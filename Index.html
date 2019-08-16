@@ -14,9 +14,24 @@
 <script>
 $( document ).ready(function() {
   $( "#aaa" ).bind( "click", function( event ) {
-    alert("aaaaaaa ttttttttttt");
+    alert(getInformation());
   });
 });
+  
+  var getInformation = function() 
+{
+    var path = "./data.json";
+    var informationArray= [];
+    console.log("Loading ....");
+    $.getJSON(path, function(data) 
+    {
+        $.each(data, function(key, val) 
+        {
+            informationArray.push(key + '-' + val);
+        });
+    }); 
+    return informationArray; 
+}
   
 function myFunction() {
   alert("aaaaaaaasss ddddddddd");
