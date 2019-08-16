@@ -25,6 +25,7 @@ $( document ).ready(function() {
     console.log("Loading ....");
     $.getJSON(path, function(data) 
     {
+      alert(data);
         $.each(data, function(key, val) 
         {
             informationArray.push(key + '-' + val);
