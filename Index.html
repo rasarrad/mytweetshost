@@ -14,6 +14,7 @@
 <script>
 $( document ).ready(function() {
   $( "#aaa" ).bind( "click", function( event ) {
+    console.log(22222222);
     console.log(getInformation());
   });
 });
@@ -25,6 +26,7 @@ $( document ).ready(function() {
     console.log("Loading ....");
     $.getJSON(path, function(data) 
     {
+      console.log(11111111);
       console.log(data);
         $.each(data, function(key, val) 
         {
@@ -33,10 +35,7 @@ $( document ).ready(function() {
     }); 
     return informationArray; 
 }
-  
-function myFunction() {
-  alert("aaaaaaaasss ddddddddd");
-}
+
 </script>
 <p>My first paragraph.</p>
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">US military delegation meets Turkish army officials over safe zone in <a href="https://twitter.com/hashtag/Syria?src=hash&amp;ref_src=twsrc%5Etfw">#Syria</a> <a href="https://twitter.com/hashtag/Akcakale?src=hash&amp;ref_src=twsrc%5Etfw">#Akcakale</a> <a href="https://twitter.com/hashtag/Turkey?src=hash&amp;ref_src=twsrc%5Etfw">#Turkey</a> <a href="https://t.co/1zz45gnABq">pic.twitter.com/1zz45gnABq</a></p>&mdash; Ruptly (@Ruptly) <a href="https://twitter.com/Ruptly/status/1162294820217524225?ref_src=twsrc%5Etfw">August 16, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
