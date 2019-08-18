@@ -28,8 +28,8 @@ $( document ).ready(function() {
     var informationArray= [];
     $.getJSON(path, function(data) 
     {
-      console.log(data);
-        $.each(data, function(key, val) 
+      console.log(data.Users);
+        $.each(data.Users, function(key, val) 
         {
           console.log(val);
         });
