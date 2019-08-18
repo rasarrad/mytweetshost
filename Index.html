@@ -14,8 +14,6 @@
 <script>
 $( document ).ready(function() {
   $( "#aaa" ).bind( "click", function( event ) {
-    console.log(22222222);
-    console.log(getInformation());
     //var foo = getParameterByName('foo');
     //alert(55);
 
@@ -31,7 +29,7 @@ $( document ).ready(function() {
     {
         $.each(data, function(key, val) 
         {
-          console.log(val);
+          console.log(val.Name);
         });
     }); 
     return informationArray; 
