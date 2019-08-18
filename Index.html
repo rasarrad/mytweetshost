@@ -20,8 +20,14 @@
         //$('.tweet#t10').css('display', 'block');
         openCreatePopup();
       });
+      $( "#create" ).bind( "click", function( event ) {
+        openCreatePopup();
+      });
     });
-      
+    var openCreatePopup = function() 
+    {
+        $('#result').text('aaaa<br>bbbb<br>cccc');
+    }     
       var getInformation = function() 
     {
         var path = "./data.json";
