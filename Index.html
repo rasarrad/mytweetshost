@@ -13,6 +13,7 @@
 
 <script>
     $( document ).ready(function() {
+
       $( "#aaa" ).bind( "click", function( event ) {
         //var foo = getParameterByName('foo');
         //alert(55);
@@ -23,15 +24,16 @@
       $( "#create" ).bind( "click", function( event ) {
         openCreatePopup();
       });
+      console.log(1);
     });
     var openCreatePopup = function() 
     {
-        alert(6);
+
         $('#result').val("{\r\n\"id\": \"Jane\",\r\n\"date\": \"20190819\",\r\n\"author\": \"Ruptly (@Ruptly)\",\r\n\"categories\": \"toview tokeep\",\r\n\"tags\": \"kyle bernie france iran irak\",\r\n\"tweet\": \"<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">US military delegation meets Turkish army officials over safe zone in <a href=\"https://twitter.com/hashtag/Syria?src=hash&amp;ref_src=twsrc%5Etfw\">#Syria</a> <a href=\"https://twitter.com/hashtag/Akcakale?src=hash&amp;ref_src=twsrc%5Etfw\">#Akcakale</a> <a href=\"https://twitter.com/hashtag/Turkey?src=hash&amp;ref_src=twsrc%5Etfw\">#Turkey</a> <a href=\"https://t.co/1zz45gnABq\">pic.twitter.com/1zz45gnABq</a></p>&mdash; Ruptly (@Ruptly) <a href=\"https://twitter.com/Ruptly/status/1162294820217524225?ref_src=twsrc%5Etfw\">August 16, 2019</a></blockquote>\"<br>},");
     }     
       var getInformation = function() 
     {
-        alert(2);
+
         var path = "./data.json";
         var informationArray= [];
         $.getJSON(path, function(data) 
