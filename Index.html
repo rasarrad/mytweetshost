@@ -27,12 +27,11 @@ $( document ).ready(function() {
 {
     var path = "./data.json";
     var informationArray= [];
-    console.log("Loading ....");
     $.getJSON(path, function(data) 
     {
         $.each(data, function(key, val) 
         {
-            informationArray.push(key + '-' + val);
+          console.log(val);
         });
     }); 
     return informationArray; 
