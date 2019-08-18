@@ -19,17 +19,21 @@
         //alert(55);
         //getInformation();
         //$('.tweet#t10').css('display', 'block');
-        getInformation();
+        //getInformation();
       });
       $( "#create" ).bind( "click", function( event ) {
         openCreatePopup();
       });
-      console.log(111111);
+      console.log(8888888888);
     });
     var openCreatePopup = function() 
     {
 
-        $('#result').val("{\r\n\"id\": \"Jane\",\r\n\"date\": \"20190819\",\r\n\"author\": \"Ruptly (@Ruptly)\",\r\n\"categories\": \"toview tokeep\",\r\n\"tags\": \"kyle bernie france iran irak\",\r\n\"tweet\": \"<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">US military delegation meets Turkish army officials over safe zone in <a href=\"https://twitter.com/hashtag/Syria?src=hash&amp;ref_src=twsrc%5Etfw\">#Syria</a> <a href=\"https://twitter.com/hashtag/Akcakale?src=hash&amp;ref_src=twsrc%5Etfw\">#Akcakale</a> <a href=\"https://twitter.com/hashtag/Turkey?src=hash&amp;ref_src=twsrc%5Etfw\">#Turkey</a> <a href=\"https://t.co/1zz45gnABq\">pic.twitter.com/1zz45gnABq</a></p>&mdash; Ruptly (@Ruptly) <a href=\"https://twitter.com/Ruptly/status/1162294820217524225?ref_src=twsrc%5Etfw\">August 16, 2019</a></blockquote>\"<br>},");
+        var text = $('#tweet').val();
+        text = "\"" + text.replace('"', '&bdquo;') + "\"";
+        
+
+        $('#result').val("{\r\n\"id\": \"Jane\",\r\n\"date\": \"20190819\",\r\n\"author\": \"Ruptly (@Ruptly)\",\r\n\"categories\": \"toview tokeep\",\r\n\"tags\": \"kyle bernie france iran irak\",\r\n\"tweet\": " + text + "\r\n},");
     }     
       var getInformation = function() 
     {
@@ -160,7 +164,7 @@ alert(1);
   
 </div>
 
-<div class="addpopup" style="display: none;">
+<div class="addpopup" style="display: none; display: block;">
     Add new<br><br>
     Tweet: <input id="tweet" type="text"></input><br><br>
     Date captured: <div style="display: inline;" id="datecap" type="text">ddsadsad sdasdasdas</div><button id="capture">Capture</button><br><br>
