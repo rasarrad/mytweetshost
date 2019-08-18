@@ -18,7 +18,7 @@
         //alert(55);
         //getInformation();
         //$('.tweet#t10').css('display', 'block');
-        openCreatePopup();
+        getInformation();
       });
       $( "#create" ).bind( "click", function( event ) {
         openCreatePopup();
@@ -26,11 +26,12 @@
     });
     var openCreatePopup = function() 
     {
-        alert(11111);
-        $('#result').html('aaaa<br>bbbb<br>cccc');
+        alert(6);
+        $('#result').val("{\r\n\"id\": \"Jane\",\r\n\"date\": \"20190819\",\r\n\"author\": \"Ruptly (@Ruptly)\",\r\n\"categories\": \"toview tokeep\",\r\n\"tags\": \"kyle bernie france iran irak\",\r\n\"tweet\": \"<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">US military delegation meets Turkish army officials over safe zone in <a href=\"https://twitter.com/hashtag/Syria?src=hash&amp;ref_src=twsrc%5Etfw\">#Syria</a> <a href=\"https://twitter.com/hashtag/Akcakale?src=hash&amp;ref_src=twsrc%5Etfw\">#Akcakale</a> <a href=\"https://twitter.com/hashtag/Turkey?src=hash&amp;ref_src=twsrc%5Etfw\">#Turkey</a> <a href=\"https://t.co/1zz45gnABq\">pic.twitter.com/1zz45gnABq</a></p>&mdash; Ruptly (@Ruptly) <a href=\"https://twitter.com/Ruptly/status/1162294820217524225?ref_src=twsrc%5Etfw\">August 16, 2019</a></blockquote>\"<br>},");
     }     
       var getInformation = function() 
     {
+        alert(1);
         var path = "./data.json";
         var informationArray= [];
         $.getJSON(path, function(data) 
@@ -71,17 +72,17 @@
         border-radius: 0px;
         }
          .addpopup {
-            max-width: 520px;
+            max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     border: 1px solid gray;
     position: fixed;
     top: 100px;
-    width: 500px;
-    height: 400px;
+    width: 800px;
+    height: 500px;
     background: gray;
     color: white;
-    left: calc(50% - 250px);
+    left: calc(50% - 400px);
     text-align: center;
          }
         </style>
@@ -155,12 +156,12 @@
   
 </div>
 
-<div class="addpopup">
+<div class="addpopup" style="display: none;">
     Add new<br><br>
     Tweet: <input id="tweet" type="text"></input><br><br>
     Date captured: <div style="display: inline;" id="datecap" type="text">ddsadsad sdasdasdas</div><button id="capture">Capture</button><br><br>
     Date: <input id="date" type="text"></input><br><br>
-    RESULT <button id="create">Createss</button><div style="width: 478px;border: 1px solid white;height: 199px;margin-left: 10px;" id="result" type="text"></div>
+    RESULT <button id="create">Createss</button><textarea style="width: 778px;height: 313px;margin-left: 10px;" id="result" type="text"></textarea>
 </div>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
