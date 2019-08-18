@@ -19,7 +19,7 @@ $( document ).ready(function() {
     //var foo = getParameterByName('foo');
     //alert(55);
 
-    $('.tweet#t10').css('display', 'block');
+    //$('.tweet#t10').css('display', 'block');
   });
 });
   
@@ -30,8 +30,6 @@ $( document ).ready(function() {
     console.log("Loading ....");
     $.getJSON(path, function(data) 
     {
-      console.log(11111111);
-      console.log(data);
         $.each(data, function(key, val) 
         {
             informationArray.push(key + '-' + val);
