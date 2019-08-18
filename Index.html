@@ -13,6 +13,7 @@
 
 <script>
     $( document ).ready(function() {
+
       $( "#aaa" ).bind( "click", function( event ) {
         //var foo = getParameterByName('foo');
         //alert(55);
@@ -20,19 +21,29 @@
         //$('.tweet#t10').css('display', 'block');
         getInformation();
       });
-      console.log(66666);
+      $( "#create" ).bind( "click", function( event ) {
+        openCreatePopup();
+      });
+      console.log(111111);
     });
-      
+    var openCreatePopup = function() 
+    {
+
+        $('#result').val("{\r\n\"id\": \"Jane\",\r\n\"date\": \"20190819\",\r\n\"author\": \"Ruptly (@Ruptly)\",\r\n\"categories\": \"toview tokeep\",\r\n\"tags\": \"kyle bernie france iran irak\",\r\n\"tweet\": \"<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">US military delegation meets Turkish army officials over safe zone in <a href=\"https://twitter.com/hashtag/Syria?src=hash&amp;ref_src=twsrc%5Etfw\">#Syria</a> <a href=\"https://twitter.com/hashtag/Akcakale?src=hash&amp;ref_src=twsrc%5Etfw\">#Akcakale</a> <a href=\"https://twitter.com/hashtag/Turkey?src=hash&amp;ref_src=twsrc%5Etfw\">#Turkey</a> <a href=\"https://t.co/1zz45gnABq\">pic.twitter.com/1zz45gnABq</a></p>&mdash; Ruptly (@Ruptly) <a href=\"https://twitter.com/Ruptly/status/1162294820217524225?ref_src=twsrc%5Etfw\">August 16, 2019</a></blockquote>\"<br>},");
+    }     
       var getInformation = function() 
     {
+alert(1);
         var path = "./data.json";
         var informationArray= [];
         $.getJSON(path, function(data) 
         {
+            alert(2);
           //console.log(data.Users);
             $.each(data.Users, function(key, val) 
             {
-              console.log(val.tweet);
+                alert(3);
+              console.log(val.author);
               console.log(key);
             });
         }); 
@@ -64,7 +75,20 @@
         border: 1px solid gray;
         border-radius: 0px;
         }
-    
+         .addpopup {
+            max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid gray;
+    position: fixed;
+    top: 100px;
+    width: 800px;
+    height: 500px;
+    background: gray;
+    color: white;
+    left: calc(50% - 400px);
+    text-align: center;
+         }
         </style>
 
 
@@ -133,204 +157,16 @@
     </blockquote> 
   </div>
   
-  <div class="tweet" id="t102">
-      <div class="categorias">toread tokeep</div>
-      <div class="tags">kyle syria france irak</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">How do you kneel with force <a href="https://t.co/z6dQB6n3kD">https://t.co/z6dQB6n3kD</a></p>&mdash; Will Chamberlain (@willchamberlain) <a href="https://twitter.com/willchamberlain/status/1162709403369390081?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  
-  <div class="tweet" id="t13">
-      <div class="categorias">mytweet</div>
-      <div class="tags">venezuela shapiro war iran trump us kyle bernie</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">In a poll released today (excluding Don&#39;t Knows), given the option of Corbyn as PM or Accepting No Deal, LibDem voters chose:<br><br>Corbyn as PM: 79.3%<br>No Deal Brexit: 20.7%<br><br>So to confirm:<br><br>79.3% of LibDem voters disagree with Jo Swinson!<br>20.7% of Libdem voters would accept No Deal!</p>&mdash; Matt Thomas #JC4PM (@Trickyjabs) <a href="https://twitter.com/Trickyjabs/status/1162673148917157888?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote>
-  </div>
-  
-  <div class="tweet" id="t14">
-      <div class="categorias">funnysweet</div>
-      <div class="tags">venezuela war trump us syria irak</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">He&#39;s the first. <a href="https://t.co/JgPuRTbIoU">https://t.co/JgPuRTbIoU</a></p>&mdash; John Iadarola (@johniadarola) <a href="https://twitter.com/johniadarola/status/1162467250814631937?ref_src=twsrc%5Etfw">August 16, 2019</a></blockquote> 
-  </div>
-  
-  <div class="tweet" id="t15">
-      <div class="categorias">tokeep</div>
-      <div class="tags">venezuela war bernie kyle trump us canada abortion warren aoc green m4a</div>
-      <blockquote class="twitter-tweet"><p lang="pt" dir="ltr">⚡💬 Bruno Lage, na flash do <a href="https://twitter.com/hashtag/BFSSLB?src=hash&amp;ref_src=twsrc%5Etfw">#BFSSLB</a>: &quot;Esta relva dificulta muito o trabalho das duas equipas.&quot;</p>&mdash; SL Benfica (@SLBenfica) <a href="https://twitter.com/SLBenfica/status/1162819207219859457?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote>
-  </div>
-  
-  <div class="tweet" id="t16">
-      <div class="categorias">toread</div>
-      <div class="tags">canada shapiro abortion warren aoc green m4a syria</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Recently, I’ve been hearing a lot about “toxic masculinity” from liberals. <br><br>Perhaps I’m lucky, but I haven’t had much experience with this problem living in the United States. Most men in this country suffer from an epidemic called “toxic femininity.”</p>&mdash; Sameera Khan (@SameeraKhan) <a href="https://twitter.com/SameeraKhan/status/1162242260244688896?ref_src=twsrc%5Etfw">August 16, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  
-  <div class="tweet" id="t17">
-      <div class="categorias">toread tokeep</div>
-      <div class="tags">m4a trump us syria aoc</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">fuck it, mask off <a href="https://t.co/FAHAKig7m4">pic.twitter.com/FAHAKig7m4</a></p>&mdash; jordan (@JordanUhl) <a href="https://twitter.com/JordanUhl/status/1162729526994112512?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  
-  <div class="tweet" id="t18">
-      <div class="categorias">mytweet</div>
-      <div class="tags">venezuela war trump us syria </div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">&quot;Beijing will invoke in full force the ‘nuclear option’ of selling all or a significant part of its US$1.4 trillion holding of US Treasury Bills, with a major chunk of the paper due to be sold in September &quot; 🇨🇳😎</p>&mdash; Korol Koshek (@korol_koshek) <a href="https://twitter.com/korol_koshek/status/1162796666199642114?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  
-  <div class="tweet" id="t19">
-      <div class="categorias">tokeep toview</div>
-      <div class="tags">canada shapiro abortion warren aoc green m4a syria</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/BFSSLB?src=hash&amp;ref_src=twsrc%5Etfw">#BFSSLB</a> | ▶ We&#39;re off. LET&#39;S GO, BOYS! <a href="https://t.co/4dsvwHiC5Q">pic.twitter.com/4dsvwHiC5Q</a></p>&mdash; SL Benfica (@slbenfica_en) <a href="https://twitter.com/slbenfica_en/status/1162787721372471297?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote>
-  </div>
-  
-  <div class="tweet" id="t10">
-      <div class="categorias">toview</div>
-      <div class="tags">trump us syria irak trump us syria </div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">JUST IN: The Wyatt says Correctional Officer Captain Thomas Woodworth has resigned as the AG’s Office investigates why he drove a truck into a group of protesters Wednesday night. This photo was sent to us by protest organizers. <a href="https://twitter.com/wpri12?ref_src=twsrc%5Etfw">@wpri12</a> <a href="https://t.co/YKEbYbPhv6">pic.twitter.com/YKEbYbPhv6</a></p>&mdash; Kait Walsh (@KaitLouiseWalsh) <a href="https://twitter.com/KaitLouiseWalsh/status/1162440030293561345?ref_src=twsrc%5Etfw">August 16, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  
-<div class="tweet" id="t101">
-    <div class="categorias">toview tokeep</div>
-    <div class="tags">kyle bernie france iran irak</div>
-    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">US military delegation meets Turkish army officials over safe zone in <a href="https://twitter.com/hashtag/Syria?src=hash&amp;ref_src=twsrc%5Etfw">#Syria</a> <a href="https://twitter.com/hashtag/Akcakale?src=hash&amp;ref_src=twsrc%5Etfw">#Akcakale</a> <a href="https://twitter.com/hashtag/Turkey?src=hash&amp;ref_src=twsrc%5Etfw">#Turkey</a> <a href="https://t.co/1zz45gnABq">pic.twitter.com/1zz45gnABq</a></p>&mdash; Ruptly (@Ruptly) <a href="https://twitter.com/Ruptly/status/1162294820217524225?ref_src=twsrc%5Etfw">August 16, 2019</a>
-    </blockquote> 
-  </div>
-  
-  <div class="tweet" id="t102">
-      <div class="categorias">toread tokeep</div>
-      <div class="tags">kyle syria france irak</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">How do you kneel with force <a href="https://t.co/z6dQB6n3kD">https://t.co/z6dQB6n3kD</a></p>&mdash; Will Chamberlain (@willchamberlain) <a href="https://twitter.com/willchamberlain/status/1162709403369390081?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  
-  <div class="tweet" id="t13">
-      <div class="categorias">mytweet</div>
-      <div class="tags">venezuela shapiro war iran trump us kyle bernie</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">In a poll released today (excluding Don&#39;t Knows), given the option of Corbyn as PM or Accepting No Deal, LibDem voters chose:<br><br>Corbyn as PM: 79.3%<br>No Deal Brexit: 20.7%<br><br>So to confirm:<br><br>79.3% of LibDem voters disagree with Jo Swinson!<br>20.7% of Libdem voters would accept No Deal!</p>&mdash; Matt Thomas #JC4PM (@Trickyjabs) <a href="https://twitter.com/Trickyjabs/status/1162673148917157888?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote>
-  </div>
-  
-  <div class="tweet" id="t14">
-      <div class="categorias">funnysweet</div>
-      <div class="tags">venezuela war trump us syria irak</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">He&#39;s the first. <a href="https://t.co/JgPuRTbIoU">https://t.co/JgPuRTbIoU</a></p>&mdash; John Iadarola (@johniadarola) <a href="https://twitter.com/johniadarola/status/1162467250814631937?ref_src=twsrc%5Etfw">August 16, 2019</a></blockquote> 
-  </div>
-  
-  <div class="tweet" id="t15">
-      <div class="categorias">tokeep</div>
-      <div class="tags">venezuela war bernie kyle trump us canada abortion warren aoc green m4a</div>
-      <blockquote class="twitter-tweet"><p lang="pt" dir="ltr">⚡💬 Bruno Lage, na flash do <a href="https://twitter.com/hashtag/BFSSLB?src=hash&amp;ref_src=twsrc%5Etfw">#BFSSLB</a>: &quot;Esta relva dificulta muito o trabalho das duas equipas.&quot;</p>&mdash; SL Benfica (@SLBenfica) <a href="https://twitter.com/SLBenfica/status/1162819207219859457?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote>
-  </div>
-  
-  <div class="tweet" id="t16">
-      <div class="categorias">toread</div>
-      <div class="tags">canada shapiro abortion warren aoc green m4a syria</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Recently, I’ve been hearing a lot about “toxic masculinity” from liberals. <br><br>Perhaps I’m lucky, but I haven’t had much experience with this problem living in the United States. Most men in this country suffer from an epidemic called “toxic femininity.”</p>&mdash; Sameera Khan (@SameeraKhan) <a href="https://twitter.com/SameeraKhan/status/1162242260244688896?ref_src=twsrc%5Etfw">August 16, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  
-  <div class="tweet" id="t17">
-      <div class="categorias">toread tokeep</div>
-      <div class="tags">m4a trump us syria aoc</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">fuck it, mask off <a href="https://t.co/FAHAKig7m4">pic.twitter.com/FAHAKig7m4</a></p>&mdash; jordan (@JordanUhl) <a href="https://twitter.com/JordanUhl/status/1162729526994112512?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  
-  <div class="tweet" id="t18">
-      <div class="categorias">mytweet</div>
-      <div class="tags">venezuela war trump us syria </div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">&quot;Beijing will invoke in full force the ‘nuclear option’ of selling all or a significant part of its US$1.4 trillion holding of US Treasury Bills, with a major chunk of the paper due to be sold in September &quot; 🇨🇳😎</p>&mdash; Korol Koshek (@korol_koshek) <a href="https://twitter.com/korol_koshek/status/1162796666199642114?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  
-  <div class="tweet" id="t19">
-      <div class="categorias">tokeep toview</div>
-      <div class="tags">canada shapiro abortion warren aoc green m4a syria</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/BFSSLB?src=hash&amp;ref_src=twsrc%5Etfw">#BFSSLB</a> | ▶ We&#39;re off. LET&#39;S GO, BOYS! <a href="https://t.co/4dsvwHiC5Q">pic.twitter.com/4dsvwHiC5Q</a></p>&mdash; SL Benfica (@slbenfica_en) <a href="https://twitter.com/slbenfica_en/status/1162787721372471297?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote>
-  </div>
-  
-  <div class="tweet" id="t10">
-      <div class="categorias">toview</div>
-      <div class="tags">trump us syria irak trump us syria </div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">JUST IN: The Wyatt says Correctional Officer Captain Thomas Woodworth has resigned as the AG’s Office investigates why he drove a truck into a group of protesters Wednesday night. This photo was sent to us by protest organizers. <a href="https://twitter.com/wpri12?ref_src=twsrc%5Etfw">@wpri12</a> <a href="https://t.co/YKEbYbPhv6">pic.twitter.com/YKEbYbPhv6</a></p>&mdash; Kait Walsh (@KaitLouiseWalsh) <a href="https://twitter.com/KaitLouiseWalsh/status/1162440030293561345?ref_src=twsrc%5Etfw">August 16, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  
-<div class="tweet" id="t101">
-    <div class="categorias">toview tokeep</div>
-    <div class="tags">kyle bernie france iran irak</div>
-    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">US military delegation meets Turkish army officials over safe zone in <a href="https://twitter.com/hashtag/Syria?src=hash&amp;ref_src=twsrc%5Etfw">#Syria</a> <a href="https://twitter.com/hashtag/Akcakale?src=hash&amp;ref_src=twsrc%5Etfw">#Akcakale</a> <a href="https://twitter.com/hashtag/Turkey?src=hash&amp;ref_src=twsrc%5Etfw">#Turkey</a> <a href="https://t.co/1zz45gnABq">pic.twitter.com/1zz45gnABq</a></p>&mdash; Ruptly (@Ruptly) <a href="https://twitter.com/Ruptly/status/1162294820217524225?ref_src=twsrc%5Etfw">August 16, 2019</a>
-    </blockquote> 
-  </div>
-  
-  <div class="tweet" id="t102">
-      <div class="categorias">toread tokeep</div>
-      <div class="tags">kyle syria france irak</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">How do you kneel with force <a href="https://t.co/z6dQB6n3kD">https://t.co/z6dQB6n3kD</a></p>&mdash; Will Chamberlain (@willchamberlain) <a href="https://twitter.com/willchamberlain/status/1162709403369390081?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  
-  <div class="tweet" id="t13">
-      <div class="categorias">mytweet</div>
-      <div class="tags">venezuela shapiro war iran trump us kyle bernie</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">In a poll released today (excluding Don&#39;t Knows), given the option of Corbyn as PM or Accepting No Deal, LibDem voters chose:<br><br>Corbyn as PM: 79.3%<br>No Deal Brexit: 20.7%<br><br>So to confirm:<br><br>79.3% of LibDem voters disagree with Jo Swinson!<br>20.7% of Libdem voters would accept No Deal!</p>&mdash; Matt Thomas #JC4PM (@Trickyjabs) <a href="https://twitter.com/Trickyjabs/status/1162673148917157888?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote>
-  </div>
-  
-  <div class="tweet" id="t14">
-      <div class="categorias">funnysweet</div>
-      <div class="tags">venezuela war trump us syria irak</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">He&#39;s the first. <a href="https://t.co/JgPuRTbIoU">https://t.co/JgPuRTbIoU</a></p>&mdash; John Iadarola (@johniadarola) <a href="https://twitter.com/johniadarola/status/1162467250814631937?ref_src=twsrc%5Etfw">August 16, 2019</a></blockquote> 
-  </div>
-  
-  <div class="tweet" id="t15">
-      <div class="categorias">tokeep</div>
-      <div class="tags">venezuela war bernie kyle trump us canada abortion warren aoc green m4a</div>
-      <blockquote class="twitter-tweet"><p lang="pt" dir="ltr">⚡💬 Bruno Lage, na flash do <a href="https://twitter.com/hashtag/BFSSLB?src=hash&amp;ref_src=twsrc%5Etfw">#BFSSLB</a>: &quot;Esta relva dificulta muito o trabalho das duas equipas.&quot;</p>&mdash; SL Benfica (@SLBenfica) <a href="https://twitter.com/SLBenfica/status/1162819207219859457?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote>
-  </div>
-  
-  <div class="tweet" id="t16">
-      <div class="categorias">toread</div>
-      <div class="tags">canada shapiro abortion warren aoc green m4a syria</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Recently, I’ve been hearing a lot about “toxic masculinity” from liberals. <br><br>Perhaps I’m lucky, but I haven’t had much experience with this problem living in the United States. Most men in this country suffer from an epidemic called “toxic femininity.”</p>&mdash; Sameera Khan (@SameeraKhan) <a href="https://twitter.com/SameeraKhan/status/1162242260244688896?ref_src=twsrc%5Etfw">August 16, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  
-  <div class="tweet" id="t17">
-      <div class="categorias">toread tokeep</div>
-      <div class="tags">m4a trump us syria aoc</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">fuck it, mask off <a href="https://t.co/FAHAKig7m4">pic.twitter.com/FAHAKig7m4</a></p>&mdash; jordan (@JordanUhl) <a href="https://twitter.com/JordanUhl/status/1162729526994112512?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  
-  <div class="tweet" id="t18">
-      <div class="categorias">mytweet</div>
-      <div class="tags">venezuela war trump us syria </div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">&quot;Beijing will invoke in full force the ‘nuclear option’ of selling all or a significant part of its US$1.4 trillion holding of US Treasury Bills, with a major chunk of the paper due to be sold in September &quot; 🇨🇳😎</p>&mdash; Korol Koshek (@korol_koshek) <a href="https://twitter.com/korol_koshek/status/1162796666199642114?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  
-  <div class="tweet" id="t19">
-      <div class="categorias">tokeep toview</div>
-      <div class="tags">canada shapiro abortion warren aoc green m4a syria</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/BFSSLB?src=hash&amp;ref_src=twsrc%5Etfw">#BFSSLB</a> | ▶ We&#39;re off. LET&#39;S GO, BOYS! <a href="https://t.co/4dsvwHiC5Q">pic.twitter.com/4dsvwHiC5Q</a></p>&mdash; SL Benfica (@slbenfica_en) <a href="https://twitter.com/slbenfica_en/status/1162787721372471297?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote>
-  </div>
-  
-  <div class="tweet" id="t10">
-      <div class="categorias">toview</div>
-      <div class="tags">trump us syria irak trump us syria </div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">JUST IN: The Wyatt says Correctional Officer Captain Thomas Woodworth has resigned as the AG’s Office investigates why he drove a truck into a group of protesters Wednesday night. This photo was sent to us by protest organizers. <a href="https://twitter.com/wpri12?ref_src=twsrc%5Etfw">@wpri12</a> <a href="https://t.co/YKEbYbPhv6">pic.twitter.com/YKEbYbPhv6</a></p>&mdash; Kait Walsh (@KaitLouiseWalsh) <a href="https://twitter.com/KaitLouiseWalsh/status/1162440030293561345?ref_src=twsrc%5Etfw">August 16, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  
-<div class="tweet" id="t101">
-    <div class="categorias">toview tokeep</div>
-    <div class="tags">kyle bernie france iran irak</div>
-    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">US military delegation meets Turkish army officials over safe zone in <a href="https://twitter.com/hashtag/Syria?src=hash&amp;ref_src=twsrc%5Etfw">#Syria</a> <a href="https://twitter.com/hashtag/Akcakale?src=hash&amp;ref_src=twsrc%5Etfw">#Akcakale</a> <a href="https://twitter.com/hashtag/Turkey?src=hash&amp;ref_src=twsrc%5Etfw">#Turkey</a> <a href="https://t.co/1zz45gnABq">pic.twitter.com/1zz45gnABq</a></p>&mdash; Ruptly (@Ruptly) <a href="https://twitter.com/Ruptly/status/1162294820217524225?ref_src=twsrc%5Etfw">August 16, 2019</a>
-    </blockquote> 
-  </div>
-  
-  <div class="tweet" id="t102">
-      <div class="categorias">toread tokeep</div>
-      <div class="tags">kyle syria france irak</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">How do you kneel with force <a href="https://t.co/z6dQB6n3kD">https://t.co/z6dQB6n3kD</a></p>&mdash; Will Chamberlain (@willchamberlain) <a href="https://twitter.com/willchamberlain/status/1162709403369390081?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-  
-  <div class="tweet" id="t13">
-      <div class="categorias">mytweet</div>
-      <div class="tags">venezuela shapiro war iran trump us kyle bernie</div>
-      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">In a poll released today (excluding Don&#39;t Knows), given the option of Corbyn as PM or Accepting No Deal, LibDem voters chose:<br><br>Corbyn as PM: 79.3%<br>No Deal Brexit: 20.7%<br><br>So to confirm:<br><br>79.3% of LibDem voters disagree with Jo Swinson!<br>20.7% of Libdem voters would accept No Deal!</p>&mdash; Matt Thomas #JC4PM (@Trickyjabs) <a href="https://twitter.com/Trickyjabs/status/1162673148917157888?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote>
-  </div>
-
   
 </div>
 
+<div class="addpopup" style="display: none;">
+    Add new<br><br>
+    Tweet: <input id="tweet" type="text"></input><br><br>
+    Date captured: <div style="display: inline;" id="datecap" type="text">ddsadsad sdasdasdas</div><button id="capture">Capture</button><br><br>
+    Date: <input id="date" type="text"></input><br><br>
+    RESULT <button id="create">Createss</button><textarea style="width: 778px;height: 313px;margin-left: 10px;" id="result" type="text"></textarea>
+</div>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
