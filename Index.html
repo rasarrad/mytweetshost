@@ -24,7 +24,7 @@
       $( "#create" ).bind( "click", function( event ) {
         openCreatePopup();
       });
-      console.log(22222222);
+      console.log(33333333);
     });
     var openCreatePopup = function() 
     {
@@ -33,15 +33,17 @@
     }     
       var getInformation = function() 
     {
-
+alert(1);
         var path = "./data.json";
         var informationArray= [];
         $.getJSON(path, function(data) 
         {
+            alert(2);
           //console.log(data.Users);
             $.each(data.Users, function(key, val) 
             {
-              console.log(val.id);
+                alert(3);
+              console.log(val.author);
               console.log(key);
             });
         }); 
