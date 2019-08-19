@@ -20,17 +20,18 @@
         //getInformation();
         //$('.tweet#t10').css('display', 'block');
         //getInformation();
+        $( "#t1102" ).append("<blockquote class=twitter-tweet><p lang=en dir=ltr>200 years ago today 18 people were killed and hundreds injured as they protested for the representation of working people.<br><br>The Massacre at Peterloo sowed the seeds for universal suffrage and the trade union movement.<br><br>Today we remember those brave protesters.<a href=https://twitter.com/hashtag/Peterloo2019?src=hash&amp;ref_src=twsrc%5Etfw>#Peterloo2019</a> <a href=https://t.co/KPMFwRy1os>pic.twitter.com/KPMFwRy1os</a></p>&mdash; GMB UNION (@GMB_union) <a href=https://twitter.com/GMB_union/status/1162254664047316993?ref_src=twsrc%5Etfw>August 16, 2019</a></blockquote> <script async src=https://platform.twitter.com/widgets.js charset=utf-8><\/script>");
       });
       $( "#create" ).bind( "click", function( event ) {
         openCreatePopup();
       });
-      console.log(8888888888);
+      console.log(11111);
     });
     var openCreatePopup = function() 
     {
 
         var text = $('#tweet').val();
-        text = "\"" + text.replace('"', '&bdquo;') + "\"";
+        text = "\"" + text.replace(/"/g, '') + "\"";
         
 
         $('#result').val("{\r\n\"id\": \"Jane\",\r\n\"date\": \"20190819\",\r\n\"author\": \"Ruptly (@Ruptly)\",\r\n\"categories\": \"toview tokeep\",\r\n\"tags\": \"kyle bernie france iran irak\",\r\n\"tweet\": " + text + "\r\n},");
@@ -100,10 +101,10 @@ alert(1);
 <p></p>
 <div class="main">
 
-<div class="tweet" id="t102">
+<div class="tweet" id="t1102" style="display: block">
     <div class="categorias">toread tokeep</div>
     <div class="tags">kyle syria france irak</div>
-    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">How do you kneel with force <a href="https://t.co/z6dQB6n3kD">https://t.co/z6dQB6n3kD</a></p>&mdash; Will Chamberlain (@willchamberlain) <a href="https://twitter.com/willchamberlain/status/1162709403369390081?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">He&#39;s the first. <a href="https://t.co/JgPuRTbIoU">https://t.co/JgPuRTbIoU</a></p>&mdash; John Iadarola (@johniadarola) <a href="https://twitter.com/johniadarola/status/1162467250814631937?ref_src=twsrc%5Etfw">August 16, 2019</a></blockquote>
 </div>
 
 <div class="tweet" id="t13">
