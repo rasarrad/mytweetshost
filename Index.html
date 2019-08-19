@@ -8,8 +8,8 @@
   </head>
 <body>
 
-<h1>My First Heading</h1>
-<button id="aaa">Try it</button>
+<h1>My tweet manager</h1>
+<button id="aaa">Add tweet</button>
 
 <script>
     var text = "";
@@ -17,7 +17,8 @@
     var nextid = "";
 
     $( document ).ready(function() {
-      getInformation();
+      //getInformation();
+
       $("#tweet").on("paste", function() {
           setTimeout(function(){
             nextid = parseInt($('#maxid').val()) + 1;
@@ -101,7 +102,7 @@
               var newtweetobj = $('#' + val.id);
               newtweetobj.append($('<div class="categorias">' + val.categories + '</div>'));
               newtweetobj.append($('<div class="tags">' + val.tags + '</div>'));
-              newtweetobj.append($('<div class="tweet"></div>'));
+              newtweetobj.append($('<div class="innertweet"></div>'));
               newtweetobj.find('.tweet').append(val.tweet);
           
             });
@@ -155,7 +156,7 @@
 <p></p>
 <input type="hidden" id="maxid" value="6">
 <div id="main">
-
+    <div id="7" class="tweet"><div class="categorias">aaaa</div><div class="tags">bbbbb</div><div class="tweet"><twitter-widget class="twitter-tweet twitter-tweet-rendered" id="twitter-widget-0" style="position: static; visibility: visible; display: block; transform: rotate(0deg); max-width: 100%; width: 500px; min-width: 220px; margin-top: 10px; margin-bottom: 10px;" data-tweet-id="1163365281995137024"></twitter-widget> <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></script></div></div>
 </div>
 
 <div class="addpopup" style="display: block;display: none;">
