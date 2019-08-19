@@ -6,7 +6,7 @@
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
   </head>
-<body>
+<body style="margin: 0;">
 
 <h1>My tweet manager</h1>
 <button id="aaa">Add tweet</button>
@@ -82,7 +82,7 @@
         //$( "#t1102" ).append("<blockquote class=twitter-tweet><p lang=en dir=ltr><a href=https://twitter.com/hashtag/ConcoursdElegance2019?src=hash&amp;ref_src=twsrc%5Etfw>#ConcoursdElegance2019</a> closes in style at <a href=https://twitter.com/hashtag/PebbleBeach?src=hash&amp;ref_src=twsrc%5Etfw>#PebbleBeach</a><a href=https://twitter.com/hashtag/USA?src=hash&amp;ref_src=twsrc%5Etfw>#USA</a> <a href=https://twitter.com/hashtag/Monterey?src=hash&amp;ref_src=twsrc%5Etfw>#Monterey</a> <a href=https://t.co/aLyxSFRBmv>pic.twitter.com/aLyxSFRBmv</a></p>&mdash; Ruptly (@Ruptly) <a href=https://twitter.com/Ruptly/status/1163365281995137024?ref_src=twsrc%5Etfw>August 19, 2019</a></blockquote> <script async src=https://platform.twitter.com/widgets.js charset=utf-8><&#47;script>");
       });
 
-      console.log(77);
+      console.log(111111);
     });
     var openCreatePopup = function() 
     {
@@ -124,10 +124,13 @@
     
     <style>
         .tweet {
-          max-width: 520px;
         margin-left: auto;
         margin-right: auto;
+        border-bottom: 2px solid white;
+        }
 
+        .innertweet {
+          margin-left: calc(50% - 250px);
         }
         
         .EmbeddedTweet-tweet {
@@ -155,7 +158,7 @@
 <input type="text"></input>
 <p></p>
 <input type="hidden" id="maxid" value="6">
-<div id="main">
+<div id="main" style="background: gray;color: white;">
     
 </div>
 
