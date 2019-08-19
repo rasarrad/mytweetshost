@@ -9,7 +9,7 @@
 <body style="margin: 0;">
 
 <h1>My tweet manager</h1>
-<button id="aaa">Add tweet</button>
+<button style="cursor: pointer;" id="aaa">Add tweet</button>
 
 <script>
     var text = "";
@@ -82,7 +82,7 @@
         //$( "#t1102" ).append("<blockquote class=twitter-tweet><p lang=en dir=ltr><a href=https://twitter.com/hashtag/ConcoursdElegance2019?src=hash&amp;ref_src=twsrc%5Etfw>#ConcoursdElegance2019</a> closes in style at <a href=https://twitter.com/hashtag/PebbleBeach?src=hash&amp;ref_src=twsrc%5Etfw>#PebbleBeach</a><a href=https://twitter.com/hashtag/USA?src=hash&amp;ref_src=twsrc%5Etfw>#USA</a> <a href=https://twitter.com/hashtag/Monterey?src=hash&amp;ref_src=twsrc%5Etfw>#Monterey</a> <a href=https://t.co/aLyxSFRBmv>pic.twitter.com/aLyxSFRBmv</a></p>&mdash; Ruptly (@Ruptly) <a href=https://twitter.com/Ruptly/status/1163365281995137024?ref_src=twsrc%5Etfw>August 19, 2019</a></blockquote> <script async src=https://platform.twitter.com/widgets.js charset=utf-8><&#47;script>");
       });
 
-      console.log(55555);
+      console.log(666);
     });
     var openCreatePopup = function() 
     {
@@ -100,7 +100,7 @@
             {
               var newtweet = $('#main').append($('<div id="' + val.id + '" class="tweet"></div>'));
               var newtweetobj = $('#' + val.id);
-              newtweetobj.append($('<button onclick="javascript: expandCat(this)" id="expand">></button><div class="categorias"><b>Tweet id: </b>' + val.id + '<b>Categories: </b>' + val.categories + '</div>'));
+              newtweetobj.append($('<button onclick="javascript: expandCat(this)" id="expand">></button><div class="categorias"><b>Tweet id: </b>' + val.id + '<b> Categories: </b>' + val.categories + '</div>'));
               newtweetobj.append($('<div class="tags"><b>Tags: </b>' + val.tags + '</div>'));
               newtweetobj.append($('<div class="innertweet"></div>'));
               newtweetobj.find('.innertweet').append(val.tweet);
@@ -176,6 +176,7 @@
           margin-top: 4px;
           left: 2px;
           font-weight: bold;
+          cursor: pointer;
          }
         </style>
 
@@ -197,7 +198,7 @@
     Tags: <input style="width: 748px;" id="tags" type="text"></input><br><br>
     <span style="margin-left: auto;margin-right: auto;width: 100%;display: block;text-align: center;font-size: 20px; height: 32px; padding-top: 3px;">Result</span>
     <div style="float: right;position: absolute;right: 148px;top: 150px;height: 19px;width: 112px;color: #ffffff;">Add one more:</div><input type="checkbox" style="float: right;position: absolute;right: 90px; top: 148px; height: 19px; width: 112px;color: #484848;" id="onemore" checked>
-    <button style="float: right;position: absolute;right: 10px;top: 146px;height: 28px;width: 112px;font-size: 16px;color: #484848;" id="create">Create</button>
+    <button style="cursor: pointer;float: right;position: absolute;right: 10px;top: 146px;height: 28px;width: 112px;font-size: 16px;color: #484848;" id="create">Create</button>
     <textarea style="width: 784px;height: 297px;" id="result" type="text"></textarea>
 </div>
 
