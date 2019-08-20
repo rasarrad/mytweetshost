@@ -105,6 +105,7 @@
             
             $.each(data.Tweets, function(key, val) 
             {
+              console.log(currentIndex);
               var newtweet = null;
               if (currentIndex < endIndex) {
                 var newtweet = $('#main').append($('<div id="inid" class="tweet"></div>'));
