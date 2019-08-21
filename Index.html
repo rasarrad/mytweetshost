@@ -22,7 +22,6 @@
       $('#filtertext').keypress(function(event){
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13' && $(this).val().length > 0){
-          alert(1111);
           getInformation(true);
         }
       });    
@@ -104,7 +103,7 @@
         var path = "./data.json";
         var endIndex = currentIndex + 5;
         var objToFocus = currentIndex;
-        
+        var dofiltertext = $('#filtertext').val().length > 0; 
         $.getJSON(path, function(data) 
         {
           console.log('1111111111111111111');
@@ -113,24 +112,29 @@
             {
               console.log(currentIndex);
               var newtweet = null;
+
               if (currentIndex < endIndex) {
-                $('#moretweets').hide();
-                var newtweet = $('#main').append($('<div id="inid" class="tweet"></div>'));
-                var newtweetobj = $('#inid');
-                newtweetobj.append($('<button onclick="javascript: expandCat(this)" id="expand">></button><div class="categorias"><b>Tweet id: </b>' + val.id + '<b> Categories: </b>' + val.categories + '</div>'));
-                newtweetobj.append($('<div class="tags"><b>Tags: </b>' + val.tags + '</div>'));
-                newtweetobj.append($('<div class="innertweet"></div>'));
-                newtweetobj.find('.innertweet').append(val.tweet);
-                newtweetobj.attr('id', val.id);
+                if (dofiltertext && val.tweet.includes('Montereyy')) {
+                  $('#moretweets').hide();
+                  var newtweet = $('#main').append($('<div id="inid" class="tweet"></div>'));
+                  var newtweetobj = $('#inid');
+                  newtweetobj.append($('<button onclick="javascript: expandCat(this)" id="expand">></button><div class="categorias"><b>Tweet id: </b>' + val.id + '<b> Categories: </b>' + val.categories + '</div>'));
+                  newtweetobj.append($('<div class="tags"><b>Tags: </b>' + val.tags + '</div>'));
+                  newtweetobj.append($('<div class="innertweet"></div>'));
+                  newtweetobj.find('.innertweet').append(val.tweet);
+                  newtweetobj.attr('id', val.id);
 
-                if (objToFocus == currentIndex) {
-                  console.log('focusss444s');
-                  var newtweetobjaction = newtweetobj;
-                  $('html, body').animate({
-                    scrollTop: $(newtweetobjaction).offset().top
-                  }, 700);
+                  if (objToFocus == currentIndex) {
+                    console.log('focusss444s');
+                    var newtweetobjaction = newtweetobj;
+                    $('html, body').animate({
+                      scrollTop: $(newtweetobjaction).offset().top
+                    }, 700);
 
+                  }
+                  currentIndex = currentIndex + 1;
                 }
+
                 
               }
               else {
@@ -138,7 +142,7 @@
                 currentIndex = currentIndex + 1;
                 return false;
               }
-              currentIndex = currentIndex + 1;
+              
               
             });
         }); 
