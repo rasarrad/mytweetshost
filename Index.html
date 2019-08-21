@@ -104,7 +104,7 @@
         //$( "#t1102" ).append("<blockquote class=twitter-tweet><p lang=en dir=ltr><a href=https://twitter.com/hashtag/ConcoursdElegance2019?src=hash&amp;ref_src=twsrc%5Etfw>#ConcoursdElegance2019</a> closes in style at <a href=https://twitter.com/hashtag/PebbleBeach?src=hash&amp;ref_src=twsrc%5Etfw>#PebbleBeach</a><a href=https://twitter.com/hashtag/USA?src=hash&amp;ref_src=twsrc%5Etfw>#USA</a> <a href=https://twitter.com/hashtag/Monterey?src=hash&amp;ref_src=twsrc%5Etfw>#Monterey</a> <a href=https://t.co/aLyxSFRBmv>pic.twitter.com/aLyxSFRBmv</a></p>&mdash; Ruptly (@Ruptly) <a href=https://twitter.com/Ruptly/status/1163365281995137024?ref_src=twsrc%5Etfw>August 19, 2019</a></blockquote> <script async src=https://platform.twitter.com/widgets.js charset=utf-8><&#47;script>");
       });
 
-      console.log(111);
+      console.log(2222);
     });
     var openCreatePopup = function() 
     {
@@ -194,7 +194,13 @@
         jobj.show();
     }
     function openmenu() {
-      $('#menu').css('width', '180px');
+      if ($('#menu').css('width') == '0px') {
+        $('#menu').css('width', '180px');
+      }
+      else {
+        $('#menu').css('width', '0px');
+      }
+
     }
     function gotop() {
       $(window).scrollTop( 0 );
@@ -288,8 +294,12 @@
             padding-right: 5px;
             padding: 5px 10px;
             color: gray;
+            cursor: pointer;
+            transition: all 0.6s;
           }
-
+          .menubutton:hover {
+            background: #eaeaea;
+          }
           #menu {
             width: 0px;
             overflow: hidden;
@@ -300,16 +310,26 @@
             border: 1px solid gray;
             border-left-width: 0px;
           }
+          
 
           #menu > ul {
             list-style: none;
             margin: 0;
-            padding-left: 17px;
+            padding-left: 0px;
           }
 
           #menu > ul > li {
             overflow: hidden;
             white-space: nowrap;
+            padding: 10px 0px;
+            padding-left: 17px;
+            color: #4c4c4c;
+            border-bottom: 1px solid #c1c1c1;
+            cursor: pointer;
+            transition: all 0.6s;
+          }
+          #menu > ul > li:hover {
+            background: #eaeaea;
           }
         </style>
 
