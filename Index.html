@@ -22,6 +22,7 @@
       $('#filtertext').keypress(function(event){
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13' && $(this).val().length > 0){
+          alert(111);
           getInformation(true);
         }
       });    
