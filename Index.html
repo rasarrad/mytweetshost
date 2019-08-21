@@ -6,9 +6,15 @@
   </head>
 <body style="margin: 0;background: gray;font-family: sans-serif;">
 
-<h1></h1>
+<i class="fa fa-bars" onclick="javascript: openmenu()"></i>
 <button style="cursor: pointer;" id="addtweet">Add tweet</button>
-
+<div id="menu" style="width: 0px;">
+  <ul>
+    <li>Menu item 1</li>
+    <li>Menu item 2</li>
+    <li>Menu item 3</li>
+  </ul>
+</div>
 <script>
     var text = "";
     var origin = "";
@@ -98,7 +104,7 @@
         //$( "#t1102" ).append("<blockquote class=twitter-tweet><p lang=en dir=ltr><a href=https://twitter.com/hashtag/ConcoursdElegance2019?src=hash&amp;ref_src=twsrc%5Etfw>#ConcoursdElegance2019</a> closes in style at <a href=https://twitter.com/hashtag/PebbleBeach?src=hash&amp;ref_src=twsrc%5Etfw>#PebbleBeach</a><a href=https://twitter.com/hashtag/USA?src=hash&amp;ref_src=twsrc%5Etfw>#USA</a> <a href=https://twitter.com/hashtag/Monterey?src=hash&amp;ref_src=twsrc%5Etfw>#Monterey</a> <a href=https://t.co/aLyxSFRBmv>pic.twitter.com/aLyxSFRBmv</a></p>&mdash; Ruptly (@Ruptly) <a href=https://twitter.com/Ruptly/status/1163365281995137024?ref_src=twsrc%5Etfw>August 19, 2019</a></blockquote> <script async src=https://platform.twitter.com/widgets.js charset=utf-8><&#47;script>");
       });
 
-      console.log(6666);
+      console.log(777);
     });
     var openCreatePopup = function() 
     {
@@ -187,7 +193,9 @@
       else
         jobj.show();
     }
-
+    function openmenu() {
+      $('#menu').css('width', '180px');
+    }
     function gotop() {
       $(window).scrollTop( 0 );
     }   
@@ -227,18 +235,18 @@
         }
 
          .addpopup {
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            border: 1px solid gray;
-            position: fixed;
-            top: 100px;
-            width: 800px;
-            height: 500px;
-            background: gray;
-            color: white;
-            left: calc(50% - 400px);
-            padding-left: 10px;
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+          position: fixed;
+          top: 100px;
+          width: 800px;
+          height: 500px;
+          background: #929292;
+          color: white;
+          left: calc(50% - 400px);
+          padding-left: 10px;
+          border: 1px solid #adabab;
          }
 
          #main:first-child {
@@ -272,6 +280,15 @@
           margin-left: calc(50% - 27px);
           margin-top: calc(50% - 27px);
          }
+
+         .menubutton {
+            font-size: 38px;
+            background: white;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding: 5px 10px;
+            color: gray;
+          }
         </style>
 
 <input type="text" id="filtertext"></input>
@@ -287,7 +304,7 @@
     Date <div style="display: inline;" id="datecap"></div> <input id="date" style="width: 95px;" type="text"></input>
     Id <input style="display: inline; width: 35px;" id="tweetid" type="text"></input> Posted by <div style="display: inline;" id="postedby"></div>
     <br><br>
-    Categories <input style="width: 710px;" id="categories" type="text"></input><br><br>
+    Categories <input style="width: 704px;" id="categories" type="text"></input><br><br>
     Tags <input style="width: 748px;" id="tags" type="text"></input><br><br>
     <span style="margin-left: auto;margin-right: auto;width: 100%;display: block;text-align: center;font-size: 20px; height: 32px; padding-top: 3px;">Result</span>
     <div style="float: right;position: absolute;right: 148px;top: 150px;height: 19px;width: 112px;color: #ffffff;">Add one more</div><input type="checkbox" style="float: right;position: absolute;right: 90px; top: 148px; height: 19px; width: 112px;color: #484848;" id="onemore" checked>
