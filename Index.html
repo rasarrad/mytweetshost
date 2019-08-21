@@ -98,7 +98,7 @@
         //$( "#t1102" ).append("<blockquote class=twitter-tweet><p lang=en dir=ltr><a href=https://twitter.com/hashtag/ConcoursdElegance2019?src=hash&amp;ref_src=twsrc%5Etfw>#ConcoursdElegance2019</a> closes in style at <a href=https://twitter.com/hashtag/PebbleBeach?src=hash&amp;ref_src=twsrc%5Etfw>#PebbleBeach</a><a href=https://twitter.com/hashtag/USA?src=hash&amp;ref_src=twsrc%5Etfw>#USA</a> <a href=https://twitter.com/hashtag/Monterey?src=hash&amp;ref_src=twsrc%5Etfw>#Monterey</a> <a href=https://t.co/aLyxSFRBmv>pic.twitter.com/aLyxSFRBmv</a></p>&mdash; Ruptly (@Ruptly) <a href=https://twitter.com/Ruptly/status/1163365281995137024?ref_src=twsrc%5Etfw>August 19, 2019</a></blockquote> <script async src=https://platform.twitter.com/widgets.js charset=utf-8><&#47;script>");
       });
 
-      console.log(4444);
+      console.log(5555);
     });
     var openCreatePopup = function() 
     {
@@ -108,6 +108,7 @@
     }     
       var getInformation = function(ismoretweets) 
     {
+        $('#mask').fadeIn(300);
         var path = "./data.json";
         var endIndex = currentIndex + 5;
         var objToFocus = currentIndex;
@@ -152,10 +153,12 @@
               else {
                 $('#moretweets').show();
                 currentIndex = currentIndex + 1;
+
+                $('#mask').fadeOut(300);
                 return false;
               }
               
-              
+              $('#mask').fadeOut(300);
             });
 
             console.log('222222222222222');
@@ -240,7 +243,7 @@
          #expand {
           position: absolute;
           margin-top: 2px;
-          left: 2px;
+          left: 8px;
           cursor: pointer;
           font-size: 22px;
          }
@@ -258,8 +261,14 @@
           cursor: pointer;
           display: none;
          }
-        </style>
 
+         .fa-circle-o-notch {
+          color: white;
+          font-size: 55px;
+          margin-left: calc(50% - 27px);
+          margin-top: calc(50% - 27px);
+         }
+        </style>
 
 <input type="text" id="filtertext"></input>
 <p></p>
@@ -282,6 +291,6 @@
     <textarea style="width: 784px;height: 297px;" id="result" type="text"></textarea>
 </div>
 <i onmouseover="javascript: gotop()" id="gotop" class="fa fa-angle-double-up"></i>
-
+<div id="mask" style="position: fixed;width: 100%; height: 100%;background: #00000099; top: 0;display: none;"><i class="fa fa-circle-o-notch fa-spin"></i></div>
 </body>
 </html>
