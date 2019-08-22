@@ -125,11 +125,11 @@
         var dofiltertag = $('#filtertag').val().length > 0; 
         var dofilterauthor = $('#filterauthor').val().length > 0;
         var dofiltercat = $('#selectedcat').val().length > 0;  
-        console.log('3333333333');
+        console.log('444');
         if (!ismoretweets) {
           $("#main").empty();
         }
-        console.log('55555');
+        console.log('66666');
         $.getJSON(path, function(data) 
         {
           console.log('1111111111111111111');
@@ -144,7 +144,7 @@
                 dofilterdate1 = (dofilterdate1 && val.date > Number($('#dofilterdate1').val())) || !dofilterdate1;
                 dofilterdate2 = (dofilterdate2 && val.date > Number($('#dofilterdate2').val())) || !dofilterdate2;
                 console.log(dofilterid);
-                dofilterid = (dofilterid && val.id == $('#dofilterid').val()) || !dofilterid;
+                dofilterid = (dofilterid && Number(val.id) == Number($('#dofilterid').val())) || !dofilterid;
                 console.log(dofilterid);
                 dofiltertag = (dofiltertag && val.tags.includes($('#dofiltertag').val())) || !dofiltertag;
                 dofiltercat = (dofiltercat && val.categories.includes($('#dofiltercat').val())) || !dofiltercat;
