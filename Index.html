@@ -30,7 +30,7 @@
         $('#gotop').fadeOut(700);
       }
     });
-      $('#filtertext').keypress(function(event){
+      $('#filtertext, #filterdate1, #filterdate2, #filterid, #filterauthor, #filtertag').keypress(function(event){
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13' && $(this).val().length > 0){
           getInformation(false);
@@ -103,7 +103,7 @@
         //$( "#t1102" ).append("<blockquote class=twitter-tweet><p lang=en dir=ltr><a href=https://twitter.com/hashtag/ConcoursdElegance2019?src=hash&amp;ref_src=twsrc%5Etfw>#ConcoursdElegance2019</a> closes in style at <a href=https://twitter.com/hashtag/PebbleBeach?src=hash&amp;ref_src=twsrc%5Etfw>#PebbleBeach</a><a href=https://twitter.com/hashtag/USA?src=hash&amp;ref_src=twsrc%5Etfw>#USA</a> <a href=https://twitter.com/hashtag/Monterey?src=hash&amp;ref_src=twsrc%5Etfw>#Monterey</a> <a href=https://t.co/aLyxSFRBmv>pic.twitter.com/aLyxSFRBmv</a></p>&mdash; Ruptly (@Ruptly) <a href=https://twitter.com/Ruptly/status/1163365281995137024?ref_src=twsrc%5Etfw>August 19, 2019</a></blockquote> <script async src=https://platform.twitter.com/widgets.js charset=utf-8><&#47;script>");
       });
 
-      console.log(4444);
+      console.log(777);
     });
     var openCreatePopup = function() 
     {
@@ -113,16 +113,23 @@
     }     
       var getInformation = function(ismoretweets) 
     {
+      console.log('2222222');
         $('#mask').fadeIn(300); 
         var path = "./data.json";
         var endIndex = currentIndex + 5;
         var objToFocus = currentIndex;
         var dofiltertext = $('#filtertext').val().length > 0; 
-
+        var dofilterdate1 = $('#filterdate1').val().length > 0; 
+        var dofilterdate2 = $('#filterdate2').val().length > 0; 
+        var dofilterid = $('#filterid').val().length > 0; 
+        var dofiltertag = $('#filtertag').val().length > 0; 
+        var dofilterauthor = $('#filterauthor').val().length > 0;
+        var dofiltercat = $('#selectedcat').val().length > 0;  
+        console.log('3333333333');
         if (!ismoretweets) {
           $("#main").empty();
         }
-
+        console.log('55555');
         $.getJSON(path, function(data) 
         {
           console.log('1111111111111111111');
@@ -133,8 +140,23 @@
               var newtweet = null;
 
               if (currentIndex < endIndex) {
+                dofiltertext = (dofiltertext && val.tweet.includes($('#filtertext').val())) || !dofiltertext;
+                dofilterdate1 = (dofilterdate1 && val.date > Number($('#dofilterdate1').val())) || !dofilterdate1;
+                dofilterdate2 = (dofilterdate2 && val.date > Number($('#dofilterdate2').val())) || !dofilterdate2;
+                console.log(dofilterid);
+                dofilterid = (dofilterid && val.id == $('#dofilterid').val()) || !dofilterid;
+                console.log(dofilterid);
+                dofiltertag = (dofiltertag && val.tags.includes($('#dofiltertag').val())) || !dofiltertag;
+                dofiltercat = (dofiltercat && val.categories.includes($('#dofiltercat').val())) || !dofiltercat;
+                dofilterauthor = (dofilterauthor && val.author.includes($('#dofilterauthor').val())) || !dofilterauthor;
 
-                if (dofiltertext && val.tweet.includes($('#filtertext').val())) {
+                console.log(dofiltertext);
+                console.log(dofilterdate1);
+                console.log(dofilterdate2);
+                console.log(dofilterauthor);
+                console.log(dofiltercat);
+
+                if (dofiltertext && dofilterdate1 && dofilterdate2 && dofilterid && dofilterauthor && dofiltercat) {
                   $('#moretweets').hide();
                   var newtweet = $('#main').append($('<div id="inid" class="tweet"></div>'));
                   var newtweetobj = $('#inid');
