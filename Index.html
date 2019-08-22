@@ -129,7 +129,7 @@
         if (!ismoretweets) {
           $("#main").empty();
         }
-        console.log('66666');
+        console.log('777');
         $.getJSON(path, function(data) 
         {
           console.log('1111111111111111111');
@@ -144,6 +144,8 @@
                 dofilterdate1 = (dofilterdate1 && val.date > Number($('#dofilterdate1').val())) || !dofilterdate1;
                 dofilterdate2 = (dofilterdate2 && val.date > Number($('#dofilterdate2').val())) || !dofilterdate2;
                 console.log(dofilterid);
+                console.log(val.id);
+                console.log($('#dofilterid').val());
                 dofilterid = (dofilterid && (Number(val.id) == Number($('#dofilterid').val()))) || !dofilterid;
                 console.log(dofilterid);
                 dofiltertag = (dofiltertag && val.tags.includes($('#dofiltertag').val())) || !dofiltertag;
