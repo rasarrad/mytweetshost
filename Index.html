@@ -129,7 +129,7 @@
         if (!ismoretweets) {
           $("#main").empty();
         }
-        console.log('777');
+        console.log('8888');
         $.getJSON(path, function(data) 
         {
           console.log('1111111111111111111');
@@ -138,19 +138,26 @@
             {
               ind = ind + 1;
               var newtweet = null;
+              var dofiltertextfinal = false;
+              var dofilterdate1final = false;
+              var dofilterdate2final = false;
+              var dofilteridfinal = false;
+              var dofiltertagfinal = false;
+              var dofiltercatfinal = false;
+              var dofilterauthorfinal = false;
 
               if (currentIndex < endIndex) {
-                dofiltertext = (dofiltertext && val.tweet.includes($('#filtertext').val())) || !dofiltertext;
-                dofilterdate1 = (dofilterdate1 && val.date >= Number($('#filterdate1').val())) || !dofilterdate1;
-                dofilterdate2 = (dofilterdate2 && val.date <= Number($('#filterdate2').val())) || !dofilterdate2;
+                dofiltertextfinal = (dofiltertext && val.tweet.includes($('#filtertext').val())) || !dofiltertext;
+                dofilterdate1final = (dofilterdate1 && val.date >= Number($('#filterdate1').val())) || !dofilterdate1;
+                dofilterdate2final = (dofilterdate2 && val.date <= Number($('#filterdate2').val())) || !dofilterdate2;
                 console.log(dofilterid);
                 console.log(val.author);
                 console.log($('#filterauthor').val());
-                dofilterid = (dofilterid && (Number(val.id) == Number($('#filterid').val()))) || !dofilterid;
+                dofilteridfinal = (dofilterid && (Number(val.id) == Number($('#filterid').val()))) || !dofilterid;
                 console.log(dofilterid);
-                dofiltertag = (dofiltertag && val.tags.includes($('#filtertag').val())) || !dofiltertag;
-                dofiltercat = (dofiltercat && val.categories.includes($('#filtercat').val())) || !dofiltercat;
-                dofilterauthor = (dofilterauthor && val.author.includes($('#filterauthor').val())) || !dofilterauthor;
+                dofiltertagfinal = (dofiltertag && val.tags.includes($('#filtertag').val())) || !dofiltertag;
+                dofiltercatfinal = (dofiltercat && val.categories.includes($('#filtercat').val())) || !dofiltercat;
+                dofilterauthorfinal = (dofilterauthor && val.author.includes($('#filterauthor').val())) || !dofilterauthor;
 
                 console.log(dofiltertext);
                 console.log(dofilterdate1);
@@ -158,7 +165,7 @@
                 console.log(dofilterauthor);
                 console.log(dofiltercat);
 
-                if (dofiltertext && dofilterdate1 && dofiltertag && dofilterdate2 && dofilterid && dofilterauthor && dofiltercat) {
+                if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal && dofilterauthorfinal && dofiltercatfinal) {
                   console.log('vai adicionar');
                   $('#moretweets').hide();
                   var newtweet = $('#main').append($('<div id="inid" class="tweet"></div>'));
