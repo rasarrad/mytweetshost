@@ -171,6 +171,7 @@
         font-size: 12px;
         padding-top: 3px;
         transition: all 0.6s;
+        min-width: 82px;
       }
       button:hover {
         background: #e4e4e4;
@@ -180,12 +181,10 @@
         font-size: 14px !important;
         font-weight: normal !important;
         padding-left: 5px;
-        display: inline-block !important;
-      }
-
-      button > i.fa-flip-horizontal {
-        padding-left: 0px; 
-        padding-right: 5px;
+        padding-right: 2px;
+        float: right;
+        position: relative;
+        top: -1px;
       }
 
       .buttonIcon {
@@ -196,7 +195,6 @@
       .buttonIcon:hover {
         color: #e4e4e4;
       }
-
       .buttonIcon.addtweet {
         float: right;
         margin-top: 18px;

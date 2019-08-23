@@ -5,7 +5,7 @@
     <script src="https://use.fontawesome.com/c6078e9ff6.js"></script>
     <link rel="stylesheet" href="./styles.css"> 
   </head>
-<body style="margin: 0;background: gray;font-family: sans-serif;">
+<body style="margin: 0;background: #585858;font-family: sans-serif;">
 
 <i class="fa fa-bars menubutton" onclick="javascript: openmenu()"></i>
 <div id="menu" style="width: 0px;">
@@ -243,12 +243,11 @@
 <input type="text" id="filterdate2" style="width: 60px;margin-right: 10px;"></input>
 <span class="label id">Id</span>
 <input type="text" style="width: 30px;" id="filterid"></input>
-<button id="btnsearch">Search<i class="fa fa-search fa-flip-horizontal"></i></button>
-<button id="btnreset">Reset<i class="fa fa-remove"></i></button>
-<i class="fa fa-plus-square buttonIcon addtweet"></i>
+<button id="btnsearch" style="position: relative;top: -7px;margin-left: 38px;">Search<i class="fa fa-search"></i></button>
+<button id="btnreset" style="position: relative;top: -7px;margin-left: 10px;">Reset<i class="fa fa-remove"></i></button>
 
 <i id="addtweet" class="fa fa-plus-square"></i>
-<p></p>
+
 <input type="hidden" id="maxid" value="0">
 <input type="hidden" id="selectedcat" value="">
 <div id="main" style="margin-bottom: 20px;background: gray;color: white;border-top: 1px solid white;margin-top: 2px;">
