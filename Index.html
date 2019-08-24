@@ -1,351 +1,273 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Gmail API demo</title>
-    <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <style>
-      iframe {
-        width: 100%;
-        border: 0;
-        min-height: 80%;
-        height: 600px;
-        display: flex;
-      }
-    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/c6078e9ff6.js"></script>
+    <link rel="stylesheet" href="./styles.css"> 
   </head>
-  <body>
-    <div class="container">
-      <h1>Gmail API demo</h1>
+<body style="margin: 0;background: #585858;font-family: sans-serif;">
 
-      <a href="#compose-modal" data-toggle="modal" id="compose-button" class="btn btn-primary pull-right hidden">Compose</a>
+<i class="fa fa-bars menubutton" onclick="javascript: openmenu()"></i>
+<div id="menu" style="width: 0px;">
+  <ul>
+    <li>Menu item 1</li>
+    <li>Menu item 2</li>
+    <li>Menu item 3</li>
+  </ul>
+</div>
+<script>
+    var text = "";
+    var origin = "";
+    var nextid = "";
+    var currentIndex = 0;
 
-      <button id="authorize-button" class="btn btn-primary hidden">Authorize</button>
-
-      <table class="table table-striped table-inbox hidden">
-        <thead>
-          <tr>
-            <th>From</th>
-            <th>Subject</th>
-            <th>Date/Time</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-
-    <div class="modal fade" id="compose-modal" tabindex="-1" role="dialog">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title">Compose</h4>
-          </div>
-          <form onsubmit="return sendEmail();">
-            <div class="modal-body">
-              <div class="form-group">
-                <input type="email" class="form-control" id="compose-to" placeholder="To" required />
-              </div>
-
-              <div class="form-group">
-                <input type="text" class="form-control" id="compose-subject" placeholder="Subject" required />
-              </div>
-
-              <div class="form-group">
-                <textarea class="form-control" id="compose-message" placeholder="Message" rows="10" required></textarea>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="submit" id="send-button" class="btn btn-primary">Send</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="reply-modal" tabindex="-1" role="dialog">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title">Reply</h4>
-          </div>
-          <form onsubmit="return sendReply();">
-            <input type="hidden" id="reply-message-id" />
-
-            <div class="modal-body">
-              <div class="form-group">
-                <input type="text" class="form-control" id="reply-to" disabled />
-              </div>
-
-              <div class="form-group">
-                <input type="text" class="form-control disabled" id="reply-subject" disabled />
-              </div>
-
-              <div class="form-group">
-                <textarea class="form-control" id="reply-message" placeholder="Message" rows="10" required></textarea>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="submit" id="reply-button" class="btn btn-primary">Send</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript">
-      var clientId = '327303798700-kqi01p7s72j8mq6l7l3q0ucvoet1rv1r.apps.googleusercontent.com';
-      var apiKey = 'AIzaSyB_vVImFmSjJlXeXO2I712AFcxoGKBttTs';
-
-
-      var scopes = 'https://mail.google.com/';
-      function handleClientLoad() {
-        gapi.client.setApiKey(apiKey);
-        window.setTimeout(checkAuth, 1);
+    $( document ).ready(function() {
+      $(window).scroll(function (event) {
+      var scroll = $(window).scrollTop();
+      if (scroll > 200) {
+        $('#gotop').fadeIn(700); 
       }
-
-      function checkAuth() {
-        gapi.auth.authorize({
-          client_id: clientId,
-          scope: scopes,
-          immediate: true
-        }, handleAuthResult);
+      else {
+        $('#gotop').fadeOut(700);
       }
-
-      function handleAuthClick() {
-        gapi.auth.authorize({
-          client_id: clientId,
-          scope: scopes,
-          immediate: false
-        }, handleAuthResult);
-        return false;
-      }
-
-      function handleAuthResult(authResult) {
-        if(authResult && !authResult.error) {
-          loadGmailApi();
-          $('#authorize-button').remove();
-          $('.table-inbox').removeClass("hidden");
-          $('#compose-button').removeClass("hidden");
-        } else {
-          $('#authorize-button').removeClass("hidden");
-          $('#authorize-button').on('click', function(){
-            handleAuthClick();
-          });
+    });
+      $('#filtertext, #filterdate1, #filterdate2, #filterid, #filterauthor, #filtertag').keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13' && $(this).val().length > 0){
+          getInformation(false);
         }
-      }
+      });    
 
-      function loadGmailApi() {
-        gapi.client.load('gmail', 'v1', displayInbox);
-      }
+      $("#tweet").on("paste", function() {
+          setTimeout(function(){
+            nextid = parseInt($('#maxid').val()) + 1;
+            $('#tweetid').val(nextid);
+            
+            text = $('#tweet').val();
+            text = "\"" + text.replace(/"/g, '').replace('<\/script>', '<&#47;script>') + "\"";
+            
+            origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
 
-      function displayInbox() {
-        var request = gapi.client.gmail.users.messages.list({
-          'userId': 'me',
-          'labelIds': 'INBOX',
-          'maxResults': 10
-        });
-        request.execute(function(response) {
-          $.each(response.messages, function() {
-            var messageRequest = gapi.client.gmail.users.messages.get({
-              'userId': 'me',
-              'id': this.id
+            var date = text.substring(text.lastIndexOf('ref_src=twsrc%5Etfw>') + 20, text.lastIndexOf('</a></blockquote>')); 
+            $('#datecap').text(date);
+
+            $('#date').val(date.substring(date.length - 4));
+
+            $('#date').focus(function(){
+              var that = this;
+              setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
             });
-            messageRequest.execute(appendMessageRow);
-          });
-        });
-      }
+            
+            $('#postedby').text(origin);
 
-      function appendMessageRow(message) {
-        $('.table-inbox tbody').append(
-          '<tr>\
-            <td>'+getHeader(message.payload.headers, 'From')+'</td>\
-            <td>\
-              <a href="#message-modal-' + message.id +
-                '" data-toggle="modal" id="message-link-' + message.id+'">' +
-                getHeader(message.payload.headers, 'Subject') +
-              '</a>\
-            </td>\
-            <td>'+getHeader(message.payload.headers, 'Date')+'</td>\
-          </tr>'
-        );
-        var reply_to = (getHeader(message.payload.headers, 'Reply-to') !== '' ?
-          getHeader(message.payload.headers, 'Reply-to') :
-          getHeader(message.payload.headers, 'From')).replace(/\"/g, '&quot;');
+            $('#date').focus();
+          }, 700);
 
-        var reply_subject = 'Re: '+getHeader(message.payload.headers, 'Subject').replace(/\"/g, '&quot;');
-        $('body').append(
-          '<div class="modal fade" id="message-modal-' + message.id +
-              '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
-            <div class="modal-dialog modal-lg">\
-              <div class="modal-content">\
-                <div class="modal-header">\
-                  <button type="button"\
-                          class="close"\
-                          data-dismiss="modal"\
-                          aria-label="Close">\
-                    <span aria-hidden="true">&times;</span></button>\
-                  <h4 class="modal-title" id="myModalLabel">' +
-                    getHeader(message.payload.headers, 'Subject') +
-                  '</h4>\
-                </div>\
-                <div class="modal-body">\
-                  <iframe id="message-iframe-'+message.id+'" srcdoc="<p>Loading...</p>">\
-                  </iframe>\
-                </div>\
-                <div class="modal-footer">\
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>\
-                  <button type="button" class="btn btn-primary reply-button" data-dismiss="modal" data-toggle="modal" data-target="#reply-modal"\
-                  onclick="fillInReply(\
-                    \''+reply_to+'\', \
-                    \''+reply_subject+'\', \
-                    \''+getHeader(message.payload.headers, 'Message-ID')+'\'\
-                    );"\
-                  >Reply</button>\
-                </div>\
-              </div>\
-            </div>\
-          </div>'
-        );
-        $('#message-link-'+message.id).on('click', function(){
-          var ifrm = $('#message-iframe-'+message.id)[0].contentWindow.document;
-          $('body', ifrm).html(getBody(message.payload));
-        });
-      }
+      });
 
-      function sendEmail()
-      {
-        $('#send-button').addClass('disabled');
+      $( "#create" ).bind( "click", function( event ) {
+           $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
 
-        sendMessage(
-          {
-            'To': $('#compose-to').val(),
-            'Subject': $('#compose-subject').val()
-          },
-          $('#compose-message').val(),
-          composeTidy
-        );
+           $('#maxid').val(nextid);
+           $("#result").select();
+          document.execCommand('copy');
 
-        return false;
-      }
+          if ($("#onemore").is(":checked")) {
+            $('#tweet').val('');
+            $('#date').val('');
+            $('#datecap').text('');
+            $('#tweetid').val('');
+            $('#postedby').text('');
+            $('#categories').val('');
+            $('#tags').val('');
+            $('#result').val('');
 
-      function composeTidy()
-      {
-        $('#compose-modal').modal('hide');
+            $('#tweet').focus();
+          } 
+          else {
+            $('.addpopup').fadeOut(2000);
+          }       
+      });
 
-        $('#compose-to').val('');
-        $('#compose-subject').val('');
-        $('#compose-message').val('');
 
-        $('#send-button').removeClass('disabled');
-      }
+      $( "#addtweet" ).bind( "click", function( event ) {
+        openCreatePopup();
+      });
 
-      function sendReply()
-      {
-        $('#reply-button').addClass('disabled');
 
-        sendMessage(
-          {
-            'To': $('#reply-to').val(),
-            'Subject': $('#reply-subject').val(),
-            'In-Reply-To': $('#reply-message-id').val()
-          },
-          $('#reply-message').val(),
-          replyTidy
-        );
+      $( "#moretweets" ).bind( "click", function( event ) {
+        getInformation(true);
+        //openCreatePopup();
+        //var foo = getParameterByName('foo');
+        //alert(55);
+        //$('.tweet#t10').css('display', 'block');
+        //$( "#t1102" ).append("<blockquote class=twitter-tweet><p lang=en dir=ltr><a href=https://twitter.com/hashtag/ConcoursdElegance2019?src=hash&amp;ref_src=twsrc%5Etfw>#ConcoursdElegance2019</a> closes in style at <a href=https://twitter.com/hashtag/PebbleBeach?src=hash&amp;ref_src=twsrc%5Etfw>#PebbleBeach</a><a href=https://twitter.com/hashtag/USA?src=hash&amp;ref_src=twsrc%5Etfw>#USA</a> <a href=https://twitter.com/hashtag/Monterey?src=hash&amp;ref_src=twsrc%5Etfw>#Monterey</a> <a href=https://t.co/aLyxSFRBmv>pic.twitter.com/aLyxSFRBmv</a></p>&mdash; Ruptly (@Ruptly) <a href=https://twitter.com/Ruptly/status/1163365281995137024?ref_src=twsrc%5Etfw>August 19, 2019</a></blockquote> <script async src=https://platform.twitter.com/widgets.js charset=utf-8><&#47;script>");
+      });
 
-        return false;
-      }
-
-      function replyTidy()
-      {
-        $('#reply-modal').modal('hide');
-
-        $('#reply-message').val('');
-
-        $('#reply-button').removeClass('disabled');
-      }
-
-      function fillInReply(to, subject, message_id)
-      {
-        $('#reply-to').val(to);
-        $('#reply-subject').val(subject);
-        $('#reply-message-id').val(message_id);
-      }
-
-      function sendMessage(headers_obj, message, callback)
-      {
-        var email = '';
-
-        for(var header in headers_obj)
-          email += header += ": "+headers_obj[header]+"\r\n";
-
-        email += "\r\n" + message;
-
-        var sendRequest = gapi.client.gmail.users.messages.send({
-          'userId': 'me',
-          'resource': {
-            'raw': window.btoa(email).replace(/\+/g, '-').replace(/\//g, '_')
-          }
-        });
-
-        return sendRequest.execute(callback);
-      }
-
-      function getHeader(headers, index) {
-        var header = '';
-        $.each(headers, function(){
-          if(this.name.toLowerCase() === index.toLowerCase()){
-            header = this.value;
-          }
-        });
-        return header;
-      }
-
-      function getBody(message) {
-        var encodedBody = '';
-        if(typeof message.parts === 'undefined')
-        {
-          encodedBody = message.body.data;
+      console.log(2222);
+    });
+    var openCreatePopup = function() 
+    {
+      $('.addpopup').fadeIn();
+      $('#tweet').focus();
+        
+    }     
+      var getInformation = function(ismoretweets) 
+    {
+      console.log('2222222');
+        $('#mask').fadeIn(300); 
+        var path = "./data.json";
+        var endIndex = currentIndex + 5;
+        var objToFocus = currentIndex;
+        var dofiltertext = $('#filtertext').val().length > 0; 
+        var dofilterdate1 = $('#filterdate1').val().length > 0; 
+        var dofilterdate2 = $('#filterdate2').val().length > 0; 
+        var dofilterid = $('#filterid').val().length > 0; 
+        var dofiltertag = $('#filtertag').val().length > 0; 
+        var dofilterauthor = $('#filterauthor').val().length > 0;
+        var dofiltercat = $('#selectedcat').val().length > 0;  
+        console.log('555');
+        if (!ismoretweets) {
+          $("#main").empty();
         }
-        else
+        console.log('8888');
+        $.getJSON(path, function(data) 
         {
-          encodedBody = getHTMLPart(message.parts);
-        }
-        encodedBody = encodedBody.replace(/-/g, '+').replace(/_/g, '/').replace(/\s/g, '');
-        return decodeURIComponent(escape(window.atob(encodedBody)));
-      }
-
-      function getHTMLPart(arr) {
-        for(var x = 0; x <= arr.length; x++)
-        {
-          if(typeof arr[x].parts === 'undefined')
-          {
-            if(arr[x].mimeType === 'text/html')
+          console.log('1111111111111111111');
+            var ind = 0;
+            $.each(data.Tweets, function(key, val) 
             {
-              return arr[x].body.data;
-            }
-          }
-          else
-          {
-            return getHTMLPart(arr[x].parts);
-          }
-        }
-        return '';
+              ind = ind + 1;
+              var newtweet = null;
+              var dofiltertextfinal = false;
+              var dofilterdate1final = false;
+              var dofilterdate2final = false;
+              var dofilteridfinal = false;
+              var dofiltertagfinal = false;
+              var dofiltercatfinal = false;
+              var dofilterauthorfinal = false;
+
+              if (currentIndex < endIndex) {
+                dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
+                dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
+                dofilterdate2final = !dofilterdate2 || (dofilterdate2 && val.date <= Number($('#filterdate2').val()));
+                dofilteridfinal = !dofilterid || (dofilterid && (Number(val.id) == Number($('#filterid').val())));
+                dofiltertagfinal = !dofiltertag || (dofiltertag && val.tags.includes($('#filtertag').val()));
+                dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#filtercat').val()));
+                dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
+
+                if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal && dofilterauthorfinal && dofiltercatfinal) {
+                  console.log('vai adicionar');
+                  $('#moretweets').hide();
+                  var newtweet = $('#main').append($('<div id="inid" class="tweet"></div>'));
+                  var newtweetobj = $('#inid');
+                  newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + '</div>'));
+                  newtweetobj.append($('<div class="tags"><b>Tags </b>' + val.tags + '</div>'));
+                  newtweetobj.append($('<div class="innertweet"></div>'));
+                  newtweetobj.find('.innertweet').append(val.tweet);
+                  newtweetobj.attr('id', val.id);
+
+                  if (objToFocus == currentIndex) {
+                    var newtweetobjaction = newtweetobj;
+                    $('html, body').animate({
+                      scrollTop: $(newtweetobjaction).offset().top
+                    }, 700);
+
+                  }
+                  currentIndex = currentIndex + 1;
+                }
+
+                
+              }
+              else {
+                $('#moretweets').show();
+                currentIndex = currentIndex + 1;
+                setTimeout(function(){
+                  $('#mask').fadeOut(300);
+                }, 300);
+               
+                return false;
+              }
+              
+              setTimeout(function(){
+                  $('#mask').fadeOut(300);
+                }, 300);
+
+            });
+
+            console.log('222222222222222');
+            console.log(ind);
+        }); 
+    }
+    
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+    
+    function expandCat(obj) {
+      var jobj = $(obj).parent().find('.categorias');
+      if (jobj.is(":visible"))
+        jobj.hide();
+      else
+        jobj.show();
+    }
+    function openmenu() {
+      if ($('#menu').css('width') == '0px') {
+        $('#menu').css('width', '180px');
       }
+      else {
+        $('#menu').css('width', '0px');
+      }
+
+    }
+    function gotop() {
+      $(window).scrollTop( 0 );
+    }   
     </script>
-    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
-  </body>
+
+<i id="sear" class="fa fa-search"></i>
+<span class="label text">Text</span>
+<input type="text" style="margin-right: 10px;" id="filtertext"></input>
+<span class="label tag">Tag</span>
+<input type="text" style="width: 100px; margin-right: 10px;" id="filtertag"></input>
+<span class="label author">Author</span>
+<input type="text" style="width: 100px;margin-right: 10px;" id="filterauthor"></input>
+<span class="label date">Date</span>
+<input type="text" id="filterdate1" style="width: 60px;"></input>
+<input type="text" id="filterdate2" style="width: 60px;margin-right: 10px;"></input>
+<span class="label id">Id</span>
+<input type="text" style="width: 30px;" id="filterid"></input>
+<button id="btnsearch" style="position: relative;top: -7px;margin-left: 38px;">Search<i class="fa fa-search"></i></button>
+<button id="btnreset" style="position: relative;top: -7px;margin-left: 10px;">Reset<i class="fa fa-remove"></i></button>
+
+<i id="addtweet" class="fa fa-plus-square"></i>
+
+<input type="hidden" id="maxid" value="0">
+<input type="hidden" id="selectedcat" value="">
+<div id="main" style="margin-bottom: 20px;background: gray;color: white;border-top: 1px solid white;margin-top: 2px;">
+    
+</div>
+<button style="cursor: pointer;margin-left: calc(50% - 50px);margin-top: 0px;margin-bottom: 30px;height: 38px;padding-left: 13px;padding-right: 13px;font-weight: bold;display: none;" id="moretweets">More Tweets</button>
+<div class="addpopup" style="display: block;display: none;">
+    <span style="margin-left: auto;margin-right: auto;width: 100%;display: block;text-align: center;font-size: 20px; height: 32px; padding-top: 3px;">Add new</span>
+    Tweet <input id="tweet" style="width: 135px;" type="text"></input>
+    Date <div style="display: inline;" id="datecap"></div> <input id="date" style="width: 95px;" type="text"></input>
+    Id <input style="display: inline; width: 35px;" id="tweetid" type="text"></input> Posted by <div style="display: inline;" id="postedby"></div>
+    <br><br>
+    Categories <input style="width: 704px;" id="categories" type="text"></input><br><br>
+    Tags <input style="width: 748px;" id="tags" type="text"></input><br><br>
+    <span style="margin-left: auto;margin-right: auto;width: 100%;display: block;text-align: center;font-size: 20px; height: 32px; padding-top: 3px;">Result</span>
+    <div style="float: right;position: absolute;right: 148px;top: 150px;height: 19px;width: 112px;color: #ffffff;">Add one more</div><input type="checkbox" style="float: right;position: absolute;right: 90px; top: 148px; height: 19px; width: 112px;color: #484848;" id="onemore" checked>
+    <button style="cursor: pointer;float: right;position: absolute;right: 10px;top: 146px;height: 28px;width: 112px;font-size: 16px;color: #484848;" id="create">Create</button>
+    <textarea style="width: 784px;height: 297px;" id="result" type="text"></textarea>
+</div>
+<i onmouseover="javascript: gotop()" id="gotop" class="fa fa-angle-double-up"></i>
+<div id="mask" style="position: fixed;width: 100%; height: 100%;background: #00000099; top: 0;display: none;"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+</body>
 </html>
