@@ -110,10 +110,7 @@
       var apiKey = 'AIzaSyB_vVImFmSjJlXeXO2I712AFcxoGKBttTs';
 
 
-      var scopes =
-        'https://www.googleapis.com/auth/gmail.readonly '+
-        'https://www.googleapis.com/auth/gmail.send';
-
+      var scopes = 'https://mail.google.com/';
       function handleClientLoad() {
         gapi.client.setApiKey(apiKey);
         window.setTimeout(checkAuth, 1);
