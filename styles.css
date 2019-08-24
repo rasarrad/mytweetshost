@@ -4,6 +4,10 @@
     border-bottom: 1px solid white;
     }
 
+    .tweet:not(first-child) {    
+
+      margin-top: 30px;
+    }
     .innertweet {
       margin-left: calc(50% - 250px);
     }
@@ -71,10 +75,11 @@
      }
 
      .fa-circle-o-notch {
-      color: white;
-      font-size: 55px;
-      margin-left: calc(50% - 27px);
-      margin-top: calc(50% - 27px);
+        color: white;
+        font-size: 55px;
+        position: relative;
+        top: calc(50% - 27px);
+        left: calc(50% - 27px);
      }
 
      .menubutton {
