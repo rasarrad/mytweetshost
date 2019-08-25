@@ -2,11 +2,12 @@
   margin-left: auto;
   margin-right: auto;
   /* border-bottom: 1px solid white; */
+  padding-bottom: 15px;
   }
 
   .tweet:not(first-child) {    
 
-    margin-top: 30px;
+    margin-top: 15px;
   }
   .innertweet {
     margin-left: calc(50% - 250px);
@@ -67,8 +68,8 @@
 
    #gotop {
     position: fixed;
-    bottom: 10px;
-    right: 20px;
+    bottom: 30px;
+    right: 29px;
     font-size: 30px;
     background: white;
     padding-left: 6px;
