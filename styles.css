@@ -1,221 +1,253 @@
 .tweet {
+  margin-left: auto;
+  margin-right: auto;
+  /* border-bottom: 1px solid white; */
+  }
+
+  .tweet:not(first-child) {    
+
+    margin-top: 30px;
+  }
+  .innertweet {
+    margin-left: calc(50% - 250px);
+  }
+  
+  .categorias {
+    text-align: center;
+    padding-top: 3px;
+    display: none;
+    padding-bottom: 5px;
+    background: #a2a2a2;
+    border-bottom: 1px solid #d4d4d4;
+  }
+
+  .tags {
+    text-align: center;
+    padding-top: 4px;
+    margin-bottom: -3px;
+    background: #a2a2a2;
+    padding-bottom: 3px;
+  }
+  .EmbeddedTweet-tweet {
+    background: #80808061;
+    border: 1px solid gray;
+    border-radius: 0px;
+  }
+
+   .addpopup {
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    border-bottom: 1px solid white;
-    }
+    position: fixed;
+    top: 100px;
+    width: 800px;
+    height: 500px;
+    background: #929292;
+    color: white;
+    left: calc(50% - 400px);
+    padding-left: 10px;
+    border: 1px solid #adabab;
+   }
 
-    .tweet:not(first-child) {    
+   #main:first-child {
+         border-top: 1px solid #d4d4d4;
+         margin-top: 0px;
+   }  
+   .tweet:first-child {
+         border-top: 1px solid #d4d4d4;
+         margin-top: 0px;
+   }  
+   #expand {
+    position: absolute;
+    margin-top: 2px;
+    left: 8px;
+    cursor: pointer;
+    font-size: 22px;
+   }
 
-      margin-top: 30px;
+   #gotop {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    font-size: 30px;
+    background: white;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 4px;
+    color: #313131;
+    cursor: pointer;
+    display: none;
+   }
+
+   .fa-circle-o-notch {
+      color: white;
+      font-size: 55px;
+      position: relative;
+      top: calc(50% - 27px);
+      left: calc(50% - 27px);
+   }
+   .fa-twitter {
+    color: white;
+    font-size: 151px;
+    position: relative;
+    top: calc(50% - 89px);
+    left: calc(50% - 75px);
+ }
+   .menubutton {
+      font-size: 38px;
+      background: white;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding: 6px 10px;
+      color: gray;
+      cursor: pointer;
+      height: 41px;
+      transition: all 0.6s;
+      padding-bottom: 5px;
     }
-    .innertweet {
-      margin-left: calc(50% - 250px);
+    .menubutton:hover {
+      background: #eaeaea;
+    }
+    #menu {
+      width: 0px;
+      overflow: hidden;
+      /*width: 180px;*/
+      position: fixed;
+      background: white;
+      transition: all 0.6s;
+      border: 1px solid gray;
+      border-left-width: 0px;
     }
     
-    .categorias {
-      text-align: center;
-      padding-top: 3px;
-      display: none;
-      padding-bottom: 5px;
-      background: #a2a2a2;
-      border-bottom: 1px solid #d4d4d4;
+
+    #menu > ul {
+      list-style: none;
+      margin: 0;
+      padding-left: 0px;
     }
 
-    .tags {
-      text-align: center;
-      padding-top: 4px;
-      margin-bottom: -3px;
-      background: #a2a2a2;
-      padding-bottom: 3px;
+    #menu > ul > li {
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 10px 0px;
+      padding-left: 17px;
+      color: #4c4c4c;
+      border-bottom: 1px solid #c1c1c1;
+      cursor: pointer;
+      transition: all 0.6s;
     }
-    .EmbeddedTweet-tweet {
-      background: #80808061;
-      border: 1px solid gray;
-      border-radius: 0px;
+    #menu > ul > li:hover {
+      background: #eaeaea;
     }
 
-     .addpopup {
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      position: fixed;
-      top: 100px;
-      width: 800px;
-      height: 500px;
-      background: #929292;
+    .label {
       color: white;
-      left: calc(50% - 400px);
-      padding-left: 10px;
-      border: 1px solid #adabab;
-     }
-
-     #main:first-child {
-           border-top: 1px solid #d4d4d4;
-     }  
-     #expand {
       position: absolute;
-      margin-top: 2px;
-      left: 8px;
-      cursor: pointer;
-      font-size: 22px;
-     }
+      top: 5px;
+      display: inline;
+      font-size: 13px;
+    }          
+    
+    .label.text {
+      left: 122px;
+    }
+     
+    .label.tag {
+      left: 309px;
+    }
+              
+    .label.author {
+      left: 428px;
+    }
+              
+    .label.date {
+      left: 546px;
+    }
+              
+    .label.id {
+      left: 694px;
+    }
 
-     #gotop {
-      position: fixed;
-      bottom: 10px;
-      right: 20px;
-      font-size: 30px;
+    #sear {
+      position: relative;
+      color: white;
+      font-size: 27px;
+      padding-left: 16px;
+      padding-right: 17px;
+      top: -4px;
+      cursor: pointer;
+    }
+
+    button {
+      cursor: pointer;
       background: white;
-      padding-left: 6px;
-      padding-right: 6px;
-      border-radius: 4px;
-      color: #313131;
+      border: 1px solid white;
+      height: 24px;
+      color: #4c4c4c;
+      font-weight: bold;
+      font-size: 12px;
+      padding-top: 3px;
+      transition: all 0.6s;
+      min-width: 82px;
+    }
+    button:hover {
+      background: #e4e4e4;
+      border: 1px solid #e4e4e4;
+    }
+    button > i {
+      font-size: 14px !important;
+      font-weight: normal !important;
+      padding-left: 5px;
+      padding-right: 2px;
+      float: right;
+      position: relative;
+      top: -1px;
+    }
+
+    .buttonIcon {
+      color: white;
+      font-size: 22px;
+      transition: all 0.6s;
+    }
+    .buttonIcon:hover {
+      color: #e4e4e4;
+    }
+    .buttonIcon.addtweet {
+      float: right;
+      margin-top: 18px;
+      margin-right: 11px;
+      margin-right: 11px;
+    }
+
+    #addtweet {
+      position: absolute;
+      color: white;
+      font-size: 27px;
+      top: 13px;
+      right: 13px;
+      transition: all 0.6s;
       cursor: pointer;
+    }
+
+    #addtweet:hover {
+      color: #e4e4e4;
+    }
+    .top {
       display: none;
-     }
+    }
 
-     .fa-circle-o-notch {
-        color: white;
-        font-size: 55px;
-        position: relative;
-        top: calc(50% - 27px);
-        left: calc(50% - 27px);
-     }
+    #closepopup {
+      position: absolute;
+      color: white;
+      font-size: 27px;
+      top: 2px;
+      right: 8px;
+      transition: all 0.6s;
+      cursor: pointer;
+    }
 
-     .menubutton {
-        font-size: 38px;
-        background: white;
-        padding-left: 5px;
-        padding-right: 5px;
-        padding: 6px 10px;
-        color: gray;
-        cursor: pointer;
-        height: 41px;
-        transition: all 0.6s;
-        padding-bottom: 5px;
-      }
-      .menubutton:hover {
-        background: #eaeaea;
-      }
-      #menu {
-        width: 0px;
-        overflow: hidden;
-        /*width: 180px;*/
-        position: fixed;
-        background: white;
-        transition: all 0.6s;
-        border: 1px solid gray;
-        border-left-width: 0px;
-      }
-      
 
-      #menu > ul {
-        list-style: none;
-        margin: 0;
-        padding-left: 0px;
-      }
-
-      #menu > ul > li {
-        overflow: hidden;
-        white-space: nowrap;
-        padding: 10px 0px;
-        padding-left: 17px;
-        color: #4c4c4c;
-        border-bottom: 1px solid #c1c1c1;
-        cursor: pointer;
-        transition: all 0.6s;
-      }
-      #menu > ul > li:hover {
-        background: #eaeaea;
-      }
-
-      .label {
-        color: white;
-        position: absolute;
-        top: 5px;
-        display: inline;
-        font-size: 13px;
-      }          
-      
-      .label.text {
-        left: 122px;
-      }
-       
-      .label.tag {
-        left: 309px;
-      }
-                
-      .label.author {
-        left: 428px;
-      }
-                
-      .label.date {
-        left: 546px;
-      }
-                
-      .label.id {
-        left: 694px;
-      }
-
-      #sear {
-        position: relative;
-        color: white;
-        font-size: 27px;
-        padding-left: 16px;
-        padding-right: 17px;
-        top: -4px;
-      }
-
-      button {
-        cursor: pointer;
-        background: white;
-        border: 1px solid white;
-        height: 24px;
-        color: #4c4c4c;
-        font-weight: bold;
-        font-size: 12px;
-        padding-top: 3px;
-        transition: all 0.6s;
-        min-width: 82px;
-      }
-      button:hover {
-        background: #e4e4e4;
-        border: 1px solid #e4e4e4;
-      }
-      button > i {
-        font-size: 14px !important;
-        font-weight: normal !important;
-        padding-left: 5px;
-        padding-right: 2px;
-        float: right;
-        position: relative;
-        top: -1px;
-      }
-
-      .buttonIcon {
-        color: white;
-        font-size: 22px;
-        transition: all 0.6s;
-      }
-      .buttonIcon:hover {
-        color: #e4e4e4;
-      }
-      .buttonIcon.addtweet {
-        float: right;
-        margin-top: 18px;
-        margin-right: 11px;
-        margin-right: 11px;
-      }
-
-      #addtweet {
-        position: absolute;
-        color: white;
-        font-size: 27px;
-        top: 13px;
-        right: 13px;
-        transition: all 0.6s;
-      }
-
-      #addtweet:hover {
-        color: #e4e4e4;
-      }
+    
+    #closepopup:hover {
+      color: #e4e4e4;
+    }

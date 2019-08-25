@@ -4,15 +4,20 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/c6078e9ff6.js"></script>
     <link rel="stylesheet" href="./styles.css"> 
+    <link rel="shortcut icon" type="image/ico" href="./favicon.ico"/>
+    <link rel="shortcut icon" type="image/png" href="./twitter-32.png"/>
+    <title>My Tweet Manager</title>
   </head>
 <body style="margin: 0;background: #585858;font-family: sans-serif;">
 
 <i class="fa fa-bars menubutton" onclick="javascript: openmenu()"></i>
-<div id="menu" style="width: 0px;">
+<div id="menu" style="Z-INDEX: 1;">
   <ul>
-    <li>Menu item 1</li>
-    <li>Menu item 2</li>
-    <li>Menu item 3</li>
+    <li onclick="javascript: clickmenu('all')">All Tweets</li>
+    <li onclick="javascript: clickmenu('toview')">To View</li>
+    <li onclick="javascript: clickmenu('toread')">To read</li>
+    <li onclick="javascript: clickmenu('tokeep')">To keep</li>
+    <li onclick="javascript: clickmenu('imp')">Important</li>
   </ul>
 </div>
 <script>
@@ -65,35 +70,6 @@
 
       });
 
-      $( "#create" ).bind( "click", function( event ) {
-           $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
-
-           $('#maxid').val(nextid);
-           $("#result").select();
-          document.execCommand('copy');
-
-          if ($("#onemore").is(":checked")) {
-            $('#tweet').val('');
-            $('#date').val('');
-            $('#datecap').text('');
-            $('#tweetid').val('');
-            $('#postedby').text('');
-            $('#categories').val('');
-            $('#tags').val('');
-            $('#result').val('');
-
-            $('#tweet').focus();
-          } 
-          else {
-            $('.addpopup').fadeOut(2000);
-          }       
-      });
-
-
-      $( "#addtweet" ).bind( "click", function( event ) {
-        openCreatePopup();
-      });
-
 
       $( "#moretweets" ).bind( "click", function( event ) {
         getInformation(true);
@@ -106,12 +82,7 @@
 
       console.log(33333);
     });
-    var openCreatePopup = function() 
-    {
-      $('.addpopup').fadeIn();
-      $('#tweet').focus();
-        
-    }     
+   
       var getInformation = function(ismoretweets) 
     {
       console.log('2222222');
@@ -231,43 +202,154 @@
     }   
     </script>
 
-<i id="sear" class="fa fa-search"></i>
-<span class="label text">Text</span>
-<input type="text" style="margin-right: 10px;" id="filtertext"></input>
-<span class="label tag">Tag</span>
-<input type="text" style="width: 100px; margin-right: 10px;" id="filtertag"></input>
-<span class="label author">Author</span>
-<input type="text" style="width: 100px;margin-right: 10px;" id="filterauthor"></input>
-<span class="label date">Date</span>
-<input type="text" id="filterdate1" style="width: 60px;"></input>
-<input type="text" id="filterdate2" style="width: 60px;margin-right: 10px;"></input>
-<span class="label id">Id</span>
-<input type="text" style="width: 30px;" id="filterid"></input>
-<button id="btnsearch" style="position: relative;top: -7px;margin-left: 38px;">Search<i class="fa fa-search"></i></button>
-<button id="btnreset" style="position: relative;top: -7px;margin-left: 10px;">Reset<i class="fa fa-remove"></i></button>
-
+<i id="sear" onclick="javascript: togglecriterions()" class="fa fa-search"></i>
+<span class="label text top">Text</span>
+<input type="text" class="top" style="margin-right: 10px;" id="filtertext"></input>
+<span class="label tag top">Tag</span>
+<input type="text" class="top" style="width: 100px; margin-right: 10px;" id="filtertag"></input>
+<span class="label author top">Author</span>
+<input type="text" class="top" style="width: 100px;margin-right: 10px;" id="filterauthor"></input>
+<span class="label date top">Date</span>
+<input type="text" class="top" id="filterdate1" style="width: 60px;"></input>
+<input type="text" class="top" id="filterdate2" style="width: 60px;margin-right: 10px;"></input>
+<span class="label id top">Id</span>
+<input type="text" class="top" style="width: 30px;" id="filterid"></input>
+<button id="btnsearch" class="top" style="position: relative;top: -7px;margin-left: 38px;">Search<i class="fa fa-search"></i></button>
+<button id="btnreset" class="top" style="position: relative;top: -7px;margin-left: 10px;">Reset<i class="fa fa-remove"></i></button>
+<span class="toptitle" style="color: white;font-size: 30px;position: relative;margin-left: calc(50% - 255px);">My Tweet Manager</span>
 <i id="addtweet" class="fa fa-plus-square"></i>
 
 <input type="hidden" id="maxid" value="0">
 <input type="hidden" id="selectedcat" value="">
+<div style="position: fixed;width: 100%;height: calc(100% - 55px);background: #00000099;top: 55px;"><i class="fa fa-twitter"></i></div>
 <div id="main" style="margin-bottom: 20px;background: gray;color: white;border-top: 1px solid white;margin-top: 2px;">
     
 </div>
 <button style="cursor: pointer;margin-left: calc(50% - 50px);margin-top: 0px;margin-bottom: 30px;height: 38px;padding-left: 13px;padding-right: 13px;font-weight: bold;display: none;" id="moretweets">More Tweets</button>
 <div class="addpopup" style="display: block;display: none;">
+  <i id="closepopup" class="fa fa-remove"></i>
     <span style="margin-left: auto;margin-right: auto;width: 100%;display: block;text-align: center;font-size: 20px; height: 32px; padding-top: 3px;">Add new</span>
-    Tweet <input id="tweet" style="width: 135px;" type="text"></input>
-    Date <div style="display: inline;" id="datecap"></div> <input id="date" style="width: 95px;" type="text"></input>
-    Id <input style="display: inline; width: 35px;" id="tweetid" type="text"></input> Posted by <div style="display: inline;" id="postedby"></div>
+    Tweet <input id="tweet" style="width: 45px;" type="text"></input>
+    Date <div style="display: inline;" id="datecap"></div> <input id="date" style="width: 61px;" type="text"></input>
+    Id <input style="display: inline; width: 28px;" id="tweetid" type="text"></input> Posted by <div style="display: inline;" id="postedby"></div>
     <br><br>
     Categories <input style="width: 704px;" id="categories" type="text"></input><br><br>
     Tags <input style="width: 748px;" id="tags" type="text"></input><br><br>
-    <span style="margin-left: auto;margin-right: auto;width: 100%;display: block;text-align: center;font-size: 20px; height: 32px; padding-top: 3px;">Result</span>
-    <div style="float: right;position: absolute;right: 148px;top: 150px;height: 19px;width: 112px;color: #ffffff;">Add one more</div><input type="checkbox" style="float: right;position: absolute;right: 90px; top: 148px; height: 19px; width: 112px;color: #484848;" id="onemore" checked>
+    <span style="margin-left: auto;margin-right: auto;width: 100%;display: block;font-size: 20px;height: 32px;padding-top: 3px;text-align: left;position: relative;top: 7px;">Result</span>
+    <div style="float: right;position: absolute;right: 154px;top: 150px;height: 19px;width: 112px;color: #ffffff;">Add one more</div><input type="checkbox" style="float: right;position: absolute;right: 90px; top: 148px; height: 19px; width: 112px;color: #484848;" id="onemore" checked>
     <button style="cursor: pointer;float: right;position: absolute;right: 10px;top: 146px;height: 28px;width: 112px;font-size: 16px;color: #484848;" id="create">Create</button>
     <textarea style="width: 784px;height: 297px;" id="result" type="text"></textarea>
 </div>
 <i onmouseover="javascript: gotop()" id="gotop" class="fa fa-angle-double-up"></i>
 <div id="mask" style="position: fixed;width: 100%; height: 100%;background: #00000099; top: 0;display: none;"><i class="fa fa-circle-o-notch fa-spin"></i></div>
 </body>
+
+<script>
+ 
+ $( document ).ready(function() {
+    $( "#create" ).bind( "click", function( event ) {
+         $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
+
+         $('#maxid').val(nextid);
+         $("#result").select();
+        document.execCommand('copy');
+
+          $('#tweet').val('');
+          $('#date').val('');
+          $('#datecap').text('');
+          $('#tweetid').val('');
+          $('#postedby').text('');
+          $('#categories').val('');
+          $('#tags').val('');
+        if ($("#onemore").is(":checked")) {
+
+          $('#tweet').focus();
+        } 
+        else {
+          $('#result').val('');
+          $('.addpopup').fadeOut(2000);
+        }       
+    });
+
+
+    $( "#addtweet" ).bind( "click", function( event ) {
+      openCreatePopup();
+    });
+
+    $( "#closepopup" ).bind( "click", function( event ) {
+      closePopup();
+    });
+  });
+
+ 
+  var resetFields = function() 
+    {
+      $('#tweet').val('');
+          $('#date').val('');
+          $('#datecap').text('');
+          $('#tweetid').val('');
+          $('#postedby').text('');
+          $('#categories').val('');
+          $('#tags').val('');
+          $('#result').val('');  
+      $('.addpopup').fadeOut();
+
+    }  
+
+  var clickmenu = function(val) 
+    {
+      $('#selectedcat').val(val);
+      resetFields();
+      openmenu();
+      getInformation(false);
+
+    }  
+
+
+  var closePopup = function() 
+    {
+      $('#tweet').val('');
+          $('#date').val('');
+          $('#datecap').text('');
+          $('#tweetid').val('');
+          $('#postedby').text('');
+          $('#categories').val('');
+          $('#tags').val('');
+          $('#result').val('');  
+      $('.addpopup').fadeOut();
+
+    }  
+  
+ 
+    var openCreatePopup = function() 
+    {
+      $('#tweet').val('');
+          $('#date').val('');
+          $('#datecap').text('');
+          $('#tweetid').val('');
+          $('#postedby').text('');
+          $('#categories').val('');
+          $('#tags').val('');
+      $('.addpopup').fadeIn();
+      $('#tweet').focus();
+      $('#result').val('');  
+    }  
+ 
+    var togglecriterions = function() 
+    {
+      if ($('.toptitle').css('display') == 'none') {
+        $('.toptitle').css('display', 'inline');
+        $('html').find('.top').each( function( index, element ){
+            $(this).css('display', 'none');
+        });
+      }
+      else {
+        $('.toptitle').css('display', 'none');
+        $('html').find('.top').each( function( index, element ){
+          $(this).css('display', 'inline');
+        });
+      } 
+    }     
+    
+    </script>
 </html>
