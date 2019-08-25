@@ -111,12 +111,13 @@
     #menu {
       width: 0px;
       overflow: hidden;
-      /*width: 180px;*/
       position: fixed;
       background: white;
       transition: all 0.6s;
       border: 1px solid gray;
       border-left-width: 0px;
+      position: absolute;
+      left: -1px;
     }
     
 
