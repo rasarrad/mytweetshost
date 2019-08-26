@@ -4,7 +4,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/c6078e9ff6.js"></script>
     <link rel="stylesheet" href="./styles.css"> 
-    <link rel="shortcut icon" type="image/ico" href="./favicon.ico"/>
     <link rel="shortcut icon" type="image/png" href="./twitter-32.png"/>
     <link rel="icon" type="image/png" href="./favicon.png"/>
     <title>My Tweet Manager</title>
@@ -81,7 +80,7 @@
         //$( "#t1102" ).append("<blockquote class=twitter-tweet><p lang=en dir=ltr><a href=https://twitter.com/hashtag/ConcoursdElegance2019?src=hash&amp;ref_src=twsrc%5Etfw>#ConcoursdElegance2019</a> closes in style at <a href=https://twitter.com/hashtag/PebbleBeach?src=hash&amp;ref_src=twsrc%5Etfw>#PebbleBeach</a><a href=https://twitter.com/hashtag/USA?src=hash&amp;ref_src=twsrc%5Etfw>#USA</a> <a href=https://twitter.com/hashtag/Monterey?src=hash&amp;ref_src=twsrc%5Etfw>#Monterey</a> <a href=https://t.co/aLyxSFRBmv>pic.twitter.com/aLyxSFRBmv</a></p>&mdash; Ruptly (@Ruptly) <a href=https://twitter.com/Ruptly/status/1163365281995137024?ref_src=twsrc%5Etfw>August 19, 2019</a></blockquote> <script async src=https://platform.twitter.com/widgets.js charset=utf-8><&#47;script>");
       });
 
-      console.log(44);
+      console.log(555);
     });
    
       var getInformation = function(ismoretweets) 
@@ -122,15 +121,18 @@
               var dofiltertagfinal = false;
               var dofiltercatfinal = false;
               var dofilterauthorfinal = false;
-              console.log('////////////////////////////////////////');
 
-        console.log('val.categories');
-        console.log(val.categories);
-        console.log('selectedcat');
-        console.log($('#selectedcat').val());
-        console.log('aaaaa');
-        console.log(val.categories.includes($('#selectedcat').val()));
               if (currentIndex < endIndex && currentIndex == ind) {
+                console.log('////////////////////antes////////////////////');
+
+console.log('val.categories');
+console.log(val.categories);
+console.log('selectedcat');
+console.log($('#selectedcat').val());
+console.log('dofiltercatfinal');
+console.log(dofiltercatfinal);
+console.log('dofiltercat');
+console.log(dofiltercat);
                 dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
                 dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
                 dofilterdate2final = !dofilterdate2 || (dofilterdate2 && val.date <= Number($('#filterdate2').val()));
@@ -139,6 +141,16 @@
                 dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
                 dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
 
+                console.log('/////////////////// depois /////////////////////');
+
+console.log('val.categories');
+console.log(val.categories);
+console.log('selectedcat');
+console.log($('#selectedcat').val());
+console.log('dofiltercatfinal');
+console.log(dofiltercatfinal);
+console.log('dofiltercat');
+console.log(dofiltercat);
 
                 if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal && dofilterauthorfinal && dofiltercatfinal) {
                   console.log('vai adicionar');
