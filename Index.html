@@ -121,13 +121,7 @@
               var dofiltertagfinal = false;
               var dofiltercatfinal = false;
               var dofilterauthorfinal = false;
-              console.log('////////////////////////////////////////');
-              console.log('currentIndex');
-        console.log(currentIndex);
-        console.log('endIndex');
-        console.log(endIndex);
-        console.log('ind');
-        console.log(ind);
+
               if (currentIndex < endIndex && currentIndex == ind) {
                 dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
                 dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
@@ -136,6 +130,13 @@
                 dofiltertagfinal = !dofiltertag || (dofiltertag && val.tags.includes($('#filtertag').val()));
                 dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
                 dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
+
+                console.log('////////////////////////////////////////');
+              console.log('val.categories');
+        console.log(val.categories);
+        console.log('$(electedcat).val()');
+        console.log($('#selectedcat').val());
+
 
                 if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal && dofilterauthorfinal && dofiltercatfinal) {
                   console.log('vai adicionar');
