@@ -31,10 +31,10 @@
     var dosearchmore = true;
 
     $( document ).ready(function() {
-      if (getParameterByName('tweetid'))
-        alert(getParameterByName('tweetid'));
-      else
-      alert(2);
+      var paramid = getParameterByName('tweetid');
+      if (paramid)
+        getInformationbyid(paramid);
+
       window.onscroll = function(ev) {
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && dosearchmore) {
         dosearchmore = false;
@@ -101,7 +101,7 @@
       $( "#btnreset" ).bind( "click", function( event ) {
         resetFields();
       });
-      console.log(55555);    
+      console.log(666);    
     });
    
       var getInformation = function(ismoretweets) 
@@ -256,6 +256,48 @@
         }); 
     }
     
+
+
+
+    var getInformationbyid = function(id) 
+    {
+        $('#mask').fadeIn(300);  
+        var path = "./data.json";
+        var objToFocus = -1;
+        
+
+        $.getJSON(path, function(data) 
+        {
+          $.each(data.Tweets, function(key, val) 
+            {
+              if (val.id.includes(id)) {
+                $('#moretweets').hide();
+                  var newtweet = $('#main').append($('<div id="inid" class="tweet"></div>'));
+                  var newtweetobj = $('#inid');
+                  newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + '</div>'));
+                  newtweetobj.append($('<div class="tags"><b>Tags </b>' + val.tags + '</div>'));
+                  newtweetobj.append($('<div class="innertweet"></div>'));
+                  newtweetobj.find('.innertweet').append(val.tweet);
+                  newtweetobj.attr('id', val.id);
+
+                    var newtweetobjaction = newtweetobj;
+                    $('html, body').animate({
+                      scrollTop: $(newtweetobjaction).offset().top
+                    }, 700);
+
+                    return false;
+              }
+              
+              setTimeout(function(){
+                  $('#mask').fadeOut(300);
+                }, 300);
+            });
+        }); 
+    }
+
+
+
+
     function getParameterByName(name) {
         var url = window.location.href;
         name = name.replace(/[\[\]]/g, '\\$&');
