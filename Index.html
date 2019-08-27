@@ -95,7 +95,7 @@
       $( "#btnreset" ).bind( "click", function( event ) {
         resetFields();
       });
-      console.log(6666);    
+      console.log(9999);    
     });
    
       var getInformation = function(ismoretweets) 
@@ -160,16 +160,16 @@
             if (Number($('#recordspersearch').val()) < ind) {
               
               $('#tweetcount').css('background', '#fff900');
-              $('#tweetcount').html((currentIndex + 1)  + " to " + toindex + " of " + ind + " Tweets<br>In " + $('#selectedcattext').val());    
+              $('#tweetcount').html((currentIndex + 1)  + " to " + toindex + " of " + ind + "<br>In " + $('#selectedcattext').val());    
               var aux = ind;
               console.log('aux 11111' + aux);
               setTimeout(function(){ 
                 console.log('aux 2222' + aux);
                 if (aux == toindex) {
-                  $('#tweetcount').html(aux + " Tweets<br>In " + $('#selectedcattext').val());  
+                  $('#tweetcount').html(aux + "Tweets<br>In " + $('#selectedcattext').val());  
                 }
                 else {
-                  $('#tweetcount').html(toindex + " of " + aux + " Tweets<br>In " + $('#selectedcattext').val());  
+                  $('#tweetcount').html(toindex + " of " + aux + "<br>In " + $('#selectedcattext').val());  
                 }   
                 
                 $('#tweetcount').css('background', 'white');
@@ -403,7 +403,7 @@
   function resetFields() 
     {
       $("#main").empty();
-      
+      $('#moretweets').hide();
       $('#selectedcat').val('all');
       $('#selectedcattext').val('All Tweets');
       $('#tweetcount').hide();  
@@ -421,6 +421,9 @@
 
   var clickmenu = function(val, text) 
     {
+      console.log(6666);    
+      console.log(val);    
+      console.log(text);    
       $('#selectedcat').val(val);
       $('#selectedcattext').val(text);
 
