@@ -98,7 +98,7 @@
       $( "#btnreset" ).bind( "click", function( event ) {
         resetFields();
       });
-      console.log(33333);    
+      console.log(4444);    
     });
    
       var getInformation = function(ismoretweets) 
@@ -254,7 +254,7 @@
     }
     
     function getParameterByName(name) {
-        if (!url) url = window.location.href;
+        var url = window.location.href;
         name = name.replace(/[\[\]]/g, '\\$&');
         var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
             results = regex.exec(url);
