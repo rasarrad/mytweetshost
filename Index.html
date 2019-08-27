@@ -31,6 +31,7 @@
     var dosearchmore = true;
 
     $( document ).ready(function() {
+      alert(getParameterByName('tweetid'));
       window.onscroll = function(ev) {
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && dosearchmore) {
         dosearchmore = false;
@@ -97,7 +98,7 @@
       $( "#btnreset" ).bind( "click", function( event ) {
         resetFields();
       });
-      console.log(1111);    
+      console.log(33333);    
     });
    
       var getInformation = function(ismoretweets) 
@@ -167,8 +168,8 @@
               console.log('aux 11111' + aux);
               setTimeout(function(){ 
                 console.log('aux 2222' + aux);
-                if (aux == toindex) {
-                  $('#tweetcount').html(aux + "Tweets<br>In " + $('#selectedcattext').val());  
+                if (aux == toindex) { 
+                  $('#tweetcount').html(aux + " Tweets<br>In " + $('#selectedcattext').val());  
                 }
                 else {
                   $('#tweetcount').html(toindex + " of " + aux + "<br>In " + $('#selectedcattext').val());  
@@ -194,22 +195,7 @@
               var dofiltertagfinal = false;
               var dofiltercatfinal = false;
               var dofilterauthorfinal = false;
-/*               console.log('////////////////////////////////////////');
 
-        console.log('val.categories');
-        console.log(val.categories);
-        console.log('selectedcat');
-        console.log($('#selectedcat').val());
-        console.log('aaaaa');
-        console.log(val.categories.includes($('#selectedcat').val()));
-        console.log('dofiltercat');
-        console.log(dofiltercat);
-        console.log('currentIndex');
-        console.log(currentIndex);
-        console.log('endIndex');
-        console.log(endIndex);
-        console.log('ind');
-        console.log(ind); */
               if (currentIndex < endIndex && ((ismoretweets && currentIndex == ind) || !ismoretweets)) {
                 dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
                 dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
@@ -220,18 +206,9 @@
 
                 dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
 
-/*                 console.log('//////');
-        console.log(dofiltertextfinal);
-        console.log(dofilterdate1final);
-        console.log(dofiltertagfinal);
-        console.log(dofilterdate2final);
-        console.log(dofilteridfinal);
-        console.log(dofilterauthorfinal);
-        console.log(dofiltercatfinal); */
                 if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                   && dofilterauthorfinal && dofiltercatfinal) {
-/*                   console.log('vai adicionar');
-                  console.log(val.id); */
+
                   $('#moretweets').hide();
                   var newtweet = $('#main').append($('<div id="inid" class="tweet"></div>'));
                   var newtweetobj = $('#inid');
@@ -240,7 +217,6 @@
                   newtweetobj.append($('<div class="innertweet"></div>'));
                   newtweetobj.find('.innertweet').append(val.tweet);
                   newtweetobj.attr('id', val.id);
-
 
                   if (objToFocus < 0) {
  
@@ -254,13 +230,10 @@
 
                   }
                   currentIndex = currentIndex + 1;
-                }
-
-                
+                }   
               }
               else {
                 if (currentIndex >= endIndex) {
-                  //console.log(currentIndex)
                   $('#moretweets').show();
                   
                   setTimeout(function(){
@@ -277,14 +250,10 @@
 
                 ind = ind + 1;
             });
-
-            //console.log('222222222222222');
-            //console.log(ind);
         }); 
     }
     
-
-    function getParameterByName(name, url) {
+    function getParameterByName(name) {
         if (!url) url = window.location.href;
         name = name.replace(/[\[\]]/g, '\\$&');
         var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
