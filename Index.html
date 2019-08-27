@@ -82,7 +82,7 @@
         //$( "#t1102" ).append("<blockquote class=twitter-tweet><p lang=en dir=ltr><a href=https://twitter.com/hashtag/ConcoursdElegance2019?src=hash&amp;ref_src=twsrc%5Etfw>#ConcoursdElegance2019</a> closes in style at <a href=https://twitter.com/hashtag/PebbleBeach?src=hash&amp;ref_src=twsrc%5Etfw>#PebbleBeach</a><a href=https://twitter.com/hashtag/USA?src=hash&amp;ref_src=twsrc%5Etfw>#USA</a> <a href=https://twitter.com/hashtag/Monterey?src=hash&amp;ref_src=twsrc%5Etfw>#Monterey</a> <a href=https://t.co/aLyxSFRBmv>pic.twitter.com/aLyxSFRBmv</a></p>&mdash; Ruptly (@Ruptly) <a href=https://twitter.com/Ruptly/status/1163365281995137024?ref_src=twsrc%5Etfw>August 19, 2019</a></blockquote> <script async src=https://platform.twitter.com/widgets.js charset=utf-8><&#47;script>");
       });
 
-      console.log(888);
+      console.log(999);
     });
    
       var getInformation = function(ismoretweets) 
@@ -156,7 +156,8 @@
         console.log(dofilteridfinal);
         console.log(dofilterauthorfinal);
         console.log(dofiltercatfinal); */
-                if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal && dofilterauthorfinal && dofiltercatfinal) {
+                if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
+                  && dofilterauthorfinal && dofiltercatfinal) {
 /*                   console.log('vai adicionar');
                   console.log(val.id); */
                   $('#moretweets').hide();
@@ -173,6 +174,8 @@
                     console.log(currentIndex);
 
                   if (objToFocus < 0) {
+                    $('#tweetcount').text(countallrecords() + " Tweets");
+                    $('#tweetcount').fadeIn(800);
                     console.log('///gggggggggggggggggggg///');
                    /*  console.log(currentIndex);
                     console.log(newtweetobj); */
@@ -197,9 +200,6 @@
                     $('#mask').fadeOut(300);
                   }, 300);
 
-                  $('#tweetcount').text(currentIndex + " Tweets");
-                  $('#tweetcount').fadeIn(800);
-
                   return false;
                 }
               }
@@ -208,8 +208,6 @@
                   $('#mask').fadeOut(300);
                 }, 300);
 
-                $('#tweetcount').text(currentIndex + " Tweets");
-                  $('#tweetcount').fadeIn(800);
                 ind = ind + 1;
             });
 
@@ -218,6 +216,54 @@
         }); 
     }
     
+    var countallrecords = function() 
+    {
+      console.log('countallrecords START');
+        var path = "./data.json";
+
+        var dofiltertext = $('#filtertext').val().length > 0; 
+        var dofilterdate1 = $('#filterdate1').val().length > 0; 
+        var dofilterdate2 = $('#filterdate2').val().length > 0; 
+        var dofilterid = $('#filterid').val().length > 0; 
+        var dofiltertag = $('#filtertag').val().length > 0; 
+        var dofilterauthor = $('#filterauthor').val().length > 0;
+        var dofiltercat = $('#selectedcat').val().length > 0 && $('#selectedcat').val() != 'all';  
+
+        $.getJSON(path, function(data) 
+        {
+            var ind = 0;
+            $.each(data.Tweets, function(key, val) 
+            {
+              var newtweet = null;
+              var dofiltertextfinal = false;
+              var dofilterdate1final = false;
+              var dofilterdate2final = false;
+              var dofilteridfinal = false;
+              var dofiltertagfinal = false;
+              var dofiltercatfinal = false;
+              var dofilterauthorfinal = false;
+
+                dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
+                dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
+                dofilterdate2final = !dofilterdate2 || (dofilterdate2 && val.date <= Number($('#filterdate2').val()));
+                dofilteridfinal = !dofilterid || (dofilterid && (Number(val.id) == Number($('#filterid').val())));
+                dofiltertagfinal = !dofiltertag || (dofiltertag && val.tags.includes($('#filtertag').val()));
+                dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
+
+                dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
+
+
+                if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
+                  && dofilterauthorfinal && dofiltercatfinal) {
+                  ind = ind + 1;
+                }
+            });
+        }); 
+        console.log('countallrecords END');
+        return ind;
+    }
+
+
     function getParameterByName(name, url) {
         if (!url) url = window.location.href;
         name = name.replace(/[\[\]]/g, '\\$&');
