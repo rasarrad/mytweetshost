@@ -91,7 +91,9 @@
       $( "#moretweets" ).bind( "click", function( event ) {
         getInformation(true);
       });
-
+      $( "#btnsearch" ).bind( "click", function( event ) {
+        getInformation(false);
+      });
       $( "#btnreset" ).bind( "click", function( event ) {
         resetFields();
       });
