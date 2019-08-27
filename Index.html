@@ -31,7 +31,10 @@
     var dosearchmore = true;
 
     $( document ).ready(function() {
-      alert(getParameterByName('tweetid'));
+      if (getParameterByName('tweetid'))
+        alert(getParameterByName('tweetid'));
+      else
+      alert(2);
       window.onscroll = function(ev) {
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && dosearchmore) {
         dosearchmore = false;
@@ -98,7 +101,7 @@
       $( "#btnreset" ).bind( "click", function( event ) {
         resetFields();
       });
-      console.log(4444);    
+      console.log(55555);    
     });
    
       var getInformation = function(ismoretweets) 
