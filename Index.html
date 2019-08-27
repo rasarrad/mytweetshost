@@ -9,17 +9,17 @@
     <title>My Tweet Manager</title>
   </head>
 <body style="margin: 0;background: #585858;font-family: sans-serif;">
-  <div id="tweetcount" style="padding: 0px 8px;padding-top: 5px;position: fixed;height: 23px;top: 67px;z-index: 8;right: 20px;background: white;border: 3px double #909090;border-radius: 4px;color: gray;transition: color 0.8s;display: none;">
+  <div id="tweetcount" style="padding: 5px 8px 0px;position: fixed;padding-bottom: 5px;top: 67px;z-index: 8;right: 20px;background: white;border: 3px double rgb(144, 144, 144);border-radius: 4px;color: gray;line-height: 23px;text-align: center;transition: color 0.8s ease 0s;display: none;">
 
     </div>
 <i class="fa fa-bars menubutton" onclick="javascript: openmenu()"></i>
 <div id="menu" style="Z-INDEX: 1;">
   <ul>
-    <li onclick="javascript: clickmenu('all')">All Tweets</li>
-    <li onclick="javascript: clickmenu('toview')">To View</li>
-    <li onclick="javascript: clickmenu('toread')">To read</li>
-    <li onclick="javascript: clickmenu('tokeep')">To keep</li>
-    <li onclick="javascript: clickmenu('imp')">Important</li>
+    <li onclick="javascript: clickmenu('all', 'All Tweets')">All Tweets</li>
+    <li onclick="javascript: clickmenu('toview', 'To View')">To View</li>
+    <li onclick="javascript: clickmenu('toread', 'To read')">To read</li>
+    <li onclick="javascript: clickmenu('tokeep', 'To keep')">To keep</li>
+    <li onclick="javascript: clickmenu('imp', 'Important')">Important</li>
   </ul>
 </div>
 <script>
@@ -97,7 +97,7 @@
         //$( "#t1102" ).append("<blockquote class=twitter-tweet><p lang=en dir=ltr><a href=https://twitter.com/hashtag/ConcoursdElegance2019?src=hash&amp;ref_src=twsrc%5Etfw>#ConcoursdElegance2019</a> closes in style at <a href=https://twitter.com/hashtag/PebbleBeach?src=hash&amp;ref_src=twsrc%5Etfw>#PebbleBeach</a><a href=https://twitter.com/hashtag/USA?src=hash&amp;ref_src=twsrc%5Etfw>#USA</a> <a href=https://twitter.com/hashtag/Monterey?src=hash&amp;ref_src=twsrc%5Etfw>#Monterey</a> <a href=https://t.co/aLyxSFRBmv>pic.twitter.com/aLyxSFRBmv</a></p>&mdash; Ruptly (@Ruptly) <a href=https://twitter.com/Ruptly/status/1163365281995137024?ref_src=twsrc%5Etfw>August 19, 2019</a></blockquote> <script async src=https://platform.twitter.com/widgets.js charset=utf-8><&#47;script>");
       });
 
-      console.log(8888);    
+      console.log(111);    
     });
    
       var getInformation = function(ismoretweets) 
@@ -162,16 +162,16 @@
             if (Number($('#recordspersearch').val()) < ind) {
               
               $('#tweetcount').css('background', '#fff900');
-              $('#tweetcount').text((currentIndex + 1)  + " to " + toindex + " of " + ind + " Tweets");
+              $('#tweetcount').text((currentIndex + 1)  + " to " + toindex + " of " + ind + " Tweets<br>In " + $('#selectedcattext').val());    
               var aux = ind;
               console.log('aux 11111' + aux);
               setTimeout(function(){ 
                 console.log('aux 2222' + aux);
                 if (aux == toindex) {
-                  $('#tweetcount').text(aux + " Tweets");
+                  $('#tweetcount').text(aux + " Tweets<br>In " + $('#selectedcattext').val());  
                 }
                 else {
-                  $('#tweetcount').text(toindex + " of " + aux + " Tweets");
+                  $('#tweetcount').text(toindex + " of " + aux + " Tweets<br>In " + $('#selectedcattext').val());  
                 }   
                 
                 $('#tweetcount').css('background', 'white');
@@ -179,7 +179,7 @@
 
             }
             else {
-              $('#tweetcount').text(ind + " Tweets");
+              $('#tweetcount').text(ind + " Tweets<br>In " + $('#selectedcattext').val());  
             }
 
 
@@ -334,6 +334,7 @@
 
 <input type="hidden" id="maxid" value="0">
 <input type="hidden" id="selectedcat" value="all">
+<input type="hidden" id="selectedcattext" value="All">
 <input type="hidden" id="recordspersearch" value="5">
 <div style="position: fixed;width: 100%;height: calc(100% - 55px);background: #00000099;top: 55px;z-index: -1;">
   <i class="fa fa-twitter"></i>
@@ -415,9 +416,10 @@
 
     }  
 
-  var clickmenu = function(val) 
+  var clickmenu = function(val, text) 
     {
       $('#selectedcat').val(val);
+      $('#selectedcattext').val(text);
       resetFields();
       openmenu();
       getInformation(false);
@@ -456,19 +458,27 @@
  
     var togglecriterions = function() 
     {
-      if ($('.toptitle').css('display') == 'none') {
-        $('.toptitle').css('display', 'inline');
-        $('html').find('.top').each( function( index, element ){
-            $(this).css('display', 'none');
-        });
-      }
-      else {
-        $('.toptitle').css('display', 'none');
-        $('html').find('.top').each( function( index, element ){
-          $(this).css('display', 'inline');
-        });
-      } 
+        var dofiltertext = $('#filtertext').val().length > 0; 
+        var dofilterdate1 = $('#filterdate1').val().length > 0; 
+        var dofilterdate2 = $('#filterdate2').val().length > 0; 
+        var dofilterid = $('#filterid').val().length > 0; 
+        var dofiltertag = $('#filtertag').val().length > 0; 
+        var dofilterauthor = $('#filterauthor').val().length > 0;
+        var dofiltercat = $('#selectedcat').val().length > 0 && $('#selectedcat').val() != 'all';  
     }     
     
+    var togglecriterions = function() 
+    {
+      $('#selectedcat').val('all');
+      $('#selectedcattext').val('All Tweets');
+      
+      var dofiltertext = $('#filtertext').val().length > 0; 
+        var dofilterdate1 = $('#filterdate1').val().length > 0; 
+        var dofilterdate2 = $('#filterdate2').val().length > 0; 
+        var dofilterid = $('#filterid').val().length > 0; 
+        var dofiltertag = $('#filtertag').val().length > 0; 
+        var dofilterauthor = $('#filterauthor').val().length > 0;
+        var dofiltercat = $('#selectedcat').val().length > 0 && $('#selectedcat').val() != 'all';  
+    }     
     </script>
 </html>
