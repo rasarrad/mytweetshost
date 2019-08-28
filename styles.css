@@ -133,10 +133,11 @@
       white-space: nowrap;
       padding: 10px 0px;
       padding-left: 17px;
-      color: #4c4c4c;
+      color: #0099f3;
       border-bottom: 1px solid #c1c1c1;
       cursor: pointer;
       transition: all 0.6s;
+      font-weight: bold;
     }
     #menu > ul > li:hover {
       background: #eaeaea;
@@ -274,4 +275,9 @@
 
     #internallink:hover, #externallink:hover, #expand:hover {
       opacity: 0.7;
+     }
+
+     input[type=text] {
+      color: #0094ea;
+      font-weight: bold;
      }
