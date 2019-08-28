@@ -105,7 +105,7 @@
       $( "#btnreset" ).bind( "click", function( event ) {
         resetFields();
       });
-      console.log(4444);    
+      console.log(555);    
     });
    
       var getInformation = function(ismoretweets) 
@@ -158,10 +158,10 @@
 
               if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                 && dofilterauthorfinal && dofiltercatfinal) {
-                  console.log('countallrecords iteracao');
                   ind = ind + 1;
               }
             });
+            
             var toindex = 0;
             if (currentIndex + Number($('#recordspersearch').val()) < ind)
             toindex = currentIndex + Number($('#recordspersearch').val());
@@ -172,9 +172,8 @@
               $('#tweetcount').css('background', '#fff900');
               $('#tweetcount').html((currentIndex + 1)  + " to " + toindex + " of " + ind + "<br>In " + $('#selectedcattext').val());    
               var aux = ind;
-              console.log('aux 11111' + aux);
+
               setTimeout(function(){ 
-                console.log('aux 2222' + aux);
                 if (aux == toindex) { 
                   $('#tweetcount').html(aux + " Tweets<br>In " + $('#selectedcattext').val());  
                 }
@@ -333,18 +332,22 @@
     }   
 
     function internallinkcopy(id) {
+      console.log('-------id-----');
       console.log(id);
       $('#linkresult').val("https://sleepy-mclean-3aea2d.netlify.com/?tweetid=" + id);
       $("#linkresult").select();
       document.execCommand('copy');
+      console.log($('#linkresult').val());
       
     }
 
     function externallinkcopy(link) {
+      console.log('-------link-----');
+      console.log(link);
       $('#linkresult').val(link);
       $("#linkresult").select();
       document.execCommand('copy');
-
+      console.log($('#linkresult').val());
     }
     </script>
 
