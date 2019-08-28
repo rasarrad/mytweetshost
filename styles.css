@@ -255,12 +255,18 @@
     }
 
     #externallink {
+      position: absolute;
+      cursor: pointer;
+      font-size: 26px;
       left: 73px;
       margin-top: 1px;
       font-size: 16px;
     }
 
     #internallink {
+      position: absolute;
+      cursor: pointer;
+      font-size: 26px;
       left: 40px;
       margin-top: 0px;
       font-size: 16px;
