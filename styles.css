@@ -2,13 +2,11 @@
   margin-left: auto;
   margin-right: auto;
   /* border-bottom: 1px solid white; */
-  padding-bottom: 15px;
+  padding-bottom: 30px;
+  background-image: linear-gradient(to bottom, #008bdc , #28b0ff );
   }
 
-  .tweet:not(first-child) {    
-
-    margin-top: 15px;
-  }
+  .tweet:not(first-child) {/* margin-top: 15px; */}
   .innertweet {
     margin-left: calc(50% - 250px);
   }
@@ -18,16 +16,17 @@
     padding-top: 3px;
     display: none;
     padding-bottom: 5px;
-    background: #a2a2a2;
-    border-bottom: 1px solid #d4d4d4;
+    background: #a2a2a200;
+    border-top: 1px solid #00004e;
   }
 
   .tags {
     text-align: center;
     padding-top: 4px;
     margin-bottom: -3px;
-    background: #a2a2a2;
+    background: #0088d600;
     padding-bottom: 3px;
+    border-top: 1px solid #00004e;
   }
   .EmbeddedTweet-tweet {
     background: #80808061;
@@ -57,6 +56,7 @@
    .tweet:first-child {
          border-top: 1px solid #d4d4d4;
          margin-top: 0px;
+         /* background-image: linear-gradient(to bottom, #84d2ff , #006cab ); */
    }  
    #expand {
     position: absolute;
