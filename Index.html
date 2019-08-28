@@ -105,7 +105,7 @@
       $( "#btnreset" ).bind( "click", function( event ) {
         resetFields();
       });
-      console.log(88888);    
+      console.log(999);    
     });
    
       var getInformation = function(ismoretweets) 
@@ -386,7 +386,7 @@
  
  $( document ).ready(function() {
     $( "#create" ).bind( "click", function( event ) {
-         $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
+         $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"url\": \"" + url  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
 
          $('#maxid').val(nextid);
          $("#result").select();
