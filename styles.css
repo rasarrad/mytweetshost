@@ -95,16 +95,16 @@
     left: calc(50% - 75px);
  }
    .menubutton {
-      font-size: 38px;
-      background: white;
-      padding-left: 5px;
-      padding-right: 5px;
-      padding: 6px 10px;
-      color: gray;
-      cursor: pointer;
-      height: 41px;
-      transition: all 0.6s;
-      padding-bottom: 5px;
+    font-size: 38px;
+    background: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding: 6px 10px;
+    color: #0098f0;
+    cursor: pointer;
+    height: 41px;
+    transition: all 0.6s;
+    padding-bottom: 5px;
     }
     .menubutton:hover {
       background: #eaeaea;
@@ -185,7 +185,7 @@
       background: white;
       border: 1px solid white;
       height: 24px;
-      color: #4c4c4c;
+      color: #0090e4;
       font-weight: bold;
       font-size: 12px;
       padding-top: 3px;
@@ -193,8 +193,8 @@
       min-width: 82px;
     }
     button:hover {
-      background: #e4e4e4;
-      border: 1px solid #e4e4e4;
+      color: #00639c;
+      border: 1px solid #0090e4;
     }
     button > i {
       font-size: 14px !important;

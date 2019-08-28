@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="./favicon.png"/>
     <title>My Tweet Manager</title>
   </head>
-<body style="margin: 0;background: #585858;font-family: sans-serif;">
+<body style="margin: 0;font-family: sans-serif;background-image: linear-gradient(to bottom, #00a1ff , #000000);background-repeat: no-repeat;height: 100%;display: block;background-size: 100% 120%;background-attachment: fixed;">
   <div id="tweetcount" style="padding: 5px 8px 0px;position: fixed;padding-bottom: 5px;display: none;top: 67px;z-index: 8;right: 20px;background: white;border: 3px double rgb(144, 144, 144);border-radius: 4px;color: gray;line-height: 23px;text-align: center;transition: color 0.8s ease 0s;">
     All Tweets
     </div>
@@ -105,7 +105,7 @@
       $( "#btnreset" ).bind( "click", function( event ) {
         resetFields();
       });
-      console.log(888);    
+      console.log(111);    
     });
    
       var getInformation = function(ismoretweets) 
@@ -372,7 +372,7 @@
 <input type="hidden" id="selectedcat" value="all">
 <input type="hidden" id="selectedcattext" value="All Tweets">
 <input type="hidden" id="recordspersearch" value="5">
-<div style="position: fixed;width: 100%;height: calc(100% - 55px);background: #00000099;top: 55px;z-index: -1;">
+<div style="position: fixed;width: 100%;height: calc(100% - 55px);background: #00000099;top: 55px;z-index: -1;background-image: linear-gradient(to bottom, #00a1ff , #00000099);background: transparent;">
   <i class="fa fa-twitter"></i>
   <div style="position: fixed;z-index: -1;width: 100%;text-align: center;bottom: 3px;color: white;font-size: 12px;">
     &copy; Copyright 2019, Rasarrad Corporation  
