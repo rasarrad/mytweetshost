@@ -105,7 +105,7 @@
       $( "#btnreset" ).bind( "click", function( event ) {
         resetFields();
       });
-      console.log(3333);    
+      console.log(2222);    
     });
    
       var getInformation = function(ismoretweets) 
@@ -411,19 +411,14 @@
          $("#result").select();
         document.execCommand('copy');
 
-          $('#tweet').val('');
-          $('#date').val('');
-          $('#datecap').text('');
-          $('#tweetid').val('');
-          $('#postedby').text('');
-          $('#categories').val('');
-          $('#tags').val('');
+        resetFieldsPopup();
+
         if ($("#onemore").is(":checked")) {
 
           $('#tweet').focus();
         } 
         else {
-          $('#result').val('');
+
           $('.addpopup').fadeOut(2000);
         }       
     });
@@ -438,24 +433,34 @@
     });
   });
 
- 
+  function resetFieldsPopup() 
+    {
+      $('#tweet').val('');
+      $('#date').val('');
+      $('#datecap').text('');
+      $('#tweetid').val('');
+      $('#postedby').text('');
+      $('#categories').val('');
+      $('#tags').val('');
+      $('#result').val('');  
+    }  
+
+
   function resetFields() 
     {
-      alert(111)
+
       $("#main").empty();
       $('#moretweets').hide();
       $('#selectedcat').val('all');
       $('#selectedcattext').val('All Tweets');
       $('#tweetcount').hide();  
-      $('#tweet').val('');
-          $('#date').val('');
-          $('#datecap').text('');
-          $('#tweetid').val('');
-          $('#postedby').text('');
-          $('#categories').val('');
-          $('#tags').val('');
-          $('#result').val('');  
-      $('.addpopup').fadeOut();
+
+          $('#filtertext').val('');
+          $('#filterdate1').text('');
+          $('#filterdate2').val('');
+          $('#filterid').text('');
+          $('#filterauthor').val('');
+          $('#filtertag').val('');
 
     }  
 
