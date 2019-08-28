@@ -105,7 +105,7 @@
       $( "#btnreset" ).bind( "click", function( event ) {
         resetFields();
       });
-      console.log(999);    
+      console.log(1111);    
     });
    
       var getInformation = function(ismoretweets) 
@@ -279,7 +279,7 @@
                   var newtweet = $('#main').append($('<div id="inid" class="tweet"></div>'));
                   var newtweetobj = $('#inid');
                   newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + '</div>'));
-                  newtweetobj.append($('<div class="tags"><b>Tags </b>' + val.tags + '</div>'));
+                  newtweetobj.append($('<div class="tags"><i onclick="javascript: internallinkcopy(' + val.id + ')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(' + val.url + ')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + val.tags + '</div>'));
                   newtweetobj.append($('<div class="innertweet"></div>'));
                   newtweetobj.find('.innertweet').append(val.tweet);
                   newtweetobj.attr('id', val.id);
@@ -331,6 +331,20 @@
     function gotop() {
       $(window).scrollTop( 0 );
     }   
+
+    function internallinkcopy(id) {
+      $('#linkresult').val("https://sleepy-mclean-3aea2d.netlify.com/?tweetid=" + id);
+      $("#linkresult").select();
+      document.execCommand('copy');
+      
+    }
+
+    function externallinkcopy(link) {
+      $('#linkresult').val(link);
+      $("#linkresult").select();
+      document.execCommand('copy');
+
+    }
     </script>
 
 <i id="sear" onclick="javascript: togglecriterions()" class="fa fa-search"></i>
@@ -380,6 +394,7 @@
 </div>
 <i onmouseover="javascript: gotop()" id="gotop" class="fa fa-angle-double-up"></i>
 <div id="mask" style="position: fixed;width: 100%; height: 100%;background: #00000099; top: 0;display: none;"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+<textarea style="width: 784px;height: 297px;visibility: hidden;" id="linkresult" type="text"></textarea>
 </body>
 
 <script>

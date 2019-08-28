@@ -60,10 +60,10 @@
    }  
    #expand {
     position: absolute;
-    margin-top: 2px;
+    margin-top: 0px;
     left: 8px;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 26px;
    }
 
    #gotop {
@@ -253,3 +253,19 @@
     #closepopup:hover {
       color: #e4e4e4;
     }
+
+    #externallink {
+      left: 73px;
+      margin-top: 1px;
+      font-size: 16px;
+    }
+
+    #internallink {
+      left: 40px;
+      margin-top: 0px;
+      font-size: 16px;
+    }
+
+    #internallink:hover, #externallink:hover, #expand:hover {
+      opacity: 0.7;
+     }
