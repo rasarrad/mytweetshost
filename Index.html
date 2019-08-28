@@ -75,7 +75,7 @@
             
             origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
 
-            url = text.substring(text.lastIndexOf('a href="https://twitter.com') + 8, text.lastIndexOf('?ref_src=')); 
+            url = text.substring(text.lastIndexOf('https://twitter'), text.lastIndexOf('?ref_src=')); 
             alert(url);
 
             var date = text.substring(text.lastIndexOf('ref_src=twsrc%5Etfw>') + 20, text.lastIndexOf('</a></blockquote>')); 
@@ -105,7 +105,7 @@
       $( "#btnreset" ).bind( "click", function( event ) {
         resetFields();
       });
-      console.log(777);    
+      console.log(88888);    
     });
    
       var getInformation = function(ismoretweets) 
