@@ -3,7 +3,7 @@
   margin-right: auto;
   /* border-bottom: 1px solid white; */
   padding-bottom: 30px;
-  background-image: linear-gradient(to bottom, #008bdc , #28b0ff );
+  background-image: linear-gradient(to bottom, #0081cc , #008ada );
   }
 
   .tweet:not(first-child) {/* margin-top: 15px; */}
@@ -100,14 +100,14 @@
     padding-left: 5px;
     padding-right: 5px;
     padding: 6px 10px;
-    color: #0098f0;
+    color: #0084d0;
     cursor: pointer;
     height: 41px;
     transition: all 0.6s;
     padding-bottom: 5px;
     }
     .menubutton:hover {
-      background: #eaeaea;
+      color: #16aaff;
     }
     #menu {
       width: 0px;
@@ -140,7 +140,8 @@
       font-weight: bold;
     }
     #menu > ul > li:hover {
-      background: #eaeaea;
+      background: #0089da;
+      color: white;
     }
 
     .label {
@@ -179,6 +180,7 @@
       padding-right: 17px;
       top: -4px;
       cursor: pointer;
+      transition: all 0.6s;
     }
 
     button {
@@ -186,7 +188,7 @@
       background: white;
       border: 1px solid white;
       height: 24px;
-      color: #0090e4;
+      color: #00639c;
       font-weight: bold;
       font-size: 12px;
       padding-top: 3px;
@@ -194,7 +196,7 @@
       min-width: 82px;
     }
     button:hover {
-      color: #00639c;
+      color: #0095ea;
       border: 1px solid #0090e4;
     }
     button > i {
@@ -233,7 +235,11 @@
     }
 
     #addtweet:hover {
-      color: #e4e4e4;
+      color: #58c1fd;
+    }
+
+    #sear:hover {
+      color: #58c1fd;
     }
     .top {
       display: none;
