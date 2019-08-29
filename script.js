@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(1111); 
+console.log(222); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -52,7 +52,6 @@ $( document ).ready(function() {
         origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
 
         url = text.substring(text.lastIndexOf('https://twitter'), text.lastIndexOf('?ref_src=')); 
-        alert(url);
 
         var date = text.substring(text.lastIndexOf('ref_src=twsrc%5Etfw>') + 20, text.lastIndexOf('</a></blockquote>')); 
         $('#datecap').text(date);
@@ -84,10 +83,10 @@ $( document ).ready(function() {
  
   
   $( "#create" ).bind( "click", function( event ) {
-    var ishidden = "1";
+    var ishidden = "0";
     if ($("#ishidden").is(":checked")) {
 
-        ishidden = "0";
+        ishidden = "1";
     } 
   
         $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
@@ -421,24 +420,10 @@ function externallinkcopy(link) {
 
     }  
   
- 
-    var openCreatePopup = function() 
-    {
-      $('#tweet').val('');
-          $('#date').val('');
-          $('#datecap').text('');
-          $('#tweetid').val('');
-          $('#postedby').text('');
-          $('#categories').val('');
-          $('#tags').val('');
-      $('.addpopup').fadeIn();
-      $('#tweet').focus();
-      $('#result').val('');  
-    }  
- 
     var togglecriterions = function() 
     {
-      if ($('.toptitle').css('display') == 'none') {
+        createCookie("aaa", "bbbbbbbbb", 99999)
+/*       if ($('.toptitle').css('display') == 'none') {
         $('.toptitle').css('display', 'inline');
         $('html').find('.top').each( function( index, element ){
             $(this).css('display', 'none');
@@ -449,8 +434,24 @@ function externallinkcopy(link) {
         $('html').find('.top').each( function( index, element ){
           $(this).css('display', 'inline');
         });
-      } 
-    }    
+      }  */
+    }   
+
+    
+    var openCreatePopup = function() 
+    {
+alert(readCookie("aaa"));
+/*       $('#tweet').val('');
+          $('#date').val('');
+          $('#datecap').text('');
+          $('#tweetid').val('');
+          $('#postedby').text('');
+          $('#categories').val('');
+          $('#tags').val('');
+      $('.addpopup').fadeIn();
+      $('#tweet').focus();
+      $('#result').val('');  */ 
+    }   
 
 
 /*  COOCKIES -----------------------------------   */
