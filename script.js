@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(222); 
+console.log(444); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -224,11 +224,16 @@ $( document ).ready(function() {
             if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
               && dofilterauthorfinal && dofiltercatfinal) {
 
+              var tes = "";
+              if (readCookie(val.id + "isdeleted").length > 0) {
+                tes = "background: red;";
+              } 
+              
               $('#moretweets').hide();
-              var newtweet = $('#main').append($('<div id="inid" class="tweet"></div>'));
+              var newtweet = $('#main').append($('<div style="tes' + + '" id="inid" class="tweet"></div>'));
               var newtweetobj = $('#inid');
               newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + '</div>'));
-              newtweetobj.append($('<div class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + val.tags + '</div>'));
+              newtweetobj.append($('<div class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + val.tags + '</div>'));
               newtweetobj.append($('<div class="innertweet"></div>'));
               newtweetobj.find('.innertweet').append(val.tweet);
               newtweetobj.attr('id', val.id);
@@ -341,22 +346,18 @@ function gotop() {
 }   
 
 function internallinkcopy(id) {
-  console.log('-------id-----');
-  console.log(id);
-  $('#linkresult').val("https://sleepy-mclean-3aea2d.netlify.com/?tweetid=" + id);
+    createCookie(id + "isdeleted", "a", 99999)
+    //alert(readCookie("aaa"));
+/*   $('#linkresult').val("https://sleepy-mclean-3aea2d.netlify.com/?tweetid=" + id);
   $("#linkresult").select();
-  document.execCommand('copy');
-  console.log($('#linkresult').val());
-  
+  document.execCommand('copy'); */
 }
 
-function externallinkcopy(link) {
-  console.log('-------link-----');
-  console.log(link);
-  $('#linkresult').val(link);
+function externallinkcopy(link, id) {
+
+/*   $('#linkresult').val(link);
   $("#linkresult").select();
-  document.execCommand('copy');
-  console.log($('#linkresult').val());
+  document.execCommand('copy'); */
 }
 
 
@@ -422,8 +423,7 @@ function externallinkcopy(link) {
   
     var togglecriterions = function() 
     {
-        createCookie("aaa", "bbbbbbbbb", 99999)
-/*       if ($('.toptitle').css('display') == 'none') {
+      if ($('.toptitle').css('display') == 'none') {
         $('.toptitle').css('display', 'inline');
         $('html').find('.top').each( function( index, element ){
             $(this).css('display', 'none');
@@ -434,14 +434,13 @@ function externallinkcopy(link) {
         $('html').find('.top').each( function( index, element ){
           $(this).css('display', 'inline');
         });
-      }  */
+      } 
     }   
 
     
     var openCreatePopup = function() 
     {
-alert(readCookie("aaa"));
-/*       $('#tweet').val('');
+      $('#tweet').val('');
           $('#date').val('');
           $('#datecap').text('');
           $('#tweetid').val('');
@@ -450,7 +449,7 @@ alert(readCookie("aaa"));
           $('#tags').val('');
       $('.addpopup').fadeIn();
       $('#tweet').focus();
-      $('#result').val('');  */ 
+      $('#result').val('');  
     }   
 
 
