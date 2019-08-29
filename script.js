@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(111); 
+console.log(2222); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -236,23 +236,23 @@ $( document ).ready(function() {
               var tagstyle = "";
               if (tagchanged && tagchanged.length > 0 && catchanged && catchanged.length > 0) {
                 tagstyle = "background-image: linear-gradient(to left, white, #b10000, #b10000)";
-                tagchanged = "<b>New tags </b>" + tagchanged;
-                catchanged = "<b>New categories </b>" + catchanged;
+                tagchanged = '<span class="newtag"><b>New tags </b>' + tagchanged + '</span>';
+                catchanged = '<span class="newcat"><b>New categories </b>' + catchanged + '</span>';
               } 
               else {
                 if (tagchanged && tagchanged.length > 0) {
                     tagstyle = "background-image: linear-gradient(to right, #b10000, #fd4c4c)";
-                    tagchanged = "<b>New tags </b>" + tagchanged;
-                    catchanged = "";
+                    tagchanged = '<span class="newtag"><b>New tags </b>' + tagchanged + '</span>';
+                    catchanged = '<span class="newcat"></span>';
                 }
                 else if (catchanged && catchanged.length > 0) {
                     tagstyle = "background-image: linear-gradient(to left, #b10000, #fd4c4c)";
-                    tagchanged = "";
-                    catchanged = "<b>New categories </b>" + catchanged;
+                    tagchanged = '<span class="newtag"></span>';
+                    catchanged = '<span class="newcat"><b>New categories </b>' + catchanged + '</span>';
                 }
                 else {
-                    tagchanged = "";
-                    catchanged = "";
+                    tagchanged = '<span class="newtag"></span>';
+                    catchanged = '<span class="newcat"></span>';
                 }
               }
 
@@ -500,10 +500,31 @@ function externallinkcopy(link, id) {
         $("#changetags").fadeIn();
     }   
 
-    function closetagpopup(obj, id) {
+    function acceptTag(obj, id) {
+        var id = $(obj).parent().attr("currid");
+
+        createCookie(id + "tagchanged", $(obj).parent().find('input').val());
+        
+        $('#' + id).css('background-image', 'linear-gradient(to right, #b10000, #fd4c4c)');
+        $(obj).parent().find('.newtag').html('<b>New tags </b>' + $(obj).parent().find('input').val());
+
         $("#changetags").fadeOut();
     }   
 
+    function undotag(obj) {
+        var id = $(obj).parent().attr("currid");
+
+        eraseCookie(id + "tagchanged");
+
+        $(obj).parent().find('input').val($(obj).parent().attr('tagactual'));
+        $(obj).parent().find('.newtag').html('<span class="newtag"></span>');
+
+        $('#' + id).css('background-image', '');
+    }   
+
+    function closetagpopup(obj, id) {
+        $("#changetags").fadeOut();
+    }   
 /*  COOCKIES -----------------------------------   */
 
     function createCookie(name, value, days) {
