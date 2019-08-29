@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(333); 
+console.log(444); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -501,7 +501,7 @@ function externallinkcopy(link, id) {
     }   
 
     function acceptTag(obj) {
-        var id = $(obj).parent().attr("currid");
+        var id = $(obj).parent().parent().attr("currid");
 
         console.log($(obj));
         console.log($(obj).parent());
@@ -515,7 +515,7 @@ function externallinkcopy(link, id) {
     }   
 
     function undotag(obj) {
-        var id = $(obj).parent().attr("currid");
+        var id = $(obj).parent().parent().attr("currid");
 
         eraseCookie(id + "tagchanged");
 
