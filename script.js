@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(888); 
+console.log(999); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -493,9 +493,14 @@ function externallinkcopy(link, id) {
 
     function changetag(obj, id) {
 
-        $("#changetags").attr('currid', id);
+        var text = readCookie(id + "tagchanged");
 
-        $("#changetags").find('input').val($(obj).attr('tagactual'));
+        if (text && text.length > 0)
+            $("#changetags").find('input').val(text);
+        else
+            $("#changetags").find('input').val($(obj).attr('tagactual'));
+
+        $("#changetags").attr('currid', id);
 
         $("#changetags").fadeIn();
     }   
@@ -519,9 +524,11 @@ function externallinkcopy(link, id) {
         eraseCookie(id + "tagchanged");
 
         $(obj).parent().find('input').val($(obj).parent().find('#changetag').attr('tagactual'));
-        $(obj).parent().find('.newtag').html('');
+        $('#' + id).find('.newtag').html('');
 
         $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, #0082cd, #0082cd)');
+
+        $("#changetags").fadeOut();
     }   
 
     function closetagpopup(obj, id) {
