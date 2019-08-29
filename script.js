@@ -224,10 +224,13 @@ $( document ).ready(function() {
             if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
               && dofilterauthorfinal && dofiltercatfinal) {
 
-              var tes = "";
-              if (readCookie(val.id + "isdeleted").length > 0) {
+              var tes = readCookie(val.id + "isdeleted");
+              if (tes && tes.length > 0) {
                 tes = "background: red;";
               } 
+              else {
+                  tes ="";
+              }
               
               $('#moretweets').hide();
               var newtweet = $('#main').append($('<div style="tes' + + '" id="inid" class="tweet"></div>'));
