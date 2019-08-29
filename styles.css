@@ -294,3 +294,29 @@
       color: #0094ea;
       font-weight: bold;
      }
+
+    #removetweet {
+      position: absolute;
+      cursor: pointer;
+      font-size: 26px;
+      left: 40px;
+      margin-top: 0px;
+      font-size: 19px;
+  }
+
+  #changetag {
+    position: absolute;
+    cursor: pointer;
+    font-size: 26px;
+    left: 73px;
+    margin-top: 1px;
+    font-size: 16px;
+}
+
+#changecat {
+  position: absolute;
+  cursor: pointer;
+  margin-top: 1px;
+  left: 108px;
+  font-size: 16px;
+}
