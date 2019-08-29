@@ -254,6 +254,10 @@
       transition: all 0.6s;
       cursor: pointer;
     }
+    
+    input[type="checkbox"] {
+      cursor: pointer;
+    }
 
     html, body {
       scroll-behavior: smooth;

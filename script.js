@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(999); 
+console.log(1111); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -84,7 +84,13 @@ $( document ).ready(function() {
  
   
   $( "#create" ).bind( "click", function( event ) {
-        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"url\": \"" + url  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
+    var ishidden = "1";
+    if ($("#ishidden").is(":checked")) {
+
+        ishidden = "0";
+    } 
+  
+        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
 
         $('#maxid').val(nextid);
         $("#result").select();
