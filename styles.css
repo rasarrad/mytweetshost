@@ -255,7 +255,10 @@
       cursor: pointer;
     }
 
-
+    html, body {
+      scroll-behavior: smooth;
+    }
+    
     
     #closepopup:hover {
       color: #e4e4e4;
