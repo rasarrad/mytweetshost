@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(6666); 
+console.log(5555); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -224,10 +224,16 @@ $( document ).ready(function() {
             if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
               && dofilterauthorfinal && dofiltercatfinal) {
 
- 
+              var tes = readCookie(val.id + "isdeleted");
+              if (tes && tes.length > 0) {
+                tes = "background: red;";
+              } 
+              else {
+                  tes ="";
+              }
               
               $('#moretweets').hide();
-              var newtweet = $('#main').append($('<div style="tes' + + '" id="inid" class="tweet"></div>'));
+              var newtweet = $('#main').append($('<div style="' + tes + '" id="inid" class="tweet"></div>'));
               var newtweetobj = $('#inid');
               newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + '</div>'));
               newtweetobj.append($('<div class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + val.tags + '</div>'));
