@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(999); 
+console.log(111); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -494,6 +494,8 @@ function externallinkcopy(link, id) {
     function changetag(obj, id) {
 
         var text = readCookie(id + "tagchanged");
+
+        $(obj).parent().find('input.poptitle').text("Change tags")
 
         if (text && text.length > 0)
             $("#changetags").find('input').val(text);
