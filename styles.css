@@ -328,8 +328,9 @@
   top: calc(50% - 27px);
   left: calc(50% - 250px);
   border: 1px solid white;
-  background: gray;
-  width: 500px;
+  background: #0084d2;
+  width: 546px;
   padding-bottom: 9px;
   text-align: center;
+  display: none;
 }

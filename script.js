@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(2222); 
+console.log(333); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -500,9 +500,12 @@ function externallinkcopy(link, id) {
         $("#changetags").fadeIn();
     }   
 
-    function acceptTag(obj, id) {
+    function acceptTag(obj) {
         var id = $(obj).parent().attr("currid");
 
+        console.log($(obj));
+        console.log($(obj).parent());
+        console.log(id);
         createCookie(id + "tagchanged", $(obj).parent().find('input').val());
         
         $('#' + id).css('background-image', 'linear-gradient(to right, #b10000, #fd4c4c)');
