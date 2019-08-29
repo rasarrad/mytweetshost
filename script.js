@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(5555); 
+console.log(666); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -224,19 +224,43 @@ $( document ).ready(function() {
             if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
               && dofilterauthorfinal && dofiltercatfinal) {
 
-              var tes = readCookie(val.id + "isdeleted");
-              if (tes && tes.length > 0) {
-                tes = "background: red;";
+              var isdeleted = readCookie(val.id + "isdeleted");
+              if (isdeleted && isdeleted.length > 0) {
+                isdeleted = "background-image: linear-gradient(to bottom, #d60000, #ff2e2e)";
               } 
               else {
-                  tes ="";
+                isdeleted ="";
               }
-              
+              var tagchanged = readCookie(val.id + "tagchanged");
+              var catchanged = readCookie(val.id + "catchanged");
+              var tagstyle = "";
+              if (tagchanged && tagchanged.length > 0 && catchanged && catchanged.length > 0) {
+                tagstyle = "background-image: linear-gradient(to left, white, #b10000, #b10000)";
+                tagchanged = "<b>New tags </b>" + tagchanged;
+                catchanged = "<b>New categories </b>" + catchanged;
+              } 
+              else {
+                if (tagchanged && tagchanged.length > 0) {
+                    tagstyle = "background-image: linear-gradient(to right, #b10000, #fd4c4c)";
+                    tagchanged = "<b>New tags </b>" + tagchanged;
+                    catchanged = "";
+                }
+                else if (catchanged && catchanged.length > 0) {
+                    tagstyle = "background-image: linear-gradient(to left, #b10000, #fd4c4c)";
+                    tagchanged = "";
+                    catchanged = "<b>New categories </b>" + catchanged;
+                }
+                else {
+                    tagchanged = "";
+                    catchanged = "";
+                }
+              }
+
               $('#moretweets').hide();
-              var newtweet = $('#main').append($('<div style="' + tes + '" id="inid" class="tweet"></div>'));
+              var newtweet = $('#main').append($('<div style="' + isdeleted + '" id="inid" class="tweet"></div>'));
               var newtweetobj = $('#inid');
-              newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + '</div>'));
-              newtweetobj.append($('<div class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + val.tags + '</div>'));
+              newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><i onclick="javascript: removetweet(this,\'' + val.id + '\')" id="removetweet" class="fa fa-remove"></i><i onclick="javascript: changetag(\'' + val.id + '\')" id="changetag" class="fa fa-tags"></i><i onclick="javascript: changecat(\'' + val.id + '\')" id="changecat" class="fa fa-bookmark"></i><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + catchanged + '</div>'));
+              newtweetobj.append($('<div style="' + tagstyle + '" class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + val.tags + tagchanged + '</div>'));
               newtweetobj.append($('<div class="innertweet"></div>'));
               newtweetobj.find('.innertweet').append(val.tweet);
               newtweetobj.attr('id', val.id);
@@ -454,6 +478,18 @@ function externallinkcopy(link, id) {
       $('#tweet').focus();
       $('#result').val('');  
     }   
+
+    function removetweet(obj, id) {
+        var isdeleted = readCookie(id + "isdeleted");
+        if (isdeleted && isdeleted.length > 0) {
+            createCookie(id + "isdeleted", "", 99999);
+            $(obj).parent().css('background-image', 'linear-gradient(to bottom, #0081cc , #008ada)');
+        } 
+        else {
+            createCookie(id + "isdeleted", "a", 99999);
+            $(obj).parent().css('background-image', 'linear-gradient(to left, white, #b10000, #b10000)');
+        }
+    }    
 
 
 /*  COOCKIES -----------------------------------   */
