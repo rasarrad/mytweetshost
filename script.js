@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(5555); 
+console.log(6666); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -224,13 +224,7 @@ $( document ).ready(function() {
             if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
               && dofilterauthorfinal && dofiltercatfinal) {
 
-              var tes = readCookie(val.id + "isdeleted");
-              if (tes && tes.length > 0) {
-                tes = "background: red;";
-              } 
-              else {
-                  tes ="";
-              }
+ 
               
               $('#moretweets').hide();
               var newtweet = $('#main').append($('<div style="tes' + + '" id="inid" class="tweet"></div>'));
