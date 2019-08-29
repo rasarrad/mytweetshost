@@ -4,6 +4,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/c6078e9ff6.js"></script>
     <link rel="stylesheet" href="./styles.css"> 
+    <script src="./script.js"></script>
     <link rel="shortcut icon" type="image/png" href="./twitter-32.png"/>
     <link rel="icon" type="image/png" href="./favicon.png"/>
     <title>My Tweet Manager</title>
@@ -105,7 +106,7 @@
       $( "#btnreset" ).bind( "click", function( event ) {
         resetFields();
       });
-      console.log(555);    
+      console.log(666);    
     });
    
       var getInformation = function(ismoretweets) 
@@ -401,127 +402,4 @@
 <textarea style="width: 200px;height: 100px;position: fixed;left: -242px;" id="linkresult" type="text"></textarea>
 </body>
 
-<script>
- 
- $( document ).ready(function() {
-    $( "#create" ).bind( "click", function( event ) {
-         $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"url\": \"" + url  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
-
-         $('#maxid').val(nextid);
-         $("#result").select();
-        document.execCommand('copy');
-
-        resetFieldsPopup();
-
-        if ($("#onemore").is(":checked")) {
-
-          $('#tweet').focus();
-        } 
-        else {
-
-          $('.addpopup').fadeOut(2000);
-        }       
-    });
-
-
-    $( "#addtweet" ).bind( "click", function( event ) {
-      openCreatePopup();
-    });
-
-    $( "#closepopup" ).bind( "click", function( event ) {
-      closePopup();
-    });
-  });
-
-  function resetFieldsPopup() 
-    {
-      $('#tweet').val('');
-      $('#date').val('');
-      $('#datecap').text('');
-      $('#tweetid').val('');
-      $('#postedby').text('');
-      $('#categories').val('');
-      $('#tags').val('');
-      $('#result').val('');  
-    }  
-
-
-  function resetFields() 
-    {
-
-      $("#main").empty();
-      $('#moretweets').hide();
-      $('#selectedcat').val('all');
-      $('#selectedcattext').val('All Tweets');
-      $('#tweetcount').hide();  
-
-          $('#filtertext').val('');
-          $('#filterdate1').val('');
-          $('#filterdate2').val('');
-          $('#filterid').val('');
-          $('#filterauthor').val('');
-          $('#filtertag').val('');
-
-    }  
-
-  var clickmenu = function(val, text) 
-    {      
-      resetFields();
-
-      $('#selectedcat').val(val);
-      $('#selectedcattext').val(text);
-
-
-      openmenu();
-      getInformation(false);
-
-    }  
-
-
-  var closePopup = function() 
-    {
-      $('#tweet').val('');
-          $('#date').val('');
-          $('#datecap').text('');
-          $('#tweetid').val('');
-          $('#postedby').text('');
-          $('#categories').val('');
-          $('#tags').val('');
-          $('#result').val('');  
-      $('.addpopup').fadeOut();
-
-    }  
-  
- 
-    var openCreatePopup = function() 
-    {
-      $('#tweet').val('');
-          $('#date').val('');
-          $('#datecap').text('');
-          $('#tweetid').val('');
-          $('#postedby').text('');
-          $('#categories').val('');
-          $('#tags').val('');
-      $('.addpopup').fadeIn();
-      $('#tweet').focus();
-      $('#result').val('');  
-    }  
- 
-    var togglecriterions = function() 
-    {
-      if ($('.toptitle').css('display') == 'none') {
-        $('.toptitle').css('display', 'inline');
-        $('html').find('.top').each( function( index, element ){
-            $(this).css('display', 'none');
-        });
-      }
-      else {
-        $('.toptitle').css('display', 'none');
-        $('html').find('.top').each( function( index, element ){
-          $(this).css('display', 'inline');
-        });
-      } 
-    }     
-    
-    </script>
 </html>
