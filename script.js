@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(444); 
+console.log(555); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -508,7 +508,7 @@ function externallinkcopy(link, id) {
         console.log(id);
         createCookie(id + "tagchanged", $(obj).parent().find('input').val());
         
-        $('#' + id).css('background-image', 'linear-gradient(to right, #b10000, #fd4c4c)');
+        $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, #b10000, #fd4c4c)');
         $(obj).parent().find('.newtag').html('<b>New tags </b>' + $(obj).parent().find('input').val());
 
         $("#changetags").fadeOut();
@@ -522,7 +522,7 @@ function externallinkcopy(link, id) {
         $(obj).parent().find('input').val($(obj).parent().attr('tagactual'));
         $(obj).parent().find('.newtag').html('<span class="newtag"></span>');
 
-        $('#' + id).css('background-image', '');
+        $('#' + id).find('.tags').css('background-image', '');
     }   
 
     function closetagpopup(obj, id) {
