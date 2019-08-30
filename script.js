@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(333); 
+console.log(444); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -235,18 +235,18 @@ $( document ).ready(function() {
               var catchanged = readCookie(val.id + "catchanged");
               var tagstyle = "background-image: linear-gradient(to right, #0082cd, #0082cd)";
               if (tagchanged && tagchanged.length > 0 && catchanged && catchanged.length > 0) {
-                tagstyle = "background-image: linear-gradient(to left, white, #b10000, #b10000)";
+                tagstyle = "background-image: linear-gradient(to right, rgb(247, 205, 205), rgb(177, 0, 0), rgb(247, 205, 205))";
                 tagchanged = '<span class="newtag"><b>New tags </b>' + tagchanged + '</span>';
                 catchanged = '<span class="newcat"><b>New categories </b>' + catchanged + '</span>';
               } 
               else {
                 if (tagchanged && tagchanged.length > 0) {
-                    tagstyle = "background-image: linear-gradient(to right, #b10000, #fd4c4c)";
+                    tagstyle = "background-image: linear-gradient(to right, rgb(177, 0, 0), rgb(247, 205, 205))";
                     tagchanged = '<span class="newtag"><b>New tags </b>' + tagchanged + '</span>';
                     catchanged = '<span class="newcat"></span>';
                 }
                 else if (catchanged && catchanged.length > 0) {
-                    tagstyle = "background-image: linear-gradient(to left, #b10000, #fd4c4c)";
+                    tagstyle = "background-image: linear-gradient(to left, rgb(177, 0, 0), rgb(247, 205, 205))";
                     tagchanged = '<span class="newtag"></span>';
                     catchanged = '<span class="newcat"><b>New categories </b>' + catchanged + '</span>';
                 }
@@ -259,7 +259,7 @@ $( document ).ready(function() {
               $('#moretweets').hide();
               var newtweet = $('#main').append($('<div style="' + isdeleted + '" id="inid" class="tweet"></div>'));
               var newtweetobj = $('#inid');
-              newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><i onclick="javascript: removetweet(this,\'' + val.id + '\')" id="removetweet" class="fa fa-remove"></i><i tagactual="' + val.tags + '" onclick="javascript: changetag(this, \'' + val.id + '\')" id="changetag" class="fa fa-tags"></i><i onclick="javascript: changecat(\'' + val.id + '\')" id="changecat" class="fa fa-bookmark"></i><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + catchanged + '</div>'));
+              newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><i onclick="javascript: removetweet(this,\'' + val.id + '\')" id="removetweet" class="fa fa-remove"></i><i tagactual="' + val.tags + '" onclick="javascript: changetag(this, \'' + val.id + '\')" id="changetag" class="fa fa-tags"></i><i catactual="' + val.categories + '" onclick="javascript: changecat(\'' + val.id + '\')" id="changecat" class="fa fa-bookmark"></i><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + catchanged + '</div>'));
               newtweetobj.append($('<div style="' + tagstyle + '" class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + val.tags + tagchanged + '</div>'));
               newtweetobj.append($('<div class="innertweet"></div>'));
               newtweetobj.find('.innertweet').append(val.tweet);
@@ -503,6 +503,7 @@ function externallinkcopy(link, id) {
             $("#changetags").find('input').val($(obj).attr('tagactual'));
 
         $("#changetags").attr('currid', id);
+        $("#changetags").attr('iscat', "no");
 
         $("#changetags").fadeIn();
     }   
@@ -510,25 +511,71 @@ function externallinkcopy(link, id) {
     function acceptTag(obj) {
         var id = $(obj).parent().parent().attr("currid");
 
-        console.log($(obj));
-        console.log($(obj).parent());
-        console.log(id);
-        createCookie(id + "tagchanged", $(obj).parent().find('input').val());
+        var iscat = $("#changetags").attr('iscat');
+
+        if (iscat && iscat == "yes") { 
+            createCookie(id + "catchanged", $(obj).parent().find('input').val());
         
-        $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, #b10000, #fd4c4c)');
-        $('#' + id).find('.newtag').html('<b>New tags </b>' + $(obj).parent().find('input').val());
+            var text = readCookie(id + "tagchanged");
+            if (text && text.length > 0) {
+                $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, rgb(247, 205, 205), rgb(177, 0, 0), rgb(247, 205, 205))');
+            }
+            else {
+                $('#' + id).find('.tags').css('background-image', 'linear-gradient(to left, rgb(177, 0, 0), rgb(247, 205, 205))');
+            }
+    
+            $('#' + id).find('.newcat').html('<b>New categories </b>' + $(obj).parent().find('input').val());           
+        }
+        else {
+            createCookie(id + "tagchanged", $(obj).parent().find('input').val());
+        
+            var text = readCookie(id + "catchanged");
+            if (text && text.length > 0) {
+                $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, rgb(247, 205, 205), rgb(177, 0, 0), rgb(247, 205, 205))');
+            }
+            else {
+                $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, rgb(177, 0, 0), rgb(247, 205, 205))');
+            }
+    
+            $('#' + id).find('.newtag').html('<b>New tags </b>' + $(obj).parent().find('input').val());
+        }
+
         $("#changetags").fadeOut();
     }   
 
     function undotag(obj) {
         var id = $(obj).parent().parent().attr("currid");
 
-        eraseCookie(id + "tagchanged");
+        var iscat = $("#changetags").attr('iscat');
 
-        $(obj).parent().find('input').val($(obj).parent().find('#changetag').attr('tagactual'));
-        $('#' + id).find('.newtag').html('');
+        if (iscat && iscat == "yes") {
+            eraseCookie(id + "catchanged");
 
-        $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, #0082cd, #0082cd)');
+            $(obj).parent().find('input').val($(obj).parent().find('#changecat').attr('catactual'));
+            $('#' + id).find('.newcat').html('');
+    
+            var text = readCookie(id + "tagchanged");
+            if (text && text.length > 0) {
+                $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, rgb(177, 0, 0), rgb(247, 205, 205))');
+            }
+            else {
+                $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, #0082cd, #0082cd)');
+            }
+        }
+        else {
+            eraseCookie(id + "tagchanged");
+
+            $(obj).parent().find('input').val($(obj).parent().find('#changetag').attr('tagactual'));
+            $('#' + id).find('.newtag').html('');
+    
+            var text = readCookie(id + "catchanged");
+            if (text && text.length > 0) {
+                $('#' + id).find('.tags').css('background-image', 'linear-gradient(to left, rgb(177, 0, 0), rgb(247, 205, 205))');
+            }
+            else {
+                $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, #0082cd, #0082cd)');
+            }
+        }
 
         $("#changetags").fadeOut();
     }   
@@ -536,6 +583,27 @@ function externallinkcopy(link, id) {
     function closetagpopup(obj, id) {
         $("#changetags").fadeOut();
     }   
+
+    function changecat(obj, id) {
+
+        var text = readCookie(id + "catchanged");
+
+        $("#changetags").find('span.poptitle').text("Change categories")
+
+        if (text && text.length > 0)
+            $("#changetags").find('input').val(text);
+        else
+            $("#changetags").find('input').val($(obj).attr('catactual'));
+
+        $("#changetags").attr('currid', id);
+
+        $("#changetags").attr('iscat', "yes");
+
+        $("#changetags").fadeIn();
+    }   
+ 
+
+
 /*  COOCKIES -----------------------------------   */
 
     function createCookie(name, value, days) {
