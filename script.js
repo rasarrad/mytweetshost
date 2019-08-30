@@ -236,19 +236,19 @@ $( document ).ready(function() {
               var tagstyle = "background-image: linear-gradient(to right, #0082cd, #0082cd)";
               if (tagchanged && tagchanged.length > 0 && catchanged && catchanged.length > 0) {
                 tagstyle = "background-image: linear-gradient(to right, rgb(247, 205, 205), rgb(177, 0, 0), rgb(247, 205, 205))";
-                tagchanged = '<span class="newtag"><b>New tags </b>' + tagchanged + '</span>';
-                catchanged = '<span class="newcat"><b>New categories </b>' + catchanged + '</span>';
+                tagchanged = '<span class="newtag"><b> New tags </b>' + tagchanged + '</span>';
+                catchanged = '<span class="newcat"><b> New categories </b>' + catchanged + '</span>';
               } 
               else {
                 if (tagchanged && tagchanged.length > 0) {
                     tagstyle = "background-image: linear-gradient(to right, rgb(177, 0, 0), rgb(247, 205, 205))";
-                    tagchanged = '<span class="newtag"><b>New tags </b>' + tagchanged + '</span>';
+                    tagchanged = '<span class="newtag"><b> New tags </b>' + tagchanged + '</span>';
                     catchanged = '<span class="newcat"></span>';
                 }
                 else if (catchanged && catchanged.length > 0) {
                     tagstyle = "background-image: linear-gradient(to left, rgb(177, 0, 0), rgb(247, 205, 205))";
                     tagchanged = '<span class="newtag"></span>';
-                    catchanged = '<span class="newcat"><b>New categories </b>' + catchanged + '</span>';
+                    catchanged = '<span class="newcat"><b> New categories </b>' + catchanged + '</span>';
                 }
                 else {
                     tagchanged = '<span class="newtag"></span>';
@@ -524,7 +524,7 @@ function externallinkcopy(link, id) {
                 $('#' + id).find('.tags').css('background-image', 'linear-gradient(to left, rgb(177, 0, 0), rgb(247, 205, 205))');
             }
     
-            $('#' + id).find('.newcat').html('<b>New categories </b>' + $(obj).parent().find('input').val());           
+            $('#' + id).find('.newcat').html('<b> New categories </b>' + $(obj).parent().find('input').val());           
         }
         else {
             createCookie(id + "tagchanged", $(obj).parent().find('input').val());
@@ -537,7 +537,7 @@ function externallinkcopy(link, id) {
                 $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, rgb(177, 0, 0), rgb(247, 205, 205))');
             }
     
-            $('#' + id).find('.newtag').html('<b>New tags </b>' + $(obj).parent().find('input').val());
+            $('#' + id).find('.newtag').html('<b> New tags </b>' + $(obj).parent().find('input').val());
         }
 
         $("#changetags").fadeOut();
