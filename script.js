@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(444); 
+console.log(555); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -590,6 +590,7 @@ function externallinkcopy(link, id) {
 
         $("#changetags").find('span.poptitle').text("Change categories")
 
+        alert(text && text.length > 0);
         if (text && text.length > 0)
             $("#changetags").find('input').val(text);
         else
