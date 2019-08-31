@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(111); 
+console.log(222); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -616,7 +616,7 @@ function externallinkcopy(link, id) {
                 var isdeleted = readCookie(val.id + "isdeleted");
  
                 if (isdeleted && isdeleted.length > 0) {
-                    createCookie(val.id + "isdeleted", "", 99999);
+                    //createCookie(val.id + "isdeleted", "", 99999);
                     return false;
                 } 
 
@@ -624,14 +624,14 @@ function externallinkcopy(link, id) {
 
                 if (cat && cat.length > 0) {
                     val.categories = cat;
-                    createCookie(val.id + "catchanged", "", 99999);
+                    //createCookie(val.id + "catchanged", "", 99999);
                 }
 
                 var tag = readCookie(val.id + "tagchanged");
 
                 if (tag && tag.length > 0) {
                     val.tags = tag;
-                    createCookie(val.id + "tagchanged", "", 99999);
+                    //createCookie(val.id + "tagchanged", "", 99999);
                 }
 
                 if (ind) {
