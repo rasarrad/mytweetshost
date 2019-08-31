@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(6666); 
+console.log(7777); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -629,18 +629,18 @@ function externallinkcopy(link, id) {
                     val.tags = tag;
                     //createCookie(val.id + "tagchanged", "", 99999);
                 }
-
-                if (ind) {
-                    text = text + ",";
-                }
-                else {
-                    ind = true;
-                }
                  
                 if (isdeleted && isdeleted.length > 0) {
                     //createCookie(val.id + "isdeleted", "", 99999);
                 } 
                 else {
+                    
+                    if (ind) {
+                        text = text + ",";
+                    }
+                    else {
+                        ind = true;
+                    }
                     text = text + JSON.stringify(this, null, " ");  
                 }
               
