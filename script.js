@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(4444); 
+console.log(333); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -606,12 +606,14 @@ function externallinkcopy(link, id) {
     }   
  
     function generate() {
-        var text = '{"Tweets": ['
+        var path = "./data.json";
+        var text = '{"Tweets": [';
+
         $.getJSON(path, function(data) 
         {
           $.each(data.Tweets, function(key, val) 
             {
-              alert(JSON.stringify(val, null, " "));  
+              alert(JSON.stringify(this, null, " "));  
               /* if (val.id.includes(id)) {
                 $('#moretweets').hide();
                   var newtweet = $('#main').append($('<div id="inid" class="tweet"></div>'));
