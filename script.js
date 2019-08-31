@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(111); 
+console.log(22222); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -259,10 +259,28 @@ $( document ).ready(function() {
                 }
               }
 
+              var hasinfo = readCookie(val.id + "info");
+              if (hasinfo && hasinfo.length > 0) {
+                if (val.info && val.info.length > 0) {
+                    val.info = '<div style="width: 564px;height: 163px;position: absolute;left: calc(50% - 280px);top: 313px;z-index: 11;font-size: 14px;background: #0083d0;text-align: left;">' + val.info + '</div>';
+                }
+                else {
+                    val.info = "";
+                }
+              } 
+              else {
+                if (val.info && val.info.length > 0) {
+                    hasinfo = val.info;
+                }
+                else {
+                    hasinfo = "";
+                }
+              }
+
               $('#moretweets').hide();
               var newtweet = $('#main').append($('<div style="' + isdeleted + '" id="inid" class="tweet"></div>'));
               var newtweetobj = $('#inid');
-              newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><i onclick="javascript: removetweet(this,\'' + val.id + '\')" id="removetweet" class="fa fa-remove"></i><i tagactual="' + val.tags + '" onclick="javascript: changetag(this, \'' + val.id + '\')" id="changetag" class="fa fa-tags"></i><i catactual="' + val.categories + '" onclick="javascript: changecat(this,\'' + val.id + '\')" id="changecat" class="fa fa-bookmark"></i><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + catchanged + '</div>'));
+              newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><i onclick="javascript: removetweet(this,\'' + val.id + '\')" id="removetweet" class="fa fa-remove"></i><i tagactual="' + val.tags + '" onclick="javascript: changetag(this, \'' + val.id + '\')" id="changetag" class="fa fa-tags"></i><i catactual="' + val.categories + '" onclick="javascript: changecat(this,\'' + val.id + '\')" id="changecat" class="fa fa-bookmark"></i><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + catchanged + '<textarea class="info" style="width: 558px;height: 216px;position: absolute;left: calc(50% - 280px);top: 89px;z-index: 11;" id="info' + val.id + '" value="' + hasinfo + '" type="text"></textarea>' + val.info + '<i onclick="javascript: saveinfo(this,\'' + val.id + '\')" class="fa fa-check" style="position: absolute;left: calc(50% + 300px);top: 89px;cursor: pointer; background: white; color: #0082cd; padding: 3px 6px;font-size: 21px;border-radius: 4px;"></i></div>'));
               newtweetobj.append($('<div style="' + tagstyle + '" class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + val.tags + tagchanged + '</div>'));
               newtweetobj.append($('<div class="innertweet"></div>'));
               newtweetobj.find('.innertweet').append(val.tweet);
@@ -376,18 +394,15 @@ function gotop() {
 }   
 
 function internallinkcopy(id) {
-    createCookie(id + "isdeleted", "a", 99999)
-    //alert(readCookie("aaa"));
-/*   $('#linkresult').val("https://sleepy-mclean-3aea2d.netlify.com/?tweetid=" + id);
+  $('#linkresult').val("https://sleepy-mclean-3aea2d.netlify.com/?tweetid=" + id);
   $("#linkresult").select();
-  document.execCommand('copy'); */
+  document.execCommand('copy'); 
 }
 
 function externallinkcopy(link, id) {
-
-/*   $('#linkresult').val(link);
+  $('#linkresult').val(link);
   $("#linkresult").select();
-  document.execCommand('copy'); */
+  document.execCommand('copy'); 
 }
 
 
@@ -480,6 +495,10 @@ function externallinkcopy(link, id) {
       $('.addpopup').fadeIn();
       $('#tweet').focus();
       $('#result').val('');  
+    }   
+
+    function saveinfo(obj, id) {
+        createCookie(id + "info", $("#" + id + "info").val(), 99999);
     }   
 
     function removetweet(obj, id) {
