@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(5556666); 
+console.log(111); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -645,7 +645,6 @@ function externallinkcopy(link, id) {
 
             text = text + ']}';
             $('#linkresult').val(text);
-            alert(text);
             $("#linkresult").select();
             document.execCommand('copy'); 
         }); 
