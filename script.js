@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(888); 
+console.log(9999); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -613,25 +613,24 @@ function externallinkcopy(link, id) {
         {
           $.each(data.Tweets, function(key, val) 
             {
-                console.log(11111111111111);
                 var isdeleted = readCookie(val.id + "isdeleted");
 
                 var cat = readCookie(val.id + "catchanged");
 
                 if (cat && cat.length > 0) {
                     val.categories = cat;
-                    //createCookie(val.id + "catchanged", "", 99999);
+                    createCookie(val.id + "catchanged", "", 99999);
                 }
 
                 var tag = readCookie(val.id + "tagchanged");
 
                 if (tag && tag.length > 0) {
                     val.tags = tag;
-                    //createCookie(val.id + "tagchanged", "", 99999);
+                    createCookie(val.id + "tagchanged", "", 99999);
                 }
                  
                 if (isdeleted && isdeleted.length > 0) {
-                    //createCookie(val.id + "isdeleted", "", 99999);
+                    createCookie(val.id + "isdeleted", "", 99999);
                 } 
                 else {
                     
