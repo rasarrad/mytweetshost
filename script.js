@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(3333); 
+console.log(4444); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -260,7 +260,9 @@ $( document ).ready(function() {
               }
 
               var hasinfo = readCookie(val.id + "info");
+              console.log(22222222);
               console.log(hasinfo);
+              console.log(val.id);
               if (hasinfo && hasinfo.length > 0) {
                 if (val.info && val.info.length > 0) {
                     val.info = '<div style="width: 564px;height: 163px;position: absolute;left: calc(50% - 280px);top: 313px;z-index: 11;font-size: 14px;background: #0083d0;text-align: left;">' + val.info + '</div>';
@@ -499,6 +501,9 @@ function externallinkcopy(link, id) {
     }   
 
     function saveinfo(obj, id) {
+        console.log(111111111111);console.log($("#" + id + "info").val());
+        console.log(id);
+
         createCookie(id + "info", $("#" + id + "info").val(), 99999);
     }   
 
