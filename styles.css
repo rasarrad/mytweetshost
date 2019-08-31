@@ -65,7 +65,12 @@
     cursor: pointer;
     font-size: 26px;
    }
-
+ol > li {
+  margin-left: -3px;
+  padding-bottom: 6px;
+  padding-top: 2px;
+  border-top: 1px solid #c7c7c7c2;
+}
    #gotop {
     position: fixed;
     bottom: 30px;
@@ -233,6 +238,16 @@
       transition: all 0.6s;
       cursor: pointer;
     }
+
+#generate {
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    top: 14px;
+    right: 54px;
+    transition: all 0.6s;
+    cursor: pointer;
+}
 
     #addtweet:hover {
       color: #58c1fd;

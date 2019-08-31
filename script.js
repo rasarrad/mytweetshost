@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(11); 
+console.log(2222); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -107,9 +107,12 @@ $( document ).ready(function() {
     }       
     });
 
-
     $( "#addtweet" ).bind( "click", function( event ) {
-    openCreatePopup();
+        openCreatePopup();
+    });
+    
+    $( "#generate" ).bind( "click", function( event ) {
+        generate();
     });
 
     $( "#closepopup" ).bind( "click", function( event ) {
@@ -602,7 +605,37 @@ function externallinkcopy(link, id) {
         $("#changetags").fadeIn();
     }   
  
-
+    function generate() {
+        var text = '{"Tweets": ['
+        $.getJSON(path, function(data) 
+        {
+          $.each(data.Tweets, function(key, val) 
+            {
+              alert(JSON.stringify(this, null, " "));  
+              /* if (val.id.includes(id)) {
+                $('#moretweets').hide();
+                  var newtweet = $('#main').append($('<div id="inid" class="tweet"></div>'));
+                  var newtweetobj = $('#inid');
+                  newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + '</div>'));
+                  newtweetobj.append($('<div class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + val.tags + '</div>'));
+                  newtweetobj.append($('<div class="innertweet"></div>'));
+                  newtweetobj.find('.innertweet').append(val.tweet);
+                  newtweetobj.attr('id', val.id);
+    
+                    var newtweetobjaction = newtweetobj;
+                    $('html, body').animate({
+                      scrollTop: $(newtweetobjaction).offset().top
+                    }, 700);
+    
+                    return false;
+              }
+              
+              setTimeout(function(){
+                  $('#mask').fadeOut(300);
+                }, 300); */
+            });
+        }); 
+    } 
 
 /*  COOCKIES -----------------------------------   */
 
