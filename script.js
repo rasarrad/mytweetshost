@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(222); 
+console.log(333); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -613,6 +613,7 @@ function externallinkcopy(link, id) {
         {
           $.each(data.Tweets, function(key, val) 
             {
+                console.log(11111111111111);
                 var isdeleted = readCookie(val.id + "isdeleted");
  
                 if (isdeleted && isdeleted.length > 0) {
