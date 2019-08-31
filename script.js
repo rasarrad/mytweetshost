@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(333); 
+console.log(444); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -608,35 +608,47 @@ function externallinkcopy(link, id) {
     function generate() {
         var path = "./data.json";
         var text = '{"Tweets": [';
-
+        var ind = false;
         $.getJSON(path, function(data) 
         {
           $.each(data.Tweets, function(key, val) 
             {
-              alert(JSON.stringify(this, null, " "));  
-              /* if (val.id.includes(id)) {
-                $('#moretweets').hide();
-                  var newtweet = $('#main').append($('<div id="inid" class="tweet"></div>'));
-                  var newtweetobj = $('#inid');
-                  newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + '</div>'));
-                  newtweetobj.append($('<div class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + val.tags + '</div>'));
-                  newtweetobj.append($('<div class="innertweet"></div>'));
-                  newtweetobj.find('.innertweet').append(val.tweet);
-                  newtweetobj.attr('id', val.id);
-    
-                    var newtweetobjaction = newtweetobj;
-                    $('html, body').animate({
-                      scrollTop: $(newtweetobjaction).offset().top
-                    }, 700);
-    
+                var isdeleted = readCookie(val.id + "isdeleted");
+                if (isdeleted && isdeleted.length > 0) {
+                    createCookie(val.id + "isdeleted", "", 99999);
                     return false;
-              }
-              
-              setTimeout(function(){
-                  $('#mask').fadeOut(300);
-                }, 300); */
+                } 
+
+                var cat = readCookie(val.id + "catchanged");
+
+                if (cat && cat.length > 0) {
+                    val.categories = cat;
+                    createCookie(val.id + "catchanged", "", 99999);
+                }
+
+                var tag = readCookie(val.id + "tagchanged");
+
+                if (tag && tag.length > 0) {
+                    val.tags = tag;
+                    createCookie(val.id + "tagchanged", "", 99999);
+                }
+
+                if (ind) {
+                    text = text + ",";
+                }
+                else {
+                    ind = true;
+                }
+              text = text + JSON.stringify(this, null, " ");  
             });
         }); 
+
+        text = text + ']}';
+        $('#linkresult').val(text);
+        $("#linkresult").select();
+        document.execCommand('copy'); 
+
+        alert('done');
     } 
 
 /*  COOCKIES -----------------------------------   */
