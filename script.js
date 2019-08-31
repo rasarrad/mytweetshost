@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(333); 
+console.log(4444); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -611,7 +611,7 @@ function externallinkcopy(link, id) {
         {
           $.each(data.Tweets, function(key, val) 
             {
-              alert(JSON.stringify(this, null, " "));  
+              alert(JSON.stringify(val, null, " "));  
               /* if (val.id.includes(id)) {
                 $('#moretweets').hide();
                   var newtweet = $('#main').append($('<div id="inid" class="tweet"></div>'));
