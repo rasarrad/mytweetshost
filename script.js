@@ -260,6 +260,7 @@ $( document ).ready(function() {
               }
 
               var hasinfo = readCookie(val.id + "info");
+              console.log(hasinfo);
               if (hasinfo && hasinfo.length > 0) {
                 if (val.info && val.info.length > 0) {
                     val.info = '<div style="width: 564px;height: 163px;position: absolute;left: calc(50% - 280px);top: 313px;z-index: 11;font-size: 14px;background: #0083d0;text-align: left;">' + val.info + '</div>';
