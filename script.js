@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(555); 
+console.log(6666); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
