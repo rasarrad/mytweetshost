@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(222); 
+console.log(3344); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -466,19 +466,11 @@ function externallinkcopy(link, id) {
     
     var openCreatePopup = function() 
     {
-      $('#tweet').val('');
-          $('#date').val('');
-          $('#datecap').text('');
-          $('#tweetid').val('');
-          $('#postedby').text('');
-          $('#categories').val('');
-          $('#tags').val('');
-          $('#info').val('');
-      $('.addpopup').fadeIn();
-      $('#tweet').focus();
-      $('#result').val('');  
+      alert(getMonthFromString("Aug")) 
     }   
-
+    function getMonthFromString(mon){
+        return new Date(Date.parse(mon +" 1, 2012")).getMonth()+1
+     }
     function saveinfo(obj, id) {
         console.log(111111111111);
         console.log($("#" + id + "info").val());
