@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(555555); 
+console.log(4444); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -466,7 +466,18 @@ function externallinkcopy(link, id) {
     
     var openCreatePopup = function() 
     {
-      alert(pad(getMonthFromString("Aug"), 2)) 
+        $('#tweet').val('');
+        $('#date').val('');
+        $('#datecap').text('');
+        $('#tweetid').val('');
+        $('#postedby').text('');
+        $('#categories').val('');
+        $('#tags').val('');
+        $('#info').val('');
+    $('.addpopup').fadeIn();
+    $('#tweet').focus();
+    $('#result').val(''); 
+      
     }   
 
     function pad (str, max) {
@@ -600,7 +611,7 @@ function externallinkcopy(link, id) {
         $("#stripmessage").fadeIn("slow", function(){
             setTimeout(function() { 
                 $("#stripmessage").fadeOut("slow");
-              }, 1100);
+              }, 1500);
             
         });
     }   
@@ -727,6 +738,8 @@ console.log(info);
             var date = text.substring(text.lastIndexOf('ref_src=twsrc%5Etfw>') + 20, text.lastIndexOf('</a></blockquote>')); 
             $('#datecap').text(date);
     
+            /* alert(pad(getMonthFromString("Aug"), 2))  */
+            
             $('#date').val(date.substring(date.length - 4));
     
             $('#date').focus(function(){
