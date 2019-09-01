@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(22222); 
+console.log(3333); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -739,8 +739,8 @@ console.log(info);
             
             var year = date.substring(date.length - 4);
             var month = date.substring(0, date.indexOf(' ')); 
-            var day = date.substring(date.indexOf(' '), date.lastIndexOf(' ') -1); 
-alert("-" + day + "-");
+            var day = date.substring(date.indexOf(' ') + 1, date.lastIndexOf(' ') -1); 
+
             $('#datecap').text(date);
     
             $('#date').val(year + pad(getMonthFromString(month), 2) + pad(day, 2));
