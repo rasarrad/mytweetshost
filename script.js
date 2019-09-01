@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(7777); 
+console.log(6666); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -749,5 +749,5 @@ $(document).keydown(function(e) {
 
 // Document Ctrl + C/V 
 $(document).keydown(function(e) {
-    if (ctrlDown && (e.keyCode == vKey)) alert(window.clipboardData.getData('Text'));
+    if (ctrlDown && (e.keyCode == vKey)) alert(navigator.clipboard.read());
 });
