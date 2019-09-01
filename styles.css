@@ -348,3 +348,19 @@ ol > li {
   padding-bottom: 9px;
   text-align: center;
 }
+
+.striptext {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: calc(98% - 27px);
+  left: calc(50% - 250px);
+  border: 1px solid white;
+  background: #00456d;
+  width: 546px;
+  padding-bottom: 9px;
+  text-align: center;
+  border-radius: 4px;
+  font-variant: small-caps;
+  transition: top 1s;
+}
