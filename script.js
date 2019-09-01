@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(66666); 
+console.log(777); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -634,8 +634,8 @@ function externallinkcopy(link, id) {
                 $("#stripmessage .striptext").css("top", "calc(98% - 27px)");
                 setTimeout(function() { 
                     $("#stripmessage").fadeOut("slow");
-                  }, 2500);
-              }, 1500);
+                  }, 3500);
+              }, 900);
             
         });
     }   
