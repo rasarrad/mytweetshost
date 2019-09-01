@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(4444); 
+console.log(4555); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -511,8 +511,8 @@ function externallinkcopy(link, id) {
     }   
 
     function removetweet(obj, id) {
-        showMessage("Test message");
-/*         var isdeleted = readCookie(id + "isdeleted");
+
+        var isdeleted = readCookie(id + "isdeleted");
         if (isdeleted && isdeleted.length > 0) {
             createCookie(id + "isdeleted", "", 99999);
             $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #0081cc , #008ada )');
@@ -520,7 +520,7 @@ function externallinkcopy(link, id) {
         else {
             createCookie(id + "isdeleted", "a", 99999);
             $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #d60000, #ff2e2e)');
-        } */
+        }
     }    
 
     function changetag(obj, id) {
@@ -624,7 +624,7 @@ function externallinkcopy(link, id) {
         $("#stripmessage").fadeIn("slow", function(){
             setTimeout(function() { 
                 $("#stripmessage").fadeOut("slow");
-              }, 700);
+              }, 1100);
             
         });
     }   
@@ -670,7 +670,9 @@ function externallinkcopy(link, id) {
                 }
 
                 var info = readCookie(val.id + "info");
-
+console.log('reconciliaçao');
+console.log(val.id);
+console.log(info);
                 if (info && info.length > 0) {
                     val.info = info;
                     createCookie(val.id + "info", "", 99999);
@@ -698,6 +700,8 @@ function externallinkcopy(link, id) {
             $('#linkresult').val(text);
             $("#linkresult").select();
             document.execCommand('copy'); 
+
+            showMessage("New tweets generated and copied to clipboard");
         }); 
 
 
@@ -729,4 +733,21 @@ function externallinkcopy(link, id) {
 
     function eraseCookie(name) {
         createCookie(name, "", -1);
-    }    
+    }  
+    
+    
+
+    var ctrlDown = false,
+    ctrlKey = 17,
+    vKey = 86,
+
+$(document).keydown(function(e) {
+    if (e.keyCode == ctrlKey) ctrlDown = true;
+}).keyup(function(e) {
+    if (e.keyCode == ctrlKey) ctrlDown = false;
+});
+
+// Document Ctrl + C/V 
+$(document).keydown(function(e) {
+    if (ctrlDown && (e.keyCode == vKey)) alert("Document catch Ctrl+V");
+});
