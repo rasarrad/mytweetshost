@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(9999); 
+console.log(222); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -42,32 +42,8 @@ $( document ).ready(function() {
   });    
 
   $("#tweet").on("paste", function() {
-      setTimeout(function(){
-        nextid = parseInt($('#maxid').val()) + 1;
-        $('#tweetid').val(nextid);
-        
-        text = $('#tweet').val();
-        text = "\"" + text.replace(/"/g, '').replace('<\/script>', '<&#47;script>') + "\"";
-        
-        origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
 
-        url = text.substring(text.lastIndexOf('https://twitter'), text.lastIndexOf('?ref_src=')); 
-
-        var date = text.substring(text.lastIndexOf('ref_src=twsrc%5Etfw>') + 20, text.lastIndexOf('</a></blockquote>')); 
-        $('#datecap').text(date);
-
-        $('#date').val(date.substring(date.length - 4));
-
-        $('#date').focus(function(){
-          var that = this;
-          setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
-        });
-        
-        $('#postedby').text(origin);
-
-        $('#date').focus();
-      }, 700);
-
+    parseTweet();
   });
 
 
@@ -497,6 +473,7 @@ function externallinkcopy(link, id) {
           $('#postedby').text('');
           $('#categories').val('');
           $('#tags').val('');
+          $('#info').val('');
       $('.addpopup').fadeIn();
       $('#tweet').focus();
       $('#result').val('');  
@@ -736,7 +713,34 @@ console.log(info);
     }  
     
     
-
+    function parseTweet() {
+        setTimeout(function(){
+            nextid = parseInt($('#maxid').val()) + 1;
+            $('#tweetid').val(nextid);
+            
+            text = $('#tweet').val();
+            text = "\"" + text.replace(/"/g, '').replace('<\/script>', '<&#47;script>') + "\"";
+            
+            origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
+    
+            url = text.substring(text.lastIndexOf('https://twitter'), text.lastIndexOf('?ref_src=')); 
+    
+            var date = text.substring(text.lastIndexOf('ref_src=twsrc%5Etfw>') + 20, text.lastIndexOf('</a></blockquote>')); 
+            $('#datecap').text(date);
+    
+            $('#date').val(date.substring(date.length - 4));
+    
+            $('#date').focus(function(){
+              var that = this;
+              setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
+            });
+            
+            $('#postedby').text(origin);
+    
+            $('#date').focus();
+          }, 700);
+    }  
+    
     var ctrlDown = false,
     ctrlKey = 17,
     vKey = 86;
@@ -753,6 +757,12 @@ $(document).keydown(function(e) {
         navigator.clipboard.readText()
   .then(text => {
     console.log('Pasted content: ', text);
+    openCreatePopup();
+    setTimeout(function() { 
+        $('#tweet').val(text);
+        parseTweet();
+      }, 300);
+    
   })
   .catch(err => {
     console.error('Failed to read clipboard contents: ', err);
