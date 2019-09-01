@@ -750,7 +750,7 @@ $(document).keydown(function(e) {
 // Document Ctrl + C/V 
 $(document).keydown(function(e) {
     if (ctrlDown && (e.keyCode == vKey)) {
-        var te = navigator.clipboard.read().items[i]
+        var te = navigator.clipboard.read().items[0]
 
         console.log(te);
     } 
