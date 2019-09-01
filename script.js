@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(5555); 
+console.log(1111); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -739,16 +739,11 @@ console.log(info);
             
             var year = date.substring(date.length - 4);
             var month = date.substring(0, date.indexOf(' ')); 
-            var day = date.substring(date.indexOf(' '), date.lastIndexOf(' ')); 
-            alert(year);
-            alert(month);
-            alert(day);
+            var day = date.substring(date.indexOf(' '), date.lastIndexOf(' ') -1); 
+
             $('#datecap').text(date);
     
-            /* alert(pad(getMonthFromString("Aug"), 2))  */
-
-
-            $('#date').val();
+            $('#date').val(year + pad(getMonthFromString(month), 2) + pad(day, 2));
     
             $('#date').focus(function(){
               var that = this;
@@ -757,7 +752,7 @@ console.log(info);
             
             $('#postedby').text(origin);
     
-            $('#date').focus();
+            $('#categories').focus();
           }, 700);
     }  
     
