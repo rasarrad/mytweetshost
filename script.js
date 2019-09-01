@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(3333); 
+console.log(4444); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -89,7 +89,7 @@ $( document ).ready(function() {
         ishidden = "1";
     } 
   
-        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
+        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"info\": \"" + $('#info').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
 
         $('#maxid').val(nextid);
         $("#result").select();
@@ -419,6 +419,7 @@ function externallinkcopy(link, id) {
       $('#postedby').text('');
       $('#categories').val('');
       $('#tags').val('');
+      $('#info').val('');
       $('#result').val('');  
     }  
 
@@ -464,6 +465,7 @@ function externallinkcopy(link, id) {
           $('#postedby').text('');
           $('#categories').val('');
           $('#tags').val('');
+          $('#info').val('');
           $('#result').val('');  
       $('.addpopup').fadeOut();
 
@@ -501,14 +503,24 @@ function externallinkcopy(link, id) {
     }   
 
     function saveinfo(obj, id) {
-        console.log(111111111111);console.log($("#" + id + "info").val());
+        console.log(111111111111);
+        console.log($("#" + id + "info").val());
         console.log(id);
 
         createCookie(id + "info", $("#" + id + "info").val(), 99999);
     }   
 
     function removetweet(obj, id) {
-        showMessage("Test message")
+        showMessage("Test message");
+/*         var isdeleted = readCookie(id + "isdeleted");
+        if (isdeleted && isdeleted.length > 0) {
+            createCookie(id + "isdeleted", "", 99999);
+            $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #0081cc , #008ada )');
+        } 
+        else {
+            createCookie(id + "isdeleted", "a", 99999);
+            $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #d60000, #ff2e2e)');
+        } */
     }    
 
     function changetag(obj, id) {
@@ -610,7 +622,10 @@ function externallinkcopy(link, id) {
         $("#stripmessage .poptitle").text(text);
 
         $("#stripmessage").fadeIn("slow", function(){
-            $("#stripmessage").fadeOut("slow");
+            setTimeout(function() { 
+                $("#stripmessage").fadeOut("slow");
+              }, 700);
+            
         });
     }   
 
@@ -640,8 +655,6 @@ function externallinkcopy(link, id) {
         {
           $.each(data.Tweets, function(key, val) 
             {
-                var isdeleted = readCookie(val.id + "isdeleted");
-
                 var cat = readCookie(val.id + "catchanged");
 
                 if (cat && cat.length > 0) {
@@ -655,7 +668,16 @@ function externallinkcopy(link, id) {
                     val.tags = tag;
                     createCookie(val.id + "tagchanged", "", 99999);
                 }
-                 
+
+                var info = readCookie(val.id + "info");
+
+                if (info && info.length > 0) {
+                    val.info = info;
+                    createCookie(val.id + "info", "", 99999);
+                }
+
+                var isdeleted = readCookie(val.id + "isdeleted");
+
                 if (isdeleted && isdeleted.length > 0) {
                     createCookie(val.id + "isdeleted", "", 99999);
                 } 
