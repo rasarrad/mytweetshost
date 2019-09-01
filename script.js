@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(2222); 
+console.log(9999); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -750,8 +750,12 @@ $(document).keydown(function(e) {
 // Document Ctrl + C/V 
 $(document).keydown(function(e) {
     if (ctrlDown && (e.keyCode == vKey)) {
-        var te = navigator.clipboard.read().items[0]
-
-        console.log(te);
+        navigator.clipboard.readText()
+  .then(text => {
+    console.log('Pasted content: ', text);
+  })
+  .catch(err => {
+    console.error('Failed to read clipboard contents: ', err);
+  });
     } 
 });
