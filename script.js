@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(3333); 
+console.log(4444); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -54,7 +54,7 @@ $( document ).ready(function() {
     getInformation(false);
   });
   $( "#btnreset" ).bind( "click", function( event ) {
-    resetFields();
+    resetFields(true);
   });
  
   
@@ -74,11 +74,11 @@ $( document ).ready(function() {
     resetFieldsPopup();
 
     if ($("#onemore").is(":checked")) {
-
+        showMessage("New tweet created and copied to clipboard. You can add one more now");
         $('#tweet').focus();
     } 
     else {
-
+        showMessage("New tweet created and copied to clipboard");
         $('.addpopup').fadeOut(2000);
     }       
     });
@@ -286,7 +286,7 @@ $( document ).ready(function() {
               setTimeout(function(){
                 $('#mask').fadeOut(300);
               }, 300);
-
+              showMessage("Search finished");
               return false;
             }
           }
@@ -297,6 +297,8 @@ $( document ).ready(function() {
 
             ind = ind + 1;
         });
+
+        showMessage("Search finished");
     }); 
 }
 
@@ -328,6 +330,8 @@ var getInformationbyid = function(id)
                 $('html, body').animate({
                   scrollTop: $(newtweetobjaction).offset().top
                 }, 700);
+
+                showMessage("Tweet loaded"); 
 
                 return false;
           }
@@ -376,12 +380,14 @@ function internallinkcopy(id) {
   $('#linkresult').val("https://sleepy-mclean-3aea2d.netlify.com/?tweetid=" + id);
   $("#linkresult").select();
   document.execCommand('copy'); 
+  showMessage("Internal link copied to clipboard"); 
 }
 
 function externallinkcopy(link, id) {
   $('#linkresult').val(link);
   $("#linkresult").select();
-  document.execCommand('copy'); 
+  document.execCommand('copy');
+  showMessage("External link copied to clipboard"); 
 }
 
 
@@ -400,7 +406,7 @@ function externallinkcopy(link, id) {
     }  
 
 
-  function resetFields() 
+  function resetFields(flag) 
     {
 
       $("#main").empty();
@@ -415,6 +421,9 @@ function externallinkcopy(link, id) {
           $('#filterid').val('');
           $('#filterauthor').val('');
           $('#filtertag').val('');
+
+          if (flag) 
+            showMessage("Search criteria cleaned"); 
 
     }  
 
@@ -483,17 +492,14 @@ function externallinkcopy(link, id) {
     function pad (str, max) {
         str = str.toString();
         return str.length < max ? pad("0" + str, max) : str;
-      }
+    }
 
       
     function getMonthFromString(mon){
         return new Date(Date.parse(mon +" 1, 2012")).getMonth()+1
      }
-    function saveinfo(obj, id) {
-        console.log(111111111111);
-        console.log($("#" + id + "info").val());
-        console.log(id);
 
+    function saveinfo(obj, id) {
         createCookie(id + "info", $("#" + id + "info").val(), 99999);
     }   
 
@@ -503,10 +509,13 @@ function externallinkcopy(link, id) {
         if (isdeleted && isdeleted.length > 0) {
             createCookie(id + "isdeleted", "", 99999);
             $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #0081cc , #008ada )');
+            showMessage("Tweet delete reverted");
         } 
         else {
             createCookie(id + "isdeleted", "a", 99999);
             $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #d60000, #ff2e2e)');
+
+            showMessage("Tweet deleted");
         }
     }    
 
@@ -543,7 +552,9 @@ function externallinkcopy(link, id) {
                 $('#' + id).find('.tags').css('background-image', 'linear-gradient(to left, rgb(177, 0, 0), rgb(247, 205, 205))');
             }
     
-            $('#' + id).find('.newcat').html('<b> New categories </b>' + $(obj).parent().find('input').val());           
+            $('#' + id).find('.newcat').html('<b> New categories </b>' + $(obj).parent().find('input').val());   
+            
+            showMessage("Category changed");
         }
         else {
             createCookie(id + "tagchanged", $(obj).parent().find('input').val());
@@ -557,6 +568,7 @@ function externallinkcopy(link, id) {
             }
     
             $('#' + id).find('.newtag').html('<b> New tags </b>' + $(obj).parent().find('input').val());
+            showMessage("Tag changed");
         }
 
         $("#changetags").fadeOut();
@@ -580,6 +592,8 @@ function externallinkcopy(link, id) {
             else {
                 $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, #0082cd, #0082cd)');
             }
+
+            showMessage("Tag reverted");
         }
         else {
             eraseCookie(id + "tagchanged");
@@ -594,6 +608,7 @@ function externallinkcopy(link, id) {
             else {
                 $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, #0082cd, #0082cd)');
             }
+            showMessage("Category reverted");
         }
 
         $("#changetags").fadeOut();
@@ -657,9 +672,7 @@ function externallinkcopy(link, id) {
                 }
 
                 var info = readCookie(val.id + "info");
-console.log('reconciliaçao');
-console.log(val.id);
-console.log(info);
+
                 if (info && info.length > 0) {
                     val.info = info;
                     createCookie(val.id + "info", "", 99999);
@@ -753,6 +766,8 @@ console.log(info);
             $('#postedby').text(origin);
     
             $('#categories').focus();
+
+            showMessage("Embebed tweet correctly parsed"); 
           }, 700);
     }  
     
