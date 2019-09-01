@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(4444); 
+console.log(5555); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -736,11 +736,19 @@ console.log(info);
             url = text.substring(text.lastIndexOf('https://twitter'), text.lastIndexOf('?ref_src=')); 
     
             var date = text.substring(text.lastIndexOf('ref_src=twsrc%5Etfw>') + 20, text.lastIndexOf('</a></blockquote>')); 
+            
+            var year = date.substring(date.length - 4);
+            var month = date.substring(0, date.indexOf(' ')); 
+            var day = date.substring(date.indexOf(' '), date.lastIndexOf(' ')); 
+            alert(year);
+            alert(month);
+            alert(day);
             $('#datecap').text(date);
     
             /* alert(pad(getMonthFromString("Aug"), 2))  */
-            
-            $('#date').val(date.substring(date.length - 4));
+
+
+            $('#date').val();
     
             $('#date').focus(function(){
               var that = this;
