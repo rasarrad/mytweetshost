@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(3344); 
+console.log(555555); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -466,8 +466,15 @@ function externallinkcopy(link, id) {
     
     var openCreatePopup = function() 
     {
-      alert(getMonthFromString("Aug")) 
+      alert(pad(getMonthFromString("Aug"), 2)) 
     }   
+
+    function pad (str, max) {
+        str = str.toString();
+        return str.length < max ? pad("0" + str, max) : str;
+      }
+
+      
     function getMonthFromString(mon){
         return new Date(Date.parse(mon +" 1, 2012")).getMonth()+1
      }
