@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(2222); 
+console.log(3333); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -635,7 +635,7 @@ function externallinkcopy(link, id) {
         $("#stripmessage").fadeIn("slow", function(){
             
             setTimeout(function() { 
-                $("#stripmessage").css("transition", "top 1s");
+                $("#stripmessage").css("transition", "top 1s, background 0.5s");
                 $("#stripmessage").css("top", "100%");
                 
                 $("#stripmessage .striptext").css("transition", "top 1s");
