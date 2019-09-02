@@ -6,7 +6,7 @@ var currpage = 0;
 var dosearchmore = true;
 var url = "";
 var dblFlag = false;
-console.log(11); 
+console.log(222); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -107,7 +107,7 @@ $( document ).ready(function() {
       console.log( "dbl click" ); 
       setTimeout(function() {     
         dblFlag = false;
-      }, 600);
+      }, 800);
     });
 
     $( "#closepopup" ).bind( "click", function( event ) {
