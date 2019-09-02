@@ -5,7 +5,9 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(333); 
+var myTimeout;
+
+console.log(444); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -93,12 +95,16 @@ $( document ).ready(function() {
     });
     
     $( "#generate" ).bind( "click", function( event ) {
-      console.log("single click");  
+    
+      myTimeout = setTimeout(function(){
+        console.log("single click");  
+      }, 400);
       //generate();
     });
 
     $( "#generate" ).dblclick(function() {
-      console.log( "Handler for .dblclick() called." );
+      clearTimeout(myVar);
+      console.log( "dbl click" );
     });
 
     $( "#closepopup" ).bind( "click", function( event ) {
