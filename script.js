@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(333); 
+console.log(4444); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -106,6 +106,7 @@ $( document ).ready(function() {
       }
       else {
           clearTimeout(dblClickTimeout);
+          console.log( "dbl click" ); 
           dblFlag = false;
       }
     });
