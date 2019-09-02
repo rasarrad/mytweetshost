@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(2222); 
+console.log(33333); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -627,16 +627,20 @@ function externallinkcopy(link, id) {
     function showMessage(text) {
         $("#stripmessage").css("transition", "none");
         $("#stripmessage .striptext").css("transition", "none");
+        $("#stripmessage").css("top", "0px");
         $("#stripmessage").css("background", "rgba(0, 0, 0, 0.6)");
         $("#stripmessage .striptext").css("top", "calc(50% - 27px)");
         $("#stripmessage .poptitle").text(text);
 
         $("#stripmessage").fadeIn("slow", function(){
+            
             setTimeout(function() { 
-                $("#stripmessage").css("transition", "background 1s");
+                $("#stripmessage").css("transition", "all 1s");
+                $("#stripmessage").css("top", "100%");
+                
                 $("#stripmessage .striptext").css("transition", "top 1s");
                 $("#stripmessage").css("background", "rgba(0, 0, 0, 0)");
-                $("#stripmessage .striptext").css("top", "calc(98% - 27px)");
+                $("#stripmessage .striptext").css("top", "calc(0% - 42px)");
                 setTimeout(function() { 
                     $("#stripmessage").fadeOut("slow");
                   }, 3500);
