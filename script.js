@@ -5,9 +5,14 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(3333); 
+console.log(444); 
 
 $( document ).ready(function() {
+  var hasChanges = readCookie("hasChanges");
+
+  if (hasChanges && hasChanges.length > 0)
+    $("#generate").addClass("haschanges");
+
   var paramid = getParameterByName('tweetid');
   if (paramid)
     getInformationbyid(paramid);
@@ -499,12 +504,11 @@ function externallinkcopy(link, id) {
 
     function saveinfo(obj, id) {
         createCookie(id + "info", encodeURIComponent($("#" + id + "info").val()), 99999);
-        console.log(1111111);
-        console.log(id);
-        console.log($("#" + id + "info").val());
-        console.log(2222222222222222222222222);
+
         var aaa = decodeURIComponent(readCookie(id + "info"));;
-        console.log(aaa);
+
+        $("#generate").addClass("haschanges");
+
         showMessage("Information About Tweet Saved"); 
     }   
 
@@ -514,12 +518,19 @@ function externallinkcopy(link, id) {
         if (isdeleted && isdeleted.length > 0) {
             createCookie(id + "isdeleted", "", 99999);
             $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #0081cc , #008ada )');
+
+            if (hasTweetChanges()) {
+              $("#generate").addClass("haschanges");
+            }
+            else {
+              $("#generate").removeClass("haschanges");
+            }
             showMessage("Tweet Marked To Delete Reverted");
         } 
         else {
             createCookie(id + "isdeleted", "a", 99999);
             $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #d60000, #ff2e2e)');
-
+            $("#generate").addClass("haschanges");
             showMessage("Tweet Marked To Delete");
         }
     }    
@@ -558,7 +569,9 @@ function externallinkcopy(link, id) {
             }
     
             $('#' + id).find('.newcat').html('<b> New categories </b>' + $(obj).parent().find('input').val());   
-            
+
+            $("#generate").addClass("haschanges");
+
             showMessage("Category Marked To Change");
         }
         else {
@@ -573,6 +586,9 @@ function externallinkcopy(link, id) {
             }
     
             $('#' + id).find('.newtag').html('<b> New tags </b>' + $(obj).parent().find('input').val());
+
+            $("#generate").addClass("haschanges");
+
             showMessage("Tag Marked To Change");
         }
 
@@ -597,7 +613,12 @@ function externallinkcopy(link, id) {
             else {
                 $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, #0082cd, #0082cd)');
             }
-
+            if (hasTweetChanges()) {
+              $("#generate").addClass("haschanges");
+            }
+            else {
+              $("#generate").removeClass("haschanges");
+            }
             showMessage("Tag Marked To Change Reverted");
         }
         else {
@@ -612,6 +633,12 @@ function externallinkcopy(link, id) {
             }
             else {
                 $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, #0082cd, #0082cd)');
+            }
+            if (hasTweetChanges()) {
+              $("#generate").addClass("haschanges");
+            }
+            else {
+              $("#generate").removeClass("haschanges");
             }
             showMessage("Category Marked To Change Reverted");
         }
@@ -719,11 +746,50 @@ function externallinkcopy(link, id) {
             $("#linkresult").select();
             document.execCommand('copy'); 
 
+            $("#generate").removeClass("haschanges");
+
             showMessage("Changes Processed And Copied To Clipboard");
         }); 
 
 
     } 
+
+    function hasTweetChanges() {
+      var path = "./data.json";
+      var ind = false;
+      $.getJSON(path, function(data) 
+      {
+        $.each(data.Tweets, function(key, val) 
+          {
+              var cat = readCookie(val.id + "catchanged");
+              if (cat && cat.length > 0) {
+                ind = true;
+                return false;
+              }
+
+              var tag = readCookie(val.id + "tagchanged");
+              if (tag && tag.length > 0) {
+                ind = true;
+                return false;
+              }
+
+              var info = readCookie(val.id + "info");
+              if (info && info.length > 0) {
+                ind = true;
+                return false;
+              }
+
+              var isdeleted = readCookie(val.id + "isdeleted");
+              if (isdeleted && isdeleted.length > 0) {
+                ind = true;
+                return false;
+              } 
+          });
+
+          return ind;
+      }); 
+      return ind;
+  } 
 
 /*  COOCKIES -----------------------------------   */
 

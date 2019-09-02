@@ -247,11 +247,14 @@ ol > li {
     right: 54px;
     transition: all 0.6s;
     cursor: pointer;
-    background: red;
+    background: #00a900;
     padding: 2px;
     border-radius: 5px;
 }
 
+#generate.haschanges {
+      background: red;
+}
     #addtweet:hover {
       color: #58c1fd;
     }
