@@ -232,8 +232,8 @@ ol > li {
     #addtweet {
       position: absolute;
       color: white;
-      font-size: 27px;
-      top: 13px;
+      font-size: 30px;
+      top: 12px;
       right: 13px;
       transition: all 0.6s;
       cursor: pointer;
@@ -243,10 +243,13 @@ ol > li {
     position: absolute;
     color: white;
     font-size: 24px;
-    top: 14px;
+    top: 13px;
     right: 54px;
     transition: all 0.6s;
     cursor: pointer;
+    background: red;
+    padding: 2px;
+    border-radius: 5px;
 }
 
     #addtweet:hover {

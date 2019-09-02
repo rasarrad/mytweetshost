@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(777); 
+console.log(11111); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -74,11 +74,11 @@ $( document ).ready(function() {
     resetFieldsPopup();
 
     if ($("#onemore").is(":checked")) {
-        showMessage("New tweet created and copied to clipboard. You can add one more now");
+        showMessage("New Tweet Created And Copied To Clipboard. You Can Add One More Now");
         $('#tweet').focus();
     } 
     else {
-        showMessage("New tweet created and copied to clipboard");
+        showMessage("New Tweet Created And Copied To Clipboard");
         $('.addpopup').fadeOut(2000);
     }       
     });
@@ -236,9 +236,7 @@ $( document ).ready(function() {
               }
 
               var hasinfo = readCookie(val.id + "info");
-              console.log(22222222);
-              console.log(hasinfo);
-              console.log(val.id);
+
               if (hasinfo && hasinfo.length > 0) {
                 if (val.info && val.info.length > 0) {
                     val.info = '<div style="width: 564px;height: 163px;position: absolute;left: calc(50% - 280px);top: 313px;z-index: 11;font-size: 14px;background: #0083d0;text-align: left;">' + val.info + '</div>';
@@ -286,7 +284,7 @@ $( document ).ready(function() {
               setTimeout(function(){
                 $('#mask').fadeOut(300);
               }, 300);
-              showMessage("Search finished");
+              showMessage("Search Finished");
               return false;
             }
           }
@@ -298,7 +296,7 @@ $( document ).ready(function() {
             ind = ind + 1;
         });
 
-        showMessage("Search finished");
+        showMessage("Search Finished");
     }); 
 }
 
@@ -331,7 +329,7 @@ var getInformationbyid = function(id)
                   scrollTop: $(newtweetobjaction).offset().top
                 }, 700);
 
-                showMessage("Tweet loaded"); 
+                showMessage("Tweet Loaded"); 
 
                 return false;
           }
@@ -380,14 +378,14 @@ function internallinkcopy(id) {
   $('#linkresult').val("https://sleepy-mclean-3aea2d.netlify.com/?tweetid=" + id);
   $("#linkresult").select();
   document.execCommand('copy'); 
-  showMessage("Internal link copied to clipboard"); 
+  showMessage("Internal Link Copied To Clipboard"); 
 }
 
 function externallinkcopy(link, id) {
   $('#linkresult').val(link);
   $("#linkresult").select();
   document.execCommand('copy');
-  showMessage("External link copied to clipboard"); 
+  showMessage("External Link Copied To Clipboard"); 
 }
 
 
@@ -423,7 +421,7 @@ function externallinkcopy(link, id) {
           $('#filtertag').val('');
 
           if (flag) 
-            showMessage("Search criteria cleaned"); 
+            showMessage("Search Criterions Cleaned"); 
 
     }  
 
@@ -501,6 +499,13 @@ function externallinkcopy(link, id) {
 
     function saveinfo(obj, id) {
         createCookie(id + "info", $("#" + id + "info").val(), 99999);
+        console.log(1111111);
+        console.log(id);
+        console.log($("#" + id + "info").val());
+        console.log(2222222222222222222222222);
+        var aaa = readCookie(id + "info");
+        console.log(aaa);
+        showMessage("Information About Tweet Saved"); 
     }   
 
     function removetweet(obj, id) {
@@ -509,13 +514,13 @@ function externallinkcopy(link, id) {
         if (isdeleted && isdeleted.length > 0) {
             createCookie(id + "isdeleted", "", 99999);
             $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #0081cc , #008ada )');
-            showMessage("Tweet delete reverted");
+            showMessage("Tweet Marked To Delete Reverted");
         } 
         else {
             createCookie(id + "isdeleted", "a", 99999);
             $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #d60000, #ff2e2e)');
 
-            showMessage("Tweet deleted");
+            showMessage("Tweet Marked To Delete");
         }
     }    
 
@@ -554,7 +559,7 @@ function externallinkcopy(link, id) {
     
             $('#' + id).find('.newcat').html('<b> New categories </b>' + $(obj).parent().find('input').val());   
             
-            showMessage("Category changed");
+            showMessage("Category Marked To Change");
         }
         else {
             createCookie(id + "tagchanged", $(obj).parent().find('input').val());
@@ -568,7 +573,7 @@ function externallinkcopy(link, id) {
             }
     
             $('#' + id).find('.newtag').html('<b> New tags </b>' + $(obj).parent().find('input').val());
-            showMessage("Tag changed");
+            showMessage("Tag Marked To Change");
         }
 
         $("#changetags").fadeOut();
@@ -593,7 +598,7 @@ function externallinkcopy(link, id) {
                 $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, #0082cd, #0082cd)');
             }
 
-            showMessage("Tag reverted");
+            showMessage("Tag Marked To Change Reverted");
         }
         else {
             eraseCookie(id + "tagchanged");
@@ -608,7 +613,7 @@ function externallinkcopy(link, id) {
             else {
                 $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, #0082cd, #0082cd)');
             }
-            showMessage("Category reverted");
+            showMessage("Category Marked To Change Reverted");
         }
 
         $("#changetags").fadeOut();
@@ -710,7 +715,7 @@ function externallinkcopy(link, id) {
             $("#linkresult").select();
             document.execCommand('copy'); 
 
-            showMessage("New tweets generated and copied to clipboard");
+            showMessage("Changes Processed And Copied To Clipboard");
         }); 
 
 
@@ -776,7 +781,7 @@ function externallinkcopy(link, id) {
     
             $('#categories').focus();
 
-            showMessage("Embebed tweet correctly parsed"); 
+            showMessage("Embebed Tweet Correctly Parsed"); 
           }, 700);
     }  
     
@@ -795,7 +800,6 @@ $(document).keydown(function(e) {
     if (ctrlDown && (e.keyCode == vKey)) {
         navigator.clipboard.readText()
   .then(text => {
-    console.log('Pasted content: ', text);
     openCreatePopup();
     setTimeout(function() { 
         $('#tweet').val(text);
