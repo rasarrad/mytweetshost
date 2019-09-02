@@ -6,7 +6,7 @@ var currpage = 0;
 var dosearchmore = true;
 var url = "";
 var dblFlag = false;
-console.log(88888); 
+console.log(11); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -98,7 +98,7 @@ $( document ).ready(function() {
         if (!dblFlag) {
              console.log("single click");  
         }
-      }, 400);
+      }, 200);
       //generate();
     });
 
@@ -107,7 +107,7 @@ $( document ).ready(function() {
       console.log( "dbl click" ); 
       setTimeout(function() {     
         dblFlag = false;
-      }, 800);
+      }, 600);
     });
 
     $( "#closepopup" ).bind( "click", function( event ) {
