@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(11111); 
+console.log(2222); 
 
 $( document ).ready(function() {
   var paramid = getParameterByName('tweetid');
@@ -235,7 +235,7 @@ $( document ).ready(function() {
                 }
               }
 
-              var hasinfo = readCookie(val.id + "info");
+              var hasinfo = decodeURIComponent(readCookie(val.id + "info"));
 
               if (hasinfo && hasinfo.length > 0) {
                 if (val.info && val.info.length > 0) {
@@ -247,7 +247,7 @@ $( document ).ready(function() {
               } 
               else {
                 if (val.info && val.info.length > 0) {
-                    hasinfo = val.info;
+                    hasinfo = decodeURIComponent(val.info);
                 }
                 else {
                     hasinfo = "";
@@ -498,12 +498,12 @@ function externallinkcopy(link, id) {
      }
 
     function saveinfo(obj, id) {
-        createCookie(id + "info", $("#" + id + "info").val(), 99999);
+        createCookie(id + "info", encodeURIComponent($("#" + id + "info").val()), 99999);
         console.log(1111111);
         console.log(id);
         console.log($("#" + id + "info").val());
         console.log(2222222222222222222222222);
-        var aaa = readCookie(id + "info");
+        var aaa = decodeURIComponent(readCookie(id + "info"));;
         console.log(aaa);
         showMessage("Information About Tweet Saved"); 
     }   
