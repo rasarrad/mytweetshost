@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(4444); 
+console.log(45555); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -94,19 +94,20 @@ $( document ).ready(function() {
         openCreatePopup();
     });
     
+    
     $( "#generate" ).bind( "click", function( event ) {
       if (!dblFlag) {
           dblFlag = true;
           dblClickTimeout = setTimeout(function() {     
             if (dblFlag) {
-                 console.log("single click");
-                 dblFlag = false;  
+                generate();
+                dblFlag = false;  
             }
           }, 500);
       }
       else {
           clearTimeout(dblClickTimeout);
-          console.log( "dbl click" ); 
+          undogenerate();
           dblFlag = false;
       }
     });
