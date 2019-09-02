@@ -6,7 +6,8 @@ var currpage = 0;
 var dosearchmore = true;
 var url = "";
 var dblFlag = false;
-console.log(222); 
+var dblClickTimeout = null;
+console.log(333); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -94,20 +95,19 @@ $( document ).ready(function() {
     });
     
     $( "#generate" ).bind( "click", function( event ) {
-      setTimeout(function() {     
-        if (!dblFlag) {
-             console.log("single click");  
-        }
-      }, 200);
-      //generate();
-    });
-
-    $( "#generate" ).dblclick(function() {
-      dblFlag = true;
-      console.log( "dbl click" ); 
-      setTimeout(function() {     
-        dblFlag = false;
-      }, 800);
+      if (!dblFlag) {
+          dblFlag = true;
+          dblClickTimeout = setTimeout(function() {     
+            if (dblFlag) {
+                 console.log("single click");
+                 dblFlag = false;  
+            }
+          }, 500);
+      }
+      else {
+          clearTimeout(dblClickTimeout);
+          dblFlag = false;
+      }
     });
 
     $( "#closepopup" ).bind( "click", function( event ) {
