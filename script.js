@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(666); 
+console.log(111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -92,10 +92,9 @@ $( document ).ready(function() {
         openCreatePopup();
     });
     
-    $( "#generate" ).bind( "click", function( event ) {
-      alert("single click");  
-      //generate();
-    });
+    /* $( "#generate" ).bind( "click", function( event ) {
+        generate();
+    }); */
 
     $( "#closepopup" ).bind( "click", function( event ) {
     closePopup();
@@ -946,4 +945,8 @@ $(document).keydown(function(e) {
 
 function aaaas() {
   alert('double click');
+}  
+
+function bbbb() {
+  alert("single click");  
 }  
