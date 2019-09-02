@@ -5,7 +5,7 @@ var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
 var url = "";
-console.log(5555); 
+console.log(666); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -93,7 +93,8 @@ $( document ).ready(function() {
     });
     
     $( "#generate" ).bind( "click", function( event ) {
-        generate();
+      alert("single click");  
+      //generate();
     });
 
     $( "#closepopup" ).bind( "click", function( event ) {
@@ -706,6 +707,7 @@ function externallinkcopy(link, id) {
 
                 if (cat && cat.length > 0) {
                     val.categories = cat;
+                    createCookie(val.id + "catchanged_bk", cat, 99999);
                     createCookie(val.id + "catchanged", "", 99999);
                 }
 
@@ -713,6 +715,7 @@ function externallinkcopy(link, id) {
 
                 if (tag && tag.length > 0) {
                     val.tags = tag;
+                    createCookie(val.id + "tagchanged_bk", tag, 99999);
                     createCookie(val.id + "tagchanged", "", 99999);
                 }
 
@@ -720,12 +723,14 @@ function externallinkcopy(link, id) {
 
                 if (info && info.length > 0) {
                     val.info = info;
+                    createCookie(val.id + "info_bk", info, 99999);
                     createCookie(val.id + "info", "", 99999);
                 }
 
                 var isdeleted = readCookie(val.id + "isdeleted");
 
                 if (isdeleted && isdeleted.length > 0) {
+                    createCookie(val.id + "isdeleted_bk", "yes", 99999);
                     createCookie(val.id + "isdeleted", "", 99999);
                 } 
                 else {
@@ -750,9 +755,65 @@ function externallinkcopy(link, id) {
 
             showMessage("Changes Processed And Copied To Clipboard");
         }); 
-
-
     } 
+
+    function undogenerate() {
+      var path = "./data.json";
+      var ind = false;
+
+      $.getJSON(path, function(data) 
+      {
+        $.each(data.Tweets, function(key, val) 
+          {
+              var cat = readCookie(val.id + "catchanged_bk");
+              if (cat && cat.length > 0) {
+                  ind = true;
+                  createCookie(val.id + "catchanged_bk", "", 99999);
+                  createCookie(val.id + "catchanged", cat, 99999);
+              }
+              else {
+                createCookie(val.id + "catchanged", "", 99999);
+              }
+
+              var tag = readCookie(val.id + "tagchanged_bk");
+              if (tag && tag.length > 0) {
+                  ind = true;
+                  val.tags = tag;
+                  createCookie(val.id + "tagchanged", tag, 99999);
+                  createCookie(val.id + "tagchanged_bk", "", 99999);
+              }
+              else {
+                createCookie(val.id + "tagchanged", "", 99999);
+              }
+
+              var info = readCookie(val.id + "info_bk");
+              if (info && info.length > 0) {
+                  ind = true;
+                  val.info = info;
+                  createCookie(val.id + "info", info, 99999);
+                  createCookie(val.id + "info_bk", "", 99999);
+              }
+              else {
+                createCookie(val.id + "info", "", 99999);
+              }
+
+              var isdeleted = readCookie(val.id + "isdeleted_bk");
+              if (isdeleted && isdeleted.length > 0) {
+                  ind = true;
+                  createCookie(val.id + "isdeleted", "yes", 99999);
+                  createCookie(val.id + "isdeleted_bk", "", 99999);
+              } 
+              else {
+                  createCookie(val.id + "isdeleted", "", 99999);
+              }            
+          });
+
+          if (ind)
+            $("#generate").addClass("haschanges");
+
+          showMessage("Processed Changes Were Reverted");
+      }); 
+  } 
 
     function hasTweetChanges() {
       var path = "./data.json";
@@ -882,3 +943,7 @@ $(document).keydown(function(e) {
   });
     } 
 });
+
+function aaaas() {
+  alert('double click');
+}  
