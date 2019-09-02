@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var myTimeout;
 
-console.log(444); 
+console.log(55555); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -103,7 +103,7 @@ $( document ).ready(function() {
     });
 
     $( "#generate" ).dblclick(function() {
-      clearTimeout(myVar);
+      clearTimeout(myTimeout);
       console.log( "dbl click" );
     });
 
