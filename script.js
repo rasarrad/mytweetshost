@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(2222); 
+console.log(11111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -257,10 +257,12 @@ $( document ).ready(function() {
               }
 
               var hasinfo = decodeURIComponent(readCookie(val.id + "info"));
+              var textareaExtraStyle ="";
 
               if (hasinfo && hasinfo.length > 0) {
                 if (val.info && val.info.length > 0) {
-                    val.info = '<div style="width: 564px;height: 163px;position: absolute;left: calc(50% - 280px);top: 313px;z-index: 11;font-size: 14px;background: #0083d0;text-align: left;">' + val.info + '</div>';
+                    textareaExtraStyle = "border: 2px solid red;border-bottom-width: 0;";
+                    val.info = '<div style="width: 562px;height: 163px;position: relative;left: calc(50% - 312px);z-index: 11;font-size: 14px;background: #0000002e;text-align: left;display: block;border: 2px solid red;border-top-color: transparent;">' + val.info + '</div>';
                 }
                 else {
                     val.info = "";
@@ -278,7 +280,7 @@ $( document ).ready(function() {
               $('#moretweets').hide();
               var newtweet = $('#main').append($('<div style="' + isdeleted + '" id="inid" class="tweet"></div>'));
               var newtweetobj = $('#inid');
-              newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><i onclick="javascript: removetweet(this,\'' + val.id + '\')" id="removetweet" class="fa fa-remove"></i><i tagactual="' + val.tags + '" onclick="javascript: changetag(this, \'' + val.id + '\')" id="changetag" class="fa fa-tags"></i><i catactual="' + val.categories + '" onclick="javascript: changecat(this,\'' + val.id + '\')" id="changecat" class="fa fa-bookmark"></i><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + catchanged + '<textarea class="info" style="width: 558px;height: 216px;position: relative;left: calc(50% - 312px);z-index: 11;" id="' + val.id + 'info" type="text">' + hasinfo + '</textarea>' + val.info + '<i onclick="javascript: saveinfo(this,\'' + val.id + '\')" class="fa fa-check" style="position: absolute;left: calc(50% + 300px);top: 89px;cursor: pointer; background: white; color: #0082cd; padding: 3px 6px;font-size: 21px;border-radius: 4px;"></i></div>'));
+              newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><i onclick="javascript: removetweet(this,\'' + val.id + '\')" id="removetweet" class="fa fa-remove"></i><i tagactual="' + val.tags + '" onclick="javascript: changetag(this, \'' + val.id + '\')" id="changetag" class="fa fa-tags"></i><i catactual="' + val.categories + '" onclick="javascript: changecat(this,\'' + val.id + '\')" id="changecat" class="fa fa-bookmark"></i><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + catchanged + '<textarea class="info" style="width: 558px;height: 216px;position: relative;left: calc(50% - 312px);z-index: 11;display: block;' + textareaExtraStyle + '" id="' + val.id + 'info" type="text">' + hasinfo + '</textarea>' + val.info + '<i onclick="javascript: saveinfo(this,\'' + val.id + '\')" class="fa fa-check" style="position: absolute;left: calc(50% + 300px);top: 89px;cursor: pointer; background: white; color: #0082cd; padding: 3px 6px;font-size: 21px;border-radius: 4px;"></i></div>'));
               newtweetobj.append($('<div style="' + tagstyle + '" class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + val.tags + tagchanged + '</div>'));
               newtweetobj.append($('<div class="innertweet"></div>'));
               newtweetobj.find('.innertweet').append(val.tweet);
@@ -377,10 +379,16 @@ function getParameterByName(name) {
 
 function expandCat(obj) {
   var jobj = $(obj).parent().find('.categorias');
-  if (jobj.is(":visible"))
-    jobj.hide();
-  else
+  if (jobj.is(":visible")) {
+     jobj.hide(); 
+     $(obj).removeClass("fa-angle-double-up");
+     $(obj).addClass("fa-angle-double-down");
+  }
+  else {
     jobj.show();
+    $(obj).removeClass("fa-angle-double-down");
+    $(obj).addClass("fa-angle-double-up");
+  }
 }
 function openmenu() {
   if ($('#menu').css('width') == '0px') {
