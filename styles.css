@@ -204,11 +204,17 @@ ol > li {
     }
 .toptitle {
   color: #0084d0 !important;
-  top: -4px;
   text-shadow: 3px 3px #c5c5c5;
-  margin-left: calc(50% - 331px) !important;
   cursor: default;
   font-weight: bold;
+  width: calc(100% - 280px);
+  background: transparent;
+  left: 0 !important;
+  text-align: center;
+  margin-left: 140px;
+  top: 10px;
+  font-size: 30px;
+  position: absolute;
 }
     button {
       cursor: pointer;
@@ -223,6 +229,7 @@ ol > li {
       min-width: 82px;
       font-variant: small-caps;
       border-radius: 4px;
+      transition: all 0.6s !important;
     }
     button:hover {
       color: #c6e9fd;
