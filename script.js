@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(1111); 
+console.log(22222); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -561,7 +561,10 @@ function externallinkcopy(link, id) {
       if ($(obj).parent().find(".oldinfo"))
          $(obj).parent().find(".oldinfo").remove();
 
-        if (hasTweetChanges()) {
+
+      var callback = function(flag) 
+      {      
+        if (flag) {
           createCookie("hasChanges", "Yes");
           $("#generate").addClass("haschanges");
         }
@@ -570,7 +573,10 @@ function externallinkcopy(link, id) {
           $("#generate").removeClass("haschanges");
         }
 
-      showMessage("Information About Tweet Reverted"); 
+        showMessage("Information About Tweet Reverted");
+      } 
+
+      hasTweetChanges(callback);
   }  
 
     function removetweet(obj, id) {
@@ -884,7 +890,7 @@ function externallinkcopy(link, id) {
       }); 
   } 
 
-    function hasTweetChanges() {
+    function hasTweetChanges(callback) {
       var path = "./data.json";
       var ind = false;
       $.getJSON(path, function(data) 
@@ -915,6 +921,9 @@ function externallinkcopy(link, id) {
                 return false;
               } 
           });
+
+          if (callback)
+              callback(ind);
 
           return ind;
       }); 
