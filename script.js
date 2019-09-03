@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(44444); 
+console.log(55555); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -893,7 +893,7 @@ function externallinkcopy(link, id) {
           {
               var cat = readCookie(val.id + "catchanged");
               
-              alert(id + "_" + cat);
+              alert(val.id + "_" + cat);
               if (cat && cat.length > 0) {
                 ind = true;
                 return false;
