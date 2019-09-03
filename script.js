@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(22222); 
+console.log(2222); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -353,15 +353,14 @@ var getInformationbyid = function(id)
                 $('html, body').animate({
                   scrollTop: $(newtweetobjaction).offset().top
                 }, 700);
+  
+                  $('#mask').fadeOut(300);
 
                 showMessage("Tweet Loaded"); 
 
                 return false;
           }
-          
-          setTimeout(function(){
-              $('#mask').fadeOut(300);
-            }, 300);
+        
         });
     }); 
 }
