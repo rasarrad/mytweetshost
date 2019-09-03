@@ -7,9 +7,10 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(5555); 
+console.log(1111); 
 
 $( document ).ready(function() {
+  alert(readCookie("4catchanged"));
   var hasChanges = readCookie("hasChanges");
 
   if (hasChanges && hasChanges.length > 0)
@@ -561,7 +562,6 @@ function externallinkcopy(link, id) {
       if ($(obj).parent().find(".oldinfo"))
          $(obj).parent().find(".oldinfo").remove();
 
-         alert(hasTweetChanges());
         if (hasTweetChanges()) {
           createCookie("hasChanges", "Yes");
           $("#generate").addClass("haschanges");
