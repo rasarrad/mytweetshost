@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(2222222); 
+console.log(3333); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -531,6 +531,7 @@ function externallinkcopy(link, id) {
 
         var aaa = decodeURIComponent(readCookie(id + "info"));;
 
+        createCookie("hasChanges", "Yes");
         $("#generate").addClass("haschanges");
 
         showMessage("Information About Tweet Saved"); 
@@ -544,9 +545,11 @@ function externallinkcopy(link, id) {
             $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #0081cc , #008ada )');
 
             if (hasTweetChanges()) {
+              createCookie("hasChanges", "Yes");
               $("#generate").addClass("haschanges");
             }
             else {
+              createCookie("hasChanges", "");
               $("#generate").removeClass("haschanges");
             }
             showMessage("Tweet Marked To Delete Reverted");
@@ -555,6 +558,7 @@ function externallinkcopy(link, id) {
             createCookie(id + "isdeleted", "a", 99999);
             $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #d60000, #ff2e2e)');
             $("#generate").addClass("haschanges");
+            createCookie("hasChanges", "Yes");
             showMessage("Tweet Marked To Delete");
         }
     }    
@@ -595,7 +599,7 @@ function externallinkcopy(link, id) {
             $('#' + id).find('.newcat').html('<b> New categories </b>' + $(obj).parent().find('input').val());   
 
             $("#generate").addClass("haschanges");
-
+            createCookie("hasChanges", "Yes");
             showMessage("Category Marked To Change");
         }
         else {
@@ -612,7 +616,7 @@ function externallinkcopy(link, id) {
             $('#' + id).find('.newtag').html('<b> New tags </b>' + $(obj).parent().find('input').val());
 
             $("#generate").addClass("haschanges");
-
+            createCookie("hasChanges", "Yes");
             showMessage("Tag Marked To Change");
         }
 
@@ -639,9 +643,11 @@ function externallinkcopy(link, id) {
             }
             if (hasTweetChanges()) {
               $("#generate").addClass("haschanges");
+              createCookie("hasChanges", "Yes");
             }
             else {
               $("#generate").removeClass("haschanges");
+              createCookie("hasChanges", "");
             }
             showMessage("Tag Marked To Change Reverted");
         }
@@ -660,9 +666,11 @@ function externallinkcopy(link, id) {
             }
             if (hasTweetChanges()) {
               $("#generate").addClass("haschanges");
+              createCookie("hasChanges", "Yes");
             }
             else {
               $("#generate").removeClass("haschanges");
+              createCookie("hasChanges", "");
             }
             showMessage("Category Marked To Change Reverted");
         }
@@ -773,7 +781,7 @@ function externallinkcopy(link, id) {
             $('#linkresult').val(text);
             $("#linkresult").select();
             document.execCommand('copy'); 
-
+            createCookie("hasChanges", "Yes");
             $("#generate").removeClass("haschanges");
 
             showMessage("Changes Processed And Copied To Clipboard");
@@ -831,8 +839,10 @@ function externallinkcopy(link, id) {
               }            
           });
 
-          if (ind)
+          if (ind) {
+            createCookie("hasChanges", "Yes");
             $("#generate").addClass("haschanges");
+          }
 
           showMessage("Processed Changes Were Reverted");
       }); 
