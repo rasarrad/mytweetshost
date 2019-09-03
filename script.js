@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(44444); 
+console.log(1111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -296,7 +296,7 @@ $( document ).ready(function() {
                 objToFocus = currentIndex;
                 var newtweetobjaction = newtweetobj;
                 $('html, body').animate({
-                  scrollTop: $(newtweetobjaction).offset().top
+                  scrollTop: $(newtweetobjaction).offset().top - 60 
                 }, 700);
 
               }
