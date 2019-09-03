@@ -258,7 +258,7 @@ $( document ).ready(function() {
 
               var hasinfo = decodeURIComponent(readCookie(val.id + "info"));
               var textareaExtraStyle ="";
-alert("-" + hasinfo + "-");
+
               if (hasinfo && hasinfo.length > 0) {
                 if (val.info && val.info.length > 0) {
                     textareaExtraStyle = "border: 2px solid red;border-bottom-width: 0;";
@@ -275,6 +275,7 @@ alert("-" + hasinfo + "-");
                 else {
                     hasinfo = "";
                 }
+                val.info = "";
               }
 
               $('#moretweets').hide();
