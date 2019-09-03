@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(3333); 
+console.log(11111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -488,13 +488,37 @@ function externallinkcopy(link, id) {
     var togglecriterions = function() 
     {
       if ($('.toptitle').css('display') == 'none') {
+        $('.top').css('opacity', '0');
+        
+        setTimeout(function(){
+          $('html').find('.top').each( function( index, element ){
+              $(this).css('display', 'none');
+          });
+        }, 1000);
+
+        $(".toptitle").css("transition", "none");
+        $('.toptitle').css('opacity', '0');
         $('.toptitle').css('display', 'inline');
-        $('html').find('.top').each( function( index, element ){
-            $(this).css('display', 'none');
-        });
+        $(".toptitle").css("transition", "opacity 1s");
+        $('.toptitle').css('opacity', '1');
       }
       else {
-        $('.toptitle').css('display', 'none');
+        $('.toptitle').css('opacity', '0');
+        setTimeout(function(){
+          $('html').find('.toptitle').each( function( index, element ){
+            $(this).css('display', 'none');
+          });
+        }, 1000);
+
+        $(".top").css("transition", "none");
+        $('.top').css('opacity', '0');
+        $('html').find('.top').each( function( index, element ){
+          $(this).css('display', 'inline');
+        });
+        $(".top").css("transition", "opacity 1s");
+        $('.top').css('opacity', '1');
+
+
         $('html').find('.top').each( function( index, element ){
           $(this).css('display', 'inline');
         });

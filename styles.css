@@ -114,18 +114,19 @@ ol > li {
  }
    .menubutton {
     font-size: 38px;
-    background: white;
+    background: #0084d0;
     padding-left: 5px;
     padding-right: 5px;
     padding: 6px 10px;
-    color: #0084d0;
+    color: white;
     cursor: pointer;
-    height: 41px;
+    height: 40px;
     transition: all 0.6s;
     padding-bottom: 5px;
+    width: 35px;
     }
     .menubutton:hover {
-      color: #16aaff;
+      color: #c6e9fd;
     }
     #menu {
       width: 0px;
@@ -163,36 +164,37 @@ ol > li {
     }
 
     .label {
-      color: white;
+      color: #0084d0;
       position: absolute;
-      top: 5px;
+      top: 8px;
       display: inline;
-      font-size: 13px;
+      font-size: 12px;
+      font-weight: bold;
     }          
     
     .label.text {
-      left: 122px;
+      left: 124px;
     }
      
     .label.tag {
-      left: 309px;
+      left: 315px;
     }
               
     .label.author {
-      left: 428px;
+      left: 441px;
     }
               
     .label.date {
-      left: 546px;
+      left: 564px;
     }
               
     .label.id {
-      left: 694px;
+      left: 724px;
     }
 
     #sear {
       position: relative;
-      color: white;
+      color: #0084d0;
       font-size: 27px;
       padding-left: 16px;
       padding-right: 17px;
@@ -200,21 +202,30 @@ ol > li {
       cursor: pointer;
       transition: all 0.6s;
     }
-
+.toptitle {
+  color: #0084d0 !important;
+  top: -4px;
+  text-shadow: 3px 3px #c5c5c5;
+  margin-left: calc(50% - 331px) !important;
+  cursor: default;
+  font-weight: bold;
+}
     button {
       cursor: pointer;
-      background: white;
+      background: #0084d0;
       border: 1px solid white;
-      height: 24px;
-      color: #00639c;
+      height: 27px;
+      color: white;
       font-weight: bold;
       font-size: 12px;
       padding-top: 3px;
       transition: all 0.6s;
       min-width: 82px;
+      font-variant: small-caps;
+      border-radius: 4px;
     }
     button:hover {
-      color: #0095ea;
+      color: #c6e9fd;
       border: 1px solid #0090e4;
     }
     button > i {
@@ -244,7 +255,7 @@ ol > li {
 
     #addtweet {
       position: absolute;
-      color: white;
+      color: #0084d0;
       font-size: 30px;
       top: 12px;
       right: 13px;
@@ -264,7 +275,9 @@ ol > li {
     padding: 2px;
     border-radius: 5px;
 }
-
+#generate:hover {
+    opacity: 0.5;
+}
 #generate.haschanges {
       background: red;
 }
@@ -295,6 +308,7 @@ ol > li {
 
     html, body {
       scroll-behavior: smooth;
+      font-variant: small-caps;
     }
     
     
@@ -325,8 +339,12 @@ ol > li {
      }
 
      input[type=text] {
-      color: #0094ea;
+      color: white;
       font-weight: bold;
+      background: #007cc391;
+      border: 1px solid #007dc5;
+      padding-left: 4px;
+      padding-right: 4px;
      }
 
     #removetweet {
