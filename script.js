@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(2222); 
+console.log(1111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -1023,7 +1023,7 @@ $(document).keydown(function(e) {
 });
 
 // Document Ctrl + C/V 
-$(document).keydown(function(e) {
+/* $(document).keydown(function(e) {
     if (ctrlDown && (e.keyCode == vKey)) {
         navigator.clipboard.readText()
   .then(text => {
@@ -1038,7 +1038,7 @@ $(document).keydown(function(e) {
     console.error('Failed to read clipboard contents: ', err);
   });
     } 
-});
+}); */
 
 function aaaas() {
   alert('double click');
