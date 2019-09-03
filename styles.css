@@ -359,8 +359,8 @@ ol > li {
   color: white;
   font-size: 20px;
   position: relative;
-  top: calc(98% - 27px);
-  left: calc(50% - 250px);
+  top: calc(50% - 27px);
+  left: calc(50% - 273px);
   border: 1px solid white;
   background: #00456d;
   width: 546px;

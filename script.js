@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(11111); 
+console.log(2222222); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -685,7 +685,7 @@ function externallinkcopy(link, id) {
 
         $("#stripmessage").fadeIn("slow", function(){
             
-/*             setTimeout(function() { 
+            setTimeout(function() { 
                 $("#stripmessage").css("transition", "top 1s");
                 $("#stripmessage").css("top", "100%");
                 
@@ -695,7 +695,7 @@ function externallinkcopy(link, id) {
                 setTimeout(function() { 
                     $("#stripmessage").fadeOut("slow");
                   }, 3500);
-              }, 900); */
+              }, 900);
             
         });
     }   
