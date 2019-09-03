@@ -267,7 +267,6 @@ $( document ).ready(function() {
                 }
               } 
               else {
-                alert("-" + val.info + "-");
                 if (val.info && val.info.length > 0) {
                     hasinfo = decodeURIComponent(val.info);
                 }
