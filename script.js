@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(5555); 
+console.log(6666); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
