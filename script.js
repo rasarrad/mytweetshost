@@ -510,6 +510,8 @@ function externallinkcopy(link, id) {
           $('.toptitle').css('display', 'none');
         }, 2000);
 
+        $(".top").css("transition", "none");
+        $('.top').css('opacity', '0');
         $('html').find('.top').each( function( index, element ){
           $(this).css('display', 'inline');
         });
