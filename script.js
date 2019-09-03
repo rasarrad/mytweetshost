@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(45555); 
+console.log(1111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -267,6 +267,7 @@ $( document ).ready(function() {
                 }
               } 
               else {
+                alert("-" + val.info + "-");
                 if (val.info && val.info.length > 0) {
                     hasinfo = decodeURIComponent(val.info);
                 }
@@ -278,7 +279,7 @@ $( document ).ready(function() {
               $('#moretweets').hide();
               var newtweet = $('#main').append($('<div style="' + isdeleted + '" id="inid" class="tweet"></div>'));
               var newtweetobj = $('#inid');
-              newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><i onclick="javascript: removetweet(this,\'' + val.id + '\')" id="removetweet" class="fa fa-remove"></i><i tagactual="' + val.tags + '" onclick="javascript: changetag(this, \'' + val.id + '\')" id="changetag" class="fa fa-tags"></i><i catactual="' + val.categories + '" onclick="javascript: changecat(this,\'' + val.id + '\')" id="changecat" class="fa fa-bookmark"></i><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + catchanged + '<textarea class="info" style="width: 558px;height: 216px;position: absolute;left: calc(50% - 280px);top: 89px;z-index: 11;" id="' + val.id + 'info" type="text">' + hasinfo + '</textarea>' + val.info + '<i onclick="javascript: saveinfo(this,\'' + val.id + '\')" class="fa fa-check" style="position: absolute;left: calc(50% + 300px);top: 89px;cursor: pointer; background: white; color: #0082cd; padding: 3px 6px;font-size: 21px;border-radius: 4px;"></i></div>'));
+              newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><i onclick="javascript: removetweet(this,\'' + val.id + '\')" id="removetweet" class="fa fa-remove"></i><i tagactual="' + val.tags + '" onclick="javascript: changetag(this, \'' + val.id + '\')" id="changetag" class="fa fa-tags"></i><i catactual="' + val.categories + '" onclick="javascript: changecat(this,\'' + val.id + '\')" id="changecat" class="fa fa-bookmark"></i><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + catchanged + '<textarea class="info" style="width: 558px;height: 216px;position: relative;left: calc(50% - 312px);z-index: 11;" id="' + val.id + 'info" type="text">' + hasinfo + '</textarea>' + val.info + '<i onclick="javascript: saveinfo(this,\'' + val.id + '\')" class="fa fa-check" style="position: absolute;left: calc(50% + 300px);top: 89px;cursor: pointer; background: white; color: #0082cd; padding: 3px 6px;font-size: 21px;border-radius: 4px;"></i></div>'));
               newtweetobj.append($('<div style="' + tagstyle + '" class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + val.tags + tagchanged + '</div>'));
               newtweetobj.append($('<div class="innertweet"></div>'));
               newtweetobj.find('.innertweet').append(val.tweet);
