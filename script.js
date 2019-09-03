@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(1111); 
+console.log(44444); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -547,6 +547,10 @@ function externallinkcopy(link, id) {
 
     function undosaveinfo(obj, id) {
       var oldtext = readCookie(id + "info");
+
+      if ($(obj).parent().find(".oldinfo"))
+           oldtext = $(obj).parent().find(".oldinfo").text();
+
       createCookie(id + "info", "", 99999);
       
       $(obj).parent().parent().find("#expand").removeClass("infomodified");
