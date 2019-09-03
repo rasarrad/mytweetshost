@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(3333); 
+console.log(6666); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -517,7 +517,6 @@ function externallinkcopy(link, id) {
           $(this).css('display', 'inline');
         });
         
-        $('.top').css('opacity', '1');
 
 
         $('html').find('.top').each( function( index, element ){
