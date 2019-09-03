@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(3333); 
+console.log(44444); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -258,7 +258,7 @@ $( document ).ready(function() {
 
               var hasinfo = decodeURIComponent(readCookie(val.id + "info"));
               var textareaExtraStyle ="";
-
+alert("-" + hasinfo + "-");
               if (hasinfo && hasinfo.length > 0) {
                 if (val.info && val.info.length > 0) {
                     textareaExtraStyle = "border: 2px solid red;border-bottom-width: 0;";
