@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(44444); 
+console.log(5555); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -561,6 +561,7 @@ function externallinkcopy(link, id) {
       if ($(obj).parent().find(".oldinfo"))
          $(obj).parent().find(".oldinfo").remove();
 
+         alert(hasTweetChanges());
         if (hasTweetChanges()) {
           createCookie("hasChanges", "Yes");
           $("#generate").addClass("haschanges");
