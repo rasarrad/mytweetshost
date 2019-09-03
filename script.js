@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(11111); 
+console.log(3333); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -501,7 +501,7 @@ function externallinkcopy(link, id) {
           $('.toptitle').css('display', 'inline');
           $(".toptitle").css("transition", "opacity 1s");
           $('.toptitle').css('opacity', '1');
-        }, 1000);
+        }, 700);
       }
       else {
         $(".toptitle").css("transition", "opacity 1s");
@@ -515,7 +515,7 @@ function externallinkcopy(link, id) {
           });
           $(".top").css("transition", "opacity 1s");
           $('.top').css('opacity', '1');
-        }, 1000);
+        }, 700);
       } 
     }   
 
