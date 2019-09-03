@@ -488,7 +488,7 @@ function externallinkcopy(link, id) {
     var togglecriterions = function() 
     {
       if ($('.toptitle').css('display') == 'none') {
-        $(".top").css("transition", "opacity 1s");
+        $(".top").css("transition", "opacity 0.7s");
         $('.top').css('opacity', '0');
         
         setTimeout(function(){
@@ -499,12 +499,12 @@ function externallinkcopy(link, id) {
           $(".toptitle").css("transition", "none");
           $('.toptitle').css('opacity', '0');
           $('.toptitle').css('display', 'inline');
-          $(".toptitle").css("transition", "opacity 1s");
+          $(".toptitle").css("transition", "opacity 0.7s");
           $('.toptitle').css('opacity', '1');
-        }, 700);
+        }, 400);
       }
       else {
-        $(".toptitle").css("transition", "opacity 1s");
+        $(".toptitle").css("transition", "opacity 0.7s");
         $('.toptitle').css('opacity', '0');
         setTimeout(function(){
           $('.toptitle').css('display', 'none');
@@ -513,9 +513,9 @@ function externallinkcopy(link, id) {
           $('html').find('.top').each( function( index, element ){
             $(this).css('display', 'inline');
           });
-          $(".top").css("transition", "opacity 1s");
+          $(".top").css("transition", "opacity 0.7s");
           $('.top').css('opacity', '1');
-        }, 700);
+        }, 400);
       } 
     }   
 
