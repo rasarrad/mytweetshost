@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(1111); 
+console.log(222); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -512,9 +512,11 @@ function externallinkcopy(link, id) {
           $('.top').css('opacity', '1');
           $('html').find('.top').each( function( index, element ){
             $(this).fadeIn(500);
-            $(".top").css("transition", "all 0.7s");
+            
           });
-
+          setTimeout(function(){
+            $(".top").css("transition", "all 0.7s");
+          }, 1400);
         }, 400);
       } 
     }   
