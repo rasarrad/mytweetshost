@@ -551,6 +551,8 @@ function externallinkcopy(link, id) {
      }
 
     function saveinfo(obj, id) {
+        resetFields(false);
+
         createCookie(id + "info", encodeURIComponent($("#" + id + "info").val()), 99999);
         
         $(obj).parent().parent().find("#expand").addClass("infomodified");
