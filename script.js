@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(8888); 
+console.log(4444); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -493,7 +493,7 @@ function externallinkcopy(link, id) {
         $('.top').css('opacity', '0');
         
         setTimeout(function(){
-          $('html').find('.top').each( function( index, element ){
+          $('html').find('.top').each( function(){
               $(this).css('display', 'none');
           });
           
@@ -507,10 +507,10 @@ function externallinkcopy(link, id) {
         $(".toptitle").css("transition", "opacity 0.7s");
         $('.toptitle').css('opacity', '0');
         setTimeout(function(){
-          $('.toptitle').css('display', 'none');
+          $('.top').css('display', 'none');
           $(".top").css("transition", "none");
           $('.top').css('opacity', '1');
-          $('html').find('.top').each( function( index, element ){
+          $('html').find('.top').each( function(){
             $(this).fadeIn(500);
           });
 
