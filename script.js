@@ -313,7 +313,7 @@ $( document ).ready(function() {
               setTimeout(function(){
                 $('#mask').fadeOut(300);
               }, 300);
-              showMessage("Search Finished");
+              showMessage("Search Results");
               return false;
             }
           }
@@ -325,7 +325,7 @@ $( document ).ready(function() {
             ind = ind + 1;
         });
 
-        showMessage("Search Finished");
+        showMessage("Search Results");
     }); 
 }
 
