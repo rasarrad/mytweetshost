@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(6666); 
+console.log(7777); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -860,7 +860,7 @@ function externallinkcopy(link, id) {
     function undogenerate() {
       var path = "./data.json";
       var ind = false;
-
+      resetFields(false);
       $.getJSON(path, function(data) 
       {
         $.each(data.Tweets, function(key, val) 
