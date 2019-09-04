@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(4444); 
+console.log(55555); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -561,6 +561,8 @@ function externallinkcopy(link, id) {
         if ($(obj).parent().find(".oldinfo"))
           $(obj).parent().find(".oldinfo").css("border", "2px solid red");
 
+        $(obj).parent().find("i.fa-undo").css("display", "inline-block");
+          
         createCookie("hasChanges", "Yes");
         $("#generate").addClass("haschanges");
 
@@ -579,6 +581,7 @@ function externallinkcopy(link, id) {
       
       $(obj).parent().find("textarea.info").val(oldtext);
       $(obj).parent().find("textarea.info").css("border", "none");
+      $(obj).parent().find("i.fa-undo").css("display", "none");
 
       if ($(obj).parent().find(".oldinfo"))
          $(obj).parent().find(".oldinfo").remove();
