@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(8888); 
+console.log(1111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -489,7 +489,7 @@ function externallinkcopy(link, id) {
     var togglecriterions = function() 
     {
       if ($('.toptitle').css('display') == 'none') {
-        $(".top").css("transition", "opacity 0.7s");
+        $(".top").css("transition", "all 0.7s");
         $('.top').css('opacity', '0');
         
         setTimeout(function(){
@@ -512,6 +512,7 @@ function externallinkcopy(link, id) {
           $('.top').css('opacity', '1');
           $('html').find('.top').each( function( index, element ){
             $(this).fadeIn(500);
+            $(".top").css("transition", "all 0.7s");
           });
 
         }, 400);
