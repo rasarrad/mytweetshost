@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(4444); 
+console.log(1111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -494,7 +494,7 @@ function externallinkcopy(link, id) {
         
         setTimeout(function(){
           $('html').find('.top').each( function( index, element ){
-              $(this).css('display', 'none');
+              $(this).fadeOut(900);
           });
           
           $(".toptitle").css("transition", "none");
@@ -507,7 +507,7 @@ function externallinkcopy(link, id) {
         $(".toptitle").css("transition", "opacity 0.7s");
         $('.toptitle').css('opacity', '0');
         setTimeout(function(){
-          $('.toptitle').css('display', 'none');
+          $('.toptitle').fadeOut(900);
           $(".top").css("transition", "none");
           $('.top').css('opacity', '1');
           $('html').find('.top').each( function( index, element ){
