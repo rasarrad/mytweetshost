@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(55555); 
+console.log(6666); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -551,7 +551,6 @@ function externallinkcopy(link, id) {
      }
 
     function saveinfo(obj, id) {
-        resetFields(false);
 
         createCookie(id + "info", encodeURIComponent($("#" + id + "info").val()), 99999);
         
@@ -796,6 +795,7 @@ function externallinkcopy(link, id) {
     }   
  
     function generate() {
+        resetFields(false);
         var path = "./data.json";
         var text = '{"Tweets": [';
         var ind = false;
