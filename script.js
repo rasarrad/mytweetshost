@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(1111); 
+console.log(4444); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -489,27 +489,20 @@ function externallinkcopy(link, id) {
     var togglecriterions = function() 
     {
       if ($('.toptitle').css('display') == 'none') {
-        $(".top").css("transition", "opacity 0.7s");
-        $('.top').css('opacity', '0');
+
         
         setTimeout(function(){
           $('html').find('.top').each( function( index, element ){
               $(this).fadeOut(900);
           });
-          
-          $(".toptitle").css("transition", "none");
-          $('.toptitle').css('opacity', '1');
+        
           $('.toptitle').fadeIn(900);
 
         }, 100);
       }
       else {
-        $(".toptitle").css("transition", "opacity 0.7s");
-        $('.toptitle').css('opacity', '0');
         setTimeout(function(){
           $('.toptitle').fadeOut(900);
-          $(".top").css("transition", "none");
-          $('.top').css('opacity', '1');
           $('html').find('.top').each( function( index, element ){
             $(this).fadeIn(900);
           });
