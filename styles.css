@@ -212,7 +212,7 @@ ol > li {
   left: 0 !important;
   text-align: center;
   margin-left: 140px;
-  top: 10px;
+  top: 8px;
   font-size: 30px;
   position: absolute;
 }
@@ -225,7 +225,6 @@ ol > li {
       font-weight: bold;
       font-size: 12px;
       padding-top: 3px;
-      transition: all 0.6s;
       min-width: 82px;
       font-variant: small-caps;
       border-radius: 4px;
