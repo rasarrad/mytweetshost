@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(2222); 
+console.log(3333); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -645,7 +645,13 @@ function externallinkcopy(link, id) {
       var oldtext = readCookie(id + "classif");
 
       if ($(obj).parent().find(".oldclassif"))
-           oldtext = $(obj).parent().find(".oldclassif").text();
+           
+
+           if ($("#" + id + "oldclassif")) {
+            oldtext = $("#" + id + "oldclassif").text();
+            $(obj).css("display", "none");
+            $("#" + id + "oldclassif").remove();
+         }
 
       createCookie(id + "classif", "", 99999);
       
@@ -653,12 +659,6 @@ function externallinkcopy(link, id) {
       
       $(obj).parent().find("#" + id + "classif").val(oldtext);
       $(obj).parent().find("#" + id + "classif").css("border", "none");
-      
-
-      if ($("#" + id + "oldclassif")) {
-         $(this).css("display", "none");
-         $("#" + id + "oldclassif").remove();
-      }
 
       var callback = function(flag) 
       {      
@@ -680,8 +680,8 @@ function externallinkcopy(link, id) {
   function undosaveinfo(obj, id) {
     var oldtext = readCookie(id + "info");
 
-    if ($("$" + id + "oldinfo").lenght > 0)
-         oldtext = $("$" + id + "oldinfo").text();
+    if ($("#" + id + "oldinfo").lenght > 0)
+         oldtext = $("#" + id + "oldinfo").text();
 
     createCookie(id + "info", "", 99999);
     
@@ -691,9 +691,9 @@ function externallinkcopy(link, id) {
     $(obj).parent().find("textarea.info").css("border", "none");
     
 
-    if ($("$" + id + "oldinfo").lenght > 0) {
-      $("$" + id + "oldinfo").remove();
-      $(this).css("display", "none");
+    if ($("#" + id + "oldinfo").lenght > 0) {
+      $("#" + id + "oldinfo").remove();
+      $(obj).css("display", "none");
     }
       
 
