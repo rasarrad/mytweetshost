@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(3333); 
+console.log(2222); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -656,7 +656,7 @@ function externallinkcopy(link, id) {
       
 
       if ($("#" + id + "oldclassif")) {
-        $("$" + id + "undoclassif").css("display", "none");
+         $(this).css("display", "none");
          $("#" + id + "oldclassif").remove();
       }
 
@@ -693,7 +693,7 @@ function externallinkcopy(link, id) {
 
     if ($("$" + id + "oldinfo").lenght > 0) {
       $("$" + id + "oldinfo").remove();
-      $("$" + id + "undoinfo").css("display", "none");
+      $(this).css("display", "none");
     }
       
 
