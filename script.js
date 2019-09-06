@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(1111); 
+console.log(2222); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -292,7 +292,7 @@ $( document ).ready(function() {
                 if (val.classif && val.classif.length > 0) {
                     textboxExtraStyle = "border: 2px solid red;";
                     expandclass = "infomodified";
-                    val.classif = '<div class="oldclassif" id ="' + val.id + 'oldclassif" style="position: relative;top: -41px;left: -283px;width: 34px; text-align: center; border: 1px solid red;height: 19px; padding-top: 2px; font-size: 14px;">'
+                    val.classif = '<div class="oldclassif" id ="' + val.id + 'oldclassif" style="position: relative;top: -41px;left: -283px;width: 34px; text-align: center; border: 2px solid red;height: 19px; padding-top: 2px; font-size: 14px;">'
                       + val.classif + '</div>';
                 }
                 else {
@@ -628,7 +628,9 @@ function externallinkcopy(link, id) {
       $(obj).parent().find("#" + id + "classif").css("border", "2px solid red");
 
       if ($("#" + id + "oldclassif")) {
-        $("#" + id + "oldclassif").css("border", "1px solid red");
+        alert(22222)
+        $("#" + id + "oldclassif").show();
+        $("#" + id + "oldclassif").css("border", "2px solid red");
 
         $(obj).parent().find("i.fa-undo").css("display", "inline-block");
       }
