@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(3333); 
+console.log(1111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -322,7 +322,7 @@ $( document ).ready(function() {
                     + '<i catactual="' + val.categories + '" onclick="javascript: changecat(this,\'' + val.id + '\')" id="changecat" class="fa fa-bookmark"></i>' 
                     + '<b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + catchanged 
                     + '<div style="width: 0px;height: 0px;position: relative;left: calc(50% - 282px);z-index: 11;display: block;top: 19px;border: 0;">'
-                      + '<input  id="' + val.id + 'classif" class="info" type="text" value="' + val.id + '"style="width: 25px;height: 19px;position: relative;left: calc(50% - 282px);z-index: 11;display: block;border: 1px solid white;margin-top: 4px;background: #2baffa;text-align: center;' + textboxExtraStyle + '"></input>'
+                      + '<input  id="' + val.id + 'classif" class="info" type="text" value="' + val.classif + '"style="width: 25px;height: 19px;position: relative;left: calc(50% - 282px);z-index: 11;display: block;border: 1px solid white;margin-top: 4px;background: #2baffa;text-align: center;' + textboxExtraStyle + '"></input>'
                       + '<i onclick="javascript: saveclassif(this,\'' + val.id + '\')" class="fa fa-check" style="position: relative;cursor: pointer;background: white;color: #0082cd;padding: 3px 6px;font-size: 21px;border-radius: 4px;left: -230px;top: -24px;width: 18px;"></i>'
                       + '<i onclick="javascript: undosaveclassif(this,\'' + val.id + '\')" class="fa fa-undo" style="position: relative;cursor: pointer;background: white;color: #0082cd;padding: 3px 6px;font-size: 21px;border-radius: 4px;left: -231px;top: -17px;' + displayundoclassif + '"></i>'
                       + val.classif // vai conter a div com a classificacao antiga - caso exista
