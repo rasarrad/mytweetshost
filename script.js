@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(4444); 
+console.log(1111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -628,6 +628,7 @@ function externallinkcopy(link, id) {
       $(obj).parent().find("#" + id + "classif").css("border", "2px solid red");
 
       if ($(obj).parent().find(".oldclassif")) {
+        alert(111)
         $(obj).parent().find(".oldclassif").css("border", "1px solid red");
 
         $(obj).parent().find("i.fa-undo").css("display", "inline-block");
