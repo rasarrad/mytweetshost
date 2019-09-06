@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(4444); 
+console.log(45555444); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -693,7 +693,7 @@ function externallinkcopy(link, id) {
 
     if ($("#" + id + "oldinfo").lenght > 0) {
       $("#" + id + "oldinfo").remove();
-      $(obj).css("display", "none");
+      $("#" + id + "undoinfo").css("display", "none");
     }
       
 
