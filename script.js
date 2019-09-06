@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(1111); 
+console.log(2222); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -266,7 +266,7 @@ $( document ).ready(function() {
                 if (val.info && val.info.length > 0) {
                     textareaExtraStyle = "border: 2px solid red;";
                     expandclass = "infomodified";
-                    val.info = '<div class="oldinfo" style="width: 562px;height: 163px;position: relative;left: calc(50% - 282px);z-index: 11;font-size: 14px;background: #0000002e;text-align: left;display: block;border: 2px solid red;top: -12px;">' 
+                    val.info = '<div id ="' + val.id + 'oldinfo" class="oldinfo" style="width: 562px;height: 163px;position: relative;left: calc(50% - 282px);z-index: 11;font-size: 14px;background: #0000002e;text-align: left;display: block;border: 2px solid red;top: -12px;">' 
                       + val.info + '</div>';
                 }
                 else {
@@ -324,13 +324,13 @@ $( document ).ready(function() {
                     + '<div style="width: 0px;height: 0px;position: relative;left: calc(50% - 282px);z-index: 11;display: block;top: 19px;border: 0;">'
                       + '<input  id="' + val.id + 'classif" class="info" type="text" value="' + hasClassif + '"style="width: 25px;height: 19px;position: relative;left: calc(50% - 282px);z-index: 11;display: block;border: 1px solid white;margin-top: 4px;background: #2baffa;text-align: center;' + textboxExtraStyle + '"></input>'
                       + '<i onclick="javascript: saveclassif(this,\'' + val.id + '\')" class="fa fa-check" style="position: relative;cursor: pointer;background: white;color: #0082cd;padding: 3px 6px;font-size: 21px;border-radius: 4px;left: -230px;top: -24px;width: 18px;"></i>'
-                      + '<i onclick="javascript: undosaveclassif(this,\'' + val.id + '\')" class="fa fa-undo" style="position: relative;cursor: pointer;background: white;color: #0082cd;padding: 3px 6px;font-size: 21px;border-radius: 4px;left: -231px;top: -17px;' + displayundoclassif + '"></i>'
+                      + '<i onclick="javascript: undosaveclassif(this,\'' + val.id + '\')" id ="' + val.id + 'undoclassif" class="fa fa-undo" style="position: relative;cursor: pointer;background: white;color: #0082cd;padding: 3px 6px;font-size: 21px;border-radius: 4px;left: -231px;top: -17px;' + displayundoclassif + '"></i>'
                       + val.classif // vai conter a div com a classificacao antiga - caso exista
                       + '</div>'
                     + '<textarea class="info" style="width: 558px;height: 216px;position: relative;left: calc(50% - 282px);z-index: 11;display: block; margin-top: 4px;' + textareaExtraStyle + '" id="' + val.id + 'info" type="text">' 
                       + hasinfo + '</textarea>' 
                     + '<i onclick="javascript: saveinfo(this,\'' + val.id + '\')" class="fa fa-check" style="position: relative;left: 330px;top: -221px;cursor: pointer;background: white;color: #0082cd;padding: 3px 6px;font-size: 21px;border-radius: 4px;width: 18px;"></i>' 
-                    + '<i onclick="javascript: undosaveinfo(this,\'' + val.id + '\')" class="fa fa-undo" style="position: relative;cursor: pointer;background: white;color: #0082cd;' + displayundo + 'padding: 3px 6px;font-size: 21px;border-radius: 4px;left: 300px;top: -188px;"></i>' 
+                    + '<i onclick="javascript: undosaveinfo(this,\'' + val.id + '\')" id ="' + val.id + 'undoinfo" class="fa fa-undo" style="position: relative;cursor: pointer;background: white;color: #0082cd;' + displayundo + 'padding: 3px 6px;font-size: 21px;border-radius: 4px;left: 300px;top: -188px;"></i>' 
                     + val.info // vai conter a div com o texto antigo - caso exista
                   + '</div>'));
               
@@ -606,10 +606,10 @@ function externallinkcopy(link, id) {
         
         $(obj).parent().find("textarea.info").css("border", "2px solid red");
 
-        if ($(obj).parent().find(".oldinfo").lenght > 0) {
-          $(obj).parent().find(".oldinfo").css("border", "2px solid red");
+        if ($("$" + id + "oldinfo").lenght > 0) {
+          $("$" + id + "oldinfo").css("border", "2px solid red");
 
-          $(obj).parent().find("i.fa-undo").css("display", "inline-block");
+          $("$" + id + "undoinfo").css("display", "inline-block");
         }
           
         createCookie("hasChanges", "Yes");
@@ -631,7 +631,7 @@ function externallinkcopy(link, id) {
         $("#" + id + "oldclassif").show();
         $("#" + id + "oldclassif").css("border", "2px solid red");
 
-        $(obj).parent().find("i.fa-undo").css("display", "inline-block");
+        $("$" + id + "undoinfo").css("display", "inline-block");
       }
 
         
@@ -653,7 +653,7 @@ function externallinkcopy(link, id) {
       
       $(obj).parent().find("#" + id + "classif").val(oldtext);
       $(obj).parent().find("#" + id + "classif").css("border", "none");
-      $(obj).parent().find("i.fa-undo").css("display", "none");
+      $("$" + id + "undoclassif").css("display", "none");
 
       if ($("#" + id + "oldclassif")) {
          $("#" + id + "oldclassif").remove();
@@ -679,8 +679,8 @@ function externallinkcopy(link, id) {
   function undosaveinfo(obj, id) {
     var oldtext = readCookie(id + "info");
 
-    if ($(obj).parent().find(".oldinfo"))
-         oldtext = $(obj).parent().find(".oldinfo").text();
+    if ($("$" + id + "oldinfo").lenght > 0)
+         oldtext = $("$" + id + "oldinfo").text();
 
     createCookie(id + "info", "", 99999);
     
@@ -688,11 +688,12 @@ function externallinkcopy(link, id) {
     
     $(obj).parent().find("textarea.info").val(oldtext);
     $(obj).parent().find("textarea.info").css("border", "none");
-    $(obj).parent().find("i.fa-undo").css("display", "none");
+    $("$" + id + "undoinfo").css("display", "none");
 
-    if ($(obj).parent().find(".oldinfo"))
-       $(obj).parent().find(".oldinfo").remove();
-
+    if ($("$" + id + "oldinfo").lenght > 0) {
+      $("$" + id + "oldinfo").remove();
+    }
+      
 
     var callback = function(flag) 
     {      
