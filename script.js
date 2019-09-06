@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(4444); 
+console.log(1111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -679,7 +679,8 @@ function externallinkcopy(link, id) {
 
   function undosaveinfo(obj, id) {
     var oldtext = readCookie(id + "info");
-
+    alert(("#" + id + "oldinfo");
+    alert($("#" + id + "oldinfo").lenght);
     if ($("#" + id + "oldinfo").lenght > 0)
          oldtext = encodeURIComponent($("#" + id + "oldinfo").text());
 
