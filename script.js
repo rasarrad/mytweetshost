@@ -679,7 +679,7 @@ function externallinkcopy(link, id) {
 
   function undosaveinfo(obj, id) {
     var oldtext = readCookie(id + "info");
-    alert(("#" + id + "oldinfo");
+    alert("#" + id + "oldinfo");
     alert($("#" + id + "oldinfo").lenght);
     if ($("#" + id + "oldinfo").lenght > 0)
          oldtext = encodeURIComponent($("#" + id + "oldinfo").text());
