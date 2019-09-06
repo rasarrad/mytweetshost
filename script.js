@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(2222); 
+console.log(33333); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -621,7 +621,7 @@ function externallinkcopy(link, id) {
 
       createCookie(id + "classif", $("#" + id + "classif").val(), 99999);
       
-      $(obj).parent().parent().find("#expand").addClass("infomodified");
+      $(obj).parent().parent().parent().find("#expand").addClass("infomodified");
       
       
       $(obj).parent().find("#" + id + "classif").css("border", "2px solid red");
@@ -637,7 +637,7 @@ function externallinkcopy(link, id) {
       showMessage("Tweet Classification Saved"); 
   }  
 
-    function undosaveinfo(obj, id) {
+    function undosaveclassif(obj, id) {
       var oldtext = readCookie(id + "classif");
 
       if ($(obj).parent().find(".oldclassif"))
@@ -645,7 +645,7 @@ function externallinkcopy(link, id) {
 
       createCookie(id + "classif", "", 99999);
       
-      $(obj).parent().parent().find("#expand").removeClass("infomodified");
+      $(obj).parent().parent().parent().find("#expand").removeClass("infomodified");
       
       $(obj).parent().find("#" + id + "classif").val(oldtext);
       $(obj).parent().find("#" + id + "classif").css("border", "none");
@@ -671,6 +671,41 @@ function externallinkcopy(link, id) {
 
       hasTweetChanges(callback);
   }  
+
+  function undosaveinfo(obj, id) {
+    var oldtext = readCookie(id + "info");
+
+    if ($(obj).parent().find(".oldinfo"))
+         oldtext = $(obj).parent().find(".oldinfo").text();
+
+    createCookie(id + "info", "", 99999);
+    
+    $(obj).parent().parent().find("#expand").removeClass("infomodified");
+    
+    $(obj).parent().find("textarea.info").val(oldtext);
+    $(obj).parent().find("textarea.info").css("border", "none");
+    $(obj).parent().find("i.fa-undo").css("display", "none");
+
+    if ($(obj).parent().find(".oldinfo"))
+       $(obj).parent().find(".oldinfo").remove();
+
+
+    var callback = function(flag) 
+    {      
+      if (flag) {
+        createCookie("hasChanges", "Yes");
+        $("#generate").addClass("haschanges");
+      }
+      else {
+        createCookie("hasChanges", "");
+        $("#generate").removeClass("haschanges");
+      }
+
+      showMessage("Information About Tweet Reverted");
+    } 
+
+    hasTweetChanges(callback);
+}  
 
     function removetweet(obj, id) {
 
