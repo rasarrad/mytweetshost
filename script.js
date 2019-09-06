@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(88888); 
+console.log(1111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -266,7 +266,8 @@ $( document ).ready(function() {
                 if (val.info && val.info.length > 0) {
                     textareaExtraStyle = "border: 2px solid red;";
                     expandclass = "infomodified";
-                    val.info = '<div class="oldinfo" style="width: 562px;height: 163px;position: relative;left: calc(50% - 282px);z-index: 11;font-size: 14px;background: #0000002e;text-align: left;display: block;border: 2px solid red;">' + val.info + '</div>';
+                    val.info = '<div class="oldinfo" style="width: 562px;height: 163px;position: relative;left: calc(50% - 282px);z-index: 11;font-size: 14px;background: #0000002e;text-align: left;display: block;border: 2px solid red;top: -12px;">' 
+                      + val.info + '</div>';
                 }
                 else {
                     val.info = "";
@@ -283,10 +284,56 @@ $( document ).ready(function() {
                 val.info = "";
               }
 
+              var hasClassif = readCookie(val.id + "classif");
+              var textboxExtraStyle ="";
+              var displayundoclassif = "";
+
+              if (hasClassif && hasClassif.length > 0) {
+                if (val.classif && val.classif.length > 0) {
+                    textboxExtraStyle = "border: 2px solid red;";
+                    expandclass = "infomodified";
+                    val.classif = '<div class="oldclassif" style="position: relative;top: -41px;left: -283px;width: 34px; text-align: center; border: 1px solid red;height: 19px; padding-top: 2px; font-size: 14px;">'
+                      + val.classif + '</div>';
+                }
+                else {
+                    val.classif = "";
+                }
+              } 
+              else {
+                displayundoclassif = "display: none;";
+                if (val.classif && val.classif.length > 0) {
+                  hasClassif = classif.info;
+                }
+                else {
+                  hasClassif = "";
+                }
+                val.classif = "";
+              }
+
+
+
               $('#moretweets').hide();
               var newtweet = $('#main').append($('<div style="' + isdeleted + '" id="inid" class="tweet"></div>'));
               var newtweetobj = $('#inid');
-              newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down ' + expandclass + '"></i><div class="categorias"><i onclick="javascript: removetweet(this,\'' + val.id + '\')" id="removetweet" class="fa fa-remove"></i><i tagactual="' + val.tags + '" onclick="javascript: changetag(this, \'' + val.id + '\')" id="changetag" class="fa fa-tags"></i><i catactual="' + val.categories + '" onclick="javascript: changecat(this,\'' + val.id + '\')" id="changecat" class="fa fa-bookmark"></i><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + catchanged + '<textarea class="info" style="width: 558px;height: 216px;position: relative;left: calc(50% - 282px);z-index: 11;display: block;' + textareaExtraStyle + '" id="' + val.id + 'info" type="text">' + hasinfo + '</textarea>' + val.info + '<i onclick="javascript: saveinfo(this,\'' + val.id + '\')" class="fa fa-check" style="position: relative;left: 330px;top: -221px;cursor: pointer;background: white;color: #0082cd;padding: 3px 6px;font-size: 21px;border-radius: 4px;width: 18px;"></i><i onclick="javascript: undosaveinfo(this,\'' + val.id + '\')" class="fa fa-undo" style="position: relative;cursor: pointer;background: white;color: #0082cd;' + displayundo + 'padding: 3px 6px;font-size: 21px;border-radius: 4px;left: 300px;top: -188px;"></i></div>'));
+              newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down ' + expandclass + '"></i>' 
+                + '<div class="categorias">' 
+                    + '<i onclick="javascript: removetweet(this,\'' + val.id + '\')" id="removetweet" class="fa fa-remove"></i>' 
+                    + '<i tagactual="' + val.tags + '" onclick="javascript: changetag(this, \'' + val.id + '\')" id="changetag" class="fa fa-tags"></i>' 
+                    + '<i catactual="' + val.categories + '" onclick="javascript: changecat(this,\'' + val.id + '\')" id="changecat" class="fa fa-bookmark"></i>' 
+                    + '<b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + catchanged 
+                    + '<div style="width: 0px;height: 0px;position: relative;left: calc(50% - 282px);z-index: 11;display: block;top: 19px;border: 0;">'
+                      + '<input  id="' + val.id + 'classif" class="info" type="text" value="' + val.id + '"style="width: 25px;height: 19px;position: relative;left: calc(50% - 282px);z-index: 11;display: block;border: 1px solid white;margin-top: 4px;background: #2baffa;text-align: center;' + textboxExtraStyle + '"></input>'
+                      + '<i onclick="javascript: saveclassif(this,\'' + val.id + '\')" class="fa fa-check" style="position: relative;cursor: pointer;background: white;color: #0082cd;padding: 3px 6px;font-size: 21px;border-radius: 4px;left: -230px;top: -24px;width: 18px;"></i>'
+                      + '<i onclick="javascript: undosaveclassif(this,\'' + val.id + '\')" class="fa fa-undo" style="position: relative;cursor: pointer;background: white;color: #0082cd;padding: 3px 6px;font-size: 21px;border-radius: 4px;left: -231px;top: -17px;' + displayundoclassif + '"></i>'
+                      + val.classif // vai conter a div com a classificacao antiga - caso exista
+                      + '</div>'
+                    + '<textarea class="info" style="width: 558px;height: 216px;position: relative;left: calc(50% - 282px);z-index: 11;display: block; margin-top: 4px;' + textareaExtraStyle + '" id="' + val.id + 'info" type="text">' 
+                      + hasinfo + '</textarea>' 
+                    + '<i onclick="javascript: saveinfo(this,\'' + val.id + '\')" class="fa fa-check" style="position: relative;left: 330px;top: -221px;cursor: pointer;background: white;color: #0082cd;padding: 3px 6px;font-size: 21px;border-radius: 4px;width: 18px;"></i>' 
+                    + '<i onclick="javascript: undosaveinfo(this,\'' + val.id + '\')" class="fa fa-undo" style="position: relative;cursor: pointer;background: white;color: #0082cd;' + displayundo + 'padding: 3px 6px;font-size: 21px;border-radius: 4px;left: 300px;top: -188px;"></i>' 
+                    + val.info // vai conter a div com o texto antigo - caso exista
+                  + '</div>'));
+              
               newtweetobj.append($('<div style="' + tagstyle + '" class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + val.tags + tagchanged + '</div>'));
               newtweetobj.append($('<div class="innertweet"></div>'));
               newtweetobj.find('.innertweet').append(val.tweet);
@@ -570,22 +617,42 @@ function externallinkcopy(link, id) {
         showMessage("Information About Tweet Saved"); 
     }   
 
+    function saveclassif(obj, id) {
+
+      createCookie(id + "classif", $("#" + id + "classif").val(), 99999);
+      
+      $(obj).parent().parent().find("#expand").addClass("infomodified");
+      
+      
+      $(obj).parent().find("#" + id + "classif").css("border", "2px solid red");
+
+      if ($(obj).parent().find(".oldclassif"))
+        $(obj).parent().find(".oldclassif").css("border", "1px solid red");
+
+      $(obj).parent().find("i.fa-undo").css("display", "inline-block");
+        
+      createCookie("hasChanges", "Yes");
+      $("#generate").addClass("haschanges");
+
+      showMessage("Tweet Classification Saved"); 
+  }  
+
     function undosaveinfo(obj, id) {
-      var oldtext = readCookie(id + "info");
+      var oldtext = readCookie(id + "classif");
 
-      if ($(obj).parent().find(".oldinfo"))
-           oldtext = $(obj).parent().find(".oldinfo").text();
+      if ($(obj).parent().find(".oldclassif"))
+           oldtext = $(obj).parent().find(".oldclassif").text();
 
-      createCookie(id + "info", "", 99999);
+      createCookie(id + "classif", "", 99999);
       
       $(obj).parent().parent().find("#expand").removeClass("infomodified");
       
-      $(obj).parent().find("textarea.info").val(oldtext);
-      $(obj).parent().find("textarea.info").css("border", "none");
+      $(obj).parent().find("#" + id + "classif").val(oldtext);
+      $(obj).parent().find("#" + id + "classif").css("border", "none");
       $(obj).parent().find("i.fa-undo").css("display", "none");
 
-      if ($(obj).parent().find(".oldinfo"))
-         $(obj).parent().find(".oldinfo").remove();
+      if ($(obj).parent().find(".oldclassif"))
+         $(obj).parent().find(".oldclassif").remove();
 
 
       var callback = function(flag) 
@@ -599,7 +666,7 @@ function externallinkcopy(link, id) {
           $("#generate").removeClass("haschanges");
         }
 
-        showMessage("Information About Tweet Reverted");
+        showMessage("Tweet Reclassification Reverted");
       } 
 
       hasTweetChanges(callback);
