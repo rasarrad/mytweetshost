@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(3333); 
+console.log(4444); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -606,10 +606,10 @@ function externallinkcopy(link, id) {
         
         $(obj).parent().find("textarea.info").css("border", "2px solid red");
 
-        if ($("$" + id + "oldinfo").lenght > 0) {
-          $("$" + id + "oldinfo").css("border", "2px solid red");
+        if ($("#" + id + "oldinfo").lenght > 0) {
+          $("#" + id + "oldinfo").css("border", "2px solid red");
 
-          $("$" + id + "undoinfo").css("display", "inline-block");
+          $("#" + id + "undoinfo").css("display", "inline-block");
         }
           
         createCookie("hasChanges", "Yes");
@@ -631,7 +631,7 @@ function externallinkcopy(link, id) {
         $("#" + id + "oldclassif").show();
         $("#" + id + "oldclassif").css("border", "2px solid red");
 
-        $("$" + id + "undoinfo").css("display", "inline-block");
+        $("#" + id + "undoinfo").css("display", "inline-block");
       }
 
         
