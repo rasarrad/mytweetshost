@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(1111); 
+console.log(222); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -606,7 +606,7 @@ function externallinkcopy(link, id) {
         
         $(obj).parent().find("textarea.info").css("border", "2px solid red");
 
-        if ($("#" + id + "oldinfo").lenght > 0) {
+        if ($("#" + id + "oldinfo").length > 0) {
           $("#" + id + "oldinfo").css("border", "2px solid red");
 
           $("#" + id + "undoinfo").css("display", "inline-block");
@@ -627,7 +627,7 @@ function externallinkcopy(link, id) {
       
       $(obj).parent().find("#" + id + "classif").css("border", "2px solid red");
 
-      if ($("#" + id + "oldclassif").lenght > 0) {
+      if ($("#" + id + "oldclassif").length > 0) {
         $("#" + id + "oldclassif").show();
         $("#" + id + "oldclassif").css("border", "2px solid red");
 
@@ -679,9 +679,8 @@ function externallinkcopy(link, id) {
 
   function undosaveinfo(obj, id) {
     var oldtext = readCookie(id + "info");
-    alert("#" + id + "oldinfo");
-    alert($("#" + id + "oldinfo").lenght);
-    if ($("#" + id + "oldinfo").lenght > 0)
+
+    if ($("#" + id + "oldinfo").length > 0)
          oldtext = encodeURIComponent($("#" + id + "oldinfo").text());
 
     createCookie(id + "info", "", 99999);
@@ -692,7 +691,7 @@ function externallinkcopy(link, id) {
     $(obj).parent().find("textarea.info").css("border", "none");
     
     $("#" + id + "undoinfo").css("display", "none");
-    if ($("#" + id + "oldinfo").lenght > 0) {
+    if ($("#" + id + "oldinfo").length > 0) {
       $("#" + id + "oldinfo").remove();
 
     }          
