@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(222); 
+console.log(333); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -993,13 +993,17 @@ function externallinkcopy(link, id) {
               }
 
               var tag = readCookie(val.id + "tagchanged_bk");
+              var tagdispalay = "None";
               if (tag && tag.length > 0) {
                   ind = true;
-                  val.tags = tag;
+                  tagdispalay = val.tags = tag;
                   createCookie(val.id + "tagchanged", tag, 99999);
                   createCookie(val.id + "tagchanged_bk", "", 99999);
               }
               else {
+                if (val.tags.length > 0) {
+                  tagdispalay = val.tags;
+                }
                 createCookie(val.id + "tagchanged", "", 99999);
               }
 
