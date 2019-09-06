@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(333); 
+console.log(222); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -334,7 +334,7 @@ $( document ).ready(function() {
                     + val.info // vai conter a div com o texto antigo - caso exista
                   + '</div>'));
               
-              newtweetobj.append($('<div style="' + tagstyle + '" class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + val.tags + tagchanged + '</div>'));
+              newtweetobj.append($('<div style="' + tagstyle + '" class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + tagdispalay + tagchanged + '</div>'));
               newtweetobj.append($('<div class="innertweet"></div>'));
               newtweetobj.find('.innertweet').append(val.tweet);
               newtweetobj.attr('id', val.id);
