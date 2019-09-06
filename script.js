@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(3333); 
+console.log(1111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -309,8 +309,7 @@ $( document ).ready(function() {
                 }
                 val.classif = "";
               }
-              console.log("111111");
-              console.log(val.classif);
+
 
 
               $('#moretweets').hide();
@@ -607,7 +606,7 @@ function externallinkcopy(link, id) {
         
         $(obj).parent().find("textarea.info").css("border", "2px solid red");
 
-        if ($(obj).parent().find(".oldinfo")) {
+        if ($(obj).parent().find(".oldinfo").lenght > 0) {
           $(obj).parent().find(".oldinfo").css("border", "2px solid red");
 
           $(obj).parent().find("i.fa-undo").css("display", "inline-block");
@@ -627,10 +626,8 @@ function externallinkcopy(link, id) {
       
       
       $(obj).parent().find("#" + id + "classif").css("border", "2px solid red");
-console.log("222222222222");
-console.log("#" + id + "oldclassif");
-console.log($("#" + id + "oldclassif"));
-      if ($("#" + id + "oldclassif")) {
+
+      if ($("#" + id + "oldclassif").lenght > 0) {
         $("#" + id + "oldclassif").show();
         $("#" + id + "oldclassif").css("border", "2px solid red");
 
