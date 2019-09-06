@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(222); 
+console.log(888888); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -992,8 +992,8 @@ function externallinkcopy(link, id) {
                 createCookie(val.id + "catchanged", "", 99999);
               }
 
-              var tag = readCookie(val.id + "tagchanged_bk");
               var tagdispalay = "None";
+              var tag = readCookie(val.id + "tagchanged_bk");
               if (tag && tag.length > 0) {
                   ind = true;
                   tagdispalay = val.tags = tag;
