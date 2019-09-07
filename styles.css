@@ -42,11 +42,11 @@
     top: 100px;
     width: 800px;
     height: 500px;
-    background: #929292;
-    color: white;
+    background: #ffffff;
+    color: #0081cd;
     left: calc(50% - 400px);
     padding-left: 10px;
-    border: 1px solid #adabab;
+    border: 1px solid #00629a;
    }
 
    #main:first-child {
@@ -304,7 +304,7 @@ ol > li {
 
     #closepopup {
       position: absolute;
-      color: white;
+      color: #0082cd;
       font-size: 27px;
       top: 2px;
       right: 8px;

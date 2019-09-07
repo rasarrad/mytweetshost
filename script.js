@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(22222); 
+console.log(3333); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -311,7 +311,7 @@ $( document ).ready(function() {
               }
 
 
-              var tagdispalay = "None";
+              var tagdispalay = "none";
               if (val.tags.length > 0) {
                 tagdispalay = val.tags;
               }
@@ -918,7 +918,6 @@ function externallinkcopy(link, id) {
           $.each(data.Tweets, function(key, val) 
             {
                 var cat = readCookie(val.id + "catchanged");
-
                 if (cat && cat.length > 0) {
                     val.categories = cat;
                     createCookie(val.id + "catchanged_bk", cat, 99999);
@@ -939,7 +938,6 @@ function externallinkcopy(link, id) {
                 createCookie(val.id + "tagchanged", "", 99999);
 
                 var info = readCookie(val.id + "info");
-
                 if (info && info.length > 0) {
                     val.info = info;
                     createCookie(val.id + "info_bk", info, 99999);
@@ -948,6 +946,16 @@ function externallinkcopy(link, id) {
                   createCookie(val.id + "info_bk", "", 99999);
                 }
                 createCookie(val.id + "info", "", 99999);
+
+                var classif = readCookie(val.id + "classif");
+                if (classif && classif.length > 0) {
+                    val.classif = classif;
+                    createCookie(val.id + "classif_bk", classif, 99999);
+                }
+                else {
+                  createCookie(val.id + "classif_bk", "", 99999);
+                }
+                createCookie(val.id + "classif", "", 99999);
 
                 var isdeleted = readCookie(val.id + "isdeleted");
                 if (isdeleted && isdeleted.length > 0) {
@@ -1017,6 +1025,17 @@ function externallinkcopy(link, id) {
               }
               else {
                 createCookie(val.id + "info", "", 99999);
+              }
+
+              var classif = readCookie(val.id + "classif_bk");
+              if (classif && classif.length > 0) {
+                  ind = true;
+                  val.classif = classif;
+                  createCookie(val.id + "classif", classif, 99999);
+                  createCookie(val.id + "classif_bk", "", 99999);
+              }
+              else {
+                createCookie(val.id + "classif", "", 99999);
               }
 
               var isdeleted = readCookie(val.id + "isdeleted_bk");

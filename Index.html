@@ -59,22 +59,22 @@
     
 </div>
 <button style="cursor: pointer;margin-left: calc(50% - 50px);margin-top: 0px;margin-bottom: 68px;height: 38px;padding-left: 13px;padding-right: 13px;font-weight: bold;color: #313131;border-radius: 5px;display: none;" id="moretweets">More Tweets</button>
-<div class="addpopup" style="display: block;display: none;">
+<div class="addpopup" style="">
   <i id="closepopup" class="fa fa-remove"></i>
     <span style="margin-left: auto;margin-right: auto;width: 100%;display: block;text-align: center;font-size: 20px; height: 32px; padding-top: 3px;">Add new</span>
-    Tweet <input id="tweet" style="width: 45px;" type="text"></input>
-    Date <div style="display: inline;" id="datecap"></div> <input id="date" style="width: 61px;" type="text"></input>
-    Id <input style="display: inline; width: 28px;" id="tweetid" type="text"></input> Posted by <div style="display: inline;" id="postedby"></div>
+    Tweet <input id="tweet" style="width: 45px;" type="text">
+    Date <div style="display: inline;" id="datecap"></div> <input id="date" style="width: 61px;" type="text">
+    Id <input style="display: inline; width: 28px;" id="tweetid" type="text"> Posted by <div style="display: inline;" id="postedby"></div>
     <br><br>
-    Categories <input style="width: 704px;" id="categories" type="text"></input><br><br>
-    Tags <input style="width: 748px;" id="tags" type="text"></input><br><br>
+    Categories <input style="width: 564px;margin-right: 16px;" id="categories" type="text">Classif <input style="width: 30px;" value="0" id="classifpop" type="text"><br><br>
+    Tags <input style="width: 735px;" id="tags" type="text"><br><br>
     <span style="margin-left: auto;margin-right: auto;width: 100%;display: block;font-size: 16px;height: 32px;padding-top: 3px;text-align: left;position: relative;top: 241px;">Result</span>
-    <div style="float: right;position: absolute;right: 254px;top: 150px;height: 19px;width: 112px;color: #ffffff;">Is secret</div><input type="checkbox" style="float: right;position: absolute;right: 231px; top: 148px; height: 19px; width: 112px;color: #484848;" id="ishidden">
-    <div style="float: right;position: absolute;right: 154px;top: 150px;height: 19px;width: 112px;color: #ffffff;">Add one more</div><input type="checkbox" style="float: right;position: absolute;right: 90px; top: 148px; height: 19px; width: 112px;color: #484848;" id="onemore" checked>
-    <button style="cursor: pointer;float: right;position: absolute;right: 10px;top: 146px;height: 28px;width: 112px;font-size: 16px;color: #484848;" id="create">Create</button>
-    <textarea style="width: 784px;height: 195px;" id="info" type="text"></textarea>
-    <textarea style="width: 784px;height: 67px;margin-top: 23px;" id="result" type="text"></textarea>
-    <span style="margin-left: auto;margin-right: auto;width: 100%;display: block;font-size: 17px;height: 32px;padding-top: 3px;text-align: left;position: relative;top: -327px;">Tweet info</span>
+    <div style="float: right;position: absolute;right: 337px;top: 150px;height: 19px;width: 78px;color: #0082cd;">Is secret</div><input type="checkbox" style="float: right;position: absolute;right: 308px;top: 148px;height: 19px;width: 33px;color: #0082cd;background: #0082cd;border: 1px solid #0082cd;" id="ishidden">
+    <div style="float: right;position: absolute;right: 178px;top: 150px;height: 19px;width: 112px;color: #0082cd;">Add one more</div><input type="checkbox" style="float: right;position: absolute;right: 106px;top: 148px;height: 19px;width: 112px;color: #484848;" id="onemore" checked="">
+    <button style="cursor: pointer;float: right;position: absolute;right: 11px;top: 146px;height: 28px;width: 112px;font-size: 16px;" id="create">Create</button>
+    <textarea style="width: 784px;height: 195px;border: 1px solid #00629a;color: white;font-weight: bold;background: #007cc391;border: 1px solid #007dc5;padding-left: 4px;padding-right: 4px;font-size: 15px;" id="info" type="text"></textarea>
+    <textarea style="width: 784px;height: 67px;margin-top: 23px;border: 1px solid #00629a;color: white;font-weight: bold;background: #007cc391;border: 1px solid #007dc5;padding-left: 4px;padding-right: 4px;" id="result" type="text"></textarea>
+    <span style="margin-left: auto;margin-right: auto;width: 100%;display: block;font-size: 17px;height: 32px;padding-top: 3px;text-align: left;position: relative;top: -338px;">Tweet info</span>
 </div>
 <i onmouseover="javascript: gotop()" id="gotop" class="fa fa-angle-double-up"></i>
 <div id="mask" style="position: fixed;width: 100%; height: 100%;background: #00000099; top: 0;display: none;"><i class="fa fa-circle-o-notch fa-spin"></i></div>
