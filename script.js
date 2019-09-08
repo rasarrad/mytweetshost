@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(3444); 
+console.log(55555); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -369,10 +369,10 @@ $( document ).ready(function() {
               $('#moretweets').css('opacity', 0);
               $('#moretweets').show();
               
-              setTimeout(function(){
+/*               setTimeout(function(){
                 $('#mask').fadeOut(300);
               }, 300);
-              showMessage("Search Results");
+              showMessage("Search Results"); */
               return false;
             }
           }
@@ -384,7 +384,7 @@ $( document ).ready(function() {
             ind = ind + 1;
         });
 
-        showMessage("Search Results");
+        showMessage("Search Results", 2000);
     }); 
 }
 
@@ -872,7 +872,10 @@ function externallinkcopy(link, id) {
     }   
 
     
-    function showMessage(text) {
+    function showMessage(text, speed) {
+      var dospeed = 3500;
+      if (speed)
+        dospeed = speed;
         $("#stripmessage").css("transition", "none");
         $("#stripmessage .striptext").css("transition", "none");
         $("#stripmessage").css("top", "0px");
@@ -891,7 +894,7 @@ function externallinkcopy(link, id) {
                 $("#stripmessage .striptext").css("top", "calc(0% - 42px)");
                 setTimeout(function() { 
                     $("#stripmessage").fadeOut("slow");
-                  }, 3500);
+                  }, dospeed);
               }, 900);
             
         });
