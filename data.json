@@ -2,6 +2,7 @@
 
     {
         "id": "8",
+        "type": "T",
         "url": "https://twitter.com/Truthdig/status/1151480505189195782",
         "ishidden": "0",
         "date": "20190717",
@@ -14,6 +15,7 @@
         },
     {
         "id": "7",
+        "type": "T",
         "url": "https://twitter.com/thenation/status/1156704103424233472",
         "ishidden": "0",
         "date": "20190731",
@@ -26,6 +28,7 @@
         },
     {
         "id": "6",
+        "type": "T",
         "url": "https://twitter.com/MintPressNews/status/1155904735611953159",
         "ishidden": "0",
         "date": "20190729",
@@ -38,6 +41,7 @@
         },
     {
         "id": "5",
+        "type": "T",
         "url": "https://twitter.com/CraigMurrayOrg/status/1155807353368928257",
         "ishidden": "0",
         "date": "20190729",
@@ -50,6 +54,7 @@
         },
     {
         "id": "4",
+        "type": "T",
         "url": "https://twitter.com/democracynow/status/1154665407573319680",
         "ishidden": "0",
         "date": "20190726",
@@ -62,6 +67,7 @@
         },
     {
         "id": "3",
+        "type": "T",
         "url": "https://twitter.com/dimitrilascaris/status/1154433372590170112",
         "ishidden": "0",
         "date": "20190725",
@@ -74,6 +80,7 @@
         },
     {
         "id": "2",
+        "type": "T",
         "url": "https://twitter.com/CornelWest/status/1154527101636268032",
         "ishidden": "0",
         "date": "20190725",
@@ -86,6 +93,7 @@
         },
     {
         "id": "1",
+        "type": "T",
         "url": "https://twitter.com/medialens/status/1154313872981078016",
         "ishidden": "0",
         "date": "20190725",
@@ -98,6 +106,7 @@
         },
     {
         "id": "0",
+        "type": "T",
         "url": "https://twitter.com/medialens/status/1154311166841303040",
         "ishidden": "0",
         "date": "20190725",
