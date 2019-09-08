@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(3333); 
+console.log(4444); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -22,12 +22,13 @@ $( document ).ready(function() {
   window.onscroll = function(ev) {
   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && dosearchmore) {
     dosearchmore = false;
-    if ($('#moretweets').css('display') == 'block') {
+    if ($('#moretweets').attr('doshow') && $('#moretweets').attr('doshow') == 'yes') {
+        $('#moretweets').show();
         $('#moretweets').css('opacity', 1);
         
         setTimeout(function() { 
           $("#moretweets").click();
-          $('#moretweets').css('display', 'none');
+          $('#moretweets').attr('doshow', 'no');
         }, 1000);
     }
     setTimeout(function() { 
@@ -368,7 +369,7 @@ $( document ).ready(function() {
           else {
             if (currentIndex >= endIndex) {
               $('#moretweets').css('opacity', 0);
-              $('#moretweets').show();
+              $('#moretweets').attr('doshow', 'yes');
               
 /*               setTimeout(function(){
                 $('#mask').fadeOut(300);
