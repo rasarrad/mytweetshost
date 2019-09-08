@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(22222); 
+console.log(44444); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -492,9 +492,8 @@ function externallinkcopy(link, id) {
     {
       $('#tweet').val('');
       $('#date').val('');
-      $('#datecap').text('');
       $('#tweetid').val('');
-      $('#postedby').text('');
+      $('#postedby').val('');
       $('#categories').val('');
       $('#tags').val('');
       $('#info').val('');
@@ -541,9 +540,8 @@ function externallinkcopy(link, id) {
     {
       $('#tweet').val('');
           $('#date').val('');
-          $('#datecap').text('');
           $('#tweetid').val('');
-          $('#postedby').text('');
+          $('#postedby').val('');
           $('#categories').val('');
           $('#tags').val('');
           $('#info').val('');
@@ -598,9 +596,8 @@ function externallinkcopy(link, id) {
       }
         $('#tweet').val('');
         $('#date').val('');
-        $('#datecap').text('');
         $('#tweetid').val('');
-        $('#postedby').text('');
+        $('#postedby').val('');
         $('#categories').val('');
         $('#tags').val('');
         $('#info').val('');
@@ -1165,8 +1162,6 @@ function externallinkcopy(link, id) {
             var year = date.substring(date.length - 4);
             var month = date.substring(0, date.indexOf(' ')); 
             var day = date.substring(date.indexOf(' ') + 1, date.lastIndexOf(' ') -1); 
-
-            $('#datecap').text(date);
     
             $('#date').val(year + pad(getMonthFromString(month), 2) + pad(day, 2));
     
@@ -1175,7 +1170,7 @@ function externallinkcopy(link, id) {
               setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
             });
             
-            $('#postedby').text(origin);
+            $('#postedby').val(origin);
     
             $('#categories').focus();
 
