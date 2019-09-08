@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(222222); 
+console.log(3444); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -24,7 +24,10 @@ $( document ).ready(function() {
     dosearchmore = false;
     if ($('#moretweets').css('display') == 'block') {
         $('#moretweets').css('opacity', 1);
-        $("#moretweets").click();
+        
+        setTimeout(function() { 
+          $("#moretweets").click();
+        }, 2000);
     }
     setTimeout(function() { 
       dosearchmore = true;
@@ -122,7 +125,7 @@ $( document ).ready(function() {
 
   var getInformation = function(ismoretweets) 
 {
-    $('#mask').fadeIn(300);  
+    
     var path = "./data.json";
     var endIndex = currentIndex + Number($('#recordspersearch').val());
     var objToFocus = -1;
@@ -139,6 +142,7 @@ $( document ).ready(function() {
 
     
     if (!ismoretweets) {
+      $('#mask').fadeIn(300);  
       $('#moretweets').hide();
       currentIndex = 0;
       endIndex = currentIndex + 5;
