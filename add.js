@@ -39,9 +39,11 @@ function parseTweet() {
           $('#date').val(date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2));
         
           url = text.substring(text.indexOf('https://www.youtube'), text.indexOf('frameborder') - 2); 
-          alert("-" + url + "-");
           
-          return false;
+          url = text.substring(text.indexOf('embed') + 7, text.indexOf('frameborder') - 2); 
+          alert("-" + url + "-");
+   
+
         }
 
 
