@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(2222); 
+console.log(66666); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -1189,11 +1189,23 @@ $(document).keydown(function(e) {
 
 // Document Ctrl + C/V 
  $(document).keydown(function(e) {
-
+   if ($(e.currentTarget).is($(document))) {
     if (ctrlDown && (e.keyCode == vKey)) {
-      console.log(1111111);
-      console.log($(e.currentTarget).is($(document)));
-    } 
+      navigator.clipboard.readText()
+.then(text => {
+  openCreatePopup();
+  setTimeout(function() { 
+      $('#tweet').val(text);
+      parseTweet();
+    }, 300);
+  
+})
+.catch(err => {
+  console.error('Failed to read clipboard contents: ', err);
+});
+  } 
+   }
+
 }); 
 
 function countmove(obj) {
