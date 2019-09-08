@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(66666); 
+console.log(11111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -56,7 +56,7 @@ $( document ).ready(function() {
   });    
 
   $("#tweet").on("paste", function() {
-
+alert(1111222);
     parseTweet();
   });
 
@@ -1190,6 +1190,8 @@ $(document).keydown(function(e) {
 // Document Ctrl + C/V 
  $(document).keydown(function(e) {
    if ($(e.currentTarget).is($(document))) {
+    console.log(22222); 
+    console.log(e.currentTarget); 
     if (ctrlDown && (e.keyCode == vKey)) {
       navigator.clipboard.readText()
 .then(text => {
