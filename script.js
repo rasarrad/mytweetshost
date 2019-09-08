@@ -1150,8 +1150,20 @@ function externallinkcopy(link, id) {
         setTimeout(function(){
             nextid = parseInt($('#maxid').val()) + 1;
             $('#tweetid').val(nextid);
-            
+
+
             text = $('#tweet').val();
+            addType = "Y"
+            if (text.substring(0,4) == "<blo") {
+              addType = "T"
+            }
+            else if (text.substring(0,4) == "http") {
+              addType = "H"
+            }
+
+alert(addType);
+return false;
+
             text = "\"" + text.replace(/"/g, '').replace('<\/script>', '<&#47;script>') + "\"";
             
             origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
