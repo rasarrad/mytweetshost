@@ -23,6 +23,7 @@ $( document ).ready(function() {
   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && dosearchmore) {
     dosearchmore = false;
     if ($('#moretweets').css('display') == 'inline-block') {
+        $('#moretweets').css('opacity', 1);
         $("#moretweets").click();
     }
     setTimeout(function() { 
@@ -136,8 +137,9 @@ $( document ).ready(function() {
     var dofilterauthor = $('#filterauthor').val().length > 0;
     var dofiltercat = $('#selectedcat').val().length > 0 && $('#selectedcat').val() != 'all';  
 
-    $('#moretweets').hide();
+    
     if (!ismoretweets) {
+      $('#moretweets').hide();
       currentIndex = 0;
       endIndex = currentIndex + 5;
 
@@ -317,7 +319,7 @@ $( document ).ready(function() {
               }
 
 
-              $('#moretweets').hide();
+              //$('#moretweets').hide();
               var newtweet = $('#main').append($('<div style="' + isdeleted + '" id="inid" class="tweet"></div>'));
               var newtweetobj = $('#inid');
               newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down ' + expandclass + '"></i>' 
@@ -360,6 +362,7 @@ $( document ).ready(function() {
           }
           else {
             if (currentIndex >= endIndex) {
+              $('#moretweets').css('opacity', 0);
               $('#moretweets').show();
               
               setTimeout(function(){
