@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(2222); 
+console.log(11111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -1190,7 +1190,7 @@ $(document).keydown(function(e) {
 // Document Ctrl + C/V 
  $(document).keydown(function(e) {
   console.error(1111111);
-  console.error(this);
+  console.error(this == "#document");
   console.error(e);
     if (ctrlDown && (e.keyCode == vKey)) {
         navigator.clipboard.readText()
