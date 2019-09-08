@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(5555); 
+console.log(11111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -361,7 +361,7 @@ $( document ).ready(function() {
                 var newtweetobjaction = newtweetobj;
                 $('html, body').animate({
                   scrollTop: $(newtweetobjaction).offset().top - 60 
-                }, 700);
+                }, 100);
 
               }
               currentIndex = currentIndex + 1;
