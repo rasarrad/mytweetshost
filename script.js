@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(11111); 
+console.log(22222); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -55,10 +55,10 @@ $( document ).ready(function() {
     }
   });    
 
-  $("#tweet").on("paste", function() {
+/*   $("#tweet").on("paste", function() {
 alert(1111222);
     parseTweet();
-  });
+  }); */
 
 
   $( "#moretweets" ).bind( "click", function( event ) {
@@ -588,8 +588,14 @@ function externallinkcopy(link, id) {
     }   
 
     
-    var openCreatePopup = function() 
+    var openCreatePopup = function(flag) 
     {
+      if (flag) {
+        $("#onemore").prop("checked", false);
+      }
+      else {
+        $("#onemore").prop("checked", true);
+      }
         $('#tweet').val('');
         $('#date').val('');
         $('#datecap').text('');
@@ -1190,15 +1196,17 @@ $(document).keydown(function(e) {
 // Document Ctrl + C/V 
  $(document).keydown(function(e) {
    if ($(e.currentTarget).is($(document))) {
-    console.log(22222); 
-    console.log(e.currentTarget); 
     if (ctrlDown && (e.keyCode == vKey)) {
       navigator.clipboard.readText()
 .then(text => {
-  openCreatePopup();
+  
   setTimeout(function() { 
-      $('#tweet').val(text);
-      parseTweet();
+    if ($(".addpopup").css('display') == 'none') {
+      openCreatePopup(true);
+    }
+    $('#tweet').val(text);
+    parseTweet();
+
     }, 300);
   
 })
