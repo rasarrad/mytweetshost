@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(11111); 
+console.log(2222); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -1192,9 +1192,7 @@ $(document).keydown(function(e) {
 
     if (ctrlDown && (e.keyCode == vKey)) {
       console.log(1111111);
-      console.log($(e.currentTarget));
-      console.log($(e.currentTarget).toString() == "document");
-      console.log($(e.currentTarget).toString() == "#document");
+      console.log($(e.currentTarget).is($(document)));
     } 
 }); 
 
