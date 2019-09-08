@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(1111); 
+console.log(1223); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -387,6 +387,7 @@ $( document ).ready(function() {
 
         if (!ismoretweets || $('#moretweets').css('opacity') != 1) {
            showMessage("Search Results", 2000);
+        }
     }); 
 }
 
