@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(4444); 
+console.log(5555); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -29,6 +29,7 @@ $( document ).ready(function() {
         setTimeout(function() { 
           $("#moretweets").click();
           $('#moretweets').attr('doshow', 'no');
+          $('#moretweets').hide();
         }, 1000);
     }
     setTimeout(function() { 
