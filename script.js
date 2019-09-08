@@ -7,7 +7,7 @@ var dosearchmore = true;
 var url = "";
 var dblFlag = false;
 var dblClickTimeout = null;
-console.log(11111); 
+console.log(222222); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -22,7 +22,7 @@ $( document ).ready(function() {
   window.onscroll = function(ev) {
   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && dosearchmore) {
     dosearchmore = false;
-    if ($('#moretweets').css('display') == 'inline-block') {
+    if ($('#moretweets').css('display') == 'block') {
         $('#moretweets').css('opacity', 1);
         $("#moretweets").click();
     }
