@@ -9,7 +9,7 @@ var urldirect = "";
 var dblFlag = false;
 var dblClickTimeout = null;
 var addType = "T";
-console.log(222); 
+console.log(11111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");

@@ -40,9 +40,15 @@ function parseTweet() {
         
           url = text.substring(text.indexOf('https://www.youtube'), text.indexOf('frameborder') - 2); 
           
-          url = text.substring(text.indexOf('embed') + 7, text.indexOf('frameborder') - 2); 
-          alert("-" + url + "-");
-   
+          urldirect = text.substring(text.indexOf('embed') + 6, text.indexOf('frameborder') - 2); 
+          
+                    
+          text = '<iframe style="width: calc(100% - 250px);padding-top: 6px;height: 446px;padding-left: 125px;padding-right: 125px;" ' 
+                + text.substring(8); 
+
+          alert("-" + text + "-");
+          alert("-" + urldirect + "-");
+
 
         }
 
