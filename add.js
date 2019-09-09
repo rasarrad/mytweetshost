@@ -1,4 +1,50 @@
 
+$( "#addtweet" ).bind( "click", function( event ) {
+    openCreatePopup();
+});
+
+var openCreatePopup = function(flag) 
+{
+    if (flag) {
+        $("#onemore").prop("checked", false);
+    }
+    else {
+        $("#onemore").prop("checked", true);
+    }
+    $('#tweet').val('');
+    $('#date').val('');
+    $('#tweetid').val('');
+    $('#postedby').val('');
+    $('#categories').val('');
+    $('#tags').val('');
+    $('#info').val('');
+    $('.addpopup').fadeIn();
+    $('#tweet').focus();
+    $('#result').val('');
+    $('#typeT').css('border-color', 'white'); 
+    $('#typeH').css('border-color', 'white'); 
+    $('#typeY').css('border-color', 'white'); 
+} 
+
+
+function resetFieldsPopup() 
+{
+    $('#tweet').val('');
+    $('#date').val('');
+    $('#tweetid').val('');
+    $('#postedby').val('');
+    $('#categories').val('');
+    $('#tags').val('');
+    $('#info').val('');
+    $('#result').val('');    
+    $('#typeT').css('border-color', 'white'); 
+    $('#typeH').css('border-color', 'white'); 
+    $('#typeY').css('border-color', 'white');   
+}  
+/////////////////////////////////////////////////////////////////////////7
+/////////////////////////////////////////////////////////////////////////7
+
+
 function parseTweet() {
     setTimeout(function(){
         nextid = parseInt($('#maxid').val()) + 1;
@@ -8,6 +54,8 @@ function parseTweet() {
         
         if (text.substring(0,4) == "<blo") {
           addType = "T";
+          $('#typeT').css('border-color', '#00bc00'); 
+
           text = "\"" + text.replace(/"/g, '').replace('<\/script>', '<&#47;script>') + "\"";
         
           origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
@@ -24,6 +72,7 @@ function parseTweet() {
         }
         else if (text.substring(0,4) == "http") {
           addType = "H";
+          $('#typeH').css('border-color', '#00bc00'); 
 
           var date = new Date();
           
@@ -33,6 +82,7 @@ function parseTweet() {
         }
         else {
           addType = "Y";
+          $('#typeY').css('border-color', '#00bc00'); 
 
           var date = new Date();
           
@@ -40,21 +90,11 @@ function parseTweet() {
         
           url = text.substring(text.indexOf('https://www.youtube'), text.indexOf('frameborder') - 2); 
           
-          urldirect = text.substring(text.indexOf('embed') + 6, text.indexOf('frameborder') - 2); 
+          urldirect = "https://www.youtube.com/watch?v=" + text.substring(text.indexOf('embed') + 6, text.indexOf('frameborder') - 2); 
           
-                    
           text = '<iframe style="width: calc(100% - 250px);padding-top: 6px;height: 446px;padding-left: 125px;padding-right: 125px;" ' 
                 + text.substring(8); 
-
-          alert("-" + text + "-");
-          alert("-" + urldirect + "-");
-
-
         }
-
-
-
-
 
         $('#date').focus(function(){
           var that = this;
@@ -65,6 +105,46 @@ function parseTweet() {
 
         $('#categories').focus();
 
-        showMessage("Embebed Tweet Correctly Parsed"); 
-      }, 700);
-}  
+        showMessage("Link Successfully Parsed"); 
+    }, 700);
+} 
+
+
+/////////////////////////////////////////////////////////////////////////7
+/////////////////////////////////////////////////////////////////////////7
+
+
+$( "#create" ).bind( "click", function( event ) {
+    var ishidden = "0";
+    if ($("#ishidden").is(":checked")) {
+        ishidden = "1";
+    } 
+    var resinfo = $('#info').val().replace(/"/g, "");
+    resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "");
+
+    if (addType == "T") {
+        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + $('#classifpop').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
+    }
+    else if (addType == "Y") {
+        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"url\": \"" + urldirect  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + $('#classifpop').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
+    }
+    else {
+        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + $('#classifpop').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
+    }
+
+    $('#maxid').val(nextid);
+    $("#result").select();
+
+    document.execCommand('copy');
+
+    resetFieldsPopup();
+
+    if ($("#onemore").is(":checked")) {
+        showMessage("New Tweet Created And Copied To Clipboard. You Can Add One More Now");
+        $('#tweet').focus();
+    } 
+    else {
+        showMessage("New Tweet Created And Copied To Clipboard");
+        $('.addpopup').fadeOut(2000);
+    }       
+});

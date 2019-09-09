@@ -9,7 +9,7 @@ var urldirect = "";
 var dblFlag = false;
 var dblClickTimeout = null;
 var addType = "T";
-console.log(11111); 
+console.log(1111); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -74,36 +74,9 @@ alert(1111222);
   });
  
   
-  $( "#create" ).bind( "click", function( event ) {
-    var ishidden = "0";
-    if ($("#ishidden").is(":checked")) {
 
-        ishidden = "1";
-    } 
-    var resinfo = $('#info').val().replace(/"/g, "");
-    resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "");
-    $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + $('#classifpop').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
 
-    $('#maxid').val(nextid);
-    $("#result").select();
 
-    document.execCommand('copy');
-
-    resetFieldsPopup();
-
-    if ($("#onemore").is(":checked")) {
-        showMessage("New Tweet Created And Copied To Clipboard. You Can Add One More Now");
-        $('#tweet').focus();
-    } 
-    else {
-        showMessage("New Tweet Created And Copied To Clipboard");
-        $('.addpopup').fadeOut(2000);
-    }       
-    });
-
-    $( "#addtweet" ).bind( "click", function( event ) {
-        openCreatePopup();
-    });
     
     
     $( "#generate" ).bind( "click", function( event ) {
@@ -490,18 +463,6 @@ function externallinkcopy(link, id) {
 
 
 
-  function resetFieldsPopup() 
-    {
-      $('#tweet').val('');
-      $('#date').val('');
-      $('#tweetid').val('');
-      $('#postedby').val('');
-      $('#categories').val('');
-      $('#tags').val('');
-      $('#info').val('');
-      $('#result').val('');  
-    }  
-
 
   function resetFields(flag) 
     {
@@ -588,26 +549,7 @@ function externallinkcopy(link, id) {
     }   
 
     
-    var openCreatePopup = function(flag) 
-    {
-      if (flag) {
-        $("#onemore").prop("checked", false);
-      }
-      else {
-        $("#onemore").prop("checked", true);
-      }
-        $('#tweet').val('');
-        $('#date').val('');
-        $('#tweetid').val('');
-        $('#postedby').val('');
-        $('#categories').val('');
-        $('#tags').val('');
-        $('#info').val('');
-    $('.addpopup').fadeIn();
-    $('#tweet').focus();
-    $('#result').val(''); 
-      
-    }   
+  
 
     function pad (str, max) {
         str = str.toString();
