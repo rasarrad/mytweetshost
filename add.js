@@ -1,15 +1,10 @@
 
 function parseTweet() {
-    resetFieldsPopup(); 
     setTimeout(function(){
         nextid = parseInt($('#maxid').val()) + 1;
         $('#tweetid').val(nextid);
 
         text = $('#tweet').val();
-        
-        alert($('#tweet').val().substring(0,4));
-
-        alert(text.substring(0,4));
 
         if (text.substring(0,4) == "<blo") {
           addType = "T";
@@ -43,7 +38,7 @@ function parseTweet() {
         else {
           addType = "Y";
           $('#typeY').css('border-color', '#00bc00'); 
-          alert(2);
+
           var date = new Date();
           
           $('#date').val(date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2));
