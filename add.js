@@ -1,48 +1,4 @@
 
-
-
-var openCreatePopup = function(flag) 
-{
-    if (flag) {
-        $("#onemore").prop("checked", false);
-    }
-    else {
-        $("#onemore").prop("checked", true);
-    }
-    $('#tweet').val('');
-    $('#date').val('');
-    $('#tweetid').val('');
-    $('#postedby').val('');
-    $('#categories').val('');
-    $('#tags').val('');
-    $('#info').val('');
-    $('.addpopup').fadeIn();
-    $('#tweet').focus();
-    $('#result').val('');
-    $('#typeT').css('border-color', 'white'); 
-    $('#typeH').css('border-color', 'white'); 
-    $('#typeY').css('border-color', 'white'); 
-} 
-
-
-function resetFieldsPopup() 
-{
-    $('#tweet').val('');
-    $('#date').val('');
-    $('#tweetid').val('');
-    $('#postedby').val('');
-    $('#categories').val('');
-    $('#tags').val('');
-    $('#info').val('');
-    $('#result').val('');    
-    $('#typeT').css('border-color', 'white'); 
-    $('#typeH').css('border-color', 'white'); 
-    $('#typeY').css('border-color', 'white');   
-}  
-/////////////////////////////////////////////////////////////////////////7
-/////////////////////////////////////////////////////////////////////////7
-
-
 function parseTweet() {
     resetFieldsPopup(); 
     setTimeout(function(){
@@ -109,8 +65,8 @@ function parseTweet() {
 } 
 
 
-/////////////////////////////////////////////////////////////////////////7
-/////////////////////////////////////////////////////////////////////////7
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 
 
 $( "#create" ).bind( "click", function( event ) {
@@ -147,3 +103,62 @@ $( "#create" ).bind( "click", function( event ) {
         $('.addpopup').fadeOut(2000);
     }       
 });
+
+
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+
+var openCreatePopup = function(flag) 
+{
+    if (flag) {
+        $("#onemore").prop("checked", false);
+    }
+    else {
+        $("#onemore").prop("checked", true);
+    }
+    $('#tweet').val('');
+    $('#date').val('');
+    $('#tweetid').val('');
+    $('#postedby').val('');
+    $('#categories').val('');
+    $('#tags').val('');
+    $('#info').val('');
+    $('.addpopup').fadeIn();
+    $('#tweet').focus();
+    $('#result').val('');
+    $('#typeT').css('border-color', 'white'); 
+    $('#typeH').css('border-color', 'white'); 
+    $('#typeY').css('border-color', 'white'); 
+} 
+
+function resetFieldsPopup() 
+{
+    $('#tweet').val('');
+    $('#date').val('');
+    $('#tweetid').val('');
+    $('#postedby').val('');
+    $('#categories').val('');
+    $('#tags').val('');
+    $('#info').val('');
+    $('#result').val('');    
+    $('#typeT').css('border-color', 'white'); 
+    $('#typeH').css('border-color', 'white'); 
+    $('#typeY').css('border-color', 'white');   
+}  
+
+var closePopup = function() 
+{
+    $('#tweet').val('');
+    $('#date').val('');
+    $('#tweetid').val('');
+    $('#postedby').val('');
+    $('#categories').val('');
+    $('#tags').val('');
+    $('#info').val('');
+    $('#result').val('');  
+    $('.addpopup').fadeOut();
+    $('#typeT').css('border-color', 'white'); 
+    $('#typeH').css('border-color', 'white'); 
+    $('#typeY').css('border-color', 'white');  
+}  
