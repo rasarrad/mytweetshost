@@ -35,6 +35,8 @@ function parseTweet() {
           $('#date').val(date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2));
         
           url = text; 
+          text = "\"" + text.replace(/"/g, '') + "\"";
+
         }
         else {
           addType = "Y";
@@ -48,8 +50,8 @@ function parseTweet() {
           
           urldirect = "https://www.youtube.com/watch?v=" + text.substring(text.indexOf('embed') + 6, text.indexOf('frameborder') - 2); 
           
-          text = '<iframe style="width: calc(100% - 250px);padding-top: 6px;height: 446px;padding-left: 125px;padding-right: 125px;" ' 
-                + text.substring(8); 
+          text = "\"" + ('<iframe style="width: calc(100% - 250px);padding-top: 6px;height: 446px;padding-left: 125px;padding-right: 125px;" ' 
+                + text.substring(8)).replace(/"/g, '')  + "\""; 
         }
 
         $('#date').focus(function(){
