@@ -1,5 +1,5 @@
 
-console.log(3333); 
+console.log(4444); 
 
 var text = "";
 var origin = "";
@@ -347,10 +347,12 @@ $(document).keydown(function(e) {
         if (ctrlDown && (e.keyCode == vKey)) {
             navigator.clipboard.readText().then(text => {
                 setTimeout(function() { 
-                    if ($(".addpopup").css('display') == 'none') {
-                        openCreatePopup(true);
-                    }
+                    resetFieldsPopup(); 
                     $('#tweet').val(text);
+
+                    if ($(".addpopup").css('display') == 'none') {
+                      openCreatePopup(true);
+                    }
                     parseTweet();
                 }, 300);
             }).catch(err => {

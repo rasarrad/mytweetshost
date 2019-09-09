@@ -121,20 +121,10 @@ var openCreatePopup = function(flag)
     }
     else {
         $("#onemore").prop("checked", true);
+        $('#tweet').focus();
     }
-    $('#tweet').val('');
-    $('#date').val('');
-    $('#tweetid').val('');
-    $('#postedby').val('');
-    $('#categories').val('');
-    $('#tags').val('');
-    $('#info').val('');
     $('.addpopup').fadeIn();
-    $('#tweet').focus();
-    $('#result').val('');
-    $('#typeT').css('border-color', 'white'); 
-    $('#typeH').css('border-color', 'white'); 
-    $('#typeY').css('border-color', 'white'); 
+
 } 
 
 function resetFieldsPopup() 
