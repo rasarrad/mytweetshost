@@ -36,7 +36,7 @@ function parseTweet() {
         
           url = text; 
 
-          text = "\"<iframe style='width: calc(100% - 252px);margin-top: 6px;height: 446px;margin-left: 125px;margin-right: 125px;border: 1px solid white;' src='" 
+          text = "\"<iframe style='width: calc(100% - 252px); background: white;margin-top: 6px;height: 446px;margin-left: 125px;margin-right: 125px;border: 1px solid white;' src='" 
                 + text + "'></iframe>\""; 
         }
         else {

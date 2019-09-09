@@ -1,5 +1,5 @@
 
-console.log(44444); 
+console.log(6666); 
 
 var text = "";
 var origin = "";
@@ -14,7 +14,11 @@ var dblClickTimeout = null;
 var addType = "T";
 
 $( document ).ready(function() {
+    var things = new Map();
 
+    things.set('aaaa', 6);
+    alert(things.has('aaaa'));
+    alert(things.get('aaaa') == 6);
     var hasChanges = readCookie("hasChanges");
 
     if (hasChanges && hasChanges.length > 0)
