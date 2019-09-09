@@ -1,5 +1,5 @@
 
-console.log(1111); 
+console.log(111112222); 
 
 var text = "";
 var origin = "";
@@ -60,7 +60,6 @@ $( document ).ready(function() {
         }
         else {
             clearTimeout(dblClickTimeout);
-            undogenerate();
             
             var win = window.open('https://github.com/rasarrad/mytweetshost/edit/master/data.json', '_blank');
             win.focus();
