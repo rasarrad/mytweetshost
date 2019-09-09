@@ -51,8 +51,8 @@ function parseTweet() {
           
           urldirect = "https://www.youtube.com/watch?v=" + text.substring(text.indexOf('embed') + 6, text.indexOf('frameborder') - 2); 
           
-          text = "\"" + ('<iframe style="width: calc(100% - 250px);padding-top: 6px;height: 446px;padding-left: 125px;padding-right: 125px;" ' 
-                + text.substring(8)).replace(/"/g, '')  + "\""; 
+          text = "\"" + ('<iframe style=&quot;width: calc(100% - 250px);padding-top: 6px;height: 446px;padding-left: 125px;padding-right: 125px;&quot; ' 
+                + text.substring(8)).replace(/"/g, '&quot;')  + "\""; 
         }
 
         $('#date').focus(function(){
