@@ -68,7 +68,7 @@ function parseTweet() {
 /////////////////////////////////////////////////////////////////////////
 
 
-$( "#create" ).bind( "click", function( event ) {
+function create() {
     var ishidden = "0";
     if ($("#ishidden").is(":checked")) {
         ishidden = "1";
@@ -101,7 +101,7 @@ $( "#create" ).bind( "click", function( event ) {
         showMessage("New Tweet Created And Copied To Clipboard");
         $('.addpopup').fadeOut(2000);
     }       
-});
+}
 
 
 /////////////////////////////////////////////////////////////////////////

@@ -1,5 +1,5 @@
 
-console.log(66666); 
+console.log(11111); 
 
 var text = "";
 var origin = "";
@@ -51,6 +51,12 @@ $( document ).ready(function() {
 
     $( "#addtweet" ).bind( "click", function( event ) {
       openCreatePopup();
+    });
+
+    ///////////////////////////////////////
+    
+    $( "#create" ).bind( "click", function( event ) {
+        create();      
     });
 
     ///////////////////////////////////////
