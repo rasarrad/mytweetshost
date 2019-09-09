@@ -223,8 +223,7 @@ var getInformation = function(ismoretweets) {
                 + '</div>'));
             
             newtweetobj.append($('<div style="' + tagstyle + '" class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + tagdispalay + tagchanged + '</div>'));
-            newtweetobj.append($('<div class="innertweet"></div>'));
-            newtweetobj.find('.innertweet').append(val.tweet);
+            newtweetobj.append($(val.tweet));
             newtweetobj.attr('id', val.id);
 
             if (objToFocus < 0) {
