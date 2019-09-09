@@ -35,8 +35,9 @@ function parseTweet() {
           $('#date').val(date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2));
         
           url = text; 
-          text = "\"" + text.replace(/"/g, '') + "\"";
 
+          text = "\"" + ('<iframe src="' + url + '" style="width: calc(100% - 250px);padding-top: 6px;height: 646px;padding-left: 125px;padding-right: 125px;" ' 
+                + text.substring(8)).replace(/"/g, '')  + "\""; 
         }
         else {
           addType = "Y";
