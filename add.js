@@ -10,7 +10,6 @@ function parseTweet() {
           addType = "T";
           $('#typeT').css('border-color', '#00bc00'); 
 
-          alert(1);
           text = "\"" + text.replace(/"/g, '').replace('<\/script>', '<&#47;script>') + "\"";
         
           origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
