@@ -44,6 +44,7 @@ function resetFieldsPopup()
 
 
 function parseTweet() {
+    resetFieldsPopup(); 
     setTimeout(function(){
         nextid = parseInt($('#maxid').val()) + 1;
         $('#tweetid').val(nextid);
