@@ -9,7 +9,7 @@ var urldirect = "";
 var dblFlag = false;
 var dblClickTimeout = null;
 var addType = "T";
-console.log(1111); 
+console.log(22222); 
 
 $( document ).ready(function() {
   var hasChanges = readCookie("hasChanges");
@@ -40,7 +40,9 @@ $( document ).ready(function() {
 
   }
 };
-
+$( "#addtweet" ).bind( "click", function( event ) {
+  openCreatePopup();
+});
   $(window).scroll(function (event) {
   var scroll = $(window).scrollTop();
   if (scroll > 200) {

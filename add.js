@@ -1,7 +1,5 @@
 
-$( "#addtweet" ).bind( "click", function( event ) {
-    openCreatePopup();
-});
+
 
 var openCreatePopup = function(flag) 
 {
