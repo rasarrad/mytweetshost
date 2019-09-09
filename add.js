@@ -14,6 +14,8 @@ function parseTweet() {
         
           origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
   
+          $('#postedby').val(origin);
+          
           url = text.substring(text.lastIndexOf('https://twitter'), text.lastIndexOf('?ref_src=')); 
   
           var date = text.substring(text.lastIndexOf('ref_src=twsrc%5Etfw>') + 20, text.lastIndexOf('</a></blockquote>')); 
@@ -54,8 +56,6 @@ function parseTweet() {
           var that = this;
           setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
         });
-        
-        $('#postedby').val(origin);
 
         $('#categories').focus();
 
