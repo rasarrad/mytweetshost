@@ -1,5 +1,5 @@
 
-console.log(6666); 
+console.log(1111); 
 
 var text = "";
 var origin = "";
@@ -14,13 +14,8 @@ var dblClickTimeout = null;
 var addType = "T";
 
 $( document ).ready(function() {
-    var things = new Map();
 
-    things.set('aaaa', 6);
-    alert(things.has('aaaa'));
-    alert(things.get('aaaa') == 6);
     var hasChanges = readCookie("hasChanges");
-
     if (hasChanges && hasChanges.length > 0)
       $("#generate").addClass("haschanges");
 
@@ -54,7 +49,26 @@ $( document ).ready(function() {
     ///////////////////////////////////////
 
     $( "#addtweet" ).bind( "click", function( event ) {
-      openCreatePopup();
+        if (!dblFlag) {
+            dblFlag = true;
+            dblClickTimeout = setTimeout(function() {     
+              if (dblFlag) {
+                  openCreatePopup();
+                  dblFlag = false;  
+              }
+            }, 500);
+        }
+        else {
+            clearTimeout(dblClickTimeout);
+            undogenerate();
+            
+            var win = window.open('https://github.com/rasarrad/mytweetshost/edit/master/data.json', '_blank');
+            win.focus();
+
+            dblFlag = false;
+        }    
+      
+        
     });
 
     ///////////////////////////////////////
