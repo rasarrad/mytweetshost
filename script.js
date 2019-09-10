@@ -1,5 +1,5 @@
 
-console.log(33); 
+console.log(111112222); 
 
 var text = "";
 var origin = "";
@@ -400,11 +400,17 @@ $(document).on({
     'drop': function(e) {
         e.preventDefault();  
         e.stopPropagation();
-        console.log(111111);
-        console.log(e.originalEvent.dataTransfer.items[0]);
+
         e.originalEvent.dataTransfer.items[0].getAsString(function(str)
         {
-            alert("-" + str + "-"); 
+            resetFieldsPopup(); 
+            $('#tweet').val("http://www." + str);
+
+            if ($(".addpopup").css('display') == 'none') {
+              openCreatePopup(true);
+            }
+            parseTweet();
+            
         })
 
     }
