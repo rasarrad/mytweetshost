@@ -315,6 +315,33 @@ var getInformationbyid = function(id) {
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
+ 
+  
+var countalltweets = function(id) {
+    var path = "./data.json";
+    
+    $.getJSON(path, function(data) {
+        $.each(data.Tweets, function(key, val) {
+            var res = val.categories.split(" ");
+            for (var i = 0; i < res.length; i++) {
+                if (counters.has(val.type + res[i])) {
+                    var aux = counters.get(val.type + res[i]);
+                    counters.set(val.type + res[i], aux + 1);
+                }
+                else {
+                    counters.set(val.type + res[i], 1);
+                }
+            }
+        });
+
+        console.log(counters);
+
+    }); 
+}
+
+
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 
 
 var togglecriterions = function() {
