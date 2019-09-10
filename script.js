@@ -1,5 +1,5 @@
 
-console.log(1111); 
+console.log(22222); 
 
 var text = "";
 var origin = "";
@@ -412,7 +412,7 @@ $(document).on({
                 console.log(2);
                 $('#tweet').val("https://www." + str);
             }
-            
+
             parseTweet();
             
         })

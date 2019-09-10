@@ -7,6 +7,7 @@ function parseTweet() {
         text = $('#tweet').val();
 
         console.log("-" + text.substring(0,4) +"-");
+        alert(text.substring(0,4) == "http");
         if (text.substring(0,4) == "<blo") {
             addType = "T";
             $('#typeT').css('border-color', '#00bc00'); 
