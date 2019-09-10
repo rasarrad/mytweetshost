@@ -1,57 +1,5 @@
 {"Tweets": [
-    {
-        "id": "12",
-        "type": "H",
-        "url": "http://www.hesgoal.com",
-        "ishidden": "0",
-        "date": "20190910",
-        "author": "",
-        "categories": "tokeep",
-        "tags": "",
-        "info": "",
-        "classif": "0",
-        "tweet": "<iframe style='width: calc(100% - 252px); background: white;margin-top: 6px;height: 446px;margin-left: 125px;margin-right: 125px;border: 1px solid white;' src='https://www.hesgoal.com'></iframe>"
-        },
-    {
-        "id": "11",
-        "type": "Y",
-        "url": "http://www.youtube.com/watch?v=edicDsSwYpk",
-        "ishidden": "0",
-        "date": "20190910",
-        "author": "",
-        "categories": "tokeep",
-        "tags": "",
-        "info": "",
-        "classif": "0",
-        "tweet": "<iframe style='width: calc(100% - 252px); background: white;margin-top: 6px;height: 446px;margin-left: 125px;margin-right: 125px;border: 1px solid white;' src='https://www.youtube.com/embed/edicDsSwYpk' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
-        },
-    {
-        "id": "10",
-        "type": "H",
-        "url": "https://www.mediamatters.org/lou-dobbs/lou-dobbs-praises-ice-employee-driving-his-car-group-protesters",
-        "ishidden": "0",
-        "date": "20190909",
-        "author": "",
-        "categories": "climate",
-        "tags": "",
-        "info": "",
-        "classif": "0",
-        "tweet": "<iframe style='width: calc(100% - 252px);margin-top: 6px;height: 446px;margin-left: 125px;margin-right: 125px;border: 1px solid white;' src='https://www.mediamatters.org/lou-dobbs/lou-dobbs-praises-ice-employee-driving-his-car-group-protesters'></iframe>"
-        },
-    {
-        "id": "9",
-        "type": "Y",
-        "url": "https://www.youtube.com/watch?v=edicDsSwYpk",
-        "ishidden": "0",
-        "date": "20190909",
-        "author": "",
-        "categories": "climate",
-        "tags": "",
-        "info": "",
-        "classif": "0",
-        "tweet": "<iframe style='width: calc(100% - 252px);margin-top: 6px;height: 446px;margin-left: 125px;margin-right: 125px;border: 1px solid white;' width='560' height='315' src='https://www.youtube.com/embed/edicDsSwYpk' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
-        },
-
+    
     {
         "id": "8",
         "type": "T",
@@ -85,7 +33,7 @@
         "ishidden": "0",
         "date": "20190729",
         "author": "MintPress News (@MintPressNews)",
-        "categories": "tokeep",
+        "categories": "toviewlong",
         "tags": "",
         "classif": "1",
         "info": "MINTCAST: Host @_whitneywebb interviews author, investigative journalist and poet Doug Valentine (@dougvalentine77) about his extensive work on exposing the dark underbelly of the CIA and some of the agency’s most notorious covert programs.https://www.mintpressnews.com/mintcast-interviews-doug-valentine-expert-on-cia-covert-operations/260810/MintCast Interviews Doug Valentine, expert on CIA covert operationsMintCast Interviews Doug Valentine on his extensive work investigating CIA covert operations and current efforts to undermine ",
@@ -163,7 +111,7 @@
         "ishidden": "0",
         "date": "20190725",
         "author": "Media Lens (@medialens)",
-        "categories": "climate tokeep",
+        "categories": "climate",
         "tags": "",
         "classif": "1",
         "info": "'This provides strong evidence that anthropogenic global warming is not only unparalleled in terms of absolute temperatures, but also unprecedented in spatial consistency within the context of the past 2,000 years' https://www.carbonbrief.org/global-extent",
