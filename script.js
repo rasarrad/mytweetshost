@@ -1,5 +1,5 @@
 
-console.log(333); 
+console.log(111112222); 
 
 var text = "";
 var origin = "";
@@ -398,11 +398,15 @@ $(document).on({
         e.stopPropagation();
     },
     'drop': function(e) {
-        alert(1111);
         e.preventDefault();  
         e.stopPropagation();
         console.log(111111);
         console.log(event);
+        e.originalEvent.dataTransfer.items[0].getAsString(function(str)
+        {
+            alert("-" + str + "-"); 
+        })
+
     }
 });
 /////////////////////////////////////////////////////////////////////////
