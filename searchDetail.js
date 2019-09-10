@@ -448,6 +448,13 @@ var countalltweets = function(id) {
         }
         $("#climate").text(climate);
         $("#all").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
+
+
+        console.log(total);
+        console.log(total_t);
+        console.log(total_y);
+        console.log(total_h);
+        console.log(counters);
     }); 
 }
 
