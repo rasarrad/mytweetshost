@@ -30,26 +30,6 @@ function parseTweet() {
 
             $('#categories').focus();
         }
-        else if (text.substring(0,4) == "http") {
-            addType = "H";
-            $('#typeH').css('border-color', '#00bc00'); 
-
-            var date = new Date();
-            
-            $('#date').val(date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2));
-            
-            url = text; 
-
-            text = "\"<iframe style='width: calc(100% - 252px); background: white;margin-top: 6px;height: 446px;margin-left: 125px;margin-right: 125px;border: 1px solid white;' src='" 
-                    + text + "'></iframe>\""; 
-
-            showMessage("HTML Link Successfully Parsed"); 
-
-            $('#date').focus(function(){
-                var that = this;
-                setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
-            });
-        }
         else if (text.indexOf("youtube.com/embed") >= 0) {
             addType = "Y";
             $('#typeY').css('border-color', '#00bc00'); 
@@ -96,7 +76,27 @@ function parseTweet() {
             });
             
         }
+        else if (text.substring(0,4) == "http") {
+            addType = "H";
+            $('#typeH').css('border-color', '#00bc00'); 
 
+            var date = new Date();
+            
+            $('#date').val(date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2));
+            
+            url = text; 
+
+            text = "\"<iframe style='width: calc(100% - 252px); background: white;margin-top: 6px;height: 446px;margin-left: 125px;margin-right: 125px;border: 1px solid white;' src='" 
+                    + text + "'></iframe>\""; 
+
+            showMessage("HTML Link Successfully Parsed"); 
+
+            $('#date').focus(function(){
+                var that = this;
+                setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
+            });
+        }
+        
         showMessage("Link Parse Failed"); 
     }, 700);
 } 
