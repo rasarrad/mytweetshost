@@ -350,7 +350,7 @@ var countalltweets = function(id) {
         });
 
         $("#all").text(total);
-        $("#all").attr("title", "Twitter: " + totalT + " - Youtube: " + totalY + " - Website: " + totalH);
+        $("#all").attr("title", "Twitter: " + total_T + " - Youtube: " + total_Y + " - Website: " + total_H);
 
 
         var toview = 0;
