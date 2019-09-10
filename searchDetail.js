@@ -371,7 +371,7 @@ var countalltweets = function(id) {
         }
 
         $("#toview").text(toview);
-        $("#all").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
+        $("#toview").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
 
         var toread = 0;
         var toreadT = 0;
@@ -390,7 +390,7 @@ var countalltweets = function(id) {
             toread = toread + counters.get("Htoread");
         }
         $("#toread").text(toread);
-        $("#all").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
+        $("#toread").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
 
         var tokeep = 0;
         var tokeepT = 0;
@@ -409,7 +409,7 @@ var countalltweets = function(id) {
             tokeep = tokeep + counters.get("Htokeep");
         }
         $("#tokeep").text(tokeep);
-        $("#all").parent().attr("title", "Twitter: " + tokeepT + " - Youtube: " + tokeepY + " - Website: " + tokeepH);
+        $("#tokeep").parent().attr("title", "Twitter: " + tokeepT + " - Youtube: " + tokeepY + " - Website: " + tokeepH);
 
         var imp = 0;
         var impT = 0;
@@ -428,7 +428,7 @@ var countalltweets = function(id) {
             imp = imp + counters.get("Himp");
         }
         $("#imp").text(imp);
-        $("#all").parent().attr("title", "Twitter: " + impT + " - Youtube: " + impY + " - Website: " + impH);
+        $("#imp").parent().attr("title", "Twitter: " + impT + " - Youtube: " + impY + " - Website: " + impH);
 
         var climate = 0;
         var climateT = 0;
@@ -447,7 +447,7 @@ var countalltweets = function(id) {
             climate = climate + counters.get("Hclimate");
         }
         $("#climate").text(climate);
-        $("#all").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
+        $("#climate").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
 
 
         console.log(total);
