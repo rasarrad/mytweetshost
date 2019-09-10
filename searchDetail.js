@@ -319,7 +319,7 @@ var getInformationbyid = function(id) {
   
 var countalltweets = function(id) {
     var path = "./data.json";
-    
+    var counters = new Map();
     $.getJSON(path, function(data) {
         $.each(data.Tweets, function(key, val) {
             var res = val.categories.split(" ");
