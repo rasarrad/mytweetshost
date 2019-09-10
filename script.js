@@ -1,5 +1,5 @@
 
-console.log(111112222); 
+console.log(33); 
 
 var text = "";
 var origin = "";
@@ -401,7 +401,7 @@ $(document).on({
         e.preventDefault();  
         e.stopPropagation();
         console.log(111111);
-        console.log(event);
+        console.log(e.originalEvent.dataTransfer.items[0]);
         e.originalEvent.dataTransfer.items[0].getAsString(function(str)
         {
             alert("-" + str + "-"); 
