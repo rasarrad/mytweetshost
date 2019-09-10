@@ -1,5 +1,18 @@
 {"Tweets": [
     {
+        "id": "12",
+        "type": "H",
+        "url": "http://www.mediamatters.org/lou-dobbs/lou-dobbs-praises-ice-employee-driving-his-car-group-protesters",
+        "ishidden": "0",
+        "date": "20190910",
+        "author": "",
+        "categories": "",
+        "tags": "",
+        "info": "",
+        "classif": "0",
+        "tweet": "<iframe style='width: calc(100% - 252px); background: white;margin-top: 6px;height: 446px;margin-left: 125px;margin-right: 125px;border: 1px solid white;' src='http://www.mediamatters.org/lou-dobbs/lou-dobbs-praises-ice-employee-driving-his-car-group-protesters'></iframe>"
+        },
+    {
         "id": "11",
         "type": "Y",
         "url": "http://www.youtube.com/watch?v=edicDsSwYpk",
