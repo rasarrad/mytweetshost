@@ -1,5 +1,5 @@
 
-console.log(2222); 
+console.log(111112222); 
 
 var text = "";
 var origin = "";
@@ -385,7 +385,7 @@ $(document).keydown(function(e) {
     }
 }); 
 
-$("html").on("drop", function(event) {
+$(document).on("drop", function(event) {
     event.preventDefault();  
     event.stopPropagation();
     console.log(111111);
