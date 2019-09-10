@@ -1,5 +1,5 @@
 
-console.log(2222); 
+console.log(1111); 
 
 var text = "";
 var origin = "";
@@ -400,16 +400,19 @@ $(document).on({
             console.log(str);
             resetFieldsPopup(); 
 
-            if (str.substring(0,3) == "www") {
-                $('#tweet').val("http://" + str);
-            }
-            else {
-                $('#tweet').val("https://www." + str);
-            }
-
             if ($(".addpopup").css('display') == 'none') {
               openCreatePopup(true);
             }
+
+            if (str.substring(0,3) == "www") {
+                console.log(1);
+                $('#tweet').val("http://" + str);
+            }
+            else {
+                console.log(2);
+                $('#tweet').val("https://www." + str);
+            }
+            
             parseTweet();
             
         })

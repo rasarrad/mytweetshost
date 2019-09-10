@@ -6,6 +6,7 @@ function parseTweet() {
 
         text = $('#tweet').val();
 
+        console.log("-" + text.substring(0,4) +"-");
         if (text.substring(0,4) == "<blo") {
             addType = "T";
             $('#typeT').css('border-color', '#00bc00'); 
