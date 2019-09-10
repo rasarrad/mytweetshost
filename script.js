@@ -1,5 +1,5 @@
 
-console.log(111112222); 
+console.log(333); 
 
 var text = "";
 var origin = "";
@@ -390,6 +390,20 @@ $(document).on("drop", function(event) {
     event.stopPropagation();
     console.log(111111);
     console.log(event);
+});
+
+$(document).on({
+    'dragover dragenter': function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    },
+    'drop': function(e) {
+        alert(1111);
+        e.preventDefault();  
+        e.stopPropagation();
+        console.log(111111);
+        console.log(event);
+    }
 });
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
