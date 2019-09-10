@@ -1,5 +1,5 @@
 
-console.log(222222); 
+console.log(111); 
 
 var text = "";
 var origin = "";
@@ -385,13 +385,6 @@ $(document).keydown(function(e) {
     }
 }); 
 
-$(document).on("drop", function(event) {
-    event.preventDefault();  
-    event.stopPropagation();
-    console.log(111111);
-    console.log(event);
-});
-
 $(document).on({
     'dragover dragenter': function(e) {
         e.preventDefault();
@@ -403,8 +396,10 @@ $(document).on({
 
         e.originalEvent.dataTransfer.items[0].getAsString(function(str)
         {
+            console.log(8888888888888888888);
+            console.log(str);
             resetFieldsPopup(); 
-            $('#tweet').val("http://www." + str);
+            $('#tweet').val("https://www." + str);
 
             if ($(".addpopup").css('display') == 'none') {
               openCreatePopup(true);
