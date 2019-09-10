@@ -268,6 +268,8 @@ var getInformation = function(ismoretweets) {
             ind = ind + 1;
         });
 
+        console.log(!ismoretweets);
+        console.log($('#moretweets').css('opacity'));
         if (!ismoretweets || $('#moretweets').css('opacity') != 1) {
             showMessage("Search Results", 2000);
         }
@@ -362,11 +364,11 @@ var countalltweets = function(id) {
             toview = counters.get("Ttoview");
         }
         if (counters.has("Ytoview")) {
-            toviewT = counters.get("Ytoview");
+            toviewY = counters.get("Ytoview");
             toview = toview + counters.get("Ytoview");
         }
         if (counters.has("Htoview")) {
-            toviewT = counters.get("Htoview");
+            toviewH = counters.get("Htoview");
             toview = toview + counters.get("Htoview");
         }
 
