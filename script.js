@@ -1,5 +1,5 @@
 
-console.log(111); 
+console.log(2222); 
 
 var text = "";
 var origin = "";
@@ -399,7 +399,13 @@ $(document).on({
             console.log(8888888888888888888);
             console.log(str);
             resetFieldsPopup(); 
-            $('#tweet').val("https://www." + str);
+
+            if (str.substring(0,3) == "www") {
+                $('#tweet').val("http://" + str);
+            }
+            else {
+                $('#tweet').val("https://www." + str);
+            }
 
             if ($(".addpopup").css('display') == 'none') {
               openCreatePopup(true);
