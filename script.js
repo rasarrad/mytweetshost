@@ -1,5 +1,5 @@
 
-console.log(66666); 
+console.log(111111); 
 
 var text = "";
 var origin = "";
@@ -396,13 +396,7 @@ $(document).on({
 
         e.originalEvent.dataTransfer.items[0].getAsString(function(str)
         {
-            console.log(8888888888888888888);
-            console.log(str);
-            resetFieldsPopup(); 
-
-            if ($(".addpopup").css('display') == 'none') {
-              openCreatePopup(true);
-            }
+alert(str);
 
             if (str.substring(0,3) == "www") {
                 console.log(1);
@@ -413,7 +407,7 @@ $(document).on({
                 $('#tweet').val("https://www." + str);
             }
 
-            parseTweet();
+            //parseTweet();
             
         })
 
