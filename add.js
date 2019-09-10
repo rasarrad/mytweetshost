@@ -7,62 +7,97 @@ function parseTweet() {
         text = $('#tweet').val();
 
         if (text.substring(0,4) == "<blo") {
-          addType = "T";
-          $('#typeT').css('border-color', '#00bc00'); 
+            addType = "T";
+            $('#typeT').css('border-color', '#00bc00'); 
 
-          text = "\"" + text.replace(/"/g, '').replace('<\/script>', '<&#47;script>') + "\"";
-        
-          origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
-  
-          $('#postedby').val(origin);
-          
-          url = text.substring(text.lastIndexOf('https://twitter'), text.lastIndexOf('?ref_src=')); 
-  
-          var date = text.substring(text.lastIndexOf('ref_src=twsrc%5Etfw>') + 20, text.lastIndexOf('</a></blockquote>')); 
-          
-          var year = date.substring(date.length - 4);
-          var month = date.substring(0, date.indexOf(' ')); 
-          var day = date.substring(date.indexOf(' ') + 1, date.lastIndexOf(' ') -1); 
-  
-          $('#date').val(year + pad(getMonthFromString(month), 2) + pad(day, 2));
+            text = "\"" + text.replace(/"/g, '').replace('<\/script>', '<&#47;script>') + "\"";
+            
+            origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
+    
+            $('#postedby').val(origin);
+            
+            url = text.substring(text.lastIndexOf('https://twitter'), text.lastIndexOf('?ref_src=')); 
+    
+            var date = text.substring(text.lastIndexOf('ref_src=twsrc%5Etfw>') + 20, text.lastIndexOf('</a></blockquote>')); 
+            
+            var year = date.substring(date.length - 4);
+            var month = date.substring(0, date.indexOf(' ')); 
+            var day = date.substring(date.indexOf(' ') + 1, date.lastIndexOf(' ') -1); 
+    
+            $('#date').val(year + pad(getMonthFromString(month), 2) + pad(day, 2));
+
+            showMessage("Twitter Link Successfully Parsed"); 
+
+            $('#categories').focus();
         }
         else if (text.substring(0,4) == "http") {
-          addType = "H";
-          $('#typeH').css('border-color', '#00bc00'); 
+            addType = "H";
+            $('#typeH').css('border-color', '#00bc00'); 
 
-          var date = new Date();
-          
-          $('#date').val(date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2));
-        
-          url = text; 
+            var date = new Date();
+            
+            $('#date').val(date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2));
+            
+            url = text; 
 
-          text = "\"<iframe style='width: calc(100% - 252px); background: white;margin-top: 6px;height: 446px;margin-left: 125px;margin-right: 125px;border: 1px solid white;' src='" 
-                + text + "'></iframe>\""; 
+            text = "\"<iframe style='width: calc(100% - 252px); background: white;margin-top: 6px;height: 446px;margin-left: 125px;margin-right: 125px;border: 1px solid white;' src='" 
+                    + text + "'></iframe>\""; 
+
+            showMessage("HTML Link Successfully Parsed"); 
+
+            $('#date').focus(function(){
+                var that = this;
+                setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
+            });
         }
-        else {
-          addType = "Y";
-          $('#typeY').css('border-color', '#00bc00'); 
+        else if (text.indexOf("youtube.com/embed") >= 0) {
+            addType = "Y";
+            $('#typeY').css('border-color', '#00bc00'); 
 
-          var date = new Date();
-          
-          $('#date').val(date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2));
-        
-          url = text.substring(text.indexOf('https://www.youtube'), text.indexOf('frameborder') - 2); 
-          
-          urldirect = "https://www.youtube.com/watch?v=" + text.substring(text.indexOf('embed') + 6, text.indexOf('frameborder') - 2); 
-          
-          text = "\"" + ("<iframe style='width: calc(100% - 252px);margin-top: 6px;height: 446px;margin-left: 125px;margin-right: 125px;border: 1px solid white;' " 
-                + text.substring(8)).replace(/"/g, "'")  + "\""; 
+            var date = new Date();
+            
+            $('#date').val(date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2));
+            
+            url = text.substring(text.indexOf('https://www.youtube'), text.indexOf('frameborder') - 2); 
+            
+            urldirect = "https://www.youtube.com/watch?v=" + text.substring(text.indexOf('embed') + 6, text.indexOf('frameborder') - 2); 
+            
+            text = "\"" + ("<iframe style='width: calc(100% - 252px);margin-top: 6px;height: 446px;margin-left: 125px;margin-right: 125px;border: 1px solid white;' " 
+                    + text.substring(8)).replace(/"/g, "'")  + "\""; 
+
+            showMessage("Youtube Link Successfully Parsed"); 
+
+            $('#date').focus(function(){
+                var that = this;
+                setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
+            });
+            
+        }
+        else if (text.indexOf("youtube") >= 0) {
+            addType = "Y";
+            $('#typeY').css('border-color', '#00bc00'); 
+
+            var date = new Date();
+            
+            $('#date').val(date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2));
+            
+            url = text.substring(text.indexOf('https://www.youtube'), text.indexOf('frameborder') - 2); 
+            
+            urldirect = text; 
+            
+            text = "\"<iframe style='width: calc(100% - 252px); background: white;margin-top: 6px;height: 446px;margin-left: 125px;margin-right: 125px;border: 1px solid white;' src='https://www.youtube.com/embed/" 
+            + text.substring(text.indexOf('watch?v=') + 7) + "' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>\""; 
+
+            showMessage("Youtube Link Successfully Parsed"); 
+
+            $('#date').focus(function(){
+                var that = this;
+                setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
+            });
+            
         }
 
-        $('#date').focus(function(){
-          var that = this;
-          setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
-        });
-
-        $('#categories').focus();
-
-        showMessage("Link Successfully Parsed"); 
+        showMessage("Link Parse Failed"); 
     }, 700);
 } 
 
