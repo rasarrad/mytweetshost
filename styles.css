@@ -159,7 +159,17 @@ ol > li {
       cursor: pointer;
       transition: all 0.6s;
       font-weight: bold;
+      position: relative;
     }
+    #menu > ul > li > div {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    font-size: 13px;
+    /* opacity: 0.6; */
+    color: #cfcfcf;
+    }
+
     #menu > ul > li:hover {
       background: #0089da;
       color: white;
@@ -434,5 +444,5 @@ ol > li {
 }
 
 .fa-spin {
-  animation-duration: 1s; // or something else
+  animation-duration: 1s;
 }

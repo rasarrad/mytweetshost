@@ -320,6 +320,10 @@ var getInformationbyid = function(id) {
 var countalltweets = function(id) {
     var path = "./data.json";
     var counters = new Map();
+    var total = 0;
+    var total_y = 0;
+    var total_t = 0;
+    var total_h = 0;
     $.getJSON(path, function(data) {
         $.each(data.Tweets, function(key, val) {
             var res = val.categories.split(" ");
@@ -332,10 +336,118 @@ var countalltweets = function(id) {
                     counters.set(val.type + res[i], 1);
                 }
             }
+
+            if (val.type == "T") {
+                total_t = total_t + 1;
+            }
+            else if (val.type == "Y") {
+                total_y = total_y + 1;
+            }
+            else {
+                total_h = total_h + 1;
+            }
+            total = total + 1;
         });
 
-        console.log(counters);
+        $("#all").text(total);
+        $("#all").attr("title", "Twitter: " + totalT + " - Youtube: " + totalY + " - Website: " + totalH);
 
+
+        var toview = 0;
+        var toviewT = 0;
+        var toviewY = 0;
+        var toviewH = 0;
+        if (counters.has("Ttoview")) {
+            toviewT = counters.get("Ttoview");
+            toview = counters.get("Ttoview");
+        }
+        if (counters.has("Ytoview")) {
+            toviewT = counters.get("Ytoview");
+            toview = toview + counters.get("Ytoview");
+        }
+        if (counters.has("Htoview")) {
+            toviewT = counters.get("Htoview");
+            toview = toview + counters.get("Htoview");
+        }
+
+        $("#toview").text(toview);
+        $("#toview").attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
+
+        var toread = 0;
+        var toreadT = 0;
+        var toreadY = 0;
+        var toreadH = 0;
+        if (counters.has("Ttoread")) {
+            toreadT = counters.get("Ttoread");
+            toread = counters.get("Ttoread");
+        }
+        if (counters.has("Ytoread")) {
+            toreadT = counters.get("Ytoread");
+            toread = toread + counters.get("Ytoread");
+        }
+        if (counters.has("Htoread")) {
+            toreadT = counters.get("Htoread");
+            toread = toread + counters.get("Htoread");
+        }
+        $("#toread").text(toread);
+        $("#toread").attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
+
+        var tokeep = 0;
+        var tokeepT = 0;
+        var tokeepY = 0;
+        var tokeepH = 0;
+        if (counters.has("Ttokeep")) {
+            tokeepT = counters.get("Ttokeep");
+            tokeep = counters.get("Ttokeep");
+        }
+        if (counters.has("Ytokeep")) {
+            tokeepT = counters.get("Ytokeep");
+            tokeep = tokeep + counters.get("Ytokeep");
+        }
+        if (counters.has("Htokeep")) {
+            tokeepT = counters.get("Htokeep");
+            tokeep = tokeep + counters.get("Htokeep");
+        }
+        $("#tokeep").text(tokeep);
+        $("#tokeep").attr("title", "Twitter: " + tokeepT + " - Youtube: " + tokeepY + " - Website: " + tokeepH);
+
+        var imp = 0;
+        var impT = 0;
+        var impY = 0;
+        var impH = 0;
+        if (counters.has("Timp")) {
+            impT = counters.get("Timp");
+            imp = counters.get("Timp");
+        }
+        if (counters.has("Yimp")) {
+            impT = counters.get("Yimp");
+            imp = imp + counters.get("Yimp");
+        }
+        if (counters.has("Himp")) {
+            impT = counters.get("Himp");
+            imp = imp + counters.get("Himp");
+        }
+        $("#imp").text(imp);
+        $("#imp").attr("title", "Twitter: " + impT + " - Youtube: " + impY + " - Website: " + impH);
+
+        var climate = 0;
+        var climateT = 0;
+        var climateY = 0;
+        var climateH = 0;
+        if (counters.has("Tclimate")) {
+            climateT = counters.get("Tclimate");
+            climate = counters.get("Tclimate");
+        }
+        if (counters.has("Yclimate")) {
+            climateT = counters.get("Yclimate");
+            climate = climate + counters.get("Yclimate");
+        }
+        if (counters.has("Hclimate")) {
+            climateT = counters.get("Hclimate");
+            climate = climate + counters.get("Hclimate");
+        }
+        $("#climate").text(climate);
+        $("#climate").attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
     }); 
 }
 
