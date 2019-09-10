@@ -1,5 +1,5 @@
 
-console.log(111111); 
+console.log(333333); 
 
 var text = "";
 var origin = "";
@@ -396,18 +396,19 @@ $(document).on({
 
         e.originalEvent.dataTransfer.items[0].getAsString(function(str)
         {
-alert(str);
-
             if (str.substring(0,3) == "www") {
-                console.log(1);
-                $('#tweet').val("http://" + str);
+                showMessage("Invalid Link - Must be HTTPS"); 
             }
             else {
-                console.log(2);
-                $('#tweet').val("https://www." + str);
-            }
+                resetFieldsPopup(); 
 
-            //parseTweet();
+                if ($(".addpopup").css('display') == 'none') {
+                  openCreatePopup(true);
+                }
+
+                $('#tweet').val("https://www." + str);
+                parseTweet();
+            }
             
         })
 
