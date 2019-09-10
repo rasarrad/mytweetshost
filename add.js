@@ -6,8 +6,6 @@ function parseTweet() {
 
         text = $('#tweet').val();
 
-        console.log("-" + text.substring(0,4) +"-");
-        alert(text.substring(0,4) == "http");
         if (text.substring(0,4) == "<blo") {
             addType = "T";
             $('#typeT').css('border-color', '#00bc00'); 
@@ -53,6 +51,8 @@ function parseTweet() {
                 var that = this;
                 setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
             });
+
+            return false;
             
         }
         else if (text.indexOf("youtube") >= 0) {
@@ -76,9 +76,12 @@ function parseTweet() {
                 var that = this;
                 setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
             });
+
+            return false;
             
         }
         else if (text.substring(0,4) == "http") {
+
             addType = "H";
             $('#typeH').css('border-color', '#00bc00'); 
 
@@ -97,6 +100,8 @@ function parseTweet() {
                 var that = this;
                 setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
             });
+
+            return false;
         }
 
         showMessage("Link Parse Failed"); 
