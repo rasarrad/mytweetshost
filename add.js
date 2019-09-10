@@ -66,7 +66,7 @@ function parseTweet() {
             urldirect = text; 
             
             text = "\"<iframe style='width: calc(100% - 252px); background: white;margin-top: 6px;height: 446px;margin-left: 125px;margin-right: 125px;border: 1px solid white;' src='https://www.youtube.com/embed/" 
-            + text.substring(text.indexOf('watch?v=') + 7) + "' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>\""; 
+            + text.substring(text.indexOf('watch?v=') + 8) + "' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>\""; 
 
             showMessage("Youtube Link Successfully Parsed"); 
 
@@ -96,7 +96,7 @@ function parseTweet() {
                 setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
             });
         }
-        
+
         showMessage("Link Parse Failed"); 
     }, 700);
 } 
