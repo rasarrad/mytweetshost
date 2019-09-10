@@ -350,7 +350,7 @@ var countalltweets = function(id) {
         });
 
         $("#all").text(total);
-        $("#all").attr("title", "Twitter: " + total_t + " - Youtube: " + total_y + " - Website: " + total_h);
+        $("#all").parent().attr("title", "Twitter: " + total_t + " - Youtube: " + total_y + " - Website: " + total_h);
 
 
         var toview = 0;
@@ -371,7 +371,7 @@ var countalltweets = function(id) {
         }
 
         $("#toview").text(toview);
-        $("#toview").attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
+        $("#all").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
 
         var toread = 0;
         var toreadT = 0;
@@ -382,15 +382,15 @@ var countalltweets = function(id) {
             toread = counters.get("Ttoread");
         }
         if (counters.has("Ytoread")) {
-            toreadT = counters.get("Ytoread");
+            toreadY = counters.get("Ytoread");
             toread = toread + counters.get("Ytoread");
         }
         if (counters.has("Htoread")) {
-            toreadT = counters.get("Htoread");
+            toreadH = counters.get("Htoread");
             toread = toread + counters.get("Htoread");
         }
         $("#toread").text(toread);
-        $("#toread").attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
+        $("#all").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
 
         var tokeep = 0;
         var tokeepT = 0;
@@ -401,15 +401,15 @@ var countalltweets = function(id) {
             tokeep = counters.get("Ttokeep");
         }
         if (counters.has("Ytokeep")) {
-            tokeepT = counters.get("Ytokeep");
+            tokeepY = counters.get("Ytokeep");
             tokeep = tokeep + counters.get("Ytokeep");
         }
         if (counters.has("Htokeep")) {
-            tokeepT = counters.get("Htokeep");
+            tokeepH = counters.get("Htokeep");
             tokeep = tokeep + counters.get("Htokeep");
         }
         $("#tokeep").text(tokeep);
-        $("#tokeep").attr("title", "Twitter: " + tokeepT + " - Youtube: " + tokeepY + " - Website: " + tokeepH);
+        $("#all").parent().attr("title", "Twitter: " + tokeepT + " - Youtube: " + tokeepY + " - Website: " + tokeepH);
 
         var imp = 0;
         var impT = 0;
@@ -420,15 +420,15 @@ var countalltweets = function(id) {
             imp = counters.get("Timp");
         }
         if (counters.has("Yimp")) {
-            impT = counters.get("Yimp");
+            impY = counters.get("Yimp");
             imp = imp + counters.get("Yimp");
         }
         if (counters.has("Himp")) {
-            impT = counters.get("Himp");
+            impH = counters.get("Himp");
             imp = imp + counters.get("Himp");
         }
         $("#imp").text(imp);
-        $("#imp").attr("title", "Twitter: " + impT + " - Youtube: " + impY + " - Website: " + impH);
+        $("#all").parent().attr("title", "Twitter: " + impT + " - Youtube: " + impY + " - Website: " + impH);
 
         var climate = 0;
         var climateT = 0;
@@ -439,15 +439,15 @@ var countalltweets = function(id) {
             climate = counters.get("Tclimate");
         }
         if (counters.has("Yclimate")) {
-            climateT = counters.get("Yclimate");
+            climateY = counters.get("Yclimate");
             climate = climate + counters.get("Yclimate");
         }
         if (counters.has("Hclimate")) {
-            climateT = counters.get("Hclimate");
+            climateH = counters.get("Hclimate");
             climate = climate + counters.get("Hclimate");
         }
         $("#climate").text(climate);
-        $("#climate").attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
+        $("#all").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
     }); 
 }
 
