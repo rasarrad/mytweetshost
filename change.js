@@ -391,7 +391,7 @@ function generate() {
         $('#linkresult').val(text);
         $("#linkresult").select();
         document.execCommand('copy'); 
-        createCookie("hasChanges", "Yes");
+        createCookie("hasChanges", "");
         console.log(11); 
         $("#generate").removeClass("haschanges");
 

@@ -1,5 +1,5 @@
 
-console.log(111); 
+console.log(333); 
 
 var text = "";
 var origin = "";
@@ -429,6 +429,6 @@ function countmove(obj) {
         }
         setTimeout(function() { 
             dblFlag = false;
-        }, 1000);
+        }, 500);
     }
 }  
