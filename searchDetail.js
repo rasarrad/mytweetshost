@@ -29,31 +29,43 @@ var getInformation = function(ismoretweets) {
 
     currpage = currpage + 1;
 
-    $.getJSON(path, function(data) 
-    {
-    $.each(data.Tweets, function(key, val) 
-        {
-        var newtweet = null;
-        var dofiltertextfinal = false;
-        var dofilterdate1final = false;
-        var dofilterdate2final = false;
-        var dofilteridfinal = false;
-        var dofiltertagfinal = false;
-        var dofiltercatfinal = false;
-        var dofilterauthorfinal = false;
+    $.getJSON(path, function(data) {
+        var total_y = 0;
+        var total_t = 0;
+        var total_h = 0;
 
-        dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
-        dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
-        dofilterdate2final = !dofilterdate2 || (dofilterdate2 && val.date <= Number($('#filterdate2').val()));
-        dofilteridfinal = !dofilterid || (dofilterid && (Number(val.id) == Number($('#filterid').val())));
-        dofiltertagfinal = !dofiltertag || (dofiltertag && val.tags.includes($('#filtertag').val()));
-        dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
-        dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
+        $.each(data.Tweets, function(key, val) {
+            var newtweet = null;
+            var dofiltertextfinal = false;
+            var dofilterdate1final = false;
+            var dofilterdate2final = false;
+            var dofilteridfinal = false;
+            var dofiltertagfinal = false;
+            var dofiltercatfinal = false;
+            var dofilterauthorfinal = false;
 
-        if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
-            && dofilterauthorfinal && dofiltercatfinal) {
-            ind = ind + 1;
-        }
+            dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
+            dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
+            dofilterdate2final = !dofilterdate2 || (dofilterdate2 && val.date <= Number($('#filterdate2').val()));
+            dofilteridfinal = !dofilterid || (dofilterid && (Number(val.id) == Number($('#filterid').val())));
+            dofiltertagfinal = !dofiltertag || (dofiltertag && val.tags.includes($('#filtertag').val()));
+            dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
+            dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
+
+            if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
+                && dofilterauthorfinal && dofiltercatfinal) {
+                ind = ind + 1;
+                
+                if (val.type == "T") {
+                    total_t = total_t + 1;
+                }
+                else if (val.type == "Y") {
+                    total_y = total_y + 1;
+                }
+                else {
+                    total_h = total_h + 1;
+                }
+            }
         });
         
         var toindex = 0;
@@ -67,6 +79,11 @@ var getInformation = function(ismoretweets) {
         
         $('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
         $('#tccateg').text("In " + $('#selectedcattext').val());
+
+        $('#tct').text(total_t);
+        $('#tcy').text(total_y);
+        $('#tch').text(total_h);
+
         var aux = ind;
 
         setTimeout(function(){ 
