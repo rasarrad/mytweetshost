@@ -15,7 +15,7 @@ function saveinfo(obj, id) {
     createCookie("hasChanges", "Yes");
     $("#generate").addClass("haschanges");
 
-    showMessage("Information About Tweet Saved"); 
+    showMessage("Information About Link Saved"); 
 }   
 
 
@@ -41,7 +41,7 @@ function saveclassif(obj, id) {
     createCookie("hasChanges", "Yes");
     $("#generate").addClass("haschanges");
 
-    showMessage("Tweet Classification Saved"); 
+    showMessage("Link Classification Saved"); 
 }  
 
 
@@ -78,7 +78,7 @@ function undosaveclassif(obj, id) {
             $("#generate").removeClass("haschanges");
         }
 
-        showMessage("Tweet Reclassification Reverted");
+        showMessage("Link Reclassification Reverted");
     } 
 
     hasTweetChanges(callback);
@@ -119,7 +119,7 @@ function undosaveinfo(obj, id) {
             $("#generate").removeClass("haschanges");
         }
 
-        showMessage("Information About Tweet Reverted");
+        showMessage("Information About Link Reverted");
     } 
 
     hasTweetChanges(callback);
@@ -145,7 +145,7 @@ function removetweet(obj, id) {
           createCookie("hasChanges", "");
           $("#generate").removeClass("haschanges");
         }
-        showMessage("Tweet Marked To Delete Reverted");
+        showMessage("Link Marked To Delete Reverted");
     } 
     else {
         createCookie(id + "isdeleted", "a", 99999);
@@ -153,7 +153,7 @@ function removetweet(obj, id) {
         $("#generate").addClass("haschanges");
         console.log(6); 
         createCookie("hasChanges", "Yes");
-        showMessage("Tweet Marked To Delete");
+        showMessage("Link Marked To Delete");
     }
 }    
 

@@ -422,7 +422,7 @@ function countmove(obj) {
     if (!dblFlag) {
         dblFlag = true;
         if ($(obj).css('top') == "67px") {
-            $(obj).css('top', 'calc(100% - 142px)');
+            $(obj).css('top', 'calc(100% - 176px)');
         }
         else {
             $(obj).css('top', '67px');

@@ -326,7 +326,7 @@ var getInformationbyid = function(id) {
 
                 $('#mask').fadeOut(300);
 
-                showMessage("Tweet Loaded"); 
+                showMessage("Link Loaded"); 
 
                 return false;
             }
@@ -520,7 +520,7 @@ function resetFields(flag) {
     $("#main").empty();
     $('#moretweets').hide();
     $('#selectedcat').val('all');
-    $('#selectedcattext').val('All Tweets');
+    $('#selectedcattext').val('All Links');
     $('#tweetcount').hide();  
     $('#filtertext').val('');
     $('#filterdate1').val('');

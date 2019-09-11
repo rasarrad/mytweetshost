@@ -139,11 +139,11 @@ function create() {
     resetFieldsPopup();
 
     if ($("#onemore").is(":checked")) {
-        showMessage("New Tweet Created And Copied To Clipboard. You Can Add One More Now");
+        showMessage("New Link Created And Copied To Clipboard. You Can Add One More Now");
         $('#tweet').focus();
     } 
     else {
-        showMessage("New Tweet Created And Copied To Clipboard");
+        showMessage("New Link Created And Copied To Clipboard");
         $('.addpopup').fadeOut(2000);
     }       
 }
