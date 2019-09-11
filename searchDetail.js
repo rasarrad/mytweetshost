@@ -19,12 +19,12 @@ var getInformation = function(ismoretweets) {
 
     
     if (!ismoretweets) {
-    $('#mask').fadeIn(300);  
-    $('#moretweets').hide();
-    currentIndex = 0;
-    endIndex = currentIndex + 5;
+        $('#mask').fadeIn(300);  
+        $('#moretweets').hide();
+        currentIndex = 0;
+        endIndex = currentIndex + 5;
 
-    $("#main").empty();
+        $("#main").empty();
     }
 
     currpage = currpage + 1;
@@ -290,7 +290,7 @@ var getInformation = function(ismoretweets) {
             ind = ind + 1;
         });
 
-        if (!ismoretweets || $('#moretweets').css('opacity') != 1) {
+        if (!ismoretweets) {
             showMessage("Search Results", 2000);
         }
     }); 
