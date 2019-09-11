@@ -11,7 +11,7 @@ function saveinfo(obj, id) {
 
       $("#" + id + "undoinfo").css("display", "inline-block");
     }
-      
+    console.log(1);   
     createCookie("hasChanges", "Yes");
     $("#generate").addClass("haschanges");
 
@@ -37,6 +37,7 @@ function saveclassif(obj, id) {
         $("#" + id + "undoinfo").css("display", "inline-block");
     }
 
+    console.log(2); 
     createCookie("hasChanges", "Yes");
     $("#generate").addClass("haschanges");
 
@@ -68,12 +69,13 @@ function undosaveclassif(obj, id) {
 
     var callback = function(flag) {      
         if (flag) {
-        createCookie("hasChanges", "Yes");
-        $("#generate").addClass("haschanges");
+            console.log(3); 
+            createCookie("hasChanges", "Yes");
+            $("#generate").addClass("haschanges");
         }
         else {
-        createCookie("hasChanges", "");
-        $("#generate").removeClass("haschanges");
+            createCookie("hasChanges", "");
+            $("#generate").removeClass("haschanges");
         }
 
         showMessage("Tweet Reclassification Reverted");
@@ -108,6 +110,7 @@ function undosaveinfo(obj, id) {
     
     var callback = function(flag) {      
         if (flag) {
+            console.log(4); 
             createCookie("hasChanges", "Yes");
             $("#generate").addClass("haschanges");
         }
@@ -134,6 +137,7 @@ function removetweet(obj, id) {
         $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #0081cc , #008ada )');
 
         if (hasTweetChanges()) {
+            console.log(5); 
           createCookie("hasChanges", "Yes");
           $("#generate").addClass("haschanges");
         }
@@ -147,6 +151,7 @@ function removetweet(obj, id) {
         createCookie(id + "isdeleted", "a", 99999);
         $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #d60000, #ff2e2e)');
         $("#generate").addClass("haschanges");
+        console.log(6); 
         createCookie("hasChanges", "Yes");
         showMessage("Tweet Marked To Delete");
     }
@@ -198,6 +203,7 @@ function acceptTag(obj) {
         $('#' + id).find('.newcat').html('<b> New categories </b>' + $(obj).parent().find('input').val());   
 
         $("#generate").addClass("haschanges");
+        console.log(7); 
         createCookie("hasChanges", "Yes");
         showMessage("Category Marked To Change");
     }
@@ -215,6 +221,7 @@ function acceptTag(obj) {
         $('#' + id).find('.newtag').html('<b> New tags </b>' + $(obj).parent().find('input').val());
 
         $("#generate").addClass("haschanges");
+        console.log(8); 
         createCookie("hasChanges", "Yes");
         showMessage("Tag Marked To Change");
     }
@@ -247,6 +254,7 @@ function undotag(obj) {
         }
         if (hasTweetChanges()) {
           $("#generate").addClass("haschanges");
+          console.log(9); 
           createCookie("hasChanges", "Yes");
         }
         else {
@@ -270,6 +278,7 @@ function undotag(obj) {
         }
         if (hasTweetChanges()) {
           $("#generate").addClass("haschanges");
+          console.log(10); 
           createCookie("hasChanges", "Yes");
         }
         else {
@@ -383,6 +392,7 @@ function generate() {
         $("#linkresult").select();
         document.execCommand('copy'); 
         createCookie("hasChanges", "Yes");
+        console.log(11); 
         $("#generate").removeClass("haschanges");
 
         showMessage("Changes Processed And Copied To Clipboard");
@@ -457,6 +467,7 @@ function undogenerate() {
       });
 
       if (ind) {
+        console.log(12); 
         createCookie("hasChanges", "Yes");
         $("#generate").addClass("haschanges");
       }

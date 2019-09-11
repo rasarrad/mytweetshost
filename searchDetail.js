@@ -64,23 +64,28 @@ var getInformation = function(ismoretweets) {
         if (Number($('#recordspersearch').val()) < ind) {
         
         $('#tweetcount').css('background', '#fff900');
-        $('#tweetcount').html((currentIndex + 1)  + " to " + toindex + " of " + ind + "<br>In " + $('#selectedcattext').val());    
+        
+        $('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
+        $('#tccateg').text("In " + $('#selectedcattext').val());
         var aux = ind;
 
         setTimeout(function(){ 
             if (aux == toindex) { 
-            $('#tweetcount').html(aux + " Tweets<br>In " + $('#selectedcattext').val());  
+                $('#tcnumber').text(aux + " Links");
+                $('#tccateg').text("In " + $('#selectedcattext').val());
             }
             else {
-            $('#tweetcount').html(toindex + " of " + aux + "<br>In " + $('#selectedcattext').val());  
+                $('#tcnumber').text(toindex + " of " + aux);
+                $('#tccateg').text("In " + $('#selectedcattext').val());
             }   
             
             $('#tweetcount').css('background', 'white');
         }, 3000);
 
         }
-        else {
-        $('#tweetcount').html(ind + " Tweets<br>In " + $('#selectedcattext').val());  
+        else {  
+            $('#tcnumber').text(ind + " Links");
+            $('#tccateg').text("In " + $('#selectedcattext').val());
         }
 
 
@@ -268,8 +273,6 @@ var getInformation = function(ismoretweets) {
             ind = ind + 1;
         });
 
-        console.log(!ismoretweets);
-        console.log($('#moretweets').css('opacity'));
         if (!ismoretweets || $('#moretweets').css('opacity') != 1) {
             showMessage("Search Results", 2000);
         }
@@ -450,13 +453,6 @@ var countalltweets = function(id) {
         }
         $("#climate").text(climate);
         $("#climate").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
-
-
-        console.log(total);
-        console.log(total_t);
-        console.log(total_y);
-        console.log(total_h);
-        console.log(counters);
     }); 
 }
 
