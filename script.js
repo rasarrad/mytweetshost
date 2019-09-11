@@ -1,5 +1,5 @@
 
-console.log(111); 
+console.log(333); 
 
 var text = "";
 var origin = "";
@@ -419,10 +419,5 @@ $(document).on({
 
 
 function countmove(obj) {
-    if ($(obj).css('top') == "67px") {
-        $(obj).css('top', 'calc(100% - 142px)');
-    }
-    else {
-        $(obj).css('top', '67px');
-    }
+
 }  
