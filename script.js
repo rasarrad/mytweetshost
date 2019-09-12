@@ -14,7 +14,7 @@ var dblClickTimeout = null;
 var addType = "T";
 
 $( document ).ready(function() {
-    readCookie(9 + "templink")
+    alert(readCookie(9 + "templink"))
     countalltweets();
     var hasChanges = readCookie("hasChanges");
     if (hasChanges && hasChanges.length > 0)
