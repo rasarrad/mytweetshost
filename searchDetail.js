@@ -124,7 +124,7 @@ var getInformation = function(ismoretweets) {
                 
                 linktmp.substring(0, linktmp.length - 1); 
 
-                linktmp = JSON.parse(decodeURIComponent());
+                linktmp = JSON.parse(decodeURIComponent(linktmp));
 
 
                 console.log(linktmp);
