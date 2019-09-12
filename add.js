@@ -5,7 +5,7 @@ function parseTweet() {
         $('#tweetid').val(nextid);
 
         text = $('#tweet').val();
-
+alert(text.substring(0,4))
         if (text.substring(0,4) == "<blo") {
             addType = "T";
             $('#typeT').css('border-color', '#00bc00'); 
@@ -146,6 +146,18 @@ function create() {
         showMessage("New Link Created And Copied To Clipboard");
         $('.addpopup').fadeOut(2000);
     }       
+
+    if ($("#preview").is(":checked")) {
+        createCookie(nextid + "templink", encodeURIComponent(JSON.stringify($('#result').val())), 99999);
+
+        var tmpid = readCookie("tmpid");
+        if (tmpid && tmpid.length > 0) {
+
+        }
+        else {
+            createCookie("tmpid", pad(nextid, 4));
+        } 
+    } 
 }
 
 

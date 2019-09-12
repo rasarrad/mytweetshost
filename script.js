@@ -1,5 +1,5 @@
 
-console.log(4444); 
+console.log(555); 
 
 var text = "";
 var origin = "";
@@ -14,26 +14,6 @@ var dblClickTimeout = null;
 var addType = "T";
 
 $( document ).ready(function() {
-
-    var obj = {
-        "id": "33",
-        "type": "T",
-        "url": "https://twitter.com/CraigMurrayOrg/status/1155807353368928257",
-        "ishidden": "0",
-        "date": "20190729",
-        "author": "Craig Murray (@CraigMurrayOrg)",
-        "categories": "toread",
-        "tags": "THE ONE",
-        "classif": "1",
-        "info": "The Removal of Humanity - Occasionally I post about my personal experience of butting up against the consequences of the removal of both common humanity and common sense from the administration of the systems which govern us. It is not that my experiences http://www.craigmurray.org.uk/archives/2019/07/the-removal-of-humanity The Removal of Humanity Occasionally I post about my personal experience of butting up against the consequences of the removal of both common humanity and common ",
-        "tweet": "<blockquote class=twitter-tweet><p lang=en dir=ltr>The Removal of Humanity - Occasionally I post about my personal experience of butting up against the consequences of the removal of both common humanity and common sense from the administration of the systems which govern us. It is not that my experiences <a href=https://t.co/6lD7kDEmly>https://t.co/6lD7kDEmly</a></p>&mdash; Craig Murray (@CraigMurrayOrg) <a href=https://twitter.com/CraigMurrayOrg/status/1155807353368928257?ref_src=twsrc%5Etfw>July 29, 2019</a></blockquote> <script async src=https://platform.twitter.com/widgets.js charset=utf-8><&#47;script>"
-        };
-        createCookie("bbbb", encodeURIComponent(JSON.stringify(obj)), 99999);
-
-
-alert(JSON.parse(decodeURIComponent(readCookie("bbbb"))).id);
-
-
 
     countalltweets();
     var hasChanges = readCookie("hasChanges");
