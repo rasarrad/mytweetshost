@@ -1,5 +1,5 @@
 
-console.log(4444); 
+console.log(1111); 
 
 var text = "";
 var origin = "";
@@ -15,7 +15,7 @@ var addType = "T";
 
 $( document ).ready(function() {
 
-    console.log(readCookie(9 + "templink"))
+    console.log(decodeURIComponent(readCookie(9 + "templink")))
     //alert(readCookie(9 + "templink"))
     countalltweets();
     var hasChanges = readCookie("hasChanges");
