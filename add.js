@@ -131,6 +131,7 @@ function create() {
         $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + $('#classifpop').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
     }
 
+    var result = $('#result').val();
     $('#maxid').val(nextid);
     $("#result").select();
 
@@ -151,10 +152,10 @@ function create() {
 
         alert(nextid)
 
-        console.log($('#result').val())
-        console.log(encodeURIComponent(JSON.stringify($('#result').val())))
+        console.log(result)
+        console.log(encodeURIComponent(JSON.stringify(result)))
 
-        createCookie(nextid + "templink", encodeURIComponent(JSON.stringify($('#result').val())), 99999);
+        createCookie(nextid + "templink", encodeURIComponent(JSON.stringify(result)), 99999);
 
         var tmpid = readCookie("tmpid");
         if (tmpid && tmpid.length > 0) {
