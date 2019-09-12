@@ -5,7 +5,6 @@ function parseTweet() {
         $('#tweetid').val(nextid);
 
         text = $('#tweet').val();
-alert(text.substring(0,4))
         if (text.substring(0,4) == "<blo") {
             addType = "T";
             $('#typeT').css('border-color', '#00bc00'); 
@@ -29,6 +28,7 @@ alert(text.substring(0,4))
             showMessage("Twitter Link Successfully Parsed"); 
 
             $('#categories').focus();
+            return false;
         }
         else if (text.indexOf("youtube.com/embed") >= 0) {
             addType = "Y";
