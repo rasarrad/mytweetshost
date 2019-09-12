@@ -122,7 +122,7 @@ var getInformation = function(ismoretweets) {
                 console.log("dooooo");
                 var linktmp = decodeURIComponent(readCookie(nextid + "templink"));
                 
-                linktmp = linktmp.substring(0, linktmp.length - 1); 
+                linktmp = linktmp.substring(0, linktmp.length - 2); 
                 console.log(888888);
                 console.log(linktmp);
                 linktmp = JSON.parse(linktmp);
