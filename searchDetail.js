@@ -120,7 +120,7 @@ var getInformation = function(ismoretweets) {
             do {
                 console.log(1);
                 var linktmp = JSON.parse("{\n\"id\": \"9\",\n\"type\": \"T\",\n\"url\": \"https://twitter.com/MaxBlumenthal/status/1171881946466701312\",\n\"ishidden\": \"0\",\n\"date\": \"20190911\",\n\"author\": \"Max Blumenthal (@MaxBlumenthal)\",\n\"categories\": \"\",\n\"tags\": \"\",\n\"info\": \"\",\n\"classif\": \"0\",\n\"tweet\": \"<blockquote class=twitter-tweet><p lang=en dir=ltr>The historic village of Maaloula, where Aramaic is still spoken today. It invaded by Jabhat al-Nusra (AQ) in 2013 &amp; nuns were kidnapped. This nun is showing me where Nusra vandalized and burned her monastery. Faces were destroyed on religious artifacts around the town. <a href=https://t.co/FU7A21FfXH>pic.twitter.com/FU7A21FfXH</a></p>&mdash; Max Blumenthal (@MaxBlumenthal) <a href=https://twitter.com/MaxBlumenthal/status/1171881946466701312?ref_src=twsrc%5Etfw>September 11, 2019</a></blockquote> <script async src=https://platform.twitter.com/widgets.js charset=utf-8><&#47;script>\"\n}");
-        
+                console.log(2222444444);
                 if (nextid == "9") {
                     nextid ="222";
                     console.log(2);
