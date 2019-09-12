@@ -133,9 +133,8 @@ var getInformation = function(ismoretweets) {
 
 
                 console.log(linktmp);
-                alert(linktmp.id);
-                alert(linktmp.tags);
-                if (linktmp && linktmp.length > 0) {
+
+                if (readCookie(nextid + "templink") && readCookie(nextid + "templink").length > 0) {
                     console.log("1");
                     val = linktmp;
                     nextid = nextid - 1;
