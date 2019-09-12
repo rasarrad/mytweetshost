@@ -120,21 +120,16 @@ var getInformation = function(ismoretweets) {
             var processtmp = true;
             do {
                 console.log("dooooo");
-                var linktmp = decodeURIComponent(readCookie(nextid + "templink"));
+                var linkcookie = readCookie(nextid + "templink");
+                var linktmp = decodeURIComponent(linkcookie);
                 
                 linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                 console.log(888888);
-                console.log(linktmp);
                 linktmp = linktmp.replace(/(\\)/gm, ""); 
-                console.log(99999);
-                console.log(linktmp);
+
                 linktmp = JSON.parse(linktmp);
 
-
-                console.log(linktmp);
-                alert(linktmp.id);
-                alert(linktmp.tags);
-                if (linktmp && linktmp.length > 0) {
+                if (linkcookie && linkcookie.length > 0) {
                     console.log("1");
                     val = linktmp;
                     nextid = nextid - 1;
