@@ -122,6 +122,8 @@ var getInformation = function(ismoretweets) {
                 console.log("dooooo");
                 var linktmp = JSON.parse(decodeURIComponent(readCookie(nextid + "templink")));
                 console.log(linktmp);
+                alert(linktmp.id);
+                alert(linktmp.tags);
                 if (linktmp && linktmp.length > 0) {
                     console.log("1");
                     val = linktmp;
