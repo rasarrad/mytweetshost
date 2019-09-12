@@ -121,21 +121,24 @@ var getInformation = function(ismoretweets) {
             do {
                 console.log("dooooo");
                 
-                var linktmp = decodeURIComponent(readCookie(nextid + "templink"));
                 
-                linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
-                console.log(888888);
-                console.log(linktmp);
-                linktmp = linktmp.replace(/(\\)/gm, ""); 
-                console.log(99999);
-                console.log(linktmp);
-                linktmp = JSON.parse(linktmp);
-
-
-                console.log(linktmp);
+                
 
                 if (readCookie(nextid + "templink") && readCookie(nextid + "templink").length > 0) {
+                    var linktmp = decodeURIComponent(readCookie(nextid + "templink"));
                     console.log("1");
+                    linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                    console.log(888888);
+                    console.log(linktmp);
+                    linktmp = linktmp.replace(/(\\)/gm, ""); 
+                    console.log(99999);
+                    console.log(linktmp);
+                    linktmp = JSON.parse(linktmp);
+    
+    
+                    console.log(linktmp);
+
+                    
                     val = linktmp;
                     nextid = nextid - 1;
                 }
