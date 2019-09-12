@@ -120,9 +120,13 @@ var getInformation = function(ismoretweets) {
             var processtmp = true;
             do {
                 console.log("dooooo");
-                var linktmp = JSON.parse(decodeURIComponent(readCookie(nextid + "templink")));
+                var linktmp = readCookie(nextid + "templink");
+                
+                linktmp.substring(0, linktmp.length - 1); 
 
-                linktmp = linktmp.substring(0, linktmp.length - 1); 
+                linktmp = JSON.parse(decodeURIComponent());
+
+
                 console.log(linktmp);
                 alert(linktmp.id);
                 alert(linktmp.tags);
@@ -133,6 +137,7 @@ var getInformation = function(ismoretweets) {
                 }
                 else {
                     console.log("2");
+                    val = recordfromdata;
                     processtmp = false;
                 }
 
