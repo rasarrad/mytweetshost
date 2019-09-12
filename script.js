@@ -1,5 +1,5 @@
 
-console.log(1111); 
+console.log(2222); 
 
 var text = "";
 var origin = "";
@@ -28,10 +28,10 @@ $( document ).ready(function() {
         "info": "The Removal of Humanity - Occasionally I post about my personal experience of butting up against the consequences of the removal of both common humanity and common sense from the administration of the systems which govern us. It is not that my experiences http://www.craigmurray.org.uk/archives/2019/07/the-removal-of-humanity The Removal of Humanity Occasionally I post about my personal experience of butting up against the consequences of the removal of both common humanity and common ",
         "tweet": "<blockquote class=twitter-tweet><p lang=en dir=ltr>The Removal of Humanity - Occasionally I post about my personal experience of butting up against the consequences of the removal of both common humanity and common sense from the administration of the systems which govern us. It is not that my experiences <a href=https://t.co/6lD7kDEmly>https://t.co/6lD7kDEmly</a></p>&mdash; Craig Murray (@CraigMurrayOrg) <a href=https://twitter.com/CraigMurrayOrg/status/1155807353368928257?ref_src=twsrc%5Etfw>July 29, 2019</a></blockquote> <script async src=https://platform.twitter.com/widgets.js charset=utf-8><&#47;script>"
         };
-        createCookie("bbbb", JSON.stringify(obj), 99999);
+        createCookie("bbbb", encodeURIComponent(JSON.stringify(obj)), 99999);
 
-        alert(readCookie("bbbb"));
-alert(JSON.parse(readCookie("bbbb")));
+
+alert(JSON.parse(decodeURIComponent(readCookie("bbbb"))));
 
 
 
