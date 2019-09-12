@@ -148,6 +148,12 @@ function create() {
     }       
 
     if ($("#preview").is(":checked")) {
+
+        alert(nextid)
+
+        console.log($('#result').val())
+        console.log(encodeURIComponent(JSON.stringify($('#result').val())))
+
         createCookie(nextid + "templink", encodeURIComponent(JSON.stringify($('#result').val())), 99999);
 
         var tmpid = readCookie("tmpid");

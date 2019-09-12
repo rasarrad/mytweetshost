@@ -1,5 +1,5 @@
 
-console.log(11); 
+console.log(2222); 
 
 var text = "";
 var origin = "";
@@ -14,7 +14,7 @@ var dblClickTimeout = null;
 var addType = "T";
 
 $( document ).ready(function() {
-    alert(readCookie(9 + "templink"))
+    //alert(readCookie(9 + "templink"))
     countalltweets();
     var hasChanges = readCookie("hasChanges");
     if (hasChanges && hasChanges.length > 0)
