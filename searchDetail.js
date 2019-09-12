@@ -125,7 +125,7 @@ var getInformation = function(ismoretweets) {
                 linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                 console.log(888888);
                 console.log(linktmp);
-                linktmp = linktmp.replace(/(\\")/gm, ""); 
+                linktmp = linktmp.replace(/(\\)/gm, ""); 
                 console.log(99999);
                 console.log(linktmp);
                 linktmp = JSON.parse(linktmp);
