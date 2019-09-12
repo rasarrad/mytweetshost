@@ -1,5 +1,5 @@
 
-console.log(2222); 
+console.log(4444); 
 
 var text = "";
 var origin = "";
@@ -31,7 +31,7 @@ $( document ).ready(function() {
         createCookie("bbbb", encodeURIComponent(JSON.stringify(obj)), 99999);
 
 
-alert(JSON.parse(decodeURIComponent(readCookie("bbbb"))));
+alert(JSON.parse(decodeURIComponent(readCookie("bbbb"))).id);
 
 
 
