@@ -120,12 +120,12 @@ var getInformation = function(ismoretweets) {
             var processtmp = true;
             do {
                 console.log("dooooo");
-                var linktmp = readCookie(nextid + "templink");
+                var linktmp = decodeURIComponent(readCookie(nextid + "templink"));
                 
                 linktmp = linktmp.substring(0, linktmp.length - 1); 
                 console.log(888888);
                 console.log(linktmp);
-                linktmp = JSON.parse(decodeURIComponent(linktmp));
+                linktmp = JSON.parse(linktmp);
 
 
                 console.log(linktmp);
