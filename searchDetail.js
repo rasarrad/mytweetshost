@@ -16,7 +16,6 @@ var getInformation = function(ismoretweets) {
     var dofiltertag = $('#filtertag').val().length > 0; 
     var dofilterauthor = $('#filterauthor').val().length > 0;
     var dofiltercat = $('#selectedcat').val().length > 0 && $('#selectedcat').val() != 'all';  
-
     
     if (!ismoretweets) {
         $('#mask').fadeIn(300);  
@@ -75,6 +74,7 @@ var getInformation = function(ismoretweets) {
         else 
             toindex = ind;
 
+        var totalLinks = ind;    
         ind = 0;
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
@@ -292,19 +292,19 @@ var getInformation = function(ismoretweets) {
                         //$('#tweetcount').css('background', '#fff900');
                         
                         //$('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
-                        $('#tcnumber').text(ind);
+                        $('#tcnumber').text(ind + " of " + totalLinks + " Links");
                         $('#tccateg').text("In " + $('#selectedcattext').val());
             
                         var aux = ind;
             
                         setTimeout(function(){ 
                             if (aux == toindex) { 
-                                $('#tcnumber').text(aux + " Links");
+                                $('#tcnumber').text(aux + " of " + totalLinks + " Links");
                                 $('#tccateg').text("In " + $('#selectedcattext').val());
                             }
                             else {
                                 //$('#tcnumber').text(toindex + " of " + aux);
-                                $('#tcnumber').text(aux);
+                                $('#tcnumber').text(aux + " of " + totalLinks + " Links");
                                 $('#tccateg').text("In " + $('#selectedcattext').val());
                             }   
                             
@@ -313,7 +313,7 @@ var getInformation = function(ismoretweets) {
             
                     }
                     else {  
-                        $('#tcnumber').text(ind + " Links");
+                        $('#tcnumber').text(ind + " of " + totalLinks + " Links");
                         $('#tccateg').text("In " + $('#selectedcattext').val());
                     }
             
@@ -342,19 +342,19 @@ var getInformation = function(ismoretweets) {
             //$('#tweetcount').css('background', '#fff900');
             
             //$('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
-            $('#tcnumber').text(ind);
+            $('#tcnumber').text(ind + " of " + totalLinks + " Links");
             $('#tccateg').text("In " + $('#selectedcattext').val());
 
             var aux = ind;
 
             setTimeout(function(){ 
                 if (aux == toindex) { 
-                    $('#tcnumber').text(aux + " Links");
+                    $('#tcnumber').text(aux + " of " + totalLinks + " Links");
                     $('#tccateg').text("In " + $('#selectedcattext').val());
                 }
                 else {
                     //$('#tcnumber').text(toindex + " of " + aux);
-                    $('#tcnumber').text(aux);
+                    $('#tcnumber').text(aux + " of " + totalLinks + " Links");
                     $('#tccateg').text("In " + $('#selectedcattext').val());
                 }   
                 
@@ -363,7 +363,7 @@ var getInformation = function(ismoretweets) {
 
         }
         else {  
-            $('#tcnumber').text(ind + " Links");
+            $('#tcnumber').text(ind + " of " + totalLinks + " Links");
             $('#tccateg').text("In " + $('#selectedcattext').val());
         }
 
@@ -460,7 +460,7 @@ var getInformationOld = function(ismoretweets) {
             //$('#tweetcount').css('background', '#fff900');
 
             //$('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
-            $('#tcnumber').text(ind);
+            $('#tcnumber').text(ind + " of " + totalLinks + " Links");
             $('#tccateg').text("In " + $('#selectedcattext').val());
 
             $('#tct').text(total_t);
@@ -471,12 +471,12 @@ var getInformationOld = function(ismoretweets) {
 
             setTimeout(function(){ 
                 if (aux == toindex) { 
-                    $('#tcnumber').text(aux + " Links");
+                    $('#tcnumber').text(aux + " of " + totalLinks + " Links");
                     $('#tccateg').text("In " + $('#selectedcattext').val());
                 }
                 else {
                     //$('#tcnumber').text(toindex + " of " + aux);
-                    $('#tcnumber').text(aux);
+                    $('#tcnumber').text(aux + " of " + totalLinks + " Links");
                     $('#tccateg').text("In " + $('#selectedcattext').val());
                 }   
                 
@@ -485,7 +485,7 @@ var getInformationOld = function(ismoretweets) {
 
         }
         else {  
-            $('#tcnumber').text(ind + " Links");
+            $('#tcnumber').text(ind + " of " + totalLinks + " Links");
             $('#tccateg').text("In " + $('#selectedcattext').val());
         }
 
