@@ -80,7 +80,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             toindex = currentIndex + Number($('#recordspersearch').val());
         else 
             toindex = ind;
-
+alert(ind)
         var totalLinks = ind;    
         ind = 0;
         $.each(data.Tweets, function(key, val) {
