@@ -341,7 +341,8 @@ var getInformation = function(ismoretweets) {
         
             //$('#tweetcount').css('background', '#fff900');
             
-            $('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
+            //$('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
+            $('#tcnumber').text(ind);
             $('#tccateg').text("In " + $('#selectedcattext').val());
 
             var aux = ind;
