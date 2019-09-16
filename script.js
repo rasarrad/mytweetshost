@@ -1,5 +1,5 @@
 
-console.log(111); 
+console.log(333); 
 
 var text = "";
 var origin = "";
@@ -96,7 +96,7 @@ $( document ).ready(function() {
     $('#filtertext, #filterdate1, #filterdate2, #filterid, #filterauthor, #filtertag').keypress(function(event){
       var keycode = (event.keyCode ? event.keyCode : event.which);
       if(keycode == '13' && $(this).val().length > 0){
-        getInformation(false);
+        getInformation(false, 1);
       }
     });    
 
@@ -109,13 +109,13 @@ $( document ).ready(function() {
     ///////////////////////////////////////
 
     $( "#moretweets" ).bind( "click", function( event ) {
-        getInformation(true);
+        getInformation(true, 3);
     });
 
     ///////////////////////////////////////
 
     $( "#btnsearch" ).bind( "click", function( event ) {
-      getInformation(false);
+      getInformation(false , 1);
     });
 
     ///////////////////////////////////////
@@ -247,7 +247,7 @@ var clickmenu = function(val, text) {
     $('#selectedcattext').val(text);
 
     openmenu();
-    getInformation(false);
+    getInformation(false, 2);
 
 } 
   

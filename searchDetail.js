@@ -1,7 +1,14 @@
 
 
 
-var getInformation = function(ismoretweets) {
+var getInformation = function(ismoretweets, wasfiltered) {
+
+    if (wasfiltered == 1) {
+        $('#countfilter').show();
+    }
+    else if (wasfiltered == 2) {
+        $('#countfilter').hide();
+    }
     
     var path = "./data.json";
     var endIndex = currentIndex + Number($('#recordspersearch').val());
