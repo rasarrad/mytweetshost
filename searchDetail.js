@@ -339,7 +339,7 @@ var getInformation = function(ismoretweets) {
 
         if (Number($('#recordspersearch').val()) < ind) {
         
-            $('#tweetcount').css('background', '#fff900');
+            //$('#tweetcount').css('background', '#fff900');
             
             $('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
             $('#tccateg').text("In " + $('#selectedcattext').val());
@@ -474,7 +474,8 @@ var getInformationOld = function(ismoretweets) {
                     $('#tccateg').text("In " + $('#selectedcattext').val());
                 }
                 else {
-                    $('#tcnumber').text(toindex + " of " + aux);
+                    //$('#tcnumber').text(toindex + " of " + aux);
+                    $('#tcnumber').text(aux);
                     $('#tccateg').text("In " + $('#selectedcattext').val());
                 }   
                 
