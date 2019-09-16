@@ -1,5 +1,5 @@
 
-console.log(1111); 
+console.log(6666); 
 
 var text = "";
 var origin = "";
@@ -148,7 +148,10 @@ $( document ).ready(function() {
     $( "#closepopup" ).bind( "click", function( event ) {
       closePopup();
     });
-
+    $( "#updatemaxid" ).bind( "click", function( event ) {
+        if ($('#postedby').val(''))
+        createCookie("maxid", pad(nextid, 4));
+    });
 });
 
 
