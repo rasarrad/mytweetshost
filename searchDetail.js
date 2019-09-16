@@ -117,7 +117,7 @@ var getInformation = function(ismoretweets) {
                         total_h = total_h + 1;
                     }
 
-
+                    totalLinks = totalLinks + 1;
                     nextid = nextid - 1;
                 }
                 else {
