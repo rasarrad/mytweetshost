@@ -67,7 +67,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                 && dofilterauthorfinal && dofiltercatfinal) {
                 ind = ind + 1;
-                
+                alert(333)
                 if (val.type == "T") {
                     total_t = total_t + 1;
                 }
@@ -118,7 +118,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
                     
                     val = linktmp;
-
+                    alert(5555)
                     if (val.type == "T") {
                         total_t = total_t + 1;
                     }
@@ -448,7 +448,7 @@ var getInformationOld = function(ismoretweets) {
             if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                 && dofilterauthorfinal && dofiltercatfinal) {
                 ind = ind + 1;
-                
+                alert(333)
                 if (val.type == "T") {
                     total_t = total_t + 1;
                 }
