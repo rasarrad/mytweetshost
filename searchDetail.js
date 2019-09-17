@@ -59,6 +59,11 @@ var getInformation = function(ismoretweets, wasfiltered) {
             dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
             dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
 
+
+            console.log(111111111111);
+            console.log(dofiltertextfinal);
+            console.log(val.tweet.toLowerCase());
+            console.log($('#filtertext').val().toLowerCase());
             if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                 && dofilterauthorfinal && dofiltercatfinal) {
                 ind = ind + 1;
@@ -80,7 +85,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             toindex = currentIndex + Number($('#recordspersearch').val());
         else 
             toindex = ind;
-alert(ind)
+
         var totalLinks = ind;    
         ind = 0;
         $.each(data.Tweets, function(key, val) {
