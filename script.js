@@ -1,5 +1,5 @@
 
-console.log(2222); 
+console.log(4444444); 
 
 var text = "";
 var origin = "";
@@ -151,7 +151,9 @@ $( document ).ready(function() {
 
     $( "#updatemaxid" ).bind( "click", function( event ) {
         if ($('#postedby').val() != "") {
-            createCookie("maxid", pad(nextid, $('#postedby').val()));
+            createCookie("maxid", pad($('#postedby').val(), 4));
+           
+            showMessage("Current ID: " +  $('#postedby').val());
             $('#postedby').val('');
         }
         else {
