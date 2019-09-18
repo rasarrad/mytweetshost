@@ -50,6 +50,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
             var dofiltertagfinal = false;
             var dofiltercatfinal = false;
             var dofilterauthorfinal = false;
+            var recordfromdata = val;
+            var processtmp = true;
+            var linkcontent = null;
 
             dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
             dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
@@ -59,25 +62,41 @@ var getInformation = function(ismoretweets, wasfiltered) {
             dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
             dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
 
+            do {
+                linkcontent = readCookie(nextid + "templink");
 
-            console.log(111111111111);
-            console.log(dofiltertextfinal);
-            console.log(val.tweet.toLowerCase());
-            console.log($('#filtertext').val().toLowerCase());
-            if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
-                && dofilterauthorfinal && dofiltercatfinal) {
-                ind = ind + 1;
-                alert(333)
-                if (val.type == "T") {
-                    total_t = total_t + 1;
-                }
-                else if (val.type == "Y") {
-                    total_y = total_y + 1;
+                if (linkcontent && linkcontent.length > 0) {
+                    var linktmp = decodeURIComponent(linkcontent);
+                    linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                    linktmp = linktmp.replace(/(\\)/gm, ""); 
+                    linktmp = JSON.parse(linktmp);
+
+                    val = linktmp;
+
+                    nextid = nextid - 1;
                 }
                 else {
-                    total_h = total_h + 1;
+                    console.log("2");
+                    val = recordfromdata;
+                    processtmp = false;
+                }
+
+                if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
+                    && dofilterauthorfinal && dofiltercatfinal) {
+                    ind = ind + 1;
+
+                    if (val.type == "T") {
+                        total_t = total_t + 1;
+                    }
+                    else if (val.type == "Y") {
+                        total_y = total_y + 1;
+                    }
+                    else {
+                        total_h = total_h + 1;
+                    }
                 }
             }
+            while (processtmp);
         });
         
         var toindex = 0;
@@ -88,6 +107,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         var totalLinks = ind;    
         ind = 0;
+        nextid = parseInt($('#maxid').val()) + 1;
+
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
             var dofiltertextfinal = false;
@@ -97,28 +118,19 @@ var getInformation = function(ismoretweets, wasfiltered) {
             var dofiltertagfinal = false;
             var dofiltercatfinal = false;
             var dofilterauthorfinal = false;
-            var recordfromdata = val;
-            var processtmp = true;
-            do {
-                console.log("dooooo");
-                
-                if (readCookie(nextid + "templink") && readCookie(nextid + "templink").length > 0) {
-                    var linktmp = decodeURIComponent(readCookie(nextid + "templink"));
-                    console.log("1");
-                    linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
-                    console.log(888888);
-                    console.log(linktmp);
-                    linktmp = linktmp.replace(/(\\)/gm, ""); 
-                    console.log(99999);
-                    console.log(linktmp);
-                    linktmp = JSON.parse(linktmp);
-    
-    
-                    console.log(linktmp);
+            recordfromdata = val;
+            processtmp = true;
+            linkcontent = null;
 
-                    
+            do {
+                linkcontent = readCookie(nextid + "templink");
+                if (linkcontent && linkcontent.length > 0) {
+                    var linktmp = decodeURIComponent(linkcontent);
+                    linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                    linktmp = linktmp.replace(/(\\)/gm, ""); 
+                    linktmp = JSON.parse(linktmp);
+
                     val = linktmp;
-                    alert(5555)
                     if (val.type == "T") {
                         total_t = total_t + 1;
                     }
@@ -448,7 +460,7 @@ var getInformationOld = function(ismoretweets) {
             if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                 && dofilterauthorfinal && dofiltercatfinal) {
                 ind = ind + 1;
-                alert(333)
+
                 if (val.type == "T") {
                     total_t = total_t + 1;
                 }
