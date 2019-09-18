@@ -1,5 +1,5 @@
 
-console.log(3333); 
+console.log(4444444); 
 
 var text = "";
 var origin = "";
@@ -148,9 +148,15 @@ $( document ).ready(function() {
     $( "#closepopup" ).bind( "click", function( event ) {
       closePopup();
     });
+
     $( "#updatemaxid" ).bind( "click", function( event ) {
-        if ($('#postedby').val(''))
-        createCookie("maxid", pad(nextid, 4));
+        if ($('#postedby').val() == "") {
+            createCookie("maxid", pad(nextid, 4));
+            $('#postedby').val('');
+        }
+        else {
+            showMessage("Current ID: " + readCookie("maxid"));
+        } 
     });
 });
 

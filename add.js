@@ -1,7 +1,7 @@
 
 function parseTweet() {
     setTimeout(function(){
-        nextid = parseInt($('#maxid').val()) + 1;
+        nextid = parseInt(readCookie("maxid")) + 1;
         $('#tweetid').val(nextid);
 
         text = $('#tweet').val();
@@ -132,7 +132,8 @@ function create() {
     }
 
     var result = $('#result').val();
-    $('#maxid').val(nextid);
+
+    createCookie("maxid", nextid);
     $("#result").select();
 
     document.execCommand('copy');
@@ -147,7 +148,8 @@ function create() {
         showMessage("New Link Created And Copied To Clipboard");
         $('.addpopup').fadeOut(2000);
     }       
-
+    createCookie("maxid", pad(nextid, parseInt(readCookie("maxid")) + 1));
+    
     if ($("#preview").is(":checked")) {
         createCookie(nextid + "templink", encodeURIComponent(JSON.stringify(result)), 99999);
 
