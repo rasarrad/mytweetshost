@@ -157,7 +157,13 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             isdeleted = "background-image: linear-gradient(to bottom, #d60000, #ff2e2e)";
                         } 
                         else {
-                            isdeleted ="";
+                            if (linkcontent && linkcontent.length > 0) {
+                                isdeleted = "background-image: linear-gradient(rgb(20, 186, 0), rgb(33, 255, 7))";
+                            }
+                            else {
+                                isdeleted ="";
+                            }
+                            
                         }
                         var tagchanged = readCookie(val.id + "tagchanged");
                         var catchanged = readCookie(val.id + "catchanged");
