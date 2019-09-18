@@ -305,7 +305,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         //$('#tweetcount').css('background', '#fff900');
                         
                         //$('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
-                        $('#tcnumber').text(ind + " of " + totalLinks + " Links");
+                        $('#tcnumber').text(toindex + " of " + totalLinks + " Links");
                         $('#tccateg').text("In " + $('#selectedcattext').val());
             
                         var aux = ind;
@@ -317,7 +317,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             }
                             else {
                                 //$('#tcnumber').text(toindex + " of " + aux);
-                                $('#tcnumber').text(aux + " of " + totalLinks + " Links");
+                                $('#tcnumber').text(toindex + " of " + totalLinks + " Links");
                                 $('#tccateg').text("In " + $('#selectedcattext').val());
                             }   
                             
@@ -355,7 +355,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             //$('#tweetcount').css('background', '#fff900');
             
             //$('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
-            $('#tcnumber').text(ind + " of " + totalLinks + " Links");
+            $('#tcnumber').text(toindex + " of " + totalLinks + " Links");
             $('#tccateg').text("In " + $('#selectedcattext').val());
 
             var aux = ind;
@@ -367,7 +367,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }
                 else {
                     //$('#tcnumber').text(toindex + " of " + aux);
-                    $('#tcnumber').text(aux + " of " + totalLinks + " Links");
+                    $('#tcnumber').text(toindex + " of " + totalLinks + " Links");
                     $('#tccateg').text("In " + $('#selectedcattext').val());
                 }   
                 
