@@ -1,7 +1,7 @@
 
 function parseTweet() {
     setTimeout(function(){
-        nextid = parseInt(readCookie("maxid")) + 1;
+        nextid = parseInt(readCookie("maxid"));
         $('#tweetid').val(nextid);
 
         text = $('#tweet').val();
@@ -133,7 +133,6 @@ function create() {
 
     var result = $('#result').val();
 
-    createCookie("maxid", nextid);
     $("#result").select();
 
     document.execCommand('copy');
