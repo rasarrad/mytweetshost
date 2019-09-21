@@ -766,6 +766,32 @@ var countalltweets = function(id) {
             var linkcontent = null;
             nextid = parseInt(readCookie("maxid")) - 1;
     
+            do {
+
+
+                var res = val.categories.split(" ");
+                for (var i = 0; i < res.length; i++) {
+                    if (counters.has(val.type + res[i])) {
+                        var aux = counters.get(val.type + res[i]);
+                        counters.set(val.type + res[i], aux + 1);
+                    }
+                    else {
+                        counters.set(val.type + res[i], 1);
+                    }
+                }
+    
+                if (val.type == "T") {
+                    total_t = total_t + 1;
+                }
+                else if (val.type == "Y") {
+                    total_y = total_y + 1;
+                }
+                else {
+                    total_h = total_h + 1;
+                }
+                total = total + 1;
+            }
+            while (processtmp);
         });
 
         $("#all").text(total);
