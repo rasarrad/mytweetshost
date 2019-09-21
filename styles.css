@@ -334,6 +334,16 @@ ol > li {
       transition: all 0.6s;
       cursor: pointer;
     }
+
+   #removetmp {
+      position: absolute;
+      color: #0082cd;
+      font-size: 18px;
+      top: 6px;
+      right: 68px;
+      transition: all 0.6s;
+      cursor: pointer;
+    }
     
     input[type="checkbox"] {
       cursor: pointer;

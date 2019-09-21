@@ -1,5 +1,5 @@
 
-console.log(8888); 
+console.log(1111); 
 
 var text = "";
 var origin = "";
@@ -159,6 +159,19 @@ $( document ).ready(function() {
         else {
             showMessage("Current ID: " + readCookie("maxid"));
         } 
+    });
+
+    $( "#removetmp" ).bind( "click", function( event ) {
+        nextid = parseInt(readCookie("maxid"));
+
+        do {
+            createCookie(nextid + "templink", "", 99999);
+            nextid = nextid - 1;
+        }
+        while (nextid > 0);
+
+        showMessage("Temp Links Removed");
+        
     });
 });
 
