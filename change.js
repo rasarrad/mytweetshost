@@ -134,10 +134,17 @@ function removetweet(obj, id) {
     var isdeleted = readCookie(id + "isdeleted");
     if (isdeleted && isdeleted.length > 0) {
         createCookie(id + "isdeleted", "", 99999);
-        $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #0081cc , #008ada )');
 
+        var linkcontent = readCookie(nextid + "templink");
+        if (linkcontent && linkcontent.length > 0) {
+            $(obj).parent().parent().css('background-image', 'linear-gradient(rgb(20, 186, 0) -87%, rgb(0, 137, 217))');
+        }
+        else {
+            $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #0081cc , #008ada )');
+        }
+
+        
         if (hasTweetChanges()) {
-            console.log(5); 
           createCookie("hasChanges", "Yes");
           $("#generate").addClass("haschanges");
         }
@@ -149,7 +156,7 @@ function removetweet(obj, id) {
     } 
     else {
         createCookie(id + "isdeleted", "a", 99999);
-        $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #d60000, #ff2e2e)');
+        $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #d60000 -33%, rgb(0, 137, 217))');
         $("#generate").addClass("haschanges");
         console.log(6); 
         createCookie("hasChanges", "Yes");

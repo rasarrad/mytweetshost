@@ -160,6 +160,10 @@ function create() {
         } 
     } 
     createCookie("maxid", pad(nextid + 1, 4));
+
+    resetFields(false);
+    countalltweets();
+
 }
 
 

@@ -162,11 +162,11 @@ var getInformation = function(ismoretweets, wasfiltered) {
         
                         var isdeleted = readCookie(val.id + "isdeleted");
                         if (isdeleted && isdeleted.length > 0) {
-                            isdeleted = "background-image: linear-gradient(to bottom, #d60000, #ff2e2e)";
+                            isdeleted = "background-image: linear-gradient(to bottom, #d60000 -33%, rgb(0, 137, 217));";
                         } 
                         else {
                             if (linkcontent && linkcontent.length > 0) {
-                                isdeleted = "background-image: linear-gradient(rgb(20, 186, 0), rgb(33, 255, 7))";
+                                isdeleted = "background-image: linear-gradient(rgb(20, 186, 0) -87%, rgb(0, 137, 217));";
                             }
                             else {
                                 isdeleted ="";
@@ -399,7 +399,10 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#tch').text(total_h);
 
         if (!ismoretweets) {
-            showMessage("Search Results", 2000);
+            if (totalLinks > 0)
+                showMessage("Search Results", 2000);
+            else
+                showMessage("No Links Found", 2000);
         }
     }); 
 }
