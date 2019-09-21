@@ -34,7 +34,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
     }
 
     currpage = currpage + 1;
-    nextid = parseInt(readCookie("maxid")) + 1;
+    nextid = parseInt(readCookie("maxid")) - 1;
 
     $.getJSON(path, function(data) {
         var total_y = 0;
@@ -107,7 +107,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         var totalLinks = ind;    
         ind = 0;
-        nextid = parseInt(readCookie("maxid")) + 1;
+        nextid = parseInt(readCookie("maxid")) - 1;
         
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;

@@ -328,62 +328,88 @@ function generate() {
     {
       $.each(data.Tweets, function(key, val) 
         {
-            var cat = readCookie(val.id + "catchanged");
-            if (cat && cat.length > 0) {
-                val.categories = cat;
-                createCookie(val.id + "catchanged_bk", cat, 99999);
-            }
-            else {
-              createCookie(val.id + "catchanged_bk", "", 99999);
-            }
-            createCookie(val.id + "catchanged", "", 99999);
+            recordfromdata = val;
+            processtmp = true;
+            linkcontent = null;
+            nextid = parseInt(readCookie("maxid")) - 1;
 
-            var tag = readCookie(val.id + "tagchanged");
-            if (tag && tag.length > 0) {
-                val.tags = tag;
-                createCookie(val.id + "tagchanged_bk", tag, 99999);
-            }
-            else {
-              createCookie(val.id + "tagchanged_bk", "", 99999);
-            }
-            createCookie(val.id + "tagchanged", "", 99999);
+            do {
+                linkcontent = readCookie(nextid + "templink");
 
-            var info = readCookie(val.id + "info");
-            if (info && info.length > 0) {
-                val.info = info;
-                createCookie(val.id + "info_bk", info, 99999);
-            }
-            else {
-              createCookie(val.id + "info_bk", "", 99999);
-            }
-            createCookie(val.id + "info", "", 99999);
+                if (linkcontent && linkcontent.length > 0) {
+                    var linktmp = decodeURIComponent(linkcontent);
+                    linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                    linktmp = linktmp.replace(/(\\)/gm, ""); 
+                    linktmp = JSON.parse(linktmp);
 
-            var classif = readCookie(val.id + "classif");
-            if (classif && classif.length > 0) {
-                val.classif = classif;
-                createCookie(val.id + "classif_bk", classif, 99999);
-            }
-            else {
-              createCookie(val.id + "classif_bk", "", 99999);
-            }
-            createCookie(val.id + "classif", "", 99999);
-
-            var isdeleted = readCookie(val.id + "isdeleted");
-            if (isdeleted && isdeleted.length > 0) {
-                createCookie(val.id + "isdeleted_bk", "yes", 99999);
-                createCookie(val.id + "isdeleted", "", 99999);
-            } 
-            else {
-                createCookie(val.id + "isdeleted", "", 99999);
-                createCookie(val.id + "isdeleted_bk", "", 99999);
-                if (ind) {
-                    text = text + ",";
+                    val = linktmp;
+                    createCookie(nextid + "templink_bk", linktmp, 99999);
+                    nextid = nextid - 1;
                 }
                 else {
-                    ind = true;
+                    console.log("2");
+                    val = recordfromdata;
+                    processtmp = false;
                 }
-                text = text + JSON.stringify(this, null, " ");  
+
+                var cat = readCookie(val.id + "catchanged");
+                if (cat && cat.length > 0) {
+                    val.categories = cat;
+                    createCookie(val.id + "catchanged_bk", cat, 99999);
+                }
+                else {
+                  createCookie(val.id + "catchanged_bk", "", 99999);
+                }
+                createCookie(val.id + "catchanged", "", 99999);
+    
+                var tag = readCookie(val.id + "tagchanged");
+                if (tag && tag.length > 0) {
+                    val.tags = tag;
+                    createCookie(val.id + "tagchanged_bk", tag, 99999);
+                }
+                else {
+                  createCookie(val.id + "tagchanged_bk", "", 99999);
+                }
+                createCookie(val.id + "tagchanged", "", 99999);
+    
+                var info = readCookie(val.id + "info");
+                if (info && info.length > 0) {
+                    val.info = info;
+                    createCookie(val.id + "info_bk", info, 99999);
+                }
+                else {
+                  createCookie(val.id + "info_bk", "", 99999);
+                }
+                createCookie(val.id + "info", "", 99999);
+    
+                var classif = readCookie(val.id + "classif");
+                if (classif && classif.length > 0) {
+                    val.classif = classif;
+                    createCookie(val.id + "classif_bk", classif, 99999);
+                }
+                else {
+                  createCookie(val.id + "classif_bk", "", 99999);
+                }
+                createCookie(val.id + "classif", "", 99999);
+    
+                var isdeleted = readCookie(val.id + "isdeleted");
+                if (isdeleted && isdeleted.length > 0) {
+                    createCookie(val.id + "isdeleted_bk", "yes", 99999);
+                    createCookie(val.id + "isdeleted", "", 99999);
+                } 
+                else {
+                    createCookie(val.id + "isdeleted", "", 99999);
+                    createCookie(val.id + "isdeleted_bk", "", 99999);
+                    if (ind) {
+                        text = text + ",";
+                    }
+                    else {
+                        ind = true;
+                    }
+                    text = text + JSON.stringify(this, null, " ");  
+                }
             }
+            while (processtmp);
           
         });
 
@@ -412,6 +438,30 @@ function undogenerate() {
   {
     $.each(data.Tweets, function(key, val) 
       {
+        recordfromdata = val;
+        processtmp = true;
+        linkcontent = null;
+        nextid = parseInt(readCookie("maxid")) - 1;
+
+        do {
+            linkcontent = readCookie(nextid + "templink");
+            if (linkcontent && linkcontent.length > 0) {
+                var linktmp = decodeURIComponent(linkcontent);
+                linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                linktmp = linktmp.replace(/(\\)/gm, ""); 
+                linktmp = JSON.parse(linktmp);
+                ind = true;
+                val = linktmp;
+                createCookie(nextid + "templink", linktmp, 99999);
+                createCookie(nextid + "templink_bk", "", 99999);
+                nextid = nextid - 1;
+            }
+            else {
+                console.log("2");
+                val = recordfromdata;
+                processtmp = false;
+            }
+
           var cat = readCookie(val.id + "catchanged_bk");
           if (cat && cat.length > 0) {
               ind = true;
@@ -463,7 +513,9 @@ function undogenerate() {
           } 
           else {
               createCookie(val.id + "isdeleted", "", 99999);
-          }            
+          }    
+        }
+        while (processtmp);        
       });
 
       if (ind) {
@@ -488,6 +540,27 @@ function hasTweetChanges(callback) {
   {
     $.each(data.Tweets, function(key, val) 
       {
+        recordfromdata = val;
+        processtmp = true;
+        linkcontent = null;
+        nextid = parseInt(readCookie("maxid")) - 1;
+
+        do {
+            linkcontent = readCookie(nextid + "templink");
+
+            if (linkcontent && linkcontent.length > 0) {
+                nextid = nextid - 1;
+                
+                ind = true;
+                return false;
+            }
+            else {
+                console.log("2");
+                val = recordfromdata;
+                processtmp = false;
+            }
+
+
           var cat = readCookie(val.id + "catchanged");
           if (cat && cat.length > 0) {
             ind = true;
@@ -511,6 +584,8 @@ function hasTweetChanges(callback) {
             ind = true;
             return false;
           } 
+        }
+        while (processtmp);
       });
 
       if (callback)
