@@ -767,7 +767,24 @@ var countalltweets = function(id) {
             nextid = parseInt(readCookie("maxid")) - 1;
     
             do {
-
+                if (processtmp) {
+                    linkcontent = readCookie(nextid + "templink");
+                    if (linkcontent && linkcontent.length > 0) {
+                        var linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                        linktmp = linktmp.replace(/(\\)/gm, ""); 
+                        linktmp = JSON.parse(linktmp);
+                        val = linktmp;
+                        nextid = nextid - 1;
+                    }
+                    else {
+                        val = recordfromdata;
+                        processtmp = false;
+                    }
+                }
+                else {
+                    val = recordfromdata;
+                }
 
                 var res = val.categories.split(" ");
                 for (var i = 0; i < res.length; i++) {
