@@ -347,8 +347,10 @@ function generate() {
                         var linktmp = decodeURIComponent(linkcontent);
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
-                        linktmp = JSON.parse(linktmp);
                         alert(linktmp);
+                        console.log(linktmp);
+                        linktmp = JSON.parse(linktmp);
+                        
                         createCookie(nextid + "templink_bk", linktmp, 99999);
                         val = linktmp;
                         nextid = nextid - 1;
