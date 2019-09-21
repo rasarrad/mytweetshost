@@ -324,32 +324,34 @@ function generate() {
     var path = "./data.json";
     var text = '{"Tweets": [';
     var ind = false;
+    var processtmp = true;
     $.getJSON(path, function(data) 
     {
       $.each(data.Tweets, function(key, val) 
         {
-            recordfromdata = val;
-            processtmp = true;
-            linkcontent = null;
+            var recordfromdata = val;
+            var linkcontent = null;
             nextid = parseInt(readCookie("maxid")) - 1;
 
             do {
-                linkcontent = readCookie(nextid + "templink");
-
-                if (linkcontent && linkcontent.length > 0) {
-                    var linktmp = decodeURIComponent(linkcontent);
-                    linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
-                    linktmp = linktmp.replace(/(\\)/gm, ""); 
-                    linktmp = JSON.parse(linktmp);
-
-                    val = linktmp;
-                    createCookie(nextid + "templink_bk", linktmp, 99999);
-                    nextid = nextid - 1;
+                if (processtmp) {
+                    linkcontent = readCookie(nextid + "templink");
+                    if (linkcontent && linkcontent.length > 0) {
+                        var linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                        linktmp = linktmp.replace(/(\\)/gm, ""); 
+                        linktmp = JSON.parse(linktmp);
+                        createCookie(nextid + "templink_bk", linktmp, 99999);
+                        val = linktmp;
+                        nextid = nextid - 1;
+                    }
+                    else {
+                        val = recordfromdata;
+                        processtmp = false;
+                    }
                 }
                 else {
-                    console.log("2");
                     val = recordfromdata;
-                    processtmp = false;
                 }
 
                 var cat = readCookie(val.id + "catchanged");
@@ -436,90 +438,94 @@ function undogenerate() {
   resetFields(false);
   $.getJSON(path, function(data) 
   {
+    var processtmp = true;
+
     $.each(data.Tweets, function(key, val) 
       {
-        recordfromdata = val;
-        processtmp = true;
-        linkcontent = null;
+        var recordfromdata = val;
+        var linkcontent = null;
         nextid = parseInt(readCookie("maxid")) - 1;
 
         do {
-            linkcontent = readCookie(nextid + "templink");
-            if (linkcontent && linkcontent.length > 0) {
-                var linktmp = decodeURIComponent(linkcontent);
-                linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
-                linktmp = linktmp.replace(/(\\)/gm, ""); 
-                linktmp = JSON.parse(linktmp);
-                ind = true;
-                val = linktmp;
-                createCookie(nextid + "templink", linktmp, 99999);
-                createCookie(nextid + "templink_bk", "", 99999);
-                nextid = nextid - 1;
+            if (processtmp) {
+                linkcontent = readCookie(nextid + "templink");
+                if (linkcontent && linkcontent.length > 0) {
+                    var linktmp = decodeURIComponent(linkcontent);
+                    linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                    linktmp = linktmp.replace(/(\\)/gm, ""); 
+                    linktmp = JSON.parse(linktmp);
+                    ind = true;
+                    val = linktmp;
+                    createCookie(nextid + "templink", linktmp, 99999);
+                    createCookie(nextid + "templink_bk", "", 99999);
+                    nextid = nextid - 1;
+                }
+                else {
+                    val = recordfromdata;
+                    processtmp = false;
+                }
             }
             else {
-                console.log("2");
                 val = recordfromdata;
-                processtmp = false;
             }
 
-          var cat = readCookie(val.id + "catchanged_bk");
-          if (cat && cat.length > 0) {
-              ind = true;
-              createCookie(val.id + "catchanged_bk", "", 99999);
-              createCookie(val.id + "catchanged", cat, 99999);
-          }
-          else {
-            createCookie(val.id + "catchanged", "", 99999);
-          }
+            var cat = readCookie(val.id + "catchanged_bk");
+            if (cat && cat.length > 0) {
+                ind = true;
+                createCookie(val.id + "catchanged_bk", "", 99999);
+                createCookie(val.id + "catchanged", cat, 99999);
+            }
+            else {
+                createCookie(val.id + "catchanged", "", 99999);
+            }
 
-          var tag = readCookie(val.id + "tagchanged_bk");
-          if (tag && tag.length > 0) {
-              ind = true;
-              val.tags = tag;
-              createCookie(val.id + "tagchanged", tag, 99999);
-              createCookie(val.id + "tagchanged_bk", "", 99999);
-          }
-          else {
-            createCookie(val.id + "tagchanged", "", 99999);
-          }
+            var tag = readCookie(val.id + "tagchanged_bk");
+            if (tag && tag.length > 0) {
+                ind = true;
+                val.tags = tag;
+                createCookie(val.id + "tagchanged", tag, 99999);
+                createCookie(val.id + "tagchanged_bk", "", 99999);
+            }
+            else {
+                createCookie(val.id + "tagchanged", "", 99999);
+            }
 
-          var info = readCookie(val.id + "info_bk");
-          if (info && info.length > 0) {
-              ind = true;
-              val.info = info;
-              createCookie(val.id + "info", info, 99999);
-              createCookie(val.id + "info_bk", "", 99999);
-          }
-          else {
-            createCookie(val.id + "info", "", 99999);
-          }
+            var info = readCookie(val.id + "info_bk");
+            if (info && info.length > 0) {
+                ind = true;
+                val.info = info;
+                createCookie(val.id + "info", info, 99999);
+                createCookie(val.id + "info_bk", "", 99999);
+            }
+            else {
+                createCookie(val.id + "info", "", 99999);
+            }
 
-          var classif = readCookie(val.id + "classif_bk");
-          if (classif && classif.length > 0) {
-              ind = true;
-              val.classif = classif;
-              createCookie(val.id + "classif", classif, 99999);
-              createCookie(val.id + "classif_bk", "", 99999);
-          }
-          else {
-            createCookie(val.id + "classif", "", 99999);
-          }
+            var classif = readCookie(val.id + "classif_bk");
+            if (classif && classif.length > 0) {
+                ind = true;
+                val.classif = classif;
+                createCookie(val.id + "classif", classif, 99999);
+                createCookie(val.id + "classif_bk", "", 99999);
+            }
+            else {
+                createCookie(val.id + "classif", "", 99999);
+            }
 
-          var isdeleted = readCookie(val.id + "isdeleted_bk");
-          if (isdeleted && isdeleted.length > 0) {
-              ind = true;
-              createCookie(val.id + "isdeleted", "yes", 99999);
-              createCookie(val.id + "isdeleted_bk", "", 99999);
-          } 
-          else {
-              createCookie(val.id + "isdeleted", "", 99999);
-          }    
+            var isdeleted = readCookie(val.id + "isdeleted_bk");
+            if (isdeleted && isdeleted.length > 0) {
+                ind = true;
+                createCookie(val.id + "isdeleted", "yes", 99999);
+                createCookie(val.id + "isdeleted_bk", "", 99999);
+            } 
+            else {
+                createCookie(val.id + "isdeleted", "", 99999);
+            }    
         }
         while (processtmp);        
       });
 
       if (ind) {
-        console.log(12); 
         createCookie("hasChanges", "Yes");
         $("#generate").addClass("haschanges");
       }
@@ -538,52 +544,56 @@ function hasTweetChanges(callback) {
   var ind = false;
   $.getJSON(path, function(data) 
   {
+      
+    var processtmp = true;
+
     $.each(data.Tweets, function(key, val) 
       {
-        recordfromdata = val;
-        processtmp = true;
-        linkcontent = null;
+        var recordfromdata = val;
+        var linkcontent = null;
         nextid = parseInt(readCookie("maxid")) - 1;
 
         do {
-            linkcontent = readCookie(nextid + "templink");
+            if (processtmp) {
+                linkcontent = readCookie(nextid + "templink");
+                if (linkcontent && linkcontent.length > 0) {
+                    nextid = nextid - 1;
+                    
+                    ind = true;
+                    return false;
+                }
+                else {
+                    val = recordfromdata;
+                    processtmp = false;
+                }
+            }
+            else {
+                val = recordfromdata;
+            }
 
-            if (linkcontent && linkcontent.length > 0) {
-                nextid = nextid - 1;
-                
+            var cat = readCookie(val.id + "catchanged");
+            if (cat && cat.length > 0) {
                 ind = true;
                 return false;
             }
-            else {
-                console.log("2");
-                val = recordfromdata;
-                processtmp = false;
+
+            var tag = readCookie(val.id + "tagchanged");
+            if (tag && tag.length > 0) {
+                ind = true;
+                return false;
             }
 
+            var info = readCookie(val.id + "info");
+            if (info && info.length > 0) {
+                ind = true;
+                return false;
+            }
 
-          var cat = readCookie(val.id + "catchanged");
-          if (cat && cat.length > 0) {
-            ind = true;
-            return false;
-          }
-
-          var tag = readCookie(val.id + "tagchanged");
-          if (tag && tag.length > 0) {
-            ind = true;
-            return false;
-          }
-
-          var info = readCookie(val.id + "info");
-          if (info && info.length > 0) {
-            ind = true;
-            return false;
-          }
-
-          var isdeleted = readCookie(val.id + "isdeleted");
-          if (isdeleted && isdeleted.length > 0) {
-            ind = true;
-            return false;
-          } 
+            var isdeleted = readCookie(val.id + "isdeleted");
+            if (isdeleted && isdeleted.length > 0) {
+                ind = true;
+                return false;
+            } 
         }
         while (processtmp);
       });
