@@ -338,13 +338,14 @@ function generate() {
         {
             var recordfromdata = val;
             var linkcontent = null;
+            var linktmp = null;
             nextid = parseInt(readCookie("maxid")) - 1;
 
             do {
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
-                        var linktmp = decodeURIComponent(linkcontent);
+                        linktmp = decodeURIComponent(linkcontent);
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
                         alert(linktmp);
