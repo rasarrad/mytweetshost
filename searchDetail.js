@@ -752,7 +752,159 @@ var getInformationbyid = function(id) {
  
   
 var countalltweets = function(id) {
-   
+    var path = "./data.json";
+    var counters = new Map();
+    var total = 0;
+    var total_y = 0;
+    var total_t = 0;
+    var total_h = 0;    
+    var processtmp = true;
+
+    $.getJSON(path, function(data) {
+        $.each(data.Tweets, function(key, val) {
+            var recordfromdata = val;
+            var linkcontent = null;
+            nextid = parseInt(readCookie("maxid")) - 1;
+    
+        });
+
+        $("#all").text(total);
+        $("#all").parent().attr("title", "Twitter: " + total_t + " - Youtube: " + total_y + " - Website: " + total_h);
+
+        var toview = 0;
+        var toviewT = 0;
+        var toviewY = 0;
+        var toviewH = 0;
+        if (counters.has("Ttoview")) {
+            toviewT = counters.get("Ttoview");
+            toview = counters.get("Ttoview");
+        }
+        if (counters.has("Ytoview")) {
+            toviewY = counters.get("Ytoview");
+            toview = toview + counters.get("Ytoview");
+        }
+        if (counters.has("Htoview")) {
+            toviewH = counters.get("Htoview");
+            toview = toview + counters.get("Htoview");
+        }
+
+        $("#toview").text(toview);
+        $("#toview").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
+
+        var toread = 0;
+        var toreadT = 0;
+        var toreadY = 0;
+        var toreadH = 0;
+        if (counters.has("Ttoread")) {
+            toreadT = counters.get("Ttoread");
+            toread = counters.get("Ttoread");
+        }
+        if (counters.has("Ytoread")) {
+            toreadY = counters.get("Ytoread");
+            toread = toread + counters.get("Ytoread");
+        }
+        if (counters.has("Htoread")) {
+            toreadH = counters.get("Htoread");
+            toread = toread + counters.get("Htoread");
+        }
+        $("#toread").text(toread);
+        $("#toread").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
+
+        var tokeep = 0;
+        var tokeepT = 0;
+        var tokeepY = 0;
+        var tokeepH = 0;
+        if (counters.has("Ttokeep")) {
+            tokeepT = counters.get("Ttokeep");
+            tokeep = counters.get("Ttokeep");
+        }
+        if (counters.has("Ytokeep")) {
+            tokeepY = counters.get("Ytokeep");
+            tokeep = tokeep + counters.get("Ytokeep");
+        }
+        if (counters.has("Htokeep")) {
+            tokeepH = counters.get("Htokeep");
+            tokeep = tokeep + counters.get("Htokeep");
+        }
+        $("#tokeep").text(tokeep);
+        $("#tokeep").parent().attr("title", "Twitter: " + tokeepT + " - Youtube: " + tokeepY + " - Website: " + tokeepH);
+
+        var imp = 0;
+        var impT = 0;
+        var impY = 0;
+        var impH = 0;
+        if (counters.has("Timp")) {
+            impT = counters.get("Timp");
+            imp = counters.get("Timp");
+        }
+        if (counters.has("Yimp")) {
+            impY = counters.get("Yimp");
+            imp = imp + counters.get("Yimp");
+        }
+        if (counters.has("Himp")) {
+            impH = counters.get("Himp");
+            imp = imp + counters.get("Himp");
+        }
+        $("#imp").text(imp);
+        $("#imp").parent().attr("title", "Twitter: " + impT + " - Youtube: " + impY + " - Website: " + impH);
+
+        var climate = 0;
+        var climateT = 0;
+        var climateY = 0;
+        var climateH = 0;
+        if (counters.has("Tclimate")) {
+            climateT = counters.get("Tclimate");
+            climate = counters.get("Tclimate");
+        }
+        if (counters.has("Yclimate")) {
+            climateY = counters.get("Yclimate");
+            climate = climate + counters.get("Yclimate");
+        }
+        if (counters.has("Hclimate")) {
+            climateH = counters.get("Hclimate");
+            climate = climate + counters.get("Hclimate");
+        }
+        $("#climate").text(climate);
+        $("#climate").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
+    }); 
+}
+
+
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+
+var togglecriterions = function() {
+    if ($('.toptitle').css('display') == 'none') {
+        $(".top").css("transition", "all 0.7s");
+        $('.top').css('opacity', '0');
+        
+        setTimeout(function(){
+            $('html').find('.top').each( function( index, element ){
+                $(this).css('display', 'none');
+            });
+            
+            $(".toptitle").css("transition", "none");
+            $('.toptitle').css('opacity', '1');
+            $('.toptitle').fadeIn(500);
+        }, 400);
+    }
+    else {
+        $(".toptitle").css("transition", "opacity 0.7s");
+        $('.toptitle').css('opacity', '0');
+        setTimeout(function(){
+            $('.toptitle').css('display', 'none');
+            $(".top").css("transition", "none");
+            $('.top').css('opacity', '1');
+            $('html').find('.top').each( function( index, element ){
+            $(this).fadeIn(500);
+            
+            });
+            setTimeout(function(){
+            $(".top").css("transition", "all 0.7s");
+            }, 1400);
+        }, 400);
+    } 
 }   
 
 
