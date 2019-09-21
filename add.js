@@ -147,7 +147,7 @@ function create() {
         showMessage("New Link Created And Copied To Clipboard");
         $('.addpopup').fadeOut(2000);
     }       
-    createCookie("maxid", pad(nextid, parseInt(readCookie("maxid")) + 1));
+    createCookie("maxid", pad(nextid, 4));
     
     if ($("#preview").is(":checked")) {
         createCookie(nextid + "templink", encodeURIComponent(JSON.stringify(result)), 99999);
