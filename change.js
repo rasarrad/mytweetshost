@@ -332,6 +332,7 @@ function generate() {
     var text = '{"Tweets": [';
     var ind = false;
     var processtmp = true;
+    nextid = parseInt(readCookie("maxid")) - 1;
     $.getJSON(path, function(data) 
     {
       $.each(data.Tweets, function(key, val) 
@@ -339,16 +340,17 @@ function generate() {
             var recordfromdata = val;
             var linkcontent = null;
             var linktmp = null;
-            nextid = parseInt(readCookie("maxid")) - 1;
+            
 
             do {
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
+                        alert(linktmp);
                         linktmp = decodeURIComponent(linkcontent);
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
-                        alert(linktmp);
+                        
                         console.log(linktmp);
                         linktmp = JSON.parse(linktmp);
                         
