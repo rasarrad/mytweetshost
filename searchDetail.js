@@ -61,7 +61,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             dofiltertagfinal = !dofiltertag || (dofiltertag && val.tags.includes($('#filtertag').val()));
             dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
             dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
-
+            console.log(nextid);
             do {
                 linkcontent = readCookie(nextid + "templink");
 
@@ -70,7 +70,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                     linktmp = linktmp.replace(/(\\)/gm, ""); 
                     linktmp = JSON.parse(linktmp);
-
+                    console.log(linktmp);
                     val = linktmp;
 
                     nextid = nextid - 1;
