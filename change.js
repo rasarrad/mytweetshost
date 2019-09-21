@@ -452,12 +452,13 @@ function undogenerate() {
   $.getJSON(path, function(data) 
   {
     var processtmp = true;
-
+    nextid = parseInt(readCookie("maxid")) - 1;
+    
     $.each(data.Tweets, function(key, val) 
       {
         var recordfromdata = val;
         var linkcontent = null;
-        nextid = parseInt(readCookie("maxid")) - 1;
+        
 
         do {
             if (processtmp) {
@@ -557,14 +558,14 @@ function hasTweetChanges(callback) {
   var ind = false;
   $.getJSON(path, function(data) 
   {
-      
+    nextid = parseInt(readCookie("maxid")) - 1;  
     var processtmp = true;
 
     $.each(data.Tweets, function(key, val) 
       {
         var recordfromdata = val;
         var linkcontent = null;
-        nextid = parseInt(readCookie("maxid")) - 1;
+        
 
         do {
             if (processtmp) {
