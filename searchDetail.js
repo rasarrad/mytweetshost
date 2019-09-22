@@ -52,16 +52,17 @@ var getInformation = function(ismoretweets, wasfiltered) {
             var dofiltercatfinal = false;
             var dofilterauthorfinal = false;
             var linkcontent = null;
-
+            console.log(88888888);
             do {
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
+                    console.log(1111111111111111111111111111111111111111111111);
                     if (linkcontent && linkcontent.length > 0) {
                         var linktmp = decodeURIComponent(linkcontent);
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
                         linktmp = JSON.parse(linktmp);
-    
+                        console.log(linktmp);
                         val = linktmp;
                         nextid = nextid - 1;
                     }
