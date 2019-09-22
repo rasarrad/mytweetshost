@@ -351,8 +351,8 @@ function generate() {
 
                         linktmp = JSON.parse(linktmp);
                         
-                        createCookie(nextid + "templink_bk", linktmp, 99999);
-                        createCookie(nextid + "templink", "", 99999);
+                        //createCookie(nextid + "templink_bk", linktmp, 99999);
+                        //createCookie(nextid + "templink", "", 99999);
                         val = linktmp;
                         nextid = nextid - 1;
                     }
@@ -368,51 +368,51 @@ function generate() {
                 var cat = readCookie(val.id + "catchanged");
                 if (cat && cat.length > 0) {
                     val.categories = cat;
-                    createCookie(val.id + "catchanged_bk", cat, 99999);
+                    //createCookie(val.id + "catchanged_bk", cat, 99999);
                 }
-                else {
-                  createCookie(val.id + "catchanged_bk", "", 99999);
-                }
-                createCookie(val.id + "catchanged", "", 99999);
+                //else {
+                //  createCookie(val.id + "catchanged_bk", "", 99999);
+                //}
+                //createCookie(val.id + "catchanged", "", 99999);
     
                 var tag = readCookie(val.id + "tagchanged");
                 if (tag && tag.length > 0) {
                     val.tags = tag;
-                    createCookie(val.id + "tagchanged_bk", tag, 99999);
+                    // createCookie(val.id + "tagchanged_bk", tag, 99999);
                 }
-                else {
-                  createCookie(val.id + "tagchanged_bk", "", 99999);
-                }
-                createCookie(val.id + "tagchanged", "", 99999);
+                //else {
+                //  createCookie(val.id + "tagchanged_bk", "", 99999);
+                //}
+                //createCookie(val.id + "tagchanged", "", 99999);
     
                 var info = readCookie(val.id + "info");
                 if (info && info.length > 0) {
                     val.info = info;
-                    createCookie(val.id + "info_bk", info, 99999);
+                    //createCookie(val.id + "info_bk", info, 99999);
                 }
-                else {
-                  createCookie(val.id + "info_bk", "", 99999);
-                }
-                createCookie(val.id + "info", "", 99999);
+                //else {
+                //  createCookie(val.id + "info_bk", "", 99999);
+                //}
+                //createCookie(val.id + "info", "", 99999);
     
                 var classif = readCookie(val.id + "classif");
                 if (classif && classif.length > 0) {
                     val.classif = classif;
-                    createCookie(val.id + "classif_bk", classif, 99999);
+                    //createCookie(val.id + "classif_bk", classif, 99999);
                 }
-                else {
-                  createCookie(val.id + "classif_bk", "", 99999);
-                }
-                createCookie(val.id + "classif", "", 99999);
+                //else {
+                //  createCookie(val.id + "classif_bk", "", 99999);
+                //}
+                //createCookie(val.id + "classif", "", 99999);
     
                 var isdeleted = readCookie(val.id + "isdeleted");
                 if (isdeleted && isdeleted.length > 0) {
-                    createCookie(val.id + "isdeleted_bk", "yes", 99999);
-                    createCookie(val.id + "isdeleted", "", 99999);
+                    //createCookie(val.id + "isdeleted_bk", "yes", 99999);
+                    //createCookie(val.id + "isdeleted", "", 99999);
                 } 
                 else {
-                    createCookie(val.id + "isdeleted", "", 99999);
-                    createCookie(val.id + "isdeleted_bk", "", 99999);
+                    //createCookie(val.id + "isdeleted", "", 99999);
+                    //createCookie(val.id + "isdeleted_bk", "", 99999);
                     if (ind) {
                         text = text + ",";
                     }
@@ -443,6 +443,32 @@ function generate() {
 
 
 function undogenerate() {
+    var id = parseInt(readCookie("maxid")) - 1;
+          
+    do {
+        eraseCookie(id + "templink");
+
+        eraseCookie(id + "isdeleted");
+
+        eraseCookie(id + "catchanged");
+
+        eraseCookie(id + "tagchanged");
+
+        eraseCookie(id + "info");
+
+        eraseCookie(id + "classif");
+
+        id = id + 1;
+    }
+    while (id >= 0);        
+
+    createCookie("hasChanges", "Yes");
+    $("#generate").addClass("haschanges");
+
+    showMessage("Changes Were Cleaned"); 
+}
+
+/* function undogenerate() {
   var path = "./data.json";
   var ind = false;
   resetFields(false);
@@ -543,7 +569,7 @@ function undogenerate() {
 
       showMessage("Processed Changes Were Reverted");
   }); 
-} 
+} */ 
 
 
 /////////////////////////////////////////////////////////////////////////
