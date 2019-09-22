@@ -419,7 +419,7 @@ function generate() {
                     else {
                         ind = true;
                     }
-                    text = text + JSON.stringify(this, null, " ");  
+                    text = text + JSON.stringify(val, null, " ");  
                 }
             }
             while (processtmp);
