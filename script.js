@@ -1,5 +1,5 @@
 
-console.log(3333); 
+console.log(11); 
 
 var text = "";
 var origin = "";
@@ -15,8 +15,6 @@ var addType = "T";
 
 $( document ).ready(function() {
 
-    //console.log(decodeURIComponent(readCookie(9 + "templink")))
-    //alert(readCookie(9 + "templink"))
     countalltweets();
     var hasChanges = readCookie("hasChanges");
     if (hasChanges && hasChanges.length > 0)
@@ -102,7 +100,7 @@ $( document ).ready(function() {
 
 
     /*   $("#tweet").on("paste", function() {
-        alert(1111222);
+
         parseTweet();
     }); */
 

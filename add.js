@@ -3,7 +3,7 @@ function parseTweet() {
     setTimeout(function(){
         nextid = parseInt(readCookie("maxid"));
         $('#tweetid').val(nextid);
-alert(nextid);
+
         text = $('#tweet').val();
         if (text.substring(0,4) == "<blo") {
             addType = "T";
@@ -130,7 +130,7 @@ function create() {
     else {
         $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + $('#classifpop').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
     }
-    alert(nextid);
+
     var result = $('#result').val();
 
     $("#result").select();
@@ -152,6 +152,7 @@ function create() {
         createCookie(nextid + "templink", encodeURIComponent(JSON.stringify(result)), 99999);
         createCookie("hasChanges", "Yes");
         $("#generate").addClass("haschanges");
+
 /*         var tmpid = readCookie("tmpid");
         if (tmpid && tmpid.length > 0) {
 
