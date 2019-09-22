@@ -51,7 +51,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
             var dofiltertagfinal = false;
             var dofiltercatfinal = false;
             var dofilterauthorfinal = false;
-            var recordfromdata = val;
             var linkcontent = null;
 
             do {
@@ -67,14 +66,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         nextid = nextid - 1;
                     }
                     else {
-                        val = recordfromdata;
                         processtmp = false;
                     }
                 }
-                else {
-                    val = recordfromdata;
-                }
-
                 
                 dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
                 dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
@@ -122,7 +116,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
             var dofiltertagfinal = false;
             var dofiltercatfinal = false;
             var dofilterauthorfinal = false;
-            recordfromdata = val;
             
             linkcontent = null;
 
@@ -139,12 +132,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         nextid = nextid - 1;
                     }
                     else {
-                        val = recordfromdata;
                         processtmp = false;
                     }
-                }
-                else {
-                    val = recordfromdata;
                 }
 
                 if (currentIndex < endIndex && ((ismoretweets && currentIndex == ind) || !ismoretweets)) {
@@ -763,7 +752,6 @@ var countalltweets = function(id) {
     
     $.getJSON(path, function(data) {
         $.each(data.Tweets, function(key, val) {
-            var recordfromdata = val;
             var linkcontent = null;
             var linktmp = null;
     
@@ -779,12 +767,8 @@ var countalltweets = function(id) {
                         nextid = nextid - 1;
                     }
                     else {
-                        val = recordfromdata;
                         processtmp = false;
                     }
-                }
-                else {
-                    val = recordfromdata;
                 }
 
                 var res = val.categories.split(" ");

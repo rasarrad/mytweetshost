@@ -337,21 +337,17 @@ function generate() {
     {
       $.each(data.Tweets, function(key, val) 
         {
-            var recordfromdata = val;
             var linkcontent = null;
             var linktmp = null;
             
-
             do {
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
-                        alert(linktmp);
                         linktmp = decodeURIComponent(linkcontent);
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
-                        
-                        console.log(linktmp);
+
                         linktmp = JSON.parse(linktmp);
                         
                         createCookie(nextid + "templink_bk", linktmp, 99999);
@@ -359,12 +355,8 @@ function generate() {
                         nextid = nextid - 1;
                     }
                     else {
-                        val = recordfromdata;
                         processtmp = false;
                     }
-                }
-                else {
-                    val = recordfromdata;
                 }
 
                 var cat = readCookie(val.id + "catchanged");
@@ -449,20 +441,19 @@ function undogenerate() {
   var path = "./data.json";
   var ind = false;
   resetFields(false);
+
   $.getJSON(path, function(data) 
   {
     var processtmp = true;
     nextid = parseInt(readCookie("maxid")) - 1;
-    
+
     $.each(data.Tweets, function(key, val) 
       {
-        var recordfromdata = val;
         var linkcontent = null;
         
-
         do {
             if (processtmp) {
-                linkcontent = readCookie(nextid + "templink");
+                linkcontent = readCookie(nextid + "templink_bk");
                 if (linkcontent && linkcontent.length > 0) {
                     var linktmp = decodeURIComponent(linkcontent);
                     linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
@@ -475,12 +466,8 @@ function undogenerate() {
                     nextid = nextid - 1;
                 }
                 else {
-                    val = recordfromdata;
                     processtmp = false;
                 }
-            }
-            else {
-                val = recordfromdata;
             }
 
             var cat = readCookie(val.id + "catchanged_bk");
@@ -563,10 +550,8 @@ function hasTweetChanges(callback) {
 
     $.each(data.Tweets, function(key, val) 
       {
-        var recordfromdata = val;
         var linkcontent = null;
         
-
         do {
             if (processtmp) {
                 linkcontent = readCookie(nextid + "templink");
@@ -577,12 +562,8 @@ function hasTweetChanges(callback) {
                     return false;
                 }
                 else {
-                    val = recordfromdata;
                     processtmp = false;
                 }
-            }
-            else {
-                val = recordfromdata;
             }
 
             var cat = readCookie(val.id + "catchanged");
