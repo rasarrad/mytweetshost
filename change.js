@@ -337,6 +337,7 @@ function generate() {
     {
       $.each(data.Tweets, function(key, val) 
         {
+            var recordfromdata = val;
             var linkcontent = null;
             var linktmp = null;
             
@@ -355,8 +356,12 @@ function generate() {
                         nextid = nextid - 1;
                     }
                     else {
+                        val = recordfromdata;
                         processtmp = false;
                     }
+                }
+                else {
+                    val = recordfromdata;
                 }
 
                 var cat = readCookie(val.id + "catchanged");
@@ -449,6 +454,7 @@ function undogenerate() {
 
     $.each(data.Tweets, function(key, val) 
       {
+        var recordfromdata = val;
         var linkcontent = null;
         
         do {
@@ -466,8 +472,12 @@ function undogenerate() {
                     nextid = nextid - 1;
                 }
                 else {
+                    val = recordfromdata;
                     processtmp = false;
                 }
+            }
+            else {
+                val = recordfromdata;
             }
 
             var cat = readCookie(val.id + "catchanged_bk");
@@ -550,8 +560,10 @@ function hasTweetChanges(callback) {
 
     $.each(data.Tweets, function(key, val) 
       {
+        var recordfromdata = val;
         var linkcontent = null;
         
+
         do {
             if (processtmp) {
                 linkcontent = readCookie(nextid + "templink");
@@ -562,8 +574,12 @@ function hasTweetChanges(callback) {
                     return false;
                 }
                 else {
+                    val = recordfromdata;
                     processtmp = false;
                 }
+            }
+            else {
+                val = recordfromdata;
             }
 
             var cat = readCookie(val.id + "catchanged");

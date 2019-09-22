@@ -51,25 +51,30 @@ var getInformation = function(ismoretweets, wasfiltered) {
             var dofiltertagfinal = false;
             var dofiltercatfinal = false;
             var dofilterauthorfinal = false;
+            var recordfromdata = val;
             var linkcontent = null;
-            console.log(88888888);
+
             do {
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
-                    console.log(1111111111111111111111111111111111111111111111);
                     if (linkcontent && linkcontent.length > 0) {
                         var linktmp = decodeURIComponent(linkcontent);
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
                         linktmp = JSON.parse(linktmp);
-                        console.log(linktmp);
+    
                         val = linktmp;
                         nextid = nextid - 1;
                     }
                     else {
+                        val = recordfromdata;
                         processtmp = false;
                     }
                 }
+                else {
+                    val = recordfromdata;
+                }
+
                 
                 dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
                 dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
@@ -117,6 +122,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             var dofiltertagfinal = false;
             var dofiltercatfinal = false;
             var dofilterauthorfinal = false;
+            recordfromdata = val;
             
             linkcontent = null;
 
@@ -133,8 +139,12 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         nextid = nextid - 1;
                     }
                     else {
+                        val = recordfromdata;
                         processtmp = false;
                     }
+                }
+                else {
+                    val = recordfromdata;
                 }
 
                 if (currentIndex < endIndex && ((ismoretweets && currentIndex == ind) || !ismoretweets)) {
@@ -750,17 +760,16 @@ var countalltweets = function(id) {
     var total_h = 0;    
     var processtmp = true;
     nextid = parseInt(readCookie("maxid")) - 1;
-    
     $.getJSON(path, function(data) {
         $.each(data.Tweets, function(key, val) {
+            var recordfromdata = val;
             var linkcontent = null;
-            var linktmp = null;
     
             do {
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
-                        linktmp = decodeURIComponent(linkcontent);
+                        var linktmp = decodeURIComponent(linkcontent);
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
                         linktmp = JSON.parse(linktmp);
@@ -768,8 +777,12 @@ var countalltweets = function(id) {
                         nextid = nextid - 1;
                     }
                     else {
+                        val = recordfromdata;
                         processtmp = false;
                     }
+                }
+                else {
+                    val = recordfromdata;
                 }
 
                 var res = val.categories.split(" ");
