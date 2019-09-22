@@ -352,6 +352,7 @@ function generate() {
                         linktmp = JSON.parse(linktmp);
                         
                         createCookie(nextid + "templink_bk", linktmp, 99999);
+                        createCookie(nextid + "templink", "", 99999);
                         val = linktmp;
                         nextid = nextid - 1;
                     }
@@ -430,7 +431,6 @@ function generate() {
         $("#linkresult").select();
         document.execCommand('copy'); 
         createCookie("hasChanges", "");
-        console.log(11); 
         $("#generate").removeClass("haschanges");
 
         showMessage("Changes Processed And Copied To Clipboard");
