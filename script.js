@@ -1,5 +1,5 @@
 
-console.log(111); 
+console.log(2222); 
 
 var text = "";
 var origin = "";
@@ -98,7 +98,7 @@ $( document ).ready(function() {
       }
     });    
 
-    $('#filtertext, #filterdate1, #filterdate2, #filterid, #filterauthor, #filtertag').keydown(function(event){
+    $('#filtertext, #filterdate1, #filterdate2, #filterid, #filterauthor, #filtertag').keydown(function(e){
         e.preventDefault();  
         e.stopPropagation();
       });
