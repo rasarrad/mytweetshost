@@ -1,5 +1,5 @@
 
-console.log(33333); 
+console.log(11111); 
 
 var text = "";
 var origin = "";
@@ -242,7 +242,8 @@ function gotop() {
 function internallinkcopy(id) {
     $('#linkresult').val("https://sleepy-mclean-3aea2d.netlify.com/?tweetid=" + id);
     $("#linkresult").select();
-    document.execCommand('copy'); 
+    document.execCommand('copy');
+    $("#linkresult").blur();
     showMessage("Internal Link Copied To Clipboard"); 
 }
 
@@ -255,6 +256,7 @@ function externallinkcopy(link, id) {
     $('#linkresult').val(link);
     $("#linkresult").select();
     document.execCommand('copy');
+    $("#linkresult").blur();
     showMessage("External Link Copied To Clipboard"); 
 }
 
