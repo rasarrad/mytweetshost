@@ -202,7 +202,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         var textareaExtraStyle ="";
                         var expandclass = "";
                         var displayundo = "";
-                        if (hasinfo && hasinfo.length > 0) {
+                        if (hasinfo && hasinfo.length > 0 && hasinfo != null && hasinfo != "null") {
                             if (val.info && val.info.length > 0) {
                                 textareaExtraStyle = "border: 2px solid red;";
                                 expandclass = "infomodified";
