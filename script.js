@@ -1,5 +1,5 @@
 
-console.log(1111); 
+console.log(222); 
 
 var text = "";
 var origin = "";
@@ -14,7 +14,8 @@ var dblClickTimeout = null;
 var addType = "T";
 
 $( document ).ready(function() {
-
+alert(($(window).height() - 100) + "px");
+    $(body).css("height", ($(window).height() - 100) + "px");
     countalltweets();
     var hasChanges = readCookie("hasChanges");
     if (hasChanges && hasChanges.length > 0)
@@ -98,7 +99,7 @@ $( document ).ready(function() {
       }
     });    
 
-    $('#filtertext, #filterdate1, #filterdate2, #filterid, #filterauthor, #filtertag').keydown(function(e){
+    $('#postedby, #categories, #tags, #info, #filtertext, #filterdate1, #filterdate2, #filterid, #filterauthor, #filtertag').keydown(function(e){
         e.stopPropagation();
       });
       

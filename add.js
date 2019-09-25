@@ -7,7 +7,7 @@ function parseTweet() {
         text = $('#tweet').val();
         if (text.substring(0,4) == "<blo") {
             addType = "T";
-            $('#typeT').css('border-color', '#00bc00'); 
+            $('#typeTT').css('border-color', '#00bc00'); 
 
             text = "\"" + text.replace(/"/g, '').replace('<\/script>', '<&#47;script>') + "\"";
             
@@ -32,7 +32,7 @@ function parseTweet() {
         }
         else if (text.indexOf("youtube.com/embed") >= 0) {
             addType = "Y";
-            $('#typeY').css('border-color', '#00bc00'); 
+            $('#typeYY').css('border-color', '#00bc00'); 
 
             var date = new Date();
             
@@ -57,7 +57,7 @@ function parseTweet() {
         }
         else if (text.indexOf("youtube") >= 0) {
             addType = "Y";
-            $('#typeY').css('border-color', '#00bc00'); 
+            $('#typeYY').css('border-color', '#00bc00'); 
 
             var date = new Date();
             
@@ -83,7 +83,7 @@ function parseTweet() {
         else if (text.substring(0,4) == "http") {
 
             addType = "H";
-            $('#typeH').css('border-color', '#00bc00'); 
+            $('#typeHH').css('border-color', '#00bc00'); 
 
             var date = new Date();
             
@@ -196,9 +196,9 @@ function resetFieldsPopup()
     $('#tags').val('');
     $('#info').val('');
     $('#result').val('');    
-    $('#typeT').css('border-color', 'white'); 
-    $('#typeH').css('border-color', 'white'); 
-    $('#typeY').css('border-color', 'white');   
+    $('#typeTT').css('border-color', 'white'); 
+    $('#typeHH').css('border-color', 'white'); 
+    $('#typeYY').css('border-color', 'white');   
 }  
 
 var closePopup = function() 
@@ -212,7 +212,7 @@ var closePopup = function()
     $('#info').val('');
     $('#result').val('');  
     $('.addpopup').fadeOut();
-    $('#typeT').css('border-color', 'white'); 
-    $('#typeH').css('border-color', 'white'); 
-    $('#typeY').css('border-color', 'white');  
+    $('#typeTT').css('border-color', 'white'); 
+    $('#typeHH').css('border-color', 'white'); 
+    $('#typeYY').css('border-color', 'white');  
 }  
