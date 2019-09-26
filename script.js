@@ -1,5 +1,5 @@
 
-console.log(2222); 
+console.log(111); 
 
 var text = "";
 var origin = "";
@@ -102,7 +102,10 @@ $( document ).ready(function() {
         e.stopPropagation();
       });
       
+    $("#typeTT, #typeYY, #typeHH").on("click", function() {
 
+        parseTweet();
+    });
     /*   $("#tweet").on("paste", function() {
 
         parseTweet();
