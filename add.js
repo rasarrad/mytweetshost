@@ -223,7 +223,7 @@ function clickCheckCat(obj, type)
         $('#categories').val($('#categories').val() + type + " ");
     } 
     else {
-        $('#categories').val().replace(type + " ", "");
+        $('#categories').val($('#categories').val().replace(type + " ", ""));
     }
 } 
 
