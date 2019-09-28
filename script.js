@@ -1,5 +1,5 @@
 
-console.log(1111); 
+console.log(333333); 
 
 var text = "";
 var origin = "";
@@ -15,7 +15,7 @@ var addType = "T";
 
 $( document ).ready(function() {
     //$("body").css("height", $(window).height() + "px");
-    //countalltweets();
+    countalltweets();
     var hasChanges = readCookie("hasChanges");
     if (hasChanges && hasChanges.length > 0)
       $("#generate").addClass("haschanges");
