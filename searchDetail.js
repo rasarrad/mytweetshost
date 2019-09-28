@@ -970,7 +970,7 @@ var countalltweets = function(id) {
             climate = climate + counters.get("Hcli");
         }
         $("#cli").text(climate);
-        $("#cli").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);*/
+        $("#cli").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
     }); 
 }
 
