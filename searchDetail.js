@@ -787,7 +787,7 @@ var countalltweets = function(id) {
 
         $("#all").text(total);
         $("#all").parent().attr("title", "Twitter: " + total_t + " - Youtube: " + total_y + " - Website: " + total_h);
-
+/*
         var toview = 0;
         var toviewT = 0;
         var toviewY = 0;
@@ -882,7 +882,7 @@ var countalltweets = function(id) {
             climate = climate + counters.get("Hclimate");
         }
         $("#climate").text(climate);
-        $("#climate").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
+        $("#climate").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);*/
     }); 
 }
 
