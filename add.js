@@ -216,3 +216,14 @@ var closePopup = function()
     $('#typeHH').css('border-color', 'white'); 
     $('#typeYY').css('border-color', 'white');  
 }  
+
+function clickCheckCat(obj, type) 
+{
+    if ($(obj).is(":checked")) {
+        $('#categories').val($('#categories').val() + type + " ");
+    } 
+    else {
+        $('#categories').val().replace(type + " ", "");
+    }
+} 
+
