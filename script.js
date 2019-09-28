@@ -1,5 +1,5 @@
 
-console.log(111); 
+console.log(2222); 
 
 var text = "";
 var origin = "";
@@ -15,7 +15,7 @@ var addType = "T";
 
 $( document ).ready(function() {
     //$("body").css("height", $(window).height() + "px");
-    countalltweets();
+    //countalltweets();
     var hasChanges = readCookie("hasChanges");
     if (hasChanges && hasChanges.length > 0)
       $("#generate").addClass("haschanges");
@@ -167,16 +167,24 @@ $( document ).ready(function() {
     });
 
     $( "#removetmp" ).bind( "click", function( event ) {
-        nextid = parseInt(readCookie("maxid"));
+        if ($('#postedby').val() != "") {
+           
+            createCookie($('#postedby').val() + "templink", "", 99999);
 
-        do {
-            createCookie(nextid + "templink", "", 99999);
-            nextid = nextid - 1;
+            showMessage("Removed link number: " +  $('#postedby').val());
+            $('#postedby').val('');
         }
-        while (nextid > 0);
+        else {
+            nextid = parseInt(readCookie("maxid"));
 
-        showMessage("Temp Links Removed");
-        
+            do {
+                createCookie(nextid + "templink", "", 99999);
+                nextid = nextid - 1;
+            }
+            while (nextid > 0);
+    
+            showMessage("Temp Links Removed");
+        } 
     });
 });
 
