@@ -146,7 +146,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 else {
                     val = recordfromdata;
                 }
-
+console.log(val.id);
                 if (currentIndex < endIndex && ((ismoretweets && currentIndex == ind) || !ismoretweets)) {
                     dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
                     dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
