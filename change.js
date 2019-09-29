@@ -458,7 +458,7 @@ function undogenerate() {
     
             eraseCookie(id + "classif");
     
-            id = id + 1;
+            id = id - 1;
         }
         while (id >= 0);        
     
