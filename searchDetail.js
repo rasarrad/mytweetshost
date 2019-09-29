@@ -931,8 +931,8 @@ var countalltweets = function(id) {
             tokeepH = counters.get("Htke");
             tokeep = tokeep + counters.get("Htk");
         }
-        $("#tk").text(tokeep);
-        $("#tk").parent().attr("title", "Twitter: " + tokeepT + " - Youtube: " + tokeepY + " - Website: " + tokeepH);
+        $("#tke").text(tokeep);
+        $("#tke").parent().attr("title", "Twitter: " + tokeepT + " - Youtube: " + tokeepY + " - Website: " + tokeepH);
 
         var imp = 0;
         var impT = 0;

@@ -430,8 +430,6 @@ function generate() {
         $('#linkresult').val(text);
         $("#linkresult").select();
         document.execCommand('copy'); 
-        createCookie("hasChanges", "");
-        $("#generate").removeClass("haschanges");
 
         showMessage("Changes Processed And Copied To Clipboard");
     }); 
@@ -443,29 +441,32 @@ function generate() {
 
 
 function undogenerate() {
-    var id = parseInt(readCookie("maxid")) - 1;
+    var r = confirm("Remove all Changes?");
+    if (r == true) {
+        var id = parseInt(readCookie("maxid")) - 1;
           
-    do {
-        eraseCookie(id + "templink");
-
-        eraseCookie(id + "isdeleted");
-
-        eraseCookie(id + "catchanged");
-
-        eraseCookie(id + "tagchanged");
-
-        eraseCookie(id + "info");
-
-        eraseCookie(id + "classif");
-
-        id = id + 1;
+        do {
+            eraseCookie(id + "templink");
+    
+            eraseCookie(id + "isdeleted");
+    
+            eraseCookie(id + "catchanged");
+    
+            eraseCookie(id + "tagchanged");
+    
+            eraseCookie(id + "info");
+    
+            eraseCookie(id + "classif");
+    
+            id = id + 1;
+        }
+        while (id >= 0);        
+    
+        createCookie("hasChanges", "");
+        $("#generate").removeClass("haschanges");
+    
+        showMessage("Changes Were Cleaned"); 
     }
-    while (id >= 0);        
-
-    createCookie("hasChanges", "Yes");
-    $("#generate").addClass("haschanges");
-
-    showMessage("Changes Were Cleaned"); 
 }
 
 /* function undogenerate() {
