@@ -115,7 +115,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         processtmp = true;
 
         $.each(data.Tweets, function(key, val) {
-
+            console.log("111 - " + val.id + " - " + ind);   
             if (ind < processedCount) {
                 ind = ind + 1;
                 return;
