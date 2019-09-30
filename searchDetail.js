@@ -53,7 +53,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             var dofilterauthorfinal = false;
             var recordfromdata = val;
             var linkcontent = null;
-
+            console.log(val.id);
             do {
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
@@ -125,7 +125,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             recordfromdata = val;
             
             linkcontent = null;
-            console.log(val.id);
+            
             do {
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
