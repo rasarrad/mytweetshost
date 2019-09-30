@@ -116,7 +116,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         $.each(data.Tweets, function(key, val) {
             console.log("111 - " + val.id + " - " + ind);   
-            if (ind < processedCount) {
+            if (ind <= processedCount) {
                 ind = ind + 1;
                 return;
             }
@@ -157,8 +157,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     val = recordfromdata;
                 }
 
-                
-
+                console.log(ismoretweets);  
+                console.log(currentIndex);   
+                console.log(endIndex);  
                 if (currentIndex < endIndex && ((ismoretweets && currentIndex == ind) || !ismoretweets)) {
                     dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
                     dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
