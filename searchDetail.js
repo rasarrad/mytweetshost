@@ -41,7 +41,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         var total_t = 0;
         var total_h = 0;
         var processtmp = true;
-
+        console.log(data);
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
             var dofiltertextfinal = false;
@@ -123,7 +123,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             var dofiltercatfinal = false;
             var dofilterauthorfinal = false;
             recordfromdata = val;
-            console.log(val.id);
+            
             linkcontent = null;
 
             do {
