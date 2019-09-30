@@ -41,7 +41,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         var total_t = 0;
         var total_h = 0;
         var processtmp = true;
-
+        console.log("-------------------------"); 
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
             var dofiltertextfinal = false;
@@ -113,7 +113,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         ind = 0;
         nextid = parseInt(readCookie("maxid")) - 1;
         processtmp = true;
-
+        console.log("=========================="); 
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
             var dofiltertextfinal = false;
@@ -162,7 +162,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
     
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                         && dofilterauthorfinal && dofiltercatfinal) {
-                            
+                            console.log(val.id); 
                         var isdeleted = readCookie(val.id + "isdeleted");
                         if (isdeleted && isdeleted.length > 0) {
                             isdeleted = "background-image: linear-gradient(to bottom, #d60000 -33%, rgb(0, 137, 217));";
