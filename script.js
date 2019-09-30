@@ -1,5 +1,5 @@
 
-console.log(111); 
+console.log(4444); 
 
 var text = "";
 var origin = "";
@@ -12,6 +12,7 @@ var urldirect = "";
 var dblFlag = false;
 var dblClickTimeout = null;
 var addType = "T";
+var processedCount = 0;
 
 $( document ).ready(function() {
     //$("body").css("height", $(window).height() + "px");

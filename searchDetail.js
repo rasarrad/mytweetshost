@@ -29,7 +29,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#moretweets').hide();
         currentIndex = 0;
         endIndex = currentIndex + Number($('#recordspersearch').val());
-
+        processedCount = 0;
         $("#main").empty();
     }
 
@@ -128,6 +128,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             linkcontent = null;
             console.log("222 - " + val.id);    
             do {
+                
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
@@ -160,9 +161,10 @@ var getInformation = function(ismoretweets, wasfiltered) {
     
                     dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
     
+                    if (ind >= processedCount) {
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                         && dofilterauthorfinal && dofiltercatfinal) {
-                            console.log(val.id); 
+                            
                         var isdeleted = readCookie(val.id + "isdeleted");
                         if (isdeleted && isdeleted.length > 0) {
                             isdeleted = "background-image: linear-gradient(to bottom, #d60000 -33%, rgb(0, 137, 217));";
@@ -306,6 +308,12 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         }
                         currentIndex = currentIndex + 1;
                     }   
+
+                }
+
+
+
+                
                 }
                 else {
                     console.log("--- " + currentIndex + " - " + endIndex);
@@ -363,11 +371,13 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }, 300);
     
                 ind = ind + 1;
+                
             }
             while (processtmp);
 
         });
-
+        processedCount = ind;
+        
         if (Number($('#recordspersearch').val()) < ind) {
         
             //$('#tweetcount').css('background', '#fff900');
