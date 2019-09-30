@@ -29,7 +29,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#moretweets').hide();
         currentIndex = 0;
         endIndex = currentIndex + Number($('#recordspersearch').val());
-
+        processedCount = 0;
         $("#main").empty();
     }
 
@@ -41,7 +41,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         var total_t = 0;
         var total_h = 0;
         var processtmp = true;
-        console.log("-------------------------"); 
+
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
             var dofiltertextfinal = false;
@@ -86,7 +86,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
                 if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                     && dofilterauthorfinal && dofiltercatfinal) {
-                        console.log("111 - " + val.id);    
+ 
                     ind = ind + 1;
 
                     if (val.type == "T") {
@@ -113,7 +113,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         ind = 0;
         nextid = parseInt(readCookie("maxid")) - 1;
         processtmp = true;
-        console.log("=========================="); 
+
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
             var dofiltertextfinal = false;
@@ -126,8 +126,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
             recordfromdata = val;
             
             linkcontent = null;
-            console.log("222 - " + val.id);    
+
             do {
+                
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
@@ -159,7 +160,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
     
                     dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
-    
+                    console.log("111 - " + val.id + " - " + ind + " - " + processedCount);   
+                    if (ind >= processedCount) {
+                        console.log("222 - " + val.id + " - " + ind + " - " + processedCount);   
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                         && dofilterauthorfinal && dofiltercatfinal) {
                             
@@ -306,9 +309,15 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         }
                         currentIndex = currentIndex + 1;
                     }   
+
+                }
+
+
+
+                
                 }
                 else {
-                    console.log("--- " + currentIndex + " - " + endIndex);
+
                     if (currentIndex >= endIndex) {
                         $('#moretweets').css('opacity', 0);
                         $('#moretweets').attr('doshow', 'yes');
@@ -363,11 +372,13 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }, 300);
     
                 ind = ind + 1;
+                
             }
             while (processtmp);
 
         });
-
+        processedCount = ind;
+        
         if (Number($('#recordspersearch').val()) < ind) {
         
             //$('#tweetcount').css('background', '#fff900');
