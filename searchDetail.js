@@ -123,7 +123,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             var dofiltercatfinal = false;
             var dofilterauthorfinal = false;
             recordfromdata = val;
-            
+            console.log(val.id);
             linkcontent = null;
 
             do {
@@ -147,7 +147,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     val = recordfromdata;
                 }
 
-                console.log(val.id);
+                
 
                 if (currentIndex < endIndex && ((ismoretweets && currentIndex == ind) || !ismoretweets)) {
                     dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
