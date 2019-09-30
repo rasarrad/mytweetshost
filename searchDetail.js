@@ -41,7 +41,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         var total_t = 0;
         var total_h = 0;
         var processtmp = true;
-        console.log(data);
+
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
             var dofiltertextfinal = false;
@@ -125,7 +125,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             recordfromdata = val;
             
             linkcontent = null;
-
+            console.log(val.id);
             do {
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
@@ -307,52 +307,53 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     }   
                 }
                 else {
+                    console.log("--- " + currentIndex + " - " + endIndex);
                     if (currentIndex >= endIndex) {
-                    $('#moretweets').css('opacity', 0);
-                    $('#moretweets').attr('doshow', 'yes');
-                    
-        /*               setTimeout(function(){
-                        $('#mask').fadeOut(300);
-                    }, 300);
-                    showMessage("Search Results"); */
-
-                    if (Number($('#recordspersearch').val()) < ind) {
-        
-                        //$('#tweetcount').css('background', '#fff900');
+                        $('#moretweets').css('opacity', 0);
+                        $('#moretweets').attr('doshow', 'yes');
                         
-                        //$('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
-                        $('#tcnumber').text(toindex + " of " + totalLinks + " Links");
-                        $('#tccateg').text("In " + $('#selectedcattext').val());
+            /*               setTimeout(function(){
+                            $('#mask').fadeOut(300);
+                        }, 300);
+                        showMessage("Search Results"); */
+
+                        if (Number($('#recordspersearch').val()) < ind) {
             
-                        var aux = ind;
-            
-                        setTimeout(function(){ 
-                            if (aux == toindex) { 
-                                $('#tcnumber').text(aux + " of " + totalLinks + " Links");
-                                $('#tccateg').text("In " + $('#selectedcattext').val());
-                            }
-                            else {
-                                //$('#tcnumber').text(toindex + " of " + aux);
-                                $('#tcnumber').text(toindex + " of " + totalLinks + " Links");
-                                $('#tccateg').text("In " + $('#selectedcattext').val());
-                            }   
+                            //$('#tweetcount').css('background', '#fff900');
                             
-                            $('#tweetcount').css('background', 'white');
-                        }, 3000);
-            
-                    }
-                    else {  
-                        $('#tcnumber').text(ind + " of " + totalLinks + " Links");
-                        $('#tccateg').text("In " + $('#selectedcattext').val());
-                    }
-            
-                    $('#tct').text(total_t);
-                    $('#tcy').text(total_y);
-                    $('#tch').text(total_h);
+                            //$('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
+                            $('#tcnumber').text(toindex + " of " + totalLinks + " Links");
+                            $('#tccateg').text("In " + $('#selectedcattext').val());
+                
+                            var aux = ind;
+                
+                            setTimeout(function(){ 
+                                if (aux == toindex) { 
+                                    $('#tcnumber').text(aux + " of " + totalLinks + " Links");
+                                    $('#tccateg').text("In " + $('#selectedcattext').val());
+                                }
+                                else {
+                                    //$('#tcnumber').text(toindex + " of " + aux);
+                                    $('#tcnumber').text(toindex + " of " + totalLinks + " Links");
+                                    $('#tccateg').text("In " + $('#selectedcattext').val());
+                                }   
+                                
+                                $('#tweetcount').css('background', 'white');
+                            }, 3000);
+                
+                        }
+                        else {  
+                            $('#tcnumber').text(ind + " of " + totalLinks + " Links");
+                            $('#tccateg').text("In " + $('#selectedcattext').val());
+                        }
+                
+                        $('#tct').text(total_t);
+                        $('#tcy').text(total_y);
+                        $('#tch').text(total_h);
 
 
 
-                    return false;
+                        return false;
                     }
                 }
                 
