@@ -115,6 +115,14 @@ var getInformation = function(ismoretweets, wasfiltered) {
         processtmp = true;
 
         $.each(data.Tweets, function(key, val) {
+
+            if (ind < processedCount) {
+                ind = ind + 1;
+                return;
+            }
+
+            
+
             var newtweet = null;
             var dofiltertextfinal = false;
             var dofilterdate1final = false;
@@ -160,9 +168,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
     
                     dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
-                    console.log("111 - " + val.id + " - " + ind + " - " + processedCount);   
-                    if (ind >= processedCount) {
-                        console.log("222 - " + val.id + " - " + ind + " - " + processedCount);   
+
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                         && dofilterauthorfinal && dofiltercatfinal) {
                             
@@ -309,11 +315,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         }
                         currentIndex = currentIndex + 1;
                     }   
-
-                }
-
-
-
                 
                 }
                 else {
