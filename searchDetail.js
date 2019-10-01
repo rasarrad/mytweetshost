@@ -133,11 +133,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
             linkcontent = null;
 
             do {
-                
-                if (processedCount >= totalGlobalLinks ) {
-                    return;
-                }
-
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
@@ -158,7 +153,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     val = recordfromdata;
                 }
 
-                
+                if (processedCount < totalGlobalLinks ) {
                 // console.log("--- " + currentIndex + " - " + endIndex);
                 processedCount = processedCount + 1;
                 console.log("--- " + processedCount + " - " + currentIndex + " - " + endIndex);
@@ -375,6 +370,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }, 300);
     
                 ind = ind + 1;
+                }
+
             }
             while (processtmp);
 
