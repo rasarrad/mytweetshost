@@ -29,7 +29,11 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#moretweets').hide();
         currentIndex = 0;
         endIndex = currentIndex + Number($('#recordspersearch').val());
-
+        processedCount = 0;
+        totalLinkss = 0;
+        total_yy = 0;
+        total_tt = 0;
+        total_hh = 0;
         $("#main").empty();
     }
 
@@ -37,79 +41,78 @@ var getInformation = function(ismoretweets, wasfiltered) {
     nextid = parseInt(readCookie("maxid")) - 1;
 
     $.getJSON(path, function(data) {
-        var total_y = 0;
-        var total_t = 0;
-        var total_h = 0;
         var processtmp = true;
 
-        $.each(data.Tweets, function(key, val) {
-            var newtweet = null;
-            var dofiltertextfinal = false;
-            var dofilterdate1final = false;
-            var dofilterdate2final = false;
-            var dofilteridfinal = false;
-            var dofiltertagfinal = false;
-            var dofiltercatfinal = false;
-            var dofilterauthorfinal = false;
-            var recordfromdata = val;
-            var linkcontent = null;
-
-            do {
-                if (processtmp) {
-                    linkcontent = readCookie(nextid + "templink");
-                    if (linkcontent && linkcontent.length > 0) {
-                        var linktmp = decodeURIComponent(linkcontent);
-                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
-                        linktmp = linktmp.replace(/(\\)/gm, ""); 
-                        linktmp = JSON.parse(linktmp);
+        if (!ismoretweets) {
+            $.each(data.Tweets, function(key, val) {
+                var newtweet = null;
+                var dofiltertextfinal = false;
+                var dofilterdate1final = false;
+                var dofilterdate2final = false;
+                var dofilteridfinal = false;
+                var dofiltertagfinal = false;
+                var dofiltercatfinal = false;
+                var dofilterauthorfinal = false;
+                var recordfromdata = val;
+                var linkcontent = null;
     
-                        val = linktmp;
-                        nextid = nextid - 1;
+                do {
+                    if (processtmp) {
+                        linkcontent = readCookie(nextid + "templink");
+                        if (linkcontent && linkcontent.length > 0) {
+                            var linktmp = decodeURIComponent(linkcontent);
+                            linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                            linktmp = linktmp.replace(/(\\)/gm, ""); 
+                            linktmp = JSON.parse(linktmp);
+        
+                            val = linktmp;
+                            nextid = nextid - 1;
+                        }
+                        else {
+                            val = recordfromdata;
+                            processtmp = false;
+                        }
                     }
                     else {
                         val = recordfromdata;
-                        processtmp = false;
+                    }
+                    
+                    dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
+                    dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
+                    dofilterdate2final = !dofilterdate2 || (dofilterdate2 && val.date <= Number($('#filterdate2').val()));
+                    dofilteridfinal = !dofilterid || (dofilterid && (Number(val.id) == Number($('#filterid').val())));
+                    dofiltertagfinal = !dofiltertag || (dofiltertag && val.tags.includes($('#filtertag').val()));
+                    dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
+                    dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
+    
+                    if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
+                        && dofilterauthorfinal && dofiltercatfinal) {
+      
+                        ind = ind + 1;
+    
+                        if (val.type == "T") {
+                            total_tt = total_tt + 1;
+                        }
+                        else if (val.type == "Y") {
+                            total_yy = total_yy + 1;
+                        }
+                        else {
+                            total_hh = total_hh + 1;
+                        }
                     }
                 }
-                else {
-                    val = recordfromdata;
-                }
+                while (processtmp);
+            });     
+            totalLinkss = ind; 
+        }
 
-                
-                dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
-                dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
-                dofilterdate2final = !dofilterdate2 || (dofilterdate2 && val.date <= Number($('#filterdate2').val()));
-                dofilteridfinal = !dofilterid || (dofilterid && (Number(val.id) == Number($('#filterid').val())));
-                dofiltertagfinal = !dofiltertag || (dofiltertag && val.tags.includes($('#filtertag').val()));
-                dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
-                dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
-
-                if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
-                    && dofilterauthorfinal && dofiltercatfinal) {
-  
-                    ind = ind + 1;
-
-                    if (val.type == "T") {
-                        total_t = total_t + 1;
-                    }
-                    else if (val.type == "Y") {
-                        total_y = total_y + 1;
-                    }
-                    else {
-                        total_h = total_h + 1;
-                    }
-                }
-            }
-            while (processtmp);
-        });
-        
+           
         var toindex = 0;
-        if (currentIndex + Number($('#recordspersearch').val()) < ind)
+        if (currentIndex + Number($('#recordspersearch').val()) < totalLinkss)
             toindex = currentIndex + Number($('#recordspersearch').val());
         else 
-            toindex = ind;
+            toindex = totalLinkss;
 
-        var totalLinks = ind;    
         ind = 0;
         nextid = parseInt(readCookie("maxid")) - 1;
         processtmp = true;
@@ -126,12 +129,12 @@ var getInformation = function(ismoretweets, wasfiltered) {
             recordfromdata = val;
             
             linkcontent = null;
-   
-
-            console.log("--- " + currentIndex + " - " + endIndex);
-
 
             do {
+                if (processedCount >= totalLinkss ) {
+                    return;
+                }
+
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
@@ -153,8 +156,10 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }
 
                 
+                // console.log("--- " + currentIndex + " - " + endIndex);
+                processedCount = processedCount + 1;
 
-                if (currentIndex < endIndex) {
+                if (currentIndex < endIndex && ((ismoretweets && currentIndex == ind) || !ismoretweets)) {
                     dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
                     dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
                     dofilterdate2final = !dofilterdate2 || (dofilterdate2 && val.date <= Number($('#filterdate2').val()));
@@ -304,7 +309,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             objToFocus = currentIndex;
                             var newtweetobjaction = newtweetobj;
                             $('html, body').animate({
-                            scrollTop: $(newtweetobjaction).offset().top - 60 
+                                scrollTop: $(newtweetobjaction).offset().top - 60 
                             }, 100);
         
                         }
@@ -326,19 +331,19 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             //$('#tweetcount').css('background', '#fff900');
                             
                             //$('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
-                            $('#tcnumber').text(toindex + " of " + totalLinks + " Links");
+                            $('#tcnumber').text(toindex + " of " + totalLinkss + " Links");
                             $('#tccateg').text("In " + $('#selectedcattext').val());
                 
                             var aux = ind;
                 
                             setTimeout(function(){ 
                                 if (aux == toindex) { 
-                                    $('#tcnumber').text(aux + " of " + totalLinks + " Links");
+                                    $('#tcnumber').text(aux + " of " + totalLinkss + " Links");
                                     $('#tccateg').text("In " + $('#selectedcattext').val());
                                 }
                                 else {
                                     //$('#tcnumber').text(toindex + " of " + aux);
-                                    $('#tcnumber').text(toindex + " of " + totalLinks + " Links");
+                                    $('#tcnumber').text(toindex + " of " + totalLinkss + " Links");
                                     $('#tccateg').text("In " + $('#selectedcattext').val());
                                 }   
                                 
@@ -347,13 +352,13 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 
                         }
                         else {  
-                            $('#tcnumber').text(ind + " of " + totalLinks + " Links");
+                            $('#tcnumber').text(ind + " of " + totalLinkss + " Links");
                             $('#tccateg').text("In " + $('#selectedcattext').val());
                         }
                 
-                        $('#tct').text(total_t);
-                        $('#tcy').text(total_y);
-                        $('#tch').text(total_h);
+                        $('#tct').text(total_tt);
+                        $('#tcy').text(total_yy);
+                        $('#tch').text(total_hh);
 
 
 
@@ -376,19 +381,19 @@ var getInformation = function(ismoretweets, wasfiltered) {
             //$('#tweetcount').css('background', '#fff900');
             
             //$('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
-            $('#tcnumber').text(toindex + " of " + totalLinks + " Links");
+            $('#tcnumber').text(toindex + " of " + totalLinkss + " Links");
             $('#tccateg').text("In " + $('#selectedcattext').val());
 
             var aux = ind;
 
             setTimeout(function(){ 
                 if (aux == toindex) { 
-                    $('#tcnumber').text(aux + " of " + totalLinks + " Links");
+                    $('#tcnumber').text(aux + " of " + totalLinkss + " Links");
                     $('#tccateg').text("In " + $('#selectedcattext').val());
                 }
                 else {
                     //$('#tcnumber').text(toindex + " of " + aux);
-                    $('#tcnumber').text(toindex + " of " + totalLinks + " Links");
+                    $('#tcnumber').text(toindex + " of " + totalLinkss + " Links");
                     $('#tccateg').text("In " + $('#selectedcattext').val());
                 }   
                 
@@ -397,16 +402,16 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         }
         else {  
-            $('#tcnumber').text(ind + " of " + totalLinks + " Links");
+            $('#tcnumber').text(ind + " of " + totalLinkss + " Links");
             $('#tccateg').text("In " + $('#selectedcattext').val());
         }
 
-        $('#tct').text(total_t);
-        $('#tcy').text(total_y);
-        $('#tch').text(total_h);
+        $('#tct').text(total_tt);
+        $('#tcy').text(total_yy);
+        $('#tch').text(total_hh);
 
         if (!ismoretweets) {
-            if (totalLinks > 0)
+            if (totalLinkss > 0)
                 showMessage("Search Results", 2000);
             else
                 showMessage("No Links Found", 2000);
