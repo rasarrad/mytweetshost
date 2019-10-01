@@ -155,6 +155,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     val = recordfromdata;
                 }
                 processedCount = processedCount + 1;
+                ind = ind + 1;
                 console.log("--- " + processedCount + " - " + totalGlobalLinks);
                 if (ind < processedCount ) {
                     return;
@@ -374,7 +375,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     $('#mask').fadeOut(300);
                 }, 300);
     
-                ind = ind + 1;
+                
             }
             while (processtmp);
 
