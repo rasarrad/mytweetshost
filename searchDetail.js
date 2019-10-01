@@ -34,6 +34,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         total_yy = 0;
         total_tt = 0;
         total_hh = 0;
+        totalGlobalLinks = 0;
         $("#main").empty();
     }
 
@@ -132,7 +133,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
             do {
                 console.log("--- " + processedCount + " - " + totalLinkss);
-                if (processedCount >= totalLinkss ) {
+                if (processedCount >= totalGlobalLinks ) {
                     return;
                 }
 
