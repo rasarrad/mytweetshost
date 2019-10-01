@@ -58,6 +58,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 var linkcontent = null;
     
                 do {
+                    totalGlobalLinks = totalGlobalLinks + 1;
                     if (processtmp) {
                         linkcontent = readCookie(nextid + "templink");
                         if (linkcontent && linkcontent.length > 0) {
