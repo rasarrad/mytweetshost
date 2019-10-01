@@ -136,8 +136,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 console.log("--- " + processedCount + " - " + totalGlobalLinks);
                 if (processedCount >= totalGlobalLinks ) {
                     return;
-
-                    alert(111);
                 }
 
                 if (processtmp) {
@@ -164,7 +162,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 // console.log("--- " + currentIndex + " - " + endIndex);
                 processedCount = processedCount + 1;
 
-                if (currentIndex < endIndex && ((ismoretweets && currentIndex == ind) || !ismoretweets)) {
+                if (currentIndex < endIndex) {
                     dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
                     dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
                     dofilterdate2final = !dofilterdate2 || (dofilterdate2 && val.date <= Number($('#filterdate2').val()));
