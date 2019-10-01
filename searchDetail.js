@@ -133,7 +133,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             linkcontent = null;
 
             do {
-                console.log("--- " + processedCount + " - " + totalLinkss);
+                console.log("--- " + processedCount + " - " + totalGlobalLinks);
                 if (processedCount >= totalGlobalLinks ) {
                     return;
                 }
