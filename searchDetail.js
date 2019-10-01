@@ -156,7 +156,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }
                 processedCount = processedCount + 1;
                 console.log("--- " + processedCount + " - " + totalGlobalLinks);
-                if (processedCount >= totalGlobalLinks ) {
+                if (ind < processedCount ) {
                     return;
 
                 }
