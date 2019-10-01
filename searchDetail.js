@@ -136,6 +136,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 console.log("--- " + processedCount + " - " + totalGlobalLinks);
                 if (processedCount >= totalGlobalLinks ) {
                     return;
+
+                    alert(111);
                 }
 
                 if (processtmp) {
