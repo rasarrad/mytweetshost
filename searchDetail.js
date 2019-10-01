@@ -131,6 +131,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             linkcontent = null;
 
             do {
+                console.log("--- " + processedCount + " - " + totalLinkss);
                 if (processedCount >= totalLinkss ) {
                     return;
                 }
