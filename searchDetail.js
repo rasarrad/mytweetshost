@@ -156,14 +156,14 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }
                 
                 ind = ind + 1;
-                console.log("--- " + ind + " - " + processedCount + " - " + totalGlobalLinks);
+                //console.log("--- " + ind + " - " + processedCount + " - " + totalGlobalLinks);
                 if (ind < processedCount ) {
                     return;
 
                 }
                 // console.log("--- " + currentIndex + " - " + endIndex);
 
-
+                console.log(val);
                 if (currentIndex < endIndex && ((ismoretweets && currentIndex == ind) || !ismoretweets)) {
                     dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
                     dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
@@ -176,7 +176,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
     
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                         && dofilterauthorfinal && dofiltercatfinal) {
-                            
+                            console.log(444444444);   
                         var isdeleted = readCookie(val.id + "isdeleted");
                         if (isdeleted && isdeleted.length > 0) {
                             isdeleted = "background-image: linear-gradient(to bottom, #d60000 -33%, rgb(0, 137, 217));";
