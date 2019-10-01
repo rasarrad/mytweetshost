@@ -154,9 +154,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 else {
                     val = recordfromdata;
                 }
-                processedCount = processedCount + 1;
+                
                 ind = ind + 1;
-                console.log("--- " + processedCount + " - " + totalGlobalLinks);
+                console.log("--- " + ind + " - " + processedCount + " - " + totalGlobalLinks);
                 if (ind < processedCount ) {
                     return;
 
@@ -380,7 +380,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             while (processtmp);
 
         });
-
+        processedCount = ind;
         if (Number($('#recordspersearch').val()) < ind) {
         
             //$('#tweetcount').css('background', '#fff900');
