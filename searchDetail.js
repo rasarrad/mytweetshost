@@ -162,6 +162,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 // console.log("--- " + currentIndex + " - " + endIndex);
                 processedCount = processedCount + 1;
                 console.log("--- " + processedCount + " - " + currentIndex + " - " + endIndex);
+                console.log(val);
                 if (currentIndex < endIndex) {
                     dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
                     dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
