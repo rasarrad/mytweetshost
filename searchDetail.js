@@ -29,7 +29,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#moretweets').hide();
         currentIndex = 0;
         endIndex = currentIndex + Number($('#recordspersearch').val());
-        processedCount = 0;
+
         $("#main").empty();
     }
 
@@ -86,7 +86,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
                 if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                     && dofilterauthorfinal && dofiltercatfinal) {
- 
+  
                     ind = ind + 1;
 
                     if (val.type == "T") {
@@ -115,14 +115,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
         processtmp = true;
 
         $.each(data.Tweets, function(key, val) {
-            console.log("111 - " + val.id + " - " + ind);   
-            if (ind <= processedCount) {
-                ind = ind + 1;
-                return;
-            }
-
-            
-
             var newtweet = null;
             var dofiltertextfinal = false;
             var dofilterdate1final = false;
@@ -134,9 +126,12 @@ var getInformation = function(ismoretweets, wasfiltered) {
             recordfromdata = val;
             
             linkcontent = null;
+   
+
+            console.log("--- " + currentIndex + " - " + endIndex);
+
 
             do {
-                
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
@@ -157,10 +152,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     val = recordfromdata;
                 }
 
-                console.log(ismoretweets);  
-                console.log(currentIndex);   
-                console.log(endIndex);  
-                if (currentIndex < endIndex && ((ismoretweets && currentIndex == ind) || !ismoretweets)) {
+                
+
+                if (currentIndex < endIndex) {
                     dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
                     dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
                     dofilterdate2final = !dofilterdate2 || (dofilterdate2 && val.date <= Number($('#filterdate2').val()));
@@ -169,7 +163,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
     
                     dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
-
+    
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                         && dofilterauthorfinal && dofiltercatfinal) {
                             
@@ -316,10 +310,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         }
                         currentIndex = currentIndex + 1;
                     }   
-                
                 }
                 else {
-
                     if (currentIndex >= endIndex) {
                         $('#moretweets').css('opacity', 0);
                         $('#moretweets').attr('doshow', 'yes');
@@ -374,13 +366,11 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }, 300);
     
                 ind = ind + 1;
-                
             }
             while (processtmp);
 
         });
-        processedCount = ind;
-        
+
         if (Number($('#recordspersearch').val()) < ind) {
         
             //$('#tweetcount').css('background', '#fff900');
@@ -486,31 +476,30 @@ var getInformationOld = function(ismoretweets) {
         
         var toindex = 0;
         if (currentIndex + Number($('#recordspersearch').val()) < ind)
-        toindex = currentIndex + Number($('#recordspersearch').val());
+            toindex = currentIndex + Number($('#recordspersearch').val());
         else 
-        toindex = ind;
-        if (Number($('#recordspersearch').val()) < ind) {
-        
-        $('#tweetcount').css('background', '#fff900');
-        $('#tweetcount').html((currentIndex + 1)  + " to " + toindex + " of " + ind + "<br>In " + $('#selectedcattext').val());    
-        var aux = ind;
+            toindex = ind;
 
-        setTimeout(function(){ 
-            if (aux == toindex) { 
-            $('#tweetcount').html(aux + " Tweets<br>In " + $('#selectedcattext').val());  
-            }
-            else {
-            $('#tweetcount').html(toindex + " of " + aux + "<br>In " + $('#selectedcattext').val());  
-            }   
-            
-            $('#tweetcount').css('background', 'white');
-        }, 3000);
+        if (Number($('#recordspersearch').val()) < ind) {
+            $('#tweetcount').css('background', '#fff900');
+            $('#tweetcount').html((currentIndex + 1)  + " to " + toindex + " of " + ind + "<br>In " + $('#selectedcattext').val());    
+            var aux = ind;
+
+            setTimeout(function(){ 
+                if (aux == toindex) { 
+                $('#tweetcount').html(aux + " Tweets<br>In " + $('#selectedcattext').val());  
+                }
+                else {
+                $('#tweetcount').html(toindex + " of " + aux + "<br>In " + $('#selectedcattext').val());  
+                }   
+                
+                $('#tweetcount').css('background', 'white');
+            }, 3000);
 
         }
         else {
-        $('#tweetcount').html(ind + " Tweets<br>In " + $('#selectedcattext').val());  
+            $('#tweetcount').html(ind + " Tweets<br>In " + $('#selectedcattext').val());  
         }
-
 
         ind = 0;
         $.each(data.Tweets, function(key, val) 
