@@ -418,7 +418,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         if (!ismoretweets) {
             if (totalLinkss > 0)
-                showMessage("Search Results", 2000);
+                if (wasfiltered != 2)
+                    showMessage("Search Results", 2000);
             else
                 showMessage("No Links Found", 2000);
         }
