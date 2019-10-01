@@ -417,11 +417,13 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#tch').text(total_hh);
 
         if (!ismoretweets) {
-            if (totalLinkss > 0)
+            if (totalLinkss > 0) {
                 if (wasfiltered != 2)
                     showMessage("Search Results", 2000);
-            else
+            }
+            else {
                 showMessage("No Links Found", 2000);
+            }
         }
     }); 
 }
