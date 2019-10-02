@@ -477,3 +477,7 @@ ol > li {
 .fa-spin {
   animation-duration: 1s;
 }
+
+twitter-widget {
+  width: 100% !important;
+}
