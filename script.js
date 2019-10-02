@@ -1,5 +1,5 @@
 
-console.log(222); 
+console.log(1111); 
 
 var text = "";
 var origin = "";
@@ -112,10 +112,10 @@ $( document ).ready(function() {
 
         parseTweet();
     });
-    /*   $("#tweet").on("paste", function() {
+    $("#tweet").on("paste", function() {
 
         parseTweet();
-    }); */
+    });
 
     ///////////////////////////////////////
 
@@ -418,7 +418,7 @@ $(document).keydown(function(e) {
         if (ctrlDown && (e.keyCode == vKey)) {
             navigator.clipboard.readText().then(text => {
                 setTimeout(function() { 
-                    alert(1111);
+                    alert(1111)
                     resetFieldsPopup(); 
                     $('#tweet').val(text);
 
