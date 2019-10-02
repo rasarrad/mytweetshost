@@ -139,7 +139,7 @@
   
       if (document.getElementById("twitter-widget-0")) {
   
-          var maxTweets = 10;
+          var maxTweets = 100;
   
           for (i = 0; i < maxTweets; i++) {
   
@@ -151,7 +151,7 @@
                   var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
                   var isIOSChrome = winNav.userAgent.match("CriOS");
                   var isSafari6Plus = !!navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i) && typeof document.body.style.webkitFilter !== "undefined";
-                  var tweetCSS = ".EmbeddedTweet{height:auto !important}.TweetAuthor-name {color:#2a83e7;}.EmbeddedTweet {background-color:red !important;border-color:#e3f5f9 !important;height:auto !important;}.Tweet-header {color: white;}.EmbeddedTweet:hover .TweetAuthor-name {color:#2054d4;}.Tweet-text {padding:10px;border-radius:5px;border:1px solid #ddd;background-color:#eee;}";
+                  var tweetCSS = ".EmbeddedTweet{height:auto !important}.EmbeddedTweet {background-color:red !important;}";
                   var tweetStyle = document.createElement("style");
   
                   tweetStyle.setAttribute("id", "tweet-style-" + i);
@@ -172,21 +172,6 @@
       }
   }
   
-  function addLoadEvent(func) {
-      var oldonload = window.onload;
-      if (typeof window.onload != 'function') {
-          window.onload = func;
-      } else {
-          window.onload = function() {
-              if (oldonload) {
-                  oldonload();
-              }
-              func();
-          }
-      }
-  }
-  
-  addLoadEvent(customizeTweet);
   /*]]>*/
   </script>
 

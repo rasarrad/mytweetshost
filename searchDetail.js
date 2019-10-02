@@ -416,6 +416,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#tcy').text(total_yy);
         $('#tch').text(total_hh);
 
+        customizeTweet();
+
         if (!ismoretweets) {
             if (totalLinkss > 0) {
                 if (wasfiltered != 2)
