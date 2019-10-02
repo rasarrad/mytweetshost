@@ -151,7 +151,7 @@
                   var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
                   var isIOSChrome = winNav.userAgent.match("CriOS");
                   var isSafari6Plus = !!navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i) && typeof document.body.style.webkitFilter !== "undefined";
-                  var tweetCSS = ".EmbeddedTweet{height:auto !important}.EmbeddedTweet {background-color:red !important;}";
+                  var tweetCSS = ".EmbeddedTweet{height:auto !important}.EmbeddedTweet {max-width: none !important;}";
                   var tweetStyle = document.createElement("style");
   
                   tweetStyle.setAttribute("id", "tweet-style-" + i);
