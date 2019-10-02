@@ -366,7 +366,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         $('#tcy').text(total_yy);
                         $('#tch').text(total_hh);
 
-
+                        customizeTweet();
 
                         return false;
                     }
