@@ -1,5 +1,5 @@
 
-console.log(1111); 
+console.log(222); 
 
 var text = "";
 var origin = "";
@@ -418,6 +418,7 @@ $(document).keydown(function(e) {
         if (ctrlDown && (e.keyCode == vKey)) {
             navigator.clipboard.readText().then(text => {
                 setTimeout(function() { 
+                    alert(1111);
                     resetFieldsPopup(); 
                     $('#tweet').val(text);
 

@@ -111,13 +111,13 @@ ol > li {
     color: white;
     font-size: 122px;
     position: relative;
-    top: calc(50% - 83px);
-    left: calc(50% - 78px);
+    top: calc(50% - 73px);
+    left: calc(50% - 71px);
     border: 10px solid #ffffff !important;
-    padding-left: 21px;
+    padding-left: 8px;
     padding-top: 5px;
-    padding-right: 5px;
-    height: 124px;
+    padding-right: 3px;
+    height: 119px;
     border-radius: 0px;
     border-style: solid !important;
     border-left-color: transparent !important;
