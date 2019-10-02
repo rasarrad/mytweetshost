@@ -366,7 +366,10 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         $('#tcy').text(total_yy);
                         $('#tch').text(total_hh);
 
-                        customizeTweet();
+                        setTimeout(function() { 
+                            customizeTweet();
+                          }, 2000);
+                        
 
                         return false;
                     }
@@ -416,7 +419,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#tcy').text(total_yy);
         $('#tch').text(total_hh);
 
-        customizeTweet();
+        setTimeout(function() { 
+            customizeTweet();
+        }, 2000);
 
         if (!ismoretweets) {
             if (totalLinkss > 0) {

@@ -139,11 +139,14 @@
   
       if (document.getElementById("twitter-widget-0")) {
   
-          var maxTweets = 100;
+          var maxTweets = 100000;
   
           for (i = 0; i < maxTweets; i++) {
   
-              if (document.getElementById("twitter-widget-" + i)) {
+              if (document.getElementById("twitter-widget-" + i) 
+                  && $(document.getElementById("twitter-widget-" + i)).attr("processed") != "yes") {
+                  
+                  $(document.getElementById("twitter-widget-" + i)).attr("processed", "yes");
                   var isChromium = window.chrome;
                   var winNav = window.navigator;
                   var vendorName = winNav.vendor;
