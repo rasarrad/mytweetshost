@@ -1,5 +1,5 @@
 
-console.log(1111); 
+console.log(2222); 
 
 var text = "";
 var origin = "";
@@ -483,7 +483,7 @@ function countmove(obj) {
 
 
 
-function counexpandscreentmove(obj) {
+function expandscreen(obj) {
     if ($(window).width() > 1200) {
         var tweeetObj = $(obj).parent().parent();
         if (tweeetObj.find("iframe")) {
