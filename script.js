@@ -1,5 +1,5 @@
 
-console.log(333); 
+console.log(444); 
 
 var text = "";
 var origin = "";
@@ -488,20 +488,7 @@ function expandscreen(obj) {
     if ($(window).width() > 1200) {
         alert(2);
         var tweeetObj = $(obj).parent().parent();
-        if (tweeetObj.find("iframe")) {
-            alert(3);
-            if (tweeetObj.attr("expanded") != "yes") {
-                tweeetObj.find("iframe").removeClass("linkIframeExpanded");
-                tweeetObj.find("iframe").addClass("linkIframeCollapsed");
-                tweeetObj.attr("expanded") == "yes";
-            }
-            else {
-                tweeetObj.find("iframe").removeClass("linkIframeCollapsed");
-                tweeetObj.find("iframe").addClass("linkIframeExpanded");
-                tweeetObj.attr("expanded") == "no";
-            }
-        }
-        else {
+        if (tweeetObj.find(".innertweet") > 0) {
             var id = tweeetObj.find("twitter-widget").attr("id").substring(tweeetObj.find("twitter-widget").attr("id").lastIndexOf("-") + 1);
             alert(id);
             if (tweeetObj.attr("expanded") != "yes") {
@@ -515,6 +502,21 @@ function expandscreen(obj) {
                 tweeetObj.find(".innertweet").addClass("linkExpanded");
                 tweeetObj.attr("expanded") == "no";
                 customizeTweet(id, "Tweet-card {}.TweetAuthor-screenName {}.TweetInfo {}.CallToAction {}.TwitterCard-container {}")
+            }
+
+        }
+        else {
+            
+            alert(3);
+            if (tweeetObj.attr("expanded") != "yes") {
+                tweeetObj.find("iframe").removeClass("linkIframeExpanded");
+                tweeetObj.find("iframe").addClass("linkIframeCollapsed");
+                tweeetObj.attr("expanded") == "yes";
+            }
+            else {
+                tweeetObj.find("iframe").removeClass("linkIframeCollapsed");
+                tweeetObj.find("iframe").addClass("linkIframeExpanded");
+                tweeetObj.attr("expanded") == "no";
             }
         }
     }
