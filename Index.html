@@ -136,11 +136,16 @@
 <script>
   /*<![CDATA[*/
   function customizeTweet() {
-  alert(1);
+  
       if (document.getElementById("twitter-widget-0")) {
   
-          var maxTweets = 100000;
-          alert(2);
+          var maxTweets = 100;
+          var ua = navigator.userAgent.toLowerCase();
+          var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+          if (!isAndroid) {
+            alert(11111);
+          }
+          
           for (i = 0; i < maxTweets; i++) {
   
               if (document.getElementById("twitter-widget-" + i) 
@@ -161,10 +166,15 @@
                   tweetStyle.innerHTML = tweetCSS;
                   tweetStyle.type = "text/css";
   
-
+                  if ((isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
+  
                       var styleTag = document.getElementById("twitter-widget-" + i).shadowRoot;
                       styleTag.insertBefore(tweetStyle, styleTag.childNodes[0]);
-                  
+                  } else {
+  
+                      var tweetWidget = document.getElementById("twitter-widget-" + i).contentDocument;
+                      tweetWidget.head.appendChild(tweetStyle);
+                  }
               } else break;
           }
       }
