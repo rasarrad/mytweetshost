@@ -1,5 +1,5 @@
 
-console.log(3333); 
+console.log(44); 
 
 var text = "";
 var origin = "";
@@ -492,14 +492,13 @@ function expandscreen(obj) {
             if (tweeetObj.attr("expanded") != "yes") {
                 tweeetObj.find(".innertweet").removeClass("linkCollapsed");
                 tweeetObj.find(".innertweet").addClass("linkExpanded");
-                tweeetObj.attr("expanded") == "yes";
+                tweeetObj.attr("expanded","yes");
                 customizeTweet(id, ".EmbeddedTweet {max-width: none !important;}.Tweet-card {font-size: 24px;background: #e1e1e1;}.TweetAuthor-screenName {font-size: 21px;}.TweetInfo {font-size: 18px;}.CallToAction {font-size: 18px;}.TwitterCard-container {max-width: none;}");
             }
             else {
-                alert(22323)
                 tweeetObj.find(".innertweet").removeClass("linkExpanded");
                 tweeetObj.find(".innertweet").addClass("linkCollapsed");
-                tweeetObj.attr("expanded") == "no";
+                tweeetObj.attr("expanded", "no");
                 customizeTweet(id, ".EmbeddedTweet {}.Tweet-card {}.TweetAuthor-screenName {}.TweetInfo {}.CallToAction {}.TwitterCard-container {}")
             }
 
@@ -508,12 +507,12 @@ function expandscreen(obj) {
             if (tweeetObj.attr("expanded") != "yes") {
                 tweeetObj.find("iframe").removeClass("linkIframeCollapsed");
                 tweeetObj.find("iframe").addClass("linkIframeExpanded");
-                tweeetObj.attr("expanded") == "yes";
+                tweeetObj.attr("expanded","yes");
             }
             else {
                 tweeetObj.find("iframe").removeClass("linkIframeExpanded");
                 tweeetObj.find("iframe").addClass("linkIframeCollapsed");
-                tweeetObj.attr("expanded") == "no";
+                tweeetObj.attr("expanded", "no");
             }
         }
     }
