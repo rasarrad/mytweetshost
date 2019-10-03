@@ -478,17 +478,7 @@ ol > li {
   animation-duration: 1s;
 }
 
-twitter-widget {
+/* twitter-widget {
   width: 100% !important;
 }
-
-.innertweet {
-    width: calc(100% - 30px) !important;
-    background: white;
-    margin-top: 16px;
-    margin-left: 15px !important;
-    margin-right: 15px !important;
-    position: relative;
-    top: 10px;
-
-  }
+*/
