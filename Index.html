@@ -139,7 +139,7 @@
   
       if (document.getElementById("twitter-widget-0")) {
   
-          var maxTweets = 100;
+          var maxTweets = 100000;
           var isChromium = window.chrome;
           var winNav = window.navigator;
           var vendorName = winNav.vendor;
@@ -152,7 +152,7 @@
           var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
           
           for (i = 0; i < maxTweets; i++) {
-  
+             alert("1- " + i);
               if (document.getElementById("twitter-widget-" + i)) {
                 alert(1);
                   if ($(document.getElementById("twitter-widget-" + i)).attr("processed") != "yes") {
