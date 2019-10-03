@@ -135,7 +135,7 @@
 
 <script>
   /*<![CDATA[*/
-  function customizeTweet() {
+  function customizeTweets() {
   
       if (document.getElementById("twitter-widget-0")
           || document.getElementById("twitter-widget-1")) {
@@ -177,7 +177,35 @@
           }
       }
   }
-  
+
+  function customizeTweet(id, style) {
+      var maxTweets = 100000;
+      var isChromium = window.chrome;
+      var winNav = window.navigator;
+      var vendorName = winNav.vendor;
+      var isOpera = typeof window.opr !== "undefined";
+      var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+      var isIOSChrome = winNav.userAgent.match("CriOS");
+      var isSafari6Plus = !!navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i) && typeof document.body.style.webkitFilter !== "undefined";
+
+      var ua = navigator.userAgent.toLowerCase();
+      var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+
+      var tweetCSS = ".EmbeddedTweet{height:auto !important}" + style;
+      var tweetStyle = document.createElement("style");
+
+      tweetStyle.setAttribute("id", "tweet-style-" + id);
+      tweetStyle.innerHTML = tweetCSS;
+      tweetStyle.type = "text/css";
+
+      if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
+          var styleTag = document.getElementById("twitter-widget-" + id).shadowRoot;
+          styleTag.insertBefore(tweetStyle, styleTag.childNodes[0]);
+      } else {
+          var tweetWidget = document.getElementById("twitter-widget-" + id).contentDocument;
+          tweetWidget.head.appendChild(tweetStyle);
+      } 
+}
   /*]]>*/
   </script>
 

@@ -296,7 +296,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                                 + val.info // vai conter a div com o texto antigo - caso exista
                             + '</div>'));
                         
-                        newtweetobj.append($('<div style="' + tagstyle + '" class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + tagdispalay + tagchanged + '</div>'));
+                        newtweetobj.append($('<div style="' + tagstyle + '" class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags </b>' + tagdispalay + tagchanged + '</div>'));
                         
                         if (val.type == "T") {
                             newtweetobj.append($('<div class="innertweet"></div>'));
@@ -367,7 +367,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         $('#tch').text(total_hh);
 
                         setTimeout(function() { 
-                            customizeTweet();
+                            customizeTweets();
                           }, 2000);
                         
 
@@ -420,7 +420,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#tch').text(total_hh);
 
         setTimeout(function() { 
-            customizeTweet();
+            customizeTweets();
         }, 2000);
 
         if (!ismoretweets) {
@@ -660,7 +660,7 @@ var getInformationOld = function(ismoretweets) {
                     + val.info // vai conter a div com o texto antigo - caso exista
                 + '</div>'));
             
-            newtweetobj.append($('<div style="' + tagstyle + '" class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + tagdispalay + tagchanged + '</div>'));
+            newtweetobj.append($('<div style="' + tagstyle + '" class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags </b>' + tagdispalay + tagchanged + '</div>'));
             
             if (val.type == "T") {
                 newtweetobj.append($('<div class="innertweet"></div>'));
@@ -728,7 +728,7 @@ var getInformationbyid = function(id) {
                 var newtweet = $('#main').append($('<div id="inid" class="tweet"></div>'));
                 var newtweetobj = $('#inid');
                 newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + '</div>'));
-                newtweetobj.append($('<div class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\')" id="externallink" class="fa fa-external-link"></i><b>Tags </b>' + val.tags + '</div>'));
+                newtweetobj.append($('<div class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\')" id="externallink" class="fa fa-external-link"></i><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags </b>' + val.tags + '</div>'));
                 newtweetobj.append($('<div class="innertweet"></div>'));
                 newtweetobj.find('.innertweet').append(val.tweet);
                 newtweetobj.attr('id', val.id);

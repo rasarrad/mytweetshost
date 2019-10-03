@@ -1,5 +1,5 @@
 
-console.log(333); 
+console.log(1111); 
 
 var text = "";
 var origin = "";
@@ -478,5 +478,41 @@ function countmove(obj) {
         setTimeout(function() { 
             dblFlag = false;
         }, 500);
+    }
+}  
+
+
+
+function counexpandscreentmove(obj) {
+    if ($(window).width() > 1200) {
+        var tweeetObj = $(obj).parent().parent();
+        if (tweeetObj.find("iframe")) {
+            if (tweeetObj.attr("expanded") != "yes") {
+                tweeetObj.find("iframe").removeClass("linkIframeExpanded");
+                tweeetObj.find("iframe").addClass("linkIframeCollapsed");
+                tweeetObj.attr("expanded") == "yes";
+            }
+            else {
+                tweeetObj.find("iframe").removeClass("linkIframeCollapsed");
+                tweeetObj.find("iframe").addClass("linkIframeExpanded");
+                tweeetObj.attr("expanded") == "no";
+            }
+        }
+        else {
+            var id = tweeetObj.find("twitter-widget").attr("id").substring(tweeetObj.find("twitter-widget").attr("id").lastIndexOf("-") + 1);
+alert(id);
+            if (tweeetObj.attr("expanded") != "yes") {
+                tweeetObj.find(".innertweet").removeClass("linkExpanded");
+                tweeetObj.find(".innertweet").addClass("linkCollapsed");
+                tweeetObj.attr("expanded") == "yes";
+                customizeTweet(id, "Tweet-card {font-size: 24px;background: #e1e1e1;}.TweetAuthor-screenName {font-size: 21px;}.TweetInfo {font-size: 18px;}.CallToAction {font-size: 18px;}.TwitterCard-container {max-width: none;}");
+            }
+            else {
+                tweeetObj.find(".innertweet").removeClass("linkCollapsed");
+                tweeetObj.find(".innertweet").addClass("linkExpanded");
+                tweeetObj.attr("expanded") == "no";
+                customizeTweet(id, "Tweet-card {}.TweetAuthor-screenName {}.TweetInfo {}.CallToAction {}.TwitterCard-container {}")
+            }
+        }
     }
 }  
