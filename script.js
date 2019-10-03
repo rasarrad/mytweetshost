@@ -1,5 +1,5 @@
 
-console.log(5555); 
+console.log(666); 
 
 var text = "";
 var origin = "";
@@ -493,8 +493,7 @@ function expandscreen(obj) {
                 tweeetObj.find(".innertweet").removeClass("linkCollapsed");
                 tweeetObj.find(".innertweet").addClass("linkExpanded");
                 tweeetObj.attr("expanded","yes");
-                alert(123)
-                customizeTweet(id, ".EmbeddedTweet {max-width: none !important;}.Tweet-card {font-size: 24px;background: #e1e1e1;}.TweetAuthor-screenName {font-size: 21px;}.TweetInfo {font-size: 18px;}.CallToAction {font-size: 18px;}.TwitterCard-container {max-width: none;}");
+                customizeTweet(id, ".EmbeddedTweet {max-width: none !important;}.Tweet-card {font-size: 24px;background: #e1e1e1;}.TweetAuthor-screenName {font-size: 21px;}.TweetInfo {font-size: 18px;}.CallToAction {font-size: 18px;}.TwitterCard-container {max-width: 10000px;}");
             }
             else {
                 tweeetObj.find(".innertweet").removeClass("linkExpanded");
