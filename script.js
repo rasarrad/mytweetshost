@@ -1,5 +1,5 @@
 
-console.log(2222); 
+console.log(333); 
 
 var text = "";
 var origin = "";
@@ -484,9 +484,12 @@ function countmove(obj) {
 
 
 function expandscreen(obj) {
+    alert(1);
     if ($(window).width() > 1200) {
+        alert(2);
         var tweeetObj = $(obj).parent().parent();
         if (tweeetObj.find("iframe")) {
+            alert(3);
             if (tweeetObj.attr("expanded") != "yes") {
                 tweeetObj.find("iframe").removeClass("linkIframeExpanded");
                 tweeetObj.find("iframe").addClass("linkIframeCollapsed");
@@ -500,7 +503,7 @@ function expandscreen(obj) {
         }
         else {
             var id = tweeetObj.find("twitter-widget").attr("id").substring(tweeetObj.find("twitter-widget").attr("id").lastIndexOf("-") + 1);
-alert(id);
+            alert(id);
             if (tweeetObj.attr("expanded") != "yes") {
                 tweeetObj.find(".innertweet").removeClass("linkExpanded");
                 tweeetObj.find(".innertweet").addClass("linkCollapsed");
