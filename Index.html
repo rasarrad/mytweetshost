@@ -137,7 +137,8 @@
   /*<![CDATA[*/
   function customizeTweet() {
   
-      if (document.getElementById("twitter-widget-0")) {
+      if (document.getElementById("twitter-widget-0")
+          || document.getElementById("twitter-widget-1")) {
   
           var maxTweets = 100000;
           var isChromium = window.chrome;
@@ -152,11 +153,9 @@
           var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
           
           for (i = 0; i < maxTweets; i++) {
-             alert("1- " + i);
               if (document.getElementById("twitter-widget-" + i)) {
-                alert(1);
                   if ($(document.getElementById("twitter-widget-" + i)).attr("processed") != "yes") {
-                    alert(2222);
+
                     $(document.getElementById("twitter-widget-" + i)).attr("processed", "yes");
                     var tweetCSS = ".EmbeddedTweet{height:auto !important}.EmbeddedTweet {max-width: none !important;}";
                     var tweetStyle = document.createElement("style");
