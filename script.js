@@ -1,5 +1,5 @@
 
-console.log(2222); 
+console.log(3333); 
 
 var text = "";
 var origin = "";
@@ -496,6 +496,7 @@ function expandscreen(obj) {
                 customizeTweet(id, ".EmbeddedTweet {max-width: none !important;}.Tweet-card {font-size: 24px;background: #e1e1e1;}.TweetAuthor-screenName {font-size: 21px;}.TweetInfo {font-size: 18px;}.CallToAction {font-size: 18px;}.TwitterCard-container {max-width: none;}");
             }
             else {
+                alert(22323)
                 tweeetObj.find(".innertweet").removeClass("linkExpanded");
                 tweeetObj.find(".innertweet").addClass("linkCollapsed");
                 tweeetObj.attr("expanded") == "no";
