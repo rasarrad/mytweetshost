@@ -10,7 +10,6 @@
   .innertweet {
     margin-left: calc(50% - 250px);
     border-radius: 5px;
-    border: 1px solid white;
   }
   
   .categorias {
@@ -550,6 +549,7 @@ twitter-widget {
       position: relative;
       top: 10px;
       border-radius: 5px;
+      border: 1px solid white;
   }  
   twitter-widget {
       width: 100% !important;
