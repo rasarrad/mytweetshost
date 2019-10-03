@@ -1,5 +1,5 @@
 
-console.log(1111); 
+console.log(444); 
 
 var text = "";
 var origin = "";
@@ -488,8 +488,8 @@ function expandscreen(obj) {
     if ($(window).width() > 1200) {
         alert(2);
         var tweeetObj = $(obj).parent().parent();
-        console.log(tweeetObj.find(".innertweet"));
-        if (tweeetObj.find(".innertweet") > 0) {
+
+        if (tweeetObj.find(".innertweet").length > 0) {
             var id = tweeetObj.find("twitter-widget").attr("id").substring(tweeetObj.find("twitter-widget").attr("id").lastIndexOf("-") + 1);
             alert(id);
             if (tweeetObj.attr("expanded") != "yes") {
