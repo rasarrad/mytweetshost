@@ -522,12 +522,16 @@ ol > li {
     margin-left: 15px !important;
     margin-right: 15px !important;
     position: relative;
-    top: 10px;
+    top: 4px;
     border-radius: 5px;
 }
 
 twitter-widget {
   width: auto;
+}
+
+.linkExpanded twitter-widget {
+  width: auto !important;
 }
 
 @media only screen and (max-width: 1000px) {
