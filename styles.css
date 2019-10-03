@@ -496,10 +496,10 @@ ol > li {
 
 .linkIframeExpanded {
     border: 1px solid white;
-    width: calc(100% - 36px) !important;
+    width: calc(100% - 52px) !important;
     background: white;
-    margin-left: 15px !important;
-    margin-right: 15px !important;
+    margin-left: 25px !important;
+    margin-right: 25px !important;
     position: relative;
     top: 4px;
 }
@@ -517,10 +517,10 @@ ol > li {
 
 
 .linkExpanded {
-    width: calc(100% - 30px) !important;
+    width: calc(100% - 50px) !important;
     background: white;
-    margin-left: 15px !important;
-    margin-right: 15px !important;
+    margin-left: 25px !important;
+    margin-right: 25px !important;
     position: relative;
     top: 4px;
     border-radius: 5px;
@@ -537,19 +537,19 @@ twitter-widget {
 @media only screen and (max-width: 1000px) {
   .tweet iframe {
       border: 1px solid white;
-      width: calc(100% - 36px) !important;
+      width: calc(100% - 52px) !important;
       background: white;
-      margin-left: 15px !important;
-      margin-right: 15px !important;
+      margin-left: 25px !important;
+      margin-right: 25px !important;
       position: relative;
       top: 4px;
       border-radius: 5px;
   }
   .tweet .innertweet {
-      width: calc(100% - 30px) !important;
+      width: calc(100% - 50px) !important;
       background: white;
-      margin-left: 15px !important;
-      margin-right: 15px !important;
+      margin-left: 25px !important;
+      margin-right: 25px !important;
       position: relative;
       top: 10px;
       border-radius: 5px;

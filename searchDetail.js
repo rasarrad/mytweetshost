@@ -368,7 +368,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
                         setTimeout(function() { 
                             customizeTweets();
-                          }, 2000);
+                          }, 1000);
                         
 
                         return false;
@@ -421,7 +421,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         setTimeout(function() { 
             customizeTweets();
-        }, 2000);
+        }, 1000);
 
         if (!ismoretweets) {
             if (totalLinkss > 0) {
