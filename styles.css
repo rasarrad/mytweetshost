@@ -522,3 +522,8 @@ ol > li {
     position: relative;
     top: 10px;
 }
+
+twitter-widget {
+  width: auto;
+}
+
