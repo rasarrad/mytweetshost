@@ -42,7 +42,7 @@ function parseTweet() {
             
             urldirect = "https://www.youtube.com/watch?v=" + text.substring(text.indexOf('embed') + 6, text.indexOf('frameborder') - 2); 
             
-            text = "\"" + ("<iframe style='margin-top: 6px;height: 446px;border: 1px solid white;width: calc(100% - 36px) !important;background: white;margin-left: 15px !important;margin-right: 15px !important;position: relative;top: 4px;' " 
+            text = "\"" + ("<iframe style='position: relative;top: 4px;width: 500px;background: white;margin-top: 6px;height: 446px;margin-left: calc(50% - 250px);margin-right: auto;border: 1px solid white;' " 
                     + text.substring(8)).replace(/"/g, "'")  + "\""; 
 
             showMessage("Youtube Link Successfully Parsed"); 
@@ -67,7 +67,7 @@ function parseTweet() {
             
             urldirect = text; 
             
-            text = "\"<iframe style='margin-top: 6px;height: 446px;border: 1px solid white;width: calc(100% - 36px) !important;background: white;margin-left: 15px !important;margin-right: 15px !important;position: relative;top: 4px;' src='https://www.youtube.com/embed/" 
+            text = "\"<iframe style='position: relative;top: 4px;width: 500px;background: white;margin-top: 6px;height: 446px;margin-left: calc(50% - 250px);margin-right: auto;border: 1px solid white;' src='https://www.youtube.com/embed/" 
             + text.substring(text.indexOf('watch?v=') + 8) + "' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>\""; 
 
             showMessage("Youtube Link Successfully Parsed"); 
@@ -91,7 +91,7 @@ function parseTweet() {
             
             url = text; 
 
-            text = "\"<iframe style='margin-top: 6px;height: 446px;border: 1px solid white;width: calc(100% - 36px) !important;background: white;margin-left: 15px !important;margin-right: 15px !important;position: relative;top: 4px;' src='" 
+            text = "\"<iframe style='position: relative;top: 4px;width: 500px;background: white;margin-top: 6px;height: 446px;margin-left: calc(50% - 250px);margin-right: auto;border: 1px solid white;' src='" 
                     + text + "'></iframe>\""; 
 
             showMessage("HTML Link Successfully Parsed"); 
