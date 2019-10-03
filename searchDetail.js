@@ -367,6 +367,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         $('#tch').text(total_hh);
 
                         setTimeout(function() { 
+                            alert(1)
                             customizeTweet();
                           }, 2000);
                         
@@ -420,6 +421,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#tch').text(total_hh);
 
         setTimeout(function() { 
+            alert(2)
             customizeTweet();
         }, 2000);
 
