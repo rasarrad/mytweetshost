@@ -15,7 +15,7 @@ var addType = "T";
 var processedCount = 0;
 var totalLinkss = 0;
 var totalGlobalLinks = 0;
-var total_yy = 0;
+var total_yy = 0; 
 var total_tt = 0;
 var total_hh = 0;
 
