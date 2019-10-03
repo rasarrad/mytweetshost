@@ -504,11 +504,11 @@ ol > li {
 }
 
 .linkIframeCollapsed {
-    width: 500px;
-    background: white;
-    margin-top: 6px;
-    height: 446px;
-    margin-left: calc(50% - 250px);
+    width: 500px !important;
+    background: white !important;
+    margin-top: 6px !important;
+    height: 446px !important;
+    margin-left: calc(50% - 250px) !important;
     margin-right: auto;
     border: 1px solid white;
 }
@@ -521,8 +521,4 @@ ol > li {
     margin-right: 15px !important;
     position: relative;
     top: 10px;
-}
-
-.linkCollapsed {
-
 }
