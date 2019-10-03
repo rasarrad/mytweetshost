@@ -9,6 +9,8 @@
   .tweet:not(first-child) {/* margin-top: 15px; */}
   .innertweet {
     margin-left: calc(50% - 250px);
+    border-radius: 5px;
+    border: 1px solid white;
   }
   
   .categorias {
@@ -511,6 +513,7 @@ ol > li {
     margin-left: calc(50% - 250px) !important;
     margin-right: auto;
     border: 1px solid white;
+    border-radius: 5px;
 }
 
 
@@ -521,9 +524,37 @@ ol > li {
     margin-right: 15px !important;
     position: relative;
     top: 10px;
+    border-radius: 5px;
 }
 
 twitter-widget {
   width: auto;
 }
 
+@media only screen and (max-width: 1000px) {
+  .tweet iframe {
+      border: 1px solid white;
+      width: calc(100% - 36px) !important;
+      background: white;
+      margin-left: 15px !important;
+      margin-right: 15px !important;
+      position: relative;
+      top: 4px;
+      border-radius: 5px;
+  }
+  .tweet .innertweet {
+      width: calc(100% - 30px) !important;
+      background: white;
+      margin-left: 15px !important;
+      margin-right: 15px !important;
+      position: relative;
+      top: 10px;
+      border-radius: 5px;
+  }  
+  twitter-widget {
+      width: 100% !important;
+  }
+  .fa-square-o {
+    display: none;
+  }
+}
