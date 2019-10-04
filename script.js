@@ -1,5 +1,5 @@
 
-console.log(1111); 
+console.log(3333); 
 
 var text = "";
 var origin = "";
@@ -60,7 +60,7 @@ $( document ).ready(function() {
             dblFlag = true;
             dblClickTimeout = setTimeout(function() {     
               if (dblFlag) {
-                $("#toptitle").click();
+                  openCreatePopup();
                   dblFlag = false;  
               }
             }, 500);
@@ -194,20 +194,16 @@ $( document ).ready(function() {
     });
 
     document.getElementById("toptitle").addEventListener('click', () => {
-        alert(2323);
         navigator.clipboard.readText()
           .then(text => {
             setTimeout(function() { 
                 resetFieldsPopup(); 
-                alert(4444);
-                var result = parseTweet(true, text);
-                alert(5555);
-                if (!result) 
-                    $('#tweet').val(text);
-
+                $('#tweet').val(text);
+    
                 if ($(".addpopup").css('display') == 'none') {
-                    openCreatePopup(true);
+                  openCreatePopup(true);
                 }
+                parseTweet();
             }, 300);
           })
           .catch(err => {
@@ -215,7 +211,7 @@ $( document ).ready(function() {
           })
       });
 
-    });
+
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
