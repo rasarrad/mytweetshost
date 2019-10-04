@@ -29,6 +29,14 @@ function parseTweet(nomessage) {
             showMessage("Twitter Link Successfully Parsed"); 
 
             $('#categories').focus();
+
+            if (nomessage) {
+                $('#tweet').val("");
+                if ($(".addpopup").css('display') == 'none') {
+                    openCreatePopup(true);
+                }
+            }
+
             return false;
         }
         else if (text.indexOf("youtube.com/embed") >= 0) {
@@ -52,6 +60,13 @@ function parseTweet(nomessage) {
                 var that = this;
                 setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
             });
+
+            if (nomessage) {
+                $('#tweet').val("");
+                if ($(".addpopup").css('display') == 'none') {
+                    openCreatePopup(true);
+                }
+            }
 
             return false;
             
@@ -77,7 +92,13 @@ function parseTweet(nomessage) {
                 var that = this;
                 setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
             });
-
+            
+            if (nomessage) {
+                $('#tweet').val("");
+                if ($(".addpopup").css('display') == 'none') {
+                    openCreatePopup(true);
+                }
+            }
             return false;
             
         }
@@ -103,14 +124,18 @@ function parseTweet(nomessage) {
                 setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
             });
 
+            if (nomessage) {
+                $('#tweet').val("");
+                if ($(".addpopup").css('display') == 'none') {
+                    openCreatePopup(true);
+                }
+            }
+
             return false;
         }
 
         if (nomessage) {
-            $('#tweet').val("");
-            if ($(".addpopup").css('display') == 'none') {
-                openCreatePopup(true);
-            }
+
         }
         else {
             showMessage("Link Parse Failed"); 
