@@ -1,5 +1,5 @@
 
-console.log(123); 
+console.log(333); 
 
 var text = "";
 var origin = "";
@@ -215,30 +215,30 @@ $( document ).ready(function() {
           })
       });
 
-      function addTweetPopup() {
-          alert(111345);
-        navigator.clipboard.readText()
-          .then(text => {
-            setTimeout(function() { 
-                resetFieldsPopup(); 
-                $('#tweet').val(text);
-    
-                if ($(".addpopup").css('display') == 'none') {
-                  openCreatePopup(true);
-                }
-                parseTweet();
-            }, 300);
-          })
-          .catch(err => {
-            console.log('Something went wrong', err);
-          })
-      }
+
 
 
     });
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
+function addTweetPopup() {
+    alert(111345);
+  navigator.clipboard.readText()
+    .then(text => {
+      setTimeout(function() { 
+          resetFieldsPopup(); 
+          $('#tweet').val(text);
 
+          if ($(".addpopup").css('display') == 'none') {
+            openCreatePopup(true);
+          }
+          parseTweet();
+      }, 300);
+    })
+    .catch(err => {
+      console.log('Something went wrong', err);
+    })
+}
 
 function getParameterByName(name) {
     var url = window.location.href;
