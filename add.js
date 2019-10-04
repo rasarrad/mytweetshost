@@ -118,18 +118,19 @@ function parseTweet(nomessage) {
 
                     
             showMessage("HTML Link Successfully Parsed"); 
-
-            $('#date').focus(function(){
-                var that = this;
-                setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
-            });
-
+alert(1)
             if (nomessage) {
+                alert(($(".addpopup").css('display'))
                 $('#tweet').val("");
                 if ($(".addpopup").css('display') == 'none') {
                     openCreatePopup(true);
                 }
             }
+
+            $('#date').focus(function(){
+                var that = this;
+                setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
+            });
 
             return false;
         }
