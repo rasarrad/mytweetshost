@@ -105,9 +105,12 @@ function parseTweet(nomessage) {
 
             return false;
         }
-        alert(nomessage)
+
         if (nomessage) {
-            return true;
+            $('#tweet').val("");
+            if ($(".addpopup").css('display') == 'none') {
+                openCreatePopup(true);
+            }
         }
         else {
             showMessage("Link Parse Failed"); 
