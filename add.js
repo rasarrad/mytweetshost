@@ -1,10 +1,16 @@
 
-function parseTweet() {
+function parseTweet(nomessage, textinput) {
     setTimeout(function(){
         nextid = parseInt(readCookie("maxid"));
         $('#tweetid').val(nextid);
 
-        text = $('#tweet').val();
+        if (nomessage) {
+            text = textinput;
+        }
+        else {
+            text = $('#tweet').val();
+        }
+        
         if (text.substring(0,4) == "<blo") {
             addType = "T";
             $('#typeTT').css('border-color', '#00bc00'); 
@@ -104,8 +110,12 @@ function parseTweet() {
 
             return false;
         }
-
-        showMessage("Link Parse Failed"); 
+        if (nomessage) {
+            return true;
+        }
+        else {
+            showMessage("Link Parse Failed"); 
+        }
     }, 700);
 } 
 
