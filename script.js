@@ -1,5 +1,5 @@
 
-console.log(3333); 
+console.log(1111); 
 
 var text = "";
 var origin = "";
@@ -194,13 +194,14 @@ $( document ).ready(function() {
     });
 
     document.getElementById("toptitle").addEventListener('click', () => {
+        alert(2323);
         navigator.clipboard.readText()
           .then(text => {
             setTimeout(function() { 
                 resetFieldsPopup(); 
-                
+                alert(4444);
                 var result = parseTweet(true, text);
-
+                alert(5555);
                 if (!result) 
                     $('#tweet').val(text);
 
