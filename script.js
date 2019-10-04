@@ -1,5 +1,5 @@
 
-console.log(11666611); 
+console.log(2222); 
 
 var text = "";
 var origin = "";
@@ -493,7 +493,7 @@ function expandscreen(obj) {
                 tweeetObj.find(".innertweet").removeClass("linkCollapsed");
                 tweeetObj.find(".innertweet").addClass("linkExpanded");
                 tweeetObj.attr("expanded","yes");
-                customizeTweet(id, ".EmbeddedTweet {max-width: none !important;}.Tweet-card {font-size: 24px !important;background: #e1e1e1;}.TweetAuthor-screenName {font-size: 21px !important;}.TweetInfo {font-size: 18px !important;}.CallToAction {font-size: 18px !important;}.TwitterCard-container {max-width: 10000px!important;}");
+                customizeTweet(id, ".EmbeddedTweet {max-width: none !important;}.Tweet-card {font-size: 22px !important;background: #e1e1e1 !important;}.Tweet-body{font-size: 22px !important;}.TweetAuthor-avatar{height: 60px !important;}.Avatar{height: 60px !important;width: 60px !important;position: relative !important;top: -7px !important;}.TweetAuthor-name {font-size: 21px !important;}.TweetAuthor-screenName {font-size: 18px !important;}.TweetInfo {font-size: 18px !important;}.CallToAction {font-size: 18px !important;}.TwitterCard-container {max-width: 10000px!important;}");
             }
             else {
                 tweeetObj.find(".innertweet").removeClass("linkExpanded");
