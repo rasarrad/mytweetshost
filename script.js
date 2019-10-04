@@ -1,5 +1,5 @@
 
-console.log(2222); 
+console.log(3333); 
 
 var text = "";
 var origin = "";
@@ -60,7 +60,7 @@ $( document ).ready(function() {
             dblFlag = true;
             dblClickTimeout = setTimeout(function() {     
               if (dblFlag) {
-                $("toptitle").click();
+                $("#toptitle").click();
                   dblFlag = false;  
               }
             }, 500);
