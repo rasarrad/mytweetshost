@@ -1,5 +1,5 @@
 
-console.log(111); 
+console.log(555); 
 
 var text = "";
 var origin = "";
@@ -192,43 +192,24 @@ $( document ).ready(function() {
             showMessage("Temp Links Removed");
         } 
     });
-alert(5);
-    var onlongtouch; 
-    var timer;
-    var touchduration = 800; 
-    
-    function touchstart() {
-        timer = setTimeout(onlongtouch, touchduration); 
-    }
-    
-    function touchend() {
 
-        if (timer)
-            clearTimeout(timer);
-    }
+    $('.toptitle').bind( "click", function( event ) {
+        navigator.clipboard.readText().then(text => {
+            setTimeout(function() { 
+                resetFieldsPopup(); 
+                $('#tweet').val(text);
     
-    document.addEventListener("DOMContentLoaded", function(event) { 
-        window.addEventListener("touchstart", touchstart, false);
-        window.addEventListener("touchend", touchend, false);
+                if ($(".addpopup").css('display') == 'none') {
+                  openCreatePopup(true);
+                }
+                parseTweet();
+            }, 300);
+        }).catch(err => {
+            console.error('Failed to read clipboard contents: ', err);
+        });
     });
 });
 
-onlongtouch = function() { 
-    alert(111);
-    navigator.clipboard.readText().then(text => {
-        setTimeout(function() { 
-            resetFieldsPopup(); 
-            $('#tweet').val(text);
-
-            if ($(".addpopup").css('display') == 'none') {
-              openCreatePopup(true);
-            }
-            parseTweet();
-        }, 300);
-    }).catch(err => {
-        console.error('Failed to read clipboard contents: ', err);
-    });
-};
 
 
 
