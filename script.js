@@ -1,5 +1,5 @@
 
-console.log(33333); 
+console.log(3333); 
 
 var text = "";
 var origin = "";
@@ -193,17 +193,9 @@ $( document ).ready(function() {
         } 
     });
 
-    $('.toptitle').bind( "click", function( event ) {
-        alert(123);
-
-
-// Remove focus from any focused element
-if (document.activeElement) {
-    document.activeElement.blur();
-}
-
-window.focus();
-        navigator.clipboard.readText().then(text => {
+    document.getElementById("toptitle").addEventListener('click', () => {
+        navigator.clipboard.readText()
+          .then(text => {
             setTimeout(function() { 
                 resetFieldsPopup(); 
                 $('#tweet').val(text);
@@ -213,13 +205,11 @@ window.focus();
                 }
                 parseTweet();
             }, 300);
-        }).catch(err => {
-            console.error('Failed to read clipboard contents: ', err);
-        });
-    });
-});
-
-
+          })
+          .catch(err => {
+            console.log('Something went wrong', err);
+          })
+      });
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -447,7 +437,6 @@ $(document).keydown(function(e) {
     if ($(e.currentTarget).is($(document))) {
         console.log(222222);
         if (ctrlDown && (e.keyCode == vKey)) {
-            console.log(3333);
             navigator.clipboard.readText().then(text => {
                 setTimeout(function() { 
                     resetFieldsPopup(); 
