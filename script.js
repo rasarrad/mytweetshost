@@ -1,5 +1,5 @@
 
-console.log(444); 
+console.log(555); 
 
 var text = "";
 var origin = "";
@@ -274,7 +274,9 @@ function externallinkcopy(link, id) {
     $("#linkresult").select();
     document.execCommand('copy');
     $("#linkresult").blur();
-    showMessage("External Link Copied To Clipboard"); 
+    var win = window.open(link, '_blank');
+    win.focus();
+    //showMessage("External Link Copied To Clipboard"); 
 }
 
 

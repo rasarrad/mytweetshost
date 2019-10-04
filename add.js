@@ -92,8 +92,9 @@ function parseTweet() {
             url = text; 
 
             text = "\"<iframe style='position: relative;top: 4px;width: 500px;background: white;margin-top: 6px;height: 446px;margin-left: calc(50% - 250px);margin-right: auto;border: 1px solid white;border-radius: 5px;' src='" 
-                    + text + "'></iframe>\""; 
+                    + text + "'></iframe><div style='position: relative;left: 0px;width: 100px;height: 0px;top: -451px;'><div style='position: relative;left: 0px;width: 83px;height: 473px;top: 0px;'></div></div><div style='position: relative;right: -16px !important;width: 100px;height: 0px;top: -451px;float: right;'><div style='position: relative;left: 0px;width: 83px;height: 473px;top: 0px;'></div></div>\""; 
 
+                    
             showMessage("HTML Link Successfully Parsed"); 
 
             $('#date').focus(function(){
