@@ -1,5 +1,5 @@
 
-console.log(222); 
+console.log(3333); 
 
 var text = "";
 var origin = "";
@@ -217,6 +217,7 @@ $( document ).ready(function() {
 });
 
     function openPopupParsed(text, showMsg) {
+        alert(showMsg)
         setTimeout(function() { 
             resetFieldsPopup(); 
             $('#tweet').val(text);
