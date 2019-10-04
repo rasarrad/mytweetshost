@@ -1,15 +1,10 @@
 
-function parseTweet(nomessage, textinput) {
+function parseTweet(nomessage) {
     setTimeout(function(){
         nextid = parseInt(readCookie("maxid"));
         $('#tweetid').val(nextid);
 
-        if (nomessage) {
-            text = textinput;
-        }
-        else {
-            text = $('#tweet').val();
-        }
+        text = $('#tweet').val();
         
         if (text.substring(0,4) == "<blo") {
             addType = "T";
@@ -110,6 +105,7 @@ function parseTweet(nomessage, textinput) {
 
             return false;
         }
+        
         if (nomessage) {
             return true;
         }

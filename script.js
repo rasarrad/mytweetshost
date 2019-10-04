@@ -1,5 +1,5 @@
 
-console.log(3333); 
+console.log(111); 
 
 var text = "";
 var origin = "";
@@ -55,6 +55,7 @@ $( document ).ready(function() {
 
     ///////////////////////////////////////
 
+    /*
     $( "#addtweet" ).bind( "click", function( event ) {
         if (!dblFlag) {
             dblFlag = true;
@@ -75,7 +76,7 @@ $( document ).ready(function() {
         }    
       
         
-    });
+    });*/
 
     ///////////////////////////////////////
     
@@ -195,23 +196,41 @@ $( document ).ready(function() {
 
     document.getElementById("toptitle").addEventListener('click', () => {
         navigator.clipboard.readText()
-          .then(text => {
-            setTimeout(function() { 
-                resetFieldsPopup(); 
-                $('#tweet').val(text);
-    
-                if ($(".addpopup").css('display') == 'none') {
-                  openCreatePopup(true);
-                }
-                parseTweet();
-            }, 300);
-          })
-          .catch(err => {
+        .then(text => {
+            openPopupParsed(text, true);
+        })
+        .catch(err => {
             console.log('Something went wrong', err);
-          })
-      });
-
+        })
     });
+
+    document.getElementById("addtweet").addEventListener('click', () => {
+        navigator.clipboard.readText()
+        .then(text => {
+            openPopupParsed(text, false);
+        })
+        .catch(err => {
+            console.log('Something went wrong', err);
+        })
+    });
+
+});
+
+    function openPopupParsed(text, showMsg) {
+        setTimeout(function() { 
+            resetFieldsPopup(); 
+            $('#tweet').val(text);
+
+            var returnVal = parseTweet(!showMsg);
+
+            if (returnVal) {
+                $('#tweet').val("");
+                if ($(".addpopup").css('display') == 'none') {
+                    openCreatePopup(true);
+                }
+            }
+        }, 300);
+    }
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
