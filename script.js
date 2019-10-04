@@ -1,5 +1,5 @@
 
-console.log(222); 
+console.log(4444); 
 
 var text = "";
 var origin = "";
@@ -223,7 +223,7 @@ $( document ).ready(function() {
             $('#tweet').val(text);
 
             var returnVal = parseTweet(!showMsg);
-            alert(returnVal)
+
             if (returnVal) {
                 $('#tweet').val("");
                 if ($(".addpopup").css('display') == 'none') {

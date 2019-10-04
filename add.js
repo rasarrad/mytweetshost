@@ -105,7 +105,7 @@ function parseTweet(nomessage) {
 
             return false;
         }
-        
+        alert(nomessage)
         if (nomessage) {
             return true;
         }
