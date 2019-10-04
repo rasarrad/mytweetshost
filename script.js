@@ -1,5 +1,5 @@
 
-console.log(88888); 
+console.log(123); 
 
 var text = "";
 var origin = "";
@@ -215,7 +215,8 @@ $( document ).ready(function() {
           })
       });
 
-      document.getElementById("addtweet").addEventListener('click', () => {
+      function addTweetPopup() {
+          alert(111345);
         navigator.clipboard.readText()
           .then(text => {
             setTimeout(function() { 
@@ -231,7 +232,7 @@ $( document ).ready(function() {
           .catch(err => {
             console.log('Something went wrong', err);
           })
-      });
+      }
 
 
     });
