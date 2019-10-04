@@ -1,5 +1,5 @@
 
-console.log(555); 
+console.log(111); 
 
 var text = "";
 var origin = "";
@@ -192,7 +192,44 @@ $( document ).ready(function() {
             showMessage("Temp Links Removed");
         } 
     });
+alert(5);
+    var onlongtouch; 
+    var timer;
+    var touchduration = 800; 
+    
+    function touchstart() {
+        timer = setTimeout(onlongtouch, touchduration); 
+    }
+    
+    function touchend() {
+
+        if (timer)
+            clearTimeout(timer);
+    }
+    
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        window.addEventListener("touchstart", touchstart, false);
+        window.addEventListener("touchend", touchend, false);
+    });
 });
+
+onlongtouch = function() { 
+    alert(111);
+    navigator.clipboard.readText().then(text => {
+        setTimeout(function() { 
+            resetFieldsPopup(); 
+            $('#tweet').val(text);
+
+            if ($(".addpopup").css('display') == 'none') {
+              openCreatePopup(true);
+            }
+            parseTweet();
+        }, 300);
+    }).catch(err => {
+        console.error('Failed to read clipboard contents: ', err);
+    });
+};
+
 
 
 /////////////////////////////////////////////////////////////////////////
