@@ -1,5 +1,5 @@
 
-console.log(123); 
+console.log(2222); 
 
 var text = "";
 var origin = "";
@@ -195,6 +195,14 @@ $( document ).ready(function() {
 
     $('.toptitle').bind( "click", function( event ) {
         alert(123);
+
+
+// Remove focus from any focused element
+if (document.activeElement) {
+    document.activeElement.blur();
+}
+
+window.focus();
         navigator.clipboard.readText().then(text => {
             setTimeout(function() { 
                 resetFieldsPopup(); 
