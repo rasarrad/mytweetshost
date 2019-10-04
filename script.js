@@ -1,5 +1,5 @@
 
-console.log(3333); 
+console.log(88888); 
 
 var text = "";
 var origin = "";
@@ -55,12 +55,12 @@ $( document ).ready(function() {
 
     ///////////////////////////////////////
 
-    $( "#addtweet" ).bind( "click", function( event ) {
+    $( "#addtweetZZZ" ).bind( "click", function( event ) {
         if (!dblFlag) {
             dblFlag = true;
             dblClickTimeout = setTimeout(function() {     
               if (dblFlag) {
-                  openCreatePopup();
+                $("#toptitle").click();
                   dblFlag = false;  
               }
             }, 500);
@@ -194,6 +194,28 @@ $( document ).ready(function() {
     });
 
     document.getElementById("toptitle").addEventListener('click', () => {
+        alert(2323);
+        navigator.clipboard.readText()
+          .then(text => {
+            setTimeout(function() { 
+                resetFieldsPopup(); 
+                alert(4444);
+                var result = parseTweet(true, text);
+                alert(5555);
+                if (!result) 
+                    $('#tweet').val(text);
+
+                if ($(".addpopup").css('display') == 'none') {
+                    openCreatePopup(true);
+                }
+            }, 300);
+          })
+          .catch(err => {
+            console.log('Something went wrong', err);
+          })
+      });
+
+      document.getElementById("addtweet").addEventListener('click', () => {
         navigator.clipboard.readText()
           .then(text => {
             setTimeout(function() { 
@@ -210,6 +232,7 @@ $( document ).ready(function() {
             console.log('Something went wrong', err);
           })
       });
+
 
     });
 /////////////////////////////////////////////////////////////////////////
