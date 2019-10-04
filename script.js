@@ -1,5 +1,5 @@
 
-console.log(2222); 
+console.log(33333); 
 
 var text = "";
 var origin = "";
@@ -443,8 +443,11 @@ $(document).keydown(function(e) {
 
 
 $(document).keydown(function(e) {
+    console.log(1111);
     if ($(e.currentTarget).is($(document))) {
+        console.log(222222);
         if (ctrlDown && (e.keyCode == vKey)) {
+            console.log(3333);
             navigator.clipboard.readText().then(text => {
                 setTimeout(function() { 
                     resetFieldsPopup(); 
