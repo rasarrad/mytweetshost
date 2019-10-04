@@ -1,5 +1,5 @@
 
-console.log(555); 
+console.log(123); 
 
 var text = "";
 var origin = "";
@@ -194,6 +194,7 @@ $( document ).ready(function() {
     });
 
     $('.toptitle').bind( "click", function( event ) {
+        alert(123);
         navigator.clipboard.readText().then(text => {
             setTimeout(function() { 
                 resetFieldsPopup(); 
