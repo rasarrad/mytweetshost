@@ -1,5 +1,5 @@
 
-console.log(333333); 
+console.log(111); 
 
 var text = "";
 var origin = "";
@@ -286,6 +286,7 @@ $( document ).ready(function() {
             createCookie("hideMode", "yes");
             showMessage("Hide Mode Activated");
         }
+        resetFields(false);
     }
 
 /////////////////////////////////////////////////////////////////////////

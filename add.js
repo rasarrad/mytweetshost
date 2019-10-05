@@ -26,9 +26,20 @@ function parseTweet(type) {
     
             $('#date').val(year + pad(getMonthFromString(month), 2) + pad(day, 2));
 
-            $('#categories').focus();
+            if (type && type == 2) {
+                create();
+                showMessage("Tweet Link Successfully Parsed And Created"); 
+            }
+            else {
+                if (type && type == 1) {
+                    if ($(".addpopup").css('display') == 'none') {
+                        openCreatePopup(true);
+                    }
+                }
+                $('#categories').focus();
 
-
+                showMessage("Tweet Link Successfully Parsed"); 
+            }     
 
             return false;
         }
@@ -47,8 +58,19 @@ function parseTweet(type) {
             text = "\"" + ("<iframe style='position: relative;top: 4px;width: 500px;background: white;margin-top: 6px;height: 446px;margin-left: calc(50% - 250px);margin-right: auto;border: 1px solid white;border-radius: 5px;' " 
                     + text.substring(8)).replace(/"/g, "'")  + "\""; 
 
-             
+            if (type && type == 2) {
+                create();
+                showMessage("Youtube Link Successfully Parsed And Created"); 
+            }
+            else {
+                if (type && type == 1) {
+                    if ($(".addpopup").css('display') == 'none') {
+                        openCreatePopup(true);
+                    }
+                }
 
+                showMessage("Youtube Link Successfully Parsed"); 
+            }             
 
             return false;
             
@@ -69,7 +91,19 @@ function parseTweet(type) {
             + text.substring(text.indexOf('watch?v=') + 8) + "' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>\""; 
 
              
+            if (type && type == 2) {
+                create();
+                showMessage("Youtube Link Successfully Parsed And Created"); 
+            }
+            else {
+                if (type && type == 1) {
+                    if ($(".addpopup").css('display') == 'none') {
+                        openCreatePopup(true);
+                    }
+                }
 
+                showMessage("Youtube Link Successfully Parsed"); 
+            }     
 
             return false;
             
