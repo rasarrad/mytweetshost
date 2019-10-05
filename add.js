@@ -5,7 +5,7 @@ function parseTweet(type) {
         $('#tweetid').val(nextid);
 
         text = $('#tweet').val();
-        alert(text)
+
         if (text.substring(0,4) == "<blo") {
             addType = "T";
             $('#typeTT').css('border-color', '#00bc00'); 
@@ -75,7 +75,7 @@ function parseTweet(type) {
             
         }
         else if (text.substring(0,4) == "http") {
-
+            alert(text)
             addType = "H";
             $('#typeHH').css('border-color', '#00bc00'); 
 
@@ -90,7 +90,8 @@ function parseTweet(type) {
 
 
             if (type && type == 2) {
-                showMessage("Link Parse Failed And Was Not Created"); 
+                create();
+                showMessage("HTTP Link Successfully Parsed And Created"); 
             }
             else {
                 $('#date').focus(function(){
@@ -98,7 +99,7 @@ function parseTweet(type) {
                     setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
                 });
 
-                showMessage("Youtube Link Successfully Parsed"); 
+                showMessage("HTTP Link Successfully Parsed"); 
             }
 
             return false;
