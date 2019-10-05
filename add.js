@@ -86,9 +86,17 @@ function parseTweet(type) {
             url = text.substring(text.indexOf('https://www.youtube'), text.indexOf('frameborder') - 2); 
             
             urldirect = text; 
-            console.log(text.substring(text.indexOf('watch?v=') + 8));
+            
+            var urltemp = text.substring(text.indexOf('watch?v=') + 8);
+alert(urltemp)
+            if (urltemp.indexOf("&t=") > 0) {
+                urltemp = urltemp.replace("&t=","?start=");
+                urltemp = urltemp.substring(0, urltemp.length -1);
+            }
+            alert(urltemp)       
+
             text = "\"<iframe style='position: relative;top: 4px;width: 500px;background: white;margin-top: 6px;height: 446px;margin-left: calc(50% - 250px);margin-right: auto;border: 1px solid white;border-radius: 5px;' src='https://www.youtube.com/embed/" 
-            + text.substring(text.indexOf('watch?v=') + 8) + "' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>\""; 
+            + urltemp + "' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>\""; 
 
              
             if (type && type == 2) {
