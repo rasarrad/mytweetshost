@@ -1,5 +1,5 @@
 
-function parseTweet(nomessage) {
+function parseTweet(type) {
     setTimeout(function(){
         nextid = parseInt(readCookie("maxid"));
         $('#tweetid').val(nextid);
@@ -26,16 +26,9 @@ function parseTweet(nomessage) {
     
             $('#date').val(year + pad(getMonthFromString(month), 2) + pad(day, 2));
 
-            showMessage("Twitter Link Successfully Parsed"); 
-
             $('#categories').focus();
 
-            if (nomessage) {
-                $('#tweet').val("");
-                if ($(".addpopup").css('display') == 'none') {
-                    openCreatePopup(true);
-                }
-            }
+
 
             return false;
         }
@@ -54,19 +47,8 @@ function parseTweet(nomessage) {
             text = "\"" + ("<iframe style='position: relative;top: 4px;width: 500px;background: white;margin-top: 6px;height: 446px;margin-left: calc(50% - 250px);margin-right: auto;border: 1px solid white;border-radius: 5px;' " 
                     + text.substring(8)).replace(/"/g, "'")  + "\""; 
 
-            showMessage("Youtube Link Successfully Parsed"); 
+             
 
-            $('#date').focus(function(){
-                var that = this;
-                setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
-            });
-
-            if (nomessage) {
-                $('#tweet').val("");
-                if ($(".addpopup").css('display') == 'none') {
-                    openCreatePopup(true);
-                }
-            }
 
             return false;
             
@@ -86,19 +68,9 @@ function parseTweet(nomessage) {
             text = "\"<iframe style='position: relative;top: 4px;width: 500px;background: white;margin-top: 6px;height: 446px;margin-left: calc(50% - 250px);margin-right: auto;border: 1px solid white;border-radius: 5px;' src='https://www.youtube.com/embed/" 
             + text.substring(text.indexOf('watch?v=') + 8) + "' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>\""; 
 
-            showMessage("Youtube Link Successfully Parsed"); 
+             
 
-            $('#date').focus(function(){
-                var that = this;
-                setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
-            });
-            
-            if (nomessage) {
-                $('#tweet').val("");
-                if ($(".addpopup").css('display') == 'none') {
-                    openCreatePopup(true);
-                }
-            }
+
             return false;
             
         }
@@ -116,9 +88,6 @@ function parseTweet(nomessage) {
             text = "\"<iframe style='position: relative;top: 4px;width: 500px;background: white;margin-top: 6px;height: 446px;margin-left: calc(50% - 250px);margin-right: auto;border: 1px solid white;border-radius: 5px;' src='" 
                     + text + "'></iframe><div style='position: relative;left: 0px;width: 100px;height: 0px;top: -451px;'><div style='position: relative;left: 0px;width: 83px;height: 473px;top: 0px;'></div></div><div style='position: relative;right: -16px !important;width: 100px;height: 0px;top: -451px;float: right;'><div style='position: relative;left: 0px;width: 83px;height: 473px;top: 0px;'></div></div>\""; 
 
-                    
-            showMessage("HTML Link Successfully Parsed"); 
-alert(1)
             if (nomessage) {
                 alert($(".addpopup").css('display'))
                 $('#tweet').val("");
@@ -126,17 +95,29 @@ alert(1)
                     openCreatePopup(true);
                 }
             }
+            else {
 
-            $('#date').focus(function(){
-                var that = this;
-                setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
-            });
+            }
+
+            if (type && type == 2) {
+                showMessage("Link Parse Failed And Was Not Created"); 
+            }
+            else {
+                $('#date').focus(function(){
+                    var that = this;
+                    setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
+                });
+
+                showMessage("Youtube Link Successfully Parsed"); 
+            }
 
             return false;
         }
 
-        if (nomessage) {
-
+        if (type) {
+            if (type == 2) {
+                showMessage("Link Parse Failed And Was Not Created"); 
+            }
         }
         else {
             showMessage("Link Parse Failed"); 

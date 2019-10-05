@@ -1,5 +1,5 @@
 
-console.log(3333); 
+console.log(111); 
 
 var text = "";
 var origin = "";
@@ -197,7 +197,7 @@ $( document ).ready(function() {
     document.getElementById("toptitle").addEventListener('click', () => {
         navigator.clipboard.readText()
         .then(text => {
-            openPopupParsed(text, true);
+            openPopupParsed(text, 2);
         })
         .catch(err => {
             console.log('Something went wrong', err);
@@ -207,7 +207,7 @@ $( document ).ready(function() {
     document.getElementById("addtweet").addEventListener('click', () => {
         navigator.clipboard.readText()
         .then(text => {
-            openPopupParsed(text, false);
+            openPopupParsed(text, 1);
         })
         .catch(err => {
             console.log('Something went wrong', err);
@@ -216,13 +216,13 @@ $( document ).ready(function() {
 
 });
 
-    function openPopupParsed(text, showMsg) {
+    function openPopupParsed(text, type) {
         
         setTimeout(function() { 
             resetFieldsPopup(); 
             $('#tweet').val(text);
 
-            parseTweet(!showMsg);
+            parseTweet(type);
 
         }, 300);
     }
