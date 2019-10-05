@@ -193,7 +193,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         }
                         var tagchanged = readCookie(val.id + "tagchanged");
                         var catchanged = readCookie(val.id + "catchanged");
-                        var tagstyle = "background-image: linear-gradient(to right, #0082cd, #0082cd)";
+                        var tagstyle = "background: #00000021;border-bottom: 1px solid #00000038;";
                         if (tagchanged && tagchanged.length > 0 && catchanged && catchanged.length > 0) {
                             tagstyle = hideMode ? "" : "background-image: linear-gradient(to right, rgb(247, 205, 205), rgb(177, 0, 0), rgb(247, 205, 205))";
                             tagchanged = '<span class="newtag"><b> New tags </b>' + tagchanged + '</span>';
