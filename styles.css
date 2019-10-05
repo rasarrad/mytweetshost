@@ -28,6 +28,8 @@
     background: #0088d600;
     padding-bottom: 3px;
     border-top: 1px solid #006097;
+    position: relative;
+    top: 2px;
   }
   .EmbeddedTweet-tweet {
     background: #80808061;
@@ -61,8 +63,8 @@
    }  
    #expand {
     position: absolute;
-    margin-top: 2px;
-    left: 3px;
+    margin-top: 4px;
+    left: 55px;
     cursor: pointer;
     font-size: 23px;
     color: #006cab;
@@ -73,6 +75,7 @@
     padding-right: 3px;
     border-radius: 3px;
     transition: all 0.6s;
+    z-index: 8888;
    }
 
    #expand.infomodified {
@@ -374,25 +377,25 @@ ol > li {
     #externallink {
       position: absolute;
       cursor: pointer;
-      left: 79px;
+      left: 129px;
       margin-top: 1px;
       font-size: 16px;
       transition: all 0.6s;
     }
 
     .fa-square-o {
-      left: 118px;
-    font-size: 21px;
-    margin-top: -2px;
-    font-weight: bold;
-    position: absolute;
-    cursor: pointer;
-    transition: all 0.6s;
+      left: 168px;
+      font-size: 21px;
+      margin-top: -2px;
+      font-weight: bold;
+      position: absolute;
+      cursor: pointer;
+      transition: all 0.6s;
     }
     #internallink {
       position: absolute;
       cursor: pointer;
-      left: 45px;
+      left: 95px;
       margin-top: 0px;
       font-size: 16px;
       transition: all 0.6s;
@@ -522,7 +525,7 @@ ol > li {
     margin-left: 25px !important;
     margin-right: 25px !important;
     position: relative;
-    top: 4px;
+    /* top: 4px; */
     border-radius: 5px;
 }
 

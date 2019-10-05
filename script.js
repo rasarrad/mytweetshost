@@ -1,5 +1,5 @@
 
-console.log(333333); 
+console.log(1111); 
 
 var text = "";
 var origin = "";
@@ -236,8 +236,13 @@ $( document ).ready(function() {
             else {
                 clearTimeout(dblClickTimeout);
                 
-                var win = window.open('https://github.com/rasarrad/mytweetshost/edit/master/data.json', '_blank');
-                win.focus();
+                if (hideMode) {
+                    openPopupParsed(text, 1);
+                }
+                else {
+                    var win = window.open('https://github.com/rasarrad/mytweetshost/edit/master/data.json', '_blank');
+                    win.focus();
+                }
     
                 dblFlag = false;
             }  
