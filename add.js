@@ -5,7 +5,7 @@ function parseTweet(type) {
         $('#tweetid').val(nextid);
 
         text = $('#tweet').val();
-        
+        alert(text)
         if (text.substring(0,4) == "<blo") {
             addType = "T";
             $('#typeTT').css('border-color', '#00bc00'); 
