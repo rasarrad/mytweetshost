@@ -1,5 +1,5 @@
 
-console.log(22222); 
+console.log(333333); 
 
 var text = "";
 var origin = "";
@@ -18,10 +18,12 @@ var totalGlobalLinks = 0;
 var total_yy = 0; 
 var total_tt = 0;
 var total_hh = 0;
+var hideMode = false;
 
 $( document ).ready(function() {
     //$("body").css("height", $(window).height() + "px");
     countalltweets();
+    setviewmode();
     var hasChanges = readCookie("hasChanges");
     if (hasChanges && hasChanges.length > 0)
       $("#generate").addClass("haschanges");
@@ -197,7 +199,22 @@ $( document ).ready(function() {
     document.getElementById("toptitle").addEventListener('click', () => {
         navigator.clipboard.readText()
         .then(text => {
-            openPopupParsed(text, 2);
+            if (!dblFlag) {
+                dblFlag = true;
+                dblClickTimeout = setTimeout(function() {     
+                  if (dblFlag) {
+                      openPopupParsed(text, 2);
+                      dblFlag = false;  
+                  }
+                }, 500);
+            }
+            else {
+                clearTimeout(dblClickTimeout);
+                
+                changeviewmode();
+    
+                dblFlag = false;
+            }  
         })
         .catch(err => {
             console.log('Something went wrong', err);
@@ -242,6 +259,30 @@ $( document ).ready(function() {
 
         }, 300);
     }
+
+    function setviewmode() {
+        var hideModeVar = readCookie("hideMode");
+        if (hideModeVar && hideModeVar.length > 0) {
+            hideMode = true;
+            $("#generate").addClass("hidemode");
+        }
+    }
+
+    function changeviewmode() {
+        if (hideMode) {
+            hideMode = false;
+            $("#generate").removeClass("hidemode");
+            createCookie("hideMode", "");
+            showMessage("Hide Mode Deactivated");
+        }
+        else {
+            hideMode = true;
+            $("#generate").addClass("hidemode");
+            createCookie("hideMode", "yes");
+            showMessage("Hide Mode Activated");
+        }
+    }
+
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 

@@ -562,3 +562,7 @@ twitter-widget {
     display: none;
   }
 }
+
+.hidemode {
+  display: none !important;
+}
