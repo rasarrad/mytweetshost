@@ -1,5 +1,5 @@
 
-console.log(22222); 
+console.log(1111); 
 
 var text = "";
 var origin = "";
@@ -22,12 +22,16 @@ var hideMode = false;
 
 $( document ).ready(function() {
     //$("body").css("height", $(window).height() + "px");
+    
+    alert(1);
     countalltweets();
+    alert(2);
     setviewmode();
+    alert(3);
     var hasChanges = readCookie("hasChanges");
     if (hasChanges && hasChanges.length > 0)
       $("#generate").addClass("haschanges");
-
+      alert(4);
     ///////////////////////////////////////
 
     var paramid = getParameterByName('tweetid');
