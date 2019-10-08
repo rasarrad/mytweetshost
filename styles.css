@@ -53,13 +53,13 @@
  
    #expand {
     position: absolute;
-    margin-top: 4px;
+    margin-top: 6px;
     left: 55px;
     cursor: pointer;
     font-size: 23px;
     color: #006cab;
     background: white;
-    height: 21px;
+    height: 19px;
     line-height: 21px;
     padding-left: 3px;
     padding-right: 3px;
@@ -386,7 +386,7 @@ ol > li {
       position: absolute;
       cursor: pointer;
       left: 95px;
-      margin-top: 0px;
+      margin-top: 1px;
       font-size: 16px;
       transition: all 0.6s;
     }
