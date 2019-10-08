@@ -180,11 +180,11 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             console.log(444444444);   
                         var isdeleted = readCookie(val.id + "isdeleted");
                         if (isdeleted && isdeleted.length > 0) {
-                            isdeleted = hideMode ? "" : "background-image: linear-gradient(to bottom, #d60000 -33%, rgb(0, 137, 217));";
+                            isdeleted = "background-image: linear-gradient(to bottom, #d60000 -33%, rgb(0, 137, 217));";
                         } 
                         else {
                             if (linkcontent && linkcontent.length > 0) {
-                                isdeleted = hideMode ? "" : "background-image: linear-gradient(rgb(20, 186, 0) -87%, rgb(0, 137, 217));";
+                                isdeleted = "background-image: linear-gradient(rgb(20, 186, 0) -87%, rgb(0, 137, 217));";
                             }
                             else {
                                 isdeleted ="";
@@ -193,20 +193,20 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         }
                         var tagchanged = readCookie(val.id + "tagchanged");
                         var catchanged = readCookie(val.id + "catchanged");
-                        var tagstyle = "background: #00000021;border-bottom: 1px solid #00000038;";
+                        var tagstyle = "background-image: linear-gradient(to right, #0082cd, #0082cd)";
                         if (tagchanged && tagchanged.length > 0 && catchanged && catchanged.length > 0) {
-                            tagstyle = hideMode ? "" : "background-image: linear-gradient(to right, rgb(247, 205, 205), rgb(177, 0, 0), rgb(247, 205, 205))";
+                            tagstyle = "background-image: linear-gradient(to right, rgb(247, 205, 205), rgb(177, 0, 0), rgb(247, 205, 205))";
                             tagchanged = '<span class="newtag"><b> New tags </b>' + tagchanged + '</span>';
                             catchanged = '<span class="newcat"><b> New categories </b>' + catchanged + '</span>';
                         } 
                         else {
                             if (tagchanged && tagchanged.length > 0) {
-                                tagstyle = hideMode ? "" : "background-image: linear-gradient(to right, rgb(177, 0, 0), rgb(247, 205, 205))";
+                                tagstyle = "background-image: linear-gradient(to right, rgb(177, 0, 0), rgb(247, 205, 205))";
                                 tagchanged = '<span class="newtag"><b> New tags </b>' + tagchanged + '</span>';
                                 catchanged = '<span class="newcat"></span>';
                             }
                             else if (catchanged && catchanged.length > 0) {
-                                tagstyle = hideMode ? "" : "background-image: linear-gradient(to left, rgb(177, 0, 0), rgb(247, 205, 205))";
+                                tagstyle = "background-image: linear-gradient(to left, rgb(177, 0, 0), rgb(247, 205, 205))";
                                 tagchanged = '<span class="newtag"></span>';
                                 catchanged = '<span class="newcat"><b> New categories </b>' + catchanged + '</span>';
                             }
@@ -223,7 +223,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         if (hasinfo && hasinfo.length > 0 && hasinfo != null && hasinfo != "null") {
                             if (val.info && val.info.length > 0) {
                                 textareaExtraStyle = "border: 2px solid red;";
-                                expandclass = hideMode ? "" : "infomodified";
+                                expandclass = "infomodified";
                                 val.info = '<div id ="' + val.id + 'oldinfo" class="oldinfo" style="width: 562px;height: 163px;position: relative;left: calc(50% - 282px);z-index: 11;font-size: 14px;background: #0000002e;text-align: left;display: block;border: 2px solid red;top: -12px;">' 
                                 + val.info + '</div>';
                             }
@@ -249,7 +249,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         if (hasClassif && hasClassif.length > 0) {
                             if (val.classif && val.classif.length > 0) {
                                 textboxExtraStyle = "border: 2px solid red;";
-                                expandclass = hideMode ? "" : "infomodified";
+                                expandclass = "infomodified";
                                 val.classif = '<div class="oldclassif" id ="' + val.id + 'oldclassif" style="position: relative;top: -41px;left: -283px;width: 34px; text-align: center; border: 2px solid red;height: 19px; padding-top: 2px; font-size: 14px;">'
                                 + val.classif + '</div>';
                             }
