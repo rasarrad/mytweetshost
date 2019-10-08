@@ -212,14 +212,6 @@ function create() {
         createCookie(nextid + "templink", encodeURIComponent(JSON.stringify(result)), 99999);
         createCookie("hasChanges", "Yes");
         $("#generate").addClass("haschanges");
-
-/*         var tmpid = readCookie("tmpid");
-        if (tmpid && tmpid.length > 0) {
-
-        }
-        else {
-            createCookie("tmpid", pad(nextid, 4));
-        }  */
     } 
     createCookie("maxid", pad(nextid + 1, 4));
 
