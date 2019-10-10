@@ -846,9 +846,9 @@ var countalltweets = function(id) {
         
         console.log(22222222222222222222222222222); 
         
-        console.log([...map]);     
+        console.log([...tagsmap]);     
         console.log(33333333333333333333333333333);
-        console.log([...map.entries()]);
+        console.log([...tagsmap.entries()]);
         
 
         
