@@ -838,7 +838,7 @@ var countalltweets = function(id) {
 
         for (let [key, value] of tagsmap) {     // get data sorted
             var o = new Option(key, key);
-            $(o).html("option text");
+            $(o).html(key);
             $("#tagsselect").append(o);
         }
         
