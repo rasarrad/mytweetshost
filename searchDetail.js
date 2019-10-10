@@ -828,30 +828,26 @@ var countalltweets = function(id) {
             }
             while (processtmp);
         });
-        console.log(1212121212121);
+        console.log(111111111111111);
 
         tagsmap[Symbol.iterator] = function* () {
 
-            yield* [...this.entries()].sort((a, b) => a[1] - b[1]);
+            yield* [...this.entries()].sort((a, b) => b[1] - a[1]);
         
         }
         
          
         
         for (let [key, value] of tagsmap) {     // get data sorted
-        
-            console.log(key + ' ' + value);
-        
+
         }
-        
-        console.log(22222222222222222222222222222); 
-        
-        console.log([...tagsmap]);     
-        console.log(33333333333333333333333333333);
-        console.log([...tagsmap.entries()]);
-        
 
         
+        console.log([...tagsmap]);     
+
+        console.log(22222222222222222222222222222); 
+
+        console.log(tagsmap);   
         
          
         
