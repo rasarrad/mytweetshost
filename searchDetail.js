@@ -757,7 +757,6 @@ var countalltweets = function(id) {
     var path = "./data.json";
     var counters = new Map();
     var tagsmap = new Map();
-    var finaltagsmap = new Map();
     var total = 0;
     var total_y = 0;
     var total_t = 0;
@@ -838,17 +837,13 @@ var countalltweets = function(id) {
         }
         
          
-        
+        var x = document.getElementById("tagsselect");
         for (let [key, value] of tagsmap) {     // get data sorted
-        
-            finaltagsmap.set(key, key);
+            var option = document.createElement("option");
+            option.text = key;
+            x.add(option);
         
         }
-
-
-        console.log(finaltagsmap);   
-        
-         
         
 
 
