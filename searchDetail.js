@@ -838,6 +838,7 @@ var countalltweets = function(id) {
         
          
         var x = document.getElementById("tagsselect");
+        console.log(x);
         for (let [key, value] of tagsmap) {     // get data sorted
             var option = document.createElement("option");
             option.text = key;
