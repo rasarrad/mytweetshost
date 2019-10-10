@@ -756,6 +756,7 @@ var getInformationbyid = function(id) {
 var countalltweets = function(id) {
     var path = "./data.json";
     var counters = new Map();
+    var tagsmap = new Map();
     var total = 0;
     var total_y = 0;
     var total_t = 0;
@@ -797,6 +798,11 @@ var countalltweets = function(id) {
                         counters.set(val.type + res[i], 1);
                     }
                 }
+
+                var tags = val.tags.split(" ");
+                for (var i = 0; i < tags.length; i++) {
+                    tagsmap.set(tags[i], tags[i]);
+                }
     
                 if (val.type == "T") {
                     total_t = total_t + 1;
@@ -811,7 +817,8 @@ var countalltweets = function(id) {
             }
             while (processtmp);
         });
-
+        console.log(111111111111111111);
+        console.log(tagsmap);
         // All Links
         $("#all").text(total);
         $("#all").parent().attr("title", "Twitter: " + total_t + " - Youtube: " + total_y + " - Website: " + total_h);
