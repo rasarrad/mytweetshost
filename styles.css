@@ -9,6 +9,7 @@
   .innertweet {
     margin-left: calc(50% - 250px);
     border-radius: 5px;
+    background: #a2a2a200 !important;
   }
   
   .categorias {
