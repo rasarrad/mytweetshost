@@ -817,12 +817,12 @@ var countalltweets = function(id) {
             }
             while (processtmp);
         });
-        console.log(3333333);
+        console.log(1111111111111111111);
 
         var keys = [];
 
         tagsmap.forEach(function callback(value, key, map) {
-            keys.push(key);
+            keys.push(key.toLowerCase());
         });
         
         // Sort keys array and go through them to put in and put them in sorted map
