@@ -828,7 +828,7 @@ var countalltweets = function(id) {
             }
             while (processtmp);
         });
-        console.log(1111111111111111111);
+        console.log(1212121212121);
 
         tagsmap[Symbol.iterator] = function* () {
 
