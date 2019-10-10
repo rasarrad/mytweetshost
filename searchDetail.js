@@ -757,6 +757,7 @@ var countalltweets = function(id) {
     var path = "./data.json";
     var counters = new Map();
     var tagsmap = new Map();
+    var finaltagsmap = new Map();
     var total = 0;
     var total_y = 0;
     var total_t = 0;
@@ -828,7 +829,7 @@ var countalltweets = function(id) {
             }
             while (processtmp);
         });
-        console.log(111111111111111);
+        console.log(33333336666666663333333333);
 
         tagsmap[Symbol.iterator] = function* () {
 
@@ -839,15 +840,13 @@ var countalltweets = function(id) {
          
         
         for (let [key, value] of tagsmap) {     // get data sorted
-
+        
+            finaltagsmap.set(key, key);
+        
         }
 
-        
-        console.log([...tagsmap]);     
 
-        console.log(22222222222222222222222222222); 
-
-        console.log(tagsmap);   
+        console.log(finaltagsmap);   
         
          
         
