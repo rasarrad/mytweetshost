@@ -1,5 +1,5 @@
 
-console.log(111); 
+console.log(444); 
 
 var text = "";
 var origin = "";
@@ -208,7 +208,7 @@ $( document ).ready(function() {
     $( "#tagsselect" ).change(function() {
         // Check input( $( this ).val() ) for validity here
         if ($( this ).val() != "notag") {
-            alert($( this ).val());
+            $( "#tags" ).val($( "#tags" ).val() + $( this ).val() + " ");
             $(this).val("notag");
         }
       });
