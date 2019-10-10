@@ -802,14 +802,17 @@ var countalltweets = function(id) {
                 var tags = val.tags.split(" ");
         
                 for (var i = 0; i < tags.length; i++) {
-                    if (tagsmap.has(tags[i].trim())) {
-                        var aux = Number(tagsmap.get(tags[i]));
+                    if (tags[i].trim().length > 0) {
+                        if (tagsmap.has(tags[i].trim())) {
+                            var aux = Number(tagsmap.get(tags[i]));
+    
+                            tagsmap.set(tags[i].trim(), aux + 1);
+                        }
+                        else {
+                            tagsmap.set(tags[i].trim(), 1);
+                        }
+                    }
 
-                        tagsmap.set(tags[i].trim(), aux + 1);
-                    }
-                    else {
-                        tagsmap.set(tags[i].trim(), 1);
-                    }
                 }
     
                 if (val.type == "T") {
@@ -825,15 +828,30 @@ var countalltweets = function(id) {
             }
             while (processtmp);
         });
-        console.log(555555555555555555555);
+        console.log(1111111111111111111);
 
+        tagsmap[Symbol.iterator] = function* () {
 
+            yield* [...this.entries()].sort((a, b) => a[1] - b[1]);
         
-        console.log(tagsmap);
+        }
         
          
         
-         
+        for (let [key, value] of tagsmap) {     // get data sorted
+        
+            console.log(key + ' ' + value);
+        
+        }
+        
+        console.log(22222222222222222222222222222); 
+        
+        console.log([...map]);     
+        console.log(33333333333333333333333333333);
+        console.log([...map.entries()]);
+        
+
+        
         
          
         
