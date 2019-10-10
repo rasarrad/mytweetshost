@@ -817,8 +817,13 @@ var countalltweets = function(id) {
             }
             while (processtmp);
         });
-        console.log(111111111111111111);
-        console.log(tagsmap);
+        console.log(22222222222222222222);
+
+        
+var mapAsc = new Map([tagsmap.entries()].sort());
+
+console.log(mapAsc)
+
         // All Links
         $("#all").text(total);
         $("#all").parent().attr("title", "Twitter: " + total_t + " - Youtube: " + total_y + " - Website: " + total_h);
