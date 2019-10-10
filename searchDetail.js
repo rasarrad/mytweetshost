@@ -817,12 +817,18 @@ var countalltweets = function(id) {
             }
             while (processtmp);
         });
-        console.log(22222222222222222222);
+        console.log(3333333);
 
+        var keys = [];
+
+        tagsmap.forEach(function callback(value, key, map) {
+            keys.push(key);
+        });
         
-var mapAsc = new Map([tagsmap.entries()].sort());
-
-console.log(mapAsc)
+        // Sort keys array and go through them to put in and put them in sorted map
+        keys.sort()
+        
+console.log(keys)
 
         // All Links
         $("#all").text(total);
