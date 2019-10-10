@@ -1,5 +1,5 @@
 
-console.log(444); 
+console.log(111); 
 
 var text = "";
 var origin = "";
@@ -204,6 +204,14 @@ $( document ).ready(function() {
             showMessage("Temp Links Removed");
         } 
     });
+
+    $( "#tagsselect" ).change(function() {
+        // Check input( $( this ).val() ) for validity here
+        if ($( this ).val() != "notag") {
+            alert($( this ).val());
+            $(this).val("notag");
+        }
+      });
 
     document.getElementById("toptitle").addEventListener('click', () => {
         navigator.clipboard.readText()

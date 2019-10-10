@@ -835,9 +835,11 @@ var countalltweets = function(id) {
             yield* [...this.entries()].sort((a, b) => b[1] - a[1]);
         
         }
-
+        var o = new Option("notag", "notag");
+        $(o).html("");
+        $("#tagsselect").append(o);
         for (let [key, value] of tagsmap) {     // get data sorted
-            var o = new Option(key, key);
+            o = new Option(key, key);
             $(o).html(key);
             $("#tagsselect").append(o);
         }
