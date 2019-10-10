@@ -800,8 +800,16 @@ var countalltweets = function(id) {
                 }
 
                 var tags = val.tags.split(" ");
+        
                 for (var i = 0; i < tags.length; i++) {
-                    tagsmap.set(tags[i], tags[i]);
+                    if (tagsmap.has(tags[i].trim())) {
+                        var aux = Number(tagsmap.get(tags[i]));
+
+                        tagsmap.set(tags[i].trim(), aux + 1);
+                    }
+                    else {
+                        tagsmap.set(tags[i].trim(), 1);
+                    }
                 }
     
                 if (val.type == "T") {
@@ -817,18 +825,22 @@ var countalltweets = function(id) {
             }
             while (processtmp);
         });
-        console.log(1111111111111111111);
+        console.log(555555555555555555555);
 
-        var keys = [];
 
-        tagsmap.forEach(function callback(value, key, map) {
-            keys.push(key.toLowerCase());
-        });
         
-        // Sort keys array and go through them to put in and put them in sorted map
-        keys.sort()
+        console.log(tagsmap);
         
-console.log(keys)
+         
+        
+         
+        
+         
+        
+
+
+
+
 
         // All Links
         $("#all").text(total);
