@@ -810,10 +810,6 @@ var countalltweets = function(id) {
                         }
                         else {
                             tagsmap.set(tags[i].trim(), 1);
-                            tagsmap.set(tags[i].trim() + "H", 1);
-                            tagsmap.set(tags[i].trim() + "K", 1);
-                            tagsmap.set(tags[i].trim() + "L", 1);
-                            tagsmap.set(tags[i].trim() + "Z", 1);
                         }
                     }
 
@@ -855,10 +851,10 @@ var countalltweets = function(id) {
         var hasOverflow = false;
 
         for (let [key, value] of tagsmap) {     // get data sorted
-            var elem = $("<li class='litags'>" + key + "</li>");
-            $("#tagsul").append(elem);
 
             if (!hasOverflow) {
+                var elem = $("<li class='litags'>" + key + "</li>");
+                $("#tagsul").append(elem);
                 if ($('#tagsul').isChildOverflowing(elem)) {
                     hasOverflow = true;
                     elem.remove();
