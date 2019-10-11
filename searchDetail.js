@@ -851,7 +851,13 @@ var countalltweets = function(id) {
             $("#tagsul").append("<li class='litags'>" + key + "</li>");
         }
         for (let [key, value] of tagsmap) {     // get data sorted
-            $("#tagsul").append("<li class='litags'>" + key + "</li>");
+            if ($("#tagsul").offsetHeight < $("#tagsul").scrollHeight ||
+            $("#tagsul").offsetWidth < $("#tagsul").scrollWidth) {
+                // your element have overflow
+            } else {
+                $("#tagsul").append("<li class='litags'>" + key + "</li>");
+            }
+            
         }
         $( ".litags" ).bind( "click", function( event ) {
             if ($(this).hasClass("selectedtag")){
