@@ -845,27 +845,25 @@ var countalltweets = function(id) {
         }*/
         
         for (let [key, value] of tagsmap) {     // get data sorted
-            $("#tagsul").append("<li class='litags'>" + key + "</li>");
+            var elem = $("#tagsul").append("<li class='litags'>" + key + "</li>");
+            
+            console.log($(elem).offset().top);
         }
         for (let [key, value] of tagsmap) {     // get data sorted
-            $("#tagsul").append("<li class='litags'>" + key + "</li>");
+            var elem = $("#tagsul").append("<li class='litags'>" + key + "</li>");
+            
+            console.log($(elem).offset().top);
         }
         for (let [key, value] of tagsmap) {     // get data sorted
-            if ($("#tagsul").scrollTop() > $("#tagsul").height() ) {
-                
-              }
-              else {
-                $("#tagsul").append("<li class='litags'>" + key + "</li>");
-            }
+            var elem = $("#tagsul").append("<li class='litags'>" + key + "</li>");
+            
+            console.log($(elem).offset().top);
         }
         for (let [key, value] of tagsmap) {     // get data sorted
-            console.log($("#tagsul").scrollTop() + " - " + $("#tagsul").height() );
-            if ($("#tagsul").scrollTop() > $("#tagsul").height() ) {
-               
-              }
-              else {
-                $("#tagsul").append("<li class='litags'>" + key + "</li>");
-            }
+            
+            var elem = $("#tagsul").append("<li class='litags'>" + key + "</li>");
+            
+            console.log($(elem).offset().top);
         }       
         $( ".litags" ).bind( "click", function( event ) {
             if ($(this).hasClass("selectedtag")){
