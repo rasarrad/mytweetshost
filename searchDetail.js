@@ -845,24 +845,28 @@ var countalltweets = function(id) {
         }*/
         
         for (let [key, value] of tagsmap) {     // get data sorted
-            var elem = $("#tagsul").append("<li class='litags'>" + key + "</li>");
+            var elem = $("<li class='litags'>" + key + "</li>");
             
+            $("#tagsul").append(elem);
             console.log($(elem).offset().top);
         }
         for (let [key, value] of tagsmap) {     // get data sorted
-            var elem = $("#tagsul").append("<li class='litags'>" + key + "</li>");
+            var elem = $("<li class='litags'>" + key + "</li>");
             
+            $("#tagsul").append(elem);
             console.log($(elem).offset().top);
         }
         for (let [key, value] of tagsmap) {     // get data sorted
-            var elem = $("#tagsul").append("<li class='litags'>" + key + "</li>");
+            var elem = $("<li class='litags'>" + key + "</li>");
             
+            $("#tagsul").append(elem);
             console.log($(elem).offset().top);
         }
         for (let [key, value] of tagsmap) {     // get data sorted
             
-            var elem = $("#tagsul").append("<li class='litags'>" + key + "</li>");
+            var elem = $("<li class='litags'>" + key + "</li>");
             
+            $("#tagsul").append(elem);
             console.log($(elem).offset().top);
         }       
         $( ".litags" ).bind( "click", function( event ) {
