@@ -368,10 +368,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         return false;
                     }
                 }
-                
-                setTimeout(function(){
-                    $('#mask').fadeOut(300);
-                }, 300);
     
                 
             }
@@ -843,10 +839,9 @@ var countalltweets = function(id) {
         $("#addpopup").css("top", "4000px");
         $("#addpopup").show();
         var hasOverflow = false;
-        console.log(33333336666666663333333333);
+
         for (let [key, value] of tagsmap) {     // get data sorted
 
-            console.log(key);
             if (!hasOverflow) {
                 var elem = $("<li class='litags'>" + key + "</li>");
                 $("#tagsul").append(elem);
@@ -871,13 +866,14 @@ var countalltweets = function(id) {
 
         $( ".litags" ).bind( "click", function( event ) {
             if ($(this).hasClass("selectedtag")){
-              $(this).removeClass("selectedtag")
+              $(this).removeClass("selectedtag");
+              $('#tags').val($('#tags').val().replace($(this).html() + " ", ""));
             }      
             else {
-              $(this).addClass("selectedtag")
+              $(this).addClass("selectedtag");
+              $('#tags').val($('#tags').val() + $(this).html() + " ");
             }
       });
-
 
 
         // All Links
