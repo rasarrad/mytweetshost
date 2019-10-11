@@ -835,17 +835,27 @@ var countalltweets = function(id) {
             yield* [...this.entries()].sort((a, b) => b[1] - a[1]);
         
         }
-        var o = new Option("notag", "notag");
+        /*var o = new Option("notag", "notag");
         $(o).html("");
         $("#tagsselect").append(o);
         for (let [key, value] of tagsmap) {     // get data sorted
             o = new Option(key, key);
             $(o).html(key);
             $("#tagsselect").append(o);
+        }*/
+        
+        for (let [key, value] of tagsmap) {     // get data sorted
+            $("#tagsul").append("<li class='litags'>" + key + "</li>");
         }
         
-
-
+        $( ".litags" ).bind( "click", function( event ) {
+            if ($(this).hasClass("selectedtag")){
+              $(this).removeClass("selectedtag")
+            }      
+            else {
+              $(this).addClass("selectedtag")
+            }
+      });
 
 
 
