@@ -851,17 +851,17 @@ var countalltweets = function(id) {
             $("#tagsul").append("<li class='litags'>" + key + "</li>");
         }
         for (let [key, value] of tagsmap) {     // get data sorted
-            if ($("#tagsul").prop('scrollHeight') > $("#tagsul").height() ) {
-                alert("this element is overflowing !!");
+            if ($("#tagsul").scrollTop() > $("#tagsul").height() ) {
+                
               }
               else {
                 $("#tagsul").append("<li class='litags'>" + key + "</li>");
             }
         }
         for (let [key, value] of tagsmap) {     // get data sorted
-            console.log($("#tagsul").prop('scrollHeight') + " - " + $("#tagsul").height() );
-            if ($("#tagsul").prop('scrollHeight') > $("#tagsul").height() ) {
-                alert("this element is overflowing !!");
+            console.log($("#tagsul").scrollTop() + " - " + $("#tagsul").height() );
+            if ($("#tagsul").scrollTop() > $("#tagsul").height() ) {
+               
               }
               else {
                 $("#tagsul").append("<li class='litags'>" + key + "</li>");
