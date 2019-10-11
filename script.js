@@ -1,5 +1,5 @@
 
-console.log(1111); 
+console.log(22222); 
 
 var text = "";
 var origin = "";
@@ -216,6 +216,15 @@ $( document ).ready(function() {
             $(this).val("notag");
         }
       });
+
+      $( ".litags" ).bind( "click", function( event ) {
+          if ($(this).hasClass("selected")){
+            $(this).removeClass("selected")
+          }      
+          else {
+            $(this).addClass("selected")
+          }
+    });
 
     document.getElementById("toptitle").addEventListener('click', () => {
         navigator.clipboard.readText()

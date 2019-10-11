@@ -588,6 +588,12 @@ twitter-widget {
   padding-left: 2px;
   padding-right: 2px;
   border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.7s;
+}
+
+.litags:hover {
+  opacity: 0.6;
 }
 
 .litags.selectedtag {
