@@ -1,5 +1,5 @@
 
-console.log(3333); 
+console.log(1111); 
 
 var text = "";
 var origin = "";
@@ -56,7 +56,7 @@ $( document ).ready(function() {
                 setTimeout(function() { 
                   $("#moretweets").click();
                   $('#moretweets').attr('doshow', 'no');
-                  $('#moretweets').hide();
+                  
                 }, 1000);
             }
             setTimeout(function() { 
