@@ -859,6 +859,7 @@ var countalltweets = function(id) {
             }
         }
         for (let [key, value] of tagsmap) {     // get data sorted
+            console.log($("#tagsul").prop('scrollHeight') + " - " + $("#tagsul").height() );
             if ($("#tagsul").prop('scrollHeight') > $("#tagsul").height() ) {
                 alert("this element is overflowing !!");
               }
