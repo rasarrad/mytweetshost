@@ -1,5 +1,5 @@
 
-console.log(22222); 
+console.log(333333); 
 
 var text = "";
 var origin = "";
@@ -276,6 +276,13 @@ $( document ).ready(function() {
     });
 
 });
+
+$.fn.isChildOverflowing = function (child) {
+    var p = $(this).get(0);
+    var el = $(child).get(0);
+    return (el.offsetTop < p.offsetTop || el.offsetLeft < p.offsetLeft) ||
+      (el.offsetTop + el.offsetHeight > p.offsetTop + p.offsetHeight || el.offsetLeft + el.offsetWidth > p.offsetLeft + p.offsetWidth);
+  };
 
     function openPopupParsed(text, type) {
         
