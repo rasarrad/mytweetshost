@@ -26,7 +26,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
     
     if (!ismoretweets) {
         $('#mask').fadeIn(300);  
-        console.log(567);
         $('#moretweets').hide();
         currentIndex = 0;
         endIndex = currentIndex + Number($('#recordspersearch').val());
@@ -319,8 +318,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }
                 else {
                     if (currentIndex >= endIndex) {
-                        $('#moretweets').css('opacity', 0);
-                        $('#moretweets').attr('doshow', 'yes');
+
                         
             /*               setTimeout(function(){
                             $('#mask').fadeOut(300);

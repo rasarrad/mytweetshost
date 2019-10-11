@@ -187,6 +187,8 @@
                   if (hasFound) {
                     console.log(890);
                     $('#moretweets').hide();
+                    $('#moretweets').css('opacity', 0);
+                    $('#moretweets').attr('doshow', 'yes');
                     $('#mask').fadeOut(300);
                     return false;
                   }
