@@ -43,9 +43,9 @@
     margin-left: auto;
     margin-right: auto;
     position: fixed;
-    top: calc(50% - 192px);
+    top: calc(50% - 188px);
     width: 800px;
-    height: 385px;
+    height: 376px;
     background: #ffffff;
     color: #0081cd;
     left: calc(50% - 400px);
@@ -577,7 +577,22 @@ twitter-widget {
 
 
 .litags {
-    display: inline-block;
-    background: white;
-    margin-bottom: 3px;
+  display: inline-block;
+  margin-bottom: 3px;
+  height: 21px;
+  font-size: 13px;
+  font-weight: bold;
+  border: 1px solid #0069a7;
+  padding-top: 6px;
+  background: #0069a621;
+  padding-left: 2px;
+  padding-right: 2px;
+  border-radius: 4px;
 }
+
+.litags.selectedtag {
+  background: #0069a6;
+  color: white;
+}
+
+
