@@ -11,7 +11,6 @@ function saveinfo(obj, id) {
 
       $("#" + id + "undoinfo").css("display", "inline-block");
     }
-    console.log(1);   
     createCookie("hasChanges", "Yes");
     $("#generate").addClass("haschanges");
 
@@ -37,7 +36,6 @@ function saveclassif(obj, id) {
         $("#" + id + "undoinfo").css("display", "inline-block");
     }
 
-    console.log(2); 
     createCookie("hasChanges", "Yes");
     $("#generate").addClass("haschanges");
 
@@ -69,7 +67,6 @@ function undosaveclassif(obj, id) {
 
     var callback = function(flag) {      
         if (flag) {
-            console.log(3); 
             createCookie("hasChanges", "Yes");
             $("#generate").addClass("haschanges");
         }
@@ -110,7 +107,6 @@ function undosaveinfo(obj, id) {
     
     var callback = function(flag) {      
         if (flag) {
-            console.log(4); 
             createCookie("hasChanges", "Yes");
             $("#generate").addClass("haschanges");
         }
@@ -158,7 +154,6 @@ function removetweet(obj, id) {
         createCookie(id + "isdeleted", "a", 99999);
         $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #d60000 -33%, rgb(0, 137, 217))');
         $("#generate").addClass("haschanges");
-        console.log(6); 
         createCookie("hasChanges", "Yes");
         showMessage("Link Marked To Delete");
     }
@@ -210,7 +205,6 @@ function acceptTag(obj) {
         $('#' + id).find('.newcat').html('<b> New categories </b>' + $(obj).parent().find('input').val());   
 
         $("#generate").addClass("haschanges");
-        console.log(7); 
         createCookie("hasChanges", "Yes");
         showMessage("Category Marked To Change");
     }
@@ -228,7 +222,6 @@ function acceptTag(obj) {
         $('#' + id).find('.newtag').html('<b> New tags </b>' + $(obj).parent().find('input').val());
 
         $("#generate").addClass("haschanges");
-        console.log(8); 
         createCookie("hasChanges", "Yes");
         showMessage("Tag Marked To Change");
     }
@@ -261,7 +254,6 @@ function undotag(obj) {
         }
         if (hasTweetChanges()) {
           $("#generate").addClass("haschanges");
-          console.log(9); 
           createCookie("hasChanges", "Yes");
         }
         else {
@@ -285,7 +277,6 @@ function undotag(obj) {
         }
         if (hasTweetChanges()) {
           $("#generate").addClass("haschanges");
-          console.log(10); 
           createCookie("hasChanges", "Yes");
         }
         else {

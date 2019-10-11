@@ -156,14 +156,11 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }
                 
                 ind = ind + 1;
-                //console.log("--- " + ind + " - " + processedCount + " - " + totalGlobalLinks);
                 if (ind < processedCount ) {
                     return;
 
                 }
-                // console.log("--- " + currentIndex + " - " + endIndex);
 
-                console.log(val);
                 if (currentIndex < endIndex) {
                     dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
                     dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
@@ -171,13 +168,10 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     dofilteridfinal = !dofilterid || (dofilterid && (Number(val.id) == Number($('#filterid').val())));
                     dofiltertagfinal = !dofiltertag || (dofiltertag && val.tags.includes($('#filtertag').val()));
                     dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
-                    console.log(val.categories);   
-                    console.log($('#selectedcat').val());   
                     dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
     
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                         && dofilterauthorfinal && dofiltercatfinal) {
-                            console.log(444444444);   
                         var isdeleted = readCookie(val.id + "isdeleted");
                         if (isdeleted && isdeleted.length > 0) {
                             isdeleted = hideMode ? "" : "background-image: linear-gradient(to bottom, #d60000 -33%, rgb(0, 137, 217));";
@@ -828,7 +822,7 @@ var countalltweets = function(id) {
             }
             while (processtmp);
         });
-        console.log(33333336666666663333333333);
+
 
         tagsmap[Symbol.iterator] = function* () {
 
@@ -843,15 +837,16 @@ var countalltweets = function(id) {
         }*/
 
         var o = new Option("notag", "notag");
-        $(o).html("Other Tags");
+        $(o).html("");
         $("#tagsselect").append(o);
 
         $("#addpopup").css("top", "4000px");
         $("#addpopup").show();
         var hasOverflow = false;
-
+        console.log(33333336666666663333333333);
         for (let [key, value] of tagsmap) {     // get data sorted
 
+            console.log(key);
             if (!hasOverflow) {
                 var elem = $("<li class='litags'>" + key + "</li>");
                 $("#tagsul").append(elem);

@@ -1,5 +1,5 @@
 
-console.log(55555); 
+console.log(1111); 
 
 var text = "";
 var origin = "";
@@ -46,11 +46,8 @@ $( document ).ready(function() {
     ///////////////////////////////////////
 
     window.onscroll = function(ev) {
-        console.log('-------------------');
-        console.log(window.innerHeight + window.scrollY + " - " + document.body.offsetHeight  + " - " + dosearchmore);
 
         if ((window.innerHeight + window.scrollY + 1) >= document.body.offsetHeight && dosearchmore) {
-            console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
             dosearchmore = false;
             if ($('#moretweets').attr('doshow') && $('#moretweets').attr('doshow') == 'yes') {
                 $('#moretweets').show();
@@ -540,9 +537,7 @@ $(document).keydown(function(e) {
 
 
 $(document).keydown(function(e) {
-    console.log(1111);
     if ($(e.currentTarget).is($(document))) {
-        console.log(222222);
         if (ctrlDown && (e.keyCode == vKey)) {
             navigator.clipboard.readText().then(text => {
                 setTimeout(function() { 
