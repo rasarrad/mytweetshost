@@ -854,27 +854,14 @@ var countalltweets = function(id) {
             var elem = $("<li class='litags'>" + key + "</li>");
             
             $("#tagsul").append(elem);
-
-            console.log($('#tagsul').isChildOverflowing(elem));
         }
         for (let [key, value] of tagsmap) {     // get data sorted
             var elem = $("<li class='litags'>" + key + "</li>");
             
             $("#tagsul").append(elem);
-
-            console.log($('#tagsul').isChildOverflowing(elem));
         }
         for (let [key, value] of tagsmap) {     // get data sorted
             var elem = $("<li class='litags'>" + key + "</li>");
-            
-            $("#tagsul").append(elem);
-
-            console.log($('#tagsul').isChildOverflowing(elem));
-        }
-        for (let [key, value] of tagsmap) {     // get data sorted
-            
-            var elem = $("<li class='litags'>" + key + "</li>");
-            
             $("#tagsul").append(elem);
 
             if (!hasOverflow) {
@@ -885,13 +872,34 @@ var countalltweets = function(id) {
                     $(o).html(key);
                     $("#tagsselect").append(o);
                 }
+
             }
             else {
                 o = new Option(key, key);
                 $(o).html(key);
                 $("#tagsselect").append(o);
             }
-            console.log();
+        }
+        for (let [key, value] of tagsmap) {     // get data sorted
+            
+            var elem = $("<li class='litags'>" + key + "</li>");
+            $("#tagsul").append(elem);
+
+            if (!hasOverflow) {
+                if ($('#tagsul').isChildOverflowing(elem)) {
+                    hasOverflow = true;
+                    elem.remove();
+                    o = new Option(key, key);
+                    $(o).html(key);
+                    $("#tagsselect").append(o);
+                }
+
+            }
+            else {
+                o = new Option(key, key);
+                $(o).html(key);
+                $("#tagsselect").append(o);
+            }
         }     
         
         $("#addpopup").css("top", "calc(50% - 189px)");
