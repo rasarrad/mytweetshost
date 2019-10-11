@@ -43,7 +43,7 @@
     margin-left: auto;
     margin-right: auto;
     position: fixed;
-    top: 0px;
+    top: calc(50% - 192px);
     width: 800px;
     height: 385px;
     background: #ffffff;
@@ -573,4 +573,11 @@ twitter-widget {
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Opera and Firefox */
+}
+
+
+.litags {
+    display: inline-block;
+    background: white;
+    margin-bottom: 3px;
 }
