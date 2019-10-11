@@ -810,6 +810,10 @@ var countalltweets = function(id) {
                         }
                         else {
                             tagsmap.set(tags[i].trim(), 1);
+                            tagsmap.set(tags[i].trim() + "H", 1);
+                            tagsmap.set(tags[i].trim() + "K", 1);
+                            tagsmap.set(tags[i].trim() + "L", 1);
+                            tagsmap.set(tags[i].trim() + "Z", 1);
                         }
                     }
 
@@ -852,16 +856,6 @@ var countalltweets = function(id) {
 
         for (let [key, value] of tagsmap) {     // get data sorted
             var elem = $("<li class='litags'>" + key + "</li>");
-            
-            $("#tagsul").append(elem);
-        }
-        for (let [key, value] of tagsmap) {     // get data sorted
-            var elem = $("<li class='litags'>" + key + "</li>");
-            
-            $("#tagsul").append(elem);
-        }
-        for (let [key, value] of tagsmap) {     // get data sorted
-            var elem = $("<li class='litags'>" + key + "</li>");
             $("#tagsul").append(elem);
 
             if (!hasOverflow) {
@@ -879,28 +873,7 @@ var countalltweets = function(id) {
                 $(o).html(key);
                 $("#tagsselect").append(o);
             }
-        }
-        for (let [key, value] of tagsmap) {     // get data sorted
-            
-            var elem = $("<li class='litags'>" + key + "</li>");
-            $("#tagsul").append(elem);
-
-            if (!hasOverflow) {
-                if ($('#tagsul').isChildOverflowing(elem)) {
-                    hasOverflow = true;
-                    elem.remove();
-                    o = new Option(key, key);
-                    $(o).html(key);
-                    $("#tagsselect").append(o);
-                }
-
-            }
-            else {
-                o = new Option(key, key);
-                $(o).html(key);
-                $("#tagsselect").append(o);
-            }
-        }     
+        }   
         
         $("#addpopup").css("top", "calc(50% - 189px)");
         $("#addpopup").hide();
