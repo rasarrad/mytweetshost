@@ -587,9 +587,11 @@ twitter-widget {
   background: #0069a621;
   padding-left: 2px;
   padding-right: 2px;
+  margin-right: 7px;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.7s;
+  color: #004f7d;
 }
 
 .litags:hover {

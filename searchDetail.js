@@ -847,7 +847,12 @@ var countalltweets = function(id) {
         for (let [key, value] of tagsmap) {     // get data sorted
             $("#tagsul").append("<li class='litags'>" + key + "</li>");
         }
-        
+        for (let [key, value] of tagsmap) {     // get data sorted
+            $("#tagsul").append("<li class='litags'>" + key + "</li>");
+        }
+        for (let [key, value] of tagsmap) {     // get data sorted
+            $("#tagsul").append("<li class='litags'>" + key + "</li>");
+        }
         $( ".litags" ).bind( "click", function( event ) {
             if ($(this).hasClass("selectedtag")){
               $(this).removeClass("selectedtag")
