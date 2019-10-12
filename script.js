@@ -369,12 +369,7 @@ function openmenu() {
 
 
 function gotop() {
-    $(window).animate( 
-        {scrollTop:'0px'},
-        300,
-        swing,
-        function(){} 
-    );
+    $(window).scrollTop( 0 );
 }   
 
 
