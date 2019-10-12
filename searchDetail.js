@@ -818,7 +818,7 @@ var countalltweets = function(id) {
             }
             while (processtmp);
         });
-alert(tagssloaded);
+
         if (!tagssloaded) {
             var o = new Option("notag", "notag");
             $(o).html("");
@@ -878,9 +878,8 @@ alert(tagssloaded);
                   $(this).addClass("selectedtag");
                   $('#tags').val($('#tags').val() + $(this).html() + " ");
                 }
-            });        
-        }
-        else {
+            });  
+
             tagssloaded = true;
         }
 
