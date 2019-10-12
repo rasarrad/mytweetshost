@@ -52,6 +52,7 @@
     left: calc(50% - 411px);
     padding-left: 10px;
     border: 1px solid #00629a;
+    z-index: 9;
    }
  
    #expand {
