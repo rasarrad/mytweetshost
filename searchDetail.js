@@ -860,10 +860,12 @@ var countalltweets = function(id) {
             else {
                 break;
             }
-        }   
+        }  
+
+        $("#addpopup").hide();
         
         $("#addpopup").css("top", "calc(50% - 189px)");
-        $("#addpopup").hide();
+
 
         $( ".litags" ).bind( "click", function( event ) {
             if ($(this).hasClass("selectedtag")){
