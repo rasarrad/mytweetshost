@@ -262,7 +262,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             val.classif = "";
                         }
     
-                        var tagdispalay = "none";
+                        var tagdispalay = " -";
                         if (val.tags.length > 0) {
                             tagdispalay = val.tags;
                         }
@@ -621,7 +621,7 @@ var getInformationOld = function(ismoretweets) {
             }
 
 
-            var tagdispalay = "none";
+            var tagdispalay = " -";
             if (val.tags.length > 0) {
                 tagdispalay = val.tags;
             }
