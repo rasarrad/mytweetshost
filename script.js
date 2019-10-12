@@ -1,5 +1,5 @@
 
-console.log(22222); 
+console.log(3333); 
 
 var text = "";
 var origin = "";
@@ -340,12 +340,14 @@ function expandCat(obj) {
     if (jobj.is(":visible")) {
         jobj.hide(); 
         $(obj).removeClass("fa-angle-double-up");
+        $(obj).removeClass("expanded");
         $(obj).addClass("fa-angle-double-down");
     }
     else {
         jobj.show();
         $(obj).removeClass("fa-angle-double-down");
         $(obj).addClass("fa-angle-double-up");
+        $(obj).addClass("expanded");
     }
 }
 
