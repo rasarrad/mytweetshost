@@ -818,6 +818,17 @@ var countalltweets = function(id) {
             while (processtmp);
         });
 
+        var o = new Option("notag", "notag");
+        $(o).html("");
+        $("#tagsselect").append(o);
+
+        var mapAsc = new Map([...tagsmap.entries()].sort());
+
+        for (let [key, value] of mapAsc) {   
+            o = new Option(key, key);
+            $(o).html(key);
+            $("#tagsselect").append(o);
+        }
 
         tagsmap[Symbol.iterator] = function* () {
 
@@ -831,9 +842,6 @@ var countalltweets = function(id) {
             $("#tagsselect").append(o);
         }*/
 
-        var o = new Option("notag", "notag");
-        $(o).html("");
-        $("#tagsselect").append(o);
 
         $("#addpopup").css("top", "4000px");
         $("#addpopup").show();
@@ -847,16 +855,10 @@ var countalltweets = function(id) {
                 if ($('#tagsul').isChildOverflowing(elem)) {
                     hasOverflow = true;
                     elem.remove();
-                    o = new Option(key, key);
-                    $(o).html(key);
-                    $("#tagsselect").append(o);
                 }
-
             }
             else {
-                o = new Option(key, key);
-                $(o).html(key);
-                $("#tagsselect").append(o);
+                break;
             }
         }   
         

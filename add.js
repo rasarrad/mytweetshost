@@ -247,10 +247,26 @@ function resetFieldsPopup()
     $('#categories').val('');
     $('#tags').val('');
     $('#info').val('');
-    $('#result').val('');    
+    $('#result').val('');  
+    $('#classifpop').val('0');     
     $('#typeTT').css('border-color', 'white'); 
     $('#typeHH').css('border-color', 'white'); 
     $('#typeYY').css('border-color', 'white');   
+
+    $( ".litags" ).each( function( index, element ){
+        $(this).removeClass("selectedtag");
+    });
+
+    $('#cattvn').prop("checked", false);
+    $('#cattrn').prop("checked", false);
+    $('#cattvi').prop("checked", false);
+    $('#cattvl').prop("checked", false);
+    $('#cattre').prop("checked", false);
+    $('#cattrl').prop("checked", false);
+    $('#cattke').prop("checked", false);
+    $('#catimp').prop("checked", false);
+    $('#catcli').prop("checked", false);
+
 }  
 
 var closePopup = function() 
