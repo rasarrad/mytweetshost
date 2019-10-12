@@ -804,9 +804,6 @@ var countalltweets = function(id) {
                         }
                     }
                 }
-                else {
-                    tagssloaded = true;
-                }
     
                 if (val.type == "T") {
                     total_t = total_t + 1;
@@ -821,7 +818,7 @@ var countalltweets = function(id) {
             }
             while (processtmp);
         });
-
+alert(tagssloaded);
         if (!tagssloaded) {
             var o = new Option("notag", "notag");
             $(o).html("");
@@ -883,7 +880,9 @@ var countalltweets = function(id) {
                 }
             });        
         }
-
+        else {
+            tagssloaded = true;
+        }
 
         // All Links
         $("#all").text(total);
