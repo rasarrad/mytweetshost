@@ -343,8 +343,8 @@ ol > li {
       position: absolute;
       color: #0082cd;
       font-size: 15px;
-      top: 7px;
-      right: 43px;
+      top: 43px;
+      right: 6px;
       transition: all 0.6s;
       cursor: pointer;
     }
@@ -353,8 +353,8 @@ ol > li {
       position: absolute;
       color: #0082cd;
       font-size: 18px;
-      top: 6px;
-      right: 68px;
+      top: 61px;
+      right: 5px;
       transition: all 0.6s;
       cursor: pointer;
     }
