@@ -1,5 +1,5 @@
 
-console.log(333); 
+console.log(4444); 
 
 var text = "";
 var origin = "";
@@ -19,6 +19,7 @@ var total_yy = 0;
 var total_tt = 0;
 var total_hh = 0;
 var hideMode = false;
+var tagssloaded = false;
 
 $( document ).ready(function() {
     //$("body").css("height", $(window).height() + "px");

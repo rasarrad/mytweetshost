@@ -788,20 +788,24 @@ var countalltweets = function(id) {
                     }
                 }
 
-                var tags = val.tags.split(" ");
+                if (!tagssloaded) {
+                    var tags = val.tags.split(" ");
         
-                for (var i = 0; i < tags.length; i++) {
-                    if (tags[i].trim().length > 0) {
-                        if (tagsmap.has(tags[i].trim())) {
-                            var aux = Number(tagsmap.get(tags[i]));
-    
-                            tagsmap.set(tags[i].trim(), aux + 1);
-                        }
-                        else {
-                            tagsmap.set(tags[i].trim(), 1);
+                    for (var i = 0; i < tags.length; i++) {
+                        if (tags[i].trim().length > 0) {
+                            if (tagsmap.has(tags[i].trim())) {
+                                var aux = Number(tagsmap.get(tags[i]));
+        
+                                tagsmap.set(tags[i].trim(), aux + 1);
+                            }
+                            else {
+                                tagsmap.set(tags[i].trim(), 1);
+                            }
                         }
                     }
-
+                }
+                else {
+                    tagssloaded = true;
                 }
     
                 if (val.type == "T") {
@@ -818,65 +822,67 @@ var countalltweets = function(id) {
             while (processtmp);
         });
 
-        var o = new Option("notag", "notag");
-        $(o).html("");
-        $("#tagsselect").append(o);
-
-        var mapAsc = new Map([...tagsmap.entries()].sort());
-
-        for (let [key, value] of mapAsc) {   
-            o = new Option(key, key);
-            $(o).html(key);
+        if (!tagssloaded) {
+            var o = new Option("notag", "notag");
+            $(o).html("");
             $("#tagsselect").append(o);
-        }
-
-        tagsmap[Symbol.iterator] = function* () {
-
-            yield* [...this.entries()].sort((a, b) => b[1] - a[1]);
-        
-        }
-        /*
-        for (let [key, value] of tagsmap) {     // get data sorted
-            o = new Option(key, key);
-            $(o).html(key);
-            $("#tagsselect").append(o);
-        }*/
-
-
-        $("#addpopup").css("top", "4000px");
-        $("#addpopup").show();
-        var hasOverflow = false;
-
-        for (let [key, value] of tagsmap) {     // get data sorted
-
-            if (!hasOverflow) {
-                var elem = $("<li class='litags'>" + key + "</li>");
-                $("#tagsul").append(elem);
-                if ($('#tagsul').isChildOverflowing(elem)) {
-                    hasOverflow = true;
-                    elem.remove();
+    
+            var mapAsc = new Map([...tagsmap.entries()].sort());
+    
+            for (let [key, value] of mapAsc) {   
+                o = new Option(key, key);
+                $(o).html(key);
+                $("#tagsselect").append(o);
+            }
+    
+            tagsmap[Symbol.iterator] = function* () {
+    
+                yield* [...this.entries()].sort((a, b) => b[1] - a[1]);
+            
+            }
+            /*
+            for (let [key, value] of tagsmap) {     // get data sorted
+                o = new Option(key, key);
+                $(o).html(key);
+                $("#tagsselect").append(o);
+            }*/
+    
+    
+            $("#addpopup").css("top", "4000px");
+            $("#addpopup").show();
+            var hasOverflow = false;
+    
+            for (let [key, value] of tagsmap) {     // get data sorted
+    
+                if (!hasOverflow) {
+                    var elem = $("<li class='litags'>" + key + "</li>");
+                    $("#tagsul").append(elem);
+                    if ($('#tagsul').isChildOverflowing(elem)) {
+                        hasOverflow = true;
+                        elem.remove();
+                    }
                 }
-            }
-            else {
-                break;
-            }
-        }  
-
-        $("#addpopup").hide();
-        
-        $("#addpopup").css("top", "calc(50% - 189px)");
-
-
-        $( ".litags" ).bind( "click", function( event ) {
-            if ($(this).hasClass("selectedtag")){
-              $(this).removeClass("selectedtag");
-              $('#tags').val($('#tags').val().replace($(this).html() + " ", ""));
-            }      
-            else {
-              $(this).addClass("selectedtag");
-              $('#tags').val($('#tags').val() + $(this).html() + " ");
-            }
-      });
+                else {
+                    break;
+                }
+            }  
+    
+            $("#addpopup").hide();
+            
+            $("#addpopup").css("top", "calc(50% - 189px)");
+    
+    
+            $( ".litags" ).bind( "click", function( event ) {
+                if ($(this).hasClass("selectedtag")){
+                  $(this).removeClass("selectedtag");
+                  $('#tags').val($('#tags').val().replace($(this).html() + " ", ""));
+                }      
+                else {
+                  $(this).addClass("selectedtag");
+                  $('#tags').val($('#tags').val() + $(this).html() + " ");
+                }
+            });        
+        }
 
 
         // All Links
