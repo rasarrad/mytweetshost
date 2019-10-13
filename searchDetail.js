@@ -318,7 +318,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }
                 else {
                     if (currentIndex >= endIndex) {
-
+                        $('#moretweets').css('opacity', 0);
+                        $('#moretweets').attr('doshow', 'yes');
+                   
                         
             /*               setTimeout(function(){
                             $('#mask').fadeOut(300);
@@ -368,7 +370,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     }
                 }
     
-                
+                setTimeout(function(){
+                    $('#mask').fadeOut(300);
+                }, 300);
             }
             while (processtmp);
 
