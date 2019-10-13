@@ -1,0 +1,622 @@
+.tweet {
+  margin-left: auto;
+  margin-right: auto;
+  /* border-bottom: 1px solid white; */
+  padding-bottom: 0px;
+  position: relative;
+  background-image: linear-gradient(to bottom, #002441, #002442);
+  top: 0px;
+  height: calc(100% - 173px);
+  background: #003f74;
+  }
+.tweet:first-child {
+  margin-top: 13px;
+  }
+  .innertweet {
+    margin-left: calc(50% - 250px);
+    border-radius: 5px;
+    background: #a2a2a200 !important;
+    border: 0px solid #b0b0b0 !important;
+  }
+  
+  .categorias {
+    text-align: center;
+    padding-top: 3px;
+    display: none;
+    padding-bottom: 5px;
+    background: #a2a2a200;
+    border-top: 1px solid #006097;
+  }
+
+  .tags {
+    text-align: center;
+    padding-top: 3px;
+    /* margin-bottom: -3px; */
+    background: #0088d600;
+    /* padding-bottom: 5px; */
+    border-top: 1px solid #006097;
+    border-top: 0px solid #d00b0b;
+    position: relative;
+    top: -11px;
+    height: 15px;
+    font-size: 15px !important;
+    border-bottom-width: 0px !important;
+    background: #003f74 !important;
+  }
+  .EmbeddedTweet-tweet {
+    background: #80808061;
+    border: 1px solid gray;
+    border-radius: 0px;
+  }
+
+   .addpopup {
+    max-width: 808px;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    top: calc(50% - 189px);
+    width: 832px;
+    height: 376px;
+    background: #ffffff;
+    color: #0081cd;
+    left: calc(50% - 411px);
+    padding-left: 10px;
+    border: 1px solid #00629a;
+    z-index: 9;
+   }
+ 
+   #expand {
+    position: absolute;
+    margin-top: 6px;
+    left: 55px;
+    cursor: pointer;
+    font-size: 23px;
+    color: #006cab;
+    background: white;
+    height: 19px;
+    line-height: 21px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius: 3px;
+    transition: all 0.6s;
+    z-index: 8888;
+   }
+   #expand.expanded {
+    margin-top: 3px;
+    left: 5px;
+   }
+ 
+
+   #expand.infomodified {
+    background: red;
+    color: white;
+  }
+
+ol > li {
+  margin-left: -3px;
+  padding-bottom: 6px;
+  padding-top: 2px;
+  border-top: 1px solid #c7c7c7c2;
+}
+   #gotop {
+    position: fixed;
+    bottom: 30px;
+    right: 29px;
+    font-size: 29px;
+    background: white;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 2px;
+    border-radius: 7px;
+    color: #00659f;
+    cursor: pointer;
+    border: 2px solid #006eae;
+    display: none;
+   }
+
+   .fa-circle-o-notch {
+      color: white;
+      font-size: 55px;
+      position: relative;
+      top: calc(50% - 27px);
+      left: calc(50% - 27px);
+   }
+   .fa-folder-open {
+    color: white;
+    font-size: 122px;
+    position: relative;
+    top: calc(50% - 73px);
+    left: calc(50% - 71px);
+    border: 10px solid #ffffff !important;
+    padding-left: 8px;
+    padding-top: 5px;
+    padding-right: 3px;
+    height: 119px;
+    border-radius: 0px;
+    border-style: solid !important;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    border-width: 4px !important;
+}
+   .menubutton {
+    font-size: 38px;
+    background: #0084d0;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding: 7px 10px;
+    color: white;
+    cursor: pointer;
+    height: 39px;
+    transition: all 0.6s;
+    padding-bottom: 5px;
+    width: 35px;
+    }
+    .menubutton:hover {
+      color: #c6e9fd;
+    }
+    #menu {
+      width: 0px;
+      overflow: hidden;
+      position: fixed;
+      background: white;
+      transition: all 0.6s;
+      border: 1px solid gray;
+      border-left-width: 0px;
+      position: absolute;
+      left: -1px;
+    }
+    
+
+    #menu > ul {
+      list-style: none;
+      margin: 0;
+      padding-left: 0px;
+    }
+
+    #menu > ul > li {
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 10px 0px;
+      padding-left: 17px;
+      color: #0082cd;
+      border-bottom: 1px solid #c1c1c1;
+      cursor: pointer;
+      transition: all 0.6s;
+      font-weight: bold;
+      position: relative;
+    }
+    #menu > ul > li > div {
+    position: absolute;
+    right: 3px;
+    top: 12px;
+    font-size: 13px;
+    color: #b2b2b2;
+    text-align: center;
+    width: 25px;
+    }
+
+    #menu > ul > li:hover {
+      background: #0089da;
+      color: white;
+    }
+
+    .label {
+      color: #0084d0;
+      position: absolute;
+      top: 8px;
+      display: inline;
+      font-size: 12px;
+      font-weight: bold;
+    }          
+    
+    .label.text {
+      left: 124px;
+    }
+     
+    .label.tag {
+      left: 315px;
+    }
+              
+    .label.author {
+      left: 441px;
+    }
+              
+    .label.date {
+      left: 564px;
+    }
+              
+    .label.id {
+      left: 724px;
+    }
+
+    #sear {
+      position: relative;
+      color: #0084d0;
+      font-size: 27px;
+      padding-left: 16px;
+      padding-right: 17px;
+      top: -4px;
+      cursor: pointer;
+      transition: all 0.6s;
+    }
+.toptitle {
+  color: #0084d0 !important;
+  text-shadow: 3px 3px #c5c5c5;
+  cursor: default;
+  font-weight: bold;
+  width: calc(100% - 280px);
+  background: transparent;
+  left: 0 !important;
+  text-align: center;
+  margin-left: 140px;
+  top: 9px;
+  font-size: 30px;
+  position: absolute;
+  transition: all 1s;
+}
+    button {
+      cursor: pointer;
+      background: #0084d0;
+      border: 1px solid white;
+      height: 27px;
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+      padding-top: 3px;
+      min-width: 82px;
+      font-variant: small-caps;
+      border-radius: 4px;
+      
+    }
+    button:not(.noeffect) {
+      transition: all 0.6s !important;
+    }
+    button:hover {
+      color: #c6e9fd;
+      border: 1px solid #0090e4;
+    }
+    button > i {
+      font-size: 14px !important;
+      font-weight: normal !important;
+      padding-left: 5px;
+      padding-right: 2px;
+      float: right;
+      position: relative;
+      top: -1px;
+    }
+
+    .buttonIcon {
+      color: white;
+      font-size: 22px;
+      transition: all 0.6s;
+    }
+    .buttonIcon:hover {
+      color: #e4e4e4;
+    }
+    .buttonIcon.addtweet {
+      float: right;
+      margin-top: 18px;
+      margin-right: 11px;
+      margin-right: 11px;
+    }
+
+    #addtweet {
+      position: absolute;
+      color: #0084d0;
+      font-size: 33px;
+      top: 10px;
+      right: 13px;
+      transition: all 0.6s;
+      cursor: pointer;
+    }
+
+#generate {
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    top: 12px;
+    right: 54px;
+    transition: all 0.6s;
+    cursor: pointer;
+    background: #00a900;
+    padding: 2px;
+    border-radius: 5px;
+}
+#generate:hover {
+    opacity: 0.5;
+}
+#generate.haschanges {
+      background: red;
+}
+    #addtweet:hover {
+      color: #58c1fd;
+    }
+
+    #sear:hover {
+      color: #58c1fd;
+    }
+    .top {
+      display: none;
+    }
+
+    #closepopup {
+      position: absolute;
+      color: #0082cd;
+      font-size: 27px;
+      top: 14px;
+      right: 2px;
+      transition: all 0.6s;
+      cursor: pointer;
+    }
+
+        #updatemaxid {
+      position: absolute;
+      color: #0082cd;
+      font-size: 15px;
+      top: 43px;
+      right: 6px;
+      transition: all 0.6s;
+      cursor: pointer;
+    }
+
+   #removetmp {
+      position: absolute;
+      color: #0082cd;
+      font-size: 18px;
+      top: 61px;
+      right: 5px;
+      transition: all 0.6s;
+      cursor: pointer;
+    }
+    
+    input[type="checkbox"] {
+      cursor: pointer;
+    }
+
+    html, body {
+      scroll-behavior: smooth;
+      font-variant: small-caps;
+    }
+    
+    
+    #closepopup:hover {
+      color: #e4e4e4;
+    }
+
+    #externallink {
+      position: absolute;
+      cursor: pointer;
+      left: 129px;
+      margin-top: 2px;
+      font-size: 16px;
+      transition: all 0.6s;
+    }
+
+    .fa-square-o {
+      left: 168px;
+      font-size: 21px;
+      margin-top: -2px;
+      font-weight: bold;
+      position: absolute;
+      cursor: pointer;
+      transition: all 0.6s;
+    }
+    #internallink {
+      position: absolute;
+      cursor: pointer;
+      left: 95px;
+      margin-top: 1px;
+      font-size: 16px;
+      transition: all 0.6s;
+    }
+
+    #internallink:hover, #externallink:hover, #expand:hover {
+      opacity: 0.7;
+     }
+
+     input[type=text] {
+      color: white;
+      font-weight: bold;
+      background: #007cc391;
+      border: 1px solid #007dc5;
+      padding-left: 4px;
+      padding-right: 4px;
+     }
+
+    #removetweet {
+      position: absolute;
+      cursor: pointer;
+      font-size: 26px;
+      left: 40px;
+      margin-top: 0px;
+      font-size: 19px;
+  }
+
+  #changetag {
+    position: absolute;
+    cursor: pointer;
+    font-size: 26px;
+    left: 73px;
+    margin-top: 1px;
+    font-size: 16px;
+}
+
+#changecat {
+  position: absolute;
+  cursor: pointer;
+  margin-top: 1px;
+  left: 108px;
+  font-size: 16px;
+}
+
+.tagtext {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: calc(50% - 27px);
+  left: calc(50% - 250px);
+  border: 1px solid white;
+  background: #0084d2;
+  width: 546px;
+  padding-bottom: 9px;
+  text-align: center;
+  height: 101px;
+}
+
+.striptext {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: calc(50% - 27px);
+  left: calc(50% - 273px);
+  border: 1px solid white;
+  background: #00456d;
+  width: 546px;
+  padding-bottom: 9px;
+  text-align: center;
+  border-radius: 4px;
+  font-variant: small-caps;
+  transition: top 1s;
+}
+
+.topoback {
+  background: white;
+  width: 100%;
+  height: 52px;
+  position: fixed;
+  z-index: -1;
+  border: 2px solid #0084d0;
+  width: calc(100% - 4px);
+  height: 49px;
+}
+
+.iconbutton {
+  position: relative;
+  cursor: pointer;
+  background: white;
+  color: #0082cd;
+  padding: 3px 6px;
+  font-size: 21px;
+  border-radius: 4px;
+  width: 18px;
+}
+
+.fa-spin {
+  animation-duration: 1s;
+}
+
+/* twitter-widget {
+  width: 100% !important;
+}
+*/
+
+.linkIframeExpanded {
+    border: 1px solid white;
+    width: calc(100% - 52px) !important;
+    background: white;
+    margin-left: 25px !important;
+    margin-right: 25px !important;
+    position: relative;
+    top: 4px;
+}
+
+.linkIframeCollapsed {
+    width: 500px !important;
+    background: white !important;
+    margin-top: 6px !important;
+    height: 446px !important;
+    margin-left: calc(50% - 250px) !important;
+    margin-right: auto;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+
+.linkExpanded {
+    width: calc(100% - 50px) !important;
+    background: white;
+    margin-left: 25px !important;
+    margin-right: 25px !important;
+    position: relative;
+    /* top: 4px; */
+    border-radius: 5px;
+}
+
+twitter-widget {
+  width: auto;
+}
+
+.linkExpanded twitter-widget {
+  width: auto !important;
+}
+
+@media only screen and (max-width: 1000px) {
+  .tweet iframe {
+      border: 1px solid white;
+      width: calc(100% - 52px) !important;
+      background: white;
+      margin-left: 25px !important;
+      margin-right: 25px !important;
+      position: relative;
+      top: 4px;
+      border-radius: 5px;
+  }
+  .tweet .innertweet {
+      width: calc(100% - 0px) !important;
+      background: white;
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+      position: relative;
+      top: -12px;
+      border-radius: 5px;
+      border: 1px solid white;
+  }  
+  twitter-widget {
+      width: 100% !important;
+  }
+  .fa-square-o {
+    display: none;
+  }
+}
+
+.hidemode {
+  display: none !important;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+
+.litags {
+  display: inline-block;
+  margin-bottom: 3px;
+  height: 21px;
+  font-size: 13px;
+  font-weight: bold;
+  border: 1px solid #0069a7;
+  padding-top: 6px;
+  background: #0069a621;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-right: 7px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.7s;
+  color: #004f7d;
+}
+
+.litags:hover {
+  opacity: 0.6;
+}
+
+.litags.selectedtag {
+  background: #0069a6;
+  color: white;
+}
