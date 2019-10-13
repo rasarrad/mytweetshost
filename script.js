@@ -1,5 +1,5 @@
 
-console.log(111); 
+console.log(3333); 
 
 var text = "";
 var origin = "";
@@ -53,13 +53,12 @@ $( document ).ready(function() {
             if ($('#moretweets').attr('doshow') && $('#moretweets').attr('doshow') == 'yes') {
                 $('#moretweets').show();
                 $('#moretweets').css('opacity', 1);
-                $("#moretweets").click();
-                $('#moretweets').attr('doshow', 'no');
-/*                 setTimeout(function() { 
+
+                 setTimeout(function() { 
                   $("#moretweets").click();
                   $('#moretweets').attr('doshow', 'no');
                   
-                }, 1000); */
+                }, 1000);
             }
             setTimeout(function() { 
               dosearchmore = true;
