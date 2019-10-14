@@ -26,7 +26,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
     
     if (!ismoretweets) {
         $('#mask').fadeIn(300);  
-        alert(2);
         $('#moretweets').hide();
         currentIndex = 0;
         endIndex = currentIndex + Number($('#recordspersearch').val());
@@ -363,7 +362,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         $('#tch').text(total_hh);
 
                         setTimeout(function() { 
-                            customizeTweets();
+                            customizeTweets(2);
                           }, 1000);
                         
 
@@ -411,7 +410,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#tch').text(total_hh);
 
         setTimeout(function() { 
-            customizeTweets();
+            customizeTweets(1);
         }, 1000);
 
         if (!ismoretweets) {

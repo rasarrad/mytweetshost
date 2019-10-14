@@ -145,7 +145,7 @@
 
 <script>
   /*<![CDATA[*/
-  function customizeTweets() {
+  function customizeTweets(flag) {
           var hasFound = false;
           var maxTweets = 100000;
           var isChromium = window.chrome;
@@ -188,10 +188,13 @@
               }
               else {
                   if (hasFound) {
-alert(1);
-                    $('#moretweets').fadeOut(300);
-                    $('#moretweets').css('opacity', 0);
-                    $('#mask').fadeOut(300);
+                    if (flag == 1) {
+                      $('#mask').fadeOut(300);
+                    }
+                    else {
+                      $('#moretweets').fadeOut(300);
+                      $('#moretweets').css('opacity', 0);
+                    }
 
                     $(window).trigger("resize");
 
