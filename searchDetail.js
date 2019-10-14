@@ -318,7 +318,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }
                 else {
                     if (currentIndex >= endIndex) {
-                        $('#moretweets').css('opacity', 0);
+
                         $('#moretweets').attr('doshow', 'yes');
                    
                         
