@@ -188,9 +188,9 @@
               }
               else {
                   if (hasFound) {
- console.log(11111111111111111111111111111111111)
- console.log(22222222222222222222222222222222222)
- console.log(33333333333333333333333333333333333)
+                    $('#moretweets').hide();
+                    $('#moretweets').css('opacity', 0);
+                    $('#moretweets').attr('doshow', 'yes');
                     $('#mask').fadeOut(300);
 
                     $(window).trigger("resize");
