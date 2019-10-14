@@ -1,5 +1,5 @@
 
-console.log(44); 
+console.log(555); 
 
 var text = "";
 var origin = "";
@@ -43,11 +43,12 @@ $( document ).ready(function() {
         if ((window.innerHeight + window.scrollY + 1) >= document.body.offsetHeight && dosearchmore) {
             dosearchmore = false;
             if ($('#moretweets').attr('doshow') && $('#moretweets').attr('doshow') == 'yes') {
-                $('#moretweets').show();
+                $('#moretweets').fadeIn(300);
                 $('#moretweets').css('opacity', 1);
 
                  setTimeout(function() { 
                   $("#moretweets").click();
+                  $('#moretweets').attr('doshow', 'no')
                 }, 1000);
             }
             setTimeout(function() { 
