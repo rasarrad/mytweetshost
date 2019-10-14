@@ -668,7 +668,7 @@ var getInformationOld = function(ismoretweets) {
                 objToFocus = currentIndex;
                 var newtweetobjaction = newtweetobj;
                 $('html, body').animate({
-                scrollTop: $(newtweetobjaction).offset().top - 260 
+                scrollTop: $(newtweetobjaction).offset().top 
                 }, 100);
 
             }
