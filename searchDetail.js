@@ -369,9 +369,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
                         return false;
                     }
-                    else {
-                        $('#moretweets').attr('doshow', 'no');
-                    }
                 }
 
             }
