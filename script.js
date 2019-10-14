@@ -1,5 +1,5 @@
 
-console.log(4444); 
+console.log(111); 
 
 var text = "";
 var origin = "";
@@ -23,14 +23,6 @@ var tagssloaded = false;
 
 $( document ).ready(function() {
     //$("body").css("height", $(window).height() + "px");
-    
-    nextid = parseInt(readCookie("maxid"));
-
-    do {
-        createCookie(nextid + "templink", "", 99999);
-        nextid = nextid - 1;
-    }
-    while (nextid > 0);
 
     countalltweets();
     setviewmode();
@@ -57,7 +49,7 @@ $( document ).ready(function() {
                  setTimeout(function() { 
                   $("#moretweets").click();
                   $('#moretweets').attr('doshow', 'no');
-                  
+                  $('#moretweets').hide();
                 }, 1000);
             }
             setTimeout(function() { 
