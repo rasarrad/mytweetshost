@@ -26,7 +26,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
     
     if (!ismoretweets) {
         $('#mask').fadeIn(300);  
-        alert(2)
         $('#moretweets').hide();
         currentIndex = 0;
         endIndex = currentIndex + Number($('#recordspersearch').val());
