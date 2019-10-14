@@ -42,7 +42,7 @@ $( document ).ready(function() {
 
         if ((window.innerHeight + window.scrollY + 1) >= document.body.offsetHeight && dosearchmore) {
             dosearchmore = false;
-            alert(($('#moretweets').attr('doshow'));
+            alert($('#moretweets').attr('doshow'));
             if ($('#moretweets').attr('doshow') && $('#moretweets').attr('doshow') == 'yes') {
                 $('#moretweets').fadeIn(300);
                 $('#moretweets').css('opacity', 1);
