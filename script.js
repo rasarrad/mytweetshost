@@ -1,5 +1,5 @@
 
-console.log(11); 
+console.log(222); 
 
 var text = "";
 var origin = "";
@@ -42,7 +42,7 @@ $( document ).ready(function() {
 
         if ((window.innerHeight + window.scrollY + 1) >= document.body.offsetHeight && dosearchmore) {
             dosearchmore = false;
-alert($('#moretweets').attr('doshow'))
+            console.log($('#moretweets').attr('doshow'))
             if ($('#moretweets').attr('doshow') && $('#moretweets').attr('doshow') == 'yes') {
                 $('#moretweets').fadeIn(300);
                 $('#moretweets').css('opacity', 1);
