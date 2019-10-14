@@ -309,7 +309,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             objToFocus = currentIndex;
                             var newtweetobjaction = newtweetobj;
                             $('html, body').animate({
-                                scrollTop: $(newtweetobjaction).offset().top - 60 
+                                scrollTop: $(newtweetobjaction).offset().top - 160 
                             }, 100);
         
                         }
@@ -667,9 +667,8 @@ var getInformationOld = function(ismoretweets) {
 
                 objToFocus = currentIndex;
                 var newtweetobjaction = newtweetobj;
-                alert(11113);
                 $('html, body').animate({
-                scrollTop: $(newtweetobjaction).offset().top 
+                scrollTop: $(newtweetobjaction).offset().top - 60 
                 }, 100);
 
             }
