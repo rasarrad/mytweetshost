@@ -369,10 +369,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         return false;
                     }
                 }
-    
-                setTimeout(function(){
-                    $('#mask').fadeOut(300);
-                }, 300);
             }
             while (processtmp);
 
