@@ -57,8 +57,8 @@
  
    #expand {
     position: absolute;
-    margin-top: 6px;
-    left: 55px;
+    margin-top: -8px;
+    left: 11px;
     cursor: pointer;
     font-size: 23px;
     color: #006cab;
@@ -130,7 +130,7 @@ ol > li {
 }
    .menubutton {
     font-size: 38px;
-    background: #0084d0;
+    background: #004a86;
     padding-left: 5px;
     padding-right: 5px;
     padding: 7px 10px;
@@ -221,7 +221,7 @@ ol > li {
 
     #sear {
       position: relative;
-      color: #0084d0;
+      color: #004a86;
       font-size: 27px;
       padding-left: 16px;
       padding-right: 17px;
@@ -230,7 +230,7 @@ ol > li {
       transition: all 0.6s;
     }
 .toptitle {
-  color: #0084d0 !important;
+  color: #004a86 !important;
   text-shadow: 3px 3px #c5c5c5;
   cursor: default;
   font-weight: bold;
@@ -292,7 +292,7 @@ ol > li {
 
     #addtweet {
       position: absolute;
-      color: #0084d0;
+      color: #004a86;
       font-size: 33px;
       top: 10px;
       right: 13px;
@@ -319,7 +319,7 @@ ol > li {
       background: red;
 }
     #addtweet:hover {
-      color: #58c1fd;
+      color: #0064b6;
     }
 
     #sear:hover {
@@ -376,7 +376,7 @@ ol > li {
     #externallink {
       position: absolute;
       cursor: pointer;
-      left: 129px;
+      left: 85px;
       margin-top: 2px;
       font-size: 16px;
       transition: all 0.6s;
@@ -394,8 +394,8 @@ ol > li {
     #internallink {
       position: absolute;
       cursor: pointer;
-      left: 95px;
-      margin-top: 1px;
+      left: 52px;
+      margin-top: 2px;
       font-size: 16px;
       transition: all 0.6s;
     }
@@ -474,7 +474,7 @@ ol > li {
   height: 52px;
   position: fixed;
   z-index: -1;
-  border: 2px solid #0084d0;
+  border: 2px solid #004a86;
   width: calc(100% - 4px);
   height: 49px;
 }
@@ -621,16 +621,18 @@ twitter-widget {
     height: calc(100% - 173px);
     background: #003f74;
   }
-  
+  .tweet:first-child {
+        margin-top: 11px;
+  }
   .tags {
     padding-top: 3px;
     margin-bottom: 0px;
     background: #0088d600;
-    padding-bottom: ~0px;
+    padding-bottom: 5px;
     border-top: 0px solid #d00b0b;
     position: relative;
     top: -11px;
-    height: 15px;
+    height: 10px;
     border-bottom-width: 0px !important;
     background: #003f74 !important;
   }
