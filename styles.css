@@ -597,6 +597,9 @@ twitter-widget {
       top: 4px;
       border-radius: 5px;
   }
+  #backdiv {
+    background-image: linear-gradient(rgb(0, 35, 64), rgb(0, 74, 134)) !important;
+  }
   .tweet .innertweet {
       width: calc(100% - 50px) !important;
       background: white;
