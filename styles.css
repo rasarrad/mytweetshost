@@ -57,16 +57,16 @@
  
    #expand {
     position: absolute;
-    margin-top: -8px;
+    margin-top: -7px;
     left: 11px;
     cursor: pointer;
     font-size: 23px;
     color: #006cab;
     background: white;
-    height: 19px;
-    line-height: 21px;
-    padding-left: 3px;
-    padding-right: 3px;
+    height: 17px;
+    line-height: 20px;
+    padding-left: 2px;
+    padding-right: 2px;
     border-radius: 3px;
     transition: all 0.6s;
     z-index: 8888;
@@ -376,7 +376,7 @@ ol > li {
     #externallink {
       position: absolute;
       cursor: pointer;
-      left: 85px;
+      left: 87px;
       margin-top: 2px;
       font-size: 16px;
       transition: all 0.6s;
@@ -619,7 +619,8 @@ twitter-widget {
     background-image: linear-gradient(to bottom, #002441, #002442);
     top: 0px;
     height: calc(100% - 173px);
-    background: #003f74;
+    background: #004a86;
+    /* background: red; */
   }
   .tweet:first-child {
         margin-top: 11px;
@@ -634,7 +635,8 @@ twitter-widget {
     top: -11px;
     height: 10px;
     border-bottom-width: 0px !important;
-    background: #003f74 !important;
+    background: #004a86 !important;
+    /* background: red !important; */
   }
   
   .tagtext {
