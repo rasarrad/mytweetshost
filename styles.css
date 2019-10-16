@@ -149,18 +149,19 @@ ol > li {
     border-width: 4px !important;
 }
    .menubutton {
-    font-size: 47px;
+    font-size: 40px;
     background: #004a86;
     padding-left: 0px;
     padding-right: 5px;
-    padding: 0px 5px;
+    padding: 6px 11px;
     color: white;
     cursor: pointer;
-    height: 39px;
+    height: 44px;
     transition: all 0.6s;
     padding-bottom: 5px;
     width: 37px;
     background-image: linear-gradient(to bottom, #003056, #004a86);
+    background: transparent;
     }
     .menubutton:hover {
       color: #c6e9fd;
@@ -243,10 +244,10 @@ ol > li {
     #sear {
       position: relative;
       color: #004a86;
-      font-size: 27px;
-      padding-left: 16px;
+      font-size: 18px;
+      padding-left: 7px;
       padding-right: 17px;
-      top: -4px;
+      top: -8px;
       cursor: pointer;
       transition: all 0.6s;
     }
@@ -340,11 +341,11 @@ ol > li {
       background: red;
 }
     #addtweet:hover {
-      color: #0064b6;
+      color: #00659f;
     }
 
     #sear:hover {
-      color: #58c1fd;
+      color: #00659f;
     }
     .top {
       display: none;
@@ -497,7 +498,7 @@ ol > li {
   z-index: -1;
   border: 0px solid #004a86;
   width: calc(100% - 0px);
-  height: 53px;
+  height: 55px;
   background-image: linear-gradient(to bottom, #003056, #004a86);
 }
 
@@ -696,26 +697,28 @@ twitter-widget {
 @media only screen and (max-width: 700px) {
 
   .toptitle {
-    top: 12px;
+    top: 10px;
     font-size: 17px;
-    padding-left: calc(50% - 103px);
+    /* padding-left: calc(50% - 103px); */
     display: block;
     text-align: center;
-    width: 136px;
+    width: 100px;
     line-height: 15px;
     font-weight: bold;
-    left: 55px !important;
+    left: calc(50% - 50px) !important;
     position: absolute;
-    margin-left: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
   #addtweet {
-    font-size: 27px;
-    top: 14px;
+    font-size: 22px;
+    top: 15px;
   }  
   #generate {
-    font-size: 19px;
-    top: 16px;
-    right: 44px;
+    font-size: 15px;
+    top: 16.5px;
+    right: 39px;
+    padding-left: 1px;
 } 
 .topoback {
 
