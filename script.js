@@ -1,5 +1,5 @@
 
-console.log(1111); 
+console.log(222); 
 
 var text = "";
 var origin = "";
@@ -40,12 +40,12 @@ $( document ).ready(function() {
 
     window.onscroll = function(ev) {
 
-/*         if ((window.innerHeight + window.scrollY + 1) >= document.body.offsetHeight && dosearchmore) {
+        if ((window.innerHeight + window.scrollY + 1) >= document.body.offsetHeight && dosearchmore) {
             dosearchmore = false;
             console.log($('#moretweets').attr('doshow'))
             if ($('#moretweets').attr('doshow') && $('#moretweets').attr('doshow') == 'yes') {
                 $('#moretweets').css('opacity', 1);
-                $('#moretweets').show();
+                //$('#moretweets').show();
 
                 $('#moretweets').attr('doshow', 'no');
                 $("#moretweets").click();
@@ -53,7 +53,7 @@ $( document ).ready(function() {
             setTimeout(function() { 
               dosearchmore = true;
             }, 2000);
-        } */
+        }
     };
 
     ///////////////////////////////////////
