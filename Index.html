@@ -169,7 +169,7 @@
           
           for (i = 0; i < maxTweets; i++) {
               var obj = $("twitter-widget-" + i);
-              if (obj) {
+              if (obj && obj.length > 0) {
                 if (obj.attr("processed") != "yes") {
                     hasFound = true;
                     obj.attr("processed", "yes");
