@@ -140,7 +140,9 @@
     <span style="right: 203px;width: 100%;display: block;font-size: 17px;height: 32px;padding-top: 3px;text-align: right;position: relative;top: -333px;">Extra info</span>
 </div>
 <i onmouseover="javascript: gotop()" id="gotop" class="fa fa-angle-double-up"></i>
-<div id="mask" style="position: fixed;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.81);top: 0px;z-index: 99999;display: none;"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+<!-- <div id="mask" style="position: fixed;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.81);top: 0px;z-index: 99999;display: none;"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+-->
+
 <div id="changetags" style="position: fixed;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.6);top: 0px;z-index: 999;display: none;" currid="2"><div class="tagtext"><i onclick="javascript: closetagpopup()" class="fa fa-remove" style="display: block;position: absolute;top: 4px;right: 5px;font-size: 21px;background: transparent;padding-left: 6px;padding-right: 6px;border-radius: 4px;color: white;cursor: pointer;height: 22px;"></i><i onclick="javascript: undotag(this)" class="fa fa-undo" style="display: block;position: absolute;top: 36px;right: 41px;font-size: 18px;background: white;padding-left: 6px;padding-right: 5px;border-radius: 4px;color: #007dc5;cursor: pointer;height: 20px;padding-top: 2px;"></i><i onclick="javascript: acceptTag(this)" class="fa fa-check" style="display: block;position: absolute;top: 36px;right: 5px;font-size: 21px;background: white;padding-left: 4px;padding-right: 4px;border-radius: 4px;color: #007dc5;cursor: pointer;height: 22px;"></i><span class="poptitle" style="position: relative;top: 3px;"></span><br><input style="width: 450px;color: #004871;margin-top: 14px;margin-left: -70px;"></div></div>
 
 <div id="stripmessage" style="position: fixed;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.6);top: 0px;z-index: 999;display: none; transition: background 1s;" currid="9" iscat="no"><div class="striptext"><span class="poptitle" style="position: relative;top: 3px;font-size: 16px;color: white;text-align: center;">Change tags</span></div></div>
@@ -166,10 +168,11 @@
           var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
           
           for (i = 0; i < maxTweets; i++) {
-              if (document.getElementById("twitter-widget-" + i)) {
-                if ($(document.getElementById("twitter-widget-" + i)).attr("processed") != "yes") {
+              var obj = $("twitter-widget-" + i);
+              if (obj) {
+                if (obj.attr("processed") != "yes") {
                     hasFound = true;
-                    $(document.getElementById("twitter-widget-" + i)).attr("processed", "yes");
+                    obj.attr("processed", "yes");
                     var tweetCSS = ".EmbeddedTweet{height:auto !important;background: #002441 !important;border: 1px solid #b0b0b0 !important; margin: 0 !important;}.EmbeddedTweet {max-width: none !important;}.SummaryCard-contentContainer{background: #00497b !important;}.SummaryCard-contentContainer:hover{background: #01355a !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;}.Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar{height: 50px !important;width: 50px !important;position: relative !important;top: -7px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important;}.TwitterCard-container {max-width: 10000px!important;}";
                                    
                     if ($(window).width() < 1200) {
@@ -190,6 +193,7 @@
                         var tweetWidget = document.getElementById("twitter-widget-" + i).contentDocument;
                         tweetWidget.head.appendChild(tweetStyle);
                     } 
+                    obj.parent().parent().find(".innermask").fadeOut(300);
                 } 
               }
               else {
