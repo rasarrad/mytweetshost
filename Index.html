@@ -193,6 +193,7 @@
                         var tweetWidget = document.getElementById("twitter-widget-" + i).contentDocument;
                         tweetWidget.head.appendChild(tweetStyle);
                     } 
+                    console.log(obj.parent().parent().find(".innermask")[0]);
                     obj.parent().parent().find(".innermask")[0].fadeOut(300);
                 } 
               }
