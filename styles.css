@@ -4,6 +4,7 @@
   /* border-bottom: 1px solid white; */
   padding-bottom: 30px;
   background-image: linear-gradient(to bottom, #0081cc , #008ada );
+  /* height: 30px; */
   }
 
   .innertweet {
@@ -69,7 +70,7 @@
     padding-right: 2px;
     border-radius: 3px;
     transition: all 0.6s;
-    z-index: 8888;
+    z-index: 10;
    }
    #expand.expanded {
     margin-top: 3px;
@@ -121,7 +122,15 @@ ol > li {
     z-index: 99999;
     height: 100%;
 }
-
+.gradiantback {
+    position: absolute;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.81);
+    top: 12px;
+    z-index: 9;
+    height: 16px;
+    background-image: linear-gradient(to bottom, #004a86 3%, #002442 80%);
+}
 .innermask .fa-circle-o-notch {
   color: #004a86;
   position: relative;
@@ -402,6 +411,7 @@ ol > li {
       margin-top: 2px;
       font-size: 16px;
       transition: all 0.6s;
+      display: none;
     }
 
     .fa-square-o {
@@ -420,6 +430,7 @@ ol > li {
       margin-top: 2px;
       font-size: 16px;
       transition: all 0.6s;
+      display: none;
     }
 
     #internallink:hover, #externallink:hover, #expand:hover {
@@ -646,7 +657,8 @@ twitter-widget {
     top: 0px;
     height: calc(100% - 173px);
     background: #004a86;
-    /* background: red; */
+    background: red;
+    background-image: linear-gradient(to bottom, #004a86 3%, #002442 80%);
   }
   .tweet:first-child {
         margin-top: 11px;
