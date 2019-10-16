@@ -308,9 +308,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
         
                             objToFocus = currentIndex;
                             var newtweetobjaction = newtweetobj;
-                            $('html, body').animate({
+/*                             $('html, body').animate({
                                 scrollTop: $(newtweetobjaction).offset().top - 60
-                            }, 100);
+                            }, 100); */
         
                         }
                         currentIndex = currentIndex + 1;
