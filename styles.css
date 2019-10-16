@@ -149,17 +149,18 @@ ol > li {
     border-width: 4px !important;
 }
    .menubutton {
-    font-size: 38px;
+    font-size: 47px;
     background: #004a86;
-    padding-left: 5px;
+    padding-left: 0px;
     padding-right: 5px;
-    padding: 7px 10px;
+    padding: 3px 5px;
     color: white;
     cursor: pointer;
     height: 39px;
     transition: all 0.6s;
     padding-bottom: 5px;
-    width: 35px;
+    width: 37px;
+    background-image: linear-gradient(to bottom, #002441, #004a86);
     }
     .menubutton:hover {
       color: #c6e9fd;
@@ -494,9 +495,10 @@ ol > li {
   height: 52px;
   position: absolute;
   z-index: -1;
-  border: 2px solid #004a86;
-  width: calc(100% - 4px);
-  height: 49px;
+  border: 0px solid #004a86;
+  width: calc(100% - 0px);
+  height: 53px;
+  background-image: linear-gradient(to bottom, #002441, #004a86);
 }
 
 .iconbutton {
