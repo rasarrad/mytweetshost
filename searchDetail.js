@@ -272,7 +272,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         var newtweet = $('#main').append($('<div style="' + isdeleted + '" id="inid" class="tweet"></div>'));
                         var newtweetobj = $('#inid');
 
-                        newtweetobj.append($('<div id="mask"><i class="fa fa-circle-o-notch fa-spin"></i></div><i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down ' + expandclass + '"></i>' 
+                        newtweetobj.append($('<div id="innermask"><i class="fa fa-circle-o-notch fa-spin"></i></div><i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down ' + expandclass + '"></i>' 
                             + '<div class="categorias">' 
                                 + '<i onclick="javascript: removetweet(this,\'' + val.id + '\')" id="removetweet" class="fa fa-remove"></i>' 
                                 + '<i tagactual="' + val.tags + '" onclick="javascript: changetag(this, \'' + val.id + '\')" id="changetag" class="fa fa-tags"></i>' 
