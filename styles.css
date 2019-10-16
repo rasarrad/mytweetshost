@@ -652,20 +652,43 @@ twitter-widget {
       margin-right: 0px !important;
       top: -12px;
   }  
-  .topoback {
-    background: red;
-  }
+
   .toptitle {
     top: 12px;
     font-size: 25px;
   }
-  
+  #addtweet {
+    font-size: 27px;
+    top: 14px;
+}
+  .topoback {
+    background: red;
+  }
 }
 
 @media only screen and (max-width: 700px) {
- 
-  .topoback {
-    background: green;
+
+  .toptitle {
+    top: 12px;
+    font-size: 17px;
+    padding-left: 27px;
+    display: block;
+    text-align: center;
+    width: 133px;
+    line-height: 15px;
+    font-weight: bold;
   }
-  
+  #addtweet {
+    font-size: 27px;
+    top: 14px;
+  }  
+  #generate {
+    font-size: 19px;
+    top: 16px;
+    right: 44px;
+} 
+.topoback {
+  background: green;
+}
+
 }
