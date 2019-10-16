@@ -239,7 +239,7 @@ ol > li {
   left: 0 !important;
   text-align: center;
   margin-left: 140px;
-  top: 9px;
+  top: 10px;
   font-size: 30px;
   position: absolute;
   transition: all 1s;
@@ -654,6 +654,10 @@ twitter-widget {
   }  
   .topoback {
     background: red;
+  }
+  .toptitle {
+    top: 12px;
+    font-size: 25px;
   }
   
 }
