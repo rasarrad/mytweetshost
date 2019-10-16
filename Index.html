@@ -171,6 +171,7 @@
               var obj = $("twitter-widget-" + i);
               if (obj && obj.length > 0) {
                 if (obj.attr("processed") != "yes") {
+                  console.log(1);
                     hasFound = true;
                     obj.attr("processed", "yes");
                     var tweetCSS = ".EmbeddedTweet{height:auto !important;background: #002441 !important;border: 1px solid #b0b0b0 !important; margin: 0 !important;}.EmbeddedTweet {max-width: none !important;}.SummaryCard-contentContainer{background: #00497b !important;}.SummaryCard-contentContainer:hover{background: #01355a !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;}.Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar{height: 50px !important;width: 50px !important;position: relative !important;top: -7px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important;}.TwitterCard-container {max-width: 10000px!important;}";
@@ -179,11 +180,11 @@
                       tweetCSS = ".EmbeddedTweet{height:auto !important; background: #002441 !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;} .CallToAction{border: 0px !important;} .EmbeddedTweet {max-width: none !important;}.SummaryCard-contentContainer{background: #001e33 !important;}.SummaryCard-contentContainer:hover{background: #01355a !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;}.Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar{height: 50px !important;width: 50px !important;position: relative !important;top: -7px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important;}.TwitterCard-container {border: 1px solid #044376 !important;max-width: 10000px!important;}";
                     }
                     var tweetStyle = document.createElement("style");
-    
+                    console.log(2);
                     tweetStyle.setAttribute("id", "tweet-style-" + i);
                     tweetStyle.innerHTML = tweetCSS;
                     tweetStyle.type = "text/css";
-    
+                    console.log(3);
                     if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
     
                         var styleTag = document.getElementById("twitter-widget-" + i).shadowRoot;
@@ -193,7 +194,7 @@
                         var tweetWidget = document.getElementById("twitter-widget-" + i).contentDocument;
                         tweetWidget.head.appendChild(tweetStyle);
                     } 
-                    console.log(obj.parent().parent().find(".innermask")[0]);
+                    console.log(4);
                     obj.parent().parent().find(".innermask")[0].fadeOut(300);
                 } 
               }
