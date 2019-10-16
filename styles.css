@@ -153,14 +153,14 @@ ol > li {
     background: #004a86;
     padding-left: 0px;
     padding-right: 5px;
-    padding: 3px 5px;
+    padding: 0px 5px;
     color: white;
     cursor: pointer;
     height: 39px;
     transition: all 0.6s;
     padding-bottom: 5px;
     width: 37px;
-    background-image: linear-gradient(to bottom, #002441, #004a86);
+    background-image: linear-gradient(to bottom, #003b6b, #004a86);
     }
     .menubutton:hover {
       color: #c6e9fd;
@@ -498,7 +498,7 @@ ol > li {
   border: 0px solid #004a86;
   width: calc(100% - 0px);
   height: 53px;
-  background-image: linear-gradient(to bottom, #002441, #004a86);
+  background-image: linear-gradient(to bottom, #003b6b, #004a86);
 }
 
 .iconbutton {
