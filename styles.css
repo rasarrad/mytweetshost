@@ -661,6 +661,11 @@ twitter-widget {
     font-size: 27px;
     top: 14px;
 }
+#generate {
+  font-size: 19px;
+  top: 16px;
+  right: 44px;
+} 
   .topoback {
     background: red;
   }
@@ -671,13 +676,16 @@ twitter-widget {
   .toptitle {
     top: 12px;
     font-size: 17px;
-    padding-left: 27px;
+    padding-left: calc(50% - 103px);
     display: block;
     text-align: center;
-    width: 133px;
+    width: 136px;
     line-height: 15px;
     font-weight: bold;
-  }
+    left: 55px !important;
+    position: absolute;
+    margin-left: 0;
+}
   #addtweet {
     font-size: 27px;
     top: 14px;
