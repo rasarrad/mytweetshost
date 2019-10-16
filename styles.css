@@ -125,9 +125,9 @@ ol > li {
 .innermask .fa-circle-o-notch {
   color: #004a86;
   position: relative;
-  font-size: 38px;
-  top: calc(50% - 19px);
-  left: calc(50% - 19px);
+  font-size: 24px;
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
   top: 42px;
 }
 
