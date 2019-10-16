@@ -166,11 +166,12 @@
           //alert($(window).width());
           var ua = navigator.userAgent.toLowerCase();
           var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-          
+          alert(2)
           for (i = 0; i < maxTweets; i++) {
               var obj = $("twitter-widget-" + i);
               if (obj && obj.length > 0) {
                 if (obj.attr("processed") != "yes") {
+                  alert(1)
                   console.log(1);
                     hasFound = true;
                     obj.attr("processed", "yes");
