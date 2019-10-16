@@ -113,7 +113,7 @@ ol > li {
 
    }
 
-.innermask .fa-circle-o-notch {
+.innermask .fa-circle-o-notch { 
     position: absolute;
     width: 100%;
     background: rgba(0, 0, 0, 0.81);
