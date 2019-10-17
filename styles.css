@@ -623,119 +623,121 @@ twitter-widget {
 
 
 @media only screen and (max-width: 1000px) {
-  .tweet iframe {
-      border: 1px solid white;
-      width: calc(100% - 52px) !important;
-      background: white;
-      margin-left: 25px !important;
-      margin-right: 25px !important;
+    .tweet iframe {
+        border: 1px solid white;
+        width: calc(100% - 52px) !important;
+        background: white;
+        margin-left: 25px !important;
+        margin-right: 25px !important;
+        position: relative;
+        top: 4px;
+        border-radius: 5px;
+    }
+    #backdiv {
+      background-image: linear-gradient(rgb(0, 35, 64), rgb(0, 74, 134)) !important;
+    }
+    .tweet .innertweet {
+        width: calc(100% - 50px) !important;
+        background: white;
+        margin-left: 25px !important;
+        margin-right: 25px !important;
+        position: relative;
+        top: 10px;
+        border-radius: 5px;
+        border: 1px solid white;
+    }  
+    twitter-widget {
+        width: 100% !important;
+    }
+    .fa-square-o {
+      display: none;
+    }
+    .tweet {
+      padding-bottom: 0px;
       position: relative;
-      top: 4px;
-      border-radius: 5px;
-  }
-  #backdiv {
-    background-image: linear-gradient(rgb(0, 35, 64), rgb(0, 74, 134)) !important;
-  }
-  .tweet .innertweet {
-      width: calc(100% - 50px) !important;
-      background: white;
-      margin-left: 25px !important;
-      margin-right: 25px !important;
+      background-image: linear-gradient(to bottom, #002441, #002442);
+      top: 0px;
+      height: calc(100% - 173px);
+      background: #004a86;
+      background: red;
+      background-image: linear-gradient(to bottom, #004a86 3%, #002442 80%);
+    }
+    .tweet:first-child {
+          margin-top: 11px;
+    }
+    .tags {
+      padding-top: 5px;
+      margin-bottom: 0px;
+      background: #0088d600;
+      padding-bottom: 5px;
+      border-top: 0px solid #d00b0b;
       position: relative;
-      top: 10px;
-      border-radius: 5px;
-      border: 1px solid white;
-  }  
-  twitter-widget {
-      width: 100% !important;
-  }
-  .fa-square-o {
-    display: none;
-  }
-  .tweet {
-    padding-bottom: 0px;
-    position: relative;
-    background-image: linear-gradient(to bottom, #002441, #002442);
-    top: 0px;
-    height: calc(100% - 173px);
-    background: #004a86;
-    background: red;
-    background-image: linear-gradient(to bottom, #004a86 3%, #002442 80%);
-  }
-  .tweet:first-child {
-        margin-top: 11px;
-  }
-  .tags {
-    padding-top: 5px;
-    margin-bottom: 0px;
-    background: #0088d600;
-    padding-bottom: 5px;
-    border-top: 0px solid #d00b0b;
-    position: relative;
-    top: -11px;
-    height: 10px;
-    border-bottom-width: 0px !important;
-    background: #004a86 !important;
-    /* background: red !important; */
-  }
-  
-  .tagtext {
-  height: 101px;
-  }
-  
-  .tweet .innertweet {
-      width: calc(100% - 0px) !important;
-      margin-left: 0px !important;
-      margin-right: 0px !important;
-      top: -12px;
-  }  
+      top: -11px;
+      height: 10px;
+      border-bottom-width: 0px !important;
+      background: #004a86 !important;
+      /* background: red !important; */
+    }
+    
+    .tagtext {
+    height: 101px;
+    }
+    
+    .tweet .innertweet {
+        width: calc(100% - 0px) !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        top: -12px;
+    }  
 
-  .toptitle {
-    top: 12px;
-    font-size: 25px;
+    .toptitle {
+      top: 12px;
+      font-size: 25px;
+    }
+    #addtweet {
+      font-size: 27px;
+      top: 14px;
   }
-  #addtweet {
-    font-size: 27px;
-    top: 14px;
-}
-#generate {
-  font-size: 19px;
-  top: 16px;
-  right: 44px;
-} 
-  .topoback {
+  #generate {
+    font-size: 19px;
+    top: 16px;
+    right: 44px;
+  } 
+    .topoback {
 
-  }
+    }
 }
 
 @media only screen and (max-width: 700px) {
-
-  .toptitle {
-    top: 10px;
-    font-size: 17px;
-    /* padding-left: calc(50% - 103px); */
-    display: block;
-    text-align: center;
-    width: 100px;
-    line-height: 15px;
-    font-weight: bold;
-    left: calc(50% - 50px) !important;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-}
-  #addtweet {
-    font-size: 22px;
-    top: 15px;
-  }  
-  #generate {
-    font-size: 15px;
-    top: 16.5px;
-    right: 39px;
-    padding-left: 1px;
-} 
-.topoback {
-
+    .toptitle {
+      top: 10px;
+      font-size: 17px;
+      /* padding-left: calc(50% - 103px); */
+      display: block;
+      text-align: center;
+      width: 100px;
+      line-height: 15px;
+      font-weight: bold;
+      left: calc(50% - 50px) !important;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+  }
+    #addtweet {
+      font-size: 22px;
+      top: 15px;
+    }  
+    #generate {
+      font-size: 15px;
+      top: 16.5px;
+      right: 39px;
+      padding-left: 1px;
+  } 
 }
 
+.bottomgradiantback {
+  background-image: linear-gradient(to bottom, #002442 3%, #004a86 80%);
+  top: auto;
+  bottom: 5px;
 }
+
