@@ -93,7 +93,7 @@ ol > li {
 }
    #gotop {
     position: fixed;
-    bottom: 12px;
+    bottom: 19px;
     right: calc(50% - 19px);
     font-size: 29px;
     background: #ffffff87;
@@ -745,7 +745,7 @@ twitter-widget {
   } 
 }
 
-.tweet .bottomgradiantback {
+.tweet:not(:last-child) .bottomgradiantback {
   position: absolute;
   width: 100%;
   background: rgba(0, 0, 0, 0.81);
