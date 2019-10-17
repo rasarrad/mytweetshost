@@ -305,8 +305,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
         
                         if (objToFocus < 0) {
         
-                            $('#tweetcount').fadeIn(800);
-        
                             objToFocus = currentIndex;
                             var newtweetobjaction = newtweetobj;
 /*                             $('html, body').animate({
@@ -349,7 +347,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                                     $('#tccateg').text("In " + $('#selectedcattext').val());
                                 }   
                                 
-                                $('#tweetcount').css('background', 'white');
+                                //$('#tweetcount').css('background', 'white');
                             }, 3000);
                 
                         }
@@ -397,7 +395,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     $('#tccateg').text("In " + $('#selectedcattext').val());
                 }   
                 
-                $('#tweetcount').css('background', 'white');
+                //$('#tweetcount').css('background', 'white');
             }, 3000);
 
         }
