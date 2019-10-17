@@ -96,7 +96,7 @@ ol > li {
     bottom: 12px;
     right: calc(50% - 19px);
     font-size: 29px;
-    background: #ffffff61;
+    background: #ffffff87;
     /* opacity: 0.6; */
     padding-left: 8px;
     padding-right: 8px;
@@ -106,6 +106,7 @@ ol > li {
     color: #00446a;
     cursor: pointer;
     border: 2px solid #00446a;
+    z-index: 13;
     display: none;
    }
 

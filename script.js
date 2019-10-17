@@ -585,6 +585,7 @@ $(document).on({
 function countmove(obj) {
     if (!dblFlag) {
         dblFlag = true;
+        alert($(obj).css('top'));
         if ($(obj).css('top') == "7vh") {
             $(obj).css('top', 'calc(100% - 7vh - 66px)');
         }
