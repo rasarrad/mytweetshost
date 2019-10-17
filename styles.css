@@ -93,17 +93,19 @@ ol > li {
 }
    #gotop {
     position: fixed;
-    bottom: 30px;
-    right: 29px;
+    bottom: 12px;
+    right: calc(50% - 19px);
     font-size: 29px;
-    background: white;
+    background: #ffffff61;
+    /* opacity: 0.6; */
     padding-left: 8px;
     padding-right: 8px;
+    font-weight: bold;
     padding-bottom: 2px;
     border-radius: 7px;
-    color: #00659f;
+    color: #00446a;
     cursor: pointer;
-    border: 2px solid #006eae;
+    border: 2px solid #00446a;
     display: none;
    }
 
@@ -187,7 +189,7 @@ ol > li {
       border-left-width: 0px;
       position: absolute;
       left: -1px;
-      top: 51px;
+      top: 52px;
     }
     
 
@@ -202,7 +204,7 @@ ol > li {
       white-space: nowrap;
       padding: 10px 0px;
       padding-left: 17px;
-      color: #004d7a;
+      color: #004064;
       border-bottom: 1px solid #c1c1c1;
       cursor: pointer;
       transition: all 0.6s;
@@ -214,9 +216,10 @@ ol > li {
     right: 3px;
     top: 12px;
     font-size: 13px;
-    color: #007adc;
+    color: #0169bd;
     text-align: center;
     width: 25px;
+    /* top: 10px; */
     }
 
     #menu > ul > li:hover {
@@ -635,7 +638,7 @@ twitter-widget {
         border-radius: 5px;
     }
     #backdiv {
-      background-image: linear-gradient(rgb(0, 74, 134), rgb(0, 32, 56)) !important;
+      background-image: linear-gradient(rgb(0, 35, 64), rgb(0, 74, 134)) !important;
     }
     .tweet .innertweet {
         width: calc(100% - 50px) !important;
@@ -723,6 +726,7 @@ twitter-widget {
       position: absolute;
       margin-left: auto;
       margin-right: auto;
+      text-shadow: 0px 0px #c5c5c5;
   }
     #addtweet {
       font-size: 22px;

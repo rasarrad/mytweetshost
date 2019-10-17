@@ -1,5 +1,5 @@
 
-console.log(3333); 
+console.log(11111); 
 
 var text = "";
 var origin = "";
@@ -585,11 +585,11 @@ $(document).on({
 function countmove(obj) {
     if (!dblFlag) {
         dblFlag = true;
-        if ($(obj).css('top') == "67px") {
-            $(obj).css('top', 'calc(100% - 176px)');
+        if ($(obj).css('top') == "7vh") {
+            $(obj).css('top', 'calc(100% - 7vh - 66px)');
         }
         else {
-            $(obj).css('top', '67px');
+            $(obj).css('top', '7vh');
         }
         setTimeout(function() { 
             dblFlag = false;
