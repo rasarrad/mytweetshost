@@ -735,7 +735,7 @@ twitter-widget {
   } 
 }
 
-.bottomgradiantback {
+.tweet:not(:first-child) .bottomgradiantback {
   background-image: linear-gradient(to bottom, #002442 3%, #004a86 80%);
   top: auto;
   bottom: 5px;
