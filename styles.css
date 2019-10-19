@@ -338,7 +338,25 @@ ol > li {
       color: #004a86;
       font-size: 33px;
       top: 10px;
-      right: 13px;
+      right: 15px;
+      transition: all 0.6s;
+      cursor: pointer;
+    }
+        #zoomin {
+      position: absolute;
+      color: #004a86;
+      font-size: 15px;
+      top: 17px;
+      right: 70px;
+      transition: all 0.6s;
+      cursor: pointer;
+    }
+            #zoomout {
+      position: absolute;
+      color: #004a86;
+      font-size: 15px;
+      top: 17px;
+      right: 91px;
       transition: all 0.6s;
       cursor: pointer;
     }
@@ -667,17 +685,17 @@ twitter-widget {
         z-index: 9;
         height: 16px;
         display: block;
-        background-image: linear-gradient(to bottom, #004a86 3%, #000000 80%);
+        background-image: linear-gradient(to bottom, #004a86 3%, #101010 80%);
     }
       .html .gradiantback {
         position: absolute;
         width: 100%;
         background: rgba(0, 0, 0, 0.81);
-        top: 14px;
+        top: 15px;
         z-index: 9;
-        height: 16px;
+        height: 18px;
         display: block;
-        background-image: linear-gradient(to bottom, #004a86 3%, #000000 170%);
+        background-image: linear-gradient(to bottom, #004a86 3%, #ffffffcf 78%);
     }
     .tweet:not(:last-child) .bottomgradiantback {
       position: absolute;
@@ -687,27 +705,47 @@ twitter-widget {
       height: 20px;
       background-image: linear-gradient(to bottom, #002442 3%, #004a86 80%);
       top: auto;
-      bottom: 5px;
+      bottom: 3px;
     }
+    .tweet.html:not(:last-child) .bottomgradiantback {
+    bottom: 8px;
+}
     
 
     .yt.tweet .bottomgradiantback {
-      background-image: linear-gradient(to bottom, #000000 -30%, #004a86 80%);
+      background-image: linear-gradient(to bottom, #101010 -12%, #004a86 80%);
       }
       .html.tweet .bottomgradiantback {
-      background-image: linear-gradient(to bottom, #000000 -30%, #004a86 80%);
+      background-image: linear-gradient(to bottom, #ffffff 21%, #004a86 80%);
       } 
         .tweet iframe {
-        width: calc(100%) !important;
+        width: calc(100% - 12px) !important;
         background: white;
-        margin-left: 0px !important;
-        margin-right: 0px !important;
+        margin-left: 4px !important;
+        margin-right: 12px !important;
         border-radius: 0px !important;
         border-top: 0 !important;
-        margin-bottom: 25px;
-        margin-top: 5px !important;
+        margin-bottom: 29px;
+        margin-top: 4px !important;
         border: 0px solid white;
         }
+        .tweet.html iframe {
+    margin-top: 4px !important;
+    }
+        
+
+        .tweet.html iframe {
+    width: calc(100% - 12px) !important;
+    border: 1px solid #bbbbbb;
+}
+
+        .tweet.yt {
+    background: #101010;
+}
+        .tweet.html {
+    background: #ffffff;
+    top: 0px;
+}
         #backdiv {
           background-image: linear-gradient(rgb(0, 74, 134), rgb(0, 32, 56)) !important;
         }
@@ -748,7 +786,7 @@ twitter-widget {
           border-top: 0px solid #d00b0b;
           position: relative;
           top: -11px;
-          height: 10px;
+          height: 16px;
           border-bottom-width: 0px !important;
           background: #004a86 !important;
           /* background: red !important; */
@@ -785,7 +823,7 @@ twitter-widget {
 
 @media only screen and (max-width: 700px) {
     .toptitle {
-      top: 10px;
+      top: 11px;
       font-size: 17px;
       /* padding-left: calc(50% - 103px); */
       display: block;
@@ -801,12 +839,12 @@ twitter-widget {
   }
     #addtweet {
       font-size: 22px;
-      top: 15px;
+      top: 14px;
     }  
     #generate {
       font-size: 15px;
-      top: 16.5px;
-      right: 39px;
+      top: 16px;
+      right: 40px;
       padding-left: 1px;
   } 
 }
