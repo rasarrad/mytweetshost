@@ -26,7 +26,7 @@
   <!-- <div class="topoback"></div>  -->
   <div class="topoback"></div> 
   <div class="topoback" style="background: white;left: 57px;width: calc(100% - 68px);top: 7px;height: 34px;border-radius: 5px;border: 2px solid #707070;border: 2px solid #002542;"></div>
-  <div id="tweetcount" onmouseover="javascript: countmove(this)" style="font-weight: bold;padding: 0px 4px;position: fixed;bottom: 54px;right: 25px;background: #ffffffa6;border: 2px solid rgb(81, 81, 81);border-radius: 4px;color: rgb(0, 54, 97);line-height: 20px;text-align: center;transition: all 0.8s ease 0s;cursor: default;font-size: 14px;z-index: 12;display:none;">
+  <div id="tweetcount" style="font-weight: bold;padding: 0px 4px;position: fixed;bottom: calc(104px);right: 25px;background: #ffffffa6;border: 2px solid rgb(81, 81, 81);border-radius: 4px;color: rgb(0, 54, 97);line-height: 20px;text-align: center;transition: all 0.8s ease 0s;cursor: default;font-size: 14px;z-index: 12;display:none;">
       <div id="tcnumber"></div><span id="tccateg"></span>
       <div style="display: block;position: relative;left: -2px;">
         <i id="typeT" class="fa fa-twitter-square" style="font-size: 19px;border: 0px solid transparent;padding: 0px 4px;border-radius: 4px;"></i>
@@ -71,8 +71,6 @@
 <span class="noselect toptitle" id="toptitle">Bookmarks Station</span>
 <i id="addtweet" class="fa fa-plus-square"></i>
 <i id="generate" class="fa fa-cogs"></i>
-<i id="zoomout" class="fa fa-search-minus"></i>
-<i id="zoomin" class="fa fa-search-plus"></i>
 <input type="hidden" id="selectedcat" value="all">
 <input type="hidden" id="selectedcattext" value="All Links">
 <input type="hidden" id="recordspersearch" value="5">
@@ -201,7 +199,6 @@
               else {
                   if (hasFound) {
                     $('#tweetcount').fadeIn(800);
-                    $(".innermask").fadeOut(300);
                     $('#mask').fadeOut(300);
                       console.log(1)
                       $('#moretweets').fadeOut(300);

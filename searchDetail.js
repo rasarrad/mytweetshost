@@ -178,7 +178,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         } 
                         else {
                             if (linkcontent && linkcontent.length > 0) {
-                                isdeleted = hideMode ? "" : ""; // newwwwwwwwwwwwwww
+                                isdeleted = hideMode ? "" : "background-image: linear-gradient(rgb(20, 186, 0) -87%, rgb(0, 137, 217));";
                             }
                             else {
                                 isdeleted ="";
@@ -267,16 +267,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             tagdispalay = val.tags;
                         }
         
-                        var xclass = "";
-                        if (val.type == "H") {
-                            xclass = " html";
-                        }
-                        else if (val.type == "Y") {
-                            xclass = " yt";
-                        }
-
+        
                         //$('#moretweets').hide();
-                        var newtweet = $('#main').append($('<div style="' + isdeleted + '" id="inid" class="tweet' + xclass + '"></div>'));
+                        var newtweet = $('#main').append($('<div style="' + isdeleted + '" id="inid" class="tweet"></div>'));
                         var newtweetobj = $('#inid');
 
                         newtweetobj.append($('<div class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down ' + expandclass + '"></i>' 
@@ -311,6 +304,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         newtweetobj.attr('id', val.id);
         
                         if (objToFocus < 0) {
+        
+                            $('#tweetcount').fadeIn(800);
         
                             objToFocus = currentIndex;
                             var newtweetobjaction = newtweetobj;
@@ -354,7 +349,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                                     $('#tccateg').text("In " + $('#selectedcattext').val());
                                 }   
                                 
-                                //$('#tweetcount').css('background', 'white');
+                                $('#tweetcount').css('background', 'white');
                             }, 3000);
                 
                         }
@@ -402,7 +397,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     $('#tccateg').text("In " + $('#selectedcattext').val());
                 }   
                 
-                //$('#tweetcount').css('background', 'white');
+                $('#tweetcount').css('background', 'white');
             }, 3000);
 
         }
