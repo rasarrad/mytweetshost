@@ -178,7 +178,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         } 
                         else {
                             if (linkcontent && linkcontent.length > 0) {
-                                isdeleted = hideMode ? "" : "background-image: linear-gradient(rgb(20, 186, 0) -87%, rgb(0, 137, 217));";
+                                isdeleted = hideMode ? "" : ""; // newwwwwwwwwwwwwww
                             }
                             else {
                                 isdeleted ="";

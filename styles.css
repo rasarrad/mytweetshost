@@ -119,13 +119,14 @@ ol > li {
 
    }
 
-.innermask { 
+.innermask {
     position: absolute;
     width: 100%;
     background: rgba(0, 0, 0, 0.81);
     top: -12px;
     z-index: 99999;
     height: 100%;
+    display: block;
 }
 .gradiantback {
     position: absolute;
@@ -688,6 +689,7 @@ twitter-widget {
       top: auto;
       bottom: 5px;
     }
+    
 
     .yt.tweet .bottomgradiantback {
       background-image: linear-gradient(to bottom, #000000 -30%, #004a86 80%);

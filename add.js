@@ -55,7 +55,7 @@ function parseTweet(type) {
             
             urldirect = "https://www.youtube.com/watch?v=" + text.substring(text.indexOf('embed') + 6, text.indexOf('frameborder') - 2); 
 
-            text = "\"" + ("<iframe style='position: relative;top: 4px;width: 500px;background: white;margin-top: 6px;height: 446px;margin-left: calc(50% - 250px);margin-right: auto;border: 1px solid white;border-radius: 5px;' " 
+            text = "\"" + ("<iframe " 
                     + text.substring(8)).replace(/"/g, "'")  + "\""; 
 
             if (type && type == 2) {
@@ -94,7 +94,7 @@ function parseTweet(type) {
                 urltemp = urltemp.substring(0, urltemp.length -1);
             }
 
-            text = "\"<iframe style='position: relative;top: 4px;width: 500px;background: white;margin-top: 6px;height: 446px;margin-left: calc(50% - 250px);margin-right: auto;border: 1px solid white;border-radius: 5px;' src='https://www.youtube.com/embed/" 
+            text = "\"<iframe src='https://www.youtube.com/embed/" 
             + urltemp + "' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>\""; 
 
              
@@ -125,7 +125,7 @@ function parseTweet(type) {
             
             url = text; 
 
-            text = "\"<iframe style='position: relative;top: 4px;width: 500px;background: white;margin-top: 6px;height: 446px;margin-left: calc(50% - 250px);margin-right: auto;border: 1px solid white;border-radius: 5px;' src='" 
+            text = "\"<iframe src='" 
                     + text + "'></iframe><div style='position: relative;left: 0px;width: 100px;height: 0px;top: -451px;'><div style='position: relative;left: 0px;width: 83px;height: 473px;top: 0px;'></div></div><div style='position: relative;right: -16px !important;width: 100px;height: 0px;top: -451px;float: right;'><div style='position: relative;left: 0px;width: 83px;height: 473px;top: 0px;'></div></div>\""; 
 
 
