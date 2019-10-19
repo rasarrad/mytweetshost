@@ -267,9 +267,16 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             tagdispalay = val.tags;
                         }
         
-        
+                        var xclass = "";
+                        if (val.type == "H") {
+                            xclass = " html";
+                        }
+                        else if (val.type == "Y") {
+                            xclass = " yt";
+                        }
+
                         //$('#moretweets').hide();
-                        var newtweet = $('#main').append($('<div style="' + isdeleted + '" id="inid" class="tweet"></div>'));
+                        var newtweet = $('#main').append($('<div style="' + isdeleted + '" id="inid" class="tweet' + xclass + '"></div>'));
                         var newtweetobj = $('#inid');
 
                         newtweetobj.append($('<div class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down ' + expandclass + '"></i>' 
