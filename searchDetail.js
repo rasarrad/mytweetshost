@@ -262,7 +262,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             val.classif = "";
                         }
     
-                        var tagdispalay = " -";
+                        var tagdispalay = " --";
                         if (val.tags.length > 0) {
                             tagdispalay = val.tags;
                         }
@@ -298,7 +298,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                                 + val.info // vai conter a div com o texto antigo - caso exista
                             + '</div>'));
                         
-                        newtweetobj.append($('<div style="' + tagstyle + '" class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags </b>' + tagdispalay + tagchanged + '</div>'));
+                        newtweetobj.append($('<div style="' + tagstyle + '" class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b style="font-size: 13px;">Tags: </b>' + tagdispalay + tagchanged + '</div>'));
                         
                         if (val.type == "T") {
                             newtweetobj.append($('<div class="innertweet"></div>'));
@@ -629,7 +629,7 @@ var getInformationOld = function(ismoretweets) {
             }
 
 
-            var tagdispalay = " -";
+            var tagdispalay = " --";
             if (val.tags.length > 0) {
                 tagdispalay = val.tags;
             }
