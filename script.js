@@ -1,5 +1,5 @@
 
-console.log(3333); 
+console.log(1); 
 
 var text = "";
 var origin = "";
@@ -23,7 +23,14 @@ var tagssloaded = false;
 
 $( document ).ready(function() {
     //$("body").css("height", $(window).height() + "px");
+    nextid = parseInt(readCookie("maxid"));
 
+    do {
+        createCookie(nextid + "templink", "", 99999);
+        nextid = nextid - 1;
+    }
+    while (nextid > 0);
+    nextid = parseInt(readCookie("maxid"));
     countalltweets();
     setviewmode();
     var hasChanges = readCookie("hasChanges");
@@ -585,11 +592,11 @@ $(document).on({
 function countmove(obj) {
     if (!dblFlag) {
         dblFlag = true;
-        if ($(obj).css('top') == "75px") {
-            $(obj).css('top', 'calc(100% - 104px)');
+        if ($(obj).css('bottom') == "54px") {
+            $(obj).css('bottom', 'calc(100% - 140px)');
         }
         else {
-            $(obj).css('top', '75px');
+            $(obj).css('bottom', '54px');
         }
         setTimeout(function() { 
             dblFlag = false;
