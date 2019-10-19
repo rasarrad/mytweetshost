@@ -1,5 +1,5 @@
 
-console.log(1); 
+console.log(222); 
 
 var text = "";
 var origin = "";
@@ -22,8 +22,8 @@ var hideMode = false;
 var tagssloaded = false;
 
 $( document ).ready(function() {
-    //$("body").css("height", $(window).height() + "px");
-    nextid = parseInt(readCookie("maxid"));
+
+    /*nextid = parseInt(readCookie("maxid"));
 
     do {
         createCookie(nextid + "templink", "", 99999);
@@ -31,6 +31,7 @@ $( document ).ready(function() {
     }
     while (nextid > 0);
     nextid = parseInt(readCookie("maxid"));
+    */
     countalltweets();
     setviewmode();
     var hasChanges = readCookie("hasChanges");
