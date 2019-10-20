@@ -691,11 +691,11 @@ twitter-widget {
         position: absolute;
         width: 100%;
         background: rgba(0, 0, 0, 0.81);
-        top: 14px;
+        top: 15px;
         z-index: 9;
         height: 18px;
         display: block;
-        background-image: linear-gradient(to bottom, #004a86 3%, #ffffffed 78%);
+        background-image: linear-gradient(to bottom, #004a86 3%, #ffffffcf 78%);
     }
     .tweet:not(:last-child) .bottomgradiantback {
       position: absolute;
@@ -725,12 +725,12 @@ twitter-widget {
         margin-right: 12px !important;
         border-radius: 0px !important;
         border-top: 0 !important;
-        margin-bottom: 28px;
+        margin-bottom: 29px;
         margin-top: 4px !important;
         border: 0px solid white;
         }
         .tweet.html iframe {
-    margin-top: 2px !important;
+    margin-top: 4px !important;
     }
         
 
