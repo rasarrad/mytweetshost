@@ -1,5 +1,5 @@
 
-console.log(2222); 
+console.log(444); 
 
 var text = "";
 var origin = "";
@@ -131,6 +131,7 @@ $( document ).ready(function() {
 
     $("#pasteinput").on("paste", function() {
         $('#tweet').val($("#pasteinput").val());
+        alert($('#pasteinput').val())
         parseTweet(2);
         $("#pasteinput").val("");
         $("#pasteinput").blur();
