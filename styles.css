@@ -282,7 +282,7 @@ ol > li {
   left: 0 !important;
   text-align: center;
   margin-left: 140px;
-  top: 10px;
+  top: 8px;
   font-size: 30px;
   position: absolute;
   transition: all 1s;
@@ -356,7 +356,7 @@ ol > li {
       color: #004a86;
       font-size: 15px;
       top: 17px;
-      right: 91px;
+      right: 94px;
       transition: all 0.6s;
       cursor: pointer;
     }
@@ -425,7 +425,7 @@ ol > li {
     }
 
     html, body {
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
       font-variant: small-caps;
     }
     
@@ -805,21 +805,43 @@ twitter-widget {
         }  
 
         .toptitle {
-          top: 12px;
+          top: 10px;
           font-size: 25px;
         }
         #addtweet {
-          font-size: 27px;
-          top: 14px;
+          font-size: 26px;
+          top: 13px;
       }
       #generate {
-        font-size: 19px;
-        top: 16px;
+        font-size: 18px;
+        top: 15px;
         right: 44px;
       } 
         .topoback {
 
         }
+
+        #openadd {
+          right: 129px !important;
+        }
+                #zoomin {
+        position: absolute;
+        color: #004a86;
+        font-size: 15px;
+        top: 17px;
+        right: 79px;
+        transition: all 0.6s;
+        cursor: pointer;
+    }
+    #zoomout {
+        position: absolute;
+        color: #004a86;
+        font-size: 15px;
+        top: 17px;
+        right: 104px;
+        transition: all 0.6s;
+        cursor: pointer;
+    }
 }
 
 @media only screen and (max-width: 700px) {
@@ -847,7 +869,28 @@ twitter-widget {
       top: 16px;
       right: 40px;
       padding-left: 1px;
-  } 
+     } 
+        #openadd {
+          right: 115px !important;
+        }
+        #zoomin {
+        position: absolute;
+        color: #004a86;
+        font-size: 15px;
+        top: 17px;
+        right: 70px;
+        transition: all 0.6s;
+        cursor: pointer;
+    }
+    #zoomout {
+        position: absolute;
+        color: #004a86;
+        font-size: 15px;
+        top: 17px;
+        right: 94px;
+        transition: all 0.6s;
+        cursor: pointer;
+    }
 }
 
 
