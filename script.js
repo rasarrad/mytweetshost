@@ -1,5 +1,5 @@
 
-console.log(11); 
+console.log(3333); 
 
 var text = "";
 var origin = "";
@@ -383,7 +383,7 @@ function openmenu() {
 
 
 function gotop() {
-    $(window).scrollTop( 0 );
+    $("html, body").animate({ scrollTop: 0 }, 600);
 }   
 
 
