@@ -58,7 +58,7 @@
  
    #expand {
     position: absolute;
-    margin-top: -6px;
+    margin-top: 6px;
     left: 18px;
     cursor: pointer;
     font-size: 23px;
@@ -73,7 +73,7 @@
     z-index: 10;
    }
 
-   .tweet:first-child #expand {margin-top: -7px;}
+   .tweet:first-child #expand {margin-top: 6.5px;}
    #expand.expanded {
     margin-top: 3px;
     left: 5px;
@@ -265,10 +265,10 @@ ol > li {
     #sear {
       position: relative;
       color: #004a86;
-      font-size: 18px;
+      font-size: 22px;
       padding-left: 7px;
       padding-right: 17px;
-      top: -8px;
+      top: -7px;
       cursor: pointer;
       transition: all 0.6s;
     }
@@ -336,8 +336,8 @@ ol > li {
     #addtweet {
       position: absolute;
       color: #004a86;
-      font-size: 33px;
-      top: 10px;
+      font-size: 28px;
+      top: 11.5px;
       right: 15px;
       transition: all 0.6s;
       cursor: pointer;
@@ -345,18 +345,18 @@ ol > li {
         #zoomin {
       position: absolute;
       color: #004a86;
-      font-size: 15px;
-      top: 17px;
-      right: 70px;
+      font-size: 21px;
+      top: 14px;
+      right: 101px;
       transition: all 0.6s;
       cursor: pointer;
     }
             #zoomout {
       position: absolute;
       color: #004a86;
-      font-size: 15px;
-      top: 17px;
-      right: 94px;
+      font-size: 21px;
+      top: 14px;
+      right: 132px;
       transition: all 0.6s;
       cursor: pointer;
     }
@@ -364,8 +364,8 @@ ol > li {
 #generate {
     position: absolute;
     color: white;
-    font-size: 24px;
-    top: 12px;
+    font-size: 20px;
+    top: 14px;
     right: 54px;
     transition: all 0.6s;
     cursor: pointer;
@@ -445,7 +445,7 @@ ol > li {
     }
 
     .fa-square-o {
-      left: 168px;
+      right: 23px;
       font-size: 21px;
       margin-top: -2px;
       font-weight: bold;
@@ -648,7 +648,7 @@ twitter-widget {
 }
 
 #backdiv {
-  background-image: linear-gradient(to bottom, #004a86 85%, #0081cd 95%) !important;
+  background-image: linear-gradient(to bottom, #0081cd, #008ada) !important;
 }
 .tweet iframe {
     position: relative;
@@ -830,7 +830,7 @@ twitter-widget {
         position: absolute;
         color: #004a86;
         font-size: 15px;
-        top: 17px;
+        top: 18px;
         right: 79px;
         transition: all 0.6s;
         cursor: pointer;
@@ -839,7 +839,7 @@ twitter-widget {
         position: absolute;
         color: #004a86;
         font-size: 15px;
-        top: 17px;
+        top: 18px;
         right: 104px;
         transition: all 0.6s;
         cursor: pointer;
@@ -854,10 +854,33 @@ twitter-widget {
         width: calc(100% - 0px);
         height: 55px;
         background-image: linear-gradient(to bottom, #003056, #004a86);
-    }    
+      }    
       #backdiv {
-      background-image:linear-gradient(rgb(0, 104, 165), rgb(0, 139, 222)) !important;
+      /* background-image:linear-gradient(rgb(0, 104, 165), rgb(0, 139, 222)) !important; */
+      }
+      #sear {
+        position: relative;
+        color: #004a86;
+        font-size: 18px;
+        padding-left: 7px;
+        padding-right: 17px;
+        top: -9px;
+        cursor: pointer;
+        transition: all 0.6s;
     }
+    .tweetcount {
+      background: rgba(255, 255, 255, 0.65) !important;
+    }
+     #expand {
+        margin-top: -6px;
+        left: 18px;
+      }     
+      .tweet:first-child #expand {
+          margin-top: -7px;
+      }  
+      #main {
+            margin-top: 2px !important;
+      }
 }
 
 @media only screen and (max-width: 700px) {
@@ -893,7 +916,7 @@ twitter-widget {
         position: absolute;
         color: #004a86;
         font-size: 15px;
-        top: 17px;
+        top: 18px;
         right: 70px;
         transition: all 0.6s;
         cursor: pointer;
@@ -902,7 +925,7 @@ twitter-widget {
         position: absolute;
         color: #004a86;
         font-size: 15px;
-        top: 17px;
+        top: 18px;
         right: 94px;
         transition: all 0.6s;
         cursor: pointer;
