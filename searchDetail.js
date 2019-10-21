@@ -25,7 +25,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
     var dofiltercat = $('#selectedcat').val().length > 0 && $('#selectedcat').val() != 'all';  
     
     if (!ismoretweets) {
-        //$('#mask').fadeIn(300);  
+        $('#mask').fadeIn(300);  
         $('#moretweets').hide();
         currentIndex = 0;
         endIndex = currentIndex + Number($('#recordspersearch').val());
@@ -279,7 +279,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         var newtweet = $('#main').append($('<div style="' + isdeleted + '" id="inid" class="tweet' + xclass + '"></div>'));
                         var newtweetobj = $('#inid');
 
-                        newtweetobj.append($('<div class="innermask" style="display:none;"><i class="fa fa-circle-o-notch fa-spin"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down ' + expandclass + '"></i>' 
+                        newtweetobj.append($('<div class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down ' + expandclass + '"></i>' 
                             + '<div class="categorias">' 
                                 + '<i onclick="javascript: removetweet(this,\'' + val.id + '\')" id="removetweet" class="fa fa-remove"></i>' 
                                 + '<i tagactual="' + val.tags + '" onclick="javascript: changetag(this, \'' + val.id + '\')" id="changetag" class="fa fa-tags"></i>' 
