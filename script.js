@@ -1,5 +1,5 @@
 
-console.log(3444); 
+console.log(111); 
 
 var text = "";
 var origin = "";
@@ -48,7 +48,7 @@ $( document ).ready(function() {
 
     window.onscroll = function(ev) {
 
-        if ((window.innerHeight + window.scrollY + 400) >= document.body.offsetHeight && dosearchmore) {
+        if ((window.innerHeight + window.scrollY + 800) >= document.body.offsetHeight && dosearchmore) {
             dosearchmore = false;
             console.log($('#moretweets').attr('doshow'))
             if ($('#moretweets').attr('doshow') && $('#moretweets').attr('doshow') == 'yes') {
