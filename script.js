@@ -1,5 +1,5 @@
 
-console.log(222); 
+console.log(2222); 
 
 var text = "";
 var origin = "";
@@ -240,12 +240,36 @@ $( document ).ready(function() {
         })
     });
 
-    document.getElementById("addtweet").addEventListener('click', 
-    function (e){
-    var clipboardData = e.clipboardData || window.clipboardData;
-    var pastedData = clipboardData.getData('Text');
-
-    alert("a " + pastedData + " a");});
+    document.getElementById("addtweet").addEventListener('click', () => {
+        navigator.clipboard.readText()
+        .then(text => {
+            if (!dblFlag) {
+                dblFlag = true;
+                dblClickTimeout = setTimeout(function() {     
+                  if (dblFlag) {
+                      openPopupParsed(text, 1);
+                      dblFlag = false;  
+                  }
+                }, 500);
+            }
+            else {
+                clearTimeout(dblClickTimeout);
+                
+                if (hideMode) {
+                    openPopupParsed(text, 1);
+                }
+                else {
+                    var win = window.open('https://github.com/rasarrad/mytweetshost/edit/master/data.json', '_blank');
+                    win.focus();
+                }
+    
+                dblFlag = false;
+            }  
+        })
+        .catch(err => {
+            console.log('Something went wrong', err);
+        })
+    });
 
 });
 
