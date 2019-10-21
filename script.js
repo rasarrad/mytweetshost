@@ -1,5 +1,5 @@
 
-console.log(2222); 
+console.log(888); 
 
 var text = "";
 var origin = "";
@@ -241,7 +241,7 @@ $( document ).ready(function() {
     });
 
     document.getElementById("addtweet").addEventListener('click', 
-    function (){alert(123)});
+    function (){alert(4443);alert(window.clipboardData.getData('Text'));});
 
 });
 
