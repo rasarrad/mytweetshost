@@ -737,7 +737,7 @@ twitter-widget {
         .tweet.html iframe {
     width: calc(100% - 0px) !important;
     border: 0px solid #bbbbbb;
-    height: 75vw;
+    height: 72vw;
 }
 
         .tweet.yt {
