@@ -1,5 +1,5 @@
 
-console.log(11); 
+console.log(5555); 
 
 var text = "";
 var origin = "";
@@ -241,7 +241,11 @@ $( document ).ready(function() {
     });
 
     document.getElementById("addtweet").addEventListener('click', 
-    function (){var aaa = window.clipboardData.getData('Text'); alert("a " + aaa + " a");});
+    function (){
+    var clipboardData = e.clipboardData || window.clipboardData;
+    var pastedData = clipboardData.getData('Text');
+
+    alert("a " + pastedData + " a");});
 
 });
 
