@@ -121,11 +121,9 @@ $( document ).ready(function() {
       });
       
     $("#typeTT, #typeYY, #typeHH").on("click", function() {
-
         parseTweet();
-    });
+    }); 
     $("#tweet").on("paste", function() {
-
         parseTweet();
     });
 
