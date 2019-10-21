@@ -197,13 +197,12 @@
                         var tweetWidget = document.getElementById("twitter-widget-" + i).contentDocument;
                         tweetWidget.head.appendChild(tweetStyle);
                     } 
-                    obj.parent().parent().find(".innermask").fadeOut(1300);
+                    
                 } 
                 console.log(i);
               }
               else {
                   if (hasFound) {
-                    console.log(9999999999);
                     $('#tweetcount').fadeIn(800);
                     $(".innermask").fadeOut(1300);
                     $('#mask').fadeOut(1300);
