@@ -1,5 +1,5 @@
 
-console.log(111); 
+console.log(222); 
 
 var text = "";
 var origin = "";
@@ -120,9 +120,9 @@ $( document ).ready(function() {
         e.stopPropagation();
       });
       
-    $("#typeTT, #typeYY, #typeHH").on("click", function() {
+    /*$("#typeTT, #typeYY, #typeHH").on("click", function() {
         parseTweet();
-    }); 
+    });*/ 
     $("#tweet").on("paste", function() {
         parseTweet();
     });
