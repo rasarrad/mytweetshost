@@ -1,5 +1,5 @@
 
-console.log(11); 
+console.log(222); 
 
 var text = "";
 var origin = "";
@@ -283,7 +283,7 @@ $.fn.isChildOverflowing = function (child) {
   };
 
     function openPopupParsed(text, type) {
-        alert(6565554)
+        
         setTimeout(function() { 
             resetFieldsPopup(); 
             $('#tweet').val(text);

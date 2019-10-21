@@ -226,6 +226,7 @@ function create() {
 
 var openCreatePopup = function(flag) 
 {
+    alert(123)
     if (flag) {
         $("#onemore").prop("checked", false);
     }
