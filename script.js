@@ -1,5 +1,5 @@
 
-console.log(333); 
+console.log(2222); 
 
 var text = "";
 var origin = "";
@@ -240,37 +240,8 @@ $( document ).ready(function() {
         })
     });
 
-    document.getElementById("addtweet").addEventListener('click', () => {
-        navigator.clipboard.readText()
-        .then(text => {
-            alert(123)
-            if (!dblFlag) {
-                dblFlag = true;
-                dblClickTimeout = setTimeout(function() {     
-                  if (dblFlag) {
-                      openPopupParsed(text, 1);
-                      dblFlag = false;  
-                  }
-                }, 500);
-            }
-            else {
-                clearTimeout(dblClickTimeout);
-                
-                if (hideMode) {
-                    openPopupParsed(text, 1);
-                }
-                else {
-                    var win = window.open('https://github.com/rasarrad/mytweetshost/edit/master/data.json', '_blank');
-                    win.focus();
-                }
-    
-                dblFlag = false;
-            }  
-        })
-        .catch(err => {
-            console.log('Something went wrong', err);
-        })
-    });
+    document.getElementById("addtweet").addEventListener('click', 
+    function (){alert(123)});
 
 });
 
