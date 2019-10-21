@@ -66,6 +66,10 @@ $( document ).ready(function() {
 
     ///////////////////////////////////////
 
+    $( "#openadd" ).bind( "click", function( event ) {
+        openCreatePopup(); 
+    });
+
     /*
     $( "#addtweet" ).bind( "click", function( event ) {
         if (!dblFlag) {
