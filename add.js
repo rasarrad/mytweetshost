@@ -128,7 +128,6 @@ function parseTweet(type) {
             text = "\"<iframe src='" 
                     + text + "'></iframe><div style='position: relative;left: 0px;width: 100px;height: 0px;top: -451px;'><div style='position: relative;left: 0px;width: 83px;height: 62vh;top: 0px;'></div></div><div style='position: relative;right: -16px !important;width: 100px;height: 0px;top: -451px;float: right;'><div style='position: relative;left: 0px;width: 83px;height: 62vh;top: 0px;'></div></div>\""; 
 
-alert(type)
             if (type && type == 2) {
                 create();
                 showMessage("HTTP Link Successfully Parsed And Created"); 

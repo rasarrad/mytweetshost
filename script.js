@@ -1,5 +1,5 @@
 
-console.log(222); 
+console.log(3333); 
 
 var text = "";
 var origin = "";
@@ -124,13 +124,11 @@ $( document ).ready(function() {
         parseTweet();
     });*/ 
     $("#tweet").on("paste", function() {
-        parseTweet();
+        parseTweet(2);
     });
 
     $("#pasteinput").on("paste", function() {
         $('#tweet').val($("#pasteinput").val());
-        
-
     });
 
     ///////////////////////////////////////
