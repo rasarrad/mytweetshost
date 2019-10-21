@@ -1,5 +1,5 @@
 
-console.log(222); 
+console.log(111); 
 
 var text = "";
 var origin = "";
@@ -538,7 +538,7 @@ $(document).keydown(function(e) {
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
-
+/*
 $(document).keydown(function(e) {
     if ($(e.currentTarget).is($(document))) {
         if (ctrlDown && (e.keyCode == vKey)) {
@@ -558,7 +558,7 @@ $(document).keydown(function(e) {
         } 
     }
 }); 
-
+*/
 $(document).on({
     'dragover dragenter': function(e) {
         e.preventDefault();
