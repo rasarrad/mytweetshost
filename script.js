@@ -1,5 +1,5 @@
 
-console.log(2222); 
+console.log(333); 
 
 var text = "";
 var origin = "";
@@ -243,6 +243,7 @@ $( document ).ready(function() {
     document.getElementById("addtweet").addEventListener('click', () => {
         navigator.clipboard.readText()
         .then(text => {
+            alert(123)
             if (!dblFlag) {
                 dblFlag = true;
                 dblClickTimeout = setTimeout(function() {     
