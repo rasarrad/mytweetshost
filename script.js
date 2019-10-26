@@ -1,5 +1,5 @@
 
-console.log(11); 
+console.log(2222); 
 
 var text = "";
 var origin = "";
@@ -348,21 +348,12 @@ function getParameterByName(name) {
 
 
 function expandCat(obj) {
-    var jobj = $(obj).parent().find('.categorias');
-    if (jobj.is(":visible")) {
-        jobj.hide(); 
-        $(obj).removeClass("fa-angle-double-up");
-        $(obj).removeClass("expanded");
-        $(obj).addClass("fa-angle-double-down");
-    }
-    else {
-        jobj.show();
-        $(obj).removeClass("fa-angle-double-down");
-        $(obj).addClass("fa-angle-double-up");
-        $(obj).addClass("expanded");
-    }
+    createCategories($(obj).parent());
 }
 
+function createCategories(link) {
+    
+}
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////

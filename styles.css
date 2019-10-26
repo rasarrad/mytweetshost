@@ -603,7 +603,23 @@ twitter-widget {
   width: auto !important;
 }
 
+.linkbar {
+      font-size: 19px;
+      border: 0px solid transparent;
+      padding: 0px 4px;
+      border-radius: 4px;
+      position: absolute;
+      right: 13px;
+      top: -7px;
+      color: white;
+      background: transparent;
+      z-index: 9;
+}
 
+.linkbar.fa-internet-explorer {
+      font-size: 17px;
+
+}
 
 .hidemode {
   display: none !important;
@@ -672,6 +688,22 @@ twitter-widget {
   display: none;
 }
 
+.newlink {
+  background: #009b00;
+  color: white;
+}
+.changedlink {
+  background: #fa1f1f;
+  color: white;
+}
+.newchangedlink {
+  background-image: linear-gradient(to bottom, #009b00 21%, #fa1f1f 80%);
+  color: white;
+}
+
+.newtag {
+  border-bottom: 2px solid #00c400;
+}
 @media only screen and (max-width: 1000px) {
     .gradiantback {
         display: block;
@@ -697,7 +729,7 @@ twitter-widget {
         z-index: 9;
         height: 18px;
         display: block;
-        background-image: linear-gradient(to bottom, #004a86 3%, #002442 78%);
+        background-image: linear-gradient(to bottom, #004a86 3%, #003663 78%);
     }
     .tweet:not(:last-child) .bottomgradiantback {
       position: absolute;
@@ -710,15 +742,15 @@ twitter-widget {
       bottom: 3px;
     }
     .tweet.html:not(:last-child) .bottomgradiantback {
-    bottom: 2px;
-}
-    
+        bottom: 2px;
+    }
+        
 
     .yt.tweet .bottomgradiantback {
       background-image: linear-gradient(to bottom, #002442 14%, #004a86 80%);
       }
       .html.tweet .bottomgradiantback {
-      background-image: linear-gradient(to bottom, #002442 21%, #004a86 80%);
+      background-image: linear-gradient(to bottom, #00325c 21%, #004a86 80%);
       } 
         .tweet iframe {
         width: calc(100% - 0px) !important;
@@ -732,23 +764,23 @@ twitter-widget {
         border: 0px solid white;
         }
         .tweet.html iframe {
-    margin-top: 0px !important;
-    }
+          margin-top: 0px !important;
+          }
         
 
         .tweet.html iframe {
-    width: calc(100% - 0px) !important;
-    border: 0px solid #bbbbbb;
-    height: 72vw;
-}
+            width: calc(100% - 0px) !important;
+            border: 0px solid #bbbbbb;
+            height: 72vw;
+        }
 
-        .tweet.yt {
-    background: #101010;
-}
-        .tweet.html {
-    background: #002646;
-    top: 0px;
-}
+                .tweet.yt {
+            background: #101010;
+        }
+                .tweet.html {
+            background: #002646;
+            top: 0px;
+        }
         #backdiv {
           background-image: linear-gradient(rgb(0, 74, 134), rgb(0, 32, 56)) !important;
         }

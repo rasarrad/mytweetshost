@@ -155,7 +155,85 @@
 
 <textarea style="width: 200px;height: 100px;position: fixed;left: -242px;" id="linkresult" type="text"></textarea>
 
+<div id="linkChange" style="position: fixed;width: 100%;height: calc(100% - 50px);top: 50px;z-index: 1000000;font-size: 11px;background-image: linear-gradient(rgb(0, 74, 134), rgb(1, 36, 62)) !important;"><div style="
+  background: #001b30;
+  height: calc(100% - 45px);
+  width: calc(100% - 50px);
+  margin: 25px;
+  border: 1px solid #003765;
+  margin-top: 20px;
+  border-radius: 4px;
+  color: white;
+  font-size: 12px;
+">        <table class="titletable" style="
+  font-size: 14px;
+  width: 100%;
+  padding-top: 7px;
+">
+          <tbody style="
+  width: 100%;
+"><tr style="
+  width: 100%;
+">
+              <td style="
+  width: 25%;
+  padding-left: 10px;
+">
+                  <b>ID </b><span class="id">32</span>
+              </td>
+              <td style="
+  width: 50%;
+  text-align: center;
+">
+                  <b>Author </b><span class="author">Manel dos santos</span>
+              </td>
+              <td style="
+  width: 25%;
+  text-align: right;
+  padding-right: 10px;
+">
+                  <b>Date </b><span class="date">2009 10 12</span>
+              </td>
+                              
+          </tr>
+      </tbody></table>
 
+      <table class="buttonstable" style="
+  width: calc(100% - 1px);
+  text-align: center;
+  margin-top: 9px;
+  margin-bottom: 2px;
+  border: 2px solid #001b30;
+  /* background: #003156; */
+  padding-bottom: 3px;
+">
+          <tbody><tr>
+              <td style="
+  padding: 0 2px 0 2px;
+  background: #003156;
+">
+                  <i onclick="javascript: removetweet(this,'32')" id="removetweet" class="fa fa-remove"></i>
+              </td>
+              <td style="
+  padding: 0 2px 0 2px;
+  background: #003156;
+">
+                  <i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i>
+              </td>
+              <td style="
+  padding: 0 2px 0 2px;
+  background: #003156;
+">
+                  <i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i>
+              </td>
+              <td style="
+  padding: 0 2px 0 2px;
+  background: #003156;
+">
+                  <i onclick="javascript: closetagpopup()" class="fa fa-remove" style="display: block;top: 4px;font-size: 21px;border-radius: 4px;cursor: pointer;"></i>
+              </td>                
+          </tr>
+      </tbody></table></div></div>
 
 <script>
   /*<![CDATA[*/

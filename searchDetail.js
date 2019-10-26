@@ -172,133 +172,57 @@ var getInformation = function(ismoretweets, wasfiltered) {
     
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                         && dofilterauthorfinal && dofiltercatfinal) {
+                        
+                        var tagdispalay = " --";
+                        var expandclass = "";
+                        
                         var isdeleted = readCookie(val.id + "isdeleted");
-                        if (isdeleted && isdeleted.length > 0) {
-                            isdeleted = hideMode ? "" : "background-image: linear-gradient(to bottom, #d60000 -33%, rgb(0, 137, 217));";
+                        if (isdeleted && isdeleted.length > 0) { // ID DELETED
+                            expandclass = hideMode ? "" : "isdeleted";    
                         } 
                         else {
-                            if (linkcontent && linkcontent.length > 0) {
-                                isdeleted = hideMode ? "" : ""; // newwwwwwwwwwwwwww
-                            }
-                            else {
-                                isdeleted ="";
+                            if (linkcontent && linkcontent.length > 0) { // IS NEW
+                                expandclass = hideMode ? "" : "isnew";  
                             }
                             
-                        }
-                        var tagchanged = readCookie(val.id + "tagchanged");
-                        var catchanged = readCookie(val.id + "catchanged");
-                        var tagstyle = "background: #00000021;border-bottom: 1px solid #00000038;";
-                        if (tagchanged && tagchanged.length > 0 && catchanged && catchanged.length > 0) {
-                            tagstyle = hideMode ? "" : "background-image: linear-gradient(to right, rgb(247, 205, 205), rgb(177, 0, 0), rgb(247, 205, 205))";
-                            tagchanged = '<span class="newtag"><b> New tags </b>' + tagchanged + '</span>';
-                            catchanged = '<span class="newcat"><b> New categories </b>' + catchanged + '</span>';
-                        } 
-                        else {
-                            if (tagchanged && tagchanged.length > 0) {
-                                tagstyle = hideMode ? "" : "background-image: linear-gradient(to right, rgb(177, 0, 0), rgb(247, 205, 205))";
-                                tagchanged = '<span class="newtag"><b> New tags </b>' + tagchanged + '</span>';
-                                catchanged = '<span class="newcat"></span>';
-                            }
-                            else if (catchanged && catchanged.length > 0) {
-                                tagstyle = hideMode ? "" : "background-image: linear-gradient(to left, rgb(177, 0, 0), rgb(247, 205, 205))";
-                                tagchanged = '<span class="newtag"></span>';
-                                catchanged = '<span class="newcat"><b> New categories </b>' + catchanged + '</span>';
-                            }
-                            else {
-                                tagchanged = '<span class="newtag"></span>';
-                                catchanged = '<span class="newcat"></span>';
-                            }
-                        }
+                            var hasChanges = readCookie(val.id + "haschanges");
+                            if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
     
-                        var hasinfo = decodeURIComponent(readCookie(val.id + "info"));
-                        var textareaExtraStyle ="";
-                        var expandclass = "";
-                        var displayundo = "";
-                        if (hasinfo && hasinfo.length > 0 && hasinfo != null && hasinfo != "null") {
-                            if (val.info && val.info.length > 0) {
-                                textareaExtraStyle = "border: 2px solid red;";
-                                expandclass = hideMode ? "" : "infomodified";
-                                val.info = '<div id ="' + val.id + 'oldinfo" class="oldinfo" style="width: 562px;height: 163px;position: relative;left: calc(50% - 282px);z-index: 11;font-size: 14px;background: #0000002e;text-align: left;display: block;border: 2px solid red;top: -12px;">' 
-                                + val.info + '</div>';
-                            }
-                            else {
-                                val.info = "";
-                            }
-                        } 
-                        else {
-                            displayundo = "display: none;";
-                            if (val.info && val.info.length > 0) {
-                                hasinfo = decodeURIComponent(val.info);
-                            }
-                            else {
-                                hasinfo = "";
-                            }
-                            val.info = "";
-                        }
+                                if (expandclass == "isnew")
+                                    expandclass = hideMode ? "" : "isnewmodified";  
+                                else 
+                                    expandclass = hideMode ? "" : "ismodified";  
+
+                                var tagchanged = readCookie(val.id + "tagchanged");
     
-                        var hasClassif = readCookie(val.id + "classif");
-                        var textboxExtraStyle ="";
-                        var displayundoclassif = "";
-        
-                        if (hasClassif && hasClassif.length > 0) {
-                            if (val.classif && val.classif.length > 0) {
-                                textboxExtraStyle = "border: 2px solid red;";
-                                expandclass = hideMode ? "" : "infomodified";
-                                val.classif = '<div class="oldclassif" id ="' + val.id + 'oldclassif" style="position: relative;top: -41px;left: -283px;width: 34px; text-align: center; border: 2px solid red;height: 19px; padding-top: 2px; font-size: 14px;">'
-                                + val.classif + '</div>';
-                            }
-                            else {
-                                val.classif = "";
-                            }
-                        } 
-                        else {
-                            displayundoclassif = "display: none;";
-                            if (val.classif && val.classif.length > 0) {
-                            hasClassif = val.classif;
-                            }
-                            else {
-                            hasClassif = "";
-                            }
-                            val.classif = "";
+                                if (tagchanged && tagchanged.length > 0) {
+                                    tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                                } 
+                                else {
+                                    if (val.tags.length > 0) {
+                                        tagdispalay = val.tags;
+                                    }
+                                }
+                            } 
                         }
-    
-                        var tagdispalay = " --";
-                        if (val.tags.length > 0) {
-                            tagdispalay = val.tags;
-                        }
-        
+
                         var xclass = "";
+                        var typefa = "twitter"
                         if (val.type == "H") {
                             xclass = " html";
+                            typefa = "internet-explorer"
                         }
                         else if (val.type == "Y") {
                             xclass = " yt";
+                            typefa = "youtube-play"
                         }
 
-                        //$('#moretweets').hide();
-                        var newtweet = $('#main').append($('<div style="' + isdeleted + '" id="inid" class="tweet' + xclass + '"></div>'));
+                        var newtweet = $('#main').append($('<div id="inid" class="tweet' + xclass + '"></div>'));
                         var newtweetobj = $('#inid');
 
-                        newtweetobj.append($('<div class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down ' + expandclass + '"></i>' 
-                            + '<div class="categorias">' 
-                                + '<i onclick="javascript: removetweet(this,\'' + val.id + '\')" id="removetweet" class="fa fa-remove"></i>' 
-                                + '<i tagactual="' + val.tags + '" onclick="javascript: changetag(this, \'' + val.id + '\')" id="changetag" class="fa fa-tags"></i>' 
-                                + '<i catactual="' + val.categories + '" onclick="javascript: changecat(this,\'' + val.id + '\')" id="changecat" class="fa fa-bookmark"></i>' 
-                                + '<b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + catchanged 
-                                + '<div style="width: 0px;height: 0px;position: relative;left: calc(50% - 282px);z-index: 11;display: block;top: 19px;border: 0;">'
-                                + '<input  id="' + val.id + 'classif" class="info" type="text" value="' + hasClassif + '"style="width: 25px;height: 19px;position: relative;left: calc(50% - 90px);z-index: 11;display: block;border: 1px solid white;margin-top: 4px;background: #2baffa;text-align: center;' + textboxExtraStyle + '"></input>'
-                                + '<i onclick="javascript: saveclassif(this,\'' + val.id + '\')" class="fa fa-check" style="position: relative;cursor: pointer;background: white;color: #0082cd;padding: 3px 6px;font-size: 21px;border-radius: 4px;left: -46px;top: -24px;width: 18px;"></i>'
-                                + '<i onclick="javascript: undosaveclassif(this,\'' + val.id + '\')" id ="' + val.id + 'undoclassif" class="fa fa-undo" style="position: relative;cursor: pointer;background: white;color: #0082cd;padding: 3px 6px;font-size: 21px;border-radius: 4px;left: -231px;top: -17px;' + displayundoclassif + '"></i>'
-                                + val.classif // vai conter a div com a classificacao antiga - caso exista
-                                + '</div>'
-                                + '<textarea class="info" style="width: 558px;height: 216px;position: relative;left: calc(50% - 282px);z-index: 11;display: block; margin-top: 4px;' + textareaExtraStyle + '" id="' + val.id + 'info" type="text">' 
-                                + hasinfo + '</textarea>' 
-                                + '<i onclick="javascript: saveinfo(this,\'' + val.id + '\')" class="fa fa-check" style="position: relative;left: 330px;top: -221px;cursor: pointer;background: white;color: #0082cd;padding: 3px 6px;font-size: 21px;border-radius: 4px;width: 18px;"></i>' 
-                                + '<i onclick="javascript: undosaveinfo(this,\'' + val.id + '\')" id ="' + val.id + 'undoinfo" class="fa fa-undo" style="position: relative;cursor: pointer;background: white;color: #0082cd;' + displayundo + 'padding: 3px 6px;font-size: 21px;border-radius: 4px;left: 300px;top: -188px;"></i>' 
-                                + val.info // vai conter a div com o texto antigo - caso exista
-                            + '</div>'));
+                        newtweetobj.append($('<div class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down ' + expandclass + '"></i><i class="linkbar fa fa-' + typefa + '" onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')"></i>'));
                         
-                        newtweetobj.append($('<div style="' + tagstyle + '" class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b style="font-size: 13px;">Tags: </b>' + tagdispalay + tagchanged + '</div>'));
+                        newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b style="font-size: 13px;">Tags: </b>' + tagdispalay + '</div>'));
                         
                         if (val.type == "T") {
                             newtweetobj.append($('<div class="innertweet"></div>'));
@@ -746,6 +670,47 @@ var getInformationbyid = function(id) {
 }
 
 
+var getJsonbyid = function(id) {
+    var path = "./data.json";
+
+    $.getJSON(path, function(data) {
+        var processtmp = true;
+        nextid = parseInt(readCookie("maxid")) - 1;
+        processtmp = true;
+
+        $.each(data.Tweets, function(key, val) {
+            var recordfromdata = val;
+            var linkcontent = null;
+
+            do {
+                if (processtmp) {
+                    linkcontent = readCookie(nextid + "templink");
+                    if (linkcontent && linkcontent.length > 0) {
+                        var linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                        linktmp = linktmp.replace(/(\\)/gm, ""); 
+                        linktmp = JSON.parse(linktmp);
+    
+                        val = linktmp;
+                        nextid = nextid - 1;
+                    }
+                    else {
+                        val = recordfromdata;
+                        processtmp = false;
+                    }
+                }
+                else {
+                    val = recordfromdata;
+                }
+
+                if (val.id == id)
+                    return val;
+            }
+            while (processtmp);
+        }); 
+    }); 
+    return null;
+}
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
  
