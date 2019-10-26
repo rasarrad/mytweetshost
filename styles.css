@@ -364,7 +364,6 @@ ol > li {
 
 #generate {
     position: absolute;
-    color: #ff7878;
     font-size: 20px;
     top: 14px;
     right: 54px;
@@ -1065,7 +1064,7 @@ twitter-widget {
     font-size: 0.75rem;
 }
 
-.topback2 {
+.topoback2 {
     background: white;
     left: 57px;
     width: calc(100% - 68px);
