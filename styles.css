@@ -968,7 +968,7 @@ twitter-widget {
     }
 }
 
-#linkChange {
+.newLayout {
     position: fixed;
     width: 100%;
     height: calc(100% - 50px);
@@ -978,7 +978,7 @@ twitter-widget {
     background-image: linear-gradient(rgb(0, 74, 134), rgb(1, 36, 62));
 }
 
-#linkChange > div {
+.newLayout > div {
     background: #001b30;
     height: calc(100% - 45px);
     width: calc(100% - 50px);
@@ -990,29 +990,29 @@ twitter-widget {
     font-size: 12px;
 }
 
-#linkChange > div .titletable {
+.newLayout > div .titletable {
     font-size: 14px;
     width: 100%;
     padding-top: 7px;  
 }
 
-#linkChange > div .titletable .firsttd {
+.newLayout > div .titletable .firsttd {
     width: 25%;
     padding-left: 10px;
 }
 
-#linkChange > div .titletable .middletd {
+.newLayout > div .titletable .middletd {
     width: 50%;
     text-align: center;
 }
 
-#linkChange > div .titletable .lasttd {
+.newLayout > div .titletable .lasttd {
     width: 25%;
     text-align: right;
     padding-right: 10px;
 }
 
-#linkChange > div .buttonstable {
+.newLayout > div .buttonstable {
     width: calc(100% - 0px);
     text-align: center;
     margin-top: 9px;
@@ -1022,21 +1022,21 @@ twitter-widget {
     color: #5187b3;
 }
 
-#linkChange > div .buttonstable td {
+.newLayout > div .buttonstable td {
     padding: 3px 2px 3px 2px;
     background: #003156;
     width: 25%;
 }
 
 
-#linkChange #removetweetp {
+.newLayout #removetweetp {
     cursor: pointer;
     font-size: 18px;
     position: initial;
     transition: all 0.6s;
 }
 
-#linkChange #internallinkp {
+.newLayout #internallinkp {
     position: initial;
     cursor: pointer;
     font-size: 15px;
@@ -1044,7 +1044,7 @@ twitter-widget {
     display: initial;
 }
 
-#linkChange #externallinkp {
+.newLayout #externallinkp {
     position: initial;
     cursor: pointer;
     font-size: 15px;
@@ -1052,12 +1052,144 @@ twitter-widget {
     display: initial;
 }
 
-#linkChange #closepopupp {
+.newLayout #closepopupp {
     display: block;
     cursor: pointer;
     font-size: 18px;
     transition: all 0.6s;
     line-height: 17px;
+}
+
+.newLayout .sectiontitletable td {
+  /* background: #002440; */
+  /* color: #b2cbde; */
+}
+
+
+.newLayout .sectiontitletable .sectionicontd {
+  width: 15%;
+  text-align: left;
+  padding-left: 9px;
+}
+
+.newLayout .currenttags {
+  text-align: left;
+  padding-left: 14px;
+  color: #d5e6f3;
+}
+
+.newLayout .sectiontitletable .sectiontitletd {
+  width: 70%;
+  text-align: center;
+  font-weight: bold;
+  /* padding-top: 2px; */
+}
+
+.newLayout .sectiontitletable .sectionedittd {
+  width: 15%;
+  text-align: right;
+  padding-right: 5px;
+  font-size: 15px;
+}
+
+.newLayout .detailtable, .newLayout .sectiontitletable {
+    width: calc(100% - 8px);
+    background: #003156;
+    margin-left: 4px;
+    color: #7ba8ca;
+    padding: 4px;
+}
+
+.newLayout .detailtable {
+    padding: 3px 5px;
+    color: #b2cbde;
+}
+.newLayout .detailtable tr {
+    vertical-align: super;
+}
+
+.boldtitle {
+    font-weight: bold;
+    padding-right: 7px;
+    color: #7ba8ca;
+}
+
+.newLayout .sectiontitle {
+  padding-left: 9px;
+  font-weight: bold;   
+}
+
+.newLayout input {
+    width: 100%;
+    color: #002133;
+    font-weight: bold;
+    background: #a6b9fd;
+    padding: 1px 4px;
+    border: 1px solid #002133;
+}
+
+.newLayout ul {
+    width: 100%;
+    height: 165px;
+    padding-left: 3px;
+    padding-top: 3px;
+    overflow-y: auto;
+    z-index: 99;
+    display: block;
+    margin-top: 6px;
+    margin-bottom: 0;
+}
+
+.newLayout ul li {
+    color: #007dc5;
+    cursor: pointer;
+    background: #002644;
+    padding: 5px 4px;
+    height: 18px;
+    padding-right: 3px;
+}
+
+.newLayout select {
+    height: 19px;
+    width: 100%;
+    outline: none;
+    margin-left: 8px;
+    position: relative;
+    color: #002133;
+    font-weight: bold;
+    background: #a6b9fd;
+    padding: 1px 4px;
+    border: 1px solid #002133;
+    top: 1px;
+    cursor: pointer;
+}
+
+/****************************************/
+
+select {
+    height: 19px;
+    width: 100%;
+    outline: none;
+    color: #002133;
+    font-weight: bold;
+    background: #a6b9fd;
+    padding: 1px 4px;
+    border: 1px solid #002133;
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    color: #002133;
+    font-weight: bold;
+    background: #a6b9fd;
+    padding: 1px 4px;
+    border: 1px solid #002133;
+}
+
+.mainbutton {
+    color: #007dc5;
+    cursor: pointer;
 }
 
 .smallrem {
@@ -1075,89 +1207,3 @@ twitter-widget {
     border: 2px solid #002542;
     background: #001b30;
 }
-
-#linkChange .sectiontitletable td {
-  /* background: #002440; */
-  /* color: #b2cbde; */
-}
-
-
-#linkChange .sectiontitletable .sectionicontd {
-  width: 15%;
-  text-align: left;
-  padding-left: 9px;
-  padding-left: 9px;
-}
-
-#linkChange .sectiontitletable .sectiontitletd {
-  width: 70%;
-  text-align: center;
-  font-weight: bold;
-  /* padding-top: 2px; */
-}
-
-#linkChange .sectiontitletable .sectionedittd {
-  width: 15%;
-  text-align: right;
-  padding-right: 5px;
-  font-size: 15px;
-}
-
-#linkChange .detailtable, #linkChange .sectiontitletable {
-    width: calc(100% - 8px);
-    background: #003156;
-    margin-left: 4px;
-    color: #b2cbde;
-    padding: 4px;
-}
-
-#linkChange .detailtable {
-    padding: 3px 5px;
-    color: #b2cbde;
-}
-
-.boldtitle {
-    font-weight: bold;
-    padding-right: 7px;
-}
-
-#linkChange .sectiontitle {
-  padding-left: 9px;
-  font-weight: bold;   
-}
-
-#linkChange input {
-    width: 100%;
-    color: #002133;
-    font-weight: bold;
-    background: #a6b9fd;
-    padding: 1px 4px;
-    border: 1px solid #002133;
-}
-
-#linkChange .mainbutton {
-    color: #007dc5;
-    cursor: pointer;
-}
-
-#linkChange ul {
-    width: 100%;
-    height: 165px;
-    padding-left: 3px;
-    padding-top: 3px;
-    overflow-y: auto;
-    z-index: 99;
-    display: block;
-    margin-top: 6px;
-    margin-bottom: 0;
-}
-
-#linkChange ul li {
-    color: #007dc5;
-    cursor: pointer;
-    background: #002644;
-    padding: 5px 4px;
-    height: 18px;
-    padding-right: 3px;
-}
-
