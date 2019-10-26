@@ -274,7 +274,7 @@ ol > li {
       transition: all 0.6s;
     }
 .toptitle {
-  color: #426c8e !important;
+  color: #7ba8ca !important;
   text-shadow: 3px 3px #c5c5c5;
   cursor: default;
   font-weight: bold;
@@ -336,7 +336,7 @@ ol > li {
 
     #addtweet {
       position: absolute;
-      color: #004a86;
+      color: #7ba8ca;
       font-size: 28px;
       top: 11.5px;
       right: 15px;
@@ -372,6 +372,7 @@ ol > li {
     background: #00a900;
     padding: 2px;
     border-radius: 5px;
+    color: #c9d3da;
 }
 #generate:hover {
     opacity: 0.5;
@@ -892,7 +893,7 @@ twitter-widget {
       }
       #sear {
         position: relative;
-        color: #004a86;
+        color: #7ba8ca;
         font-size: 18px;
         padding-left: 7px;
         padding-right: 17px;
@@ -934,6 +935,7 @@ twitter-widget {
       margin-right: auto;
       text-shadow: none;
       color: #5c8cb3;
+      color: #7ba8ca;
   }
     #addtweet {
       font-size: 22px;
@@ -950,7 +952,7 @@ twitter-widget {
         }
         #zoomin {
         position: absolute;
-        color: #004a86;
+        color: #7ba8ca;
         font-size: 15px;
         top: 18px;
         right: 70px;
@@ -959,7 +961,7 @@ twitter-widget {
     }
     #zoomout {
         position: absolute;
-        color: #004a86;
+        color: #7ba8ca;
         font-size: 15px;
         top: 18px;
         right: 94px;
@@ -986,8 +988,8 @@ twitter-widget {
     border: 1px solid #003765;
     margin-top: 20px;
     border-radius: 4px;
-    color: #426c8e;
     font-size: 12px;
+    color: #7ba8ca;
 }
 
 .newLayout > div .titletable {
@@ -1019,7 +1021,7 @@ twitter-widget {
     margin-bottom: 2px;
     border: 2px solid #001b30;
     padding-bottom: 3px;
-    color: #5187b3;
+    color: #7ba8ca;
 }
 
 .newLayout > div .buttonstable td {
