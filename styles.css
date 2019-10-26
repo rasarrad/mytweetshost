@@ -169,7 +169,8 @@ ol > li {
     padding-left: 0px;
     padding-right: 5px;
     padding: 6px 11px;
-    color: white;
+    color: #001b30;
+    background: #001b30;
     cursor: pointer;
     height: 44px;
     transition: all 0.6s;
@@ -273,7 +274,7 @@ ol > li {
       transition: all 0.6s;
     }
 .toptitle {
-  color: #004a86 !important;
+  color: #426c8e !important;
   text-shadow: 3px 3px #c5c5c5;
   cursor: default;
   font-weight: bold;
@@ -363,7 +364,7 @@ ol > li {
 
 #generate {
     position: absolute;
-    color: white;
+    color: #ff7878;
     font-size: 20px;
     top: 14px;
     right: 54px;
@@ -920,7 +921,7 @@ twitter-widget {
 
 @media only screen and (max-width: 700px) {
     .toptitle {
-      top: 10px;
+      top: 9px;
       font-size: 17px;
       /* padding-left: calc(50% - 103px); */
       display: block;
@@ -932,7 +933,8 @@ twitter-widget {
       position: absolute;
       margin-left: auto;
       margin-right: auto;
-      text-shadow: 0px 0px #c5c5c5;
+      text-shadow: none;
+      color: #5c8cb3;
   }
     #addtweet {
       font-size: 22px;
@@ -985,7 +987,7 @@ twitter-widget {
     border: 1px solid #003765;
     margin-top: 20px;
     border-radius: 4px;
-    color: white;
+    color: #426c8e;
     font-size: 12px;
 }
 
@@ -1018,6 +1020,7 @@ twitter-widget {
     margin-bottom: 2px;
     border: 2px solid #001b30;
     padding-bottom: 3px;
+    color: #5187b3;
 }
 
 #linkChange > div .buttonstable td {
@@ -1060,4 +1063,16 @@ twitter-widget {
 
 .smallrem {
     font-size: 0.75rem;
+}
+
+.topback2 {
+    background: white;
+    left: 57px;
+    width: calc(100% - 68px);
+    top: 7px;
+    height: 34px;
+    border-radius: 5px;
+    border: 2px solid #707070;
+    border: 2px solid #002542;
+    background: #001b30;
 }
