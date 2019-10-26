@@ -1057,3 +1057,7 @@ twitter-widget {
     transition: all 0.6s;
     line-height: 17px;
 }
+
+.smallrem {
+    font-size: 0.75rem;
+}

@@ -156,42 +156,42 @@
 <textarea style="width: 200px;height: 100px;position: fixed;left: -242px;" id="linkresult" type="text"></textarea>
 
 <div id="linkChange">
-  <div>        
-    <table class="titletable">
-      <tbody>
-        <tr>
-            <td class="firsttd">
-                <b>ID </b><span class="id">32</span>
+    <div>        
+      <table class="titletable">
+        <tbody>
+          <tr>
+              <td class="firsttd">
+                  <b>id </b><span class="id smallrem">32</span>
+              </td>
+              <td class="middletd">
+                  <b>author </b><span class="author">manel dos santos</span>
+              </td>
+              <td class="lasttd">
+                  <b>date </b><span class="date smallrem">2009 10 12</span>
+              </td>                    
+          </tr>
+        </tbody>
+      </table>
+      <table class="buttonstable">
+        <tbody>
+          <tr>
+            <td>
+                <i onclick="removetweet(this,32)" id="removetweetp" class="fa fa-times-circle"></i>
             </td>
-            <td class="middletd">
-                <b>Author </b><span class="author">Manel dos santos</span>
+            <td>
+                <i onclick="internallinkcopy(32)" id="internallinkp" class="fa fa-link"></i>
             </td>
-            <td class="lasttd">
-                <b>Date </b><span class="date">2009 10 12</span>
-            </td>                    
-        </tr>
-      </tbody>
-    </table>
-    <table class="buttonstable">
-      <tbody>
-        <tr>
-          <td>
-              <i onclick="removetweet(this,32)" id="removetweetp" class="fa fa-times-circle"></i>
-          </td>
-          <td>
-              <i onclick="internallinkcopy(32)" id="internallinkp" class="fa fa-link"></i>
-          </td>
-          <td>
-              <i onclick="externallinkcopy('val.url', 'val.id')" id="externallinkp" class="fa fa-external-link"></i>
-          </td>
-          <td>
-              <i id="closepopupp" onclick="closetagpopup()" class="fa fa-remove"></i>
-          </td>                
-        </tr>
-      </tbody>
-    </table>
+            <td>
+                <i onclick="externallinkcopy('val.url', 'val.id')" id="externallinkp" class="fa fa-external-link"></i>
+            </td>
+            <td>
+                <i id="closepopupp" onclick="closetagpopup()" class="fa fa-remove"></i>
+            </td>                
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
 
 <script>
   /*<![CDATA[*/
