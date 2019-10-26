@@ -127,12 +127,12 @@
     <br><br>
     Tags <input style="width: 172px;padding-left: 469px;" id="tags" type="text">
     <div style="position: relative;height: 36px;width: 486px;display: grid;background: white;top: -26px;padding-right: 20px;">
-        <ul id="tagsul" style="width: 532px;background: white;height: 253px;max-width: 490px;padding-left: 3px;padding-top: 3px;border: 2px solid #006ba9;overflow-y: auto;z-index: 99;display: block;margin-top: 6px;margin-bottom: 0;">
+        <ul id="tagsulxxx" style="width: 532px;background: white;height: 253px;max-width: 490px;padding-left: 3px;padding-top: 3px;border: 2px solid #006ba9;overflow-y: auto;z-index: 99;display: block;margin-top: 6px;margin-bottom: 0;">
 
         </ul>
     </div>
 
-    <select style="width: 96px;float: right;position: absolute;right: 14px;top: 109px;height: 19px;" id="tagsselect"></select><br><br>
+    <select style="width: 96px;float: right;position: absolute;right: 14px;top: 109px;height: 19px;" id="tagsselectxxxx"></select><br><br>
     <span style="margin-left: auto;margin-right: auto;width: 100%;display: block;font-size: 16px;height: 32px;padding-top: 3px;text-align: left;position: relative;top: 241px;">Result</span>
     <div style="float: right;position: absolute;right: 460px;top: 150px;height: 19px;width: 163px;color: #0082cd;">Preview And Include</div>
     <input type="checkbox" style="float: right;position: absolute;right: 389px;top: 148px;height: 19px;width: 112px;color: #484848;" id="preview" checked="">
@@ -207,7 +207,33 @@
                     <span class="currenttags">bernie war joe rogan m4a</span>
                 </td>                                    
             </tr>          
-        </tbody></table>
+        </tbody>
+      </table>
+      <table class="detailtable">
+          <tbody>
+            <tr>  
+              <td>
+                  <input/>
+              </td>
+              <td>
+                  <select style="width: 96px;float: right;position: absolute;right: 14px;top: 109px;height: 19px;" id="tagsselect"></select>
+              </td>                      
+              <td>
+                  <i class="mainbutton" onclick="javascript: acceptTag(this)" style="font-size: 21px;"></i>
+              </td>
+              <td>
+                  <i class="mainbutton" onclick="javascript: undotag(this)" style="font-size: 18px;"></i>
+              </td>                                        
+          </tr>    
+          <tr>  
+              <td colspan="4">
+                  <ul id="tagsul" style="width: 532px;background: white;height: 253px;max-width: 490px;padding-left: 3px;padding-top: 3px;border: 2px solid #006ba9;overflow-y: auto;z-index: 99;display: block;margin-top: 6px;margin-bottom: 0;">
+
+                  </ul>
+              </td>                                        
+          </tr>                                       
+        </tbody>
+      </table>      
     </div>
   </div>
 

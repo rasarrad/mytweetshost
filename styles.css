@@ -1083,21 +1083,21 @@ twitter-widget {
 
 
 #linkChange .sectiontitletable .sectionicontd {
-  width: 90%;
+  width: 15%;
   text-align: left;
   padding-left: 9px;
   padding-left: 9px;
 }
 
-#linkChange .sectiontitletable .sectiontitle\td {
-  width: 80%;
-  text-align: left;
+#linkChange .sectiontitletable .sectiontitletd {
+  width: 70%;
+  text-align: center;
   font-weight: bold;
-  padding-top: 2px;
+  /* padding-top: 2px; */
 }
 
 #linkChange .sectiontitletable .sectionedittd {
-  width: 10%;
+  width: 15%;
   text-align: right;
   padding-right: 5px;
   font-size: 15px;
@@ -1108,6 +1108,7 @@ twitter-widget {
     background: #003156;
     margin-left: 4px;
     color: #b2cbde;
+    padding: 4px;
 }
 
 #linkChange .detailtable {
@@ -1123,4 +1124,18 @@ twitter-widget {
 #linkChange .sectiontitle {
   padding-left: 9px;
   font-weight: bold;   
+}
+
+#linkChange input {
+    width: 100%;
+    color: #002133;
+    font-weight: bold;
+    background: #a6b9fd;
+    padding: 1px 4px;
+    border: 1px solid #002133;
+}
+
+#linkChange .mainbutton {
+    color: #007dc5;
+    cursor: pointer;
 }
