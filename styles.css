@@ -920,7 +920,7 @@ twitter-widget {
 
 @media only screen and (max-width: 700px) {
     .toptitle {
-      top: 11px;
+      top: 10px;
       font-size: 17px;
       /* padding-left: calc(50% - 103px); */
       display: block;
@@ -967,4 +967,93 @@ twitter-widget {
     }
 }
 
+#linkChange {
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 50px);
+    top: 50px;
+    z-index: 1000000;
+    font-size: 11px;
+    background-image: linear-gradient(rgb(0, 74, 134), rgb(1, 36, 62));
+}
 
+#linkChange > div {
+    background: #001b30;
+    height: calc(100% - 45px);
+    width: calc(100% - 50px);
+    margin: 25px;
+    border: 1px solid #003765;
+    margin-top: 20px;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+}
+
+#linkChange > div .titletable {
+    font-size: 14px;
+    width: 100%;
+    padding-top: 7px;  
+}
+
+#linkChange > div .titletable .firsttd {
+    width: 25%;
+    padding-left: 10px;
+}
+
+#linkChange > div .titletable .middletd {
+    width: 50%;
+    text-align: center;
+}
+
+#linkChange > div .titletable .lasttd {
+    width: 25%;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#linkChange > div .buttonstable {
+    width: calc(100% - 1px);
+    text-align: center;
+    margin-top: 9px;
+    margin-bottom: 2px;
+    border: 2px solid #001b30;
+    padding-bottom: 3px;
+}
+
+#linkChange > div .buttonstable td {
+    padding: 3px 2px 3px 2px;
+    background: #003156;
+    width: 25%;
+}
+
+
+#linkChange #removetweetp {
+    cursor: pointer;
+    font-size: 18px;
+    position: initial;
+    transition: all 0.6s;
+}
+
+#linkChange #internallinkp {
+    position: initial;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.6s;
+    display: initial;
+}
+
+#linkChange #externallinkp {
+    position: initial;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.6s;
+    display: initial;
+}
+
+#linkChange #closepopupp {
+    display: block;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.6s;
+    line-height: 17px;
+}
