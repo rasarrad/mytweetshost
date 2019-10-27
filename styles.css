@@ -1,5 +1,9 @@
 :root {
   --high-color: #45cae7;
+  --text-color: #6db0bf;
+  --dark-color: #001b30;
+  --softdark-color: #003156;
+  --soft-color: #004a86:
 }
 
 .tweet {
@@ -664,8 +668,8 @@ twitter-widget {
 }
 
 .litags.selectedtag {
-  background: #0069a6;
-  color: white;
+  color: var(--dark-color);
+  background: var(--high-color);
 }
 
 #backdiv {
@@ -925,7 +929,7 @@ twitter-widget {
 
 @media only screen and (max-width: 700px) {
     .toptitle {
-      top: 9px;
+      top: 10px;
       font-size: 17px;
       /* padding-left: calc(50% - 103px); */
       display: block;
@@ -985,7 +989,7 @@ twitter-widget {
 }
 
 .newLayout > div {
-    background: #001b30;
+    background: var(--dark-color);
     max-height: calc(100% - 45px);
     width: calc(100% - 50px);
     margin: 25px;
@@ -993,7 +997,7 @@ twitter-widget {
     margin-top: 20px;
     border-radius: 4px;
     font-size: 12px;
-    color: #6db0bf;
+    color: #004a86;
     padding-bottom: 6px;
     overflow-y: auto;
 }
@@ -1001,9 +1005,19 @@ twitter-widget {
 .newLayout > div .titletable {
     font-size: 14px;
     width: 100%;
-    padding-top: 7px;  
+    padding-top: 7px;
+    color: var(--high-color);
 }
 
+.newLayout > div .author {
+  color: var(--text-color);
+}
+.newLayout > div .id {
+  color: var(--text-color);
+}
+.newLayout > div .date {
+  color: var(--text-color);
+}
 .newLayout > div .titletable .firsttd {
     width: 25%;
     padding-left: 10px;
@@ -1032,7 +1046,7 @@ twitter-widget {
 
 .newLayout > div .buttonstable td {
     padding: 3px 2px 3px 2px;
-    background: #003156;
+    background: var(--softdark-color);
     width: 25%;
 }
 
@@ -1083,7 +1097,7 @@ twitter-widget {
 .newLayout .currenttags {
   text-align: left;
   padding-left: 14px;
-  color: #6db0bf;
+  color: var(--text-color);
 }
 
 .newLayout .sectiontitletable .sectiontitletd {
@@ -1102,7 +1116,7 @@ twitter-widget {
 
 .newLayout .detailtable, .newLayout .sectiontitletable {
     width: calc(100% - 8px);
-    background: #003156;
+    background: var(--softdark-color);
     margin-left: 4px;
     color: var(--high-color);
     padding: 4px;
@@ -1129,7 +1143,7 @@ twitter-widget {
 
 .newLayout input {
     width: 100%;
-    color: #004367;
+    color: var(--dark-color);
     font-weight: bold;
     background: var(--high-color);
     padding: 1px 4px;
@@ -1153,7 +1167,7 @@ twitter-widget {
 .newLayout ul li {
     color: var(--high-color);
     cursor: pointer;
-    background: #004275;
+    background: var(--soft-color);
     padding: 5px 4px;
     height: 18px;
     padding-right: 3px;
@@ -1165,11 +1179,11 @@ twitter-widget {
     outline: none;
     margin-left: 8px;
     position: relative;
-    color: #004367;
+    color: var(--dark-color);
     font-weight: bold;
     background: var(--high-color);
     padding: 1px 4px;
-    border: 1px solid #002133;
+    border: 1px solid #330000;
     top: 1px;
     cursor: pointer;
 }
@@ -1214,8 +1228,8 @@ input {
     height: 34px;
     border-radius: 5px;
     border: 2px solid #707070;
-    border: 2px solid #002542;
-    background: #001b30;
+    border: 2px solid var(--dark-color);
+    background: var(--dark-color);
 }
 
 
@@ -1224,7 +1238,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"] + label {
-    color: #6db0bf;
+    color: var(--text-color);
     font-size: 11px;
 }
 
