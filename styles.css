@@ -169,7 +169,7 @@ ol > li {
     padding-left: 0px;
     padding-right: 5px;
     padding: 6px 11px;
-    color: #001b30;
+    color: #45cae7;
     background: #001b30;
     cursor: pointer;
     height: 44px;
@@ -274,7 +274,7 @@ ol > li {
       transition: all 0.6s;
     }
 .toptitle {
-  color: #7ba8ca !important;
+  color: #45cae7 !important;
   text-shadow: 3px 3px #c5c5c5;
   cursor: default;
   font-weight: bold;
@@ -336,7 +336,7 @@ ol > li {
 
     #addtweet {
       position: absolute;
-      color: #7ba8ca;
+      color: #45cae7;
       font-size: 28px;
       top: 11.5px;
       right: 15px;
@@ -893,7 +893,7 @@ twitter-widget {
       }
       #sear {
         position: relative;
-        color: #7ba8ca;
+        color: #45cae7;
         font-size: 18px;
         padding-left: 7px;
         padding-right: 17px;
@@ -952,7 +952,7 @@ twitter-widget {
         }
         #zoomin {
         position: absolute;
-        color: #7ba8ca;
+        color: #45cae7;
         font-size: 15px;
         top: 18px;
         right: 70px;
@@ -961,7 +961,7 @@ twitter-widget {
     }
     #zoomout {
         position: absolute;
-        color: #7ba8ca;
+        color: #45cae7;
         font-size: 15px;
         top: 18px;
         right: 94px;
@@ -989,7 +989,7 @@ twitter-widget {
     margin-top: 20px;
     border-radius: 4px;
     font-size: 12px;
-    color: #7ba8ca;
+    color: #6db0bf;
     padding-bottom: 6px;
     overflow-y: auto;
 }
@@ -1079,7 +1079,7 @@ twitter-widget {
 .newLayout .currenttags {
   text-align: left;
   padding-left: 14px;
-  color: #7ba8ca;
+  color: #6db0bf;
 }
 
 .newLayout .sectiontitletable .sectiontitletd {
@@ -1220,7 +1220,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"] + label {
-    color: #7ba8ca;
+    color: #6db0bf;
     font-size: 11px;
 }
 
