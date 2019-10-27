@@ -1,3 +1,7 @@
+:root {
+  --high-color: #45cae7;
+}
+
 .tweet {
   margin-left: auto;
   margin-right: auto;
@@ -169,7 +173,7 @@ ol > li {
     padding-left: 0px;
     padding-right: 5px;
     padding: 6px 11px;
-    color: #45cae7;
+    color: var(--high-color);
     background: #001b30;
     cursor: pointer;
     height: 44px;
@@ -274,7 +278,7 @@ ol > li {
       transition: all 0.6s;
     }
 .toptitle {
-  color: #45cae7 !important;
+  color: var(--high-color) !important;
   text-shadow: 3px 3px #c5c5c5;
   cursor: default;
   font-weight: bold;
@@ -336,7 +340,7 @@ ol > li {
 
     #addtweet {
       position: absolute;
-      color: #45cae7;
+      color: var(--high-color);
       font-size: 28px;
       top: 11.5px;
       right: 15px;
@@ -893,7 +897,7 @@ twitter-widget {
       }
       #sear {
         position: relative;
-        color: #45cae7;
+        color: var(--high-color);
         font-size: 18px;
         padding-left: 7px;
         padding-right: 17px;
@@ -952,7 +956,7 @@ twitter-widget {
         }
         #zoomin {
         position: absolute;
-        color: #45cae7;
+        color: var(--high-color);
         font-size: 15px;
         top: 18px;
         right: 70px;
@@ -961,7 +965,7 @@ twitter-widget {
     }
     #zoomout {
         position: absolute;
-        color: #45cae7;
+        color: var(--high-color);
         font-size: 15px;
         top: 18px;
         right: 94px;
@@ -1023,7 +1027,7 @@ twitter-widget {
     margin-bottom: 2px;
     border: 2px solid #001b30;
     padding-bottom: 3px;
-    color: #45cae7;
+    color: var(--high-color);
 }
 
 .newLayout > div .buttonstable td {
@@ -1100,7 +1104,7 @@ twitter-widget {
     width: calc(100% - 8px);
     background: #003156;
     margin-left: 4px;
-    color: #45cae7;
+    color: var(--high-color);
     padding: 4px;
 }
 
@@ -1115,7 +1119,7 @@ twitter-widget {
 .boldtitle {
     font-weight: bold;
     padding-right: 7px;
-    color: #45cae7;
+    color: var(--high-color);
 }
 
 .newLayout .sectiontitle {
@@ -1127,7 +1131,7 @@ twitter-widget {
     width: 100%;
     color: #004367;
     font-weight: bold;
-    background: #45cae7;
+    background: var(--high-color);
     padding: 1px 4px;
     border: 1px solid #002133;
     outline: none;
@@ -1147,7 +1151,7 @@ twitter-widget {
 }
 
 .newLayout ul li {
-    color: #45cae7;
+    color: var(--high-color);
     cursor: pointer;
     background: #004275;
     padding: 5px 4px;
@@ -1163,7 +1167,7 @@ twitter-widget {
     position: relative;
     color: #004367;
     font-weight: bold;
-    background: #45cae7;
+    background: var(--high-color);
     padding: 1px 4px;
     border: 1px solid #002133;
     top: 1px;
@@ -1194,7 +1198,7 @@ input {
 }
 
 .mainbutton {
-    color: #45cae7;
+    color: var(--high-color);
     cursor: pointer;
 }
 
