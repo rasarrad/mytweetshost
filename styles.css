@@ -3,7 +3,11 @@
   --text-color: #6db0bf;
   --dark-color: #001b30;
   --softdark-color: #003156;
-  --soft-color: #004a86:
+  --soft-color: #004a86;
+}
+
+.copyright {
+  color: var(--high-color);
 }
 
 .tweet {
@@ -155,12 +159,12 @@ ol > li {
 }
 
    .fa-folder-open {
-    color: white;
+    color: var(--high-color);
     font-size: 122px;
     position: relative;
     top: calc(50% - 73px);
     left: calc(50% - 71px);
-    border: 10px solid #ffffff !important;
+    border: 10px solid var(--high-color) !important;
     padding-left: 8px;
     padding-top: 5px;
     padding-right: 3px;
@@ -380,13 +384,14 @@ ol > li {
     background: #00a900;
     padding: 2px;
     border-radius: 5px;
-    color: #c9d3da;
+    color: var(--dark-color);
+    background: var(--high-color);
 }
 #generate:hover {
     opacity: 0.5;
 }
 #generate.haschanges {
-      background: red;
+      color: #c30000;
 }
     #addtweet:hover {
       color: #00659f;
@@ -651,7 +656,7 @@ twitter-widget {
   height: 21px;
   font-size: 13px;
   font-weight: bold;
-  border: 1px solid #0069a7;
+  border: 1px solid var(--high-color);
   padding-top: 6px;
   background: #0069a621;
   padding-left: 2px;
@@ -791,7 +796,7 @@ twitter-widget {
             top: 0px;
         }
         #backdiv {
-          background-image: linear-gradient(rgb(0, 74, 134), rgb(0, 32, 56)) !important;
+          background-image: linear-gradient(var(--soft-color), var(--softdark-color)) !important;
         }
         .tweet .innertweet {
             width: calc(100% - 50px) !important;
@@ -986,6 +991,7 @@ twitter-widget {
     z-index: 1000000;
     font-size: 11px;
     background-image: linear-gradient(rgb(0, 74, 134), rgb(1, 36, 62));
+    background: #0000007a;
 }
 
 .newLayout > div {
@@ -1167,10 +1173,10 @@ twitter-widget {
 .newLayout ul li {
     color: var(--high-color);
     cursor: pointer;
-    background: var(--soft-color);
     padding: 5px 4px;
     height: 18px;
     padding-right: 3px;
+    background: var(--soft-color);
 }
 
 .newLayout select {
