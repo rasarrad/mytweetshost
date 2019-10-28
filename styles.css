@@ -745,7 +745,7 @@ twitter-widget {
         z-index: 9;
         height: 15px;
         display: block;
-        background-image: linear-gradient(to bottom, var(--soft-color) 22%, var(--dark-color) 89%);
+        background-image: linear-gradient(to bottom, var(--soft-color) 3%, var(--dark-color) 80%);
     }
       .html .gradiantback {
         position: absolute;
