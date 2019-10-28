@@ -14,7 +14,7 @@
   --dark-color: #670000;
   --softdark-color: #b90000;
   --soft-color: #ff6060;
-*/
+
 }
 
 .copyright {
@@ -745,7 +745,7 @@ twitter-widget {
         z-index: 9;
         height: 15px;
         display: block;
-        background-image: linear-gradient(to bottom, var(--soft-color) 3%, var(--dark-color) 80%);
+        background-image: linear-gradient(to bottom, var(--soft-color) 22%, var(--dark-color) 89%);
     }
       .html .gradiantback {
         position: absolute;
@@ -1002,7 +1002,7 @@ twitter-widget {
     z-index: 1000000;
     font-size: 11px;
     background-image: linear-gradient(rgb(0, 74, 134), rgb(1, 36, 62));
-    display: none;
+    /* display: none; */
     border-top: 1px solid var(--softdark-color);
     background: var(--soft-transp-color);
     border-top: 1px solid var(--high-color);
@@ -1273,7 +1273,6 @@ input[type="checkbox"] + label span {
 }
 
 input[type="checkbox"]:checked + label span {
-    background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -19px top no-repeat;
 }
 
 input[type="radio"] {

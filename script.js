@@ -1,5 +1,5 @@
 
-console.log(111); 
+console.log(222); 
 
 var text = "";
 var origin = "";
@@ -109,6 +109,11 @@ $( document ).ready(function() {
         else {
           $('#gotop').fadeOut(700);
         }
+    });
+
+    
+    $(".newLayout > div").scroll(function (event) {
+        event.stopPropagation();
     });
 
     ///////////////////////////////////////
