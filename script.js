@@ -113,7 +113,12 @@ $( document ).ready(function() {
 
     
     $(".newLayout > div").scroll(function (event) {
-        event.stopPropagation();
+        $('body').css("overflow-y", "hidden");
+        clearTimeout($.data(this, 'scrollTimer'));
+        $.data(this, 'scrollTimer', setTimeout(function() {
+            $('body').css("overflow-y", "auto"); 
+        }, 250));
+
     });
 
     ///////////////////////////////////////
