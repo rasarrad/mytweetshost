@@ -159,7 +159,7 @@ ol > li {
     top: 12px;
     z-index: 9;
     height: 16px;
-    background-image: linear-gradient(to bottom, var(--soft-color) 3%, var(--softdark-color) 80%);
+    background-image: linear-gradient(to bottom, var(--soft-color) 3%, var(--dark-color) 80%);
 }
 .innermask .fa-circle-o-notch {
   color: #004a86;
@@ -755,7 +755,7 @@ twitter-widget {
         z-index: 9;
         height: 18px;
         display: block;
-        background-image: linear-gradient(to bottom,var(--soft-color) 3%, var(--softdark-color) 78%);
+        background-image: linear-gradient(to bottom,var(--soft-color) 3%, var(--softdark-color) 87%);
     }
     .tweet:not(:last-child) .bottomgradiantback {
       position: absolute;
@@ -763,7 +763,7 @@ twitter-widget {
       background: rgba(0, 0, 0, 0.81);
       z-index: 9;
       height: 21px;
-      background-image: linear-gradient(to bottom, var(--softdark-color) 3%, var(--soft-color) 80%);
+      background-image: linear-gradient(to bottom, var(--dark-color) 3%, var(--soft-color) 80%);
       top: auto;
       bottom: 3px;
     }
@@ -776,7 +776,7 @@ twitter-widget {
       background-image: linear-gradient(to bottom, #002442 14%, #004a86 80%);
       }
       .html.tweet .bottomgradiantback {
-      background-image: linear-gradient(to bottom, var(--softdark-color) 21%, var(--soft-color) 80%);
+      background-image: linear-gradient(to bottom, var(--softdark-color) 15%, var(--soft-color) 85%);
       } 
         .tweet iframe {
         width: calc(100% - 0px) !important;
