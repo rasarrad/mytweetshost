@@ -1,9 +1,20 @@
 :root {
+  
   --high-color: #45cae7;
   --text-color: #6db0bf;
   --dark-color: #001b30;
   --softdark-color: #003156;
   --soft-color: #004a86;
+  --soft-transp-color: #45cae787;
+  
+/*
+
+    --high-color: #7fe745;
+  --text-color: #2c6916;
+  --dark-color: #670000;
+  --softdark-color: #b90000;
+  --soft-color: #ff6060;
+*/
 }
 
 .copyright {
@@ -991,7 +1002,8 @@ twitter-widget {
     z-index: 1000000;
     font-size: 11px;
     background-image: linear-gradient(rgb(0, 74, 134), rgb(1, 36, 62));
-    background: #0000007a;
+    /* display: none; */
+    background: var(--soft-transp-color);
 }
 
 .newLayout > div {
@@ -999,7 +1011,7 @@ twitter-widget {
     max-height: calc(100% - 45px);
     width: calc(100% - 50px);
     margin: 25px;
-    border: 1px solid #003765;
+    border: 1px solid var(--high-color);
     margin-top: 20px;
     border-radius: 4px;
     font-size: 12px;
@@ -1045,7 +1057,7 @@ twitter-widget {
     text-align: center;
     margin-top: 9px;
     margin-bottom: 2px;
-    border: 2px solid #001b30;
+    border: 2px solid #001b3000;
     padding-bottom: 3px;
     color: var(--high-color);
 }
