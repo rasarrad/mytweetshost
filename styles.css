@@ -7,8 +7,8 @@
   --soft-color: #004a86;
   --soft-transp-color: #45cae787;
   
-/*
-*/
+/**/
+
     --high-color: #7fe745;
   --text-color: #2c6916;
   --dark-color: #670000;
@@ -56,6 +56,7 @@
     position: relative;
     top: 2px;
     font-size: 15px !important;
+    color: var(--high-color);
   }
   .EmbeddedTweet-tweet {
     background: #80808061;
@@ -85,8 +86,8 @@
     left: 18px;
     cursor: pointer;
     font-size: 23px;
-    color: #006cab;
-    background: white;
+    color: var(--soft-color);
+    background: var(--high-color);
     height: 18px;
     line-height: 20px;
     padding-left: 2px;
@@ -158,7 +159,7 @@ ol > li {
     top: 12px;
     z-index: 9;
     height: 16px;
-    background-image: linear-gradient(to bottom, #004a86 3%, #002442 80%);
+    background-image: linear-gradient(to bottom, var(--soft-color) 3%, var(--softdark-color) 80%);
 }
 .innermask .fa-circle-o-notch {
   color: #004a86;
@@ -636,7 +637,7 @@ twitter-widget {
       position: absolute;
       right: 13px;
       top: -7px;
-      color: white;
+      color: var(--high-color);
       background: transparent;
       z-index: 9;
 }
@@ -754,7 +755,7 @@ twitter-widget {
         z-index: 9;
         height: 18px;
         display: block;
-        background-image: linear-gradient(to bottom, #004a86 3%, #003663 78%);
+        background-image: linear-gradient(to bottom,var(--soft-color) 3%, var(--softdark-color) 78%);
     }
     .tweet:not(:last-child) .bottomgradiantback {
       position: absolute;
@@ -762,7 +763,7 @@ twitter-widget {
       background: rgba(0, 0, 0, 0.81);
       z-index: 9;
       height: 21px;
-      background-image: linear-gradient(to bottom, #002442 3%, #004a86 80%);
+      background-image: linear-gradient(to bottom, var(--softdark-color) 3%, var(--soft-color) 80%);
       top: auto;
       bottom: 3px;
     }
@@ -775,7 +776,7 @@ twitter-widget {
       background-image: linear-gradient(to bottom, #002442 14%, #004a86 80%);
       }
       .html.tweet .bottomgradiantback {
-      background-image: linear-gradient(to bottom, #00325c 21%, #004a86 80%);
+      background-image: linear-gradient(to bottom, var(--softdark-color) 21%, var(--soft-color) 80%);
       } 
         .tweet iframe {
         width: calc(100% - 0px) !important;
@@ -848,8 +849,7 @@ twitter-widget {
           top: -11px;
           height: 16px;
           border-bottom-width: 0px !important;
-          background: #004a86 !important;
-          /* background: red !important; */
+          background: var(--soft-color) !important;
         }
         
         .tagtext {
@@ -910,7 +910,7 @@ twitter-widget {
         border: 0px solid #004a86;
         width: calc(100% - 0px);
         height: 55px;
-        background-image: linear-gradient(to bottom, #003056, #004a86);
+        background-image: linear-gradient(to bottom, var(--softdark-color), var(--soft-color));
       }    
       #backdiv {
       /* background-image:linear-gradient(rgb(0, 104, 165), rgb(0, 139, 222)) !important; */
@@ -1002,7 +1002,7 @@ twitter-widget {
     z-index: 1000000;
     font-size: 11px;
     background-image: linear-gradient(rgb(0, 74, 134), rgb(1, 36, 62));
-    /* display: none; */
+    display: none;
     border-top: 1px solid var(--softdark-color);
     background: var(--soft-transp-color);
     border-top: 1px solid var(--high-color);
