@@ -1,5 +1,5 @@
 
-console.log(222); 
+console.log(444); 
 
 var text = "";
 var origin = "";
@@ -109,16 +109,6 @@ $( document ).ready(function() {
         else {
           $('#gotop').fadeOut(700);
         }
-    });
-
-    
-    $(".newLayout > div").scroll(function (event) {
-        $('body').css("overflow-y", "hidden");
-        clearTimeout($.data(this, 'scrollTimer'));
-        $.data(this, 'scrollTimer', setTimeout(function() {
-            $('body').css("overflow-y", "auto"); 
-        }, 250));
-
     });
 
     ///////////////////////////////////////
