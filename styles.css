@@ -8,13 +8,13 @@
   --soft-transp-color: #45cae787;
   
 /*
-
+*/
     --high-color: #7fe745;
   --text-color: #2c6916;
   --dark-color: #670000;
   --softdark-color: #b90000;
   --soft-color: #ff6060;
-*/
+
 }
 
 .copyright {
@@ -1003,7 +1003,9 @@ twitter-widget {
     font-size: 11px;
     background-image: linear-gradient(rgb(0, 74, 134), rgb(1, 36, 62));
     /* display: none; */
+    border-top: 1px solid var(--softdark-color);
     background: var(--soft-transp-color);
+    border-top: 1px solid var(--high-color);
 }
 
 .newLayout > div {
@@ -1011,7 +1013,7 @@ twitter-widget {
     max-height: calc(100% - 45px);
     width: calc(100% - 50px);
     margin: 25px;
-    border: 1px solid var(--high-color);
+    border: 1px solid var(--soft-color);
     margin-top: 20px;
     border-radius: 4px;
     font-size: 12px;
