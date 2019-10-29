@@ -14,7 +14,14 @@
   --dark-color: #670000;
   --softdark-color: #b90000;
   --soft-color: #ff6060;
-*/
+
+
+    --high-color: #232323;
+  --text-color: #000000;
+  --dark-color: #888888;
+  --softdark-color: #b90000;
+  --soft-color: #ffffff;
+  */
 }
 
 .copyright {
@@ -197,14 +204,14 @@ ol > li {
     background: #001b30;
     cursor: pointer;
     height: 44px;
-    transition: all 0.6s;
+    transition: all 0.4s;
     padding-bottom: 5px;
     width: 37px;
     background-image: linear-gradient(to bottom, #003056, #004a86);
     background: transparent;
     }
     .menubutton:hover {
-      color: #c6e9fd;
+      color: var(--dark-color);
     }
     #menu {
       width: 0px;
@@ -400,17 +407,17 @@ ol > li {
     background: var(--high-color);
 }
 #generate:hover {
-    opacity: 0.5;
+    opacity: 0.4;
 }
 #generate.haschanges {
       color: #c30000;
 }
     #addtweet:hover {
-      color: #00659f;
+      color: var(--soft-color);
     }
 
     #sear:hover {
-      color: #00659f;
+      color: var(--soft-color);
     }
     .top {
       display: none;
@@ -743,9 +750,9 @@ twitter-widget {
         background: rgba(0, 0, 0, 0.81);
         top: 9px;
         z-index: 9;
-        height: 15px;
+        height: 23px;
         display: block;
-        background-image: linear-gradient(to bottom, var(--soft-color) 3%, var(--dark-color) 80%);
+        background-image: linear-gradient(to bottom, var(--soft-color) 10%, var(--dark-color) 100%);
     }
       .html .gradiantback {
         position: absolute;
@@ -786,7 +793,7 @@ twitter-widget {
         border-radius: 0px !important;
         border-top: 0 !important;
         margin-bottom: 22px;
-        margin-top: -7px !important;
+        margin-top: 0px !important;
         border: 0px solid white;
         }
         .tweet.html iframe {
@@ -994,27 +1001,44 @@ twitter-widget {
     }
 }
 
+#zoomin:hover {
+    color: var(--soft-color);
+}
+#zoomout:hover {
+    color: var(--soft-color);
+}
+    
 .newLayout {
     position: fixed;
     width: 100%;
-    height: calc(100% - 50px);
-    top: 50px;
+    height: calc(100% - 0px);
+    top: 0px;
     z-index: 1000000;
     font-size: 11px;
     background-image: linear-gradient(rgb(0, 74, 134), rgb(1, 36, 62));
-    display: none;
+    /* display: none; */
     border-top: 1px solid var(--softdark-color);
     background: var(--soft-transp-color);
-    border-top: 1px solid var(--high-color);
+    border-top: 1px solid transparent;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    background: #0000009e;
 }
 
 .newLayout > div {
     background: var(--dark-color);
-    max-height: calc(100% - 45px);
+    max-height: calc(100% - 60px);
     width: calc(100% - 50px);
     margin: 25px;
     border: 1px solid var(--soft-color);
-    margin-top: 20px;
+    margin-top: 32px;
+    margin-bottom: 28px;
     border-radius: 4px;
     font-size: 12px;
     color: #004a86;
@@ -1025,8 +1049,20 @@ twitter-widget {
 .newLayout > div .titletable {
     font-size: 14px;
     width: 100%;
-    padding-top: 7px;
+    padding-top: 3px;
     color: var(--high-color);
+    position: fixed;
+    background: red;
+    padding-bottom: 6px;
+    width: calc(100% - 52px);
+    z-index: 1;
+    background: var(--dark-color);
+    /* background: green; */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    /* border-bottom: 1px solid var(--soft-color); */
 }
 
 .newLayout > div .author {
@@ -1038,9 +1074,11 @@ twitter-widget {
 .newLayout > div .date {
   color: var(--text-color);
 }
-.newLayout > div .titletable .firsttd {
-    width: 25%;
-    padding-left: 10px;
+.newLayout > div .titletable tr:first-child .firsttd {
+    width: 100%;
+    padding-left: 2px;
+    padding-bottom: 9px;
+    text-align: center;
 }
 
 .newLayout > div .titletable .middletd {
@@ -1054,17 +1092,24 @@ twitter-widget {
     padding-right: 10px;
 }
 
-.newLayout > div .buttonstable {
+.newLayout > div .buttonstable { 
+
+/*
     width: calc(100% - 0px);
     text-align: center;
-    margin-top: 9px;
+    margin-top: -5px;
     margin-bottom: 2px;
     border: 2px solid #001b3000;
     padding-bottom: 3px;
     color: var(--high-color);
+    position: relative;
+    background: red;
+    top: 38px;
+    z-index: 1;
+    background: var(--dark-color);*/
 }
 
-.newLayout > div .buttonstable td {
+.newLayout > div .buttonstable tr:last-child td {
     padding: 3px 2px 3px 2px;
     background: var(--softdark-color);
     width: 25%;
@@ -1135,11 +1180,13 @@ twitter-widget {
 }
 
 .newLayout .detailtable, .newLayout .sectiontitletable {
-    width: calc(100% - 8px);
+    width: calc(100% - 14px);
     background: var(--softdark-color);
-    margin-left: 4px;
+    margin-left: 0px;
     color: var(--high-color);
     padding: 4px;
+    /* margin-top: 65px; */
+    margin-left: 7px;
 }
 
 .newLayout .detailtable {
@@ -1252,6 +1299,14 @@ input {
     background: var(--dark-color);
 }
 
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.newLayout > div::-webkit-scrollbar { width: 0 !important }
+.newLayout > div { overflow: -moz-scrollbars-none; }
+.newLayout > div { -ms-overflow-style: none; }
 
 input[type="checkbox"] {
     /* display:none; */
