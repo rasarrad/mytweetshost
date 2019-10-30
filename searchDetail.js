@@ -672,6 +672,7 @@ var getInformationbyid = function(id) {
 
 var getJsonbyid = function(id) {
     var path = "./data.json";
+    var result = null;
 
     $.getJSON(path, function(data) {
         var processtmp = true;
@@ -705,13 +706,15 @@ var getJsonbyid = function(id) {
                     val = recordfromdata;
                 }
                 console.log(val.id + " - " + id + " - " + (val.id == id));
-                if (val.id == id)
-                    return val;
+                if (val.id == id) {
+                    result = val;
+                    return false;
+                }
             }
             while (processtmp);
         }); 
     }); 
-    return null;
+    return result;
 }
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
