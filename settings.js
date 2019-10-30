@@ -16,7 +16,7 @@ var openSettingsPopup = function(obj)
         }
     } 
 
-    getJsonbyid(obj.attr("id"), functorun);
+    getJsonbyid(94, functorun);
 } 
 
 function closeSettingsPopup(obj) {
