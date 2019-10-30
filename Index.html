@@ -178,7 +178,7 @@
             <td>
                 <i onclick="externallinkcopy('val.url', 'val.id')" id="externallinkp" class="fa fa-external-link"></i>
             </td>
-            <td onclick="closeSettingsPopup()" >
+            <td onclick="closeSettingsPopup()">
                 <i id="closepopupp" class="fa fa-remove"></i>
             </td>                
           </tr>
@@ -186,7 +186,7 @@
       </table>
       <table class="sectiontitletable" style="margin-top: 68px;">
             <tbody>
-              <tr>
+              <tr onclick="editTags()">
                 <td class="sectionicontd">
                     <i class="fa fa-tags"></i><span class="sectiontitle">Tags</span><span class="currenttags">bernie - war - joe - rogan - m4a</span>
                 </td>            
@@ -196,20 +196,20 @@
             </tr>          
         </tbody>
       </table>  
-      <table class="detailtable">
+      <table id="editTags" class="detailtable">
           <tbody>
             <tr>  
               <td style="width: 80%;width: calc(100% - 220px);">
                   <input style="margin-left: 3px;">
               </td>
               <td style="width: 20%;">
-                  <select id="tagsselect"><option value="notag">All</option><option value="Assange">Assange</option><option value="John">John</option><option value="Julian">Julian</option><option value="Pilger">Pilger</option><option value="bernie">bernie</option><option value="climate">climate</option><option value="corbyn">corbyn</option><option value="coronel">coronel</option><option value="coup">coup</option><option value="dailyshow">dailyshow</option><option value="failed">failed</option><option value="fakenews">fakenews</option><option value="fox">fox</option><option value="funny">funny</option><option value="gun">gun</option><option value="hannity">hannity</option><option value="hongkong">hongkong</option><option value="israel">israel</option><option value="joe">joe</option><option value="maduro">maduro</option><option value="max">max</option><option value="moto">moto</option><option value="nunes">nunes</option><option value="palestine">palestine</option><option value="racism">racism</option><option value="rogan">rogan</option><option value="sanders">sanders</option><option value="syria">syria</option><option value="usa">usa</option><option value="venezuela">venezuela</option><option value="west">west</option><option value="ww2">ww2</option></select>
+                  <select id="tagsselect"><option value="notag">All</option><option value="Assange">Assange</option><option value="John">John</option><option value="Julian">Julian</option><option value="Pilger">Pilger</option><option value="bernie">bernie</option><option value="climate">climate</option><option value="corbyn">corbyn</option><option value="coronel">coronel</option><option value="coup">coup</option><option value="dailyshow">dailyshow</option><option value="failed">failed</option><option value="fakenews">fakenews</option><option value="fox">fox</option><option value="funny">funny</option><option value="gun">gun</option><option value="hannity">hannity</option><option value="hongkong">hongkong</option><option value="israel">israel</option><option value="joe">joe</option><option value="maduro">maduro</option><option value="max">max</option><option value="moto">moto</option><option value="nunes">nunes</option><option value="palestine">palestine</option><option value="racism">racism</option><option value="rogan">rogan</option><option value="sanders">sanders</option><option value="syria">syria</option><option value="usa">usa</option><option value="venezuela">venezuela</option><option value="west">west</option><option value="ww2">ww2</option><option value="notag"></option><option value="Assange">Assange</option><option value="John">John</option><option value="Julian">Julian</option><option value="Pilger">Pilger</option><option value="bernie">bernie</option><option value="climate">climate</option><option value="corbyn">corbyn</option><option value="coronel">coronel</option><option value="coup">coup</option><option value="dailyshow">dailyshow</option><option value="failed">failed</option><option value="fakenews">fakenews</option><option value="fox">fox</option><option value="funny">funny</option><option value="gun">gun</option><option value="hannity">hannity</option><option value="hongkong">hongkong</option><option value="israel">israel</option><option value="joe">joe</option><option value="maduro">maduro</option><option value="max">max</option><option value="moto">moto</option><option value="nunes">nunes</option><option value="palestine">palestine</option><option value="racism">racism</option><option value="rogan">rogan</option><option value="sanders">sanders</option><option value="syria">syria</option><option value="usa">usa</option><option value="venezuela">venezuela</option><option value="west">west</option><option value="ww2">ww2</option></select>
               </td>                      
                                                       
           </tr>    
           <tr>  
               <td colspan="4">
-                  <ul id="tagsul"><li class="litags">fakenews</li><li class="litags">dailyshow</li><li class="litags">climate</li><li class="litags">rogan</li><li class="litags">gun</li><li class="litags">usa</li><li class="litags">moto</li><li class="litags">venezuela</li><li class="litags">coup</li><li class="litags">failed</li><li class="litags">funny</li><li class="litags">hannity</li><li class="litags">nunes</li><li class="litags">fox</li><li class="litags">racism</li><li class="litags selectedtag">israel</li><li class="litags">palestine</li><li class="litags">bernie</li><li class="litags">sanders</li><li class="litags">maduro</li><li class="litags">max</li><li class="litags">Julian</li><li class="litags">Assange</li><li class="litags">John</li><li class="litags">Pilger</li><li class="litags">syria</li><li class="litags">ww2</li><li class="litags">corbyn</li><li class="litags">hongkong</li><li class="litags">joe</li><li class="litags">coronel</li><li class="litags">west</li></ul>
+                  <ul id="tagsul"><li class="litags">fakenews</li><li class="litags">dailyshow</li><li class="litags">climate</li><li class="litags">rogan</li><li class="litags">gun</li><li class="litags">usa</li><li class="litags">moto</li><li class="litags">venezuela</li><li class="litags">coup</li><li class="litags">failed</li><li class="litags">funny</li><li class="litags">hannity</li><li class="litags">nunes</li><li class="litags">fox</li><li class="litags">racism</li><li class="litags selectedtag">israel</li><li class="litags">palestine</li><li class="litags">bernie</li><li class="litags">sanders</li><li class="litags">maduro</li><li class="litags">max</li><li class="litags">Julian</li><li class="litags">Assange</li><li class="litags">John</li><li class="litags">Pilger</li><li class="litags">syria</li><li class="litags">ww2</li><li class="litags">corbyn</li><li class="litags">hongkong</li><li class="litags">joe</li><li class="litags">coronel</li><li class="litags">west</li><li class="litags">fakenews</li><li class="litags">dailyshow</li><li class="litags">climate</li><li class="litags">rogan</li><li class="litags">gun</li><li class="litags">usa</li><li class="litags">moto</li><li class="litags">venezuela</li><li class="litags">coup</li><li class="litags">failed</li><li class="litags">funny</li><li class="litags">hannity</li><li class="litags">nunes</li><li class="litags">fox</li><li class="litags">racism</li><li class="litags">israel</li><li class="litags">palestine</li><li class="litags">bernie</li><li class="litags">sanders</li><li class="litags">maduro</li><li class="litags">max</li><li class="litags">Julian</li><li class="litags">Assange</li><li class="litags">John</li><li class="litags">Pilger</li><li class="litags">syria</li><li class="litags">ww2</li><li class="litags">corbyn</li><li class="litags">hongkong</li><li class="litags">joe</li><li class="litags">coronel</li><li class="litags">west</li></ul>
               </td>                                        
           </tr>    
           <tr>
@@ -223,7 +223,7 @@
           </tr>                                               
         </tbody>
       </table>     
-      <table class="sectiontitletable" style="margin-top: 7px;">
+      <table class="sectiontitletable" style="">
             <tbody><tr>
                 <td class="sectionicontd">
                     <i class="fa fa-bookmark"></i><span class="sectiontitle">Categories</span><span class="currenttags">trending - to view</span>
@@ -311,7 +311,6 @@
                     } 
                     
                 } 
-                console.log(i);
               }
               else {
                   if (hasFound) {

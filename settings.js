@@ -8,13 +8,25 @@ function expandCat(obj) {
         }
     } 
 
-    getJsonbyid(obj.parent().attr("id"), functorun);
+    getJsonbyid($(obj).parent().attr("id"), functorun);
 }
 
-var openSettingsPopup = function(obj) 
+var openSettingsPopup = function(jsonobj) 
 {
-    console.log(obj); 
+    console.log(jsonobj); 
+
+    var tagchanged = readCookie(jsonobj.id + "tagchanged");
+    
+    if (tagchanged && tagchanged.length > 0) {
+        $('#editTags').hide();
+    } 
+    else {
+        $('#editTags').hide();
+    }
+    
     $('#linkChange').fadeIn();
+
+    
 } 
 
 function closeSettingsPopup(obj) {

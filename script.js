@@ -1,5 +1,5 @@
 
-console.log(555); 
+console.log(8989); 
 
 var text = "";
 var origin = "";
@@ -32,6 +32,16 @@ $( document ).ready(function() {
     while (nextid > 0);
     nextid = parseInt(readCookie("maxid"));
     */
+
+   var functorun = function(jsonvar) 
+   { 
+       if (jsonvar != null) {
+           openSettingsPopup(jsonvar);
+       }
+   } 
+
+   getJsonbyid(28, functorun);
+
     countalltweets();
     setviewmode();
     var hasChanges = readCookie("hasChanges");

@@ -1022,7 +1022,7 @@ twitter-widget {
     z-index: 1000000;
     font-size: 11px;
     background-image: linear-gradient(rgb(0, 74, 134), rgb(1, 36, 62));
-    /* display: none; */
+    display: none;
     border-top: 1px solid var(--softdark-color);
     background: var(--soft-transp-color);
     border-top: 1px solid transparent;
