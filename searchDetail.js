@@ -708,6 +708,7 @@ var getJsonbyid = function(id) {
                 console.log(val.id + " - " + id + " - " + (val.id == id));
                 if (val.id == id) {
                     result = val;
+                    processtmp = false;
                     return false;
                 }
             }
