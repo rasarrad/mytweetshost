@@ -156,112 +156,115 @@
 <textarea style="width: 200px;height: 100px;position: fixed;left: -242px;" id="linkresult" type="text"></textarea>
 
 <div id="linkChange" class="newLayout">
-  <div>        
-    <table class="titletable buttonstable">
-      <tbody>
-        <tr>
-            <td colspan="4" class="firsttd">
-                <i class="fa fa-twitter" style="margin-right: 9px;font-size: 18px;position: relative;top: 2px;"></i>
-                <b>id </b><span class="id smallrem">32</span> <b style="margin-left: 7px;">author </b>
-                <span class="author">manel dos santos</span><b style="margin-left: 10px;">date </b>
-                <span class="date smallrem">2009 10 12</span>
-            </td>            
-        </tr>
-        <tr style="text-align: center;">
-          <td>
-              <i onclick="removetweet(this,32)" id="removetweetp" class="fa fa-times-circle"></i>
-          </td>
-          <td>
-              <i onclick="internallinkcopy(32)" id="internallinkp" class="fa fa-link"></i>
-          </td>
-          <td>
-              <i onclick="externallinkcopy('val.url', 'val.id')" id="externallinkp" class="fa fa-external-link"></i>
-          </td>
-          <td>
-              <i id="closepopupp" onclick="closetagpopup()" class="fa fa-remove"></i>
-          </td>                
-        </tr>
-      </tbody>
-    </table>
-    <table class="sectiontitletable" style="margin-top: 68px;">
+    <div>        
+      <table class="titletable buttonstable">
+        <tbody>
+          <tr>
+              <td colspan="4" class="firsttd">
+                  <i class="fa fa-twitter" style="margin-right: 9px;font-size: 18px;position: relative;top: 2px;"></i>
+                  <b>id </b><span class="id smallrem">32</span> <b style="margin-left: 7px;">author </b>
+                  <span class="author">manel dos santos</span><b style="margin-left: 10px;">date </b>
+                  <span class="date smallrem">2009 10 12</span>
+              </td>            
+          </tr>
+          <tr style="text-align: center;">
+            <td>
+                <i onclick="removetweet(this,32)" id="removetweetp" class="fa fa-eraser fa-flip-horizontal"></i>
+            </td>
+            <td>
+                <i onclick="internallinkcopy(32)" id="internallinkp" class="fa fa-link"></i>
+            </td>
+            <td>
+                <i onclick="externallinkcopy('val.url', 'val.id')" id="externallinkp" class="fa fa-external-link"></i>
+            </td>
+            <td>
+                <i id="closepopupp" onclick="closetagpopup()" class="fa fa-remove"></i>
+            </td>                
+          </tr>
+        </tbody>
+      </table>
+      <table class="sectiontitletable" style="margin-top: 68px;">
+            <tbody>
+              <tr>
+                <td class="sectionicontd">
+                    <i class="fa fa-tags"></i><span class="sectiontitle">Tags</span><span class="currenttags">bernie - war - joe - rogan - m4a</span>
+                </td>            
+                <td class="sectionedittd">
+                    <i onclick="javascript: edittag(this)" class="fa fa-edit"></i>
+                </td>                                        
+            </tr>          
+        </tbody>
+      </table>  
+      <table class="detailtable">
           <tbody>
-            <tr>
-              <td class="sectionicontd">
-                  <i class="fa fa-tags"></i><span class="sectiontitle">Tags</span><span class="currenttags">bernie - war - joe - rogan - m4a</span>
-              </td>            
-              <td class="sectionedittd">
-                  <i onclick="javascript: edittag(this)" class="fa fa-edit"></i>
-              </td>                                        
-          </tr>          
-      </tbody>
-    </table>  
-    <table class="detailtable">
-        <tbody>
+            <tr>  
+              <td style="width: 80%;width: calc(100% - 220px);">
+                  <input style="margin-left: 3px;">
+              </td>
+              <td style="width: 20%;">
+                  <select id="tagsselect"><option value="notag">All</option><option value="Assange">Assange</option><option value="John">John</option><option value="Julian">Julian</option><option value="Pilger">Pilger</option><option value="bernie">bernie</option><option value="climate">climate</option><option value="corbyn">corbyn</option><option value="coronel">coronel</option><option value="coup">coup</option><option value="dailyshow">dailyshow</option><option value="failed">failed</option><option value="fakenews">fakenews</option><option value="fox">fox</option><option value="funny">funny</option><option value="gun">gun</option><option value="hannity">hannity</option><option value="hongkong">hongkong</option><option value="israel">israel</option><option value="joe">joe</option><option value="maduro">maduro</option><option value="max">max</option><option value="moto">moto</option><option value="nunes">nunes</option><option value="palestine">palestine</option><option value="racism">racism</option><option value="rogan">rogan</option><option value="sanders">sanders</option><option value="syria">syria</option><option value="usa">usa</option><option value="venezuela">venezuela</option><option value="west">west</option><option value="ww2">ww2</option></select>
+              </td>                      
+                                                      
+          </tr>    
           <tr>  
-            <td style="width: 80%;width: calc(100% - 220px);">
-                <input>
-            </td>
-            <td style="width: 20%;">
-                <select id="tagsselect"></select>
-            </td>                      
-            <td style="width: 72px;text-align: right;">
-              <i class="fa fa-undo mainbutton" onclick="javascript: undotag(this)" style="font-size: 18px;padding-right: 10px;"></i>
-              <i class="fa fa-check mainbutton" onclick="javascript: acceptTag(this)" style="font-size: 24px;"></i>  
-            </td>                                        
-        </tr>    
-        <tr>  
-            <td colspan="4">
-                <ul id="tagsul"></ul>
-            </td>                                        
-        </tr>    
-        <tr>
-            <td colspan="4" style="padding: 5px;">
-                <span class="boldtitle">Current tags</span>
-                <span class="currenttags">bernie war joe rogan m4a</span>
-            </td>                                   
-        </tr>                                               
-      </tbody>
-    </table>     
-    <table class="sectiontitletable" style="margin-top: 4px;">
-          <tbody><tr>
-              <td class="sectionicontd">
-                  <i class="fa fa-bookmark"></i><span class="sectiontitle">Categories</span><span class="currenttags">trending - to view</span>
-              </td>            
-              <td class="sectionedittd">
-                  <i onclick="javascript: edittag(this)" class="fa fa-edit"></i>
+              <td colspan="4">
+                  <ul id="tagsul"><li class="litags">fakenews</li><li class="litags">dailyshow</li><li class="litags">climate</li><li class="litags">rogan</li><li class="litags">gun</li><li class="litags">usa</li><li class="litags">moto</li><li class="litags">venezuela</li><li class="litags">coup</li><li class="litags">failed</li><li class="litags">funny</li><li class="litags">hannity</li><li class="litags">nunes</li><li class="litags">fox</li><li class="litags">racism</li><li class="litags selectedtag">israel</li><li class="litags">palestine</li><li class="litags">bernie</li><li class="litags">sanders</li><li class="litags">maduro</li><li class="litags">max</li><li class="litags">Julian</li><li class="litags">Assange</li><li class="litags">John</li><li class="litags">Pilger</li><li class="litags">syria</li><li class="litags">ww2</li><li class="litags">corbyn</li><li class="litags">hongkong</li><li class="litags">joe</li><li class="litags">coronel</li><li class="litags">west</li></ul>
               </td>                                        
-          </tr>          
-      </tbody>
-    </table><table class="detailtable">
-        <tbody>
+          </tr>    
+          <tr>
+              <td style="padding: 5px;">
+                  <span class="boldtitle">Original tags</span>
+                  <span class="currenttags">bernie war joe rogan m4a</span>
+              </td><td style="width: 72px;text-align: right;">
+                <i class="fa fa-undo mainbutton" onclick="javascript: undotag(this)" style="font-size: 18px;padding-right: 10px;"></i>
+                <i class="fa fa-check mainbutton" onclick="javascript: acceptTag(this)" style="font-size: 24px;display: none;"></i>  
+              </td>                                   
+          </tr>                                               
+        </tbody>
+      </table>     
+      <table class="sectiontitletable" style="margin-top: 7px;">
+            <tbody><tr>
+                <td class="sectionicontd">
+                    <i class="fa fa-bookmark"></i><span class="sectiontitle">Categories</span><span class="currenttags">trending - to view</span>
+                </td>            
+                <td class="sectionedittd">
+                    <i onclick="javascript: edittag(this)" class="fa fa-edit"></i>
+                </td>                                        
+            </tr>          
+        </tbody>
+      </table><table class="detailtable">
+          <tbody>
+            <tr>  
+              <td style="width: calc(100% - 73px);">
+                  <input style="
+      margin-left: 3px;
+      width: calc(100% - -61px);
+  ">
+              </td>
+                                    
+                                                      
+          </tr>    
           <tr>  
-            <td style="width: calc(100% - 73px);">
-                <input>
-            </td>
-                                  
-            <td style="width: 73px;text-align: right;">
-              <i class="fa fa-undo mainbutton" onclick="javascript: undotag(this)" style="font-size: 18px;padding-right: 10px;"></i>
-              <i class="fa fa-check mainbutton" onclick="javascript: acceptTag(this)" style="font-size: 24px;"></i>  
-            </td>                                        
-        </tr>    
-        <tr>  
-            <td colspan="2" style="display: block;text-align: left;width: calc(100% + 86px);">
-                <div class="checkstyleddiv">                  
-                  <input type="checkbox" checked="checked" onclick="javascript: clickCheckCat(this, 'tvn')" id="cattvn" name="cc">
-                  <label for="cattvn" style="position: relative;top: -7px;"><span><i class="fa fa-check"></i></span>Check Box 1</label>
-                </div>
-            </td>                                      
-        </tr>    
-        <tr>
-            <td colspan="4" style="padding: 5px;">
-                <span class="boldtitle">Current tags</span>
-                <span class="currenttags">bernie war joe rogan m4a</span>
-            </td>                                   
-        </tr>                                               
-      </tbody>
-    </table>        
+              <td colspan="2" style="display: block;text-align: left;width: calc(100% + 86px);padding-left: 4px;">
+                  <div class="checkstyleddiv">                  
+                    <input type="checkbox" checked="checked" onclick="javascript: clickCheckCat(this, 'tvn')" id="cattvn" name="cc">
+                    <label for="cattvn" style="position: relative;top: -7px;"><span><i class="fa fa-check"></i></span>Check Box 1</label>
+                  </div>
+              </td>                                      
+          </tr>    
+          <tr>
+              <td style="padding: 5px;">
+                  <span class="boldtitle">Original categories</span>
+                  <span class="currenttags">bernie war joe rogan m4a</span>
+              </td><td style="width: 73px;text-align: right;">
+                <i class="fa fa-undo mainbutton" onclick="javascript: undotag(this)" style="font-size: 18px;padding-right: 10px;"></i>
+                <i class="fa fa-check mainbutton" onclick="javascript: acceptTag(this)" style="font-size: 24px;"></i>  
+              </td>                                   
+          </tr>                                               
+        </tbody>
+      </table>        
+    </div>
   </div>
-</div>
 
 <script>
   /*<![CDATA[*/

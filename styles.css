@@ -688,12 +688,18 @@ twitter-widget {
 }
 
 .litags:hover {
-  opacity: 0.6;
+  color: var(--dark-color);
+  background: var(--high-color);
 }
 
 .litags.selectedtag {
   color: var(--dark-color);
   background: var(--high-color);
+}
+
+.litags.selectedtag:hover {
+    color: var(--high-color) !important;
+    background: var(--softdark-color) !important;
 }
 
 #backdiv {
@@ -1187,11 +1193,13 @@ twitter-widget {
     padding: 4px;
     /* margin-top: 65px; */
     margin-left: 7px;
+    /* background-image: linear-gradient(to bottom, var(--softdark-color), var(--dark-color)); */
 }
 
 .newLayout .detailtable {
     padding: 3px 5px;
     color: #b2cbde;
+    background-image: linear-gradient(to bottom, var(--softdark-color), var(--dark-color) 150%);
 }
 .newLayout .detailtable tr {
     vertical-align: super;
@@ -1209,7 +1217,7 @@ twitter-widget {
 }
 
 .newLayout input {
-    width: 100%;
+    width: 98%;
     color: var(--dark-color);
     font-weight: bold;
     background: var(--high-color);
@@ -1221,7 +1229,7 @@ twitter-widget {
 
 .newLayout ul {
     width: 100%;
-    height: 165px;
+    height: 138px;
     padding-left: 3px;
     padding-top: 3px;
     overflow-y: auto;
@@ -1242,7 +1250,7 @@ twitter-widget {
 
 .newLayout select {
     height: 19px;
-    width: 100%;
+    width: calc(100% - 7px);
     outline: none;
     margin-left: 8px;
     position: relative;
@@ -1250,7 +1258,7 @@ twitter-widget {
     font-weight: bold;
     background: var(--high-color);
     padding: 1px 4px;
-    border: 1px solid #330000;
+    border: 1px solid var(--dark-color);
     top: 1px;
     cursor: pointer;
 }
@@ -1276,8 +1284,17 @@ input {
     background: #a6b9fd;
     padding: 1px 4px;
     border: 1px solid #002133;
+    font-variant: small-caps;
 }
-
+select, textarea {
+    font-variant: small-caps;
+}
+.newLayout .fa-bookmark {
+    font-size: 14px;
+}
+.newLayout .fa-tags {
+    font-size: 13px;
+}
 .mainbutton {
     color: var(--high-color);
     cursor: pointer;
