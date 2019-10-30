@@ -42,7 +42,7 @@ function closeSettingsPopup(obj) {
 
 
 function editTags() {
-    if ($('#editTags').attr('style') == '') {
+    if ($('#editTags').attr('style') == '' || $('#editTags').attr('style') == '100%') {
         $('#editTags').attr('style', 'height: 0;width: 0;margin: 0;overflow: hidden;display: block;padding: 0;');
     }
     else {
