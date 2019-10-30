@@ -705,20 +705,18 @@ var getJsonbyid = function(id, functorun) {
                 }
                
                 if (val.id == id) {
-                    result = val;
                     processtmp = false;
 
-                    console.log(6);
+                    if (functorun)
+                        functorun(result);
                     return false;
                 }
             }
             while (processtmp);
         }); 
     }); 
-    console.log(7);
-    if (functorun)
-        functorun(result);
-    return result;
+
+    return null;
 }
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
