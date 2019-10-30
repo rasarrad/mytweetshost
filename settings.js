@@ -4,7 +4,7 @@ function expandCat(obj) {
     openSettingsPopup($(obj).parent());
 }
 
-var openSettingsPopup = function(flag) 
+var openSettingsPopup = function(obj) 
 {
     var json = getJsonbyid(obj.attr("id"));
 
