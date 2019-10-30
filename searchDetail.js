@@ -670,7 +670,7 @@ var getInformationbyid = function(id) {
 }
 
 
-var getJsonbyid = function(id) {
+var getJsonbyid = function(id, functorun) {
     var path = "./data.json";
     var result = null;
 
@@ -715,6 +715,9 @@ var getJsonbyid = function(id) {
             while (processtmp);
         }); 
     }); 
+
+    if (functorun)
+        functorun(result);
     return result;
 }
 /////////////////////////////////////////////////////////////////////////

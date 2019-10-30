@@ -6,12 +6,17 @@ function expandCat(obj) {
 
 var openSettingsPopup = function(obj) 
 {
-    var jsonvar = getJsonbyid(obj.attr("id"));
-    console.log(jsonvar);
-    if (jsonvar && jsonvar.length > 0) {
-        console.log(json);
-        $('#linkChange').fadeIn();
-    }
+
+
+    var functorun = function(jsonvar) 
+    {
+        if (jsonvar && jsonvar.length > 0) {
+            console.log(json);
+            $('#linkChange').fadeIn();
+        }
+    } 
+
+    var jsonvar = getJsonbyid(obj.attr("id"), functorun);
 } 
 
 function closeSettingsPopup(obj) {
