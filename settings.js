@@ -1,22 +1,20 @@
 
 
 function expandCat(obj) {
-    openSettingsPopup($(obj).parent());
+    var functorun = function(jsonvar) 
+    { 
+        if (jsonvar != null) {
+            openSettingsPopup(jsonvar);
+        }
+    } 
+
+    getJsonbyid(obj.parent().attr("id"), functorun);
 }
 
 var openSettingsPopup = function(obj) 
 {
-    var functorun = function(jsonvar) 
-    {
-        console.log(jsonvar); 
-        console.log(jsonvar != null); 
-        if (jsonvar && jsonvar.length > 0) {
-            console.log(999999); 
-            $('#linkChange').fadeIn();
-        }
-    } 
-
-    getJsonbyid(94, functorun);
+    console.log(obj); 
+    $('#linkChange').fadeIn();
 } 
 
 function closeSettingsPopup(obj) {
