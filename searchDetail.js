@@ -708,7 +708,7 @@ var getJsonbyid = function(id, functorun) {
                     processtmp = false;
 
                     if (functorun)
-                        functorun(result);
+                        functorun(val);
                     return false;
                 }
             }
