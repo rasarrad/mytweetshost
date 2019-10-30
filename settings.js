@@ -42,12 +42,12 @@ function closeSettingsPopup(obj) {
 
 
 function editTags() {
-    alert("-" + $('#editTags').attr('style') + "")
-    if ($('#editTags').attr('style') == '' || $('#editTags').attr('style') == 'height: 100%') {
+
+    if ($('#editTags').attr('style') == '' || $('#editTags').attr('style') == 'height: auto;') {
         $('#editTags').attr('style', 'height: 0;width: 0;margin: 0;overflow: hidden;display: block;padding: 0;');
     }
     else {
-        $('#editTags').attr('style', 'height: 0');
+        $('#editTags').attr('style', '');
         $('#editTags').animate({height: 'auto'}, 600);
     }
 
