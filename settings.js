@@ -9,6 +9,7 @@ var openSettingsPopup = function(obj)
     var functorun = function(jsonvar) 
     {
         console.log(jsonvar); 
+        console.log(jsonvar && jsonvar.length > 0); 
         if (jsonvar && jsonvar.length > 0) {
             console.log(999999); 
             $('#linkChange').fadeIn();
