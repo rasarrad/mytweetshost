@@ -10,11 +10,12 @@ var openSettingsPopup = function(obj)
     {
         console.log(jsonvar); 
         if (jsonvar && jsonvar.length > 0) {
+            console.log(999999); 
             $('#linkChange').fadeIn();
         }
     } 
 
-    var jsonvar = getJsonbyid(obj.attr("id"), functorun);
+    getJsonbyid(obj.attr("id"), functorun);
 } 
 
 function closeSettingsPopup(obj) {

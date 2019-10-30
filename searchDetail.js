@@ -672,7 +672,6 @@ var getInformationbyid = function(id) {
 
 var getJsonbyid = function(id, functorun) {
     var path = "./data.json";
-    var result = null;
 
     $.getJSON(path, function(data) {
         var processtmp = true;
