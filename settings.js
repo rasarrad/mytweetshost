@@ -20,11 +20,11 @@ var openSettingsPopup = function(jsonobj)
     var tagchanged = readCookie(jsonobj.id + "tagchanged");
     
     if (tagchanged && tagchanged.length > 0) {
-        $('#editTags').attr('style', '');
+        $('#editTags').attr('style', 'height: 205px;display: block;width: calc(100% - 24px);');
         $('.currenttags').css('color','#00ff72');
     } 
     else {
-        $('#editTags').attr('style', 'height: 0;width: 0;margin: 0;overflow: hidden;display: block;padding: 0;');
+        $('#editTags').attr('style', 'height: 0px;width: 0;margin: 0;overflow: hidden;display: block;padding: 0;');
     }
     
     $('#linkChange').fadeIn();
@@ -41,14 +41,15 @@ function closeSettingsPopup(obj) {
 /////////////////////////////////////////////////////////////////////////
 
 
+
+
 function editTags() {
 
-    if ($('#editTags').attr('style') == '' || $('#editTags').attr('style') == 'height: auto;') {
-        $('#editTags').attr('style', 'height: 0;width: 0;margin: 0;overflow: hidden;display: block;padding: 0;');
+    if ($('#editTags').css('height') == '205px') {
+        $('#editTags').attr('style', 'height: 0px;width: 0;margin: 0;overflow: hidden;display: block;padding: 0;');
     }
     else {
-        $('#editTags').attr('style', '');
-        $('#editTags').animate({height: 'auto'}, 600);
+        $('#editTags').attr('style', 'height: 205px;display: block;width: calc(100% - 24px);');
     }
 
 }
