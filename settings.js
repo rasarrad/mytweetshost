@@ -20,11 +20,11 @@ var openSettingsPopup = function(jsonobj)
     var tagchanged = readCookie(jsonobj.id + "tagchanged");
     
     if (tagchanged && tagchanged.length > 0) {
-        $('#editTags').attr('style', 'height: 205px;display: block;width: calc(100% - 24px);');
+        $('#editTags').css('height', '232px');
         $('.currenttags').css('color','#00ff72');
     } 
     else {
-        $('#editTags').attr('style', 'height: 0px;width: 0;margin: 0;overflow: hidden;display: block;padding: 0;');
+        $('#editTags').css('height', '21px');
     }
     
     $('#linkChange').fadeIn();
@@ -45,11 +45,11 @@ function closeSettingsPopup(obj) {
 
 function editTags() {
 
-    if ($('#editTags').css('height') == '205px') {
-        $('#editTags').attr('style', 'height: 0px;width: 0;margin: 0;overflow: hidden;display: block;padding: 0;');
+    if ($('#editTags').css('height') == '232px') {
+        $('#editTags').css('height', '21px');
     }
     else {
-        $('#editTags').attr('style', 'height: 205px;display: block;width: calc(100% - 24px);');
+        $('#editTags').css('height', '232px');
     }
 
 }
