@@ -1188,9 +1188,14 @@ twitter-widget {
     /* background-image: linear-gradient(to bottom, var(--softdark-color), var(--dark-color)); */
 }
 
+.newLayout .sectiontitletable {
+    cursor: pointer;
+    margin-top: 7px;
+}
 .newLayout .detailtable {
     padding: 3px 5px;
     color: #b2cbde;
+    transition: height 0.6s;
     background-image: linear-gradient(to bottom, var(--softdark-color), var(--dark-color) 150%);
 }
 .newLayout .detailtable tr {

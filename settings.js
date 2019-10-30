@@ -15,13 +15,16 @@ var openSettingsPopup = function(jsonobj)
 {
     console.log(jsonobj); 
 
+    $('#linkChange').attr("cid", jsonobj.id);
+
     var tagchanged = readCookie(jsonobj.id + "tagchanged");
     
     if (tagchanged && tagchanged.length > 0) {
-        $('#editTags').hide();
+        $('#editTags').attr('style', '');
+        $('.currenttags').css('color','#00ff72');
     } 
     else {
-        $('#editTags').hide();
+        $('#editTags').attr('style', 'height: 0;width: 0;margin: 0;overflow: hidden;display: block;padding: 0;');
     }
     
     $('#linkChange').fadeIn();
@@ -36,3 +39,20 @@ function closeSettingsPopup(obj) {
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
+
+
+function editTags() {
+    if ($('#editTags').attr('style') == '') {
+        $('#editTags').attr('style', 'height: 0;width: 0;margin: 0;overflow: hidden;display: block;padding: 0;');
+    }
+    else {
+        $('#editTags').attr('style', '');
+    }
+
+}
+
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+
+
