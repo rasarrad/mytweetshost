@@ -675,6 +675,8 @@ var getJsonbyid = function(id) {
 
     $.getJSON(path, function(data) {
         var processtmp = true;
+        console.log(33333333);
+        console.log(nextid);
         nextid = parseInt(readCookie("maxid")) - 1;
         processtmp = true;
 
@@ -702,7 +704,7 @@ var getJsonbyid = function(id) {
                 else {
                     val = recordfromdata;
                 }
-
+                console.log(val.id + " - " + id);
                 if (val.id == id)
                     return val;
             }
