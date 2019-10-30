@@ -704,7 +704,7 @@ var getJsonbyid = function(id) {
                 else {
                     val = recordfromdata;
                 }
-                console.log(val.id + " - " + id);
+                console.log(val.id + " - " + id + " - " + (val.id == id));
                 if (val.id == id)
                     return val;
             }
