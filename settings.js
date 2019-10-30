@@ -6,9 +6,9 @@ function expandCat(obj) {
 
 var openSettingsPopup = function(obj) 
 {
-    var json = getJsonbyid(obj.attr("id"));
-    console.log(json);
-    if (json) {
+    var jsonvar = getJsonbyid(obj.attr("id"));
+    console.log(jsonvar);
+    if (jsonvar && jsonvar.length > 0) {
         console.log(json);
         $('#linkChange').fadeIn();
     }
