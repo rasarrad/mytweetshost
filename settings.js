@@ -46,7 +46,8 @@ function editTags() {
         $('#editTags').attr('style', 'height: 0;width: 0;margin: 0;overflow: hidden;display: block;padding: 0;');
     }
     else {
-        $('#editTags').attr('style', '');
+        $('#editTags').attr('style', 'height: 0');
+        $('#editTags').css('height', '100%');
     }
 
 }
