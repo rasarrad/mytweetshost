@@ -20,7 +20,7 @@ var openSettingsPopup = function(jsonobj)
     var tagchanged = readCookie(jsonobj.id + "tagchanged");
     
     if (tagchanged && tagchanged.length > 0) {
-        $('#editTags').css('height', '232px');
+        $('#editTags').css('height', '100%');
         $('.currenttags').css('color','#00ff72');
     } 
     else {
@@ -43,16 +43,24 @@ function closeSettingsPopup(obj) {
 
 
 
-function editTags() {
+function editSetting(obj) {
 
-    if ($('#editTags').css('height') == '232px') {
-        $('#editTags').css('height', '21px');
+    var table = $(obj).parent().parent();
+    if (table.css('height') == '21px') {
+        table.css('height', '100%');
     }
     else {
-        $('#editTags').css('height', '232px');
+        table.css('height', '21px');
     }
 
 }
+
+function tagsInputChange(obj) {
+
+
+}
+
+
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////

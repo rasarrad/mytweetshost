@@ -1108,7 +1108,7 @@ twitter-widget {
 }
 
 .newLayout > div .buttonstable tr:last-child td {
-    padding: 3px 2px 3px 2px;
+    padding: 4px 2px 3px 2px;
     background: var(--softdark-color);
     width: 25%;
 }
@@ -1155,12 +1155,14 @@ twitter-widget {
   width: 94%;
   text-align: left;
   padding-left: 9px;
+  padding-bottom: 12px;
 }
 
 .newLayout .currenttags {
   text-align: left;
   padding-left: 14px;
   color: var(--text-color);
+  line-height: 17px;
 }
 
 .newLayout .sectiontitletable .sectiontitletd {
@@ -1175,6 +1177,12 @@ twitter-widget {
   text-align: right;
   padding-right: 5px;
   font-size: 15px;
+  vertical-align: top;
+}
+
+.newLayout .sectiontitletable .sectionedittd i {
+  /* position: relative; */
+  /* top: 0px; */
 }
 
 .newLayout .detailtable, .newLayout .sectiontitletable {
@@ -1192,6 +1200,16 @@ twitter-widget {
     cursor: pointer;
     margin-top: 7px;
 }
+
+.newLayout .sectionexpandable {
+    overflow: hidden;
+    display: block;
+    width: calc(100% - 22px);
+    transition: height 0.6s;
+}
+
+
+
 .newLayout .detailtable {
     padding: 3px 5px;
     color: #b2cbde;

@@ -1,5 +1,5 @@
 
-console.log(3333); 
+console.log(222); 
 
 var text = "";
 var origin = "";
@@ -228,15 +228,17 @@ $( document ).ready(function() {
         } 
     });
 
-    $( "#tagsselect" ).change(function() {
+    $( "#tagsinput" ).change(function() {
+        tagsInputChange(this);
+      });
+
+      $( "#tagsselect" ).change(function() {
         // Check input( $( this ).val() ) for validity here
         if ($( this ).val() != "notag") {
             $( "#tags" ).val($( "#tags" ).val() + $( this ).val() + " ");
             $(this).val("notag");
         }
       });
-
-
 
     document.getElementById("toptitle").addEventListener('click', () => {
         navigator.clipboard.readText()
