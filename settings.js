@@ -25,10 +25,12 @@ var openSettingsPopup = function(jsonobj)
         $('#editTags').css('max-height', '450px');
         currenttagdisplay.css('color','#00ff72');
         currenttagdisplay.val(tagchanged);
+        $('#tagsinput').val(tagchanged);
         $('#editTags').find('.sectionedittd i').addClass('fa-remove').removeClass('fa-edit');
     } 
     else {
         currenttagdisplay.html(jsonobj.tags);
+        $('#tagsinput').val(jsonobj.tags);
     }
     
     $('#linkChange').fadeIn();
