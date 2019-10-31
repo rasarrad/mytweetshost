@@ -68,28 +68,23 @@ function editSetting(obj) {
 
 function tagsInputOnKeyUp(obj) {
 //    if (!dblClickTimeout) {
-//        dblClickTimeout = setTimeout(function() {     
-            var oldtags = $(obj).attr("ctags");
-            var currenttagdisplay = $('.currenttags'); 
-            currenttagdisplay.html(parseTags($(obj).val()));
-            
-            if (oldtags.trim() == $(obj).val().trim()) {
-                currenttagdisplay.css('color', '');
-            }
-            else {
-                currenttagdisplay.css('color','#00ff72');
-            }
+//        dblClickTimeout = setTimeout(function() {    
+
+    var oldtags = $(obj).attr("ctags");
+    var currenttagdisplay = $('.currenttags'); 
+    currenttagdisplay.html(parseTags($(obj).val()));
+    
+    if (oldtags.trim() == $(obj).val().trim()) {
+        currenttagdisplay.css('color', '');
+    }
+    else {
+        currenttagdisplay.css('color','#00ff72');
+    }
+    
  //           clearTimeout(dblClickTimeout);
  //       }, 150);
-    }
-
-
-
-      
-
-
-
 }
+
 
 
 
