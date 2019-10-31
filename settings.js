@@ -28,6 +28,7 @@ var openSettingsPopup = function(jsonobj)
         $('#editTags').find('.sectionedittd i').addClass('fa-remove').removeClass('fa-edit');
     } 
     else {
+        alert(jsonobj.tags)
         currenttagdisplay.val(jsonobj.tags);
     }
     
