@@ -16,14 +16,20 @@ var openSettingsPopup = function(jsonobj)
     console.log(jsonobj); 
 
     $('#linkChange').attr("cid", jsonobj.id);
+    $('#tagsinput').attr("ctags", jsonobj.tags);
 
     var tagchanged = readCookie(jsonobj.id + "tagchanged");
-    
-    if (tagchanged && tagchanged.length > 0) {~
-        table.css('transition', 'max-height 1.5s');
+    var currenttagdisplay = $('.currenttags'); 
+    if (tagchanged && tagchanged.length > 0) {
+        $('#editTags').css('transition', 'max-height 1.5s');
         $('#editTags').css('max-height', '450px');
-        $('.currenttags').css('color','#00ff72');
+        currenttagdisplay.css('color','#00ff72');
+        currenttagdisplay.val(tagchanged);
+        $('#editTags').find('.sectionedittd i').addClass('fa-remove').removeClass('fa-edit');
     } 
+    else {
+        currenttagdisplay.val(jsonobj.tags);
+    }
     
     $('#linkChange').fadeIn();
 
@@ -52,14 +58,23 @@ function editSetting(obj) {
     }
     else {
         table.css('transition', 'max-height .5s');
+        table.addClass('max-height', '21px');
         table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-remove');
     }
 
 }
 
 function tagsInputChange(obj) {
+    var oldtags = $(obj).attr("ctags");
+    var currenttagdisplay = $('.currenttags'); 
+    currenttagdisplay.val($(obj).val());
 
-
+    if (oldtags == $(obj).val()) {
+        currenttagdisplay.css('color', null);
+    }
+    else {
+        currenttagdisplay.css('color','#00ff72');
+    }
 }
 
 
