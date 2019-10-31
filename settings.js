@@ -20,7 +20,7 @@ var openSettingsPopup = function(jsonobj)
     var tagchanged = readCookie(jsonobj.id + "tagchanged");
     
     if (tagchanged && tagchanged.length > 0) {
-        $('#editTags').css('max-height', '1000px');
+        $('#editTags').css('max-height', '450px');
         $('.currenttags').css('color','#00ff72');
     } 
     else {
@@ -47,7 +47,7 @@ function editSetting(obj) {
 
     var table = $(obj).parent().parent();
     if (table.css('max-height') == '21px') {
-        table.css('max-height', '1000px');
+        table.css('max-height', '450px');
     }
     else {
         table.css('max-height', '21px');
