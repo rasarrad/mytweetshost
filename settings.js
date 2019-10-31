@@ -70,8 +70,9 @@ function tagsInputChange(obj) {
     var oldtags = $(obj).attr("ctags");
     var currenttagdisplay = $('.currenttags'); 
     currenttagdisplay.val($(obj).val());
-
-    if (oldtags == $(obj).val()) {
+    alert(oldtags.trim())
+    if (oldtags.trim() == $(obj).val().trim()) {
+        alert(121212)
         currenttagdisplay.css('color', null);
     }
     else {
