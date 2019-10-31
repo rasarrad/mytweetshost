@@ -28,8 +28,7 @@ var openSettingsPopup = function(jsonobj)
         $('#editTags').find('.sectionedittd i').addClass('fa-remove').removeClass('fa-edit');
     } 
     else {
-        alert(jsonobj.tags)
-        currenttagdisplay.val(jsonobj.tags);
+        currenttagdisplay.html(jsonobj.tags);
     }
     
     $('#linkChange').fadeIn();
@@ -58,6 +57,7 @@ function editSetting(obj) {
         
     }
     else {
+        alert(123)
         table.css('transition', 'max-height .5s');
         table.addClass('max-height', '21px');
         table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-remove');
