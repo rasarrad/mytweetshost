@@ -57,9 +57,8 @@ function editSetting(obj) {
         
     }
     else {
-        alert(123)
         table.css('transition', 'max-height .5s');
-        table.addClass('max-height', '21px');
+        table.css('max-height', '21px');
         table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-remove');
     }
 
