@@ -1205,8 +1205,8 @@ twitter-widget {
     overflow: hidden;
     display: block;
     width: calc(100% - 22px);
-    transition: max-height 0.6s;
-    max-height: 1059px;
+    transition: max-height .5s;
+    max-height: 21px;
     height: 100%;
 }
 
