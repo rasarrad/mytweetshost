@@ -1224,7 +1224,6 @@ twitter-widget {
 
 .boldtitle {
     font-weight: bold;
-    padding-right: 7px;
     color: var(--high-color);
 }
 
@@ -1267,7 +1266,7 @@ twitter-widget {
 
 .newLayout select {
     height: 19px;
-    width: calc(100% - 7px);
+    width: calc(100% - 12px);
     outline: none;
     margin-left: 8px;
     position: relative;
@@ -1276,7 +1275,7 @@ twitter-widget {
     background: var(--high-color);
     padding: 1px 4px;
     border: 1px solid var(--dark-color);
-    top: 1px;
+    top: 0px;
     cursor: pointer;
 }
 

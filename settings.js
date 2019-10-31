@@ -47,10 +47,15 @@ function editSetting(obj) {
     if (table.css('max-height') == '21px') {
         table.css('transition', 'max-height 1.5s');
         table.css('max-height', '450px');
+        table.find('.sectionedittd').css('max-height', '450px');
+        table.addClass('fa-remove');
+        table.removeClass('fa-edit');
+        
     }
     else {
         table.css('transition', 'max-height .5s');
-        table.css('max-height', '21px');
+        table.addClass('fa-edit');
+        table.removeClass('fa-remove');
     }
 
 }
