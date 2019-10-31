@@ -20,11 +20,11 @@ var openSettingsPopup = function(jsonobj)
     var tagchanged = readCookie(jsonobj.id + "tagchanged");
     
     if (tagchanged && tagchanged.length > 0) {
-        $('#editTags').css('height', '100%');
+        $('#editTags').css('max-height', '1000px');
         $('.currenttags').css('color','#00ff72');
     } 
     else {
-        $('#editTags').css('height', '21px');
+        $('#editTags').css('max-height', '21px');
     }
     
     $('#linkChange').fadeIn();
@@ -46,11 +46,11 @@ function closeSettingsPopup(obj) {
 function editSetting(obj) {
 
     var table = $(obj).parent().parent();
-    if (table.css('height') == '21px') {
-        table.css('height', '100%');
+    if (table.css('max-height') == '21px') {
+        table.css('max-height', '1000px');
     }
     else {
-        table.css('height', '21px');
+        table.css('max-height', '21px');
     }
 
 }
