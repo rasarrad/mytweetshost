@@ -67,8 +67,8 @@ function editSetting(obj) {
 }
 
 function tagsInputOnKeyUp(obj) {
-    if (!dblClickTimeout) {
-        dblClickTimeout = setTimeout(function() {     
+//    if (!dblClickTimeout) {
+//        dblClickTimeout = setTimeout(function() {     
             var oldtags = $(obj).attr("ctags");
             var currenttagdisplay = $('.currenttags'); 
             currenttagdisplay.html(parseTags($(obj).val()));
@@ -79,8 +79,8 @@ function tagsInputOnKeyUp(obj) {
             else {
                 currenttagdisplay.css('color','#00ff72');
             }
-            clearTimeout(dblClickTimeout);
-        }, 150);
+ //           clearTimeout(dblClickTimeout);
+ //       }, 150);
     }
 
 
@@ -101,8 +101,8 @@ function parseTags(tags) {
     var result = "";
     var res = tags.split(" ");
     for (var i = 0; i < res.length; i++) {
-        result = result + res[i] + " -";
+        result = result + res[i] + " - ";
     }
 
-    return result.substring(0, result.length - 2);
+    return result.substring(0, result.length - 3);
 }
