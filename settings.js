@@ -24,12 +24,12 @@ var openSettingsPopup = function(jsonobj)
         $('#editTags').css('transition', 'max-height 1.5s');
         $('#editTags').css('max-height', '450px');
         currenttagdisplay.css('color','#00ff72');
-        currenttagdisplay.val(tagchanged);
+        currenttagdisplay.val(parseTags(tagchanged));
         $('#tagsinput').val(tagchanged);
         $('#editTags').find('.sectionedittd i').addClass('fa-remove').removeClass('fa-edit');
     } 
     else {
-        currenttagdisplay.html(jsonobj.tags);
+        currenttagdisplay.html(parseTags(jsonobj.tags));
         $('#tagsinput').val(jsonobj.tags);
     }
     
@@ -66,17 +66,29 @@ function editSetting(obj) {
 
 }
 
-function tagsInputChange(obj) {
-    var oldtags = $(obj).attr("ctags");
-    var currenttagdisplay = $('.currenttags'); 
-    currenttagdisplay.val($(obj).val());
-    
-    if (oldtags.trim() == $(obj).val().trim()) {
-        currenttagdisplay.css('color', '');
+function tagsInputOnKeyUp(obj) {
+    if (!dblClickTimeout) {
+        dblClickTimeout = setTimeout(function() {     
+            var oldtags = $(obj).attr("ctags");
+            var currenttagdisplay = $('.currenttags'); 
+            currenttagdisplay.html(parseTags($(obj).val()));
+            
+            if (oldtags.trim() == $(obj).val().trim()) {
+                currenttagdisplay.css('color', '');
+            }
+            else {
+                currenttagdisplay.css('color','#00ff72');
+            }
+            clearTimeout(dblClickTimeout);
+        }, 150);
     }
-    else {
-        currenttagdisplay.css('color','#00ff72');
-    }
+
+
+
+      
+
+
+
 }
 
 
@@ -85,4 +97,12 @@ function tagsInputChange(obj) {
 /////////////////////////////////////////////////////////////////////////
 
 
+function parseTags(tags) {
+    var result = "";
+    var res = tags.split(" ");
+    for (var i = 0; i < res.length; i++) {
+        result = result + res[i] + " -";
+    }
 
+    return result.substring(0, result.length - 2);
+}
