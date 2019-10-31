@@ -1,5 +1,11 @@
 
 
+
+
+/////////////////////////////////////////////////////////////////////////
+//                             GENERAL                                 //
+/////////////////////////////////////////////////////////////////////////
+
 function expandCat(obj) {
     var functorun = function(jsonvar) 
     { 
@@ -10,6 +16,7 @@ function expandCat(obj) {
 
     getJsonbyid($(obj).parent().attr("id"), functorun);
 }
+
 
 var openSettingsPopup = function(jsonobj) 
 {
@@ -33,20 +40,17 @@ var openSettingsPopup = function(jsonobj)
         $('#tagsinput').val(jsonobj.tags);
     }
     
-    $('#linkChange').fadeIn();
+    removeNonExistentLi();
 
+    createNonExistentLi();
     
+    $('#linkChange').fadeIn();  
 } 
+
 
 function closeSettingsPopup(obj) {
     $('#linkChange').fadeOut();
 }
-
-
-/////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
-
-
 
 
 function editSetting(obj) {
@@ -66,10 +70,12 @@ function editSetting(obj) {
 
 }
 
-function tagsInputOnKeyUp(obj) {
-//    if (!dblClickTimeout) {
-//        dblClickTimeout = setTimeout(function() {    
 
+/////////////////////////////////////////////////////////////////////////
+//                           TAGS SETTINGS                             //
+/////////////////////////////////////////////////////////////////////////
+
+function tagsInputOnKeyUp(obj) {
     var oldtags = $(obj).attr("ctags");
     var currenttagdisplay = $('.currenttags'); 
     currenttagdisplay.html(parseTags($(obj).val()));
@@ -80,17 +86,63 @@ function tagsInputOnKeyUp(obj) {
     else {
         currenttagdisplay.css('color','#00ff72');
     }
-    
- //           clearTimeout(dblClickTimeout);
- //       }, 150);
 }
 
 
+function addtag(text) {
+    var hasLi = existsLi(text);
 
+    if (hasLi == "") {
+        createLi();
+    }
+    else {
+        hasLi.addClass("selectedtag");
+    }
 
-/////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
+    $('#tagsinput').val($('#tagsinput').val() + text + " ");
+}
 
+function createLi(text) {
+    $('#tagsul').prepend('<li class="litags selectedtag new">' + text + '</li>');
+}
+
+function createNonExistentLi() {
+    var res = $('#tagsinput').val().split(" ");
+    for (var i = 0; i < res.length; i++) {
+
+        var li = existsLi(res[i].trim());
+        if (li == "") {
+            createLi(res[i].trim());
+        }
+        else {
+            li.addClass("selectedtag");
+        }
+    }
+}
+
+function existsLi(text) {
+    var hasLi = "";
+
+    $('#tagsul').find(".litags").each( function( index, element ){
+        if ($(element).html() == text) {
+            hasLi = $(element);
+            return false;
+        }
+    });
+
+    return hasLi;
+}
+
+function removeNonExistentLi() {
+    var tags = $('#tagsinput').val();
+
+    $('#tagsul').find(".litags.new").each( function( index, element ) {
+        $(element).removeClass("selectedtag");
+        if ($(element).hasClass("new") && tags.indexOf($(element).html()) < 0) {
+            $(element).remove();
+        }
+    });
+}
 
 function parseTags(tags) {
     var result = "";
@@ -101,3 +153,9 @@ function parseTags(tags) {
 
     return result.substring(0, result.length - 3);
 }
+
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+
+
