@@ -28,8 +28,6 @@ var openSettingsPopup = function(jsonobj)
     var tagchanged = readCookie(jsonobj.id + "tagchanged");
     var currenttagdisplay = $('.currenttags'); 
     if (tagchanged && tagchanged.length > 0) {
-        $('#editTags').css('transition', 'max-height 1.5s');
-        $('#editTags').css('max-height', '450px');
         currenttagdisplay.css('color','#00ff72');
         currenttagdisplay.val(parseTags(tagchanged));
         $('#tagsinput').val(tagchanged);
@@ -103,19 +101,20 @@ function addtag(text) {
 }
 
 function createLi(text) {
-    $('#tagsul').prepend('<li class="litags selectedtag new">' + text + '</li>');
+    $('#tagsul').prepend('<li onclick="javascript: clickLiTag(this)" class="litags selectedtag new">' + text + '</li>');
 }
 
 function createNonExistentLi() {
     var res = $('#tagsinput').val().split(" ");
-    for (var i = 0; i < res.length; i++) {
+    for (var i = res.length; i > 0; i--) {
 
         var li = existsLi(res[i].trim());
         if (li == "") {
             createLi(res[i].trim());
         }
         else {
-            li.addClass("selectedtag");
+            li.clone().addClass("selectedtag").prependTo("#tagsul");
+            li.remove();
         }
     }
 }
@@ -137,7 +136,7 @@ function existsLi(text) {
 function removeNonExistentLi() {
     var tags = $('#tagsinput').val();
 
-    $('#tagsul').find(".litags.new").each( function( index, element ) {
+    $('#tagsul').find(".litags").each( function( index, element ) {
         $(element).removeClass("selectedtag");
         if ($(element).hasClass("new") && tags.indexOf($(element).html()) < 0) {
             $(element).remove();
@@ -159,4 +158,14 @@ function parseTags(tags) {
 /////////////////////////////////////////////////////////////////////////
 
 
-
+    
+$( ".litags" ).bind( "click", function( event ) {
+    if ($(this).hasClass("selectedtag")) {
+      $(this).removeClass("selectedtag");
+      $('#tags').val($('#tags').val().replace($(this).html() + " ", ""));
+    }      
+    else {
+      $(this).addClass("selectedtag");
+      $('#tags').val($('#tags').val() + $(this).html() + " ");
+    }
+});  

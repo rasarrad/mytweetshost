@@ -800,7 +800,7 @@ var countalltweets = function(id) {
 
         if (!tagssloaded) {
             var o = new Option("notag", "notag");
-            $(o).html("");
+            $(o).html("All Tags");
             $("#tagsselect").append(o);
     
             var mapAsc = new Map([...tagsmap.entries()].sort());
@@ -831,7 +831,7 @@ var countalltweets = function(id) {
             for (let [key, value] of tagsmap) {     // get data sorted
     
                 if (!hasOverflow) {
-                    var elem = $("<li class='litags'>" + key + "</li>");
+                    var elem = $("<li  onclick='javascript: clickLiTag(this)' class='litags'>" + key + "</li>");
                     $("#tagsul").append(elem);
                     if ($('#tagsul').isChildOverflowing(elem)) {
                         hasOverflow = true;
@@ -846,18 +846,6 @@ var countalltweets = function(id) {
             $("#addpopup").hide();
             
             $("#addpopup").css("top", "calc(50% - 189px)");
-    
-    
-            $( ".litags" ).bind( "click", function( event ) {
-                if ($(this).hasClass("selectedtag")){
-                  $(this).removeClass("selectedtag");
-                  $('#tags').val($('#tags').val().replace($(this).html() + " ", ""));
-                }      
-                else {
-                  $(this).addClass("selectedtag");
-                  $('#tags').val($('#tags').val() + $(this).html() + " ");
-                }
-            });  
 
             tagssloaded = true;
         }
