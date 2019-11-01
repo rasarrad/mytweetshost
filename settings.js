@@ -120,7 +120,7 @@ function createNonExistentLi() {
     }
 }
 
-function existsLi(text) {
+function existsLi(text) { 
     var hasLi = "";
 
     $('#tagsul').find(".litags").each( function( index, element ){
