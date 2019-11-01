@@ -108,7 +108,7 @@ function createNonExistentLi() {
     var res = $('#tagsinput').val().split(" ");
     for (var i = res.length; i > 0; i--) {
 
-        var li = existsLi(res[i].trim());
+        var li = existsLi(res[i-1].trim());
         if (li == "") {
             createLi(res[i].trim());
         }
