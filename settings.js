@@ -73,6 +73,7 @@ function editSetting(obj) {
 /////////////////////////////////////////////////////////////////////////
 
 function tagsInputOnChange(obj) {
+    alert(2)
     var oldtags = $(obj).attr("ctags");
     var currenttagdisplay = $('.currenttags'); 
     currenttagdisplay.html(parseTags($(obj).val()));
@@ -170,10 +171,12 @@ function clickLiTag(obj) {
     if ($(obj).hasClass("selectedtag")) {
         $(obj).removeClass("selectedtag");
         $('#tagsinput').val($('#tagsinput').val().replace($(obj).html() + " ", ""));
+        alert(3)
       }      
       else {
         $(obj).addClass("selectedtag");
         $('#tagsinput').val($('#tagsinput').val() + $(obj).html() + " ");
       }
+      alert(1)
       $('#tagsinput').trigger("change");
 }
