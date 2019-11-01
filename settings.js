@@ -124,6 +124,7 @@ function existsLi(text) {
     var hasLi = "";
 
     $('#tagsul').find(".litags").each( function( index, element ){
+        console.log($(element).html() + ' - ' + text + ' - ' + ($(element).html() == text));
         if ($(element).html() == text) {
             hasLi = $(element);
             return false;
