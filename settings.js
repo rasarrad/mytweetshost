@@ -172,13 +172,13 @@ function clickLiTag(obj) {
             $('#tagsinput').val($('#tagsinput').val().replace($(obj).html() + " ", ""));
         }
         else {
-            $('#tagsinput').val($('#tagsinput').val().replace($(obj).html(), ""));
+            $('#tagsinput').val($('#tagsinput').val().replace($(obj).html(), "").trim());
         }
         $('#tagsinput').trigger("change");
       }      
       else {
         $(obj).addClass("selectedtag");
-        $('#tagsinput').val($('#tagsinput').val() + " " + $(obj).html());
+        $('#tagsinput').val($('#tagsinput').val().trim() + " " + $(obj).html());
         $('#tagsinput').trigger("change");
       }
       
