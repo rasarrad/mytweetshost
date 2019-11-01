@@ -1,7 +1,7 @@
 
 console.log(22); 
  
-var text = "";
+var text = "";  
 var origin = "";
 var nextid = "";
 var currentIndex = 0;
