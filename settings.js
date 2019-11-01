@@ -130,7 +130,6 @@ function existsLi(text) {
     var hasLi = "";
 
     $('#tagsul').find(".litags").each( function( index, element ){
-        console.log($(element).html() + ' - ' + text + ' - ' + ($(element).html() == text));
         if ($(element).html() == text) {
             hasLi = $(element);
             return false;
@@ -152,6 +151,7 @@ function removeNonExistentLi() {
 }
 
 function parseTags(tags) {
+    console.log('-' + tags + '-');
     var result = "";
     var res = tags.trim().split(" ");
     for (var i = 0; i < res.length; i++) {
