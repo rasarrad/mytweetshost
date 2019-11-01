@@ -77,7 +77,7 @@ function tagsInputOnChange(obj) {
     var currenttagdisplay = $('.currenttags'); 
     currenttagdisplay.html(parseTags($(obj).val()));
     
-    if (oldtags.trim() == $(obj).val().trim()) {
+    if (oldtags == $(obj).val()) {
         currenttagdisplay.css('color', '');
         createCookie($('#linkChange').attr("cid") + "tagchanged", "");
         $('#originaltagtd i').hide();
@@ -115,10 +115,9 @@ function createLi(text) {
 function createNonExistentLi() {
     var res = $('#tagsinput').val().split(" ");
     for (var i = res.length; i > 0; i--) {
-        alert("-" + res[i-1].trim() + "-") 
-        var li = existsLi(res[i-1].trim());
+        var li = existsLi(res[i-1]);
         if (li == "") {
-            createLi(res[i-1].trim());
+            createLi(res[i-1]);
         }
         else {
             li.clone().addClass("selectedtag").prependTo("#tagsul");
