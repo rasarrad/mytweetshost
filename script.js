@@ -1,5 +1,5 @@
 
-console.log(22); 
+console.log(11); 
  
 var text = "";  
 var origin = "";
@@ -32,7 +32,8 @@ $( document ).ready(function() {
     while (nextid > 0);
     nextid = parseInt(readCookie("maxid"));
     */
-
+   countalltweets();
+    setviewmode();
    var functorun = function(jsonvar) 
    { 
        if (jsonvar != null) {
@@ -42,8 +43,7 @@ $( document ).ready(function() {
 
    getJsonbyid(28, functorun);
 
-    countalltweets();
-    setviewmode();
+ 
     var hasChanges = readCookie("hasChanges");
     if (hasChanges && hasChanges.length > 0)
       $("#generate").addClass("haschanges");
