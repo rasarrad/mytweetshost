@@ -1,5 +1,5 @@
 
-console.log(3311); 
+console.log(11); 
  
 var text = "";  
 var origin = "";
@@ -32,6 +32,7 @@ $( document ).ready(function() {
     while (nextid > 0);
     nextid = parseInt(readCookie("maxid"));
     */
+   createCookie("28tagchanged", "");
    countalltweets();
     setviewmode();
    var functorun = function(jsonvar) 
