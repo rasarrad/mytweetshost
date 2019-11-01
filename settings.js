@@ -57,15 +57,14 @@ function editSetting(obj) {
     if (table.css('max-height') == '21px') {
         table.css('transition', 'max-height 1.5s');
         table.css('max-height', '450px');
-        table.find('.sectionedittd i').addClass('fa-remove').removeClass('fa-edit');
+        table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;top: -6px;');
         
     }
     else {
         table.css('transition', 'max-height .5s');
         table.css('max-height', '21px');
-        table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-remove');
+        table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
     }
-
 }
 
 
@@ -158,14 +157,13 @@ function parseTags(tags) {
 /////////////////////////////////////////////////////////////////////////
 
 
-    
-$( ".litags" ).bind( "click", function( event ) {
-    if ($(this).hasClass("selectedtag")) {
-      $(this).removeClass("selectedtag");
-      $('#tags').val($('#tags').val().replace($(this).html() + " ", ""));
-    }      
-    else {
-      $(this).addClass("selectedtag");
-      $('#tags').val($('#tags').val() + $(this).html() + " ");
-    }
-});  
+function clickLiTag(obj) { 
+    if ($(obj).hasClass("selectedtag")) {
+        $(obj).removeClass("selectedtag");
+        $('#tagsinput').val($('#tagsinput').val().replace($(obj).html() + " ", ""));
+      }      
+      else {
+        $(obj).addClass("selectedtag");
+        $('#tagsinput').val($('#tagsinput').val() + $(obj).html() + " ");
+      }
+}
