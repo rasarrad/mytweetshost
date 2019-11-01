@@ -169,7 +169,7 @@ function parseTags(tags) {
 function clickLiTag(obj) {
     if ($(obj).hasClass("selectedtag")) {
         $(obj).removeClass("selectedtag");
-        if ($('#tagsinput').val().indexOf($(element).html() + " ") >= 0) {
+        if ($('#tagsinput').val().indexOf($(obj).html() + " ") >= 0) {
             $('#tagsinput').val($('#tagsinput').val().replace($(obj).html() + " ", ""));
         }
         else {
