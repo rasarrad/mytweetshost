@@ -25,7 +25,8 @@ var openSettingsPopup = function(jsonobj)
     $('#tagsinput').attr("ctags", jsonobj.tags);
 
     var tagchanged = readCookie(jsonobj.id + "tagchanged");
-    var currenttagdisplay = $('.currenttags'); 
+    var currenttagdisplay = $('.currenttags');
+    $('.originaltags').val(jsonobj.tags);  
     if (tagchanged && tagchanged.length > 0) {
         alert("-" + tagchanged + "-") 
         currenttagdisplay.css('color','#00ff72');

@@ -1,5 +1,5 @@
 
-console.log(124); 
+console.log(12); 
  
 var text = "";  
 var origin = "";
