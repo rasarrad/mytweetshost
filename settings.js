@@ -152,9 +152,8 @@ function removeNonExistentLi() {
 }
 
 function parseTags(tags) {
-    alert("-" + tags + "-") 
     var result = "";
-    var res = tags.split(" ");
+    var res = tags.trim().split(" ");
     for (var i = 0; i < res.length; i++) {
         result = result + res[i] + " - ";
     }
