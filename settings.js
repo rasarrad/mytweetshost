@@ -73,6 +73,7 @@ function editSetting(obj) {
 /////////////////////////////////////////////////////////////////////////
 
 function tagsInputOnChange(obj) {
+    alert(1);
     var oldtags = $(obj).attr("ctags");
     var currenttagdisplay = $('.currenttags'); 
     currenttagdisplay.html(parseTags($(obj).val()));
@@ -83,6 +84,7 @@ function tagsInputOnChange(obj) {
         $('#originaltagtd i').hide();
     }
     else {
+        alert(2);
         currenttagdisplay.css('color','#00ff72');
         createCookie($('#linkChange').attr("cid") + "tagchanged", $(obj).val().trim());
         $('#originaltagtd i').show();
@@ -167,7 +169,9 @@ function parseTags(tags) {
 
 
 function clickLiTag(obj) { 
+    alert(3);
     if ($(obj).hasClass("selectedtag")) {
+        alert(4);
         $(obj).removeClass("selectedtag");
         $('#tagsinput').val($('#tagsinput').val().replace($(obj).html() + " ", ""));
       }      
