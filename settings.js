@@ -73,11 +73,11 @@ function editSetting(obj) {
 /////////////////////////////////////////////////////////////////////////
 
 function tagsInputOnChange(obj) {
-    alert(3)
+    alert($(obj).val())
     var oldtags = $(obj).attr("ctags");
     var currenttagdisplay = $('.currenttags'); 
     currenttagdisplay.html(parseTags($(obj).val()));
-    
+    alert(oldtags.trim() == $(obj).val().trim())
     if (oldtags.trim() == $(obj).val().trim()) {
         currenttagdisplay.css('color', '');
         createCookie($('#linkChange').attr("cid") + "tagchanged", "");
@@ -168,9 +168,7 @@ function parseTags(tags) {
 
 
 function clickLiTag(obj) {
-    alert(1) 
     if ($(obj).hasClass("selectedtag")) {
-        alert(2) 
         $(obj).removeClass("selectedtag");
         $('#tagsinput').val($('#tagsinput').val().replace($(obj).html() + " ", ""));
         $('#tagsinput').trigger("change");
