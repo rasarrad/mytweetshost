@@ -72,19 +72,28 @@ function editSetting(obj) {
 //                           TAGS SETTINGS                             //
 /////////////////////////////////////////////////////////////////////////
 
-function tagsInputOnKeyUp(obj) {
+function tagsInputOnChange(obj) {
     var oldtags = $(obj).attr("ctags");
     var currenttagdisplay = $('.currenttags'); 
     currenttagdisplay.html(parseTags($(obj).val()));
     
     if (oldtags.trim() == $(obj).val().trim()) {
         currenttagdisplay.css('color', '');
+        createCookie($('#linkChange').attr("cid") + "tagchanged", "");
+        $('#originaltagtd i').hide();
     }
     else {
         currenttagdisplay.css('color','#00ff72');
+        createCookie($('#linkChange').attr("cid") + "tagchanged", $(obj).val().trim());
+        $('#originaltagtd i').show();
     }
 }
 
+function undoTags(obj) {
+    $('#tagsinput').val($('#tagsinput').attr("ctags"));
+    $(obj).hide();
+    showMessage("Tags reverted", null, "fa-undo");
+}
 
 function addtag(text) {
     var hasLi = existsLi(text);

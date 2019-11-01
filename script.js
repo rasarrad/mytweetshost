@@ -1,5 +1,5 @@
 
-console.log(11); 
+console.log(222); 
  
 var text = "";  
 var origin = "";
@@ -228,8 +228,8 @@ $( document ).ready(function() {
         } 
     });
 
-    $( "#tagsinput" ).keyup(function() {
-        tagsInputOnKeyUp(this);
+    $( "#tagsinput" ).change(function() {
+        tagsInputOnChange(this);
       });
 
       $( "#tagsselect" ).change(function() {
