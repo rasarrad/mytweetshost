@@ -1,5 +1,5 @@
 
-console.log(111); 
+console.log(22); 
  
 var text = "";
 var origin = "";
@@ -21,7 +21,7 @@ var total_hh = 0;
 var hideMode = false;
 var tagssloaded = false;
 
-$( document ).ready(function() {
+$( document ).ready(function() { 
 
     /*nextid = parseInt(readCookie("maxid"));
 
