@@ -20,7 +20,6 @@ function expandCat(obj) {
 
 var openSettingsPopup = function(jsonobj) 
 {
-    console.log(jsonobj); 
 
     $('#linkChange').attr("cid", jsonobj.id);
     $('#tagsinput').attr("ctags", jsonobj.tags);
@@ -119,7 +118,7 @@ function createNonExistentLi() {
 
         var li = existsLi(res[i-1].trim());
         if (li == "") {
-            createLi(res[i].trim());
+            createLi(res[i-1].trim());
         }
         else {
             li.clone().addClass("selectedtag").prependTo("#tagsul");
