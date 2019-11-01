@@ -73,7 +73,6 @@ function editSetting(obj) {
 /////////////////////////////////////////////////////////////////////////
 
 function tagsInputOnChange(obj) {
-    alert("-" + $(obj).val() + "-") 
     var oldtags = $(obj).attr("ctags");
     var currenttagdisplay = $('.currenttags'); 
     currenttagdisplay.html(parseTags($(obj).val()));
@@ -153,6 +152,7 @@ function removeNonExistentLi() {
 }
 
 function parseTags(tags) {
+    alert("-" + tags + "-") 
     var result = "";
     var res = tags.split(" ");
     for (var i = 0; i < res.length; i++) {
