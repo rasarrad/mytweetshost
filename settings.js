@@ -98,6 +98,10 @@ function undoTags(obj) {
         alert(1);
     } 
     $('#tagsinput').trigger("change");
+    removeNonExistentLi();
+
+    createNonExistentLi();
+    
     showMessage("Tags reverted", null, "fa-undo", "", null, "undo");
 }
 
