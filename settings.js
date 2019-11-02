@@ -15,7 +15,7 @@ function expandCat(obj) {
     } 
 
     //getJsonbyid($(obj).parent().attr("id"), functorun);
-    getJsonbyid(24, functorun);
+    getJsonbyid(28, functorun);
 }
 
 
@@ -182,12 +182,11 @@ function removeNonExistentLi() {
 }
 
 function parseTags(tags) {
-    console.log('-' + tags + '-');
     var result = "";
     var res = tags.trim().split(" ");
 
     if (res.length == 1 && res[0].trim() == 0) {
-        return " --";
+        return "--";
     } 
 
     for (var i = 0; i < res.length; i++) {
