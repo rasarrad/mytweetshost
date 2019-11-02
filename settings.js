@@ -21,7 +21,7 @@ function expandCat(obj) {
 
 var openSettingsPopup = function(jsonobj) 
 {
-    $('body').css('overflow-y', 'hidden');
+    $('body, html').css('overflow-y', 'hidden');
     $('#linkChange').attr("cid", jsonobj.id);
     $('#tagsinput').attr("ctags", jsonobj.tags);
 
@@ -48,7 +48,7 @@ var openSettingsPopup = function(jsonobj)
 
 
 function closeSettingsPopup(obj) {
-    $('body').css('overflow-y', 'auto');
+    $('body, html').css('overflow-y', 'auto');
     $('#linkChange').fadeOut();
 }
 
