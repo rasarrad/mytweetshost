@@ -96,7 +96,7 @@ function tagsInputOnChange(obj) {
  
 function addTextTag(obj) {
     if ($('#addtaginput').val() != "") {
-        $('#tagsinput').val($('#addtaginput').val());
+        $('#tagsinput').val($('#tagsinput').val() + " " + $('#addtaginput').val());
         $('#tagsinput').trigger("change");
         $('#addtaginput').val("");
     }
