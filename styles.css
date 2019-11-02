@@ -697,7 +697,7 @@ twitter-widget {
 
 .litags {
   display: inline-block;
-  margin-bottom: 3px;
+  margin-bottom: 6px;
   height: 21px;
   font-size: 13px;
   font-weight: bold;
@@ -1284,6 +1284,7 @@ twitter-widget {
     padding: 5px 4px;
     height: 18px;
     padding-right: 3px;
+    padding-bottom: 2px;
     background: var(--soft-color);
 }
 
