@@ -1,5 +1,5 @@
 
-console.log(1); 
+console.log(51); 
  
 var text = "";  
 var origin = "";
@@ -645,7 +645,7 @@ function countmove(obj) {
             dblFlag = false;
             setTimeout(function() { 
                 $(obj).css('opacity', '0.42');
-            }, 1500);
+            }, 2500);
         }, 500);
     }
 }  
