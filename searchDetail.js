@@ -832,7 +832,7 @@ var countalltweets = function(id) {
             for (let [key, value] of tagsmap) {     // get data sorted
     
                 if (!hasOverflow) {
-                    var elem = $("<li  onclick='javascript: clickLiTag(this)' class='litags'>" + key + "</li>");
+                    var elem = $("<li  onclick='javascript: clickLiTag(event, this)' class='litags'>" + key + "</li>");
                     $("#tagsul").append(elem);
                     if ($('#tagsul').isChildOverflowing(elem)) {
                         hasOverflow = true;

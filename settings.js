@@ -133,11 +133,15 @@ function addtag(text) {
 }
 
 function createLi(text) {
-    $('#tagsul').prepend('<li onclick="javascript: clickLiTag(this)" class="litags selectedtag new">' + text + '</li>');
+    $('#tagsul').prepend('<li onclick="javascript: clickLiTag(event, this)" class="litags selectedtag new">' + text + '</li>');
 }
 
 function createNonExistentLi() {
     var res = $('#tagsinput').val().split(" ");
+
+    if (res.length == 1 && res[0].trim() == 0) {
+        return false;
+    } 
     for (var i = res.length; i > 0; i--) {
         var li = existsLi(res[i-1]);
         if (li == "") {
@@ -190,7 +194,9 @@ function parseTags(tags) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function clickLiTag(obj) {
+function clickLiTag(e, obj) {
+    e.stopPropagation();
+
     if ($(obj).hasClass("selectedtag")) {
         $(obj).removeClass("selectedtag");
         if ($('#tagsinput').val().indexOf($(obj).html() + " ") >= 0) {
