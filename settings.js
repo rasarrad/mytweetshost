@@ -139,11 +139,12 @@ function createLi(text) {
 }
 
 function createNonExistentLi() {
-    var res = $('#tagsinput').val().split(" ");
+    var res = $('#tagsinput').val().trim().split(" ");
 
     if (res.length == 1 && res[0].trim() == 0) {
         return false;
-    } 
+    }
+
     for (var i = res.length; i > 0; i--) {
         var li = existsLi(res[i-1]);
         if (li == "") {
