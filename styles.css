@@ -549,20 +549,46 @@ ol > li {
 }
 
 .striptext {
-  color: white;
   font-size: 20px;
   position: relative;
   top: calc(50% - 27px);
-  left: calc(50% - 273px);
-  border: 1px solid white;
-  background: #00456d;
-  width: 546px;
+  /* left: calc(50% - 273px); */
+  border: 1px solid var(--soft-color);
+  background: var(--high-color) !important;
+  /* width: 546px; */
   padding-bottom: 9px;
   text-align: center;
   border-radius: 4px;
   font-variant: small-caps;
   transition: top 1s;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: var(--softdark-color);
 }
+
+#stripmessage {
+      position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    top: 100%;
+    z-index: 999999999;
+    transition: top 1s ease 0s;
+    display: none;
+}
+
+.striptext .poptitle {
+    position: relative;
+    top: 3px;
+    font-size: 16px;
+    text-align: center;
+    text-transform: lowercase;
+    width: calc(100% - 87px);
+    display: block;
+    padding-left: 36px;
+    font-weight: bold;
+}
+
 
 .topoback {
   background: white;

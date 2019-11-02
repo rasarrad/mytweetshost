@@ -1,5 +1,5 @@
 
-console.log(162); 
+console.log(1); 
  
 var text = "";  
 var origin = "";
@@ -457,28 +457,48 @@ function closetagpopup(obj, id) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function showMessage(text, speed) {
+function showMessage(text, speed, icon, iconstyle, undofunc) {
+    var mainDiv = $("#stripmessage");
     var dospeed = 3500;
     if (speed)
       dospeed = speed;
 
-    $("#stripmessage").css("transition", "none");
+    mainDiv.find('i.fa').attr('class', 'fa');
+    if (icon) {
+        mainDiv.find('i.fa').addClass(icon);
+        mainDiv.find('i.fa').attr('style', iconstyle);
+        mainDiv.find('i.fa').show();
+    }
+    else {
+        mainDiv.find('i.fa').hide();
+    }
+
+    $("#stripfunc").unbind("click");
+    if (undofunc) {
+        $("#stripfunc").bind("click", undofunc);
+        mainDiv.find('#stripfunc').show();
+    }
+    else {
+        mainDiv.find('#stripfunc').hide();
+    }
+    
+    mainDiv.css("transition", "none");
     $("#stripmessage .striptext").css("transition", "none");
-    $("#stripmessage").css("top", "0px");
-    $("#stripmessage").css("background", "rgba(0, 0, 0, 0.6)");
+    mainDiv.css("top", "0px");
+    mainDiv.css("background", "rgba(0, 0, 0, 0.6)");
     $("#stripmessage .striptext").css("top", "calc(50% - 27px)");
     $("#stripmessage .poptitle").text(text);
 
-    $("#stripmessage").fadeIn("slow", function(){
+    mainDiv.fadeIn("slow", function(){
       setTimeout(function() { 
-          $("#stripmessage").css("transition", "top 1s");
-          $("#stripmessage").css("top", "100%");
+          mainDiv.css("transition", "top 1s");
+          mainDiv.css("top", "100%");
           
           $("#stripmessage .striptext").css("transition", "top 1s");
-          $("#stripmessage").css("background", "rgba(0, 0, 0, 0)");
+          mainDiv.css("background", "rgba(0, 0, 0, 0)");
           $("#stripmessage .striptext").css("top", "calc(0% - 42px)");
           setTimeout(function() { 
-              $("#stripmessage").fadeOut("slow");
+              mainDiv.fadeOut("slow");
             }, dospeed);
         }, 900);
     });
