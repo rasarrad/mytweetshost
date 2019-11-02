@@ -1,5 +1,5 @@
 
-console.log(1); 
+console.log(12); 
  
 var text = "";  
 var origin = "";
@@ -498,7 +498,7 @@ function showMessage(text, speed, icon, iconstyle, undofunc) {
           mainDiv.css("background", "rgba(0, 0, 0, 0)");
           $("#stripmessage .striptext").css("top", "calc(0% - 42px)");
           setTimeout(function() { 
-              mainDiv.fadeOut("slow");
+              //mainDiv.fadeOut("slow");
             }, dospeed);
         }, 900);
     });
