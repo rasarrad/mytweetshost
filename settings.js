@@ -98,7 +98,7 @@ function undoTags(obj) {
         alert(1);
     } 
 
-    showMessage("Tags reverted", null, "fa-undo", "", functorun);
+    showMessage("Tags reverted", null, "fa-undo", "", functorun, "undo");
 }
 
 function addtag(text) {

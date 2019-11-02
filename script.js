@@ -1,5 +1,5 @@
 
-console.log(12); 
+console.log(1); 
  
 var text = "";  
 var origin = "";
@@ -457,7 +457,7 @@ function closetagpopup(obj, id) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function showMessage(text, speed, icon, iconstyle, undofunc) {
+function showMessage(text, speed, icon, iconstyle, undofunc, undotext) {
     var mainDiv = $("#stripmessage");
     var dospeed = 3500;
     if (speed)
@@ -466,7 +466,9 @@ function showMessage(text, speed, icon, iconstyle, undofunc) {
     mainDiv.find('i.fa').attr('class', 'fa');
     if (icon) {
         mainDiv.find('i.fa').addClass(icon);
-        mainDiv.find('i.fa').attr('style', iconstyle);
+
+        if (iconstyle != '')
+            mainDiv.find('i.fa').attr('style', iconstyle);
         mainDiv.find('i.fa').show();
     }
     else {
@@ -476,6 +478,7 @@ function showMessage(text, speed, icon, iconstyle, undofunc) {
     $("#stripfunc").unbind("click");
     if (undofunc) {
         $("#stripfunc").bind("click", undofunc);
+        $("#stripfunc").text(undotext);
         mainDiv.find('#stripfunc').show();
     }
     else {
@@ -496,9 +499,9 @@ function showMessage(text, speed, icon, iconstyle, undofunc) {
           
           $("#stripmessage .striptext").css("transition", "top 1s");
           mainDiv.css("background", "rgba(0, 0, 0, 0)");
-          $("#stripmessage .striptext").css("top", "calc(0% - 42px)");
+          $("#stripmessage .striptext").css("top", "calc(0% - 71px)");
           setTimeout(function() { 
-              //mainDiv.fadeOut("slow");
+               mainDiv.fadeOut("slow");
             }, dospeed);
         }, 900);
     });
