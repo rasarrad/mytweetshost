@@ -1095,6 +1095,8 @@ twitter-widget {
     padding-left: 5px;
     padding-right: 5px;
     /* border-bottom: 1px solid var(--soft-color); */
+    border-spacing: 3px 0px;
+    border-collapse: separate;
 }
 
 .newLayout > div .author {
@@ -1109,8 +1111,9 @@ twitter-widget {
 .newLayout > div .titletable tr:first-child .firsttd {
     width: 100%;
     padding-left: 2px;
-    padding-bottom: 9px;
+    padding-bottom: 14px;
     text-align: center;
+    padding-top: 5px;
 }
 
 .newLayout > div .titletable .middletd {
@@ -1134,9 +1137,13 @@ twitter-widget {
 }
 
 .newLayout > div .buttonstable tr:last-child td {
-    padding: 4px 2px 3px 2px;
-    background: var(--softdark-color);
+    padding: 4px 0px 3px 0px;
+    background: var(--soft-color);
     width: 25%;
+    /* margin-right: 5px; */
+    /* display: inline-block; */
+    /* width: calc(25% - 0px); */
+    /* margin-left: 0px; */
 }
 
 

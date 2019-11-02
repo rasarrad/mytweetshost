@@ -165,32 +165,60 @@
 
 <div id="linkChange" class="newLayout" onclick="closeSettingsPopup()" cid="28">
     <div>        
-      <table class="titletable buttonstable">
-        <tbody>
-          <tr class="cursordefault">
-              <td colspan="4" class="firsttd">
-                  <i class="fa fa-twitter" style="margin-right: 9px;font-size: 18px;position: relative;top: 2px;"></i>
-                  <b>id </b><span class="id smallrem">32</span> <b style="margin-left: 7px;">author </b>
-                  <span class="author">manel dos santos</span><b style="margin-left: 10px;">date </b>
-                  <span class="date smallrem">2009 10 12</span>
-              </td>            
-          </tr>
-          <tr class="buttonstr" style="text-align: center;">
-            <td>
-                <i onclick="removetweet(this,32)" id="removetweetp" class="fa fa-eraser fa-flip-horizontal"></i>
-            </td>
-            <td>
-                <i onclick="internallinkcopy(32)" id="internallinkp" class="fa fa-link"></i>
-            </td>
-            <td>
-                <i onclick="externallinkcopy('val.url', 'val.id')" id="externallinkp" class="fa fa-external-link"></i>
-            </td>
-            <td onclick="closeSettingsPopup()">
-                <i id="closepopupp" class="fa fa-window-close-o"></i>
-            </td>                
-          </tr>
-        </tbody>
-      </table>
+        <table class="titletable buttonstable">
+            <tbody>
+              <tr class="cursordefault" style="
+        /* position: relative; */
+        /* left: 42px; */
+    ">
+                  <td colspan="4" class="firsttd">
+                      <i class="fa fa-twitter" style="margin-right: 9px;font-size: 18px;position: relative;top: 2px;"></i>
+                      <b>id </b><span class="id smallrem">32</span> <b style="margin-left: 7px;">author </b>
+                      <span class="author" style="
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 135px;
+        display: inline-block;
+        white-space: nowrap;
+        position: relative;
+        top: 3px;
+    ">aaaaaaa</span><b style="margin-left: 5px;">date </b>
+                      <span class="date smallrem">2009 10 12</span>
+                  </td>            
+              </tr>
+              <tr class="buttonstr" style="text-align: center;">
+                <td style="
+        position: relative;
+        left: -1px;
+    ">
+                    <i onclick="removetweet(this,32)" id="removetweetp" class="fa fa-eraser fa-flip-horizontal"></i>
+                </td>
+                <td style="
+        position: relative;
+        left: 0px;
+    ">
+                    <i onclick="internallinkcopy(32)" id="internallinkp" class="fa fa-link"></i>
+                </td>
+                <td style="
+        position: relative;
+        left: 1px;
+    ">
+                    <i onclick="externallinkcopy('val.url', 'val.id')" id="externallinkp" class="fa fa-external-link"></i>
+                </td>
+                <td onclick="closeSettingsPopup()" style="position: relative;left: 2px;">
+                    <i id="closepopupp" class="fa fa-window-close-o"></i><div style="
+        background: red;
+        position: absolute;
+        height: 30px;
+        width: 2px;
+        top: 0px;
+        right: -1px;
+        background: var(--dark-color);
+    "></div>
+                </td>                
+              </tr>
+            </tbody>
+          </table>
       <table id="editTags" cheight="232px" class="sectiontitletable sectionexpandable" style="margin-top: 68px; transition: max-height 0.5s ease 0s; max-height: 21px;">
           <tbody>
             <tr class="cursorpointer" onclick="editSetting(this)" style="padding-bottom: 15px;">
