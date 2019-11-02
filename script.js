@@ -1,5 +1,5 @@
 
-console.log(15); 
+console.log(1555); 
  
 var text = "";  
 var origin = "";
@@ -549,7 +549,7 @@ function readCookie(name) {
 
 
 function eraseCookie(name) {
-    createCookie(name, "", -1);
+    createCookie(name, null, -1);
 }  
     
 

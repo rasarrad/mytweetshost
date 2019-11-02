@@ -29,7 +29,7 @@ var openSettingsPopup = function(jsonobj)
     var currenttagdisplay = $('.currenttags');
     $('.originaltags').html(parseTags(jsonobj.tags));  
     alert("-" + tagchanged + "-");
-    if (tagchanged) {
+    if (tagchanged != null) {
         alert("- + -");
         currenttagdisplay.css('color','#00ff72');
         currenttagdisplay.val(parseTags(tagchanged));
@@ -83,7 +83,7 @@ function tagsInputOnChange(obj) {
     
     if (oldtags == $(obj).val()) {
         currenttagdisplay.css('color', '');
-        createCookie($('#linkChange').attr("cid") + "tagchanged", "");
+        createCookie($('#linkChange').attr("cid") + "tagchanged", null);
         $('#originaltagtd i').hide();
     }
     else {
