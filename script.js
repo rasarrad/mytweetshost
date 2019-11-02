@@ -1,5 +1,5 @@
 
-console.log(1621); 
+console.log(1); 
  
 var text = "";  
 var origin = "";
@@ -232,10 +232,10 @@ $( document ).ready(function() {
     $( "#tagsinput" ).change(function() {
         tagsInputOnChange(this);
       });
-      
+      /*
       $( ".linkChange > div" ).click(function(event) {
         event.stopPropagation();
-      });
+      });*/
 
 
       $( "#tagsselect" ).change(function() {
