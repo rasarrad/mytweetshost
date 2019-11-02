@@ -167,7 +167,7 @@
     <div>        
       <table class="titletable buttonstable">
         <tbody>
-          <tr>
+          <tr class="cursordefault">
               <td colspan="4" class="firsttd">
                   <i class="fa fa-twitter" style="margin-right: 9px;font-size: 18px;position: relative;top: 2px;"></i>
                   <b>id </b><span class="id smallrem">32</span> <b style="margin-left: 7px;">author </b>
@@ -186,7 +186,7 @@
                 <i onclick="externallinkcopy('val.url', 'val.id')" id="externallinkp" class="fa fa-external-link"></i>
             </td>
             <td onclick="closeSettingsPopup()">
-                <i id="closepopupp" class="fa fa-remove"></i>
+                <i id="closepopupp" class="fa fa-window-close"></i>
             </td>                
           </tr>
         </tbody>
@@ -202,20 +202,19 @@
               </td>                                        
           </tr>   
           <tr>  
-            <td style="width: 80%;width: calc(100% - 220px);">
-                <input id="tagsinput" style="margin-left: 3px;">
-            </td>
-            <td colspan="2" style="width: 27%;">
-                <select id="tagsselect"></select>
-            </td>                      
-                                                    
-        </tr>    
+              <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;">
+                  <input id="tagsinput" style="margin-left: 3px;display:none;" ctags="climate fox">
+  <input id="addtaginput" style="margin-left: 3px;" ctags="climate fox">
+             <select id="tagsselect"><option value="notag">All Tags</option><option value="Assange">Assange</option><option value="John">John</option><option value="Julian">Julian</option><option value="Pilger">Pilger</option><option value="bernie">bernie</option><option value="climate">climate</option><option value="corbyn">corbyn</option><option value="coronel">coronel</option><option value="coup">coup</option><option value="dailyshow">dailyshow</option><option value="failed">failed</option><option value="fakenews">fakenews</option><option value="fox">fox</option><option value="funny">funny</option><option value="gun">gun</option><option value="hannity">hannity</option><option value="hongkong">hongkong</option><option value="israel">israel</option><option value="joe">joe</option><option value="maduro">maduro</option><option value="max">max</option><option value="moto">moto</option><option value="nunes">nunes</option><option value="palestine">palestine</option><option value="racism">racism</option><option value="rogan">rogan</option><option value="sanders">sanders</option><option value="syria">syria</option><option value="usa">usa</option><option value="venezuela">venezuela</option><option value="west">west</option><option value="ww2">ww2</option></select> </td>
+                                    
+                                                      
+          </tr>  
         <tr>  
             <td colspan="3">
                 <ul id="tagsul"></ul>
             </td>                                        
         </tr>    
-        <tr>
+        <tr class="cursordefault">
           <td id="originaltagtd" colspan="3" style="padding: 4px;padding-top: 0px;">
               <span class="boldtitle">Original tags</span><i class="fa fa-undo mainbutton" onclick="javascript: undoTags(this)" style="font-size: 14px;padding-left: 8px;position: relative;top: 1px;display: none;"></i>
               <span class="originaltags titletext"></span>
