@@ -15,7 +15,7 @@ function expandCat(obj) {
     } 
 
     //getJsonbyid($(obj).parent().attr("id"), functorun);
-    getJsonbyid(28, functorun);
+    getJsonbyid(24, functorun);
 }
 
 
@@ -28,7 +28,9 @@ var openSettingsPopup = function(jsonobj)
     var tagchanged = readCookie(jsonobj.id + "tagchanged");
     var currenttagdisplay = $('.currenttags');
     $('.originaltags').html(parseTags(jsonobj.tags));  
-    if (tagchanged && tagchanged.length > 0) {
+    alert("-" + tagchanged + "-");
+    if (tagchanged) {
+        alert("- + -");
         currenttagdisplay.css('color','#00ff72');
         currenttagdisplay.val(parseTags(tagchanged));
         $('#tagsinput').val(tagchanged);
