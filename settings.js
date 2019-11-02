@@ -183,6 +183,11 @@ function parseTags(tags) {
     console.log('-' + tags + '-');
     var result = "";
     var res = tags.trim().split(" ");
+
+    if (res.length == 1 && res[0].trim() == 0) {
+        return " --";
+    } 
+
     for (var i = 0; i < res.length; i++) {
         result = result + res[i] + " - ";
     }
