@@ -106,7 +106,9 @@ function addTextTag(obj) {
 }
 
 
-function undoTags(obj) {
+function undoTags(e, obj) {
+    e.stopPropagation();
+    
     $('#tagsinput').val($('#tagsinput').attr("ctags"));
     $(obj).hide();
     var functorun = function() 
