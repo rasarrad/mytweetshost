@@ -26,7 +26,7 @@ var openSettingsPopup = function(jsonobj)
 
     var tagchanged = readCookie(jsonobj.id + "tagchanged");
     var currenttagdisplay = $('.currenttags');
-    $('.originaltags').html(jsonobj.tags);  
+    $('.originaltags').html(parseTags(jsonobj.tags));  
     if (tagchanged && tagchanged.length > 0) {
         alert("-" + tagchanged + "-") 
         currenttagdisplay.css('color','#00ff72');
@@ -97,8 +97,8 @@ function undoTags(obj) {
     { 
         alert(1);
     } 
-
-    showMessage("Tags reverted", null, "fa-undo", "", functorun, "undo");
+    $('#tagsinput').trigger("change");
+    showMessage("Tags reverted", null, "fa-undo", "", null, "undo");
 }
 
 function addtag(text) {
