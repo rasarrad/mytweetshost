@@ -93,6 +93,16 @@ function tagsInputOnChange(obj) {
     createNonExistentLi();
 }
 
+ 
+function addTextTag(obj) {
+    if ($('#addtaginput').val() != "") {
+        $('#tagsinput').val($('#addtaginput').val());
+        $('#tagsinput').trigger("change");
+        $('#addtaginput').val("");
+    }
+}
+
+
 function undoTags(obj) {
     $('#tagsinput').val($('#tagsinput').attr("ctags"));
     $(obj).hide();
