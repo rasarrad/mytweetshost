@@ -1110,7 +1110,7 @@ twitter-widget {
 }
 .newLayout > div .titletable tr:first-child .firsttd {
     width: 100%;
-    padding-left: 2px;
+    padding-left: 0px;
     padding-bottom: 14px;
     text-align: center;
     padding-top: 5px;
@@ -1348,7 +1348,7 @@ select, textarea {
 }
 
 .smallrem {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
 }
 
 .topoback2 {
