@@ -101,7 +101,7 @@ function undoTags(obj) {
     removeNonExistentLi();
 
     createNonExistentLi();
-    
+
     showMessage("Tags reverted", null, "fa-undo", "", null, "undo");
 }
 
@@ -130,6 +130,7 @@ function createNonExistentLi() {
             createLi(res[i-1]);
         }
         else {
+            console.log(li.html());
             li.clone().addClass("selectedtag").prependTo("#tagsul");
             li.remove();
         }

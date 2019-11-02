@@ -1256,15 +1256,14 @@ twitter-widget {
   font-weight: bold;   
 }
 
-.newLayout input {
-    width: 98%;
+.newLayout #addtaginput {
+    width: 100px;
     color: var(--dark-color);
     font-weight: bold;
     background: var(--high-color);
     padding: 1px 4px;
     border: 1px solid #002133;
     outline: none;
-    position: relative;
 }
 
 .newLayout ul {
@@ -1290,7 +1289,7 @@ twitter-widget {
 
 .newLayout select {
     height: 19px;
-    width: calc(100% - 12px);
+    width: 100px;
     outline: none;
     margin-left: 8px;
     position: relative;

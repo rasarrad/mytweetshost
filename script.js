@@ -1,5 +1,5 @@
 
-console.log(13); 
+console.log(136); 
  
 var text = "";  
 var origin = "";
@@ -236,8 +236,12 @@ $( document ).ready(function() {
       $( "#tagsselect" ).change(function() {
         // Check input( $( this ).val() ) for validity here
         if ($( this ).val() != "notag") {
-            $( "#tags" ).val($( "#tags" ).val() + $( this ).val() + " ");
+            $( "#tagsinput" ).val($( "#tagsinput" ).val() + " " + $( this ).val());
             $(this).val("notag");
+            $('#tagsinput').trigger("change");
+            removeNonExistentLi();
+        
+            createNonExistentLi();
         }
       });
 
