@@ -28,9 +28,9 @@ var openSettingsPopup = function(jsonobj)
     var tagchanged = readCookie(jsonobj.id + "tagchanged");
     var currenttagdisplay = $('.currenttags');
     $('.originaltags').html(parseTags(jsonobj.tags));  
-    alert("-" + tagchanged + "-");
-    if (tagchanged != null) {
-        alert("- + -");
+    console.log("-" + tagchanged + "-");
+    if (tagchanged !== null) {
+        console.log("- + -");
         currenttagdisplay.css('color','#00ff72');
         currenttagdisplay.val(parseTags(tagchanged));
         $('#tagsinput').val(tagchanged);
