@@ -1,5 +1,5 @@
 
-console.log(16); 
+console.log(1621); 
  
 var text = "";  
 var origin = "";
@@ -32,7 +32,7 @@ $( document ).ready(function() {
     while (nextid > 0);
     nextid = parseInt(readCookie("maxid"));
     */
-   createCookie("28tagchanged", null);
+   //createCookie("28tagchanged", null);
    countalltweets();
     setviewmode();
    var functorun = function(jsonvar) 
@@ -232,6 +232,11 @@ $( document ).ready(function() {
     $( "#tagsinput" ).change(function() {
         tagsInputOnChange(this);
       });
+      
+      $( ".linkChange > div" ).click(function(event) {
+        event.stopPropagation();
+      });
+
 
       $( "#tagsselect" ).change(function() {
         // Check input( $( this ).val() ) for validity here
