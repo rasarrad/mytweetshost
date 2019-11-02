@@ -1,5 +1,5 @@
 
-console.log(2331); 
+console.log(1); 
  
 var text = "";  
 var origin = "";
@@ -633,8 +633,8 @@ function countmove(obj) {
     if (!dblFlag) {
         dblFlag = true;
 
-        $(obj).css('opacity', '1');
-
+        $(obj).css('opacity', '0.7');
+        
         if ($(obj).css('bottom') == "54px") {
             $(obj).css('bottom', 'calc(100% - 140px)');
         }
