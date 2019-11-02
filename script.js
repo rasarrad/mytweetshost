@@ -1,5 +1,5 @@
 
-console.log(1); 
+console.log(21); 
  
 var text = "";  
 var origin = "";
@@ -632,6 +632,9 @@ $(document).on({
 function countmove(obj) {
     if (!dblFlag) {
         dblFlag = true;
+
+        $(obj).css('opacity', '1');
+
         if ($(obj).css('bottom') == "54px") {
             $(obj).css('bottom', 'calc(100% - 140px)');
         }
@@ -640,6 +643,9 @@ function countmove(obj) {
         }
         setTimeout(function() { 
             dblFlag = false;
+            setTimeout(function() { 
+                $(obj).css('opacity', '0.42');
+            }, 1500);
         }, 500);
     }
 }  
