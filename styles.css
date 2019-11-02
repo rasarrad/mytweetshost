@@ -1296,9 +1296,9 @@ twitter-widget {
     color: var(--dark-color);
     font-weight: bold;
     background: var(--high-color);
-    padding: 1px 4px;
+    padding: 0px 4px;
     border: 1px solid var(--dark-color);
-    top: 0px;
+    top: -1px;
     cursor: pointer;
 }
 

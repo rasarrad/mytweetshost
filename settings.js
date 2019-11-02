@@ -88,6 +88,9 @@ function tagsInputOnChange(obj) {
         createCookie($('#linkChange').attr("cid") + "tagchanged", $(obj).val());
         $('#originaltagtd i').show();
     }
+    removeNonExistentLi();
+
+    createNonExistentLi();
 }
 
 function undoTags(obj) {
