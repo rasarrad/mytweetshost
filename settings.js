@@ -14,7 +14,8 @@ function expandCat(obj) {
         }
     } 
 
-    getJsonbyid($(obj).parent().attr("id"), functorun);
+    //getJsonbyid($(obj).parent().attr("id"), functorun);
+    getJsonbyid(28, functorun);
 }
 
 
