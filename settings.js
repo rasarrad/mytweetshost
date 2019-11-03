@@ -293,6 +293,8 @@ function catsInputOnChange(obj) {
     }
 
     markCategoriesCheckBoxs();
+
+    alert($(obj).val());
 }
 
 function clickCheckCat(obj, cat) {
