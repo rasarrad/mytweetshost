@@ -1,5 +1,5 @@
 
-console.log(1); 
+console.log(133); 
  
 var text = "";  
 var origin = "";
@@ -244,7 +244,11 @@ $( document ).ready(function() {
     $( "#tagsinput" ).change(function() {
         tagsInputOnChange(this);
       });
-      
+
+      $( "#catsinput" ).change(function() {
+        catsInputOnChange(this);
+      });
+
       $( "#linkChange > div" ).click(function(event) {
         event.stopPropagation();
       });

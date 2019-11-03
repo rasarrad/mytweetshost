@@ -95,6 +95,8 @@ var openSettingsPopup = function(jsonobj)
         $('#catsinput').val(jsonobj.categories);
     }
     
+    markCategoriesCheckBoxs();
+
     $('#linkChange').fadeIn();  
 } 
 
@@ -173,6 +175,7 @@ function undoTags(e, obj) {
     showMessage("Tags reverted", null, "fa-undo", "", null, "undo");
 }
 
+/*
 function addtag(text) {
     var hasLi = existsLi(text);
 
@@ -185,7 +188,7 @@ function addtag(text) {
 
     $('#tagsinput').val($('#tagsinput').val() + text + " ");
 }
-
+*/
 function createLi(text) {
     $('#tagsul').prepend('<li onclick="javascript: clickLiTag(event, this)" class="litags selectedtag new">' + text + '</li>');
 }
@@ -248,6 +251,99 @@ function parseTags(tags) {
     return result.substring(0, result.length - 3);
 }
 
+
+function clickLiTag(e, obj) {
+    e.stopPropagation();
+
+    if ($(obj).hasClass("selectedtag")) {
+        $(obj).removeClass("selectedtag");
+        if ($('#tagsinput').val().indexOf($(obj).html() + " ") >= 0) {
+            $('#tagsinput').val($('#tagsinput').val().replace($(obj).html() + " ", ""));
+        }
+        else {
+            $('#tagsinput').val($('#tagsinput').val().replace($(obj).html(), "").trim());
+        }
+        $('#tagsinput').trigger("change");
+    }      
+    else {
+        $(obj).addClass("selectedtag");
+        $('#tagsinput').val($('#tagsinput').val().trim() + " " + $(obj).html());
+        $('#tagsinput').trigger("change");
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////////////
+//                       CATEGORIES SETTINGS                           //
+/////////////////////////////////////////////////////////////////////////
+
+
+function catsInputOnChange(obj) {
+    var oldcats = $(obj).attr("ccats");
+    var currentcatdisplay = $('.currentcats'); 
+    currentcatdisplay.html(parseCats($(obj).val()));
+    
+    if (oldcats == $(obj).val()) {
+        currentcatdisplay.css('color', '');
+        createCookie($('#linkChange').attr("cid") + "catchanged", null);
+        $('#originalcattd i').hide();
+    }
+    else {
+        currentcatdisplay.css('color','#00ff72');
+        createCookie($('#linkChange').attr("cid") + "catchanged", $(obj).val());
+        $('#originalcattd i').show();
+    }
+
+    markCategoriesCheckBoxs();
+}
+
+function clickCheckCat(obj, cat) {
+    if (!$(obj).is(":checked")) {
+        
+        if ($('#catsinput').val().indexOf(cat + " ") >= 0) {
+            $('#catsinput').val($('#catsinput').val().replace(cat + " ", ""));
+        }
+        else {
+            $('#catsinput').val($('#catsinput').val().replace(cat, "").trim());
+        }
+        $('#catsinput').trigger("change");
+    }      
+    else {
+
+        $('#catsinput').val($('#catsinput').val().trim() + " " + cat);
+        $('#catsinput').trigger("change");
+    }
+}
+
+function markCategoriesCheckBoxs() {
+
+    for (let [key, value] of catsmap) {  
+        if ($('#catsinput').indexOf(key) < 0) {
+            $("#cat" + key).attr("checked", null); 
+        }
+        else {
+            $("#cat" + key).attr("checked", "checked"); 
+        }
+    }  
+
+}
+
+function undoCats(e, obj) {
+    e.stopPropagation();
+    
+    $('#catsinput').val($('#catsinput').attr("ccats"));
+    $(obj).hide();
+    var functorun = function() 
+    { 
+        alert(1);
+    } 
+    $('#catsinput').trigger("change");
+
+    markCategoriesCheckBoxs();
+
+    showMessage("Categories reverted", null, "fa-undo", "", null, "undo");
+}
+
 function parseCats(cats) {
     var result = "";
     var res = cats.trim().split(" ");
@@ -265,25 +361,3 @@ function parseCats(cats) {
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
-
-
-function clickLiTag(e, obj) {
-    e.stopPropagation();
-
-    if ($(obj).hasClass("selectedtag")) {
-        $(obj).removeClass("selectedtag");
-        if ($('#tagsinput').val().indexOf($(obj).html() + " ") >= 0) {
-            $('#tagsinput').val($('#tagsinput').val().replace($(obj).html() + " ", ""));
-        }
-        else {
-            $('#tagsinput').val($('#tagsinput').val().replace($(obj).html(), "").trim());
-        }
-        $('#tagsinput').trigger("change");
-      }      
-      else {
-        $(obj).addClass("selectedtag");
-        $('#tagsinput').val($('#tagsinput').val().trim() + " " + $(obj).html());
-        $('#tagsinput').trigger("change");
-      }
-      
-}
