@@ -78,6 +78,7 @@ function editSetting(e, obj) {
 function tagsInputOnChange(obj) {
     var oldtags = $(obj).attr("ctags");
     var currenttagdisplay = $('.currenttags'); 
+    alert(111)
     currenttagdisplay.html(parseTags($(obj).val()));
     
     if (oldtags == $(obj).val()) {
