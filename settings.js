@@ -76,7 +76,6 @@ function editSetting(e, obj) {
 /////////////////////////////////////////////////////////////////////////
 
 function tagsInputOnChange(obj) {
-    alert(12)
     var oldtags = $(obj).attr("ctags");
     var currenttagdisplay = $('.currenttags'); 
     currenttagdisplay.html(parseTags($(obj).val()));
@@ -187,7 +186,7 @@ function removeNonExistentLi() {
 function parseTags(tags) {
     var result = "";
     var res = tags.trim().split(" ");
-
+console.log(res.length + "-" + res[0].trim() + "-" + (res.length == 1 && res[0].trim() == 0))
     if (res.length == 1 && res[0].trim() == 0) {
         return "--";
     } 
