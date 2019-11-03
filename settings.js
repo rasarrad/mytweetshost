@@ -51,6 +51,18 @@ var openSettingsPopup = function(jsonobj)
         $(".buttonstable tr:first-child td i").addClass('fa').addClass('fa-youtube-play').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
     }
 
+    $(".buttonstable tr:first-child td .id").html(jsonobj.id);
+
+    if (jsonobj.author.length > 0)
+        $(".buttonstable tr:first-child td .author").html(jsonobj.author);
+    else
+        $(".buttonstable tr:first-child td .author").html("--");
+
+    if (jsonobj.date.length > 0)
+        $(".buttonstable tr:first-child td .date").html(jsonobj.date.substring(0,4) + " " + jsonobj.date.substring(4,2) + " " + jsonobj.date.substring(6,2));
+    else
+        $(".buttonstable tr:first-child td .date").html("--");
+
     removeNonExistentLi();
 
     createNonExistentLi();
