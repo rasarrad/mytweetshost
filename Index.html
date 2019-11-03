@@ -227,7 +227,7 @@
     </table>  
 
 
-    <table id="editCats" cheight="232px" class="sectiontitletable sectionexpandable" style="margin-top: 70px; transition: max-height 0.5s ease 0s; max-height: 21px;">
+    <table id="editCats" cheight="232px" class="sectiontitletable sectionexpandable" style="transition: max-height 0.5s ease 0s; max-height: 21px;">
       <tbody>
         <tr class="cursorpointer" onclick="editSetting(event,this)" style="padding-bottom: 15px;">
           <td colspan="2" class="sectionicontd">
@@ -241,8 +241,67 @@
           <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;">
               <input id="catsinput" style="margin-left: 3px;display:none;" ctags="">
               <div class="checkstyleddiv">                  
-                  <input type="checkbox" checked="checked" onclick="javascript: clickCheckCat(this, 'tvn')" id="cattvn" name="cc">
-                  <label for="cattvn" style="position: relative;top: -7px;"><span><i class="fa fa-check"></i></span>Check Box 1</label>
+                  <input type="checkbox" onclick="javascript: clickCheckCat(this, 'trn')" id="cattrn">
+                  <label for="cattrn" style="position: relative;top: -7px;">
+                      <span><i class="fa fa-check"></i></span>
+                      To View Now
+                  </label>
+              </div>
+              <div class="checkstyleddiv">                  
+                  <input type="checkbox" onclick="javascript: clickCheckCat(this, 'tvn')" id="cattvn">
+                  <label for="cattvn" style="position: relative;top: -7px;">
+                      <span><i class="fa fa-check"></i></span>
+                      Trending
+                  </label>
+              </div>
+              <div class="checkstyleddiv">                  
+                  <input type="checkbox" onclick="javascript: clickCheckCat(this, 'tvi')" id="cattvi">
+                  <label for="cattvi" style="position: relative;top: -7px;">
+                      <span><i class="fa fa-check"></i></span>
+                      To View
+                  </label>
+              </div>
+              <div class="checkstyleddiv">                  
+                  <input type="checkbox" onclick="javascript: clickCheckCat(this, 'tvl')" id="cattvl">
+                  <label for="cattvl" style="position: relative;top: -7px;">
+                      <span><i class="fa fa-check"></i></span>
+                      To View Long
+                  </label>
+              </div>
+              <div class="checkstyleddiv">                  
+                  <input type="checkbox" onclick="javascript: clickCheckCat(this, 'tre')" id="cattre">
+                  <label for="cattre" style="position: relative;top: -7px;">
+                      <span><i class="fa fa-check"></i></span>
+                      To Read
+                  </label>
+              </div>
+              <div class="checkstyleddiv">                  
+                  <input type="checkbox" onclick="javascript: clickCheckCat(this, 'trl')" id="cattrl">
+                  <label for="cattrl" style="position: relative;top: -7px;">
+                      <span><i class="fa fa-check"></i></span>
+                      To Read Long
+                  </label>
+              </div>
+              <div class="checkstyleddiv">                  
+                  <input type="checkbox" onclick="javascript: clickCheckCat(this, 'tke')" id="cattke">
+                  <label for="cattke" style="position: relative;top: -7px;">
+                      <span><i class="fa fa-check"></i></span>
+                      To keep
+                  </label>
+              </div>
+              <div class="checkstyleddiv">                  
+                  <input type="checkbox" onclick="javascript: clickCheckCat(this, 'imp')" id="catimp">
+                  <label for="catimp" style="position: relative;top: -7px;">
+                      <span><i class="fa fa-check"></i></span>
+                      Important
+                  </label>
+              </div>
+              <div class="checkstyleddiv">                  
+                  <input type="checkbox" onclick="javascript: clickCheckCat(this, 'cli')" id="catcli">
+                  <label for="catcli" style="position: relative;top: -7px;">
+                      <span><i class="fa fa-check"></i></span>
+                      Climate Change
+                  </label>
               </div>
           </td>                                          
       </tr>    

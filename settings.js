@@ -82,16 +82,16 @@ var openSettingsPopup = function(jsonobj)
 
     var catchanged = readCookie(jsonobj.id + "catchanged");
     var currentcatdisplay = $('.currentcats');
-    $('.originalcats').html(parseTags(jsonobj.categories));  
+    $('.originalcats').html(parseCats(jsonobj.categories));  
 
     if (catchanged != null && catchanged != 'null') {
         currentcatdisplay.css('color','#00ff72');
-        currentcatdisplay.html(parseTags(catchanged));
+        currentcatdisplay.html(parseCats(catchanged));
         $('#catsinput').val(catchanged);
         $('#originalcattd i').show();
     } 
     else {
-        currentcatdisplay.html(parseTags(jsonobj.categories));
+        currentcatdisplay.html(parseCats(jsonobj.categories));
         $('#catsinput').val(jsonobj.categories);
     }
     
@@ -243,6 +243,21 @@ function parseTags(tags) {
 
     for (var i = 0; i < res.length; i++) {
         result = result + res[i] + " - ";
+    }
+
+    return result.substring(0, result.length - 3);
+}
+
+function parseCats(cats) {
+    var result = "";
+    var res = cats.trim().split(" ");
+
+    if (res.length == 1 && res[0].trim() == 0) {
+        return "--";
+    } 
+
+    for (var i = 0; i < res.length; i++) {
+        result = result + catsmap.get(res[i]) + " - ";
     }
 
     return result.substring(0, result.length - 3);

@@ -1,5 +1,5 @@
 
-console.log(12); 
+console.log(1332); 
  
 var text = "";  
 var origin = "";
@@ -33,6 +33,18 @@ $( document ).ready(function() {
     nextid = parseInt(readCookie("maxid"));
     */
    //createCookie("28tagchanged", null);
+
+   var catsmap = new Map();
+   catsmap.set("tvn", "To View Now");
+   catsmap.set("trn", "Trending");
+   catsmap.set("tvi", "To View");
+   catsmap.set("tvl", "To View Long");
+   catsmap.set("tre", "To Read");
+   catsmap.set("trl", "To Read Long");
+   catsmap.set("tke", "To keep");
+   catsmap.set("imp", "Important");
+   catsmap.set("cli", "Climate Change");
+
    countalltweets();
     setviewmode();
    var functorun = function(jsonvar) 
