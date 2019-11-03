@@ -1,5 +1,5 @@
 
-console.log(1); 
+console.log(133); 
  
 var text = "";  
 var origin = "";
@@ -246,6 +246,7 @@ $( document ).ready(function() {
       });
 
       $( "#catsinput" ).change(function() {
+        alert(6);
         catsInputOnChange(this);
       });
 

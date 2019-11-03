@@ -277,6 +277,7 @@ function clickLiTag(e, obj) {
 
 
 function catsInputOnChange(obj) {
+    alert(1);
     var oldcats = $(obj).attr("ccats");
     var currentcatdisplay = $('.currentcats'); 
     currentcatdisplay.html(parseCats($(obj).val()));
@@ -298,19 +299,20 @@ function catsInputOnChange(obj) {
 }
 
 function clickCheckCat(obj, cat) {
-    if (!$(obj).is(":checked")) {
-        
+    if (!$(obj).prop("checked")) {       
         if ($('#catsinput').val().indexOf(cat + " ") >= 0) {
             $('#catsinput').val($('#catsinput').val().replace(cat + " ", ""));
         }
         else {
             $('#catsinput').val($('#catsinput').val().replace(cat, "").trim());
         }
+        alert(2);
         $('#catsinput').trigger("change");
     }      
     else {
-
         $('#catsinput').val($('#catsinput').val().trim() + " " + cat);
+
+        alert(3);
         $('#catsinput').trigger("change");
     }
 }
