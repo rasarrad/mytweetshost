@@ -318,7 +318,7 @@ function clickCheckCat(obj, cat) {
 function markCategoriesCheckBoxs() {
 
     for (let [key, value] of catsmap) {  
-        if ($('#catsinput').indexOf(key) < 0) {
+        if ($('#catsinput').val().indexOf(key) < 0) {
             $("#cat" + key).attr("checked", null); 
         }
         else {
