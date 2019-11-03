@@ -299,6 +299,7 @@ function catsInputOnChange(obj) {
 }
 
 function clickCheckCat(obj, cat) {
+    alert(334432)
     if (!$(obj).prop("checked")) {       
         if ($('#catsinput').val().indexOf(cat + " ") >= 0) {
             $('#catsinput').val($('#catsinput').val().replace(cat + " ", ""));
@@ -306,7 +307,7 @@ function clickCheckCat(obj, cat) {
         else {
             $('#catsinput').val($('#catsinput').val().replace(cat, "").trim());
         }
-        alert(2);
+        
         $('#catsinput').trigger("change");
     }      
     else {
