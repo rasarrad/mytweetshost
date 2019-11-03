@@ -1,5 +1,5 @@
 
-console.log(1332); 
+console.log(1); 
  
 var text = "";  
 var origin = "";
@@ -20,6 +20,7 @@ var total_tt = 0;
 var total_hh = 0;
 var hideMode = false;
 var tagssloaded = false;
+var catsmap = new Map();
 
 $( document ).ready(function() { 
 
@@ -34,7 +35,6 @@ $( document ).ready(function() {
     */
    //createCookie("28tagchanged", null);
 
-   var catsmap = new Map();
    catsmap.set("tvn", "To View Now");
    catsmap.set("trn", "Trending");
    catsmap.set("tvi", "To View");
