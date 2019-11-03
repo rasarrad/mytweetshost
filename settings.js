@@ -44,8 +44,6 @@ var openSettingsPopup = function(jsonobj)
         $(".buttonstable tr:first-child td .author").html(jsonobj.author);
     else
         $(".buttonstable tr:first-child td .author").html("--");
-
-    console.log("-" + jsonobj.date + "-") 
     
     var date = jsonobj.date.toString();
     if (date.length > 0)
@@ -317,7 +315,8 @@ function clickCheckCat(obj, cat) {
 
 function markCategoriesCheckBoxs() {
 
-    for (let [key, value] of catsmap) {  
+    for (let [key, value] of catsmap) { 
+        console.log("-" + key + "-")  
         if ($('#catsinput').val().indexOf(key) < 0) {
             $("#cat" + key).attr("checked", null); 
         }
