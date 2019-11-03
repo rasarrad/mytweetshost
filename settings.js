@@ -319,11 +319,11 @@ function markCategoriesCheckBoxs() {
         
         if (currCats.indexOf(key) < 0) {
             console.log("nao -" + key + "-")  
-            $("#cat" + key).attr("checked", null); 
+            $("#cat" + key).prop('checked', false);
         }
         else {
             console.log("sim -" + key + "-")  
-            $("#cat" + key).attr("checked", "checked"); 
+            $("#cat" + key).prop('checked', true);
         }
     }  
 
