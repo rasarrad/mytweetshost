@@ -1,5 +1,5 @@
 
-console.log(58881); 
+console.log(18); 
  
 var text = "";  
 var origin = "";
@@ -232,10 +232,10 @@ $( document ).ready(function() {
     $( "#tagsinput" ).change(function() {
         tagsInputOnChange(this);
       });
-      /*
-      $( ".linkChange > div" ).click(function(event) {
+      
+      $( "#linkChange > div" ).click(function(event) {
         event.stopPropagation();
-      });*/
+      });
 
 
       $( "#tagsselect" ).change(function() {
@@ -633,7 +633,7 @@ function countmove(obj) {
     if (!dblFlag) {
         dblFlag = true;
 
-        $(obj).css('opacity', '0.7');
+        $(obj).css('opacity', '0.8');
         
         if ($(obj).css('bottom') == "54px") {
             $(obj).css('bottom', 'calc(100% - 140px)');
