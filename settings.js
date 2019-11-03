@@ -44,10 +44,10 @@ var openSettingsPopup = function(jsonobj)
 
     $(".buttonstable tr:first-child td i.fa").addClass('fa').addClass('fa-twitter').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
 
-    if (val.type == "H") {
+    if (jsonobj.type == "H") {
         $(".buttonstable tr:first-child td i.fa").addClass('fa').addClass('fa-internet-explorer').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
     }
-    else if (val.type == "Y") {
+    else if (jsonobj.type == "Y") {
         $(".buttonstable tr:first-child td i.fa").addClass('fa').addClass('fa-youtube-play').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
     }
 
