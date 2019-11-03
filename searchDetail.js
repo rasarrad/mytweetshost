@@ -220,7 +220,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         var newtweet = $('#main').append($('<div id="inid" class="tweet' + xclass + '"></div>'));
                         var newtweetobj = $('#inid');
 
-                        newtweetobj.append($('<div class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down ' + expandclass + '"></i><i class="linkbar fa fa-' + typefa + '" onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')"></i>'));
+                        newtweetobj.append($('<div class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down ' + expandclass + '"></i><i class="linkbar fa fa-' + typefa + '" onclick="javascript: externallinkopen(\'' + val.url + '\', \'' + val.id + '\')"></i>'));
                         
                         newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b style="font-size: 13px;">Tags: </b>' + tagdispalay + '</div>'));
                         

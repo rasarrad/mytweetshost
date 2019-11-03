@@ -1107,6 +1107,7 @@ twitter-widget {
 .newLayout > div .author {
   color: var(--text-color);
 }
+
 .newLayout > div .id {
   color: var(--text-color);
 }

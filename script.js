@@ -1,5 +1,5 @@
 
-console.log(1); 
+console.log(12); 
  
 var text = "";  
 var origin = "";
@@ -394,8 +394,8 @@ function gotop() {
 /////////////////////////////////////////////////////////////////////////
 
 
-function internallinkcopy(id) {
-    $('#linkresult').val("https://sleepy-mclean-3aea2d.netlify.com/?tweetid=" + id);
+function internallinkcopy(obj) {
+    $('#linkresult').val("https://sleepy-mclean-3aea2d.netlify.com/?tweetid=" + $('#linkChange').attr('cid'));
     $("#linkresult").select();
     document.execCommand('copy');
     $("#linkresult").blur();
@@ -407,7 +407,7 @@ function internallinkcopy(id) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function externallinkcopy(link, id) {
+function externallinkopen(link, id) {
     $('#linkresult').val(link);
     $("#linkresult").select();
     document.execCommand('copy');
@@ -415,6 +415,14 @@ function externallinkcopy(link, id) {
     var win = window.open(link, '_blank');
     win.focus();
     //showMessage("External Link Copied To Clipboard"); 
+}
+
+function externallinkcopy(obj) {
+    $('#linkresult').val($('#linkChange').attr('clink'));
+    $("#linkresult").select();
+    document.execCommand('copy');
+    $("#linkresult").blur();
+    showMessage("External Link Copied To Clipboard"); 
 }
 
 

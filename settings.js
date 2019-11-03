@@ -21,24 +21,11 @@ function expandCat(obj) {
 
 var openSettingsPopup = function(jsonobj) 
 {
+    // GENERAL
+
     $('body, html').css('overflow-y', 'hidden');
     $('#linkChange').attr("cid", jsonobj.id);
-    $('#tagsinput').attr("ctags", jsonobj.tags);
-
-    var tagchanged = readCookie(jsonobj.id + "tagchanged");
-    var currenttagdisplay = $('.currenttags');
-    $('.originaltags').html(parseTags(jsonobj.tags));  
-
-    if (tagchanged != null && tagchanged != 'null') {
-        currenttagdisplay.css('color','#00ff72');
-        currenttagdisplay.html(parseTags(tagchanged));
-        $('#tagsinput').val(tagchanged);
-        $('#originaltagtd i').show();
-    } 
-    else {
-        currenttagdisplay.html(parseTags(jsonobj.tags));
-        $('#tagsinput').val(jsonobj.tags);
-    }
+    $('#linkChange').attr("clink", jsonobj.url);
 
     $(".buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
 
@@ -62,13 +49,51 @@ var openSettingsPopup = function(jsonobj)
     
     var date = jsonobj.date.toString();
     if (date.length > 0)
-        $(".buttonstable tr:first-child td .date").html(date.substring(0,4) + " " + date.substring(4,6) + " " + date.substring(6,8));
+        $(".buttonstable tr:first-child td .date").html(date.substring(6,8) + "/" + date.substring(4,6) + "/" + date.substring(0,4));
     else
         $(".buttonstable tr:first-child td .date").html("--");
+    
+    // TAGS
+
+    $('#tagsinput').attr("ctags", jsonobj.tags);
+
+    var tagchanged = readCookie(jsonobj.id + "tagchanged");
+    var currenttagdisplay = $('.currenttags');
+    $('.originaltags').html(parseTags(jsonobj.tags));  
+
+    if (tagchanged != null && tagchanged != 'null') {
+        currenttagdisplay.css('color','#00ff72');
+        currenttagdisplay.html(parseTags(tagchanged));
+        $('#tagsinput').val(tagchanged);
+        $('#originaltagtd i').show();
+    } 
+    else {
+        currenttagdisplay.html(parseTags(jsonobj.tags));
+        $('#tagsinput').val(jsonobj.tags);
+    }
 
     removeNonExistentLi();
 
     createNonExistentLi();
+
+    // CAGTEGORIES
+
+    $('#catsinput').attr("ccats", jsonobj.categories);
+
+    var catchanged = readCookie(jsonobj.id + "catchanged");
+    var currentcatdisplay = $('.currentcats');
+    $('.originalcats').html(parseTags(jsonobj.categories));  
+
+    if (catchanged != null && catchanged != 'null') {
+        currentcatdisplay.css('color','#00ff72');
+        currentcatdisplay.html(parseTags(catchanged));
+        $('#catsinput').val(catchanged);
+        $('#originalcattd i').show();
+    } 
+    else {
+        currentcatdisplay.html(parseTags(jsonobj.categories));
+        $('#catsinput').val(jsonobj.categories);
+    }
     
     $('#linkChange').fadeIn();  
 } 
