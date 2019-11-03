@@ -28,9 +28,9 @@ var openSettingsPopup = function(jsonobj)
     var tagchanged = readCookie(jsonobj.id + "tagchanged");
     var currenttagdisplay = $('.currenttags');
     $('.originaltags').html(parseTags(jsonobj.tags));  
-    console.log("-" + tagchanged + "-");
+    //console.log("-" + tagchanged + "-");
     if (tagchanged != null && tagchanged != 'null') {
-        console.log("- + -");
+        //console.log("- + -");
         currenttagdisplay.css('color','#00ff72');
         currenttagdisplay.val(parseTags(tagchanged));
         $('#tagsinput').val(tagchanged);
@@ -152,7 +152,6 @@ function createNonExistentLi() {
             createLi(res[i-1]);
         }
         else {
-            console.log(li.html());
             li.clone().addClass("selectedtag").prependTo("#tagsul");
             li.remove();
         }
@@ -186,7 +185,7 @@ function removeNonExistentLi() {
 function parseTags(tags) {
     var result = "";
     var res = tags.trim().split(" ");
-console.log(res.length + "-" + res[0].trim() + "-" + (res.length == 1 && res[0].trim() == 0))
+
     if (res.length == 1 && res[0].trim() == 0) {
         return "--";
     } 
@@ -194,6 +193,8 @@ console.log(res.length + "-" + res[0].trim() + "-" + (res.length == 1 && res[0].
     for (var i = 0; i < res.length; i++) {
         result = result + res[i] + " - ";
     }
+
+    console.log(result)
 
     return result.substring(0, result.length - 3);
 }
