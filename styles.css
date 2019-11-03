@@ -724,8 +724,13 @@ twitter-widget {
 }
 
 .litags.selectedtag:hover {
-    color: var(--high-color) !important;
-    background: var(--softdark-color) !important;
+  color: var(--high-color);
+  background: var(--soft-color);
+}
+
+.litags:not(.selectedtag):hover {
+    color: var(--dark-color);
+    background: var(--high-color);
 }
 
 #backdiv {
