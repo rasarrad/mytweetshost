@@ -28,11 +28,10 @@ var openSettingsPopup = function(jsonobj)
     var tagchanged = readCookie(jsonobj.id + "tagchanged");
     var currenttagdisplay = $('.currenttags');
     $('.originaltags').html(parseTags(jsonobj.tags));  
-    //console.log("-" + tagchanged + "-");
+
     if (tagchanged != null && tagchanged != 'null') {
-        //console.log("- + -");
         currenttagdisplay.css('color','#00ff72');
-        currenttagdisplay.val(parseTags(tagchanged));
+        currenttagdisplay.html(parseTags(tagchanged));
         $('#tagsinput').val(tagchanged);
     } 
     else {
@@ -78,7 +77,6 @@ function editSetting(e, obj) {
 function tagsInputOnChange(obj) {
     var oldtags = $(obj).attr("ctags");
     var currenttagdisplay = $('.currenttags'); 
-    alert(111)
     currenttagdisplay.html(parseTags($(obj).val()));
     
     if (oldtags == $(obj).val()) {
@@ -194,8 +192,6 @@ function parseTags(tags) {
     for (var i = 0; i < res.length; i++) {
         result = result + res[i] + " - ";
     }
-
-    console.log(result)
 
     return result.substring(0, result.length - 3);
 }
