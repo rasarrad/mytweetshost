@@ -58,6 +58,7 @@ var openSettingsPopup = function(jsonobj)
     else
         $(".buttonstable tr:first-child td .author").html("--");
 
+    console.log("-" + jsonobj.date + "-")    
     if (jsonobj.date.length > 0)
         $(".buttonstable tr:first-child td .date").html(jsonobj.date.substring(0,4) + " " + jsonobj.date.substring(4,2) + " " + jsonobj.date.substring(6,2));
     else
