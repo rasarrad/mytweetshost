@@ -34,7 +34,6 @@ var openSettingsPopup = function(jsonobj)
         currenttagdisplay.css('color','#00ff72');
         currenttagdisplay.val(parseTags(tagchanged));
         $('#tagsinput').val(tagchanged);
-        $('#editTags').find('.sectionedittd i').addClass('fa-remove').removeClass('fa-edit');
     } 
     else {
         currenttagdisplay.html(parseTags(jsonobj.tags));
@@ -77,6 +76,7 @@ function editSetting(e, obj) {
 /////////////////////////////////////////////////////////////////////////
 
 function tagsInputOnChange(obj) {
+    alert(12)
     var oldtags = $(obj).attr("ctags");
     var currenttagdisplay = $('.currenttags'); 
     currenttagdisplay.html(parseTags($(obj).val()));
