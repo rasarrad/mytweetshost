@@ -318,11 +318,11 @@ function markCategoriesCheckBoxs() {
     for (let [key, value] of catsmap) { 
         
         if (currCats.indexOf(key) < 0) {
-            console.log("nao -" + key + "-")  
+             
             $("#cat" + key).prop('checked', false);
         }
         else {
-            console.log("sim -" + key + "-")  
+            console.log($("#cat" + key)) 
             $("#cat" + key).prop('checked', true);
         }
     }  
