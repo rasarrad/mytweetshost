@@ -277,7 +277,6 @@ function clickLiTag(e, obj) {
 
 
 function catsInputOnChange(obj) {
-    alert(1);
     var oldcats = $(obj).attr("ccats");
     var currentcatdisplay = $('.currentcats'); 
     currentcatdisplay.html(parseCats($(obj).val()));
@@ -294,12 +293,9 @@ function catsInputOnChange(obj) {
     }
 
     markCategoriesCheckBoxs();
-
-    alert($(obj).val());
 }
 
 function clickCheckCat(obj, cat) {
-    alert(334432)
     if (!$(obj).prop("checked")) {       
         if ($('#catsinput').val().indexOf(cat + " ") >= 0) {
             $('#catsinput').val($('#catsinput').val().replace(cat + " ", ""));
@@ -313,7 +309,6 @@ function clickCheckCat(obj, cat) {
     else {
         $('#catsinput').val($('#catsinput').val().trim() + " " + cat);
 
-        alert(3);
         $('#catsinput').trigger("change");
     }
 }
@@ -322,14 +317,10 @@ function markCategoriesCheckBoxs() {
     var currCats = $('#catsinput').val();
     for (let [key, value] of catsmap) { 
         
-        if (currCats.indexOf(key) < 0) {
-            console.log("nao -" + key + "-") 
-            console.log($("#cat" + key))  
+        if (currCats.indexOf(key) < 0) { 
             $("#cat" + key).prop('checked', false);
         }
-        else {
-            console.log("sim -" + key + "-")
-            console.log($("#cat" + key))   
+        else {  
             $("#cat" + key).prop('checked', true);
         }
     }  
