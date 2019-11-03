@@ -1266,7 +1266,9 @@ twitter-widget {
 
 .newLayout .sectiontitle {
   padding-left: 9px;
-  font-weight: bold;   
+  font-weight: bold;
+  /* position: relative; */
+  /* top: -5px; */
 }
 
 .newLayout #addtaginput {
@@ -1344,6 +1346,8 @@ select, textarea {
 }
 .newLayout .fa-bookmark {
     font-size: 14px;
+    /* position: relative; */
+    /* top: -4px; */
 }
 .newLayout .fa-tags {
     font-size: 13px;
@@ -1450,6 +1454,31 @@ input[type="radio"]:checked + label span {
 .cursorpointer {
   cursor: pointer !important;
 }
+
 .cursordefault {
   cursor: default !important;
+}
+
+.colapsed tr td .titletext {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 209px;
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    top: 0px;
+}
+
+.colapsed tr td .titletext.currenttags {
+    max-width: 245px;
+}
+
+.colapsed tr td .sectiontitle {
+    position: relative;
+    top: -5px;
+}
+
+.colapsed tr td .fa:not(.fa-edit) {
+    position: relative;
+    top: -4px;
 }
