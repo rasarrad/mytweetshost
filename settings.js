@@ -314,13 +314,15 @@ function clickCheckCat(obj, cat) {
 }
 
 function markCategoriesCheckBoxs() {
-    console.log("1-" + $('#catsinput').val() + "-")  
+    var currCats = $('#catsinput').val();
     for (let [key, value] of catsmap) { 
-        console.log("-" + key + "-")  
-        if ($('#catsinput').val().indexOf(key) < 0) {
+        
+        if (currCats.indexOf(key) < 0) {
+            console.log("nao -" + key + "-")  
             $("#cat" + key).attr("checked", null); 
         }
         else {
+            console.log("sim -" + key + "-")  
             $("#cat" + key).attr("checked", "checked"); 
         }
     }  
