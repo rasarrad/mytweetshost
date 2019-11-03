@@ -283,7 +283,7 @@ var closePopup = function()
     $('#typeHH').css('border-color', 'white'); 
     $('#typeYY').css('border-color', 'white');  
 }  
-
+/*
 function clickCheckCat(obj, type) 
 {
     if ($(obj).is(":checked")) {
@@ -294,3 +294,4 @@ function clickCheckCat(obj, type)
     }
 } 
 
+ */
