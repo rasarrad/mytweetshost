@@ -127,7 +127,10 @@ function editSetting(e, obj) {
         table.css('transition', 'max-height .5s');
         table.css('max-height', '21px');
         table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
-        table.find('td.el').addClass('ellipsis');
+        setTimeout(function() { 
+            table.find('td.el').addClass('ellipsis');
+          }, 500);
+        
     }
 }
 
