@@ -28,7 +28,6 @@ var openSettingsPopup = function(jsonobj)
         table.css('transition', 'max-height .01s');
         table.css('max-height', '21px');
         table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
-        table.addClass('colapsed');
     });
 
     // OTHER SETTINGS
@@ -121,13 +120,11 @@ function editSetting(e, obj) {
         table.css('transition', 'max-height 1.5s');
         table.css('max-height', '450px');
         table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;top: -6px;');
-        table.removeClass('colapsed');
     }
     else {
         table.css('transition', 'max-height .5s');
         table.css('max-height', '21px');
         table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
-        table.addClass('colapsed');
     }
 }
 
