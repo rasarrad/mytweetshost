@@ -1200,7 +1200,8 @@ twitter-widget {
   text-align: left;
   padding-left: 14px;
   color: var(--text-color);
-  line-height: 17px;
+  line-height: 19px;
+  /* color: rgb(0, 255, 114); */
 }
 
 .newLayout .sectiontitletable .sectiontitletd {
@@ -1355,8 +1356,9 @@ select, textarea {
 }
 .newLayout .fa-bookmark {
     font-size: 14px;
-    /* position: relative; */
-    /* top: -4px; */
+    position: relative;
+    top: 0px;
+    left: -3px;
 }
 .newLayout .fa-tags {
     font-size: 13px;
@@ -1503,6 +1505,7 @@ input[type="radio"]:checked + label span {
   left: 0;
   right: 0;
   white-space: nowrap;
+  padding-left: 9px !important;
   overflow: hidden;
   text-overflow: ellipsis;
 }
