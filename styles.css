@@ -1292,7 +1292,9 @@ twitter-widget {
     margin-top: 6px;
     margin-bottom: 0;
 }
-
+.newLayout ul#classiful {
+    height: 42px
+}
 .newLayout ul li {
     color: var(--high-color);
     cursor: pointer;
@@ -1302,6 +1304,13 @@ twitter-widget {
     padding-bottom: 3px;
     background: var(--soft-color);
 }
+
+.newLayout ul#classiful li {
+    min-width: 14px;
+    padding-right: 4px;
+    margin-right: 7px;
+}
+
 
 .newLayout select {
     height: 19px;
