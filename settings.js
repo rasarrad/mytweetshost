@@ -131,7 +131,7 @@ var openSettingsPopup = function(jsonobj)
 
     if (classifchanged != null && classifchanged != 'null') {
         currentclassifdisplay.css('color','#00ff72');
-        currentclassifdisplay.html(parseCats(classifchanged));
+        currentclassifdisplay.html(classifchanged);
         $('#classifinput').val(classifchanged);
         $('#originalclassiftd i').show();
     } 
