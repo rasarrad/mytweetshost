@@ -1362,6 +1362,24 @@ select, textarea {
 }
 .newLayout .fa-tags {
     font-size: 13px;
+    /* font-size: 14px; */
+    position: relative;
+    top: 0px;
+    left: -3px;
+}
+
+.newLayout .fa-star-half-o {
+    font-size: 14px;
+    position: relative;
+    top: 0px;
+    left: -4px;
+}
+
+.newLayout .fa-file-text {
+    font-size: 13px;
+    position: relative;
+    top: 0px;
+    left: -4px;
 }
 .mainbutton {
     color: var(--high-color);
@@ -1504,6 +1522,7 @@ input[type="radio"]:checked + label span {
   position: absolute;
   left: 0;
   right: 0;
+  top: 0px;
   white-space: nowrap;
   padding-left: 9px !important;
   overflow: hidden;
