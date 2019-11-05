@@ -104,6 +104,25 @@ var openSettingsPopup = function(jsonobj)
     
     markCategoriesCheckBoxs();
 
+    // CLASSIFICATION
+
+    $('#classifinput').attr("cclassif", jsonobj.classif);
+
+    var classifchanged = readCookie(jsonobj.id + "classif");
+    var currentcatdisplay = $('.currentclassif');
+    $('.originalclassif').html(parseCats(jsonobj.classif));  
+
+    if (classifchanged != null && classifchanged != 'null') {
+        currentclassifdisplay.css('color','#00ff72');
+        currentclassifdisplay.html(parseCats(classifchanged));
+        $('#classifinput').val(classifchanged);
+        $('#originalclassiftd i').show();
+    } 
+    else {
+        currentcatdisplay.html(parseCats(jsonobj.classif));
+        $('#classifinput').val(jsonobj.classif);
+    }
+
     $('#linkChange').fadeIn();  
 } 
 
@@ -394,6 +413,67 @@ function parseCats(cats) {
 
     return result.substring(0, result.length - 3);
 }
+
+/////////////////////////////////////////////////////////////////////////
+//                     CLASSIFICATION SETTINGS                         //
+/////////////////////////////////////////////////////////////////////////
+
+function classifInputOnChange(obj) {
+    var oldclassif = $(obj).attr("cclassif");
+    var currentcatdisplay = $('.currentclassif'); 
+    currentclassifdisplay.html($(obj).val());
+    
+    if (oldclassif == $(obj).val()) {
+        currentclassifdisplay.css('color', '');
+        createCookie($('#linkChange').attr("cid") + "classif", null);
+        $('#originalclassiftd i').hide();
+    }
+    else {
+        currentclassifdisplay.css('color','#00ff72');
+        createCookie($('#linkChange').attr("cid") + "classif", $(obj).val());
+        $('#originalclassiftd i').show();
+    }
+
+    $('#classiful').find(".litags").each( function( index, element ) {
+        if($(element).html() == $(obj).val()) {
+            $(obj).addClass("selectedtag");
+        }
+    });
+    
+}
+
+
+function clickLiClassif(e, obj) {
+    e.stopPropagation();
+
+    if (!$(obj).hasClass("selectedtag")) {
+        $('#classifinput').val($(obj).html());
+
+        $('#classifinput').trigger("change");
+
+        $('#classiful').find(".litags").each( function( index, element ) {
+            $(element).removeClass("selectedtag");
+        });
+        $(obj).addClass("selectedtag");
+    }  
+
+}
+
+
+function undoClassif(e, obj) {
+    e.stopPropagation();
+    
+    $('#classifinput').val($('#classifinput').attr("cclassif"));
+    $(obj).hide();
+    var functorun = function() 
+    { 
+        alert(1);
+    } 
+    $('#classifinput').trigger("change");
+
+    showMessage("Classification reverted", null, "fa-undo", "", null, "undo");
+}
+
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////

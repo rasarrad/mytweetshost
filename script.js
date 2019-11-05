@@ -245,8 +245,8 @@ $( document ).ready(function() {
         tagsInputOnChange(this);
       });
 
-      $( "#catsinput" ).change(function() {
-        catsInputOnChange(this);
+      $( "#classifinput" ).change(function() {
+        classifInputOnChange(this);
       });
 
       $( "#linkChange > div" ).click(function(event) {
