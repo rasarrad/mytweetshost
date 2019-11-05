@@ -146,7 +146,8 @@ var openSettingsPopup = function(jsonobj)
         }
 
     }
-
+    markClassif($(obj).val());
+    
     $('#linkChange').fadeIn();  
 } 
 
@@ -458,12 +459,20 @@ function classifInputOnChange(obj) {
         $('#originalclassiftd i').show();
     }
 
+    markClassif($(obj).val());
+}
+
+function markClassif(value) {
+
     $('#classiful').find(".litags").each( function( index, element ) {
-        if($(element).html() == $(obj).val()) {
+        console.log("-" + $(element).html() + "-");
+        console.log("-" + value + "-");
+        console.log("-" + ($(element).html() == value) + "-");
+        if($(element).html() == value) {
             $(obj).addClass("selectedtag");
         }
     });
-    
+
 }
 
 
