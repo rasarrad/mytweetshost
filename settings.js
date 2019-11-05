@@ -132,11 +132,19 @@ function editSetting(e, obj) {
             }
         });
     
+if (hasExpanded) {
+    table.css('transition', 'max-height 2s');
+    table.css('max-height', '450px');
+    table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;top: -6px;');
+    table.find('td.el').removeClass('ellipsis');
+}
+else {
+    table.css('transition', 'max-height 1.3s');
+    table.css('max-height', '450px');
+    table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;top: -6px;');
+    table.find('td.el').removeClass('ellipsis');
+}
 
-            table.css('transition', 'max-height 2s');
-            table.css('max-height', '450px');
-            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;top: -6px;');
-            table.find('td.el').removeClass('ellipsis');
         
     }
     else {
