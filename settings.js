@@ -134,7 +134,7 @@ var openSettingsPopup = function(jsonobj)
         currentclassifdisplay.html(classifchanged);
         $('#classifinput').val(classifchanged);
         $('#originalclassiftd i').show();
-        markClassif(jsonobj.classif);
+        markClassif(classifchanged);
     } 
     else {
         if (jsonobj.classif.length > 0 && jsonobj.classif != 0) {
