@@ -141,6 +141,10 @@ function editSetting(e, obj) {
             }, 500);
         }
         else {
+            table.css('transition', 'max-height 1.5s');
+            table.css('max-height', '450px');
+            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;top: -6px;');
+            table.find('td.el').removeClass('ellipsis');
         }
     }
     else {
