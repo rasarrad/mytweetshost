@@ -174,7 +174,7 @@
                       <b>id </b>
                       <span class="id smallrem"></span>
                       <b style="margin-left: 7px;">author </b>
-                      <span class="author" style="overflow: hidden;text-overflow: ellipsis;max-width: 124px;display: inline-block;white-space: nowrap; position: relative; top: 3px;"></span>
+                      <span class="author" style="overflow: hidden;text-overflow: ellipsis;max-width: 124px;display: inline-block;white-space: nowrap;position: relative;top: 3px;text-transform: lowercase;"></span>
                       <b style="margin-left: 5px;">date </b>
                       <span class="date smallrem"></span>
                   </td>            
@@ -320,19 +320,21 @@
       </tr>
     </tbody>
   </table>  
+
+
   <table id="editClassif" cheight="232px" class="sectiontitletable sectionexpandable" style="transition: max-height 0.5s ease 0s; max-height: 21px;">
       <tbody>
         <tr class="cursorpointer" onclick="editSetting(event,this)" style="padding-bottom: 15px;">
           <td class="sectionicontd" style="width: 87px;display: inline-block;white-space: nowrap;">
-              <i class="fa fa-bar-chart"></i><span class="sectiontitle">Classification</span></span>
+              <i class="fa fa-star-half-o"></i><span class="sectiontitle">Classification</span>
           </td>   
-          <td class="sectionicontd">
-              <span class="currentclassif titletext" style="text-align: left;padding-left: 0px;"></span>
-          </td>       
           <td class="sectionicontd el ellipsis">
+              <span class="currentclassif titletext" style="text-align: left;padding-left: 0;"></span>
+          </td>             
+          <td class="sectionedittd">
               <i class="fa fa-edit"></i>
           </td>                                        
-      </tr> 
+      </tr>   
       <tr>  
           <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;">
               <input id="classifinput" style="margin-left: 3px;display:none;">
@@ -358,41 +360,46 @@
                   <li onclick="javascript: clickLiClassif(event, this)" class="litags">
                   10</li>
               </ul>           
-      </tr>    
-    <tr class="cursordefault">
-      <td id="originalclassiftd" colspan="3" style="padding: 4px;padding-top: 0px;">
-          <span class="boldtitle">Original classification</span><i class="fa fa-undo mainbutton" onclick="javascript: undoClassif(event, this)" style="font-size: 14px;padding-left: 8px;position: relative;top: 1px;display: none;"></i>
-          <span class="originalclassif titletext"></span>
-      </td>                                   
-    </tr>
-  </tbody>
-</table>         
-<table id="editInfo" cheight="232px" class="sectiontitletable sectionexpandable" style="transition: max-height 0.5s ease 0s; max-height: 21px;">
-    <tbody>
-      <tr class="cursorpointer" onclick="editSetting(event,this)" style="padding-bottom: 15px;">
-        <td class="sectionicontd" style="width: 87px;display: inline-block;white-space: nowrap;">
-            <i class="fa fa-bar-chart"></i><span class="sectiontitle">Info</span></span>
-        </td>   
-        <td class="sectionicontd">
-            <span class="currentclassif titletext" style="text-align: left;padding-left: 0px;"></span>
-        </td>            
-        <td class="sectionicontd el ellipsis">
-            <i class="fa fa-edit"></i>
-        </td>                                        
-    </tr> 
-    <tr>  
-        <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;">
-            <input id="classifinput" style="margin-left: 3px;display:none;">
-         
-    </tr>    
-  <tr class="cursordefault">
-    <td id="originalclassiftd" colspan="3" style="padding: 4px;padding-top: 0px;">
-        <span class="boldtitle">Original classification</span><i class="fa fa-undo mainbutton" onclick="javascript: undoClassif(event, this)" style="font-size: 14px;padding-left: 8px;position: relative;top: 1px;display: none;"></i>
-        <span class="originalclassif titletext"></span>
-    </td>                                   
-  </tr>
-</tbody>
-</table>   
+      </tr>   
+
+      <tr class="cursordefault">
+        <td id="originalclassiftd" colspan="3" style="padding: 4px;padding-top: 0px;">
+            <span class="boldtitle">Original classification</span><i class="fa fa-undo mainbutton" onclick="javascript: undoClassif(event, this)" style="font-size: 14px;padding-left: 8px;position: relative;top: 1px;display: none;"></i>
+            <span class="originalclassif titletext"></span>
+        </td>                                   
+      </tr>
+    </tbody>
+  </table>  
+
+  <table id="editInfo" cheight="232px" class="sectiontitletable sectionexpandable" style="transition: max-height 0.5s ease 0s; max-height: 21px;">
+      <tbody>
+        <tr class="cursorpointer" onclick="editSetting(event,this)" style="padding-bottom: 15px;">
+          <td class="sectionicontd" style="width: 87px;display: inline-block;white-space: nowrap;">
+              <i class="fa fa-file-text"></i><span class="sectiontitle">Info</span>
+          </td>   
+          <td class="sectionicontd el ellipsis">
+              <span class="currentcats titletext" style="text-align: left;padding-left: 0;"></span>
+          </td>             
+          <td class="sectionedittd">
+              <i class="fa fa-edit"></i>
+          </td>                                        
+      </tr>   
+      <tr>  
+          <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;">
+              <textarea id="infoinput" style="margin-left: 3px;display:none;"></textarea>
+           
+      </tr>  
+
+      <tr class="cursordefault">
+        <td id="originalinfotd" colspan="3" style="padding: 4px;padding-top: 0px;">
+            <span class="boldtitle">Original info</span><i class="fa fa-undo mainbutton" onclick="javascript: undoCats(event, this)" style="font-size: 14px;padding-left: 8px;position: relative;top: 1px;display: none;"></i>
+            <span class="originalinfo titletext"></span>
+        </td>                                   
+      </tr>
+    </tbody>
+  </table>
+  
+
     </div>
   </div>
 
