@@ -116,20 +116,32 @@ function closeSettingsPopup(obj) {
 
 function editSetting(e, obj) {
     e.stopPropagation();
-    $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
-        var table = $(element);
-        table.css('transition', 'max-height .01s');
-        table.css('max-height', '21px');
-        table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
-        table.find('td.el').addClass('ellipsis');
-    });
-    
+
     var table = $(obj).parent().parent();
     if (table.css('max-height') == '21px') {
-        table.css('transition', 'max-height 1.5s');
-        table.css('max-height', '450px');
-        table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;top: -6px;');
-        table.find('td.el').removeClass('ellipsis');
+        var hasExpanded = false;
+        $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
+            var table = $(element);
+            
+            if (!table.find('td.el').hasClass('ellipsis')) {
+                hasExpanded = true;
+                table.css('transition', 'max-height .5s');
+                table.css('max-height', '21px');
+                table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
+                table.find('td.el').addClass('ellipsis');
+            }
+        });
+    
+        if (hasExpanded) {
+            setTimeout(function(){ 
+                table.css('transition', 'max-height 1.5s');
+                table.css('max-height', '450px');
+                table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;top: -6px;');
+                table.find('td.el').removeClass('ellipsis');
+            }, 500);
+        }
+        else {
+        }
     }
     else {
         table.css('transition', 'max-height .5s');
