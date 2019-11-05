@@ -120,7 +120,7 @@ var openSettingsPopup = function(jsonobj)
     $('#classifinput').attr("cclassif", jsonobj.classif);
 
     var classifchanged = readCookie(jsonobj.id + "classif");
-    var currentcatdisplay = $('.currentclassif');
+    var currentclassifdisplay = $('.currentclassif');
 
     if (jsonobj.classif.length > 0 && jsonobj.classif != 0) {
         $('.originalclassif').html(jsonobj.classif); 
@@ -137,12 +137,12 @@ var openSettingsPopup = function(jsonobj)
     } 
     else {
         if (jsonobj.classif.length > 0 && jsonobj.classif != 0) {
-            currentcatdisplay.html(jsonobj.classif);
+            currentclassifdisplay.html(jsonobj.classif);
             $('#classifinput').val(jsonobj.classif);
             markClassif(jsonobj.classif);
         }
         else {
-            currentcatdisplay.html("--");
+            currentclassifdisplay.html("--");
             $('#classifinput').val(0);
         }
 
