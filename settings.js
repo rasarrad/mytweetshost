@@ -468,7 +468,7 @@ function markClassif(value) {
         console.log("-" + $(element).html() + "-");
         console.log("-" + value + "-");
         console.log("-" + ($(element).html() == value) + "-");
-        if($(element).html() == value) {
+        if($(element).html().trim() == value) {
             $(obj).addClass("selectedtag");
         }
     });
