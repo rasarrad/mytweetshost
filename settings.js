@@ -444,7 +444,7 @@ function parseCats(cats) {
 
 function classifInputOnChange(obj) {
     var oldclassif = $(obj).attr("cclassif");
-    var currentcatdisplay = $('.currentclassif'); 
+    var currentclassifdisplay = $('.currentclassif'); 
     currentclassifdisplay.html($(obj).val());
     
     if (oldclassif == $(obj).val()) {
