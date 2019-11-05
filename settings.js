@@ -472,6 +472,9 @@ function markClassif(value) {
         if($(element).html().trim() == value) {
             $(element).addClass("selectedtag");
         }
+        else {
+            $(element).removeClass("selectedtag");
+        }
     });
 
 }
@@ -484,11 +487,6 @@ function clickLiClassif(e, obj) {
         $('#classifinput').val($(obj).html());
 
         $('#classifinput').trigger("change");
-
-        $('#classiful').find(".litags").each( function( index, element ) {
-            $(element).removeClass("selectedtag");
-        });
-        $(obj).addClass("selectedtag");
     }  
 
 }
