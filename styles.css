@@ -1421,7 +1421,7 @@ input[type="checkbox"] {
 }
 
 .checkstyleddiv {
-    width: 109px;
+    width: 108px;
     display: inline-block;
 }
 
@@ -1443,7 +1443,7 @@ input[type="checkbox"] + label span {
     display:inline-block;
     width: 16px;
     height: 16px;
-    margin: -2px 3px 0 0px;
+    margin: -2px 2px 0 0px;
     vertical-align:middle;
     background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) left top no-repeat;
     cursor:pointer;
