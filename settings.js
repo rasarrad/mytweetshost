@@ -66,7 +66,13 @@ var openSettingsPopup = function(jsonobj)
 
     var tagchanged = readCookie(jsonobj.id + "tagchanged");
     var currenttagdisplay = $('.currenttags');
-    $('.originaltags').html(parseTags(jsonobj.tags));  
+    
+    if (jsonobj.tags.length > 0) {
+        $('.originaltags').html(parseTags(jsonobj.tags));  
+    }
+    else {
+        $('.originaltags').html("--");  
+    }
 
     if (tagchanged != null && tagchanged != 'null') {
         currenttagdisplay.css('color','#00ff72');
@@ -89,7 +95,13 @@ var openSettingsPopup = function(jsonobj)
 
     var catchanged = readCookie(jsonobj.id + "catchanged");
     var currentcatdisplay = $('.currentcats');
-    $('.originalcats').html(parseCats(jsonobj.categories));  
+
+    if (jsonobj.categories.length > 0) {
+        $('.originalcats').html(parseCats(jsonobj.categories));  
+    }
+    else {
+        $('.originalcats').html("--"); 
+    }
 
     if (catchanged != null && catchanged != 'null') {
         currentcatdisplay.css('color','#00ff72');
@@ -109,7 +121,13 @@ var openSettingsPopup = function(jsonobj)
 
     var classifchanged = readCookie(jsonobj.id + "classif");
     var currentcatdisplay = $('.currentclassif');
-    $('.originalclassif').html(jsonobj.classif);  
+
+    if (jsonobj.classif.length > 0 && jsonobj.classif != 0) {
+        $('.originalclassif').html(jsonobj.classif); 
+    }
+    else {
+        $('.originalclassif').html("--"); 
+    }
 
     if (classifchanged != null && classifchanged != 'null') {
         currentclassifdisplay.css('color','#00ff72');
