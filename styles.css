@@ -1085,9 +1085,9 @@ twitter-widget {
 
 .newLayout > div .titletable {
     font-size: 14px;
-    width: 100%;
-    border-top: 1px solid var(--soft-color);
+    /* width: 100%; */
     margin-top: -1px;
+    border-top: 1px solid var(--soft-color);
     padding-top: 3px;
     color: var(--high-color);
     position: fixed;
