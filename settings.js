@@ -447,20 +447,20 @@ function parseCats(cats) {
 function classifInputOnChange(obj) {
     var oldclassif = $(obj).attr("cclassif");
     var currentclassifdisplay = $('.currentclassif'); 
-    currentclassifdisplay.html($(obj).val());
+    currentclassifdisplay.html($(obj).val().trim());
     
-    if (oldclassif == $(obj).val()) {
+    if (oldclassif == $(obj).val().trim()) {
         currentclassifdisplay.css('color', '');
         createCookie($('#linkChange').attr("cid") + "classif", null);
         $('#originalclassiftd i').hide();
     }
     else {
         currentclassifdisplay.css('color','#00ff72');
-        createCookie($('#linkChange').attr("cid") + "classif", $(obj).val());
+        createCookie($('#linkChange').attr("cid") + "classif", $(obj).val().trim());
         $('#originalclassiftd i').show();
     }
 
-    markClassif($(obj).val());
+    markClassif($(obj).val().trim());
 }
 
 function markClassif(value) {
@@ -484,7 +484,7 @@ function clickLiClassif(e, obj) {
     e.stopPropagation();
 
     if (!$(obj).hasClass("selectedtag")) {
-        $('#classifinput').val($(obj).html());
+        $('#classifinput').val($(obj).html().trim());
 
         $('#classifinput').trigger("change");
     }  
