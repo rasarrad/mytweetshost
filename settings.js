@@ -469,7 +469,7 @@ function markClassif(value) {
         console.log("-" + value + "-");
         console.log("-" + ($(element).html() == value) + "-");
         if($(element).html().trim() == value) {
-            $(obj).addClass("selectedtag");
+            $(element).addClass("selectedtag");
         }
     });
 
