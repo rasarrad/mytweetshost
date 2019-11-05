@@ -116,6 +116,14 @@ function closeSettingsPopup(obj) {
 
 function editSetting(e, obj) {
     e.stopPropagation();
+    $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
+        var table = $(element);
+        table.css('transition', 'max-height .01s');
+        table.css('max-height', '21px');
+        table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
+        table.find('td.el').addClass('ellipsis');
+    });
+    
     var table = $(obj).parent().parent();
     if (table.css('max-height') == '21px') {
         table.css('transition', 'max-height 1.5s');
