@@ -105,7 +105,7 @@ var openSettingsPopup = function(jsonobj)
     markCategoriesCheckBoxs();
 
     // CLASSIFICATION
-
+alert(jsonobj.classif)
     $('#classifinput').attr("cclassif", jsonobj.classif);
 
     var classifchanged = readCookie(jsonobj.id + "classif");
