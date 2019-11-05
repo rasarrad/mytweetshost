@@ -105,7 +105,6 @@ var openSettingsPopup = function(jsonobj)
     markCategoriesCheckBoxs();
 
     // CLASSIFICATION
-console.log(jsonobj.classif)
     $('#classifinput').attr("cclassif", jsonobj.classif);
 
     var classifchanged = readCookie(jsonobj.id + "classif");
@@ -119,8 +118,15 @@ console.log(jsonobj.classif)
         $('#originalclassiftd i').show();
     } 
     else {
-        currentcatdisplay.html(parseCats(jsonobj.classif));
-        $('#classifinput').val(jsonobj.classif);
+        if (jsonobj.classif.length > 0 && jsonobj.classif != 0) {
+            currentcatdisplay.html(jsonobj.classif);
+            $('#classifinput').val(jsonobj.classif);
+        }
+        else {
+            currentcatdisplay.html("--");
+            $('#classifinput').val(0);
+        }
+
     }
 
     $('#linkChange').fadeIn();  
