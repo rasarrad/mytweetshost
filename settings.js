@@ -105,12 +105,12 @@ var openSettingsPopup = function(jsonobj)
     markCategoriesCheckBoxs();
 
     // CLASSIFICATION
-alert(jsonobj.classif)
+
     $('#classifinput').attr("cclassif", jsonobj.classif);
 
     var classifchanged = readCookie(jsonobj.id + "classif");
     var currentcatdisplay = $('.currentclassif');
-    $('.originalclassif').html(parseCats(jsonobj.classif));  
+    $('.originalclassif').html(jsonobj.classif);  
 
     if (classifchanged != null && classifchanged != 'null') {
         currentclassifdisplay.css('color','#00ff72');
