@@ -139,6 +139,7 @@ var openSettingsPopup = function(jsonobj)
         if (jsonobj.classif.length > 0 && jsonobj.classif != 0) {
             currentcatdisplay.html(jsonobj.classif);
             $('#classifinput').val(jsonobj.classif);
+            markClassif(jsonobj.classif);
         }
         else {
             currentcatdisplay.html("--");
@@ -146,8 +147,7 @@ var openSettingsPopup = function(jsonobj)
         }
 
     }
-    markClassif($(obj).val());
-    
+
     $('#linkChange').fadeIn();  
 } 
 
