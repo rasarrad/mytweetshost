@@ -155,7 +155,7 @@ var openSettingsPopup = function(jsonobj)
 
     var infochanged = readCookie(jsonobj.id + "info");
     var currentinfodisplay = $('.currentinfo');
-«
+
     if (jsonobj.info.length > 0) {
         $('.originalinfo').html(decodeURIComponent(jsonobj.info)); 
     }
