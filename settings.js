@@ -149,6 +149,38 @@ var openSettingsPopup = function(jsonobj)
 
     }
 
+    
+    // INFO
+    $('#infoinput').attr("cinfo", jsonobj.info);
+
+    var infochanged = readCookie(jsonobj.id + "info");
+    var currentinfodisplay = $('.currentinfo');
+«
+    if (jsonobj.info.length > 0) {
+        $('.originalinfo').html(decodeURIComponent(jsonobj.info)); 
+    }
+    else {
+        $('.originalinfo').html("--"); 
+    }
+
+    if (infochanged != null && infochanged != 'null') {
+        currentinfodisplay.css('color','#00ff72');
+        currentinfodisplay.val(decodeURIComponent(infochanged));
+        $('#infoinput').val(decodeURIComponent(infochanged));
+        $('#originalinfotd i').show();
+    } 
+    else {
+        if (jsonobj.info.length > 0 && jsonobj.info != 0) {
+            currentinfodisplay.html(decodeURIComponent(jsonobj.info));
+            $('#infoinput').val(decodeURIComponent(jsonobj.info));
+        }
+        else {
+            currentinfodisplay.html("--");
+            $('#infoinput').val("");
+        }
+    }
+
+
     $('#linkChange').fadeIn();  
 } 
 

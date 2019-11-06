@@ -1225,7 +1225,9 @@ twitter-widget {
 
 .newLayout .sectiontitletable .sectionedittd i {
   /* position: relative; */
-  /* top: 0px; */
+  top: -2px;
+  font-size: 11px;
+  position: relative;
 }
 
 .newLayout .detailtable, .newLayout .sectiontitletable {
@@ -1286,6 +1288,15 @@ twitter-widget {
     outline: none;
 }
 
+.newLayout textarea {
+    width: 100px;
+    color: var(--dark-color);
+    font-weight: bold;
+    background: var(--high-color);
+    padding: 1px 4px;
+    border: 1px solid #002133;
+    outline: none;
+}
 .newLayout ul {
     width: 100%;
     height: 100%;
