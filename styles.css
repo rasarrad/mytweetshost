@@ -1549,18 +1549,3 @@ input[type="radio"]:checked + label span {
   position: relative !important;
   top: -2px !important;
 }
-
-#editInfo .el span:not(.sectiontitle) {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0px;
-  white-space: nowrap;
-  padding-left: 9px !important;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-#editInfo .el {
-  position: relative;
-}
