@@ -1224,7 +1224,7 @@ twitter-widget {
 }
 
 .newLayout .sectiontitletable .sectionedittd i {
-  /* position: relative; */
+  position: relative;
   top: -2px;
   font-size: 11px;
   position: relative;
@@ -1545,7 +1545,22 @@ input[type="radio"]:checked + label span {
   text-overflow: ellipsis;
 }
 
-.el:not(.ellipsis) span:not(.sectiontitle) {
+.el:not(.ellipsis) span:not(.sectiontitle):not(.currentinfo) {
   position: relative !important;
   top: -2px !important;
+}
+
+#editInfo .el span:not(.sectiontitle) {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0px;
+  white-space: nowrap;
+  padding-left: 9px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#editInfo .el {
+  position: relative;
 }
