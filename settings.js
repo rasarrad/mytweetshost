@@ -200,7 +200,7 @@ function editSetting(e, obj) {
         $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
             var table = $(element);
             
-            if (!table.find('td.el').hasClass('ellipsis') || (table.attr('id') != 'editInfo' && table.css('max-height') == '450px') {
+            if (!table.find('td.el').hasClass('ellipsis') || (table.attr('id') != 'editInfo' && table.css('max-height') == '450px')) {
                 hasExpanded = true;
                 table.css('transition', 'max-height 0.01s');
                 table.css('max-height', '21px');
