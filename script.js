@@ -254,7 +254,7 @@ $( document ).ready(function() {
       });
 
 
-      $(document).keyup(function(e) {
+      $("#infoinput").keyup(function(e) {
         infoInputOnKeyup(e);
       });
 

@@ -535,8 +535,8 @@ function undoClassif(e, obj) {
 /////////////////////////////////////////////////////////////////////////
 
 function infoInputOnKeyup(obj) {
-    var cid = $(obj).attr("cinfo");
-    var val = $(obj).val();
+    var cid = $("#infoinput").attr("cinfo");
+    var val = $("#infoinput").val();
     if (!dblFlag) {
         dblFlag = true;
         setTimeout(function() {     
