@@ -1228,6 +1228,7 @@ twitter-widget {
   top: -2px;
   font-size: 11px;
   position: relative;
+  width: 11px;
 }
 
 .newLayout .detailtable, .newLayout .sectiontitletable {
@@ -1392,10 +1393,10 @@ select, textarea {
 }
 
 .newLayout .fa-file-text {
-    font-size: 13px;
+    font-size: 12px;
     position: relative;
     top: 0px;
-    left: -4px;
+    left: -3px;
 }
 .mainbutton {
     color: var(--high-color);
