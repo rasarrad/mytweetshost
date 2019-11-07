@@ -166,7 +166,7 @@ var openSettingsPopup = function(jsonobj)
     if (infochanged != null && infochanged != 'null') {
         alert(infochanged)
         currentinfodisplay.css('color','#00ff72');
-        currentinfodisplay.val(decodeURIComponent(infochanged));
+        currentinfodisplay.html(decodeURIComponent(infochanged));
         $('#infoinput').val(decodeURIComponent(infochanged));
         $('#originalinfotd i').show();
     } 
@@ -561,18 +561,18 @@ function infoInputOnKeyup(obj) {
 }
 
 
-function undoClassif(e, obj) {
+function undoInfo(e, obj) {
     e.stopPropagation();
     
-    $('#classifinput').val($('#classifinput').attr("cclassif"));
+    $('#infoinput').val($('#infoinput').attr("cinfo"));
     $(obj).hide();
     var functorun = function() 
     { 
         alert(1);
     } 
-    $('#classifinput').trigger("change");
+    $('#infoinput').trigger("keyup");
 
-    showMessage("Classification reverted", null, "fa-undo", "", null, "undo");
+    showMessage("Information reverted", null, "fa-undo", "", null, "undo");
 }
 
 /////////////////////////////////////////////////////////////////////////
