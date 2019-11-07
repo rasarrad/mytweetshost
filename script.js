@@ -254,6 +254,11 @@ $( document ).ready(function() {
       });
 
 
+      $(document).keyup(function(e) {
+        infoInputOnKeyup(e);
+      });
+
+
       $( "#tagsselect" ).change(function() {
         // Check input( $( this ).val() ) for validity here
         if ($( this ).val() != "notag") {

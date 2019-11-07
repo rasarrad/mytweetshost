@@ -530,6 +530,48 @@ function undoClassif(e, obj) {
     showMessage("Classification reverted", null, "fa-undo", "", null, "undo");
 }
 
+/////////////////////////////////////////////////////////////////////////
+//                            INFO SETTINGS                            //
+/////////////////////////////////////////////////////////////////////////
+
+function infoInputOnKeyup(obj) {
+
+    if (!dblFlag) {
+        dblFlag = true;
+        setTimeout(function() {     
+            var oldinfo = $(obj).attr("cinfo");
+            var currentinfodisplay = $('.currentinfo'); 
+            currentinfodisplay.html($(obj).val());
+            
+            if (oldinfo == $(obj).val()) {
+                currentinfodisplay.css('color', '');
+                createCookie($('#linkChange').attr("cid") + "info", null);
+                $('#originalinfotd i').hide();
+            }
+            else {
+                currentinfodisplay.css('color','#00ff72');
+                createCookie($('#linkChange').attr("cid") + "info", $(obj).val());
+                $('#originalinfotd i').show();
+            }
+            dblFlag = false;
+        }, 300);
+    }
+}
+
+
+function undoClassif(e, obj) {
+    e.stopPropagation();
+    
+    $('#classifinput').val($('#classifinput').attr("cclassif"));
+    $(obj).hide();
+    var functorun = function() 
+    { 
+        alert(1);
+    } 
+    $('#classifinput').trigger("change");
+
+    showMessage("Classification reverted", null, "fa-undo", "", null, "undo");
+}
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
