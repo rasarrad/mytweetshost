@@ -127,7 +127,7 @@ ol > li {
 }
    #gotop {
     position: fixed;
-    bottom: 19px;
+    bottom: 25px;
     right: calc(50% - 19px);
     font-size: 29px;
     background: #ffffff87;
@@ -817,6 +817,16 @@ twitter-widget {
       background-image: linear-gradient(to bottom, var(--dark-color) 3%, var(--soft-color) 80%);
       top: auto;
       bottom: 3px;
+    }
+    .tweet:last-child .bottomgradiantback {
+      position: absolute;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.81);
+      z-index: 9;
+      height: 24px;
+      background-image: linear-gradient(to bottom, var(--dark-color) 3%, var(--softdark-color) 80%);
+      top: auto;
+      bottom: -5px;
     }
     .tweet.html:not(:last-child) .bottomgradiantback {
         bottom: 2px;
@@ -1762,7 +1772,7 @@ body.big .newLayout ul#classiful li {
 
 .tags {
   font-size: 13px !important;
-  top: -9px;
+  top: -10px;
 }
 body.big .tags {
   font-size: 15px !important;
@@ -1772,7 +1782,7 @@ body.big .tags {
 .linkbar {
     left: 9px;
     font-size: 17px;
-    top: -6px;  
+    top: -7px;
 }
 body.big .linkbar {
     left: 9px;
@@ -1806,7 +1816,7 @@ body.big .linkbar.fa-youtube-play{
 #expand {
     font-size: 14px;
     right: 10px;
-    top: 1px;
+    top: -1px;
     left: auto;
 }
 body.big #expand {
