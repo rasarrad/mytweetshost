@@ -416,11 +416,13 @@ function gotop() {
 
 
 function internallinkcopy(obj) {
-    $('#linkresult').val("https://sleepy-mclean-3aea2d.netlify.com/?tweetid=" + $('#linkChange').attr('cid'));
+    /*$('#linkresult').val("https://sleepy-mclean-3aea2d.netlify.com/?tweetid=" + $('#linkChange').attr('cid'));
     $("#linkresult").select();
     document.execCommand('copy');
     $("#linkresult").blur();
     showMessage("Internal Link Copied To Clipboard"); 
+    */
+   doZoom(false);
 }
 
 
@@ -439,13 +441,23 @@ function externallinkopen(link, id) {
 }
 
 function externallinkcopy(obj) {
-    $('#linkresult').val($('#linkChange').attr('clink'));
+   /*$('#linkresult').val($('#linkChange').attr('clink'));
     $("#linkresult").select();
     document.execCommand('copy');
     $("#linkresult").blur();
     showMessage("External Link Copied To Clipboard"); 
+    */
+   doZoom(true);
 }
 
+function doZoom(zoomin) {
+    if (zoomin) {
+        
+    }
+    else {
+        
+    }
+}
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////

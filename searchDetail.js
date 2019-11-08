@@ -220,7 +220,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         var newtweet = $('#main').append($('<div id="inid" class="tweet' + xclass + '"></div>'));
                         var newtweetobj = $('#inid');
 
-                        newtweetobj.append($('<div class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down ' + expandclass + '"></i><i class="linkbar fa fa-' + typefa + '" onclick="javascript: externallinkopen(\'' + val.url + '\', \'' + val.id + '\')"></i>'));
+                        newtweetobj.append($('<div class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="fa fa-edit ' + expandclass + '"></i><i class="linkbar fa fa-' + typefa + '" onclick="javascript: externallinkopen(\'' + val.url + '\', \'' + val.id + '\')"></i>'));
                         
                         newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b style="font-size: 13px;">Tags: </b>' + tagdispalay + '</div>'));
                         
@@ -562,7 +562,7 @@ var getInformationOld = function(ismoretweets) {
             //$('#moretweets').hide();
             var newtweet = $('#main').append($('<div style="' + isdeleted + '" id="inid" class="tweet"></div>'));
             var newtweetobj = $('#inid');
-            newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down ' + expandclass + '"></i>' 
+            newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-edit ' + expandclass + '"></i>' 
                 + '<div class="categorias">' 
                     + '<i onclick="javascript: removetweet(this,\'' + val.id + '\')" id="removetweet" class="fa fa-remove"></i>' 
                     + '<i tagactual="' + val.tags + '" onclick="javascript: changetag(this, \'' + val.id + '\')" id="changetag" class="fa fa-tags"></i>' 
@@ -648,7 +648,7 @@ var getInformationbyid = function(id) {
                 $('#moretweets').hide();
                 var newtweet = $('#main').append($('<div id="inid" class="tweet"></div>'));
                 var newtweetobj = $('#inid');
-                newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-angle-double-down"></i><div class="categorias"><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + '</div>'));
+                newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-edit"></i><div class="categorias"><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + '</div>'));
                 newtweetobj.append($('<div class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\')" id="externallink" class="fa fa-external-link"></i><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags </b>' + val.tags + '</div>'));
                 newtweetobj.append($('<div class="innertweet"></div>'));
                 newtweetobj.find('.innertweet').append(val.tweet);

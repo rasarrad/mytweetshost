@@ -29,9 +29,9 @@
   <div class="topoback topoback2"></div>
   <div id="tweetcount" onmouseover="javascript: countmove(this)" style="font-weight: bold; padding: 0px 4px; position: fixed; bottom: 54px; right: 25px; background: var(--high-color); border: 2px solid var(--soft-color); border-radius: 4px; color: var(--dark-color); line-height: 20px; text-align: center; transition: all 0.8s ease 0s; cursor: default; font-size: 14px; z-index: 12; opacity: 0.42;display:none;">
       <div id="tcnumber"></div><span id="tccateg"></span>
-      <div style="display: block;position: relative;left: -2px;">
+      <div style="margin-top: 4px;display: block;position: relative;left: -2px;">
         <i id="typeT" class="fa fa-twitter-square" style="font-size: 19px;border: 0px solid transparent;padding: 0px 4px;border-radius: 4px;"></i>
-        <div id="tct" style="display: inline-block;position: relative;left: -6px;top: -2px;font-size: 13px;text-align: left;"></div>
+        <div id="tct" style="display: inline-block;position: relative;left: -3px;top: 0px !important;font-size: 13px;text-align: left;"></div>
         <i id="typeY" class="fa fa-youtube-square" style="font-size: 19px;border: 0px solid transparent;padding: 0px 4px;border-radius: 4px;"></i>
         <div id="tcy" style="display: inline-block;position: relative;left: -1px;top: -2px;font-size: 13px;text-align: left;"></div>
         <i id="typeH" class="fa fa-internet-explorer" style="font-size: 17px;border: 2px solid transparent;padding: 0px;border-radius: 4px;position: relative;left: 2px;top: -2px;"></i>
@@ -190,7 +190,7 @@
                     <i onclick="externallinkcopy(this)" id="externallinkp" class="fa fa-external-link"></i>
                 </td>
                 <td onclick="closeSettingsPopup()" style="position: relative;left: 2px;">
-                    <i id="closepopupp" class="fa fa-window-close-o"></i><div style="position: absolute; height: 30px; width: 2px; top: 0px; right: -1px; background: var(--dark-color);"></div>
+                    <i id="closepopupp" class="fa fa-window-close"></i><div style="position: absolute; height: 30px; width: 2px; top: 0px; right: -1px; background: var(--dark-color);"></div>
                 </td>                
               </tr>
             </tbody>
@@ -211,7 +211,7 @@
           <tr>  
               <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;">
                   <input id="tagsinput" style="margin-left: 3px;display:none;" ctags="">
-                  <input id="addtaginput" style="margin-left: 3px;">
+                  <input id="addtaginput" type="text" style="margin-left: 3px;">
                   <i class="fa fa-plus-square mainbutton" onclick="javascript: addTextTag(this)" style="font-size: 17px;padding-left: 4px;position: relative;top: 1px;padding-right: 10px;"></i>
                   <select id="tagsselect"><option value="notag">All Tags</option><option value="Assange">Assange</option><option value="John">John</option><option value="Julian">Julian</option><option value="Pilger">Pilger</option><option value="bernie">bernie</option><option value="climate">climate</option><option value="corbyn">corbyn</option><option value="coronel">coronel</option><option value="coup">coup</option><option value="dailyshow">dailyshow</option><option value="failed">failed</option><option value="fakenews">fakenews</option><option value="fox">fox</option><option value="funny">funny</option><option value="gun">gun</option><option value="hannity">hannity</option><option value="hongkong">hongkong</option><option value="israel">israel</option><option value="joe">joe</option><option value="maduro">maduro</option><option value="max">max</option><option value="moto">moto</option><option value="nunes">nunes</option><option value="palestine">palestine</option><option value="racism">racism</option><option value="rogan">rogan</option><option value="sanders">sanders</option><option value="syria">syria</option><option value="usa">usa</option><option value="venezuela">venezuela</option><option value="west">west</option><option value="ww2">ww2</option></select> </td>                                          
           </tr>  
@@ -406,7 +406,7 @@
 
 <script>
   /*<![CDATA[*/
-  function customizeTweets(flag) {
+  function customizeTweets(flag, forceProcess, big) {
           var hasFound = false;
           var maxTweets = 100000;
           var isChromium = window.chrome;
@@ -422,13 +422,16 @@
           for (i = 0; i < maxTweets; i++) {
               var obj = $("#twitter-widget-" + i);
               if (obj && obj.length > 0) {
-                if (obj.attr("processed") != "yes") {
+                if (forceProcess || obj.attr("processed") != "yes") {
                     hasFound = true;
                     obj.attr("processed", "yes");
                     var tweetCSS = ".EmbeddedTweet{height:auto !important;background: var(--dark-color) !important;border: 1px solid #b0b0b0 !important; margin: 0 !important;}.EmbeddedTweet {max-width: none !important;}.Icon.Icon--twitter {display: none !important;}.SummaryCard-contentContainer{background: #00497b !important;}.SummaryCard-contentContainer:hover{background: #01355a !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;}.Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar{height: 50px !important;width: 50px !important;position: relative !important;top: -7px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important;}.TwitterCard-container {max-width: 10000px!important;}";
                                    
                     if ($(window).width() < 1200) {
-                      tweetCSS = ".EmbeddedTweet{height:auto !important; background: var(--dark-color) !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important;} .EmbeddedTweet {max-width: none !important;}.SummaryCard-contentContainer{background: #001e33 !important;}.SummaryCard-contentContainer:hover{background: #01355a !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;}.Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar{height: 50px !important;width: 50px !important;position: relative !important;top: -7px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important;}.TwitterCard-container {border: 1px solid #044376 !important;max-width: 10000px!important;}";
+                      if (big)
+                          tweetCSS = ".EmbeddedTweet{height:auto !important; background: var(--dark-color) !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important;} .EmbeddedTweet {max-width: none !important;}.SummaryCard-contentContainer{background: #001e33 !important;}.SummaryCard-contentContainer:hover{background: #01355a !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;}.Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar{height: 50px !important;width: 50px !important;position: relative !important;top: -7px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important;}.TwitterCard-container {border: 1px solid #044376 !important;max-width: 10000px!important;}";
+                      else 
+                          tweetCSS = ".EmbeddedTweet{height:auto !important; background: var(--dark-color) !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important;} .EmbeddedTweet {max-width: none !important;}.SummaryCard-contentContainer{background: #001e33 !important;}.SummaryCard-contentContainer:hover{background: #01355a !important;}.Tweet-card {background: transparent !important;}.TwitterCard-container {border: 1px solid #044376 !important;max-width: 10000px!important;}";    
                     }
                     var tweetStyle = document.createElement("style");
     
@@ -458,7 +461,7 @@
                       $('#moretweets').css('opacity', 0);
 
                     $(window).trigger("resize");
-break;
+                    break;
                     return false;
                   }
               }
