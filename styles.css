@@ -174,7 +174,7 @@ ol > li {
     background-image: linear-gradient(to bottom, var(--soft-color) 3%, var(--dark-color) 80%);
 }
 .innermask .fa-circle-o-notch {
-  color: #004a86;
+  color: var(--high-color);
   position: relative;
   font-size: 24px;
   top: calc(50% - 12px);
