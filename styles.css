@@ -1060,8 +1060,8 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
 
 @media only screen and (max-width: 700px) {
     .toptitle {
-      top: 10px;
-      font-size: 17px;
+      top: 12px;
+      font-size: 13px;
       /* padding-left: calc(50% - 103px); */
       display: block;
       text-align: center;
@@ -1443,11 +1443,13 @@ select {
     width: 100%;
     outline: none;
     color: #002133;
-    font-weight: bold;
+    font-weight: normal !important;
     background: #a6b9fd;
     padding: 1px 4px;
     border: 1px solid #002133;
     cursor: pointer;
+    font-family: Helvetica, Roboto, "Segoe UI", Calibri, sans-serif !important;
+    font-variant-caps: normal !important;
 }
 
 input {
@@ -1518,7 +1520,7 @@ input[type="checkbox"] {
 }
 
 .checkstyleddiv {
-    width: 108px;
+    width: 107px;
     display: inline-block;
 }
 
@@ -1742,7 +1744,7 @@ body.big input[type="checkbox"] + label {
 
 
 .newLayout textarea {
-    font-size: 15px;
+    font-size: 14px;
 }
 body.big .newLayout textarea {
     font-size: 17px;
