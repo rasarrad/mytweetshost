@@ -191,7 +191,7 @@ function create() {
     }
 
     var result = $('#result').val();
-
+console.log(result);
     $("#result").select();
 
     document.execCommand('copy');
@@ -199,12 +199,10 @@ function create() {
     resetFieldsPopup();
 
     if ($("#onemore").is(":checked")) {
-        alert(444);
         showMessage("New Link Created And Copied To Clipboard. You Can Add One More Now");
         $('#tweet').focus();
     } 
     else {
-        alert(4333);
         showMessage("New Link Created And Copied To Clipboard");
         $('.addpopup').fadeOut(2000);
     }       
