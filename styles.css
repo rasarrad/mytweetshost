@@ -834,7 +834,7 @@ twitter-widget {
         
 
     .yt.tweet .bottomgradiantback {
-      background-image: linear-gradient(to bottom, var(--dark-color) 13%, var(--soft-color) 80%);
+      background-image: linear-gradient(to bottom, var(--dark-color) 13%, var(--softdark-color) 80%);
       }
       .html.tweet .bottomgradiantback {
       background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--softdark-color) 85%);
@@ -1694,7 +1694,7 @@ body.big .buttonstable .firsttd {
 
 
 .buttonstable .author {
-     max-width: 172px !important;
+     max-width: 111px !important;
 }
 body.big .buttonstable .author {
      max-width: 124px !important;
@@ -1877,4 +1877,40 @@ body.big #tweetcount > div > div {
 body.big #gotop {
     font-size: 20px;
     padding-top: 1px;
+}
+
+.buttonstable tr:first-child .firsttd i.fa-internet-explorer {
+    font-size: 14px !important;
+    top: 0px !important;
+    left: 1px !important;
+}
+
+body.big .buttonstable tr:first-child .firsttd i.fa-internet-explorer {
+    font-size: 14px !important;
+    top: 0px !important;
+    left: 1px !important;
+}
+
+.buttonstable tr:first-child .firsttd i.fa-youtube-play {
+    font-size: 14px !important;
+    top: 0px !important;
+    left: 2px !important;
+}
+
+body.big .buttonstable tr:first-child .firsttd i.fa-youtube-play {
+    font-size: 14px !important;
+    top: 0px !important;
+    left: 1px !important;
+}
+
+.buttonstable tr:first-child .firsttd i.fa-twitter {
+    font-size: 15px !important;
+    top: 0px !important;
+    left: 1px !important;
+}
+
+body.big .buttonstable tr:first-child .firsttd i.fa-twitter {
+    font-size: 14px !important;
+    top: 0px !important;
+    left: 1px !important;
 }
