@@ -781,6 +781,33 @@ twitter-widget {
 .newtag {
   border-bottom: 2px solid #00c400;
 }
+
+
+
+
+
+.newLayout > div {
+    margin-left: calc(50% - 183px) !important;
+    width: 361px !important;
+}
+
+
+.buttonstable .author {
+      max-width: 166px !important;
+}
+body.big .buttonstable .author {
+       max-width: 124px !important;
+}
+
+
+.newLayout > div .titletable tr:first-child .firsttd {
+    min-width: 345px;
+} 
+body.big .newLayout > div .titletable tr:first-child .firsttd {
+    min-width: 345px;
+} 
+
+
 @media only screen and (max-width: 1000px) {
     .gradiantback {
         display: block;
@@ -1002,6 +1029,31 @@ twitter-widget {
       .innermask {
           background: rgba(0, 0, 0, 0.81);
       }
+    .newLayout > div {
+        margin-left: calc(50% - 241px) !important;
+        width: 482px !important;
+    }
+    .buttonstable .author {
+          max-width: 287px !important;
+      }
+      body.big .buttonstable .author {
+           max-width: 124px !important;
+      }
+      .newLayout > div .titletable tr:first-child .firsttd {
+          min-width: 466px;
+      }
+      body.big .newLayout > div .titletable tr:first-child .firsttd {
+          min-width: 345px;
+      } 
+
+      .buttonstable .datespan {
+          position: relative !important;
+          top: -1px;
+      }  
+      .buttonstable .date {
+          position: relative !important;
+          top: -1px;
+      }              
 }
 
 @media only screen and (max-width: 700px) {
@@ -1053,6 +1105,22 @@ twitter-widget {
         transition: all 0.6s;
         cursor: pointer;
     }
+    .newLayout > div {
+        margin-left: calc(50% - 183px) !important;
+        width: 361px !important;
+    }
+    .buttonstable .author {
+          max-width: 166px !important;
+      }
+      body.big .buttonstable .author {
+           max-width: 124px !important;
+      }
+      .newLayout > div .titletable tr:first-child .firsttd {
+          min-width: 345px;
+      }
+      body.big .newLayout > div .titletable tr:first-child .firsttd {
+          min-width: 345px;
+      }      
 }
 
 #zoomin:hover {
@@ -1097,9 +1165,9 @@ twitter-widget {
     font-size: 12px;
     color: #004a86;
     padding-bottom: 8px;
-    max-width: 381px;
     overflow-y: auto;
-    margin-left: calc(50% - 190px);
+    margin-left: calc(50% - 183px);
+    width: 361px;
 }
 
 .newLayout > div .titletable {
@@ -1145,6 +1213,7 @@ twitter-widget {
     padding-bottom: 14px;
     text-align: center;
     padding-top: 5px;
+    /* min-width: 466px; */
 }
 
 .newLayout > div .titletable .middletd {
@@ -1692,15 +1761,6 @@ body.big .buttonstable .firsttd {
     font-size: 16px !important;
 }
 
-
-.buttonstable .author {
-     max-width: 111px !important;
-}
-body.big .buttonstable .author {
-     max-width: 124px !important;
-}
-
-
 #removetweetp {
     font-size: 18px !important;
 }
@@ -1905,7 +1965,7 @@ body.big .buttonstable tr:first-child .firsttd i.fa-youtube-play {
 
 .buttonstable tr:first-child .firsttd i.fa-twitter {
     font-size: 15px !important;
-    top: 0px !important;
+    top: 1px !important;
     left: 1px !important;
 }
 
