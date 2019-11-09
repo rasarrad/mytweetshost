@@ -195,7 +195,7 @@ function create() {
     $("#result").select();
 
     document.execCommand('copy');
-
+alert(444);
     resetFieldsPopup();
 
     if ($("#onemore").is(":checked")) {
