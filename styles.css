@@ -837,7 +837,7 @@ twitter-widget {
       background-image: linear-gradient(to bottom, var(--dark-color) 13%, var(--soft-color) 80%);
       }
       .html.tweet .bottomgradiantback {
-      background-image: linear-gradient(to bottom, var(--softdark-color) 15%, var(--soft-color) 85%);
+      background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--softdark-color) 85%);
       } 
         .tweet iframe {
         width: calc(100% - 0px) !important;
