@@ -47,7 +47,7 @@ var openSettingsPopup = function(jsonobj)
         $(".buttonstable tr:first-child td i").addClass('fa').addClass('fa-youtube-play').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
     }
 
-    $(".buttonstable tr:first-child td .id").html(jsonobj.id);
+    //$(".buttonstable tr:first-child td .id").html(jsonobj.id);
 
     if (jsonobj.author.length > 0)
         $(".buttonstable tr:first-child td .author").html(jsonobj.author);
