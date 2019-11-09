@@ -62,7 +62,7 @@
     border-top: 1px solid #006097;
     position: relative;
     top: 2px;
-    font-size: 15px !important;
+    font-size: 14px !important;
     color: var(--high-color);
   }
   .EmbeddedTweet-tweet {
@@ -512,6 +512,8 @@ ol > li {
       border: 1px solid #007dc5;
       padding-left: 4px;
       padding-right: 4px;
+      font-family: Helvetica, Roboto, "Segoe UI", Calibri, sans-serif;
+      font-variant-caps: normal;
      }
 
     #removetweet {
@@ -1368,7 +1370,7 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
 .newLayout #addtaginput {
     width: 100px;
     color: var(--dark-color);
-    font-weight: bold;
+    font-weight: normal !important;
     background: var(--high-color);
     padding: 1px 4px;
     border: 1px solid #002133;
@@ -1384,6 +1386,8 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
     border: 1px solid #002133;
     outline: none;
     font-size: 17px;
+    font-family: Helvetica, Roboto, "Segoe UI", Calibri, sans-serif;
+    font-variant-caps: normal;
 }
 .newLayout ul {
     width: 100%;
@@ -1837,7 +1841,7 @@ body.big .newLayout ul#classiful li {
 
 
 .tags {
-  font-size: 13px !important;
+  font-size: 12px !important;
   top: -10px;
 }
 body.big .tags {
@@ -1847,8 +1851,8 @@ body.big .tags {
 
 .linkbar {
     left: 9px;
-    font-size: 17px;
-    top: -7px;
+    font-size: 15px;
+    top: -3px;
 }
 body.big .linkbar {
     left: 9px;
@@ -1859,8 +1863,8 @@ body.big .linkbar {
 
 .linkbar.fa-internet-explorer {
       left: 9px;
-      font-size: 14px;
-      top: -5px;
+      font-size: 13px;
+      top: -4px;
 }
 body.big .linkbar.fa-internet-explorer {
       font-size: 17px;
@@ -1869,7 +1873,7 @@ body.big .linkbar.fa-internet-explorer {
 
 .linkbar.fa-youtube-play{
     left: 9px;
-    font-size: 15px;
+    font-size: 14px;
     top: -5px;
 }
 body.big .linkbar.fa-youtube-play{
@@ -1940,7 +1944,7 @@ body.big #gotop {
 }
 
 .buttonstable tr:first-child .firsttd i.fa-internet-explorer {
-    font-size: 14px !important;
+    font-size: 13px !important;
     top: 0px !important;
     left: 1px !important;
 }
@@ -1953,7 +1957,7 @@ body.big .buttonstable tr:first-child .firsttd i.fa-internet-explorer {
 
 .buttonstable tr:first-child .firsttd i.fa-youtube-play {
     font-size: 14px !important;
-    top: 0px !important;
+    top: 1px !important;
     left: 2px !important;
 }
 
