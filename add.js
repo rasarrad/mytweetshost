@@ -195,14 +195,16 @@ function create() {
     $("#result").select();
 
     document.execCommand('copy');
-alert(444);
+
     resetFieldsPopup();
 
     if ($("#onemore").is(":checked")) {
+        alert(444);
         showMessage("New Link Created And Copied To Clipboard. You Can Add One More Now");
         $('#tweet').focus();
     } 
     else {
+        alert(4333);
         showMessage("New Link Created And Copied To Clipboard");
         $('.addpopup').fadeOut(2000);
     }       
