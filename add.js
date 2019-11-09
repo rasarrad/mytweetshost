@@ -191,11 +191,23 @@ function create() {
     }
 
     var result = $('#result').val();
-
-    $("#result").select();
+    
+    $('#linkresult').val(result);
+    $("#linkresult").select();
 
     document.execCommand('copy');
 
+    resetFieldsPopup();
+
+    if ($("#onemore").is(":checked")) {
+        showMessage("New Link Created And Copied To Clipboard. You Can Add One More Now");
+        $('#tweet').focus();
+    } 
+    else {
+        showMessage("New Link Created And Copied To Clipboard");
+        $('.addpopup').fadeOut(2000);
+    }       
+    
     if ($("#preview").is(":checked")) {
         createCookie(nextid + "templink", encodeURIComponent(JSON.stringify(result)), 99999);
         createCookie("hasChanges", "Yes");
@@ -203,6 +215,8 @@ function create() {
     } 
     createCookie("maxid", pad(nextid + 1, 4));
 
+    resetFields(false);
+    countalltweets();
 
 }
 
