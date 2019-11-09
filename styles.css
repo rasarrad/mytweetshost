@@ -1112,7 +1112,7 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
         width: 361px !important;
     }
     .buttonstable .author {
-          max-width: 166px !important;
+          max-width: 163px !important;
       }
       body.big .buttonstable .author {
            max-width: 124px !important;
@@ -1860,7 +1860,7 @@ body.big .tags {
 .linkbar {
     left: 9px;
     font-size: 15px;
-    top: -3px;
+    top: -6px;
 }
 body.big .linkbar {
     left: 9px;
@@ -1872,7 +1872,7 @@ body.big .linkbar {
 .linkbar.fa-internet-explorer {
       left: 9px;
       font-size: 13px;
-      top: -4px;
+      top: -5px;
 }
 body.big .linkbar.fa-internet-explorer {
       font-size: 17px;
