@@ -1153,6 +1153,8 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
     display: flex;
     align-items: center;
     background: #0000009c;
+    touch-action: none;
+    overscroll-behavior: none;
 }
 
 .newLayout > div {
@@ -1170,6 +1172,8 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
     overflow-y: auto;
     margin-left: calc(50% - 183px);
     width: 361px;
+    touch-action: none;
+    overscroll-behavior: none;
 }
 
 .newLayout > div .titletable {
@@ -1473,9 +1477,9 @@ select, textarea {
 
 
 .newLayout .fa-star-half-o {
-    font-size: 14px;
+    font-size: 15px;
     position: relative;
-    top: 0px;
+    top: 1px;
     left: -4px;
 }
 
@@ -1715,7 +1719,7 @@ body.big .newLayout .sectiontitletable .sectionedittd i.fa-edit {
 
 input[type="checkbox"] + label span {
     width: 13px;
-    height: 13px;
+    height: 12px;
     margin: -2px 2px 0 0px;
 }
 body.big input[type="checkbox"] + label span {
@@ -1816,8 +1820,10 @@ body.big .newLayout .fa-tags {
 
 .newLayout ul li {
     font-size: 12px;
-    padding-bottom: 1px;
+    padding-bottom: 0px;
     padding-top: 3px;
+    padding-right: 4px;
+    height: 17px;
 }
 body.big .newLayout ul li {
     font-size: 12px;
