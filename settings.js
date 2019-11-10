@@ -19,6 +19,12 @@ function expandCat(obj) {
 }
 
 
+function test() {
+    if ($('body').hasClass('big'))
+        $('body').removeClass('big');
+    else
+        $('body').addClass('big');
+}
 var openSettingsPopup = function(jsonobj) 
 {
     // GENERAL
