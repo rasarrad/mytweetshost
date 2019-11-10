@@ -1479,7 +1479,7 @@ select, textarea {
 .newLayout .fa-star-half-o {
     font-size: 15px;
     position: relative;
-    top: 1px;
+    top: 0px;
     left: -4px;
 }
 
@@ -1986,3 +1986,13 @@ body.big .buttonstable tr:first-child .firsttd i.fa-twitter {
     top: 0px !important;
     left: 1px !important;
 }
+
+i:not(.notclicable):active {
+   color: #ffff6c !important;
+}
+
+tr.cursorpointer:active {
+   color: #ffff6c !important;
+}
+
+ 
