@@ -799,6 +799,7 @@ twitter-widget {
 }
 body.big .buttonstable .author {
        max-width: 124px !important;
+       top: 5px !important;
 }
 
 
@@ -809,6 +810,9 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
     min-width: 345px;
 } 
 
+.brsep {
+  display: none;
+}   
 
 @media only screen and (max-width: 1000px) {
     .gradiantback {
@@ -1039,7 +1043,7 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
           max-width: 287px !important;
       }
       body.big .buttonstable .author {
-           max-width: 124px !important;
+           max-width: 222px !important;
       }
       .newLayout > div .titletable tr:first-child .firsttd {
           min-width: 466px;
@@ -1050,12 +1054,12 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
 
       .buttonstable .datespan {
           position: relative !important;
-          top: -1px;
+          top: 0px;
       }  
       .buttonstable .date {
           position: relative !important;
-          top: -1px;
-      }              
+          top: 0px;
+      }         
 }
 
 @media only screen and (max-width: 700px) {
@@ -1115,14 +1119,18 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
           max-width: 163px !important;
       }
       body.big .buttonstable .author {
-           max-width: 124px !important;
+           max-width: 229px !important;
       }
       .newLayout > div .titletable tr:first-child .firsttd {
           min-width: 345px;
       }
       body.big .newLayout > div .titletable tr:first-child .firsttd {
           min-width: 345px;
-      }      
+      }     
+  
+      body.big .brsep {
+          display: inline;
+      }  
 }
 
 #zoomin:hover {
@@ -1265,6 +1273,8 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
     font-size: 15px;
     transition: all 0.6s;
     display: initial;
+    position: relative;
+    top: 0px;
 }
 
 .newLayout #externallinkp {
@@ -1273,6 +1283,8 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
     font-size: 15px;
     transition: all 0.6s;
     display: initial;
+    position: relative;
+    top: 1px;
 }
 
 .newLayout #closepopupp {
@@ -1760,7 +1772,7 @@ body.big .newLayout textarea {
     font-size: 0.7rem;
 }
 body.big .smallrem {
-    font-size: 0.7rem;
+    font-size: 1rem;
 }
 
 
@@ -1768,27 +1780,29 @@ body.big .smallrem {
     font-size: 14px !important;
 }
 body.big .buttonstable .firsttd {
-    font-size: 16px !important;
+    font-size: 19px !important;
 }
 
 #removetweetp {
     font-size: 18px !important;
 }
 body.big #removetweetp {
-    font-size: 18px !important;
+    font-size: 29px !important;
 }
 
 
 #internallinkp {
-    font-size: 15px !important;
+    font-size: 16px !important;
 }
 body.big #internallinkp {
-    font-size: 15px !important;
+    font-size: 24px !important;
+    font-weight: bold;
 }
 
 
 #externallinkp {
-    font-size: 15px !important;
+    font-size: 24px !important;
+    font-weight: bold;
 }
 .body.big #externallinkp {
     font-size: 15px !important;
@@ -1799,7 +1813,7 @@ body.big #internallinkp {
     font-size: 18px !important;
 }
 body.big #closepopupp {
-    font-size: 18px !important;
+    font-size: 25px !important;
 }
 
 
@@ -1812,7 +1826,7 @@ body.big #closepopupp {
     left: -3px;
 }
 body.big .newLayout .fa-tags {
-    font-size: 13px;
+    font-size: 18px;
     top: 0px;
     left: -3px;
 }
@@ -1982,8 +1996,8 @@ body.big .buttonstable tr:first-child .firsttd i.fa-youtube-play {
 }
 
 body.big .buttonstable tr:first-child .firsttd i.fa-twitter {
-    font-size: 14px !important;
-    top: 0px !important;
+    font-size: 22px !important;
+    top: 2px !important;
     left: 1px !important;
 }
 
@@ -1995,4 +2009,11 @@ tr.cursorpointer:active {
    color: #ffff6c !important;
 }
 
- 
+body.big .newLayout > div .buttonstable tr:last-child td {
+    /* padding: 9px 0px 8px 0px; */
+}
+
+body.big #editTags {
+  margin-top: 120px !important;
+}
+
