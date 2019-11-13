@@ -1280,11 +1280,11 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
 .newLayout #externallinkp {
     position: initial;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 17px;
     transition: all 0.6s;
     display: initial;
     position: relative;
-    top: 1px;
+    top: 2px;
 }
 
 .newLayout #closepopupp {
@@ -1295,9 +1295,10 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
     line-height: 18px;
 }
 
-.newLayout .sectiontitletable td {
-  /* background: #002440; */
+body.big .newLayout #editTags.sectiontitletable tr:first-child td {
+  /* padding-top: 7px;;
   /* color: #b2cbde; */
+  padding-bottom: 16px;
 }
 
 
@@ -1328,7 +1329,7 @@ body .newLayout #editCats .sectionicontd:first-child {
 }
 
 body.big .newLayout #editCats .sectionicontd:first-child {
-    width: 101px !important;
+    width: 106px !important;
 }
 
 body .newLayout #editClassif .sectionicontd:first-child {
@@ -1336,7 +1337,7 @@ body .newLayout #editClassif .sectionicontd:first-child {
 }
 
 body.big .newLayout #editClassif .sectionicontd:first-child {
-    width: 126px !important;
+    width: 133px !important;
 }
 
 body .newLayout #editInfo .sectionicontd:first-child {
@@ -1553,7 +1554,7 @@ body.big .newLayout .fa-star-half-o {
 }
 body.big .newLayout .fa-file-text {
     font-size: 17px;
-    top: 0px;
+    top: -1px;
     left: -1px;
 }
 
@@ -1706,7 +1707,7 @@ input[type="radio"]:checked + label span {
 
 .el:not(.ellipsis) span:not(.sectiontitle):not(.currentinfo) {
   position: relative !important;
-  top: -4px !important;
+  top: -2px !important;
 }
 
 
@@ -1718,8 +1719,8 @@ input[type=text] {
   height: 15px;
 }
 body.big input[type=text] {
-  font-size: 12px !important;
-  height: 15px;
+  font-size: 15px !important;
+  height: 18px;
 }
 
 
@@ -1727,7 +1728,8 @@ select {
   font-size: 11px !important;
 }
 body.big select {
-  font-size: 12px !important;
+  font-size: 15px !important;
+  height: 22px;
 }
 
 
@@ -1764,7 +1766,7 @@ body.big .newLayout #editClassif .sectiontitle {
     font-size: 12px;
 }
 body.big .newLayout .boldtitle {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 
@@ -1777,17 +1779,24 @@ body.big .newLayout .titletext {
   font-size: 15px;
   top: -2px !important;
 }
+body.big #editCats td:not(.ellipsis) .titletext {
+    top: 0px !important;
+    line-height: 18px;
+}
 body.big .newLayout #editTags td.ellipsis .titletext {
   top: -1px !important;
 }
 
 body.big .newLayout #editTags td:not(.ellipsis) .titletext {
-  top: 0px !important;
-  line-height: 21px;
+  top: 1px !important;
+  line-height: 18px;
 }
-
+body.big .newLayout #editCatss td:not(.ellipsis) .titletext {
+    top: -1px !important;
+    line-height: 21px;
+}
 body.big .newLayout #editClassif .titletext {
-  top: -1px !important;
+  top: -4px !important;
 }
 .newLayout .fa-undo.mainbutton {
    font-size: 14px !important;
@@ -1802,8 +1811,9 @@ body.big .newLayout .fa-undo..mainbutton {
     left: -2px;
 }
 body.big .newLayout .sectiontitletable .sectionedittd i.fa-angle-up {
-    font-size: 22px;
-    left: -2px;
+    font-size: 27px !important;
+    left: -5px;
+    padding-top: 3px;
 }
 
 
@@ -1812,7 +1822,7 @@ body.big .newLayout .sectiontitletable .sectionedittd i.fa-angle-up {
 }
 body.big .newLayout .sectiontitletable .sectionedittd i.fa-edit {
   font-size: 15px;
-  top: 4px;
+  top: 5px;
 }
 
 
@@ -1887,7 +1897,7 @@ body.big #internallinkp {
 }
 
 
-#externallinkp {
+body.big #externallinkp {
     font-size: 24px !important;
     font-weight: bold;
 }
@@ -1913,7 +1923,7 @@ body.big #closepopupp {
     left: -3px;
 }
 body.big .newLayout .fa-tags {
-    font-size: 18px;
+    font-size: 17px;
     top: 1px;
     left: -3px;
 }
@@ -1927,17 +1937,18 @@ body.big .newLayout .fa-tags {
     height: 17px;
 }
 body.big .newLayout ul li {
-    font-size: 12px;
-    padding-bottom: 1px;
-    padding-top: 3px;
+    font-size: 15px;
+    padding-bottom: 4px;
+    padding-top: 2px;
+    font-weight: normal;
 }
 
 
 .newLayout .fa-plus-square.mainbutton {
    font-size: 17px !important;
 }
-body.big .newLayout .fa-plus-square..mainbutton {
-   font-size: 17px !important;
+body.big .newLayout .fa-plus-square.mainbutton {
+   font-size: 23px !important;
 }
 
 
