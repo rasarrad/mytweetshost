@@ -173,6 +173,10 @@ ol > li {
     height: 16px;
     background-image: linear-gradient(to bottom, var(--soft-color) 3%, var(--dark-color) 80%);
 }
+body.big .gradiantback {
+    top: 19px;
+}
+    
 .innermask .fa-circle-o-notch {
   color: var(--high-color);
   position: relative;
@@ -1965,7 +1969,9 @@ body.big .newLayout ul#classiful li {
   top: -10px;
 }
 body.big .tags {
-  font-size: 15px !important;
+  font-size: 17px !important;
+  height: 21px;
+  top: -9px;
 }
 
 
@@ -1976,8 +1982,8 @@ body.big .tags {
 }
 body.big .linkbar {
     left: 9px;
-    font-size: 17px;
-    top: -6px;  
+    font-size: 22px;
+    top: -6px;
 }
 
 
@@ -2010,9 +2016,9 @@ body.big .linkbar.fa-youtube-play{
     left: auto;
 }
 body.big #expand {
-    font-size: 15px;
+    font-size: 20px;
     right: 13px;
-    top: 1px;
+    top: 3px;
     left: auto;
 }
 
@@ -2115,3 +2121,11 @@ body.big #editTags {
   margin-top: 120px !important;
 }
 
+
+body.notransit * {
+  -o-transition-property: none !important;
+  -moz-transition-property: none !important;
+  -ms-transition-property: none !important;
+  -webkit-transition-property: none !important;
+  transition-property: none !important;
+}

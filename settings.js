@@ -31,7 +31,7 @@ var openSettingsPopup = function(jsonobj)
     var setHeight = "21px";
 
     if ($('body').hasClass('big'))
-        setHeight = "29px";
+        setHeight = "31px";
 
     $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
         var table = $(element);
@@ -207,7 +207,7 @@ function editSetting(e, obj) {
     var setHeight = "21px";
 
     if ($('body').hasClass('big'))
-        setHeight = "29px";
+        setHeight = "31px";
 
     var table = $(obj).parent().parent();
     if (table.css('max-height') == setHeight) {
