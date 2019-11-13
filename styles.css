@@ -1340,11 +1340,11 @@ body.big .newLayout #editClassif .sectionicontd:first-child {
 }
 
 body .newLayout #editInfo .sectionicontd:first-child {
-    width: 48px !important;
+    width: 34px !important;
 }
 
 body.big .newLayout #editInfo .sectionicontd:first-child {
-    width: 56px !important;
+    width: 32px !important;
 }
 
 
@@ -1551,6 +1551,12 @@ body.big .newLayout .fa-star-half-o {
     top: 0px;
     left: -3px;
 }
+body.big .newLayout .fa-file-text {
+    font-size: 17px;
+    top: 0px;
+    left: -1px;
+}
+
 .mainbutton {
     color: var(--high-color);
     cursor: pointer;
@@ -1734,6 +1740,9 @@ body.big .newLayout .sectiontitle {
   font-size: 15px;
   padding-left: 12px;
 }
+body.big .newLayout #editInfo .sectiontitle {
+  padding-left: 12px !important;
+}
 body.big .newLayout #editClassif .sectiontitle {
   padding-left: 7px !important;
 }
@@ -1779,7 +1788,8 @@ body.big .newLayout .sectiontitletable .sectionedittd i.fa-angle-up {
   font-size: 11px;
 }
 body.big .newLayout .sectiontitletable .sectionedittd i.fa-edit {
-  font-size: 11px;
+  font-size: 15px;
+  top: 4px;
 }
 
 
