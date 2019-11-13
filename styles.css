@@ -1310,6 +1310,47 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
   /* top: 0px; */
 }
 
+
+body.big .newLayout .sectiontitletable .sectionicontd {
+    padding-top: 4px !important;
+}
+
+body .newLayout #editTags .sectionicontd:first-child {
+    width: 48px !important;
+}
+
+body.big .newLayout #editTags .sectionicontd:first-child {
+    width: 56px !important;
+}
+
+body .newLayout #editCats .sectionicontd:first-child {
+    width: 48px !important;
+}
+
+body.big .newLayout #editCats .sectionicontd:first-child {
+    width: 56px !important;
+}
+
+body .newLayout #editClassif .sectionicontd:first-child {
+    width: 48px !important;
+}
+
+body.big .newLayout #editClassif .sectionicontd:first-child {
+    width: 56px !important;
+}
+
+body .newLayout #editInfo .sectionicontd:first-child {
+    width: 48px !important;
+}
+
+body.big .newLayout #editInfo .sectionicontd:first-child {
+    width: 56px !important;
+}
+
+
+
+
+
 .newLayout .titletext {
   text-align: left;
   padding-left: 14px;
@@ -1486,7 +1527,11 @@ select, textarea {
     top: 0px;
     left: -3px;
 }
-
+body.big .newLayout .fa-bookmark {
+    font-size: 18px;
+    top: 0px;
+    left: -3px;
+}
 
 .newLayout .fa-star-half-o {
     font-size: 15px;
@@ -1681,7 +1726,7 @@ body.big select {
   font-size: 12px;
 }
 body.big .newLayout .sectiontitle {
-  font-size: 12px;
+  font-size: 15px;
 }
 
 
@@ -1698,8 +1743,9 @@ body.big .newLayout .boldtitle {
   font-size: 11px;
 }
 body.big .newLayout .titletext {
-  line-height: 19px;
-  font-size: 12px;
+  line-height: 30px;
+  font-size: 15px;
+  top: -2px !important;
 }
 
 
@@ -1795,7 +1841,7 @@ body.big #removetweetp {
     font-size: 16px !important;
 }
 body.big #internallinkp {
-    font-size: 24px !important;
+    font-size: 22px !important;
     font-weight: bold;
 }
 
@@ -1827,7 +1873,7 @@ body.big #closepopupp {
 }
 body.big .newLayout .fa-tags {
     font-size: 18px;
-    top: 0px;
+    top: 1px;
     left: -3px;
 }
 
