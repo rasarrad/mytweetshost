@@ -1541,7 +1541,7 @@ body.big .newLayout .fa-bookmark {
 }
 body.big .newLayout .fa-star-half-o {
     font-size: 20px;
-    top: 1px;
+    top: -2px;
     left: -3px;
 }
 
@@ -1706,7 +1706,7 @@ input[type="radio"]:checked + label span {
 
 .el:not(.ellipsis) span:not(.sectiontitle):not(.currentinfo) {
   position: relative !important;
-  top: -2px !important;
+  top: -4px !important;
 }
 
 
@@ -1740,6 +1740,19 @@ body.big .newLayout .sectiontitle {
   font-size: 15px;
   padding-left: 12px;
 }
+
+body.big #editCats .sectiontitle {
+  position: relative;
+  top: -1px;
+}
+body.big #editInfo .sectiontitle {
+  position: relative;
+  top: -1px;
+}
+body.big #editClassif .sectiontitle {
+  position: relative;
+  top: -3px !important;
+}
 body.big .newLayout #editInfo .sectiontitle {
   padding-left: 12px !important;
 }
@@ -1764,8 +1777,18 @@ body.big .newLayout .titletext {
   font-size: 15px;
   top: -2px !important;
 }
+body.big .newLayout #editTags td.ellipsis .titletext {
+  top: -1px !important;
+}
 
+body.big .newLayout #editTags td:not(.ellipsis) .titletext {
+  top: 0px !important;
+  line-height: 21px;
+}
 
+body.big .newLayout #editClassif .titletext {
+  top: -1px !important;
+}
 .newLayout .fa-undo.mainbutton {
    font-size: 14px !important;
 }
