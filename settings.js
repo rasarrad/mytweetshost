@@ -28,11 +28,15 @@ function test() {
 var openSettingsPopup = function(jsonobj) 
 {
     // GENERAL
+    var setHeight = "21px";
+
+    if ($('body').hasClass('big'))
+        setHeight = "29px";
 
     $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
         var table = $(element);
         table.css('transition', 'max-height .01s');
-        table.css('max-height', '21px');
+        table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
         table.find('td.el').addClass('ellipsis');
     });
@@ -200,15 +204,19 @@ function closeSettingsPopup(obj) {
 
 function editSetting(e, obj) {
     e.stopPropagation();
+    var setHeight = "21px";
+
+    if ($('body').hasClass('big'))
+        setHeight = "29px";
 
     var table = $(obj).parent().parent();
-    if (table.css('max-height') == '21px') {
+    if (table.css('max-height') == setHeight) {
         var hasExpanded = false;
         $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
             var table = $(element);
             
             table.css('transition', 'max-height 0.01s');
-            table.css('max-height', '21px');
+            table.css('max-height', setHeight);
             table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
             table.find('td.el').addClass('ellipsis');
         });
@@ -222,7 +230,7 @@ function editSetting(e, obj) {
     }
     else {
         table.css('transition', 'max-height .5s');
-        table.css('max-height', '21px');
+        table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
         setTimeout(function() { 
             table.find('td.el').addClass('ellipsis');
