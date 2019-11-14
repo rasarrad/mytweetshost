@@ -31,15 +31,15 @@ function zoom(obj) {
     if ($('body').hasClass('big')) {
         $('#zoomin').addClass('fa-search-plus');
         $('#zoomin').removeClass('fa-search-minus');
-        customizeTweets(null, true, false);
         $('body').removeClass('big');
+        customizeTweets(null, true, false);
         createCookie("hasZoom", "");
     }
     else {
         $('#zoomin').addClass('fa-search-minus');
         $('#zoomin').removeClass('fa-search-plus');
-        customizeTweets(null, true, true);
         $('body').addClass('big');
+        customizeTweets(null, true, true);
         createCookie("hasZoom", true)
     }
     var setHeight = "18px";
