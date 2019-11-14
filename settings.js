@@ -174,7 +174,6 @@ var openSettingsPopup = function(jsonobj)
     }
 
     if (infochanged != null && infochanged != 'null') {
-        alert(infochanged)
         currentinfodisplay.css('color','#00ff72');
         currentinfodisplay.html(decodeURIComponent(infochanged));
         $('#infoinput').val(decodeURIComponent(infochanged));
