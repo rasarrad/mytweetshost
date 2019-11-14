@@ -18,9 +18,8 @@ function expandCat(obj) {
     getJsonbyid(28, functorun);
 }
 
-function fixfocus()
+function fixfocus(el)
 {
-    var el = this;
     var par = el.parentNode;
     var next = el.nextSibling;
     par.removeChild(el);
