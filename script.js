@@ -685,7 +685,7 @@ function countmove(obj) {
         setTimeout(function() { 
             dblFlag = false;
             setTimeout(function() { 
-                $(obj).css('opacity', '0.42');
+                $(obj).css('opacity', '0.52');
             }, 2500);
         }, 500);
     }

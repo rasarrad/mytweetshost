@@ -126,8 +126,8 @@ ol > li {
   border-top: 1px solid #c7c7c7c2;
 }
    #gotop {
-    position: fixed;
-    bottom: 25px;
+    position: absolute;
+    bottom: -46px;
     right: calc(50% - 19px);
     font-size: 29px;
     background: #ffffff87;
@@ -143,7 +143,7 @@ ol > li {
     z-index: 13;
     display: none;
     background: var(--high-color);
-    opacity: 0.62;
+    opacity: 1;
    }
 
    .fa-circle-o-notch {
@@ -174,7 +174,7 @@ ol > li {
     background-image: linear-gradient(to bottom, var(--soft-color) 3%, var(--dark-color) 80%);
 }
 body.big .gradiantback {
-    top: 19px;
+    top: 15px;
 }
     
 .innermask .fa-circle-o-notch {
@@ -833,7 +833,7 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
         z-index: 9;
         height: 23px;
         display: block;
-        background-image: linear-gradient(to bottom, var(--soft-color) 10%, var(--dark-color) 100%);
+        background-image: linear-gradient(to bottom, var(--soft-color) 10%, var(--dark-color) 83%);
     }
       .html .gradiantback {
         position: absolute;
@@ -843,7 +843,7 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
         z-index: 9;
         height: 18px;
         display: block;
-        background-image: linear-gradient(to bottom,var(--soft-color) 3%, var(--softdark-color) 87%);
+        background-image: linear-gradient(to bottom,var(--soft-color) -4%, var(--dark-color) 105%);
     }
     .tweet:not(:last-child) .bottomgradiantback {
       position: absolute;
@@ -853,7 +853,12 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
       height: 21px;
       background-image: linear-gradient(to bottom, var(--dark-color) 3%, var(--soft-color) 80%);
       top: auto;
-      bottom: 3px;
+      bottom: -1px;
+    }
+   body:not(.big) .tweet:not(:last-child) .bottomgradiantback {
+      height: 19px;
+      top: auto;
+      bottom: 4px;
     }
     .tweet:last-child .bottomgradiantback {
       position: absolute;
@@ -871,10 +876,14 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
         
 
     .yt.tweet .bottomgradiantback {
-      background-image: linear-gradient(to bottom, var(--dark-color) 13%, var(--softdark-color) 80%);
+      background-image: linear-gradient(to bottom, var(--dark-color) 13%, var(--soft-color) 80%);
       }
+    body:not(.big) .yt.tweet .bottomgradiantback {
+      height: 15px;
+      bottom: 6px;
+      }     
       .html.tweet .bottomgradiantback {
-      background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--softdark-color) 85%);
+      background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--soft-color) 85%);
       } 
         .tweet iframe {
         width: calc(100% - 0px) !important;
@@ -948,6 +957,7 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
           height: 16px;
           border-bottom-width: 0px !important;
           background: var(--soft-color) !important;
+          /* z-index: 9; */
         }
         
         .tagtext {
@@ -1007,7 +1017,7 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
         z-index: -1;
         border: 0px solid #004a86;
         width: calc(100% - 0px);
-        height: 55px;
+        height: 58px;
         background-image: linear-gradient(to bottom, var(--softdark-color), var(--soft-color));
       }    
       #backdiv {
@@ -1609,7 +1619,10 @@ input[type="checkbox"] {
     opacity: 0;
 }
 
-
+body.big .checkstyleddiv input {
+    top: 10px;
+    left: -48px;
+}
 input[type="checkbox"] + label {
     color: var(--text-color);
 }
@@ -1800,13 +1813,16 @@ body.big .newLayout #editCatss td:not(.ellipsis) .titletext {
     line-height: 21px;
 }
 body.big .newLayout #editClassif .titletext {
-  top: -4px !important;
+  top: -5px !important;
+}
+body.big .newLayout #editClassif .ellipsis .titletext {
+  top: -1px !important;
 }
 .newLayout .fa-undo.mainbutton {
    font-size: 14px !important;
 }
 body.big .newLayout .fa-undo..mainbutton {
-   font-size: 17px !important;
+   font-size: 17px !important; 
 }
 
 
@@ -1971,7 +1987,7 @@ body.big .newLayout ul#classiful li {
 body.big .tags {
   font-size: 17px !important;
   height: 21px;
-  top: -9px;
+  top: -8px;
 }
 
 
@@ -1983,7 +1999,7 @@ body.big .tags {
 body.big .linkbar {
     left: 9px;
     font-size: 22px;
-    top: -6px;
+    top: -5px;
 }
 
 
@@ -1993,7 +2009,8 @@ body.big .linkbar {
       top: -5px;
 }
 body.big .linkbar.fa-internet-explorer {
-      font-size: 17px;
+      font-size: 18px;
+      top: -3px;
 }
 
 
@@ -2004,8 +2021,8 @@ body.big .linkbar.fa-internet-explorer {
 }
 body.big .linkbar.fa-youtube-play{
     left: 9px;
-    font-size: 17px;
-    top: -6px;  
+    font-size: 19px;
+    top: -3px;
 }
 
 
@@ -2018,7 +2035,7 @@ body.big .linkbar.fa-youtube-play{
 body.big #expand {
     font-size: 20px;
     right: 13px;
-    top: 3px;
+    top: 4px;
     left: auto;
 }
 
@@ -2029,16 +2046,16 @@ body.big #expand {
     font-size: 11.5px !important;
 }
 body.big #tweetcount {
-    padding: 0px 4px !important;
+    padding: 2px 6px !important;
     line-height: 20px !important;
-    font-size: 14px !important;  
-}
-
-
-#tweetcount i {
     font-size: 14px !important;
 }
-body.big #tweetcount i {
+
+
+#tweetcount i:not(#gotop) {
+    font-size: 14px !important;
+}
+body.big #tweetcount i:not(#gotop) {
     font-size: 14px !important;  
 }
 
@@ -2061,12 +2078,17 @@ body.big #tweetcount > div > div {
 }
 
 #gotop {
-    font-size: 20px;
+    font-size: 20px !important;
     padding-top: 1px;
+    bottom: -36px;
 }
-body.big #gotop {
-    font-size: 20px;
-    padding-top: 1px;
+body.big #tweetcount #gotop {
+    font-size: 29px !important;
+    padding-top: 0px;
+    bottom: -46px;
+    width: 20px;
+    padding-left: 8px;
+    /* padding-bottom: 26px; */
 }
 
 .buttonstable tr:first-child .firsttd i.fa-internet-explorer {
