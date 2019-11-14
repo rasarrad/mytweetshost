@@ -406,7 +406,8 @@ function openmenu() {
 /////////////////////////////////////////////////////////////////////////
 
 
-function gotop() {
+function gotop(e) {
+    e.stopPropagation();
     $(window).scrollTop( 0 );
 }   
 
