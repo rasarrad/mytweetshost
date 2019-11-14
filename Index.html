@@ -475,6 +475,10 @@
           }
   }
 
+  function insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }
+
   function customizeTweet(id, style) {
       var maxTweets = 100000;
       var isChromium = window.chrome;
