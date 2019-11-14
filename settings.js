@@ -220,7 +220,8 @@ var openSettingsPopup = function(jsonobj)
     }
 
 
-    $('#linkChange').fadeIn();  
+    $('#linkChange').fadeIn(); 
+    $('#linkChange').css('display', 'flex');  
 } 
 
 
