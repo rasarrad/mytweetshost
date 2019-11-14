@@ -447,11 +447,9 @@
                     tweetStyle.type = "text/css";
     
                     if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
-                        alert(1)
                         var styleTag = document.getElementById("twitter-widget-" + i).shadowRoot;
-                        insertAfter(tweetStyle, styleTag.childNodes[0]);
+                        insertAfter(tweetStyle, styleTag);
                     } else {
-    alert(2)
                         var tweetWidget = document.getElementById("twitter-widget-" + i).contentDocument;
                         $(tweetWidget.head).prepend(tweetStyle);
                     } 
