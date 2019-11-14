@@ -1156,8 +1156,8 @@ body.big #editTags {
       .newLayout {margin-top: 52px !important;height: calc(100% - 49px) !important;}
 
       .newLayout > div {
-          margin-top: 23px !important;
-          max-height: calc(100% - 73px) !important;
+          margin-top: 20px !important;
+          max-height: calc(100% - 75px) !important;
       }
 }
 .newLayout > div {
@@ -1844,7 +1844,7 @@ body.big .newLayout #editTags td.ellipsis .titletext {
 }
 
 body.big .newLayout #editTags td:not(.ellipsis) .titletext {
-  top: 1px !important;
+  top: -1px !important;
   line-height: 18px;
 }
 body.big .newLayout #editCatss td:not(.ellipsis) .titletext {
@@ -2182,7 +2182,7 @@ body.big .newLayout > div .buttonstable tr:last-child td {
     /* padding: 9px 0px 8px 0px; */
 }
 
-/*
+
 body.notransit * {
   -o-transition-property: none !important;
   -moz-transition-property: none !important;
@@ -2190,14 +2190,8 @@ body.notransit * {
   -webkit-transition-property: none !important;
   transition-property: none !important;
 }
-*/
-* {
-  -o-transition-property: none !important;
-  -moz-transition-property: none !important;
-  -ms-transition-property: none !important;
-  -webkit-transition-property: none !important;
-  transition-property: none !important;
-}
+
+
 
 
 

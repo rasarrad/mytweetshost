@@ -19,12 +19,34 @@ function expandCat(obj) {
 }
 
 
-function test() {
-    if ($('body').hasClass('big'))
+function zoom() {
+    $('body').addClass('notransit');
+
+    if ($('body').hasClass('big')) {
+        customizeTweets(null, true, false);
         $('body').removeClass('big');
-    else
+    }
+    else {
+        customizeTweets(null, true, true);
         $('body').addClass('big');
+    }
+    var setHeight = "18px";
+
+    if ($('body').hasClass('big'))
+        setHeight = "31px";
+
+    $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
+        var table = $(element);
+        table.css('transition', 'max-height .01s');
+        table.css('max-height', setHeight);
+        table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
+        table.find('td.el').addClass('ellipsis');
+    });
+    $('body').removeClass('notransit');   
 }
+
+
+
 var openSettingsPopup = function(jsonobj) 
 {
     // GENERAL
