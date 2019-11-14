@@ -7,6 +7,8 @@
 /////////////////////////////////////////////////////////////////////////
 
 function expandCat(obj) {
+    fixfocus(obj);
+
     var functorun = function(jsonvar) 
     { 
         if (jsonvar != null) {
@@ -15,7 +17,7 @@ function expandCat(obj) {
     } 
 
     //getJsonbyid($(obj).parent().attr("id"), functorun);
-    getJsonbyid(28, functorun);
+    getJsonbyid(28, functorun); // xyz
 }
 
 function fixfocus(el)
@@ -231,6 +233,7 @@ var openSettingsPopup = function(jsonobj)
 
 
 function closeSettingsPopup(obj) {
+    fixfocus(obj);
     $('body, html').css('overflow-y', 'auto');
     $('#linkChange').fadeOut();
 }
@@ -301,6 +304,7 @@ function tagsInputOnChange(obj) {
 
  
 function addTextTag(obj) {
+    fixfocus(obj);
     if ($('#addtaginput').val() != "") {
         $('#tagsinput').val($('#tagsinput').val() + " " + $('#addtaginput').val());
         $('#tagsinput').trigger("change");
@@ -311,7 +315,8 @@ function addTextTag(obj) {
 
 function undoTags(e, obj) {
     e.stopPropagation();
-    
+    fixfocus(obj);
+
     $('#tagsinput').val($('#tagsinput').attr("ctags"));
     $(obj).hide();
     var functorun = function() 
@@ -482,7 +487,8 @@ function markCategoriesCheckBoxs() {
 
 function undoCats(e, obj) {
     e.stopPropagation();
-    
+    fixfocus(obj);
+
     $('#catsinput').val($('#catsinput').attr("ccats"));
     $(obj).hide();
     var functorun = function() 
@@ -565,6 +571,7 @@ function clickLiClassif(e, obj) {
 
 function undoClassif(e, obj) {
     e.stopPropagation();
+    fixfocus(obj);
     
     $('#classifinput').val($('#classifinput').attr("cclassif"));
     $(obj).hide();
@@ -609,7 +616,8 @@ function infoInputOnKeyup(obj) {
 
 function undoInfo(e, obj) {
     e.stopPropagation();
-    
+    fixfocus(obj);
+
     $('#infoinput').val($('#infoinput').attr("cinfo"));
     $(obj).hide();
     var functorun = function() 

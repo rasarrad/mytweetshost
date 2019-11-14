@@ -220,7 +220,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         var newtweet = $('#main').append($('<div id="inid" class="tweet' + xclass + '"></div>'));
                         var newtweetobj = $('#inid');
 
-                        newtweetobj.append($('<div class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="fa fa-edit ' + expandclass + '"></i><i class="linkbar fa fa-' + typefa + '" onclick="javascript: externallinkopen(\'' + val.url + '\', \'' + val.id + '\')"></i>'));
+                        newtweetobj.append($('<div class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
                         
                         newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
                         
@@ -1044,7 +1044,8 @@ var countalltweets = function(id) {
 /////////////////////////////////////////////////////////////////////////
 
 
-var togglecriterions = function() {
+var togglecriterions = function(obj) {
+    fixfocus(obj);
     if ($('.toptitle').css('display') == 'none') {
         $(".top").css("transition", "all 0.7s");
         $('.top').css('opacity', '0');

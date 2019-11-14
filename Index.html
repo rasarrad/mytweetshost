@@ -40,7 +40,7 @@
     </div>
     <i onmouseover="javascript: gotop(event)" onclick="javascript: gotop(event)" id="gotop" class="fa fa-angle-up"></i>
       </div>
-<i class="fa fa-bars menubutton" onclick="javascript: openmenu()"></i>
+<i class="fa fa-bars menubutton clicable" onclick="javascript: openmenu(this)"></i>
 <div id="menu" style="Z-INDEX: 999999;">
   <ul>
     <li onclick="javascript: clickmenu('all', 'All Links')">All Links<div id="all">0</div></li>
@@ -58,7 +58,7 @@
 <input id="pasteinput" style="position: absolute;width: 89px;top: 11px;left: 56px;height: 28px;border: 0;cursor: default;background: transparent;">
 <div id="openadd" style="position: absolute;width: 56px;top: 11px;right: 108px;height: 28px;border: 0;cursor: default;background: transparent;"></div>
 
-<i id="sear" onclick="javascript: togglecriterions()" class="fa fa-search"></i>
+<i id="sear" onclick="javascript: togglecriterions(this)" class="fa fa-search clicable"></i>
 <span class="label text top">Text</span>
 <input type="text" class="top" style="margin-right: 10px;" id="filtertext"></input>
 <span class="label tag top">Tag</span>
@@ -73,8 +73,8 @@
 <button id="btnsearch" class="top noeffect" style="position: relative;top: -8px;margin-left: 38px;">Search<i class="fa fa-search"></i></button>
 <button id="btnreset" class="top noeffect" style="position: relative;top: -8px;margin-left: 10px;">Reset<i class="fa fa-eraser"></i></button>
 <span class="noselect toptitle" style="font-family: Helvetica, Roboto, 'Segoe UI', Calibri, sans-serif !important;font-variant-caps: normal !important;text-transform: uppercase;" id="toptitle">bookmark station</span>
-<i id="addtweet" class="fa fa-plus-square"></i>
-<i id="generate" class="fa fa-cogs"></i>
+<i id="addtweet" class="fa fa-plus-square clicable"></i>
+<i id="generate" class="fa fa-cogs clicable"></i>
 <i id="zoomin" onclick="javascript: zoom(this)" class="fa fa-search-plus"></i>
 <input type="hidden" id="selectedcat" value="all">
 <input type="hidden" id="selectedcattext" value="All Links">
@@ -182,16 +182,16 @@
               </tr>
               <tr class="buttonstr" style="text-align: center;">
                 <td style="position: relative;left: -1px;">
-                    <i onclick="removetweet(this)" id="removetweetp" class="fa fa-eraser fa-flip-horizontal"></i>
+                    <i onclick="removetweet(this)" id="removetweetp" class="fa fa-eraser fa-flip-horizontal clicable"></i>
                 </td>
                 <td style="position: relative;left: 0px; padding-top: 6px;">
-                    <i onclick="internallinkcopy(this)" id="internallinkp" class="fa fa-link"></i>
+                    <i onclick="internallinkcopy(this)" id="internallinkp" class="fa fa-link clicable"></i>
                 </td>
                 <td style="position: relative;left: 1px;">
-                    <i onclick="externallinkcopy(this)" id="externallinkp" class="fa fa-external-link"></i>
+                    <i onclick="externallinkcopy(this)" id="externallinkp" class="fa fa-external-link clicable"></i>
                 </td>
-                <td onclick="closeSettingsPopup()" style="position: relative;left: 2px;">
-                    <i id="closepopupp" class="fa fa-window-close"></i><div style="position: absolute; height: 41px; width: 2px; top: 0px; right: -1px; background: var(--dark-color);"></div>
+                <td onclick="closeSettingsPopup(this)" style="position: relative;left: 2px;">
+                    <i id="closepopupp" class="fa fa-window-close clicable"></i><div style="position: absolute; height: 41px; width: 2px; top: 0px; right: -1px; background: var(--dark-color);"></div>
                 </td>                
               </tr>
             </tbody>
@@ -213,7 +213,7 @@
               <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;">
                   <input id="tagsinput" style="margin-left: 3px;display:none;" ctags="">
                   <input id="addtaginput" type="text" style="margin-left: 3px;">
-                  <i class="fa fa-plus-square mainbutton" onclick="javascript: addTextTag(this)" style="font-size: 17px;padding-left: 4px;position: relative;top: 2px;padding-right: 10px;"></i>
+                  <i class="fa fa-plus-square mainbutton clicable" onclick="javascript: addTextTag(this)" style="font-size: 17px;padding-left: 4px;position: relative;top: 2px;padding-right: 10px;"></i>
                   <select id="tagsselect"><option value="notag">All Tags</option><option value="Assange">Assange</option><option value="John">John</option><option value="Julian">Julian</option><option value="Pilger">Pilger</option><option value="bernie">bernie</option><option value="climate">climate</option><option value="corbyn">corbyn</option><option value="coronel">coronel</option><option value="coup">coup</option><option value="dailyshow">dailyshow</option><option value="failed">failed</option><option value="fakenews">fakenews</option><option value="fox">fox</option><option value="funny">funny</option><option value="gun">gun</option><option value="hannity">hannity</option><option value="hongkong">hongkong</option><option value="israel">israel</option><option value="joe">joe</option><option value="maduro">maduro</option><option value="max">max</option><option value="moto">moto</option><option value="nunes">nunes</option><option value="palestine">palestine</option><option value="racism">racism</option><option value="rogan">rogan</option><option value="sanders">sanders</option><option value="syria">syria</option><option value="usa">usa</option><option value="venezuela">venezuela</option><option value="west">west</option><option value="ww2">ww2</option></select> </td>                                          
           </tr>  
         <tr>  
@@ -432,13 +432,13 @@
                 if (forceProcess || obj.attr("processed") != "yes") {
                     hasFound = true;
                     obj.attr("processed", "yes");
-                    var tweetCSS = ".EmbeddedTweet{height:auto !important;background: var(--dark-color) !important;border: 1px solid #b0b0b0 !important; margin: 0 !important;}.EmbeddedTweet {max-width: none !important;}.Icon.Icon--twitter {display: none !important;}.SummaryCard-contentContainer{background: #00497b !important;}.SummaryCard-contentContainer:hover{background: #01355a !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;}.Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar:not(.Identity-avatar) {height: 50px !important;width: 50px !important;position: relative !important;top: -7px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important; padding-top: 0 !important;}.TwitterCard-container {max-width: 10000px!important;}";
+                    var tweetCSS = ".EmbeddedTweet{height:auto !important;background: var(--dark-color) !important;border: 1px solid #b0b0b0 !important; margin: 0 !important;}.EmbeddedTweet {max-width: none !important;}.Icon.Icon--twitter {display: none !important;}.SummaryCard-contentContainer{background: #00497b !important;}.SummaryCard-contentContainer:hover{background: #01355a !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;}.Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar:not(.Identity-avatar) {height: 50px !important;width: 50px !important;position: relative !important;top: -7px !important;}.Avatar.Identity-avatar {width: 20px !important;height: 22px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important; padding-top: 0 !important;}.TwitterCard-container {max-width: 10000px!important;}";
                                    
                     if ($(window).width() < 1200) {
                       if (big)
-                          tweetCSS = ".EmbeddedTweet{height:auto !important; background: var(--dark-color) !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;}.SummaryCard-contentContainer{background: #001e33 !important;}.SummaryCard-contentContainer:hover{background: #01355a !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;}.Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar:not(.Identity-avatar) {height: 50px !important;width: 50px !important;position: relative !important;top: -7px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important;}.TwitterCard-container {border: 1px solid #044376 !important;max-width: 10000px!important;}";
+                          tweetCSS = ".EmbeddedTweet{height:auto !important; background: var(--dark-color) !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;}.SummaryCard-contentContainer{background: #001e33 !important;}.SummaryCard-contentContainer:hover{background: #01355a !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;}.Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar:not(.Identity-avatar) {height: 50px !important;width: 50px !important;position: relative !important;top: -7px !important;}.Avatar.Identity-avatar {width: 20px !important;height: 22px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important;}.TwitterCard-container {border: 1px solid #044376 !important;max-width: 10000px!important;}";
                       else 
-                          tweetCSS = ".EmbeddedTweet{height:auto !important; background: var(--dark-color) !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;}.SummaryCard-contentContainer{background: #001e33 !important;}.SummaryCard-contentContainer:hover{background: #01355a !important;}.Tweet-card {background: transparent !important;}.TwitterCard-container {border: 1px solid #044376 !important;max-width: 10000px!important;}.TweetAuthor-name {font-size: 16px !important;}.Avatar:not(.Identity-avatar) {height: 36px !important;width: 36px !important;position: inherit !important;}.TweetAuthor-screenName {font-size: 14px !important;}.Tweet-body{font-size: 16px !important;}.TweetInfo {font-size: 12px !important;}.CallToAction {font-size: 13px !important;}.Tweet-card {font-size: 14px !important;}.TweetAuthor-avatar{width: 36px !important;height: 36px !important;}";    
+                          tweetCSS = ".EmbeddedTweet{height:auto !important; background: var(--dark-color) !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;}.SummaryCard-contentContainer{background: #001e33 !important;}.SummaryCard-contentContainer:hover{background: #01355a !important;}.Tweet-card {background: transparent !important;}.TwitterCard-container {border: 1px solid #044376 !important;max-width: 10000px!important;}.TweetAuthor-name {font-size: 16px !important;}.Avatar:not(.Identity-avatar) {height: 36px !important;width: 36px !important;position: inherit !important;}.Avatar.Identity-avatar {width: 16px !important;height: 16px !important;}.TweetAuthor-screenName {font-size: 14px !important;}.Tweet-body{font-size: 16px !important;}.TweetInfo {font-size: 12px !important;}.CallToAction {font-size: 13px !important;}.Tweet-card {font-size: 14px !important;}.TweetAuthor-avatar{width: 36px !important;height: 36px !important;}";    
                     }
                     var tweetStyle = document.createElement("style");
     

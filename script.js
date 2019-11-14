@@ -196,6 +196,9 @@ $( document ).ready(function() {
     ///////////////////////////////////////
     
     $( "#generate" ).bind( "click", function( event ) {
+
+      fixfocus(this);
+
       if (!dblFlag) {
           dblFlag = true;
           dblClickTimeout = setTimeout(function() {     
@@ -307,6 +310,7 @@ $( document ).ready(function() {
     });
 
     document.getElementById("addtweet").addEventListener('click', () => {
+        fixfocus(this);
         navigator.clipboard.readText()
         .then(text => {
             if (!dblFlag) {
@@ -402,7 +406,8 @@ function getParameterByName(name) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function openmenu() {
+function openmenu(obj) {
+    fixfocus(obj);
     if ($('#menu').css('width') == '0px') {
         $('#menu').css('width', '180px');
     }
@@ -427,13 +432,13 @@ function gotop(e) {
 
 
 function internallinkcopy(obj) {
-    /*$('#linkresult').val("https://sleepy-mclean-3aea2d.netlify.com/?tweetid=" + $('#linkChange').attr('cid'));
+    fixfocus(obj.nextSibling);
+    
+    $('#linkresult').val("https://sleepy-mclean-3aea2d.netlify.com/?tweetid=" + $('#linkChange').attr('cid'));
     $("#linkresult").select();
     document.execCommand('copy');
     $("#linkresult").blur();
     showMessage("Internal Link Copied To Clipboard"); 
-    */
-   doZoom(false);
 }
 
 
@@ -441,7 +446,8 @@ function internallinkcopy(obj) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function externallinkopen(link, id) {
+function externallinkopen(obj, link, id) {
+    fixfocus(obj);
     $('#linkresult').val(link);
     $("#linkresult").select();
     document.execCommand('copy');
@@ -452,22 +458,12 @@ function externallinkopen(link, id) {
 }
 
 function externallinkcopy(obj) {
-   /*$('#linkresult').val($('#linkChange').attr('clink'));
+    fixfocus(obj.nextSibling);
+    $('#linkresult').val($('#linkChange').attr('clink'));
     $("#linkresult").select();
     document.execCommand('copy');
     $("#linkresult").blur();
     showMessage("External Link Copied To Clipboard"); 
-    */
-   doZoom(true);
-}
-
-function doZoom(zoomin) {
-    if (zoomin) {
-        
-    }
-    else {
-        
-    }
 }
 
 /////////////////////////////////////////////////////////////////////////

@@ -126,8 +126,9 @@ function undosaveinfo(obj, id) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function removetweet() {
-    alert("make remove function");
+function removetweet(obj) {
+    fixfocus(obj.nextSibling);
+    alert("make remove function"); // xyz
     return false;
 
     var isdeleted = readCookie(id + "isdeleted");

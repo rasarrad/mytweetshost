@@ -2170,7 +2170,7 @@ body.big .buttonstable tr:first-child .firsttd i.fa-twitter {
     left: 1px !important;
 }
 
-i:not(.notclicable):active {
+i.clicable:active {
    color: #ffff6c !important;
 }
 
