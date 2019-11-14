@@ -50,9 +50,9 @@ $( document ).ready(function() {
 
     var hasZoom = readCookie("hasZoom");
     if (hasZoom && hasZoom.length > 0)
-        $("body").addClass("big");
-    else   
         $("body").removeClass("big");
+    else   
+        $("body").addClass("big");
     
     zoom();
 

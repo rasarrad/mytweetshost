@@ -20,14 +20,12 @@ function expandCat(obj) {
 
 function fixfocus(el)
 {
-    var par = el.parentNode;
-    var next = el.nextSibling;
-    par.removeChild(el);
-    setTimeout(function() {par.insertBefore(el, next);}, 0)
+    $(el).clone(el).insertAfter($(el));
+    $(el).remove();
 }
 
 function zoom() {
-
+    fixfocus(this);
     $('body').addClass('notransit');
 
     if ($('body').hasClass('big')) {
