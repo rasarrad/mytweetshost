@@ -20,15 +20,22 @@ function expandCat(obj) {
 
 
 function zoom() {
+
     $('body').addClass('notransit');
 
     if ($('body').hasClass('big')) {
+        $('#zoomin').addClass('fa-search-plus');
+        $('#zoomin').removeClass('fa-search-minus');
         customizeTweets(null, true, false);
         $('body').removeClass('big');
+        createCookie("hasZoom", "");
     }
     else {
+        $('#zoomin').addClass('fa-search-minus');
+        $('#zoomin').removeClass('fa-search-plus');
         customizeTweets(null, true, true);
         $('body').addClass('big');
+        createCookie("hasZoom", true)
     }
     var setHeight = "18px";
 

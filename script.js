@@ -47,7 +47,17 @@ $( document ).ready(function() {
 
    countalltweets();
     setviewmode();
-   var functorun = function(jsonvar) 
+
+    var hasZoom = readCookie("hasZoom");
+    if (hasZoom && hasZoom.length > 0)
+        $("body").addClass("big");
+    else   
+        $("body").removeClass("big");
+    
+    zoom();
+
+    /*
+    var functorun = function(jsonvar) 
    { 
        if (jsonvar != null) {
            openSettingsPopup(jsonvar);
@@ -55,7 +65,7 @@ $( document ).ready(function() {
    } 
 
    getJsonbyid(28, functorun);
-
+ */
  
     var hasChanges = readCookie("hasChanges");
     if (hasChanges && hasChanges.length > 0)
