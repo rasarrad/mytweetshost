@@ -1203,7 +1203,7 @@ body.big #editTags {
     left: 0;
     bottom: 0;
     right: 0;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     background: #0000009c;
     touch-action: none;
