@@ -75,7 +75,7 @@
 <span class="noselect toptitle" style="font-family: Helvetica, Roboto, 'Segoe UI', Calibri, sans-serif !important;font-variant-caps: normal !important;text-transform: uppercase;" id="toptitle">bookmark station</span>
 <i id="addtweet" class="fa fa-plus-square"></i>
 <i id="generate" class="fa fa-cogs"></i>
-<i id="zoomin" onclick="javascript: zoom()" class="fa fa-search-plus"></i>
+<i id="zoomin" ontouchend="this.onclick=fixfocus" onclick="javascript: zoom()" class="fa fa-search-plus"></i>
 <input type="hidden" id="selectedcat" value="all">
 <input type="hidden" id="selectedcattext" value="All Links">
 <input type="hidden" id="recordspersearch" value="5">
