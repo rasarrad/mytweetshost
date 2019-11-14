@@ -28,7 +28,7 @@ function test() {
 var openSettingsPopup = function(jsonobj) 
 {
     // GENERAL
-    var setHeight = "21px";
+    var setHeight = "18px";
 
     if ($('body').hasClass('big'))
         setHeight = "31px";
@@ -203,7 +203,7 @@ function closeSettingsPopup(obj) {
 
 function editSetting(e, obj) {
     e.stopPropagation();
-    var setHeight = "21px";
+    var setHeight = "18px";
 
     if ($('body').hasClass('big'))
         setHeight = "31px";
@@ -231,10 +231,11 @@ function editSetting(e, obj) {
         table.css('transition', 'max-height .5s');
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
-        setTimeout(function() { 
+        table.find('td.el').addClass('ellipsis');
+        /*setTimeout(function() { 
             table.find('td.el').addClass('ellipsis');
         }, 500);
-        
+        */
     }
 }
 
