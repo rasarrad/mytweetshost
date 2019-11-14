@@ -24,8 +24,8 @@ function fixfocus(el)
     $(el).remove();
 }
 
-function zoom() {
-    fixfocus(this);
+function zoom(obj) {
+    fixfocus(obj);
     $('body').addClass('notransit');
 
     if ($('body').hasClass('big')) {
