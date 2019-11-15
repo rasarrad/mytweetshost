@@ -310,7 +310,6 @@ $( document ).ready(function() {
     });
 
     document.getElementById("addtweet").addEventListener('click', () => {
-        fixfocus(this);
         navigator.clipboard.readText()
         .then(text => {
             if (!dblFlag) {
