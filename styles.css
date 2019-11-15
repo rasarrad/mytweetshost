@@ -859,8 +859,8 @@ body.big #main {
 }
 
 .newLayout > div {
-    margin-top: 20px !important;
-    max-height: calc(100% - 75px) !important;
+    /* margin-top: 20px !important; */
+    /* max-height: calc(100% - 75px) !important; */
 }
 body.big .newLayout > div {
     margin-top: 12px !important;
@@ -1292,8 +1292,8 @@ body.big #editTags {
         max-width: none;
     }
   .newLayout > div {
-        margin-top: 20px !important;
-        max-height: calc(100% - 75px) !important;
+        /* margin-top: 20px !important; */
+        /* max-height: calc(100% - 180px) !important; */
     }
     body.big .newLayout > div {
         margin-top: 14px !important;
@@ -1469,6 +1469,8 @@ body.big #editTags {
     overscroll-behavior: none;
     position: fixed;
     top: 65px;
+    max-height: calc(100% - 180px) !important;
+    margin-top: 20px !important;
 }
 
 .newLayout > div .titletable {
