@@ -176,9 +176,11 @@ ol > li {
     background-image: linear-gradient(to bottom, var(--soft-color) 3%, var(--dark-color) 80%);
 }
 body.big .gradiantback {
-    top: 31px;
+    top: 27px;
 }
-    
+ body.big .html .gradiantback {
+    top: 24px;
+}   
 .innermask .fa-circle-o-notch {
   color: var(--high-color);
   position: relative;
@@ -964,59 +966,11 @@ body.big .linkbar {
     left: calc(50% - 334px);
 }
 #expand {
-    right: calc(50% - 340px);
+    right: calc(50% - 334px);
 }
 body.big #expand {
-    right: calc(50% - 337px);
+    right: calc(50% - 331px);
 }
-                               
-@media only screen and (max-width: 1000px) {
-      .tweet .innertweet {
-        position: relative;
-        top: 10px;
-        border-radius: 5px;
-        border: 1px solid white;
-        /* width: calc(100% - 0px) !important; */
-        margin-left: calc(50% - 249px) !important;
-        margin-right: 0px !important;
-        top: -12px;
-        max-width: 498px;
-    }
-     .linkbar {
-        left: calc(50% - 228px);
-    }
-    body.big .linkbar {
-        left: calc(50% - 234px);
-    }
-    #expand {
-        right: calc(50% - 228px);
-    }
-    body.big #expand {
-        right: calc(50% - 233px);
-    } 
-    .tweet:not(:nth-of-type(1)) .tags {
-      padding-left: calc(48px);
-      margin-left: calc(50% - 242px);
-      width: 435px;
-    }
-    .tweet:nth-of-type(1) .tags {
-      padding-left: calc(50% - 199px);
-    }    
-    .tweet:not(:nth-of-type(1)) .gradiantback {
-      padding-left: calc(48px);
-      margin-left: calc(50% - 242px);
-      width: 435px;
-    }   
-    .bottomgradiantback:not(:first-of-type) {
-      padding-left: calc(48px);
-      margin-left: calc(50% - 242px);
-      width: 435px !important;
-    }      
-}
-
-
-
-
 .gradiantback {
     display: block;
 }
@@ -1027,9 +981,9 @@ body.big #expand {
     position: absolute;
     width: 100%;
     background: rgba(0, 0, 0, 0.81);
-    top: 9px;
+    /* top: 9px; */
     z-index: 9;
-    height: 23px;
+    /* height: 23px; */
     display: block;
     background-image: linear-gradient(to bottom, var(--soft-color) 10%, var(--dark-color) 83%);
 }
@@ -1069,7 +1023,7 @@ body:not(.big) .tweet:not(:last-child) .bottomgradiantback {
   bottom: -5px;
 }
 .tweet.html:not(:last-child) .bottomgradiantback {
-    bottom: 2px;
+    bottom: 0px;
 }
 
 
@@ -1077,44 +1031,135 @@ body:not(.big) .tweet:not(:last-child) .bottomgradiantback {
   background-image: linear-gradient(to bottom, var(--dark-color) 13%, var(--soft-color) 80%);
   }
 body:not(.big) .yt.tweet .bottomgradiantback {
-  height: 15px;
-  bottom: 6px;
+  /* height: 15px; */
+  /* bottom: 6px; */
   }     
   .html.tweet .bottomgradiantback {
   background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--soft-color) 85%);
 } 
   .tweet iframe {
   width: calc(100% - 0px) !important;
-  background: white;
   margin-left: 0px !important;
   margin-right: 12px !important;
   border-radius: 0px !important;
   border-top: 0 !important;
-  margin-bottom: 22px;
+  margin-bottom: 1px;
   margin-top: 0px !important;
   border: 0px solid white;
   }
   .tweet.html iframe {
-    margin-top: 0px !important;
+    margin-top: 11px !important;
     }
-
+  .tweet.yt iframe {
+    margin-top: 4px !important;
+    height: 369px;
+    }
 
   .tweet.html iframe {
       width: calc(100% - 0px) !important;
       border: 0px solid #bbbbbb;
-      height: 72vw;
+      height: 48vw;
   }
 
           .tweet.yt {
-      background: #101010;
+      /* background: #101010; */
   }
           .tweet.html {
-      background: #002646;
+      /* background: #002646; */
       top: 0px;
   }
   #backdiv {
     background-image: linear-gradient(var(--soft-color), var(--softdark-color)) !important;
   }
+
+.tweet iframe {
+  position: relative;
+  top: 10px;
+  border-radius: 5px;
+  border: 0px solid white;
+  width: calc(100% - 0px) !important;
+  margin-left: calc(50% - 327px) !important;
+  margin-right: 0px !important;
+  top: -12px;
+  max-width: 656px;
+}   
+                                   
+@media only screen and (max-width: 1000px) {
+    .tweet.yt iframe {
+        margin-top: 4px !important;
+        height: 305px;
+    }
+    .tweet iframe {
+      position: relative;
+      top: 10px;
+      border-radius: 5px;
+      border: 0px solid white;
+      width: calc(100% - 0px) !important;
+      margin-left: calc(50% - 236px) !important;
+      margin-right: 0px !important;
+      top: -12px;
+      max-width: 470px;
+    }  
+
+      .tweet .innertweet {
+        position: relative;
+        top: 10px;
+        border-radius: 5px;
+        border: 1px solid white;
+        /* width: calc(100% - 0px) !important; */
+        margin-left: calc(50% - 249px) !important;
+        margin-right: 0px !important;
+        top: -12px;
+        max-width: 498px;
+    }
+     .linkbar {
+        left: calc(50% - 240px);
+    }
+    body.big .linkbar {
+        left: calc(50% - 243px);
+    }
+    #expand {
+        right: calc(50% - 237px);
+    }
+    body.big #expand {
+        right: calc(50% - 241px);
+    } 
+    .tweet .tags {
+      padding-left: calc(50% - 209px);
+      /* margin-left: calc(50% - 268px); */
+      /* width: 480px; */
+      /* border-bottom-left-radius: 18px; */
+      /* border-bottom-right-radius: 18px; */
+    }
+    .tweet:nth-of-type(1) .tags {
+      padding-left: calc(50% - 199px);
+    }    
+    .tweet:not(:nth-of-type(1)) .gradiantback {
+      /* padding-left: calc(48px); */
+      /* margin-left: calc(50% - 268px); */
+      /* width: 480px; */
+      /* border-bottom-left-radius: 20px; */
+      /* border-bottom-right-radius: 20px; */
+    }   
+    .tweet.yt .gradiantback {
+      top: 16px;
+    } 
+    body.big .tweet.yt .gradiantback {
+      top: 26px;
+    }             
+    .bottomgradiantback:not(:first-of-type) {
+      /* padding-left: calc(48px); */
+      /* margin-left: calc(50% - 268px); */
+      /* width: 480px !important; */
+      /* border-top-left-radius: 10px; */
+      /* border-top-right-radius: 10px; */
+    }      
+}
+
+
+
+
+
 
   twitter-widget {
       width: 100% !important;
@@ -1218,6 +1263,22 @@ body.big #editTags {
 
 
 @media only screen and (max-width: 700px) {
+
+    .tweet iframe {
+        position: relative;
+        top: 10px;
+        border-radius: 5px;
+        border: 0px solid white;
+        width: calc(100% - 0px) !important;
+        margin-left: 0 !important;
+        margin-right: 0px !important;
+        top: -12px;
+        max-width: 470px;
+        height: 61vw !important;
+    }
+    .tweet.html iframe {
+        height: 100vw !important;
+    }  
     .tweet .innertweet {
         position: relative;
         top: 10px;
@@ -1238,10 +1299,10 @@ body.big #editTags {
         max-height: calc(100% - 75px) !important;
     } 
     .tags {
-      padding-left: 38px;
+      padding-left: 38px !important;
     }   
     body.big .tags {
-      padding-left: 45px;
+      padding-left: 42px !important;
     }   
     
     #expand {
@@ -1252,10 +1313,24 @@ body.big #editTags {
     }  
     .linkbar {
         left: 9px;
+        top: -2px !important;
     }
+    .linkbar.fa-youtube-play {
+        top: -1px !important;
+    }    
+    .linkbar.fa-internet-explorer {
+        top: 0px !important;
+    }      
     body.big .linkbar {
         left: 8px;
+        top: 2px !important;
     }
+    body.big .linkbar.fa-youtube-play {
+        top: 4px !important;
+    }    
+    body.big .linkbar.fa-internet-explorer {
+        top: 5px !important;
+    }     
   .toptitle {
       top: 12px;
       font-size: 13px;
@@ -2215,25 +2290,25 @@ body.big .linkbar {
 
 
 .linkbar.fa-internet-explorer {
-      left: 9px;
+      /* left: 9px; */
       font-size: 13px;
-      top: -5px;
+      top: -1px;
 }
 body.big .linkbar.fa-internet-explorer {
       font-size: 18px;
-      top: -3px;
+      top: 4px;
 }
 
 
 .linkbar.fa-youtube-play{
-    left: 9px;
+    /* left: 9px; */
     font-size: 14px;
-    top: -5px;
+    top: -1px;
 }
 body.big .linkbar.fa-youtube-play{
-    left: 9px;
+    /* left: 9px; */
     font-size: 19px;
-    top: -3px;
+    top: 4px;
 }
 
 
