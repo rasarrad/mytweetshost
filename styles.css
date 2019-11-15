@@ -35,6 +35,7 @@
   padding-bottom: 30px;
   background-image: linear-gradient(to bottom, #0081cc , #008ada );
   /* height: 30px; */
+  background: var(--dark-color);
   }
 
   .innertweet {
@@ -64,6 +65,7 @@
     top: 2px;
     font-size: 14px !important;
     color: var(--high-color);
+    cursor: default;
   }
   .EmbeddedTweet-tweet {
     background: #80808061;
@@ -219,8 +221,13 @@ body.big .gradiantback {
     background-image: linear-gradient(to bottom, #003056, #004a86);
     background: transparent;
     }
+body.big .menubutton {
+    font-size: 54px;
+}
+    
     .menubutton:hover {
-      color: var(--dark-color);
+      /* color: var(--dark-color); */
+      opacity: 0.6;
     }
     #menu {
       width: 0px;
@@ -328,79 +335,75 @@ body.big .gradiantback {
   position: absolute;
   transition: all 1s;
 }
-    button {
-      cursor: pointer;
-      background: #0084d0;
-      border: 1px solid white;
-      height: 27px;
-      color: white;
-      font-weight: bold;
-      font-size: 12px;
-      padding-top: 3px;
-      min-width: 82px;
-      font-variant: small-caps;
-      border-radius: 4px;
-      
-    }
-    button:not(.noeffect) {
-      transition: all 0.6s; /* xyx */
-    }
-    button:hover {
-      color: #c6e9fd;
-      border: 1px solid #0090e4;
-    }
-    button > i {
-      font-size: 14px !important;
-      font-weight: normal !important;
-      padding-left: 5px;
-      padding-right: 2px;
-      float: right;
-      position: relative;
-      top: -1px;
-    }
+button {
+  cursor: pointer;
+  background: #0084d0;
+  border: 1px solid white;
+  height: 27px;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  padding-top: 3px;
+  min-width: 82px;
+  font-variant: small-caps;
+  border-radius: 4px;
 
-    .buttonIcon {
-      color: white;
-      font-size: 22px;
-      transition: all 0.6s;
-    }
-    .buttonIcon:hover {
-      color: #e4e4e4;
-    }
-    .buttonIcon.addtweet {
-      float: right;
-      margin-top: 18px;
-      margin-right: 11px;
-      margin-right: 11px;
-    }
+}
+button:not(.noeffect) {
+  transition: all 0.6s; /* xyx */
+}
+button:hover {
+  color: #c6e9fd;
+  border: 1px solid #0090e4;
+}
+button > i {
+  font-size: 14px !important;
+  font-weight: normal !important;
+  padding-left: 5px;
+  padding-right: 2px;
+  float: right;
+  position: relative;
+  top: -1px;
+}
 
-    #addtweet {
-      position: absolute;
-      color: var(--high-color);
-      font-size: 28px;
-      top: 11.5px;
-      right: 15px;
-      transition: all 0.6s;
-      cursor: pointer;
-    }
-        #zoomin {
-      position: absolute;
-      color: #004a86;
-      font-size: 21px;
-      top: 14px;
-      right: 101px;
-      transition: all 0.6s;
-      cursor: pointer;
-    }
-            #zoomout {
-      position: absolute;
-      color: #004a86;
-      font-size: 21px;
-      top: 14px;
-      right: 132px;
-      transition: all 0.6s;
-      cursor: pointer;
-    }
+.buttonIcon {
+  color: white;
+  font-size: 22px;
+  transition: all 0.6s;
+}
+.buttonIcon:hover {
+  color: #e4e4e4;
+}
+.buttonIcon.addtweet {
+  float: right;
+  margin-top: 18px;
+  margin-right: 11px;
+  margin-right: 11px;
+}
+
+#addtweet {
+  position: absolute;
+  color: var(--high-color);
+  font-size: 28px;
+  top: 11.5px;
+  right: 15px;
+  transition: all 0.6s;
+  cursor: pointer;
+}
+#zoomin {
+    position: absolute;
+    color: var(--high-color);
+    font-size: 20px;
+    top: 15px;
+    right: 74px;
+    transition: all 0.6s;
+    cursor: pointer;
+}
+body.big #zoomin {
+    font-size: 21px;
+    top: 22px;
+    right: 81px;
+}
 
 #generate {
     position: absolute;
@@ -417,16 +420,19 @@ body.big .gradiantback {
 }
 #generate:hover {
     opacity: 0.4;
+    opacity: 0.6;
 }
 #generate.haschanges {
       color: #c30000;
 }
     #addtweet:hover {
-      color: var(--soft-color);
+      /* color: var(--soft-color); */
+      opacity: 0.6;
     }
 
     #sear:hover {
-      color: var(--soft-color);
+      /* color: var(--soft-color); */
+      opacity: 0.6;
     }
     .top {
       display: none;
@@ -506,7 +512,7 @@ body.big .gradiantback {
     }
 
     #internallink:hover, .linkbar:hover, #externallink:hover, #expand:hover {
-      opacity: 0.7;
+      opacity: 0.6;
      }
 
      input[type=text] {
@@ -818,270 +824,406 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
   display: none;
 }   
 
-@media only screen and (max-width: 1000px) {
-    .gradiantback {
-        display: block;
-    }
-        .bottomgradiantback {
-        display: block;
-    }
-      .yt .gradiantback {
-        position: absolute;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.81);
-        top: 9px;
-        z-index: 9;
-        height: 23px;
-        display: block;
-        background-image: linear-gradient(to bottom, var(--soft-color) 10%, var(--dark-color) 83%);
-    }
-      .html .gradiantback {
-        position: absolute;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.81);
-        top: 12px;
-        z-index: 9;
-        height: 18px;
-        display: block;
-        background-image: linear-gradient(to bottom,var(--soft-color) -4%, var(--dark-color) 105%);
-    }
-    .tweet:not(:last-child) .bottomgradiantback {
-      position: absolute;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.81);
-      z-index: 9;
-      height: 21px;
-      background-image: linear-gradient(to bottom, var(--dark-color) 3%, var(--soft-color) 80%);
-      top: auto;
-      bottom: -1px;
-    }
-   body:not(.big) .tweet:not(:last-child) .bottomgradiantback {
-      height: 19px;
-      top: auto;
-      bottom: 4px;
-    }
-    .tweet:last-child .bottomgradiantback {
-      position: absolute;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.81);
-      z-index: 9;
-      height: 24px;
-      background-image: linear-gradient(to bottom, var(--dark-color) 3%, var(--softdark-color) 80%);
-      top: auto;
-      bottom: -5px;
-    }
-    .tweet.html:not(:last-child) .bottomgradiantback {
-        bottom: 2px;
-    }
-        
+.topoback {
+    background: white;
+    width: 100%;
+    height: 52px;
+    position: absolute;
+    z-index: -1;
+    border: 0px solid #004a86;
+    width: calc(100% - 0px);
+    height: 58px;
+    background-image: linear-gradient(to bottom, var(--softdark-color), var(--soft-color));
+    /* background: transparent; */
+  } 
+body.big .topoback {
+    height: 71px;
+}     
 
-    .yt.tweet .bottomgradiantback {
-      background-image: linear-gradient(to bottom, var(--dark-color) 13%, var(--soft-color) 80%);
-      }
-    body:not(.big) .yt.tweet .bottomgradiantback {
-      height: 15px;
-      bottom: 6px;
-      }     
-      .html.tweet .bottomgradiantback {
-      background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--soft-color) 85%);
-      } 
-        .tweet iframe {
-        width: calc(100% - 0px) !important;
-        background: white;
-        margin-left: 0px !important;
-        margin-right: 12px !important;
-        border-radius: 0px !important;
-        border-top: 0 !important;
-        margin-bottom: 22px;
-        margin-top: 0px !important;
-        border: 0px solid white;
-        }
-        .tweet.html iframe {
-          margin-top: 0px !important;
-          }
-        
 
-        .tweet.html iframe {
-            width: calc(100% - 0px) !important;
-            border: 0px solid #bbbbbb;
-            height: 72vw;
-        }
-
-                .tweet.yt {
-            background: #101010;
-        }
-                .tweet.html {
-            background: #002646;
-            top: 0px;
-        }
-        #backdiv {
-          background-image: linear-gradient(var(--soft-color), var(--softdark-color)) !important;
-        }
-        .tweet .innertweet {
-            width: calc(100% - 50px) !important;
-            background: white;
-            margin-left: 25px !important;
-            margin-right: 25px !important;
-            position: relative;
-            top: 10px;
-            border-radius: 5px;
-            border: 1px solid white;
-        }  
-        twitter-widget {
-            width: 100% !important;
-        }
-        .fa-square-o {
-          display: none;
-        }
-        .tweet {
-          padding-bottom: 0px;
-          position: relative;
-          background-image: linear-gradient(to bottom, #002441, #002442);
-          top: 0px;
-          height: calc(100% - 43px);
-          background: #004a86;
-          background: red;
-          background-image: linear-gradient(to bottom, #004a86 3%, #002442 80%);
-        }
-        .tweet:first-child {
-              margin-top: 11px;
-        }
-        .tags {
-          padding-top: 5px;
-          margin-bottom: 0px;
-          background: #0088d600;
-          padding-bottom: 5px;
-          border-top: 0px solid #d00b0b;
-          position: relative;
-          top: -11px;
-          height: 16px;
-          border-bottom-width: 0px !important;
-          background: var(--soft-color) !important;
-          /* z-index: 9; */
-        }
-        
-        .tagtext {
-        height: 101px;
-        }
-        
-        .tweet .innertweet {
-            width: calc(100% - 0px) !important;
-            margin-left: 0px !important;
-            margin-right: 0px !important;
-            top: -12px;
-        }  
-
-        .toptitle {
-          top: 10px;
-          font-size: 25px;
-        }
-        #addtweet {
-          font-size: 26px;
-          top: 13px;
-      }
-      #generate {
-        font-size: 18px;
-        top: 15px;
-        right: 44px;
-      } 
-        .topoback {
-
-        }
-
-        #openadd {
-          right: 129px !important;
-        }
-                #zoomin {
-        position: absolute;
-        color: #004a86;
-        font-size: 15px;
-        top: 18px;
-        right: 79px;
-        transition: all 0.6s;
-        cursor: pointer;
-    }
-    #zoomout {
-        position: absolute;
-        color: #004a86;
-        font-size: 15px;
-        top: 18px;
-        right: 104px;
-        transition: all 0.6s;
-        cursor: pointer;
-    }
-    .topoback {
-        background: white;
-        width: 100%;
-        height: 52px;
-        position: absolute;
-        z-index: -1;
-        border: 0px solid #004a86;
-        width: calc(100% - 0px);
-        height: 58px;
-        background-image: linear-gradient(to bottom, var(--softdark-color), var(--soft-color));
-      }    
-      #backdiv {
-      /* background-image:linear-gradient(rgb(0, 104, 165), rgb(0, 139, 222)) !important; */
-      }
-      #sear {
-        position: relative;
-        color: var(--high-color);
-        font-size: 18px;
-        padding-left: 7px;
-        padding-right: 17px;
-        top: -9px;
-        cursor: pointer;
-        transition: all 0.6s;
-    }
-    .tweetcount {
-      background: rgba(255, 255, 255, 0.65) !important;
-    }
-     #expand {
-        margin-top: -6px;
-        left: 18px;
-      }     
-      .tweet:first-child #expand {
-          margin-top: -7px;
-      }  
-      #main {
-            margin-top: 2px !important;
-      }
-      .innermask {
-          background: rgba(0, 0, 0, 0.81);
-      }
-    .newLayout > div {
-        margin-left: calc(50% - 241px) !important;
-        width: 482px !important;
-    }
-    .buttonstable .author {
-          max-width: 287px !important;
-      }
-      body.big .buttonstable .author {
-           max-width: 222px !important;
-      }
-      .newLayout > div .titletable tr:first-child .firsttd {
-          min-width: 466px;
-      }
-      body.big .newLayout > div .titletable tr:first-child .firsttd {
-          min-width: 345px;
-      } 
-
-      .buttonstable .datespan {
-          position: relative !important;
-          top: 0px;
-      }  
-      .buttonstable .date {
-          position: relative !important;
-          top: 0px;
-      }         
+body.big #backdiv {
+  top: 64px !important;
+  height: calc(100% - 64px) !important;
+} 
+#main {
+      margin-top: 2px !important;
 }
+body.big #main {
+      margin-top: 20px !important;
+}  
+.newLayout {
+    margin-top: 52px !important;
+    height: calc(100% - 49px) !important;
+}
+
+.newLayout > div {
+    margin-top: 20px !important;
+    max-height: calc(100% - 75px) !important;
+}
+
+body.big .newLayout {
+    margin-top: 64px !important;
+    height: calc(100% - 49px) !important;
+}
+
+body.big .newLayout > div {
+    margin-top: 14px !important;
+    max-height: calc(100% - 75px) !important;
+} 
+.toptitle {
+  top: 20px;
+  font-size: 18px;
+  /* padding-left: calc(50% - 103px); */
+  display: block;
+  text-align: center;
+  width: 190px;
+  line-height: 15px;
+  font-weight: bold;
+  left: calc(50% - 95px) !important;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: none;
+  color: #5c8cb3;
+  color: #7ba8ca;
+  cursor: pointer;
+  transition: all 0.6s !important;
+}
+.toptitle:hover {
+  opacity: 0.6 !important;
+}
+body.big .toptitle {
+  top: 27px;
+  font-size: 25px;
+  width: 266px;
+  line-height: 15px;
+  left: calc(50% - 133px) !important;
+}
+#generate {
+  font-size: 15px;
+  top: 16px;
+  right: 40px;
+  padding-left: 1px;
+ } 
+body.big #generate {
+  font-size: 19px;
+  top: 22px;
+  right: 44px;
+  padding-left: 1px;
+ }  
+#addtweet {
+  font-size: 22px;
+  top: 14px;
+}  
+body.big #addtweet {
+  font-size: 26px;
+  top: 21px;
+}  
+
+.tweet .innertweet {
+    position: relative;
+    top: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    /* width: calc(100% - 0px) !important; */
+    margin-left: calc(50% - 350px) !important;
+    margin-right: 0px !important;
+    top: -12px;
+    max-width: 700px;
+}  
+.tweet {
+  padding-bottom: 0px;
+  position: relative;
+  top: 0px;
+  height: calc(100% - 43px);
+  background: var(--dark-color);
+}
+.tweet:first-child {
+      margin-top: 11px;
+}
+.tags {
+  padding-top: 5px;
+  margin-bottom: 0px;
+  background: #0088d600;
+  padding-bottom: 5px;
+  border-top: 0px solid #d00b0b;
+  position: relative;
+  top: -11px;
+  height: 16px;
+  border-bottom-width: 0px !important;
+  background: var(--soft-color) !important;
+  /* z-index: 9; */
+  padding-left: calc(50% - 294px);
+  text-align: left;
+}   
+
+.linkbar {
+    left: calc(50% - 330px);
+}
+body.big .linkbar {
+    left: calc(50% - 334px);
+}
+#expand {
+    right: calc(50% - 340px);
+}
+body.big #expand {
+    right: calc(50% - 337px);
+}
+                               
+@media only screen and (max-width: 1000px) {
+      .tweet .innertweet {
+        position: relative;
+        top: 10px;
+        border-radius: 5px;
+        border: 1px solid white;
+        /* width: calc(100% - 0px) !important; */
+        margin-left: calc(50% - 249px) !important;
+        margin-right: 0px !important;
+        top: -12px;
+        max-width: 498px;
+    }
+     .linkbar {
+        left: calc(50% - 228px);
+    }
+    body.big .linkbar {
+        left: calc(50% - 234px);
+    }
+    #expand {
+        right: calc(50% - 228px);
+    }
+    body.big #expand {
+        right: calc(50% - 233px);
+    } 
+    .tags {
+      padding-left: calc(50% - 195px);
+    }
+    
+}
+
+
+
+
+.gradiantback {
+    display: block;
+}
+    .bottomgradiantback {
+    display: block;
+}
+  .yt .gradiantback {
+    position: absolute;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.81);
+    top: 9px;
+    z-index: 9;
+    height: 23px;
+    display: block;
+    background-image: linear-gradient(to bottom, var(--soft-color) 10%, var(--dark-color) 83%);
+}
+  .html .gradiantback {
+    position: absolute;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.81);
+    top: 12px;
+    z-index: 9;
+    height: 18px;
+    display: block;
+    background-image: linear-gradient(to bottom,var(--soft-color) -4%, var(--dark-color) 105%);
+}
+.tweet:not(:last-child) .bottomgradiantback {
+  position: absolute;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.81);
+  z-index: 9;
+  height: 21px;
+  background-image: linear-gradient(to bottom, var(--dark-color) 3%, var(--soft-color) 80%);
+  top: auto;
+  bottom: -1px;
+}
+body:not(.big) .tweet:not(:last-child) .bottomgradiantback {
+  height: 19px;
+  top: auto;
+  bottom: 4px;
+}
+.tweet:last-child .bottomgradiantback {
+  position: absolute;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.81);
+  z-index: 9;
+  height: 24px;
+  background-image: linear-gradient(to bottom, var(--dark-color) 3%, var(--softdark-color) 80%);
+  top: auto;
+  bottom: -5px;
+}
+.tweet.html:not(:last-child) .bottomgradiantback {
+    bottom: 2px;
+}
+
+
+.yt.tweet .bottomgradiantback {
+  background-image: linear-gradient(to bottom, var(--dark-color) 13%, var(--soft-color) 80%);
+  }
+body:not(.big) .yt.tweet .bottomgradiantback {
+  height: 15px;
+  bottom: 6px;
+  }     
+  .html.tweet .bottomgradiantback {
+  background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--soft-color) 85%);
+} 
+  .tweet iframe {
+  width: calc(100% - 0px) !important;
+  background: white;
+  margin-left: 0px !important;
+  margin-right: 12px !important;
+  border-radius: 0px !important;
+  border-top: 0 !important;
+  margin-bottom: 22px;
+  margin-top: 0px !important;
+  border: 0px solid white;
+  }
+  .tweet.html iframe {
+    margin-top: 0px !important;
+    }
+
+
+  .tweet.html iframe {
+      width: calc(100% - 0px) !important;
+      border: 0px solid #bbbbbb;
+      height: 72vw;
+  }
+
+          .tweet.yt {
+      background: #101010;
+  }
+          .tweet.html {
+      background: #002646;
+      top: 0px;
+  }
+  #backdiv {
+    background-image: linear-gradient(var(--soft-color), var(--softdark-color)) !important;
+  }
+
+  twitter-widget {
+      width: 100% !important;
+  }
+  .fa-square-o {
+    display: none;
+  }
+
+
+  .tagtext {
+  height: 101px;
+  }
+
+
+
+  #openadd {
+    right: 129px !important;
+  }
+
+#backdiv {
+/* background-image:linear-gradient(rgb(0, 104, 165), rgb(0, 139, 222)) !important; */
+}
+#sear {
+    position: relative;
+    color: var(--high-color);
+    font-size: 18px;
+    padding-left: 7px;
+    padding-right: 17px;
+    top: -9px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+body.big #sear {
+    font-size: 25px;
+    padding-left: 17px;
+    padding-right: 17px;
+    top: -12px;
+}
+.tweetcount {
+  background: rgba(255, 255, 255, 0.65) !important;
+}
+ #expand {
+    margin-top: -6px;
+    left: 18px;
+  }     
+  .tweet:first-child #expand {
+      margin-top: -7px;
+  }  
+
+  .innermask {
+      background: rgba(0, 0, 0, 0.81);
+  }
+.newLayout > div {
+    margin-left: calc(50% - 241px) !important;
+    width: 482px !important;
+}
+.buttonstable .author {
+      max-width: 287px !important;
+  }
+  body.big .buttonstable .author {
+       max-width: 222px !important;
+  }
+  .newLayout > div .titletable tr:first-child .firsttd {
+      min-width: 466px;
+  }
+  body.big .newLayout > div .titletable tr:first-child .firsttd {
+      min-width: 345px;
+  } 
+
+  .buttonstable .datespan {
+      position: relative !important;
+      top: 0px;
+  }  
+  .buttonstable .date {
+      position: relative !important;
+      top: 0px;
+  }         
+
 
 body.big #editTags {
   margin-top: 93px !important;
 }
+.sectionicontd {
+  transition: all 0.6s;
+}
+.sectionicontd:hover {
+  opacity: 0.6;
+}
+.sectionedittd {
+  transition: all 0.6s;
+}
+.sectionedittd:hover {
+  opacity: 0.6;
+}
+.mainbutton {
+  transition: all 0.6s;
+}
+.mainbutton:hover {
+  opacity: 0.6;
+}
+
 
 @media only screen and (max-width: 700px) {
-    .toptitle {
+    .tags {
+      padding-left: 38px;
+    }   
+    body.big .tags {
+      padding-left: 45px;
+    }   
+    
+    #expand {
+        right: 11px;
+    }
+    body.big #expand {
+        right: 13px;
+    }  
+    .linkbar {
+        left: 9px;
+    }
+    body.big .linkbar {
+        left: 8px;
+    }
+  .toptitle {
       top: 12px;
       font-size: 13px;
       /* padding-left: calc(50% - 103px); */
@@ -1097,29 +1239,18 @@ body.big #editTags {
       text-shadow: none;
       color: #5c8cb3;
       color: #7ba8ca;
-  }
-    #addtweet {
-      font-size: 22px;
-      top: 14px;
-    }  
-    #generate {
+  }  
+   body.big .toptitle {
+      top: 18px;
       font-size: 15px;
-      top: 16px;
-      right: 40px;
-      padding-left: 1px;
-     } 
+      width: 100px;
+      line-height: 15px;
+      left: calc(50% - 50px) !important;
+  }   
+    
         #openadd {
           right: 115px !important;
         }
-        #zoomin {
-        position: absolute;
-        color: var(--high-color);
-        font-size: 20px;
-        top: 15px;
-        right: 74px;
-        transition: all 0.6s;
-        cursor: pointer;
-    }
     #zoomout {
         position: absolute;
         color: var(--high-color);
@@ -1153,13 +1284,11 @@ body.big #editTags {
       body.big #editTags {
         margin-top: 120px !important;
       }
-      .newLayout {margin-top: 52px !important;height: calc(100% - 49px) !important;}
-
-      .newLayout > div {
-          margin-top: 20px !important;
-          max-height: calc(100% - 75px) !important;
-      }
 }
+
+
+
+
 .newLayout > div {
     background: var(--dark-color);
     max-height: calc(100% - 60px);
@@ -1179,7 +1308,8 @@ body.big #editTags {
     overscroll-behavior: none;
 }
 #zoomin:hover {
-    color: var(--soft-color);
+    /* color: var(--soft-color); */
+    opacity: 0.6;
 }
 #zoomout:hover {
     color: var(--soft-color);
@@ -1624,6 +1754,12 @@ body.big .newLayout .fa-file-text {
     border: 2px solid var(--dark-color);
     background: var(--dark-color);
 }
+body.big .topoback2 {
+    left: 66px;
+    width: calc(100% - 77px);
+    top: 9px;
+    height: 45px;
+}
 
 ::-webkit-scrollbar {
     width: 0px;  /* Remove scrollbar space */
@@ -2035,12 +2171,11 @@ body.big .tags {
 
 
 .linkbar {
-    left: 9px;
     font-size: 15px;
     top: -6px;
+    width: 20px;
 }
 body.big .linkbar {
-    left: 9px;
     font-size: 22px;
     top: -5px;
 }
@@ -2071,17 +2206,15 @@ body.big .linkbar.fa-youtube-play{
 
 #expand {
     font-size: 14px;
-    right: 10px;
     top: -1px;
     left: auto;
 }
+
 body.big #expand {
     font-size: 20px;
-    right: 13px;
     top: 4px;
     left: auto;
 }
-
 
 #tweetcount {
     padding: 0px 4px !important;
