@@ -855,7 +855,7 @@ body.big #main {
 }  
 .newLayout {
     margin-top: 52px !important;
-    height: calc(100% - 49px) !important;
+    height: 60000000px !important;
 }
 
 .newLayout > div {
@@ -868,7 +868,7 @@ body.big .newLayout > div {
 } 
 body.big .newLayout {
     margin-top: 64px !important;
-    height: calc(100% - 49px) !important;
+    /* height: calc(100% - 49px) !important; */
 }
 
 
@@ -1114,6 +1114,7 @@ body:not(.big) .yt.tweet .bottomgradiantback {
     }
      .linkbar {
         left: calc(50% - 240px);
+        top: -1px !important;
     }
     body.big .linkbar {
         left: calc(50% - 243px);
@@ -1313,23 +1314,23 @@ body.big #editTags {
     }  
     .linkbar {
         left: 9px;
-        top: -2px !important;
+        top: -1px !important;
     }
     .linkbar.fa-youtube-play {
-        top: -1px !important;
+        top: 0px !important;
     }    
     .linkbar.fa-internet-explorer {
         top: 0px !important;
     }      
     body.big .linkbar {
         left: 8px;
-        top: 2px !important;
+        top: 3px !important;
     }
     body.big .linkbar.fa-youtube-play {
-        top: 4px !important;
+        top: 5px !important;
     }    
     body.big .linkbar.fa-internet-explorer {
-        top: 5px !important;
+        top: 6px !important;
     }     
   .toptitle {
       top: 12px;
@@ -1436,10 +1437,10 @@ body.big #editTags {
     background: var(--soft-transp-color);
     border-top: 1px solid transparent;
     margin: auto;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
+    /* bottom: 0; */
     right: 0;
     /* display: flex; */
     align-items: center;
@@ -1466,6 +1467,8 @@ body.big #editTags {
     width: 361px;
     /* touch-action: none; */
     overscroll-behavior: none;
+    position: fixed;
+    top: 65px;
 }
 
 .newLayout > div .titletable {
