@@ -170,13 +170,13 @@ ol > li {
     position: absolute;
     width: 100%;
     background: rgba(0, 0, 0, 0.81);
-    top: 12px;
+    top: 19px;
     z-index: 9;
     height: 16px;
     background-image: linear-gradient(to bottom, var(--soft-color) 3%, var(--dark-color) 80%);
 }
 body.big .gradiantback {
-    top: 15px;
+    top: 31px;
 }
     
 .innermask .fa-circle-o-notch {
@@ -832,12 +832,12 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
     z-index: -1;
     border: 0px solid #004a86;
     width: calc(100% - 0px);
-    height: 58px;
+    height: 62px;
     background-image: linear-gradient(to bottom, var(--softdark-color), var(--soft-color));
     /* background: transparent; */
   } 
 body.big .topoback {
-    height: 71px;
+    height: 76px;
 }     
 
 
@@ -860,16 +860,16 @@ body.big #main {
     margin-top: 20px !important;
     max-height: calc(100% - 75px) !important;
 }
-
+body.big .newLayout > div {
+    margin-top: 12px !important;
+    max-height: calc(100% - 29px) !important;
+} 
 body.big .newLayout {
     margin-top: 64px !important;
     height: calc(100% - 49px) !important;
 }
 
-body.big .newLayout > div {
-    margin-top: 14px !important;
-    max-height: calc(100% - 75px) !important;
-} 
+
 .toptitle {
   top: 20px;
   font-size: 18px;
@@ -949,7 +949,7 @@ body.big #addtweet {
   border-top: 0px solid #d00b0b;
   position: relative;
   top: -11px;
-  height: 16px;
+  height: 21px;
   border-bottom-width: 0px !important;
   background: var(--soft-color) !important;
   /* z-index: 9; */
@@ -994,10 +994,24 @@ body.big #expand {
     body.big #expand {
         right: calc(50% - 233px);
     } 
-    .tags {
-      padding-left: calc(50% - 195px);
+    .tweet:not(:nth-of-type(1)) .tags {
+      padding-left: calc(48px);
+      margin-left: calc(50% - 242px);
+      width: 435px;
     }
-    
+    .tweet:nth-of-type(1) .tags {
+      padding-left: calc(50% - 199px);
+    }    
+    .tweet:not(:nth-of-type(1)) .gradiantback {
+      padding-left: calc(48px);
+      margin-left: calc(50% - 242px);
+      width: 435px;
+    }   
+    .bottomgradiantback:not(:first-of-type) {
+      padding-left: calc(48px);
+      margin-left: calc(50% - 242px);
+      width: 435px !important;
+    }      
 }
 
 
@@ -1204,6 +1218,25 @@ body.big #editTags {
 
 
 @media only screen and (max-width: 700px) {
+    .tweet .innertweet {
+        position: relative;
+        top: 10px;
+        border-radius: 5px;
+        border: 1px solid white;
+        width: calc(100% - 0px) !important;
+        margin-left: 0 !important;
+        margin-right: 0px !important;
+        top: -12px;
+        max-width: none;
+    }
+  .newLayout > div {
+        margin-top: 20px !important;
+        max-height: calc(100% - 75px) !important;
+    }
+    body.big .newLayout > div {
+        margin-top: 14px !important;
+        max-height: calc(100% - 75px) !important;
+    } 
     .tags {
       padding-left: 38px;
     }   
@@ -2161,23 +2194,23 @@ body.big .newLayout ul#classiful li {
 
 .tags {
   font-size: 12px !important;
-  top: -10px;
+  top: -5px;
 }
 body.big .tags {
   font-size: 17px !important;
-  height: 21px;
-  top: -8px;
+  height: 32px;
+  top: 0px;
 }
 
 
 .linkbar {
     font-size: 15px;
-    top: -6px;
+    top: 0px;
     width: 20px;
 }
 body.big .linkbar {
     font-size: 22px;
-    top: -5px;
+    top: 3px;
 }
 
 
@@ -2206,13 +2239,13 @@ body.big .linkbar.fa-youtube-play{
 
 #expand {
     font-size: 14px;
-    top: -1px;
+    top: 4px;
     left: auto;
 }
 
 body.big #expand {
     font-size: 20px;
-    top: 4px;
+    top: 11px;
     left: auto;
 }
 
