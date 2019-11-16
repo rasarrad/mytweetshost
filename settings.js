@@ -12,12 +12,11 @@ function expandCat(obj) {
 
     var functorun = function(jsonvar) 
     { 
-        
+        console.log(jsonvar);
         if (jsonvar != null) {
             openSettingsPopup(jsonvar);
         }
     } 
-    alert(id)
     getJsonbyid(id, functorun);
     // getJsonbyid(28, functorun); // xyz
 }

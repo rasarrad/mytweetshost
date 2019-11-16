@@ -180,6 +180,12 @@ function create() {
     var resinfo = $('#info').val().replace(/"/g, "");
     resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "");
 
+    // xyx
+    $('#categories').val("");
+    $('#classifpop').val("0");
+    $('#tags').val("");
+    resinfo = "";
+    
     if (addType == "T") {
         $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + $('#classifpop').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
     }

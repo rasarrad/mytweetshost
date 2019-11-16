@@ -50,8 +50,6 @@ $( document ).ready(function() {
 
     var hasZoom = readCookie("hasZoom");
     if (hasZoom && hasZoom.length > 0)
-        var aaaaa="";
-    else
         zoom(null, true);
     
     
