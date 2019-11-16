@@ -58,7 +58,9 @@ function zoom(obj, flag) {
         table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
         table.find('td.el').addClass('ellipsis');
     });
-    $('body').removeClass('notransit');   
+    setTimeout(function(){
+        $('body').removeClass('notransit'); 
+    }, 1400);  
 }
 
 
