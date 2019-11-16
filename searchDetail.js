@@ -175,35 +175,39 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         
                         var tagdispalay = " --";
                         var expandclass = "";
-                        
+                        var color = "";
+
                         var isdeleted = readCookie(val.id + "isdeleted");
                         if (isdeleted && isdeleted.length > 0) { // ID DELETED
                             expandclass = hideMode ? "" : "isdeleted";    
+                            color = "color: red;";
                         } 
                         else {
                             if (linkcontent && linkcontent.length > 0) { // IS NEW
                                 expandclass = hideMode ? "" : "isnew";  
+                                color = "color: #00b900;";
                             }
-                            
-                            var hasChanges = readCookie(val.id + "haschanges");
-                            if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
+                            else {
+                                var hasChanges = readCookie(val.id + "haschanges");
+                                if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
+                                    color = "color: #f18618;";
+                                    if (expandclass == "isnew")
+                                        expandclass = hideMode ? "" : "isnewmodified";  
+                                    else 
+                                        expandclass = hideMode ? "" : "ismodified";  
     
-                                if (expandclass == "isnew")
-                                    expandclass = hideMode ? "" : "isnewmodified";  
-                                else 
-                                    expandclass = hideMode ? "" : "ismodified";  
-
-                                var tagchanged = readCookie(val.id + "tagchanged");
-    
-                                if (tagchanged && tagchanged.length > 0) {
-                                    tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
-                                } 
-                                else {
-                                    if (val.tags.length > 0) {
-                                        tagdispalay = val.tags;
+                                    var tagchanged = readCookie(val.id + "tagchanged");
+        
+                                    if (tagchanged && tagchanged.length > 0) {
+                                        tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                                    } 
+                                    else {
+                                        if (val.tags.length > 0) {
+                                            tagdispalay = val.tags;
+                                        }
                                     }
-                                }
-                            } 
+                                } 
+                            }
                         }
 
                         var xclass = "";
@@ -220,7 +224,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         var newtweet = $('#main').append($('<div id="inid" class="tweet' + xclass + '"></div>'));
                         var newtweetobj = $('#inid');
 
-                        newtweetobj.append($('<div class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
+                        newtweetobj.append($('<div class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
                         
                         newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
                         

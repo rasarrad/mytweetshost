@@ -386,7 +386,11 @@ function tagsInputOnChange(obj) {
     createNonExistentLi();
 
     var color = getLinkColor($('#linkChange').attr("cid"));
-
+    if (color == "#f18618")
+        createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
+    else
+        createCookie($('#linkChange').attr("cid") + "haschanges", null);
+        
     updateLinkColor(color, $('#linkChange').attr("cid"));
     updateSettingsColor(color);
 }
@@ -563,6 +567,10 @@ function catsInputOnChange(obj) {
     markCategoriesCheckBoxs();
 
     var color = getLinkColor($('#linkChange').attr("cid"));
+    if (color == "#f18618")
+        createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
+    else
+        createCookie($('#linkChange').attr("cid") + "haschanges", null);
 
     updateLinkColor(color, $('#linkChange').attr("cid"));
     updateSettingsColor(color);
@@ -652,7 +660,11 @@ function classifInputOnChange(obj) {
         $('#originalclassiftd i').show();
     }
     var color = getLinkColor($('#linkChange').attr("cid"));
-    console.log(2); 
+    if (color == "#f18618")
+    createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
+    else
+        createCookie($('#linkChange').attr("cid") + "haschanges", null);
+
     updateLinkColor(color, $('#linkChange').attr("cid"));
     updateSettingsColor(color);
 
@@ -729,6 +741,11 @@ function infoInputOnKeyup(obj) {
             }
 
             var color = getLinkColor($('#linkChange').attr("cid"));
+
+            if (color == "#f18618")
+                createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
+            else
+                createCookie($('#linkChange').attr("cid") + "haschanges", null);
 
             updateLinkColor(color, $('#linkChange').attr("cid"));
             updateSettingsColor(color);
