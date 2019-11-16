@@ -1085,6 +1085,12 @@ body:not(.big) .yt.tweet .bottomgradiantback {
 }   
                                    
 @media only screen and (max-width: 1000px) {
+    .fa-folder-open {
+        font-size: 74px;
+        height: 76px;
+        top: calc(50% - 62px);
+        left: calc(50% - 47px);
+    }  
     .tweet.yt iframe {
         margin-top: 4px !important;
         height: 305px;
@@ -1264,7 +1270,12 @@ body.big #editTags {
 
 
 @media only screen and (max-width: 700px) {
-
+    .fa-folder-open {
+        font-size: 86px;
+        height: 85px;
+        top: calc(50% - 66px);
+        left: calc(50% - 55px);
+    }
     .tweet iframe {
         position: relative;
         top: 10px;
