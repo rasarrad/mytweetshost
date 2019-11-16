@@ -123,7 +123,7 @@ var openSettingsPopup = function(jsonobj)
     else {
         $('.originaltags').html("--");  
     }
-
+alert("-" + tagchanged + "-" + (tagchanged != null && tagchanged != 'null'))
     if (tagchanged != null && tagchanged != 'null') {
         hasChanges = true;
         currenttagdisplay.css('color','#00ff72');
