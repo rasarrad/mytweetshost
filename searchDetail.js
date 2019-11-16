@@ -204,6 +204,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         
                                     if (tagchanged && tagchanged.length > 0) {
                                         tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                                        tagdispalay = '<span>' + tagchanged + '</span>';
                                     } 
                                     else {
                                         if (val.tags.length > 0) {
