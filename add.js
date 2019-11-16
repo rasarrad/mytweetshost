@@ -187,13 +187,13 @@ function create() {
     resinfo = "";
     alert(1)
     if (addType == "T") {
-        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + $('#classifpop').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
+        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + "" + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + $('#classifpop').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
     }
     else if (addType == "Y") {
-        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + urldirect  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + $('#classifpop').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
+        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + urldirect  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + "" + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + $('#classifpop').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
     }
     else {
-        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + $('#categories').val() + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + $('#classifpop').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
+        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + "" + "\",\r\n\"tags\": \"" + $('#tags').val() + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + $('#classifpop').val() + "\",\r\n\"tweet\": " + text + "\r\n},");
     }
 
     var result = $('#result').val();
