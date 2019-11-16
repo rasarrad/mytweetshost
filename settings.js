@@ -199,13 +199,13 @@ var openSettingsPopup = function(jsonobj)
     } 
     else {
         alert(jsonobj.classif)
-        if (jsonobj.classif.length > 0 && jsonobj.classif != 0) {
+        if (jsonobj.classif.length > 0 && jsonobj.classif != 0 && jsonobj.classif != "undefined") {
             currentclassifdisplay.html(jsonobj.classif);
             $('#classifinput').val(jsonobj.classif);
             markClassif(jsonobj.classif);
         }
         else {
-            currentclassifdisplay.html("--");
+            currentclassifdisplay.html("0");
             $('#classifinput').val(0);
         }
 
@@ -238,6 +238,7 @@ var openSettingsPopup = function(jsonobj)
         $('#originalinfotd i').show();
     } 
     else {
+        alert("-" +jsonobj.info + "-")
         if (jsonobj.info.length > 0 && jsonobj.info != "") {
             currentinfodisplay.html(decodeURIComponent(jsonobj.info));
             $('#infoinput').val(decodeURIComponent(jsonobj.info));
