@@ -702,7 +702,7 @@ var getJsonbyid = function(id, functorun) {
                 else {
                     val = recordfromdata;
                 }
-                alert(val.id + " - " + id + " - " + (val.id == id))
+                //alert(val.id + " - " + id + " - " + (val.id == id))
                 if (val.id == id) {
                     processtmp = false;
 

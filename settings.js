@@ -7,6 +7,7 @@
 /////////////////////////////////////////////////////////////////////////
 
 function expandCat(obj) {
+    var id = $(obj).parent().attr("id");
     fixfocus(obj);
 
     var functorun = function(jsonvar) 
@@ -16,8 +17,8 @@ function expandCat(obj) {
             openSettingsPopup(jsonvar);
         }
     } 
-    alert($(obj).parent().attr("id"))
-    getJsonbyid($(obj).parent().attr("id"), functorun);
+    alert(id)
+    getJsonbyid(id, functorun);
     // getJsonbyid(28, functorun); // xyz
 }
 
@@ -32,22 +33,21 @@ function zoom(obj, flag) {
     
     $('body').addClass('notransit');
 
-    if (flag || $('body').hasClass('big')) {
+    if (flag || !$('body').hasClass('big')) {
+        $('#zoomin').addClass('fa-search-minus');
+        $('#zoomin').removeClass('fa-search-plus');
+        $('body').addClass('big');
+        customizeTweets(null, true, true);
+        createCookie("hasZoom", true);
+    }
+    else {
         $('#zoomin').addClass('fa-search-plus');
         $('#zoomin').removeClass('fa-search-minus');
         $('body').removeClass('big');
         customizeTweets(null, true, false);
         createCookie("hasZoom", "");
     }
-    else {
-        $('#zoomin').addClass('fa-search-minus');
-        $('#zoomin').removeClass('fa-search-plus');
-        $('body').addClass('big');
-        customizeTweets(null, true, true);
-        createCookie("hasZoom", true)
-    }
     var setHeight = "18px";
-
     if ($('body').hasClass('big'))
         setHeight = "31px";
 
