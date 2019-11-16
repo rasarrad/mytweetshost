@@ -889,7 +889,7 @@ body.big .newLayout {
   color: #5c8cb3;
   color: #7ba8ca;
   cursor: pointer;
-  transition: all 0.6s !important;
+  transition: all 0.6s;
 }
 .toptitle:hover {
   opacity: 0.6 !important;
