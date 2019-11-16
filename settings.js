@@ -123,7 +123,7 @@ var openSettingsPopup = function(jsonobj)
     else {
         $('.originaltags').html("--");  
     }
-alert("-" + tagchanged + "-" + (tagchanged != null && tagchanged != 'null'))
+
     if (tagchanged != null && tagchanged != 'null') {
         hasChanges = true;
         currenttagdisplay.css('color','#00ff72');
@@ -136,6 +136,7 @@ alert("-" + tagchanged + "-" + (tagchanged != null && tagchanged != 'null'))
         $('#originaltagtd i').show();
     } 
     else {
+        currenttagdisplay.css('color',null);
         currenttagdisplay.html(parseTags(jsonobj.tags));
         $('#tagsinput').val(jsonobj.tags);
     }
@@ -170,6 +171,7 @@ alert("-" + tagchanged + "-" + (tagchanged != null && tagchanged != 'null'))
         $('#originalcattd i').show();
     } 
     else {
+        currentcatdisplay.css('color',null);
         currentcatdisplay.html(parseCats(jsonobj.categories));
         $('#catsinput').val(jsonobj.categories);
     }
@@ -198,6 +200,7 @@ alert("-" + tagchanged + "-" + (tagchanged != null && tagchanged != 'null'))
         markClassif(classifchanged);
     } 
     else {
+        currentclassifdisplay.css('color',null);
         if (jsonobj.classif.length > 0 && jsonobj.classif != 0 && jsonobj.classif != "undefined") {
             currentclassifdisplay.html(jsonobj.classif);
             $('#classifinput').val(jsonobj.classif);
@@ -237,6 +240,7 @@ alert("-" + tagchanged + "-" + (tagchanged != null && tagchanged != 'null'))
         $('#originalinfotd i').show();
     } 
     else {
+        currentinfodisplay.css('color',null);
         if (jsonobj.info.length > 0 && jsonobj.info != "" && jsonobj.info != "undefined") {
             currentinfodisplay.html(decodeURIComponent(jsonobj.info));
             $('#infoinput').val(decodeURIComponent(jsonobj.info));
@@ -472,6 +476,7 @@ function clickLiTag(e, obj) {
 
 
 function catsInputOnChange(obj) {
+    alert($(obj).val())
     var oldcats = $(obj).attr("ccats");
     var currentcatdisplay = $('.currentcats'); 
     currentcatdisplay.html(parseCats($(obj).val()));
