@@ -12,7 +12,7 @@ function expandCat(obj) {
 
     var functorun = function(jsonvar) 
     { 
-        console.log(jsonvar);
+        
         if (jsonvar != null) {
             openSettingsPopup(jsonvar);
         }
