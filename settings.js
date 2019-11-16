@@ -476,7 +476,7 @@ function clickLiTag(e, obj) {
 
 
 function catsInputOnChange(obj) {
-    alert($(obj).val())
+
     var oldcats = $(obj).attr("ccats");
     var currentcatdisplay = $('.currentcats'); 
     currentcatdisplay.html(parseCats($(obj).val()));
