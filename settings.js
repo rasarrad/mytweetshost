@@ -127,7 +127,11 @@ var openSettingsPopup = function(jsonobj)
     if (tagchanged != null && tagchanged != 'null') {
         hasChanges = true;
         currenttagdisplay.css('color','#00ff72');
-        currenttagdisplay.html(parseTags(tagchanged));
+        if (tagchanged.length > 0)
+            currenttagdisplay.html(parseTags(tagchanged));
+        else
+            currenttagdisplay.html("--");
+
         $('#tagsinput').val(tagchanged);
         $('#originaltagtd i').show();
     } 
@@ -157,7 +161,11 @@ var openSettingsPopup = function(jsonobj)
     if (catchanged != null && catchanged != 'null') {
         hasChanges = true;
         currentcatdisplay.css('color','#00ff72');
-        currentcatdisplay.html(parseCats(catchanged));
+        if (catchanged.length > 0)
+            currentcatdisplay.html(parseCats(catchanged));
+        else
+            currentcatdisplay.html("--");
+        
         $('#catsinput').val(catchanged);
         $('#originalcattd i').show();
     } 
@@ -190,6 +198,7 @@ var openSettingsPopup = function(jsonobj)
         markClassif(classifchanged);
     } 
     else {
+        alert(jsonobj.classif)
         if (jsonobj.classif.length > 0 && jsonobj.classif != 0) {
             currentclassifdisplay.html(jsonobj.classif);
             $('#classifinput').val(jsonobj.classif);
@@ -219,12 +228,17 @@ var openSettingsPopup = function(jsonobj)
     if (infochanged != null && infochanged != 'null') {
         hasChanges = true;
         currentinfodisplay.css('color','#00ff72');
-        currentinfodisplay.html(decodeURIComponent(infochanged));
+
+        if (infochanged.length > 0)
+            currentinfodisplay.html(decodeURIComponent(infochanged));
+        else
+            currentinfodisplay.html("--");
+
         $('#infoinput').val(decodeURIComponent(infochanged));
         $('#originalinfotd i').show();
     } 
     else {
-        if (jsonobj.info.length > 0 && jsonobj.info != 0) {
+        if (jsonobj.info.length > 0 && jsonobj.info != "") {
             currentinfodisplay.html(decodeURIComponent(jsonobj.info));
             $('#infoinput').val(decodeURIComponent(jsonobj.info));
         }
