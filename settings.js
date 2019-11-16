@@ -660,9 +660,9 @@ function classifInputOnChange(obj) {
 function markClassif(value) {
 
     $('#classiful').find(".litags").each( function( index, element ) {
-        console.log("-" + $(element).html().trim() + "-");
-        console.log("-" + value + "-");
-        console.log("-" + ($(element).html().trim() == value) + "-");
+        //console.log("-" + $(element).html().trim() + "-");
+        //console.log("-" + value + "-");
+        //console.log("-" + ($(element).html().trim() == value) + "-");
         if($(element).html().trim() == value) {
             $(element).addClass("selectedtag");
         }

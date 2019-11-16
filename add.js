@@ -224,8 +224,6 @@ function create() {
     }       
     
     if ($("#preview").is(":checked")) {
-        console.log(55555555555555);
-        console.log(result);
         createCookie(nextid + "templink", encodeURIComponent(JSON.stringify(result)), 99999);
         createCookie("hasChanges", "Yes");
         $("#generate").addClass("haschanges");
