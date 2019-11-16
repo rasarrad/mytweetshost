@@ -27,11 +27,12 @@ function fixfocus(el)
     $(el).remove();
 }
 
-function zoom(obj) {
-    fixfocus(obj);
+function zoom(obj, flag) {
+    if (obj) fixfocus(obj);
+    
     $('body').addClass('notransit');
 
-    if ($('body').hasClass('big')) {
+    if (flag || $('body').hasClass('big')) {
         $('#zoomin').addClass('fa-search-plus');
         $('#zoomin').removeClass('fa-search-minus');
         $('body').removeClass('big');

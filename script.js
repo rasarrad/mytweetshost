@@ -50,11 +50,9 @@ $( document ).ready(function() {
 
     var hasZoom = readCookie("hasZoom");
     if (hasZoom && hasZoom.length > 0)
-        $("body").removeClass("big");
-    else   
-        $("body").addClass("big");
+        zoom(null, true);
     
-    zoom();
+    
 
     /*
     var functorun = function(jsonvar) 
