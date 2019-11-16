@@ -252,6 +252,11 @@ $( document ).ready(function() {
         } 
     });
 
+    
+    $( "#catsinput" ).change(function() {
+        catsInputOnChange(this);
+    });
+
     $( "#tagsinput" ).change(function() {
         tagsInputOnChange(this);
       });
