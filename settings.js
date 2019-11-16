@@ -117,7 +117,7 @@ var openSettingsPopup = function(jsonobj)
     var tagchanged = readCookie(jsonobj.id + "tagchanged");
     var currenttagdisplay = $('.currenttags');
     
-    if (jsonobj.tags.length > 0) {
+    if (jsonobj.tags.length > 0 && jsonobj.tags != "undefined") {
         $('.originaltags').html(parseTags(jsonobj.tags));  
     }
     else {
@@ -151,7 +151,7 @@ var openSettingsPopup = function(jsonobj)
     var catchanged = readCookie(jsonobj.id + "catchanged");
     var currentcatdisplay = $('.currentcats');
 
-    if (jsonobj.categories.length > 0) {
+    if (jsonobj.categories.length > 0 && jsonobj.categories != "undefined") {
         $('.originalcats').html(parseCats(jsonobj.categories));  
     }
     else {
@@ -182,7 +182,7 @@ var openSettingsPopup = function(jsonobj)
     var classifchanged = readCookie(jsonobj.id + "classif");
     var currentclassifdisplay = $('.currentclassif');
 
-    if (jsonobj.classif.length > 0 && jsonobj.classif != 0) {
+    if (jsonobj.classif.length > 0 && jsonobj.classif != 0 && jsonobj.classif != "undefined") {
         $('.originalclassif').html(jsonobj.classif); 
     }
     else {
@@ -198,14 +198,13 @@ var openSettingsPopup = function(jsonobj)
         markClassif(classifchanged);
     } 
     else {
-        alert(jsonobj.classif)
         if (jsonobj.classif.length > 0 && jsonobj.classif != 0 && jsonobj.classif != "undefined") {
             currentclassifdisplay.html(jsonobj.classif);
             $('#classifinput').val(jsonobj.classif);
             markClassif(jsonobj.classif);
         }
         else {
-            currentclassifdisplay.html("0");
+            currentclassifdisplay.html("--");
             $('#classifinput').val(0);
         }
 
@@ -218,7 +217,7 @@ var openSettingsPopup = function(jsonobj)
     var infochanged = readCookie(jsonobj.id + "info");
     var currentinfodisplay = $('.currentinfo');
 
-    if (jsonobj.info.length > 0) {
+    if (jsonobj.info.length > 0 && jsonobj.info != "undefined") {
         $('.originalinfo').html(decodeURIComponent(jsonobj.info)); 
     }
     else {
@@ -238,8 +237,7 @@ var openSettingsPopup = function(jsonobj)
         $('#originalinfotd i').show();
     } 
     else {
-        alert("-" +jsonobj.info + "-")
-        if (jsonobj.info.length > 0 && jsonobj.info != "") {
+        if (jsonobj.info.length > 0 && jsonobj.info != "" && jsonobj.info != "undefined") {
             currentinfodisplay.html(decodeURIComponent(jsonobj.info));
             $('#infoinput').val(decodeURIComponent(jsonobj.info));
         }
