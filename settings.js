@@ -273,6 +273,49 @@ var openSettingsPopup = function(jsonobj)
 } 
 
 
+
+var getLinkColor = function(id) 
+{
+    var isdeleted = readCookie(id + "isdeleted");
+    if (isdeleted && isdeleted.length > 0) {
+        return "red";
+    }
+    else {
+        var linkcontent = readCookie(id + "templink");
+        if (linkcontent && linkcontent.length > 0) {
+            return "#00b900";
+        }
+        else {
+            var hasChanges = false;
+
+            var tagchanged = readCookie(id + "tagchanged");
+            if (tagchanged != null && tagchanged != 'null') {
+                hasChanges = true;
+            } 
+        
+            var catchanged = readCookie(id + "catchanged");
+            if (catchanged != null && catchanged != 'null') {
+                hasChanges = true;
+            } 
+        
+            var classifchanged = readCookie(id + "classif");
+            if (classifchanged != null && classifchanged != 'null') {
+                hasChanges = true;
+            } 
+        
+            var infochanged = readCookie(id + "info");
+            if (infochanged != null && infochanged != 'null') {
+                hasChanges = true;
+            }
+
+            if (hasChanges) 
+                return "#f18618";
+            else 
+               return "";
+        }
+    }
+} 
+
 function closeSettingsPopup(obj) {
     fixfocus(obj);
     $('body, html').css('overflow-y', 'auto');
@@ -341,9 +384,32 @@ function tagsInputOnChange(obj) {
     removeNonExistentLi();
 
     createNonExistentLi();
+
+    var color = getLinkColor($('#linkChange').attr("cid"));
+
+    updateLinkColor(color, $('#linkChange').attr("cid"));
+    updateSettingsColor(color);
 }
 
  
+function updateSettingsColor(color) {
+    if (color != "") {
+        $('#seticon').css("color", color); 
+    }
+    else {
+        $('#seticon').css("color", null); 
+    }
+}
+
+function updateLinkColor(color, id) {
+    if (color != "") {
+        $(".tweet#" + id).find("i.linkbar").css("color", color); 
+    }
+    else {
+        $(".tweet#" + id).find("i.linkbar").css("color", null); 
+    }
+}
+
 function addTextTag(obj) {
     fixfocus(obj);
     if ($('#addtaginput').val() != "") {
@@ -493,6 +559,11 @@ function catsInputOnChange(obj) {
     }
 
     markCategoriesCheckBoxs();
+
+    var color = getLinkColor($('#linkChange').attr("cid"));
+
+    updateLinkColor(color, $('#linkChange').attr("cid"));
+    updateSettingsColor(color);
 }
 
 function clickCheckCat(obj, cat) {
@@ -578,6 +649,10 @@ function classifInputOnChange(obj) {
         createCookie($('#linkChange').attr("cid") + "classif", $(obj).val().trim());
         $('#originalclassiftd i').show();
     }
+    var color = getLinkColor($('#linkChange').attr("cid"));
+
+    updateLinkColor(color, $('#linkChange').attr("cid"));
+    updateSettingsColor(color);
 
     markClassif($(obj).val().trim());
 }
@@ -650,6 +725,12 @@ function infoInputOnKeyup(obj) {
                 createCookie($('#linkChange').attr("cid") + "info", val);
                 $('#originalinfotd i').show();
             }
+
+            var color = getLinkColor($('#linkChange').attr("cid"));
+
+            updateLinkColor(color, $('#linkChange').attr("cid"));
+            updateSettingsColor(color);
+
             dblFlag = false;
         }, 300);
     }
