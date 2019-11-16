@@ -128,22 +128,13 @@ function undosaveinfo(obj, id) {
 
 function removetweet(obj) {
     fixfocus(obj.nextSibling);
-    alert("make remove function"); // xyz
-    return false;
-
-    var isdeleted = readCookie(id + "isdeleted");
+    $("#seticon").attr("style", "color: red;");
+    var isdeleted = readCookie($('#linkChange').attr("cid") + "isdeleted");
     if (isdeleted && isdeleted.length > 0) {
-        createCookie(id + "isdeleted", "", 99999);
+        createCookie($('#linkChange').attr("cid") + "isdeleted", "", 99999);
 
-        var linkcontent = readCookie(nextid + "templink");
-        if (linkcontent && linkcontent.length > 0) {
-            $(obj).parent().parent().css('background-image', 'linear-gradient(rgb(20, 186, 0) -87%, rgb(0, 137, 217))');
-        }
-        else {
-            $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #0081cc , #008ada )');
-        }
+        $("#seticon").attr("style", "");
 
-        
         if (hasTweetChanges()) {
           createCookie("hasChanges", "Yes");
           $("#generate").addClass("haschanges");
@@ -155,8 +146,8 @@ function removetweet(obj) {
         showMessage("Link Marked To Delete Reverted");
     } 
     else {
-        createCookie(id + "isdeleted", "a", 99999);
-        $(obj).parent().parent().css('background-image', 'linear-gradient(to bottom, #d60000 -33%, rgb(0, 137, 217))');
+        createCookie($('#linkChange').attr("cid") + "isdeleted", "a", 99999);
+        $("#seticon").attr("style", "color: red;");
         $("#generate").addClass("haschanges");
         createCookie("hasChanges", "Yes");
         showMessage("Link Marked To Delete");

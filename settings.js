@@ -16,8 +16,8 @@ function expandCat(obj) {
         }
     } 
 
-    //getJsonbyid($(obj).parent().attr("id"), functorun);
-    getJsonbyid(28, functorun); // xyz
+    getJsonbyid($(obj).parent().attr("id"), functorun);
+    // getJsonbyid(28, functorun); // xyz
 }
 
 function fixfocus(el)
@@ -64,6 +64,7 @@ function zoom(obj) {
 var openSettingsPopup = function(jsonobj) 
 {
     // GENERAL
+    var hasChanges = false;
     var setHeight = "18px";
 
     if ($('body').hasClass('big'))
@@ -76,7 +77,7 @@ var openSettingsPopup = function(jsonobj)
         table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
         table.find('td.el').addClass('ellipsis');
     });
-
+    
     // OTHER SETTINGS
     $('body, html').css('overflow-y', 'hidden');
     $('#linkChange').attr("cid", jsonobj.id);
@@ -121,6 +122,7 @@ var openSettingsPopup = function(jsonobj)
     }
 
     if (tagchanged != null && tagchanged != 'null') {
+        hasChanges = true;
         currenttagdisplay.css('color','#00ff72');
         currenttagdisplay.html(parseTags(tagchanged));
         $('#tagsinput').val(tagchanged);
@@ -150,6 +152,7 @@ var openSettingsPopup = function(jsonobj)
     }
 
     if (catchanged != null && catchanged != 'null') {
+        hasChanges = true;
         currentcatdisplay.css('color','#00ff72');
         currentcatdisplay.html(parseCats(catchanged));
         $('#catsinput').val(catchanged);
@@ -176,6 +179,7 @@ var openSettingsPopup = function(jsonobj)
     }
 
     if (classifchanged != null && classifchanged != 'null') {
+        hasChanges = true;
         currentclassifdisplay.css('color','#00ff72');
         currentclassifdisplay.html(classifchanged);
         $('#classifinput').val(classifchanged);
@@ -210,6 +214,7 @@ var openSettingsPopup = function(jsonobj)
     }
 
     if (infochanged != null && infochanged != 'null') {
+        hasChanges = true;
         currentinfodisplay.css('color','#00ff72');
         currentinfodisplay.html(decodeURIComponent(infochanged));
         $('#infoinput').val(decodeURIComponent(infochanged));
@@ -226,6 +231,22 @@ var openSettingsPopup = function(jsonobj)
         }
     }
 
+    var isdeleted = readCookie(jsonobj.id + "isdeleted");
+    if (isdeleted && isdeleted.length > 0) {
+        $("#seticon").attr("style", "color: red;");
+    }
+    else {
+        var linkcontent = readCookie(jsonobj.id + "templink");
+        if (linkcontent && linkcontent.length > 0) {
+            $("#seticon").attr("style", "color: #00b900;");
+        }
+        else {
+            if (hasChanges) 
+                $("#seticon").attr("style", "color: #f18618;");
+            else 
+                $("#seticon").attr("style", "");
+        }
+    }
 
     $('#linkChange').fadeIn(); 
     $('#linkChange').css('display', 'flex');  
@@ -572,7 +593,7 @@ function clickLiClassif(e, obj) {
 function undoClassif(e, obj) {
     e.stopPropagation();
     fixfocus(obj);
-    
+
     $('#classifinput').val($('#classifinput').attr("cclassif"));
     $(obj).hide();
     var functorun = function() 

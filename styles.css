@@ -2448,7 +2448,9 @@ body.notransit * {
   transition-property: none !important;
 }
 
-
+#seticon {
+  margin-right: 9px;font-size: 18px;position: relative;top: 2px;
+}
 
 
 
