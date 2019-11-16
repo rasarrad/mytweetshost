@@ -11,6 +11,7 @@ function expandCat(obj) {
 
     var functorun = function(jsonvar) 
     { 
+        alert(jsonvar)
         if (jsonvar != null) {
             openSettingsPopup(jsonvar);
         }
