@@ -127,7 +127,7 @@ function undosaveinfo(obj, id) {
 
 
 function removetweet(obj) {
-    //fixfocus(obj.nextSibling);
+    fixfocus(obj);
     
     var isdeleted = readCookie($('#linkChange').attr("cid") + "isdeleted");
     if (isdeleted && isdeleted.length > 0) {
