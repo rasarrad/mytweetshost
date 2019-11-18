@@ -1102,6 +1102,10 @@ body.big .tags {
         max-height: calc(100% - 66px) !important;
         margin-top: -10px !important;
     }  
+    .newLayout.mainsettings > div {
+        max-height: calc(100% - 66px) !important;
+        margin-top: calc(50% - 40px) !important;
+    }      
     body.big .newLayout > div {
         margin-top: 0px !important;
         max-height: calc(100% - 77px) !important;
@@ -1285,7 +1289,8 @@ body.big #editTags {
 .sectionicontd {
   transition: all 0.6s;
 }
-.sectionicontd:hover {
+
+.newLayout:not(.mainsettings) .sectionicontd:hover {
   opacity: 0.6;
 }
 .sectionedittd {
@@ -1431,6 +1436,9 @@ body.big #editTags {
       .newLayout > div .titletable tr:first-child .firsttd {
           min-width: 345px;
       }
+      .newLayout.mainsettings > div .titletable tr:first-child .firsttd {
+          min-width: 319px;
+      }
       body.big .newLayout > div .titletable tr:first-child .firsttd {
           min-width: 345px !important;
       }     
@@ -1526,7 +1534,7 @@ body.big #editTags {
     font-size: 14px;
     /* width: 100%; */
     margin-top: -1px;
-    border-top: 1px solid var(--soft-color);
+    border-top: -4px solid var(--soft-color);
     padding-top: 3px;
     color: var(--high-color);
     position: fixed;
