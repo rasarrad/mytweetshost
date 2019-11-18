@@ -98,6 +98,8 @@ var openSettingsPopup = function(jsonobj)
     }
 
     //$(".buttonstable tr:first-child td .id").html(jsonobj.id);
+    $(".buttonstable tr:first-child td .author").show();
+    $(".buttonstable tr:first-child td .authorinput").hide(); 
     var authorchanged = readCookie(jsonobj.id + "authorchanged");
     if (authorchanged != null && authorchanged != 'null') {
         if (authorchanged.length > 0) {
@@ -119,6 +121,9 @@ var openSettingsPopup = function(jsonobj)
             $(".buttonstable tr:first-child td .authorinput").val("");
         }
     }
+
+    $(".buttonstable tr:first-child td .date").show();
+    $(".buttonstable tr:first-child td .date").hide(); 
     var datechanged = readCookie(jsonobj.id + "datechanged");
     if (datechanged != null && datechanged != 'null') {
         if (datechanged.length > 0) {
@@ -359,7 +364,7 @@ function showAuthor(obj) {
 function saveAuthor(obj) {
     $(obj).hide();
     var otherObj = $(obj).parent().find(".author");
-    otherObj.val($(obj).val());
+    otherObj.html($(obj).val());
     otherObj.show();
     
     createCookie($('#linkChange').attr("cid") + "authorchanged", $(obj).val());
@@ -373,7 +378,7 @@ function showDate(obj) {
 function saveDate(obj) {
     $(obj).hide();
     var otherObj = $(obj).parent().find(".date");
-    otherObj.val($(obj).val());
+    otherObj.html($(obj).val());
     otherObj.show();
 
     createCookie($('#linkChange').attr("cid") + "datechanged", $(obj).val());
