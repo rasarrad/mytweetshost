@@ -171,6 +171,7 @@ var openSettingsPopup = function(jsonobj)
         $('#originalcattd i').show();
     } 
     else {
+        alert(1)
         currentcatdisplay.css('color',null);
         currentcatdisplay.html(parseCats(jsonobj.categories));
         $('#catsinput').val(jsonobj.categories);
@@ -628,7 +629,7 @@ function undoCats(e, obj) {
 function parseCats(cats) {
     var result = "";
     var res = cats.trim().split(" ");
-
+console.log(res);
     if (res.length == 1 && res[0].trim() == 0) {
         return "--";
     } 

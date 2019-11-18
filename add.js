@@ -181,8 +181,7 @@ function create() {
     resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "");
 
     var cats = $('#categories').val();
-    console.log("-" + cats + "-")
-    console.log($('#categories'))
+
     if (cats == "undefined" || cats.length == 0) {
         cats = "";
     }
