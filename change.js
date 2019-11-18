@@ -443,7 +443,9 @@ function undogenerate() {
             eraseCookie(id + "info");
     
             eraseCookie(id + "classif");
-    
+
+            eraseCookie(id + "haschanges");
+
             id = id - 1;
         }
         while (id >= 0);        
