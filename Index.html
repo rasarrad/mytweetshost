@@ -175,10 +175,12 @@
                       <!-- <b>id </b>
                       <span class="id smallrem"></span>-->
                       <b style="margin-left: -1px;">author </b>
-                      <span class="author" style="overflow: hidden;text-overflow: ellipsis;max-width: 124px;display: inline-block;white-space: nowrap;position: relative;top: 4px;text-transform: lowercase;"></span>
+                      <span class="author" onclick="showAuthor(this)" style="overflow: hidden;text-overflow: ellipsis;max-width: 124px;display: inline-block;white-space: nowrap;position: relative;top: 4px;text-transform: lowercase;"></span>
+                      <input type="text" onblur="saveAuthor(this)" class="authorinput" style="max-width: 124px !important;white-space: nowrap;position: relative;top: 1px;color: var(--text-color);display:none;" value="">
                       <br class="brsep">
                       <b class="datespan" style="margin-left: 5px;">date </b>
-                      <span class="date smallrem"></span>
+                      <span onclick="showDate(this)" class="date smallrem"></span>
+                      <input type="text" onblur="saveDate(this)" class="dateinput" style="max-width: 54px !important;display: inline-block;white-space: nowrap;position: relative;top: 0px;color: var(--text-color);padding-left: 0;padding-right: 0;display: none;" value="">
                   </td>            
               </tr>
               <tr class="buttonstr" style="text-align: center;">
