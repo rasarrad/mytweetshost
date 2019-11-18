@@ -509,7 +509,7 @@ function parseTags(tags) {
     var result = "";
     var res = tags.trim().split(" ");
 
-    if (res.length == 1 && (res[0].trim() == 0 && res[0].trim() == "undefined")) {
+    if (res.length == 1 && (res[0].trim() == 0 || res[0].trim() == "undefined")) {
         return "--";
     } 
 
@@ -629,7 +629,7 @@ function parseCats(cats) {
     var result = "";
     var res = cats.trim().split(" ");
 
-    if (res.length == 1 && (res[0].trim() == 0 && res[0].trim() == "undefined")) {
+    if (res.length == 1 && (res[0].trim() == 0 || res[0].trim() == "undefined")) {
         return "--";
     } 
 
