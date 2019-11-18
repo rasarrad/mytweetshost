@@ -191,12 +191,12 @@ var getInformation = function(ismoretweets, wasfiltered) {
                                 console.log(2);
                                 var tagchanged = readCookie(val.id + "tagchanged");
         
-                                if (tagchanged && tagchanged.length > 0) {
+                                if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
                                     tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
                                     tagdispalay = '<span>' + tagchanged + '</span>';
                                 } 
                                 else {
-                                    if (val.tags.length > 0) {
+                                    if (val.tags.length > 0 && val.tags != 'undefined') {
                                         tagdispalay = val.tags;
                                     }
                                 }
@@ -213,12 +213,12 @@ var getInformation = function(ismoretweets, wasfiltered) {
     
                                     var tagchanged = readCookie(val.id + "tagchanged");
         
-                                    if (tagchanged && tagchanged.length > 0) {
+                                    if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
                                         tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
                                         tagdispalay = '<span>' + tagchanged + '</span>';
                                     } 
                                     else {
-                                        if (val.tags.length > 0) {
+                                        if (val.tags.length > 0 && val.tags != 'undefined') {
                                             tagdispalay = val.tags;
                                         }
                                     }
