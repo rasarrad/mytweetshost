@@ -416,7 +416,7 @@ function updateLinkColor(color, id) {
     }
 }
 function updateTagsText(text, id) {
-    $(".tweet#" + id).find(".tags").text(text); 
+    $(".tweet#" + id).find(".tags").html("<b>Tags: </b>" + text); 
 }
 
 
