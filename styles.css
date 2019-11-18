@@ -2332,6 +2332,7 @@ body.big .linkbar.fa-youtube-play{
     font-size: 14px;
     top: 4px;
     left: auto;
+    transition: all 0.6s;
 }
 
 body.big #expand {

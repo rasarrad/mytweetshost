@@ -52,7 +52,9 @@ $( document ).ready(function() {
     if (hasZoom && hasZoom.length > 0)
         zoom(null, true);
     
-    
+    setTimeout(function(){
+        $('body').removeClass('notransit'); 
+    }, 1400);  
 
     /*
     var functorun = function(jsonvar) 
