@@ -193,11 +193,11 @@ var getInformation = function(ismoretweets, wasfiltered) {
         
                                 if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
                                     tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
-                                    tagdispalay = '<span>' + tagchanged + '</span>';
+                                    tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
                                 } 
                                 else {
                                     if (val.tags.length > 0 && val.tags != 'undefined') {
-                                        tagdispalay = val.tags;
+                                        tagdispalay = parseTags(val.tags);
                                     }
                                 }
                             }
@@ -216,16 +216,16 @@ var getInformation = function(ismoretweets, wasfiltered) {
         
                                     if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
                                         tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
-                                        tagdispalay = '<span>' + tagchanged + '</span>';
+                                        tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
                                     } 
                                     else {
                                         if (val.tags.length > 0 && val.tags != 'undefined') {
-                                            tagdispalay = val.tags;
+                                            tagdispalay = parseTags(val.tags);
                                         }
                                     }
                                 } 
                                 else if (val.tags.length > 0 && val.tags != 'undefined') {
-                                    tagdispalay = val.tags;
+                                    tagdispalay = parseTags(val.tags);
                                 }
                             }
                         }
