@@ -399,7 +399,11 @@ function closeSettingsPopup(obj) {
     $('body, html').css('overflow-y', 'auto');
     $('#linkChange').fadeOut();
 }
-
+function closeMainSettingsPopup(obj) {
+    fixfocus(obj);
+    $('body, html').css('overflow-y', 'auto');
+    $('#mainsettings').fadeOut();
+}
 
 function editSetting(e, obj) {
     e.stopPropagation();
