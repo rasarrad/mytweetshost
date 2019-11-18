@@ -425,7 +425,7 @@ function updateTagsText(text, id) {
 
 
 function addTextTag(obj) {
-    fixfocus(obj);
+    //fixfocus(obj);
     if ($('#addtaginput').val() != "") {
         $('#tagsinput').val($('#tagsinput').val() + " " + $('#addtaginput').val());
         $('#tagsinput').trigger("change");
