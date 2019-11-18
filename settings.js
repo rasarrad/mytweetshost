@@ -136,7 +136,7 @@ var openSettingsPopup = function(jsonobj)
         $('#originaltagtd i').show();
     } 
     else {
-        currenttagdisplay.css('color',null);
+        currenttagdisplay.css('color',"");
         currenttagdisplay.html(parseTags(jsonobj.tags));
         $('#tagsinput').val(jsonobj.tags);
     }

@@ -2296,7 +2296,7 @@ body.big .tags {
 
 .linkbar {
     font-size: 15px;
-    top: 0px;
+    top: -1px;
     width: 20px;
 }
 body.big .linkbar {
