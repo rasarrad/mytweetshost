@@ -364,7 +364,10 @@ function showAuthor(obj) {
 function saveAuthor(obj) {
     $(obj).hide();
     var otherObj = $(obj).parent().find(".author");
-    otherObj.html($(obj).val());
+    if ($(obj).val().length > 0) 
+        otherObj.html($(obj).val());
+    else
+        otherObj.html("--"); 
     otherObj.show();
     
     createCookie($('#linkChange').attr("cid") + "authorchanged", $(obj).val());
@@ -378,6 +381,11 @@ function showDate(obj) {
 function saveDate(obj) {
     $(obj).hide();
     var otherObj = $(obj).parent().find(".date");
+    if ($(obj).val().length > 0) 
+        otherObj.html($(obj).val().substring(6,8) + "/" + $(obj).val().substring(4,6) + "/" + $(obj).val().substring(0,4));
+    else
+        otherObj.html("--"); 
+
     otherObj.html($(obj).val());
     otherObj.show();
 
