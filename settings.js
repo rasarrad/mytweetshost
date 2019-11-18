@@ -129,11 +129,11 @@ var openSettingsPopup = function(jsonobj)
         if (datechanged.length > 0) {
             $(".buttonstable tr:first-child td .date").html(datechanged.substring(6,8) + "/" + datechanged.substring(4,6) + "/" + datechanged.substring(0,4));
         
-            $(".buttonstable tr:first-child td .date").val(datechanged);
+            $(".buttonstable tr:first-child td .dateinput").val(datechanged);
         }
         else {
             $(".buttonstable tr:first-child td .date").html("--");
-            $(".buttonstable tr:first-child td .date").val("");
+            $(".buttonstable tr:first-child td .dateinput").val("");
         }
     } 
     else {
@@ -141,11 +141,11 @@ var openSettingsPopup = function(jsonobj)
         if (date.length > 0) {
             $(".buttonstable tr:first-child td .date").html(date.substring(6,8) + "/" + date.substring(4,6) + "/" + date.substring(0,4));
         
-            $(".buttonstable tr:first-child td .date").val(date);
+            $(".buttonstable tr:first-child td .dateinput").val(date);
         }
         else {
             $(".buttonstable tr:first-child td .date").html("--");
-            $(".buttonstable tr:first-child td .date").val("");
+            $(".buttonstable tr:first-child td .dateinput").val("");
         }
     }
     
