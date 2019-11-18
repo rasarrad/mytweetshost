@@ -384,6 +384,8 @@ function tagsInputOnChange(obj) {
     removeNonExistentLi();
 
     createNonExistentLi();
+    
+    updateTagsText($(obj).val(), $('#linkChange').attr("cid"));
 
     var color = getLinkColor($('#linkChange').attr("cid"));
     if (color == "#f18618")
@@ -413,6 +415,10 @@ function updateLinkColor(color, id) {
         $(".tweet#" + id).find("i.linkbar").css("color", ""); 
     }
 }
+function updateTagsText(text, id) {
+    $(".tweet#" + id).find(".tags").text(text); 
+}
+
 
 function addTextTag(obj) {
     fixfocus(obj);

@@ -189,6 +189,17 @@ var getInformation = function(ismoretweets, wasfiltered) {
                                 expandclass = hideMode ? "" : "isnew";  
                                 color = "color: #00dc00;";
                                 console.log(2);
+                                var tagchanged = readCookie(val.id + "tagchanged");
+        
+                                if (tagchanged && tagchanged.length > 0) {
+                                    tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                                    tagdispalay = '<span>' + tagchanged + '</span>';
+                                } 
+                                else {
+                                    if (val.tags.length > 0) {
+                                        tagdispalay = val.tags;
+                                    }
+                                }
                             }
                             else {
                                 var hasChanges = readCookie(val.id + "haschanges");

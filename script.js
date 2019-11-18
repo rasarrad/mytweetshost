@@ -434,7 +434,7 @@ function gotop(e) {
 
 
 function internallinkcopy(obj) {
-    fixfocus(obj.nextSibling);
+    //fixfocus(obj.nextSibling);
     
     $('#linkresult').val("https://sleepy-mclean-3aea2d.netlify.com/?tweetid=" + $('#linkChange').attr('cid'));
     $("#linkresult").select();
@@ -460,7 +460,7 @@ function externallinkopen(obj, link, id) {
 }
 
 function externallinkcopy(obj) {
-    fixfocus(obj.nextSibling);
+    //fixfocus(obj.nextSibling);
     $('#linkresult').val($('#linkChange').attr('clink'));
     $("#linkresult").select();
     document.execCommand('copy');
