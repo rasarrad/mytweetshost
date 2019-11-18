@@ -127,8 +127,8 @@ function undosaveinfo(obj, id) {
 
 
 function removetweet(obj) {
-    fixfocus(obj.nextSibling);
-    $("#seticon").attr("style", "color: red;");
+    //fixfocus(obj.nextSibling);
+    
     var isdeleted = readCookie($('#linkChange').attr("cid") + "isdeleted");
     if (isdeleted && isdeleted.length > 0) {
         createCookie($('#linkChange').attr("cid") + "isdeleted", "", 99999);
@@ -143,11 +143,13 @@ function removetweet(obj) {
           createCookie("hasChanges", "");
           $("#generate").removeClass("haschanges");
         }
+        updateLinkColor("", $('#linkChange').attr("cid"));
         showMessage("Link Marked To Delete Reverted");
     } 
     else {
         createCookie($('#linkChange').attr("cid") + "isdeleted", "a", 99999);
         $("#seticon").attr("style", "color: red;");
+        updateLinkColor("red", $('#linkChange').attr("cid"));
         $("#generate").addClass("haschanges");
         createCookie("hasChanges", "Yes");
         showMessage("Link Marked To Delete");

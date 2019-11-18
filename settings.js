@@ -397,7 +397,6 @@ function tagsInputOnChange(obj) {
 
  
 function updateSettingsColor(color) {
-    console.log(color); 
     if (color != "") {
         $('#seticon').css("color", color); 
     }
@@ -407,7 +406,6 @@ function updateSettingsColor(color) {
 }
 
 function updateLinkColor(color, id) {
-    console.log(color); 
     if (color != "") {
         $(".tweet#" + id).find("i.linkbar").css("color", color); 
     }
