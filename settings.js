@@ -123,7 +123,7 @@ var openSettingsPopup = function(jsonobj)
     }
 
     $(".buttonstable tr:first-child td .date").show();
-    $(".buttonstable tr:first-child td .date").hide(); 
+    $(".buttonstable tr:first-child td .dateinput").hide(); 
     var datechanged = readCookie(jsonobj.id + "datechanged");
     if (datechanged != null && datechanged != 'null') {
         if (datechanged.length > 0) {
@@ -381,12 +381,12 @@ function showDate(obj) {
 function saveDate(obj) {
     $(obj).hide();
     var otherObj = $(obj).parent().find(".date");
+
     if ($(obj).val().length > 0) 
         otherObj.html($(obj).val().substring(6,8) + "/" + $(obj).val().substring(4,6) + "/" + $(obj).val().substring(0,4));
     else
         otherObj.html("--"); 
 
-    otherObj.html($(obj).val());
     otherObj.show();
 
     createCookie($('#linkChange').attr("cid") + "datechanged", $(obj).val());
