@@ -407,7 +407,7 @@ body.big #zoomin {
     right: 81px;
 }
 
-#generate {
+#settings {
     position: absolute;
     font-size: 20px;
     top: 14px;
@@ -420,11 +420,11 @@ body.big #zoomin {
     color: var(--dark-color);
     background: var(--high-color);
 }
-#generate:hover {
+#settings:hover {
     opacity: 0.4;
     opacity: 0.6;
 }
-#generate.haschanges {
+#settings.haschanges {
       color: #c30000;
 }
     #addtweet:hover {
@@ -901,13 +901,13 @@ body.big .toptitle {
   line-height: 15px;
   left: calc(50% - 133px) !important;
 }
-#generate {
+#settings {
   font-size: 15px;
   top: 16px;
   right: 40px;
   padding-left: 1px;
  } 
-body.big #generate {
+body.big #settings {
   font-size: 19px;
   top: 22px;
   right: 44px;

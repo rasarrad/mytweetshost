@@ -311,7 +311,11 @@ var openSettingsPopup = function(jsonobj)
     $('#linkChange').css('display', 'flex');  
 } 
 
-
+var openMainSettingsPopup = function(jsonobj) 
+{
+    $('#mainsettings').fadeIn(); 
+    $('#mainsettings').css('display', 'flex');  
+} 
 
 var getLinkColor = function(id) 
 {

@@ -66,7 +66,7 @@ $( document ).ready(function() {
 
    getJsonbyid(28, functorun);
  */
- 
+openMainSettingsPopup();
     var hasChanges = readCookie("hasChanges");
     if (hasChanges && hasChanges.length > 0)
       $("#generate").addClass("haschanges");
@@ -214,6 +214,28 @@ $( document ).ready(function() {
           dblFlag = false;
       }
     });
+
+    $( "#settings" ).bind( "click", function( event ) {
+
+        fixfocus(this);
+
+        openMainSettingsPopup();
+  /* 
+        if (!dblFlag) {
+            dblFlag = true;
+            dblClickTimeout = setTimeout(function() {     
+              if (dblFlag) {
+                  generate();
+                  dblFlag = false;  
+              }
+            }, 500);
+        }
+        else {
+            clearTimeout(dblClickTimeout);
+            undogenerate();
+            dblFlag = false;
+        }*/
+      });
 
     ///////////////////////////////////////
 
