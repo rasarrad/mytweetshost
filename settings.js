@@ -416,7 +416,10 @@ function updateLinkColor(color, id) {
     }
 }
 function updateTagsText(text, id) {
-    $(".tweet#" + id).find(".tags").html("<b>Tags: </b>" + text); 
+    if (text.trim().length > 0 && text != "undefined")
+        $(".tweet#" + id).find(".tags").html("<b>Tags: </b>" + text); 
+    else
+        $(".tweet#" + id).find(".tags").html("<b>Tags: </b>--");     
 }
 
 
