@@ -171,7 +171,7 @@ var openSettingsPopup = function(jsonobj)
         $('#originalcattd i').show();
     } 
     else {
-        currentcatdisplay.css('color',null);
+        currentcatdisplay.css('color',"");
         currentcatdisplay.html(parseCats(jsonobj.categories));
         $('#catsinput').val(jsonobj.categories);
     }
@@ -200,7 +200,7 @@ var openSettingsPopup = function(jsonobj)
         markClassif(classifchanged);
     } 
     else {
-        currentclassifdisplay.css('color',null);
+        currentclassifdisplay.css('color',"");
         if (jsonobj.classif.length > 0 && jsonobj.classif != 0 && jsonobj.classif != "undefined") {
             currentclassifdisplay.html(jsonobj.classif);
             $('#classifinput').val(jsonobj.classif);
@@ -240,7 +240,7 @@ var openSettingsPopup = function(jsonobj)
         $('#originalinfotd i').show();
     } 
     else {
-        currentinfodisplay.css('color',null);
+        currentinfodisplay.css('color',"");
         if (jsonobj.info.length > 0 && jsonobj.info != "" && jsonobj.info != "undefined") {
             currentinfodisplay.html(decodeURIComponent(jsonobj.info));
             $('#infoinput').val(decodeURIComponent(jsonobj.info));
@@ -402,7 +402,7 @@ function updateSettingsColor(color) {
         $('#seticon').css("color", color); 
     }
     else {
-        $('#seticon').css("color", null); 
+        $('#seticon').css("color", ""); 
     }
 }
 
@@ -412,7 +412,7 @@ function updateLinkColor(color, id) {
         $(".tweet#" + id).find("i.linkbar").css("color", color); 
     }
     else {
-        $(".tweet#" + id).find("i.linkbar").css("color", null); 
+        $(".tweet#" + id).find("i.linkbar").css("color", ""); 
     }
 }
 
