@@ -258,7 +258,7 @@ var openSettingsPopup = function(jsonobj)
     else {
         var linkcontent = readCookie(jsonobj.id + "templink");
         if (linkcontent && linkcontent.length > 0) {
-            $("#seticon").attr("style", "color: #00b900;");
+            $("#seticon").attr("style", "color: #00dc00;");
         }
         else {
             if (hasChanges) 
@@ -283,7 +283,7 @@ var getLinkColor = function(id)
     else {
         var linkcontent = readCookie(id + "templink");
         if (linkcontent && linkcontent.length > 0) {
-            return "#00b900";
+            return "#00dc00";
         }
         else {
             var hasChanges = false;
@@ -390,7 +390,7 @@ function tagsInputOnChange(obj) {
         createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
     else
         createCookie($('#linkChange').attr("cid") + "haschanges", null);
-        
+
     updateLinkColor(color, $('#linkChange').attr("cid"));
     updateSettingsColor(color);
 }

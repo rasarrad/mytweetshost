@@ -187,7 +187,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         else {
                             if (linkcontent && linkcontent.length > 0) { // IS NEW
                                 expandclass = hideMode ? "" : "isnew";  
-                                color = "color: #00b900;";
+                                color = "color: #00dc00;";
                                 console.log(2);
                             }
                             else {

@@ -1641,11 +1641,11 @@ body.big .newLayout #editClassif .sectionicontd:first-child {
 }
 
 body .newLayout #editInfo .sectionicontd:first-child {
-    width: 34px !important;
+    width: 42px !important;
 }
 
 body.big .newLayout #editInfo .sectionicontd:first-child {
-    width: 32px !important;
+    width: 55px !important;
 }
 
 
