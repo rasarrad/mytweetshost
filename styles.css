@@ -1094,6 +1094,18 @@ body.big .tags {
 }
                                    
 @media only screen and (max-width: 1000px) {
+      body.big .newLayout > div .titletable tr:first-child .firsttd {
+        min-width: 466px !important;
+    } 
+
+    .newLayout > div {
+        max-height: calc(100% - 66px) !important;
+        margin-top: -10px !important;
+    }  
+    body.big .newLayout > div {
+        margin-top: 0px !important;
+        max-height: calc(100% - 77px) !important;
+    }    
     .fa-folder-open {
         font-size: 74px;
         height: 76px;
@@ -1248,6 +1260,7 @@ body.big #sear {
   }
   body.big .buttonstable .author {
        max-width: 222px !important;
+       /* min-width: 222px; */
   }
   .newLayout > div .titletable tr:first-child .firsttd {
       min-width: 466px;
@@ -1419,7 +1432,7 @@ body.big #editTags {
           min-width: 345px;
       }
       body.big .newLayout > div .titletable tr:first-child .firsttd {
-          min-width: 345px;
+          min-width: 345px !important;
       }     
   
       body.big .brsep {
@@ -1505,8 +1518,8 @@ body.big #editTags {
     overscroll-behavior: none;
     position: fixed;
     top: 65px;
-    max-height: calc(100% - 180px) !important;
-    margin-top: 20px !important;
+    max-height: calc(100% - 180px);
+    margin-top: 20px;
 }
 
 .newLayout > div .titletable {
@@ -2446,10 +2459,6 @@ body.big .buttonstable tr:first-child .firsttd i.fa-twitter {
 }
 
 i.clicable:active {
-   color: #ffff6c !important;
-}
-
-tr.cursorpointer:active {
    color: #ffff6c !important;
 }
 
