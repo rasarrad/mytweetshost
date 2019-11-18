@@ -360,6 +360,7 @@ function showAuthor(obj) {
     $(obj).hide();
     var otherObj = $(obj).parent().find(".authorinput");
     otherObj.show();
+    otherObj.focus();
 }
 function saveAuthor(obj) {
     $(obj).hide();
@@ -377,6 +378,7 @@ function showDate(obj) {
     $(obj).hide();
     var otherObj = $(obj).parent().find(".dateinput");
     otherObj.show();
+    otherObj.focus();
 }
 function saveDate(obj) {
     $(obj).hide();
