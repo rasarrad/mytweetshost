@@ -313,6 +313,7 @@ var openSettingsPopup = function(jsonobj)
 
 var openMainSettingsPopup = function(jsonobj) 
 {
+    $('body, html').css('overflow-y', 'hidden');
     $('#mainsettings').fadeIn(); 
     $('#mainsettings').css('display', 'flex');  
 } 

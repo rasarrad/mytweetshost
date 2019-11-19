@@ -289,10 +289,9 @@ openMainSettingsPopup();
         classifInputOnChange(this);
       });
 
-      $( "#linkChange > div" ).click(function(event) {
+      $( ".newLayout > div" ).click(function(event) {
         event.stopPropagation();
       });
-
 
       $("#infoinput").keyup(function(e) {
         infoInputOnKeyup(e);
