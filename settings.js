@@ -437,7 +437,7 @@ function editSetting(e, obj) {
   
     }
     else {
-        table.css('transition', 'max-height .5s');
+        table.css('transition', 'max-height .99s');
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
         table.find('td.el').addClass('ellipsis');
