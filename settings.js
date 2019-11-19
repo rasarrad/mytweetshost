@@ -481,6 +481,18 @@ function tagsInputOnChange(obj) {
 
     updateLinkColor(color, $('#linkChange').attr("cid"));
     updateSettingsColor(color);
+
+    var callback = function(flag) {      
+        if (flag) {
+            createCookie("hasChanges", "Yes");
+            $("#generateicon").addClass("haschanges");
+        }
+        else {
+            createCookie("hasChanges", "");
+            $("#generateicon").removeClass("haschanges");
+        }
+    } 
+    hasTweetChanges(callback);
 }
 
  
@@ -668,6 +680,17 @@ function catsInputOnChange(obj) {
 
     updateLinkColor(color, $('#linkChange').attr("cid"));
     updateSettingsColor(color);
+    var callback = function(flag) {      
+        if (flag) {
+            createCookie("hasChanges", "Yes");
+            $("#generateicon").addClass("haschanges");
+        }
+        else {
+            createCookie("hasChanges", "");
+            $("#generateicon").removeClass("haschanges");
+        }
+    } 
+    hasTweetChanges(callback);
 }
 
 function clickCheckCat(obj, cat) {
@@ -761,6 +784,18 @@ function classifInputOnChange(obj) {
 
     updateLinkColor(color, $('#linkChange').attr("cid"));
     updateSettingsColor(color);
+    
+    var callback = function(flag) {      
+        if (flag) {
+            createCookie("hasChanges", "Yes");
+            $("#generateicon").addClass("haschanges");
+        }
+        else {
+            createCookie("hasChanges", "");
+            $("#generateicon").removeClass("haschanges");
+        }
+    } 
+    hasTweetChanges(callback);
 
     markClassif($(obj).val().trim());
 }
@@ -843,7 +878,17 @@ function infoInputOnKeyup(obj) {
 
             updateLinkColor(color, $('#linkChange').attr("cid"));
             updateSettingsColor(color);
-
+            var callback = function(flag) {      
+                if (flag) {
+                    createCookie("hasChanges", "Yes");
+                    $("#generateicon").addClass("haschanges");
+                }
+                else {
+                    createCookie("hasChanges", "");
+                    $("#generateicon").removeClass("haschanges");
+                }
+            } 
+            hasTweetChanges(callback);
             dblFlag = false;
         }, 300);
     }
