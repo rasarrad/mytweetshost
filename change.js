@@ -128,31 +128,35 @@ function undosaveinfo(obj, id) {
 
 function removetweet(obj) {
     fixfocus(obj);
+    if ($('#linkChange').attr("cid") != "new") {
+        var isdeleted = readCookie($('#linkChange').attr("cid") + "isdeleted");
+        if (isdeleted && isdeleted.length > 0) {
+            createCookie($('#linkChange').attr("cid") + "isdeleted", "", 99999);
     
-    var isdeleted = readCookie($('#linkChange').attr("cid") + "isdeleted");
-    if (isdeleted && isdeleted.length > 0) {
-        createCookie($('#linkChange').attr("cid") + "isdeleted", "", 99999);
-
-        $("#seticon").attr("style", "");
-
-        if (hasTweetChanges()) {
-          createCookie("hasChanges", "Yes");
-          $("#generateicon").addClass("haschanges");
-        }
+            $("#seticon").attr("style", "");
+    
+            if (hasTweetChanges()) {
+              createCookie("hasChanges", "Yes");
+              $("#generateicon").addClass("haschanges");
+            }
+            else {
+              createCookie("hasChanges", "");
+              $("#generateicon").removeClass("haschanges");
+            }
+            updateLinkColor("", $('#linkChange').attr("cid"));
+            showMessage("Link Marked To Delete Reverted");
+        } 
         else {
-          createCookie("hasChanges", "");
-          $("#generateicon").removeClass("haschanges");
+            createCookie($('#linkChange').attr("cid") + "isdeleted", "a", 99999);
+            $("#seticon").attr("style", "color: red;");
+            updateLinkColor("red", $('#linkChange').attr("cid"));
+            $("#generateicon").addClass("haschanges");
+            createCookie("hasChanges", "Yes");
+            showMessage("Link Marked To Delete");
         }
-        updateLinkColor("", $('#linkChange').attr("cid"));
-        showMessage("Link Marked To Delete Reverted");
-    } 
+    }
     else {
-        createCookie($('#linkChange').attr("cid") + "isdeleted", "a", 99999);
-        $("#seticon").attr("style", "color: red;");
-        updateLinkColor("red", $('#linkChange').attr("cid"));
-        $("#generateicon").addClass("haschanges");
-        createCookie("hasChanges", "Yes");
-        showMessage("Link Marked To Delete");
+        create();
     }
 }    
 

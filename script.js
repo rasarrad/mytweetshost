@@ -66,7 +66,8 @@ $( document ).ready(function() {
 
    getJsonbyid(28, functorun);
  */
-openMainSettingsPopup();
+    //openMainSettingsPopup();
+    
     var hasChanges = readCookie("hasChanges");
 
     if (hasChanges && hasChanges.length > 0) {
@@ -156,7 +157,7 @@ openMainSettingsPopup();
       }
     });    
 
-    $('#postedby, #categories, #tags, #info, #filtertext, #filterdate1, #filterdate2, #filterid, #filterauthor, #filtertag').keydown(function(e){
+    $('#categories, #tags, #info, #filtertext, #filterdate1, #filterdate2, #filterid, #filterauthor, #filtertag').keydown(function(e){
         e.stopPropagation();
       });
       

@@ -68,86 +68,143 @@ var openSettingsPopup = function(jsonobj)
 {
     // GENERAL
     var hasChanges = false;
-    var setHeight = "18px";
 
-    if ($('body').hasClass('big'))
-        setHeight = "31px";
-
-    $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
-        var table = $(element);
-        table.css('transition', 'max-height .01s');
-        table.css('max-height', setHeight);
-        table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
-        table.find('td.el').addClass('ellipsis');
-    });
     
     // OTHER SETTINGS
     $('body, html').css('overflow-y', 'hidden');
-    $('#linkChange').attr("cid", jsonobj.id);
-    $('#linkChange').attr("clink", jsonobj.url);
 
-    $(".buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
+    if (jsonobj) {
+        var setHeight = "18px";
 
-    $(".buttonstable tr:first-child td i").addClass('fa').addClass('fa-twitter').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
+        if ($('body').hasClass('big'))
+            setHeight = "31px";
+    
+        $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
+            var table = $(element);
+            table.css('transition', 'max-height .01s');
+            table.css('max-height', setHeight);
+            table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '').show();
+            table.find('td.el').addClass('ellipsis');
+        });
 
-    if (jsonobj.type == "H") {
-        $(".buttonstable tr:first-child td i").addClass('fa').addClass('fa-internet-explorer').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
-    }
-    else if (jsonobj.type == "Y") {
-        $(".buttonstable tr:first-child td i").addClass('fa').addClass('fa-youtube-play').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
-    }
+        $(".fa-angle-up").show();  
 
-    //$(".buttonstable tr:first-child td .id").html(jsonobj.id);
-    $(".buttonstable tr:first-child td .author").show();
-    $(".buttonstable tr:first-child td .authorinput").hide(); 
-    var authorchanged = readCookie(jsonobj.id + "authorchanged");
-    if (authorchanged != null && authorchanged != 'null') {
-        if (authorchanged.length > 0) {
-            $(".buttonstable tr:first-child td .author").html(authorchanged);
-            $(".buttonstable tr:first-child td .authorinput").val(authorchanged);
+        $('#linkChange').attr("cid", jsonobj.id);
+        $('#linkChange').attr("clink", jsonobj.url);
+
+        $('#linktable').hide();
+        $('#editTags').css('margin-top', '80px');  
+        $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
+
+        $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-twitter').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
+    
+        if (jsonobj.type == "H") {
+            $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-internet-explorer').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
         }
+        else if (jsonobj.type == "Y") {
+            $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-youtube-play').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
+        }   
+
+            //$("#linkChange .buttonstable tr:first-child td .id").html(jsonobj.id);
+        $("#linkChange .buttonstable tr:first-child td .author").show();
+        $("#linkChange .buttonstable tr:first-child td .authorinput").hide(); 
+        var authorchanged = readCookie(jsonobj.id + "authorchanged");
+        if (authorchanged != null && authorchanged != 'null') {
+            if (authorchanged.length > 0) {
+                $("#linkChange .buttonstable tr:first-child td .author").html(authorchanged);
+                $("#linkChange .buttonstable tr:first-child td .authorinput").val(authorchanged);
+            }
+            else {
+                $("#linkChange .buttonstable tr:first-child td .author").html("--");
+                $("#linkChange .buttonstable tr:first-child td .authorinput").val("");
+            }
+        } 
         else {
-            $(".buttonstable tr:first-child td .author").html("--");
-            $(".buttonstable tr:first-child td .authorinput").val("");
+            if (jsonobj.author.length > 0) {
+                $("#linkChange .buttonstable tr:first-child td .author").html(jsonobj.author);
+                $("#linkChange .buttonstable tr:first-child td .authorinput").val(jsonobj.author);
+            }
+            else {
+                $("#linkChange .buttonstable tr:first-child td .author").html("--");
+                $("#linkChange .buttonstable tr:first-child td .authorinput").val("");
+            }
         }
-    } 
+
+        $("#linkChange .buttonstable tr:first-child td .date").show();
+        $("#linkChange .buttonstable tr:first-child td .dateinput").hide(); 
+        var datechanged = readCookie(jsonobj.id + "datechanged");
+        if (datechanged != null && datechanged != 'null') {
+            if (datechanged.length > 0) {
+                $("#linkChange .buttonstable tr:first-child td .date").html(datechanged.substring(6,8) + "/" + datechanged.substring(4,6) + "/" + datechanged.substring(0,4));
+            
+                $("#linkChange .buttonstable tr:first-child td .dateinput").val(datechanged);
+            }
+            else {
+                $("#linkChange .buttonstable tr:first-child td .date").html("--");
+                $("#linkChange .buttonstable tr:first-child td .dateinput").val("");
+            }
+        } 
+        else {
+            var date = jsonobj.date.toString();
+            if (date.length > 0) {
+                $("#linkChange .buttonstable tr:first-child td .date").html(date.substring(6,8) + "/" + date.substring(4,6) + "/" + date.substring(0,4));
+            
+                $("#linkChange .buttonstable tr:first-child td .dateinput").val(date);
+            }
+            else {
+                $("#linkChange .buttonstable tr:first-child td .date").html("--");
+                $("#linkChange .buttonstable tr:first-child td .dateinput").val("");
+            }
+        }      
+
+        $(".buttontdtohide").show();  
+
+        $('#removetweetp').attr('class','').addClass('fa').addClass('fa-eraser').addClass('fa-flip-horizontal');
+
+
+
+
+    }
     else {
-        if (jsonobj.author.length > 0) {
-            $(".buttonstable tr:first-child td .author").html(jsonobj.author);
-            $(".buttonstable tr:first-child td .authorinput").val(jsonobj.author);
-        }
-        else {
-            $(".buttonstable tr:first-child td .author").html("--");
-            $(".buttonstable tr:first-child td .authorinput").val("");
-        }
+    
+        $('#linkChange').find("table:not(.buttonstable):not(.newlinktable)").each( function( index, element ) {
+            var table = $(element);
+            table.css('transition', 'max-height 0.01s');
+            table.css('max-height', '2450px');
+            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;top: -6px;').hide();
+            if (table.attr('id') != 'editInfo')
+                table.find('td.el').removeClass('ellipsis');
+        });
+                
+        $('#linkChange').attr("cid", "new");
+
+        $('#linktable').show();
+        $('#editTags').css('margin-top', 'null');  
+
+        $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
+
+        $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-question').attr('style','');
+    
+            //$("#linkChange .buttonstable tr:first-child td .id").html(jsonobj.id);
+        $("#linkChange .buttonstable tr:first-child td .author").hide();
+        $("#linkChange .buttonstable tr:first-child td .authorinput").show(); 
+
+        $("#linkChange .buttonstable tr:first-child td .date").hide();
+        $("#linkChange .buttonstable tr:first-child td .dateinput").show(); 
+      
+        $(".buttontdtohide").hide();
+
+        $('#removetweetp').attr('class','').addClass('fa').addClass('fa-floppy-o');
+
+
+
+
+
     }
 
-    $(".buttonstable tr:first-child td .date").show();
-    $(".buttonstable tr:first-child td .dateinput").hide(); 
-    var datechanged = readCookie(jsonobj.id + "datechanged");
-    if (datechanged != null && datechanged != 'null') {
-        if (datechanged.length > 0) {
-            $(".buttonstable tr:first-child td .date").html(datechanged.substring(6,8) + "/" + datechanged.substring(4,6) + "/" + datechanged.substring(0,4));
-        
-            $(".buttonstable tr:first-child td .dateinput").val(datechanged);
-        }
-        else {
-            $(".buttonstable tr:first-child td .date").html("--");
-            $(".buttonstable tr:first-child td .dateinput").val("");
-        }
-    } 
-    else {
-        var date = jsonobj.date.toString();
-        if (date.length > 0) {
-            $(".buttonstable tr:first-child td .date").html(date.substring(6,8) + "/" + date.substring(4,6) + "/" + date.substring(0,4));
-        
-            $(".buttonstable tr:first-child td .dateinput").val(date);
-        }
-        else {
-            $(".buttonstable tr:first-child td .date").html("--");
-            $(".buttonstable tr:first-child td .dateinput").val("");
-        }
-    }
+ 
+
+
     
     // TAGS
 
@@ -368,15 +425,17 @@ function showAuthor(obj) {
     otherObj.focus();
 }
 function saveAuthor(obj) {
-    $(obj).hide();
-    var otherObj = $(obj).parent().find(".author");
-    if ($(obj).val().length > 0) 
-        otherObj.html($(obj).val());
-    else
-        otherObj.html("--"); 
-    otherObj.show();
-    
-    createCookie($('#linkChange').attr("cid") + "authorchanged", $(obj).val());
+    if ($('#linkChange').attr("cid") != "new") {
+        $(obj).hide();
+        var otherObj = $(obj).parent().find(".author");
+        if ($(obj).val().length > 0) 
+            otherObj.html($(obj).val());
+        else
+            otherObj.html("--"); 
+        otherObj.show();
+        
+        createCookie($('#linkChange').attr("cid") + "authorchanged", $(obj).val());
+    }
 }
 
 function showDate(obj) {
@@ -386,17 +445,19 @@ function showDate(obj) {
     otherObj.focus();
 }
 function saveDate(obj) {
-    $(obj).hide();
-    var otherObj = $(obj).parent().find(".date");
-
-    if ($(obj).val().length > 0) 
-        otherObj.html($(obj).val().substring(6,8) + "/" + $(obj).val().substring(4,6) + "/" + $(obj).val().substring(0,4));
-    else
-        otherObj.html("--"); 
-
-    otherObj.show();
-
-    createCookie($('#linkChange').attr("cid") + "datechanged", $(obj).val());
+    if ($('#linkChange').attr("cid") != "new") {
+        $(obj).hide();
+        var otherObj = $(obj).parent().find(".date");
+    
+        if ($(obj).val().length > 0) 
+            otherObj.html($(obj).val().substring(6,8) + "/" + $(obj).val().substring(4,6) + "/" + $(obj).val().substring(0,4));
+        else
+            otherObj.html("--"); 
+    
+        otherObj.show();
+    
+        createCookie($('#linkChange').attr("cid") + "datechanged", $(obj).val());
+    }
 }
 
 function closeSettingsPopup(obj) {
@@ -412,38 +473,41 @@ function closeMainSettingsPopup(obj) {
 
 function editSetting(e, obj) {
     e.stopPropagation();
-    var setHeight = "18px";
 
-    if ($('body').hasClass('big'))
-        setHeight = "31px";
+    if ($('#linkChange').attr("cid") != "new") {
+        var setHeight = "18px";
 
-    var table = $(obj).parent().parent();
-    if (table.css('max-height') == setHeight) {
-        var hasExpanded = false;
-        $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
-            var table = $(element);
-            
-            table.css('transition', 'max-height 0.01s');
+        if ($('body').hasClass('big'))
+            setHeight = "31px";
+    
+        var table = $(obj).parent().parent();
+        if (table.css('max-height') == setHeight) {
+            var hasExpanded = false;
+            $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
+                var table = $(element);
+                
+                table.css('transition', 'max-height 0.01s');
+                table.css('max-height', setHeight);
+                table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
+                table.find('td.el').addClass('ellipsis');
+            });
+        
+            table.css('transition', 'max-height 6.3s');
+            table.css('max-height', '2450px');
+            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;top: -6px;');
+            if (table.attr('id') != 'editInfo')
+                table.find('td.el').removeClass('ellipsis');
+      
+        }
+        else {
+            table.css('transition', 'max-height ease-in 2.99s');
             table.css('max-height', setHeight);
             table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
-            table.find('td.el').addClass('ellipsis');
-        });
-    
-        table.css('transition', 'max-height 6.3s');
-        table.css('max-height', '2450px');
-        table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;top: -6px;');
-        if (table.attr('id') != 'editInfo')
-            table.find('td.el').removeClass('ellipsis');
-  
-    }
-    else {
-        table.css('transition', 'max-height ease-in 2.99s');
-        table.css('max-height', setHeight);
-        table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
-        setTimeout(function() { 
-            table.find('td.el').addClass('ellipsis');
-        }, 1500);
-        
+            setTimeout(function() { 
+                table.find('td.el').addClass('ellipsis');
+            }, 1500);
+            
+        }
     }
 }
 

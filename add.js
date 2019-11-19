@@ -8,7 +8,10 @@ function parseTweet(type) {
 
         if (text.substring(0,4) == "<blo") {
             addType = "T";
-            $('#typeTT').css('border-color', '#00bc00'); 
+
+            $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
+
+            $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-twitter').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
 
             text = "\"" + text.replace(/"/g, '').replace('<\/script>', '<&#47;script>') + "\"";
             
@@ -45,8 +48,9 @@ function parseTweet(type) {
         }
         else if (text.indexOf("youtube.com/embed") >= 0) {
             addType = "Y";
-            $('#typeYY').css('border-color', '#00bc00'); 
-
+            $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
+            $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-youtube-play').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
+            
             var date = new Date();
             
             $('#date').val(date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2));
@@ -77,7 +81,8 @@ function parseTweet(type) {
         }
         else if (text.indexOf("youtube") >= 0) {
             addType = "Y";
-            $('#typeYY').css('border-color', '#00bc00'); 
+            $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
+            $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-youtube-play').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
 
             var date = new Date();
             
@@ -117,7 +122,8 @@ function parseTweet(type) {
         }
         else if (text.substring(0,4) == "http") {
             addType = "H";
-            $('#typeHH').css('border-color', '#00bc00'); 
+            $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
+            $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-internet-explorer').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
 
             var date = new Date();
             
@@ -213,8 +219,9 @@ function create() {
 
     document.execCommand('copy');
 
-    resetFieldsPopup();
+    //resetFieldsPopup();
 
+    /*
     if ($("#onemore").is(":checked")) {
         showMessage("New Link Created And Copied To Clipboard. You Can Add One More Now");
         $('#tweet').focus();
@@ -222,13 +229,16 @@ function create() {
     else {
         showMessage("New Link Created And Copied To Clipboard");
         $('.addpopup').fadeOut(2000);
-    }       
+    }        */
+    showMessage("New Link Created And Copied To Clipboard");
+    $('.addpopup').fadeOut(2000);
     
-    if ($("#preview").is(":checked")) {
+    
+    //if ($("#preview").is(":checked")) {
         createCookie(nextid + "templink", encodeURIComponent(JSON.stringify(result)), 99999);
         createCookie("hasChanges", "Yes");
         $("#generateicon").addClass("haschanges");
-    } 
+    //} 
     createCookie("maxid", pad(nextid + 1, 4));
 
     resetFields(false);
@@ -243,14 +253,17 @@ function create() {
 
 var openCreatePopup = function(flag) 
 {
+    /*
     if (flag) {
         $("#onemore").prop("checked", false);
     }
     else {
         $("#onemore").prop("checked", true);
         $('#tweet').focus();
-    }
-    $('.addpopup').fadeIn();
+    } */
+    $('#tweet').focus();
+
+    openSettingsPopup();
 
 } 
 
