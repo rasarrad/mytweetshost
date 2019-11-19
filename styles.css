@@ -521,7 +521,9 @@ body.big #zoomin {
       color: white;
       font-weight: bold;
       background: #007cc391;
-      border: 1px solid #007dc5;
+      border: 1px solid var(--dark-color);
+      color: var(--dark-color);
+    background: var(--high-color);
       padding-left: 4px;
       padding-right: 4px;
       font-family: Helvetica, Roboto, "Segoe UI", Calibri, sans-serif;
@@ -1296,6 +1298,12 @@ body.big #editTags {
 .newLayout:not(.new):not(.mainsettings) table .sectionicontd:hover {
   opacity: 0.6;
 }
+.newLayout.new div table tr .td {
+  cursor: default !important;
+}
+.newLayout.new div table tr .td:hover {
+  cursor: default !important;
+}
 .sectionedittd {
   transition: all 0.6s;
 }
@@ -2014,10 +2022,15 @@ input[type="radio"]:checked + label span {
   -moz-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.cursorpointer {
+.newLayout:not(.new) .cursorpointer {
   cursor: pointer !important;
 }
-
+.newLayout:not(.new) .sectiontitle {
+  cursor: pointer !important;
+}
+.newLayout.new .sectiontitle {
+  cursor: default !important;
+}
 .cursordefault {
   cursor: default !important;
 }
