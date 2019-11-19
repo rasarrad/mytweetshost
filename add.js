@@ -39,7 +39,7 @@ function parseTweet(type) {
                         openCreatePopup(true);
                     }
                 }
-                $('#categories').focus();
+                $('#addtaginput').focus();
 
                 showMessage("Tweet Link Successfully Parsed"); 
             }     
@@ -72,7 +72,7 @@ function parseTweet(type) {
                         openCreatePopup(true);
                     }
                 }
-
+                $('#postedby').focus();
                 showMessage("Youtube Link Successfully Parsed"); 
             }             
 
@@ -113,7 +113,7 @@ function parseTweet(type) {
                         openCreatePopup(true);
                     }
                 }
-
+                $('#postedby').focus();
                 showMessage("Youtube Link Successfully Parsed"); 
             }     
 
@@ -124,7 +124,7 @@ function parseTweet(type) {
             addType = "H";
             $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
             $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-internet-explorer').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
-
+            alert(22)
             var date = new Date();
             
             $('#date').val(date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2));
@@ -145,11 +145,11 @@ function parseTweet(type) {
                     }
                 }
 
-                $('#date').focus(function(){
+                /*$('#date').focus(function(){
                     var that = this;
                     setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
-                });
-
+                });*/
+                $('#postedby').focus();
                 showMessage("HTTP Link Successfully Parsed"); 
             }
 
