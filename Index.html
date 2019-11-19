@@ -98,7 +98,7 @@
     Link <input id="tweet" style="width: 45px;" type="text">
     Date <input id="date" style="width: 61px;" type="text">
     Id <input style="display: inline; width: 28px;" id="tweetid" type="text"> 
-    Posted by <input type="text" style="display: inline;text-overflow: clip;width: 246px;" id="postedby"></input>
+    Posted by <input type="text" style="display: inline;text-overflow: clip;width: 246px;"></input>
     <div style="display: inline;position: absolute;right: 172px;">
       <i id="typeTT" class="fa fa-twitter-square" style="font-size: 28px;position: absolute;left: 20px; top: -19px; border: 2px solid white; padding: 2px 4px; border-radius: 4px;"></i>
       <i id="typeYY" class="fa fa-youtube-square" style=" font-size: 28px; position: absolute; left: 62px;top: -19px; border: 2px solid white; padding: 2px 4px; border-radius: 4px;"></i>
@@ -461,10 +461,10 @@
                 <i class="fa fa-hashtag" style="font-size: 14px;position: relative;top: -1px;left: -4px;"></i><span style="padding-left: 6px;position: relative;top: -1px;left: -1px;" class="sectiontitle">Current ID</span>
             </td>    
             <td class="sectionicontd el ellipsis" style="cursor: default;">
-                <input type="text" style="position: relative;top: -3px;width: 84px;">
+                <input id="maxidinput" type="text" style="position: relative;top: -3px;width: 84px;">
             </td>                         
             <td class="sectionedittd">
-                <i class="fa fa-check" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 18px;top: -3px;border-radius: 3px;padding-left: 0px;height: 17px;padding-right: 1px;"></i>
+                <i class="fa fa-check" id="updatemaxid" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 18px;top: -3px;border-radius: 3px;padding-left: 0px;height: 17px;padding-right: 1px;"></i>
             </td>                                         
             </tr>   
         </tbody>
@@ -476,10 +476,10 @@
                 <i class="fa fa-plus-square" style="font-size: 14px;position: relative;top: -1px;left: -4px;"></i><span style="padding-left: 6px;position: relative;top: -1px;left: -1px;" class="sectiontitle">New links</span>
             </td>    
             <td class="sectionicontd el ellipsis" style="cursor: default;">
-                <input type="text" style="position: relative;top: -3px;width: 84px;">
+                <input id="removetmpinput" type="text" style="position: relative;top: -3px;width: 84px;">
             </td>                         
             <td class="sectionedittd">
-                <i class="fa fa-check" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 18px;top: -3px;border-radius: 3px;padding-left: 0px;height: 17px;padding-right: 1px;"></i>
+                <i class="fa fa-check" id="removetmp" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 18px;top: -3px;border-radius: 3px;padding-left: 0px;height: 17px;padding-right: 1px;"></i>
             </td>                                         
         </tr>   
       </tbody>

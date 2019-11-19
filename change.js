@@ -435,11 +435,12 @@ function undogenerate(obj) {
 
     var r = confirm("Remove all Changes?");
     if (r == true) {
+        resetFields(false);
+
         var id = parseInt(readCookie("maxid")) - 1;
 
         do {
-            console.log(33333333333)
-            console.log(id)  
+
             eraseCookie(id + "templink");
     
             eraseCookie(id + "isdeleted");

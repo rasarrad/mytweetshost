@@ -227,11 +227,11 @@ openMainSettingsPopup();
     });
 
     $( "#updatemaxid" ).bind( "click", function( event ) {
-        if ($('#postedby').val() != "") {
-            createCookie("maxid", pad($('#postedby').val(), 4));
+        if ($('#maxidinput').val() != "") {
+            createCookie("maxid", pad($('#maxidinput').val(), 4));
            
-            showMessage("Current ID: " +  $('#postedby').val());
-            $('#postedby').val('');
+            showMessage("Current ID: " +  $('#maxidinput').val());
+            $('#maxidinput').val('');
         }
         else {
             showMessage("Current ID: " + readCookie("maxid"));
@@ -239,12 +239,12 @@ openMainSettingsPopup();
     });
 
     $( "#removetmp" ).bind( "click", function( event ) {
-        if ($('#postedby').val() != "") {
+        if ($('#removetmpinput').val() != "") {
            
-            createCookie($('#postedby').val() + "templink", "", 99999);
+            createCookie($('#removetmpinput').val() + "templink", "", 99999);
 
-            showMessage("Removed link number: " +  $('#postedby').val());
-            $('#postedby').val('');
+            showMessage("Removed link number: " +  $('#removetmpinput').val());
+            $('#removetmpinput').val('');
         }
         else {
             nextid = parseInt(readCookie("maxid"));
