@@ -163,7 +163,11 @@ function parseTweet(type) {
             else {
                 $('#tweet').val("");
                 if ($(".addpopup").css('display') == 'none') {
-                    alert(65)
+                    
+                    $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
+
+                    $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-question').attr('style','');
+                
                     dblFlag = true;
                     openCreatePopup(true);
                 }

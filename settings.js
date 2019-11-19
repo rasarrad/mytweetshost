@@ -323,7 +323,7 @@ var openSettingsPopup = function(jsonobj)
 
     }
     else {
-        alert(dblFlag)
+        //alert(dblFlag)
 
         dblFlag = false;
 
@@ -338,13 +338,10 @@ var openSettingsPopup = function(jsonobj)
                 
         $('#linkChange').attr("cid", "new");
         $('#linkChange').addClass("new");
+        $('#editTags').css('margin-top', '0px');  
         $('#linktable').show();
-        $('#editTags').css('margin-top', null);  
 
-        $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
 
-        $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-question').attr('style','');
-    
             //$("#linkChange .buttonstable tr:first-child td .id").html(jsonobj.id);
         $("#linkChange .buttonstable tr:first-child td .author").hide();
         $("#linkChange .buttonstable tr:first-child td .authorinput").show(); 
