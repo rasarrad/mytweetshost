@@ -68,8 +68,11 @@ $( document ).ready(function() {
  */
 openMainSettingsPopup();
     var hasChanges = readCookie("hasChanges");
-    if (hasChanges && hasChanges.length > 0)
-      $("#generateicon").addClass("haschanges");
+    alert("-" + hasChanges + "-")
+    if (hasChanges && hasChanges.length > 0) {
+        $("#generateicon").addClass("haschanges");
+    }
+
 
     ///////////////////////////////////////
 
