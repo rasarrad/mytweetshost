@@ -203,7 +203,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             }
                             else {
                                 var hasChanges = readCookie(val.id + "haschanges");
-                                console.log(1)
+                                console.log("-" + hasChanges + "-")
                                 if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
                                     console.log(3);
                                     color = "color: #f18618;";

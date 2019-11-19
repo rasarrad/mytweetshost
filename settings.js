@@ -514,7 +514,6 @@ function updateLinkColor(color, id) {
     }
 }
 function updateTagsText(text, id) {
-    console.log("-" + text + "-")
     if (text.trim().length > 0 && text != "undefined")
         $(".tweet#" + id).find(".tags").html("<b>Tags: </b>" + text); 
     else
@@ -803,9 +802,6 @@ function classifInputOnChange(obj) {
 function markClassif(value) {
 
     $('#classiful').find(".litags").each( function( index, element ) {
-        //console.log("-" + $(element).html().trim() + "-");
-        //console.log("-" + value + "-");
-        //console.log("-" + ($(element).html().trim() == value) + "-");
         if($(element).html().trim() == value) {
             $(element).addClass("selectedtag");
         }

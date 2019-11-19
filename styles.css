@@ -424,8 +424,8 @@ body.big #zoomin {
     opacity: 0.4;
     opacity: 0.6;
 }
-#settings.haschanges {
-      color: #c30000;
+#generateicon.haschanges {
+      color: #e88e0b;
 }
     #addtweet:hover {
       /* color: var(--soft-color); */
