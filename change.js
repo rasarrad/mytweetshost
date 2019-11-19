@@ -436,9 +436,10 @@ function undogenerate(obj) {
     var r = confirm("Remove all Changes?");
     if (r == true) {
         var id = parseInt(readCookie("maxid")) - 1;
-        console.log(33333333333)
-        console.log(id)  
+
         do {
+            console.log(33333333333)
+            console.log(id)  
             eraseCookie(id + "templink");
     
             eraseCookie(id + "isdeleted");
