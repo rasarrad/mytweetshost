@@ -69,7 +69,7 @@ $( document ).ready(function() {
 openMainSettingsPopup();
     var hasChanges = readCookie("hasChanges");
     if (hasChanges && hasChanges.length > 0)
-      $("#generate").addClass("haschanges");
+      $("#generateicon").addClass("haschanges");
 
     ///////////////////////////////////////
 
@@ -194,26 +194,6 @@ openMainSettingsPopup();
     });
  
     ///////////////////////////////////////
-    
-    $( "#generate" ).bind( "click", function( event ) {
-
-      fixfocus(this);
-
-      if (!dblFlag) {
-          dblFlag = true;
-          dblClickTimeout = setTimeout(function() {     
-            if (dblFlag) {
-                generate();
-                dblFlag = false;  
-            }
-          }, 500);
-      }
-      else {
-          clearTimeout(dblClickTimeout);
-          undogenerate();
-          dblFlag = false;
-      }
-    });
 
     $( "#settings" ).bind( "click", function( event ) {
 
@@ -390,20 +370,20 @@ $.fn.isChildOverflowing = function (child) {
         var hideModeVar = readCookie("hideMode");
         if (hideModeVar && hideModeVar.length > 0) {
             hideMode = true;
-            $("#generate").addClass("hidemode");
+            //$("#generate").addClass("hidemode");
         }
     }
 
     function changeviewmode() {
         if (hideMode) {
             hideMode = false;
-            $("#generate").removeClass("hidemode");
+            //$("#generate").removeClass("hidemode");
             createCookie("hideMode", "");
             showMessage("Hide Mode Deactivated");
         }
         else {
             hideMode = true;
-            $("#generate").addClass("hidemode");
+            //$("#generate").addClass("hidemode");
             createCookie("hideMode", "yes");
             showMessage("Hide Mode Activated");
         }

@@ -227,7 +227,7 @@ function create() {
     if ($("#preview").is(":checked")) {
         createCookie(nextid + "templink", encodeURIComponent(JSON.stringify(result)), 99999);
         createCookie("hasChanges", "Yes");
-        $("#generate").addClass("haschanges");
+        $("#generateicon").addClass("haschanges");
     } 
     createCookie("maxid", pad(nextid + 1, 4));
 
