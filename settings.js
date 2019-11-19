@@ -75,7 +75,7 @@ var openSettingsPopup = function(jsonobj)
 
     if (jsonobj) {
         var setHeight = "18px";
-        alert(33)
+
         if ($('body').hasClass('big'))
             setHeight = "31px";
     
@@ -323,7 +323,10 @@ var openSettingsPopup = function(jsonobj)
 
     }
     else {
-    alert(11)
+        alert(dblFlag)
+
+        dblFlag = false;
+
         $('#linkChange').find("table:not(.buttonstable):not(.newlinktable)").each( function( index, element ) {
             var table = $(element);
             table.css('transition', 'max-height 0.01s');

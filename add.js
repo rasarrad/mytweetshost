@@ -124,7 +124,7 @@ function parseTweet(type) {
             addType = "H";
             $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
             $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-internet-explorer').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
-            alert(22)
+
             var date = new Date();
             
             $('#date').val(date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2));
@@ -163,6 +163,8 @@ function parseTweet(type) {
             else {
                 $('#tweet').val("");
                 if ($(".addpopup").css('display') == 'none') {
+                    alert(65)
+                    dblFlag = true;
                     openCreatePopup(true);
                 }
             }
