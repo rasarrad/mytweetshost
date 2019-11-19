@@ -158,7 +158,7 @@ var openSettingsPopup = function(jsonobj)
         }      
 
         $(".buttontdtohide").show();  
-
+        $(".originaltr").show();
         $('#removetweetp').attr('class','').addClass('fa').addClass('fa-eraser').addClass('fa-flip-horizontal');
 
     
@@ -350,7 +350,7 @@ var openSettingsPopup = function(jsonobj)
         $("#linkChange .buttonstable tr:first-child td .dateinput").show(); 
       
         $(".buttontdtohide").hide();
-
+        $(".originaltr").hide();
         $('#removetweetp').attr('class','').addClass('fa').addClass('fa-floppy-o');
 
     }
