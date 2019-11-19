@@ -75,7 +75,7 @@ var openSettingsPopup = function(jsonobj)
 
     if (jsonobj) {
         var setHeight = "18px";
-
+        alert(33)
         if ($('body').hasClass('big'))
             setHeight = "31px";
     
