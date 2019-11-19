@@ -423,10 +423,12 @@ function editSetting(e, obj) {
         $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
             var table = $(element);
             
-            table.css('transition', 'max-height 0.01s');
+            table.css('transition', 'max-height ease-out 1.99s');
             table.css('max-height', setHeight);
             table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
-            table.find('td.el').addClass('ellipsis');
+            setTimeout(function() { 
+                table.find('td.el').addClass('ellipsis');
+            }, 1500);
         });
     
         table.css('transition', 'max-height 6.3s');
@@ -437,7 +439,7 @@ function editSetting(e, obj) {
   
     }
     else {
-        table.css('transition', 'max-height ease-out 2.99s');
+        table.css('transition', 'max-height ease-out 1.99s');
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
         setTimeout(function() { 
