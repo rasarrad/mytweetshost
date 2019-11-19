@@ -437,14 +437,13 @@ function editSetting(e, obj) {
   
     }
     else {
-        table.css('transition', 'max-height ease-out 4.99s');
+        table.css('transition', 'max-height ease-out 2.99s');
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
-        table.find('td.el').addClass('ellipsis');
-        /*setTimeout(function() { 
+        setTimeout(function() { 
             table.find('td.el').addClass('ellipsis');
-        }, 500);
-        */
+        }, 1500);
+        
     }
 }
 
