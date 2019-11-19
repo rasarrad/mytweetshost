@@ -176,19 +176,17 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         var tagdispalay = " --";
                         var expandclass = "";
                         var color = "";
-                        console.log(11111111111111111);
-                        console.log(val.id);
+
                         var isdeleted = readCookie(val.id + "isdeleted");
                         if (isdeleted && isdeleted.length > 0) { // ID DELETED
                             expandclass = hideMode ? "" : "isdeleted";    
                             color = "color: red;";
-                            console.log(1);
                         } 
                         else {
                             if (linkcontent && linkcontent.length > 0) { // IS NEW
                                 expandclass = hideMode ? "" : "isnew";  
                                 color = "color: #00dc00;";
-                                console.log(2);
+    
                                 var tagchanged = readCookie(val.id + "tagchanged");
         
                                 if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
@@ -203,9 +201,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             }
                             else {
                                 var hasChanges = readCookie(val.id + "haschanges");
-                                console.log("-" + hasChanges + "-")
                                 if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
-                                    console.log(3);
                                     color = "color: #f18618;";
                                     if (expandclass == "isnew")
                                         expandclass = hideMode ? "" : "isnewmodified";  

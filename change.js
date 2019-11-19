@@ -316,7 +316,7 @@ function changecat(obj, id) {
 
 function generate(obj) {
     fixfocus(obj);
-    
+
     resetFields(false);
     var path = "./data.json";
     var text = '{"Tweets": [';
@@ -436,7 +436,8 @@ function undogenerate(obj) {
     var r = confirm("Remove all Changes?");
     if (r == true) {
         var id = parseInt(readCookie("maxid")) - 1;
-          
+        console.log(33333333333)
+        console.log(id)  
         do {
             eraseCookie(id + "templink");
     
