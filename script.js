@@ -157,7 +157,7 @@ $( document ).ready(function() {
       }
     });    
 
-    $('#categories, #tags, #info, #filtertext, #filterdate1, #filterdate2, #filterid, #filterauthor, #filtertag').keydown(function(e){
+    $('#catsinput, #tagsinput, #infoinput, #filtertext, #filterdate1, #filterdate2, #filterid, #filterauthor, #filtertag').keydown(function(e){
         e.stopPropagation();
       });
       

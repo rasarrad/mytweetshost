@@ -341,6 +341,10 @@ var openSettingsPopup = function(jsonobj)
         $('#editTags').css('margin-top', '0px');  
         $('#linktable').show();
 
+        $('.currenttags').html("--");  
+        $('.currentcats').html("--");  
+        $('.currentinfo').html("--");  
+        $('.currentclassif').html("--");  
 
             //$("#linkChange .buttonstable tr:first-child td .id").html(jsonobj.id);
         $("#linkChange .buttonstable tr:first-child td .author").hide();

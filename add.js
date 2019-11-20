@@ -189,21 +189,21 @@ function create() {
     if ($("#ishidden").is(":checked")) {
         ishidden = "1";
     } 
-    var resinfo = $('#info').val().replace(/"/g, "");
+    var resinfo = $('#infoinput').val().replace(/"/g, "");
     resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "");
 
-    var cats = $('#categories').val();
+    var cats = $('#catsinput').val();
 
     if (cats == "undefined" || cats.length == 0) {
         cats = "";
     }
 
-    var classif = $('#classifpop').val();
+    var classif = $('#classifinput').val();
     if (classif == "undefined" || classif.length == 0) {
         classif = "0";
     }
 
-    var tags = $('#tags').val();
+    var tags = $('#tagsinput').val();
     if (tags == "undefined" || tags.length == 0) {
         tags = "";
     }
@@ -279,11 +279,11 @@ function resetFieldsPopup()
     $('#date').val('');
     $('#tweetid').val('');
     $('#postedby').val('');
-    $('#categories').val('');
-    $('#tags').val('');
-    $('#info').val('');
+    $('#catsinput').val('');
+    $('#tagsinput').val('');
+    $('#infoinput').val('');
     $('#result').val('');  
-    $('#classifpop').val('0');     
+    $('#classifinput').val('0');     
     $('#typeTT').css('border-color', 'white'); 
     $('#typeHH').css('border-color', 'white'); 
     $('#typeYY').css('border-color', 'white');   
@@ -310,9 +310,9 @@ var closePopup = function()
     $('#date').val('');
     $('#tweetid').val('');
     $('#postedby').val('');
-    $('#categories').val('');
-    $('#tags').val('');
-    $('#info').val('');
+    $('#catsinput').val('');
+    $('#tagsinput').val('');
+    $('#infoinput').val('');
     $('#result').val('');  
     $('.addpopup').fadeOut();
     $('#typeTT').css('border-color', 'white'); 
