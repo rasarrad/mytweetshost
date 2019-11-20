@@ -1,7 +1,8 @@
 
 function parseTweet(type) {
+    nextid = parseInt(readCookie("maxid"));
     setTimeout(function(){
-        nextid = parseInt(readCookie("maxid"));
+        
         $('#tweetid').val(nextid);
 
         text = $('#tweet').val();
