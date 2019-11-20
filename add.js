@@ -3,7 +3,7 @@ function parseTweet(type) {
     
     nextid = parseInt(readCookie("maxid"));
     console.log("111: " + nextid);
-    
+
     setTimeout(function(){
         console.log("2222: " + nextid);
         $('#tweetid').val(nextid);
@@ -252,7 +252,7 @@ function create() {
         $("#generateicon").addClass("haschanges");
     //} 
 
-
+    console.log("44444: " + nextid);
     createCookie("maxid", pad(nextid + 1, 4));
 
     resetFields(false);
