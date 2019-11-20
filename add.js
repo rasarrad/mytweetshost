@@ -210,7 +210,7 @@ function createPreview() {
     var newtweet = $('#previewtd').append($('<div id="inid" class="tweet' + xclass + '"></div>'));
     var newtweetobj = $('#inid');
         
-    if (val.type == "T") {
+    if (addType == "T") {
         newtweetobj.append($('<div class="innertweet"></div>'));
         newtweetobj.find('.innertweet').append(text);
     }
