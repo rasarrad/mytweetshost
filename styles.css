@@ -1567,7 +1567,9 @@ body.big #editTags {
     display: block;
     /* width: calc(100% - 22px); */
 }
-
+.newLayout.new > div .titletable #seticon {
+    color: var(--high-color) !important;
+}
 .newLayout > div .author {
   color: var(--text-color);
 }
@@ -1716,7 +1718,9 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
   line-height: 19px;
   /* position: relative; */
 }
-
+.newLayout.new > div .titletext {
+    /*color: var(--text-color) !important;*/
+}
 .newLayout .sectiontitletable .sectiontitletd {
   width: 70%;
   text-align: center;

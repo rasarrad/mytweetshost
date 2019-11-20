@@ -237,7 +237,7 @@ function create() {
         $('.addpopup').fadeOut(2000);
     }        */
     showMessage("New Link Created And Copied To Clipboard");
-    $('.addpopup').fadeOut(2000);
+    closeSettingsPopup();
     
     
     //if ($("#preview").is(":checked")) {
@@ -245,6 +245,9 @@ function create() {
         createCookie("hasChanges", "Yes");
         $("#generateicon").addClass("haschanges");
     //} 
+
+    console.log(44444444444444444444);
+    console.log(nextid);
     createCookie("maxid", pad(nextid + 1, 4));
 
     resetFields(false);

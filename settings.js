@@ -458,7 +458,8 @@ function saveDate(obj) {
 }
 
 function closeSettingsPopup(obj) {
-    fixfocus(obj);
+    if (obj)
+        fixfocus(obj);
     $('body, html').css('overflow-y', 'auto');
     $('#linkChange').fadeOut();
 }
