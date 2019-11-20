@@ -1,7 +1,9 @@
 
 function parseTweet(type) {
-    console.log("111: " + nextid);
+    
     nextid = parseInt(readCookie("maxid"));
+    console.log("111: " + nextid);
+    
     setTimeout(function(){
         console.log("2222: " + nextid);
         $('#tweetid').val(nextid);
