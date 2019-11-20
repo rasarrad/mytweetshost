@@ -41,6 +41,8 @@ function parseTweet(type) {
                 if (type && type == 1) {
                     if ($(".addpopup").css('display') == 'none') {
                         openCreatePopup(true);
+                        
+                        createPreview();
                     }
                 }
                 $('#addtaginput').focus();
@@ -74,6 +76,8 @@ function parseTweet(type) {
                 if (type && type == 1) {
                     if ($(".addpopup").css('display') == 'none') {
                         openCreatePopup(true);
+                        
+                        createPreview();
                     }
                 }
                 $('#postedby').focus();
@@ -115,6 +119,8 @@ function parseTweet(type) {
                 if (type && type == 1) {
                     if ($(".addpopup").css('display') == 'none') {
                         openCreatePopup(true);
+                        
+                        createPreview();
                     }
                 }
                 $('#postedby').focus();
@@ -146,6 +152,8 @@ function parseTweet(type) {
                 if (type && type == 1) {
                     if ($(".addpopup").css('display') == 'none') {
                         openCreatePopup(true);
+                        
+                        createPreview();
                     }
                 }
 
@@ -174,6 +182,7 @@ function parseTweet(type) {
                 
                     dblFlag = true;
                     openCreatePopup(true);
+
                 }
             }
         }
@@ -186,6 +195,34 @@ function parseTweet(type) {
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
+
+function createPreview() {
+    var xclass = "";
+    var typefa = "twitter"
+    if (addType == "H") {
+        xclass = " html";
+        typefa = "internet-explorer"
+    }
+    else if (addType == "Y") {
+        xclass = " yt";
+        typefa = "youtube-play"
+    }
+    var newtweet = $('#previewtd').append($('<div id="inid" class="tweet' + xclass + '"></div>'));
+    var newtweetobj = $('#inid');
+        
+    if (val.type == "T") {
+        newtweetobj.append($('<div class="innertweet"></div>'));
+        newtweetobj.find('.innertweet').append(text);
+    }
+    else {
+        newtweetobj.append($(val.tweet));
+    }
+
+    $('#linktable').hide();
+
+    $('#previewtable').show();
+}
+
 
 
 function create() {
