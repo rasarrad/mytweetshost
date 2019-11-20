@@ -215,7 +215,7 @@ function createPreview() {
         newtweetobj.find('.innertweet').append(text);
     }
     else {
-        newtweetobj.append($(val.tweet));
+        newtweetobj.append($(text));
     }
 
     $('#linktable').hide();
