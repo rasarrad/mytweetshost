@@ -249,6 +249,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             newtweetobj.find('.innertweet').append(val.tweet);
                         }
                         else {
+                            console.log(1234556789);
+                            console.log("-" + val.tweet  + "-");
                             newtweetobj.append($(val.tweet));
                         }
             
