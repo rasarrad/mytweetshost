@@ -1,8 +1,9 @@
 
 function parseTweet(type) {
+    console.log("111: " + nextid);
     nextid = parseInt(readCookie("maxid"));
     setTimeout(function(){
-        
+        console.log("2222: " + nextid);
         $('#tweetid').val(nextid);
 
         text = $('#tweet').val();
@@ -209,6 +210,8 @@ function create() {
         tags = "";
     }
 
+    console.log("33333: " + nextid);
+
     if (addType == "T") {
         $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"tweet\": " + text + "\r\n},");
     }
@@ -247,8 +250,7 @@ function create() {
         $("#generateicon").addClass("haschanges");
     //} 
 
-    console.log(44444444444444444444);
-    console.log(nextid);
+
     createCookie("maxid", pad(nextid + 1, 4));
 
     resetFields(false);
