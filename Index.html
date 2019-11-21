@@ -520,7 +520,7 @@
 
 <script>
   /*<![CDATA[*/
-  function customizeTweets(flag, forceProcess, big) {
+  function customizeTweets(flag, forceProcess, big, dopostcode) {
           var hasFound = false;
           var maxTweets = 100000;
           var isChromium = window.chrome;
@@ -570,7 +570,7 @@
                 } 
               }
               else {
-                  if (hasFound) {
+                  if (hasFound && dopostcode != 1) {
                     $('#tweetcount').fadeIn(800);
 
                     //$(".innermask").fadeOut(1300);
