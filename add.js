@@ -213,7 +213,8 @@ function createPreview() {
     if (addType == "T") {
         newtweetobj.append($('<div class="innertweet"></div>'));
         newtweetobj.find('.innertweet').append(text.substring(1, text.length -1))
-        customizeTweets(null, true, null, 1);
+        setTimeout(function(){ customizeTweets(null, true, null, 1); }, 300);
+        
     }
     else {
         newtweetobj.append(text.substring(1, text.length -1));
