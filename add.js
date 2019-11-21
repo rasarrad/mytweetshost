@@ -216,8 +216,8 @@ function createPreview() {
     }
     else {
         console.log(1234556789);
-        console.log("-" + text  + "-");
-        newtweetobj.append(text);
+        console.log("-" + text.substring(1, text.length -1)  + "-");
+        newtweetobj.append(text.substring(1, text.length -1));
     }
 
     $('#linktable').hide();
