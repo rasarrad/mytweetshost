@@ -532,7 +532,7 @@
           var isSafari6Plus = !!navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i) && typeof document.body.style.webkitFilter !== "undefined";
           var ua = navigator.userAgent.toLowerCase();
           var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-          
+          alert(24444434)
           if ($('body').hasClass('big')) {
               big = true;
           }
@@ -541,6 +541,7 @@
           }
           for (i = 0; i < maxTweets; i++) {
               var obj = $("#twitter-widget-" + i);
+              alert(2)
               if (obj && obj.length > 0) {
                 if (forceProcess || obj.attr("processed") != "yes") {
                     alert(234)
