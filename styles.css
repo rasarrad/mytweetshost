@@ -2514,7 +2514,7 @@ body.notransit * {
   padding: 0;
 }
 
-#previewtd div:not(.innertweet) {
+#previewtd div:not(.innertweet):not(.tweet) {
   max-height: 231px;
   margin: 0;
   top: 10px;
