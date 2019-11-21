@@ -215,8 +215,6 @@ function createPreview() {
         newtweetobj.find('.innertweet').append(text);
     }
     else {
-        console.log(1234556789);
-        console.log("-" + text.substring(1, text.length -1)  + "-");
         newtweetobj.append(text.substring(1, text.length -1));
     }
 

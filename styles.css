@@ -2507,6 +2507,28 @@ body.notransit * {
   margin-right: 9px;font-size: 18px;position: relative;top: 2px;
 }
 
+#previewtd {
+  width: calc(100% - 220px);
+  padding-left: 6px;
+  padding-bottom: 14px;
+  padding: 0;
+}
+
+#previewtd div {
+  max-height: 231px;
+  margin: 0;
+  top: 10px;
+  background: transparent;
+}
+
+#previewtd div iframe {
+  margin: 0 !important;
+  height: 41vw !important;
+}
+
+#previewtd > div div {
+  display: none !important;
+}
 
 
 
