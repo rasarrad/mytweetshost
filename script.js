@@ -360,7 +360,7 @@ $.fn.isChildOverflowing = function (child) {
   };
 
     function openPopupParsed(text, type) {
-        
+        $('#mask').fadeIn(600);  
         setTimeout(function() { 
             resetFieldsPopup(); 
             $('#tweet').val(text);

@@ -197,6 +197,8 @@ function parseTweet(type) {
 /////////////////////////////////////////////////////////////////////////
 
 function createPreview() {
+
+    $('#mask').fadeOut(600);  
     var xclass = "";
     var typefa = "twitter"
     if (addType == "H") {
@@ -211,7 +213,7 @@ function createPreview() {
     var newtweetobj = $('#inid');
         
     if (addType == "T") {
-        newtweetobj.append($('<div class="innertweet"></div>'));
+        newtweetobj.append($('<div class="innertweet" style="max-height: 290px;min-height: 200px;"><i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;left: 153px;height: 33px;width: 33px;top: 95px;color: var(--high-color);font-size: 33px;/* display: none; */"></i></div>'));
         newtweetobj.find('.innertweet').append(text.substring(1, text.length -1))
         setTimeout(function(){ customizeTweets(null, true, null, 1); }, 1300);
         
