@@ -2531,6 +2531,11 @@ body.notransit * {
 }
 
 
+#previewtd > div div.innertweet twitter-widget {
+  opacity: 0;
+  display: none;
+  transition: all 1.6s;
+}
 
 
 
