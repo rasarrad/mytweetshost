@@ -209,6 +209,8 @@ function createPreview() {
         xclass = " yt";
         typefa = "youtube-play"
     }
+    $('#previewtd').empty();
+
     var newtweet = $('#previewtd').append($('<div id="inid" class="tweet' + xclass + '"></div>'));
     var newtweetobj = $('#inid');
         
@@ -216,10 +218,12 @@ function createPreview() {
         newtweetobj.append($('<div class="innertweet" style="max-height: 290px;min-height: 200px;"><i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;left: 153px;height: 33px;width: 33px;top: 95px;color: var(--high-color);font-size: 33px;/* display: none; */"></i></div>'));
         newtweetobj.find('.innertweet').append(text.substring(1, text.length -1))
         setTimeout(function(){ customizeTweets(null, true, null, 1); }, 1300);
-        
     }
     else {
-        newtweetobj.append(text.substring(1, text.length -1));
+        newtweetobj.append('<i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;left: 153px;height: 33px;width: 33px;top: 95px;color: var(--high-color);font-size: 33px;/* display: none; */"></i>' + text.substring(1, text.length -1));
+
+        
+        setTimeout(function(){$('#previewtd > div iframe').show().css('opacity', 1);}, 1300);
     }
 
     $('#linktable').hide();

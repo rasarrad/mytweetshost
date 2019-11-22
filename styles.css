@@ -2530,12 +2530,15 @@ body.notransit * {
   display: none !important;
 }
 
-
 #previewtd > div div.innertweet twitter-widget {
   opacity: 0;
   display: none;
-  transition: all 1.6s;
+  transition: all 1s;
 }
 
-
+#previewtd > div iframe {
+  opacity: 0;
+  display: none;
+  transition: all 1s;
+}
 
