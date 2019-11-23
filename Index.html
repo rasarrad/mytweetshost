@@ -538,6 +538,7 @@
           else {
               big = false;
           }
+          alert(1);
           for (i = 0; i < maxTweets; i++) {
               var obj = $("#twitter-widget-" + i);
               if (obj && obj.length > 0) {
@@ -569,6 +570,7 @@
                 } 
               }
               else {
+                alert(dopostcode);
                   if (hasFound && dopostcode != 1) {
                     $('#tweetcount').fadeIn(800);
 
