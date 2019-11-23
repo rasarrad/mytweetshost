@@ -1357,7 +1357,7 @@ body.big #editTags {
     }     
   .newLayout > div {
         /* margin-top: 20px !important; */
-        /* max-height: calc(100% - 180px) !important; */
+        max-height: calc(100% - 125px) !important;
     }
     body.big .newLayout > div {
         margin-top: 14px !important;
@@ -1461,6 +1461,15 @@ body.big #editTags {
       body.big #editTags {
         margin-top: 120px !important;
       }
+      .newLayout > div {
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+      }
+
+      .newLayout > div .titletable {
+          margin-top: 0px !important;
+      }      
+
 }
 
 
@@ -1545,7 +1554,7 @@ body.big #editTags {
     font-size: 14px;
     /* width: 100%; */
     margin-top: -1px;
-    border-top: -4px solid var(--soft-color);
+    /* border-top: -4px solid var(--soft-color); */
     padding-top: 3px;
     color: var(--high-color);
     position: fixed;
