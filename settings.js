@@ -89,6 +89,10 @@ var openSettingsPopup = function(jsonobj)
 
         $(".fa-angle-up").show();  
 
+        $('#linktable').hide();
+
+        $('#previewtable').hide();
+
         $('#linkChange').attr("cid", jsonobj.id);
         $('#linkChange').attr("clink", jsonobj.url);
         $('#linkChange').removeClass("new");
@@ -340,6 +344,10 @@ var openSettingsPopup = function(jsonobj)
         $('#linkChange').addClass("new");
         $('#editTags').css('margin-top', '0px');  
         $('#linktable').show();
+
+        $('#linktable').show();
+
+        $('#previewtable').hide();
 
         $('.currenttags').html("--");  
         $('.currentcats').html("--");  

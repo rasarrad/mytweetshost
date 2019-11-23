@@ -2533,12 +2533,12 @@ body.notransit * {
 #previewtd > div div.innertweet twitter-widget {
   opacity: 0;
   display: none;
-  transition: all 1s;
+  transition: opacity 1s;
 }
 
 #previewtd > div iframe {
   opacity: 0;
   display: none;
-  transition: all 1.9s;
+  transition: opacity 1.9s;
 }
 

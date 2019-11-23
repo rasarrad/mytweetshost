@@ -49,7 +49,7 @@ function parseTweet(type) {
 
                 showMessage("Tweet Link Successfully Parsed"); 
             }     
-
+            $('#mask').fadeOut(600);  
             return false;
         }
         else if (text.indexOf("youtube.com/embed") >= 0) {
@@ -83,7 +83,7 @@ function parseTweet(type) {
                 $('#postedby').focus();
                 showMessage("Youtube Link Successfully Parsed"); 
             }             
-
+            $('#mask').fadeOut(600);  
             return false;
             
         }
@@ -126,7 +126,7 @@ function parseTweet(type) {
                 $('#postedby').focus();
                 showMessage("Youtube Link Successfully Parsed"); 
             }     
-
+            $('#mask').fadeOut(600);  
             return false;
             
         }
@@ -164,10 +164,11 @@ function parseTweet(type) {
                 $('#postedby').focus();
                 showMessage("HTTP Link Successfully Parsed"); 
             }
-
+            $('#mask').fadeOut(600);  
             return false;
         }
-
+        $('#mask').fadeOut(600);  
+        
         if (type) {
             if (type == 2) {
                 showMessage("Link Parse Failed And Was Not Created"); 
@@ -197,8 +198,6 @@ function parseTweet(type) {
 /////////////////////////////////////////////////////////////////////////
 
 function createPreview() {
-
-    $('#mask').fadeOut(600);  
     var xclass = "";
     var typefa = "twitter"
     if (addType == "H") {
@@ -213,17 +212,21 @@ function createPreview() {
 
     var newtweet = $('#previewtd').append($('<div id="inid" class="tweet' + xclass + '"></div>'));
     var newtweetobj = $('#inid');
-        
+    $('#previewtd').css('height', '');    
+
     if (addType == "T") {
         newtweetobj.append($('<div class="innertweet" style="max-height: 290px;min-height: 200px;"><i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;left: 153px;height: 33px;width: 33px;top: 95px;color: var(--high-color);font-size: 33px;/* display: none; */"></i></div>'));
         newtweetobj.find('.innertweet').append(text.substring(1, text.length -1))
         setTimeout(function(){ customizeTweets(null, true, null, 1); }, 1300);
+
     }
     else {
-        newtweetobj.css('style', 'top: -10px;margin-top: 0px;')
+        newtweetobj.attr('style', 'top: -10px;margin-top: 0px;')
         newtweetobj.append('<i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;left: 153px;height: 33px;width: 33px;top: 95px;color: var(--high-color);font-size: 33px;/* display: none; */"></i>' + text.substring(1, text.length -1));
 
         setTimeout(function(){$('#previewtd > div iframe').show().css('opacity', 1);}, 1300);
+        
+        $('#previewtd').css('height', '100px');
     }
 
     $('#linktable').hide();
