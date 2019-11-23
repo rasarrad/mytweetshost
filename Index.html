@@ -541,6 +541,10 @@
 
           for (i = 0; i < maxTweets; i++) {
               var obj = $("#twitter-widget-" + i);
+
+              console.log(777777777);
+              console.log(obj && obj.length > 0);
+              console.log(forceProcess || obj.attr("processed") != "yes");
               if (obj && obj.length > 0) {
                 if (forceProcess || obj.attr("processed") != "yes") {
                     hasFound = true;
