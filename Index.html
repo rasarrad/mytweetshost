@@ -543,8 +543,13 @@
           do {
               var obj = $("#twitter-widget-" + i);
 
+              if (i == 100) {
+                console.log(88888);
+                doprocess = false;
+              }
               console.log(777777777);
               console.log(i);
+              console.log(obj && obj.length > 0);
               if (obj && obj.length > 0) {
                 if (forceProcess || obj.attr("processed") != "yes") {
                     hasFound = true;
