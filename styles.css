@@ -908,7 +908,7 @@ body.big .toptitle {
   top: 16px;
   right: 40px;
   padding-left: 3px;
-  padding-right: 4px;
+  padding-right: 3px;
  } 
 body.big #settings {
   font-size: 19px;
@@ -918,7 +918,7 @@ body.big #settings {
  }  
 #addtweet {
   font-size: 22px;
-  top: 14px;
+  top: 15px;
 }  
 body.big #addtweet {
   font-size: 26px;
@@ -1278,15 +1278,18 @@ body.big #sear {
       min-width: 345px;
   } 
 
-  .buttonstable .datespan {
-      position: relative !important;
-      top: 0px;
+   body.big .newLayout.new .buttonstable .datespan {
+      top: 1px !important;
   }  
+  
   .buttonstable .date {
       position: relative !important;
       top: 0px;
   }         
-
+  .buttonstable .datespan {
+      position: relative !important;
+      top: 0px;
+  }  
 
 body.big #editTags {
   margin-top: 93px !important;
@@ -1461,6 +1464,9 @@ body.big #editTags {
       body.big #editTags {
         margin-top: 120px !important;
       }
+      body.big .newLayout.new #editTags {
+        margin-top: 6px !important;
+      }      
       .newLayout > div {
         margin-top: 20px !important;
         margin-bottom: 20px !important;
@@ -1553,7 +1559,7 @@ body.big #editTags {
 .newLayout > div .titletable {
     font-size: 14px;
     /* width: 100%; */
-    margin-top: -1px;
+    margin-top: 0px;
     /* border-top: -4px solid var(--soft-color); */
     padding-top: 3px;
     color: var(--high-color);
@@ -1777,8 +1783,12 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
     height: 100%;
 }
 
-
-
+body.big .newLayout #linktable {
+    margin-top: 113px !important;
+}
+body.big .newLayout #previewtable {
+    margin-top: 113px !important;
+}
 .newLayout .detailtable {
     padding: 3px 5px;
     color: #b2cbde;
@@ -2102,12 +2112,24 @@ input[type=text] {
   font-size: 12px !important;
   height: 15px;
 }
+
 body.big input[type=text] {
   font-size: 15px !important;
   height: 18px;
 }
 
+body.big .newLayout.new #postedby {
+  height: 17px !important;
+}
+body.big .newLayout.new #date {
+  height: 17px !important;
+}
+body.big .newLayout.new #tweet {top: -1px !important;left: 4px;}
 
+body.big postedby {
+  font-size: 15px !important;
+  height: 18px;
+}
 select {
   font-size: 11px !important;
 }
@@ -2219,6 +2241,10 @@ body.big .newLayout .sectiontitletable .sectionedittd i.fa-edit {
   top: 5px;
 }
 
+body.big .newLayout.new .fa-link {
+    font-size: 17px !important;
+    top: 2px !important;
+}
 
 input[type="checkbox"] + label span {
     width: 13px;
@@ -2282,7 +2308,9 @@ body.big .buttonstable .firsttd {
 body.big #removetweetp {
     font-size: 29px !important;
 }
-
+body.big .newLayout.new #removetweetp {
+    font-size: 27px !important;
+}
 
 #internallinkp {
     font-size: 16px !important;
@@ -2516,6 +2544,8 @@ body.notransit * {
   margin-right: 9px;font-size: 18px;position: relative;top: 2px;
 }
 
+body.big .newLayout.new #seticon {font-size: 24px;top: 3px;}
+
 #previewtd {
   width: calc(100% - 220px);
   padding-left: 6px;
@@ -2551,3 +2581,6 @@ body.notransit * {
   transition: opacity 1.9s;
 }
 
+body.big .newLayout.new .sectiontitle {
+    top: 1px !important;
+}
