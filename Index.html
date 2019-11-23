@@ -522,7 +522,7 @@
   /*<![CDATA[*/
   function customizeTweets(flag, forceProcess, big, dopostcode) {
           var hasFound = false;
-          var maxTweets = 10000;
+          var maxTweets = 1000;
           var isChromium = window.chrome;
           var winNav = window.navigator;
           var vendorName = winNav.vendor;
@@ -545,11 +545,13 @@
           do {
               var obj = $("#twitter-widget-" + i);
 
-              if (i == numrecords + 2) {
+              if (i == numrecords + 1000) {
                 
                 doprocess = false;
               }
-
+              //console.log(777777777);
+              console.log(i);
+              //console.log(obj && obj.length > 0);
               if (obj && obj.length > 0) {
                 if (forceProcess || obj.attr("processed") != "yes") {
                     hasFound = true;
@@ -579,6 +581,9 @@
                 } 
               }
               else {
+                    console.log(929292);
+                    console.log(hasFound);
+
                   if (hasFound) {
                     $('#tweetcount').fadeIn(800);
 
@@ -595,12 +600,17 @@
                     $(window).trigger("resize");
 
                     doprocess = false;
+                    console.log(33333333);
                   }
               }
 
               i = i + 1;
+
+              //console.log(51515151);
+              //console.log(doprocess);
             }
             while (doprocess);
+          //console.log(22222222222222);
   }
 
   function insertAfter(newNode, referenceNode) {
