@@ -45,7 +45,7 @@ function parseTweet(type) {
                         createPreview();
                     }
                 }
-                $('#addtaginput').focus();
+                $('#postedby').focus();
 
                 showMessage("Tweet Link Successfully Parsed"); 
             }     
@@ -168,7 +168,7 @@ function parseTweet(type) {
             return false;
         }
         $('#mask').fadeOut(600);  
-        
+
         if (type) {
             if (type == 2) {
                 showMessage("Link Parse Failed And Was Not Created"); 
