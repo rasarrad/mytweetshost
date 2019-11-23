@@ -14,7 +14,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
     var endIndex = currentIndex + Number($('#recordspersearch').val());
     var objToFocus = -1;
     var ind = 0;
-    
+    var hasFinished = false;
 
     var dofiltertext = $('#filtertext').val().length > 0; 
     var dofilterdate1 = $('#filterdate1').val().length > 0; 
@@ -314,7 +314,11 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         $('#tch').text(total_hh);
 
                         setTimeout(function() { 
-                            customizeTweets(2);
+                            hasFinished = false;
+                            if (!hasFinished) {
+                                hasFinished = true;
+                                customizeTweets(2);
+                            }
                           }, 1000);
                         
 
@@ -362,8 +366,11 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#tch').text(total_hh);
 
         setTimeout(function() { 
-            
-            customizeTweets(1);
+            hasFinished = false;
+            if (!hasFinished) {
+                hasFinished = true;
+                customizeTweets(1);
+            }
         }, 1000);
 
         if (!ismoretweets) {
