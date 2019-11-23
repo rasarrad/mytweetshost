@@ -314,7 +314,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         $('#tch').text(total_hh);
 
                         setTimeout(function() { 
-                            hasFinished = false;
                             if (!hasFinished) {
                                 hasFinished = true;
                                 customizeTweets(2);
@@ -366,8 +365,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#tch').text(total_hh);
 
         setTimeout(function() { 
-            hasFinished = false;
             if (!hasFinished) {
+                
                 hasFinished = true;
                 customizeTweets(1);
             }
