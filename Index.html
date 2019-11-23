@@ -538,8 +538,8 @@
           else {
               big = false;
           }
-
-          for (i = 0; i < maxTweets; i++) {
+          var doprocess = false;
+          for (i = 0; i < maxTweets && doprocess; i++) {
               var obj = $("#twitter-widget-" + i);
 
               console.log(777777777);
@@ -590,7 +590,7 @@
                     console.log(111111111111111);
 
                     maxTweets = 0;
-
+                    doprocess = false;
                     console.log(33333333);
                   }
               }
