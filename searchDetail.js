@@ -314,9 +314,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         $('#tch').text(total_hh);
 
                         setTimeout(function() { 
-                            console.log(66666666);
                             customizeTweets(2);
-                          }, 5000);
+                          }, 1000);
                         
 
                         return false;
@@ -363,9 +362,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#tch').text(total_hh);
 
         setTimeout(function() { 
-            console.log(4444444444);
+            
             customizeTweets(1);
-        }, 5000);
+        }, 1000);
 
         if (!ismoretweets) {
             if (totalLinkss > 0) {
