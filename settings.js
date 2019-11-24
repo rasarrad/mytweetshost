@@ -701,20 +701,26 @@ function parseTags(tags) {
 function clickLiTag(e, obj) {
     e.stopPropagation();
 
-    if ($(obj).hasClass("selectedtag")) {
-        $(obj).removeClass("selectedtag");
-        if ($('#tagsinput').val().indexOf($(obj).html() + " ") >= 0) {
-            $('#tagsinput').val($('#tagsinput').val().replace($(obj).html() + " ", ""));
-        }
+    if (!dblFlag) {
+        dblFlag = true;
+        setTimeout(function(){
+            dblFlag = false;
+        }, 600); 
+        if ($(obj).hasClass("selectedtag")) {
+            $(obj).removeClass("selectedtag");
+            if ($('#tagsinput').val().indexOf($(obj).html() + " ") >= 0) {
+                $('#tagsinput').val($('#tagsinput').val().replace($(obj).html() + " ", ""));
+            }
+            else {
+                $('#tagsinput').val($('#tagsinput').val().replace($(obj).html(), "").trim());
+            }
+            $('#tagsinput').trigger("change");
+        }      
         else {
-            $('#tagsinput').val($('#tagsinput').val().replace($(obj).html(), "").trim());
+            $(obj).addClass("selectedtag");
+            $('#tagsinput').val($('#tagsinput').val().trim() + " " + $(obj).html());
+            $('#tagsinput').trigger("change");
         }
-        $('#tagsinput').trigger("change");
-    }      
-    else {
-        $(obj).addClass("selectedtag");
-        $('#tagsinput').val($('#tagsinput').val().trim() + " " + $(obj).html());
-        $('#tagsinput').trigger("change");
     }
 }
 
