@@ -1100,7 +1100,13 @@ body.big .tags {
     margin-top: calc(50% - 108px) !important;
 }    
 
-                                 
+#previewtable #inid {
+    min-width: calc(100% + 28px);
+}
+#previewtable #inid > i {
+    left: 214px;
+}
+                               
 @media only screen and (max-width: 1000px) {
       body.big .newLayout > div .titletable tr:first-child .firsttd {
         min-width: 466px !important;
@@ -1456,7 +1462,12 @@ body.big #editTags {
       body.big .newLayout > div .titletable tr:first-child .firsttd {
           min-width: 345px !important;
       }     
-  
+        #previewtable #inid {
+          min-width: auto;
+      }
+      #previewtable #inid > i {
+          left: 153px;
+      }
       body.big .brsep {
           display: inline;
       }  
