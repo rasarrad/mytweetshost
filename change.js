@@ -327,6 +327,9 @@ function generate(obj) {
     var ind = false;
     var processtmp = true;
     nextid = parseInt(readCookie("maxid")) - 1;
+    if (!nextid)
+        nextid = parseInt($("#maxid").val()) - 1;
+
     $.getJSON(path, function(data) 
     {
       $.each(data.Tweets, function(key, val) 
@@ -584,6 +587,9 @@ function hasTweetChanges(callback) {
   $.getJSON(path, function(data) 
   {
     nextid = parseInt(readCookie("maxid")) - 1;  
+    if (!nextid)
+        nextid = parseInt($("#maxid").val()) - 1;
+
     var processtmp = true;
 
     $.each(data.Tweets, function(key, val) 

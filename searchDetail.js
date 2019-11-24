@@ -40,6 +40,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
     currpage = currpage + 1;
     nextid = parseInt(readCookie("maxid")) - 1;
+    if (!nextid)
+        nextid = parseInt($("#maxid").val()) - 1;
 
     $.getJSON(path, function(data) {
         var processtmp = true;
@@ -117,6 +119,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         ind = 0;
         nextid = parseInt(readCookie("maxid")) - 1;
+        if (!nextid)
+            nextid = parseInt($("#maxid").val()) - 1;
+
         processtmp = true;
 
         $.each(data.Tweets, function(key, val) {
@@ -704,6 +709,9 @@ var getJsonbyid = function(id, functorun) {
     $.getJSON(path, function(data) {
         var processtmp = true;
         nextid = parseInt(readCookie("maxid")) - 1;
+        if (!nextid)
+            nextid = parseInt($("#maxid").val()) - 1;
+
         processtmp = true;
 
         $.each(data.Tweets, function(key, val) {
@@ -759,6 +767,9 @@ var countalltweets = function(id) {
     var total_h = 0;    
     var processtmp = true;
     nextid = parseInt(readCookie("maxid")) - 1;
+    if (!nextid)
+        nextid = parseInt($("#maxid").val()) - 1;
+
     $.getJSON(path, function(data) {
         $.each(data.Tweets, function(key, val) {
             var recordfromdata = val;
