@@ -342,7 +342,7 @@ var openSettingsPopup = function(jsonobj)
                 
         $('#linkChange').attr("cid", "new");
         $('#linkChange').addClass("new");
-        $('#editTags').css('margin-top', '0px');  
+        $('#editTags').css('margin-top', '6px');  
         $('#linktable').show();
 
         $('#linktable').show();

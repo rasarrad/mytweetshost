@@ -45,7 +45,9 @@ function parseTweet(type) {
                         createPreview();
                     }
                 }
-                $('#postedby').focus();
+                if ($(window).width() > 1200) {
+                    $('#postedby').focus();
+                }
 
                 showMessage("Tweet Link Successfully Parsed"); 
             }     
@@ -80,7 +82,9 @@ function parseTweet(type) {
                         createPreview();
                     }
                 }
-                $('#postedby').focus();
+                if ($(window).width() > 1200) {
+                    $('#postedby').focus();
+                }
                 showMessage("Youtube Link Successfully Parsed"); 
             }             
             $('#mask').fadeOut(600);  
@@ -123,7 +127,9 @@ function parseTweet(type) {
                         createPreview();
                     }
                 }
-                $('#postedby').focus();
+                if ($(window).width() > 1200) {
+                    $('#postedby').focus();
+                }
                 showMessage("Youtube Link Successfully Parsed"); 
             }     
             $('#mask').fadeOut(600);  
@@ -161,7 +167,9 @@ function parseTweet(type) {
                     var that = this;
                     setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
                 });*/
-                $('#postedby').focus();
+                if ($(window).width() > 1200) {
+                    $('#postedby').focus();
+                }
                 showMessage("HTTP Link Successfully Parsed"); 
             }
             $('#mask').fadeOut(600);  
@@ -210,7 +218,7 @@ function createPreview() {
     }
     $('#previewtd').empty();
 
-    var newtweet = $('#previewtd').append($('<div id="inid" class="tweet' + xclass + '"></div>'));
+    var newtweet = $('#previewtd').append($('<div id="inid" style="overflow: hidden;margin-top: 0px;" class="tweet' + xclass + '"></div>'));
     var newtweetobj = $('#inid');
     $('#previewtd').css('height', '');    
 
