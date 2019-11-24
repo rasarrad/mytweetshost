@@ -718,6 +718,8 @@ function clickLiTag(e, obj) {
             $('#tagsinput').trigger("change");
         }      
         else {
+             
+            $(obj).attr("class", "litags");
             $(obj).addClass("selectedtag");
             $('#tagsinput').val($('#tagsinput').val().trim() + " " + $(obj).html());
             $('#tagsinput').trigger("change");
