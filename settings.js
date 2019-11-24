@@ -133,7 +133,7 @@ var openSettingsPopup = function(jsonobj)
                 $("#linkChange .buttonstable tr:first-child td .authorinput").val("");
             }
         }
-
+        alert(1);
         $("#linkChange .buttonstable tr:first-child td .dateinput").css('max-width', '54px !important');
         $("#linkChange .buttonstable tr:first-child td .date").show();
         $("#linkChange .buttonstable tr:first-child td .dateinput").hide(); 
@@ -361,6 +361,7 @@ var openSettingsPopup = function(jsonobj)
 
         $("#linkChange .buttonstable tr:first-child td .date").hide();
         $("#linkChange .buttonstable tr:first-child td .dateinput").show(); 
+        alert(2);
         $("#linkChange .buttonstable tr:first-child td .dateinput").css('max-width', '60px !important');
 
         $(".buttontdtohide").hide();

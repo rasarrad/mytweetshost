@@ -1559,7 +1559,7 @@ body.big #editTags {
 .newLayout > div .titletable {
     font-size: 14px;
     /* width: 100%; */
-    margin-top: 0px;
+    margin-top: -0.5px;
     /* border-top: -4px solid var(--soft-color); */
     padding-top: 3px;
     color: var(--high-color);
