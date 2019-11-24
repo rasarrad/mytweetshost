@@ -324,14 +324,11 @@ $( document ).ready(function() {
     document.getElementById("addtweet").addEventListener('click', () => {
         navigator.clipboard.readText()
         .then(text => {
-            alert(1);
-            fixfocus(document.getElementById("addtweet"));
-            alert(2);
+            //fixfocus(document.getElementById("addtweet"));
             if (!dblFlag) {
                 dblFlag = true;
                 dblClickTimeout = setTimeout(function() {     
                   if (dblFlag) {
-                    alert(3);
                       openPopupParsed(text, 1);
                       dblFlag = false;  
                   }
