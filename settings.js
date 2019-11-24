@@ -133,6 +133,7 @@ var openSettingsPopup = function(jsonobj)
                 $("#linkChange .buttonstable tr:first-child td .authorinput").val("");
             }
         }
+        alert(1111)
         $("#linkChange .buttonstable tr:first-child td .dateinput").css('max-width', '54px !important');
         $("#linkChange .buttonstable tr:first-child td .date").show();
         $("#linkChange .buttonstable tr:first-child td .dateinput").hide(); 
