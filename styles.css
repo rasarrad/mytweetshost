@@ -2566,7 +2566,7 @@ body.big .newLayout.new #seticon {font-size: 24px;top: 3px;}
 
 #previewtd div iframe {
   margin: 0 !important;
-  height: 41vw !important;
+  height: 49vw !important;
 }
 
 #previewtd > div div:not(.innertweet) {

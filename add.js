@@ -2,6 +2,11 @@
 function parseTweet(type) {
     
     nextid = parseInt(readCookie("maxid"));
+    
+    if (!nextid)
+        alert(1111)
+    else 
+        alert(nextid)
     console.log("111: " + nextid);
 
     setTimeout(function(){
