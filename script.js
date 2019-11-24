@@ -85,7 +85,7 @@ $( document ).ready(function() {
 
     window.onscroll = function(ev) {
 
-        if ((window.innerHeight + window.scrollY + 800) >= document.body.offsetHeight && dosearchmore) {
+        if ((window.innerHeight + window.scrollY + 1800) >= document.body.offsetHeight && dosearchmore) {
             dosearchmore = false;
 
             if ($('#moretweets').attr('doshow') && $('#moretweets').attr('doshow') == 'yes') {
@@ -251,7 +251,7 @@ $( document ).ready(function() {
             nextid = parseInt(readCookie("maxid"));
             if (!nextid)
                 nextid = parseInt($("#maxid").val());
-                
+
             do {
                 createCookie(nextid + "templink", "", 99999);
                 nextid = nextid - 1;
