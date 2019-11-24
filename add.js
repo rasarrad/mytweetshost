@@ -224,18 +224,16 @@ function createPreview() {
     $('#previewtd').css('height', '');    
 
     if (addType == "T") {
-        newtweetobj.append($('<div class="innertweet" style="max-height: 290px;min-height: 200px;"><i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;height: 33px;width: 33px;top: 69px;color: var(--high-color);font-size: 33px;/* display: none; */"></i></div>'));
+        newtweetobj.append($('<div class="innertweet" style="max-height: 290px;min-height: 200px;margin-left: 0 !important;"><i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;height: 33px;width: 33px;top: 69px;color: var(--high-color);font-size: 33px;/* display: none; */"></i></div>'));
         newtweetobj.find('.innertweet').append(text.substring(1, text.length -1))
         setTimeout(function(){ customizeTweets(null, true, null, 1); }, 1300);
 
     }
     else {
-        newtweetobj.attr('style', 'top: -10px;margin-top: 0px;')
+        newtweetobj.attr('style', 'top: -3px;margin-top: 0px;overflow: hidden;')
         newtweetobj.append('<i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;left: height: 33px;width: 33px;top: 69px;color: var(--high-color);font-size: 33px;/* display: none; */"></i>' + text.substring(1, text.length -1));
 
         setTimeout(function(){$('#previewtd > div iframe').show().css('opacity', 1);}, 1300);
-        
-        $('#previewtd').css('height', '191px');
     }
 
     $('#linktable').hide();

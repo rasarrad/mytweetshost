@@ -1101,7 +1101,8 @@ body.big .tags {
 }    
 
 #previewtable #inid {
-    min-width: calc(100% + 28px);
+    min-width: calc(100% + 0px);
+    height: auto;
 }
 #previewtable #inid > i {
     left: 214px;
@@ -1326,8 +1327,22 @@ body.big #editTags {
   opacity: 0.6;
 }
 
+#previewtd div iframe {
+  margin: 0px !important;
+  height: auto !important;
+}
+#previewtable #inid {
+  min-width: auto;
+  max-height: 229px;
+}
 
+      
 @media only screen and (max-width: 700px) {
+    #previewtd div iframe {
+      margin: 0px !important;
+      height: 44vw !important;
+    }
+
     .fa-folder-open {
         font-size: 86px;
         height: 85px;
@@ -1464,6 +1479,7 @@ body.big #editTags {
       }     
         #previewtable #inid {
           min-width: auto;
+          max-height: 181px;
       }
       #previewtable #inid > i {
           left: 153px;
@@ -2575,10 +2591,6 @@ body.big .newLayout.new #seticon {font-size: 24px;top: 3px;}
   background: transparent;
 }
 
-#previewtd div iframe {
-  margin: 0px !important;
-  height: 44vw !important;
-}
 
 #previewtd > div div:not(.innertweet) {
   display: none !important;
@@ -2594,7 +2606,8 @@ body.big .newLayout.new #seticon {font-size: 24px;top: 3px;}
   opacity: 0;
   display: none;
   transition: opacity 1.9s;
-  margin-top: 5px !important;
+  /* margin-top: 11px !important; */
+  height: 256px !important;
 }
 
 body.big .newLayout.new .sectiontitle {
@@ -2615,4 +2628,5 @@ body.big .newLayout.new .sectiontitle {
 
 .dateinput.extended {
   max-width: 54px !important;
+  height: 12px;
 }
