@@ -133,7 +133,7 @@ var openSettingsPopup = function(jsonobj)
                 $("#linkChange .buttonstable tr:first-child td .authorinput").val("");
             }
         }
-        $("#linkChange .buttonstable tr:first-child td .dateinput").style('max-width', '54px', 'important');
+        $("#linkChange .buttonstable tr:first-child td .dateinput").removeClass('extended');
         $("#linkChange .buttonstable tr:first-child td .date").show();
         $("#linkChange .buttonstable tr:first-child td .dateinput").hide(); 
         var datechanged = readCookie(jsonobj.id + "datechanged");
@@ -359,9 +359,10 @@ var openSettingsPopup = function(jsonobj)
         $("#linkChange .buttonstable tr:first-child td .authorinput").show(); 
 
         $("#linkChange .buttonstable tr:first-child td .date").hide();
+        
+        $("#linkChange .buttonstable tr:first-child td .dateinput").addClass('extended');
         $("#linkChange .buttonstable tr:first-child td .dateinput").show(); 
 
-        $("#linkChange .buttonstable tr:first-child td .dateinput").style('max-width', '60px', 'important');
         $(".buttontdtohide").hide();
         $(".originaltr").hide();
         $('#removetweetp').attr('class','').addClass('fa').addClass('fa-floppy-o');

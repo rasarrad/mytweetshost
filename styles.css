@@ -2588,3 +2588,19 @@ body.big .newLayout.new #seticon {font-size: 24px;top: 3px;}
 body.big .newLayout.new .sectiontitle {
     top: 1px !important;
 }
+
+.dateinput {
+  white-space: nowrap;
+  position: relative;
+  top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  max-width: 54px !important;
+  font-size: 12px !important;
+  height: 11px;
+  display: none;
+}
+
+.dateinput.extended {
+  max-width: 54px !important;
+}
