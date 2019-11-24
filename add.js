@@ -231,7 +231,7 @@ function createPreview() {
     }
     else {
         newtweetobj.attr('style', 'top: -10px;margin-top: 0px;')
-        newtweetobj.append('<i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;left: 153px;height: 33px;width: 33px;top: 95px;color: var(--high-color);font-size: 33px;/* display: none; */"></i>' + text.substring(1, text.length -1));
+        newtweetobj.append('<i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;left: 153px;height: 33px;width: 33px;top: 95px;color: var(--high-color);font-size: 33px;/* display: none; */"></i>');
 
         setTimeout(function(){$('#previewtd > div iframe').show().css('opacity', 1);}, 1300);
         

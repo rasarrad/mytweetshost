@@ -1123,7 +1123,7 @@ body.big .tags {
     }  
     .tweet.yt iframe {
         margin-top: 4px !important;
-        height: 305px;
+        height: 265px;
     }
     .tweet iframe {
       position: relative;
@@ -1338,7 +1338,7 @@ body.big #editTags {
         margin-right: 0px !important;
         top: -12px;
         max-width: 470px;
-        height: 61vw !important;
+        height: 56vw !important;
     }
     .tweet.html iframe {
         height: 100vw !important;
