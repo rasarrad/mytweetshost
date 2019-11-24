@@ -284,6 +284,8 @@ function create() {
 
     document.execCommand('copy');
 
+    $("#linkresult").blur();
+
     //resetFieldsPopup();
 
     /*

@@ -427,7 +427,7 @@ function generate(obj) {
         $('#linkresult').val(text);
         $("#linkresult").select();
         document.execCommand('copy'); 
-
+        $("#linkresult").blur();
         showMessage("Changes Processed And Copied To Clipboard");
     }); 
 } 
