@@ -706,6 +706,7 @@ function clickLiTag(e, obj) {
         setTimeout(function(){
             dblFlag = false;
         }, 600); 
+        console.log($(obj).html());
         if ($(obj).hasClass("selectedtag")) {
             $(obj).removeClass("selectedtag");
             if ($('#tagsinput').val().indexOf($(obj).html() + " ") >= 0) {
