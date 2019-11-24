@@ -701,29 +701,22 @@ function parseTags(tags) {
 function clickLiTag(e, obj) {
     e.stopPropagation();
 
-    if (!dblFlag) {
-        dblFlag = true;
-        setTimeout(function(){
-            dblFlag = false;
-        }, 600); 
-        console.log($(obj).html());
-        if ($(obj).hasClass("selectedtag")) {
-            $(obj).removeClass("selectedtag");
-            if ($('#tagsinput').val().indexOf($(obj).html() + " ") >= 0) {
-                $('#tagsinput').val($('#tagsinput').val().replace($(obj).html() + " ", ""));
-            }
-            else {
-                $('#tagsinput').val($('#tagsinput').val().replace($(obj).html(), "").trim());
-            }
-            $('#tagsinput').trigger("change");
-        }      
-        else {
-             
-            $(obj).attr("class", "litags");
-            $(obj).addClass("selectedtag");
-            $('#tagsinput').val($('#tagsinput').val().trim() + " " + $(obj).html());
-            $('#tagsinput').trigger("change");
+    if ($(obj).hasClass("selectedtag")) {
+        $(obj).removeClass("selectedtag");
+        if ($('#tagsinput').val().indexOf($(obj).html() + " ") >= 0) {
+            $('#tagsinput').val($('#tagsinput').val().replace($(obj).html() + " ", ""));
         }
+        else {
+            $('#tagsinput').val($('#tagsinput').val().replace($(obj).html(), "").trim());
+        }
+        $('#tagsinput').trigger("change");
+    }      
+    else {
+            
+        $(obj).attr("class", "litags");
+        $(obj).addClass("selectedtag");
+        $('#tagsinput').val($('#tagsinput').val().trim() + " " + $(obj).html());
+        $('#tagsinput').trigger("change");
     }
 }
 
