@@ -2576,8 +2576,8 @@ body.big .newLayout.new #seticon {font-size: 24px;top: 3px;}
 }
 
 #previewtd div iframe {
-  margin: 0 !important;
-  height: 49vw !important;
+  margin: 0px !important;
+  height: 44vw !important;
 }
 
 #previewtd > div div:not(.innertweet) {
@@ -2594,6 +2594,7 @@ body.big .newLayout.new #seticon {font-size: 24px;top: 3px;}
   opacity: 0;
   display: none;
   transition: opacity 1.9s;
+  margin-top: 5px !important;
 }
 
 body.big .newLayout.new .sectiontitle {

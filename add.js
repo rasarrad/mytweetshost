@@ -235,7 +235,7 @@ function createPreview() {
 
         setTimeout(function(){$('#previewtd > div iframe').show().css('opacity', 1);}, 1300);
         
-        $('#previewtd').css('height', '212px');
+        $('#previewtd').css('height', '191px');
     }
 
     $('#linktable').hide();
