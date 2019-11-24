@@ -324,6 +324,7 @@ $( document ).ready(function() {
     document.getElementById("addtweet").addEventListener('click', () => {
         navigator.clipboard.readText()
         .then(text => {
+            console.log(document.getElementById("addtweet"))
             //fixfocus(document.getElementById("addtweet"));
             if (!dblFlag) {
                 dblFlag = true;

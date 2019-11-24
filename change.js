@@ -319,6 +319,7 @@ function changecat(obj, id) {
 
 
 function generate(obj) {
+    console.log(obj)
     fixfocus(obj);
 
     resetFields(false);
