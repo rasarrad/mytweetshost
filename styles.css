@@ -2113,6 +2113,10 @@ input[type=text] {
   height: 15px;
 }
 
+input[type=text]#date {
+  text-align: center;
+}
+
 body.big input[type=text] {
   font-size: 15px !important;
   height: 18px;
