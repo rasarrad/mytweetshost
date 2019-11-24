@@ -322,11 +322,9 @@ $( document ).ready(function() {
     });
 
     document.getElementById("addtweet").addEventListener('click', () => {
-        console.log(this);
-        var obj = this;
         navigator.clipboard.readText()
         .then(text => {
-            fixfocus(obj);
+            fixfocus(document.getElementById("addtweet"));
             if (!dblFlag) {
                 dblFlag = true;
                 dblClickTimeout = setTimeout(function() {     
