@@ -1,6 +1,6 @@
 
 function parseTweet(type) {
-    
+    alert(type)
     nextid = parseInt(readCookie("maxid"));
     
     if (!nextid)
@@ -249,12 +249,15 @@ function create() {
         ishidden = "1";
     } 
     var resinfo = $('#infoinput').val().replace(/"/g, "");
-    resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "");
+    resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "").trim();
 
     var cats = $('#catsinput').val();
 
     if (cats == "undefined" || cats.length == 0) {
         cats = "";
+    }
+    else {
+        cats = cats.trim();
     }
 
     var classif = $('#classifinput').val();
@@ -265,6 +268,9 @@ function create() {
     var tags = $('#tagsinput').val();
     if (tags == "undefined" || tags.length == 0) {
         tags = "";
+    }
+    else {
+        tags = tags.trim();
     }
 
     if (addType == "T") {
