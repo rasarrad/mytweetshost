@@ -46,6 +46,10 @@ function parseTweet(type) {
                         createPreview();
                     }
                 }
+                else {
+                    createPreview();
+                }
+                
                 if ($(window).width() > 1200) {
                     $('#postedby').focus();
                 }
@@ -83,6 +87,10 @@ function parseTweet(type) {
                         createPreview();
                     }
                 }
+                else {
+                    createPreview();
+                }
+                
                 if ($(window).width() > 1200) {
                     $('#postedby').focus();
                 }
@@ -128,6 +136,10 @@ function parseTweet(type) {
                         createPreview();
                     }
                 }
+                else {
+                    createPreview();
+                }
+
                 if ($(window).width() > 1200) {
                     $('#postedby').focus();
                 }
@@ -162,6 +174,9 @@ function parseTweet(type) {
                         
                         createPreview();
                     }
+                }
+                else {
+                    createPreview();
                 }
 
                 /*$('#date').focus(function(){

@@ -50,7 +50,7 @@ function zoom(obj, flag) {
     if ($('body').hasClass('big'))
         setHeight = "31px";
 
-    $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
+    $('#linkChange').find("table:not(.buttonstable:not(.newlinktable))").each( function( index, element ) {
         var table = $(element);
         table.css('transition', 'max-height .01s');
         table.css('max-height', setHeight);
@@ -79,7 +79,7 @@ var openSettingsPopup = function(jsonobj)
         if ($('body').hasClass('big'))
             setHeight = "31px";
     
-        $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
+        $('#linkChange').find("table:not(.buttonstable):not(.newlinktable)").each( function( index, element ) {
             var table = $(element);
             table.css('transition', 'max-height .01s');
             table.css('max-height', setHeight);
