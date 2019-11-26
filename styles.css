@@ -2593,7 +2593,7 @@ body.big .newLayout.new #seticon {font-size: 24px;top: 3px;}
 }
 
 
-#previewtd > div div:not(.innertweet) {
+#previewtd > div div:not(.innertweet):not(.glasscover) {
   display: none !important;
 }
 

@@ -250,7 +250,7 @@ function createPreview() {
 
         setTimeout(function(){$('#previewtd > div iframe').show().css('opacity', 1);}, 1300);
     }
-    newtweetobj.append('<div style="position: absolute;left: -16px;width: calc(100% + 16px);height: 100%;top: 0px;background: red;"></div>');
+    newtweetobj.append('<div class="glasscover" style="position: absolute;left: -16px;width: calc(100% + 16px);height: 100%;top: 0px;background: red;"></div>');
     $('#linktable').hide();
 
     $('#previewtable').show();
