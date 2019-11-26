@@ -49,7 +49,7 @@ function parseTweet(type) {
                 else {
                     createPreview();
                 }
-                
+
                 if ($(window).width() > 1200) {
                     $('#postedby').focus();
                 }
@@ -240,7 +240,7 @@ function createPreview() {
 
     if (addType == "T") {
         newtweetobj.append($('<div class="innertweet" style="max-height: 290px;min-height: 200px;margin-left: 0 !important;"><i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;height: 33px;width: 33px;top: 69px;color: var(--high-color);font-size: 33px;/* display: none; */"></i></div>'));
-        newtweetobj.find('.innertweet').append(text.substring(1, text.length -1))
+        newtweetobj.find('.innertweet').append(text.substring(1, text.length -1));
         setTimeout(function(){ customizeTweets(null, true, null, 1); }, 1300);
 
     }
@@ -250,7 +250,7 @@ function createPreview() {
 
         setTimeout(function(){$('#previewtd > div iframe').show().css('opacity', 1);}, 1300);
     }
-
+    newtweetobj.append('<div style="position: absolute;left: -16px;width: calc(100% + 16px);height: 100%;top: 0px;background: red;"></div>');
     $('#linktable').hide();
 
     $('#previewtable').show();
