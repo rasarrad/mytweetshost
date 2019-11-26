@@ -1108,6 +1108,10 @@ body.big .tags {
 #previewtable #inid > i {
     left: 214px;
 }
+
+body.big .newLayout.new #editTags {
+    margin-top: 6px !important;
+}
                                
 @media only screen and (max-width: 1000px) {
       body.big .newLayout > div .titletable tr:first-child .firsttd {
@@ -1337,6 +1341,12 @@ body.big #editTags {
   max-height: 229px;
 }
 
+body.big .newLayout #linktable {
+    margin-top: 98px !important;
+}
+body.big .newLayout #previewtable {
+    margin-top: 94px !important;
+}
       
 @media only screen and (max-width: 700px) {
     #previewtd div iframe {
@@ -1344,6 +1354,12 @@ body.big #editTags {
       height: 44vw !important;
     }
 
+    body.big .newLayout #linktable {
+        margin-top: 113px !important;
+    }
+    body.big .newLayout #previewtable {
+        margin-top: 113px !important;
+    }
     .fa-folder-open {
         font-size: 86px;
         height: 85px;
@@ -1811,12 +1827,6 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
     height: 100%;
 }
 
-body.big .newLayout #linktable {
-    margin-top: 113px !important;
-}
-body.big .newLayout #previewtable {
-    margin-top: 113px !important;
-}
 .newLayout .detailtable {
     padding: 3px 5px;
     color: #b2cbde;
