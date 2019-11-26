@@ -50,13 +50,16 @@ function zoom(obj, flag) {
     if ($('body').hasClass('big'))
         setHeight = "31px";
 
-    $('#linkChange').find("table:not(.buttonstable:not(.newlinktable)").each( function( index, element ) {
-        var table = $(element);
-        table.css('transition', 'max-height .01s');
-        table.css('max-height', setHeight);
-        table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
-        table.find('td.el').addClass('ellipsis');
-    });
+    if ($('#linkChange').attr("cid") != "new") {
+        $('#linkChange').find("table:not(.buttonstable:not(.newlinktable)").each( function( index, element ) {
+            var table = $(element);
+            table.css('transition', 'max-height .01s');
+            table.css('max-height', setHeight);
+            table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
+            table.find('td.el').addClass('ellipsis');
+        });
+    }    
+
     setTimeout(function(){
         $('body').removeClass('notransit'); 
     }, 1400);  
@@ -79,7 +82,7 @@ var openSettingsPopup = function(jsonobj)
         if ($('body').hasClass('big'))
             setHeight = "31px";
     
-        $('#linkChange').find("table:not(.buttonstable):not(.newlinktable)").each( function( index, element ) {
+        $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
             var table = $(element);
             table.css('transition', 'max-height .01s');
             table.css('max-height', setHeight);
@@ -336,15 +339,19 @@ var openSettingsPopup = function(jsonobj)
             table.css('transition', 'max-height 0.01s');
             table.css('max-height', '2450px');
             table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;top: -6px;').hide();
-            if (table.attr('id') != 'editInfo')
-                table.find('td.el').removeClass('ellipsis');
         });
-                
+        
+        var setHeight = "18px";
+
+        if ($('body').hasClass('big'))
+            setHeight = "31px";
+        
+        $('#linktable').css('transition', 'max-height 0.01s');
+        $('#linktable').css('max-height', setHeight);
+
         $('#linkChange').attr("cid", "new");
         $('#linkChange').addClass("new");
         $('#editTags').css('margin-top', '6px');  
-        $('#linktable').show();
-
         $('#linktable').show();
 
         $('#previewtable').hide();
