@@ -2275,7 +2275,7 @@ body.big .newLayout .sectiontitletable .sectionedittd i.fa-edit {
 
 body.big .newLayout.new .fa-link {
     font-size: 17px !important;
-    top: 2px !important;
+    top: 1px !important;
 }
 
 input[type="checkbox"] + label span {
@@ -2612,7 +2612,7 @@ body.big .newLayout.new #seticon {font-size: 24px;top: 3px;}
 }
 
 body.big .newLayout.new .sectiontitle {
-    top: 1px !important;
+    top: -1px !important;
 } 
 
 .dateinput {
