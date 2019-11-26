@@ -58,6 +58,10 @@ function zoom(obj, flag) {
             table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
             table.find('td.el').addClass('ellipsis');
         });
+    }
+    else {
+        $('#linktable').css('transition', 'max-height 0.01s');
+        $('#linktable').css('max-height', setHeight);
     }    
 
     setTimeout(function(){
