@@ -1145,7 +1145,19 @@ body.big .newLayout#mainsettings > div {
 .newLayout#mainsettings .fa-check {
   top: -2px !important;
 }
-                                   
+#mainmenu .buttonstable {
+  width: 471px;
+  display: block;
+  text-align: center;
+  font-size: 15px;
+}       
+#mainmenu span {
+  width: 424px;
+  display: block;
+  text-align: center;
+  font-size: 15px;
+} 
+                                  
 @media only screen and (max-width: 1000px) {
     .fa-folder-open {
       font-size: 74px;
