@@ -1156,6 +1156,22 @@ body.big .newLayout#mainsettings > div {
   display: block;
   text-align: center;
   font-size: 15px;
+  position: relative;
+  top: -1px;
+} 
+
+#mainmenu .fa-bars {
+    font-size: 18px;
+    position: absolute;
+    left: 10px;
+    top: 6px;
+} 
+#mainmenu .fa-window-close {
+    font-size: 16px;
+    margin-top: 0px;
+    cursor: pointer;
+    position: relative;
+    right: 23px;
 } 
                                   
 @media only screen and (max-width: 1000px) {
