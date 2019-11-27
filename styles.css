@@ -1098,10 +1098,14 @@ body.big .tags {
 }
 .newLayout.mainsettings > div {
     /* max-height: calc(100% - 66px) !important; */
-    margin-top: calc(50% - 2px) !important;
+    margin-top: 38px !important;
     /* height: 100%; */
 }    
-
+body.big .newLayout.mainsettings > div {
+    /* max-height: calc(100% - 66px) !important; */
+    margin-top: calc(50% - 2px) !important;
+    /* height: 100%; */
+} 
 #previewtable #inid {
     min-width: calc(100% + 0px);
     height: auto;
@@ -1113,26 +1117,41 @@ body.big .tags {
 body.big .newLayout.new #editTags {
     margin-top: 6px !important;
 }
-                               
-@media only screen and (max-width: 1000px) {
-      body.big .newLayout > div .titletable tr:first-child .firsttd {
-        min-width: 466px !important;
-    } 
+#mainsettings .buttonstable {
+  width: 470px;
+}         
+body.big #mainsettings .buttonstable {
+  width: 468px;
+}
+body.big .newLayout > div .titletable tr:first-child .firsttd {
+  min-width: 466px !important;
+} 
 
-    .newLayout > div {
-        max-height: calc(100% - 66px) !important;
-        margin-top: -10px !important;
-    }  
-    
-    body.big .newLayout > div {
-        margin-top: 0px !important;
-        max-height: calc(100% - 77px) !important;
-    }    
+.newLayout > div {
+  max-height: calc(100% - 66px) !important;
+  margin-top: -10px !important;
+}  
+
+body.big .newLayout > div {
+  margin-top: 0px !important;
+  max-height: calc(100% - 77px) !important;
+}    
+
+body.big .newLayout#mainsettings > div {
+  margin-top: 17px !important;
+  max-height: calc(100% - 77px) !important;
+}   
+
+.newLayout#mainsettings .fa-check {
+  top: -2px !important;
+}
+                                   
+@media only screen and (max-width: 1000px) {
     .fa-folder-open {
-        font-size: 74px;
-        height: 76px;
-        top: calc(50% - 62px);
-        left: calc(50% - 47px);
+      font-size: 74px;
+      height: 76px;
+      top: calc(50% - 62px);
+      left: calc(50% - 47px);
     }  
     .tweet.yt iframe {
         margin-top: 4px !important;
@@ -1361,11 +1380,12 @@ body.big #mainsettings .fa-window-close {
 
 body.big #mainsettings .buttonstable tr:first-child .firsttd b {
   font-size: 18px !important;
+  margin-left: 0 !important;
 }    
 
 
 body.big #mainsettings .firstsettable {
-  margin-top: 36px !important;
+  margin-top: 44px !important;
 }
 
 body.big #mainsettings .fa-cogs {
@@ -1382,6 +1402,11 @@ body.big #mainsettings .fa-plus-square {
   margin-right:2px;
 }  
 
+#mainsettings .firstsettable {margin-top: 38px !important;}
+body.big #mainsettings .firstsettable {
+  
+}
+
 body.big #mainsettings input[type=text] {left: 13px;top: -1px !important;}
 
 body.big #mainsettings .fa-check {
@@ -1393,8 +1418,43 @@ body.big #mainsettings .fa-check {
   top: 1px !important;
   right: -5px;
 } 
+#mainsettings .fa-window-close {
+  right: 22px !important;
+} 
+body.big #mainsettings .fa-window-close {
+
+} 
 
 @media only screen and (max-width: 700px) {
+    #mainsettings .firstsettable {
+        margin-top: 31px !important;
+    }
+    body.big #mainsettings .firstsettable {
+
+    }  
+    #mainsettings .fa-window-close {
+      right: -4px !important;
+    } 
+    body.big #mainsettings .fa-window-close {
+
+    }   
+    #mainsettings .buttonstable {
+      width: 349px;
+    }         
+    body.big #mainsettings .buttonstable {
+      width: 468px;
+    }  
+    .newLayout.mainsettings > div {
+        /* max-height: calc(100% - 66px) !important; */
+        margin-top: 223px !important;
+        /* height: 100%; */
+    }     
+    body.big #mainsettings .firstsettable {
+      margin-top: 36px !important;
+    }
+    body.big #mainsettings .buttonstable {
+      width: 349px;
+    }
     #previewtd div iframe {
       margin: 0px !important;
       height: 44vw !important;
@@ -1447,8 +1507,8 @@ body.big #mainsettings .fa-check {
         max-height: calc(100% - 125px) !important;
     }
     body.big .newLayout > div {
-        margin-top: 14px !important;
-        max-height: calc(100% - 75px) !important;
+        margin-top: 31px !important;
+        max-height: calc(100% - 137px) !important;
     } 
 
     body.big .newLayout#mainsettings > div {
