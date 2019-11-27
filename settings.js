@@ -59,10 +59,12 @@ function zoom(obj, flag) {
             table.find('td.el').addClass('ellipsis');
         });
     }
-    else {
-        $('#linktable').css('transition', 'max-height 0.01s');
-        $('#linktable').css('max-height', setHeight);
-    }    
+
+    $(".newLayout table.defaulttablerow").each( function( index, element ) {
+        var table = $(element);
+        table.css('transition', 'max-height .01s');
+        table.css('max-height', setHeight);
+    });
 
     setTimeout(function(){
         $('body').removeClass('notransit'); 

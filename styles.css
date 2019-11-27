@@ -1097,8 +1097,9 @@ body.big .tags {
   top: 0px;
 }
 .newLayout.mainsettings > div {
-    max-height: calc(100% - 66px) !important;
-    margin-top: calc(50% - 108px) !important;
+    /* max-height: calc(100% - 66px) !important; */
+    margin-top: calc(50% - 2px) !important;
+    /* height: 100%; */
 }    
 
 #previewtable #inid {
@@ -1347,7 +1348,52 @@ body.big .newLayout #linktable {
 body.big .newLayout #previewtable {
     margin-top: 94px !important;
 }
-      
+
+
+body.big #mainsettings .fa-cog {
+  font-size: 23px !important;
+}  
+
+body.big #mainsettings .fa-window-close {
+  font-size: 20px !important;
+  right: 26px !important;
+}  
+
+body.big #mainsettings .buttonstable tr:first-child .firsttd b {
+  font-size: 18px !important;
+}    
+
+
+body.big #mainsettings .firstsettable {
+  margin-top: 36px !important;
+}
+
+body.big #mainsettings .fa-cogs {
+  font-size: 18px !important;
+}  
+body.big #mainsettings .fa-eraser {
+  font-size: 18px !important;
+}  
+body.big #mainsettings .fa-hashtag {
+  font-size: 18px !important;
+}  
+body.big #mainsettings .fa-plus-square {
+  font-size: 18px !important;
+  margin-right:2px;
+}  
+
+body.big #mainsettings input[type=text] {left: 13px;top: -1px !important;}
+
+body.big #mainsettings .fa-check {
+  font-size: 19px !important;
+  padding-left: 3px !important;
+  height: 21px !important;
+  padding-right: 3px !important;
+  padding-top: 2px !important;
+  top: 1px !important;
+  right: -5px;
+} 
+
 @media only screen and (max-width: 700px) {
     #previewtd div iframe {
       margin: 0px !important;
@@ -1402,6 +1448,11 @@ body.big .newLayout #previewtable {
     }
     body.big .newLayout > div {
         margin-top: 14px !important;
+        max-height: calc(100% - 75px) !important;
+    } 
+
+    body.big .newLayout#mainsettings > div {
+        margin-top: calc(50% - 12px) !important;
         max-height: calc(100% - 75px) !important;
     } 
     .tags {
@@ -2142,6 +2193,11 @@ input[type="radio"]:checked + label span {
   top: -2px !important;
 }
 
+body.big .el:not(.ellipsis) span:not(.sectiontitle):not(.currentinfo) {
+  position: relative !important;
+  top: -4px !important;
+  left: 19px;
+}
 
 
 /* genericos */
