@@ -1150,14 +1150,21 @@ body.big .newLayout#mainsettings > div {
   display: block;
   text-align: center;
   font-size: 15px;
-}       
+  max-height: 24px;
+  margin-top: 0px;
+}
+body.big #mainmenu .buttonstable {
+  font-size: 15px;
+  max-height: 32px;
+  margin-top: 0px;
+}        
 #mainmenu span {
   width: 424px;
   display: block;
   text-align: center;
   font-size: 15px;
   position: relative;
-  top: -2px;
+  top: -3px;
 } 
 body.big #mainmenu span {
   font-size: 18px;
@@ -1167,47 +1174,47 @@ body.big #mainmenu span {
     font-size: 18px;
     position: absolute;
     left: 10px;
-    top: 6px;
+    top: 7px;
 } 
 body.big #mainmenu .fa-bars {
     font-size: 23px;
     left: 10px;
-    top: 3px;
+    top: 8px;
 } 
 
 #mainmenu .firsttd b {
     position: relative;
-    top: -3px;
+    top: 0px;
     font-size: 16px;
 }
 
 body.big #mainmenu .firsttd b {
-    top: -4px;
+    top: 1px;
     font-size: 18px;
 }
 
 #mainmenu .fa-window-close {
     font-size: 16px;
-    margin-top: 0px;
+    margin-top: 2px;
     cursor: pointer;
     position: relative;
     right: 23px;
 } 
 body.big #mainmenu .fa-window-close {
     font-size: 19px;
-    margin-top: -1px;
+    margin-top: 3px;
     right: 24px;
 } 
 #mainmenu .firstsettable {
   margin-top: 35px;
 }  
-#mainmenu table:not(.firstsettable) {
-  margin-top: 35px;
+#mainmenu table:not(.firstsettable):not(.buttonstable) {
+  margin-top: 5px;
 }  
 body.big #mainmenu .firstsettable {
   margin-top: 38px;
 }  
-body.big #mainmenu table:not(.firstsettable) {
+body.big #mainmenu table:not(.firstsettable):not(.buttonstable) {
   margin-top: 7px;
 }  
 
@@ -1505,7 +1512,7 @@ body.big #mainsettings .fa-window-close {
 
 @media only screen and (max-width: 700px) {
     #mainmenu .firstsettable {
-      margin-top: 30px;
+      margin-top: 34px;
     }  
     #mainmenu .buttonstable {
       width: 345px;
@@ -1517,7 +1524,7 @@ body.big #mainsettings .fa-window-close {
         top: 1px;
     }
     body.big #mainmenu .firstsettable {
-      margin-top: 32px;
+      margin-top: 42px;
     }  
 
 
