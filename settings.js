@@ -390,9 +390,10 @@ var openSettingsPopup = function(jsonobj)
 
 var openMainSettingsPopup = function(jsonobj) 
 {
+    closeallnewlayout();
+
     $('body, html').css('overflow-y', 'hidden');
-    $('#mainsettings').fadeIn(); 
-    $('#mainsettings').css('display', 'flex');  
+    $('#mainsettings').fadeIn(600); 
 } 
 
 var getLinkColor = function(id) 
@@ -484,14 +485,20 @@ function closeSettingsPopup(obj) {
     if (obj)
         fixfocus(obj);
     $('body, html').css('overflow-y', 'auto');
-    $('#linkChange').fadeOut();
+    $('#linkChange').fadeOut(600);
 }
 function closeMainSettingsPopup(obj) {
-    fixfocus(obj);
+    if (obj)
+        fixfocus(obj);
     $('body, html').css('overflow-y', 'auto');
-    $('#mainsettings').fadeOut();
+    $('#mainsettings').fadeOut(600);
 }
-
+function closeMenuPopup(obj) {
+    if (obj)
+        fixfocus(obj);
+    $('body, html').css('overflow-y', 'auto');
+    $('#mainmenu').fadeOut(600);
+}
 function editSetting(e, obj) {
     e.stopPropagation();
 

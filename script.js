@@ -300,6 +300,9 @@ $( document ).ready(function() {
         navigator.clipboard.readText()
         .then(text => {
             if (!dblFlag) {
+                closeallnewlayout();
+                $('body, html').css('overflow-y', 'hidden');
+                
                 dblFlag = true;
                 dblClickTimeout = setTimeout(function() {     
                   if (dblFlag) {
@@ -325,6 +328,9 @@ $( document ).ready(function() {
         navigator.clipboard.readText()
         .then(text => {
             $( "#addtweet" ).blur();
+            closeallnewlayout();
+            $('body, html').css('overflow-y', 'hidden');
+            
             console.log(document.getElementById("addtweet"))
             //fixfocus(document.getElementById("addtweet"));
             if (!dblFlag) {
@@ -421,13 +427,28 @@ function getParameterByName(name) {
 
 
 function openmenu(obj) {
-    fixfocus(obj);
-    if ($('#menu').css('width') == '0px') {
-        $('#menu').css('width', '180px');
+    if (obj)
+        fixfocus(obj);
+
+    if ($(window).width() > 1200) {
+        if ($('#menu').css('width') == '0px') {
+            $('#menu').css('width', '180px');
+        }
+        else {
+            $('#menu').css('width', '0px');
+        }
     }
     else {
-        $('#menu').css('width', '0px');
+        closeallnewlayout();
+
+        $('body, html').css('overflow-y', 'hidden');
+
+        $('#mainmenu').fadeIn(600);
     }
+}
+
+function closeallnewlayout(bj) {
+    $('.newLayout').fadeOut(300);
 }
 
 
@@ -490,7 +511,13 @@ var clickmenu = function(val, text) {
     $('#selectedcat').val(val);
     $('#selectedcattext').val(text);
 
-    openmenu();
+    if ($(window).width() > 1200) {
+        openmenu();
+    }
+    else {
+        closeMenuPopup();
+    }
+    
     getInformation(false, 2);
 
 } 
