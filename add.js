@@ -1,6 +1,5 @@
 
 function parseTweet(type) {
-    alert(type)
     nextid = parseInt(readCookie("maxid"));
     
     if (!nextid)
