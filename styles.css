@@ -1527,7 +1527,12 @@ body.big #mainsettings .fa-window-close {
       margin-top: 42px;
     }  
 
-
+    #mainmenu > div {
+      margin-top: 139px !important;
+    }  
+    body.big #mainmenu > div {
+      margin-top: 77px !important;
+    }  
 
 
     
