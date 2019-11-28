@@ -1157,7 +1157,7 @@ body.big .newLayout#mainsettings > div {
   text-align: center;
   font-size: 15px;
   position: relative;
-  top: -1px;
+  top: -2px;
 } 
 
 #mainmenu .fa-bars {
@@ -1173,7 +1173,19 @@ body.big .newLayout#mainsettings > div {
     position: relative;
     right: 23px;
 } 
-                                  
+#mainmenu .firstsettable {
+  margin-top: 35px;
+}  
+
+.menuitemcounter {
+    padding-left: 10px;
+    font-size: 13px;
+    opacity: 0.4;
+    position: absolute;
+    top: 0px;
+    right: -19px;
+}
+                               
 @media only screen and (max-width: 1000px) {
     .fa-folder-open {
       font-size: 74px;

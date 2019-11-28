@@ -524,7 +524,7 @@
               <tr class="cursordefault">
                   <td colspan="3" class="firsttd" style="width: 164px;">
                       <i class="fa fa-bars"></i>
-                      <b style="position: relative;top: -2px;font-size: 15px;">Filter by category</b>
+                      <b style="position: relative;top: -3px;font-size: 16px;">CATEGORY</b>
                   </td>
                   <td style="padding-top: 4px;vertical-align: initial;">
                     <i onclick="closeMenuPopup(this)" class="fa fa-window-close"></i>
@@ -534,11 +534,12 @@
               </tr>
             </tbody>
         </table>
-        <table class="sectiontitletable sectionexpandable defaulttablerow firstsettable" style="margin-top: 32px;transition: max-height 0.5s ease 0s;max-height: 18px;">
+        <table class="sectiontitletable sectionexpandable defaulttablerow firstsettable">
           <tbody>
-            <tr class="cursorpointer" style="padding-bottom: 15px;">
-              <td class="sectionicontd" style="width: 70px !important;display: inline-block;white-space: nowrap;cursor: default;">
+            <tr onclick="javascript: clickmenu('all', 'All Links')" class="cursorpointer hover" style="padding-bottom: 15px;">
+              <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
                   <span style="padding-left: 6px;" class="sectiontitle">To Read Now</span>
+                  <div class="menuitemcounter" id="all">32</div>
               </td>                                                                   
             </tr>   
            </tbody>
