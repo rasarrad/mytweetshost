@@ -1201,9 +1201,16 @@ body.big #mainmenu .fa-window-close {
 #mainmenu .firstsettable {
   margin-top: 35px;
 }  
+#mainmenu table:not(.firstsettable) {
+  margin-top: 35px;
+}  
 body.big #mainmenu .firstsettable {
   margin-top: 38px;
 }  
+body.big #mainmenu table:not(.firstsettable) {
+  margin-top: 7px;
+}  
+
 .menuitemcounter {
     padding-left: 10px;
     font-size: 13px;

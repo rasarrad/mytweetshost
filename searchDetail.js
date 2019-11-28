@@ -891,7 +891,9 @@ var countalltweets = function(id) {
 
         // All Links
         $("#all").text(total);
+        $("#all2").text(total);
         $("#all").parent().attr("title", "Twitter: " + total_t + " - Youtube: " + total_y + " - Website: " + total_h);
+        $("#all2").parent().attr("title", "Twitter: " + total_t + " - Youtube: " + total_y + " - Website: " + total_h);
 
         // To View Now
         var toview = 0;
@@ -913,6 +915,8 @@ var countalltweets = function(id) {
 
         $("#tvn").text(toview);
         $("#tvn").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
+        $("#tvn2").text(toview);
+        $("#tvn2").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
 
         // Trending
         var trending = 0;
@@ -934,6 +938,8 @@ var countalltweets = function(id) {
 
         $("#trn").text(trending);
         $("#trn").parent().attr("title", "Twitter: " + trendingT + " - Youtube: " + trendingY + " - Website: " + trendingH);
+        $("#trn2").text(trending);
+        $("#trn2").parent().attr("title", "Twitter: " + trendingT + " - Youtube: " + trendingY + " - Website: " + trendingH);
 
         // To View
         var toview = 0;
@@ -955,6 +961,8 @@ var countalltweets = function(id) {
 
         $("#tvi").text(toview);
         $("#tvi").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
+        $("#tvi2").text(toview);
+        $("#tvi2").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
 
 
         // To View Long
@@ -977,6 +985,8 @@ var countalltweets = function(id) {
 
         $("#tvl").text(toview);
         $("#tvl").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
+        $("#tvl2").text(toview);
+        $("#tvl2").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
 
         // To read
         var toread = 0;
@@ -997,6 +1007,8 @@ var countalltweets = function(id) {
         }
         $("#tre").text(toread);
         $("#tre").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
+        $("#tre2").text(toread);
+        $("#tre2").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
 
         // To read long
         var toread = 0;
@@ -1017,6 +1029,8 @@ var countalltweets = function(id) {
         }
         $("#trl").text(toread);
         $("#trl").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
+        $("#trl2").text(toread);
+        $("#trl2").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
 
         // To keep
         var tokeep = 0;
@@ -1037,6 +1051,8 @@ var countalltweets = function(id) {
         }
         $("#tke").text(tokeep);
         $("#tke").parent().attr("title", "Twitter: " + tokeepT + " - Youtube: " + tokeepY + " - Website: " + tokeepH);
+        $("#tke2").text(tokeep);
+        $("#tke2").parent().attr("title", "Twitter: " + tokeepT + " - Youtube: " + tokeepY + " - Website: " + tokeepH);
 
         var imp = 0;
         var impT = 0;
@@ -1056,6 +1072,8 @@ var countalltweets = function(id) {
         }
         $("#imp").text(imp);
         $("#imp").parent().attr("title", "Twitter: " + impT + " - Youtube: " + impY + " - Website: " + impH);
+        $("#imp2").text(imp);
+        $("#imp2").parent().attr("title", "Twitter: " + impT + " - Youtube: " + impY + " - Website: " + impH);
 
         var climate = 0;
         var climateT = 0;
@@ -1075,6 +1093,9 @@ var countalltweets = function(id) {
         }
         $("#cli").text(climate);
         $("#cli").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
+        $("#cli2").text(climate);
+        $("#cli2").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
+ 
     }); 
 }
 
