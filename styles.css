@@ -1159,13 +1159,33 @@ body.big .newLayout#mainsettings > div {
   position: relative;
   top: -2px;
 } 
-
+body.big #mainmenu span {
+  font-size: 18px;
+  top: -1px;
+} 
 #mainmenu .fa-bars {
     font-size: 18px;
     position: absolute;
     left: 10px;
     top: 6px;
 } 
+body.big #mainmenu .fa-bars {
+    font-size: 23px;
+    left: 10px;
+    top: 3px;
+} 
+
+#mainmenu .firsttd b {
+    position: relative;
+    top: -3px;
+    font-size: 16px;
+}
+
+body.big #mainmenu .firsttd b {
+    top: -4px;
+    font-size: 18px;
+}
+
 #mainmenu .fa-window-close {
     font-size: 16px;
     margin-top: 0px;
@@ -1173,19 +1193,30 @@ body.big .newLayout#mainsettings > div {
     position: relative;
     right: 23px;
 } 
+body.big #mainmenu .fa-window-close {
+    font-size: 19px;
+    margin-top: -1px;
+    right: 24px;
+} 
 #mainmenu .firstsettable {
   margin-top: 35px;
 }  
-
+body.big #mainmenu .firstsettable {
+  margin-top: 38px;
+}  
 .menuitemcounter {
     padding-left: 10px;
     font-size: 13px;
-    opacity: 0.4;
+    opacity: 0.6;
     position: absolute;
-    top: 0px;
+    top: 2px;
     right: -19px;
 }
-                               
+body.big .menuitemcounter {
+    font-size: 16px;
+    top: 5px;
+    right: -19px;
+}                               
 @media only screen and (max-width: 1000px) {
     .fa-folder-open {
       font-size: 74px;
@@ -1466,6 +1497,26 @@ body.big #mainsettings .fa-window-close {
 } 
 
 @media only screen and (max-width: 700px) {
+    #mainmenu .firstsettable {
+      margin-top: 30px;
+    }  
+    #mainmenu .buttonstable {
+      width: 345px;
+    }   
+    #mainmenu span {
+      width: 304px;
+    } 
+    .menuitemcounter {
+        top: 1px;
+    }
+    body.big #mainmenu .firstsettable {
+      margin-top: 32px;
+    }  
+
+
+
+
+    
     #mainsettings .firstsettable {
         margin-top: 31px !important;
     }
