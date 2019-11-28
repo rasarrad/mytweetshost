@@ -383,6 +383,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     showMessage("Search Results", 2000);
             }
             else {
+                $('#mask').fadeOut(600);  
                 showMessage("No Links Found", 2000);
             }
         }
