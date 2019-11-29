@@ -178,6 +178,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                         && dofilterauthorfinal && dofiltercatfinal) {
                         
+                        console.log('--------------' + val.id + '--------------');
+                        console.log(val);    
                         var tagdispalay = " --";
                         var expandclass = "";
                         var color = "";
@@ -254,8 +256,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             newtweetobj.find('.innertweet').append(val.tweet);
                         }
                         else {
-                            console.log(1234556789);
-                            console.log("-" + val.tweet  + "-");
                             newtweetobj.append($(val.tweet));
                         }
             
