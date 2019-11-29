@@ -393,6 +393,19 @@ var openMainSettingsPopup = function(jsonobj)
     closeallnewlayout();
 
     $('body, html').css('overflow-y', 'hidden');
+    var setHeight = "18px";
+
+    if ($('body').hasClass('big'))
+        setHeight = "31px";
+
+    $("#mainsetting table#theme").each( function( index, element ) {
+        var table = $(element);
+        table.css('transition', 'max-height .01s');
+        table.css('max-height', setHeight);
+        table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '').show();
+        table.find('td.el').addClass('ellipsis');
+    });
+
     $('#mainsettings').fadeIn(600); 
 } 
 
@@ -499,10 +512,10 @@ function closeMenuPopup(obj) {
     $('body, html').css('overflow-y', 'auto');
     $('#mainmenu').fadeOut(600);
 }
-function editSetting(e, obj) {
+function editSetting(e, obj, flag) {
     e.stopPropagation();
 
-    if ($('#linkChange').attr("cid") != "new") {
+    if ($('#linkChange').attr("cid") != "new" || flag) {
         var setHeight = "18px";
 
         if ($('body').hasClass('big'))

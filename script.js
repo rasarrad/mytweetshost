@@ -37,7 +37,7 @@ $( document ).ready(function() {
 
    var currTheme = readCookie("currTheme");
    if (currTheme && currTheme.length > 0 && currTheme != 'default') {
-        //changetheme(currTheme);
+        changetheme(currTheme);
    }  
 
    catsmap.set("tvn", "To View Now");
@@ -461,7 +461,7 @@ function changetheme(type, desc) {
             text_color = "#f7f768";
             dark_color = "#005411";
             softdark_color = "#179631";
-            soft_color = "#179631";
+            soft_color = "#25c345";
             soft_transp_color = "#fdfd157d"; 
             document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#179631');
             $('#mainsettings .currenttheme').html('Green Army'); 
