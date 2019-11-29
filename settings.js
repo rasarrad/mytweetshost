@@ -540,7 +540,7 @@ function editSetting(e, obj, flag) {
             
             table.css('transition', 'max-height 6.3s');
             table.css('max-height', '2450px');
-            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;');
+            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;margin-top: -4px;');
             if (table.attr('id') != 'editInfo')
                 table.find('td.el').removeClass('ellipsis');
       
