@@ -45,7 +45,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
     $.getJSON(path, function(data) {
         var processtmp = true;
-
+        console.log('-------------- COUNT--------------');
         if (!ismoretweets) {
             $.each(data.Tweets, function(key, val) {
                 var newtweet = null;
@@ -110,7 +110,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
             totalLinkss = ind; 
         }
 
-           
+        console.log('-------------- FIM COUNT--------------');
+
         var toindex = 0;
         if (currentIndex + Number($('#recordspersearch').val()) < totalLinkss)
             toindex = currentIndex + Number($('#recordspersearch').val());
