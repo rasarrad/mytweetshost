@@ -37,7 +37,7 @@ $( document ).ready(function() {
 
    var currTheme = readCookie("currTheme");
    if (currTheme && currTheme.length > 0 && currTheme != 'default') {
-        changetheme(currTheme);
+        //changetheme(currTheme);
    }  
 
    catsmap.set("tvn", "To View Now");
@@ -430,6 +430,7 @@ function changetheme(type, desc) {
             softdark_color = "#003156";
             soft_color = "#004a86";
             soft_transp_color = "#45cae787";
+            document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#003156');
             $('#mainsettings .currenttheme').html('Twitter Lines'); 
             break;
 
@@ -440,6 +441,7 @@ function changetheme(type, desc) {
             softdark_color = "#af0000";
             soft_color = "#ea0000";
             soft_transp_color = "#faaeae78";  
+            document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#af0000');
             $('#mainsettings .currenttheme').html('Red Tide'); 
             break;
 
@@ -450,16 +452,18 @@ function changetheme(type, desc) {
             softdark_color = "#bbbbbb";
             soft_color = "#ffffff";
             soft_transp_color = "#ffffff63"; 
+            document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#bbbbbb');
             $('#mainsettings .currenttheme').html('Shades Of Gray'); 
             break;
 
         case "green":
             high_color = "#fdfd15";
-            text_color = "#ffff9d";
+            text_color = "#f7f768";
             dark_color = "#005411";
-            softdark_color = "#06ea35";
-            soft_color = "#00ad23";
+            softdark_color = "#179631";
+            soft_color = "#179631";
             soft_transp_color = "#fdfd157d"; 
+            document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#179631');
             $('#mainsettings .currenttheme').html('Green Army'); 
             break; 
     }

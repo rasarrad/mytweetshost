@@ -1,12 +1,12 @@
 :root {
   
-  --high-color: #45cae7;
-  --text-color: #6db0bf;
-  --dark-color: #001b30;
-  --softdark-color: #003156;
-  --soft-color: #004a86;
-  --soft-transp-color: #45cae787;
-  
+  --high-color: #fdfd15;
+  --text-color: #f7f768;
+  --dark-color: #005411;
+  --softdark-color: #179631;
+  --soft-color: #179631;
+  --soft-transp-color: #fdfd157d;
+
 /*
 
     --high-color: #7fe745;
