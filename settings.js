@@ -64,7 +64,7 @@ function zoom(obj, flag) {
     .css('max-height', setHeight)
     .find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '').show()
     .find('td.el').addClass('ellipsis');
-    
+
     $(".newLayout table.defaulttablerow").each( function( index, element ) {
         var table = $(element);
         table.css('transition', 'max-height .01s');
@@ -546,7 +546,7 @@ function editSetting(e, obj, flag) {
       
         }
         else {
-            table.css('transition', 'max-height ease-in 2.99s');
+            table.css('transition', 'max-height 1.99s');
             table.css('max-height', setHeight);
             table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
             setTimeout(function() { 
