@@ -1119,9 +1119,11 @@ body.big .newLayout.new #editTags {
 }
 #mainsettings .buttonstable {
   width: 470px;
+  max-height: 23px;
 }         
 body.big #mainsettings .buttonstable {
   width: 468px;
+  max-height: 28px;
 }
 body.big .newLayout > div .titletable tr:first-child .firsttd {
   min-width: 466px !important;
@@ -1470,7 +1472,7 @@ body.big #mainsettings .buttonstable tr:first-child .firsttd b {
 
 
 body.big #mainsettings .firstsettable {
-  margin-top: 44px !important;
+  margin-top: 36px !important;
 }
 
 body.big #mainsettings .fa-cogs {
@@ -1499,7 +1501,7 @@ body.big #mainsettings .fa-plus-square {
   margin-right:2px;
 }  
 
-#mainsettings .firstsettable {margin-top: 38px !important;}
+#mainsettings .firstsettable {margin-top: 32px !important;}
 body.big #mainsettings .firstsettable {
   
 }
@@ -1770,7 +1772,7 @@ body.big#mainsettings .newLayout > div {
           margin-top: 0px !important;
       }      
       .newLayout#mainsettings > div .titletable {
-          margin-top: -0px !important;
+          margin-top: -0.3px !important;
       }      
 
 }
@@ -2935,4 +2937,41 @@ body.big .newLayout.new .sectiontitle {
 
 .buttonstable {
   z-index: 9999 !important;
+}
+
+
+
+
+.themebox {
+    width: 100%;
+    height: 100%;
+    padding-left: 0px;
+    padding-top: 3px;
+    overflow: visible;
+    z-index: 99;
+    display: block;
+    margin-bottom: 0;
+    min-height: 122px;
+    position: relative;
+    background: var(--dark-color);
+    background-size: 100%;
+    border: 1px solid var(--high-color);
+    margin-top: 24px;
+}
+
+.themetitle {
+    width: calc(100% + 2px);
+    z-index: 99;
+    display: block;
+    position: absolute;
+    text-align: center;
+    font-size: 14px;
+    cursor: default;
+    background: var(--high-color);
+    color: var(--dark-color);
+    top: -21px;
+    font-weight: bold;
+    height: 18px;
+    padding-top: 2px;
+    left: -1px;
 }
