@@ -574,7 +574,8 @@ function externallinkcopy(obj) {
 /////////////////////////////////////////////////////////////////////////
 
 
-var clickmenu = function(val, text) {      
+var clickmenu = function(val, text) {    
+    console.log('-------------- clickmenu--------------');  
     resetFields();
 
     $('#selectedcat').val(val);

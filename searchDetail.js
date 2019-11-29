@@ -9,7 +9,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
     else if (wasfiltered == 2) {
         $('#countfilter').hide();
     }
-    
+    console.log('-------------- getInformation--------------'); 
     var path = "./data.json";
     var endIndex = currentIndex + Number($('#recordspersearch').val());
     var objToFocus = -1;
