@@ -408,6 +408,34 @@ $.fn.isChildOverflowing = function (child) {
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
+function changetheme(type) {
+    var high_color = "";
+    var text_color = "";
+    var dark_color = "";
+    var softdark_color = "";
+    var soft_color = "";
+    var soft_transp_color = "";
+    
+    switch(fruits) {
+        case "default":
+            var high_color = "#45cae7";
+            var text_color = "#6db0bf";
+            var dark_color = "#001b30";
+            var softdark_color = "#003156";
+            var soft_color = "#004a86";
+            var soft_transp_color = "#45cae787";
+            break;
+    }
+
+    document.documentElement.style.setProperty('--high-color', high_color);
+    document.documentElement.style.setProperty('--text-color', text_color);
+    document.documentElement.style.setProperty('--dark-color', dark_color);
+    document.documentElement.style.setProperty('--softdark-color', softdark_color);
+    document.documentElement.style.setProperty('--soft-color', soft_color);
+    document.documentElement.style.setProperty('--soft-transp-color', soft_transp_color);
+}
+
+
 
 function getParameterByName(name) {
     var url = window.location.href;

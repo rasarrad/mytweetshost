@@ -1528,12 +1528,11 @@ body.big #mainsettings .fa-window-close {
     }  
 
     #mainmenu > div {
-      margin-top: 139px !important;
+      margin-top: 111px !important;
     }  
     body.big #mainmenu > div {
-      margin-top: 77px !important;
+      margin-top: 62px !important;
     }  
-
 
     
     #mainsettings .firstsettable {
@@ -2326,7 +2325,9 @@ input[type="radio"]:checked + label span {
     position: relative;
     top: 0px;
 }
-
+.titletext {
+    cursor: default;
+}
 .colapsed tr td .titletext.currenttags {
     max-width: 245px;
 }
