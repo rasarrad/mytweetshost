@@ -413,7 +413,7 @@ $.fn.isChildOverflowing = function (child) {
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
-function changetheme(type) {
+function changetheme(type, desc) {
     var high_color = "";
     var text_color = "";
     var dark_color = "";
@@ -421,7 +421,7 @@ function changetheme(type) {
     var soft_color = "";
     var soft_transp_color = "";
     createCookie("currTheme", type);
-    
+
     switch(type) {
         case "default":
             high_color = "#45cae7";
@@ -430,6 +430,7 @@ function changetheme(type) {
             softdark_color = "#003156";
             soft_color = "#004a86";
             soft_transp_color = "#45cae787";
+            $('#mainsettings .currenttheme').html('Twitter Lines'); 
             break;
 
         case "red":
@@ -438,21 +439,29 @@ function changetheme(type) {
             dark_color = "#630000";
             softdark_color = "#af0000";
             soft_color = "#ea0000";
-            soft_transp_color = "#faaeae78";    
+            soft_transp_color = "#faaeae78";  
+            $('#mainsettings .currenttheme').html('Red Tide'); 
+            break;
+
         case "gray":
             high_color = "#313131";
             text_color = "#f79393";
             dark_color = "#909090";
             softdark_color = "#bbbbbb";
             soft_color = "#ffffff";
-            soft_transp_color = "#ffffff63";  
+            soft_transp_color = "#ffffff63"; 
+            $('#mainsettings .currenttheme').html('Shades Of Gray'); 
+            break;
+
         case "green":
             high_color = "#fdfd15";
             text_color = "#ffff9d";
             dark_color = "#005411";
             softdark_color = "#06ea35";
             soft_color = "#00ad23";
-            soft_transp_color = "#fdfd157d";  
+            soft_transp_color = "#fdfd157d"; 
+            $('#mainsettings .currenttheme').html('Green Army'); 
+            break; 
     }
 
     document.documentElement.style.setProperty('--high-color', high_color);

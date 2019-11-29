@@ -2867,3 +2867,7 @@ body.big .newLayout.new .sectiontitle {
   max-width: 54px !important;
   height: 12px;
 }
+
+.buttonstable {
+  z-index: 9999 !important;
+}
