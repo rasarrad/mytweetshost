@@ -1476,6 +1476,12 @@ body.big #mainsettings .firstsettable {
 body.big #mainsettings .fa-cogs {
   font-size: 18px !important;
 }  
+body.big #mainsettings .fa-picture-o {
+  font-size: 16px !important;
+  position: relative;
+  left: -2px;
+}  
+
 body.big #mainsettings .fa-eraser {
   font-size: 18px !important;
 }  
@@ -2453,6 +2459,14 @@ body.big .newLayout .titletext {
   font-size: 15px;
   top: -2px !important;
 }
+
+body.big .newLayout#mainsettings .themename {
+  line-height: 30px;
+  font-size: 15px;
+  top: -1px !important;
+  padding-left: 20px !important;
+}
+
 body.big .newLayout .titletext.currenttags {
   line-height: 18px;
 }
