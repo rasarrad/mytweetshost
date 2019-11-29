@@ -453,7 +453,32 @@
               </tr>
             </tbody>
         </table>
-        <table class="sectiontitletable sectionexpandable defaulttablerow firstsettable" style="margin-top: 32px;transition: max-height 0.5s ease 0s;max-height: 18px;">
+        <table id="editTags" cheight="232px" class="sectiontitletable sectionexpandable firstsettable" style="margin-top: 6px; transition: max-height 0.01s ease 0s; max-height: 2450px;">
+          <tbody>
+            <tr class="cursorpointer" onclick="editSetting(event,this)" style="padding-bottom: 15px;">
+              <td class="sectionicontd" style="width: 54px !important;display: inline-block;white-space: nowrap;">
+                  <i class="fa fa-picture-o"></i><span style="padding-left: 6px;" class="sectiontitle">Theme</span>
+              </td>    
+              <td class="sectionicontd el ellipsis">
+                  <span class="currenttags titletext" style="top: -1px;text-align: left;padding-left: 0px;">Default</span>
+              </td>                         
+              <td class="sectionedittd">
+                  <i class="fa fa-angle-up" style="font-size: 22px; position: relative; top: -6px; display: none;"></i>
+              </td>                                        
+          </tr>   
+          <tr>  
+              <td colspan="3">
+                  <div style="width: 100%;height: 100%;padding-left: 0px; padding-top: 3px; overflow-y: auto;z-index: 99;display: block; margin-bottom: 0; min-height: 122px; position: relative; background: var(--dark-color);">
+                      <div style="width: calc(100% - 1px); z-index: 99; display: block;color: var(--high-color); position: absolute; text-align: center;font-size: 14px; cursor: default;">
+                          Test vande piuu
+                      </div>
+                      <i class="fa fa-check clicable" onclick="javascript: generate(this)" id="generate" style="cursor: pointer;color: var(--softdark-color);background: var(--high-color);width: 19px;border-radius: 3px;height: 18px;position: absolute;font-size: 14px;bottom: 16px;padding-left: 5px;padding-top: 3px;right: 13px;"></i>
+                  </div>   
+              </td>                                        
+          </tr>  
+        </tbody>
+      </table>        
+        <table class="sectiontitletable sectionexpandable defaulttablerow" style="margin-top: 32px;transition: max-height 0.5s ease 0s;max-height: 18px;">
           <tbody>
             <tr class="cursorpointer" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="width: 70px !important;display: inline-block;white-space: nowrap;cursor: default;">
