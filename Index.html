@@ -707,7 +707,7 @@
           var isSafari6Plus = !!navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i) && typeof document.body.style.webkitFilter !== "undefined";
           var ua = navigator.userAgent.toLowerCase();
           var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-          console.log(88888);
+
           if ($('body').hasClass('big')) {
               big = true;
           }
@@ -724,9 +724,7 @@
                 
                 doprocess = false;
               }
-              //console.log(777777777);
-              console.log(i);
-              //console.log(obj && obj.length > 0);
+ 
               if (obj && obj.length > 0) {
                 if (forceProcess || obj.attr("processed") != "yes") {
                     hasFound = true;
@@ -756,8 +754,6 @@
                 } 
               }
               else {
-                    console.log(929292);
-                    console.log(hasFound);
 
                   if (hasFound) {
                     if (dopostcode == 1) {
@@ -776,24 +772,14 @@
 
                         $(window).trigger("resize");
                     }
-
-
                     //$(".innermask").fadeOut(1300);
-
-
                     doprocess = false;
-
-
                   }
               }
 
               i = i + 1;
-
-              //console.log(51515151);
-              //console.log(doprocess);
             }
             while (doprocess);
-          //console.log(22222222222222);
   }
 
   function insertAfter(newNode, referenceNode) {
