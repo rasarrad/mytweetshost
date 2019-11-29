@@ -59,7 +59,12 @@ function zoom(obj, flag) {
             table.find('td.el').addClass('ellipsis');
         });
     }
-
+    $("#mainsettings table#theme")
+    .css('transition', 'max-height .01s')
+    .css('max-height', setHeight)
+    .find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '').show()
+    .find('td.el').addClass('ellipsis');
+    
     $(".newLayout table.defaulttablerow").each( function( index, element ) {
         var table = $(element);
         table.css('transition', 'max-height .01s');
@@ -398,7 +403,7 @@ var openMainSettingsPopup = function(jsonobj)
     if ($('body').hasClass('big'))
         setHeight = "31px";
 
-    $("#mainsetting table#theme").each( function( index, element ) {
+    $("#mainsettings table#theme").each( function( index, element ) {
         var table = $(element);
         table.css('transition', 'max-height .01s');
         table.css('max-height', setHeight);
@@ -532,7 +537,7 @@ function editSetting(e, obj, flag) {
                 table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
                 table.find('td.el').addClass('ellipsis');
             });
-        
+            
             table.css('transition', 'max-height 6.3s');
             table.css('max-height', '2450px');
             table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;top: -6px;');
