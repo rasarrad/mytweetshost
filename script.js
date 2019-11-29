@@ -35,6 +35,11 @@ $( document ).ready(function() {
     */
    //createCookie("28tagchanged", null);
 
+   var currTheme = readCookie("currTheme");
+   if (currTheme && currTheme.length > 0 && currTheme != 'default') {
+        changetheme(currTheme);
+   }  
+
    catsmap.set("tvn", "To View Now");
    catsmap.set("trn", "Trending");
    catsmap.set("tvi", "To View");
@@ -415,16 +420,39 @@ function changetheme(type) {
     var softdark_color = "";
     var soft_color = "";
     var soft_transp_color = "";
+    createCookie("currTheme", type);
     
-    switch(fruits) {
+    switch(type) {
         case "default":
-            var high_color = "#45cae7";
-            var text_color = "#6db0bf";
-            var dark_color = "#001b30";
-            var softdark_color = "#003156";
-            var soft_color = "#004a86";
-            var soft_transp_color = "#45cae787";
+            high_color = "#45cae7";
+            text_color = "#6db0bf";
+            dark_color = "#001b30";
+            softdark_color = "#003156";
+            soft_color = "#004a86";
+            soft_transp_color = "#45cae787";
             break;
+
+        case "red":
+            high_color = "#fdb9b9";
+            text_color = "#f79393";
+            dark_color = "#630000";
+            softdark_color = "#af0000";
+            soft_color = "#ea0000";
+            soft_transp_color = "#faaeae78";    
+        case "gray":
+            high_color = "#313131";
+            text_color = "#f79393";
+            dark_color = "#909090";
+            softdark_color = "#bbbbbb";
+            soft_color = "#ffffff";
+            soft_transp_color = "#ffffff63";  
+        case "green":
+            high_color = "#fdfd15";
+            text_color = "#ffff9d";
+            dark_color = "#005411";
+            softdark_color = "#06ea35";
+            soft_color = "#00ad23";
+            soft_transp_color = "#fdfd157d";  
     }
 
     document.documentElement.style.setProperty('--high-color', high_color);

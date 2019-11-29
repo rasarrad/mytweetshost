@@ -453,14 +453,14 @@
               </tr>
             </tbody>
         </table>
-        <table id="editTags" cheight="232px" class="sectiontitletable sectionexpandable firstsettable" style="margin-top: 6px; transition: max-height 0.01s ease 0s; max-height: 2450px;">
+        <table cheight="232px" class="sectiontitletable sectionexpandable firstsettable" style="margin-top: 6px; transition: max-height 0.01s ease 0s; max-height: 2450px;">
           <tbody>
             <tr class="cursorpointer" onclick="editSetting(event,this)" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="width: 54px !important;display: inline-block;white-space: nowrap;">
                   <i class="fa fa-picture-o"></i><span style="padding-left: 6px;" class="sectiontitle">Theme</span>
               </td>    
               <td class="sectionicontd el ellipsis">
-                  <span class="currenttags titletext" style="top: -1px;text-align: left;padding-left: 0px;">Default</span>
+                  <span class="currenttags titletext" style="top: -1px;text-align: left;padding-left: 0px;">Twitter Lines</span>
               </td>                         
               <td class="sectionedittd">
                   <i class="fa fa-angle-up" style="font-size: 22px; position: relative; top: -6px; display: none;"></i>
@@ -468,16 +468,46 @@
           </tr>   
           <tr>  
               <td colspan="3">
-                  <div style="width: 100%;height: 100%;padding-left: 0px;padding-top: 3px;overflow-y: auto;z-index: 99;display: block;margin-bottom: 0;min-height: 122px;position: relative;background: var(--dark-color);background-image: url(&quot;./JPGs/default_theme.jpg&quot;);background-size: 100%;border: 1px solid var(--high-color);">
-                      <div style="width: calc(100% - 0px);z-index: 99;display: block;color: var(--high-color);position: absolute;text-align: center;font-size: 14px;cursor: default;background: #00000075;background: var(--high-color);color: var(--dark-color);opacity: 0.63;top: -1px;font-weight: bold;height: 18px;padding-top: 2px;">
-                          Test vande piuu
+                  <div style="width: 100%;height: 100%;padding-left: 0px;padding-top: 3px;overflow-y: auto;z-index: 99;display: block;margin-bottom: 0;min-height: 122px;position: relative;background: var(--dark-color);background-image: url('./JPGs/default_theme.jpg');background-size: 100%;border: 1px solid var(--high-color);">
+                      <div style="width: calc(100% - 0px);z-index: 99;display: block;color: var(--high-color);position: absolute;text-align: center;font-size: 14px;cursor: default;background: #00000075;background: var(--high-color);color: var(--dark-color);opacity: 0.53;top: -1px;font-weight: bold;height: 18px;padding-top: 2px;">
+                          Twitter Lines
                       </div>
-                      <i class="fa fa-check clicable" onclick="javascript: generate(this)" id="generate" style="cursor: pointer;color: var(--softdark-color);background: var(--high-color);width: 19px;border-radius: 3px;height: 18px;position: absolute;font-size: 14px;bottom: 11px;padding-left: 5px;padding-top: 3px;right: 11px;top: auto !important;"></i>
+                      <i class="fa fa-check clicable" onclick="javascript: changetheme('default', 'Twitter Lines')" id="generate" style="cursor: pointer;color: var(--softdark-color);background: var(--high-color);width: 19px;border-radius: 3px;height: 18px;position: absolute;font-size: 14px;bottom: 11px;padding-left: 5px;padding-top: 3px;right: 11px;top: auto !important;"></i>
                   </div>   
               </td>                                        
-          </tr>  
+          </tr>   
+          <tr>  
+              <td colspan="3">
+                  <div style="width: 100%;height: 100%;padding-left: 0px;padding-top: 3px;overflow-y: auto;z-index: 99;display: block;margin-bottom: 0;min-height: 122px;position: relative;background: var(--dark-color);background-image: url('./JPGs/red_theme.jpg');background-size: 100%;border: 1px solid var(--high-color);">
+                      <div style="width: calc(100% - 0px);z-index: 99;display: block;color: var(--high-color);position: absolute;text-align: center;font-size: 14px;cursor: default;background: #00000075;background: var(--high-color);color: var(--dark-color);opacity: 0.53;top: -1px;font-weight: bold;height: 18px;padding-top: 2px;">
+                        Red Tide
+                      </div>
+                      <i class="fa fa-check clicable" onclick="javascript: changetheme('red', 'Red Tide')" id="generate" style="cursor: pointer;color: var(--softdark-color);background: var(--high-color);width: 19px;border-radius: 3px;height: 18px;position: absolute;font-size: 14px;bottom: 11px;padding-left: 5px;padding-top: 3px;right: 11px;top: auto !important;"></i>
+                  </div>   
+              </td>                                        
+          </tr>    
+          <tr>  
+              <td colspan="3">
+                  <div style="width: 100%;height: 100%;padding-left: 0px;padding-top: 3px;overflow-y: auto;z-index: 99;display: block;margin-bottom: 0;min-height: 122px;position: relative;background: var(--dark-color);background-image: url('./JPGs/gray_theme.jpg');background-size: 100%;border: 1px solid var(--high-color);">
+                      <div style="width: calc(100% - 0px);z-index: 99;display: block;color: var(--high-color);position: absolute;text-align: center;font-size: 14px;cursor: default;background: #00000075;background: var(--high-color);color: var(--dark-color);opacity: 0.53;top: -1px;font-weight: bold;height: 18px;padding-top: 2px;">
+                          Shades Of Gray
+                      </div>
+                      <i class="fa fa-check clicable" onclick="javascript: changetheme('gray', 'Shades Of Gray')" id="generate" style="cursor: pointer;color: var(--softdark-color);background: var(--high-color);width: 19px;border-radius: 3px;height: 18px;position: absolute;font-size: 14px;bottom: 11px;padding-left: 5px;padding-top: 3px;right: 11px;top: auto !important;"></i>
+                  </div>   
+              </td>                                        
+          </tr>    
+          <tr>  
+              <td colspan="3">
+                  <div style="width: 100%;height: 100%;padding-left: 0px;padding-top: 3px;overflow-y: auto;z-index: 99;display: block;margin-bottom: 0;min-height: 122px;position: relative;background: var(--dark-color);background-image: url('./JPGs/green_theme.jpg');background-size: 100%;border: 1px solid var(--high-color);">
+                      <div style="width: calc(100% - 0px);z-index: 99;display: block;color: var(--high-color);position: absolute;text-align: center;font-size: 14px;cursor: default;background: #00000075;background: var(--high-color);color: var(--dark-color);opacity: 0.53;top: -1px;font-weight: bold;height: 18px;padding-top: 2px;">
+                        Green Army
+                      </div>
+                      <i class="fa fa-check clicable" onclick="javascript: changetheme('green', 'Green Army')" id="generate" style="cursor: pointer;color: var(--softdark-color);background: var(--high-color);width: 19px;border-radius: 3px;height: 18px;position: absolute;font-size: 14px;bottom: 11px;padding-left: 5px;padding-top: 3px;right: 11px;top: auto !important;"></i>
+                  </div>   
+              </td>                                        
+          </tr>   
         </tbody>
-      </table>     
+      </table>   
         <table class="sectiontitletable sectionexpandable defaulttablerow" style="margin-top: 8px;transition: max-height 0.5s ease 0s;max-height: 18px;">
           <tbody>
             <tr class="cursorpointer" style="padding-bottom: 15px;">
