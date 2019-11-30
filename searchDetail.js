@@ -10,7 +10,7 @@ function changecriteria(e, obj) {
     var maindiv = table.parent();
 console.log($(obj).parent().parent())
 console.log($(obj).parent())
-console.log($(obj)
+console.log($(obj))
     var setHeight = "18px";
 
     if ($('body').hasClass('big'))
