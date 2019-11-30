@@ -25,16 +25,16 @@ function changecriteria(e, obj) {
             othertable.find('td.el').addClass('ellipsis');
         });
         
-        table.css('transition', 'max-height 6.3s');
-        table.css('max-height', '2450px');
+        table.css('transition', 'max-height 1s');
+        table.css('max-height', table.attr("cmaxheight") + "px");
         table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;margin-top: -4px;');
 
         table.find('td.el').removeClass('ellipsis');
-        
+
         $("#searchpopup > div").attr("style", "max-height: " + (125 + Number(table.attr("cmaxheight"))) + "px !important;margin-top: " + (234 - Number(table.attr("cmargin"))) + "px !important;");
     }
     else {
-        table.css('transition', 'max-height 1.99s');
+        table.css('transition', 'max-height 1s');
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
         setTimeout(function() { 

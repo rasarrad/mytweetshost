@@ -1867,6 +1867,7 @@ body.big#mainsettings .newLayout > div {
     top: 65px;
     max-height: calc(100% - 180px);
     margin-top: 20px;
+    transition: all 1s;
 }
 
 .newLayout > div .titletable {
