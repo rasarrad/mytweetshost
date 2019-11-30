@@ -159,6 +159,10 @@ $( document ).ready(function() {
       var keycode = (event.keyCode ? event.keyCode : event.which);
       if(keycode == '13' && $(this).val().length > 0){
         getInformation(false, 1);
+
+        if ($(window).width() < 1200) {
+            $(this).blur();
+        }
       }
     });    
 
