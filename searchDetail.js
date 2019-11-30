@@ -6,11 +6,9 @@ function changecriteria(e, obj) {
         //fixfocus(obj);
     //e.stopPropagation();
 
-    var table = $(obj).parent();
+    var table = $(obj).parent().parent();
     var maindiv = table.parent();
-console.log($(obj).parent().parent())
-console.log($(obj).parent())
-console.log($(obj))
+
     var setHeight = "18px";
 
     if ($('body').hasClass('big'))
