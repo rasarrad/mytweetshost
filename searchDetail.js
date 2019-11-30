@@ -447,7 +447,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         if (!ismoretweets) {
             if (totalLinkss > 0) {
-                if (wasfiltered != 2)
+                //if (wasfiltered != 2)
                     //showMessage("Search Results", 2000);
             }
             else {
