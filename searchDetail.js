@@ -30,8 +30,8 @@ function changecriteria(e, obj) {
         table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;margin-top: -4px;');
 
         table.find('td.el').removeClass('ellipsis');
-
-        $("#searchpopup > div").attr("style", "max-height: " + (124 + Number(table.attr("cmaxheight"))) + "px !important;margin-top: " + (112 + Number(table.attr("cmargin"))) + "px !important;")
+        
+        $("#searchpopup > div").attr("style", "max-height: " + (125 + Number(table.attr("cmaxheight"))) + "px !important;margin-top: " + (234 - Number(table.attr("cmargin"))) + "px !important;");
     }
     else {
         table.css('transition', 'max-height 1.99s');
@@ -41,6 +41,7 @@ function changecriteria(e, obj) {
             table.find('td.el').addClass('ellipsis');
         }, 1500);
         
+        $("#searchpopup > div").attr("style", "max-height: 125px !important;margin-top: 234px !important;");
     }
 
 }
