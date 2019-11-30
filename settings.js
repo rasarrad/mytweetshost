@@ -418,6 +418,19 @@ var openSearchPopup = function(jsonobj)
 {
     $('body, html').css('overflow-y', 'hidden');
     $('#linkChange').css('display', 'flex');  
+    var setHeight = "18px";
+
+    if ($('body').hasClass('big'))
+        setHeight = "31px";
+
+    $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
+        var table = $(element);
+        table.css('transition', 'max-height .01s');
+        table.css('max-height', setHeight);
+        table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '').show();
+        table.find('td.el').addClass('ellipsis');
+    });
+    
     $('#linkChange').fadeIn(); 
 
 } 
