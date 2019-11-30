@@ -414,6 +414,14 @@ var openMainSettingsPopup = function(jsonobj)
     $('#mainsettings').fadeIn(600); 
 } 
 
+var openSearchPopup = function(jsonobj) 
+{
+    $('body, html').css('overflow-y', 'hidden');
+    $('#linkChange').css('display', 'flex');  
+    $('#linkChange').fadeIn(); 
+
+} 
+
 var getLinkColor = function(id) 
 {
     var isdeleted = readCookie(id + "isdeleted");

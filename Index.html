@@ -166,8 +166,8 @@
 
 <textarea style="width: 200px;height: 100px;position: fixed;left: -242px;" id="linkresult" type="text"></textarea>
 
-<div id="linkChange" style="display: none;display: flex !important;" class="newLayout" onclick="closeSettingsPopup()" cid="">
-  <div>        
+<div id="linkChange" style="display: none;" class="newLayout" onclick="closeSettingsPopup()" cid="">
+  <div style="max-height: 191px !important;">        
       <table class="titletable buttonstable newlinktable">
           <tbody>
             <tr class="cursordefault">
@@ -193,35 +193,7 @@
               </td>                
             </tr>
           </tbody>
-        </table>
-        <table id="linktable" class="sectiontitletable sectionexpandable defaulttablerow" style="transition: max-height 0.5s ease 0s;max-height: 18px;margin-top: 80px;">
-              <tbody>
-                <tr class="cursorpointer" style="padding-bottom: 15px;">
-                    <td class="sectionicontd" style="width: 7px !important;display: inline-block;white-space: nowrap;cursor: default;">
-                        <i class="fa fa-link" style="font-size: 14px;position: relative;top: -2px;left: -4px;"></i><span style="padding-left: 6px;position: relative;top: -3px;left: -1px;" class="sectiontitle">Link</span>
-                    </td>    
-                    <td class="sectionicontd el ellipsis" style="cursor: default;width: 96%;padding-left: 5px;">
-                        <input id="tweet" type="text" style="position: relative;top: -4px;width: calc(100% - 53px);">
-                    </td>                         
-                                                             
-                </tr>   
-              </tbody>
-            </table>  
-            <table id="previewtable" class="sectiontitletable sectionexpandable newlinktable" style="transition: max-height 0.5s ease 0s;max-height: 1908px;margin-top: 80px;display: none;">
-                  <tbody>
-                    <tr class="cursorpointer" style="padding-bottom: 15px;">
-                        <td class="sectionicontd" style="width: 7px !important;display: inline-block;white-space: nowrap;cursor: default;">
-                            <i class="fa fa-desktop" style="font-size: 14px;position: relative;top: 0px;left: -4px;"></i><span style="padding-left: 6px;position: relative;top: -2px;left: -1px;" class="sectiontitle">Preview</span>
-                        </td>    
-                        <td class="sectionicontd el ellipsis" style="cursor: default;width: 96%;padding-left: 5px;">   
-                        </td>                                                                     
-                    </tr>
-                    <tr>  
-                          <td colspan="3" id="previewtd" style="width: calc(100% - 220px);padding-left: 0px;padding-bottom: 0px;">
-                          </td>                                          
-                      </tr>   
-                  </tbody>
-                </table>                      
+        </table>                  
     <table id="editTags" cheight="232px" class="sectiontitletable sectionexpandable" style="margin-top: 80px;">
         <tbody>
           <tr class="cursorpointer" onclick="editSetting(event,this)" style="padding-bottom: 15px;">

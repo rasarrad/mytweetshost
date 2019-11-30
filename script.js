@@ -61,6 +61,13 @@ $( document ).ready(function() {
         $('body').removeClass('notransit'); 
     }, 1400);  
 
+    
+
+
+    openSearchPopup();
+    
+    
+    
     /*
     var functorun = function(jsonvar) 
    { 
