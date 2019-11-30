@@ -26,7 +26,7 @@ function changecriteria(e, obj) {
         });
         
         table.css('transition', 'max-height 1s');
-        table.css('max-height', table.attr("cmaxheight") + "px");
+        table.css('max-height', table.attr("cheight") + "px");
         table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;margin-top: -4px;');
 
         table.find('td.el').removeClass('ellipsis');
