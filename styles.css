@@ -1413,6 +1413,13 @@ body.big #sear {
 body.big #editTags {
   margin-top: 93px !important;
 }
+#searchtags {
+  margin-top: 93px !important;
+}
+body.big #searchtags {
+  margin-top: 93px !important;
+}
+
 .sectionicontd {
   transition: all 0.6s;
 }
@@ -1760,6 +1767,14 @@ body.big#mainsettings .newLayout > div {
       body.big #editTags {
         margin-top: 120px !important;
       }
+      #searchtags {
+        margin-top: 120px !important;
+      }
+      
+      body.big #searchtags {
+        margin-top: 120px !important;
+      }
+
       body.big .newLayout.new #editTags {
         margin-top: 6px !important;
       }      
