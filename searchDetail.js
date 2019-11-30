@@ -1,6 +1,73 @@
 
 
 
+function changecriteria(e, obj) {
+    if (obj)
+        fixfocus(obj);
+    e.stopPropagation();
+
+    var table = $(obj).parent().parent();
+    var maindiv = table.parent();
+
+    var setHeight = "18px";
+
+    if ($('body').hasClass('big'))
+        setHeight = "31px";
+
+    if (table.css('max-height') == setHeight) {
+        var hasExpanded = false;
+        $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
+            var othertable = $(element);
+            
+            othertable.css('transition', 'max-height 0.01s');
+            othertable.css('max-height', setHeight);
+            othertable.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
+            othertable.find('td.el').addClass('ellipsis');
+        });
+        
+        table.css('transition', 'max-height 6.3s');
+        table.css('max-height', '2450px');
+        table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;margin-top: -4px;');
+
+        table.find('td.el').removeClass('ellipsis');
+
+        $("#searchpopup > div").attr("style", "max-height: " + (124 + Number(table.attr("cmaxheight"))) + "px !important;margin-top: " + (112 + Number(table.attr("cmargin"))) + "px !important;")
+    }
+    else {
+        table.css('transition', 'max-height 1.99s');
+        table.css('max-height', setHeight);
+        table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
+        setTimeout(function() { 
+            table.find('td.el').addClass('ellipsis');
+        }, 1500);
+        
+    }
+
+}
+
+
+var openSearchPopup = function(jsonobj) 
+{
+    $('body, html').css('overflow-y', 'hidden');
+    $('#searchpopup').css('display', 'flex');  
+    var setHeight = "18px";
+
+    if ($('body').hasClass('big'))
+        setHeight = "31px";
+
+    $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
+        var table = $(element);
+        table.css('transition', 'max-height .01s');
+        table.css('max-height', setHeight);
+        table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '').show();
+        table.find('td.el').addClass('ellipsis');
+    });
+
+    $('#searchpopup').fadeIn(); 
+
+} 
+
+
 var getInformation = function(ismoretweets, wasfiltered) {
 
     if (wasfiltered == 1) {
@@ -381,7 +448,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         if (!ismoretweets) {
             if (totalLinkss > 0) {
                 if (wasfiltered != 2)
-                    showMessage("Search Results", 2000);
+                    //showMessage("Search Results", 2000);
             }
             else {
                 $('#mask').fadeOut(600);  
@@ -663,7 +730,7 @@ var getInformationOld = function(ismoretweets) {
         });
 
         if (!ismoretweets || $('#moretweets').css('opacity') != 1) {
-            showMessage("Search Results", 2000);
+            //showMessage("Search Results", 2000);
         }
     }); 
 }
@@ -696,7 +763,7 @@ var getInformationbyid = function(id) {
 
                 $('#mask').fadeOut(300);
 
-                showMessage("Link Loaded"); 
+                //showMessage("Link Loaded"); 
 
                 return false;
             }
