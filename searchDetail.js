@@ -31,7 +31,7 @@ function changecriteria(e, obj) {
 
         table.find('td.el').removeClass('ellipsis');
 
-        $("#searchpopup > div").attr("style", "max-height: " + (125 + Number(table.attr("cmaxheight"))) + "px !important;margin-top: " + (234 - Number(table.attr("cmargin"))) + "px !important;");
+        $("#searchpopup > div").attr("style", "max-height: " + (125 + Number(table.attr("cmaxheight"))) + "px !important;");
     }
     else {
         table.css('transition', 'max-height 1s');
@@ -41,7 +41,7 @@ function changecriteria(e, obj) {
             table.find('td.el').addClass('ellipsis');
         }, 1500);
         
-        $("#searchpopup > div").attr("style", "max-height: 125px !important;margin-top: 234px !important;");
+        $("#searchpopup > div").attr("style", "max-height: 125px !important;");
     }
 
 }
