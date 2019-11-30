@@ -13,7 +13,7 @@ function changecriteria(e, obj) {
 
     if ($('body').hasClass('big'))
         setHeight = "31px";
-
+        alert(table.css('max-height'))
     if (table.css('max-height') == setHeight) {
         var hasExpanded = false;
         $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
@@ -30,7 +30,7 @@ function changecriteria(e, obj) {
         table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;margin-top: -4px;');
 
         table.find('td.el').removeClass('ellipsis');
-alert(1111)
+
         $("#searchpopup > div").attr("style", "max-height: " + (124 + Number(table.attr("cmaxheight"))) + "px !important;margin-top: " + (112 + Number(table.attr("cmargin"))) + "px !important;")
     }
     else {
