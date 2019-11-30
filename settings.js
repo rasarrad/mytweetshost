@@ -457,6 +457,17 @@ var getLinkColor = function(id)
 } 
 
 
+function searchTags(tags, text) {
+    var res = text.split(" ");
+    for (var i = 0; i < res.length; i++) {
+        if (tags.includes(res[i])) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
 function showAuthor(obj) {
     $(obj).hide();
     var otherObj = $(obj).parent().find(".authorinput");
