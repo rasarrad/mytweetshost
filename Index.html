@@ -171,17 +171,11 @@
       <table class="titletable buttonstable newlinktable">
           <tbody>
             <tr class="cursordefault">
-                <td colspan="4" class="firsttd">
-                    <i id="seticon" class="fa"></i>
+                <td colspan="4" class="firsttd" style="padding-top: 3px;padding-bottom: 9px;">
+                    <i class="fa fa-search clicable" style="margin-right: 9px;font-size: 15px;position: relative;top: 1px;"></i>
                     <!-- <b>id </b>
                     <span class="id smallrem"></span>-->
-                    <b style="margin-left: -1px;">author </b>
-                    <span class="author" onclick="showAuthor(this)" style="overflow: hidden;text-overflow: ellipsis;max-width: 124px;display: inline-block;white-space: nowrap;position: relative;top: 4px;text-transform: lowercase;"></span>
-                    <input type="text" additionalAttributes="{autocomplete: 'none'}" autocomplete=none id="postedby" onblur="saveAuthor(this)" class="authorinput" style="white-space: nowrap;position: relative;top: 0px;max-width: 124px !important;height: 11px;display:none;" value="">
-                    <br class="brsep">
-                    <b class="datespan" style="margin-left: 5px;">date </b>
-                    <span onclick="showDate(this)" class="date smallrem"></span>
-                    <input type="text" id="date" onblur="saveDate(this)" class="dateinput" value="">
+                    <b style="margin-left: -1px;">Search </b>
                 </td>            
             </tr>
             <tr class="buttonstr" style="text-align: center;">
@@ -254,6 +248,7 @@
       </tr>    
     </tbody>
   </table>  
+  <i id="sear" onclick="javascript: togglecriterions(this)" class="fa fa-search clicable" style="position: sticky;bottom: 9px;z-index: 33333;top: auto;background: var(--high-color);color: var(--softdark-color);width: 13px;padding-left: 6px;padding-top: 3px;height: 29px; border-radius: 5px;right: 16px;left: calc(100% - 52px);"></i>  
   </div>
 </div>
 
