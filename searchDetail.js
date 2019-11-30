@@ -8,12 +8,14 @@ function changecriteria(e, obj) {
 
     var table = $(obj).parent();
     var maindiv = table.parent();
-
+console.log($(obj).parent().parent())
+console.log($(obj).parent())
+console.log($(obj)
     var setHeight = "18px";
 
     if ($('body').hasClass('big'))
         setHeight = "31px";
-        alert(table.css('max-height'))
+
     if (table.css('max-height') == setHeight) {
         var hasExpanded = false;
         $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
