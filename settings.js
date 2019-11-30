@@ -460,11 +460,11 @@ var getLinkColor = function(id)
 function searchTags(tags, text) {
     var res = text.split(" ");
     for (var i = 0; i < res.length; i++) {
-        if (tags.includes(res[i])) {
-            return true;
+        if (!tags.includes(res[i])) {
+            return false;
         }
     }
-    return false;
+    return true;
 }
 
 
