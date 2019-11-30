@@ -2,9 +2,9 @@
 
 
 function changecriteria(e, obj) {
-    if (obj)
-        fixfocus(obj);
-    e.stopPropagation();
+    //if (obj)
+        //fixfocus(obj);
+    //e.stopPropagation();
 
     var table = $(obj).parent();
     var maindiv = table.parent();
