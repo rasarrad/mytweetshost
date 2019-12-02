@@ -1,7 +1,7 @@
 :root {
   
   --high-color: #45cae7;
-  --text-color: #6db0bf;
+  --text-color: #ffffff;
   --dark-color: #001b30;
   --softdark-color: #003156;
   --soft-color: #004a86;
@@ -2048,7 +2048,6 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
   text-align: left;
   padding-left: 14px;
   color: var(--text-color);
-  color: white;
   line-height: 19px;
   /* position: relative; */
 }
@@ -2155,10 +2154,9 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
     height: 100%;
 }
 .newLayout ul li {
-    color: var(--text-color);
+    color: var(--high-color);
     cursor: pointer;
     padding: 5px 4px;
-    color: white;
     height: 18px;
     padding-right: 3px;
     padding-bottom: 3px;
@@ -2311,7 +2309,6 @@ body.big .checkstyleddiv input {
 }
 input[type="checkbox"] + label {
     color: var(--text-color);
-    color: white;
 }
 
 input[type="checkbox"] + label span {
@@ -2383,7 +2380,7 @@ input[type="radio"]:checked + label span {
     top: 0px;
 }
 .titletext {
-    cursor: default;
+    /* cursor: default; */
 }
 .colapsed tr td .titletext.currenttags {
     max-width: 245px;
@@ -2998,8 +2995,29 @@ body.big .newLayout.new .sectiontitle {
 
 .clicable {
   transition: opacity 0.6s !important;
+  cursor: pointer !important
 }
 
 .clicable:hover {
+  opacity: 0.6 !important;
+}
+
+.cursorpointer {
+  transition: opacity 0.6s !important;
+  cursor: pointer !important
+}
+
+.cursorpointer:hover {
+  opacity: 0.6 !important;
+}
+
+#linkchange:not(.new) .titletext {
+    cursor: pointer !important;
+}
+.checkstyleddiv {
+  transition: opacity 0.6s !important;
+  cursor: pointer !important
+}
+.checkstyleddiv:hover {
   opacity: 0.6 !important;
 }
