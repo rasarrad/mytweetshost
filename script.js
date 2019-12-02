@@ -67,7 +67,7 @@ $( document ).ready(function() {
     openSearchPopup();
     
     
-    
+
     /*
     var functorun = function(jsonvar) 
    { 
@@ -391,7 +391,8 @@ $.fn.isChildOverflowing = function (child) {
         setTimeout(function() { 
             resetFieldsPopup(); 
             $('#tweet').val(text);
-
+            console.log(11111)
+console.log(text)
             parseTweet(type);
 
         }, 300);
