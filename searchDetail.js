@@ -36,8 +36,6 @@ function changecriteria(e, obj) {
         table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;margin-top: -4px;');
 
         table.find('td.el').removeClass('ellipsis');
-
-        $("#searchpopup > div").attr("style", "max-height: " + (125 + Number(table.attr("cmaxheight"))) + "px !important;");
     }
     else {
         table.css('transition', 'max-height 1s');
@@ -46,8 +44,6 @@ function changecriteria(e, obj) {
         setTimeout(function() { 
             table.find('td.el').addClass('ellipsis');
         }, 1500);
-        
-        $("#searchpopup > div").attr("style", "max-height: 125px !important;");
     }
 
 }
