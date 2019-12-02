@@ -405,7 +405,7 @@ var openMainSettingsPopup = function(jsonobj)
         var table = $(element);
         table.css('transition', 'max-height .01s');
         table.css('max-height', setHeight);
-        table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '').show();
+        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').attr('style', '').show();
         table.find('td.el').addClass('ellipsis');
     });
 
@@ -544,7 +544,7 @@ function editSetting(e, obj, flag) {
                 
                 table.css('transition', 'max-height 0.01s');
                 table.css('max-height', setHeight);
-                table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
+                table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').attr('style', '');
                 table.find('td.el').addClass('ellipsis');
             });
             
