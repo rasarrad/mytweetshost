@@ -55,14 +55,14 @@ function zoom(obj, flag) {
             var table = $(element);
             table.css('transition', 'max-height .01s');
             table.css('max-height', setHeight);
-            table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
+            table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
             table.find('td.el').addClass('ellipsis');
         });
     }
     $("#mainsettings table#theme")
     .css('transition', 'max-height .01s')
     .css('max-height', setHeight)
-    .find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '').show()
+    .find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-up').show()
     .find('td.el').addClass('ellipsis');
 
     $(".newLayout table.defaulttablerow").each( function( index, element ) {
@@ -348,8 +348,8 @@ var openSettingsPopup = function(jsonobj)
         $('#linkChange').find("table:not(.buttonstable):not(.newlinktable)").each( function( index, element ) {
             var table = $(element);
             table.css('transition', 'max-height 0.01s');
-            table.css('max-height', '2450px');
-            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;top: -6px;').hide();
+            table.css('max-height', '450px');
+            table.find('.sectionedittd i').hide();
         });
         
         var setHeight = "18px";
@@ -548,25 +548,25 @@ function editSetting(e, obj, flag) {
                 table.find('td.el').addClass('ellipsis');
             });
             
-            table.css('transition', 'max-height 6.3s');
-            table.css('max-height', '2450px');
+            table.css('transition', 'max-height 1s');
+            table.css('max-height', '450px');
             
             if (table.attr('id') != 'editInfo')
                 setTimeout(function() { 
-                    table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;margin-top: -4px;');
+                    table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down');
                     table.find('td.el').removeClass('ellipsis');
                 }, 1500);
             else
                 setTimeout(function() { 
-                    table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;margin-top: -4px;');
+                    table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down');
                 }, 1500);
       
         }
         else {
-            table.css('transition', 'max-height 1.99s');
+            table.css('transition', 'max-height 1s');
             table.css('max-height', setHeight);
             setTimeout(function() { 
-                table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
+                table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
                 table.find('td.el').addClass('ellipsis');
             }, 1500);
             
