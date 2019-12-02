@@ -1,5 +1,11 @@
 
 
+function closeSearchPopup(obj) {
+    if (obj)
+        fixfocus(obj);
+    $('body, html').css('overflow-y', 'auto');
+    $('#searchpopup').fadeOut(600);
+}
 
 function changecriteria(e, obj) {
     //if (obj)

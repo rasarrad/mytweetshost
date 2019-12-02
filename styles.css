@@ -2991,3 +2991,12 @@ body.big .newLayout.new .sectiontitle {
     padding-top: 2px;
     left: -1px;
 }
+
+
+.clicable {
+  transition: opacity 0.6s !important;
+}
+
+.clicable:hover {
+  opacity: 0.6 !important;
+}
