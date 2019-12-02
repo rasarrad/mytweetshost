@@ -2077,14 +2077,8 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
   width: 11px;
 }
 
-.newLayout#searchpopup .sectiontitletable .sectionedittd i {
-  top: -2px;
-  font-size: 11px;
-  position: relative;
-  width: 11px;
-}
-body.big .newLayout#searchpopup .sectiontitletable .sectionedittd i {
-  top: -2px;
+body.big .newLayout .sectiontitletable .sectionedittd i {
+  top: 0px;
   font-size: 24px !important;
   position: relative;
   width: 11px;
@@ -2579,15 +2573,6 @@ body.big .newLayout .fa-undo..mainbutton {
 }
 
 
-.newLayout .sectiontitletable .sectionedittd i.fa-angle-up {
-    font-size: 22px;
-    left: -2px;
-}
-body.big .newLayout .sectiontitletable .sectionedittd i.fa-angle-up {
-    font-size: 27px !important;
-    left: -5px;
-    padding-top: 3px;
-}
 
 
 .newLayout .sectiontitletable .sectionedittd i.fa-edit {
