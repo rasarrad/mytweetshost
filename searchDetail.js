@@ -27,20 +27,20 @@ function changecriteria(e, obj) {
             
             othertable.css('transition', 'max-height 0.01s');
             othertable.css('max-height', setHeight);
-            othertable.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
+            othertable.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
             othertable.find('td.el').addClass('ellipsis');
         });
         
         table.css('transition', 'max-height 1s');
         table.css('max-height', table.attr("cheight") + "px");
-        table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;margin-top: -4px;');
+        table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down');
 
         table.find('td.el').removeClass('ellipsis');
     }
     else {
         table.css('transition', 'max-height 1s');
         table.css('max-height', setHeight);
-        table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
+        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
         setTimeout(function() { 
             table.find('td.el').addClass('ellipsis');
         }, 1500);
