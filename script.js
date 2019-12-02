@@ -23,7 +23,7 @@ var tagssloaded = false;
 var catsmap = new Map();
 
 $( document ).ready(function() { 
-    $( "#mask" ).fadeOut( 600, function() {
+    $( "#mask" ).fadeOut( 1100, function() {
         $( "#mask" ).css("background", "rgba(0, 0, 0, 0.72)")
     });
     /*nextid = parseInt(readCookie("maxid"));
