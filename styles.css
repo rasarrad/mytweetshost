@@ -2005,7 +2005,7 @@ body.big .newLayout #editTags.sectiontitletable tr:first-child td {
 
 
 body.big .newLayout .sectiontitletable .sectionicontd {
-    padding-top: 4px !important;
+    padding-top: 3px !important;
 }
 
 body .newLayout #editTags .sectionicontd:first-child {
@@ -2046,7 +2046,7 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
 
 .newLayout .titletext {
   text-align: left;
-  padding-left: 14px;
+  padding-left: 0px;
   color: var(--text-color);
   line-height: 19px;
   /* position: relative; */
@@ -2106,7 +2106,7 @@ body.big .newLayout .sectiontitletable .sectionedittd i {
     display: block;
     width: calc(100% - 22px);
     transition: max-height .5s;
-    max-height: 21px;
+    /* max-height: 21px; */
     height: 100%;
 }
 
@@ -2422,16 +2422,6 @@ input[type="radio"]:checked + label span {
   text-overflow: ellipsis;
 }
 
-.el:not(.ellipsis) span:not(.sectiontitle):not(.currentinfo) {
-  position: relative !important;
-  top: -2px !important;
-}
-
-body.big .el:not(.ellipsis) span:not(.sectiontitle):not(.currentinfo) {
-  position: relative !important;
-  top: -4px !important;
-  left: 19px;
-}
 
 
 /* genericos */
@@ -2536,35 +2526,18 @@ body.big .newLayout#mainsettings .el:not(.ellipsis) .themename {
   padding-left: 0px !important;
   left: 11px;
 }
-body.big .newLayout .titletext.currenttags {
-  line-height: 18px;
-}
 
-body.big .newLayout .titletext.originalinfo {
-  line-height: 20px;
-}
-body.big #editCats td:not(.ellipsis) .titletext {
-    top: 0px !important;
+body.big td:not(.ellipsis) .titletext {
     line-height: 18px;
+    position: relative;
+    top: 1px !important;
 }
-body.big .newLayout #editTags td.ellipsis .titletext {
-  top: 4px !important;
+body.big td.ellipsis .titletext {
+    line-height: 18px;
+    position: absolute;
+    top: 4px !important;
 }
 
-body.big .newLayout #editTags td:not(.ellipsis) .titletext {
-  top: -1px !important;
-  line-height: 18px;
-}
-body.big .newLayout #editCatss td:not(.ellipsis) .titletext {
-    top: -1px !important;
-    line-height: 21px;
-}
-body.big .newLayout #editClassif .titletext {
-  top: -5px !important;
-}
-body.big .newLayout #editClassif .ellipsis .titletext {
-  top: -1px !important;
-}
 .newLayout .fa-undo.mainbutton {
    font-size: 14px !important;
 }

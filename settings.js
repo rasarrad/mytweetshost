@@ -549,18 +549,15 @@ function editSetting(e, obj, flag) {
             });
             
             table.css('transition', 'max-height 1s');
-            table.css('max-height', '450px');
+            table.css('max-height', 'fit-content');
             
             if (table.attr('id') != 'editInfo')
-                setTimeout(function() { 
-                    table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down');
-                    table.find('td.el').removeClass('ellipsis');
-                }, 1500);
-            else
-                setTimeout(function() { 
-                    table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down');
-                }, 1500);
-      
+                table.find('td.el').removeClass('ellipsis');
+
+            setTimeout(function() { 
+                table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down');
+                
+            }, 1500);
         }
         else {
             table.css('transition', 'max-height 1s');
