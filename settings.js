@@ -62,7 +62,7 @@ function zoom(obj, flag) {
     $("#mainsettings table#theme")
     .css('transition', 'max-height .01s')
     .css('max-height', setHeight)
-    .find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-up').show()
+    .find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').show()
     .find('td.el').addClass('ellipsis');
 
     $(".newLayout table.defaulttablerow").each( function( index, element ) {
@@ -348,7 +348,7 @@ var openSettingsPopup = function(jsonobj)
         $('#linkChange').find("table:not(.buttonstable):not(.newlinktable)").each( function( index, element ) {
             var table = $(element);
             table.css('transition', 'max-height 0.01s');
-            table.css('max-height', '450px');
+            table.css('max-height', 'fit-content');
             table.find('.sectionedittd i').hide();
         });
         
@@ -405,7 +405,7 @@ var openMainSettingsPopup = function(jsonobj)
         var table = $(element);
         table.css('transition', 'max-height .01s');
         table.css('max-height', setHeight);
-        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').attr('style', '').show();
+        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').show();
         table.find('td.el').addClass('ellipsis');
     });
 

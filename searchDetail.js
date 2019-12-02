@@ -32,7 +32,7 @@ function changecriteria(e, obj) {
         });
         
         table.css('transition', 'max-height 1s');
-        table.css('max-height', table.attr("cheight") + "px");
+        table.css('max-height', "fit-content");
         table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down');
 
         table.find('td.el').removeClass('ellipsis');
@@ -41,9 +41,7 @@ function changecriteria(e, obj) {
         table.css('transition', 'max-height 1s');
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
-        setTimeout(function() { 
-            table.find('td.el').addClass('ellipsis');
-        }, 1500);
+        table.find('td.el').addClass('ellipsis');
     }
 
 }
@@ -62,7 +60,7 @@ var openSearchPopup = function(jsonobj)
         var table = $(element);
         table.css('transition', 'max-height .01s');
         table.css('max-height', setHeight);
-        table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-up').show();
+        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').show();
         table.find('td.el').addClass('ellipsis');
     });
 
