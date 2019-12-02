@@ -550,16 +550,23 @@ function editSetting(e, obj, flag) {
             
             table.css('transition', 'max-height 6.3s');
             table.css('max-height', '2450px');
-            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;margin-top: -4px;');
+            
             if (table.attr('id') != 'editInfo')
-                table.find('td.el').removeClass('ellipsis');
+                setTimeout(function() { 
+                    table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;margin-top: -4px;');
+                    table.find('td.el').removeClass('ellipsis');
+                }, 1500);
+            else
+                setTimeout(function() { 
+                    table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-edit').attr('style', 'font-size: 22px;position: relative;margin-top: -4px;');
+                }, 1500);
       
         }
         else {
             table.css('transition', 'max-height 1.99s');
             table.css('max-height', setHeight);
-            table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
             setTimeout(function() { 
+                table.find('.sectionedittd i').addClass('fa-edit').removeClass('fa-angle-up').attr('style', '');
                 table.find('td.el').addClass('ellipsis');
             }, 1500);
             

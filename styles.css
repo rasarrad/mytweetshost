@@ -1425,7 +1425,7 @@ body.big #searchtags {
 }
 
 .newLayout:not(.new):not(.mainsettings) table .sectionicontd:hover {
-  opacity: 0.6;
+  /* opacity: 0.6; */
 }
 .newLayout.new div table tr .td {
   cursor: default !important;
@@ -2076,6 +2076,21 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
   position: relative;
   width: 11px;
 }
+
+.newLayout#searchpopup .sectiontitletable .sectionedittd i {
+  top: -2px;
+  font-size: 11px;
+  position: relative;
+  width: 11px;
+}
+body.big .newLayout#searchpopup .sectiontitletable .sectionedittd i {
+  top: -2px;
+  font-size: 24px !important;
+  position: relative;
+  width: 11px;
+  right: 1px;
+}
+
 
 .newLayout .detailtable, .newLayout .sectiontitletable {
     width: calc(100% - 14px);
