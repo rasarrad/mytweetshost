@@ -23,6 +23,7 @@ var tagssloaded = false;
 var catsmap = new Map();
 
 $( document ).ready(function() { 
+    alert(44444);
     $( "#mask" ).fadeOut( 1100, function() {
         $( "#mask" ).css("background", "rgba(0, 0, 0, 0.72)")
     });
