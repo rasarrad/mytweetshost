@@ -23,7 +23,7 @@ var tagssloaded = false;
 var catsmap = new Map();
 
 $( document ).ready(function() { 
-    alert(44444);
+
     $( "#mask" ).fadeOut( 1100, function() {
         $( "#mask" ).css("background", "rgba(0, 0, 0, 0.72)")
     });
@@ -35,7 +35,7 @@ $( document ).ready(function() {
     }
     while (nextid > 0);
     nextid = parseInt(readCookie("maxid"));
-    */
+
    //createCookie("28tagchanged", null);
 
    var currTheme = readCookie("currTheme");
