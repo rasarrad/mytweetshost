@@ -554,19 +554,13 @@ function editSetting(e, obj, flag) {
             if (table.attr('id') != 'editInfo')
                 table.find('td.el').removeClass('ellipsis');
 
-            setTimeout(function() { 
-                table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down');
-                
-            }, 1500);
+            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down');
         }
         else {
             table.css('transition', 'max-height 1s');
             table.css('max-height', setHeight);
-            setTimeout(function() { 
-                table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
-                table.find('td.el').addClass('ellipsis');
-            }, 1500);
-            
+            table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
+            table.find('td.el').addClass('ellipsis');
         }
     }
 }
