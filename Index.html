@@ -481,7 +481,7 @@
         </tr> 
         <tr>  
             <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;">
-              <input type="text" id="tagsinput" style="margin-left: 1px;width: calc(100% - 15px);" ctags="">
+              <input type="text" id="tagsinput" style="margin-left: 1px;width: calc(100% - 15px);margin-top: 3px;" ctags="">
             </td>                                          
         </tr>  
       <tr>  
@@ -492,6 +492,37 @@
       </tr>    
     </tbody>
   </table>  
+  <table id="searchtypes" cheight="303" cmaxheight="272" cmargin="119" class="sectiontitletable sectionexpandable" style="margin-top: 80px;">
+    <tbody>
+      <tr class="cursorpointer" onclick="changecriteria(event,this)" style="padding-bottom: 15px;">
+        <td class="sectionicontd" style="width: 48px;display: inline-block;white-space: nowrap;">
+            <i class="fa fa-external-link-square" style="top: 1px;"></i><span style="padding-left: 6px;" class="sectiontitle">Link type</span>
+        </td>    
+        <td class="sectionicontd el ellipsis">
+            <span class="currenttags titletext" style="text-align: left;">All</span>
+        </td>            
+        <td class="sectionedittd">
+            <i class="fa fa-angle-down"></i>
+        </td>           
+    </tr> 
+
+  <tr>  
+      <td colspan="3">
+          <ul>
+            <li>
+                <span class="fa-stack fa-lg">
+                <i class="fa fa-compress fa-stack-2x"></i>
+                <i class="fa fa-filter fa-stack-1x"></i>
+              </span>
+            </li>
+            <li><i class="fa fa-twitter"></i></li>
+            <li><i class="fa fa-internet-explorer"></i></li>
+            <li><i class="fa fa-youtube-play"></i></li>
+          </ul>
+      </td>                                        
+  </tr>    
+</tbody>
+</table>  
   <i id="sear" onclick="javascript: togglecriterions(this)" class="fa fa-search clicable" style="position: sticky;bottom: 9px;z-index: 33333;top: auto;background: var(--high-color);color: var(--softdark-color);width: 12px;padding-left: 7px;padding-top: 3px;height: 29px;border-radius: 4px;right: 16px;left: calc(100% - 52px);border: 1px solid var(--softdark-color);"></i>  
   </div>
 </div>
