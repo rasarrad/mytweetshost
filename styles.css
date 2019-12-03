@@ -24,6 +24,37 @@
   */
 }
 
+#searchpopup .fa-external-link-square {
+  
+}
+body.big #searchpopup .fa-external-link-square {
+  font-size: 16px;
+  position: relative;
+  left: -2px;
+  margin-right: 4px;
+}
+
+.newLayout#searchpopup #searchtypes.sectiontitletable .firsticon {
+
+}
+body.big .newLayout#searchpopup #searchtypes.sectiontitletable .firsticon {
+  width: 91px !important;
+}
+
+.newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
+
+}
+body.big .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
+  width: 49px !important;
+}
+
+
+
+
+
+
+
+
 
 .litags {
   display: inline-block;

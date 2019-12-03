@@ -469,7 +469,7 @@
     <table id="searchtags" cheight="303" cmaxheight="272" cmargin="119" class="sectiontitletable sectionexpandable" style="margin-top: 80px;">
         <tbody>
           <tr class="cursorpointer" onclick="changecriteria(event,this)" style="padding-bottom: 15px;">
-            <td class="sectionicontd" style="width: 48px;display: inline-block;white-space: nowrap;">
+            <td class="sectionicontd firsticon" style="width: 48px;display: inline-block;white-space: nowrap;">
                 <i class="fa fa-tags" style="top: 1px;"></i><span style="padding-left: 6px;" class="sectiontitle">Tag</span>
             </td>    
             <td class="sectionicontd el ellipsis">
@@ -492,10 +492,11 @@
       </tr>    
     </tbody>
   </table>  
-  <table id="searchtypes" cheight="303" cmaxheight="272" cmargin="119" class="sectiontitletable sectionexpandable" style="margin-top: 80px;">
+  <table id="searchtypes" class="sectiontitletable sectionexpandable" 
+      style="position: relative;overflow: hidden;">
     <tbody>
       <tr class="cursorpointer" onclick="changecriteria(event,this)" style="padding-bottom: 15px;">
-        <td class="sectionicontd" style="width: 48px;display: inline-block;white-space: nowrap;">
+        <td class="sectionicontd firsticon" style="width: 48px;display: inline-block;white-space: nowrap;">
             <i class="fa fa-external-link-square" style="top: 1px;"></i><span style="padding-left: 6px;" class="sectiontitle">Link type</span>
         </td>    
         <td class="sectionicontd el ellipsis">
@@ -508,7 +509,7 @@
 
     <tr>  
         <td colspan="3">
-            <ul class="iconul" style="text-align: center;">
+            <ul class="iconul" style="text-align: center;overflow: hidden;">
               <li><i class="fa fa-twitter" style="opacity: 0;"></i>
                   <div>All</div>
               </li>
@@ -517,7 +518,7 @@
               <li><i class="fa fa-youtube-play" style="padding-top: 1px;"></i></li>
             </ul>
         </td>                                        
-    </tr>   
+    </tr> 
 </tbody>
 </table>  
   <i id="sear" onclick="javascript: togglecriterions(this)" class="fa fa-search clicable" style="position: sticky;bottom: 9px;z-index: 33333;top: auto;background: var(--high-color);color: var(--softdark-color);width: 12px;padding-left: 7px;padding-top: 3px;height: 29px;border-radius: 4px;right: 16px;left: calc(100% - 52px);border: 1px solid var(--softdark-color);"></i>  
