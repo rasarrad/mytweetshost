@@ -2689,6 +2689,7 @@ body.big .newLayout ul li {
     padding-bottom: 4px;
     padding-top: 2px;
     font-weight: normal;
+    margin-right: 11px;
 }
 
 
@@ -2993,4 +2994,38 @@ body.big .newLayout.new .sectiontitle {
 }
 .checkstyleddiv:hover {
   opacity: 0.6 !important;
+}
+
+.iconul li {
+    display: inline-block;
+    border: 1px solid var(--high-color);
+    border-radius: 4px;
+    width: 25px;
+    height: 20px;
+}
+body.big .iconul li {
+    display: inline-block;
+    border: 1px solid var(--high-color);
+    border-radius: 4px;
+    width: 30px;
+    height: 25px;
+}
+.iconul li i {
+    font-size: 20px;
+}
+body.big .iconul li i {
+    font-size: 23px;
+    padding-left: 4px;
+    float: left;
+}
+
+.iconul li div {
+    font-size: 20px;
+}
+body.big .iconul li div {
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    margin-top: 3px;
+    padding-left: 2px;
 }
