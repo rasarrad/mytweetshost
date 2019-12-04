@@ -57,7 +57,7 @@ function filtertagOnChange(obj) {
         currenttagdisplay.addClass("emptyvalue");
     }
     else {
-        currenttagdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, 'filtertag')' class='fa fa-times-circle'></i>");
+        currenttagdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filtertag\")' class='fa fa-times-circle'></i>");
         currenttagdisplay.removeClass("emptyvalue");
     }
 }

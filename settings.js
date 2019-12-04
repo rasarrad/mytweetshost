@@ -748,6 +748,7 @@ function clickLiTag(e, obj) {
     e.stopPropagation();
 
     if ($("#searchpopup").css("display") == "none") {
+        alert(1);
         if ($(obj).hasClass("selectedtag")) {
             $(obj).removeClass("selectedtag");
             if ($('#tagsinput').val().indexOf($(obj).html() + " ") >= 0) {
@@ -767,6 +768,7 @@ function clickLiTag(e, obj) {
         }
     }
     else {
+        alert(2);
         if ($(obj).hasClass("selectedtag")) {
             $(obj).removeClass("selectedtag");
             if ($('#filtertag').val().indexOf($(obj).html() + " ") >= 0) {
