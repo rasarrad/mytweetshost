@@ -731,10 +731,16 @@ function existsLi(text, obj) {
     return hasLi;
 }
 
-function removeNonExistentLi() {
-    var tags = $('#tagsinput').val();
+function removeNonExistentLi(obj, obj2) {
+    var objToUse = "tagsul";
+    var objToUse2 = "tagsinput";
+    if (obj) {
+        objToUse = obj;
+        objToUse2 = obj2;
+    }
+    var tags = $('#' + objToUse2).val();
 
-    $('#tagsul').find(".litags").each( function( index, element ) {
+    $('#' + objToUse).find(".litags").each( function( index, element ) {
         $(element).removeClass("selectedtag");
         if ($(element).hasClass("new") && tags.indexOf($(element).html()) < 0) {
             $(element).remove();
@@ -785,23 +791,20 @@ function clickLiTag(e, obj) {
         if ($(obj).hasClass("selectedtag")) {
             $(obj).removeClass("selectedtag");
             if ($('#filtertag').val().indexOf($(obj).html() + " ") >= 0) {
-                alert(3);
                 $('#filtertag').val($('#filtertag').val().replace($(obj).html() + " ", ""));
             }
             else {
-                alert(4);
                 $('#filtertag').val($('#filtertag').val().replace($(obj).html(), "").trim());
             }
-            //$('#filtertag').trigger("change");
+            $('#filtertag').trigger("change");
         }      
         else {
-            alert($(obj).html());   
-            alert($('#filtertag').val().trim() + " " + $(obj).html());    
             $(obj).attr("class", "litags");
             $(obj).addClass("selectedtag");
-            $('#filtertag').val($('#filtertag').val().trim() + " " + $(obj).html());
-            //$('#filtertag').trigger("change");
+            $('#filtertag').val(($('#filtertag').val().trim() + " " + $(obj).html()).trim());
+            $('#filtertag').trigger("change");
         }
+
     }
 }
 

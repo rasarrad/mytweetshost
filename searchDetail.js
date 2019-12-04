@@ -60,6 +60,10 @@ function filtertagOnChange(obj) {
         currenttagdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filtertag\")' class='fa fa-times-circle'></i>");
         currenttagdisplay.removeClass("emptyvalue");
     }
+
+    removeNonExistentLi("tagsearchul", "currenttagsearch");
+
+    createNonExistentLi("tagsearchul", "currenttagsearch");
 }
 
 function clearcriterion(e, obj, affectedobj) {
