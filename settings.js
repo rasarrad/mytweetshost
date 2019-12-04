@@ -747,22 +747,43 @@ function parseTags(tags) {
 function clickLiTag(e, obj) {
     e.stopPropagation();
 
-    if ($(obj).hasClass("selectedtag")) {
-        $(obj).removeClass("selectedtag");
-        if ($('#tagsinput').val().indexOf($(obj).html() + " ") >= 0) {
-            $('#tagsinput').val($('#tagsinput').val().replace($(obj).html() + " ", ""));
-        }
+    if ($("#searchpopup").css("display") == "none") {
+        if ($(obj).hasClass("selectedtag")) {
+            $(obj).removeClass("selectedtag");
+            if ($('#tagsinput').val().indexOf($(obj).html() + " ") >= 0) {
+                $('#tagsinput').val($('#tagsinput').val().replace($(obj).html() + " ", ""));
+            }
+            else {
+                $('#tagsinput').val($('#tagsinput').val().replace($(obj).html(), "").trim());
+            }
+            $('#tagsinput').trigger("change");
+        }      
         else {
-            $('#tagsinput').val($('#tagsinput').val().replace($(obj).html(), "").trim());
+                
+            $(obj).attr("class", "litags");
+            $(obj).addClass("selectedtag");
+            $('#tagsinput').val($('#tagsinput').val().trim() + " " + $(obj).html());
+            $('#tagsinput').trigger("change");
         }
-        $('#tagsinput').trigger("change");
-    }      
+    }
     else {
-            
-        $(obj).attr("class", "litags");
-        $(obj).addClass("selectedtag");
-        $('#tagsinput').val($('#tagsinput').val().trim() + " " + $(obj).html());
-        $('#tagsinput').trigger("change");
+        if ($(obj).hasClass("selectedtag")) {
+            $(obj).removeClass("selectedtag");
+            if ($('#filtertag').val().indexOf($(obj).html() + " ") >= 0) {
+                $('#filtertag').val($('#filtertag').val().replace($(obj).html() + " ", ""));
+            }
+            else {
+                $('#filtertag').val($('#filtertag').val().replace($(obj).html(), "").trim());
+            }
+            $('#filtertag').trigger("change");
+        }      
+        else {
+                
+            $(obj).attr("class", "litags");
+            $(obj).addClass("selectedtag");
+            $('#filtertag').val($('#filtertag').val().trim() + " " + $(obj).html());
+            $('#filtertag').trigger("change");
+        }
     }
 }
 

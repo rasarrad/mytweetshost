@@ -289,6 +289,9 @@ $( document ).ready(function() {
     $( "#tagsinput" ).change(function() {
         tagsInputOnChange(this);
       });
+      $( "#filtertag" ).change(function() {
+        filtertagOnChange(this);
+      });
 
       $( "#classifinput" ).change(function() {
         classifInputOnChange(this);

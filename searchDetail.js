@@ -49,6 +49,23 @@ function changecriteria(e, obj) {
 
 }
 
+function filtertagOnChange(obj) {
+    var currenttagdisplay = $('.currenttagsearch'); 
+        
+    if ($(obj).val().trim() == "") {
+        currenttagdisplay.html("");
+        currenttagdisplay.addClass("emptyvalue");
+    }
+    else {
+        currenttagdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, 'filtertag')' class='fa fa-times-circle'></i>");
+        currenttagdisplay.removeClass("emptyvalue");
+    }
+}
+
+function clearcriterion(e, obj, affectedobj) {
+    $('#' + affectedobj).val("");
+}
+
 
 var openSearchPopup = function(jsonobj) 
 {
