@@ -8,13 +8,15 @@ function closeSearchPopup(obj) {
 }
 
 function changecriteria(e, obj) {
-    //if (obj)
-        //fixfocus(obj);
-    //e.stopPropagation();
-    $(obj).blur();
-    
+     
     var table = $(obj).parent().parent();
     var maindiv = table.parent();
+    
+    if (obj)
+        //fixfocus(obj);
+    e.stopPropagation();
+    $(obj).blur();
+
 
     var setHeight = "18px";
 
