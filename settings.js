@@ -748,7 +748,6 @@ function clickLiTag(e, obj) {
     e.stopPropagation();
 
     if ($("#searchpopup").css("display") == "none") {
-        alert(1);
         if ($(obj).hasClass("selectedtag")) {
             $(obj).removeClass("selectedtag");
             if ($('#tagsinput').val().indexOf($(obj).html() + " ") >= 0) {
@@ -768,23 +767,25 @@ function clickLiTag(e, obj) {
         }
     }
     else {
-        alert(2);
+    
         if ($(obj).hasClass("selectedtag")) {
             $(obj).removeClass("selectedtag");
             if ($('#filtertag').val().indexOf($(obj).html() + " ") >= 0) {
+                alert(3);
                 $('#filtertag').val($('#filtertag').val().replace($(obj).html() + " ", ""));
             }
             else {
+                alert(4);
                 $('#filtertag').val($('#filtertag').val().replace($(obj).html(), "").trim());
             }
-            $('#filtertag').trigger("change");
+            //$('#filtertag').trigger("change");
         }      
         else {
-                
+            alert(5);    
             $(obj).attr("class", "litags");
             $(obj).addClass("selectedtag");
             $('#filtertag').val($('#filtertag').val().trim() + " " + $(obj).html());
-            $('#filtertag').trigger("change");
+            //$('#filtertag').trigger("change");
         }
     }
 }
