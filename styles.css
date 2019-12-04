@@ -28,10 +28,40 @@
   
 }
 body.big #searchpopup .fa-external-link-square {
+  font-size: 17px;
+  position: relative;
+  left: -2px;
+  margin-right: 4px;
+}
+#searchpopup .fa-user-circle {
+  
+}
+body.big #searchpopup .fa-user-circle {
+  font-size: 17px;
+  position: relative;
+  left: -3px;
+  margin-right: 4px;
+}
+#searchpopup .fa-file-text {
+  
+}
+body.big #searchpopup .fa-file-text {
   font-size: 16px;
   position: relative;
   left: -2px;
   margin-right: 4px;
+  top: 0 !important;
+}
+
+#searchpopup .fa-calendar {
+  
+}
+body.big #searchpopup .fa-calendar {
+  font-size: 16px;
+  position: relative;
+  left: -2px;
+  margin-right: 4px;
+  top: 0 !important;
 }
 
 .newLayout#searchpopup #searchtypes.sectiontitletable .firsticon {
@@ -48,9 +78,29 @@ body.big .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
   width: 49px !important;
 }
 
+.newLayout#searchpopup #searchauthor.sectiontitletable .firsticon {
+
+}
+body.big .newLayout#searchpopup #searchauthor.sectiontitletable .firsticon {
+  width: 81px !important;
+}
+
+.newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {
+
+}
+body.big .newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {
+  width: 52px !important;
+  padding-top: 4px !important;
+}
 
 
+.newLayout#searchpopup #searchdate.sectiontitletable .firsticon {
 
+}
+body.big .newLayout#searchpopup #searchdate.sectiontitletable .firsticon {
+  width: 57px !important;
+  padding-top: 4px !important;
+}
 
 
 
