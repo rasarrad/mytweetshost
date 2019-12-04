@@ -121,7 +121,15 @@ body.big .newLayout#searchpopup #searchdate.sectiontitletable .firsticon {
   padding-top: 4px !important;
 }
 
-
+#searchdate span {
+  
+}
+body.big #searchdate tr:nth-of-type(2) span {
+  font-size: 14px;
+  position: relative;
+  top: -2px;
+  left: -1px;
+}
 
 
 
