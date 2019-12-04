@@ -681,33 +681,47 @@ function addtag(text) {
     $('#tagsinput').val($('#tagsinput').val() + text + " ");
 }
 */
-function createLi(text) {
-    $('#tagsul').prepend('<li onclick="javascript: clickLiTag(event, this)" class="litags selectedtag new">' + text + '</li>');
+function createLi(text, obj) {
+    var objToUse = "tagsul";
+    if (obj)
+        objToUse = obj;
+    $('#'+ objToUse).prepend('<li onclick="javascript: clickLiTag(event, this)" class="litags selectedtag new">' + text + '</li>');
 }
 
-function createNonExistentLi() {
-    var res = $('#tagsinput').val().trim().split(" ");
+function createNonExistentLi(obj, obj2) {
+    var objToUse = "tagsul";
+    var objToUse2 = "tagsinput";
+    if (obj) {
+        objToUse = obj;
+        objToUse2 = obj2;
+    }
+           
+    var res = $('#' + objToUse2).val().trim().split(" ");
 
     if (res.length == 1 && res[0].trim() == 0) {
         return false;
     }
 
     for (var i = res.length; i > 0; i--) {
-        var li = existsLi(res[i-1]);
+        var li = existsLi(res[i-1], objToUse);
         if (li == "") {
             createLi(res[i-1]);
         }
         else {
-            li.clone().addClass("selectedtag").prependTo("#tagsul");
+            li.clone().addClass("selectedtag").prependTo("#"+ objToUse);
             li.remove();
         }
     }
 }
 
-function existsLi(text) { 
+function existsLi(text, obj) {
+    var objToUse = "tagsul";
+    if (obj)
+        objToUse = obj;
+
     var hasLi = "";
 
-    $('#tagsul').find(".litags").each( function( index, element ){
+    $('#' + objToUse).find(".litags").each( function( index, element ){
         if ($(element).html() == text) {
             hasLi = $(element);
             return false;
