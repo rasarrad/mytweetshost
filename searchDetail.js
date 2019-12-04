@@ -947,9 +947,7 @@ var countalltweets = function(id) {
                         elem.remove();
                     }
                 }
-                else {
-                    break;
-                }
+                $('#tagsearchul').append(elem);
             }  
     
             $("#addpopup").hide();

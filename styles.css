@@ -33,6 +33,19 @@ body.big #searchpopup .fa-external-link-square {
   left: -2px;
   margin-right: 4px;
 }
+
+
+#searchpopup .fa-external-link-square {
+  
+}
+body.big #searchpopup .fa-star-half-o {
+  font-size: 17px;
+  position: relative;
+  left: -3px;
+  margin-right: 4px;
+}
+
+
 #searchpopup .fa-user-circle {
   
 }
@@ -69,6 +82,12 @@ body.big #searchpopup .fa-calendar {
 }
 body.big .newLayout#searchpopup #searchtypes.sectiontitletable .firsticon {
   width: 91px !important;
+}
+.newLayout#searchpopup #searchtypes.searchclassif .firsticon {
+
+}
+body.big .newLayout#searchpopup #searchclassif.sectiontitletable .firsticon {
+  width: 129px !important;
 }
 
 .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {

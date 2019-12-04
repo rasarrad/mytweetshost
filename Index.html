@@ -255,7 +255,7 @@
         </tr>  
       <tr>  
           <td colspan="3">
-              <ul id="tagsul2"></ul>
+              <ul id="tagsul"></ul>
               <div style="height: 7px;width: 100%;position: relative;top: -4px;background-image: linear-gradient(to bottom, transparent 49%, var(--softdark-color) 80%);"></div>
           </td>                                        
       </tr>    
@@ -397,7 +397,9 @@
                 9</li>
                 <li onclick="javascript: clickLiClassif(event, this)" class="litags">
                 10</li>
-            </ul>           
+            </ul>   
+            
+          </td>
     </tr>   
 
     <tr class="cursordefault originaltr">
@@ -486,7 +488,7 @@
         </tr>  
       <tr>  
           <td colspan="3">
-              <ul id="tagsul"></ul>
+              <ul id="tagsearchul"></ul>
               <div style="height: 7px;width: 100%;position: relative;top: -4px;background-image: linear-gradient(to bottom, transparent 49%, var(--softdark-color) 80%);"></div>
           </td>                                        
       </tr>    
@@ -581,6 +583,54 @@
         </td>                                          
     </tr>  
       
+</tbody>
+</table>
+<table id="searchclassif" class="sectiontitletable sectionexpandable" style="position: relative; overflow: hidden; transition: max-height 1s ease 0s; max-height: fit-content;">
+  <tbody>
+    <tr class="cursorpointer" onclick="changecriteria(event,this)" style="padding-bottom: 15px;">
+      <td class="sectionicontd firsticon" style="width: 48px;display: inline-block;white-space: nowrap;">
+          <i class="fa fa-star-half-o" style="top: 1px;"></i><span style="padding-left: 3px;" class="sectiontitle">Classification</span>
+      </td>    
+      <td class="sectionicontd el">
+          <span class="currenttags titletext" style="text-align: left;">All</span>
+      </td>            
+      <td class="sectionedittd">
+          <i class="fa fa-angle-up"></i>
+      </td>           
+  </tr> 
+
+  <tr>  
+      <td colspan="3" style="text-align: center;">
+          <select id="classifselect" style="width: 118px;"><option value="=">Equal</option><option value=">">Greater than</option><option value="<">Less than</option></select>
+      </td>                                        
+  </tr>    <tr>  
+      <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px;">
+          <input id="classifinput" style="margin-left: 3px;display:none;">
+          <ul id="classiful">
+              <li onclick="javascript: clickLiClassif(event, this)" class="litags">
+              1</li>
+              <li onclick="javascript: clickLiClassif(event, this)" class="litags">
+              2</li>
+              <li onclick="javascript: clickLiClassif(event, this)" class="litags">
+              3</li>
+              <li onclick="javascript: clickLiClassif(event, this)" class="litags">
+              4</li>
+              <li onclick="javascript: clickLiClassif(event, this)" class="litags">
+              5</li>
+              <li onclick="javascript: clickLiClassif(event, this)" class="litags">
+              6</li>
+              <li onclick="javascript: clickLiClassif(event, this)" class="litags">
+              7</li>
+              <li onclick="javascript: clickLiClassif(event, this)" class="litags">
+              8</li>
+              <li onclick="javascript: clickLiClassif(event, this)" class="litags">
+              9</li>
+              <li onclick="javascript: clickLiClassif(event, this)" class="litags">
+              10</li>
+          </ul>   
+          
+        </td>
+  </tr>   
 </tbody>
 </table>
   <i id="sear" onclick="javascript: togglecriterions(this)" class="fa fa-search clicable" style="position: sticky;bottom: 9px;z-index: 33333;top: auto;background: var(--high-color);color: var(--softdark-color);width: 12px;padding-left: 7px;padding-top: 3px;height: 29px;border-radius: 4px;right: 16px;left: calc(100% - 52px);border: 1px solid var(--softdark-color);"></i>  
