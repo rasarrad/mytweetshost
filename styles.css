@@ -157,6 +157,70 @@ body.big #searchdate tr:nth-of-type(2) span {
 }
 
 @media only screen and (min-width: 1200px) {
+  .sectionedittd:hover {
+    opacity: 0.6;
+  }
+  
+  .newLayout > div .buttonstr td:hover { 
+    opacity: 0.6;
+  }
+  .newLayout.new div table tr .td:hover {
+    cursor: default !important;
+  }
+  .mainbutton:hover {
+    opacity: 0.6;
+  }
+
+  .toptitle:hover {
+    opacity: 0.6 !important;
+  }
+
+  #closepopup:hover {
+    color: #e4e4e4;
+  }
+  #internallink:hover, .linkbar:hover, #externallink:hover, #expand:hover {
+    opacity: 0.6;
+   }
+   #zoomin:hover {
+    /* color: var(--soft-color); */
+    opacity: 0.6;
+    }
+    #zoomout:hover {
+        color: var(--soft-color);
+    }
+
+  #settings:hover {
+    opacity: 0.4;
+    opacity: 0.6;
+}
+
+  .buttonIcon:hover {
+    color: #e4e4e4;
+  }
+
+  button:hover {
+    color: #c6e9fd;
+    border: 1px solid #0090e4;
+  }
+
+  #menu > ul > li:hover {
+    background: #004873;
+    color: white;
+  }
+
+  #menu > ul > li:hover > div {
+    color: #51b1ff;
+  }
+
+  .menubutton:hover {
+    /* color: var(--dark-color); */
+    opacity: 0.6;
+  }
+
+  .cursorpointer:hover {
+    opacity: 0.6 !important;
+  }
+
   .litags:hover {
     color: var(--dark-color);
     background: var(--high-color);
@@ -179,6 +243,15 @@ body.big #searchdate tr:nth-of-type(2) span {
       /* color: var(--soft-color); */
       opacity: 0.6;
     }
+    
+    .clicable:hover {
+      opacity: 0.6 !important;
+    }
+    .checkstyleddiv:hover {
+      opacity: 0.6 !important;
+    }
+    
+
 }
 .copyright {
   color: var(--high-color);
@@ -383,10 +456,6 @@ body.big .menubutton {
     font-size: 54px;
 }
     
-    .menubutton:hover {
-      /* color: var(--dark-color); */
-      opacity: 0.6;
-    }
     #menu {
       width: 0px;
       overflow: hidden;
@@ -428,15 +497,6 @@ body.big .menubutton {
     text-align: center;
     width: 25px;
     /* top: 10px; */
-    }
-
-    #menu > ul > li:hover {
-      background: #004873;
-      color: white;
-    }
-
-    #menu > ul > li:hover > div {
-      color: #51b1ff;
     }
 
     .label {
@@ -510,10 +570,7 @@ button {
 button:not(.noeffect) {
   transition: all 0.6s; /* xyx */
 }
-button:hover {
-  color: #c6e9fd;
-  border: 1px solid #0090e4;
-}
+
 button > i {
   font-size: 14px !important;
   font-weight: normal !important;
@@ -529,9 +586,7 @@ button > i {
   font-size: 22px;
   transition: all 0.6s;
 }
-.buttonIcon:hover {
-  color: #e4e4e4;
-}
+
 .buttonIcon.addtweet {
   float: right;
   margin-top: 18px;
@@ -576,10 +631,7 @@ body.big #zoomin {
     color: var(--dark-color);
     background: var(--high-color);
 }
-#settings:hover {
-    opacity: 0.4;
-    opacity: 0.6;
-}
+
 #generateicon.haschanges {
       color: #e88e0b;
 }
@@ -627,11 +679,6 @@ body.big #zoomin {
       font-variant: small-caps;
     }
     
-    
-    #closepopup:hover {
-      color: #e4e4e4;
-    }
-
     #externallink {
       position: absolute;
       cursor: pointer;
@@ -660,10 +707,6 @@ body.big #zoomin {
       transition: all 0.6s;
       display: none;
     }
-
-    #internallink:hover, .linkbar:hover, #externallink:hover, #expand:hover {
-      opacity: 0.6;
-     }
 
      input[type=text] {
       color: white;
@@ -1002,9 +1045,7 @@ body.big .newLayout {
   cursor: pointer;
   transition: all 0.6s;
 }
-.toptitle:hover {
-  opacity: 0.6 !important;
-}
+
 body.big .toptitle {
   top: 27px;
   font-size: 25px;
@@ -1538,20 +1579,14 @@ body.big #searchtags {
 .newLayout.new div table tr .td {
   cursor: default !important;
 }
-.newLayout.new div table tr .td:hover {
-  cursor: default !important;
-}
+
 .sectionedittd {
   transition: all 0.6s;
 }
-.sectionedittd:hover {
-  opacity: 0.6;
-}
+
+
 .mainbutton {
   transition: all 0.6s;
-}
-.mainbutton:hover {
-  opacity: 0.6;
 }
 
 #previewtd div iframe {
@@ -1921,13 +1956,7 @@ body.big#mainsettings .newLayout > div {
     /* touch-action: none; */
     overscroll-behavior: none;
 }
-#zoomin:hover {
-    /* color: var(--soft-color); */
-    opacity: 0.6;
-}
-#zoomout:hover {
-    color: var(--soft-color);
-}
+
     
 .newLayout {
     position: fixed;
@@ -2046,9 +2075,6 @@ body.big#mainsettings .newLayout > div {
     cursor: pointer
 }
 
-.newLayout > div .buttonstr td:hover { 
-    opacity: 0.6;
-}
 
 .newLayout > div .buttonstable tr:last-child td {
     padding: 4px 0px 3px 0px;
@@ -3080,18 +3106,11 @@ body.big .newLayout.new .sectiontitle {
   cursor: pointer !important
 }
 
-.clicable:hover {
-  opacity: 0.6 !important;
-}
-
 .cursorpointer {
   transition: opacity 0.6s !important;
   cursor: pointer !important
 }
 
-.cursorpointer:hover {
-  opacity: 0.6 !important;
-}
 
 #linkchange:not(.new) .titletext {
     cursor: pointer !important;
@@ -3099,9 +3118,6 @@ body.big .newLayout.new .sectiontitle {
 .checkstyleddiv {
   transition: opacity 0.6s !important;
   cursor: pointer !important
-}
-.checkstyleddiv:hover {
-  opacity: 0.6 !important;
 }
 
 .iconul li {
@@ -3138,8 +3154,5 @@ body.big .iconul li div {
     padding-left: 2px;
 }
 
-html.nontouch *:hover {
-  background: none !important;
-}
 
 
