@@ -781,7 +781,8 @@ function clickLiTag(e, obj) {
             //$('#filtertag').trigger("change");
         }      
         else {
-            alert(5);    
+            alert($(obj).html());   
+            alert($('#filtertag').val().trim() + " " + $(obj).html());    
             $(obj).attr("class", "litags");
             $(obj).addClass("selectedtag");
             $('#filtertag').val($('#filtertag').val().trim() + " " + $(obj).html());
