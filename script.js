@@ -23,7 +23,7 @@ var tagssloaded = false;
 var catsmap = new Map();
 
 $( document ).ready(function() { 
-
+    console.log('-------------- app - BEGIN --------------');
     $( "#mask" ).fadeOut( 1100, function() {
         $( "#mask" ).css("background", "rgba(0, 0, 0, 0.72)")
     });
@@ -397,8 +397,7 @@ $.fn.isChildOverflowing = function (child) {
         setTimeout(function() { 
             resetFieldsPopup(); 
             $('#tweet').val(text);
-            console.log(11111)
-console.log(text)
+
             parseTweet(type);
 
         }, 300);
@@ -593,7 +592,6 @@ function externallinkcopy(obj) {
 
 
 var clickmenu = function(val, text) {    
-    console.log('-------------- clickmenu--------------');  
     resetFields();
 
     $('#selectedcat').val(val);

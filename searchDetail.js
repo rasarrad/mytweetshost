@@ -98,7 +98,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
     else if (wasfiltered == 2) {
         $('#countfilter').hide();
     }
-    console.log('-------------- getInformation--------------'); 
+
     var path = "./data.json";
     var endIndex = currentIndex + Number($('#recordspersearch').val());
     var objToFocus = -1;
@@ -134,7 +134,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
     $.getJSON(path, function(data) {
         var processtmp = true;
-        console.log('-------------- COUNT--------------');
+
         if (!ismoretweets) {
             $.each(data.Tweets, function(key, val) {
                 var newtweet = null;
@@ -199,7 +199,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
             totalLinkss = ind; 
         }
 
-        console.log('-------------- FIM COUNT--------------');
 
         var toindex = 0;
         if (currentIndex + Number($('#recordspersearch').val()) < totalLinkss)
@@ -268,8 +267,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
                         && dofilterauthorfinal && dofiltercatfinal) {
                         
-                        console.log('--------------' + val.id + '--------------');
-                        console.log(val);    
                         var tagdispalay = " --";
                         var expandclass = "";
                         var color = "";
@@ -849,6 +846,8 @@ var getJsonbyid = function(id, functorun) {
  
   
 var countalltweets = function(id) {
+    console.log('-------------- countalltweets - BEGIN --------------');
+
     var path = "./data.json";
     var counters = new Map();
     var tagsmap = new Map();
@@ -885,7 +884,7 @@ var countalltweets = function(id) {
                 else {
                     val = recordfromdata;
                 }
-
+/* 
                 var res = val.categories.split(" ");
                 for (var i = 0; i < res.length; i++) {
                     if (counters.has(val.type + res[i])) {
@@ -896,7 +895,7 @@ var countalltweets = function(id) {
                         counters.set(val.type + res[i], 1);
                     }
                 }
-
+*/
                 if (!tagssloaded) {
                     var tags = val.tags.split(" ");
         
@@ -913,7 +912,7 @@ var countalltweets = function(id) {
                         }
                     }
                 }
-    
+    /* 
                 if (val.type == "T") {
                     total_t = total_t + 1;
                 }
@@ -924,6 +923,7 @@ var countalltweets = function(id) {
                     total_h = total_h + 1;
                 }
                 total = total + 1;
+                        */
             }
             while (processtmp);
         });
@@ -977,6 +977,8 @@ var countalltweets = function(id) {
 
             tagssloaded = true;
         }
+
+        /* 
 
         // All Links
         $("#all").text(total);
@@ -1184,13 +1186,15 @@ var countalltweets = function(id) {
         $("#cli").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
         $("#cli2").text(climate);
         $("#cli2").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
-        
+        */
         /* 
         $( "#mask" ).fadeOut( 700, function() {
             $( "#mask" ).css("background", "rgba(0, 0, 0, 0.72)")
         });
         */
     }); 
+
+    console.log('-------------- countalltweets - END --------------');
 }
 
 
