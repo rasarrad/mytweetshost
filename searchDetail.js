@@ -964,7 +964,7 @@ var countalltweets = function(id) {
             $("#addpopup").show();
             var hasOverflow = false;
     
-            var int jj = 0;
+            var jj = 0;
             for (let [key, value] of tagsmap) {     // get data sorted
                 jj = jj +1;
                 if (!hasOverflow) {
