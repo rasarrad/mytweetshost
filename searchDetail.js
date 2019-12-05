@@ -61,9 +61,9 @@ function filtertagOnChange(obj) {
         currenttagdisplay.removeClass("emptyvalue");
     }
 
-    removeNonExistentLi("tagsearchul", "currenttagsearch");
+    removeNonExistentLi("tagsearchul", "filtertag");
 
-    createNonExistentLi("tagsearchul", "currenttagsearch");
+    createNonExistentLi("tagsearchul", "filtertag");
 }
 
 function clearcriterion(e, obj, affectedobj) {
