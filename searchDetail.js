@@ -53,7 +53,7 @@ function filtertagOnChange(obj) {
     var currenttagdisplay = $('.currenttagsearch'); 
         
     if ($(obj).val().trim() == "") {
-        currenttagdisplay.html("");
+        currenttagdisplay.html("all");
         currenttagdisplay.addClass("emptyvalue");
     }
     else {

@@ -705,7 +705,7 @@ function createNonExistentLi(obj, obj2) {
     for (var i = res.length; i > 0; i--) {
         var li = existsLi(res[i-1], objToUse);
         if (li == "") {
-            createLi(res[i-1]);
+            createLi(res[i-1], objToUse);
         }
         else {
             li.clone().addClass("selectedtag").prependTo("#"+ objToUse);
