@@ -8,9 +8,6 @@ function closeSearchPopup(obj) {
 }
 
 function expandsection(obj, table) {
-    if (obj)
-        fixfocus(obj);
-    
     if ($(obj).hasClass("fa-chevron-circle-down")) {
         $(obj).removeClass("fa-chevron-circle-down");
         $(obj).addClass("fa-chevron-circle-up");
