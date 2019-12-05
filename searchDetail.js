@@ -69,6 +69,7 @@ function filtertagOnChange(obj) {
 function clearcriterion(e, obj, affectedobj) {
     e.stopPropagation();
     $('#' + affectedobj).val("");
+    $('#' + affectedobj).trigger("change");
 }
 
 
