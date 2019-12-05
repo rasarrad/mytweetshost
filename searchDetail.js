@@ -7,16 +7,17 @@ function closeSearchPopup(obj) {
     $('#searchpopup').fadeOut(600);
 }
 
-function changecriteria(e, obj) {
-     
+function changecriteria(e, obj, tableparam) {
     var table = $(obj).parent().parent();
+
+    if (tableparam) {
+       table = $("#" + tableparam);
+    }
+
     var maindiv = table.parent();
     
-    if (obj)
-        //fixfocus(obj);
-    e.stopPropagation();
-    $(obj).blur();
-
+    if (e)
+        e.stopPropagation();
 
     var setHeight = "18px";
 
@@ -57,7 +58,7 @@ function filtertagOnChange(obj) {
         currenttagdisplay.addClass("emptyvalue");
     }
     else {
-        currenttagdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filtertag\")' class='fa fa-times-circle'></i>");
+        currenttagdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filtertag\", \"searchtypes\")' class='fa fa-times-circle'></i>");
         currenttagdisplay.removeClass("emptyvalue");
     }
 
@@ -66,7 +67,7 @@ function filtertagOnChange(obj) {
     createNonExistentLi("tagsearchul", "filtertag");
 }
 
-function clearcriterion(e, obj, affectedobj) {
+function clearcriterion(e, obj, affectedobj, affectedtable) {
     e.stopPropagation();
     $('#' + affectedobj).val("");
     $('#' + affectedobj).trigger("change");

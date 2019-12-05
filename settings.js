@@ -739,13 +739,17 @@ function removeNonExistentLi(obj, obj2) {
         objToUse2 = obj2;
     }
     var tags = $('#' + objToUse2).val();
-
-    $('#' + objToUse).find(".litags").each( function( index, element ) {
-        $(element).removeClass("selectedtag");
-        if ($(element).hasClass("new") && tags.indexOf($(element).html()) < 0) {
-            $(element).remove();
-        }
-    });
+    var res = tags.trim().split(" ");
+    
+    for (var i = 0; i < res.length; i++) {
+        $('#' + objToUse).find(".litags").each( function( index, element ) {
+            $(element).removeClass("selectedtag");
+            if ($(element).hasClass("new") && res[i].trim() == $(element).text().trim()) {
+                $(element).remove();
+                break;
+            }
+        });
+    }
 }
 
 function parseTags(tags) {
