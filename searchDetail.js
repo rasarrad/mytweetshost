@@ -968,9 +968,8 @@ var countalltweets = function(id) {
             $("#addpopup").show();
             var hasOverflow = false;
     
-            var jj = 0;
             for (let [key, value] of tagsmap) {     // get data sorted
-                jj = jj +1;
+                /*
                 if (!hasOverflow) {
                     var elem = $("<li  onclick='javascript: clickLiTag(event, this)' class='litags'>" + key + "</li>");
                     $("#tagsul").append(elem);
@@ -979,8 +978,9 @@ var countalltweets = function(id) {
                         elem.remove();
                     }
                 }
-                if (jj < 6)
-                    $('#tagsearchul').append(elem);
+                 */
+                $("#tagsul").append(elem);
+                $('#tagsearchul').append(elem);
             }  
     
             $("#addpopup").hide();

@@ -746,7 +746,6 @@ function removeNonExistentLi(obj, obj2) {
 
         if ($.inArray( $(element).text().trim(), res ) < 0 && $(element).hasClass("new")) {
             $(element).remove();
-            return false;
         }
     });
 
