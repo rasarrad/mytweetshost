@@ -942,13 +942,14 @@ var countalltweets = function(id) {
             var o = new Option("notag", "notag");
             $(o).html("All Tags");
             $("#tagsselect").append(o);
-    
+            $("#tagsearchselect").append(o);
             var mapAsc = new Map([...tagsmap.entries()].sort());
     
             for (let [key, value] of mapAsc) {   
                 o = new Option(key, key);
                 $(o).html(key);
                 $("#tagsselect").append(o);
+                $("#tagsearchselect").append(o);
             }
     
             tagsmap[Symbol.iterator] = function* () {

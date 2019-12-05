@@ -321,6 +321,19 @@ $( document ).ready(function() {
         }
       });
 
+      $( "#tagsearchselect" ).change(function() {
+        // Check input( $( this ).val() ) for validity here
+        if ($( this ).val() != "notag") {
+            $( "#filtertag" ).val($( "#filtertag" ).val() + " " + $( this ).val());
+            $(this).val("notag");
+            $('#filtertag').trigger("change");
+
+            removeNonExistentLi("tagsearchul", "filtertag");
+
+            createNonExistentLi("tagsearchul", "filtertag");
+        }
+      });
+
     document.getElementById("toptitle").addEventListener('click', () => {
         navigator.clipboard.readText()
         .then(text => {
@@ -528,11 +541,18 @@ function openmenu(obj) {
         }
     }
     else {
-        closeallnewlayout();
+        if ($('#mainmenu').css("display") == "none") {
+            closeallnewlayout();
 
-        $('body, html').css('overflow-y', 'hidden');
+            $('body, html').css('overflow-y', 'hidden');
+    
+            $('#mainmenu').fadeIn(600);
+        }
+        else {
+            closeallnewlayout();
 
-        $('#mainmenu').fadeIn(600);
+            $('body, html').css('overflow-y', 'auto');
+        }
     }
 }
 
