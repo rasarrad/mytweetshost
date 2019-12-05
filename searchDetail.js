@@ -8,10 +8,12 @@ function closeSearchPopup(obj) {
 }
 
 function changecriteria(e, obj, tableparam) {
-    var table = $(obj).parent().parent();
-console.log(tableparam)
-    if (tableparam) {
-       table = $("#" + tableparam);
+    var table = null;
+    if (obj) {
+        table = $(obj).parent().parent();
+    }
+    else {
+        table = $("#" + tableparam);
     }
 
     var maindiv = table.parent();
@@ -71,6 +73,8 @@ function clearcriterion(e, obj, affectedobj, affectedtable) {
     e.stopPropagation();
     $('#' + affectedobj).val("");
     $('#' + affectedobj).trigger("change");
+
+    changecriteria(null,null, affectedtable)
 }
 
 
