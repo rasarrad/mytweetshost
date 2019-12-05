@@ -9,7 +9,7 @@ function closeSearchPopup(obj) {
 
 function changecriteria(e, obj, tableparam) {
     var table = $(obj).parent().parent();
-
+console.log(tableparam)
     if (tableparam) {
        table = $("#" + tableparam);
     }

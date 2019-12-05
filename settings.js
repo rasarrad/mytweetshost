@@ -744,6 +744,11 @@ function removeNonExistentLi(obj, obj2) {
     for (var i = 0; i < res.length; i++) {
         $('#' + objToUse).find(".litags").each( function( index, element ) {
             $(element).removeClass("selectedtag");
+            console.log('----------------')
+            console.log($(element).hasClass("new"))
+            console.log("-" + res[i].trim() + "-")
+            console.log("-" + $(element).text().trim() + "-")
+
             if ($(element).hasClass("new") && res[i].trim() == $(element).text().trim()) {
                 $(element).remove();
                 return false;
