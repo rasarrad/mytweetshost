@@ -74,7 +74,7 @@ function clearcriterion(e, obj, affectedobj, affectedtable) {
     $('#' + affectedobj).val("");
     $('#' + affectedobj).trigger("change");
 
-    changecriteria(null,null, affectedtable)
+    changecriteria(null,null, affectedtable);
 }
 
 
