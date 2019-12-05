@@ -746,7 +746,7 @@ function removeNonExistentLi(obj, obj2) {
             $(element).removeClass("selectedtag");
             if ($(element).hasClass("new") && res[i].trim() == $(element).text().trim()) {
                 $(element).remove();
-                break;
+                return false;
             }
         });
     }
