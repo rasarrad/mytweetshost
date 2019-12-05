@@ -292,6 +292,9 @@ $( document ).ready(function() {
       $( "#filtertag" ).change(function() {
         filtertagOnChange(this);
       });
+      $("#filtertag").keyup(function(e) {
+        filtertagOnChange(this);
+      });
 
       $( "#classifinput" ).change(function() {
         classifInputOnChange(this);
