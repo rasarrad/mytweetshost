@@ -979,6 +979,7 @@ var countalltweets = function(id) {
                     }
                 }
                  */
+                var elem = $("<li  onclick='javascript: clickLiTag(event, this)' class='litags'>" + key + "</li>");
                 $("#tagsul").append(elem);
                 $('#tagsearchul').append(elem);
             }  
