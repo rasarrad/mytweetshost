@@ -7,6 +7,23 @@ function closeSearchPopup(obj) {
     $('#searchpopup').fadeOut(600);
 }
 
+function expandsection(obj, table) {
+    if (obj)
+        fixfocus(obj);
+    
+    if ($(obj).hasClass("fa-chevron-circle-down")) {
+        $(obj).removeClass("fa-chevron-circle-down");
+        $(obj).addClass("fa-chevron-circle-up");
+        $("#" + table).css("max-height", "fit-content");
+    }   
+    else {
+        $(obj).removeClass("fa-chevron-circle-up");
+        $(obj).addClass("fa-chevron-circle-down");
+        $("#" + table).css("max-height", $("#" + table).attr("cmaxheight"));
+    } 
+}
+
+
 function changecriteria(e, obj, tableparam) {
     var table = null;
     if (obj) {
@@ -38,7 +55,13 @@ function changecriteria(e, obj, tableparam) {
         });
         
         table.css('transition', 'max-height 1s');
-        table.css('max-height', "fit-content");
+
+        if (table.attr("cmaxheight"))
+            table.css('max-height', table.attr("cmaxheight"));
+        else {
+            table.css('max-height', "fit-content");
+        }
+
         table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down');
 
         table.find('td.el').removeClass('ellipsis');
