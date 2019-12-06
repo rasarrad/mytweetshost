@@ -109,14 +109,47 @@ function filterinfoOnChange(obj) {
 }
 
 function clearcriterion(e, obj, affectedobj, affectedtable) {
-    $('#' + affectedobj).val("");
-    $('#' + affectedobj).trigger("change");
+    if (affectedobj != "selectedtype") {
+        $('#' + affectedobj).val("");
+        $('#' + affectedobj).trigger("change");
+    }
+    else {
+        $('#' + affectedobj).val("all");
+        $( ".iconul .litags" ).each( function( index, element ){
+            $(this).removeClass("selected");
+        });
+        $('.currenttype').html("all");
+        $('#alltypesoption').addClass("selected");
+    }
 
     changecriteria(null,null, affectedtable);
 
     e.stopPropagation();
 }
 
+function changesearchtype(e, obj, code, desc) {
+    $('#selectedtype').val(code);
+
+    var currenttagdisplay = $('.currenttype'); 
+    
+    $( ".iconul .litags" ).each( function( index, element ){
+        $(this).removeClass("selected");
+    });
+
+    $(obj).addClass("selected");
+
+    if (code == "all") {
+        currenttagdisplay.html("all");
+        currenttagdisplay.addClass("emptyvalue");
+        $("#searchtypes").addClass("emptyvalue");
+    }
+    else {
+        currenttagdisplay.html(desc + "<i onclick='clearcriterion(event,this, \"selectedtype\", \"searchtypes\")' class='fa fa-times-circle'></i>");
+        currenttagdisplay.removeClass("emptyvalue");
+        $("#searchtypes").removeClass("emptyvalue");
+    }
+    e.stopPropagation();
+}
 
 var openSearchPopup = function(jsonobj) 
 {
