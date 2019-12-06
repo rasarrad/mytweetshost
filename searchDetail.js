@@ -103,11 +103,13 @@ function filterinfoOnChange(obj) {
 }
 
 function clearcriterion(e, obj, affectedobj, affectedtable) {
-    e.stopPropagation();
+    
     $('#' + affectedobj).val("");
     $('#' + affectedobj).trigger("change");
 
     changecriteria(null,null, affectedtable);
+
+    e.stopPropagation();
 }
 
 
