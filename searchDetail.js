@@ -103,7 +103,7 @@ function filterinfoOnChange(obj) {
 }
 
 function clearcriterion(e, obj, affectedobj, affectedtable) {
-    
+    console.log(344444444444)
     $('#' + affectedobj).val("");
     $('#' + affectedobj).trigger("change");
 
