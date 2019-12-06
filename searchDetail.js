@@ -97,13 +97,18 @@ function filterinfoOnChange(obj) {
         currentinfosearchdisplay.addClass("emptyvalue");
     }
     else {
-        currentinfosearchdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filtertext\", \"searchinfo\")' class='fa fa-times-circle'></i>");
+        currentinfosearchdisplay.html($(obj).val().trim() + "<i id='filtertextclear' class='fa fa-times-circle'></i>");
         currentinfosearchdisplay.removeClass("emptyvalue");
+
+        currentinfosearchdisplay.find("#filtertextclear").bind( "click", function( event ) {
+            clearcriterion(event,this, "filtertext", "searchinfo"); 
+        });
     }
 }
 
 function clearcriterion(e, obj, affectedobj, affectedtable) {
     console.log(344444444444)
+    $('#' + affectedobj + 'clear').unbind("click");
     $('#' + affectedobj).val("");
     $('#' + affectedobj).trigger("change");
 
