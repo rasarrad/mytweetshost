@@ -97,7 +97,7 @@ function filterinfoOnChange(obj) {
         currentinfosearchdisplay.addClass("emptyvalue");
     }
     else {
-        currentinfosearchdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filterinfo\", \"searchinfo\")' class='fa fa-times-circle'></i>");
+        currentinfosearchdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filtertext\", \"searchinfo\")' class='fa fa-times-circle'></i>");
         currentinfosearchdisplay.removeClass("emptyvalue");
     }
 }
