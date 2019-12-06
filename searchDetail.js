@@ -41,27 +41,29 @@ function changecriteria(e, obj, tableparam) {
         setHeight = "31px";
 
     if (table.css('max-height') == setHeight) {
-        var hasExpanded = false;
-        $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
-            var othertable = $(element);
+        if (obj) {
+            var hasExpanded = false;
+            $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
+                var othertable = $(element);
+                
+                othertable.css('transition', 'max-height 0.01s');
+                othertable.css('max-height', setHeight);
+                othertable.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
+                othertable.find('td.el').addClass('ellipsis');
+            });
             
-            othertable.css('transition', 'max-height 0.01s');
-            othertable.css('max-height', setHeight);
-            othertable.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
-            othertable.find('td.el').addClass('ellipsis');
-        });
-        
-        table.css('transition', 'max-height 1s');
-
-        if (table.attr("cmaxheight"))
-            table.css('max-height', table.attr("cmaxheight"));
-        else {
-            table.css('max-height', "fit-content");
+            table.css('transition', 'max-height 1s');
+    
+            if (table.attr("cmaxheight"))
+                table.css('max-height', table.attr("cmaxheight"));
+            else {
+                table.css('max-height', "fit-content");
+            }
+    
+            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down');
+    
+            table.find('td.el').removeClass('ellipsis');
         }
-
-        table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down');
-
-        table.find('td.el').removeClass('ellipsis');
     }
     else {
         table.css('transition', 'max-height 1s');
