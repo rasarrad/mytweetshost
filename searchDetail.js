@@ -80,10 +80,12 @@ function filtertagOnChange(obj) {
     if ($(obj).val().trim() == "") {
         currenttagdisplay.html("all");
         currenttagdisplay.addClass("emptyvalue");
+        $("#searchtags").addClass("emptyvalue");
     }
     else {
         currenttagdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filtertag\", \"searchtags\")' class='fa fa-times-circle'></i>");
         currenttagdisplay.removeClass("emptyvalue");
+        $("#searchtags").removeClass("emptyvalue");
     }
 
     removeNonExistentLi("tagsearchul", "filtertag");
@@ -97,15 +99,16 @@ function filterinfoOnChange(obj) {
     if ($(obj).val().trim() == "") {
         currentinfosearchdisplay.html("all");
         currentinfosearchdisplay.addClass("emptyvalue");
+        $("#searchinfo").addClass("emptyvalue");
     }
     else {
         currentinfosearchdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filtertext\", \"searchinfo\")' class='fa fa-times-circle'></i>");
         currentinfosearchdisplay.removeClass("emptyvalue");
+        $("#searchinfo").removeClass("emptyvalue");
     }
 }
 
 function clearcriterion(e, obj, affectedobj, affectedtable) {
-    console.log(34442222)
     $('#' + affectedobj).val("");
     $('#' + affectedobj).trigger("change");
 
@@ -152,14 +155,15 @@ var getInformation = function(ismoretweets, wasfiltered) {
     var ind = 0;
     var hasFinished = false;
 
-    var dofiltertext = $('#filtertext').val().length > 0; 
-    var dofilterdate1 = $('#filterdate1').val().length > 0; 
-    var dofilterdate2 = $('#filterdate2').val().length > 0; 
-    var dofilterid = $('#filterid').val().length > 0; 
-    var dofiltertag = $('#filtertag').val().length > 0; 
-    var dofilterauthor = $('#filterauthor').val().length > 0;
+    var dofiltertext = $('#filtertext').val().trim().length > 0; 
+    var dofilterdate1 = $('#filterdate1').val().trim().length > 0; 
+    var dofilterdate2 = $('#filterdate2').val().trim().length > 0; 
+    var dofiltertag = $('#filtertag').val().trim().length > 0; 
+    var dofilterauthor = $('#filterauthor').val().trim().length > 0;
     var dofiltercat = $('#selectedcat').val().length > 0 && $('#selectedcat').val() != 'all';  
-    
+    var dofiltertype = $('#selectedtype').val().trim() != "all"; 
+    var dofilterclassif = $('#selectedclassif').val().trim() != "all"; 
+
     if (!ismoretweets) {
         $('#mask').fadeIn(300);  
         $('#moretweets').hide();
@@ -188,13 +192,14 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 var dofiltertextfinal = false;
                 var dofilterdate1final = false;
                 var dofilterdate2final = false;
-                var dofilteridfinal = false;
                 var dofiltertagfinal = false;
                 var dofiltercatfinal = false;
                 var dofilterauthorfinal = false;
                 var recordfromdata = val;
                 var linkcontent = null;
-    
+                var dofiltertypefinal = false;
+                var dofilterclassiffinal = false;
+
                 do {
                     totalGlobalLinks = totalGlobalLinks + 1;
                     if (processtmp) {
@@ -217,16 +222,17 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         val = recordfromdata;
                     }
                     
-                    dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
-                    dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
-                    dofilterdate2final = !dofilterdate2 || (dofilterdate2 && val.date <= Number($('#filterdate2').val()));
-                    dofilteridfinal = !dofilterid || (dofilterid && (Number(val.id) == Number($('#filterid').val())));
-                    dofiltertagfinal = !dofiltertag || (dofiltertag && val.tags.includes($('#filtertag').val()));
-                    dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
-                    dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
-    
-                    if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
-                        && dofilterauthorfinal && dofiltercatfinal) {
+                    dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
+                    dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
+                    dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
+                    dofiltertagfinal = !dofiltertag || searchTags(val.tags.toLowerCase(), $('#filtertag').val().toLowerCase());
+                    dofiltercatfinal = !dofiltercat || val.categories.includes($('#selectedcat').val());
+                    dofilterauthorfinal = !dofilterauthor || val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase());
+                    dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
+                    dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
+                    
+                    if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
+                        && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal) {
       
                         ind = ind + 1;
     
@@ -265,10 +271,11 @@ var getInformation = function(ismoretweets, wasfiltered) {
             var dofiltertextfinal = false;
             var dofilterdate1final = false;
             var dofilterdate2final = false;
-            var dofilteridfinal = false;
             var dofiltertagfinal = false;
             var dofiltercatfinal = false;
             var dofilterauthorfinal = false;
+            var dofiltertypefinal = false;
+            var dofilterclassiffinal = false;
             recordfromdata = val;
             
             linkcontent = null;
@@ -303,16 +310,17 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }
 
                 if (currentIndex < endIndex) {
-                    dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
-                    dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
-                    dofilterdate2final = !dofilterdate2 || (dofilterdate2 && val.date <= Number($('#filterdate2').val()));
-                    dofilteridfinal = !dofilterid || (dofilterid && (Number(val.id) == Number($('#filterid').val())));
-                    dofiltertagfinal = !dofiltertag || (dofiltertag && searchTags(val.tags.toLowerCase(), $('#filtertag').val().toLowerCase()));
-                    dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
-                    dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
-    
-                    if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
-                        && dofilterauthorfinal && dofiltercatfinal) {
+                    dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
+                    dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
+                    dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
+                    dofiltertagfinal = !dofiltertag || searchTags(val.tags.toLowerCase(), $('#filtertag').val().toLowerCase());
+                    dofiltercatfinal = !dofiltercat || val.categories.includes($('#selectedcat').val());
+                    dofilterauthorfinal = !dofilterauthor || val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase());
+                    dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
+                    dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
+                    
+                    if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
+                        && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal) {
                         
                         var tagdispalay = " --";
                         var expandclass = "";

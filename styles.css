@@ -131,7 +131,7 @@ body.big #searchdate tr:nth-of-type(2) span {
   left: -1px;
 }
 
-#searchpopup .emptyvalue {
+#searchpopup .emptyvalue:not(table) {
     text-align: right !important;
     padding-right: 9px !important;
 }
@@ -2153,6 +2153,13 @@ body.big .newLayout #editTags.sectiontitletable tr:first-child td {
   /* top: 0px; */
 }
 
+.newLayout table.emptyvalue .sectionicontd.el.ellipsis > span {
+  padding-right: 13px;
+}
+.newLayout table.emptyvalue .sectionicontd.el.ellipsis > span > i {
+    position: absolute !important;
+    left: calc(100% - 16px) !important;
+}
 
 body.big .newLayout .sectiontitletable .sectionicontd {
     padding-top: 3px !important;
@@ -3170,5 +3177,11 @@ body.big .iconul li div {
     padding-left: 2px;
 }
 
+#iconul li.selected {
+    background: var(--high-color);
+    color: var(--soft-color);
+}
 
-
+#searchpopup table.emptyvalue {
+  background: var(--soft-color);
+}

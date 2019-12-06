@@ -466,6 +466,31 @@ function searchTags(tags, text) {
     return true;
 }
 
+function searchInfo(info, tweet, text) {
+    var res = text.split(" ");
+    var ret = true;
+    for (var i = 0; i < res.length; i++) {
+        if (!(info.includes(res[i]) || tweet.includes(res[i]))) {
+            ret = false;
+            return false;
+        }
+    }
+    return ret;
+}
+
+function searchClassif(val, selectedclassif, selectedclassiftype) {
+    if (selectedclassiftype == "equal") {
+        return Number(val) == Number(selectedclassif)
+    }
+    else if (selectedclassiftype == "greater") {
+        return Number(val) > Number(selectedclassif)
+    }
+    else {
+        return Number(val) < Number(selectedclassif)
+    }
+}
+
+
 
 function showAuthor(obj) {
     $(obj).hide();

@@ -525,7 +525,7 @@
             <i class="fa fa-external-link-square" style="top: 1px;"></i><span style="padding-left: 6px;" class="sectiontitle">Link type</span>
         </td>    
         <td class="sectionicontd el ellipsis">
-            <span class="currenttags titletext" style="text-align: left;">All</span>
+            <span class="currenttags emptyvalue titletext" style="text-align: left;">all</span>
         </td>            
         <td class="sectionedittd">
             <i class="fa fa-angle-down"></i>
@@ -535,13 +535,15 @@
     <tr>  
         <td colspan="3">
             <ul class="iconul" style="text-align: center;overflow: hidden;">
-              <li><i class="fa fa-twitter" style="opacity: 0;"></i>
+              <li class="selected" onclick="changesearchtype(event, this, 'all')"><i class="fa fa-twitter" style="opacity: 0;"></i>
                   <div>All</div>
               </li>
-              <li><i class="fa fa-twitter" style="padding-left: 5px;padding-top: 1px;"></i></li>
-              <li><i class="fa fa-twitter" style="opacity: 0;"></i><i class="fa fa-internet-explorer" style="font-size: 19px;position: absolute; margin-left: -27px;margin-top: 3px;"></i></li>
-              <li><i class="fa fa-youtube-play" style="padding-top: 1px;"></i></li>
+              <li onclick="changesearchtype(event, this, 'T')"><i class="fa fa-twitter" style="padding-left: 5px;padding-top: 1px;"></i></li>
+              <li onclick="changesearchtype(event, this, 'H')"><i class="fa fa-twitter" style="opacity: 0;"></i>
+                  <i class="fa fa-internet-explorer" style="font-size: 19px;position: absolute; margin-left: -27px;margin-top: 3px;"></i></li>
+              <li onclick="changesearchtype(event, this, 'Y')"><i class="fa fa-youtube-play" style="padding-top: 1px;"></i></li>
             </ul>
+            <input type="hidden" id="selectedtype" value="all">
         </td>                                        
     </tr> 
 </tbody>
@@ -608,7 +610,6 @@
       </td>                                        
   </tr>    <tr>  
       <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px;">
-          <input id="classifinput" style="margin-left: 3px;display:none;">
           <ul id="classiful">
               <li onclick="javascript: clickLiClassif(event, this)" class="litags">
               1</li>
@@ -631,7 +632,7 @@
               <li onclick="javascript: clickLiClassif(event, this)" class="litags">
               10</li>
           </ul>   
-          
+          <input type="hidden" id="selectedclassif" value="all">
         </td>
   </tr>   
 </tbody>
