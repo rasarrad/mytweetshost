@@ -80,13 +80,26 @@ function filtertagOnChange(obj) {
         currenttagdisplay.addClass("emptyvalue");
     }
     else {
-        currenttagdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filtertag\", \"searchtypes\")' class='fa fa-times-circle'></i>");
+        currenttagdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filtertag\", \"searchtags\")' class='fa fa-times-circle'></i>");
         currenttagdisplay.removeClass("emptyvalue");
     }
 
     removeNonExistentLi("tagsearchul", "filtertag");
 
     createNonExistentLi("tagsearchul", "filtertag");
+}
+
+function filterinfoOnChange(obj) {
+    var currentinfosearchdisplay = $('.currentinfosearch'); 
+        
+    if ($(obj).val().trim() == "") {
+        currentinfosearchdisplay.html("all");
+        currentinfosearchdisplay.addClass("emptyvalue");
+    }
+    else {
+        currentinfosearchdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filterinfo\", \"searchinfo\")' class='fa fa-times-circle'></i>");
+        currentinfosearchdisplay.removeClass("emptyvalue");
+    }
 }
 
 function clearcriterion(e, obj, affectedobj, affectedtable) {

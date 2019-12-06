@@ -304,10 +304,12 @@ $( document ).ready(function() {
         event.stopPropagation();
       });
 
-      $("#infoinput").keyup(function(e) {
-        infoInputOnKeyup(e);
+      $("#filtertext").keyup(function() {
+        filterinfoOnChange(this);
       });
-
+      $( "#filtertext" ).change(function() {
+        filterinfoOnChange(this);
+      });
 
       $( "#tagsselect" ).change(function() {
         // Check input( $( this ).val() ) for validity here
