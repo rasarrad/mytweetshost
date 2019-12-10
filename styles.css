@@ -3182,6 +3182,14 @@ body.big .iconul li div {
     color: var(--soft-color);
 }
 
+#searchpopup table:not(.emptyvalue) {
+  background: var(--softdark-color);
+}
+
 #searchpopup table.emptyvalue {
+  background: var(--softdark-color);
+}
+
+#searchpopup table.withvalue) {
   background: var(--soft-color);
 }

@@ -86,6 +86,7 @@ function filtertagOnChange(obj) {
         currenttagdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filtertag\", \"searchtags\")' class='fa fa-times-circle'></i>");
         currenttagdisplay.removeClass("emptyvalue");
         $("#searchtags").removeClass("emptyvalue");
+        $("#searchtags").addClass("withvalue");
     }
 
     removeNonExistentLi("tagsearchul", "filtertag");
