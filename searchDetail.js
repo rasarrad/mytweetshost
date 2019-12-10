@@ -65,7 +65,7 @@ function changecriteria(e, obj, tableparam) {
             table.find('td.el').removeClass('ellipsis');
         }
         setTimeout(function() { 
-            $("#sear").css("top", (table.offset().top) + "px");
+            $("#sear").css("top", (table.offset().top - 31) + "px");
         }, 100);
     }
     else {
