@@ -64,12 +64,15 @@ function changecriteria(e, obj, tableparam) {
     
             table.find('td.el').removeClass('ellipsis');
         }
+
+        alert(table.offset().top)
     }
     else {
         table.css('transition', 'max-height 1s');
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
         table.find('td.el').addClass('ellipsis');
+        alert(table.offset().top)
     }
 
 }
