@@ -81,6 +81,7 @@ function filtertagOnChange(obj) {
         currenttagdisplay.html("all");
         currenttagdisplay.addClass("emptyvalue");
         $("#searchtags").addClass("emptyvalue");
+        $("#searchtags").removeClass("withvalue");
     }
     else {
         currenttagdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filtertag\", \"searchtags\")' class='fa fa-times-circle'></i>");
@@ -101,11 +102,13 @@ function filterinfoOnChange(obj) {
         currentinfosearchdisplay.html("all");
         currentinfosearchdisplay.addClass("emptyvalue");
         $("#searchinfo").addClass("emptyvalue");
+        $("#searchinfo").removeClass("withvalue");
     }
     else {
         currentinfosearchdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filtertext\", \"searchinfo\")' class='fa fa-times-circle'></i>");
         currentinfosearchdisplay.removeClass("emptyvalue");
         $("#searchinfo").removeClass("emptyvalue");
+        $("#searchinfo").addClass("withvalue");
     }
 }
 
@@ -143,11 +146,13 @@ function changesearchtype(e, obj, code, desc) {
         currenttagdisplay.html("all");
         currenttagdisplay.addClass("emptyvalue");
         $("#searchtypes").addClass("emptyvalue");
+        $("#searchtypes").removeClass("withvalue");
     }
     else {
         currenttagdisplay.html(desc + "<i onclick='clearcriterion(event,this, \"selectedtype\", \"searchtypes\")' class='fa fa-times-circle'></i>");
         currenttagdisplay.removeClass("emptyvalue");
         $("#searchtypes").removeClass("emptyvalue");
+        $("#searchtypes").addClass("withvalue");
     }
     e.stopPropagation();
 }
