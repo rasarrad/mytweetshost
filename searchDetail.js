@@ -146,7 +146,7 @@ function changesearchtype(e, obj, code, desc) {
     var currenttagdisplay = $('.currenttype'); 
     
     $( ".iconul .litags" ).each( function( index, element ){
-        $(this).removeClass("selected");
+        $(element).removeClass("selected");
     });
 
     $(obj).addClass("selected");
