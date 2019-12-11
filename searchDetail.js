@@ -128,11 +128,14 @@ function clearcriterion(e, obj, affectedobj, affectedtable) {
     }
     else {
         $('#' + affectedobj).val("all");
-        $( ".iconul .litags" ).each( function( index, element ){
+        $( ".iconul li" ).each( function( index, element ){
             $(this).removeClass("selected");
         });
         $('.currenttype').html("all");
         $('#alltypesoption').addClass("selected");
+        $('.currenttype').addClass("emptyvalue");
+        $("#searchtypes").addClass("emptyvalue");
+        $("#searchtypes").removeClass("withvalue");
     }
 
     changecriteria(null,null, affectedtable);
