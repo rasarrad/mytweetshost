@@ -48,7 +48,7 @@ function changecriteria(e, obj, tableparam) {
                 
                 othertable.css('transition', 'max-height 0.01s');
                 othertable.css('max-height', setHeight);
-                othertable.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
+                othertable.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", "0px");
                 othertable.find('td.el').addClass('ellipsis');
             });
             
@@ -60,7 +60,7 @@ function changecriteria(e, obj, tableparam) {
                 table.css('max-height', "fit-content");
             }
     
-            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down');
+            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down').css("top", "-6px");
     
             table.find('td.el').removeClass('ellipsis');
         }
@@ -74,7 +74,7 @@ function changecriteria(e, obj, tableparam) {
     else {
         table.css('transition', 'max-height 1s');
         table.css('max-height', setHeight);
-        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
+        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", "0px");
         table.find('td.el').addClass('ellipsis');
         setTimeout(function() { 
             $("#sear").css("top", "calc(100% - 53px)");
