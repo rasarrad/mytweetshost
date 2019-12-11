@@ -65,7 +65,10 @@ function changecriteria(e, obj, tableparam) {
             table.find('td.el').removeClass('ellipsis');
         }
         setTimeout(function() { 
-            $("#sear").css("top", (table.offset().top - 31) + "px");
+            var offset = 0;
+            if (table.attr("cheight") && table.attr("cheight").trim() != "")
+                offset = Number(table.attr("cheight"));   
+            $("#sear").css("top", (table.offset().top - 31 + offset) + "px");
         }, 100);
     }
     else {
