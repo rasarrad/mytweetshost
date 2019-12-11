@@ -128,7 +128,7 @@ body.big #searchdate tr:nth-of-type(2) span {
   font-size: 14px;
   position: relative;
   top: -2px;
-  left: -1px;
+  left: 6px;
 }
 
 #searchpopup .emptyvalue:not(table) {
