@@ -63,13 +63,13 @@ function changecriteria(e, obj, tableparam) {
             table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down').css("top", "-6px");
     
             table.find('td.el').removeClass('ellipsis');
+            setTimeout(function() { 
+                var offset = 0;
+                if (table.attr("cheight") && table.attr("cheight").trim() != "")
+                    offset = Number(table.attr("cheight"));   
+                $("#sear").css("top", (table.offset().top - 38 + offset) + "px");
+            }, 100);
         }
-        setTimeout(function() { 
-            var offset = 0;
-            if (table.attr("cheight") && table.attr("cheight").trim() != "")
-                offset = Number(table.attr("cheight"));   
-            $("#sear").css("top", (table.offset().top - 38 + offset) + "px");
-        }, 100);
     }
     else {
         table.css('transition', 'max-height 1s');
