@@ -11,15 +11,15 @@ function expandsection(obj, table) {
     if ($(obj).hasClass("fa-chevron-down")) {
         $(obj).removeClass("fa-chevron-down");
         $(obj).addClass("fa-chevron-up");
-        $(obj).css("top", "135px");
-        $(obj).css("bottom", "auto");
+        $(obj).css("top", "auto");
+        $(obj).css("bottom", "-5px");
         $("#" + table).css("max-height", "fit-content");
     }   
     else {
         $(obj).removeClass("fa-chevron-up");
-        $(obj).addClass("fa-chevron-down");
-        $(obj).css("top", "auto");
-        $(obj).css("bottom", "-5px");
+        $(obj).addClass("fa-chevron-down");  
+        $(obj).css("top", "135px");
+        $(obj).css("bottom", "auto");
         $("#" + table).css("max-height", $("#" + table).attr("cmaxheight"));
     } 
 }
