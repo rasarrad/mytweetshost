@@ -132,7 +132,7 @@ body.big #searchdate tr:nth-of-type(2) span {
 }
 
 #searchpopup .emptyvalue:not(table) {
-    text-align: right !important;
+    /* text-align: right !important; */
     padding-right: 9px !important;
 }
 
