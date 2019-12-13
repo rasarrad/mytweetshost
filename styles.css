@@ -1709,15 +1709,50 @@ body.big #myCalendar {
 }
 
 #calendardiv > div {
-  height: 376px !important;
+  height: 349px !important;
   max-width: 361px !important;
   margin-left: calc(50% - 183px) !important;
 }
-
+body.big #calendardiv > div {
+  height: 376px !important;
+}
 #calendardiv  > div .titletable tr:first-child .firsttd {
-    min-width: 345px;
+    min-width: 345px !important;
 }
 
+#calendardiv .fa-window-close {
+  right: 19px !important;
+}
+
+body.big #calendardiv .fa-window-close {
+    font-size: 19px;
+    right: 22px !important;
+}
+
+#calendardiv .titletable.buttonstable {
+    max-height: 27px;
+}
+
+body.big #calendardiv .titletable.buttonstable {
+  max-height: 38px;
+}
+
+#calendardiv .sectiontitletable.sectionexpandable {
+  margin-top: 52px;
+}
+
+body.big #calendardiv .sectiontitletable.sectionexpandable {
+  margin-top: 60px;
+}
+
+
+#calendardiv .fa-calendar {
+    font-size: 14px;
+}
+
+body.big #calendardiv .fa-calendar {
+    font-size: 19px;
+}
 
 @media only screen and (max-width: 700px) {
     .newLayout#mainsettings > div {
