@@ -21,6 +21,8 @@
     margin: 0 auto;
     overflow: hidden;
     width: 350px;
+    background-color: var(--soft-color);
+    border: solid 1px var(--softdark-color);
 }
 @media (max-width:1200px) {
     .vanilla-calendar {
@@ -56,7 +58,7 @@
 }
 
 .vanilla-calendar .vanilla-calendar-header svg {
-    fill: var(--vanilla-calendar-today-color);
+    fill: var(--high-color);
 }
 
 .vanilla-calendar .vanilla-calendar-header__label {
@@ -66,13 +68,13 @@
 }
 
 .vanilla-calendar .vanilla-calendar-week {
-    background-color: var(--vanilla-calendar-selected-bg-color);
+    background-color: var(--softdark-color);
     display: flex;
     flex-wrap: wrap;
 }
 
 .vanilla-calendar .vanilla-calendar-week span {
-    color: var(--vanilla-calendar-selected-color);
+    color: var(--high-color);
     flex-direction: column;
     flex: 0 0 14.28%;
     font-size: 1em;
@@ -92,7 +94,7 @@
 
 .vanilla-calendar .vanilla-calendar-date {
     align-items: center;
-    background-color: #fff;
+    background-color: var(--soft-color);
     border-radius: var(--vanilla-calendar-border-radius);
     display: flex;
     flex-direction: column;
@@ -106,13 +108,15 @@
 }
 
 .vanilla-calendar .vanilla-calendar-date--today {
-    background-color: var(--vanilla-calendar-today-bg-color);
-    color: var(--vanilla-calendar-today-color);
+    background-color: var(--high-color);
+    color: var(--dark-color);
+    font-weight: bold;
+    border: 1px solid var(--softdark-color);
 }
 
 .vanilla-calendar .vanilla-calendar-date--selected {
-    background-color: var(--vanilla-calendar-selected-bg-color);
-    color: var(--vanilla-calendar-selected-color);
+    /* background-color: var(--vanilla-calendar-selected-bg-color); */
+    /* color: var(--vanilla-calendar-selected-color); */
 }
 
 .vanilla-calendar .vanilla-calendar-date--disabled {
