@@ -2093,7 +2093,7 @@ body.big#mainsettings .newLayout > div {
 
 
 .newLayout > div .buttonstable tr:last-child td {
-    padding: 4px 0px 3px 0px;
+    padding: 1px 0px 3px 0px;
     background: var(--soft-color);
     width: 25%;
     /* margin-right: 5px; */
@@ -2780,14 +2780,14 @@ body.big .smallrem {
     font-size: 14px !important;
 }
 body.big .buttonstable .firsttd {
-    font-size: 19px !important;
+    font-size: 22px !important;
 }
 
 #removetweetp {
     font-size: 18px !important;
 }
 body.big #removetweetp {
-    font-size: 29px !important;
+    font-size: 26px !important;
 }
 body.big .newLayout.new #removetweetp {
     font-size: 27px !important;
@@ -2797,13 +2797,13 @@ body.big .newLayout.new #removetweetp {
     font-size: 16px !important;
 }
 body.big #internallinkp {
-    font-size: 22px !important;
+    font-size: 21px !important;
     font-weight: bold;
 }
 
 
 body.big #externallinkp {
-    font-size: 24px !important;
+    font-size: 21px !important;
     font-weight: bold;
 }
 .body.big #externallinkp {
@@ -2815,7 +2815,7 @@ body.big #externallinkp {
     font-size: 18px !important;
 }
 body.big #closepopupp {
-    font-size: 25px !important;
+    font-size: 22px !important;
 }
 
 
