@@ -1710,6 +1710,12 @@ body.big #myCalendar {
 
 #calendardiv > div {
   height: 376px !important;
+  max-width: 361px !important;
+  margin-left: calc(50% - 183px) !important;
+}
+
+#calendardiv  > div .titletable tr:first-child .firsttd {
+    min-width: 345px;
 }
 
 
@@ -3206,3 +3212,4 @@ body.big .iconul li div {
 #searchpopup table.withvalue {
   background: var(--soft-color);
 }
+
