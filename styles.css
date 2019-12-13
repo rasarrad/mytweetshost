@@ -544,7 +544,7 @@ body.big .menubutton {
       left: 724px;
     }
 
-    #sear {
+    #sear,#sear2 {
       position: relative;
       color: #004a86;
       font-size: 22px;
@@ -1514,7 +1514,7 @@ body.big .menuitemcounter {
 #backdiv {
 /* background-image:linear-gradient(rgb(0, 104, 165), rgb(0, 139, 222)) !important; */
 }
-#sear {
+#sear, #sear2  {
     position: relative;
     color: var(--high-color);
     font-size: 18px;
@@ -1524,7 +1524,7 @@ body.big .menuitemcounter {
     cursor: pointer;
     transition: all 0.6s;
 }
-body.big #sear {
+body.big #sear, body.big #sear2 {
     font-size: 25px;
     padding-left: 17px;
     padding-right: 17px;
@@ -1874,11 +1874,11 @@ body.big#mainsettings .newLayout > div {
       color: #7ba8ca;
   }  
    body.big .toptitle {
-      top: 18px;
-      font-size: 15px;
+      top: 16px;
+      font-size: 20px;
       width: 100px;
       line-height: 15px;
-      left: calc(50% - 50px) !important;
+      left: calc(50% - 75px) !important;
   }   
     
         #openadd {

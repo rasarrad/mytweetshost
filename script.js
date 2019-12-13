@@ -307,8 +307,20 @@ $( document ).ready(function() {
       $("#filtertext").keyup(function() {
         filterinfoOnChange(this);
       });
-      $( "#filtertext" ).change(function() {
-        filterinfoOnChange(this);
+      $( "#filterdate1" ).change(function() {
+        filterDate1OnChange(this);
+      });
+
+      $( "#filterdate2" ).change(function() {
+        filterDate2OnChange(this);
+      });
+
+      $( "#filterdate1" ).keyup(function() {
+        filterDate1OnChange(this);
+      });
+
+      $( "#filterdate2" ).keyup(function() {
+        filterDate2OnChange(this);
       });
 
       $( "#tagsselect" ).change(function() {

@@ -72,7 +72,10 @@
 <input type="text" class="top" style="width: 30px;" id="filterid"></input>
 <button id="btnsearch" class="top noeffect" style="position: relative;top: -8px;margin-left: 38px;">Search<i class="fa fa-search"></i></button>
 <button id="btnreset" class="top noeffect" style="position: relative;top: -8px;margin-left: 10px;display:none;">Reset<i class="fa fa-eraser"></i></button>
-<span class="noselect toptitle" style="font-family: Helvetica, Roboto, 'Segoe UI', Calibri, sans-serif !important;font-variant-caps: normal !important;text-transform: uppercase;" id="toptitle">bookmark station</span>
+<span class="noselect toptitle" style="font-family: Helvetica, Roboto, 'Segoe UI', Calibri, sans-serif !important;font-variant-caps: normal !important;text-transform: uppercase;" id="toptitle">
+bookmark <span style="position: absolute;top: 18px;left: 74px;">
+  station</span>
+</span>
 <i id="addtweet" class="fa fa-plus-square clicable"></i>
 <i id="settings" class="fa fa-cog clicable"></i>
 <i id="zoomin" onclick="javascript: zoom(this)" class="fa fa-search-plus clicable"></i>
@@ -448,8 +451,8 @@
           <tbody>
             <tr class="cursordefault">
                 <td colspan="4" class="firsttd" style="padding-top: 3px;padding-bottom: 9px;">
-                    <i class="fa fa-search clicable" style="margin-right: 12px;font-size: 19px;position: relative;top: -1px;"></i>
-                    <b style="margin-left: -1px;">Search </b>
+                    <!--<i class="fa fa-search clicable" style="margin-right: 12px;font-size: 19px;position: relative;top: -1px;"></i>-->
+                    <b style="margin-left: 1px;top: -1px;position: relative;">Search </b>
                 </td>            
             </tr>
             <tr class="buttonstr" style="text-align: center;">
@@ -463,7 +466,7 @@
                   <i id="externallinkp" class="fa fa-external-link"></i>
               </td>
               <td onclick="closeSearchPopup(this)" style="position: relative;left: 2px;">
-                  <i id="closepopupp" class="fa fa-window-close"></i><div style="position: absolute; height: 41px; width: 2px; top: 0px; right: -1px; background: var(--dark-color);"></div>
+                  <i id="closepopupp" class="fa fa-window-close"></i><div style="position: absolute; height: 41px; width: 2px; top: 0px; right: -1px; background: var(--dark-color);display:none;"></div>
               </td>                
             </tr>
           </tbody>
@@ -517,7 +520,7 @@
         
   </tbody>
 </table>  
-  <table id="searchtypes" cheight="4" class="sectiontitletable sectionexpandable" 
+  <table id="searchtypes" cmaxheight="80px" cheight="4" class="sectiontitletable sectionexpandable" 
       style="position: relative;overflow: hidden;">
     <tbody>
       <tr class="cursorpointer" onclick="changecriteria(event,this)" style="padding-bottom: 15px;">

@@ -125,6 +125,40 @@ function filterinfoOnChange(obj) {
     }
 }
 
+function filterDate1OnChange(obj) {
+    if (isValidDate(date)) $( "#filterdate1" )
+}
+
+function filterDate2OnChange(obj) {
+
+}
+function isValidDate(date) {
+    try {
+        var day = Number(date.substring(6,8));
+        if (day > 31 || day < 0)
+            return false;
+
+        var month = Number(date.substring(4,6));
+        if (month > 12 || month < 0)
+            return false;
+
+        var year = Number(date.substring(0,4));
+        if (year > 2020 || year < 2000)
+            return false;    
+    }
+    catch(err) {
+        return false;
+    }
+
+    return true;
+}
+
+function formatDate(date) {
+    return date.substring(6,8) + "/" + date.substring(4,6) + "/" + date.substring(0,4)
+}
+
+
+
 function clearcriterion(e, obj, affectedobj, affectedtable) {
     if (affectedobj != "selectedtype") {
         $('#' + affectedobj).val("");
