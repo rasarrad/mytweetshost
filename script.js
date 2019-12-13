@@ -23,6 +23,18 @@ var tagssloaded = false;
 var catsmap = new Map();
 
 $( document ).ready(function() { 
+    var calendar = new VanillaCalendar({
+        selector: "#myCalendar",
+        months: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+        shortWeekday: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+        onSelect: (data, elem) => {
+            console.log(data)
+            console.log(elem)
+            var aaa = new Date("" + data.date);
+            alert(aaa.getMonth())
+        }
+    })
+
     console.log('-------------- app - BEGIN --------------');
     $( "#mask" ).fadeOut( 1100, function() {
         $( "#mask" ).css("background", "rgba(0, 0, 0, 0.72)")
@@ -307,21 +319,14 @@ $( document ).ready(function() {
       $("#filtertext").keyup(function() {
         filterinfoOnChange(this);
       });
-      $( "#filterdate1" ).change(function() {
-        filterDate1OnChange(this);
+      $( "#filterdate1" ).click(function() {
+        $( "#calendardiv" ).fadeIn();
       });
 
       $( "#filterdate2" ).change(function() {
         filterDate2OnChange(this);
       });
 
-      $( "#filterdate1" ).keyup(function() {
-        filterDate1OnChange(this);
-      });
-
-      $( "#filterdate2" ).keyup(function() {
-        filterDate2OnChange(this);
-      });
 
       $( "#tagsselect" ).change(function() {
         // Check input( $( this ).val() ) for validity here
