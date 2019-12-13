@@ -917,37 +917,39 @@ bookmark <span style="position: absolute;top: 18px;left: 74px;">
     </div>
   </div>
 
-  <div id="calendardiv" style="display: none;" class="newLayout" onclick="closeMenuPopup()">
-    <div>        
-        <table class="titletable buttonstable">
+  <div id="calendardiv" style="display: block;" class="newLayout" onclick="closeMenuPopup()">
+    <div style="height: 357px;overflow: hidden;">        
+        <table class="titletable buttonstable" style="width: 351px; background: var(--softdark-color); max-height: 36px; overflow: hidden;">
             <tbody>
               <tr class="cursordefault">
-                  <td colspan="3" class="firsttd" style="width: 164px;">
-                      <i class="fa fa-bars"></i>
-                      <b>CATEGORY</b>
+                  <td colspan="3" class="firsttd" style="width: 164px;/* min-width: 322px !important; */">
+                      <i class="fa fa-calendar" style="font-size: 19px; margin-right: 6px;"></i>
+                      <b>calendar</b>
                   </td>
                   <td style="padding-top: 4px;vertical-align: initial;">
-                    <i onclick="closeMenuPopup(this)" class="fa fa-window-close"></i>
+                    <i onclick="closeMenuPopup(this)" class="fa fa-window-close" style="position: relative;right: 22px;font-size: 19px; top: -2px;"></i>
                   </td>            
               </tr>
               <tr class="buttonstr" style="text-align: center;overflow: visible;">               
               </tr>
             </tbody>
         </table>
-        <table class="sectiontitletable sectionexpandable">
+        <table class="sectiontitletable sectionexpandable defaulttablerow" style="transition: max-height 0.01s ease 0s;margin-top: 59px;background: transparent;/* max-height: 18px; */">
           <tbody>
             <tr onclick="javascript: clickmenu('tvn', 'To View Now')" class="cursorpointer hover" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
-                <div id="myCalendar" class="vanilla-calendar" style="margin-bottom: 20px"></div>
+                <div id="myCalendar" class="vanilla-calendar" style="margin-bottom: 20px;">
+                </div>
               </td>                                                                   
             </tr>   
            </tbody>
         </table>
-
-
-
     </div>
   </div>
+
+
+
+
 <script>
   /*<![CDATA[*/
   function customizeTweets(flag, forceProcess, big, dopostcode) {
