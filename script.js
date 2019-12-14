@@ -317,8 +317,8 @@ $( document ).ready(function() {
       $("#filtertext").keyup(function() {
         filterinfoOnChange(this);
       });
-      $( "#filterdate1" ).click(function() {
-          openCalendar("filterdate1")
+      $( "#filterdate1display" ).click(function() {
+          openCalendar("filterdate1display", "filterdate1")
       });
 
       $( "#filterdate1" ).change(function() {

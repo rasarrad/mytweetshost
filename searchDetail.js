@@ -129,33 +129,34 @@ function filterinfoOnChange(obj) {
 function formatDate(date) {
     return date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
 }
-
+function formatNumDate(date) {
+    return date.getFullYear() + "" + (date.getMonth() + 1) + date.getDate();
+}
 function closeCalendarPopup() {
     $('body, html').css('overflow-y', 'auto');
     $('#calendardiv').fadeOut(600);
 }
 
-function openCalendar(targetObj) {
+function openCalendar(targetObj, targetObj2) {
     $('body, html').css('overflow-y', 'hidden');
     $('#calendardiv').attr("targetObj", targetObj);
+    $('#calendardiv').attr("targetObj2", targetObj2);
     $('#calendardiv').fadeIn(600);
 }
 
 function filterdate1change() {
-    
-    $( ".currentdate" ).html(formatDate($( "#filterdate1" ).val()));
-    $( "#filterdate1" ).val(formatDate($( "#filterdate1" ).val()));
+    $( ".currentdate" ).html($( "#filterdate1display" ).val());
 
-    $( "#filterdate1" ).blur();
+    $( "#filterdate1display" ).blur();
     closeCalendarPopup();
 }    
   
 function calendarChanged(date) {
     $('body, html').css('overflow-y', 'hidden');
-    alert("-" + '#' + $('#calendardiv').attr("targetObj") + "-");
-    $('#' + $('#calendardiv').attr("targetObj")).val(date);
-    //$('#' + $('#calendardiv').attr("targetObj2")).val(date);
-    $('#' + $('#calendardiv').attr("targetObj")).trigger("change");
+    
+    $('#' + $('#calendardiv').attr("targetObj")).val(formatDate(date));
+    $('#' + $('#calendardiv').attr("targetObj2")).val(formatNumDate(date));
+    $('#' + $('#calendardiv').attr("targetObj2")).trigger("change");
 }          
 
 
