@@ -157,7 +157,7 @@ function formatDate(date) {
     return date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
 }
 
-function closeCalendarPopup(obj) {
+function closeCalendarPopup() {
     $('body, html').css('overflow-y', 'auto');
     $('#calendardiv').fadeOut(600);
 }
@@ -168,12 +168,21 @@ function openCalendar(targetObj, targetObj2) {
     $('#calendardiv').attr("targetObj2", targetObj2);
     $('#calendardiv').fadeIn(600);
 }
+
+function filterdate1change() {
+    
+    $( ".currentdate" ).html(formatDate($( "#filterdate1" ).val()));
+    $( "#filterdate1" ).val(formatDate($( "#filterdate1" ).val()));
+
+    $( "#filterdate1" ).blur();
+    closeCalendarPopup();
+}    
   
 function calendarChanged(date) {
     $('body, html').css('overflow-y', 'hidden');
-    $('#' + $('#calendardiv').attr("targetObj")).val(formatDate(date));
-    $('#' + $('#calendardiv').attr("targetObj2")).val(date);
-    $('#' + $('#calendardiv').attr("targetObj2")).trigger("change");
+    $('#' + $('#calendardiv').attr("targetObj")).val(date);
+    //$('#' + $('#calendardiv').attr("targetObj2")).val(date);
+    $('#' + $('#calendardiv').attr("targetObj")).trigger("change");
 }          
 
 function clearcriterion(e, obj, affectedobj, affectedtable) {

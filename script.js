@@ -318,7 +318,11 @@ $( document ).ready(function() {
         filterinfoOnChange(this);
       });
       $( "#filterdate1" ).click(function() {
-        $( "#calendardiv" ).fadeIn();
+          openCalendar("filterdate1")
+      });
+
+      $( "#filterdate1" ).change(function() {
+        filterdate1change();
       });
 
       $( "#filterdate2" ).change(function() {
