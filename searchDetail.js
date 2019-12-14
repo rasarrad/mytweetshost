@@ -157,6 +157,10 @@ function formatDate(date) {
     return date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
 }
 
+function closeCalendarPopup(obj) {
+    $('body, html').css('overflow-y', 'auto');
+    $('#calendardiv').fadeOut(600);
+}
 
 function openCalendar(targetObj, targetObj2) {
     $('body, html').css('overflow-y', 'hidden');
