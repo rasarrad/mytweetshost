@@ -32,7 +32,7 @@ let VanillaCalendar = (function () {
             months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             shortWeekday: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
         }
-        //for (let k in options) if (opts.hasOwnProperty(k)) opts[k] = options[k]
+        for (let k in options) if (opts.hasOwnProperty(k)) opts[k] = options[k]
         
         let element = document.querySelector(opts.selector)
         if (!element)
