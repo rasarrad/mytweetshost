@@ -28,10 +28,8 @@ $( document ).ready(function() {
         //months: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
         //shortWeekday: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
         onSelect: (data, elem) => {
-            console.log(data)
-            console.log(elem)
-            var aaa = new Date("" + data.date);
-            alert(aaa.getMonth())
+            var date = new Date("" + data.date);
+            calendarChanged(date);
         }
     })
 

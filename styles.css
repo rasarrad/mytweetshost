@@ -1722,6 +1722,7 @@ body.big #calendardiv > div {
 
 #calendardiv .fa-window-close {
   right: 19px !important;
+  cursor: pointer;
 }
 
 body.big #calendardiv .fa-window-close {
@@ -3248,3 +3249,17 @@ body.big .iconul li div {
   background: var(--soft-color);
 }
 
+.vanilla-calendar-date:hover {
+    transition: all 0.6s;
+}
+
+.vanilla-calendar-date:hover {
+    opacity: 0.6;
+    background: var(--high-color);
+color: var(--dark-color);
+
+}
+
+#myCalendar {
+  cursor: default !important;
+}

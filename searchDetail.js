@@ -126,7 +126,7 @@ function filterinfoOnChange(obj) {
 }
 
 function filterDate1OnChange(obj) {
-    if (isValidDate(date)) $( "#filterdate1" )
+    
 }
 
 function filterDate2OnChange(obj) {
@@ -154,10 +154,23 @@ function isValidDate(date) {
 }
 
 function formatDate(date) {
-    return date.substring(6,8) + "/" + date.substring(4,6) + "/" + date.substring(0,4)
+    return date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
 }
 
 
+function openCalendar(targetObj, targetObj2) {
+    $('body, html').css('overflow-y', 'hidden');
+    $('#calendardiv').attr("targetObj", targetObj);
+    $('#calendardiv').attr("targetObj2", targetObj2);
+    $('#calendardiv').fadeIn(600);
+}
+  
+function calendarChanged(date) {
+    $('body, html').css('overflow-y', 'hidden');
+    $('#' + $('#calendardiv').attr("targetObj")).val(formatDate(date));
+    $('#' + $('#calendardiv').attr("targetObj2")).val(date);
+    $('#' + $('#calendardiv').attr("targetObj2")).trigger("change");
+}          
 
 function clearcriterion(e, obj, affectedobj, affectedtable) {
     if (affectedobj != "selectedtype") {
