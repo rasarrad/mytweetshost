@@ -21,17 +21,9 @@ var total_hh = 0;
 var hideMode = false;
 var tagssloaded = false;
 var catsmap = new Map();
+var calendar = null;
 
 $( document ).ready(function() { 
-    var calendar = new VanillaCalendar({
-        selector: "#myCalendar",
-        //months: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
-        //shortWeekday: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
-        onSelect: (data, elem) => {
-            var date = new Date("" + data.date);
-            calendarChanged(date);
-        }
-    })
 
     console.log('-------------- app - BEGIN --------------');
     $( "#mask" ).fadeOut( 1100, function() {
@@ -318,7 +310,11 @@ $( document ).ready(function() {
         filterinfoOnChange(this);
       });
       $( "#filterdate1display" ).click(function() {
-          openCalendar("filterdate1display", "filterdate1")
+          var value = null;
+          if ($( "#filterdate1display" ).val().trim() != "")
+            value = $( "#filterdate1display" ).date;
+            
+          openCalendar("filterdate1display", "filterdate1", value)
       });
 
       $( "#filterdate1" ).change(function() {

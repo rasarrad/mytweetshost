@@ -137,8 +137,27 @@ function closeCalendarPopup() {
     $('#calendardiv').fadeOut(600);
 }
 
-function openCalendar(targetObj, targetObj2) {
+function openCalendar(targetObj, targetObj2, date) {
     $('body, html').css('overflow-y', 'hidden');
+
+    alert(date);
+    var currDate = null;
+    if (date)
+        currDate = date;
+    else
+        currDate = new Date();
+
+    calendar = new VanillaCalendar({
+        selector: "#myCalendar",
+        //months: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+        //shortWeekday: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+        date: currDate,
+        onSelect: (data, elem) => {
+            var date = new Date("" + data.date);
+            calendarChanged(date);
+        }
+    });
+
     $('#calendardiv').attr("targetObj", targetObj);
     $('#calendardiv').attr("targetObj2", targetObj2);
     $('#calendardiv').fadeIn(600);
@@ -155,6 +174,7 @@ function calendarChanged(date) {
     $('body, html').css('overflow-y', 'hidden');
     
     $('#' + $('#calendardiv').attr("targetObj")).val(formatDate(date));
+    $('#' + $('#calendardiv').attr("targetObj")).date = date;
     $('#' + $('#calendardiv').attr("targetObj2")).val(formatNumDate(date));
     $('#' + $('#calendardiv').attr("targetObj2")).trigger("change");
 }          
