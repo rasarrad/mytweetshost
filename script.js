@@ -170,7 +170,7 @@ $( document ).ready(function() {
     ///////////////////////////////////////
 
     $('#filtertext, #filterid, #filterauthor, #filtertag').keypress(function(event){
-        alert(5);
+      
         var keycode = (event.keyCode ? event.keyCode : event.which);
       if(keycode == '13' && $(this).val().length > 0){
         getInformation(false, 1);
@@ -206,14 +206,12 @@ $( document ).ready(function() {
     ///////////////////////////////////////
 
     $( "#moretweets" ).bind( "click", function( event ) {
-        alert(2);
         getInformation(true, 3);
     });
 
     ///////////////////////////////////////
 
     $( "#btnsearch" ).bind( "click", function( event ) {
-        alert(2);
       getInformation(false , 1);
     });
 
@@ -654,7 +652,7 @@ var clickmenu = function(val, text) {
     else {
         closeMenuPopup();
     }
-    alert(1);
+    
     getInformation(false, 2);
 
 } 
