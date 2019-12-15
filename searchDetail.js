@@ -140,7 +140,6 @@ function closeCalendarPopup() {
 function openCalendar(targetObj, targetObj2, date) {
     $('body, html').css('overflow-y', 'hidden');
 
-    alert(date);
     var currDate = null;
     if (date)
         currDate = date;
@@ -174,7 +173,14 @@ function calendarChanged(date) {
     $('body, html').css('overflow-y', 'hidden');
     
     $('#' + $('#calendardiv').attr("targetObj")).val(formatDate(date));
+
+    
+    alert(date);
+    
+
     $('#' + $('#calendardiv').attr("targetObj")).date = date;
+
+    alert($('#' + $('#calendardiv').attr("targetObj")).date);
     $('#' + $('#calendardiv').attr("targetObj2")).val(formatNumDate(date));
     $('#' + $('#calendardiv').attr("targetObj2")).trigger("change");
 }          
