@@ -22,6 +22,8 @@ var hideMode = false;
 var tagssloaded = false;
 var catsmap = new Map();
 var calendar = null;
+var filterdate1date = null;
+var filterdate2date = null;
 
 $( document ).ready(function() { 
 
@@ -311,9 +313,8 @@ $( document ).ready(function() {
       });
       $( "#filterdate1display" ).click(function() {
           var value = null;
-          if ($( "#filterdate1display" ).val().trim() != "")
-            value = $( "#filterdate1display" ).date;
-            
+          if (filterdate1date != null)
+            value = filterdate1date;
           openCalendar("filterdate1display", "filterdate1", value)
       });
 
