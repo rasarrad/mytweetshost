@@ -133,8 +133,10 @@ function formatNumDate(date) {
     return date.getFullYear() + "" + (date.getMonth() + 1) + date.getDate();
 }
 function closeCalendarPopup(e) {
-    e.stopPropagation();
-    $('body, html').css('overflow-y', 'auto');
+    if (e)
+        e.stopPropagation();
+    
+        $('body, html').css('overflow-y', 'auto');
     $('#calendardiv').fadeOut(600);
 }
 
