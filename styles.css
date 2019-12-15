@@ -3310,8 +3310,9 @@ body.big #filterdate2clean {
   position: relative;
   top: -1px;
     font-size: 16px;
+    cursor: pointer;
 }
 
 body.big #titlesearch {
-  font-size: 20px;
+  font-size: 17px;
 }
