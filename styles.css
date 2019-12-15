@@ -3305,9 +3305,13 @@ body.big #filterdate2clean {
   left: 4px !important;
   top: 0px !important;
 }
-
 #titlesearch {
   text-decoration: underline;
   position: relative;
   top: -1px;
+    font-size: 16px;
+}
+
+body.big #titlesearch {
+  font-size: 20px;
 }

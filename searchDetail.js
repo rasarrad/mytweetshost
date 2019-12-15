@@ -253,9 +253,9 @@ var openSearchPopup = function(jsonobj)
     $('#searchpopup').css('display', 'flex');  
     var setHeight = "18px";
 
-    $('#titlesearch').html($('#selectedcattext').val());
+    $('#titlesearch').html("(" + $('#selectedcattext').val() + ")");
 
-    if ($('#').hasClass('big'))
+    if ($('body').hasClass('big'))
         setHeight = "31px";
 
     $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
