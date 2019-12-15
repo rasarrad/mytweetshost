@@ -322,9 +322,16 @@ $( document ).ready(function() {
         filterdate1change();
       });
 
-      $( "#filterdate2" ).change(function() {
-        filterDate2OnChange(this);
-      });
+      $( "#filterdate2display" ).click(function() {
+        var value = null;
+        if (filterdate2date != null)
+          value = filterdate2date;
+        openCalendar("filterdate2", value)
+    });
+
+    $( "#filterdate2" ).change(function() {
+      filterdate2change();
+    });
 
 
       $( "#tagsselect" ).change(function() {

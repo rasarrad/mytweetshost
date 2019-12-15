@@ -128,7 +128,7 @@ body.big #searchdate tr:nth-of-type(2) span {
   font-size: 14px;
   position: relative;
   top: -2px;
-  left: 6px;
+  left: -1px;
 }
 
 #searchpopup .emptyvalue:not(table) {
@@ -3262,4 +3262,52 @@ color: var(--dark-color);
 
 #myCalendar {
   cursor: default !important;
+}
+
+#filterdate1display {
+  width: calc(50% - 99px);
+  margin-left: 9px !important;
+}
+
+body.big #filterdate1display {
+  width: calc(50% - 99px);
+  margin-left: 1px !important;
+  margin-right: 11px !important;
+}
+
+
+#filterdate2display {
+  width: calc(50% - 99px);
+  margin-left: 9px !important;
+}
+
+body.big #filterdate2display {
+  width: calc(50% - 99px);
+  margin-left: 1px !important;
+}
+
+#filterdate1clean {
+
+}
+
+body.big #filterdate1clean {
+  font-size: 16px;
+  left: -11px !important;
+  top: 0px !important;
+}
+
+#filterdate2clean {
+
+}
+
+body.big #filterdate2clean {
+  font-size: 16px;
+  left: 4px !important;
+  top: 0px !important;
+}
+
+#titlesearch {
+  text-decoration: underline;
+  position: relative;
+  top: -1px;
 }

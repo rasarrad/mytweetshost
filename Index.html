@@ -454,7 +454,7 @@ bookmark <span style="position: absolute;top: 18px;left: 74px;">
             <tr class="cursordefault">
                 <td colspan="4" class="firsttd" style="padding-top: 3px;padding-bottom: 9px;">
                     <!--<i class="fa fa-search clicable" style="margin-right: 12px;font-size: 19px;position: relative;top: -1px;"></i>-->
-                    <b style="margin-left: 1px;top: -1px;position: relative;">Search </b>
+                    <b style="margin-left: 1px;top: -1px;position: relative;">Search (<span id="titlesearch"></span>)</b>
                 </td>            
             </tr>
             <tr class="buttonstr" style="text-align: center;">
@@ -567,12 +567,14 @@ bookmark <span style="position: absolute;top: 18px;left: 74px;">
         </td>           
     </tr> 
     <tr>  
-        <td colspan="3" style="width: 80%;width: calc(100% - 220px);">
-          <span>From </span><input type="text" id="filterdate1display" style="margin-left: 9px;width: calc(50% - 90px);margin-top: 7px;margin-bottom: 3px;display: inline;margin-right: 16px;">
-          <span>To </span><input type="text" id="filterdate2display" style="margin-left: 9px;width: calc(50% - 90px);margin-top: 1px;margin-bottom: 3px;display: inline;">
-          <input type="text" id="filterdate1" style="display: none;">
-          <input type="text" id="filterdate2" style="display: none;">
-        </td>                                          
+      <td colspan="3" style="width: 80%;width: calc(100% - 220px);">
+        <span>From </span><input type="text" id="filterdate1display" style="margin-left: 9px;margin-top: 7px;margin-bottom: 3px;display: inline;margin-right: 4px;">
+        <i class="fa fa-times-circle" style="top: 1px;" id="filterdate1clean"></i>
+        <span>To </span><input type="text" id="filterdate2display" style="margin-left: 9px;/* width: calc(50% - 90px); */margin-top: 1px;margin-bottom: 3px;display: inline;">
+        <i class="fa fa-times-circle" style="top: 1px;" id="filterdate2clean"></i>
+        <input type="text" id="filterdate1" style="display: none;">
+        <input type="text" id="filterdate2" style="display: none;">
+      </td>                                        
     </tr>   
 </tbody>
 </table>

@@ -167,7 +167,14 @@ function filterdate1change() {
     $( "#filterdate1display" ).blur();
     closeCalendarPopup();
 }    
-  
+
+function filterdate2change() {
+    $( ".currentdate" ).html($( "#filterdate2display" ).val());
+
+    $( "#filterdate2display" ).blur();
+    closeCalendarPopup();
+} 
+
 function calendarChanged(date) {
     $('body, html').css('overflow-y', 'hidden');
     
@@ -177,6 +184,12 @@ function calendarChanged(date) {
             filterdate1date = date;
             $('#filterdate1').val(formatNumDate(date));
             $('#filterdate1').trigger("change");
+            break; 
+        case "filterdate2":
+            $('#filterdate2display').val(formatDate(date));
+            filterdate2date = date;
+            $('#filterdate2').val(formatNumDate(date));
+            $('#filterdate2').trigger("change");
             break; 
     }
 }          
@@ -240,7 +253,9 @@ var openSearchPopup = function(jsonobj)
     $('#searchpopup').css('display', 'flex');  
     var setHeight = "18px";
 
-    if ($('body').hasClass('big'))
+    $('#titlesearch').html($('#selectedcattext').val());
+
+    if ($('#').hasClass('big'))
         setHeight = "31px";
 
     $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
@@ -1427,10 +1442,14 @@ function resetFields(flag) {
     $('#filtertext').val('');
     $('#filterdate1').val('');
     $('#filterdate2').val('');
+    $('#filterdate1display').val('');
+    $('#filterdate2display').val('');
     $('#filterid').val('');
     $('#filterauthor').val('');
     $('#filtertag').val('');
-
+    filterdate1date = null;
+    filterdate2date = null;
+    
     if (flag) 
         showMessage("Search Criterions Cleaned"); 
 } 
