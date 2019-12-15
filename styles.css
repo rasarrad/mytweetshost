@@ -1714,7 +1714,7 @@ body.big #myCalendar {
   margin-left: calc(50% - 183px) !important;
 }
 body.big #calendardiv > div {
-  height: 330px !important;
+  height: 331px !important;
 }
 #calendardiv  > div .titletable tr:first-child .firsttd {
     min-width: 345px !important;
@@ -2055,7 +2055,7 @@ body.big #calendardiv .fa-calendar {
 }
 
 .newLayout > div {
-    background: var(--softdark-color);
+    background: var(--dark-color);
     max-height: calc(100% - 60px);
     width: calc(100% - 50px);
     margin: 25px;
