@@ -169,8 +169,9 @@ $( document ).ready(function() {
 
     ///////////////////////////////////////
 
-    $('#filtertext, #filterdate1, #filterdate2, #filterid, #filterauthor, #filtertag').keypress(function(event){
-      var keycode = (event.keyCode ? event.keyCode : event.which);
+    $('#filtertext, #filterid, #filterauthor, #filtertag').keypress(function(event){
+      
+        var keycode = (event.keyCode ? event.keyCode : event.which);
       if(keycode == '13' && $(this).val().length > 0){
         getInformation(false, 1);
 
