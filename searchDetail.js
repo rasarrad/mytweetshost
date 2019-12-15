@@ -137,7 +137,7 @@ function closeCalendarPopup() {
     $('#calendardiv').fadeOut(600);
 }
 
-function openCalendar(targetObj, targetObj2, date) {
+function openCalendar(targetObj, date) {
     $('body, html').css('overflow-y', 'hidden');
 
     var currDate = null;
@@ -158,7 +158,6 @@ function openCalendar(targetObj, targetObj2, date) {
     });
 
     $('#calendardiv').attr("targetObj", targetObj);
-    $('#calendardiv').attr("targetObj2", targetObj2);
     $('#calendardiv').fadeIn(600);
 }
 
@@ -172,17 +171,14 @@ function filterdate1change() {
 function calendarChanged(date) {
     $('body, html').css('overflow-y', 'hidden');
     
-    $('#' + $('#calendardiv').attr("targetObj")).val(formatDate(date));
-
-    
-    alert(date);
-    
-
-    $('#' + $('#calendardiv').attr("targetObj")).date = date;
-
-    alert($('#' + $('#calendardiv').attr("targetObj")).date);
-    $('#' + $('#calendardiv').attr("targetObj2")).val(formatNumDate(date));
-    $('#' + $('#calendardiv').attr("targetObj2")).trigger("change");
+    switch($('#calendardiv').attr("targetObj")) {
+        case "filterdate1":
+            $('#filterdate1display').val(formatDate(date));
+            filterdate1date = date;
+            $('#filterdate1').val(formatNumDate(date));
+            $('#filterdate1').trigger("change");
+            break; 
+    }
 }          
 
 

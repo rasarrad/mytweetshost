@@ -315,7 +315,7 @@ $( document ).ready(function() {
           var value = null;
           if (filterdate1date != null)
             value = filterdate1date;
-          openCalendar("filterdate1display", "filterdate1", value)
+          openCalendar("filterdate1", value)
       });
 
       $( "#filterdate1" ).change(function() {
