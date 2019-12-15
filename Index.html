@@ -921,7 +921,7 @@ bookmark <span style="position: absolute;top: 18px;left: 74px;">
     </div>
   </div>
 
-  <div id="calendardiv" style="display: block;display: none;" class="newLayout" onclick="closeCalendarPopup(event)">
+  <div id="calendardiv" style="display: block;background: var(--dark-color);" class="newLayout" onclick="closeCalendarPopup(event)" targetobj="filterdate1">
     <div style="height: 357px;overflow: hidden;">        
         <table class="titletable buttonstable" style="width: 351px; background: var(--softdark-color); overflow: hidden;">
             <tbody>
@@ -938,11 +938,11 @@ bookmark <span style="position: absolute;top: 18px;left: 74px;">
               </tr>
             </tbody>
         </table>
-        <table class="sectiontitletable sectionexpandable" style="transition: max-height 0.01s ease 0s;background: transparent;/* max-height: 18px; */">
+        <table class="sectiontitletable sectionexpandable" style="transition: max-height 0.01s ease 0s;background: transparent;/* max-height: 18px; */padding: 0;width: 100%;margin-left: 0;">
           <tbody>
             <tr class="cursorpointer hover" style="padding-bottom: 15px;">
-              <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
-                <div id="myCalendar" class="vanilla-calendar" style="margin-left: 2px;">
+              <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer;position: relative;padding: 0 !important;width: 100%;">
+                <div id="myCalendar" class="vanilla-calendar" style="margin-left: 0px;border-radius: 0;">
                 </div>
               </td>                                                                   
             </tr>   

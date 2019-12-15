@@ -1714,7 +1714,7 @@ body.big #myCalendar {
   margin-left: calc(50% - 183px) !important;
 }
 body.big #calendardiv > div {
-  height: 376px !important;
+  height: 330px !important;
 }
 #calendardiv  > div .titletable tr:first-child .firsttd {
     min-width: 345px !important;
@@ -1735,7 +1735,7 @@ body.big #calendardiv .fa-window-close {
 }
 
 body.big #calendardiv .titletable.buttonstable {
-  max-height: 38px;
+  max-height: 34px;
 }
 
 #calendardiv .sectiontitletable.sectionexpandable {
@@ -1743,7 +1743,7 @@ body.big #calendardiv .titletable.buttonstable {
 }
 
 body.big #calendardiv .sectiontitletable.sectionexpandable {
-  margin-top: 60px;
+  margin-top: 42px;
 }
 
 
@@ -2055,7 +2055,7 @@ body.big #calendardiv .fa-calendar {
 }
 
 .newLayout > div {
-    background: var(--dark-color);
+    background: var(--softdark-color);
     max-height: calc(100% - 60px);
     width: calc(100% - 50px);
     margin: 25px;
