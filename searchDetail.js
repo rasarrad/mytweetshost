@@ -176,17 +176,35 @@ function openCalendar(targetObj, date) {
 }
 
 function filterdate1change() {
-    $( ".currentdate" ).html($( "#filterdate1display" ).val());
+    updatedatedisplay();
 
     $( "#filterdate1display" ).blur();
     closeCalendarPopup();
 }    
 
 function filterdate2change() {
-    $( ".currentdate" ).html($( "#filterdate2display" ).val());
+    updatedatedisplay();
 
     $( "#filterdate2display" ).blur();
     closeCalendarPopup();
+} 
+function updatedatedisplay() {
+    if ($( "#filterdate1display" ).val().trim().length > 0) {
+        if ($( "#filterdate2display" ).val().trim().length > 0) {
+            if ($( "#filterdate2display" ).val().trim() == $( "#filterdate1display" ).val().trim()) {
+                $( ".currentdate" ).html("On " + $( "#filterdate1display" ).val());
+            }
+            else {
+                $( ".currentdate" ).html("Between " + $( "#filterdate1display" ).val() + " and " + $( "#filterdate2display" ).val());
+            }
+        }
+        else {
+            $( ".currentdate" ).html("After " + $( "#filterdate1display" ).val());
+        }
+    }
+    else if ($( "#filterdate2display" ).val().trim().length > 0) {
+        $( ".currentdate" ).html("Before " + $( "#filterdate2display" ).val());
+    }
 } 
 
 function calendarChanged(date) {
