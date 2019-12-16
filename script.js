@@ -514,6 +514,7 @@ function changetheme(type, desc) {
             softdark_color = "#bbbbbb";
             soft_color = "#ffffff";
             soft_transp_color = "rgba(162, 162, 162, 0.42)"; 
+            soft_transp_color = "#ff00003b"; //xyz
             document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#bbbbbb');
             $('#mainsettings .currenttheme').html('Shades Of Gray'); 
             break;
@@ -657,7 +658,7 @@ var clickmenu = function(val, text) {
     if ($('#mainmenu').attr("fromsearch") == "yes") {
         closeMenuPopup();
         $('#searchpopup').css("background", document.documentElement.style.getPropertyValue('--color-font-general'));
-        
+        $('#titlesearch').html("(" + $('#selectedcattext').val() + ")");
         $('#mainmenu').attr("fromsearch", "");
     }
     else {
