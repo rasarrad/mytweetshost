@@ -198,14 +198,14 @@ function calendarChanged(date) {
             filterdate1date = date;
             $('#filterdate1').val(formatNumDate(date));
             $('#filterdate1').trigger("change");
-            $('#searchpopup').css("background", "#0000009c");
+            $('#searchpopup').css("background", document.documentElement.style.getPropertyValue('--color-font-general'));
             break; 
         case "filterdate2":
             $('#filterdate2display').val(formatDate(date));
             filterdate2date = date;
             $('#filterdate2').val(formatNumDate(date));
             $('#filterdate2').trigger("change");
-            $('#searchpopup').css("background", "#0000009c");
+            $('#searchpopup').css("background", document.documentElement.style.getPropertyValue('--color-font-general'));
             break; 
     }
 }          
