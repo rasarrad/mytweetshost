@@ -110,7 +110,7 @@ function filtertagOnChange(obj) {
 
 function filterinfoOnChange(obj) {
     var currentinfosearchdisplay = $('.currentinfosearch'); 
-    alert("1 - " + $(obj).val().trim())    
+    console.log("1 - " + $(obj).val().trim())    
     if ($(obj).val().trim() == "") {
         currentinfosearchdisplay.html("all");
         currentinfosearchdisplay.addClass("emptyvalue");
@@ -269,7 +269,7 @@ function clearcriterion(e, obj, affectedobj, affectedtable) {
         $("#" + affectedtable).addClass("emptyvalue");
         $("#" + affectedtable).removeClass("withvalue");
 
-        alert("2 - " + affectedobj)   
+        console.log("2 - " + affectedobj)   
         $('#' + affectedobj).val("");
         $('#' + affectedobj).trigger("change");
     }
