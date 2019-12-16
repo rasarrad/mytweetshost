@@ -110,7 +110,7 @@ function filtertagOnChange(obj) {
 
 function filterinfoOnChange(obj) {
     var currentinfosearchdisplay = $('.currentinfosearch'); 
-        
+    alert("1 - " + $(obj).val().trim())    
     if ($(obj).val().trim() == "") {
         currentinfosearchdisplay.html("all");
         currentinfosearchdisplay.addClass("emptyvalue");
@@ -192,24 +192,24 @@ function updatedatedisplay() {
     if ($( "#filterdate1display" ).val().trim().length > 0) {
         if ($( "#filterdate2display" ).val().trim().length > 0) {
             if ($( "#filterdate2display" ).val().trim() == $( "#filterdate1display" ).val().trim()) {
-                $( ".currentdate" ).html("On " + $( "#filterdate1display" ).val());
+                $( ".currentdate" ).html("On " + $( "#filterdate1display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
             }
             else {
-                $( ".currentdate" ).html("Between " + $( "#filterdate1display" ).val() + " and " + $( "#filterdate2display" ).val());
+                $( ".currentdate" ).html("Between " + $( "#filterdate1display" ).val() + " and " + $( "#filterdate2display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
             }
         }
         else {
-            $( ".currentdate" ).html("After " + $( "#filterdate1display" ).val());
+            $( ".currentdate" ).html("After " + $( "#filterdate1display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
         }
     }
     else if ($( "#filterdate2display" ).val().trim().length > 0) {
-        $( ".currentdate" ).html("Before " + $( "#filterdate2display" ).val());
+        $( ".currentdate" ).html("Before " + $( "#filterdate2display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
     }
     else {
         $( ".currentdate" ).html("all");
     }
 
-    + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>"
+   
 } 
 
 function calendarChanged(date) {
@@ -239,6 +239,7 @@ function calendarChanged(date) {
 
 
 function clearcriterion(e, obj, affectedobj, affectedtable) {
+    
     if (affectedobj == "selectedtype") {
         $('#' + affectedobj).val("all");
         $( ".iconul li" ).each( function( index, element ){
@@ -260,7 +261,7 @@ function clearcriterion(e, obj, affectedobj, affectedtable) {
         $('.' + affectedobj).addClass("emptyvalue");
         $("#" + affectedtable).addClass("emptyvalue");
         $("#" + affectedtable).removeClass("withvalue");
-        
+
         $('#filterdate1').trigger("change");
     }
     else {
@@ -268,6 +269,7 @@ function clearcriterion(e, obj, affectedobj, affectedtable) {
         $("#" + affectedtable).addClass("emptyvalue");
         $("#" + affectedtable).removeClass("withvalue");
 
+        alert("2 - " + affectedobj)   
         $('#' + affectedobj).val("");
         $('#' + affectedobj).trigger("change");
     }
