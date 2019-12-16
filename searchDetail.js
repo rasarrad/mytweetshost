@@ -189,6 +189,10 @@ function filterdate2change() {
     closeCalendarPopup();
 } 
 function updatedatedisplay() {
+    $( ".currentdate" ).removeClass("emptyvalue");
+    $("#searchdate").removeClass("emptyvalue");
+    $("#searchdate").addClass("withvalue");
+
     if ($( "#filterdate1display" ).val().trim().length > 0) {
         if ($( "#filterdate2display" ).val().trim().length > 0) {
             if ($( "#filterdate2display" ).val().trim() == $( "#filterdate1display" ).val().trim()) {
@@ -206,6 +210,10 @@ function updatedatedisplay() {
         $( ".currentdate" ).html("Before " + $( "#filterdate2display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
     }
     else {
+        $( ".currentdate" ).addClass("emptyvalue");
+        $("#searchdate").addClass("emptyvalue");
+        $("#searchdate").removeClass("withvalue");
+
         $( ".currentdate" ).html("all");
     }
 
@@ -269,7 +277,6 @@ function clearcriterion(e, obj, affectedobj, affectedtable) {
         $("#" + affectedtable).addClass("emptyvalue");
         $("#" + affectedtable).removeClass("withvalue");
 
-        console.log("2 - " + affectedobj)   
         $('#' + affectedobj).val("");
         $('#' + affectedobj).trigger("change");
     }
