@@ -317,7 +317,7 @@ $( document ).ready(function() {
       });
 
       $( "#filterdate1display" ).click(function() {
-          var value = null;
+          var value = new Date();
           if (filterdate1date != null)
             value = filterdate1date;
           $('#searchpopup').css("background", "transparent");
@@ -329,7 +329,7 @@ $( document ).ready(function() {
       });
 
       $( "#filterdate2display" ).click(function() {
-        var value = null;
+        var value = new Date();
         if (filterdate2date != null)
             value = filterdate2date;
 
