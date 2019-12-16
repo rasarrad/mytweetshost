@@ -188,6 +188,21 @@ function filterdate2change() {
     $( "#filterdate2display" ).blur();
     closeCalendarPopup();
 } 
+
+function cleandate1() {
+    $('#filterdate1').val("");
+    $('#filterdate1display').val("");
+    filterdate1date = date;
+
+    updatedatedisplay();
+} 
+function cleandate2() {
+    $('#filterdate2').val("");
+    $('#filterdate2display').val("");
+    filterdate2date = date;
+    
+    updatedatedisplay();
+} 
 function updatedatedisplay() {
     $( ".currentdate" ).removeClass("emptyvalue");
     $("#searchdate").removeClass("emptyvalue");
@@ -201,15 +216,23 @@ function updatedatedisplay() {
             else {
                 $( ".currentdate" ).html("Between " + $( "#filterdate1display" ).val() + " and " + $( "#filterdate2display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
             }
+            $( "#filterdate1clean" ).show();
+            $( "#filterdate2clean" ).show();
         }
         else {
+            $( "#filterdate1clean" ).show();
+            $( "#filterdate2clean" ).hide();
             $( ".currentdate" ).html("After " + $( "#filterdate1display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
         }
     }
     else if ($( "#filterdate2display" ).val().trim().length > 0) {
+        $( "#filterdate1clean" ).hide();
+        $( "#filterdate2clean" ).show();
         $( ".currentdate" ).html("Before " + $( "#filterdate2display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
     }
     else {
+        $( "#filterdate1clean" ).hide();
+        $( "#filterdate2clean" ).hide();
         $( ".currentdate" ).addClass("emptyvalue");
         $("#searchdate").addClass("emptyvalue");
         $("#searchdate").removeClass("withvalue");

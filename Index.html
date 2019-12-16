@@ -569,9 +569,9 @@ bookmark <span style="position: absolute;top: 18px;left: 74px;">
     <tr>  
       <td colspan="3" style="width: 80%;width: calc(100% - 220px);">
         <span>From </span><input type="text" id="filterdate1display" style="margin-left: 9px;margin-top: 7px;margin-bottom: 3px;display: inline;margin-right: 4px;">
-        <i class="fa fa-times-circle" style="top: 1px;" id="filterdate1clean"></i>
+        <i class="fa fa-times-circle" onclick="cleandate1(event,this)" style="top: 1px;display: none;" id="filterdate1clean"></i>
         <span>To </span><input type="text" id="filterdate2display" style="margin-left: 9px;/* width: calc(50% - 90px); */margin-top: 1px;margin-bottom: 3px;display: inline;">
-        <i class="fa fa-times-circle" style="top: 1px;" id="filterdate2clean"></i>
+        <i class="fa fa-times-circle" onclick="cleandate2(event,this)" style="top: 1px;display: none;" id="filterdate2clean"></i>
         <input type="text" id="filterdate1" style="display: none;">
         <input type="text" id="filterdate2" style="display: none;">
       </td>                                        
