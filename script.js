@@ -312,6 +312,10 @@ $( document ).ready(function() {
       $("#filtertext").keyup(function() {
         filterinfoOnChange(this);
       });
+      $("#filtertext").change(function() {
+        filterinfoOnChange(this);
+      });
+
       $( "#filterdate1display" ).click(function() {
           var value = null;
           if (filterdate1date != null)
