@@ -287,8 +287,8 @@ function clearcriterion(e, obj, affectedobj, affectedtable) {
         $('#filterdate2').val("");
         $('#filterdate1display').val("");
         $('#filterdate2display').val("");
-        filterdate1date = date;
-        filterdate2date = date;
+        filterdate1date = new Date();
+        filterdate2date = new Date();
         $('.' + affectedobj).addClass("emptyvalue");
         $("#" + affectedtable).addClass("emptyvalue");
         $("#" + affectedtable).removeClass("withvalue");
