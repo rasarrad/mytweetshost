@@ -573,6 +573,7 @@ function openmenu(obj, flag) {
     else {
         if ($('#mainmenu').css("display") == "none") {
             if (flag) {
+                $('#searchpopup').css("background", "transparent");
                 $('#mainmenu').attr("fromsearch", "yes");
             }
             else {

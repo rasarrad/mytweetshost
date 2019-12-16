@@ -2048,7 +2048,7 @@ body.big #calendardiv .fa-calendar {
     /* bottom: 0; */
     right: 0;
     align-items: center;
-    background: #0000009c;
+    background: var(--soft-transp-color);
     touch-action: none;
     overscroll-behavior: none;
     margin-top: 49px;
