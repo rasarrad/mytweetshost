@@ -136,7 +136,17 @@ function closeCalendarPopup(e) {
     if (e)
         e.stopPropagation();
     
-        $('body, html').css('overflow-y', 'auto');
+    $('body, html').css('overflow-y', 'auto');
+
+    switch($('#calendardiv').attr("targetObj")) {
+        case "filterdate1":
+            $('#searchpopup').css("background", "#0000009c");
+            break; 
+        case "filterdate2":
+            $('#searchpopup').css("background", "#0000009c");
+            break; 
+    }
+
     $('#calendardiv').fadeOut(600);
 }
 
@@ -161,6 +171,7 @@ function openCalendar(targetObj, date) {
     });
 
     $('#calendardiv').attr("targetObj", targetObj);
+
     $('#calendardiv').fadeIn(600);
 }
 
@@ -187,12 +198,14 @@ function calendarChanged(date) {
             filterdate1date = date;
             $('#filterdate1').val(formatNumDate(date));
             $('#filterdate1').trigger("change");
+            $('#searchpopup').css("background", "#0000009c");
             break; 
         case "filterdate2":
             $('#filterdate2display').val(formatDate(date));
             filterdate2date = date;
             $('#filterdate2').val(formatNumDate(date));
             $('#filterdate2').trigger("change");
+            $('#searchpopup').css("background", "#0000009c");
             break; 
     }
 }          

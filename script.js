@@ -316,6 +316,7 @@ $( document ).ready(function() {
           var value = null;
           if (filterdate1date != null)
             value = filterdate1date;
+          $('#searchpopup').css("background", "transparent");
           openCalendar("filterdate1", value)
       });
 
@@ -326,7 +327,9 @@ $( document ).ready(function() {
       $( "#filterdate2display" ).click(function() {
         var value = null;
         if (filterdate2date != null)
-          value = filterdate2date;
+            value = filterdate2date;
+
+        $('#searchpopup').css("background", "transparent");
         openCalendar("filterdate2", value)
     });
 
