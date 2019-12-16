@@ -270,38 +270,52 @@ function calendarChanged(date) {
 
 
 function clearcriterion(e, obj, affectedobj, affectedtable) {
+    switch(affectedobj) {
+        case "selectedtype":
+            $('#' + affectedobj).val("all");
+            $( ".iconul li" ).each( function( index, element ){
+                $(this).removeClass("selected");
+            });
+            $('.currenttype').html("all");
+            $('#alltypesoption').addClass("selected");
+            $('.currenttype').addClass("emptyvalue");
+            $("#searchtypes").addClass("emptyvalue");
+            $("#searchtypes").removeClass("withvalue");
+            break;
+
+        case "selectedclassif":
+            $('#classifsearchul').find(".litags").each( function( index, element ) {
+                $(element).removeClass("selectedtag");
+            });
     
-    if (affectedobj == "selectedtype") {
-        $('#' + affectedobj).val("all");
-        $( ".iconul li" ).each( function( index, element ){
-            $(this).removeClass("selected");
-        });
-        $('.currenttype').html("all");
-        $('#alltypesoption').addClass("selected");
-        $('.currenttype').addClass("emptyvalue");
-        $("#searchtypes").addClass("emptyvalue");
-        $("#searchtypes").removeClass("withvalue");
-    }
-    else if (affectedobj == "filterdate1") {
-        $('#filterdate1').val("");
-        $('#filterdate2').val("");
-        $('#filterdate1display').val("");
-        $('#filterdate2display').val("");
-        filterdate1date = new Date();
-        filterdate2date = new Date();
-        $('.' + affectedobj).addClass("emptyvalue");
-        $("#" + affectedtable).addClass("emptyvalue");
-        $("#" + affectedtable).removeClass("withvalue");
+            $(".currentsearchclassif").html("all");
+            $(".currentsearchclassif").addClass("emptyvalue");
+            $("#searchclassif").addClass("emptyvalue");
+            $("#searchclassif").removeClass("withvalue");
+            break;
 
-        $('#filterdate1').trigger("change");
-    }
-    else {
-        $('.' + affectedobj).addClass("emptyvalue");
-        $("#" + affectedtable).addClass("emptyvalue");
-        $("#" + affectedtable).removeClass("withvalue");
+        case "filterdate1":
+            $('#filterdate1').val("");
+            $('#filterdate2').val("");
+            $('#filterdate1display').val("");
+            $('#filterdate2display').val("");
+            filterdate1date = new Date();
+            filterdate2date = new Date();
+            $('.' + affectedobj).addClass("emptyvalue");
+            $("#" + affectedtable).addClass("emptyvalue");
+            $("#" + affectedtable).removeClass("withvalue");
+    
+            $('#filterdate1').trigger("change");
+            break;
 
-        $('#' + affectedobj).val("");
-        $('#' + affectedobj).trigger("change");
+        default:
+            $('.' + affectedobj).addClass("emptyvalue");
+            $("#" + affectedtable).addClass("emptyvalue");
+            $("#" + affectedtable).removeClass("withvalue");
+    
+            $('#' + affectedobj).val("");
+            $('#' + affectedobj).trigger("change");
+            break; 
     }
 
     changecriteria(null,null, affectedtable);
@@ -358,6 +372,40 @@ var openSearchPopup = function(jsonobj)
 
 } 
 
+function clickSearchLiClassif(e, obj) {
+    e.stopPropagation();
+
+    $('#classifsearchul').find(".litags").each( function( index, element ) {
+        $(element).removeClass("selectedtag");
+    });
+
+    $('#selectedclassif').val($(obj).html().trim());
+    $(obj).addClass("selectedtag");
+
+    var desc = "Greater than ";
+
+    if ($("#classifselect").val() == "=") {
+        desc = "Equal to ";
+    }
+    else if ($("#classifselect").val() == "<") {
+        desc = "Less than ";
+    }
+
+    $(".currentsearchclassif").html(desc + $(obj).html().trim() + "<i onclick='clearcriterion(event,this, \"selectedclassif\", \"searchclassif\")' class='fa fa-times-circle'></i>");
+    $(".currentsearchclassif").removeClass("emptyvalue");
+    $("#searchclassif").removeClass("emptyvalue");
+    $("#searchclassif").addClass("withvalue");
+
+    if (code == "all") {
+
+    }
+    else {
+
+    }
+    
+
+
+}
 
 var getInformation = function(ismoretweets, wasfiltered) {
 
