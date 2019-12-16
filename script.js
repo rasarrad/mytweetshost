@@ -354,6 +354,23 @@ $( document ).ready(function() {
         }
       });
 
+      $( "#classifselect" ).change(function() {
+        if ($("#selectedclassif").val() != "all") {
+            var desc = "Greater than ";
+
+            if ($("#classifselect").val() == "=") {
+                desc = "Equal to ";
+            }
+            else if ($("#classifselect").val() == "<") {
+                desc = "Less than ";
+            }
+        
+            $(".currentsearchclassif").html(desc + $("#selectedclassif").val() + "<i onclick='clearcriterion(event,this, \"selectedclassif\", \"searchclassif\")' class='fa fa-times-circle'></i>");
+            
+        }
+      });
+
+
       $( "#tagsearchselect" ).change(function() {
         // Check input( $( this ).val() ) for validity here
         if ($( this ).val() != "notag") {

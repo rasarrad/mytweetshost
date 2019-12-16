@@ -395,16 +395,6 @@ function clickSearchLiClassif(e, obj) {
     $(".currentsearchclassif").removeClass("emptyvalue");
     $("#searchclassif").removeClass("emptyvalue");
     $("#searchclassif").addClass("withvalue");
-
-    if (code == "all") {
-
-    }
-    else {
-
-    }
-    
-
-
 }
 
 var getInformation = function(ismoretweets, wasfiltered) {
