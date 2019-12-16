@@ -509,11 +509,11 @@ function changetheme(type, desc) {
 
         case "gray":
             high_color = "#313131";
-            text_color = "#f79393";
+            text_color = "#3a3a3a";
             dark_color = "#909090";
             softdark_color = "#bbbbbb";
             soft_color = "#ffffff";
-            soft_transp_color = "#ffffff63"; 
+            soft_transp_color = "rgba(162, 162, 162, 0.42)"; 
             document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#bbbbbb');
             $('#mainsettings .currenttheme').html('Shades Of Gray'); 
             break;
@@ -557,7 +557,7 @@ function getParameterByName(name) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function openmenu(obj) {
+function openmenu(obj, flag) {
     if (obj)
         fixfocus(obj);
 
@@ -571,7 +571,12 @@ function openmenu(obj) {
     }
     else {
         if ($('#mainmenu').css("display") == "none") {
-            closeallnewlayout();
+            if (flag) {
+                $('#mainmenu').attr("fromsearch", "yes");
+            }
+            else {
+                closeallnewlayout();
+            }
 
             $('body, html').css('overflow-y', 'hidden');
     
@@ -649,15 +654,22 @@ var clickmenu = function(val, text) {
     $('#selectedcat').val(val);
     $('#selectedcattext').val(text);
 
-    if ($(window).width() > 1200) {
-        openmenu();
+    if ($('#mainmenu').attr("fromsearch") == "yes") {
+        closeMenuPopup();
+        $('#searchpopup').css("background", document.documentElement.style.getPropertyValue('--color-font-general'));
+        
+        $('#mainmenu').attr("fromsearch", "");
     }
     else {
-        closeMenuPopup();
+        if ($(window).width() > 1200) {
+            openmenu();
+        }
+        else {
+            closeMenuPopup();
+        }
+        
+        getInformation(false, 2);
     }
-    
-    getInformation(false, 2);
-
 } 
   
 
