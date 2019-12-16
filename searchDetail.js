@@ -192,14 +192,14 @@ function filterdate2change() {
 function cleandate1() {
     $('#filterdate1').val("");
     $('#filterdate1display').val("");
-    filterdate1date = date;
+    filterdate1date = new Date();
 
     updatedatedisplay();
 } 
 function cleandate2() {
     $('#filterdate2').val("");
     $('#filterdate2display').val("");
-    filterdate2date = date;
+    filterdate2date = new Date();
     
     updatedatedisplay();
 } 
