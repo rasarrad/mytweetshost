@@ -66,7 +66,7 @@
 <span class="label tag top">Tag</span>
 <input type="text" class="top" style="width: 80px; margin-right: 10px;" id="filtertag2" value="dailyshow gun usa moto"></input>
 <span class="label author top">Author</span>
-<input type="text" class="top" style="width: 80px;margin-right: 10px;" id="filterauthor"></input>
+<input type="text" class="top" style="width: 80px;margin-right: 10px;" id="filterauthor2"></input>
 <span class="label date top">Date</span>
 <input type="text" class="top" id="filterdate12" style="width: 40px;"></input>
 <input type="text" class="top" id="filterdate22" style="width: 40px;margin-right: 10px;"></input>
@@ -501,7 +501,7 @@ bookmark <span style="position: absolute;top: 18px;left: 74px;">
       </tr>    
     </tbody>
   </table>  
-  <table id="searchinfo" cmaxheight="60px" class="sectiontitletable sectionexpandable" style="transition: max-height 1s ease 0s; max-height: fit-content;">
+  <table id="searchinfo" cmaxheight="60px" class="sectiontitletable sectionexpandable emptyvalue" style="transition: max-height 1s ease 0s; max-height: fit-content;">
       <tbody>
         <tr class="cursorpointer" onclick="changecriteria(event,this)" style="padding-bottom: 15px;">
           <td class="sectionicontd firsticon" style="width: 48px;display: inline-block;white-space: nowrap;">
@@ -522,7 +522,7 @@ bookmark <span style="position: absolute;top: 18px;left: 74px;">
         
   </tbody>
 </table>  
-  <table id="searchtypes" cmaxheight="80px" cheight="4" class="sectiontitletable sectionexpandable" 
+  <table id="searchtypes" cmaxheight="80px" cheight="4" class="sectiontitletable sectionexpandable emptyvalue" 
       style="position: relative;overflow: hidden;">
     <tbody>
       <tr class="cursorpointer" onclick="changecriteria(event,this)" style="padding-bottom: 15px;">
@@ -553,7 +553,7 @@ bookmark <span style="position: absolute;top: 18px;left: 74px;">
     </tr> 
 </tbody>
 </table>  
-<table id="searchdate" cheight="3" class="sectiontitletable sectionexpandable" style="transition: max-height 1s ease 0s; max-height: fit-content;">
+<table id="searchdate" cheight="3" class="sectiontitletable sectionexpandable emptyvalue" style="transition: max-height 1s ease 0s; max-height: fit-content;">
     <tbody>
       <tr class="cursorpointer" onclick="changecriteria(event,this)" style="padding-bottom: 15px;">
         <td class="sectionicontd firsticon" style="width: 48px;display: inline-block;white-space: nowrap;">
@@ -578,7 +578,7 @@ bookmark <span style="position: absolute;top: 18px;left: 74px;">
     </tr>   
 </tbody>
 </table>
-<table id="searchclassif" class="sectiontitletable sectionexpandable" style="position: relative; overflow: hidden; transition: max-height 1s ease 0s; max-height: fit-content;">
+<table id="searchclassif" class="sectiontitletable sectionexpandable emptyvalue" style="position: relative; overflow: hidden; transition: max-height 1s ease 0s; max-height: fit-content;">
   <tbody>
     <tr class="cursorpointer" onclick="changecriteria(event,this)" style="padding-bottom: 15px;">
       <td class="sectionicontd firsticon" style="width: 48px;display: inline-block;white-space: nowrap;">
@@ -625,14 +625,14 @@ bookmark <span style="position: absolute;top: 18px;left: 74px;">
   </tr>   
 </tbody>
 </table>
-<table id="searchauthor" class="sectiontitletable sectionexpandable">
+<table id="searchauthor" class="sectiontitletable sectionexpandable emptyvalue">
     <tbody>
       <tr class="cursorpointer" onclick="changecriteria(event,this)" style="padding-bottom: 15px;">
         <td class="sectionicontd firsticon" style="width: 48px;display: inline-block;white-space: nowrap;">
             <i class="fa fa-user-circle" style="top: 1px;"></i><span style="padding-left: 4px;" class="sectiontitle">Author</span>
         </td>    
         <td class="sectionicontd el ellipsis">
-            <span class="currenttags emptyvalue titletext" style="text-align: left;">all</span>
+            <span class="currentauthorsearch emptyvalue titletext" style="text-align: left;">all</span>
         </td>            
         <td class="sectionedittd">
             <i class="fa fa-angle-up"></i>
@@ -640,7 +640,7 @@ bookmark <span style="position: absolute;top: 18px;left: 74px;">
     </tr> 
     <tr>  
         <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;">
-          <input type="text" id="tagsinput" style="margin-left: 1px;width: calc(100% - 69px);margin-top: 3px;margin-bottom: 3px;float: left;" ctags="">
+          <input type="text" id="filterauthor" style="margin-left: 1px;width: calc(100% - 69px);margin-top: 3px;margin-bottom: 3px;float: left;" ctags="">
         </td>                                          
     </tr>  
       

@@ -125,6 +125,23 @@ function filterinfoOnChange(obj) {
     }
 }
 
+function filterauthorOnChange(obj) {
+    var currentinfosearchdisplay = $('.currentauthorsearch'); 
+
+    if ($(obj).val().trim() == "") {
+        currentinfosearchdisplay.html("all");
+        currentinfosearchdisplay.addClass("emptyvalue");
+        $("#searchinfo").addClass("emptyvalue");
+        $("#searchinfo").removeClass("withvalue");
+    }
+    else {
+        currentinfosearchdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filterauthor\", \"searchauthor\")' class='fa fa-times-circle'></i>");
+        currentinfosearchdisplay.removeClass("emptyvalue");
+        $("#searchinfo").removeClass("emptyvalue");
+        $("#searchinfo").addClass("withvalue");
+    }
+}
+
 
 function formatDate(date) {
     return date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();

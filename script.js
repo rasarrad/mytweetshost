@@ -169,7 +169,7 @@ $( document ).ready(function() {
 
     ///////////////////////////////////////
 
-    $('#filtertext, #filterid, #filterauthor, #filtertag').keypress(function(event){
+    $('#filtertext, #filterauthor, #filtertag').keypress(function(event){
       
         var keycode = (event.keyCode ? event.keyCode : event.which);
       if(keycode == '13' && $(this).val().length > 0){
@@ -315,6 +315,15 @@ $( document ).ready(function() {
       $("#filtertext").change(function() {
         filterinfoOnChange(this);
       });
+
+
+      $("#filterauthor").keyup(function() {
+        filterauthorOnChange(this);
+      });
+      $("#filterauthor").change(function() {
+        filterauthorOnChange(this);
+      });
+
 
       $( "#filterdate1display" ).click(function() {
           var value = new Date();
