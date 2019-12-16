@@ -140,10 +140,10 @@ function closeCalendarPopup(e) {
 
     switch($('#calendardiv').attr("targetObj")) {
         case "filterdate1":
-            $('#searchpopup').css("background", "#0000009c");
+            $('#searchpopup').css("background", document.documentElement.style.getPropertyValue('--soft-transp-color'));
             break; 
         case "filterdate2":
-            $('#searchpopup').css("background", "#0000009c");
+            $('#searchpopup').css("background", document.documentElement.style.getPropertyValue('--soft-transp-color'));
             break; 
     }
 

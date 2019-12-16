@@ -29,7 +29,7 @@ $( document ).ready(function() {
 
     console.log('-------------- app - BEGIN --------------');
     $( "#mask" ).fadeOut( 1100, function() {
-        $( "#mask" ).css("background", "rgba(0, 0, 0, 0.72)")
+        $( "#mask" ).css("background", document.documentElement.style.getPropertyValue('--soft-transp-color'));
     });
     nextid = parseInt(readCookie("maxid"));
 
@@ -658,7 +658,7 @@ var clickmenu = function(val, text) {
 
     if ($('#mainmenu').attr("fromsearch") == "yes") {
         closeMenuPopup();
-        $('#searchpopup').css("background", document.documentElement.style.getPropertyValue('--color-font-general'));
+        $('#searchpopup').css("background", document.documentElement.style.getPropertyValue('--soft-transp-color'));
         $('#titlesearch').html("(" + $('#selectedcattext').val() + ")");
         $('#mainmenu').attr("fromsearch", "");
     }
