@@ -205,6 +205,11 @@ function updatedatedisplay() {
     else if ($( "#filterdate2display" ).val().trim().length > 0) {
         $( ".currentdate" ).html("Before " + $( "#filterdate2display" ).val());
     }
+    else {
+        $( ".currentdate" ).html("all");
+    }
+
+    + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>"
 } 
 
 function calendarChanged(date) {
@@ -234,11 +239,7 @@ function calendarChanged(date) {
 
 
 function clearcriterion(e, obj, affectedobj, affectedtable) {
-    if (affectedobj != "selectedtype") {
-        $('#' + affectedobj).val("");
-        $('#' + affectedobj).trigger("change");
-    }
-    else {
+    if (affectedobj == "selectedtype") {
         $('#' + affectedobj).val("all");
         $( ".iconul li" ).each( function( index, element ){
             $(this).removeClass("selected");
@@ -248,6 +249,27 @@ function clearcriterion(e, obj, affectedobj, affectedtable) {
         $('.currenttype').addClass("emptyvalue");
         $("#searchtypes").addClass("emptyvalue");
         $("#searchtypes").removeClass("withvalue");
+    }
+    else if (affectedobj == "filterdate1") {
+        $('#filterdate1').val("");
+        $('#filterdate2').val("");
+        $('#filterdate1display').val("");
+        $('#filterdate2display').val("");
+        filterdate1date = date;
+        filterdate2date = date;
+        $('.' + affectedobj).addClass("emptyvalue");
+        $("#" + affectedtable).addClass("emptyvalue");
+        $("#" + affectedtable).removeClass("withvalue");
+        
+        $('#filterdate1').trigger("change");
+    }
+    else {
+        $('.' + affectedobj).addClass("emptyvalue");
+        $("#" + affectedtable).addClass("emptyvalue");
+        $("#" + affectedtable).removeClass("withvalue");
+
+        $('#' + affectedobj).val("");
+        $('#' + affectedobj).trigger("change");
     }
 
     changecriteria(null,null, affectedtable);
