@@ -18,7 +18,7 @@ function expandsection(obj, table) {
     else {
         $(obj).removeClass("fa-chevron-up");
         $(obj).addClass("fa-chevron-down");  
-        $(obj).css("top", "135px");
+        $(obj).css("top", "132px");
         $(obj).css("bottom", "auto");
         $("#" + table).css("max-height", $("#" + table).attr("cmaxheight"));
     } 
@@ -224,14 +224,15 @@ function updatedatedisplay() {
     $( ".currentdate" ).removeClass("emptyvalue");
     $("#searchdate").removeClass("emptyvalue");
     $("#searchdate").addClass("withvalue");
-
+    $( ".currentdate" ).css("font-size", "fff");
     if ($( "#filterdate1display" ).val().trim().length > 0) {
         if ($( "#filterdate2display" ).val().trim().length > 0) {
             if ($( "#filterdate2display" ).val().trim() == $( "#filterdate1display" ).val().trim()) {
                 $( ".currentdate" ).html("On " + $( "#filterdate1display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
             }
             else {
-                $( ".currentdate" ).html("Between " + $( "#filterdate1display" ).val() + " and " + $( "#filterdate2display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
+                $( ".currentdate" ).css("font-size", "13px");
+                $( ".currentdate" ).html("Between " + $( "#filterdate1display" ).val() + " & " + $( "#filterdate2display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
             }
             $( "#filterdate1clean" ).show();
             $( "#filterdate2clean" ).show();

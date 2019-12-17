@@ -81,13 +81,13 @@ body.big #searchpopup .fa-calendar {
 
 }
 body.big .newLayout#searchpopup #searchtypes.sectiontitletable .firsticon {
-  width: 91px !important;
+  width: 88px !important;
 }
 .newLayout#searchpopup #searchtypes.searchclassif .firsticon {
 
 }
 body.big .newLayout#searchpopup #searchclassif.sectiontitletable .firsticon {
-  width: 129px !important;
+  width: 124px !important;
 }
 
 .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
@@ -101,14 +101,14 @@ body.big .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
 
 }
 body.big .newLayout#searchpopup #searchauthor.sectiontitletable .firsticon {
-  width: 81px !important;
+  width: 77px !important;
 }
 
 .newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {
 
 }
 body.big .newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {
-  width: 52px !important;
+  width: 51px !important;
   padding-top: 4px !important;
 }
 
@@ -117,7 +117,7 @@ body.big .newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {
 
 }
 body.big .newLayout#searchpopup #searchdate.sectiontitletable .firsticon {
-  width: 57px !important;
+  width: 54px !important;
   padding-top: 4px !important;
 }
 
@@ -127,7 +127,7 @@ body.big .newLayout#searchpopup #searchdate.sectiontitletable .firsticon {
 body.big #searchdate tr:nth-of-type(2) span {
   font-size: 14px;
   position: relative;
-  top: -2px;
+  top: -1px;
   left: -1px;
 }
 
@@ -3228,7 +3228,7 @@ body.big .iconul li div {
     font-size: 15px;
     font-weight: bold;
     position: absolute;
-    margin-top: 3px;
+    margin-top: 4px;
     padding-left: 2px;
 }
 
@@ -3270,9 +3270,10 @@ color: var(--dark-color);
 }
 
 body.big #filterdate1display {
-  width: calc(50% - 99px);
+  width: calc(50% - 89px);
   margin-left: 1px !important;
   margin-right: 11px !important;
+  padding-left: 1px;
 }
 
 
@@ -3282,8 +3283,9 @@ body.big #filterdate1display {
 }
 
 body.big #filterdate2display {
-  width: calc(50% - 99px);
+  width: calc(50% - 88px);
   margin-left: 1px !important;
+  padding-left: 1px;
 }
 
 #filterdate1clean {
@@ -3302,7 +3304,7 @@ body.big #filterdate1clean {
 
 body.big #filterdate2clean {
   font-size: 16px;
-  left: 4px !important;
+  left: 0px !important;
   top: 0px !important;
 }
 #titlesearch {
@@ -3325,10 +3327,18 @@ body.big #searchpopup .titletable tr:first-child {
   height: 50px;
 }
 
+body.big #searchpopup td span.titletext {
+    line-height: 17px;
+}
 
+body.big #searchpopup #searchdate td.ellipsis .titletext {
+    top: 5px !important;
+}
 
-
-
+#classifsearchul .litags {
+  min-width: 16px;
+  margin-right: 4px;
+}
 
 
 

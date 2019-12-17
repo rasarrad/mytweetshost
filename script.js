@@ -326,10 +326,12 @@ $( document ).ready(function() {
 
 
       $( "#filterdate1display" ).click(function() {
-          var value = new Date();
+        $( "#filterdate1display" ).blur();  
+        var value = new Date();
           if (filterdate1date != null)
             value = filterdate1date;
           $('#searchpopup').css("background", "transparent");
+          
           openCalendar("filterdate1", value)
       });
 
@@ -338,6 +340,8 @@ $( document ).ready(function() {
       });
 
       $( "#filterdate2display" ).click(function() {
+        $( "#filterdate2display" ).blur();
+
         var value = new Date();
         if (filterdate2date != null)
             value = filterdate2date;
