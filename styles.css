@@ -1986,7 +1986,7 @@ body.big #calendardiv .fa-calendar {
       }
       
       body.big #searchtags {
-        margin-top: 85px !important;
+        margin-top: 96px !important;
       }
 
       body.big .newLayout.new #editTags {
@@ -3316,3 +3316,22 @@ body.big #filterdate2clean {
 body.big #titlesearch {
   font-size: 17px;
 }
+
+#searchpopup .titletable tr:first-child {
+  height: 50px;
+}
+
+body.big #searchpopup .titletable tr:first-child {
+  height: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
