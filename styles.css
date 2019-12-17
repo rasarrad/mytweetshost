@@ -1007,6 +1007,7 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
     height: 62px;
     background-image: linear-gradient(to bottom, var(--softdark-color), var(--soft-color));
     /* background: transparent; */
+    /* background-image: linear-gradient(to bottom, red, var(--soft-color)); */
   } 
 body.big .topoback {
     height: 76px;
@@ -1397,8 +1398,26 @@ body.big .menuitemcounter {
     font-size: 16px;
     top: 5px;
     right: -19px;
-}                               
+}       
+
+#calendardiv > div {
+  height: 349px !important;
+  max-width: 361px !important;
+  margin-left: calc(50% - 183px) !important;
+  margin-top: 40px !important;
+}
+body.big #calendardiv > div {
+  margin-top: 40px !important;
+}
+                        
 @media only screen and (max-width: 1000px) {
+    #calendardiv > div {
+      margin-top: 40px !important;
+    }
+    body.big #calendardiv > div {
+      margin-top: 40px !important;
+    }
+
     .fa-folder-open {
       font-size: 74px;
       height: 76px;
@@ -1708,14 +1727,7 @@ body.big #myCalendar {
     font-size: 15px;
 }
 
-#calendardiv > div {
-  height: 349px !important;
-  max-width: 361px !important;
-  margin-left: calc(50% - 183px) !important;
-}
-body.big #calendardiv > div {
-  height: 331px !important;
-}
+
 #calendardiv  > div .titletable tr:first-child .firsttd {
     min-width: 345px !important;
 }
@@ -1731,7 +1743,7 @@ body.big #calendardiv .fa-window-close {
 }
 
 #calendardiv .titletable.buttonstable {
-    max-height: 27px;
+    max-height: 23px;
 }
 
 body.big #calendardiv .titletable.buttonstable {
@@ -1739,7 +1751,7 @@ body.big #calendardiv .titletable.buttonstable {
 }
 
 #calendardiv .sectiontitletable.sectionexpandable {
-  margin-top: 52px;
+  margin-top: 30px;
 }
 
 body.big #calendardiv .sectiontitletable.sectionexpandable {
@@ -1756,6 +1768,14 @@ body.big #calendardiv .fa-calendar {
 }
 
 @media only screen and (max-width: 700px) {
+    #calendardiv > div {
+      margin-top: 164px !important;
+      height: 300px !important;
+    }
+    body.big #calendardiv > div {
+      margin-top: 145px !important;
+      height: 335px !important;
+    }  
     .newLayout#mainsettings > div {
           margin-top: 18px !important;
           max-height: calc(100% - 122px) !important;
@@ -1877,9 +1897,8 @@ body.big #calendardiv .fa-calendar {
         max-height: calc(100% - 137px) !important;
     } 
     body.big #searchpopup.newLayout > div {
-        margin-top: 130px !important;
-        height: 364px !important;
-        max-height: unset !important;
+        margin-top: 27px !important;
+        max-height: 614px !important;
     } 
 
     body.big .newLayout#mainsettings > div {
@@ -1922,7 +1941,7 @@ body.big #calendardiv .fa-calendar {
     }     
   .toptitle {
       top: 12px;
-      font-size: 13px;
+      font-size: 16px;
       /* padding-left: calc(50% - 103px); */
       display: block;
       text-align: center;
@@ -2071,7 +2090,7 @@ body.big #calendardiv .fa-calendar {
     border: 1px solid var(--soft-color);
     margin-top: -24px;
     margin-bottom: 28px;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 12px;
     color: #004a86;
     padding-bottom: 8px;
@@ -2101,8 +2120,8 @@ body.big #calendardiv .fa-calendar {
     z-index: 1;
     background: var(--dark-color);
     /* background: green; */
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
     padding-left: 5px;
     padding-right: 5px;
     /* border-bottom: 1px solid var(--soft-color); */
@@ -3271,6 +3290,8 @@ color: var(--dark-color);
 
 #myCalendar {
   cursor: default !important;
+  border-bottom-left-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
 }
 
 #filterdate1display {
@@ -3353,6 +3374,18 @@ body.big #searchpopup #searchinfo td.el:not(.ellipsis) span.titletext {
     line-height: 13px;
 }
 
+.toptitle > span {
+    position: absolute;
+    top: 16px;
+    left: 26px;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: normal;
+}
 
-
+body.big .toptitle > span {
+    top: 16px;
+    left: 35px;
+    font-size: 15px;
+}
 
