@@ -1872,6 +1872,15 @@ body.big #calendardiv .fa-calendar {
         margin-top: 31px !important;
         max-height: calc(100% - 137px) !important;
     } 
+    #searchpopup.newLayout > div {
+        margin-top: 31px !important;
+        max-height: calc(100% - 137px) !important;
+    } 
+    body.big #searchpopup.newLayout > div {
+        margin-top: 130px !important;
+        height: 364px !important;
+        max-height: unset !important;
+    } 
 
     body.big .newLayout#mainsettings > div {
         margin-top: 29px !important;
@@ -3340,7 +3349,9 @@ body.big #searchpopup #searchdate td.ellipsis .titletext {
   margin-right: 4px;
 }
 
-
+body.big #searchpopup #searchinfo td.el:not(.ellipsis) span.titletext {
+    line-height: 13px;
+}
 
 
 
