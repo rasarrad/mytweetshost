@@ -544,8 +544,7 @@ function changetheme(type, desc) {
             softdark_color = "#bbbbbb";
             soft_color = "#ffffff";
             soft_transp_color = "rgba(162, 162, 162, 0.42)"; 
-            soft_transp_color = "rgba(255, 255, 255, 0.32)"; 
-            soft_transp_color = "#ff00003b"; //xyz
+            soft_transp_color = "rgba(255, 255, 255, 0.32)";  //xyz
             document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#bbbbbb');
             $('#mainsettings .currenttheme').html('Shades Of Gray'); 
             break;
