@@ -46,6 +46,8 @@ function zoom(obj, flag) {
         customizeTweets(null, true, false);
         createCookie("hasZoom", "");
     }
+
+    // create
     var setHeight = "18px";
     if ($('body').hasClass('big'))
         setHeight = "31px";
@@ -59,6 +61,11 @@ function zoom(obj, flag) {
             table.find('td.el').addClass('ellipsis');
         });
     }
+
+    // search
+    updateSearchTablesHeight();
+
+    // settings
     $("#mainsettings table#theme")
     .css('transition', 'max-height .01s')
     .css('max-height', setHeight)

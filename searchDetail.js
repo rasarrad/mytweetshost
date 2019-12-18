@@ -42,7 +42,7 @@ function changecriteria(e, obj, tableparam) {
     var setHeight = "18px";
 
     if ($('body').hasClass('big'))
-        setHeight = "31px";
+        setHeight = "29px";
 
     if (table.css('max-height') == setHeight) {
         if (obj) {
@@ -371,12 +371,18 @@ var openSearchPopup = function(jsonobj)
 {
     $('body, html').css('overflow-y', 'hidden');
     $('#searchpopup').css('display', 'flex');  
-    var setHeight = "18px";
-
+    
     $('#titlesearch').html("(" + $('#selectedcattext').val() + ")");
 
+    updateSearchTablesHeight();
+
+    $('#searchpopup').fadeIn(); 
+} 
+
+function updateSearchTablesHeight() {
+    var setHeight = "18px";
     if ($('body').hasClass('big'))
-        setHeight = "31px";
+        setHeight = "29px";
 
     $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
         var table = $(element);
@@ -385,9 +391,6 @@ var openSearchPopup = function(jsonobj)
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').show();
         table.find('td.el').addClass('ellipsis');
     });
-
-    $('#searchpopup').fadeIn(); 
-
 } 
 
 function clickSearchLiClassif(e, obj) {
