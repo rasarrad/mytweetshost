@@ -606,6 +606,16 @@ function openmenu(obj, flag) {
     }
     else {
         if ($('#mainmenu').css("display") == "none") {
+            var setHeight = "18px";
+            if ($('body').hasClass('big')) {
+                setHeight = "28px";
+            }
+            $("#mainsettings.newLayout table.defaulttablerow").each( function( index, element ) {
+                var table = $(element);
+                table.css('transition', 'max-height .01s');
+                table.css('max-height', setHeight);
+            });
+
             if (flag) {
                 $('#searchpopup').css("background", "transparent");
                 $('#mainmenu').attr("fromsearch", "yes");

@@ -1411,8 +1411,28 @@ body.big #calendardiv > div {
   height: 331px !important;
   max-width: 361px !important;
 }
-                        
+
+#mainmenu > div {
+  /* margin-top: 40px !important; */
+  /* height: 331px !important; */
+  /* max-width: 361px !important; */
+}
+body.big #mainmenu > div {
+  /* margin-top: 40px !important; */
+  /* height: 331px !important; */
+  /* max-width: 361px !important; */
+}                       
 @media only screen and (max-width: 1000px) {
+    #mainmenu > div {
+      /* margin-top: 40px !important; */
+      /* height: 331px !important; */
+      /* max-width: 361px !important; */
+    }
+    body.big #mainmenu > div {
+      /* margin-top: 40px !important; */
+      /* height: 331px !important; */
+      /* max-width: 361px !important; */
+    }    
     #calendardiv > div {
       margin-top: -52px !important;
       max-height: 300px !important;
@@ -1789,6 +1809,16 @@ body.big .toptitle > span {
 }
 
 @media only screen and (max-width: 700px) {
+    #mainmenu > div {
+      margin-top: 40px !important;
+      height: 331px !important;
+      max-width: 361px !important;  
+    }
+    body.big #mainmenu > div {
+      margin-top: 40px !important;
+      height: 331px !important;
+      max-width: 361px !important;  
+    }      
     .toptitle > span {
         position: absolute;
         top: 16px;
