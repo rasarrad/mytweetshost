@@ -1044,12 +1044,12 @@ body.big .newLayout {
 
 
 .toptitle {
-  top: 20px;
-  font-size: 18px;
+  top: 19px;
+  font-size: 21px;
   /* padding-left: calc(50% - 103px); */
   display: block;
   text-align: center;
-  width: 190px;
+  width: 209px;
   line-height: 15px;
   font-weight: bold;
   left: calc(50% - 95px) !important;
@@ -1412,10 +1412,14 @@ body.big #calendardiv > div {
                         
 @media only screen and (max-width: 1000px) {
     #calendardiv > div {
-      margin-top: 40px !important;
+      margin-top: -52px !important;
+      max-height: 300px !important;
     }
     body.big #calendardiv > div {
-      margin-top: 40px !important;
+      margin-top: -72px !important;
+      height: 375px !important;
+      max-height: unset !important;
+      border-radius: 0;
     }
 
     .fa-folder-open {
@@ -1767,7 +1771,36 @@ body.big #calendardiv .fa-calendar {
     font-size: 19px;
 }
 
+.toptitle > span {
+    position: relative;
+    top: -1px;
+    left: 4px;
+    font-size: 19px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+body.big .toptitle > span {
+    top: -1px;
+    left: 7px;
+    font-size: 22px;
+}
+
 @media only screen and (max-width: 700px) {
+    .toptitle > span {
+        position: absolute;
+        top: 16px;
+        left: 26px;
+        font-size: 13px;
+        font-style: italic;
+        font-weight: normal;
+    }
+
+    body.big .toptitle > span {
+        top: 16px;
+        left: 35px;
+        font-size: 15px;
+    }  
     #calendardiv > div {
       margin-top: 164px !important;
       height: 300px !important;
@@ -3374,18 +3407,5 @@ body.big #searchpopup #searchinfo td.el:not(.ellipsis) span.titletext {
     line-height: 13px;
 }
 
-.toptitle > span {
-    position: absolute;
-    top: 16px;
-    left: 26px;
-    font-size: 13px;
-    font-style: italic;
-    font-weight: normal;
-}
 
-body.big .toptitle > span {
-    top: 16px;
-    left: 35px;
-    font-size: 15px;
-}
 
