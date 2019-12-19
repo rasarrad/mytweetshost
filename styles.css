@@ -1665,7 +1665,7 @@ body.big #mainsettings .fa-cog {
 
 body.big #mainsettings .fa-window-close {
   font-size: 20px !important;
-  right: 26px !important;
+  right: 24px !important;
 }  
 
 body.big #mainsettings .buttonstable tr:first-child .firsttd b {
@@ -1687,14 +1687,14 @@ body.big #mainsettings .fa-cogs {
   top: 0px;
 }
 body.big #mainsettings .fa-picture-o {
-  font-size: 16px !important;
+  font-size: 18px !important;
   position: relative;
   left: -3px;
   top: 2px;
 }  
 
 body.big #mainsettings .fa-eraser {
-  font-size: 18px !important;
+  font-size: 19px !important;
 }  
 body.big #mainsettings .fa-hashtag {
   font-size: 18px !important;
@@ -1873,7 +1873,8 @@ body.big .toptitle > span {
 
     }  
     #mainsettings .fa-window-close {
-      right: -4px !important;
+      right: 19px !important;
+      top: -2px;
     } 
     body.big #mainsettings .fa-window-close {
 
@@ -1890,10 +1891,11 @@ body.big .toptitle > span {
         /* height: 100%; */
     }     
     body.big #mainsettings .firstsettable {
-      margin-top: 36px !important;
+      margin-top: 38px !important;
     }
     body.big #mainsettings .buttonstable {
       width: 349px;
+      /* max-height: 29px !important; */
     }
     #previewtd div iframe {
       margin: 0px !important;
@@ -2048,7 +2050,7 @@ body.big .toptitle > span {
           min-width: 345px;
       }
       .newLayout.mainsettings > div .titletable tr:first-child .firsttd {
-          min-width: 319px;
+          min-width: 344px;
       }
       body.big .newLayout > div .titletable tr:first-child .firsttd {
           min-width: 345px !important;
@@ -2818,9 +2820,9 @@ body.big .newLayout#mainsettings .themename {
   padding-left: 20px !important;
 }
 body.big .newLayout#mainsettings .el:not(.ellipsis) .themename {
-  line-height: 30px;
+  line-height: 25px;
   font-size: 15px;
-  top: -4px !important;
+  top: -1px !important;
   padding-left: 0px !important;
   left: 11px;
 }
@@ -3432,5 +3434,49 @@ body.big #searchpopup #searchinfo td.el:not(.ellipsis) span.titletext {
     line-height: 13px;
 }
 
+#mainsettings .sectionedittd > i {
+  top: -4px !important;
+}
+body.big #mainsettings .sectionedittd > i {
+  top: 1px !important;
+}
 
+#mainsettings #generatetablerow td:first-child {
+  width: 73px !important;
+}
 
+body.big #mainsettings #generatetablerow td:first-child {
+  width: 91px !important;
+}
+
+#mainsettings #generatetablerow td:not(.ellipsis) .titletext {
+    line-height: 18px;
+    position: relative;
+    top: -2px !important;
+}
+
+body.big #mainsettings #generatetablerow td:not(.ellipsis) .titletext {
+    line-height: 18px;
+    position: relative;
+    top: 2px !important;
+}
+
+#mainsettings #cleandatatable td:first-child {
+  width: 83px !important;
+}
+
+body.big #mainsettings #cleandatatable td:first-child {
+  width: 98px !important;
+}
+
+#mainsettings #cleandatatable td:not(.ellipsis) .titletext {
+    line-height: 18px;
+    position: relative;
+    top: -2px !important;
+}
+
+body.big #mainsettings #cleandatatable td:not(.ellipsis) .titletext {
+    line-height: 18px;
+    position: relative;
+    top: 2px !important;
+}
