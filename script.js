@@ -525,7 +525,7 @@ function changetheme(type, desc) {
             dark_color = "#001b30";
             softdark_color = "#003156";
             soft_color = "#004a86";
-            soft_transp_color = "#45cae787";
+            soft_transp_color = "#001b30cc";
             document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#003156');
             $('#mainsettings .currenttheme').html('Twitter Lines'); 
             break;
@@ -536,7 +536,7 @@ function changetheme(type, desc) {
             dark_color = "#630000";
             softdark_color = "#af0000";
             soft_color = "#ea0000";
-            soft_transp_color = "#faaeae78";  
+            soft_transp_color = "#630000c2";  
             document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#af0000');
             $('#mainsettings .currenttheme').html('Red Tide'); 
             break;
@@ -547,8 +547,7 @@ function changetheme(type, desc) {
             dark_color = "#909090";
             softdark_color = "#bbbbbb";
             soft_color = "#ffffff";
-            soft_transp_color = "rgba(162, 162, 162, 0.42)"; 
-            soft_transp_color = "rgba(255, 255, 255, 0.32)";  //xyz
+            soft_transp_color = "#3c3c3cbd"; 
             document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#999');
             $('#mainsettings .currenttheme').html('Shades Of Gray'); 
             break;
@@ -559,7 +558,7 @@ function changetheme(type, desc) {
             dark_color = "#005411";
             softdark_color = "#179631";
             soft_color = "#25c345";
-            soft_transp_color = "#fdfd157d"; 
+            soft_transp_color = "#04290bc4"; 
             document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#179631');
             $('#mainsettings .currenttheme').html('Green Army'); 
             break; 

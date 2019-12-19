@@ -5,7 +5,7 @@
   --dark-color: #001b30;
   --softdark-color: #003156;
   --soft-color: #004a86;
-  --soft-transp-color: #45cae787;
+  --soft-transp-color: #001b30cc;
   
 /*
 
@@ -1256,11 +1256,13 @@ body:not(.big) .yt.tweet .bottomgradiantback {
 .tags {
   font-size: 12px !important;
   top: -5px;
+  margin-top: -9px;
 }
 body.big .tags {
   font-size: 17px !important;
   height: 32px;
   top: 0px;
+  margin-top: -9px;
 }
 .newLayout.mainsettings > div {
     /* max-height: calc(100% - 66px) !important; */
