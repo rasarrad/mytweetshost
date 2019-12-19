@@ -421,6 +421,8 @@ function clickSearchLiClassif(e, obj) {
 
 var getInformation = function(ismoretweets, wasfiltered) {
 
+    closeSearchPopup();
+    
     if (wasfiltered == 1) {
         $('#countfilter').show();
     }
