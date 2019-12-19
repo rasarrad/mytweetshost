@@ -3348,7 +3348,7 @@ body.big .iconul li div {
     color: var(--soft-color);
 }
 
-#searchpopup table:not(.emptyvalue) {
+#searchpopup table:not(.emptyvalue):not(.titletable) {
   background: var(--softdark-color);
 }
 

@@ -3,7 +3,7 @@
 function closeSearchPopup(obj) {
     if (obj)
         fixfocus(obj);
-        
+
     $('body, html').css('overflow-y', 'auto');
     $('#searchpopup').fadeOut(600);
 }
@@ -1594,17 +1594,14 @@ var togglecriterions = function(obj) {
 function resetFields(flag) {
     $("#main").empty();
     $('#moretweets').hide();
-    $('#selectedcat').val('all');
-    $('#selectedcattext').val('All Links');
     $('#tweetcount').hide();  
-    $('#filtertext').val('');
-    $('#filterdate1').val('');
-    $('#filterdate2').val('');
-    $('#filterdate1display').val('');
-    $('#filterdate2display').val('');
-    $('#filterid').val('');
-    $('#filterauthor').val('');
-    $('#filtertag').val('');
+    clearcriterion(null,null, "filterdate1", "searchdate");
+    clearcriterion(null,null, "filterdate2", "searchdate");
+    clearcriterion(null,null, "selectedtype", "searchtypes");
+    clearcriterion(null,null, "filterauthor", "searchauthor");
+    clearcriterion(null,null, "filtertext", "searchinfo");
+    clearcriterion(null,null, "filtertag", "searchtags");
+    clearcriterion(null,null, "selectedclassif", "searchclassif");
     filterdate1date = null;
     filterdate2date = null;
     
