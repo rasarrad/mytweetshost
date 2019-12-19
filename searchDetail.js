@@ -1542,7 +1542,15 @@ var countalltweets = function(id) {
 
 
 var togglecriterions = function(obj) {
+    
+    if ($("#searchpopup").css("display") == "none")
+        openSearchPopup();
+    else
+        closeSearchPopup();
+
+    /*    
     fixfocus(obj);
+
     if ($('.toptitle').css('display') == 'none') {
         $(".top").css("transition", "all 0.7s");
         $('.top').css('opacity', '0');
@@ -1573,6 +1581,7 @@ var togglecriterions = function(obj) {
             }, 1400);
         }, 400);
     } 
+     */
 }   
 
 
