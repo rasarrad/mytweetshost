@@ -1675,7 +1675,10 @@ body.big #mainsettings .fa-window-close {
 body.big #mainsettings .buttonstable tr:first-child .firsttd b {
   font-size: 18px !important;
   margin-left: 0 !important;
-}    
+  top: -4px !important;
+}
+
+b {}    
 
 
 body.big #mainsettings .firstsettable {
