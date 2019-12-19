@@ -595,6 +595,7 @@ function openmenu(obj, flag) {
     if (obj)
         fixfocus(obj);
 
+    /*
     if ($(window).width() > 1200) {
         if ($('#menu').css('width') == '0px') {
             $('#menu').css('width', '180px');
@@ -603,7 +604,7 @@ function openmenu(obj, flag) {
             $('#menu').css('width', '0px');
         }
     }
-    else {
+    else { */
         if ($('#mainmenu').css("display") == "none") {
             var setHeight = "18px";
             if ($('body').hasClass('big')) {
@@ -632,7 +633,7 @@ function openmenu(obj, flag) {
 
             $('body, html').css('overflow-y', 'auto');
         }
-    }
+    //}
 }
 
 function closeallnewlayout(bj) {
