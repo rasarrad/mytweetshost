@@ -3458,7 +3458,7 @@ body.big #mainsettings #generatetablerow td:first-child {
 body.big #mainsettings #generatetablerow td:not(.ellipsis) .titletext {
     line-height: 18px;
     position: relative;
-    top: 2px !important;
+    top: 1px !important;
 }
 
 #mainsettings #cleandatatable td:first-child {
@@ -3466,7 +3466,7 @@ body.big #mainsettings #generatetablerow td:not(.ellipsis) .titletext {
 }
 
 body.big #mainsettings #cleandatatable td:first-child {
-  width: 98px !important;
+  width: 103px !important;
 }
 
 #mainsettings #cleandatatable td:not(.ellipsis) .titletext {
@@ -3476,6 +3476,26 @@ body.big #mainsettings #cleandatatable td:first-child {
 }
 
 body.big #mainsettings #cleandatatable td:not(.ellipsis) .titletext {
+    line-height: 18px;
+    position: relative;
+    top: 1px !important;
+}
+
+#mainsettings #theme td:first-child {
+  width: 55px !important;
+}
+
+body.big #mainsettings #theme td:first-child {
+  width: 56px !important;
+}
+
+#mainsettings #theme td:not(.ellipsis) .titletext {
+    line-height: 18px;
+    position: relative;
+    top: -1px !important;
+}
+
+body.big #mainsettings #theme td:not(.ellipsis) .titletext {
     line-height: 18px;
     position: relative;
     top: 2px !important;

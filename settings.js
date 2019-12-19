@@ -590,7 +590,11 @@ function editSetting(e, obj, flag) {
             });
             
             table.css('transition', 'max-height 1s');
-            table.css('max-height', 'fit-content');
+            if (table.attr("cmaxheight"))
+                table.css('max-height', table.attr("cmaxheight"));
+            else {
+                table.css('max-height', "fit-content");
+            }
             
             if (table.attr('id') != 'editInfo')
                 table.find('td.el').removeClass('ellipsis');
