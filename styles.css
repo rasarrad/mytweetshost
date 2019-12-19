@@ -3117,9 +3117,19 @@ body.big #tweetcount {
     font-size: 14px !important;
 }
 body.big #tweetcount i:not(#gotop) {
-    font-size: 14px !important;  
+    font-size: 14px !important;
+    /* top: -54px !important; */
 }
 
+#tweetcount i.fa-filter {
+    font-size: 14px !important;
+    top: -40px !important;
+    right: -11px !important;
+}
+body.big #tweetcount i.fa-filter {
+    font-size: 14px !important;
+    top: -50px !important;
+}
 
 #tweetcount i.fa-internet-explorer {
     font-size: 12px !important;
