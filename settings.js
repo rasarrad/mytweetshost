@@ -81,7 +81,7 @@ function zoom(obj, flag) {
         table.css('max-height', setHeight);
     });
 
-    $("#mainsettings.newLayout table.defaulttablerow").each( function( index, element ) {
+    $("#mainmenu.newLayout table.defaulttablerow").each( function( index, element ) {
         var table = $(element);
         table.css('transition', 'max-height .01s');
         table.css('max-height', setHeight2);
