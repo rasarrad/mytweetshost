@@ -1418,9 +1418,32 @@ body.big #calendardiv > div {
   max-width: 361px !important;
 }
 
+.newLayout#mainsettings > div {
+      margin-top: 16px !important;
+      max-height: calc(100% - 65px) !important;
+}
+body.big #mainsettings.newLayout > div {
+    margin-top: 31px !important;
+    max-height: calc(100% - 137px) !important;
+} 
 #mainmenu > div {margin-top: 3px !important;max-height: 245px !important;}
-body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !important;}                       
+body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !important;}  
+
+
+                     
 @media only screen and (max-width: 1000px) {
+  .newLayout#mainsettings > div {
+          margin-top: 23px !important;
+          max-height: calc(100% - 65px) !important;
+    }
+    body.big #mainsettings.newLayout > div {
+        margin-top: 31px !important;
+        max-height: calc(100% - 137px) !important;
+    } 
+    body.big .newLayout#mainsettings > div {
+      margin-top: 1px !important;
+      max-height: calc(100% - 79px) !important;
+    }   
     #mainmenu > div {
     margin-top: -3px !important;
     max-height: 245px !important;
@@ -1734,14 +1757,7 @@ body.big #mainsettings .fa-check {
 body.big #mainsettings .fa-window-close {
 
 } 
-.newLayout#mainsettings > div {
-      margin-top: 16px !important;
-      max-height: calc(100% - 65px) !important;
-}
-body.big#mainsettings .newLayout > div {
-    margin-top: 31px !important;
-    max-height: calc(100% - 137px) !important;
-} 
+
 
 
 #myCalendar {
