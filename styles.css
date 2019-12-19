@@ -1049,10 +1049,10 @@ body.big .newLayout {
   /* padding-left: calc(50% - 103px); */
   display: block;
   text-align: center;
-  width: 209px;
+  width: 233px;
   line-height: 15px;
   font-weight: bold;
-  left: calc(50% - 95px) !important;
+  left: calc(50% - 116px) !important;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -1401,13 +1401,15 @@ body.big .menuitemcounter {
 }       
 
 #calendardiv > div {
-  height: 349px !important;
+  height: 301px !important;
   max-width: 361px !important;
   margin-left: calc(50% - 183px) !important;
   margin-top: 40px !important;
 }
 body.big #calendardiv > div {
   margin-top: 40px !important;
+  height: 331px !important;
+  max-width: 361px !important;
 }
                         
 @media only screen and (max-width: 1000px) {
