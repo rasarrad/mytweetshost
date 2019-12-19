@@ -1412,26 +1412,16 @@ body.big #calendardiv > div {
   max-width: 361px !important;
 }
 
-#mainmenu > div {
-  /* margin-top: 40px !important; */
-  /* height: 331px !important; */
-  /* max-width: 361px !important; */
-}
-body.big #mainmenu > div {
-  /* margin-top: 40px !important; */
-  /* height: 331px !important; */
-  /* max-width: 361px !important; */
-}                       
+#mainmenu > div {margin-top: 3px !important;max-height: 245px !important;}
+body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !important;}                       
 @media only screen and (max-width: 1000px) {
     #mainmenu > div {
-      /* margin-top: 40px !important; */
-      /* height: 331px !important; */
-      /* max-width: 361px !important; */
+    margin-top: -3px !important;
+    max-height: 245px !important;
     }
     body.big #mainmenu > div {
-      /* margin-top: 40px !important; */
-      /* height: 331px !important; */
-      /* max-width: 361px !important; */
+      margin-top: 3px !important;
+      max-height: 246px !important;
     }    
     #calendardiv > div {
       margin-top: -52px !important;
@@ -1811,13 +1801,13 @@ body.big .toptitle > span {
 @media only screen and (max-width: 700px) {
     #mainmenu > div {
       margin-top: 40px !important;
-      height: 331px !important;
-      max-width: 361px !important;  
+      height: 377px !important;
+      max-width: 361px !important;
     }
     body.big #mainmenu > div {
       margin-top: 40px !important;
-      height: 331px !important;
-      max-width: 361px !important;  
+      height: 495px !important;
+      max-height: 465px !important;
     }      
     .toptitle > span {
         position: absolute;
@@ -1866,10 +1856,11 @@ body.big .toptitle > span {
     }  
 
     #mainmenu > div {
-      margin-top: 111px !important;
+      margin-top: 140px !important;
+      max-height: 338px !important;
     }  
     body.big #mainmenu > div {
-      margin-top: 81px !important;
+      margin-top: 91px !important;
     }  
 
     
