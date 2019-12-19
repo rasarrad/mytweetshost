@@ -339,7 +339,8 @@ function clearcriterion(e, obj, affectedobj, affectedtable) {
 
     changecriteria(null,null, affectedtable);
 
-    e.stopPropagation();
+    if (e)
+        e.stopPropagation();
 }
 
 function changesearchtype(e, obj, code, desc) {
@@ -422,7 +423,7 @@ function clickSearchLiClassif(e, obj) {
 var getInformation = function(ismoretweets, wasfiltered) {
 
     closeSearchPopup();
-    
+
     if (wasfiltered == 1) {
         $('#countfilter').show();
     }
