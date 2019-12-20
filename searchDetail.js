@@ -1185,6 +1185,9 @@ var getJsonbyid = function(id, functorun) {
 var countalltweets = function(id) {
     console.log('-------------- countalltweets - BEGIN --------------');
 
+    // xyz
+    return false;
+
     var path = "./data.json";
     var counters = new Map();
     var tagsmap = new Map();

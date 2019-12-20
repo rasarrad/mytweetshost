@@ -33,7 +33,10 @@ $( document ).ready(function() {
         $( "#mask" ).css("background", document.documentElement.style.getPropertyValue('--soft-transp-color'));
     });
     */
-   $( "#mask" ).fadeOut( 1100);
+   $( "#mask" ).fadeOut(1100);
+   setTimeout(function(){ alert(document.documentElement.style.getPropertyValue('--soft-transp-color')); }, 3300);
+
+
     nextid = parseInt(readCookie("maxid"));
 
     do {
