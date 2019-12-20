@@ -1429,9 +1429,18 @@ body.big #mainsettings.newLayout > div {
 #mainmenu > div {margin-top: 3px !important;max-height: 245px !important;}
 body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !important;}  
 
-
+.authorinput {
+  width: 211px;
+  height: 20px;
+}
                      
 @media only screen and (max-width: 1000px) {
+  .tags {
+    margin-top: -1px;
+  }
+  body.big .tags {
+    margin-top: 3px;
+  }
   .newLayout#mainsettings > div {
           margin-top: 23px !important;
           max-height: calc(100% - 65px) !important;
@@ -1616,7 +1625,7 @@ body.big #sear, body.big #sear2 {
       max-width: 287px !important;
   }
   body.big .buttonstable .author {
-       max-width: 222px !important;
+       max-width: 199px !important;
        /* min-width: 222px; */
   }
   .newLayout > div .titletable tr:first-child .firsttd {
@@ -1822,6 +1831,12 @@ body.big .toptitle > span {
     left: 7px;
     font-size: 22px;
 }
+
+  body.big #linkChange.newLayout > div .titletable tr:first-child .firsttd {
+      min-width: 345px;
+      /* min-width: 236px !important; */
+      width: 207px;
+  } 
 
 @media only screen and (max-width: 700px) {
     #mainmenu > div {
