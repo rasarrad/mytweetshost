@@ -711,17 +711,18 @@ var clickmenu = function(val, text) {
 
     if ($('#mainmenu').attr("fromsearch") == "yes") {
         closeMenuPopup();
+        alert(document.documentElement.style.getPropertyValue('--soft-transp-color'))
         $('#searchpopup').css("background", document.documentElement.style.getPropertyValue('--soft-transp-color'));
         $('#titlesearch').html("(" + $('#selectedcattext').val() + ")");
         $('#mainmenu').attr("fromsearch", "");
     }
     else {
-        if ($(window).width() > 1200) {
+        /*if ($(window).width() > 1200) {
             openmenu();
         }
-        else {
+        else {*/
             closeMenuPopup();
-        }
+        //}
         
         getInformation(false, 2);
     }
