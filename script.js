@@ -30,17 +30,12 @@ $( document ).ready(function() {
     console.log('-------------- app - BEGIN --------------');
     $( "#mask" ).fadeOut( 1100, function() {
         var style = window.getComputedStyle(body, null);
-        alert(style.getPropertyValue('--soft-transp-color'));
-        //alert(document.documentElement.style.getPropertyValue('--soft-transp-color'));
-        $( "#mask" ).css("background", document.documentElement.style.getPropertyValue('--soft-transp-color'));
+
+        $( "#mask" ).css("background", style.getPropertyValue('--soft-transp-color'));
         $( "#mask .fa-folder-open" ).hide();
         $( "#mask .fa-circle-o-notch" ).show();
     });
     
-   //$( "#mask" ).fadeOut(1100);
-   //setTimeout(function(){ alert(document.documentElement.style.getPropertyValue('--soft-transp-color')); }, 3300);
-
-
     nextid = parseInt(readCookie("maxid"));
 
     do {
@@ -712,8 +707,8 @@ var clickmenu = function(val, text) {
 
     if ($('#mainmenu').attr("fromsearch") == "yes") {
         closeMenuPopup();
-        alert(document.documentElement.style.getPropertyValue('--soft-transp-color'))
-        $('#searchpopup').css("background", document.documentElement.style.getPropertyValue('--soft-transp-color'));
+        var style = window.getComputedStyle(body, null);
+        $('#searchpopup').css("background", style.getPropertyValue('--soft-transp-color'));
         $('#titlesearch').html("(" + $('#selectedcattext').val() + ")");
         $('#mainmenu').attr("fromsearch", "");
     }

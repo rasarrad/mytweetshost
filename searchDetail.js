@@ -156,12 +156,13 @@ function closeCalendarPopup(e) {
     
     $('body, html').css('overflow-y', 'auto');
 
+    var style = window.getComputedStyle(body, null);
     switch($('#calendardiv').attr("targetObj")) {
         case "filterdate1":
-            $('#searchpopup').css("background", document.documentElement.style.getPropertyValue('--soft-transp-color'));
+            $('#searchpopup').css("background", style.getPropertyValue('--soft-transp-color'));
             break; 
         case "filterdate2":
-            $('#searchpopup').css("background", document.documentElement.style.getPropertyValue('--soft-transp-color'));
+            $('#searchpopup').css("background", style.getPropertyValue('--soft-transp-color'));
             break; 
     }
 
@@ -264,21 +265,21 @@ function updatedatedisplay() {
 
 function calendarChanged(date) {
     $('body, html').css('overflow-y', 'hidden');
-    
+    var style = window.getComputedStyle(body, null);
     switch($('#calendardiv').attr("targetObj")) {
         case "filterdate1":
             $('#filterdate1display').val(formatDate(date));
             filterdate1date = date;
             $('#filterdate1').val(formatNumDate(date));
             $('#filterdate1').trigger("change");
-            $('#searchpopup').css("background", document.documentElement.style.getPropertyValue('--color-font-general'));
+            $('#searchpopup').css("background", style.getPropertyValue('--color-font-general'));
             break; 
         case "filterdate2":
             $('#filterdate2display').val(formatDate(date));
             filterdate2date = date;
             $('#filterdate2').val(formatNumDate(date));
             $('#filterdate2').trigger("change");
-            $('#searchpopup').css("background", document.documentElement.style.getPropertyValue('--color-font-general'));
+            $('#searchpopup').css("background", style.getPropertyValue('--color-font-general'));
             break; 
     }
 }          
