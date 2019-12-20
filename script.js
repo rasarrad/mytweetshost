@@ -28,8 +28,9 @@ var filterdate2date = null;
 $( document ).ready(function() { 
 
     console.log('-------------- app - BEGIN --------------');
-    $( "#mask" ).fadeOut( 6100, function() {
-        alert(document.documentElement.style.getPropertyValue('--soft-transp-color'));
+    $( "#mask" ).fadeOut( 1100, function() {
+        var style = window.getComputedStyle(body, null);
+        alert(style.getPropertyValue('--soft-transp-color'));
         //alert(document.documentElement.style.getPropertyValue('--soft-transp-color'));
         $( "#mask" ).css("background", document.documentElement.style.getPropertyValue('--soft-transp-color'));
         $( "#mask .fa-folder-open" ).hide();
