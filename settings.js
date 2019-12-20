@@ -51,7 +51,7 @@ function zoom(obj, flag) {
     var setHeight = "18px";
     var setHeight2 = "18px";
     if ($('body').hasClass('big')) {
-        setHeight = "31px";
+        setHeight = "30px";
         setHeight2 = "28px";
     }
 
@@ -107,7 +107,7 @@ var openSettingsPopup = function(jsonobj)
         var setHeight = "18px";
 
         if ($('body').hasClass('big'))
-            setHeight = "31px";
+            setHeight = "30px";
     
         $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
             var table = $(element);
@@ -371,7 +371,7 @@ var openSettingsPopup = function(jsonobj)
         var setHeight = "18px";
 
         if ($('body').hasClass('big'))
-            setHeight = "31px";
+            setHeight = "30px";
         
         $('#linktable').css('transition', 'max-height 0.01s');
         $('#linktable').css('max-height', setHeight);
@@ -575,7 +575,7 @@ function editSetting(e, obj, flag) {
         var setHeight = "18px";
 
         if ($('body').hasClass('big'))
-            setHeight = "31px";
+            setHeight = "30px";
     
         var table = $(obj).parent().parent();
         if (table.css('max-height') == setHeight) {

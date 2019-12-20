@@ -156,7 +156,7 @@ bookmarks <span>
 <!-- <div id="mask" style="position: fixed;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.81);top: 0px;z-index: 99999;display: none;"><i class="fa fa-circle-o-notch fa-spin"></i></div>
 -->
 
-<div id="mask" style="position: fixed;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.88);top: 0px;z-index: 99999;font-size: 11px;"><i class="fa fa-circle-o-notch fa-spin" style="font-size: 43px; top: calc(50% - 21px);left: calc(50% - 21px);color: var(--high-color);"></i></div>
+<div id="mask" style="position: fixed;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.88);top: 0px;z-index: 99999;font-size: 11px;background: var(--soft-transp-color);"><i class="fa fa-circle-o-notch fa-spin" style="font-size: 43px; top: calc(50% - 21px);left: calc(50% - 21px);color: var(--high-color);"></i></div>
 
 <div id="changetags" style="position: fixed;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.6);top: 0px;z-index: 999;display: none;" currid="2"><div class="tagtext"><i onclick="javascript: closetagpopup()" class="fa fa-remove" style="display: block;position: absolute;top: 4px;right: 5px;font-size: 21px;background: transparent;padding-left: 6px;padding-right: 6px;border-radius: 4px;color: white;cursor: pointer;height: 22px;"></i><i onclick="javascript: undotag(this)" class="fa fa-undo clicable" style="display: block;position: absolute;top: 36px;right: 41px;font-size: 18px;background: white;padding-left: 6px;padding-right: 5px;border-radius: 4px;color: #007dc5;cursor: pointer;height: 20px;padding-top: 2px;"></i><i onclick="javascript: acceptTag(this)" class="fa fa-check" style="display: block;position: absolute;top: 36px;right: 5px;font-size: 21px;background: white;padding-left: 4px;padding-right: 4px;border-radius: 4px;color: #007dc5;cursor: pointer;height: 22px;"></i><span class="poptitle" style="position: relative;top: 3px;"></span><br><input style="width: 450px;color: #004871;margin-top: 14px;margin-left: -70px;"></div></div>
 
@@ -187,7 +187,7 @@ bookmarks <span>
                     <span class="id smallrem"></span>-->
                     <b style="margin-left: -1px;">author </b>
                     <span class="author" onclick="showAuthor(this)" style="overflow: hidden;text-overflow: ellipsis;max-width: 124px;display: inline-block;white-space: nowrap;position: relative;top: 4px;text-transform: lowercase;"></span>
-                    <input type="text" additionalAttributes="{autocomplete: 'none'}" autocomplete=none id="postedby" onblur="saveAuthor(this)" class="authorinput" style="white-space: nowrap;position: relative;top: 0px;max-width: 124px !important;height: 11px;display:none;" value="">
+                    <input type="text" additionalAttributes="{autocomplete: 'none'}" autocomplete=none id="postedby" onblur="saveAuthor(this)" class="authorinput" style="white-space: nowrap;position: relative;top: 0px;display:none;" value="">
                     <br class="brsep">
                     <b class="datespan" style="margin-left: 5px;">date </b>
                     <span onclick="showDate(this)" class="date smallrem"></span>
