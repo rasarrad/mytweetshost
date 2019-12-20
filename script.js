@@ -79,7 +79,7 @@ $( document ).ready(function() {
     
 
 
-    openSearchPopup();
+    //openSearchPopup();
     
     
 
