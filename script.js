@@ -31,6 +31,8 @@ $( document ).ready(function() {
     $( "#mask" ).fadeOut( 1100, function() {
         //alert(document.documentElement.style.getPropertyValue('--soft-transp-color'));
         $( "#mask" ).css("background", document.documentElement.style.getPropertyValue('--soft-transp-color'));
+        $( "#mask .fa-folder-open" ).hide();
+        $( "#mask .fa-circle-o-notch" ).show();
     });
     
    //$( "#mask" ).fadeOut(1100);
