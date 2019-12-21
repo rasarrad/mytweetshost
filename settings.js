@@ -529,25 +529,18 @@ function saveAuthor(obj) {
 }
 
 function showDate(obj) {
-    $(obj).hide();
+    //$(obj).hide();
+    $('#linkChange').css("background", "transparent");
     var otherObj = $(obj).parent().find(".dateinput");
-    otherObj.show();
-    otherObj.focus();
-}
-function saveDate(obj) {
-    if ($('#linkChange').attr("cid") != "new") {
-        $(obj).hide();
-        var otherObj = $(obj).parent().find(".date");
-    
-        if ($(obj).val().length > 0) 
-            otherObj.html($(obj).val().substring(6,8) + "/" + $(obj).val().substring(4,6) + "/" + $(obj).val().substring(0,4));
-        else
-            otherObj.html("--"); 
-    
-        otherObj.show();
-    
-        createCookie($('#linkChange').attr("cid") + "datechanged", $(obj).val());
+    //otherObj.show();
+    //otherObj.focus();
+    var date = new Date();
+    if (otherObj.val().trim() != "") {
+        date.setDate(Number(otherObj.val().substring(6, 2)));
+        date.setMonth(Number(otherObj.val().substring(4, 2)) - 1);
+        date.setFullYear(Number(otherObj.val().substring(0, 4)));
     }
+    openCalendar("linkdate", date);
 }
 
 function closeSettingsPopup(obj) {

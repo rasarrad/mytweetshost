@@ -272,15 +272,30 @@ function calendarChanged(date) {
             filterdate1date = date;
             $('#filterdate1').val(formatNumDate(date));
             $('#filterdate1').trigger("change");
-            $('#searchpopup').css("background", style.getPropertyValue('--color-font-general'));
+            $('#searchpopup').css("background", style.getPropertyValue('--soft-transp-color'));
             break; 
         case "filterdate2":
             $('#filterdate2display').val(formatDate(date));
             filterdate2date = date;
             $('#filterdate2').val(formatNumDate(date));
             $('#filterdate2').trigger("change");
-            $('#searchpopup').css("background", style.getPropertyValue('--color-font-general'));
+            $('#searchpopup').css("background", style.getPropertyValue('--soft-transp-color'));
             break; 
+        case "linkdate":
+            if ($('#linkChange').attr("cid") != "new") {
+                var otherObj = $("#linkChange").find(".date");
+                
+                if (date) {
+                    otherObj.html(formatDate(date));
+                    createCookie($('#linkChange').attr("cid") + "datechanged", formatNumDate(date));
+                }
+                else {
+                    otherObj.html("--"); 
+                }
+            }
+            $('#linkChange').css("background", style.getPropertyValue('--soft-transp-color'));
+            
+            break;    
     }
 }          
 
