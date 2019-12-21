@@ -173,6 +173,9 @@ body.big #searchpopup .fa-times-circle {
 }
 
 @media only screen and (min-width: 1200px) {
+  #mask .fa-circle-o-notch {
+    height: 43px !important;
+  }
   .sectionedittd:hover {
     opacity: 0.6;
   }
@@ -1774,9 +1777,7 @@ body.big #mainsettings .fa-window-close {
 
 
 
-#myCalendar {
-
-}
+#myCalendar {width: 355px;}
 
 body.big #myCalendar {
     font-size: 15px;
