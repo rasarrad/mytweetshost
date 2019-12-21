@@ -981,7 +981,7 @@ twitter-widget {
 }
 body.big .buttonstable .author {
        max-width: 124px !important;
-       top: 5px !important;
+       top: 6px !important;
 }
 
 
@@ -1625,7 +1625,7 @@ body.big #sear, body.big #sear2 {
       max-width: 287px !important;
   }
   body.big .buttonstable .author {
-       max-width: 199px !important;
+       max-width: 192px !important;
        /* min-width: 222px; */
   }
   .newLayout > div .titletable tr:first-child .firsttd {
@@ -1642,7 +1642,12 @@ body.big #sear, body.big #sear2 {
   .buttonstable .date {
       position: relative !important;
       top: 0px;
-  }         
+  }    
+ body.big .buttonstable .date {
+      position: relative !important;
+      top: 0px;
+      font-size: 17px;
+  }       
   .buttonstable .datespan {
       position: relative !important;
       top: 0px;
@@ -1839,6 +1844,14 @@ body.big .toptitle > span {
   } 
 
 @media only screen and (max-width: 700px) {
+    body.big .buttonstable .date {
+        position: relative !important;
+        top: 0px;
+    }
+    .authorinput {
+      width: 154px;
+      height: 20px;
+    }
     #mainmenu > div {
       margin-top: 40px !important;
       height: 377px !important;
@@ -2080,6 +2093,7 @@ body.big .toptitle > span {
     }
     .buttonstable .author {
           max-width: 163px !important;
+          top: 3px !important;
       }
       body.big .buttonstable .author {
            max-width: 229px !important;
@@ -2297,7 +2311,7 @@ body.big .toptitle > span {
     transition: all 0.6s;
     display: initial;
     position: relative;
-    top: 0px;
+    top: -1px;
 }
 .newLayout #opensearch {
     position: initial;
@@ -2311,11 +2325,11 @@ body.big .toptitle > span {
 .newLayout #externallinkp {
     position: initial;
     cursor: pointer;
-    font-size: 17px;
+    font-size: 16px;
     transition: all 0.6s;
     display: initial;
     position: relative;
-    top: 2px;
+    top: 3px;
 }
 .newLayout #savesearch {
     position: initial;
@@ -2364,7 +2378,7 @@ body.big .newLayout .sectiontitletable .sectionicontd {
 }
 
 body .newLayout #editTags .sectionicontd:first-child {
-    width: 48px !important;
+    width: 43px !important;
 }
 
 body.big .newLayout #editTags .sectionicontd:first-child {
@@ -2427,7 +2441,7 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
 .newLayout .sectiontitletable .sectionedittd i {
   position: relative;
   top: -2px;
-  font-size: 11px;
+  font-size: 16px;
   position: relative;
   width: 11px;
 }
@@ -2777,8 +2791,15 @@ input[type="radio"]:checked + label span {
   text-overflow: ellipsis;
 }
 
+.currenttags.titletext {
+  position: relative;
+  top: -1px !important;
+}
 
-
+body.big .currenttags.titletext {
+  position: relative;
+  top: 1px;
+}
 /* genericos */
 
 input[type=text] {
@@ -2881,16 +2902,24 @@ body.big .newLayout#mainsettings .el:not(.ellipsis) .themename {
   padding-left: 0px !important;
   left: 11px;
 }
+td:not(.ellipsis) .titletext {
+    position: relative;
+    top: -2px !important;
+}
+td:not(.ellipsis) .titletext.originaltags  {
+    position: relative;
+    top: -1px !important;
+}
 
 body.big td:not(.ellipsis) .titletext {
     line-height: 18px;
     position: relative;
-    top: 1px !important;
+    top: 0px !important;
 }
 body.big td.ellipsis .titletext {
     line-height: 18px;
     position: absolute;
-    top: 4px !important;
+    top: 3px !important;
 }
 
 .newLayout .fa-undo.mainbutton {
@@ -2985,7 +3014,7 @@ body.big .buttonstable .firsttd {
     font-size: 18px !important;
 }
 body.big #removetweetp {
-    font-size: 26px !important;
+    font-size: 25px !important;
 }
 body.big .newLayout.new #removetweetp {
     font-size: 27px !important;
@@ -2995,14 +3024,16 @@ body.big .newLayout.new #removetweetp {
     font-size: 16px !important;
 }
 body.big #internallinkp {
-    font-size: 21px !important;
+    font-size: 20px !important;
     font-weight: bold;
 }
 
 
 body.big #externallinkp {
-    font-size: 21px !important;
+    font-size: 20px !important;
     font-weight: bold;
+    position: relative;
+    top: 3px;
 }
 .body.big #externallinkp {
     font-size: 15px !important;
@@ -3010,10 +3041,14 @@ body.big #externallinkp {
 
 
 #closepopupp {
-    font-size: 18px !important;
+    font-size: 17px !important;
+    position: relative;
+    top: 1px;
 }
 body.big #closepopupp {
     font-size: 22px !important;
+    position: relative;
+    top: 1px;
 }
 
 
