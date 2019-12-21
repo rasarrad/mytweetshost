@@ -308,6 +308,7 @@ function calendarChanged(date) {
         case "linkcreatedate":            
             if (date) {
                 $("#linkChange").find(".dateinput").val(formatNumDate(date));
+                $("#linkChange").find(".datetoshow").val(formatDate(date));
             }
 
             closeCalendarPopup();
