@@ -530,7 +530,7 @@ function saveAuthor(obj) {
 function showDate(obj) {
     //$(obj).hide();
     $('#linkChange').css("background", "transparent");
-    var otherObj = $(obj).parent().find(".dateinput");
+    var otherObj = $('#linkChange').find(".dateinput");
     //otherObj.show();
     //otherObj.focus();
     var date = new Date();

@@ -359,6 +359,18 @@ $( document ).ready(function() {
       filterdate2change();
     });
 
+    $( "#date" ).click(function() {
+        $( "#date" ).blur();  
+        $('#linkChange').css("background", "transparent");
+        var otherObj = $('#linkChange').find(".dateinput");
+        var date = new Date();
+        if (otherObj.val().trim() != "") {
+            date.setDate(Number(otherObj.val().substring(6, 8)));
+            date.setMonth(Number(otherObj.val().substring(4, 6)) - 1);
+            date.setFullYear(Number(otherObj.val().substring(0, 4)));
+        }
+        openCalendar("linkcreatedate", date);
+      });
 
       $( "#tagsselect" ).change(function() {
         // Check input( $( this ).val() ) for validity here

@@ -159,11 +159,13 @@ function closeCalendarPopup(e) {
     var style = window.getComputedStyle(body, null);
     switch($('#calendardiv').attr("targetObj")) {
         case "filterdate1":
-            $('#searchpopup').css("background", style.getPropertyValue('--soft-transp-color'));
-            break; 
         case "filterdate2":
             $('#searchpopup').css("background", style.getPropertyValue('--soft-transp-color'));
             break; 
+        case "linkdate":
+        case "linkcreatedate":    
+            $('#linkChange').css("background", style.getPropertyValue('--soft-transp-color'));
+            break;     
     }
 
     $('#calendardiv').fadeOut(600);
@@ -295,10 +297,17 @@ function calendarChanged(date) {
                     otherObj.html("--"); 
                 }
             }
-            $('#linkChange').css("background", style.getPropertyValue('--soft-transp-color'));
+            closeCalendarPopup();
+            break;    
+
+        case "linkcreatedate":            
+            if (date) {
+                $("#linkChange").find(".dateinput").val(formatNumDate(date));
+            }
+
             closeCalendarPopup();
 
-            break;    
+            break;             
     }
 }          
 
