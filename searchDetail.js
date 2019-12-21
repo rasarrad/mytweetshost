@@ -145,7 +145,7 @@ function filterauthorOnChange(obj) {
 
 
 function formatDate(date) {
-    return pad(date.getDate(), 2) + "/" + pad((date.getMonth() + 1), + 1) + "/" + date.getFullYear();
+    return pad(date.getDate(), 2) + "/" + pad((date.getMonth() + 1), 2) + "/" + date.getFullYear();
 }
 function formatNumDate(date) {
     return date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2);
@@ -173,6 +173,7 @@ function openCalendar(targetObj, date) {
     $('body, html').css('overflow-y', 'hidden');
 
     var currDate = null;
+    alert(date)
     if (date)
         currDate = date;
     else
