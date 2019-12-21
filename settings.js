@@ -536,7 +536,7 @@ function showDate(obj) {
     //otherObj.focus();
     var date = new Date();
     if (otherObj.val().trim() != "") {
-        alert(otherObj.val())
+        alert("---" + otherObj.val())
         date.setDate(Number(otherObj.val().substring(6, 2)));
         date.setMonth(Number(otherObj.val().substring(4, 2)) - 1);
         date.setFullYear(Number(otherObj.val().substring(0, 4)));
