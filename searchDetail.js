@@ -145,10 +145,10 @@ function filterauthorOnChange(obj) {
 
 
 function formatDate(date) {
-    return date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+    return pad(date.getDate(), 2) + "/" + pad((date.getMonth() + 1), + 1) + "/" + date.getFullYear();
 }
 function formatNumDate(date) {
-    return date.getFullYear() + "" + (date.getMonth() + 1) + date.getDate();
+    return date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2);
 }
 function closeCalendarPopup(e) {
     if (e)
