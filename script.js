@@ -373,7 +373,7 @@ $( document ).ready(function() {
     });
 
     
-    $( "#tagsselect" ).change(function() {
+    $("#tagsselect").change(function() {
         // Check input( $( this ).val() ) for validity here
         if ($( this ).val() != "notag") {
             $( "#tagsinput" ).val($( "#tagsinput" ).val() + " " + $( this ).val());
@@ -385,7 +385,7 @@ $( document ).ready(function() {
         }
       });
 
-      $( "#classifselect" ).change(function() {
+      $("#classifselect").change(function() {
         if ($("#selectedclassif").val() != "all") {
             var desc = "Greater than ";
 

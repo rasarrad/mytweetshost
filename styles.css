@@ -1092,7 +1092,7 @@ body.big #settings {
  }  
 #addtweet {
   font-size: 22px;
-  top: 15px;
+  top: 14px;
 }  
 body.big #addtweet {
   font-size: 26px;
@@ -1438,6 +1438,10 @@ body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !importan
 }
                      
 @media only screen and (max-width: 1000px) {
+  #addtweet {
+      font-size: 22px;
+      top: 15px;
+    }  
   .tags {
     margin-top: -1px;
   }
