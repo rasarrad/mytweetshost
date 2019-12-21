@@ -1700,7 +1700,7 @@ body.big #searchtags {
 }
 
 body.big .newLayout #linktable {
-    margin-top: 98px !important;
+    margin-top: 92px !important;
 }
 body.big .newLayout #previewtable {
     margin-top: 94px !important;
@@ -1848,7 +1848,60 @@ body.big .toptitle > span {
       width: 207px;
   } 
 
+#postedby {
+  width: 202px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+body.big #postedby {
+  width: 169px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+#datetoshow {
+  width: 64px !important;
+  margin-left: 2px;
+}
+body.big #datetoshow {
+  width: 81px !important;
+  margin-left: 4px;
+}
+#linkChange .titletable {
+  width: 464px;
+  padding-left: 7px;
+}
+body.big #linkChange .titletable {
+  width: 468px;
+  padding-left: 6px;
+}   
+        
 @media only screen and (max-width: 700px) {
+    #postedby {
+      width: 135px;
+      margin-left: 3px;
+      margin-right: 3px;
+    }
+    body.big #postedby {
+      width: 194px;
+      margin-left: 3px;
+      margin-right: 3px;
+    }
+    #datetoshow {
+      width: 64px !important;
+      margin-left: 2px;
+    }
+    body.big #datetoshow {
+      width: 81px !important;
+      margin-left: 4px;
+    }
+    #linkChange .titletable {
+      width: 339px;
+      padding-left: 8px;
+    }
+    body.big #linkChange .titletable {
+      width: 345px;
+      padding-left: 6px;
+    }    
     body.big .buttonstable .date {
         position: relative !important;
         top: 0px;
@@ -1959,7 +2012,7 @@ body.big .toptitle > span {
     }
 
     body.big .newLayout #linktable {
-        margin-top: 113px !important;
+        margin-top: 118px !important;
     }
     body.big .newLayout #previewtable {
         margin-top: 113px !important;
@@ -2305,6 +2358,18 @@ body.big .toptitle > span {
 
 .newLayout #removetweetp {
     cursor: pointer;
+    font-size: 18px !important;
+    position: initial;
+}
+.newLayout.new #removetweetp {
+    cursor: pointer;
+    font-size: 18px !important;
+    position: relative;
+    top: 2px;
+}
+
+body.big .newLayout.new #removetweetp {
+    cursor: pointer;
     font-size: 27px;
     position: initial;
 }
@@ -2483,6 +2548,11 @@ body.big .newLayout .sectiontitletable .sectionedittd i {
     /* max-height: 21px; */
     height: 100%;
 }
+
+body.big #linktable {
+  
+}
+
 
 .newLayout .detailtable {
     padding: 3px 5px;
@@ -3051,7 +3121,7 @@ body.big #externallinkp {
     top: 1px;
 }
 body.big #closepopupp {
-    font-size: 22px !important;
+    font-size: 24px !important;
     position: relative;
     top: 1px;
 }
