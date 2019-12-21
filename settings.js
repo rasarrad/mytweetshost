@@ -535,14 +535,9 @@ function showDate(obj) {
     //otherObj.focus();
     var date = new Date();
     if (otherObj.val().trim() != "") {
-        alert("---" + otherObj.val())
-        alert("---1" + otherObj.val().substring(6, 2))
-        alert("---2" + otherObj.val().substring(4, 2))
-        alert("---3" + otherObj.val().substring(0, 4))
-        date.setDate(Number(otherObj.val().substring(6, 2)));
-        date.setMonth(Number(otherObj.val().substring(4, 2)) - 1);
+        date.setDate(Number(otherObj.val().substring(6, 8)));
+        date.setMonth(Number(otherObj.val().substring(4, 6)) - 1);
         date.setFullYear(Number(otherObj.val().substring(0, 4)));
-        alert(date)
     }
     openCalendar("linkdate", date);
 }

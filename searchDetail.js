@@ -173,7 +173,7 @@ function openCalendar(targetObj, date) {
     $('body, html').css('overflow-y', 'hidden');
 
     var currDate = null;
-    alert(date)
+
     if (date)
         currDate = date;
     else
@@ -288,8 +288,6 @@ function calendarChanged(date) {
                 
                 if (date) {
                     otherObj.html(formatDate(date));
-                    alert(date)
-                    alert(formatNumDate(date))
                     $("#linkChange").find(".dateinput").val(formatNumDate(date));
                     createCookie($('#linkChange').attr("cid") + "datechanged", formatNumDate(date));
                 }
@@ -1184,7 +1182,6 @@ var getJsonbyid = function(id, functorun) {
                 else {
                     val = recordfromdata;
                 }
-                //alert(val.id + " - " + id + " - " + (val.id == id))
                 if (val.id == id) {
                     processtmp = false;
 
