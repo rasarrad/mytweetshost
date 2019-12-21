@@ -139,7 +139,7 @@ function filterauthorOnChange(obj) {
         currentinfosearchdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filterauthor\", \"searchauthor\")' class='fa fa-times-circle'></i>");
         currentinfosearchdisplay.removeClass("emptyvalue");
         $("#searchinfo").removeClass("emptyvalue");
-        $("#searchinfo").addClass("withvalue");
+        $("#searchinfo").addClass("withvalue"); 
     }
 }
 
