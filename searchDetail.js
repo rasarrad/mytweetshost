@@ -287,6 +287,7 @@ function calendarChanged(date) {
                 
                 if (date) {
                     otherObj.html(formatDate(date));
+                    $("#linkChange").find(".dateinput").val(formatNumDate(date));
                     createCookie($('#linkChange').attr("cid") + "datechanged", formatNumDate(date));
                 }
                 else {
