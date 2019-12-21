@@ -1876,6 +1876,14 @@ body.big #linkChange .titletable {
 }   
         
 @media only screen and (max-width: 700px) {
+    .checkstyleddiv {
+        width: 107px !important;
+        display: inline-block;
+    }
+    body.big .checkstyleddiv {
+        width: 162px !important;
+        display: inline-block;
+    }  
     #postedby {
       width: 135px;
       margin-left: 3px;
@@ -2747,7 +2755,10 @@ input[type="checkbox"] {
     width: 107px;
     display: inline-block;
 }
-
+body.big .checkstyleddiv {
+    width: 146px;
+    display: inline-block;
+}
 .checkstyleddiv input {
     position: relative;
     top: 10px;
@@ -3055,7 +3066,7 @@ input[type="checkbox"] + label {
     font-size: 11px;
 }
 body.big input[type="checkbox"] + label {
-    font-size: 11px;
+    font-size: 14px;
 }
 
 
