@@ -147,6 +147,11 @@ function filterauthorOnChange(obj) {
 function formatDate(date) {
     return pad(date.getDate(), 2) + "/" + pad((date.getMonth() + 1), 2) + "/" + date.getFullYear();
 }
+
+function formatDateFromNum(date) {
+    return pad(date.substring(6,8), 2) + "/" + pad(date.substring(4,6), 2) + "/" + date.substring(0,4);
+}
+
 function formatNumDate(date) {
     return date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2);
 }

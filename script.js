@@ -359,8 +359,8 @@ $( document ).ready(function() {
       filterdate2change();
     });
 
-    $( "#date" ).click(function() {
-        $( "#date" ).blur();  
+    $( "#datetoshow" ).click(function() {
+        $("#datetoshow").blur();  
         $('#linkChange').css("background", "transparent");
         var otherObj = $('#linkChange').find(".dateinput");
         var date = new Date();
@@ -370,9 +370,10 @@ $( document ).ready(function() {
             date.setFullYear(Number(otherObj.val().substring(0, 4)));
         }
         openCalendar("linkcreatedate", date);
-      });
+    });
 
-      $( "#tagsselect" ).change(function() {
+    
+    $( "#tagsselect" ).change(function() {
         // Check input( $( this ).val() ) for validity here
         if ($( this ).val() != "notag") {
             $( "#tagsinput" ).val($( "#tagsinput" ).val() + " " + $( this ).val());

@@ -32,7 +32,8 @@ function parseTweet(type) {
             var day = date.substring(date.indexOf(' ') + 1, date.lastIndexOf(' ') -1); 
     
             $('#date').val(year + pad(getMonthFromString(month), 2) + pad(day, 2));
-
+            
+            $('#datetoshow').val(formatDateFromNum($('#date').val()));
             if (type && type == 2) {
                 create();
                 showMessage("Tweet Link Successfully Parsed And Created"); 
@@ -65,8 +66,10 @@ function parseTweet(type) {
             
             var date = new Date();
             
-            $('#date').val(date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2));
+            $('#date').val(formatNumDate(date));
             
+            $('#datetoshow').val(formatDate(date));
+
             url = text.substring(text.indexOf('https://www.youtube'), text.indexOf('frameborder') - 2); 
             
             urldirect = "https://www.youtube.com/watch?v=" + text.substring(text.indexOf('embed') + 6, text.indexOf('frameborder') - 2); 
@@ -106,8 +109,10 @@ function parseTweet(type) {
 
             var date = new Date();
             
-            $('#date').val(date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2));
+            $('#date').val(formatNumDate(date));
             
+            $('#datetoshow').val(formatDate(date));
+
             url = text.substring(text.indexOf('https://www.youtube'), text.indexOf('frameborder') - 2); 
             
             urldirect = text; 
@@ -155,8 +160,10 @@ function parseTweet(type) {
 
             var date = new Date();
             
-            $('#date').val(date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2));
+            $('#date').val(formatNumDate(date));
             
+            $('#datetoshow').val(formatDate(date));
+
             url = text; 
 
             text = "\"<iframe src='" 
@@ -359,6 +366,7 @@ function resetFieldsPopup()
 {
     $('#tweet').val('');
     $('#date').val('');
+    $('#datetoshow').val('');
     $('#tweetid').val('');
     $('#postedby').val('');
     $('#catsinput').val('');
@@ -390,6 +398,7 @@ var closePopup = function()
 {
     $('#tweet').val('');
     $('#date').val('');
+    $('#datetoshow').val('');
     $('#tweetid').val('');
     $('#postedby').val('');
     $('#catsinput').val('');

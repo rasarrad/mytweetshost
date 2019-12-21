@@ -163,13 +163,14 @@ var openSettingsPopup = function(jsonobj)
                 $("#linkChange .buttonstable tr:first-child td .authorinput").val("");
             }
         }
-        $("#linkChange .buttonstable tr:first-child td .dateinput").removeClass('extended');
+        $("#linkChange .buttonstable tr:first-child td .datetoshow").removeClass('extended');
         $("#linkChange .buttonstable tr:first-child td .date").show();
         $("#linkChange .buttonstable tr:first-child td .dateinput").hide(); 
+        $("#linkChange .buttonstable tr:first-child td .datetoshow").hide(); 
         var datechanged = readCookie(jsonobj.id + "datechanged");
         if (datechanged != null && datechanged != 'null') {
             if (datechanged.length > 0) {
-                $("#linkChange .buttonstable tr:first-child td .date").html(datechanged.substring(6,8) + "/" + datechanged.substring(4,6) + "/" + datechanged.substring(0,4));
+                $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(datechanged));
             
                 $("#linkChange .buttonstable tr:first-child td .dateinput").val(datechanged);
             }
@@ -181,7 +182,7 @@ var openSettingsPopup = function(jsonobj)
         else {
             var date = jsonobj.date.toString();
             if (date.length > 0) {
-                $("#linkChange .buttonstable tr:first-child td .date").html(date.substring(6,8) + "/" + date.substring(4,6) + "/" + date.substring(0,4));
+                $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(date));
             
                 $("#linkChange .buttonstable tr:first-child td .dateinput").val(date);
             }
@@ -392,9 +393,9 @@ var openSettingsPopup = function(jsonobj)
         $("#linkChange .buttonstable tr:first-child td .authorinput").show(); 
 
         $("#linkChange .buttonstable tr:first-child td .date").hide();
-        
-        $("#linkChange .buttonstable tr:first-child td .dateinput").addClass('extended');
-        $("#linkChange .buttonstable tr:first-child td .dateinput").show(); 
+
+        $("#linkChange .buttonstable tr:first-child td .datetoshow").addClass('extended');
+        $("#linkChange .buttonstable tr:first-child td .datetoshow").show(); 
 
         $(".buttontdtohide").hide();
         $(".originaltr").hide();
