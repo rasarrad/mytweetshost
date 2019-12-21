@@ -294,7 +294,8 @@ function calendarChanged(date) {
                 }
             }
             $('#linkChange').css("background", style.getPropertyValue('--soft-transp-color'));
-            
+            closeCalendarPopup();
+
             break;    
     }
 }          
