@@ -21,7 +21,7 @@ var total_hh = 0;
 var hideMode = false;
 var tagssloaded = false;
 var catsmap = new Map();
-var calendar = null;
+var calendar = null; 
 var filterdate1date = null;
 var filterdate2date = null;
 
