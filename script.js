@@ -25,10 +25,10 @@ var calendar = null;
 var filterdate1date = null;
 var filterdate2date = null;
 
-$("#mask").css("background-image", "linear-gradient(to bottom, red 4%, green 126%)");
+
 
 $( document ).ready(function() { 
-
+    $("#mask").css("background-image", "linear-gradient(to bottom, red 4%, green 126%)");
     console.log('-------------- app - BEGIN --------------');
     /*$( "#mask" ).fadeOut( 1100, function() {
         var style = window.getComputedStyle(body, null);
