@@ -25,6 +25,8 @@ var calendar = null;
 var filterdate1date = null;
 var filterdate2date = null;
 
+$("#mask").css("background-image", "linear-gradient(to bottom, var(--dark-color) 4%, var(--high-color) 126%)");
+
 $( document ).ready(function() { 
 
     console.log('-------------- app - BEGIN --------------');
