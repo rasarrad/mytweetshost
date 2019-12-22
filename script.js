@@ -25,8 +25,13 @@ var calendar = null;
 var filterdate1date = null;
 var filterdate2date = null;
 
+var currTheme = readCookie("currTheme");
+if (currTheme && currTheme.length > 0 && currTheme != 'default') {
+     changetheme(currTheme);
+}  
+
 setTimeout(function(){
-    $("#mask").css("background-image", "linear-gradient(to bottom, red 4%, green 126%)");
+    $("#mask").css("background-image", "linear-gradient(to bottom, var(--dark-color) 4%, var(--high-color) 126%)");
 }, 1); 
 
 $( document ).ready(function() { 
@@ -50,11 +55,6 @@ $( document ).ready(function() {
     nextid = parseInt(readCookie("maxid"));
 
    //createCookie("28tagchanged", null);
-
-   var currTheme = readCookie("currTheme");
-   if (currTheme && currTheme.length > 0 && currTheme != 'default') {
-        changetheme(currTheme);
-   }  
 
    catsmap.set("tvn", "To View Now");
    catsmap.set("trn", "Trending");
