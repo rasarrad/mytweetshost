@@ -190,8 +190,9 @@ var openSettingsPopup = function(jsonobj)
                 $("#linkChange .buttonstable tr:first-child td .date").html("--");
                 $("#linkChange .buttonstable tr:first-child td .dateinput").val("");
             }
-        }      
-
+        }  
+        $("#linkChange #editTags .fa-chevron-down").show();    
+        
         $(".buttontdtohide").show();  
         $(".originaltr").show();
         $('#removetweetp').attr('class','').addClass('fa').addClass('fa-eraser').addClass('fa-flip-horizontal');
@@ -401,6 +402,7 @@ var openSettingsPopup = function(jsonobj)
         $(".originaltr").hide();
         $('#removetweetp').attr('class','').addClass('fa').addClass('fa-floppy-o');
 
+        $("#linkChange #editTags .fa-chevron-down").hide();    
     }
 
     $('#linkChange').fadeIn(); 
