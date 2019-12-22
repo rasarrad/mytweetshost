@@ -23,7 +23,7 @@ var tagssloaded = false;
 var catsmap = new Map();
 var calendar = null; 
 var filterdate1date = null;
-var filterdate2date = null;
+var filterdate2date = null; 
 
 var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
