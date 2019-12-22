@@ -1569,14 +1569,15 @@ var countalltweets = function(id) {
         
         /////*/
 
-        /* 
+
         $( "#mask" ).fadeOut( 800, function() {
             var style = window.getComputedStyle(body, null);
     
-            $( "#mask" ).css("background", style.getPropertyValue('--soft-transp-color'));
-            $( "#mask .fa-folder-open" ).hide();
-            $( "#mask .fa-circle-o-notch" ).show();
-        });*/
+            $("#mask").css("background", style.getPropertyValue('--soft-transp-color'));
+            $("#mask .fa-folder-open").hide();
+            $("#mask > div" ).hide();
+            $("#mask .fa-circle-o-notch").show();
+        });
     }); 
 
     console.log('-------------- countalltweets - END --------------');
