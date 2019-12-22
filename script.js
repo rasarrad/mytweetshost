@@ -536,7 +536,7 @@ $.fn.isChildOverflowing = function (child) {
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
-function changetheme(type, desc) {
+function changetheme(type, flag) {
     var high_color = "";
     var text_color = "";
     var dark_color = "";
