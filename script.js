@@ -27,6 +27,7 @@ var filterdate2date = null;
 
 var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
+    alert(1);
      changetheme(currTheme);
 }  
 
