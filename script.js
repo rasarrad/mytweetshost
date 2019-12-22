@@ -31,7 +31,7 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 }  
 
 setTimeout(function(){
-    $("#mask").css("background-image", "linear-gradient(to bottom, var(--dark-color) 4%, var(--high-color) 126%)");
+    $("#mask").css("background-image", "linear-gradient(var(--soft-color), var(--dark-color))");
 }, 1); 
 
 $( document ).ready(function() { 

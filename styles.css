@@ -1246,7 +1246,7 @@ body:not(.big) .yt.tweet .bottomgradiantback {
       top: 0px;
   }
   #backdiv {
-    background-image: linear-gradient(var(--soft-color), var(--softdark-color)) !important;
+    background-image: linear-gradient(var(--soft-color), var(--dark-color)) !important;
   }
 
 .tweet iframe {
