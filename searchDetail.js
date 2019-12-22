@@ -1358,7 +1358,7 @@ var countalltweets = function(id) {
             console.log('-------------- 9999999999 --------------');
         }
 
-        /* 
+        
 
         // All Links
         $("#all").text(total);
@@ -1566,7 +1566,14 @@ var countalltweets = function(id) {
         $("#cli").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
         $("#cli2").text(climate);
         $("#cli2").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
-        */
+
+        $( "#mask" ).fadeOut( 800, function() {
+            var style = window.getComputedStyle(body, null);
+    
+            $( "#mask" ).css("background", style.getPropertyValue('--soft-transp-color'));
+            $( "#mask .fa-folder-open" ).hide();
+            $( "#mask .fa-circle-o-notch" ).show();
+        });
         /* 
         $( "#mask" ).fadeOut( 700, function() {
             $( "#mask" ).css("background", "rgba(0, 0, 0, 0.72)")

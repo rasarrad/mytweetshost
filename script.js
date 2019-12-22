@@ -28,14 +28,14 @@ var filterdate2date = null;
 $( document ).ready(function() { 
 
     console.log('-------------- app - BEGIN --------------');
-    $( "#mask" ).fadeOut( 1100, function() {
+    /*$( "#mask" ).fadeOut( 1100, function() {
         var style = window.getComputedStyle(body, null);
 
         $( "#mask" ).css("background", style.getPropertyValue('--soft-transp-color'));
         $( "#mask .fa-folder-open" ).hide();
         $( "#mask .fa-circle-o-notch" ).show();
     });
-    
+    */
     nextid = parseInt(readCookie("maxid"));
 
     do {
