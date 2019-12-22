@@ -27,7 +27,7 @@ var filterdate2date = null;
 
 setTimeout(function(){
     $("#mask").css("background-image", "linear-gradient(to bottom, red 4%, green 126%)");
-}, 40); 
+}, 1); 
 
 $( document ).ready(function() { 
     
