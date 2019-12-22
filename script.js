@@ -71,7 +71,11 @@ $( document ).ready(function() {
         $(element).attr("autocomplete", "none");
         $(element).attr("additionalAttributes", "{autocomplete: 'none'}");
    });
-   countalltweets();
+   setTimeout(function(){
+    countalltweets();
+}, 1); 
+
+
     setviewmode();
 
     var hasZoom = readCookie("hasZoom");
