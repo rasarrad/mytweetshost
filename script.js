@@ -610,6 +610,7 @@ function changetheme(type, flag) {
                                     
             if (flag) {
                 setTimeout(function(){
+                    alert(122);
                     $("#mask").css("background-image", "linear-gradient(#25c345, #005411)");
                 }, 1); 
             }
