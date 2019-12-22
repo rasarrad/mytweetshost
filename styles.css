@@ -2892,7 +2892,9 @@ input[type=text] {
   font-size: 12px !important;
   height: 15px;
 }
-
+input, select, textarea {
+  outline: none;
+}
 input[type=text]#date {
   text-align: center;
 }

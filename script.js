@@ -62,6 +62,11 @@ $( document ).ready(function() {
    catsmap.set("imp", "Important");
    catsmap.set("cli", "Climate Change");
 
+   $( "input, textarea" ).each( function( index, element ){
+        $(element).attr("spellcheck", "false");
+        $(element).attr("autocomplete", "none");
+        $(element).attr("additionalAttributes", "{autocomplete: 'none'}");
+   });
    countalltweets();
     setviewmode();
 
