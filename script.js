@@ -30,6 +30,11 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
      changetheme(currTheme, true);
 }  
 
+/*
+setTimeout(function(){
+    $("#mask").css("background-image", "linear-gradient(var(--soft-color), var(--dark-color))");
+}, 1); 
+*/
 $( document ).ready(function() { 
     
     console.log('-------------- app - BEGIN --------------');
@@ -536,7 +541,7 @@ $.fn.isChildOverflowing = function (child) {
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
-function changetheme(type, flag) {
+function changetheme(type, desc) {
     var high_color = "";
     var text_color = "";
     var dark_color = "";
@@ -555,12 +560,6 @@ function changetheme(type, flag) {
             soft_transp_color = "#001b30cc";
             document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#003156');
             $('#mainsettings .currenttheme').html('Twitter Lines'); 
-
-            if (flag) {
-                setTimeout(function(){
-                    $("#mask").css("background-image", "linear-gradient(#004a86, #001b30)");
-                }, 1); 
-            }
             break;
 
         case "red":
@@ -572,13 +571,6 @@ function changetheme(type, flag) {
             soft_transp_color = "#630000c2";  
             document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#af0000');
             $('#mainsettings .currenttheme').html('Red Tide'); 
-            
-            if (flag) {
-                setTimeout(function(){
-                    $("#mask").css("background-image", "linear-gradient(#ea0000, #630000)");
-                }, 1); 
-            }
-
             break;
 
         case "gray":
@@ -590,12 +582,6 @@ function changetheme(type, flag) {
             soft_transp_color = "#3c3c3cbd"; 
             document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#999');
             $('#mainsettings .currenttheme').html('Shades Of Gray'); 
-                        
-            if (flag) {
-                setTimeout(function(){
-                    $("#mask").css("background-image", "linear-gradient(#ffffff, #909090)");
-                }, 1); 
-            }
             break;
 
         case "green":
@@ -607,13 +593,6 @@ function changetheme(type, flag) {
             soft_transp_color = "#04290bc4"; 
             document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#179631');
             $('#mainsettings .currenttheme').html('Green Army'); 
-                                    
-            if (flag) {
-                setTimeout(function(){
-                    alert(122);
-                    $("#mask").css("background-image", "linear-gradient(#25c345, #005411)");
-                }, 1); 
-            }
             break; 
     }
 
