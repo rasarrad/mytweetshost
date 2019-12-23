@@ -30,8 +30,10 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
      changetheme(currTheme, true);
 }  
 
+dosearchmore = false;
 dblFlag = true;
-setTimeout(function() {     
+setTimeout(function() {
+  dosearchmore = true;    
   if (!dblFlag) {
       $( "#mask" ).fadeOut( 800, function() {
             var style = window.getComputedStyle(body, null);
@@ -42,7 +44,7 @@ setTimeout(function() {
             $("#mask > .fa-circle-o-notch").show();
       });
   }
-}, 2000);
+}, 4000);
 
 /*
 setTimeout(function(){
