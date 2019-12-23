@@ -1567,8 +1567,8 @@ var countalltweets = function(id) {
         $("#cli2").text(climate);
         $("#cli2").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
         
-        /////*/
-
+        /////* 
+        /* 
 
         $( "#mask" ).fadeOut( 800, function() {
             var style = window.getComputedStyle(body, null);
@@ -1577,7 +1577,7 @@ var countalltweets = function(id) {
             $("#mask .fa-folder-open").hide();
             $("#mask > div" ).hide();
             $("#mask .fa-circle-o-notch").show();
-        });
+        });*/
     }); 
 
     console.log('-------------- countalltweets - END --------------');
