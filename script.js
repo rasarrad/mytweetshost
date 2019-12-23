@@ -30,7 +30,21 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
      changetheme(currTheme, true);
 }  
 
+dosearchmore = false;
+dblFlag = true;
+setTimeout(function() {
+  dosearchmore = true;    
+  if (!dblFlag) {
+      $( "#mask" ).fadeOut( 800, function() {
+            var style = window.getComputedStyle(body, null);
 
+            $("#mask").css("background", style.getPropertyValue('--soft-transp-color'));
+            $("#mask .fa-folder-open").hide();
+            $("#mask > div" ).hide();
+            $("#mask > .fa-circle-o-notch").show();
+      });
+  }
+}, 2500);
 
 /*
 setTimeout(function(){
