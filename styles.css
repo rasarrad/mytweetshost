@@ -3588,7 +3588,7 @@ body.big #mainsettings #theme td:not(.ellipsis) .titletext {
 /*****************************************************************************/
 /********************************* DESKTOP CSS *******************************/
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1020px) {
   #mask .fa-circle-o-notch {
     height: 43px !important;
   }
