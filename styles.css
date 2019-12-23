@@ -1120,7 +1120,10 @@ body.big #addtweet {
   background-image: linear-gradient(to bottom, var(--soft-color) 4%, var(--dark-color) 7% );
 }
 .tweet:first-child {
-      margin-top: 11px;
+      margin-top: 17px;
+}
+body.big .tweet:first-child {
+      margin-top: 29px;
 }
 .tags {
   padding-top: 5px;
@@ -1449,10 +1452,10 @@ body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !importan
       top: 15px;
     }  
   .tags {
-    margin-top: -1px;
+    margin-top: -14px;
   }
   body.big .tags {
-    margin-top: 3px;
+    margin-top: -9px;
   }
   .newLayout#mainsettings > div {
           margin-top: 23px !important;
@@ -1520,27 +1523,27 @@ body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !importan
     }
      .linkbar {
         left: calc(50% - 240px);
-        top: 0px !important;
+        top: 6px !important;
     }
     body.big .linkbar {
         left: calc(50% - 243px);
-        top: 2px !important;
+        top: 3px !important;
     }
     #expand {
         right: calc(50% - 237px);
     }
     body.big #expand {
         right: calc(50% - 241px);
-        top: 8px !important;
+        top: 12px !important;
     } 
     .tags {
       font-size: 12px !important;
-      top: -5px;
+      top: 2px;
     }
     body.big .tags {
       font-size: 17px !important;
       height: 32px;
-      top: -3px;
+      top: 0px;
     }
     .tweet .tags {
       padding-left: calc(50% - 209px);
@@ -1548,7 +1551,7 @@ body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !importan
       /* width: 480px; */
       /* border-bottom-left-radius: 18px; */
       /* border-bottom-right-radius: 18px; */
-      max-width: 408px;
+      max-width: 411px;
     }
     .tweet:nth-of-type(1) .tags {
       padding-left: calc(50% - 199px);
@@ -1625,7 +1628,7 @@ body.big #sear, body.big #sear2 {
     left: 18px;
   }     
   .tweet:first-child #expand {
-      margin-top: -7px;
+      margin-top: -6px;
   }  
 
   .innermask {
@@ -2105,6 +2108,10 @@ body.big #linkChange .titletable {
         right: 13px;
     }  
     .linkbar {
+        left: 9px;
+        top: 6px !important;
+    }
+    body.big .linkbar {
         left: 9px;
         top: -1px !important;
     }
@@ -3236,7 +3243,7 @@ body.big .linkbar.fa-youtube-play{
 
 #expand {
     font-size: 14px;
-    top: 4px;
+    top: 10px;
     left: auto;
     transition: all 0.6s;
 }
