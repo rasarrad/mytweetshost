@@ -172,106 +172,6 @@ body.big #searchpopup .fa-times-circle {
   background: var(--high-color);
 }
 
-@media only screen and (min-width: 1200px) {
-  #mask .fa-circle-o-notch {
-    height: 43px !important;
-  }
-  .sectionedittd:hover {
-    opacity: 0.6;
-  }
-  
-  .newLayout > div .buttonstr td:hover { 
-    opacity: 0.6;
-  }
-  .newLayout.new div table tr .td:hover {
-    cursor: default !important;
-  }
-  .mainbutton:hover {
-    opacity: 0.6;
-  }
-
-  .toptitle:hover {
-    opacity: 0.6 !important;
-  }
-
-  #closepopup:hover {
-    color: #e4e4e4;
-  }
-  #internallink:hover, .linkbar:hover, #externallink:hover, #expand:hover {
-    opacity: 0.6;
-   }
-   #zoomin:hover {
-    /* color: var(--soft-color); */
-    opacity: 0.6;
-    }
-    #zoomout:hover {
-        color: var(--soft-color);
-    }
-
-  #settings:hover {
-    opacity: 0.4;
-    opacity: 0.6;
-}
-
-  .buttonIcon:hover {
-    color: #e4e4e4;
-  }
-
-  button:hover {
-    color: #c6e9fd;
-    border: 1px solid #0090e4;
-  }
-
-  #menu > ul > li:hover {
-    background: #004873;
-    color: white;
-  }
-
-  #menu > ul > li:hover > div {
-    color: #51b1ff;
-  }
-
-  .menubutton:hover {
-    /* color: var(--dark-color); */
-    opacity: 0.6;
-  }
-
-  .cursorpointer:hover {
-    opacity: 0.6 !important;
-  }
-
-  .litags:hover {
-    color: var(--dark-color);
-    background: var(--high-color);
-  }
-  .litags.selectedtag:hover {
-    color: var(--high-color);
-    background: var(--soft-color);
-  }
-  
-  .litags:not(.selectedtag):hover {
-      color: var(--dark-color);
-      background: var(--high-color);
-  }
-      #addtweet:hover {
-      /* color: var(--soft-color); */
-      opacity: 0.6;
-    }
-
-    #sear:hover {
-      /* color: var(--soft-color); */
-      opacity: 0.6;
-    }
-    
-    .clicable:hover {
-      opacity: 0.6 !important;
-    }
-    .checkstyleddiv:hover {
-      opacity: 0.6 !important;
-    }
-    
-
-}
 .copyright {
   color: var(--high-color);
 }
@@ -1445,7 +1345,10 @@ body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !importan
   width: 211px;
   height: 20px;
 }
-                     
+
+/*****************************************************************************/
+/******************************** LANDSCAPE CSS ******************************/
+
 @media only screen and (max-width: 1000px) {
   #addtweet {
       font-size: 22px;
@@ -1577,33 +1480,25 @@ body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !importan
       /* border-top-right-radius: 10px; */
     }      
 }
+/****************************** FIM LANDSCAPE CSS ****************************/
+/*****************************************************************************/
 
 
-
-
-
-
-  twitter-widget {
-      width: 100% !important;
-  }
-  .fa-square-o {
-    display: none;
-  }
-
-
-  .tagtext {
-  height: 101px;
-  }
-
-
-
-  #openadd {
-    right: 129px !important;
-  }
-
-#backdiv {
-/* background-image:linear-gradient(rgb(0, 104, 165), rgb(0, 139, 222)) !important; */
+twitter-widget {
+    width: 100% !important;
 }
+.fa-square-o {
+  display: none;
+}
+
+.tagtext {
+height: 101px;
+}
+
+#openadd {
+  right: 129px !important;
+}
+
 #sear, #sear2  {
     position: relative;
     color: var(--high-color);
@@ -1624,51 +1519,51 @@ body.big #sear, body.big #sear2 {
   background: rgba(255, 255, 255, 0.65) !important;
 }
  #expand {
+  margin-top: -6px;
+  left: 18px;
+}     
+.tweet:first-child #expand {
     margin-top: -6px;
-    left: 18px;
-  }     
-  .tweet:first-child #expand {
-      margin-top: -6px;
-  }  
+}  
 
-  .innermask {
-      background: rgba(0, 0, 0, 0.81);
-  }
+.innermask {
+    background: rgba(0, 0, 0, 0.81);
+}
 .newLayout > div {
     margin-left: calc(50% - 241px) !important;
     width: 482px !important;
 }
 .buttonstable .author {
-      max-width: 287px !important;
-  }
-  body.big .buttonstable .author {
-       max-width: 192px !important;
-       /* min-width: 222px; */
-  }
-  .newLayout > div .titletable tr:first-child .firsttd {
-      min-width: 466px;
-  }
-  body.big .newLayout > div .titletable tr:first-child .firsttd {
-      min-width: 345px;
-  } 
+    max-width: 287px !important;
+}
+body.big .buttonstable .author {
+      max-width: 192px !important;
+      /* min-width: 222px; */
+}
+.newLayout > div .titletable tr:first-child .firsttd {
+    min-width: 466px;
+}
+body.big .newLayout > div .titletable tr:first-child .firsttd {
+    min-width: 345px;
+} 
 
-   body.big .newLayout.new .buttonstable .datespan {
-      top: 1px !important;
-  }  
-  
-  .buttonstable .date {
-      position: relative !important;
-      top: 0px;
-  }    
- body.big .buttonstable .date {
-      position: relative !important;
-      top: 0px;
-      font-size: 17px;
-  }       
-  .buttonstable .datespan {
-      position: relative !important;
-      top: 0px;
-  }  
+body.big .newLayout.new .buttonstable .datespan {
+    top: 1px !important;
+}  
+
+.buttonstable .date {
+    position: relative !important;
+    top: 0px;
+}    
+body.big .buttonstable .date {
+    position: relative !important;
+    top: 0px;
+    font-size: 17px;
+}       
+.buttonstable .datespan {
+    position: relative !important;
+    top: 0px;
+}  
 
 body.big #editTags {
   margin-top: 93px !important;
@@ -1684,9 +1579,6 @@ body.big #searchtags {
   transition: all 0.6s;
 }
 
-.newLayout:not(.new):not(.mainsettings) table .sectionicontd:hover {
-  /* opacity: 0.6; */
-}
 .newLayout.new div table tr .td {
   cursor: default !important;
 }
@@ -1694,7 +1586,6 @@ body.big #searchtags {
 .sectionedittd {
   transition: all 0.6s;
 }
-
 
 .mainbutton {
   transition: all 0.6s;
@@ -1716,7 +1607,6 @@ body.big .newLayout #previewtable {
     margin-top: 94px !important;
 }
 
-
 body.big #mainsettings .fa-cog {
   font-size: 23px !important;
 }  
@@ -1731,9 +1621,6 @@ body.big #mainsettings .buttonstable tr:first-child .firsttd b {
   margin-left: 0 !important;
   top: -4px !important;
 }
-
-b {}    
-
 
 body.big #mainsettings .firstsettable {
   margin-top: 36px !important;
@@ -1766,9 +1653,6 @@ body.big #mainsettings .fa-plus-square {
 }  
 
 #mainsettings .firstsettable {margin-top: 32px !important;}
-body.big #mainsettings .firstsettable {
-  
-}
 
 body.big #mainsettings input[type=text] {left: 13px;top: -1px !important;}
 
@@ -1785,18 +1669,12 @@ body.big #mainsettings .fa-check {
 #mainsettings .fa-window-close {
   right: 22px !important;
 } 
-body.big #mainsettings .fa-window-close {
-
-} 
-
-
 
 #myCalendar {width: 355px;}
 
 body.big #myCalendar {
     font-size: 15px;
 }
-
 
 #calendardiv  > div .titletable tr:first-child .firsttd {
     min-width: 345px !important;
@@ -1828,7 +1706,6 @@ body.big #calendardiv .sectiontitletable.sectionexpandable {
   margin-top: 42px;
 }
 
-
 #calendardiv .fa-calendar {
     font-size: 14px;
 }
@@ -1852,11 +1729,11 @@ body.big .toptitle > span {
     font-size: 22px;
 }
 
-  body.big #linkChange.newLayout > div .titletable tr:first-child .firsttd {
-      min-width: 345px;
-      /* min-width: 236px !important; */
-      width: 207px;
-  } 
+body.big #linkChange.newLayout > div .titletable tr:first-child .firsttd {
+    min-width: 345px;
+    /* min-width: 236px !important; */
+    width: 207px;
+} 
 
 #postedby {
   width: 202px;
@@ -1884,6 +1761,9 @@ body.big #linkChange .titletable {
   width: 468px;
   padding-left: 6px;
 }   
+
+/*****************************************************************************/
+/******************************** PORTRAIT CSS *******************************/
         
 @media only screen and (max-width: 700px) {
     .checkstyleddiv {
@@ -2226,7 +2106,8 @@ body.big #linkChange .titletable {
       }      
 
 }
-
+/****************************** FIM PORTRAIT CSS *****************************/
+/*****************************************************************************/
 
 
 
@@ -3703,3 +3584,108 @@ body.big #mainsettings #theme td:not(.ellipsis) .titletext {
     position: relative;
     top: 2px !important;
 }
+
+/*****************************************************************************/
+/********************************* DESKTOP CSS *******************************/
+
+@media only screen and (min-width: 1200px) {
+  #mask .fa-circle-o-notch {
+    height: 43px !important;
+  }
+  .sectionedittd:hover {
+    opacity: 0.6;
+  }
+  
+  .newLayout > div .buttonstr td:hover { 
+    opacity: 0.6;
+  }
+  .newLayout.new div table tr .td:hover {
+    cursor: default !important;
+  }
+  .mainbutton:hover {
+    opacity: 0.6;
+  }
+
+  .toptitle:hover {
+    opacity: 0.6 !important;
+  }
+
+  #closepopup:hover {
+    color: #e4e4e4;
+  }
+  #internallink:hover, .linkbar:hover, #externallink:hover, #expand:hover {
+    opacity: 0.6;
+   }
+   #zoomin:hover {
+    /* color: var(--soft-color); */
+    opacity: 0.6;
+    }
+    #zoomout:hover {
+        color: var(--soft-color);
+    }
+
+  #settings:hover {
+    opacity: 0.4;
+    opacity: 0.6;
+}
+
+  .buttonIcon:hover {
+    color: #e4e4e4;
+  }
+
+  button:hover {
+    color: #c6e9fd;
+    border: 1px solid #0090e4;
+  }
+
+  #menu > ul > li:hover {
+    background: #004873;
+    color: white;
+  }
+
+  #menu > ul > li:hover > div {
+    color: #51b1ff;
+  }
+
+  .menubutton:hover {
+    /* color: var(--dark-color); */
+    opacity: 0.6;
+  }
+
+  .cursorpointer:hover {
+    opacity: 0.6 !important;
+  }
+
+  .litags:hover {
+    color: var(--dark-color);
+    background: var(--high-color);
+  }
+  .litags.selectedtag:hover {
+    color: var(--high-color);
+    background: var(--soft-color);
+  }
+  
+  .litags:not(.selectedtag):hover {
+      color: var(--dark-color);
+      background: var(--high-color);
+  }
+      #addtweet:hover {
+      /* color: var(--soft-color); */
+      opacity: 0.6;
+    }
+
+    #sear:hover {
+      /* color: var(--soft-color); */
+      opacity: 0.6;
+    }
+    
+    .clicable:hover {
+      opacity: 0.6 !important;
+    }
+    .checkstyleddiv:hover {
+      opacity: 0.6 !important;
+    }
+}
+
+/******************************* FIM DESKTOP CSS *****************************/
+/*****************************************************************************/
