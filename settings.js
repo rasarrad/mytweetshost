@@ -402,7 +402,7 @@ var openSettingsPopup = function(jsonobj)
         $(".originaltr").hide();
         $('#removetweetp').attr('class','').addClass('fa').addClass('fa-floppy-o');
 
-        $("#linkChange #editTags .fa-chevron-down").hide();    
+        $("#linkChange #editTags .fa-chevron-down").show();    
     }
 
     $('#linkChange').fadeIn(); 
@@ -417,7 +417,7 @@ var openMainSettingsPopup = function(jsonobj)
     var setHeight = "18px";
 
     if ($('body').hasClass('big'))
-        setHeight = "31px";
+        setHeight = "30px";
 
     $("#mainsettings table#theme").each( function( index, element ) {
         var table = $(element);

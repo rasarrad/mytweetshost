@@ -422,6 +422,7 @@ ol > li {
     z-index: 9;
     height: 16px;
     background-image: linear-gradient(to bottom, var(--soft-color) 3%, var(--dark-color) 80%);
+    display: none !important;
 }
 body.big .gradiantback {
     top: 27px;
@@ -1115,7 +1116,8 @@ body.big #addtweet {
   position: relative;
   top: 0px;
   height: calc(100% - 43px);
-  background: var(--dark-color);
+  background: var(--soft-color);
+  background-image: linear-gradient(to bottom, var(--soft-color) 4%, var(--dark-color) 7% );
 }
 .tweet:first-child {
       margin-top: 11px;
@@ -1130,7 +1132,7 @@ body.big #addtweet {
   top: -11px;
   height: 21px;
   border-bottom-width: 0px !important;
-  background: var(--soft-color) !important;
+  background: transpa !important;
   /* z-index: 9; */
   padding-left: calc(50% - 294px);
   text-align: left;
@@ -1264,6 +1266,10 @@ body:not(.big) .yt.tweet .bottomgradiantback {
   font-size: 12px !important;
   top: -5px;
   margin-top: -9px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 594px;
 }
 body.big .tags {
   font-size: 17px !important;
@@ -1542,6 +1548,7 @@ body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !importan
       /* width: 480px; */
       /* border-bottom-left-radius: 18px; */
       /* border-bottom-right-radius: 18px; */
+      max-width: 408px;
     }
     .tweet:nth-of-type(1) .tags {
       padding-left: calc(50% - 199px);
@@ -2084,6 +2091,7 @@ body.big #linkChange .titletable {
     } 
     .tags {
       padding-left: 38px !important;
+      max-width: 338px !important;
     }   
     body.big .tags {
       padding-left: 42px !important;
