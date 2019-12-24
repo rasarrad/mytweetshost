@@ -604,7 +604,7 @@ function editSetting(e, obj, flag) {
         }
     }
     
-    updateTopPosition("linkChange");
+    updateTopPosition("linkChange"); 
 }
 
 function updateTopPosition(obj) {
