@@ -48,7 +48,7 @@ setTimeout(function() {
 
 
 $( document ).ready(function() { 
-    alert($('#mainmenu').height())
+    alert($("#mask > .fa-circle-o-notch").height())
     console.log('-------------- app - BEGIN --------------');
 
     nextid = parseInt(readCookie("maxid"));
