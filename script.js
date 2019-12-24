@@ -48,7 +48,7 @@ setTimeout(function() {
 
 
 $( document ).ready(function() { 
-    
+    alert($('mainmenu').height())
     console.log('-------------- app - BEGIN --------------');
 
     nextid = parseInt(readCookie("maxid"));
