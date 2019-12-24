@@ -49,7 +49,7 @@ setTimeout(function() {
 
 $( document ).ready(function() { 
     console.log('-------------- app - BEGIN --------------');
-alert(window.innerHeight)
+
     nextid = parseInt(readCookie("maxid"));
 
     do {
