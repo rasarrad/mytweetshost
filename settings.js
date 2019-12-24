@@ -603,12 +603,12 @@ function editSetting(e, obj, flag) {
             table.find('td.el').addClass('ellipsis');
         }
     }
-    table.css('transition', 'margin-top 0.6s !important');
+    
     updateTopPosition("linkChange");
 }
 
 function updateTopPosition(obj) {
-    $("#" + obj).attr("style", "margin-top: calc(50% - " + ($("#" + obj).height() / 2) + "px) !important;"); 
+    $("#" + obj + " > div").attr("style", "margin-top: calc(50% - " + ($("#" + obj).height() / 2) + "px) !important;"); 
 }
 
 /////////////////////////////////////////////////////////////////////////
