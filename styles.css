@@ -1020,7 +1020,7 @@ body.big #addtweet {
   background-image: linear-gradient(to bottom, var(--soft-color) 4%, var(--dark-color) 7% );
 }
 .tweet:first-child {
-      margin-top: 17px;
+      margin-top: 22px;
 }
 body.big .tweet:first-child {
       margin-top: 29px;
@@ -1435,6 +1435,9 @@ body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !importan
         left: calc(50% - 240px);
         top: 6px !important;
     }
+    .tweet:first-child .linkbar {
+        top: 1px !important;
+    }
     body.big .linkbar {
         left: calc(50% - 243px);
         top: 3px !important;
@@ -1464,7 +1467,8 @@ body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !importan
       max-width: 411px;
     }
     .tweet:nth-of-type(1) .tags {
-      padding-left: calc(50% - 199px);
+      /* padding-left: calc(50% - 199px); */
+      top: -3px;
     }    
     .tweet:not(:nth-of-type(1)) .gradiantback {
       /* padding-left: calc(48px); */
@@ -1530,7 +1534,7 @@ body.big #sear, body.big #sear2 {
   left: 18px;
 }     
 .tweet:first-child #expand {
-    margin-top: -6px;
+    margin-top: -11px;
 }  
 
 .innermask {
