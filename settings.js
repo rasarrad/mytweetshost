@@ -727,7 +727,9 @@ function createLi(text, obj) {
         objToUse = obj;
     $('#'+ objToUse).prepend('<li onclick="javascript: clickLiTag(event, this)" class="litags selectedtag new">' + text + '</li>');
 }
-
+function test() {
+    alert($('#mainmenu').css("height"))
+}
 function createNonExistentLi(obj, obj2) {
     var objToUse = "tagsul";
     var objToUse2 = "tagsinput";
