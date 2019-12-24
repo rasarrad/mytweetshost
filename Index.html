@@ -1044,15 +1044,18 @@ bookmarks <span>
                     else {
                       $('#tweetcount').fadeIn(800);
                       $('#mask').fadeOut(1300);
+
+                      /*
                         setTimeout(function(){
                             //$(".innermask").fadeOut(1300);
                             $('#mask').fadeOut(1300);
                         }, 1000);  
-
+                                                $(window).trigger("resize");
+*/
                           $('#moretweets').fadeOut(300);
                           $('#moretweets').css('opacity', 0);
 
-                        $(window).trigger("resize");
+
                     }
                     //$(".innermask").fadeOut(1300);
                     doprocess = false;
