@@ -1075,7 +1075,7 @@ body.big #expand {
     position: absolute;
     width: 100%;
     background: rgba(0, 0, 0, 0.81);
-    top: 12px;
+    top: 20px;
     z-index: 9;
     height: 18px;
     display: block;
@@ -1096,6 +1096,10 @@ body:not(.big) .tweet:not(:last-child) .bottomgradiantback {
   top: auto;
   bottom: 4px;
 }
+body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
+  top: auto;
+  bottom: 15px;
+}
 .tweet:last-child .bottomgradiantback {
   position: absolute;
   width: 100%;
@@ -1107,16 +1111,17 @@ body:not(.big) .tweet:not(:last-child) .bottomgradiantback {
   bottom: -5px;
 }
 .tweet.html:not(:last-child) .bottomgradiantback {
-    bottom: 0px;
+    bottom: 9px;
 }
 
 
 .yt.tweet .bottomgradiantback {
   background-image: linear-gradient(to bottom, var(--dark-color) 13%, var(--soft-color) 80%);
+  bottom: 9px;
   }
 body:not(.big) .yt.tweet .bottomgradiantback {
   /* height: 15px; */
-  /* bottom: 6px; */
+  bottom: 16px;
   }     
   .html.tweet .bottomgradiantback {
   background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--soft-color) 85%);
@@ -1132,7 +1137,7 @@ body:not(.big) .yt.tweet .bottomgradiantback {
   border: 0px solid white;
   }
   .tweet.html iframe {
-    margin-top: 11px !important;
+    margin-top: 19px !important;
     }
   .tweet.yt iframe {
     margin-top: 4px !important;
@@ -1143,6 +1148,7 @@ body:not(.big) .yt.tweet .bottomgradiantback {
       width: calc(100% - 0px) !important;
       border: 0px solid #bbbbbb;
       height: 48vw;
+      margin-bottom: 18px;
   }
 
           .tweet.yt {
@@ -1367,23 +1373,23 @@ body.big .linkbar {
 .linkbar.fa-internet-explorer {
       /* left: 9px; */
       font-size: 13px;
-      top: -1px;
+      top: 3px;
 }
 body.big .linkbar.fa-internet-explorer {
       font-size: 18px;
-      top: 4px;
+      top: 2px;
 }
 
 
 .linkbar.fa-youtube-play{
     /* left: 9px; */
     font-size: 14px;
-    top: -1px;
+    top: 2px;
 }
 body.big .linkbar.fa-youtube-play{
     /* left: 9px; */
     font-size: 19px;
-    top: 4px;
+    top: 2px;
 }
 
 
@@ -1420,6 +1426,10 @@ body.big .tweet:first-child .linkbar {
 /******************************** LANDSCAPE CSS ******************************/
 
 @media only screen and (max-width: 1000px) {
+  body.big .linkbar.fa-internet-explorer {
+        font-size: 18px;
+        top: 6px !important;
+  }
   #expand {
     margin-top: -6px;
     /* left: 18px; */
@@ -1489,7 +1499,7 @@ body.big .tweet:first-child .linkbar {
     }  
     .tweet.yt iframe {
         margin-top: 4px !important;
-        height: 265px;
+        height: 289px;
     }
     .tweet iframe {
       position: relative;
@@ -1518,6 +1528,9 @@ body.big .tweet:first-child .linkbar {
         left: calc(50% - 240px);
         top: 2px !important;
     }
+    .linkbar.fa-internet-explorer {
+        top: 3px !important;
+    }
     .tweet:first-child .linkbar {
         top: -1px !important;
     }
@@ -1525,6 +1538,9 @@ body.big .tweet:first-child .linkbar {
         left: calc(50% - 243px);
         top: 3px !important;
     }
+    body.big .linkbar.fa-youtube-play {
+        top: 5px !important;
+    }    
     #expand {
         right: calc(50% - 237px);
     }
@@ -1853,6 +1869,18 @@ body.big #linkChange .titletable {
 /******************************** PORTRAIT CSS *******************************/
         
 @media only screen and (max-width: 700px) {
+      body:not(.big) .html .gradiantback {
+        top: 18px;
+    }
+    body:not(.big) .tweet:not(:last-child) .bottomgradiantback {
+      bottom: 4px;
+    }
+    body:not(.big) .yt.tweet:not(:last-child) .bottomgradiantback {
+      bottom: 15px;
+    }
+    body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
+      bottom: 16px;
+    }
     #expand {
       margin-top: -6px;
       /* left: 18px; */
@@ -2033,6 +2061,8 @@ body.big #linkChange .titletable {
     }
     .tweet.html iframe {
         height: 100vw !important;
+        margin-bottom: 19px;
+        margin-top: 17px !important;
     }  
     .tweet .innertweet {
         position: relative;
@@ -2094,10 +2124,10 @@ body.big #linkChange .titletable {
         top: -1px !important;
     }
     .linkbar.fa-youtube-play {
-        top: 0px !important;
+        top: 3px !important;
     }    
     .linkbar.fa-internet-explorer {
-        top: 0px !important;
+        top: 3px !important;
     }      
     body.big .linkbar {
         left: 8px;
@@ -2609,7 +2639,7 @@ body.big #linktable {
     height: 100%;
 }
 .newLayout ul li {
-    color: var(--high-color);
+    color: var(--text-color);
     cursor: pointer;
     padding: 5px 4px;
     height: 18px;
