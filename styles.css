@@ -1435,7 +1435,7 @@ body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !importan
     }
      .linkbar {
         left: calc(50% - 240px);
-        top: 6px !important;
+        top: 2px !important;
     }
     .tweet:first-child .linkbar {
         top: -1px !important;
@@ -1779,6 +1779,10 @@ body.big #linkChange .titletable {
 /******************************** PORTRAIT CSS *******************************/
         
 @media only screen and (max-width: 700px) {
+    .linkbar {
+        left: calc(50% - 240px);
+        top: 6px !important;
+    }
     .checkstyleddiv {
         width: 107px !important;
         display: inline-block;
