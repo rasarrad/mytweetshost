@@ -322,7 +322,7 @@ ol > li {
     z-index: 9;
     height: 16px;
     background-image: linear-gradient(to bottom, var(--soft-color) 3%, var(--dark-color) 80%);
-    display: none !important;
+    /* display: none !important; */
 }
 body.big .gradiantback {
     top: 27px;
@@ -1010,6 +1010,7 @@ body.big #addtweet {
     margin-right: 0px !important;
     top: -12px;
     max-width: 700px;
+    background: var(--dark-color) !important;
 }  
 .tweet {
   padding-bottom: 0px;
@@ -1017,13 +1018,14 @@ body.big #addtweet {
   top: 0px;
   height: calc(100% - 43px);
   background: var(--soft-color);
-  background-image: linear-gradient(to bottom, var(--soft-color) 4%, var(--dark-color) 7% );
+  /* background-image: linear-gradient(to bottom, var(--soft-color) 4%, var(--dark-color) 7% ); */
+  background: var(--dark-color);
 }
 .tweet:first-child {
-      margin-top: 22px;
+      margin-top: 26px;
 }
 body.big .tweet:first-child {
-      margin-top: 29px;
+      margin-top: 36px;
 }
 .tags {
   padding-top: 5px;
@@ -1436,7 +1438,7 @@ body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !importan
         top: 6px !important;
     }
     .tweet:first-child .linkbar {
-        top: 1px !important;
+        top: -1px !important;
     }
     body.big .linkbar {
         left: calc(50% - 243px);
@@ -1451,7 +1453,7 @@ body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !importan
     } 
     .tags {
       font-size: 12px !important;
-      top: 2px;
+      top: -2px;
     }
     body.big .tags {
       font-size: 17px !important;
@@ -1468,7 +1470,7 @@ body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !importan
     }
     .tweet:nth-of-type(1) .tags {
       /* padding-left: calc(50% - 199px); */
-      top: -3px;
+      top: -5px;
     }    
     .tweet:not(:nth-of-type(1)) .gradiantback {
       /* padding-left: calc(48px); */
@@ -1534,7 +1536,7 @@ body.big #sear, body.big #sear2 {
   left: 18px;
 }     
 .tweet:first-child #expand {
-    margin-top: -11px;
+    margin-top: -9px;
 }  
 
 .innermask {
@@ -2000,7 +2002,7 @@ body.big #linkChange .titletable {
     }  
     .linkbar {
         left: 9px;
-        top: 6px !important;
+        top: 2px !important;
     }
     body.big .linkbar {
         left: 9px;
@@ -3130,7 +3132,7 @@ body.big .linkbar.fa-youtube-play{
 
 #expand {
     font-size: 14px;
-    top: 10px;
+    top: 6px;
     left: auto;
     transition: all 0.6s;
 }
