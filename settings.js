@@ -578,13 +578,13 @@ function editSetting(e, obj, flag) {
             $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
                 var table = $(element);
                 
-                table.css('transition', 'max-height 0.01s');
+                table.css('transition', 'none !important');
                 table.css('max-height', setHeight);
                 table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').attr('style', '');
                 table.find('td.el').addClass('ellipsis');
             });
             
-            table.css('transition', 'max-height 1s');
+            table.css('transition', 'none !important');
             if (table.attr("cmaxheight"))
                 table.css('max-height', table.attr("cmaxheight"));
             else {
@@ -597,14 +597,19 @@ function editSetting(e, obj, flag) {
             table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down');
         }
         else {
-            table.css('transition', 'max-height 1s');
+            table.css('transition', 'none !important');
             table.css('max-height', setHeight);
             table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
             table.find('td.el').addClass('ellipsis');
         }
     }
+    table.css('transition', 'margin-top 0.6s !important');
+    updateTopPosition("linkChange");
 }
 
+function updateTopPosition(obj) {
+    $("#" + obj).attr("style", "margin-top: calc(50% - " + ($("#" + obj).height() / 2) + "px) !important;"); 
+}
 
 /////////////////////////////////////////////////////////////////////////
 //                           TAGS SETTINGS                             //
