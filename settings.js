@@ -608,7 +608,9 @@ function editSetting(e, obj, flag) {
 }
 
 function updateTopPosition(obj) {
-    $("#" + obj + " > div").attr("style", "margin-top: " + ((window.innerHeight / 2) - ($("#" + obj + " > div").height() / 2)) + "px) !important;"); 
+    console.log(window.innerHeight / 2);
+    console.log($("#" + obj + " > div").height() / 2);
+    $("#" + obj + " > div").attr("style", "top: " + ((window.innerHeight / 2) - ($("#" + obj + " > div").height() / 2)) + "px) !important;"); 
 }
 
 /////////////////////////////////////////////////////////////////////////
