@@ -3439,6 +3439,9 @@ body.big .newLayout.new .sectiontitle {
   cursor: pointer !important
 }
 
+#linkChange.new .cursorpointer {
+  cursor: default !important
+}
 
 #linkchange:not(.new) .titletext {
     cursor: pointer !important;

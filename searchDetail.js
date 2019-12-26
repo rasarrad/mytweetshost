@@ -13,7 +13,7 @@ function expandsection(obj, table) {
         $(obj).removeClass("fa-chevron-down");
         $(obj).addClass("fa-chevron-up");
         $(obj).css("top", "auto");
-        $(obj).css("bottom", "-5px");
+        $(obj).css("bottom", "4px");
         $("#" + table).css("max-height", "fit-content");
     }   
     else {
@@ -23,6 +23,13 @@ function expandsection(obj, table) {
         $(obj).css("bottom", "auto");
         $("#" + table).css("max-height", $("#" + table).attr("cmaxheight"));
     } 
+
+    if (table == "searchtags") {
+        updateTopPosition("searchpopup"); 
+    }
+    else {
+        updateTopPosition("linkChange"); 
+    }
 }
 
 

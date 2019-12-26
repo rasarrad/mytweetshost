@@ -623,9 +623,9 @@ function updateTopPosition(obj) {
         if ($('body').hasClass('big')) {
             maxHeightStyle = "max-height: " + (innerHeight - 137) + "px !important;"
         }
-        htmlElem.attr("style", "margin-top: 0px !important;" + maxHeightStyle);     
+        htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle);     
     
-        htmlElem.attr("style", "margin-top: 0px !important;" + maxHeightStyle + "top: " + ((innerHeight / 2) - (htmlElem.height() / 2)) + "px !important;"); 
+        htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle + "top: " + ((innerHeight / 2) - (htmlElem.height() / 2)) + "px !important;"); 
     }, 40);
     
 }
