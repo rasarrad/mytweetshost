@@ -609,7 +609,11 @@ function editSetting(e, obj, flag) {
 
 function updateTopPosition(obj) {
     console.log(window.innerHeight / 2);
-    console.log($("#" + obj + " > div").height() / 2);
+    console.log($("#" + obj + " > div").height());
+    console.log(document.getElementById('foo').offsetHeight);
+    document.getElementById('foo').offsetWidth
+
+
     $("#" + obj + " > div").attr("style", "top: " + ((window.innerHeight / 2) - ($("#" + obj + " > div").height() / 2)) + "px) !important;"); 
 }
 
