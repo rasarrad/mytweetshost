@@ -617,14 +617,15 @@ function editSetting(e, obj, flag) {
 
 function updateTopPosition(obj) {
     setTimeout(function(){
-        alert(123);
+        console.log("passou");
+        /*
         console.log(window.innerHeight / 2);
         console.log($("#" + obj + " > div").height());
         console.log(document.querySelector("#" + obj + " > div").offsetHeight);
-    
+     */
     
         $("#" + obj + " > div").attr("style", "margin-top: 0px !important;top: " + ((window.innerHeight / 2) - ($("#" + obj + " > div").height() / 2)) + "px !important;"); 
-    }, 4);
+    }, 40);
     
 }
 
