@@ -407,6 +407,8 @@ var openSettingsPopup = function(jsonobj)
 
     $('#linkChange').fadeIn(); 
     $('#linkChange').css('display', 'flex');  
+
+    updateTopPosition("linkChange"); 
 } 
 
 var openMainSettingsPopup = function(jsonobj) 
@@ -614,8 +616,8 @@ function updateTopPosition(obj) {
         console.log(document.querySelector("#" + obj + " > div").offsetHeight);
     
     
-        $("#" + obj + " > div").attr("style", "top: " + ((window.innerHeight / 2) - ($("#" + obj + " > div").height() / 2)) + "px !important;"); 
-    }, 40);
+        $("#" + obj + " > div").attr("style", "margin-top: 0px !important;top: " + ((window.innerHeight / 2) - ($("#" + obj + " > div").height() / 2)) + "px !important;"); 
+    }, 4);
     
 }
 
