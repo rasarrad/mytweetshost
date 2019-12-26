@@ -364,8 +364,14 @@ var openSettingsPopup = function(jsonobj)
 
         $('#linkChange').find("table:not(.buttonstable):not(.newlinktable)").each( function( index, element ) {
             var table = $(element);
-            table.css('transition', 'max-height 0.01s');
-            table.css('max-height', 'fit-content');
+
+            table.css('transition', 'none !important');
+            if (table.attr("cmaxheight"))
+                table.css('max-height', table.attr("cmaxheight"));
+            else {
+                table.css('max-height', "fit-content");
+            }
+
             table.find('.sectionedittd i').hide();
         });
         
