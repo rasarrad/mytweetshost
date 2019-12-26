@@ -19,7 +19,7 @@ function expandsection(obj, table) {
     else {
         $(obj).removeClass("fa-chevron-up");
         $(obj).addClass("fa-chevron-down");  
-        $(obj).css("top", "132px");
+        $(obj).css("top", "85px");
         $(obj).css("bottom", "auto");
         $("#" + table).css("max-height", $("#" + table).attr("cmaxheight"));
     } 
