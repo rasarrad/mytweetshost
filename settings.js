@@ -614,7 +614,7 @@ function updateTopPosition(obj) {
         console.log(document.querySelector("#" + obj + " > div").offsetHeight);
     
     
-        $("#" + obj + " > div").attr("style", "top: " + ((window.innerHeight / 2) - ($("#" + obj + " > div").height() / 2)) + "px) !important;"); 
+        $("#" + obj + " > div").attr("style", "top: " + ((window.innerHeight / 2) - ($("#" + obj + " > div").height() / 2)) + "px !important;"); 
     }, 40);
     
 }
