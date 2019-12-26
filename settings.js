@@ -608,12 +608,15 @@ function editSetting(e, obj, flag) {
 }
 
 function updateTopPosition(obj) {
-    console.log(window.innerHeight / 2);
-    console.log($("#" + obj + " > div").height());
-    console.log(document.querySelector("#" + obj + " > div").offsetHeight);
-
-
-    $("#" + obj + " > div").attr("style", "top: " + ((window.innerHeight / 2) - ($("#" + obj + " > div").height() / 2)) + "px) !important;"); 
+    setTimeout(function(){
+        console.log(window.innerHeight / 2);
+        console.log($("#" + obj + " > div").height());
+        console.log(document.querySelector("#" + obj + " > div").offsetHeight);
+    
+    
+        $("#" + obj + " > div").attr("style", "top: " + ((window.innerHeight / 2) - ($("#" + obj + " > div").height() / 2)) + "px) !important;"); 
+    }, 40);
+    
 }
 
 /////////////////////////////////////////////////////////////////////////
