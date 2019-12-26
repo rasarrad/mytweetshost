@@ -87,6 +87,9 @@ function zoom(obj, flag) {
         table.css('max-height', setHeight2);
     });
 
+    updateTopPosition("searchpopup"); 
+    updateTopPosition("linkChange"); 
+    
     setTimeout(function(){
         $('body').removeClass('notransit'); 
     }, 1400);  
@@ -366,8 +369,14 @@ var openSettingsPopup = function(jsonobj)
             var table = $(element);
 
             table.css('transition', 'none !important');
-            if (table.attr("cmaxheight"))
-                table.css('max-height', table.attr("cmaxheight"));
+            if (table.attr("cmaxheight")) {
+                if ($('body').hasClass('big')) {
+                    table.css('max-height', table.attr("cmaxheightbig"));
+                }
+                else {
+                    table.css('max-height', table.attr("cmaxheight"));
+                }
+            }
             else {
                 table.css('max-height', "fit-content");
             }
@@ -593,8 +602,14 @@ function editSetting(e, obj, flag) {
             });
             
             table.css('transition', 'none !important');
-            if (table.attr("cmaxheight"))
-                table.css('max-height', table.attr("cmaxheight"));
+            if (table.attr("cmaxheight")) {
+                if ($('body').hasClass('big')) {
+                    table.css('max-height', table.attr("cmaxheightbig"));
+                }
+                else {
+                    table.css('max-height', table.attr("cmaxheight"));
+                }
+            }
             else {
                 table.css('max-height', "fit-content");
             }
@@ -619,9 +634,9 @@ function updateTopPosition(obj) {
     setTimeout(function(){
         var innerHeight = window.innerHeight;
         var htmlElem = $("#" + obj + " > div");
-        var maxHeightStyle = "max-height: " + (innerHeight - 125) + "px !important;"
+        var maxHeightStyle = "max-height: " + (innerHeight - 125) + "px !important;";
         if ($('body').hasClass('big')) {
-            maxHeightStyle = "max-height: " + (innerHeight - 137) + "px !important;"
+            maxHeightStyle = "max-height: " + (innerHeight - 137) + "px !important;";
         }
         htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle);     
     

@@ -19,9 +19,17 @@ function expandsection(obj, table) {
     else {
         $(obj).removeClass("fa-chevron-up");
         $(obj).addClass("fa-chevron-down");  
-        $(obj).css("top", "85px");
+        
+        if ($('body').hasClass('big')) {
+            $("#" + table).css("max-height", $("#" + table).attr("cmaxheightbig"));
+            $(obj).css("top", "94px");
+        }
+        else {
+            $("#" + table).css("max-height", $("#" + table).attr("cmaxheight"));
+            $(obj).css("top", "85px");
+        }
+
         $(obj).css("bottom", "auto");
-        $("#" + table).css("max-height", $("#" + table).attr("cmaxheight"));
     } 
 
     if (table == "searchtags") {
@@ -66,8 +74,14 @@ function changecriteria(e, obj, tableparam) {
             
             table.css('transition', 'max-height 1s');
     
-            if (table.attr("cmaxheight"))
-                table.css('max-height', table.attr("cmaxheight"));
+            if (table.attr("cmaxheight")) {
+                if ($('body').hasClass('big')) {
+                    table.css('max-height', table.attr("cmaxheightbig"));
+                }
+                else {
+                    table.css('max-height', table.attr("cmaxheight"));
+                }
+            }   
             else {
                 table.css('max-height', "fit-content");
             }
