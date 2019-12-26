@@ -617,12 +617,15 @@ function editSetting(e, obj, flag) {
 
 function updateTopPosition(obj) {
     setTimeout(function(){
-        console.log(window.innerHeight);
-        console.log($("#" + obj + " > div").height());
-        console.log(document.querySelector("#" + obj + " > div").offsetHeight);
+        var innerHeight = window.innerHeight;
+        var htmlElem = $("#" + obj + " > div");
+        var maxHeightStyle = "max-height: " + (innerHeight - 125) + "px !important;"
+        if ($('body').hasClass('big')) {
+            maxHeightStyle = "max-height: " + (innerHeight - 137) + "px !important;"
+        }
+        htmlElem.attr("style", "margin-top: 0px !important;" + maxHeightStyle);     
     
-    
-        $("#" + obj + " > div").attr("style", "margin-top: 0px !important;top: " + ((window.innerHeight / 2) - ($("#" + obj + " > div").height() / 2)) + "px !important;"); 
+        htmlElem.attr("style", "margin-top: 0px !important;" + maxHeightStyle + "top: " + ((innerHeight / 2) - (htmlElem.height() / 2)) + "px !important;"); 
     }, 40);
     
 }
