@@ -2305,7 +2305,7 @@ body.big #linkChange .titletable {
     top: 65px;
     max-height: calc(100% - 180px);
     margin-top: 20px;
-    transition: all 1s;
+    transition: all 0.5s;
 }
 
 .newLayout > div .titletable {
@@ -3666,6 +3666,41 @@ body.big #mainsettings #theme td:not(.ellipsis) .titletext {
     top: 2px !important;
 }
 
+
+
+#expandedittags, #expandsearchtags {
+    padding-left: 2px;
+    position: absolute;
+    padding-right: 11px;
+    padding-top: 1px;
+    height: 22px;
+    width: 10px;
+    top: 132px;
+    border-radius: 4px;
+    bottom: auto;
+    left: calc(100% - 28px);
+    color: var(--soft-color);
+    border: 1px solid var(--soft-color);
+    font-size: 19px !important;
+    background: var(--high-color) !important;
+}
+
+body.big #expandedittags, body.big #expandsearchtags {
+    padding-left: 2px;
+    position: absolute;
+    padding-right: 11px;
+    padding-top: 1px;
+    height: 26px;
+    width: 14px;
+    top: 132px;
+    border-radius: 4px;
+    bottom: auto;
+    left: calc(100% - 32px);
+    color: var(--soft-color);
+    border: 1px solid var(--soft-color);
+    font-size: 23px !important;
+    background: var(--high-color) !important;
+}
 /*****************************************************************************/
 /********************************* DESKTOP CSS *******************************/
 

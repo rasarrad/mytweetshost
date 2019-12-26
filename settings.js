@@ -626,7 +626,7 @@ function updateTopPosition(obj) {
         htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle);     
     
         htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle + "top: " + ((innerHeight / 2) - (htmlElem.height() / 2)) + "px !important;"); 
-    }, 40);
+    }, 140);
     
 }
 
