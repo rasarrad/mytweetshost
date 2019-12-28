@@ -3675,7 +3675,7 @@ body.big #mainsettings #theme td:not(.ellipsis) .titletext {
     padding-top: 1px;
     height: 22px;
     width: 10px;
-    top: 132px;
+    top: 88px;
     border-radius: 4px;
     bottom: auto;
     left: calc(100% - 28px);
@@ -3692,7 +3692,7 @@ body.big #expandedittags, body.big #expandsearchtags {
     padding-top: 1px;
     height: 26px;
     width: 14px;
-    top: 132px;
+    top: 93px;
     border-radius: 4px;
     bottom: auto;
     left: calc(100% - 32px);
