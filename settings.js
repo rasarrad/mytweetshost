@@ -633,7 +633,7 @@ function editSetting(e, obj, flag) {
 function updateTopPosition(obj) { 
     setTimeout(function(){
         var isLandscape = window.innerWidth < 1200 && window.innerWidth > 700;
-
+console.log(window.innerWidth)
         if (isLandscape) {
             htmlElem.attr("style", "margin-top: -1px !important;max-height: 310px !important;top: 5px !important;"); 
         }
