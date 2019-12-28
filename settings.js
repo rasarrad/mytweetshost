@@ -633,14 +633,20 @@ function editSetting(e, obj, flag) {
 function updateTopPosition(obj) { 
     setTimeout(function(){
         var isLandscape = window.innerWidth < 1200 && window.innerWidth > 700;
-console.log(window.innerWidth)
+        var innerHeight = window.innerHeight;
+        var htmlElem = $("#" + obj + " > div");
+        var maxHeightStyle = "max-height: " + (innerHeight - 125) + "px !important;";
+
         if (isLandscape) {
-            htmlElem.attr("style", "margin-top: -1px !important;max-height: 310px !important;top: 5px !important;"); 
+
+            maxHeightStyle = "margin-top: -1px !important;max-height: 310px !important;";
+
+            htmlElem.attr("style", maxHeightStyle);     
+
+            htmlElem.attr("style", maxHeightStyle + "top: " + (155 - (htmlElem.height() / 2)) + "px !important;"); 
         }
         else {
-            var innerHeight = window.innerHeight;
-            var htmlElem = $("#" + obj + " > div");
-            var maxHeightStyle = "max-height: " + (innerHeight - 125) + "px !important;";
+
             if ($('body').hasClass('big')) {
                 maxHeightStyle = "max-height: " + (innerHeight - 137) + "px !important;";
             }
