@@ -22,11 +22,11 @@ function expandsection(obj, table) {
         
         if ($('body').hasClass('big')) {
             $("#" + table).css("max-height", $("#" + table).attr("cmaxheightbig"));
-            $(obj).css("top", "94px");
+            $(obj).css("top", "93px");
         }
         else {
             $("#" + table).css("max-height", $("#" + table).attr("cmaxheight"));
-            $(obj).css("top", "85px");
+            $(obj).css("top", "88px");
         }
 
         $(obj).css("bottom", "auto");
