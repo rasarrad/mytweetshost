@@ -632,6 +632,7 @@ function editSetting(e, obj, flag) {
 
 function updateTopPosition(obj) {
     setTimeout(function(){
+        alert(window.innerWidth)
         var innerHeight = window.innerHeight;
         var htmlElem = $("#" + obj + " > div");
         var maxHeightStyle = "max-height: " + (innerHeight - 125) + "px !important;";
