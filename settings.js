@@ -632,16 +632,23 @@ function editSetting(e, obj, flag) {
 
 function updateTopPosition(obj) {
     setTimeout(function(){
-        alert(window.innerWidth)
-        var innerHeight = window.innerHeight;
-        var htmlElem = $("#" + obj + " > div");
-        var maxHeightStyle = "max-height: " + (innerHeight - 125) + "px !important;";
-        if ($('body').hasClass('big')) {
-            maxHeightStyle = "max-height: " + (innerHeight - 137) + "px !important;";
+        var isLandscape = window.innerWidth < 1200 && window.innerWidth > 700;
+
+        if (isLandscape) {
+            htmlElem.attr("style", "margin-top: -1px !important;max-height: 310px !important;top: 5px !important;"); 
         }
-        htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle);     
-    
-        htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle + "top: " + ((innerHeight / 2) - (htmlElem.height() / 2)) + "px !important;"); 
+        else {
+            var innerHeight = window.innerHeight;
+            var htmlElem = $("#" + obj + " > div");
+            var maxHeightStyle = "max-height: " + (innerHeight - 125) + "px !important;";
+            if ($('body').hasClass('big')) {
+                maxHeightStyle = "max-height: " + (innerHeight - 137) + "px !important;";
+            }
+            htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle);     
+
+            htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle + "top: " + ((innerHeight / 2) - (htmlElem.height() / 2)) + "px !important;"); 
+        }
+        
     }, 140);
     
 }
