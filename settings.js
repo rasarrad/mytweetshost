@@ -630,7 +630,7 @@ function editSetting(e, obj, flag) {
     updateTopPosition("linkChange"); 
 }
 
-function updateTopPosition(obj) {
+function updateTopPosition(obj) { 
     setTimeout(function(){
         var isLandscape = window.innerWidth < 1200 && window.innerWidth > 700;
 
