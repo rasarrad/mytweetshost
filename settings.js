@@ -637,7 +637,7 @@ function updateTopPosition(obj) {
         var htmlElem = $("#" + obj + " > div");
         var maxHeightStyle = "max-height: " + (innerHeight - 125) + "px !important;";
 
-        if (isLandscape) {
+        if (isLandscape && false) {
 
             maxHeightStyle = "margin-top: -1px !important;max-height: 310px !important;";
 
