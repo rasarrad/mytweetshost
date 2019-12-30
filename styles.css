@@ -1422,10 +1422,17 @@ body.big .tweet:first-child .linkbar {
     margin-top: -8px;
 }    
    
+
+#mask > div > i {
+  background: #464646 !important;
+}   
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
 
 @media only screen and (max-width: 1000px) {
+  #mask > div > i {
+    background: #484848 !important;
+  }   
   body.big .linkbar.fa-internet-explorer {
         font-size: 18px;
         top: 6px !important;
@@ -1869,6 +1876,9 @@ body.big #linkChange .titletable {
 /******************************** PORTRAIT CSS *******************************/
         
 @media only screen and (max-width: 700px) {
+    #mask > div > i {
+      background: #484848 !important;
+    }     
       body:not(.big) .html .gradiantback {
         top: 18px;
     }
