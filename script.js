@@ -54,7 +54,7 @@ $( document ).ready(function() {
         return check;
       };
 
-alert(window.mobileAndTabletcheck)
+alert(window.mobileAndTabletcheck())
     nextid = parseInt(readCookie("maxid"));
 
     do {
