@@ -2311,7 +2311,7 @@ body.big #linkChange .titletable {
 .newLayout > div .titletable {
     font-size: 14px;
     /* width: 100%; */
-    margin-top: -0.5px;
+    margin-top: 0px;
     /* border-top: -4px solid var(--soft-color); */
     padding-top: 3px;
     color: var(--high-color);
@@ -2323,7 +2323,7 @@ body.big #linkChange .titletable {
     background: var(--dark-color);
     /* background: green; */
     border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+    /* border-top-right-radius: 6px; */
     padding-left: 5px;
     padding-right: 5px;
     /* border-bottom: 1px solid var(--soft-color); */
@@ -2903,7 +2903,7 @@ input[type="radio"]:checked + label span {
 
 .currenttags.titletext {
   position: relative;
-  top: -1px !important;
+  top: -1.5px !important;
 }
 
 body.big .currenttags.titletext {
@@ -3018,9 +3018,15 @@ td:not(.ellipsis) .titletext {
     position: relative;
     top: -2px !important;
 }
+
 td:not(.ellipsis) .titletext.originaltags  {
     position: relative;
     top: -1px !important;
+}
+
+td:not(.ellipsis) .titletext.currenttags {
+    position: relative;
+    top: -2.5px !important;
 }
 
 body.big td:not(.ellipsis) .titletext {
@@ -3670,10 +3676,10 @@ body.big #mainsettings #theme td:not(.ellipsis) .titletext {
 
 #expandedittags, #expandsearchtags {
     padding-left: 2px;
-    position: absolute;
+    position: relative;
     padding-right: 11px;
     padding-top: 1px;
-    height: 22px;
+    /* height: 22px; */
     width: 10px;
     top: 88px;
     border-radius: 4px;
@@ -3683,6 +3689,8 @@ body.big #mainsettings #theme td:not(.ellipsis) .titletext {
     border: 1px solid var(--soft-color);
     font-size: 19px !important;
     background: var(--high-color) !important;
+    height: 22px;
+    left: calc(100% - 23px);
 }
 
 body.big #expandedittags, body.big #expandsearchtags {
