@@ -2498,7 +2498,7 @@ body.big .newLayout #editTags .sectionicontd:first-child {
 }
 
 body .newLayout #editCats .sectionicontd:first-child {
-    width: 87px !important;
+    width: 78px !important;
 }
 
 body.big .newLayout #editCats .sectionicontd:first-child {
@@ -2506,7 +2506,7 @@ body.big .newLayout #editCats .sectionicontd:first-child {
 }
 
 body .newLayout #editClassif .sectionicontd:first-child {
-    width: 107px !important;
+    width: 101px !important;
 }
 
 body.big .newLayout #editClassif .sectionicontd:first-child {
@@ -2916,11 +2916,23 @@ input[type="radio"]:checked + label span {
   top: -1.5px !important;
 }
 
+
 body.big .currenttags.titletext {
   position: relative;
   top: 1px;
 }
 /* genericos */
+.ellipsis span.currentcats {
+    top: -2px;
+} 
+
+body.big .ellipsis span.currentcats {
+    top: -2px;
+} 
+
+.newLayout .titletext.currentclassif {
+  top: -2px;
+}
 
 input[type=text] {
   font-size: 12px !important;
@@ -3028,12 +3040,28 @@ td:not(.ellipsis) .titletext {
     position: relative;
     top: -2px !important;
 }
-
+td:not(.ellipsis) .titletext.originalclassif {
+    position: relative;
+    top: 0px !important;
+    left: 6px;
+}
+td:not(.ellipsis) .titletext.currentclassif {
+    position: relative;
+    top: -3px !important;
+}
+td:not(.ellipsis) .titletext.currentcats  {
+    position: relative;
+    top: -2.5px !important;
+}
 td:not(.ellipsis) .titletext.originaltags  {
     position: relative;
     top: -1px !important;
 }
-
+td:not(.ellipsis) .titletext.originalcats  {
+    position: relative;
+    top: -0.2px !important;
+    left: 4px;
+}
 td:not(.ellipsis) .titletext.currenttags {
     position: relative;
     top: -2.5px !important;
