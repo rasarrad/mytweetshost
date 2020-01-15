@@ -78,9 +78,11 @@ function zoom(obj, flag) {
     });
 
     if ($('#linkChange').attr("cid") != "new") {
+        console.log(3333333333);
         $('#linkChange').find("table:not(.buttonstable:not(.newlinktable)").each( function( index, element ) {
             var table = $(element);
             table.css('transition', 'max-height .01s');
+            console.log(setHeight);
             table.css('max-height', setHeight);
             table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
             table.find('td.el').addClass('ellipsis');
