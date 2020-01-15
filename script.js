@@ -347,6 +347,9 @@ $( document ).ready(function() {
         filterinfoOnChange(this);
       });
 
+      $("#infoinput").keyup(function() {
+        infoInputOnKeyup(this);
+      });
 
       $("#filterauthor").keyup(function() {
         filterauthorOnChange(this);
@@ -440,6 +443,27 @@ $( document ).ready(function() {
             createNonExistentLi("tagsearchul", "filtertag");
         }
       });
+
+      $("input, textarea").focus(function(){  
+            if ($("#linkChange").css("display") != "none") {
+                var innerHeight = window.innerHeight;
+                var htmlElem = $("#linkChange > div");
+                var maxHeightStyle = "max-height: " + (innerHeight - 125) + "px !important;";
+
+                if ($('body').hasClass('big')) {
+                    maxHeightStyle = "max-height: " + (innerHeight - 137) + "px !important;";
+                }
+                htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle);     
+    
+                htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle + "top: 1px !important;"); 
+            }
+      });
+      $("input, textarea").blur( function(){  
+            if ($("#linkChange").css("display") != "none") {
+                updateTopPosition("linkChange"); 
+            }
+      });
+
 
     document.getElementById("toptitle").addEventListener('click', () => {
         navigator.clipboard.readText()
