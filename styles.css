@@ -2502,7 +2502,7 @@ body .newLayout #editCats .sectionicontd:first-child {
 }
 
 body.big .newLayout #editCats .sectionicontd:first-child {
-    width: 106px !important;
+    width: 102px !important;
 }
 
 body .newLayout #editClassif .sectionicontd:first-child {
@@ -2510,11 +2510,11 @@ body .newLayout #editClassif .sectionicontd:first-child {
 }
 
 body.big .newLayout #editClassif .sectionicontd:first-child {
-    width: 133px !important;
+    width: 129px !important;
 }
 
 body .newLayout #editInfo .sectionicontd:first-child {
-    width: 42px !important;
+    width: 37px !important;
 }
 
 body.big .newLayout #editInfo .sectionicontd:first-child {
@@ -2916,7 +2916,19 @@ input[type="radio"]:checked + label span {
   top: -1.5px !important;
 }
 
+.currentinfo.titletext {
+  position: relative;
+  top: -1.5px !important;
+}
 
+.ellipsis span.currentinfo:not(.sectiontitle) {
+  position: absolute;
+  top: -1.5px !important;
+}
+body.big .ellipsis span.currentinfo:not(.sectiontitle) {
+  position: absolute;
+  top: 2px !important;
+}
 body.big .currenttags.titletext {
   position: relative;
   top: 1px;
@@ -2926,12 +2938,12 @@ body.big .currenttags.titletext {
     top: -2px;
 } 
 
-body.big .ellipsis span.currentcats {
-    top: -2px;
+body.big td.ellipsis span.currentcats {
+    top: 3px !important;
 } 
 
 .newLayout .titletext.currentclassif {
-  top: -2px;
+  top: -1.5px;
 }
 
 input[type=text] {
@@ -3040,6 +3052,12 @@ td:not(.ellipsis) .titletext {
     position: relative;
     top: -2px !important;
 }
+td:not(.ellipsis) .titletext.originalinfo {
+    position: relative;
+    top: -0.5px !important;
+    left: 5px;
+}
+
 td:not(.ellipsis) .titletext.originalclassif {
     position: relative;
     top: 0px !important;
@@ -3047,7 +3065,11 @@ td:not(.ellipsis) .titletext.originalclassif {
 }
 td:not(.ellipsis) .titletext.currentclassif {
     position: relative;
-    top: -3px !important;
+    top: -2.5px !important;
+}
+body.big td:not(.ellipsis) .titletext.currentclassif {
+    position: relative;
+    top: -1px !important;
 }
 td:not(.ellipsis) .titletext.currentcats  {
     position: relative;
@@ -3070,7 +3092,7 @@ td:not(.ellipsis) .titletext.currenttags {
 body.big td:not(.ellipsis) .titletext {
     line-height: 18px;
     position: relative;
-    top: 0px !important;
+    /* top: 0px !important; */
 }
 body.big td.ellipsis .titletext {
     line-height: 18px;
