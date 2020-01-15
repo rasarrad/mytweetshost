@@ -1929,12 +1929,12 @@ body.big #linkChange .titletable {
       margin-left: 4px;
     }
     #linkChange .titletable {
-      width: 347px;
+      width: 343px;
       padding-left: 6px;
     }
     body.big #linkChange .titletable {
-      width: 349px;
-      padding-left: 7px;
+      width: 343px;
+      padding-left: 6px;
     }    
     body.big .buttonstable .date {
         position: relative !important;
@@ -2218,7 +2218,7 @@ body.big #linkChange .titletable {
       }  
       
       body.big #editTags {
-        margin-top: 120px !important;
+        margin-top: 116px !important;
       }
       #searchtags {
         margin-top: 120px !important;
@@ -2237,7 +2237,8 @@ body.big #linkChange .titletable {
       }
 
       .newLayout > div .titletable {
-          margin-top: 0px !important;
+          margin-top: 0.7px !important;
+          /* margin-top: 0px !important; */
       }      
       .newLayout#mainsettings > div .titletable {
           margin-top: -0.3px !important;
@@ -2939,7 +2940,7 @@ body.big .currenttags.titletext {
 } 
 
 body.big td.ellipsis span.currentcats {
-    top: 3px !important;
+    top: 3.5px !important;
 } 
 
 .newLayout .titletext.currentclassif {
@@ -3107,7 +3108,9 @@ body.big .newLayout .fa-undo..mainbutton {
    font-size: 17px !important; 
 }
 
-
+body.big td:not(.ellipsis) .titletext.currentcats {
+    top: 0px !important;
+}
 
 
 .newLayout .sectiontitletable .sectionedittd i.fa-edit {

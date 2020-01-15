@@ -56,6 +56,7 @@ function zoom(obj, flag) {
     }
 
     if ($('#linkChange').attr("cid") != "new") {
+        alert(setHeight);
         $('#linkChange').find("table:not(.buttonstable:not(.newlinktable)").each( function( index, element ) {
             var table = $(element);
             table.css('transition', 'max-height .01s');
