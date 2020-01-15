@@ -127,7 +127,9 @@ var openSettingsPopup = function(jsonobj)
         $('#linkChange').attr("clink", jsonobj.url);
         $('#linkChange').removeClass("new");
         $('#linktable').hide();
-        $('#editTags').css('margin-top', '80px');  
+        
+        $('#editTags').css('margin-top', '75px');  
+        
         $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
 
         $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-twitter').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
