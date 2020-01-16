@@ -107,7 +107,9 @@ function changecriteria(e, obj, tableparam) {
             $("#sear").css("top", "calc(100% - 53px)");
         }, 100);
     }
-    updateTopPosition("searchpopup"); 
+    setTimeout(function() { 
+        updateTopPosition("searchpopup"); 
+    }, 1000);
 }
 
 function filtertagOnChange(obj) {
