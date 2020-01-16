@@ -2204,7 +2204,7 @@ body.big #linkChange .titletable {
           min-width: 344px;
       }
       body.big .newLayout > div .titletable tr:first-child .firsttd {
-          min-width: 345px !important;
+          min-width: 343px !important;
       }     
         #previewtable #inid {
           min-width: auto;
@@ -2243,6 +2243,11 @@ body.big #linkChange .titletable {
       .newLayout#mainsettings > div .titletable {
           margin-top: -0.3px !important;
       }      
+
+
+    .newLayout#searchpopup > div .titletable {
+        width: 344px !important;
+    }
 
 }
 /****************************** FIM PORTRAIT CSS *****************************/
@@ -2348,6 +2353,7 @@ body.big #linkChange .titletable {
 
 
 
+.newLayout#searchpopup > div .titletable {width: 344px;}
 
 .newLayout.new > div .titletable #seticon {
     color: var(--high-color) !important;
