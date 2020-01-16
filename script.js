@@ -450,12 +450,16 @@ $( document ).ready(function() {
                 var htmlElem = $("#linkChange > div");
                 var maxHeightStyle = "max-height: " + (innerHeight - 125) + "px !important;";
 
+                var top = 1;
+                if ($('#linkChange').attr("cid") == "new" && $(this).attr("id") == "infoinput") 
+                    top = -100;
+                    
                 if ($('body').hasClass('big')) {
                     maxHeightStyle = "max-height: " + (innerHeight - 137) + "px !important;";
                 }
                 htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle);     
     
-                htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle + "top: 1px !important;"); 
+                htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle + "top: " + top + "px !important;"); 
             }
       });
       $("input, textarea").blur( function(){  
