@@ -644,22 +644,33 @@ function updateTopPosition(obj) {
         var htmlElem = $("#" + obj + " > div");
         var maxHeightStyle = "max-height: " + (innerHeight - 125) + "px !important;";
 
-        if (isLandscape && false) {
+        if (obj == "linkChange") {
+            if (isLandscape && false) {
 
-            maxHeightStyle = "margin-top: -1px !important;max-height: 310px !important;";
-
-            htmlElem.attr("style", maxHeightStyle);     
-
-            htmlElem.attr("style", maxHeightStyle + "top: " + (155 - (htmlElem.height() / 2)) + "px !important;"); 
+                maxHeightStyle = "margin-top: -1px !important;max-height: 310px !important;";
+    
+                htmlElem.attr("style", maxHeightStyle);     
+    
+                htmlElem.attr("style", maxHeightStyle + "top: " + (155 - (htmlElem.height() / 2)) + "px !important;"); 
+            }
+            else {
+    
+                if ($('body').hasClass('big')) {
+                    maxHeightStyle = "max-height: " + (innerHeight - 137) + "px !important;";
+                }
+                htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle);     
+    
+                htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle + "top: " + ((innerHeight / 2) - (htmlElem.height() / 2)) + "px !important;"); 
+            }
         }
         else {
-
             if ($('body').hasClass('big')) {
                 maxHeightStyle = "max-height: " + (innerHeight - 137) + "px !important;";
             }
-            htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle);     
+            htmlElem.attr("style", maxHeightStyle);     
 
-            htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle + "top: " + ((innerHeight / 2) - (htmlElem.height() / 2)) + "px !important;"); 
+            htmlElem.attr("style", maxHeightStyle + "margin-top: " + ((innerHeight / 2) - (htmlElem.height() / 2)) + "px !important;"); 
+
         }
         
     }, 140);
