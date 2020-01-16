@@ -34,7 +34,7 @@ function expandsection(obj, table) {
     } 
 
     if (table == "searchtags") {
-        updateTopPosition("searchpopup"); 
+        //updateTopPosition("searchpopup"); 
     }
     else {
         updateTopPosition("linkChange"); 
@@ -108,7 +108,7 @@ function changecriteria(e, obj, tableparam) {
         }, 100);
     }
     setTimeout(function() { 
-        updateTopPosition("searchpopup"); 
+        //updateTopPosition("searchpopup"); 
     }, 1000);
 }
 
@@ -436,7 +436,7 @@ var openSearchPopup = function(jsonobj)
 
     updateSearchTablesHeight();
 
-    updateTopPosition("searchpopup"); 
+    //updateTopPosition("searchpopup"); 
 
     $('#searchpopup').fadeIn(); 
 } 
