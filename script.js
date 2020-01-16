@@ -452,7 +452,7 @@ $( document ).ready(function() {
 
                 var top = 1;
                 if ($('#linkChange').attr("cid") == "new" && $(this).attr("id") == "infoinput") 
-                    top = -100;
+                    top = -250;
                     
                 if ($('body').hasClass('big')) {
                     maxHeightStyle = "max-height: " + (innerHeight - 137) + "px !important;";
