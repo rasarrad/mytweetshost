@@ -669,7 +669,7 @@ function updateTopPosition(obj) {
             }
             htmlElem.attr("style", maxHeightStyle);     
 
-            htmlElem.attr("style", maxHeightStyle + "margin-top: " + ((innerHeight / 2) - (htmlElem.height() / 2)) + "px !important;"); 
+            htmlElem.attr("style", maxHeightStyle + "margin-top: " + ((innerHeight / 2) - (htmlElem.height() / 2) - 65) + "px !important;"); 
 
         }
         
