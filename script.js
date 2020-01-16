@@ -451,8 +451,12 @@ $( document ).ready(function() {
                 var maxHeightStyle = "max-height: " + (innerHeight - 125) + "px !important;";
 
                 var top = 1;
-                if ($('#linkChange').attr("cid") == "new" && $(this).attr("id") == "infoinput") 
-                    top = -250;
+                var isLandscape = window.innerWidth < 1200 && window.innerWidth > 700;
+                if ($('#linkChange').attr("cid") == "new" && $(this).attr("id") == "infoinput")
+                    if (isLandscape)
+                        top = -50;
+                    else 
+                        top = -250;
                     
                 if ($('body').hasClass('big')) {
                     maxHeightStyle = "max-height: " + (innerHeight - 137) + "px !important;";
