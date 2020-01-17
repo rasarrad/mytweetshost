@@ -2913,7 +2913,6 @@ input[type="radio"]:checked + label span {
   position: relative;
 }
 .ellipsis:before {
-  content: '&nbsp;';
   visibility: hidden;
 }
 .ellipsis span:not(.sectiontitle) {
@@ -3114,6 +3113,7 @@ body.big td.ellipsis .titletext {
     line-height: 18px;
     position: absolute;
     top: 3px !important;
+    display: block;
 }
 body.big td.ellipsis .titletext.currenttags {
     top: 2.5px !important;
@@ -3679,8 +3679,22 @@ body.big #searchpopup .titletable tr:first-child {
   height: 50px;
 }
 
-body.big #searchpopup td span.titletext {
-position: absolute;
+
+body.big #searchpopup td span.titletext.currenttagsearch {
+    position: relative;
+    top: -0.5px !important;
+    left: auto;
+    padding-left: 0px !important;
+}
+
+#searchpopup td.ellipsis span.titletext.currenttagsearch {
+    position: absolute;
+    top: 3px !important;
+    width: 236px;
+    display: block;
+}
+body.big #searchpopup.ellipsis td span.titletext.currenttagsearch {
+    position: absolute;
     top: 3px !important;
 }
 
@@ -3792,9 +3806,9 @@ body.big #expandedittags, body.big #expandsearchtags {
     padding-top: 1px;
     height: 26px;
     width: 14px;
-    top: 93px;
+    top: auto;
     border-radius: 4px;
-    bottom: auto;
+    bottom: 23px;
     left: calc(100% - 32px);
     color: var(--soft-color);
     border: 1px solid var(--soft-color);
