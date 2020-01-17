@@ -91,7 +91,7 @@ body.big .newLayout#searchpopup #searchclassif.sectiontitletable .firsticon {
 }
 
 .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
-
+    width: 37px !important;
 }
 body.big .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
   width: 49px !important;
@@ -2221,9 +2221,11 @@ body.big #linkChange .titletable {
         margin-top: 115px !important;
       }
       #searchtags {
-        margin-top: 120px !important;
+        margin-top: 87px !important;
       }
-      
+      body.big #searchtags {
+        margin-top: 120px !important;
+      }      
       body.big #searchtags {
         margin-top: 90px !important;
       }
@@ -2435,14 +2437,19 @@ body.big .newLayout.new #removetweetp {
 .newLayout #opensearch {
     position: initial;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 16px;
     transition: all 0.6s;
     display: initial;
     position: relative;
-    top: 0px;
+    top: -1px;
 }
+
+body.big .newLayout #opensearch {
+    font-size: 22px;
+    top: -1px;
+}
+
 .newLayout #externallinkp {
-    position: initial;
     cursor: pointer;
     font-size: 16px;
     transition: all 0.6s;
@@ -2451,13 +2458,15 @@ body.big .newLayout.new #removetweetp {
     top: 3px;
 }
 .newLayout #savesearch {
-    position: initial;
     cursor: pointer;
     font-size: 17px;
     transition: all 0.6s;
     display: initial;
     position: relative;
     top: 2px;
+}
+body.big .newLayout #savesearch {
+    font-size: 23px;
 }
 
 .newLayout #closepopupp {
@@ -3193,6 +3202,12 @@ body.big .smallrem {
 .buttonstable .firsttd {
     font-size: 14px !important;
 }
+
+
+.buttonstable .firsttd {
+    font-size: 18px !important;
+}
+
 body.big .buttonstable .firsttd {
     font-size: 22px !important;
 }
@@ -3641,10 +3656,14 @@ body.big #filterdate2clean {
   text-decoration: underline;
   position: relative;
   top: -1px;
-    font-size: 16px;
-    cursor: pointer;
+  font-size: 14px;
+  cursor: pointer;
 }
+body.big #titlesearch {
+  top: -1px;
+    font-size: 16px;
 
+}
 body.big #titlesearch {
   font-size: 17px;
 }
@@ -3658,7 +3677,8 @@ body.big #searchpopup .titletable tr:first-child {
 }
 
 body.big #searchpopup td span.titletext {
-    line-height: 17px;
+position: absolute;
+    top: 3px !important;
 }
 
 body.big #searchpopup #searchdate td.ellipsis .titletext {

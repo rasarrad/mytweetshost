@@ -468,7 +468,7 @@ $( document ).ready(function() {
       });
       $("input, textarea").blur( function(){  
             if ($("#linkChange").css("display") != "none") {
-                updateTopPosition("linkChange"); 
+                updateTopPosition("linkChange");
             }
       });
 
