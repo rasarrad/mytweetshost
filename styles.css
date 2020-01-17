@@ -2195,7 +2195,7 @@ body.big #linkChange .titletable {
           top: 3px !important;
       }
       body.big .buttonstable .author {
-           max-width: 229px !important;
+           max-width: 226px !important;
       }
       .newLayout > div .titletable tr:first-child .firsttd {
           min-width: 345px;
@@ -3102,7 +3102,7 @@ td:not(.ellipsis) .titletext.originalcats  {
 }
 td:not(.ellipsis) .titletext.currenttags {
     position: relative;
-    top: -2.5px !important;
+    top: -0.5px !important;
 }
 
 body.big td:not(.ellipsis) .titletext {
@@ -3114,6 +3114,9 @@ body.big td.ellipsis .titletext {
     line-height: 18px;
     position: absolute;
     top: 3px !important;
+}
+body.big td.ellipsis .titletext.currenttags {
+    top: 2.5px !important;
 }
 
 .newLayout .fa-undo.mainbutton {
