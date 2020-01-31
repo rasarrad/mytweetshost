@@ -608,7 +608,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         processtmp = true;
 
-        console.log('-------------5555------------');
+        console.log('-------------BEGIN SORT------------');
 
         var sortByProperty = function (property) {
             return function (x, y) {
@@ -617,8 +617,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
         };
 
         data.Tweets.sort(sortByProperty(''));
-
-        console.log(data.Tweets);
 
         console.log('.......END......---');
 
