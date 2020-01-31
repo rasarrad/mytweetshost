@@ -530,7 +530,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         console.log('-------------------------')
 
-        data['Tweets'].sort((a, b) => {
+        data.Tweets.sort((a, b) => {
             if (a.date < b.date)
               return -1;
             if (a.date > b.date)
