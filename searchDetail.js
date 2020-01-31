@@ -528,15 +528,15 @@ var getInformation = function(ismoretweets, wasfiltered) {
     $.getJSON(path, function(data) {
         var processtmp = true;
 
-        console.log('-------------4444------------')
+        console.log('-------------5555------------')
 
-        data.Tweets.sort((a, b) => {
-            if (a.date < b.date)
-              return -1;
-            if (a.date > b.date)
-              return 1;
-            return 0;
-          })
+        var sortByProperty = function (property) {
+            return function (x, y) {
+                return ((Number(x[property]) === Number(y[property])) ? 0 : ((Number(x[property]) > Number(y[property])) ? 1 : -1));
+            };
+        };
+
+        data.Tweets.sort(sortByProperty('date'));
 
 
         console.log('.............---')
