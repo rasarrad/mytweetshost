@@ -624,7 +624,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         var obj = [{"id":1,"name":"x","mark":20},{"id":2,"name":"y","mark":30}];
         console.log(obj);
         console.log('---------------');
-        Object.values(obj).forEach(arr => arr.sort((a,b) => a.mark-b.mark));
+        obj.forEach(arr => arr.sort((a,b) => a.mark-b.mark));
         
         console.log(obj);
 
