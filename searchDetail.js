@@ -528,18 +528,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
     $.getJSON(path, function(data) {
         var processtmp = true;
 
-        console.log('-------------5555------------')
-
-        var sortByProperty = function (property) {
-            return function (x, y) {
-                return ((Number(x[property]) === Number(y[property])) ? 0 : ((Number(x[property]) > Number(y[property])) ? 1 : -1));
-            };
-        };
-
-        data.Tweets.sort(sortByProperty('date'));
-
-
-        console.log('.............---')
         if (!ismoretweets) {
             $.each(data.Tweets, function(key, val) {
                 var newtweet = null;
@@ -620,6 +608,19 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         processtmp = true;
 
+        console.log('-------------5555------------');
+
+        var sortByProperty = function (property) {
+            return function (x, y) {
+                return ((Number(x.date) === Number(x.date)) ? 0 : ((Number(x.date) > Number(x.date)) ? 1 : -1));
+            };
+        };
+
+        data.Tweets.sort(sortByProperty(''));
+
+
+        console.log('.............---');
+        
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
             var dofiltertextfinal = false;
