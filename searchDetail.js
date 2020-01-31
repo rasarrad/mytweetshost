@@ -529,10 +529,16 @@ var getInformation = function(ismoretweets, wasfiltered) {
         var processtmp = true;
 
         console.log('-------------------------')
-        function mycomparator(a,b) {
-            return parseInt(a.date) - parseInt(b.date);
-        }
-        data.Tweets.sort(mycomparator);
+
+        data['Tweets'].sort((a, b) => {
+            if (a.date < b.date)
+              return -1;
+            if (a.date > b.date)
+              return 1;
+            return 0;
+          })
+
+
         console.log('.............---')
         if (!ismoretweets) {
             $.each(data.Tweets, function(key, val) {
