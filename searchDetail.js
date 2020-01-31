@@ -608,6 +608,20 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         processtmp = true;
 
+        console.log('-------------5555------------');
+
+        var sortByProperty = function (property) {
+            return function (x, y) {
+                return Number(x.date) < Number(y.date);
+            };
+        };
+
+        data.Tweets.sort(sortByProperty(''));
+
+        console.log(data.Tweets);
+
+        console.log('.......END......---');
+
 
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
