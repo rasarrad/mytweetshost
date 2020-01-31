@@ -528,6 +528,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
     $.getJSON(path, function(data) {
         var processtmp = true;
 
+
         if (!ismoretweets) {
             $.each(data.Tweets, function(key, val) {
                 var newtweet = null;
