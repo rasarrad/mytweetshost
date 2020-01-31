@@ -528,7 +528,12 @@ var getInformation = function(ismoretweets, wasfiltered) {
     $.getJSON(path, function(data) {
         var processtmp = true;
 
-
+        console.log('-------------------------')
+        function mycomparator(a,b) {
+            return parseInt(a.date) - parseInt(b.date);
+        }
+        data.Tweets.sort(mycomparator);
+        console.log('.............---')
         if (!ismoretweets) {
             $.each(data.Tweets, function(key, val) {
                 var newtweet = null;
