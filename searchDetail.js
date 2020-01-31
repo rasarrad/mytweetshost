@@ -612,7 +612,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         var sortByProperty = function (property) {
             return function (x, y) {
-                return y.date - x.date;
+                return Number(y.date) - Number(x.date);
             };
         };
 
