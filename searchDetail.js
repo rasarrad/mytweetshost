@@ -528,7 +528,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
     $.getJSON(path, function(data) {
         var processtmp = true;
 
-        console.log('-------------------------')
+        console.log('-------------4444------------')
 
         data.Tweets.sort((a, b) => {
             if (a.date < b.date)
