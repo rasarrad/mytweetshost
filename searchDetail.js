@@ -545,6 +545,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 do {
                     totalGlobalLinks = totalGlobalLinks + 1;
                     if (processtmp) {
+                        alert(nextid);
                         linkcontent = readCookie(nextid + "templink");
                         if (linkcontent && linkcontent.length > 0) {
                             var linktmp = decodeURIComponent(linkcontent);
