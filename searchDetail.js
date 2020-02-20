@@ -1405,7 +1405,7 @@ var countalltweets = function(id) {
         $("#all").parent().attr("title", "Twitter: " + total_t + " - Youtube: " + total_y + " - Website: " + total_h);
         $("#all2").parent().attr("title", "Twitter: " + total_t + " - Youtube: " + total_y + " - Website: " + total_h);
 
-        // To View Now
+        // Ongoing
         var toview = 0;
         var toviewT = 0;
         var toviewY = 0;
@@ -1428,7 +1428,7 @@ var countalltweets = function(id) {
         $("#tvn2").text(toview);
         $("#tvn2").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
 
-        // Trending
+        // New / Hot / Trending
         var trending = 0;
         var trendingT = 0;
         var trendingY = 0;
@@ -1451,7 +1451,7 @@ var countalltweets = function(id) {
         $("#trn2").text(trending);
         $("#trn2").parent().attr("title", "Twitter: " + trendingT + " - Youtube: " + trendingY + " - Website: " + trendingH);
 
-        // To View
+        // To Watch
         var toview = 0;
         var toviewT = 0;
         var toviewY = 0;
@@ -1475,7 +1475,7 @@ var countalltweets = function(id) {
         $("#tvi2").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
 
 
-        // To View Long
+        // Documentaries / Films
         var toview = 0;
         var toviewT = 0;
         var toviewY = 0;
@@ -1498,7 +1498,7 @@ var countalltweets = function(id) {
         $("#tvl2").text(toview);
         $("#tvl2").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
 
-        // To read
+        // Fast Reading
         var toread = 0;
         var toreadT = 0;
         var toreadY = 0;
@@ -1520,7 +1520,7 @@ var countalltweets = function(id) {
         $("#tre2").text(toread);
         $("#tre2").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
 
-        // To read long
+        // Long Reading
         var toread = 0;
         var toreadT = 0;
         var toreadY = 0;
@@ -1542,7 +1542,7 @@ var countalltweets = function(id) {
         $("#trl2").text(toread);
         $("#trl2").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
 
-        // To keep
+        // Important / To Keep
         var tokeep = 0;
         var tokeepT = 0;
         var tokeepY = 0;

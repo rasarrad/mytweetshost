@@ -69,15 +69,15 @@ $( document ).ready(function() {
 
    //createCookie("28tagchanged", null);
 
-   catsmap.set("tvn", "To View Now");
-   catsmap.set("trn", "Trending");
-   catsmap.set("tvi", "To View");
-   catsmap.set("tvl", "To View Long");
-   catsmap.set("tre", "To Read");
-   catsmap.set("trl", "To Read Long");
-   catsmap.set("tke", "To keep");
-   catsmap.set("imp", "Important");
-   catsmap.set("cli", "Climate Change");
+   catsmap.set("tvn", "Ongoing");
+   catsmap.set("trn", "New / Hot / Trending");
+   catsmap.set("tvi", "To Watch");
+   catsmap.set("tvl", "Documentaries / Films");
+   catsmap.set("tre", "Fast Reading");
+   catsmap.set("trl", "Long Reading");
+   catsmap.set("tke", "Important / To Keep");
+   catsmap.set("imp", "Shocking Truth");
+   catsmap.set("cli", "My Tweets");
 
    $( "input, textarea" ).each( function( index, element ){
         $(element).attr("spellcheck", "false");
