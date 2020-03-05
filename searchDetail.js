@@ -1314,6 +1314,7 @@ var countalltweets = function(id) {
                 }
 ////////////* 
                 var res = val.categories.split(" ");
+                alert(res);
                 for (var i = 0; i < res.length; i++) {
                     if (counters.has(val.type + res[i])) {
                         var aux = counters.get(val.type + res[i]);
