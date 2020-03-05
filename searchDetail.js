@@ -1279,9 +1279,9 @@ var countalltweets = function(id) {
     
             do {
                 if (processtmp) {
-                    alert(nextid);
-
+                
                     linkcontent = readCookie(nextid + "templink");
+                    alert(linkcontent);
                     if (linkcontent && linkcontent.length > 0) {
                         var linktmp = decodeURIComponent(linkcontent);
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
