@@ -58,6 +58,7 @@ $( document ).ready(function() {
     alert(window.mobileAndTabletcheck())
     */
 
+    /*
     nextid = parseInt(readCookie("maxid"));
 
     do {
@@ -66,6 +67,8 @@ $( document ).ready(function() {
     }
     while (nextid > 0);
     nextid = parseInt(readCookie("maxid"));
+*/
+
 
    //createCookie("28tagchanged", null);
 
