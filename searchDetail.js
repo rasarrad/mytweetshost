@@ -1269,10 +1269,10 @@ var countalltweets = function(id) {
     var total_h = 0;    
     var processtmp = true;
     nextid = parseInt(readCookie("maxid")) - 1;
-    alert(nextid);
+   
     if (!nextid)
         nextid = parseInt($("#maxid").val()) - 1;
-
+        alert(nextid);
 
     $.getJSON(path, function(data) {
         $.each(data.Tweets, function(key, val) {
