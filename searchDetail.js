@@ -1282,6 +1282,10 @@ var countalltweets = function(id) {
         nextid = parseInt($("#maxid").val()) - 1;
     }
 
+    console.log("----------------5555----------------");
+    console.log(nextid);
+    console.log("----------------5555----------------");
+
     $.getJSON(path, function(data) {
         $.each(data.Tweets, function(key, val) {
             var recordfromdata = val;
