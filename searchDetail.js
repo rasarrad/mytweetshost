@@ -1281,10 +1281,10 @@ var countalltweets = function(id) {
                 if (processtmp) {
                 
                     linkcontent = readCookie(nextid + "templink");
-                    console.log("--------------------------------");
-                    console.log(nextid + 1);
+                    console.log("----------------aaaaaa----------------");
+                    console.log(nextid);
                     console.log(linkcontent);
-                    console.log("--------------------------------");
+                    console.log("------------------aaaaaaa--------------");
                     if (linkcontent && linkcontent.length > 0) {
                         var linktmp = decodeURIComponent(linkcontent);
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
