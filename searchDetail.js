@@ -1270,9 +1270,16 @@ var countalltweets = function(id) {
     var processtmp = true;
     nextid = parseInt(readCookie("maxid")) - 1;
    
-    if (!nextid)
+    console.log("----------------111----------------");
+    console.log(nextid);
+    console.log("----------------111----------------");
+
+    if (!nextid) {
         nextid = parseInt($("#maxid").val()) - 1;
-        alert(nextid);
+        console.log("----------------3333----------------");
+        console.log(nextid);
+        console.log("----------------3333----------------");
+    }
 
     $.getJSON(path, function(data) {
         $.each(data.Tweets, function(key, val) {
@@ -1283,10 +1290,7 @@ var countalltweets = function(id) {
                 if (processtmp) {
                 
                     linkcontent = readCookie(nextid + "templink");
-                    console.log("----------------aaaaaa----------------");
-                    console.log(nextid);
-                    console.log(linkcontent);
-                    console.log("------------------aaaaaaa--------------");
+
                     if (linkcontent && linkcontent.length > 0) {
                         var linktmp = decodeURIComponent(linkcontent);
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
