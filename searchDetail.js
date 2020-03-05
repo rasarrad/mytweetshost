@@ -1270,27 +1270,17 @@ var countalltweets = function(id) {
     var processtmp = true;
 
     nextid = parseInt(readCookie("maxid")) - 1;
-    console.log("-" + nextid + "-");
+
     try {
-        if (nextid > 0) {
-            console.log("----------------3333----------------");
+        if (nextid >= 0) {
         }
         else {
-            console.log("----------------9999999----------------");
             nextid = parseInt($("#maxid").val()) - 1;
         }
     }
     catch(err) {
-        console.log("----------------8888888----------------");
         nextid = parseInt($("#maxid").val()) - 1;
     }
-
-
-    console.log("----------------5555----------------");
-    console.log(nextid);
-    console.log("----------------5555----------------");
-
-
 
     $.getJSON(path, function(data) {
         $.each(data.Tweets, function(key, val) {
