@@ -368,7 +368,62 @@ function generate(obj) {
                     val = recordfromdata;
                 }
 
-               
+                var cat = readCookie(val.id + "catchanged");
+                if (cat && cat.length > 0) {
+                    val.categories = cat;
+                    //createCookie(val.id + "catchanged_bk", cat, 99999);
+                }
+                //else {
+                //  createCookie(val.id + "catchanged_bk", "", 99999);
+                //}
+                //createCookie(val.id + "catchanged", "", 99999);
+    
+                var tag = readCookie(val.id + "tagchanged");
+                if (tag && tag.length > 0) {
+                    val.tags = tag;
+                    // createCookie(val.id + "tagchanged_bk", tag, 99999);
+                }
+                //else {
+                //  createCookie(val.id + "tagchanged_bk", "", 99999);
+                //}
+                //createCookie(val.id + "tagchanged", "", 99999);
+    
+                var info = readCookie(val.id + "info");
+                if (info && info.length > 0) {
+                    val.info = info;
+                    //createCookie(val.id + "info_bk", info, 99999);
+                }
+                //else {
+                //  createCookie(val.id + "info_bk", "", 99999);
+                //}
+                //createCookie(val.id + "info", "", 99999);
+    
+                var classif = readCookie(val.id + "classif");
+                if (classif && classif.length > 0) {
+                    val.classif = classif;
+                    //createCookie(val.id + "classif_bk", classif, 99999);
+                }
+                //else {
+                //  createCookie(val.id + "classif_bk", "", 99999);
+                //}
+                //createCookie(val.id + "classif", "", 99999);
+    
+                var isdeleted = readCookie(val.id + "isdeleted");
+                if (isdeleted && isdeleted.length > 0) {
+                    //createCookie(val.id + "isdeleted_bk", "yes", 99999);
+                    //createCookie(val.id + "isdeleted", "", 99999);
+                } 
+                else {
+                    //createCookie(val.id + "isdeleted", "", 99999);
+                    //createCookie(val.id + "isdeleted_bk", "", 99999);
+                    if (ind) {
+                        text = text + ",";
+                    }
+                    else {
+                        ind = true;
+                    }
+                    text = text + JSON.stringify(val, null, " ");  
+                }
             }
             while (processtmp);
           
