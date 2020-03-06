@@ -319,8 +319,6 @@ function changecat(obj, id) {
 
 
 function countalltweets() {
-    if (obj)
-        fixfocus(obj);
 
     resetFields(false);
     var path = "./data.json";
