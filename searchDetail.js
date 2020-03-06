@@ -1265,26 +1265,22 @@ var countalltweets = function(id) {
     var total_h = 0;    
     var processtmp = true;
 
-    try {
-        if (nextid >= 0) {
-        }
-        else {
-            nextid = parseInt($("#maxid").val()) - 1;
-        }
-    }
-    catch(err) {
+    nextid = parseInt(readCookie("maxid")) - 1;
+    if (!nextid)
         nextid = parseInt($("#maxid").val()) - 1;
-    }
 
-    $.getJSON(path, function(data) {
-        $.each(data.Tweets, function(key, val) {
+    $.getJSON(path, function(data) 
+    {
+      $.each(data.Tweets, function(key, val) 
+        {
             var recordfromdata = val;
             var linkcontent = null;
-    
+            var linktmp = null;
+            
             do {
                 if (processtmp) {
-                    console.log('----1vvv------%%%%%%%%%%%%%%%--------');
-
+                    console.log('----222vvv------%%%%%%%%%%%%%%%--------');
+                    console.log(nextid);
                     linkcontent = readCookie(nextid + "templink");
 
                     if (linkcontent && linkcontent.length > 0) {
@@ -1293,7 +1289,9 @@ var countalltweets = function(id) {
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
 
                         linktmp = JSON.parse(linktmp);
-
+                        
+                        //createCookie(nextid + "templink_bk", linktmp, 99999);
+                        //createCookie(nextid + "templink", "", 99999);
                         val = linktmp;
                         nextid = nextid - 1;
 
@@ -1347,9 +1345,13 @@ var countalltweets = function(id) {
                     total_h = total_h + 1;
                 }
                 total = total + 1;
+
             }
             while (processtmp);
+          
         });
+
+
 
         if (!tagssloaded) {
             var o = new Option("notag", "notag");
@@ -1627,7 +1629,21 @@ var countalltweets = function(id) {
                 $("#mask > .fa-circle-o-notch").show();
             });
         }
+
     }); 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     console.log('-------------- countalltweets - END --------------');
 }

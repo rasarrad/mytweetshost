@@ -319,7 +319,7 @@ function changecat(obj, id) {
 
 
 function generate(obj) {
- 
+    fixfocus(obj);
 
     resetFields(false);
     var path = "./data.json";
@@ -340,7 +340,7 @@ function generate(obj) {
             
             do {
                 if (processtmp) {
-                    console.log('----1vvv------%%%%%%%%%%%%%%%--------');
+                    console.log('----222vvv------%%%%%%%%%%%%%%%--------');
                     console.log(nextid);
                     linkcontent = readCookie(nextid + "templink");
 
