@@ -474,8 +474,285 @@ function generate(obj) {
             while (processtmp);
           
         });
+        if (!tagssloaded) {
+            var o = new Option("notag", "notag");
+            $(o).html("All Tags");
+            $("#tagsselect").append(o);
+            $("#tagsearchselect").append(o);
+            var mapAsc = new Map([...tagsmap.entries()].sort());
+    
+            for (let [key, value] of mapAsc) {   
+                o = new Option(key, key);
+                $(o).html(key);
+                $("#tagsselect").append(o);
+                $("#tagsearchselect").append(o);
+            }
+    
+            tagsmap[Symbol.iterator] = function* () {
+    
+                yield* [...this.entries()].sort((a, b) => b[1] - a[1]);
+            
+            }
+            /*
+            for (let [key, value] of tagsmap) {     // get data sorted
+                o = new Option(key, key);
+                $(o).html(key);
+                $("#tagsselect").append(o);
+            }*/
+    
+    
+            $("#addpopup").css("top", "4000px");
+            $("#addpopup").show();
+            var hasOverflow = false;
+    
+            for (let [key, value] of tagsmap) {     // get data sorted
+                /*
+                if (!hasOverflow) {
+                    var elem = $("<li  onclick='javascript: clickLiTag(event, this)' class='litags'>" + key + "</li>");
+                    $("#tagsul").append(elem);
+                    if ($('#tagsul').isChildOverflowing(elem)) {
+                        hasOverflow = true;
+                        elem.remove();
+                    }
+                }
+                 */
+                var elem = $("<li  onclick='javascript: clickLiTag(event, this)' class='litags'>" + key + "</li>");
+                $("#tagsul").append(elem);
+                var elem2 = $("<li  onclick='javascript: clickLiTag(event, this)' class='litags'>" + key + "</li>");
+                $('#tagsearchul').append(elem2);
+            }  
+    
+            $("#addpopup").hide();
+            
+            $("#addpopup").css("top", "calc(50% - 189px)");
 
+            tagssloaded = true;
+
+            console.log('-------------- 9999999999 --------------');
+        }
+
+        // All Links
+        $("#all").text(total);
+        $("#all2").text(total);
+        $("#all").parent().attr("title", "Twitter: " + total_t + " - Youtube: " + total_y + " - Website: " + total_h);
+        $("#all2").parent().attr("title", "Twitter: " + total_t + " - Youtube: " + total_y + " - Website: " + total_h);
+
+        // Ongoing
+        var toview = 0;
+        var toviewT = 0;
+        var toviewY = 0;
+        var toviewH = 0;
+        if (counters.has("Ttvn")) {
+            toviewT = counters.get("Ttvn");
+            toview = counters.get("Ttvn");
+        }
+        if (counters.has("Ytvn")) {
+            toviewY = counters.get("Ytvn");
+            toview = toview + counters.get("Ytvn");
+        }
+        if (counters.has("Htvn")) {
+            toviewH = counters.get("Htvn");
+            toview = toview + counters.get("Htvn");
+        }
+
+        $("#tvn").text(toview);
+        $("#tvn").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
+        $("#tvn2").text(toview);
+        $("#tvn2").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
+
+        // New / Hot / Trending
+        var trending = 0;
+        var trendingT = 0;
+        var trendingY = 0;
+        var trendingH = 0;
+        if (counters.has("Ttrn")) {
+            trendingT = counters.get("Ttrn");
+            trending = counters.get("Ttrn");
+        }
+        if (counters.has("Ytrn")) {
+            trendingY = counters.get("Ytrn");
+            trending = trending + counters.get("Ytrn");
+        }
+        if (counters.has("Htrn")) {
+            trendingH = counters.get("Htrn");
+            trending = trending + counters.get("Htrn");
+        }
+
+        $("#trn").text(trending);
+        $("#trn").parent().attr("title", "Twitter: " + trendingT + " - Youtube: " + trendingY + " - Website: " + trendingH);
+        $("#trn2").text(trending);
+        $("#trn2").parent().attr("title", "Twitter: " + trendingT + " - Youtube: " + trendingY + " - Website: " + trendingH);
+
+        // To Watch
+        var toview = 0;
+        var toviewT = 0;
+        var toviewY = 0;
+        var toviewH = 0;
+        if (counters.has("Ttvi")) {
+            toviewT = counters.get("Ttvi");
+            toview = counters.get("Ttvi");
+        }
+        if (counters.has("Ytvi")) {
+            toviewY = counters.get("Ytvi");
+            toview = toview + counters.get("Ytvi");
+        }
+        if (counters.has("Htvi")) {
+            toviewH = counters.get("Htvi");
+            toview = toview + counters.get("Htvi");
+        }
+
+        $("#tvi").text(toview);
+        $("#tvi").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
+        $("#tvi2").text(toview);
+        $("#tvi2").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
+
+
+        // Documentaries / Films
+        var toview = 0;
+        var toviewT = 0;
+        var toviewY = 0;
+        var toviewH = 0;
+        if (counters.has("Ttvl")) {
+            toviewT = counters.get("Ttvl");
+            toview = counters.get("Ttvl");
+        }
+        if (counters.has("Ytvl")) {
+            toviewY = counters.get("Ytvl");
+            toview = toview + counters.get("Ytvl");
+        }
+        if (counters.has("Htvl")) {
+            toviewH = counters.get("Htvl");
+            toview = toview + counters.get("Htvl");
+        }
+
+        $("#tvl").text(toview);
+        $("#tvl").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
+        $("#tvl2").text(toview);
+        $("#tvl2").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
+
+        // Fast Reading
+        var toread = 0;
+        var toreadT = 0;
+        var toreadY = 0;
+        var toreadH = 0;
+        if (counters.has("Ttre")) {
+            toreadT = counters.get("Ttre");
+            toread = counters.get("Ttre");
+        }
+        if (counters.has("Ytre")) {
+            toreadY = counters.get("Ytre");
+            toread = toread + counters.get("Ytre");
+        }
+        if (counters.has("Htre")) {
+            toreadH = counters.get("Htre");
+            toread = toread + counters.get("Htre");
+        }
+        $("#tre").text(toread);
+        $("#tre").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
+        $("#tre2").text(toread);
+        $("#tre2").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
+
+        // Long Reading
+        var toread = 0;
+        var toreadT = 0;
+        var toreadY = 0;
+        var toreadH = 0;
+        if (counters.has("Ttrl")) {
+            toreadT = counters.get("Ttrl");
+            toread = counters.get("Ttrl");
+        }
+        if (counters.has("Ytrl")) {
+            toreadY = counters.get("Ytrl");
+            toread = toread + counters.get("Ytrl");
+        }
+        if (counters.has("Htrl")) {
+            toreadH = counters.get("Htrl");
+            toread = toread + counters.get("Htrl");
+        }
+        $("#trl").text(toread);
+        $("#trl").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
+        $("#trl2").text(toread);
+        $("#trl2").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
+
+        // Important / To Keep
+        var tokeep = 0;
+        var tokeepT = 0;
+        var tokeepY = 0;
+        var tokeepH = 0;
+        if (counters.has("Ttke")) {
+            tokeepT = counters.get("Ttke");
+            tokeep = counters.get("Ttke");
+        }
+        if (counters.has("Ytke")) {
+            tokeepY = counters.get("Ytke");
+            tokeep = tokeep + counters.get("Ytke");
+        }
+        if (counters.has("Htke")) {
+            tokeepH = counters.get("Htke");
+            tokeep = tokeep + counters.get("Htk");
+        }
+        $("#tke").text(tokeep);
+        $("#tke").parent().attr("title", "Twitter: " + tokeepT + " - Youtube: " + tokeepY + " - Website: " + tokeepH);
+        $("#tke2").text(tokeep);
+        $("#tke2").parent().attr("title", "Twitter: " + tokeepT + " - Youtube: " + tokeepY + " - Website: " + tokeepH);
+
+        var imp = 0;
+        var impT = 0;
+        var impY = 0;
+        var impH = 0;
+        if (counters.has("Timp")) {
+            impT = counters.get("Timp");
+            imp = counters.get("Timp");
+        }
+        if (counters.has("Yimp")) {
+            impY = counters.get("Yimp");
+            imp = imp + counters.get("Yimp");
+        }
+        if (counters.has("Himp")) {
+            impH = counters.get("Himp");
+            imp = imp + counters.get("Himp");
+        }
+        $("#imp").text(imp);
+        $("#imp").parent().attr("title", "Twitter: " + impT + " - Youtube: " + impY + " - Website: " + impH);
+        $("#imp2").text(imp);
+        $("#imp2").parent().attr("title", "Twitter: " + impT + " - Youtube: " + impY + " - Website: " + impH);
+
+        var climate = 0;
+        var climateT = 0;
+        var climateY = 0;
+        var climateH = 0;
+        if (counters.has("Tcli")) {
+            climateT = counters.get("Tcli");
+            climate = counters.get("Tcli");
+        }
+        if (counters.has("Ycli")) {
+            climateY = counters.get("Ycli");
+            climate = climate + counters.get("Ycli");
+        }
+        if (counters.has("Hcli")) {
+            climateH = counters.get("Hcli");
+            climate = climate + counters.get("Hcli");
+        }
+        $("#cli").text(climate);
+        $("#cli").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
+        $("#cli2").text(climate);
+        $("#cli2").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
+        
+        dblFlag = false;  
+
+        if (dosearchmore) {
+            $( "#mask" ).fadeOut( 800, function() {
+                var style = window.getComputedStyle(body, null);
+        
+                $("#mask").css("background", style.getPropertyValue('--soft-transp-color'));
+                $("#mask .fa-folder-open").hide();
+                $("#mask > div" ).hide();
+                $("#mask > .fa-circle-o-notch").show();
+            });
+        }
     }); 
+
+    console.log('-------------- countalltweets - END --------------');
 } 
 
 
