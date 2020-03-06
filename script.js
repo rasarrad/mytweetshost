@@ -91,7 +91,7 @@ $( document ).ready(function() {
    nextid = parseInt(readCookie("maxid")) - 1;
 
    setTimeout(function(){
-        generate2();
+        generate();
 }, 1); 
 
 
