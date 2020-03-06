@@ -318,7 +318,7 @@ function changecat(obj, id) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function generate(obj) {
+function countalltweets() {
     if (obj)
         fixfocus(obj);
 
