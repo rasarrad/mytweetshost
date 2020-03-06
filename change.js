@@ -343,6 +343,7 @@ function generate(obj) {
                     console.log('----222vvv------%%%%%%%%%%%%%%%--------');
                     console.log(nextid);
                     linkcontent = readCookie(nextid + "templink");
+                    alert("-" + linkcontent + "-");
                     if (linkcontent && linkcontent.length > 0) {
                         linktmp = decodeURIComponent(linkcontent);
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
