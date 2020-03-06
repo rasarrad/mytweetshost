@@ -319,8 +319,7 @@ function changecat(obj, id) {
 
 
 function generate(obj) {
-    if (obj)
-        fixfocus(obj);
+ 
 
     resetFields(false);
     var path = "./data.json";
