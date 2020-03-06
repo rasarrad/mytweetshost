@@ -1293,17 +1293,21 @@ var countalltweets = function(id) {
     
             do {
                 if (processtmp) {
-                    console.log('----222------%%%%%%%%%%%%%%%--------');
+                    console.log('----5555vvv------%%%%%%%%%%%%%%%--------');
                     console.log(nextid);
                     linkcontent = readCookie(nextid + "templink");
-                    
                     if (linkcontent && linkcontent.length > 0) {
-                        var linktmp = decodeURIComponent(linkcontent);
+                        linktmp = decodeURIComponent(linkcontent);
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
+
                         linktmp = JSON.parse(linktmp);
+                        
+                        //createCookie(nextid + "templink_bk", linktmp, 99999);
+                        //createCookie(nextid + "templink", "", 99999);
                         val = linktmp;
                         nextid = nextid - 1;
+
                         console.log(val);
                     }
                     else {
