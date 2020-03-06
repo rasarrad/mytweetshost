@@ -1293,9 +1293,10 @@ var countalltweets = function(id) {
     
             do {
                 if (processtmp) {
-                
+                    console.log('----------%%%%%%%%%%%%%%%----');
+                    console.log(nextid);
                     linkcontent = readCookie(nextid + "templink");
-
+                    console.log(linkcontent);
                     if (linkcontent && linkcontent.length > 0) {
                         var linktmp = decodeURIComponent(linkcontent);
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
@@ -1314,7 +1315,7 @@ var countalltweets = function(id) {
                 }
 ////////////* 
                 var res = val.categories.split(" ");
-                alert(res);
+                
                 for (var i = 0; i < res.length; i++) {
                     if (counters.has(val.type + res[i])) {
                         var aux = counters.get(val.type + res[i]);
