@@ -429,12 +429,6 @@ function generate(obj) {
           
         });
 
-        text = text + ']}';
-        $('#linkresult').val(text);
-        $("#linkresult").select();
-        document.execCommand('copy'); 
-        $("#linkresult").blur();
-        showMessage("Changes Processed And Copied To Clipboard");
     }); 
 } 
 
