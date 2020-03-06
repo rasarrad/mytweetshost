@@ -324,6 +324,12 @@ function generate(obj) {
 
     resetFields(false);
     var path = "./data.json";
+    var counters = new Map();
+    var tagsmap = new Map();
+    var total = 0;
+    var total_y = 0;
+    var total_t = 0;
+    var total_h = 0;    
     var text = '{"Tweets": [';
     var ind = false;
     var processtmp = true;
