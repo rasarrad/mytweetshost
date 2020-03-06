@@ -1293,19 +1293,18 @@ var countalltweets = function(id) {
     
             do {
                 if (processtmp) {
-                    console.log('----333------%%%%%%%%%%%%%%%--------');
+                    console.log('----222------%%%%%%%%%%%%%%%--------');
                     console.log(nextid);
                     linkcontent = readCookie(nextid + "templink");
                     
                     if (linkcontent && linkcontent.length > 0) {
                         var linktmp = decodeURIComponent(linkcontent);
-                        console.log(linktmp);
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
                         linktmp = JSON.parse(linktmp);
                         val = linktmp;
                         nextid = nextid - 1;
-                        
+                        console.log(val);
                     }
                     else {
                         val = recordfromdata;

@@ -340,6 +340,8 @@ function generate(obj) {
             
             do {
                 if (processtmp) {
+                    console.log('----222vvv------%%%%%%%%%%%%%%%--------');
+                    console.log(nextid);
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
                         linktmp = decodeURIComponent(linkcontent);
@@ -352,6 +354,8 @@ function generate(obj) {
                         //createCookie(nextid + "templink", "", 99999);
                         val = linktmp;
                         nextid = nextid - 1;
+
+                        console.log(val);
                     }
                     else {
                         val = recordfromdata;
