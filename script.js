@@ -89,9 +89,9 @@ $( document ).ready(function() {
    });
 
    nextid = parseInt(readCookie("maxid")) - 1;
-   
+
    setTimeout(function(){
-    countalltweets();
+        generate();
 }, 1); 
 
 
