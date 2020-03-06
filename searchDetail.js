@@ -1256,10 +1256,6 @@ var getJsonbyid = function(id, functorun) {
   
 var countalltweets = function(id) {
     console.log('-------------- countalltweets - BEGIN --------------');
-
-    // xyz
-    //return false;
-
     var path = "./data.json";
     var counters = new Map();
     var tagsmap = new Map();
@@ -1282,10 +1278,6 @@ var countalltweets = function(id) {
         nextid = parseInt($("#maxid").val()) - 1;
     }
 
-    console.log("----------------5555----------------");
-    console.log(nextid);
-    console.log("----------------5555----------------");
-
     $.getJSON(path, function(data) {
         $.each(data.Tweets, function(key, val) {
             var recordfromdata = val;
@@ -1293,8 +1285,8 @@ var countalltweets = function(id) {
     
             do {
                 if (processtmp) {
-                    console.log('----5555vvv------%%%%%%%%%%%%%%%--------');
-                    console.log(nextid);
+                    console.log('----8888vvv------%%%%%%%%%%%%%%%--------');
+
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
                         linktmp = decodeURIComponent(linkcontent);
@@ -1302,9 +1294,7 @@ var countalltweets = function(id) {
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
 
                         linktmp = JSON.parse(linktmp);
-                        
-                        //createCookie(nextid + "templink_bk", linktmp, 99999);
-                        //createCookie(nextid + "templink", "", 99999);
+
                         val = linktmp;
                         nextid = nextid - 1;
 
@@ -1318,7 +1308,7 @@ var countalltweets = function(id) {
                 else {
                     val = recordfromdata;
                 }
-////////////* 
+
                 var res = val.categories.split(" ");
                 
                 for (var i = 0; i < res.length; i++) {
@@ -1330,7 +1320,7 @@ var countalltweets = function(id) {
                         counters.set(val.type + res[i], 1);
                     }
                 }
-//////////*/
+
                 if (!tagssloaded) {
                     var tags = val.tags.split(" ");
         
@@ -1347,7 +1337,7 @@ var countalltweets = function(id) {
                         }
                     }
                 }
-    ///////////* 
+
                 if (val.type == "T") {
                     total_t = total_t + 1;
                 }
@@ -1358,11 +1348,10 @@ var countalltweets = function(id) {
                     total_h = total_h + 1;
                 }
                 total = total + 1;
-    //////////////*/
             }
             while (processtmp);
         });
-        console.log('-------------- 88888888888888888 --------------');
+
         if (!tagssloaded) {
             var o = new Option("notag", "notag");
             $(o).html("All Tags");
@@ -1419,8 +1408,6 @@ var countalltweets = function(id) {
 
             console.log('-------------- 9999999999 --------------');
         }
-
-        /////* 
 
         // All Links
         $("#all").text(total);
@@ -1629,8 +1616,6 @@ var countalltweets = function(id) {
         $("#cli2").text(climate);
         $("#cli2").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
         
-        /////* 
-        /* */
         dblFlag = false;  
 
         if (dosearchmore) {
