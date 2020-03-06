@@ -656,3 +656,123 @@ function hasTweetChanges(callback) {
   }); 
   return ind;
 } 
+
+function generate2(obj) {
+    if (obj)
+        fixfocus(obj);
+
+    resetFields(false);
+    var path = "./data.json";
+    var text = '{"Tweets": [';
+    var ind = false;
+    var processtmp = true;
+    nextid = parseInt(readCookie("maxid")) - 1;
+    if (!nextid)
+        nextid = parseInt($("#maxid").val()) - 1;
+
+    $.getJSON(path, function(data) 
+    {
+      $.each(data.Tweets, function(key, val) 
+        {
+            var recordfromdata = val;
+            var linkcontent = null;
+            var linktmp = null;
+            
+            do {
+                if (processtmp) {
+                    console.log('----222vvv------%%%%%%%%%%%%%%%--------');
+                    console.log(nextid);
+                    linkcontent = readCookie(nextid + "templink");
+
+                    if (linkcontent && linkcontent.length > 0) {
+                        linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                        linktmp = linktmp.replace(/(\\)/gm, ""); 
+
+                        linktmp = JSON.parse(linktmp);
+                        
+                        //createCookie(nextid + "templink_bk", linktmp, 99999);
+                        //createCookie(nextid + "templink", "", 99999);
+                        val = linktmp;
+                        nextid = nextid - 1;
+
+                        console.log(val);
+                    }
+                    else {
+                        val = recordfromdata;
+                        processtmp = false;
+                    }
+                }
+                else {
+                    val = recordfromdata;
+                }
+
+                var cat = readCookie(val.id + "catchanged");
+                if (cat && cat.length > 0) {
+                    val.categories = cat;
+                    //createCookie(val.id + "catchanged_bk", cat, 99999);
+                }
+                //else {
+                //  createCookie(val.id + "catchanged_bk", "", 99999);
+                //}
+                //createCookie(val.id + "catchanged", "", 99999);
+    
+                var tag = readCookie(val.id + "tagchanged");
+                if (tag && tag.length > 0) {
+                    val.tags = tag;
+                    // createCookie(val.id + "tagchanged_bk", tag, 99999);
+                }
+                //else {
+                //  createCookie(val.id + "tagchanged_bk", "", 99999);
+                //}
+                //createCookie(val.id + "tagchanged", "", 99999);
+    
+                var info = readCookie(val.id + "info");
+                if (info && info.length > 0) {
+                    val.info = info;
+                    //createCookie(val.id + "info_bk", info, 99999);
+                }
+                //else {
+                //  createCookie(val.id + "info_bk", "", 99999);
+                //}
+                //createCookie(val.id + "info", "", 99999);
+    
+                var classif = readCookie(val.id + "classif");
+                if (classif && classif.length > 0) {
+                    val.classif = classif;
+                    //createCookie(val.id + "classif_bk", classif, 99999);
+                }
+                //else {
+                //  createCookie(val.id + "classif_bk", "", 99999);
+                //}
+                //createCookie(val.id + "classif", "", 99999);
+    
+                var isdeleted = readCookie(val.id + "isdeleted");
+                if (isdeleted && isdeleted.length > 0) {
+                    //createCookie(val.id + "isdeleted_bk", "yes", 99999);
+                    //createCookie(val.id + "isdeleted", "", 99999);
+                } 
+                else {
+                    //createCookie(val.id + "isdeleted", "", 99999);
+                    //createCookie(val.id + "isdeleted_bk", "", 99999);
+                    if (ind) {
+                        text = text + ",";
+                    }
+                    else {
+                        ind = true;
+                    }
+                    text = text + JSON.stringify(val, null, " ");  
+                }
+            }
+            while (processtmp);
+          
+        });
+
+        text = text + ']}';
+        $('#linkresult').val(text);
+        $("#linkresult").select();
+        document.execCommand('copy'); 
+        $("#linkresult").blur();
+        showMessage("Changes Processed And Copied To Clipboard");
+    }); 
+} 

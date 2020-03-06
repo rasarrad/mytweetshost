@@ -91,7 +91,7 @@ $( document ).ready(function() {
    nextid = parseInt(readCookie("maxid")) - 1;
 
    setTimeout(function(){
-        generate();
+        generate2();
 }, 1); 
 
 
@@ -270,7 +270,7 @@ $( document ).ready(function() {
             dblFlag = true;
             dblClickTimeout = setTimeout(function() {     
               if (dblFlag) {
-                  generate();
+                  generate2();
                   dblFlag = false;  
               }
             }, 500);
