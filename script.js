@@ -270,7 +270,7 @@ $( document ).ready(function() {
             dblFlag = true;
             dblClickTimeout = setTimeout(function() {     
               if (dblFlag) {
-                  generate2();
+                  generate();
                   dblFlag = false;  
               }
             }, 500);

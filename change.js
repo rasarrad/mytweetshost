@@ -345,8 +345,6 @@ function countalltweets() {
             
             do {
                 if (processtmp) {
-                    console.log('----222vvv------%%%%%%%%%%%%%%%--------');
-                    console.log(nextid);
                     linkcontent = readCookie(nextid + "templink");
 
                     if (linkcontent && linkcontent.length > 0) {
@@ -355,13 +353,9 @@ function countalltweets() {
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
 
                         linktmp = JSON.parse(linktmp);
-                        
-                        //createCookie(nextid + "templink_bk", linktmp, 99999);
-                        //createCookie(nextid + "templink", "", 99999);
+
                         val = linktmp;
                         nextid = nextid - 1;
-
-                        console.log(val);
                     }
                     else {
                         val = recordfromdata;
@@ -372,10 +366,10 @@ function countalltweets() {
                     val = recordfromdata;
                 }
 
+                console.log('-------------- FAKE CODE - BEGIN --------------');
                 var cat = readCookie(val.id + "catchanged");
                 if (cat && cat.length > 0) {
                     val.categories = cat;
-                    //createCookie(val.id + "catchanged_bk", cat, 99999);
                 }
                 //else {
                 //  createCookie(val.id + "catchanged_bk", "", 99999);
@@ -428,6 +422,8 @@ function countalltweets() {
                     }
                     text = text + JSON.stringify(val, null, " ");  
                 }
+                console.log('-------------- FAKE CODE - FIM --------------');
+
 
                 var res = val.categories.split(" ");
                 
@@ -972,7 +968,7 @@ function hasTweetChanges(callback) {
   return ind;
 } 
 
-function generate2(obj) {
+function generate(obj) {
     if (obj)
         fixfocus(obj);
 
