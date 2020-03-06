@@ -87,31 +87,8 @@ $( document ).ready(function() {
         $(element).attr("autocomplete", "none");
         $(element).attr("additionalAttributes", "{autocomplete: 'none'}");
    });
-   setTimeout(function(){
-    //countalltweets();
-    console.log(88888888);
-    console.log(nextid);
-    linkcontent = readCookie("1templink");
 
-    if (linkcontent && linkcontent.length > 0) {
-        linktmp = decodeURIComponent(linkcontent);
-        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
-        linktmp = linktmp.replace(/(\\)/gm, ""); 
-
-        linktmp = JSON.parse(linktmp);
-
-        val = linktmp;
-        nextid = nextid - 1;
-
-        console.log(val);
-    }
-    else {
-        console.log(11111111);
-    }
-
-
-}, 5000); 
-
+   generate();
 
     setviewmode();
 
