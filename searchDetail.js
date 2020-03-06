@@ -1265,8 +1265,6 @@ var countalltweets = function(id) {
     var total_h = 0;    
     var processtmp = true;
 
-    nextid = parseInt(readCookie("maxid")) - 1;
-
     try {
         if (nextid >= 0) {
         }

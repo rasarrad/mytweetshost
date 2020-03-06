@@ -88,7 +88,12 @@ $( document ).ready(function() {
         $(element).attr("additionalAttributes", "{autocomplete: 'none'}");
    });
 
-   generate();
+   nextid = parseInt(readCookie("maxid")) - 1;
+   
+   setTimeout(function(){
+    countalltweets();
+}, 1); 
+
 
     setviewmode();
 
