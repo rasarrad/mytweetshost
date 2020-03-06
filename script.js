@@ -89,7 +89,7 @@ $( document ).ready(function() {
    });
    setTimeout(function(){
     countalltweets();
-}, 1); 
+}, 1000); 
 
 
     setviewmode();

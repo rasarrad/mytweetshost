@@ -1285,10 +1285,10 @@ var countalltweets = function(id) {
     
             do {
                 if (processtmp) {
-                    console.log('----8888vvv------%%%%%%%%%%%%%%%--------');
+                    console.log('----1vvv------%%%%%%%%%%%%%%%--------');
 
                     linkcontent = readCookie(nextid + "templink");
-                    alert("-" + linkcontent + "-");
+
                     if (linkcontent && linkcontent.length > 0) {
                         linktmp = decodeURIComponent(linkcontent);
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
