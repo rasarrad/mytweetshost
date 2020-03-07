@@ -372,7 +372,13 @@ $( document ).ready(function() {
         filterauthorOnChange(this);
       });
 
-
+      $("#addtaginput").keyup(function(e) {
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13' && $(this).val().length > 0){
+            addTextTag();
+        }
+      });
+      
       $( "#filterdate1display" ).click(function() {
         $( "#filterdate1display" ).blur();  
         var value = new Date();
