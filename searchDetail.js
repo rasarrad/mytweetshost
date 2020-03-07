@@ -554,6 +554,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
         
                             val = linktmp;
                             nextid = nextid - 1;
+
+                            console.log(val);
                         }
                         else {
                             val = recordfromdata;
