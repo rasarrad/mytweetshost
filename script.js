@@ -288,7 +288,7 @@ $( document ).ready(function() {
 
     $( "#updatemaxid" ).bind( "click", function( event ) {
         if ($('#maxidinput').val() != "") {
-            createCookie("maxid", pad($('#maxidinput').val(), 4));
+            createCookie("maxid", $('#maxidinput').val());
            
             showMessage("Current ID: " +  $('#maxidinput').val());
             $('#maxidinput').val('');
