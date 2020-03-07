@@ -332,6 +332,9 @@ function countalltweets() {
     var ind = false;
     var processtmp = true;
 
+    createCookie("maxid", "aaa");
+    
+    nextid = null;
     try {
         nextid = parseInt(readCookie("maxid")) - 1;
     }
@@ -340,6 +343,14 @@ function countalltweets() {
     }
     finally {
         console.log("-" + nextid + "-");
+        if (nextid) {
+            console.log("-111-");
+        }
+        else {
+            console.log("-222-");
+        }
+
+
         if (nextid < 0) {
             nextid = parseInt($("#maxid").val());
             console.log("nextid vem do hidden field: " + nextid);
