@@ -331,33 +331,24 @@ function countalltweets() {
     var text = '{"Tweets": [';
     var ind = false;
     var processtmp = true;
-
-    createCookie("maxid", "aaa");
     
     nextid = null;
     try {
-        nextid = parseInt(readCookie("maxid")) - 1;
+        nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
         console.log("Error parsing next id - countalltweets");
     }
     finally {
-        console.log("-" + nextid + "-");
         if (nextid) {
-            console.log("-111-");
-        }
-        else {
-            console.log("-222-");
-        }
-
-
-        if (nextid < 0) {
-            nextid = parseInt($("#maxid").val());
-            console.log("nextid vem do hidden field: " + nextid);
-        }
-        else {
             $("#maxid").val(nextid);
+            nextid = nextid - 1;
             console.log("nextid vem do cookie: " + nextid);
+        }
+        else {
+            nextid = parseInt($("#maxid").val());
+            nextid = nextid - 1;
+            console.log("nextid vem do hidden field: " + nextid);
         }
     }
 

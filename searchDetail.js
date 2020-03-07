@@ -522,11 +522,24 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
     currpage = currpage + 1;
 
-    nextid = parseInt(readCookie("maxid")) - 1;
-    if (!nextid) {
-        alert(6666);
-        return false;
-        //nextid = parseInt($("#maxid").val());
+    nextid = null;
+    try {
+        nextid = parseInt(readCookie("maxid"));
+    }
+    catch(err) {
+        console.log("Error parsing next id - countalltweets");
+    }
+    finally {
+        if (nextid) {
+            $("#maxid").val(nextid);
+            nextid = nextid - 1;
+            console.log("nextid vem do cookie: " + nextid);
+        }
+        else {
+            nextid = parseInt($("#maxid").val());
+            nextid = nextid - 1;
+            console.log("nextid vem do hidden field: " + nextid);
+        }
     }
 
     $.getJSON(path, function(data) {
@@ -627,12 +640,24 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         ind = 0;
 
-        nextid = parseInt(readCookie("maxid")) - 1;
-
-        if (!nextid) {
-            alert(7777);
-            return false;
-            //nextid = parseInt($("#maxid").val());
+        nextid = null;
+        try {
+            nextid = parseInt(readCookie("maxid"));
+        }
+        catch(err) {
+            console.log("Error parsing next id - countalltweets");
+        }
+        finally {
+            if (nextid) {
+                $("#maxid").val(nextid);
+                nextid = nextid - 1;
+                console.log("nextid vem do cookie: " + nextid);
+            }
+            else {
+                nextid = parseInt($("#maxid").val());
+                nextid = nextid - 1;
+                console.log("nextid vem do hidden field: " + nextid);
+            }
         }
 
         processtmp = true;
@@ -1251,12 +1276,24 @@ var getJsonbyid = function(id, functorun) {
     $.getJSON(path, function(data) {
         var processtmp = true;
 
-        nextid = parseInt(readCookie("maxid")) - 1;
-
-        if (!nextid) {
-            alert(88888);
-            return false;
-            //nextid = parseInt($("#maxid").val());
+        nextid = null;
+        try {
+            nextid = parseInt(readCookie("maxid"));
+        }
+        catch(err) {
+            console.log("Error parsing next id - countalltweets");
+        }
+        finally {
+            if (nextid) {
+                $("#maxid").val(nextid);
+                nextid = nextid - 1;
+                console.log("nextid vem do cookie: " + nextid);
+            }
+            else {
+                nextid = parseInt($("#maxid").val());
+                nextid = nextid - 1;
+                console.log("nextid vem do hidden field: " + nextid);
+            }
         }
 
         processtmp = true;

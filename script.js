@@ -86,12 +86,9 @@ $( document ).ready(function() {
         $(element).attr("additionalAttributes", "{autocomplete: 'none'}");
    });
 
-   nextid = parseInt(readCookie("maxid")) - 1;
-
-   setTimeout(function(){
-    countalltweets();
-}, 1); 
-
+    setTimeout(function(){
+        countalltweets();
+    }, 1); 
 
     setviewmode();
 
@@ -306,11 +303,22 @@ $( document ).ready(function() {
             $('#removetmpinput').val('');
         }
         else {
-            nextid = parseInt(readCookie("maxid"));
-            if (!nextid) {
-                alert(5555);
-                return false;
-                //nextid = parseInt($("#maxid").val());
+            nextid = null;
+            try {
+                nextid = parseInt(readCookie("maxid"));
+            }
+            catch(err) {
+                console.log("Error parsing next id - countalltweets");
+            }
+            finally {
+                if (nextid) {
+                    $("#maxid").val(nextid);
+                    console.log("nextid vem do cookie: " + nextid);
+                }
+                else {
+                    nextid = parseInt($("#maxid").val());
+                    console.log("nextid vem do hidden field: " + nextid);
+                }
             }
 
             do {
