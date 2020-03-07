@@ -307,8 +307,11 @@ $( document ).ready(function() {
         }
         else {
             nextid = parseInt(readCookie("maxid"));
-            if (!nextid)
-                nextid = parseInt($("#maxid").val());
+            if (!nextid) {
+                alert(5555);
+                return false;
+                //nextid = parseInt($("#maxid").val());
+            }
 
             do {
                 createCookie(nextid + "templink", "", 99999);

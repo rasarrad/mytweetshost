@@ -331,9 +331,13 @@ function countalltweets() {
     var text = '{"Tweets": [';
     var ind = false;
     var processtmp = true;
+
     nextid = parseInt(readCookie("maxid")) - 1;
-    if (!nextid)
-        nextid = parseInt($("#maxid").val()) - 1;
+    if (!nextid) {
+        alert(22222);
+        return false;
+        //nextid = parseInt($("#maxid").val());
+    }
 
     $.getJSON(path, function(data) 
     {
@@ -862,9 +866,13 @@ function hasTweetChanges(callback) {
   var ind = false;
   $.getJSON(path, function(data) 
   {
-    nextid = parseInt(readCookie("maxid")) - 1;  
-    if (!nextid)
-        nextid = parseInt($("#maxid").val()) - 1;
+    nextid = parseInt(readCookie("maxid")) - 1; 
+
+    if (!nextid) {
+        alert(3333);
+        return false;
+        //nextid = parseInt($("#maxid").val());
+    }
 
     var processtmp = true;
 
@@ -936,9 +944,14 @@ function generate(obj) {
     var text = '{"Tweets": [';
     var ind = false;
     var processtmp = true;
+    
     nextid = parseInt(readCookie("maxid")) - 1;
-    if (!nextid)
-        nextid = parseInt($("#maxid").val()) - 1;
+
+    if (!nextid) {
+        alert(4444);
+        return false;
+        //nextid = parseInt($("#maxid").val());
+    }
 
     $.getJSON(path, function(data) 
     {

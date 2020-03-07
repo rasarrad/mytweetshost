@@ -2,8 +2,11 @@
 function parseTweet(type) {
     nextid = parseInt(readCookie("maxid"));
 
-    if (!nextid)
-        nextid = parseInt($("#maxid").val());
+    if (!nextid) {
+        alert(11111);
+        return false;
+        //nextid = parseInt($("#maxid").val());
+    }
 
     setTimeout(function(){
         $('#tweetid').val(nextid);

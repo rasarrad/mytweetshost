@@ -521,9 +521,13 @@ var getInformation = function(ismoretweets, wasfiltered) {
     }
 
     currpage = currpage + 1;
+
     nextid = parseInt(readCookie("maxid")) - 1;
-    if (!nextid)
-        nextid = parseInt($("#maxid").val()) - 1;
+    if (!nextid) {
+        alert(6666);
+        return false;
+        //nextid = parseInt($("#maxid").val());
+    }
 
     $.getJSON(path, function(data) {
         var processtmp = true;
@@ -622,9 +626,14 @@ var getInformation = function(ismoretweets, wasfiltered) {
             toindex = totalLinkss;
 
         ind = 0;
+
         nextid = parseInt(readCookie("maxid")) - 1;
-        if (!nextid)
-            nextid = parseInt($("#maxid").val()) - 1;
+
+        if (!nextid) {
+            alert(7777);
+            return false;
+            //nextid = parseInt($("#maxid").val());
+        }
 
         processtmp = true;
 
@@ -1241,9 +1250,14 @@ var getJsonbyid = function(id, functorun) {
 
     $.getJSON(path, function(data) {
         var processtmp = true;
+
         nextid = parseInt(readCookie("maxid")) - 1;
-        if (!nextid)
-            nextid = parseInt($("#maxid").val()) - 1;
+
+        if (!nextid) {
+            alert(88888);
+            return false;
+            //nextid = parseInt($("#maxid").val());
+        }
 
         processtmp = true;
 
