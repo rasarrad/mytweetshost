@@ -333,14 +333,13 @@ function create() {
     
     
     //if ($("#preview").is(":checked")) {
-        alert(111);
-        console.log(1111111);
+
         createCookie(nextid + "templink", encodeURIComponent(JSON.stringify(result)), 99999);
         createCookie("hasChanges", "Yes");
         $("#generateicon").addClass("haschanges");
     //} 
 
-    createCookie("maxid", pad(nextid + 1, 4));
+    createCookie("maxid", nextid + 1);
 
     resetFields(false);
     countalltweets();

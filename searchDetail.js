@@ -135,7 +135,7 @@ function filtertagOnChange(obj) {
 
 function filterinfoOnChange(obj) {
     var currentinfosearchdisplay = $('.currentinfosearch'); 
-    console.log("1 - " + $(obj).val().trim())    
+
     if ($(obj).val().trim() == "") {
         currentinfosearchdisplay.html("all");
         currentinfosearchdisplay.addClass("emptyvalue");
@@ -554,8 +554,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
         
                             val = linktmp;
                             nextid = nextid - 1;
-
-                            console.log(val);
                         }
                         else {
                             val = recordfromdata;
@@ -565,8 +563,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     else {
                         val = recordfromdata;
                     }
-                    
-                    console.log('-------------- FAKE CODE - BEGIN --------------');
+
                     var cat = readCookie(val.id + "catchanged");
                     if (cat && cat.length > 0) {
                         val.categories = cat;
@@ -586,7 +583,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     if (classif && classif.length > 0) {
                         val.classif = classif;
                     }
-                    console.log('-------------- FAKE CODE - FIM --------------');
 
                     dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
                     dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
@@ -632,8 +628,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         processtmp = true;
 
-        console.log('-------------BEGIN SORT------------');
-
         var sortByProperty = function (property) {
             return function (x, y) {
                 return Number(y.date) - Number(x.date);
@@ -641,9 +635,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
         };
 
         data.Tweets.sort(sortByProperty(''));
-
-        console.log('.......END......---');
-
 
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
@@ -681,8 +672,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 else {
                     val = recordfromdata;
                 }
-                
-                console.log('-------------- FAKE CODE - BEGIN --------------');
+
                 var cat = readCookie(val.id + "catchanged");
                 if (cat && cat.length > 0) {
                     val.categories = cat;
@@ -702,7 +692,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 if (classif && classif.length > 0) {
                     val.classif = classif;
                 }
-                console.log('-------------- FAKE CODE - FIM --------------');
 
                 ind = ind + 1;
                 if (ind < processedCount ) {
@@ -1282,7 +1271,7 @@ var getJsonbyid = function(id, functorun) {
                 else {
                     val = recordfromdata;
                 }
-                console.log('-------------- FAKE CODE - BEGIN --------------');
+
                 var cat = readCookie(val.id + "catchanged");
                 if (cat && cat.length > 0) {
                     val.categories = cat;
@@ -1302,8 +1291,7 @@ var getJsonbyid = function(id, functorun) {
                 if (classif && classif.length > 0) {
                     val.classif = classif;
                 }
-                console.log('-------------- FAKE CODE - FIM --------------');
-                
+
                 if (val.id == id) {
                     processtmp = false;
 

@@ -366,7 +366,6 @@ function countalltweets() {
                     val = recordfromdata;
                 }
 
-                console.log('-------------- FAKE CODE - BEGIN --------------');
                 var cat = readCookie(val.id + "catchanged");
                 if (cat && cat.length > 0) {
                     val.categories = cat;
@@ -386,9 +385,7 @@ function countalltweets() {
                 if (classif && classif.length > 0) {
                     val.classif = classif;
                 }
-                console.log('-------------- FAKE CODE - FIM --------------');
-
-
+            
                 var res = val.categories.split(" ");
                 
                 for (var i = 0; i < res.length; i++) {
@@ -486,7 +483,6 @@ function countalltweets() {
 
             tagssloaded = true;
 
-            console.log('-------------- 9999999999 --------------');
         }
 
         // All Links
@@ -710,7 +706,6 @@ function countalltweets() {
         }
     }); 
 
-    console.log('-------------- countalltweets - END --------------');
 } 
 
 
@@ -726,8 +721,7 @@ function undogenerate(obj) {
         resetFields(false);
 
         var id = parseInt(readCookie("maxid")) - 1;
-        alert(2222);
-        console.log(22222);
+
         do {
 
             eraseCookie(id + "templink");
@@ -956,8 +950,7 @@ function generate(obj) {
             
             do {
                 if (processtmp) {
-                    console.log('----222vvv------%%%%%%%%%%%%%%%--------');
-                    console.log(nextid);
+
                     linkcontent = readCookie(nextid + "templink");
 
                     if (linkcontent && linkcontent.length > 0) {
@@ -967,12 +960,8 @@ function generate(obj) {
 
                         linktmp = JSON.parse(linktmp);
                         
-                        //createCookie(nextid + "templink_bk", linktmp, 99999);
-                        //createCookie(nextid + "templink", "", 99999);
                         val = linktmp;
                         nextid = nextid - 1;
-
-                        console.log(val);
                     }
                     else {
                         val = recordfromdata;
