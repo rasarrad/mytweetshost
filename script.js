@@ -308,7 +308,7 @@ $( document ).ready(function() {
                 nextid = parseInt(readCookie("maxid"));
             }
             catch(err) {
-                console.log("Error parsing next id - countalltweets");
+                console.log("Error parsing next id - removetmp click");
             }
             finally {
                 if (nextid) {

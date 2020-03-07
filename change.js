@@ -342,13 +342,13 @@ function countalltweets() {
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            nextid = nextid - 1;
             console.log("nextid vem do cookie: " + nextid);
+            nextid = nextid - 1;
         }
         else {
             nextid = parseInt($("#maxid").val());
-            nextid = nextid - 1;
             console.log("nextid vem do hidden field: " + nextid);
+            nextid = nextid - 1;
         }
     }
 
@@ -879,12 +879,24 @@ function hasTweetChanges(callback) {
   var ind = false;
   $.getJSON(path, function(data) 
   {
-    nextid = parseInt(readCookie("maxid")) - 1; 
-
-    if (!nextid) {
-        alert(3333);
-        return false;
-        //nextid = parseInt($("#maxid").val());
+    nextid = null;
+    try {
+        nextid = parseInt(readCookie("maxid"));
+    }
+    catch(err) {
+        console.log("Error parsing next id - hasTweetChanges");
+    }
+    finally {
+        if (nextid) {
+            $("#maxid").val(nextid);
+            console.log("nextid vem do cookie: " + nextid);
+            nextid = nextid - 1;
+        }
+        else {
+            nextid = parseInt($("#maxid").val());
+            console.log("nextid vem do hidden field: " + nextid);
+            nextid = nextid - 1;
+        }
     }
 
     var processtmp = true;
@@ -958,12 +970,24 @@ function generate(obj) {
     var ind = false;
     var processtmp = true;
     
-    nextid = parseInt(readCookie("maxid")) - 1;
-
-    if (!nextid) {
-        alert(4444);
-        return false;
-        //nextid = parseInt($("#maxid").val());
+    nextid = null;
+    try {
+        nextid = parseInt(readCookie("maxid"));
+    }
+    catch(err) {
+        console.log("Error parsing next id - generate");
+    }
+    finally {
+        if (nextid) {
+            $("#maxid").val(nextid);
+            console.log("nextid vem do cookie: " + nextid);
+            nextid = nextid - 1;
+        }
+        else {
+            nextid = parseInt($("#maxid").val());
+            console.log("nextid vem do hidden field: " + nextid);
+            nextid = nextid - 1;
+        }
     }
 
     $.getJSON(path, function(data) 

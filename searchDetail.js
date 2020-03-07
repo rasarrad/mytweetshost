@@ -527,18 +527,18 @@ var getInformation = function(ismoretweets, wasfiltered) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("Error parsing next id - countalltweets");
+        console.log("Error parsing next id - getInformation 1");
     }
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            nextid = nextid - 1;
             console.log("nextid vem do cookie: " + nextid);
+            nextid = nextid - 1;
         }
         else {
             nextid = parseInt($("#maxid").val());
-            nextid = nextid - 1;
             console.log("nextid vem do hidden field: " + nextid);
+            nextid = nextid - 1;
         }
     }
 
@@ -645,18 +645,18 @@ var getInformation = function(ismoretweets, wasfiltered) {
             nextid = parseInt(readCookie("maxid"));
         }
         catch(err) {
-            console.log("Error parsing next id - countalltweets");
+            console.log("Error parsing next id - getInformation 2");
         }
         finally {
             if (nextid) {
                 $("#maxid").val(nextid);
-                nextid = nextid - 1;
                 console.log("nextid vem do cookie: " + nextid);
+                nextid = nextid - 1;
             }
             else {
                 nextid = parseInt($("#maxid").val());
-                nextid = nextid - 1;
                 console.log("nextid vem do hidden field: " + nextid);
+                nextid = nextid - 1;
             }
         }
 
@@ -1281,18 +1281,18 @@ var getJsonbyid = function(id, functorun) {
             nextid = parseInt(readCookie("maxid"));
         }
         catch(err) {
-            console.log("Error parsing next id - countalltweets");
+            console.log("Error parsing next id - getJsonbyid");
         }
         finally {
             if (nextid) {
                 $("#maxid").val(nextid);
-                nextid = nextid - 1;
                 console.log("nextid vem do cookie: " + nextid);
+                nextid = nextid - 1;
             }
             else {
                 nextid = parseInt($("#maxid").val());
-                nextid = nextid - 1;
                 console.log("nextid vem do hidden field: " + nextid);
+                nextid = nextid - 1;
             }
         }
 

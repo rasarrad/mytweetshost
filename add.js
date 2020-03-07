@@ -1,11 +1,21 @@
 
 function parseTweet(type) {
-    nextid = parseInt(readCookie("maxid"));
-
-    if (!nextid) {
-        alert(11111);
-        return false;
-        //nextid = parseInt($("#maxid").val());
+    nextid = null;
+    try {
+        nextid = parseInt(readCookie("maxid"));
+    }
+    catch(err) {
+        console.log("Error parsing next id - parseTweet");
+    }
+    finally {
+        if (nextid) {
+            $("#maxid").val(nextid);
+            console.log("nextid vem do cookie: " + nextid);
+        }
+        else {
+            nextid = parseInt($("#maxid").val());
+            console.log("nextid vem do hidden field: " + nextid);
+        }
     }
 
     setTimeout(function(){
