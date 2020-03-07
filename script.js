@@ -372,7 +372,7 @@ $( document ).ready(function() {
         filterauthorOnChange(this);
       });
 
-      $("#addtaginput").keyup(function(e) {
+      $("#addtaginput").keyup(function(event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13' && $(this).val().length > 0){
             addTextTag();
