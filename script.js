@@ -302,7 +302,8 @@ $( document ).ready(function() {
 
     $( "#removetmp" ).bind( "click", function( event ) {
         if ($('#removetmpinput').val() != "") {
-           
+            alert(333);
+            console.log(333333);
             createCookie($('#removetmpinput').val() + "templink", "", 99999);
 
             showMessage("Removed link number: " +  $('#removetmpinput').val());
@@ -313,6 +314,9 @@ $( document ).ready(function() {
             if (!nextid)
                 nextid = parseInt($("#maxid").val());
 
+
+                alert(4444);
+                console.log(444444);
             do {
                 createCookie(nextid + "templink", "", 99999);
                 nextid = nextid - 1;

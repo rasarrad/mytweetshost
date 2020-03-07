@@ -762,7 +762,8 @@ function undogenerate(obj) {
         resetFields(false);
 
         var id = parseInt(readCookie("maxid")) - 1;
-
+        alert(2222);
+        console.log(22222);
         do {
 
             eraseCookie(id + "templink");
