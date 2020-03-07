@@ -566,6 +566,54 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         val = recordfromdata;
                     }
                     
+                    console.log('-------------- FAKE CODE - BEGIN --------------');
+                    var cat = readCookie(val.id + "catchanged");
+                    if (cat && cat.length > 0) {
+                        val.categories = cat;
+                    }
+                    //else {
+                    //  createCookie(val.id + "catchanged_bk", "", 99999);
+                    //}
+                    //createCookie(val.id + "catchanged", "", 99999);
+        
+                    var tag = readCookie(val.id + "tagchanged");
+                    if (tag && tag.length > 0) {
+                        val.tags = tag;
+                        // createCookie(val.id + "tagchanged_bk", tag, 99999);
+                    }
+                    //else {
+                    //  createCookie(val.id + "tagchanged_bk", "", 99999);
+                    //}
+                    //createCookie(val.id + "tagchanged", "", 99999);
+        
+                    var info = readCookie(val.id + "info");
+                    if (info && info.length > 0) {
+                        val.info = info;
+                        //createCookie(val.id + "info_bk", info, 99999);
+                    }
+        
+                    var classif = readCookie(val.id + "classif");
+                    if (classif && classif.length > 0) {
+                        val.classif = classif;
+                        //createCookie(val.id + "classif_bk", classif, 99999);
+                    }
+                    //else {
+                    //  createCookie(val.id + "classif_bk", "", 99999);
+                    //}
+                    //createCookie(val.id + "classif", "", 99999);
+        
+                    var isdeleted = readCookie(val.id + "isdeleted");
+                    if (isdeleted && isdeleted.length > 0) {
+                        //createCookie(val.id + "isdeleted_bk", "yes", 99999);
+                        //createCookie(val.id + "isdeleted", "", 99999);
+                    } 
+                    else {
+                        //createCookie(val.id + "isdeleted", "", 99999);
+                        //createCookie(val.id + "isdeleted_bk", "", 99999);
+
+                    }
+                    console.log('-------------- FAKE CODE - FIM --------------');
+
                     dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
                     dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
                     dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
