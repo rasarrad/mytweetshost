@@ -339,13 +339,14 @@ function countalltweets() {
         console.log("Error parsing next id - countalltweets");
     }
     finally {
+        console.log("-" + nextid + "-");
         if (nextid <= 0) {
             nextid = parseInt($("#maxid").val());
-            console.log("nextid vem do cookie: " + nextid);
+            console.log("nextid vem do hidden field: " + nextid);
         }
         else {
             $("#maxid").val(nextid);
-            console.log("nextid vem do hidden field: " + nextid);
+            console.log("nextid vem do cookie: " + nextid);
         }
     }
 
