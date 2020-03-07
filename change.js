@@ -341,9 +341,11 @@ function countalltweets() {
     finally {
         if (nextid <= 0) {
             nextid = parseInt($("#maxid").val());
+            console.log("nextid vem do cookie: " + nextid);
         }
         else {
             $("#maxid").val(nextid);
+            console.log("nextid vem do hidden field: " + nextid);
         }
     }
 
