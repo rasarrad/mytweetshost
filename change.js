@@ -340,7 +340,7 @@ function countalltweets() {
     }
     finally {
         console.log("-" + nextid + "-");
-        if (nextid <= 0) {
+        if (nextid < 0) {
             nextid = parseInt($("#maxid").val());
             console.log("nextid vem do hidden field: " + nextid);
         }
