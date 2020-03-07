@@ -332,12 +332,19 @@ function countalltweets() {
     var ind = false;
     var processtmp = true;
 
-    alert("-" + readCookie("maxid") + "-");
-    nextid = parseInt(readCookie("maxid")) - 1;
-    if (!nextid) {
-        alert(22222);
-        return false;
-        //nextid = parseInt($("#maxid").val());
+    try {
+        nextid = parseInt(readCookie("maxid")) - 1;
+    }
+    catch(err) {
+        console.log("Error parsing next id - countalltweets");
+    }
+    finally {
+        if (nextid <= 0) {
+            nextid = parseInt($("#maxid").val());
+        }
+        else {
+            $("#maxid").val(nextid);
+        }
     }
 
     $.getJSON(path, function(data) 
