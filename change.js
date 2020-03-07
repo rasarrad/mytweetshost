@@ -332,6 +332,7 @@ function countalltweets() {
     var ind = false;
     var processtmp = true;
 
+    alert("-" + readCookie("maxid") + "-");
     nextid = parseInt(readCookie("maxid")) - 1;
     if (!nextid) {
         alert(22222);
