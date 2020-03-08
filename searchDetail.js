@@ -685,8 +685,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
             linkcontent = null;
 
             do {
-
-
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
@@ -733,6 +731,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
                 }
 
+                alert(currentIndex + " - " + endIndex);
                 if (currentIndex < endIndex) {
                     dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
                     dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
