@@ -905,7 +905,11 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         return false;
                     }
                 }
+                if (val.id == 0) {
 
+                    return;
+
+                }
             }
             while (processtmp);
 
