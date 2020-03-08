@@ -673,7 +673,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
         alert(8888);
     */
 
-   console.log("11111111111111");
 
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
@@ -688,10 +687,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
             recordfromdata = val;
             
             linkcontent = null;
-            console.log("22222222");
-            console.log(processtmp);
+
             do {
-                console.log("aaaaaaa");
+
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
@@ -733,19 +731,17 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }
 
                 ind = ind + 1;
-                console.log("bbbbbbb");
+                console.log(ind + " - " + processedCount);
                 if (ind < processedCount ) {
-                    console.log("cccccccc");
-                    console.log(ind + " - " + processedCount);
+
                     return;
 
                 }
-                console.log("3333333");
+
 
                 //alert(currentIndex + " - " + endIndex);
                 if (currentIndex < endIndex) {
 
-                    console.log("44444444");
 
                     dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
                     dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
