@@ -351,7 +351,8 @@ function create() {
         createCookie("hasChanges", "Yes");
         $("#generateicon").addClass("haschanges");
     //} 
-
+console.log("on - create " + (nextid + 1));
+    alert(nextid + 1);
     createCookie("maxid", nextid + 1);
 
     resetFields(false);

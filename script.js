@@ -285,6 +285,8 @@ $( document ).ready(function() {
 
     $( "#updatemaxid" ).bind( "click", function( event ) {
         if ($('#maxidinput').val() != "") {
+            console.log("on - create " + (parseInt($('#maxidinput').val().trim())));
+    alert(parseInt($('#maxidinput').val().trim()));
             createCookie("maxid", parseInt($('#maxidinput').val().trim()));
            
             showMessage("Current ID: " +  $('#maxidinput').val());
