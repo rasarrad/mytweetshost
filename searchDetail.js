@@ -731,12 +731,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }
 
                 ind = ind + 1;
-                console.log(ind + " - " + processedCount);
-                if (ind < processedCount ) {
-
-                    return;
-
-                }
 
 
                 //alert(currentIndex + " - " + endIndex);
@@ -1285,7 +1279,7 @@ var getJsonbyid = function(id, functorun) {
     $.getJSON(path, function(data) {
         var processtmp = true;
 
-        nextid = null;
+        nextid = null; 
         try {
             nextid = parseInt(readCookie("maxid"));
         }
