@@ -143,7 +143,7 @@ $( document ).ready(function() {
                 $('#moretweets').css('opacity', 1);
                 //$('#moretweets').show();
 
-                $('#moretweets').attr('doshow', 'no');
+                $('#moretweets').attr('doshow', 'no'); 
                 $("#moretweets").click();
             }
             setTimeout(function() { 
