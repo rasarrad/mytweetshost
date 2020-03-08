@@ -130,7 +130,7 @@ $( document ).ready(function() {
 
     var paramid = getParameterByName('tweetid');
     if (paramid)
-      getInformationbyid(paramid);
+      getInformationbyid(paramid); 
 
     ///////////////////////////////////////
 
