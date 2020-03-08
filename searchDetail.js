@@ -521,26 +521,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
     }
 
     currpage = currpage + 1;
-
-    nextid = null;
-    try {
-        nextid = parseInt(readCookie("maxid"));
-    }
-    catch(err) {
-        console.log("Error parsing next id - getInformation 1");
-    }
-    finally {
-        if (nextid) {
-            $("#maxid").val(nextid);
-            console.log("getInformation 1 - nextid vem do cookie: " + nextid);
-            nextid = nextid - 1;
-        }
-        else {
-            nextid = parseInt($("#maxid").val());
-            console.log("getInformation 1 - nextid vem do hidden field: " + nextid);
-            nextid = nextid - 1;
-        }
-    }
+    nextid = parseInt(readCookie("maxid")) - 1;
+    if (!nextid)
+        nextid = parseInt($("#maxid").val()) - 1;
 
     $.getJSON(path, function(data) {
         var processtmp = true;
@@ -580,27 +563,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     else {
                         val = recordfromdata;
                     }
-
-                    var cat = readCookie(val.id + "catchanged");
-                    if (cat && cat.length > 0) {
-                        val.categories = cat;
-                    }
-        
-                    var tag = readCookie(val.id + "tagchanged");
-                    if (tag && tag.length > 0) {
-                        val.tags = tag;
-                    }
-        
-                    var info = readCookie(val.id + "info");
-                    if (info && info.length > 0) {
-                        val.info = info;
-                    }
-        
-                    var classif = readCookie(val.id + "classif");
-                    if (classif && classif.length > 0) {
-                        val.classif = classif;
-                    }
-
+                    
                     dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
                     dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
                     dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
@@ -639,40 +602,11 @@ var getInformation = function(ismoretweets, wasfiltered) {
             toindex = totalLinkss;
 
         ind = 0;
-
-        nextid = null;
-        try {
-            nextid = parseInt(readCookie("maxid"));
-        }
-        catch(err) {
-            console.log("Error parsing next id - getInformation 2");
-        }
-        finally {
-            if (nextid) {
-                $("#maxid").val(nextid);
-                console.log("getInformation 2 - nextid vem do cookie: " + nextid);
-                nextid = nextid - 1;
-            }
-            else {
-                nextid = parseInt($("#maxid").val());
-                console.log("getInformation 2 - nextid vem do hidden field: " + nextid);
-                nextid = nextid - 1;
-            }
-        }
+        nextid = parseInt(readCookie("maxid")) - 1;
+        if (!nextid)
+            nextid = parseInt($("#maxid").val()) - 1;
 
         processtmp = true;
-
-        /*
-        var sortByProperty = function (property) {
-            return function (x, y) {
-                return Number(y.date) - Number(x.date);
-            };
-        };
-        
-        data.Tweets.sort(sortByProperty(''));
-        alert(8888);
-    */
-
 
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
@@ -689,6 +623,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             linkcontent = null;
 
             do {
+
 
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
@@ -709,34 +644,14 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 else {
                     val = recordfromdata;
                 }
-
-                var cat = readCookie(val.id + "catchanged");
-                if (cat && cat.length > 0) {
-                    val.categories = cat;
-                }
-    
-                var tag = readCookie(val.id + "tagchanged");
-                if (tag && tag.length > 0) {
-                    val.tags = tag;
-                }
-    
-                var info = readCookie(val.id + "info");
-                if (info && info.length > 0) {
-                    val.info = info;
-                }
-    
-                var classif = readCookie(val.id + "classif");
-                if (classif && classif.length > 0) {
-                    val.classif = classif;
-                }
-
+                
                 ind = ind + 1;
+                if (ind < processedCount ) {
+                    return;
 
+                }
 
-                //alert(currentIndex + " - " + endIndex);
                 if (currentIndex < endIndex) {
-
-
                     dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
                     dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
                     dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
@@ -816,7 +731,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         var newtweet = $('#main').append($('<div id="inid" class="tweet' + xclass + '"></div>'));
                         var newtweetobj = $('#inid');
 
-                        newtweetobj.append($('<div style="z-index: 0;background: var(--soft-color);height: 39px;" class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
+                        newtweetobj.append($('<div style="display:none;" class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
                         
                         newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
                         
@@ -958,6 +873,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         }
     }); 
 }
+  
   
 
 /////////////////////////////////////////////////////////////////////////
