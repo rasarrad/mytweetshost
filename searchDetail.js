@@ -733,7 +733,10 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }
 
                 ind = ind + 1;
+                console.log("bbbbbbb");
                 if (ind < processedCount ) {
+                    console.log("cccccccc");
+                    console.log(ind + " - " + processedCount);
                     return;
 
                 }
