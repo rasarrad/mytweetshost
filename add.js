@@ -10,11 +10,11 @@ function parseTweet(type) {
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("nextid vem do cookie: " + nextid);
+            console.log("parseTweet - nextid vem do cookie: " + nextid);
         }
         else {
             nextid = parseInt($("#maxid").val());
-            console.log("nextid vem do hidden field: " + nextid);
+            console.log("parseTweet - nextid vem do hidden field: " + nextid);
         }
     }
 

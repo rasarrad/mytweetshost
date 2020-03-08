@@ -532,12 +532,12 @@ var getInformation = function(ismoretweets, wasfiltered) {
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("nextid vem do cookie: " + nextid);
+            console.log("getInformation 1 - nextid vem do cookie: " + nextid);
             nextid = nextid - 1;
         }
         else {
             nextid = parseInt($("#maxid").val());
-            console.log("nextid vem do hidden field: " + nextid);
+            console.log("getInformation 1 - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
     }
@@ -650,12 +650,12 @@ var getInformation = function(ismoretweets, wasfiltered) {
         finally {
             if (nextid) {
                 $("#maxid").val(nextid);
-                console.log("nextid vem do cookie: " + nextid);
+                console.log("getInformation 2 - nextid vem do cookie: " + nextid);
                 nextid = nextid - 1;
             }
             else {
                 nextid = parseInt($("#maxid").val());
-                console.log("nextid vem do hidden field: " + nextid);
+                console.log("getInformation 2 - nextid vem do hidden field: " + nextid);
                 nextid = nextid - 1;
             }
         }
@@ -1286,12 +1286,12 @@ var getJsonbyid = function(id, functorun) {
         finally {
             if (nextid) {
                 $("#maxid").val(nextid);
-                console.log("nextid vem do cookie: " + nextid);
+                console.log("getJsonbyid - nextid vem do cookie: " + nextid);
                 nextid = nextid - 1;
             }
             else {
                 nextid = parseInt($("#maxid").val());
-                console.log("nextid vem do hidden field: " + nextid);
+                console.log("getJsonbyid - nextid vem do hidden field: " + nextid);
                 nextid = nextid - 1;
             }
         }

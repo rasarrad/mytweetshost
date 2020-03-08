@@ -342,12 +342,12 @@ function countalltweets() {
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("nextid vem do cookie: " + nextid);
+            console.log("countalltweets - nextid vem do cookie: " + nextid);
             nextid = nextid - 1;
         }
         else {
             nextid = parseInt($("#maxid").val());
-            console.log("nextid vem do hidden field: " + nextid);
+            console.log("countalltweets - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
     }
@@ -889,12 +889,12 @@ function hasTweetChanges(callback) {
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("nextid vem do cookie: " + nextid);
+            console.log("hasTweetChanges - nextid vem do cookie: " + nextid);
             nextid = nextid - 1;
         }
         else {
             nextid = parseInt($("#maxid").val());
-            console.log("nextid vem do hidden field: " + nextid);
+            console.log("hasTweetChanges - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
     }
@@ -980,12 +980,12 @@ function generate(obj) {
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("nextid vem do cookie: " + nextid);
+            console.log("generate - nextid vem do cookie: " + nextid);
             nextid = nextid - 1;
         }
         else {
             nextid = parseInt($("#maxid").val());
-            console.log("nextid vem do hidden field: " + nextid);
+            console.log("generate - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
     }
