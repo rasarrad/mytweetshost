@@ -689,7 +689,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             
             linkcontent = null;
             console.log("22222222");
-
+            console.log(processtmp);
             do {
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
