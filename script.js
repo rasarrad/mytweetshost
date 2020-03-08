@@ -135,7 +135,7 @@ $( document ).ready(function() {
     ///////////////////////////////////////
 
     window.onscroll = function(ev) {
-        console.log((window.innerHeight + window.scrollY + 1800) + " ->=- " + document.body.offsetHeight + " -&&- " + $('#moretweets').attr('doshow'));
+        //console.log((window.innerHeight + window.scrollY + 1800) + " ->=- " + document.body.offsetHeight + " -&&- " + $('#moretweets').attr('doshow'));
         if ((window.innerHeight + window.scrollY + 1800) >= document.body.offsetHeight && dosearchmore) {
             dosearchmore = false;
 
