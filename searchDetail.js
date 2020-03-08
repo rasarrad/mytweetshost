@@ -662,15 +662,18 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         processtmp = true;
 
+        /*
         var sortByProperty = function (property) {
             return function (x, y) {
                 return Number(y.date) - Number(x.date);
             };
         };
-
+        
         data.Tweets.sort(sortByProperty(''));
-
         alert(8888);
+    */
+
+
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
             var dofiltertextfinal = false;
@@ -732,7 +735,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
                 }
 
-                alert(currentIndex + " - " + endIndex);
+                //alert(currentIndex + " - " + endIndex);
                 if (currentIndex < endIndex) {
                     dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
                     dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
