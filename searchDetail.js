@@ -670,6 +670,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         data.Tweets.sort(sortByProperty(''));
 
+        alert(8888);
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
             var dofiltertextfinal = false;
