@@ -315,11 +315,11 @@ $( document ).ready(function() {
             finally {
                 if (nextid) {
                     $("#maxid").val(nextid);
-                    console.log("nextid vem do cookie: " + nextid);
+                    console.log("removetmp click - nextid vem do cookie: " + nextid);
                 }
                 else {
                     nextid = parseInt($("#maxid").val());
-                    console.log("nextid vem do hidden field: " + nextid);
+                    console.log("removetmp click - nextid vem do hidden field: " + nextid);
                 }
             }
 

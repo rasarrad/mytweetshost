@@ -278,6 +278,24 @@ function createPreview() {
 
 
 function create() {
+    nextid = null;
+    try {
+        nextid = parseInt(readCookie("maxid"));
+    }
+    catch(err) {
+        console.log("Error parsing next id - create");
+    }
+    finally {
+        if (nextid) {
+            $("#maxid").val(nextid);
+            console.log("create - nextid vem do cookie: " + nextid);
+        }
+        else {
+            nextid = parseInt($("#maxid").val());
+            console.log("create - nextid vem do hidden field: " + nextid);
+        }
+    }
+
     var ishidden = "0";
     if ($("#ishidden").is(":checked")) {
         ishidden = "1";
@@ -346,13 +364,15 @@ function create() {
     
     
     //if ($("#preview").is(":checked")) {
+alert(nextid);
 
+console.log(JSON.stringify(result));
         createCookie(nextid + "templink", encodeURIComponent(JSON.stringify(result)), 99999);
         createCookie("hasChanges", "Yes");
         $("#generateicon").addClass("haschanges");
     //} 
-console.log("on - create " + (nextid + 1));
-    alert(nextid + 1);
+
+
     createCookie("maxid", nextid + 1);
 
     resetFields(false);
