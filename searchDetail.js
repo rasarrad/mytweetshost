@@ -865,19 +865,19 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             //$('#tweetcount').css('background', '#fff900');
                             
                             //$('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
-                            $('#tcnumber').text(toindex + " of " + totalLinkss + " Links");
+                            $('#tcnumber').text(totalLinkss + " Links");
                             $('#tccateg').text("In " + $('#selectedcattext').val());
                 
                             var aux = ind;
                 
                             setTimeout(function(){ 
                                 if (aux == toindex) { 
-                                    $('#tcnumber').text(aux + " of " + totalLinkss + " Links");
+                                    $('#tcnumber').text(totalLinkss + " Links");
                                     $('#tccateg').text("In " + $('#selectedcattext').val());
                                 }
                                 else {
                                     //$('#tcnumber').text(toindex + " of " + aux);
-                                    $('#tcnumber').text(toindex + " of " + totalLinkss + " Links");
+                                    $('#tcnumber').text(totalLinkss + " Links");
                                     $('#tccateg').text("In " + $('#selectedcattext').val());
                                 }   
                                 
@@ -886,7 +886,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 
                         }
                         else {  
-                            $('#tcnumber').text(ind + " of " + totalLinkss + " Links");
+                            $('#tcnumber').text(totalLinkss + " Links");
                             $('#tccateg').text("In " + $('#selectedcattext').val());
                         }
                 
@@ -920,19 +920,19 @@ var getInformation = function(ismoretweets, wasfiltered) {
             //$('#tweetcount').css('background', '#fff900');
             
             //$('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
-            $('#tcnumber').text(toindex + " of " + totalLinkss + " Links");
+            $('#tcnumber').text(totalLinkss + " Links");
             $('#tccateg').text("In " + $('#selectedcattext').val());
 
             var aux = ind;
 
             setTimeout(function(){ 
                 if (aux == toindex) { 
-                    $('#tcnumber').text(aux + " of " + totalLinkss + " Links");
+                    $('#tcnumber').text(totalLinkss + " Links");
                     $('#tccateg').text("In " + $('#selectedcattext').val());
                 }
                 else {
                     //$('#tcnumber').text(toindex + " of " + aux);
-                    $('#tcnumber').text(toindex + " of " + totalLinkss + " Links");
+                    $('#tcnumber').text(totalLinkss + " Links");
                     $('#tccateg').text("In " + $('#selectedcattext').val());
                 }   
                 
@@ -941,7 +941,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         }
         else {  
-            $('#tcnumber').text(ind + " of " + totalLinkss + " Links");
+            $('#tcnumber').text(totalLinkss + " Links");
             $('#tccateg').text("In " + $('#selectedcattext').val());
         }
 
