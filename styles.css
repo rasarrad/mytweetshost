@@ -1350,7 +1350,7 @@ body.big #mainsettings.newLayout > div {
     max-height: calc(100% - 137px) !important;
 } 
 #mainmenu > div {margin-top: 3px !important;max-height: 245px !important;}
-body.big #mainmenu > div {margin-top: 3px !important;max-height: 245px !important;}  
+body.big #mainmenu > div {margin-top: 3px !important;max-height: 478px !important;}  
 
 .authorinput {
   width: 211px;
@@ -1425,7 +1425,12 @@ body.big .tweet:first-child .linkbar {
 
 #mask > div > i {
   background: #464646 !important;
-}   
+}  
+
+body.big #editTags {
+  margin-top: 119px !important;
+}
+
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
 
@@ -1596,6 +1601,9 @@ body.big .tweet:first-child .linkbar {
       /* border-top-left-radius: 10px; */
       /* border-top-right-radius: 10px; */
     }      
+    body.big #editTags {
+      margin-top: 93px !important;
+    }
 }
 /****************************** FIM LANDSCAPE CSS ****************************/
 /*****************************************************************************/
@@ -1675,9 +1683,7 @@ body.big .buttonstable .date {
     top: 0px;
 }  
 
-body.big #editTags {
-  margin-top: 93px !important;
-}
+
 #searchtags {
   margin-top: 93px !important;
 }
