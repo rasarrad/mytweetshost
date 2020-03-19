@@ -192,7 +192,7 @@ function parseTweet(type) {
                     $('#mask').fadeOut(600);  
                 }
             } 
-
+alert(url)
             existsLink(url, "Y", functorun);
 
             return false;  
