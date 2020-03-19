@@ -91,6 +91,7 @@ function parseTweet(type) {
                         }
                     }
                 }, 500);
+                console.log(!existingId);
             }
             while (!existingId);    
 
