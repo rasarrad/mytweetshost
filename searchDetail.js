@@ -1405,6 +1405,14 @@ var getInformationbyid = function(id) {
     
                     //showMessage("Link Loaded"); 
                     console.log(111111);
+
+                    if (!$('body').hasClass('big')) {
+                        customizeTweets(null, true, true);
+                    }
+                    else {
+                        customizeTweets(null, true, false);
+                    }
+
                     return false;
                 }
             }
