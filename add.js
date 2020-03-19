@@ -34,68 +34,57 @@ function parseTweet(type) {
             
             console.log(4444444);
 
-            var existingId = existsLink(text, "T");
-
-            do {
-                setTimeout(function() { 
-                    if (existingId) {
-                        console.log(existingId);
-                        if (existingId != "no") {
-                            alert(888 + " - " + existingId);
-                            console.log(555555555);
-                            getInformationbyid(existingId);
-                            return false;
+            var functorun = function() 
+            { 
+                if (existingId != "no") {
+                    alert(888 + " - " + existingId);
+                    getInformationbyid(existingId);
+                }
+                else {
+                    alert(333 + " - " + existingId);
+                    console.log(6666666);
+                    origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
+            
+                    $('#postedby').val(origin);
+                    
+                    url = text.substring(text.lastIndexOf('https://twitter'), text.lastIndexOf('?ref_src=')); 
+            
+                    var date = text.substring(text.lastIndexOf('ref_src=twsrc%5Etfw>') + 20, text.lastIndexOf('</a></blockquote>')); 
+                    
+                    var year = date.substring(date.length - 4);
+                    var month = date.substring(0, date.indexOf(' ')); 
+                    var day = date.substring(date.indexOf(' ') + 1, date.lastIndexOf(' ') -1); 
+            
+                    $('#date').val(year + pad(getMonthFromString(month), 2) + pad(day, 2));
+                    
+                    $('#datetoshow').val(formatDateFromNum($('#date').val()));
+                    if (type && type == 2) {
+                        create();
+                        showMessage("Tweet Link Successfully Parsed And Created"); 
+                    }
+                    else {
+                        if (type && type == 1) {
+                            if ($(".addpopup").css('display') == 'none') {
+                                openCreatePopup(true);
+                                
+                                createPreview();
+                            }
                         }
                         else {
-                            alert(333 + " - " + existingId);
-                            console.log(6666666);
-                            origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
-                    
-                            $('#postedby').val(origin);
-                            
-                            url = text.substring(text.lastIndexOf('https://twitter'), text.lastIndexOf('?ref_src=')); 
-                    
-                            var date = text.substring(text.lastIndexOf('ref_src=twsrc%5Etfw>') + 20, text.lastIndexOf('</a></blockquote>')); 
-                            
-                            var year = date.substring(date.length - 4);
-                            var month = date.substring(0, date.indexOf(' ')); 
-                            var day = date.substring(date.indexOf(' ') + 1, date.lastIndexOf(' ') -1); 
-                    
-                            $('#date').val(year + pad(getMonthFromString(month), 2) + pad(day, 2));
-                            
-                            $('#datetoshow').val(formatDateFromNum($('#date').val()));
-                            if (type && type == 2) {
-                                create();
-                                showMessage("Tweet Link Successfully Parsed And Created"); 
-                            }
-                            else {
-                                if (type && type == 1) {
-                                    if ($(".addpopup").css('display') == 'none') {
-                                        openCreatePopup(true);
-                                        
-                                        createPreview();
-                                    }
-                                }
-                                else {
-                                    createPreview();
-                                }
-                
-                                if ($(window).width() > 1200) {
-                                    $('#postedby').focus();
-                                }
-                
-                                showMessage("Tweet Link Successfully Parsed"); 
-                            }     
-                            $('#mask').fadeOut(600);  
-                            return false;
+                            createPreview();
                         }
-                    }
-                }, 500);
-                console.log(!existingId);
-            }
-            while (!existingId);    
+        
+                        if ($(window).width() > 1200) {
+                            $('#postedby').focus();
+                        }
+        
+                        showMessage("Tweet Link Successfully Parsed"); 
+                    }     
+                    $('#mask').fadeOut(600);  
+                }
+            } 
 
-
+            existsLink(text, "T", functorun);
 
         }
         else if (text.indexOf("youtube.com/embed") >= 0) {

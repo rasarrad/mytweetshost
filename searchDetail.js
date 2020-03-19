@@ -1576,10 +1576,9 @@ function resetFields(flag) {
 
 
 
-var existsLink = function(text, type) {
+var existsLink = function(text, type, functorun) {
 
     var path = "./data.json";
-    var endIndex = currentIndex + Number($('#recordspersearch').val());
 
     nextid = null;
     try {
@@ -1638,17 +1637,20 @@ var existsLink = function(text, type) {
                     console.log(text.substring(1,151));
                     if (val.tweet.substring(0,150).localeCompare(text.substring(1,151)) == 0) {
                         alert(11118 + " - " + val.id);
-                        return val.id;
+                        existingId = val.id;
                     }
                 }
                 else {
                     if (val.url.includes(text)) {
-                        return val.id;
+                        existingId = val.id;
                     }
                 }
 
-                if (val.id == "0")
-                    return "no";
+                if (val.id == "0") {
+                    alert(12345);
+                    if (functorun)
+                        functorun();
+                }
             }
             while (processtmp);
         });     
