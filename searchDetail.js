@@ -1638,7 +1638,8 @@ var existsLink = function(text, type) {
                     console.log(val.id);
                     console.log(val.tweet.substring(0,150));
                     console.log(text.substring(1,151));
-                    if (val.tweet.substring(0,150) == text.substring(1,151)) {
+                    if (val.tweet.substring(0,150).localeCompare(text.substring(1,151)) == 0) {
+                        alert(11118 + " - " + val.id);
                         return val.id;
                     }
                 }
