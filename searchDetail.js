@@ -1388,20 +1388,13 @@ var getInformationbyid = function(id, flag) {
                     }
         
                     newtweetobj.attr('id', val.id);
-    
-                    var newtweetobjaction = newtweetobj;
-                    $('html, body').animate({
-                    scrollTop: $(newtweetobjaction).offset().top
-                    }, 700);
+
     
                     $('#mask').fadeOut(300);
     
                     if (flag)
                         showMessage("This Link is the same as the one you are trying to add", 6000); 
 
-                    setTimeout(function() { 
-                            customizeTweets(2);
-                      }, 1000);
                     return false;
                 }
             }
