@@ -711,6 +711,12 @@ function countalltweets() {
         
         dblFlag = false;  
 
+        var paramid = getParameterByName('tweetid');
+        if (paramid) {
+            alert(321)
+          getInformationbyid(paramid);   
+        }
+
         if (dosearchmore) {
             $( "#mask" ).fadeOut( 800, function() {
                 var style = window.getComputedStyle(body, null);
