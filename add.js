@@ -32,6 +32,8 @@ function parseTweet(type) {
 
             text = "\"" + text.replace(/"/g, '').replace('<\/script>', '<&#47;script>') + "\"";
             
+            console.log(4444444);
+
             var existingId = existsLink(text, "T");
             if (existingId != null) {
                 getInformationbyid(existingId);
