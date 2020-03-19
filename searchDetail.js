@@ -1262,13 +1262,91 @@ var getInformationbyid = function(id) {
     $.getJSON(path, function(data) {
         $.each(data.Tweets, function(key, val) {
             if (val.id.includes(id)) {
+
+                $("#main").empty();
                 $('#moretweets').hide();
-                var newtweet = $('#main').append($('<div id="inid" class="tweet"></div>'));
+                $('#tweetcount').hide();  
+
+
+                var tagdispalay = " --";
+                var expandclass = "";
+                var color = "";
+
+                var isdeleted = readCookie(val.id + "isdeleted");
+                if (isdeleted && isdeleted.length > 0) { // ID DELETED
+                    expandclass = hideMode ? "" : "isdeleted";    
+                    color = "color: red;";
+                } 
+                else {
+                    if (linkcontent && linkcontent.length > 0) { // IS NEW
+                        expandclass = hideMode ? "" : "isnew";  
+                        color = "color: #00dc00;";
+
+                        var tagchanged = readCookie(val.id + "tagchanged");
+
+                        if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
+                            tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                            tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
+                        } 
+                        else {
+                            if (val.tags.length > 0 && val.tags != 'undefined') {
+                                tagdispalay = parseTags(val.tags);
+                            }
+                        }
+                    }
+                    else {
+                        var hasChanges = readCookie(val.id + "haschanges");
+                        if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
+                            color = "color: #f18618;";
+                            if (expandclass == "isnew")
+                                expandclass = hideMode ? "" : "isnewmodified";  
+                            else 
+                                expandclass = hideMode ? "" : "ismodified";  
+
+                            var tagchanged = readCookie(val.id + "tagchanged");
+
+                            if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
+                                tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                                tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
+                            } 
+                            else {
+                                if (val.tags.length > 0 && val.tags != 'undefined') {
+                                    tagdispalay = parseTags(val.tags);
+                                }
+                            }
+                        } 
+                        else if (val.tags.length > 0 && val.tags != 'undefined') {
+                            tagdispalay = parseTags(val.tags);
+                        }
+                    }
+                }
+
+                var xclass = "";
+                var typefa = "twitter"
+                if (val.type == "H") {
+                    xclass = " html";
+                    typefa = "internet-explorer"
+                }
+                else if (val.type == "Y") {
+                    xclass = " yt";
+                    typefa = "youtube-play"
+                }
+
+                var newtweet = $('#main').append($('<div id="inid" class="tweet' + xclass + '"></div>'));
                 var newtweetobj = $('#inid');
-                newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-edit"></i><div class="categorias"><b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + '</div>'));
-                newtweetobj.append($('<div class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\')" id="externallink" class="fa fa-external-link"></i><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags </b>' + val.tags + '</div>'));
-                newtweetobj.append($('<div class="innertweet"></div>'));
-                newtweetobj.find('.innertweet').append(val.tweet);
+
+                newtweetobj.append($('<div style="z-index: 0;background: var(--soft-color);height: 39px;" class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
+                
+                newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
+                
+                if (val.type == "T") {
+                    newtweetobj.append($('<div class="innertweet"></div>'));
+                    newtweetobj.find('.innertweet').append(val.tweet);
+                }
+                else {
+                    newtweetobj.append($(val.tweet));
+                }
+    
                 newtweetobj.attr('id', val.id);
 
                 var newtweetobjaction = newtweetobj;
