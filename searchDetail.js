@@ -1632,9 +1632,6 @@ var existsLink = function(text, type, functorun) {
                     }
                 }
                 else {
-                    console.log(6666666);
-                    console.log(val.url);
-                    console.log(text);
                     if (val.url.localeCompare(text) == 0) {
                         existingId = val.id;
                     }
