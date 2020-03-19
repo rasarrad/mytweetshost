@@ -35,11 +35,13 @@ function parseTweet(type) {
             console.log(4444444);
 
             var existingId = existsLink(text, "T");
+            console.log(existingId);
             if (existingId != null) {
+                console.log(555555555);
                 getInformationbyid(existingId);
                 return false;
             }
-
+            console.log(6666666);
             origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
     
             $('#postedby').val(origin);
