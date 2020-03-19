@@ -1404,15 +1404,11 @@ var getInformationbyid = function(id) {
                     $('#mask').fadeOut(300);
     
                     //showMessage("Link Loaded"); 
-                    console.log(111111);
+                    console.log(777777);
 
-                    if (!$('body').hasClass('big')) {
-                        customizeTweets(null, true, true);
-                    }
-                    else {
-                        customizeTweets(null, true, false);
-                    }
-
+                    setTimeout(function() { 
+                            customizeTweets(2);
+                      }, 1000);
                     return false;
                 }
             }
