@@ -129,9 +129,10 @@ $( document ).ready(function() {
     ///////////////////////////////////////
 
     var paramid = getParameterByName('tweetid');
-    if (paramid)
+    if (paramid) {
+        alert(12345)
       getInformationbyid(paramid);   
-
+    }
     ///////////////////////////////////////
 
     window.onscroll = function(ev) {

@@ -480,6 +480,9 @@ function clickSearchLiClassif(e, obj) {
     $("#searchclassif").addClass("withvalue");
 }
 
+
+
+
 var getInformation = function(ismoretweets, wasfiltered) {
 
     closeSearchPopup();
@@ -1444,3 +1447,83 @@ function resetFields(flag) {
         showMessage("Search Criterions Cleaned"); 
 } 
 
+
+
+
+
+var existsLink = function(text, type) {
+
+    var path = "./data.json";
+    var endIndex = currentIndex + Number($('#recordspersearch').val());
+
+    nextid = null;
+    try {
+        nextid = parseInt(readCookie("maxid"));
+    }
+    catch(err) {
+        console.log("Error parsing next id - getInformation 1");
+    }
+    finally {
+        if (nextid) {
+            $("#maxid").val(nextid);
+            console.log("getInformation 1 - nextid vem do cookie: " + nextid);
+            nextid = nextid - 1;
+        }
+        else {
+            nextid = parseInt($("#maxid").val());
+            console.log("getInformation 1 - nextid vem do hidden field: " + nextid);
+            nextid = nextid - 1;
+        }
+    }
+
+    $.getJSON(path, function(data) {
+        var processtmp = true;
+
+        $.each(data.Tweets, function(key, val) {
+            var recordfromdata = val;
+            var linkcontent = null;
+
+            do {
+                totalGlobalLinks = totalGlobalLinks + 1;
+                if (processtmp) {
+                    linkcontent = readCookie(nextid + "templink");
+                    if (linkcontent && linkcontent.length > 0) {
+                        var linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                        linktmp = linktmp.replace(/(\\)/gm, ""); 
+                        linktmp = JSON.parse(linktmp);
+    
+                        val = linktmp;
+                        nextid = nextid - 1;
+                    }
+                    else {
+                        val = recordfromdata;
+                        processtmp = false;
+                    }
+                }
+                else {
+                    val = recordfromdata;
+                }
+
+
+                if (val.tweet.includes(text)) {
+                    return val;
+                }
+
+                /*
+                if (val.type == "T") {
+
+                }
+                else if (val.type == "Y") {
+
+                }
+                else {
+
+                }*/
+            }
+            while (processtmp);
+        });     
+    }); 
+
+    return null;
+}
