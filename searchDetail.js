@@ -1257,21 +1257,14 @@ var getInformationOld = function(ismoretweets) {
 var getInformationbyid = function(id) {
     $('#mask').fadeIn(300);  
     var path = "./data.json";
-    var objToFocus = -1;
 
     $.getJSON(path, function(data) {
+        var processtmp = true;
+
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
-            var dofiltertextfinal = false;
-            var dofilterdate1final = false;
-            var dofilterdate2final = false;
-            var dofiltertagfinal = false;
-            var dofiltercatfinal = false;
-            var dofilterauthorfinal = false;
             var recordfromdata = val;
             var linkcontent = null;
-            var dofiltertypefinal = false;
-            var dofilterclassiffinal = false;
 
             do {
                 if (processtmp) {
