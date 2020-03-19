@@ -1627,25 +1627,29 @@ var existsLink = function(text, type, functorun) {
                 else {
                     val = recordfromdata;
                 }
-                console.log(55555);
+
                 if (val.type == "T") {
                     console.log(777766677);
                     console.log(val.id);
                     console.log(val.tweet.substring(0,150));
                     console.log(text.substring(1,151));
                     if (val.tweet.substring(0,150).localeCompare(text.substring(1,151)) == 0) {
-                        alert(11118 + " - " + val.id);
                         existingId = val.id;
+                    }
+                    else {
+                        existingId = "no";
                     }
                 }
                 else {
                     if (val.url.includes(text)) {
                         existingId = val.id;
                     }
+                    else {
+                        existingId = "no";
+                    }
                 }
 
                 if (val.id == "0") {
-                    alert(12345);
                     if (functorun)
                         functorun();
                 }

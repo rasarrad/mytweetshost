@@ -36,13 +36,12 @@ function parseTweet(type) {
 
             var functorun = function() 
             { 
-                
-                alert(987 + " - " + existingId);
                 if (existingId != "no") {
+                    alert("aaaa - " + existingId);
                     getInformationbyid(existingId);
                 }
                 else {
-                    alert(333 + " - " + existingId);
+                    alert("bbbb - " + existingId);
                     console.log(6666666);
                     origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
             
