@@ -370,9 +370,8 @@ function create() {
     
     
     //if ($("#preview").is(":checked")) {
-alert(nextid);
 
-console.log(JSON.stringify(result));
+
         createCookie(nextid + "templink", encodeURIComponent(JSON.stringify(result)), 99999);
         createCookie("hasChanges", "Yes");
         $("#generateicon").addClass("haschanges");

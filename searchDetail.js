@@ -735,7 +735,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }
 
                 ind = ind + 1;
-                console.log(ind + " - " + processedCount);
                 if (ind < processedCount ) {
 
                     return;
@@ -1254,7 +1253,7 @@ var getInformationOld = function(ismoretweets) {
 /////////////////////////////////////////////////////////////////////////
  
   
-var getInformationbyid = function(id) {
+var getInformationbyid = function(id, flag) {
     $('#mask').fadeIn(300);  
     var path = "./data.json";
 
@@ -1307,9 +1306,7 @@ var getInformationbyid = function(id) {
                     val = recordfromdata;
                 }
 
-                console.log('val.id.includes(id): ' + val.id + ' - ' + id);
                 if (val.id.includes(id)) {
-                    console.log(val);
                     $("#main").empty();
                     $('#moretweets').hide();
                     $('#tweetcount').hide();  
@@ -1403,8 +1400,8 @@ var getInformationbyid = function(id) {
     
                     $('#mask').fadeOut(300);
     
-                    //showMessage("Link Loaded"); 
-                    console.log(777777);
+                    if (flag)
+                        showMessage("This Link is the same as the one you are trying to add", 6000); 
 
                     setTimeout(function() { 
                             customizeTweets(2);
@@ -1637,6 +1634,10 @@ var existsLink = function(text, type) {
                 }
 
                 if (val.type == "T") {
+                    console.log(777766677);
+                    console.log(val.id);
+                    console.log(val.tweet);
+                    console.log(text);
                     if (val.tweet.includes(text)) {
                         return val.id;
                     }
