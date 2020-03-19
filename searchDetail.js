@@ -1653,5 +1653,5 @@ var existsLink = function(text, type) {
         });     
     }); 
 
-    return null;
+    return "no";
 }
