@@ -1574,8 +1574,6 @@ function resetFields(flag) {
 
 
 
-
-
 var existsLink = function(text, type, functorun) {
 
     var path = "./data.json";

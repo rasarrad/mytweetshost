@@ -86,6 +86,7 @@ function parseTweet(type) {
 
             existsLink(text, "T", functorun);
 
+            return false;
         }
         else if (text.indexOf("youtube.com/embed") >= 0) {
             addType = "Y";
