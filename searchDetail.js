@@ -1258,6 +1258,26 @@ var getInformationbyid = function(id) {
     $('#mask').fadeIn(300);  
     var path = "./data.json";
 
+    nextid = null;
+    try {
+        nextid = parseInt(readCookie("maxid"));
+    }
+    catch(err) {
+        console.log("Error parsing next id - getInformationbyid");
+    }
+    finally {
+        if (nextid) {
+            $("#maxid").val(nextid);
+            console.log("getInformationbyid - nextid vem do cookie: " + nextid);
+            nextid = nextid - 1;
+        }
+        else {
+            nextid = parseInt($("#maxid").val());
+            console.log("getInformationbyid - nextid vem do hidden field: " + nextid);
+            nextid = nextid - 1;
+        }
+    }
+
     $.getJSON(path, function(data) {
         var processtmp = true;
 
