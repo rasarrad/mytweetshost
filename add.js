@@ -147,7 +147,7 @@ function parseTweet(type) {
             $('#date').val(formatNumDate(date));
             
             $('#datetoshow').val(formatDate(date));
-
+            alert(text.substring(text.indexOf('https://www.youtube'), text.indexOf('frameborder') - 2))
             url = text.substring(text.indexOf('https://www.youtube'), text.indexOf('frameborder') - 2); 
             
             urldirect = text; 
@@ -192,7 +192,7 @@ function parseTweet(type) {
                     $('#mask').fadeOut(600);  
                 }
             } 
-alert(url)
+
             existsLink(url, "Y", functorun);
 
             return false;  
