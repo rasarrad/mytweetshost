@@ -1600,15 +1600,16 @@ var existsLink = function(text, type) {
             nextid = nextid - 1;
         }
     }
-
+    console.log(1111);
     $.getJSON(path, function(data) {
         var processtmp = true;
-
+        console.log(222222);
         $.each(data.Tweets, function(key, val) {
             var recordfromdata = val;
             var linkcontent = null;
-
+            console.log(33333);
             do {
+                console.log(44444);
                 totalGlobalLinks = totalGlobalLinks + 1;
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
@@ -1629,7 +1630,7 @@ var existsLink = function(text, type) {
                 else {
                     val = recordfromdata;
                 }
-
+                console.log(55555);
                 if (val.type == "T") {
                     console.log(777766677);
                     console.log(val.id);
