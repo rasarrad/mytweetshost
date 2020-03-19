@@ -713,7 +713,6 @@ function countalltweets() {
 
         var paramid = getParameterByName('tweetid');
         if (paramid) {
-            alert(321)
           getInformationbyid(paramid);   
         }
 
