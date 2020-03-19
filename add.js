@@ -101,28 +101,39 @@ function parseTweet(type) {
             text = "\"" + ("<iframe " 
                     + text.substring(8)).replace(/"/g, "'")  + "\""; 
 
-            if (type && type == 2) {
-                create();
-                showMessage("Youtube Link Successfully Parsed And Created"); 
-            }
-            else {
-                if (type && type == 1) {
-                    if ($(".addpopup").css('display') == 'none') {
-                        openCreatePopup(true);
-                        
-                        createPreview();
-                    }
+            var functorun = function() 
+            { 
+                if (existingId != "no") {
+                    getInformationbyid(existingId, true);
                 }
                 else {
-                    createPreview();
+                    if (type && type == 2) {
+                        create();
+                        showMessage("Youtube Link Successfully Parsed And Created"); 
+                    }
+                    else {
+                        if (type && type == 1) {
+                            if ($(".addpopup").css('display') == 'none') {
+                                openCreatePopup(true);
+                                
+                                createPreview();
+                            }
+                        }
+                        else {
+                            createPreview();
+                        }
+                        
+                        if ($(window).width() > 1200) {
+                            $('#postedby').focus();
+                        }
+                        showMessage("Youtube Link Successfully Parsed"); 
+                    }             
+                    $('#mask').fadeOut(600);  
                 }
-                
-                if ($(window).width() > 1200) {
-                    $('#postedby').focus();
-                }
-                showMessage("Youtube Link Successfully Parsed"); 
-            }             
-            $('#mask').fadeOut(600);  
+            } 
+
+            existsLink(url, "Y", functorun);
+
             return false;
             
         }
@@ -151,31 +162,40 @@ function parseTweet(type) {
             text = "\"<iframe src='https://www.youtube.com/embed/" 
             + urltemp + "' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>\""; 
 
-             
-            if (type && type == 2) {
-                create();
-                showMessage("Youtube Link Successfully Parsed And Created"); 
-            }
-            else {
-                if (type && type == 1) {
-                    if ($(".addpopup").css('display') == 'none') {
-                        openCreatePopup(true);
-                        
-                        createPreview();
-                    }
+            var functorun = function() 
+            { 
+                if (existingId != "no") {
+                    getInformationbyid(existingId, true);
                 }
                 else {
-                    createPreview();
+                    if (type && type == 2) {
+                        create();
+                        showMessage("Youtube Link Successfully Parsed And Created"); 
+                    }
+                    else {
+                        if (type && type == 1) {
+                            if ($(".addpopup").css('display') == 'none') {
+                                openCreatePopup(true);
+                                
+                                createPreview();
+                            }
+                        }
+                        else {
+                            createPreview();
+                        }
+        
+                        if ($(window).width() > 1200) {
+                            $('#postedby').focus();
+                        }
+                        showMessage("Youtube Link Successfully Parsed"); 
+                    }     
+                    $('#mask').fadeOut(600);  
                 }
+            } 
 
-                if ($(window).width() > 1200) {
-                    $('#postedby').focus();
-                }
-                showMessage("Youtube Link Successfully Parsed"); 
-            }     
-            $('#mask').fadeOut(600);  
-            return false;
-            
+            existsLink(url, "Y", functorun);
+
+            return false;  
         }
         else if (text.substring(0,4) == "http") {
             addType = "H";
@@ -193,32 +213,43 @@ function parseTweet(type) {
             text = "\"<iframe src='" 
                     + text + "'></iframe><div style='position: relative;left: 0px;width: 100px;height: 0px;top: -451px;'><div style='position: relative;left: 0px;width: 83px;height: 62vh;top: 0px;'></div></div><div style='position: relative;right: -16px !important;width: 100px;height: 0px;top: -451px;float: right;'><div style='position: relative;left: 0px;width: 83px;height: 62vh;top: 0px;'></div></div>\""; 
 
-            if (type && type == 2) {
-                create();
-                showMessage("HTTP Link Successfully Parsed And Created"); 
-            }
-            else {
-                if (type && type == 1) {
-                    if ($(".addpopup").css('display') == 'none') {
-                        openCreatePopup(true);
-                        
-                        createPreview();
-                    }
+            var functorun = function() 
+            { 
+                if (existingId != "no") {
+                    getInformationbyid(existingId, true);
                 }
                 else {
-                    createPreview();
+                    if (type && type == 2) {
+                        create();
+                        showMessage("HTTP Link Successfully Parsed And Created"); 
+                    }
+                    else {
+                        if (type && type == 1) {
+                            if ($(".addpopup").css('display') == 'none') {
+                                openCreatePopup(true);
+                                
+                                createPreview();
+                            }
+                        }
+                        else {
+                            createPreview();
+                        }
+        
+                        /*$('#date').focus(function(){
+                            var that = this;
+                            setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
+                        });*/
+                        if ($(window).width() > 1200) {
+                            $('#postedby').focus();
+                        }
+                        showMessage("HTTP Link Successfully Parsed"); 
+                    }
+                    $('#mask').fadeOut(600);  
                 }
+            } 
 
-                /*$('#date').focus(function(){
-                    var that = this;
-                    setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
-                });*/
-                if ($(window).width() > 1200) {
-                    $('#postedby').focus();
-                }
-                showMessage("HTTP Link Successfully Parsed"); 
-            }
-            $('#mask').fadeOut(600);  
+            existsLink(url, "Y", functorun);
+
             return false;
         }
         $('#mask').fadeOut(600);  

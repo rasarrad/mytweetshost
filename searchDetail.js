@@ -1398,6 +1398,7 @@ var getInformationbyid = function(id, flag) {
 
                     setTimeout(function() { 
                             customizeTweets(2);
+                            $('#tweetcount').hide();
                             $('body, html').css('overflow-y', 'auto');
                       }, 1000);
                     return false;
@@ -1631,7 +1632,7 @@ var existsLink = function(text, type, functorun) {
                     }
                 }
                 else {
-                    if (val.url.includes(text)) {
+                    if (val.url.substring(0,150).localeCompare(text.substring(1,151)) == 0) {
                         existingId = val.id;
                     }
                 }
