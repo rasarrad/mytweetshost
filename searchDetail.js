@@ -1637,8 +1637,8 @@ var existsLink = function(text, type) {
                     console.log(777766677);
                     console.log(val.id);
                     console.log(val.tweet.substring(0,150));
-                    console.log(text.substring(0,150));
-                    if (val.tweet.substring(0,150).includes(text.substring(1,151))) {
+                    console.log(text.substring(1,151));
+                    if (val.tweet.substring(0,150) == text.substring(1,151)) {
                         return val.id;
                     }
                 }
