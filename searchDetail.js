@@ -673,7 +673,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
         };
         
         data.Tweets.sort(sortByProperty(''));
-        alert(8888);
     */
 
    console.log("11111111111111");
@@ -742,9 +741,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }
 
 
-                //alert(currentIndex + " - " + endIndex);
                 if (currentIndex < endIndex) {
-
 
                     dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
                     dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
@@ -1648,10 +1645,11 @@ var existsLink = function(text, type) {
                         return val.id;
                     }
                 }
+
+                if (val.id == "0")
+                    return "no";
             }
             while (processtmp);
         });     
     }); 
-
-    return "no";
 }

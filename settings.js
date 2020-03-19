@@ -768,7 +768,7 @@ function undoTags(e, obj) {
     $(obj).hide();
     var functorun = function() 
     { 
-        alert(1);
+        console.log(1);
     } 
     $('#tagsinput').trigger("change");
     removeNonExistentLi();
@@ -1008,7 +1008,7 @@ function undoCats(e, obj) {
     $(obj).hide();
     var functorun = function() 
     { 
-        alert(1);
+        console.log(1);
     } 
     $('#catsinput').trigger("change");
 
@@ -1109,7 +1109,7 @@ function undoClassif(e, obj) {
     $(obj).hide();
     var functorun = function() 
     { 
-        alert(1);
+        console.log(1);
     } 
     $('#classifinput').trigger("change");
 
@@ -1175,7 +1175,7 @@ function undoInfo(e, obj) {
     $(obj).hide();
     var functorun = function() 
     { 
-        alert(1);
+        console.log(1);
     } 
     $('#infoinput').trigger("keyup");
 

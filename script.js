@@ -53,7 +53,7 @@ $( document ).ready(function() {
         return check;
       };
 
-    alert(window.mobileAndTabletcheck())
+    console.log(window.mobileAndTabletcheck())
     */
 
     /*
