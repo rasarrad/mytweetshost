@@ -1262,7 +1262,7 @@ var getInformationbyid = function(id) {
     $.getJSON(path, function(data) {
         $.each(data.Tweets, function(key, val) {
             if (val.id.includes(id)) {
-
+console.log(val);
                 $("#main").empty();
                 $('#moretweets').hide();
                 $('#tweetcount').hide();  
@@ -1357,7 +1357,7 @@ var getInformationbyid = function(id) {
                 $('#mask').fadeOut(300);
 
                 //showMessage("Link Loaded"); 
-
+                console.log(111111);
                 return false;
             }
         });
