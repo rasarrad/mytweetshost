@@ -337,7 +337,7 @@ function countalltweets() {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("Error parsing next id - countalltweets");
+        console.log("countalltweets - Error parsing next id");
     }
     finally {
         if (nextid) {
@@ -889,7 +889,7 @@ function hasTweetChanges(callback) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("Error parsing next id - hasTweetChanges");
+        console.log("hasTweetChanges - Error parsing next id");
     }
     finally {
         if (nextid) {
@@ -980,7 +980,7 @@ function generate(obj) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("Error parsing next id - generate");
+        console.log("generate - Error parsing next id");
     }
     finally {
         if (nextid) {

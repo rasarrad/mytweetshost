@@ -5,7 +5,7 @@ function parseTweet(type) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("Error parsing next id - parseTweet");
+        console.log("parseTweet - Error parsing next id");
     }
     finally {
         if (nextid) {
@@ -31,18 +31,13 @@ function parseTweet(type) {
             $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-twitter').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
 
             text = "\"" + text.replace(/"/g, '').replace('<\/script>', '<&#47;script>') + "\"";
-            
-            console.log(4444444);
 
             var functorun = function() 
             { 
                 if (existingId != "no") {
-                    alert("aaaa - " + existingId);
-                    getInformationbyid(existingId);
+                    getInformationbyid(existingId, true);
                 }
                 else {
-                    alert("bbbb - " + existingId);
-                    console.log(6666666);
                     origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
             
                     $('#postedby').val(origin);
@@ -299,7 +294,7 @@ function create() {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("Error parsing next id - create");
+        console.log("create - Error parsing next id");
     }
     finally {
         if (nextid) {

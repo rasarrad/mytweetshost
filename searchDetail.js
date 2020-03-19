@@ -530,17 +530,17 @@ var getInformation = function(ismoretweets, wasfiltered) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("Error parsing next id - getInformation 1");
+        console.log("1 getInformation 1 - Error parsing next id");
     }
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("getInformation 1 - nextid vem do cookie: " + nextid);
+            console.log("1 getInformation 1 - nextid vem do cookie: " + nextid);
             nextid = nextid - 1;
         }
         else {
             nextid = parseInt($("#maxid").val());
-            console.log("getInformation 1 - nextid vem do hidden field: " + nextid);
+            console.log("1 getInformation 1 - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
     }
@@ -648,17 +648,17 @@ var getInformation = function(ismoretweets, wasfiltered) {
             nextid = parseInt(readCookie("maxid"));
         }
         catch(err) {
-            console.log("Error parsing next id - getInformation 2");
+            console.log("2 getInformation 2 - Error parsing next id");
         }
         finally {
             if (nextid) {
                 $("#maxid").val(nextid);
-                console.log("getInformation 2 - nextid vem do cookie: " + nextid);
+                console.log("2 getInformation 2 - nextid vem do cookie: " + nextid);
                 nextid = nextid - 1;
             }
             else {
                 nextid = parseInt($("#maxid").val());
-                console.log("getInformation 2 - nextid vem do hidden field: " + nextid);
+                console.log("2 getInformation 2 - nextid vem do hidden field: " + nextid);
                 nextid = nextid - 1;
             }
         }
@@ -675,7 +675,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
         data.Tweets.sort(sortByProperty(''));
     */
 
-   console.log("11111111111111");
 
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
@@ -1259,7 +1258,7 @@ var getInformationbyid = function(id, flag) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("Error parsing next id - getInformationbyid");
+        console.log("getInformationbyid - Error parsing next id");
     }
     finally {
         if (nextid) {
@@ -1423,7 +1422,7 @@ var getJsonbyid = function(id, functorun) {
             nextid = parseInt(readCookie("maxid"));
         }
         catch(err) {
-            console.log("Error parsing next id - getJsonbyid");
+            console.log("getJsonbyid - Error parsing next id");
         }
         finally {
             if (nextid) {
@@ -1583,7 +1582,7 @@ var existsLink = function(text, type, functorun) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("Error parsing next id - existsLink");
+        console.log("existsLink - Error parsing next id");
     }
     finally {
         if (nextid) {
@@ -1629,10 +1628,6 @@ var existsLink = function(text, type, functorun) {
                 }
 
                 if (val.type == "T") {
-                    console.log(777766677);
-                    console.log(val.id);
-                    console.log(val.tweet.substring(0,150));
-                    console.log(text.substring(1,151));
                     if (val.tweet.substring(0,150).localeCompare(text.substring(1,151)) == 0) {
                         existingId = val.id;
                     }
