@@ -32,6 +32,12 @@ function parseTweet(type) {
 
             text = "\"" + text.replace(/"/g, '').replace('<\/script>', '<&#47;script>') + "\"";
             
+            var existingId = existsLink(text, "T");
+            if (existingId != null) {
+                getInformationbyid(existingId);
+                return false;
+            }
+
             origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
     
             $('#postedby').val(origin);

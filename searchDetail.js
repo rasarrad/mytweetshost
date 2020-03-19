@@ -1592,17 +1592,17 @@ var existsLink = function(text, type) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("Error parsing next id - getInformation 1");
+        console.log("Error parsing next id - existsLink");
     }
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("getInformation 1 - nextid vem do cookie: " + nextid);
+            console.log("existsLink - nextid vem do cookie: " + nextid);
             nextid = nextid - 1;
         }
         else {
             nextid = parseInt($("#maxid").val());
-            console.log("getInformation 1 - nextid vem do hidden field: " + nextid);
+            console.log("existsLink - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
     }
@@ -1636,21 +1636,16 @@ var existsLink = function(text, type) {
                     val = recordfromdata;
                 }
 
-
-                if (val.tweet.includes(text)) {
-                    return val;
-                }
-
-                /*
                 if (val.type == "T") {
-
-                }
-                else if (val.type == "Y") {
-
+                    if (val.tweet.includes(text)) {
+                        return val.id;
+                    }
                 }
                 else {
-
-                }*/
+                    if (val.url.includes(text)) {
+                        return val.id;
+                    }
+                }
             }
             while (processtmp);
         });     
