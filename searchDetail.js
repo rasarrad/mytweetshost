@@ -1261,50 +1261,63 @@ var getInformationbyid = function(id) {
 
     $.getJSON(path, function(data) {
         $.each(data.Tweets, function(key, val) {
-            if (val.id.includes(id)) {
-console.log(val);
-                $("#main").empty();
-                $('#moretweets').hide();
-                $('#tweetcount').hide();  
+            var newtweet = null;
+            var dofiltertextfinal = false;
+            var dofilterdate1final = false;
+            var dofilterdate2final = false;
+            var dofiltertagfinal = false;
+            var dofiltercatfinal = false;
+            var dofilterauthorfinal = false;
+            var recordfromdata = val;
+            var linkcontent = null;
+            var dofiltertypefinal = false;
+            var dofilterclassiffinal = false;
 
-
-                var tagdispalay = " --";
-                var expandclass = "";
-                var color = "";
-
-                var isdeleted = readCookie(val.id + "isdeleted");
-                if (isdeleted && isdeleted.length > 0) { // ID DELETED
-                    expandclass = hideMode ? "" : "isdeleted";    
-                    color = "color: red;";
-                } 
-                else {
-                    if (linkcontent && linkcontent.length > 0) { // IS NEW
-                        expandclass = hideMode ? "" : "isnew";  
-                        color = "color: #00dc00;";
-
-                        var tagchanged = readCookie(val.id + "tagchanged");
-
-                        if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
-                            tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
-                            tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
-                        } 
-                        else {
-                            if (val.tags.length > 0 && val.tags != 'undefined') {
-                                tagdispalay = parseTags(val.tags);
-                            }
-                        }
+            do {
+                if (processtmp) {
+                    linkcontent = readCookie(nextid + "templink");
+                    if (linkcontent && linkcontent.length > 0) {
+                        var linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                        linktmp = linktmp.replace(/(\\)/gm, ""); 
+                        linktmp = JSON.parse(linktmp);
+    
+                        val = linktmp;
+                        nextid = nextid - 1;
                     }
                     else {
-                        var hasChanges = readCookie(val.id + "haschanges");
-                        if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
-                            color = "color: #f18618;";
-                            if (expandclass == "isnew")
-                                expandclass = hideMode ? "" : "isnewmodified";  
-                            else 
-                                expandclass = hideMode ? "" : "ismodified";  
+                        val = recordfromdata;
+                        processtmp = false;
+                    }
+                }
+                else {
+                    val = recordfromdata;
+                }
 
+                console.log('val.id.includes(id): ' + val.id + ' - ' + id);
+                if (val.id.includes(id)) {
+                    console.log(val);
+                    $("#main").empty();
+                    $('#moretweets').hide();
+                    $('#tweetcount').hide();  
+    
+    
+                    var tagdispalay = " --";
+                    var expandclass = "";
+                    var color = "";
+    
+                    var isdeleted = readCookie(val.id + "isdeleted");
+                    if (isdeleted && isdeleted.length > 0) { // ID DELETED
+                        expandclass = hideMode ? "" : "isdeleted";    
+                        color = "color: red;";
+                    } 
+                    else {
+                        if (linkcontent && linkcontent.length > 0) { // IS NEW
+                            expandclass = hideMode ? "" : "isnew";  
+                            color = "color: #00dc00;";
+    
                             var tagchanged = readCookie(val.id + "tagchanged");
-
+    
                             if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
                                 tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
                                 tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
@@ -1314,52 +1327,75 @@ console.log(val);
                                     tagdispalay = parseTags(val.tags);
                                 }
                             }
-                        } 
-                        else if (val.tags.length > 0 && val.tags != 'undefined') {
-                            tagdispalay = parseTags(val.tags);
+                        }
+                        else {
+                            var hasChanges = readCookie(val.id + "haschanges");
+                            if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
+                                color = "color: #f18618;";
+                                if (expandclass == "isnew")
+                                    expandclass = hideMode ? "" : "isnewmodified";  
+                                else 
+                                    expandclass = hideMode ? "" : "ismodified";  
+    
+                                var tagchanged = readCookie(val.id + "tagchanged");
+    
+                                if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
+                                    tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                                    tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
+                                } 
+                                else {
+                                    if (val.tags.length > 0 && val.tags != 'undefined') {
+                                        tagdispalay = parseTags(val.tags);
+                                    }
+                                }
+                            } 
+                            else if (val.tags.length > 0 && val.tags != 'undefined') {
+                                tagdispalay = parseTags(val.tags);
+                            }
                         }
                     }
-                }
-
-                var xclass = "";
-                var typefa = "twitter"
-                if (val.type == "H") {
-                    xclass = " html";
-                    typefa = "internet-explorer"
-                }
-                else if (val.type == "Y") {
-                    xclass = " yt";
-                    typefa = "youtube-play"
-                }
-
-                var newtweet = $('#main').append($('<div id="inid" class="tweet' + xclass + '"></div>'));
-                var newtweetobj = $('#inid');
-
-                newtweetobj.append($('<div style="z-index: 0;background: var(--soft-color);height: 39px;" class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
-                
-                newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
-                
-                if (val.type == "T") {
-                    newtweetobj.append($('<div class="innertweet"></div>'));
-                    newtweetobj.find('.innertweet').append(val.tweet);
-                }
-                else {
-                    newtweetobj.append($(val.tweet));
-                }
     
-                newtweetobj.attr('id', val.id);
-
-                var newtweetobjaction = newtweetobj;
-                $('html, body').animate({
-                scrollTop: $(newtweetobjaction).offset().top
-                }, 700);
-
-                $('#mask').fadeOut(300);
-
-                //showMessage("Link Loaded"); 
-                console.log(111111);
-                return false;
+                    var xclass = "";
+                    var typefa = "twitter"
+                    if (val.type == "H") {
+                        xclass = " html";
+                        typefa = "internet-explorer"
+                    }
+                    else if (val.type == "Y") {
+                        xclass = " yt";
+                        typefa = "youtube-play"
+                    }
+    
+                    var newtweet = $('#main').append($('<div id="inid" class="tweet' + xclass + '"></div>'));
+                    var newtweetobj = $('#inid');
+    
+                    newtweetobj.append($('<div style="z-index: 0;background: var(--soft-color);height: 39px;" class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
+                    
+                    newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
+                    
+                    if (val.type == "T") {
+                        newtweetobj.append($('<div class="innertweet"></div>'));
+                        newtweetobj.find('.innertweet').append(val.tweet);
+                    }
+                    else {
+                        newtweetobj.append($(val.tweet));
+                    }
+        
+                    newtweetobj.attr('id', val.id);
+    
+                    var newtweetobjaction = newtweetobj;
+                    $('html, body').animate({
+                    scrollTop: $(newtweetobjaction).offset().top
+                    }, 700);
+    
+                    $('#mask').fadeOut(300);
+    
+                    //showMessage("Link Loaded"); 
+                    console.log(111111);
+                    return false;
+                }
             }
+            while (processtmp);
         });
     }); 
 }
