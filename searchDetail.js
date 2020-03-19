@@ -1597,16 +1597,16 @@ var existsLink = function(text, type, functorun) {
             nextid = nextid - 1;
         }
     }
-    console.log(1111);
+    existingId = "no";
+
     $.getJSON(path, function(data) {
         var processtmp = true;
-        console.log(222222);
+
         $.each(data.Tweets, function(key, val) {
             var recordfromdata = val;
             var linkcontent = null;
-            console.log(33333);
+
             do {
-                console.log(44444);
                 totalGlobalLinks = totalGlobalLinks + 1;
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
@@ -1636,16 +1636,10 @@ var existsLink = function(text, type, functorun) {
                     if (val.tweet.substring(0,150).localeCompare(text.substring(1,151)) == 0) {
                         existingId = val.id;
                     }
-                    else {
-                        existingId = "no";
-                    }
                 }
                 else {
                     if (val.url.includes(text)) {
                         existingId = val.id;
-                    }
-                    else {
-                        existingId = "no";
                     }
                 }
 
