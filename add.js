@@ -36,8 +36,9 @@ function parseTweet(type) {
 
             var functorun = function() 
             { 
+                
+                alert(987 + " - " + existingId);
                 if (existingId != "no") {
-                    alert(888 + " - " + existingId);
                     getInformationbyid(existingId);
                 }
                 else {
