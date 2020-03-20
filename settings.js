@@ -448,7 +448,7 @@ var openMainSettingsPopup = function(jsonobj)
     $('#mainsettings').fadeIn(600);  
 } 
 
-var putChoosedThemTop = function() 
+function putChoosedThemTop() 
 {
     var theme = readCookie("currTheme");
     var clonedTheme = null;
