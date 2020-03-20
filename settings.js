@@ -448,28 +448,6 @@ var openMainSettingsPopup = function(jsonobj)
     $('#mainsettings').fadeIn(600);  
 } 
 
-function putChoosedThemTop() 
-{
-    var theme = readCookie("currTheme");
-    var clonedTheme = null;
-    var themes = new Array();
-    var counter = 0;
-
-    $("#mainsettings table#theme tr.theme").each( function( index, element ) {
-        var currow = $(element);
-
-        if (currow.attr("id") != theme) {
-            themes[counter] = currow.clone();
-            currow.remove();
-            counter = counter + 1;
-        }
-    });
-
-    for (var i = 0; i < counter; i++) {
-        $("#mainsettings table#theme").append(themes[i]);
-    }
-}
-
 
 var getLinkColor = function(id) 
 {
