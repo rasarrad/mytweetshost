@@ -675,7 +675,7 @@ function putChoosedThemTop()
         var currow = $(element);
         
         $(element).find("i").removeClass("gradient-border");
-        $(element).find("i").css("cursor", "default");
+        $(element).find("i").hide();
 
         if (currow.attr("id") != theme) {
             themes[counter] = currow.clone();
@@ -685,7 +685,7 @@ function putChoosedThemTop()
     });
 
     for (var i = 0; i < counter; i++) {
-        $(themes[i]).find("i").addClass("gradient-border").css("cursor", "pointer");
+        $(themes[i]).find("i").addClass("gradient-border").show();
         $("#mainsettings table#theme").append(themes[i]);
     }
 }
