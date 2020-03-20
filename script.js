@@ -673,6 +673,8 @@ function putChoosedThemTop()
 
     $("#mainsettings table#theme tr.theme").each( function( index, element ) {
         var currow = $(element);
+        
+        $(element).find("i").removeClass("gradient-border");
 
         if (currow.attr("id") != theme) {
             themes[counter] = currow.clone();
@@ -682,6 +684,7 @@ function putChoosedThemTop()
     });
 
     for (var i = 0; i < counter; i++) {
+        $(themes[i]).addClass("gradient-border");
         $("#mainsettings table#theme").append(themes[i]);
     }
 }
