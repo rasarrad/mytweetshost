@@ -445,7 +445,7 @@ var openMainSettingsPopup = function(jsonobj)
 
     putChoosedThemTop();
 
-    $('#mainsettings').fadeIn(600); 
+    $('#mainsettings').fadeIn(600);  
 } 
 
 var putChoosedThemTop = function() 
