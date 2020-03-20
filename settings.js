@@ -452,16 +452,22 @@ var putChoosedThemTop = function()
 {
     var theme = readCookie("currTheme");
     var clonedTheme = null;
+    var themes = new Array();
+    var counter = 0;
 
     $("#mainsettings table#theme tr.theme").each( function( index, element ) {
         var currow = $(element);
 
-        if (currow.attr("id") == theme) {
-            clonedTheme = currow.clone();
+        if (currow.attr("id") != theme) {
+            themes[counter] = currow.clone();
+            currow.remove();
+            counter = counter + 1;
         }
-
-        currow.remove();
     });
+
+    for (var i = 0; i < counter; i++) {
+        $("#mainsettings table#theme").append(themes[i]);
+    }
 }
 
 
