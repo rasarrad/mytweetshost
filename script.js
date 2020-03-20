@@ -654,6 +654,8 @@ function changetheme(type, desc) {
             break; 
     }
 
+    putChoosedThemTop();
+    
     document.documentElement.style.setProperty('--high-color', high_color);
     document.documentElement.style.setProperty('--text-color', text_color);
     document.documentElement.style.setProperty('--dark-color', dark_color);
