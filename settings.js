@@ -443,8 +443,26 @@ var openMainSettingsPopup = function(jsonobj)
         table.find('td.el').addClass('ellipsis');
     });
 
+    putChoosedThemTop();
+
     $('#mainsettings').fadeIn(600); 
 } 
+
+var putChoosedThemTop = function() 
+{
+    var theme = readCookie("currTheme", type);
+    var clonedTheme = null;
+
+    $("#mainsettings table#theme tr.theme").each( function( index, element ) {
+        var currow = $(element);
+
+        if (currow.attr("id") == theme) {
+            clonedTheme = currow.clone();
+        }
+
+        currow.remove();
+    });
+}
 
 
 var getLinkColor = function(id) 
