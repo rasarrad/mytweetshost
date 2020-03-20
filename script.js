@@ -684,7 +684,7 @@ function putChoosedThemTop()
     });
 
     for (var i = 0; i < counter; i++) {
-        $(themes[i]).addClass("gradient-border");
+        $(themes[i]).find("i").addClass("gradient-border");
         $("#mainsettings table#theme").append(themes[i]);
     }
 }
