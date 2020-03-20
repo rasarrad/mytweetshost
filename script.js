@@ -673,21 +673,30 @@ function putChoosedThemTop()
 
     $("#mainsettings table#theme tr.theme").each( function( index, element ) {
         var currow = $(element);
-        
-        $(element).find("i").removeClass("gradient-border");
-        $(element).find("i").hide();
-        $(element).find("td").css("border-bottom", "14px solid #45cae700");
 
         if (currow.attr("id") != theme) {
             themes[counter] = currow.clone();
             currow.remove();
             counter = counter + 1;
         }
+        else {
+            $(element).find("i").removeClass("gradient-border");
+            $(element).find("i").hide();
+            $(element).find("td").css("border-bottom", "6px solid #45cae700");
+            $(element).find(".themebox").css("border", "3px solid 3var(--high-color)").css("width", "calc(100% - 4px)");
+            $(element).find(".themetitle").css("left", "-3px").css("width", "calc(100% + 6px)");
+        }
     });
 
     for (var i = 0; i < counter; i++) {
         $(themes[i]).find("i").addClass("gradient-border").show();
         $(themes[i]).find("td").css("border-bottom", "0");
+
+
+        $(themes[i]).find(".themebox").css("border", "1px solid var(--high-color)").css("width", "100%");
+        $(themes[i]).find(".themetitle").css("left", "-1px").css("width", "calc(100% + 2px)");
+
+
         $("#mainsettings table#theme").append(themes[i]);
     }
 }
