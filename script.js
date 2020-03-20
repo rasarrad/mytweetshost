@@ -683,7 +683,7 @@ function putChoosedThemTop()
             $(element).find("i").removeClass("gradient-border");
             $(element).find("i").hide();
             $(element).find("td").css("border-bottom", "6px solid #45cae700");
-            $(element).find(".themebox").css("border", "3px solid 3var(--high-color)").css("width", "calc(100% - 4px)");
+            $(element).find(".themebox").css("border", "3px solid var(--high-color)").css("width", "calc(100% - 4px)");
             $(element).find(".themetitle").css("left", "-3px").css("width", "calc(100% + 6px)");
         }
     });
