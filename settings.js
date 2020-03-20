@@ -450,7 +450,7 @@ var openMainSettingsPopup = function(jsonobj)
 
 var putChoosedThemTop = function() 
 {
-    var theme = readCookie("currTheme", type);
+    var theme = readCookie("currTheme");
     var clonedTheme = null;
 
     $("#mainsettings table#theme tr.theme").each( function( index, element ) {
