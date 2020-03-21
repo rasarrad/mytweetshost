@@ -1109,6 +1109,7 @@ body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
   background-image: linear-gradient(to bottom, var(--dark-color) 3%, var(--softdark-color) 80%);
   top: auto;
   bottom: -5px;
+  background: var(--dark-color);
 }
 .tweet.html:not(:last-child) .bottomgradiantback {
     bottom: 9px;
