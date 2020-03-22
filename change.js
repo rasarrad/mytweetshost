@@ -508,7 +508,7 @@ function countalltweets() {
         $("#all").parent().attr("title", "Twitter: " + total_t + " - Youtube: " + total_y + " - Website: " + total_h);
         $("#all2").parent().attr("title", "Twitter: " + total_t + " - Youtube: " + total_y + " - Website: " + total_h);
 
-        // Ongoing
+        // New/Ongoing
         var toview = 0;
         var toviewT = 0;
         var toviewY = 0;

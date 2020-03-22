@@ -347,7 +347,7 @@ function create() {
     var cats = $('#catsinput').val();
 
     if (cats == "undefined" || cats.length == 0) {
-        cats = "";
+        cats = "tvn";
     }
     else {
         cats = cats.trim();

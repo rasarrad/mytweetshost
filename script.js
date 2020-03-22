@@ -69,7 +69,7 @@ $( document ).ready(function() {
 
    //createCookie("28tagchanged", null);
 
-   catsmap.set("tvn", "Ongoing");
+   catsmap.set("tvn", "New/Ongoing");
    catsmap.set("trn", "New / Hot / Trending");
    catsmap.set("tvi", "To Watch");
    catsmap.set("tvl", "Documentaries / Films");
