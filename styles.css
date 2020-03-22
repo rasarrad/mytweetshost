@@ -885,7 +885,7 @@ twitter-widget {
 }
 body.big .buttonstable .author {
        max-width: 124px !important;
-       top: 6px !important;
+       top: 3px !important;
 }
 
 
@@ -2198,11 +2198,11 @@ body.big #linkChange .titletable {
         width: 361px !important;
     }
     .buttonstable .author {
-          max-width: 163px !important;
-          top: 3px !important;
+          max-width: 134px !important;
+          top: 2px !important;
       }
       body.big .buttonstable .author {
-           max-width: 226px !important;
+           max-width: 210px !important;
       }
       .newLayout > div .titletable tr:first-child .firsttd {
           min-width: 345px;
@@ -3400,7 +3400,7 @@ body.big .buttonstable tr:first-child .firsttd i.fa-youtube-play {
 
 .buttonstable tr:first-child .firsttd i.fa-twitter {
     font-size: 15px !important;
-    top: 1px !important;
+    top: 0px !important;
     left: 1px !important;
 }
 
@@ -3959,5 +3959,11 @@ body.big #expandedittags, body.big #expandsearchtags {
 	}
 }
 
+.author {
+  font-size: 15px;
+}
   
-
+body.big .author {
+  font-size: 19px;
+}
+  
