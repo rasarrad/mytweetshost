@@ -1627,18 +1627,21 @@ var existsLink = function(text, type, functorun) {
                 }
 
                 if (val.type == "T") {
-                    alert("-" + val.tweet.substring(0,16100) + "-");
-
-
-
+                    if (   
+                        (text.substring(0,10) != "" && val.tweet.includes(text.substring(0,10)))
+                        ||
+                        (text.substring(20,30) != "" && val.tweet.includes(text.substring(20,30)))                        
+                        ||
+                        (text.substring(40,50) != "" && val.tweet.includes(text.substring(40,50)))                     
+                    ) {
+                        existingId = val.id;
+                    }
                 }
                 else {
                     if (val.url.localeCompare(text) == 0) {
                         existingId = val.id;
                     }
                 }
-
-                existingId = 15;
 
                 if (val.id == "0") {
                     if (functorun)
