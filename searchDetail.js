@@ -1627,11 +1627,10 @@ var existsLink = function(text, type, functorun) {
                 }
 
                 if (val.type == "T") {
-                    alert("-" + val.tweet.substring(16000,16100) + "-");
-                    if (val.tweet.substring(16000,16100).localeCompare(text.substring(16000,16100)) == 0) {
-                        alert(2222);
-                        existingId = val.id;
-                    }
+                    alert("-" + val.tweet.substring(0,16100) + "-");
+
+
+
                 }
                 else {
                     if (val.url.localeCompare(text) == 0) {
