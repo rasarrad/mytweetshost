@@ -1637,6 +1637,8 @@ var existsLink = function(text, type, functorun) {
                     }
                 }
 
+                existingId = 15;
+
                 if (val.id == "0") {
                     if (functorun)
                         functorun();
