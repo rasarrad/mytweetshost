@@ -1627,7 +1627,7 @@ var existsLink = function(text, type, functorun) {
                 }
 
                 if (val.type == "T") {
-                    if (val.tweet.substring(0,150).localeCompare(text.substring(1,151)) == 0) {
+                    if (val.tweet.substring(16000,16100).localeCompare(text.substring(16000,16100)) == 0) {
                         existingId = val.id;
                     }
                 }
