@@ -716,8 +716,10 @@ function countalltweets() {
           getInformationbyid(paramid);   
         }
 
+
+        /*
         if (dosearchmore) {
-            $( "#mask" ).fadeOut( 100, function() {
+            $( "#mask" ).fadeOut( 800, function() {
                 var style = window.getComputedStyle(body, null);
         
                 $("#mask").css("background", style.getPropertyValue('--soft-transp-color'));
@@ -726,6 +728,8 @@ function countalltweets() {
                 $("#mask > .fa-circle-o-notch").show();
             });
         }
+
+         */
     }); 
 
 } 
