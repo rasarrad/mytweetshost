@@ -72,12 +72,17 @@ $( document ).ready(function() {
         nextid = nextid - 1;
     }
     while (nextid > 0);
-    
+
     nextid = parseInt(readCookie("maxid"));
+
+
+
+
+    document.addEventListener('visibilitychange', visibilityHandler, false);
+    visibilityHandler();
+    
 */
 
-document.addEventListener('visibilitychange', visibilityHandler, false);
-visibilityHandler();
    //createCookie("28tagchanged", null);
 
    catsmap.set("tvn", "New/Ongoing");
