@@ -45,6 +45,15 @@ setTimeout(function() {
   }
 }, 2500);
 
+function visibilityHandler() {
+    var hash = '#bg';
+    if (document.hidden && !window.location.hash) {
+      window.history.replaceState(null, null, window.location + hash);
+    } else if (!document.hidden && window.location.hash == hash) {
+      var l = '' + window.location;
+      window.history.replaceState(null, null, l.substr(0, l.length - hash.length));
+    }
+  };
 
 $( document ).ready(function() { 
     /*
@@ -63,10 +72,12 @@ $( document ).ready(function() {
         nextid = nextid - 1;
     }
     while (nextid > 0);
+    
     nextid = parseInt(readCookie("maxid"));
 */
 
-
+document.addEventListener('visibilitychange', visibilityHandler, false);
+visibilityHandler();
    //createCookie("28tagchanged", null);
 
    catsmap.set("tvn", "New/Ongoing");
