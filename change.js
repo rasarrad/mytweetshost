@@ -717,7 +717,7 @@ function countalltweets() {
         }
 
         if (dosearchmore) {
-            $( "#mask" ).fadeOut( 800, function() {
+            $( "#mask" ).fadeOut( 100, function() {
                 var style = window.getComputedStyle(body, null);
         
                 $("#mask").css("background", style.getPropertyValue('--soft-transp-color'));
