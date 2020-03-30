@@ -28,6 +28,10 @@ function fixfocus(el)
 }
 
 function zoom(obj, flag) {
+
+alert($("#showdeleted").val());
+return false;
+
     if (obj) fixfocus(obj);
     
     $('body').addClass('notransit');
