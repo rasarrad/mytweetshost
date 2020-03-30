@@ -614,8 +614,16 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
                     dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
                     
+                    var doShowDeletedLink = true;  
+                    if (!$("#showdeleted").is(":checked")) {
+                        var isdeleted = readCookie(val.id + "isdeleted");
+                        if (isdeleted && isdeleted.length > 0) { 
+                            doShowDeletedLink = false; 
+                        } 
+                    }
+
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
-                        && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal) {
+                        && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
       
                         ind = ind + 1;
     
@@ -753,8 +761,18 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
                     dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
                     
+
+                    var isdeleted = null;
+                    var doShowDeletedLink = true;  
+                    if (!$("#showdeleted").is(":checked")) {
+                        isdeleted = readCookie(val.id + "isdeleted");
+                        if (isdeleted && isdeleted.length > 0) { 
+                            doShowDeletedLink = false; 
+                        } 
+                    }
+
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
-                        && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal) {
+                        && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
                         
                         var tagdispalay = " --";
                         var expandclass = "";
