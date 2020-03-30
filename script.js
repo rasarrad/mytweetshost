@@ -706,7 +706,7 @@ function putChoosedThemTop()
             counter = counter + 1;
         }
         else {
-            $('#mainsettings .currenttheme').html(theme); 
+            $('#mainsettings .currenttheme').html(currow.find('.themetitle').text()); 
             $(element).find("i").removeClass("gradient-border");
             $(element).find("i").hide();
             $(element).find("td").css("border-bottom", "6px solid #45cae700");
