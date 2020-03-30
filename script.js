@@ -337,6 +337,7 @@ $( document ).ready(function() {
                 }
                 else {
                     nextid = parseInt($("#maxid").val());
+                    createCookie("maxid", nextid);
                     console.log("removetmp click - nextid vem do hidden field: " + nextid);
                 }
             }
@@ -705,6 +706,7 @@ function putChoosedThemTop()
             counter = counter + 1;
         }
         else {
+            $('#mainsettings .currenttheme').html(theme); 
             $(element).find("i").removeClass("gradient-border");
             $(element).find("i").hide();
             $(element).find("td").css("border-bottom", "6px solid #45cae700");

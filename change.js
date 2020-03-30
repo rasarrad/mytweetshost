@@ -347,6 +347,7 @@ function countalltweets() {
         }
         else {
             nextid = parseInt($("#maxid").val());
+            createCookie("maxid", nextid);
             console.log("countalltweets - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
@@ -903,6 +904,7 @@ function hasTweetChanges(callback) {
         }
         else {
             nextid = parseInt($("#maxid").val());
+            createCookie("maxid", nextid);
             console.log("hasTweetChanges - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
@@ -994,6 +996,7 @@ function generate(obj) {
         }
         else {
             nextid = parseInt($("#maxid").val());
+            createCookie("maxid", nextid);
             console.log("generate - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }

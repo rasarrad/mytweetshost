@@ -14,6 +14,7 @@ function parseTweet(type) {
         }
         else {
             nextid = parseInt($("#maxid").val());
+            createCookie("maxid", nextid);
             console.log("parseTweet - nextid vem do hidden field: " + nextid);
         }
     }
@@ -335,6 +336,7 @@ function create() {
         }
         else {
             nextid = parseInt($("#maxid").val());
+            createCookie("maxid", nextid);
             console.log("create - nextid vem do hidden field: " + nextid);
         }
     }

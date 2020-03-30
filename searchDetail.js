@@ -540,6 +540,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         }
         else {
             nextid = parseInt($("#maxid").val());
+            createCookie("maxid", nextid);
             console.log("1 getInformation 1 - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
@@ -658,6 +659,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
             }
             else {
                 nextid = parseInt($("#maxid").val());
+                createCookie("maxid", nextid);
                 console.log("2 getInformation 2 - nextid vem do hidden field: " + nextid);
                 nextid = nextid - 1;
             }
@@ -1268,6 +1270,7 @@ var getInformationbyid = function(id, flag) {
         }
         else {
             nextid = parseInt($("#maxid").val());
+            createCookie("maxid", nextid);
             console.log("getInformationbyid - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
@@ -1431,6 +1434,7 @@ var getJsonbyid = function(id, functorun) {
             }
             else {
                 nextid = parseInt($("#maxid").val());
+                createCookie("maxid", nextid);
                 console.log("getJsonbyid - nextid vem do hidden field: " + nextid);
                 nextid = nextid - 1;
             }
@@ -1591,6 +1595,7 @@ var existsLink = function(text, type, functorun) {
         }
         else {
             nextid = parseInt($("#maxid").val());
+            createCookie("maxid", nextid);
             console.log("existsLink - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
