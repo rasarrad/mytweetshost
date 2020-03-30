@@ -3967,3 +3967,12 @@ body.big .author {
   font-size: 19px;
 }
   
+.checkstyleddiv.showdeleted {
+  top: -4px;
+  right: 6px;
+}
+
+body.big .checkstyleddiv.showdeleted {
+  top: -12px; 
+  right: -24px;
+}
