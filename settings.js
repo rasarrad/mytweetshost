@@ -29,7 +29,7 @@ function fixfocus(el)
 
 function zoom(obj, flag) {
 
-alert($("#showdeleted").val());
+alert($("#showdeleted").is(":checked"));
 return false;
 
     if (obj) fixfocus(obj);
