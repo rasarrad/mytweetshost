@@ -31,6 +31,8 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 
 dosearchmore = false;
 dblFlag = true;
+
+/* 
 setTimeout(function() {
   dosearchmore = true;    
   if (!dblFlag) {
@@ -44,7 +46,7 @@ setTimeout(function() {
       });
   }
 }, 2500);
-
+*/
 function visibilityHandler() {
     var hash = '#bg';
     if (document.hidden && !window.location.hash) {
@@ -100,7 +102,7 @@ $( document ).ready(function() {
         $(element).attr("autocomplete", "none");
         $(element).attr("additionalAttributes", "{autocomplete: 'none'}");
    });
-
+   /*
     setTimeout(function(){
         countalltweets();
 
@@ -113,7 +115,7 @@ $( document ).ready(function() {
             $("#mask > .fa-circle-o-notch").show();
         });
     }, 1); 
-
+    */
     setviewmode();
 
     var hasZoom = readCookie("hasZoom");
