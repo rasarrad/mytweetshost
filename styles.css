@@ -1856,6 +1856,7 @@ body.big #linkChange.newLayout > div .titletable tr:first-child .firsttd {
   min-width: 345px;
   /* min-width: 236px !important; */
   width: 207px;
+  padding-bottom: 2px;
 } 
 
 body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
@@ -1966,6 +1967,7 @@ body.big #splash .titletable {
     #splash .titletable {
       width: 343px;
       padding-left: 6px;
+      height: 24px;
     }
     body.big #splash .titletable {
       width: 343px;
@@ -4022,3 +4024,6 @@ body.big .menuincludedeleted label > div {
     top: -13px !important;
 }
 
+#splash.newLayout .sectiontitletable {
+    margin-top: 38px;
+}
