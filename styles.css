@@ -1958,8 +1958,8 @@ body.big #linkChange .titletable {
     }
     body.big #mainmenu > div {
       margin-top: 40px !important;
-      height: 495px !important;
-      max-height: 465px !important;
+      height: 507px !important;
+      max-height: 507px !important;
     }      
     .toptitle > span {
         position: absolute;
@@ -2008,11 +2008,11 @@ body.big #linkChange .titletable {
     }  
 
     #mainmenu > div {
-      margin-top: 140px !important;
-      max-height: 338px !important;
+      margin-top: 116px !important;
+      max-height: 368px !important;
     }  
     body.big #mainmenu > div {
-      margin-top: 91px !important;
+      margin-top: 48px !important;
     }  
 
     
@@ -3976,3 +3976,12 @@ body.big .checkstyleddiv.showdeleted {
   top: -12px; 
   right: -24px;
 }
+
+body.big .menuincludedeleted {
+    top: -7px !important;
+}
+
+body.big .menuincludedeleted label > div {
+    top: -13px !important;
+}
+

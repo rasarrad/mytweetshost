@@ -259,6 +259,27 @@ $( document ).ready(function() {
 
     ///////////////////////////////////////
 
+    
+    $( "#showdeleted" ).bind( "click", function( event ) {
+        if ($("#showdeleted").is(":checked")) {
+            $("#showdeleted2").prop('checked', true);
+        }
+        else {
+            $("#showdeleted2").prop('checked', false);
+        }
+    });
+
+
+    $( "#showdeleted2" ).bind( "click", function( event ) {
+        if ($("#showdeleted2").is(":checked")) {
+            $("#showdeleted").prop('checked', true);
+        }
+        else {
+            $("#showdeleted").prop('checked', false);
+        }
+    });
+
+
     $( "#moretweets" ).bind( "click", function( event ) {
         getInformation(true, 3);
     });
