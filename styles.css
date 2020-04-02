@@ -1852,6 +1852,18 @@ body.big #linkChange.newLayout > div .titletable tr:first-child .firsttd {
     width: 207px;
 } 
 
+#splash.newLayout > div .titletable tr:first-child .firsttd {
+  min-width: 345px;
+  /* min-width: 236px !important; */
+  width: 207px;
+} 
+
+body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
+  min-width: 345px;
+  /* min-width: 236px !important; */
+  width: 207px;
+} 
+
 #postedby {
   width: 202px;
   margin-left: 3px;
@@ -1879,6 +1891,14 @@ body.big #linkChange .titletable {
   padding-left: 6px;
 }   
 
+#splash .titletable {
+  width: 464px;
+  padding-left: 7px;
+}
+body.big #splash .titletable {
+  width: 468px;
+  padding-left: 6px;
+}  
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
         
@@ -1943,6 +1963,14 @@ body.big #linkChange .titletable {
       width: 343px;
       padding-left: 6px;
     }    
+    #splash .titletable {
+      width: 343px;
+      padding-left: 6px;
+    }
+    body.big #splash .titletable {
+      width: 343px;
+      padding-left: 6px;
+    } 
     body.big .buttonstable .date {
         position: relative !important;
         top: 0px;
@@ -3546,6 +3574,15 @@ body.big .newLayout.new .sectiontitle {
 #linkchange:not(.new) .titletext {
     cursor: pointer !important;
 }
+#splash.new .cursorpointer {
+  cursor: default !important
+}
+
+#splash:not(.new) .titletext {
+    cursor: pointer !important;
+}
+
+
 .checkstyleddiv {
   transition: opacity 0.6s !important;
   cursor: pointer !important

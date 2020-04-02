@@ -114,7 +114,7 @@ $( document ).ready(function() {
     $("#showdeleted2").prop('checked', false);
    }
    
-   /*
+   
     setTimeout(function(){
         countalltweets();
 
@@ -127,7 +127,7 @@ $( document ).ready(function() {
             $("#mask > .fa-circle-o-notch").show();
         });
     }, 1); 
-    */
+   
     setviewmode();
 
     var hasZoom = readCookie("hasZoom");
