@@ -267,6 +267,7 @@ $( document ).ready(function() {
         else {
             $("#showdeleted2").prop('checked', false);
         }
+        countalltweets();
     });
 
 
@@ -277,6 +278,7 @@ $( document ).ready(function() {
         else {
             $("#showdeleted").prop('checked', false);
         }
+        countalltweets();
     });
 
 
