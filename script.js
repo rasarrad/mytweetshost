@@ -102,6 +102,18 @@ $( document ).ready(function() {
         $(element).attr("autocomplete", "none");
         $(element).attr("additionalAttributes", "{autocomplete: 'none'}");
    });
+
+   var showDeleted = getshowdeletedcookie();
+   
+   if (showDeleted == "true") {
+    $("#showdeleted").prop('checked', true);
+    $("#showdeleted2").prop('checked', true);
+   }
+   else {
+    $("#showdeleted").prop('checked', false);
+    $("#showdeleted2").prop('checked', false);
+   }
+   
    /*
     setTimeout(function(){
         countalltweets();
@@ -263,9 +275,11 @@ $( document ).ready(function() {
     $( "#showdeleted" ).bind( "click", function( event ) {
         if ($("#showdeleted").is(":checked")) {
             $("#showdeleted2").prop('checked', true);
+            setshowdeletedcookie("true");
         }
         else {
             $("#showdeleted2").prop('checked', false);
+            setshowdeletedcookie("false");
         }
         countalltweets();
     });
@@ -274,13 +288,22 @@ $( document ).ready(function() {
     $( "#showdeleted2" ).bind( "click", function( event ) {
         if ($("#showdeleted2").is(":checked")) {
             $("#showdeleted").prop('checked', true);
+            setshowdeletedcookie("true");
         }
         else {
             $("#showdeleted").prop('checked', false);
+            setshowdeletedcookie("false");
         }
         countalltweets();
     });
 
+    function setshowdeletedcookie(val) {
+        createCookie("showdeleted", val, 99999);  
+    }   
+
+    function getshowdeletedcookie(val) {
+        return readCookie("showdeleted");  
+    }   
 
     $( "#moretweets" ).bind( "click", function( event ) {
         getInformation(true, 3);
