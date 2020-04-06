@@ -4027,3 +4027,15 @@ body.big .menuincludedeleted label > div {
 #splash.newLayout .firstTable {
     margin-top: 38px;
 }
+
+#splash.newLayout .fa-bookmark {
+    font-size: 18px;
+    top: 1px;
+    left: -2px;
+}
+
+body.big #splash.newLayout .fa-bookmark {
+    font-size: 18px;
+    top: 1px;
+    left: -2px;
+}
