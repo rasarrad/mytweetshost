@@ -4089,3 +4089,27 @@ body.big #splash.newLayout .sectiontitle {
 #splash > div {
   margin-top: 34px !important;
 }
+
+.splashtext.aboutme {
+  height: 100px;
+}
+
+body.big .splashtext.aboutme {
+  height: 100px;
+}
+
+.splashtext.donate {
+  height: 100px;
+}
+
+body.big .splashtext.donate {
+  height: 100px;
+}
+
+.splashtext.aboutbs {
+  height: 100px;
+}
+
+body.big .splashtext.aboutbs {
+  height: 100px;
+}
