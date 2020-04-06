@@ -4028,6 +4028,10 @@ body.big .menuincludedeleted label > div {
     margin-top: 38px;
 }
 
+body.big #splash.newLayout .firstTable {
+    margin-top: 40px;
+}
+
 #splash.newLayout .fa-bookmark {
     font-size: 14px;
     top: 0px;
@@ -4048,13 +4052,13 @@ body.big #splash.newLayout .fa-bookmark {
 }
 
 body.big #splash.newLayout .fa-user-circle-o {
-    font-size: 18px;
-    top: 1px;
+    font-size: 17px;
+    top: 0px;
     left: -2px;
 }
 
 #splash.newLayout .fa-paypal {
-    font-size: 14px;
+    font-size: 15px;
     top: 0px;
     left: -3px;
     position: relative;
