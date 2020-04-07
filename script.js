@@ -385,7 +385,7 @@ $( document ).ready(function() {
     ///////////////////////////////////////
 
     $( "#btnsearch" ).bind( "click", function( event ) {
-        showSplash();
+      getInformation(false , 1);
     });
 
     ///////////////////////////////////////
