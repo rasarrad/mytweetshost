@@ -597,9 +597,10 @@ $( document ).ready(function() {
     document.getElementById("addtweet").addEventListener('click', () => {
         navigator.clipboard.readText()
         .then(text => {
-            showSplash();
 
-/*
+            /*
+            showSplash();
+            */
             $( "#addtweet" ).blur();
             closeallnewlayout();
             $('body, html').css('overflow-y', 'hidden');
@@ -628,7 +629,6 @@ $( document ).ready(function() {
                 dblFlag = false;
             }  
 
-            */
         })
         .catch(err => {
             
