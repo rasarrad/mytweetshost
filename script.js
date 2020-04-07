@@ -172,6 +172,8 @@ $( document ).ready(function() {
 
     function showSplash()
     {
+        $("#splash").fadeIn(600);
+
         currentIndex = 16;
         $("#splashbutton").removeClass("active");
         $("#splashbutton").hide();
