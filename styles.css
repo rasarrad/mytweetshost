@@ -4124,12 +4124,12 @@ body.big .splashtext.aboutbs {
   background: var(--high-color);
   color: var(--dark-color);
   position: relative;
-  width: 64px;
+  width: 50px;
   display: block;
   text-align: center;
-  line-height: 16px;
+  line-height: 19px;
   font-size: 13px;
-  height: 18px;
+  height: 20px;
   padding-top: 2px;
   font-weight: bold;
   padding-left: 0;
@@ -4139,8 +4139,10 @@ body.big .splashtext.aboutbs {
   bottom: 4px;
 }
 
-#splash .splashbutton > span {
-  font-size: 11px;  
+#splash .splashbutton.active {
+  cursor: pointer !important;
+  height: 19px;
+  line-height: 15px;
 }
 
 body.big #splash .splashbutton {

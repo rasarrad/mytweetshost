@@ -140,7 +140,7 @@ $( document ).ready(function() {
 
     
     currentIndex = 16;
-
+    $("#splashbutton").removeClass("active");
     dblClickTimeout = setTimeout(function() {  
         $("#splash").fadeIn(1600);
         updateSplashCounter();
@@ -178,6 +178,7 @@ $( document ).ready(function() {
     {
         if (currentIndex == 0) {
             $("#splashbutton").html("close");
+            $("#splashbutton").addClass("active");
             //currentIndex = 4;
             //updateSplashInnerCounter();
         }
@@ -214,7 +215,7 @@ $( document ).ready(function() {
     }
 
 
-    function closeSplash(flag)
+    function closeSplash()
     {
         currentIndex = 0;
 
@@ -225,6 +226,11 @@ $( document ).ready(function() {
         $("#splash").fadeOut(1000);
     }
     
+    $( "#splashbutton" ).bind( "click", function( event ) {
+        if (currentIndex == 0)
+            closeSplash(); 
+    });
+
     window.onscroll = function(ev) {
         if ((window.innerHeight + window.scrollY + 1800) >= document.body.offsetHeight && dosearchmore) {
             dosearchmore = false;
