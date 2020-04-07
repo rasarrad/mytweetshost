@@ -325,9 +325,9 @@ $( document ).ready(function() {
 
     $( "#settings" ).bind( "click", function( event ) {
 
-        showSplash();
+        fixfocus(this);
 
- 
+        openMainSettingsPopup();
   /* 
         if (!dblFlag) {
             dblFlag = true;
