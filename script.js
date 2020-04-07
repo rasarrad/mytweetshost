@@ -176,12 +176,10 @@ $( document ).ready(function() {
     function updateSplashCounter()
     {
         if (currentIndex == 5) {
-            dblClickTimeout = setTimeout(function() {   
-                $("#splashbutton").text("close");
-                $("#splashbuttoncounter").text("(5)");
-                currentIndex = 4;
-                updateSplashInnerCounter();
-            }, 998);
+            $("#splashbutton").text("close");
+            $("#splashbuttoncounter").text("(5)");
+            currentIndex = 4;
+            //updateSplashInnerCounter();
         }
         else {
             currentIndex = currentIndex -1;
