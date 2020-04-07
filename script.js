@@ -175,10 +175,11 @@ $( document ).ready(function() {
 
     function updateSplashCounter()
     {
-        if (currentIndex == 4) {
+        if (currentIndex == 5) {
             dblClickTimeout = setTimeout(function() {   
                 $("#splashbutton").text("close");
                 $("#splashbuttoncounter").text("(5)");
+                currentIndex = 4;
                 updateSplashInnerCounter();
             }, 998);
         }
@@ -216,8 +217,12 @@ $( document ).ready(function() {
     }
 
 
-    function closeSplash()
+    function closeSplash(flag)
     {
+        if (flag && currentIndex > 4) {
+            return false;
+        }
+
         clearTimeout(dblClickTimeout);
 
         currentIndex = 0;
