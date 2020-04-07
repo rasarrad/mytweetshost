@@ -142,7 +142,7 @@ $( document ).ready(function() {
     currentIndex = 16;
     $("#splashbutton").removeClass("active");
     dblClickTimeout = setTimeout(function() {  
-        $("#splash").fadeIn(800);
+        $("#splashbutton").fadeIn(800);
         updateSplashCounter();
     }, 1498);
 
