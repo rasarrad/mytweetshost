@@ -172,6 +172,7 @@ $( document ).ready(function() {
 
     function showSplash()
     {
+        alert(111);
         $("#splash").css("display", "block");
 
         currentIndex = 16;
