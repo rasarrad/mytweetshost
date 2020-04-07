@@ -4090,6 +4090,10 @@ body.big #splash.newLayout .sectiontitle {
   margin-top: 34px !important;
 }
 
+body.big #splash > div {
+  margin-top: 45px !important;
+}
+
 .splashtext.aboutme {
   height: 100px;
 }
@@ -4113,3 +4117,37 @@ body.big .splashtext.donate {
 body.big .splashtext.aboutbs {
   height: 100px;
 }
+
+
+#splash .splashbutton {
+  border: 1px solid var(--dark-color);
+  background: var(--high-color);
+  color: var(--dark-color);
+  position: relative;
+  width: 56px;
+  display: block;
+  text-align: center;
+  height: 18px;
+  padding-top: 2px;
+  padding-left: 0;
+  cursor: pointer !important;
+}
+
+body.big #splash .splashbutton {
+  border: 1px solid var(--dark-color);
+  background: var(--high-color);
+  color: var(--dark-color);
+  position: relative;
+  width: 56px;
+  display: block;
+  text-align: center;
+  height: 18px;
+  padding-top: 2px;
+  padding-left: 0;
+  cursor: pointer !important;
+
+}
+
+
+
+
