@@ -139,7 +139,7 @@ $( document ).ready(function() {
     }, 1400);  
 
     
-    currentIndex = 15;
+    currentIndex = 8;
 
     dblClickTimeout = setTimeout(function() {     
         updateSplashCounter();
