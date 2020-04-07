@@ -139,9 +139,10 @@ $( document ).ready(function() {
     }, 1400);  
 
     
-    currentIndex = 8;
+    currentIndex = 16;
 
-    dblClickTimeout = setTimeout(function() {     
+    dblClickTimeout = setTimeout(function() {  
+        $("#splash").fadeOut(1600);
         updateSplashCounter();
     }, 1498);
 
@@ -215,18 +216,10 @@ $( document ).ready(function() {
 
     function closeSplash(flag)
     {
-        if (flag && currentIndex > 4) {
-            return false;
-        }
-
-        clearTimeout(dblClickTimeout);
-
         currentIndex = 0;
 
         setTimeout(function() {     
             $("#splashbutton").text("15");
-
-            $("#splashbuttoncounter").text("");
         }, 998);
 
         $("#splash").fadeOut(1000);
