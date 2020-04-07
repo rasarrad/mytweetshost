@@ -138,7 +138,7 @@ $( document ).ready(function() {
         $('body').removeClass('notransit'); 
     }, 1400);  
 
-    showSplash();
+    //showSplash();
 
 
     //openSearchPopup();
@@ -172,7 +172,6 @@ $( document ).ready(function() {
 
     function showSplash()
     {
-        alert(111);
         $("#splash").css("display", "block");
 
         currentIndex = 16;
