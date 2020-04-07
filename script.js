@@ -172,7 +172,7 @@ $( document ).ready(function() {
 
     function showSplash()
     {
-        $("#splash").fadeIn(600);
+        $("#splash").css("display", "block");
 
         currentIndex = 16;
         $("#splashbutton").removeClass("active");
@@ -227,14 +227,12 @@ $( document ).ready(function() {
 
     function closeSplash()
     {
-        currentIndex = 0;
-
         setTimeout(function() {     
             $("#splashbutton").text("15");
             $("#splashbutton").hide();
         }, 998);
 
-        $("#splash").fadeOut(700);
+        $("#splash").css("display", "none");
     }
     
     $( "#splashbutton" ).bind( "click", function( event ) {
