@@ -142,7 +142,7 @@ $( document ).ready(function() {
     currentIndex = 16;
 
     dblClickTimeout = setTimeout(function() {  
-        $("#splash").fadeOut(1600);
+        $("#splash").fadeIn(1600);
         updateSplashCounter();
     }, 1498);
 
