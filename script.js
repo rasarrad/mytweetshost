@@ -138,8 +138,9 @@ $( document ).ready(function() {
         $('body').removeClass('notransit'); 
     }, 1400);  
 
+    
     showSplash();
-
+    
     //openSearchPopup();
     
     /*
