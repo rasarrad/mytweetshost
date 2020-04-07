@@ -144,7 +144,7 @@ $( document ).ready(function() {
     dblClickTimeout = setTimeout(function() {  
         $("#splash").fadeIn(1600);
         updateSplashCounter();
-    }, 1498);
+    }, 998);
 
     //openSearchPopup();
     
