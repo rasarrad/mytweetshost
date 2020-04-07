@@ -4141,7 +4141,6 @@ body.big .splashtext.aboutbs {
 
 #splash .splashbutton.active {
   cursor: pointer !important;
-  height: 19px;
   line-height: 15px;
 }
 

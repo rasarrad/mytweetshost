@@ -176,10 +176,10 @@ $( document ).ready(function() {
 
     function updateSplashCounter()
     {
-        if (currentIndex == 0) {
+        if (currentIndex == 1) {
             $("#splashbutton").html("close");
             $("#splashbutton").addClass("active");
-            //currentIndex = 4;
+            currentIndex = 0;
             //updateSplashInnerCounter();
         }
         else {
