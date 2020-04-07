@@ -140,11 +140,8 @@ $( document ).ready(function() {
 
     showSplash();
 
-
     //openSearchPopup();
     
-    
-
     /*
     var functorun = function(jsonvar) 
    { 
@@ -163,16 +160,14 @@ $( document ).ready(function() {
         $("#generateicon").addClass("haschanges");
     }
 
-
-    ///////////////////////////////////////
-
+});
 
     ///////////////////////////////////////
 
 
     function showSplash()
     {
-        $("#splash").css("display", "block");
+        $("#splash").fadeIn(800);
 
         currentIndex = 16;
         $("#splashbutton").removeClass("active");
@@ -204,27 +199,6 @@ $( document ).ready(function() {
     }
 
 
-
-    function updateSplashInnerCounter()
-    {
-        if (currentIndex == 0) {
-            $("#splashbutton").html("close<span id=\"splashbuttoncounter\" class=\"counter\">(" + currentIndex + ")</span>");
-
-            dblClickTimeout = setTimeout(function() {   
-                closeSplash();
-            }, 298);
-        }
-        else {
-            $("#splashbutton").html("close<span id=\"splashbuttoncounter\" class=\"counter\">(" + currentIndex + ")</span>");
-            currentIndex = currentIndex -1;
-
-            dblClickTimeout = setTimeout(function() {     
-                updateSplashInnerCounter();
-            }, 998);
-        }
-    }
-
-
     function closeSplash()
     {
         setTimeout(function() {     
@@ -232,13 +206,16 @@ $( document ).ready(function() {
             $("#splashbutton").hide();
         }, 998);
 
-        $("#splash").css("display", "none");
+        $("#splash").fadeOut(800);
     }
     
     $( "#splashbutton" ).bind( "click", function( event ) {
         if (currentIndex == 0)
             closeSplash(); 
     });
+
+
+    ///////////////////////////////////////
 
     window.onscroll = function(ev) {
         if ((window.innerHeight + window.scrollY + 1800) >= document.body.offsetHeight && dosearchmore) {
@@ -395,7 +372,8 @@ $( document ).ready(function() {
     ///////////////////////////////////////
 
     $( "#settings" ).bind( "click", function( event ) {
-        showSplash();
+
+        showSplash()
       });
 
     ///////////////////////////////////////
