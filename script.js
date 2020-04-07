@@ -138,13 +138,8 @@ $( document ).ready(function() {
         $('body').removeClass('notransit'); 
     }, 1400);  
 
-    
-    currentIndex = 16;
-    $("#splashbutton").removeClass("active");
-    dblClickTimeout = setTimeout(function() {  
-        $("#splashbutton").fadeIn(800);
-        updateSplashCounter();
-    }, 1498);
+    showSplash();
+
 
     //openSearchPopup();
     
@@ -173,6 +168,19 @@ $( document ).ready(function() {
 
 
     ///////////////////////////////////////
+
+
+    function showSplash()
+    {
+        currentIndex = 16;
+        $("#splashbutton").removeClass("active");
+        $("#splashbutton").hide();
+        dblClickTimeout = setTimeout(function() {  
+            $("#splashbutton").fadeIn(800);
+            updateSplashCounter();
+        }, 1498);
+    }
+
 
     function updateSplashCounter()
     {
