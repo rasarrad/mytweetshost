@@ -138,7 +138,7 @@ $( document ).ready(function() {
         $('body').removeClass('notransit'); 
     }, 1400);  
 
-    //showSplash();
+    showSplash();
 
 
     //openSearchPopup();
@@ -395,25 +395,7 @@ $( document ).ready(function() {
     ///////////////////////////////////////
 
     $( "#settings" ).bind( "click", function( event ) {
-
-        fixfocus(this);
-
-        openMainSettingsPopup();
-  /* 
-        if (!dblFlag) {
-            dblFlag = true;
-            dblClickTimeout = setTimeout(function() {     
-              if (dblFlag) {
-                  generate();
-                  dblFlag = false;  
-              }
-            }, 500);
-        }
-        else {
-            clearTimeout(dblClickTimeout);
-            undogenerate();
-            dblFlag = false;
-        }*/
+        showSplash();
       });
 
     ///////////////////////////////////////
