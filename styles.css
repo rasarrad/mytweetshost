@@ -4124,30 +4124,32 @@ body.big .splashtext.aboutbs {
   background: var(--high-color);
   color: var(--dark-color);
   position: relative;
-  width: 56px;
+  width: 64px;
   display: block;
   text-align: center;
+  line-height: 16px;
+  font-size: 13px;
   height: 18px;
   padding-top: 2px;
+  font-weight: bold;
   padding-left: 0;
   cursor: pointer !important;
+  right: 3px;
+  float: right;
+  bottom: 4px;
+}
+
+#splash .splashbutton > span {
+  font-size: 11px;  
 }
 
 body.big #splash .splashbutton {
-  border: 1px solid var(--dark-color);
-  background: var(--high-color);
-  color: var(--dark-color);
-  position: relative;
-  width: 56px;
-  display: block;
-  text-align: center;
-  height: 18px;
-  padding-top: 2px;
-  padding-left: 0;
-  cursor: pointer !important;
 
 }
 
+body.big #splash .splashbutton > span {
+
+}
 
 
 

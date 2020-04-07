@@ -139,7 +139,11 @@ $( document ).ready(function() {
     }, 1400);  
 
     
+    currentIndex = 15;
 
+    dblClickTimeout = setTimeout(function() {     
+        updateSplashCounter();
+    }, 1498);
 
     //openSearchPopup();
     
@@ -169,6 +173,64 @@ $( document ).ready(function() {
 
     ///////////////////////////////////////
 
+    function updateSplashCounter()
+    {
+        if (currentIndex == 4) {
+            dblClickTimeout = setTimeout(function() {   
+                $("#splashbutton").text("close");
+                $("#splashbuttoncounter").text("(5)");
+                updateSplashInnerCounter();
+            }, 998);
+        }
+        else {
+            currentIndex = currentIndex -1;
+
+            $("#splashbutton").text(currentIndex);
+
+            dblClickTimeout = setTimeout(function() {     
+                updateSplashCounter();
+            }, 998);
+        }
+    }
+
+
+
+    function updateSplashInnerCounter()
+    {
+        if (currentIndex == 0) {
+            $("#splashbuttoncounter").text("(" + currentIndex + ")");
+
+            dblClickTimeout = setTimeout(function() {   
+                closeSplash();
+            }, 298);
+        }
+        else {
+            $("#splashbuttoncounter").text("(" + currentIndex + ")");
+
+            currentIndex = currentIndex -1;
+
+            dblClickTimeout = setTimeout(function() {     
+                updateSplashInnerCounter();
+            }, 998);
+        }
+    }
+
+
+    function closeSplash()
+    {
+        clearTimeout(dblClickTimeout);
+
+        currentIndex = 0;
+
+        setTimeout(function() {     
+            $("#splashbutton").text("15");
+
+            $("#splashbuttoncounter").text("");
+        }, 998);
+
+        $("#splash").fadeOut(1000);
+    }
+    
     window.onscroll = function(ev) {
         if ((window.innerHeight + window.scrollY + 1800) >= document.body.offsetHeight && dosearchmore) {
             dosearchmore = false;
