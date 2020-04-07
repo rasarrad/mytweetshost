@@ -140,7 +140,7 @@ $( document ).ready(function() {
 
     
     showSplash();
-    
+
     //openSearchPopup();
     
     /*
@@ -325,7 +325,24 @@ $( document ).ready(function() {
 
     $( "#settings" ).bind( "click", function( event ) {
 
-        showSplash()
+        showSplash();
+
+ 
+  /* 
+        if (!dblFlag) {
+            dblFlag = true;
+            dblClickTimeout = setTimeout(function() {     
+              if (dblFlag) {
+                  generate();
+                  dblFlag = false;  
+              }
+            }, 500);
+        }
+        else {
+            clearTimeout(dblClickTimeout);
+            undogenerate();
+            dblFlag = false;
+        }*/
       });
 
     ///////////////////////////////////////
@@ -383,6 +400,10 @@ $( document ).ready(function() {
         } 
     });
 
+    $( "#splashbutton" ).bind( "click", function( event ) {
+        if (currentIndex == 0)
+            closeSplash(); 
+    });
     
     $( "#catsinput" ).change(function() {
         catsInputOnChange(this);
@@ -657,12 +678,6 @@ function closeSplash()
 
     $("#splash").fadeOut(800);
 }
-
-$( "#splashbutton" ).bind( "click", function( event ) {
-    if (currentIndex == 0)
-        closeSplash(); 
-});
-
 
 $.fn.isChildOverflowing = function (child) {
     var p = $(this).get(0);
