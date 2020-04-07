@@ -176,10 +176,9 @@ $( document ).ready(function() {
     function updateSplashCounter()
     {
         if (currentIndex == 5) {
-            $("#splashbutton").text("close");
-            $("#splashbuttoncounter").text("(5)");
+            $("#splashbutton").html("close<span id=\"splashbuttoncounter\" class=\"counter\">(5)</span>");
             currentIndex = 4;
-            //updateSplashInnerCounter();
+            updateSplashInnerCounter();
         }
         else {
             currentIndex = currentIndex -1;
@@ -197,15 +196,14 @@ $( document ).ready(function() {
     function updateSplashInnerCounter()
     {
         if (currentIndex == 0) {
-            $("#splashbuttoncounter").text("(" + currentIndex + ")");
+            $("#splashbutton").html("close<span id=\"splashbuttoncounter\" class=\"counter\">(" + currentIndex + ")</span>");
 
             dblClickTimeout = setTimeout(function() {   
                 closeSplash();
             }, 298);
         }
         else {
-            $("#splashbuttoncounter").text("(" + currentIndex + ")");
-
+            $("#splashbutton").html("close<span id=\"splashbuttoncounter\" class=\"counter\">(" + currentIndex + ")</span>");
             currentIndex = currentIndex -1;
 
             dblClickTimeout = setTimeout(function() {     
