@@ -160,59 +160,10 @@ $( document ).ready(function() {
         $("#generateicon").addClass("haschanges");
     }
 
-});
+
 
     ///////////////////////////////////////
 
-
-    function showSplash()
-    {
-        $("#splash").fadeIn(800);
-
-        currentIndex = 16;
-        $("#splashbutton").removeClass("active");
-        $("#splashbutton").hide();
-        dblClickTimeout = setTimeout(function() {  
-            $("#splashbutton").fadeIn(800);
-            updateSplashCounter();
-        }, 1498);
-    }
-
-
-    function updateSplashCounter()
-    {
-        if (currentIndex == 1) {
-            $("#splashbutton").html("close");
-            $("#splashbutton").addClass("active");
-            currentIndex = 0;
-            //updateSplashInnerCounter();
-        }
-        else {
-            currentIndex = currentIndex -1;
-
-            $("#splashbutton").text(currentIndex);
-
-            dblClickTimeout = setTimeout(function() {     
-                updateSplashCounter();
-            }, 998);
-        }
-    }
-
-
-    function closeSplash()
-    {
-        setTimeout(function() {     
-            $("#splashbutton").text("15");
-            $("#splashbutton").hide();
-        }, 998);
-
-        $("#splash").fadeOut(800);
-    }
-    
-    $( "#splashbutton" ).bind( "click", function( event ) {
-        if (currentIndex == 0)
-            closeSplash(); 
-    });
 
 
     ///////////////////////////////////////
@@ -658,6 +609,59 @@ $( document ).ready(function() {
     });
 
 });
+
+
+
+
+function showSplash()
+{
+    $("#splash").fadeIn(800);
+
+    currentIndex = 16;
+    $("#splashbutton").removeClass("active");
+    $("#splashbutton").hide();
+    dblClickTimeout = setTimeout(function() {  
+        $("#splashbutton").fadeIn(800);
+        updateSplashCounter();
+    }, 1498);
+}
+
+
+function updateSplashCounter()
+{
+    if (currentIndex == 1) {
+        $("#splashbutton").html("close");
+        $("#splashbutton").addClass("active");
+        currentIndex = 0;
+        //updateSplashInnerCounter();
+    }
+    else {
+        currentIndex = currentIndex -1;
+
+        $("#splashbutton").text(currentIndex);
+
+        dblClickTimeout = setTimeout(function() {     
+            updateSplashCounter();
+        }, 998);
+    }
+}
+
+
+function closeSplash()
+{
+    setTimeout(function() {     
+        $("#splashbutton").text("15");
+        $("#splashbutton").hide();
+    }, 998);
+
+    $("#splash").fadeOut(800);
+}
+
+$( "#splashbutton" ).bind( "click", function( event ) {
+    if (currentIndex == 0)
+        closeSplash(); 
+});
+
 
 $.fn.isChildOverflowing = function (child) {
     var p = $(this).get(0);
