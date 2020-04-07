@@ -139,7 +139,7 @@ $( document ).ready(function() {
     }, 1400);  
 
     
-    showSplash();
+    //showSplash();
 
     //openSearchPopup();
     
@@ -597,6 +597,9 @@ $( document ).ready(function() {
     document.getElementById("addtweet").addEventListener('click', () => {
         navigator.clipboard.readText()
         .then(text => {
+            showSplash();
+
+/*
             $( "#addtweet" ).blur();
             closeallnewlayout();
             $('body, html').css('overflow-y', 'hidden');
@@ -624,6 +627,8 @@ $( document ).ready(function() {
     
                 dblFlag = false;
             }  
+
+            */
         })
         .catch(err => {
             
