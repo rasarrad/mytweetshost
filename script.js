@@ -142,9 +142,9 @@ $( document ).ready(function() {
     currentIndex = 16;
     $("#splashbutton").removeClass("active");
     dblClickTimeout = setTimeout(function() {  
-        $("#splash").fadeIn(1600);
+        $("#splash").fadeIn(800);
         updateSplashCounter();
-    }, 998);
+    }, 1498);
 
     //openSearchPopup();
     
@@ -221,9 +221,10 @@ $( document ).ready(function() {
 
         setTimeout(function() {     
             $("#splashbutton").text("15");
+            $("#splashbutton").hide();
         }, 998);
 
-        $("#splash").fadeOut(1000);
+        $("#splash").fadeOut(700);
     }
     
     $( "#splashbutton" ).bind( "click", function( event ) {
