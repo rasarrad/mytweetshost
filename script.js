@@ -175,10 +175,10 @@ $( document ).ready(function() {
 
     function updateSplashCounter()
     {
-        if (currentIndex == 5) {
-            $("#splashbutton").html("close<span id=\"splashbuttoncounter\" class=\"counter\">(5)</span>");
-            currentIndex = 4;
-            updateSplashInnerCounter();
+        if (currentIndex == 0) {
+            $("#splashbutton").html("close");
+            //currentIndex = 4;
+            //updateSplashInnerCounter();
         }
         else {
             currentIndex = currentIndex -1;
