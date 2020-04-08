@@ -32,6 +32,9 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 dosearchmore = false;
 dblFlag = true;
 
+console.log("----window.innerWidth-----window.innerHeight------navigator.userAgent-----");
+console.log(window.innerWidth + " - " + window.innerHeight + " - " + navigator.userAgent);
+console.log("--------------------------------------------------------------------------");
 /* 
 setTimeout(function() {
   dosearchmore = true;    
