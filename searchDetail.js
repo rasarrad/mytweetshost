@@ -66,8 +66,7 @@ function changecriteria(e, obj, tableparam) {
             var hasExpanded = false;
             $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
                 var othertable = $(element);
-                
-                othertable.css('transition', 'max-height 0.01s');
+
                 othertable.css('max-height', setHeight);
                 othertable.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", "0px");
                 othertable.find('td.el').addClass('ellipsis');
@@ -430,7 +429,6 @@ function changesearchtype(e, obj, code, desc) {
 var openSearchPopup = function(jsonobj) 
 {
     $('body, html').css('overflow-y', 'hidden');
-    $('#searchpopup').css('display', 'flex');  
     
     $('#titlesearch').html("(" + $('#selectedcattext').val() + ")");
 
@@ -448,7 +446,6 @@ function updateSearchTablesHeight() {
 
     $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
         var table = $(element);
-        table.css('transition', 'max-height .01s');
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').show();
         table.find('td.el').addClass('ellipsis');
