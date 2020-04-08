@@ -596,13 +596,13 @@ function editSetting(e, obj, flag) {
             $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
                 var table = $(element);
                 
-                table.css('transition', 'none !important');
+                table.css('transition', 'transition: all 0.7s !important');
                 table.css('max-height', setHeight);
                 table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').attr('style', '');
                 table.find('td.el').addClass('ellipsis');
             });
             
-            table.css('transition', 'none !important');
+            table.css('transition', 'transition: all 0.7s !important');
             if (table.attr("cmaxheight")) {
                 if ($('body').hasClass('big')) {
                     table.css('max-height', table.attr("cmaxheightbig"));
@@ -628,7 +628,7 @@ function editSetting(e, obj, flag) {
             table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down');
         }
         else {
-            table.css('transition', 'none !important');
+            table.css('transition', 'transition: all 0.7s !important');
             table.css('overflow-y', "hidden");
             table.css('max-height', setHeight);
             table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
