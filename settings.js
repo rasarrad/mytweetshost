@@ -60,25 +60,27 @@ function zoom(obj, flag) {
 
     // settings
     $("#mainsettings table#theme")
+    .css('transition', 'max-height .01s')
     .css('max-height', setHeight)
     .find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').show()
     .find('td.el').addClass('ellipsis');
 
     $(".newLayout table.defaulttablerow").each( function( index, element ) {
         var table = $(element);
+        table.css('transition', 'max-height .01s');
         table.css('max-height', setHeight);
     });
 
     $("#mainmenu.newLayout table.defaulttablerow").each( function( index, element ) {
         var table = $(element);
-        
+        table.css('transition', 'max-height .01s');
         table.css('max-height', setHeight2);
     });
 
     if ($('#linkChange').attr("cid") != "new") {
         $('#linkChange').find("table:not(.defaulttablerow):not(.newlinktable)").each( function( index, element ) {
             var table = $(element);
-        
+            table.css('transition', 'max-height .01s');
             table.css('max-height', setHeight);
             table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
             table.find('td.el').addClass('ellipsis');
@@ -109,7 +111,7 @@ var openSettingsPopup = function(jsonobj)
     
         $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
             var table = $(element);
-
+            table.css('transition', 'max-height .01s');
             table.css('max-height', setHeight);
             table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').show();
             table.find('td.el').addClass('ellipsis');
@@ -386,6 +388,7 @@ var openSettingsPopup = function(jsonobj)
         if ($('body').hasClass('big'))
             setHeight = "30px";
         
+        $('#linktable').css('transition', 'max-height 0.01s');
         $('#linktable').css('max-height', setHeight);
 
         $('#linkChange').attr("cid", "new");
@@ -417,6 +420,7 @@ var openSettingsPopup = function(jsonobj)
     }
 
     $('#linkChange').fadeIn(); 
+    $('#linkChange').css('display', 'flex');  
 
     updateTopPosition("linkChange"); 
 } 
@@ -433,7 +437,7 @@ var openMainSettingsPopup = function(jsonobj)
 
     $("#mainsettings table#theme").each( function( index, element ) {
         var table = $(element);
-
+        table.css('transition', 'max-height .01s');
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').show();
         table.find('td.el').addClass('ellipsis');
