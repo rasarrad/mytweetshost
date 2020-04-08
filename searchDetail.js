@@ -429,7 +429,6 @@ function changesearchtype(e, obj, code, desc) {
 var openSearchPopup = function(jsonobj) 
 {
     $('body, html').css('overflow-y', 'hidden');
-    $('#searchpopup').css('display', 'flex');  
     
     $('#titlesearch').html("(" + $('#selectedcattext').val() + ")");
 
