@@ -648,7 +648,7 @@ function updateTopPosition(obj) {
 
         console.log(window.innerWidth + "-" + window.innerHeight)
         if (obj == "linkChange") {
-            if (isLandscape && false) {
+            if (isLandscape) {
 
                 maxHeightStyle = "margin-top: -1px !important;max-height: 310px !important;";
     
