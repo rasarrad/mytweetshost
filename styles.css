@@ -1735,6 +1735,11 @@ body.big #searchtags {
   max-height: 296px;
 }
 
+#previewtable #inid.yt {
+  min-width: auto;
+  max-height: 243px;
+}
+
 body.big .newLayout #linktable {
     margin-top: 92px !important;
 }
