@@ -121,15 +121,17 @@ $( document ).ready(function() {
     setTimeout(function(){
         countalltweets();
 
-        /* 
-        $( "#mask" ).fadeOut( 800, function() {
-            var style = window.getComputedStyle(body, null);
-    
-            $("#mask").css("background", style.getPropertyValue('--soft-transp-color'));
-            $("#mask .fa-folder-open").hide();
-            $("#mask > div" ).hide();
-            $("#mask > .fa-circle-o-notch").show();
-        });*/
+        setTimeout(function(){
+            $( "#mask" ).fadeOut( 800, function() {
+                var style = window.getComputedStyle(body, null);
+        
+                $("#mask").css("background", style.getPropertyValue('--soft-transp-color'));
+                $("#mask .fa-folder-open").hide();
+                $("#mask > div" ).hide();
+                $("#mask > .fa-circle-o-notch").show();
+            });
+        }, 900); 
+
     }, 1); 
    
     setviewmode();
