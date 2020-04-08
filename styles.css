@@ -1714,7 +1714,7 @@ body.big #searchtags {
 }
 #previewtable #inid {
   min-width: auto;
-  max-height: 229px;
+  max-height: 296px;
 }
 
 body.big .newLayout #linktable {
@@ -2245,7 +2245,7 @@ body.big #splash .titletable {
       }     
         #previewtable #inid {
           min-width: auto;
-          max-height: 181px;
+          max-height: 296px;
       }
       #previewtable #inid > i {
           left: 153px;
