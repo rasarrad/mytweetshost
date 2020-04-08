@@ -417,7 +417,6 @@ var openSettingsPopup = function(jsonobj)
     }
 
     $('#linkChange').fadeIn(); 
-    $('#linkChange').css('display', 'flex');  
 
     updateTopPosition("linkChange"); 
 } 
