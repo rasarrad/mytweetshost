@@ -129,7 +129,7 @@ $( document ).ready(function() {
     }, 1); 
    
     setviewmode();
-
+alert(navigator.userAgent)
     var hasZoom = readCookie("hasZoom");
     if (hasZoom && hasZoom.length > 0)
         zoom(null, true);
