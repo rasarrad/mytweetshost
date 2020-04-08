@@ -640,6 +640,8 @@ function editSetting(e, obj, flag) {
 }
 
 function updateTopPosition(obj) { 
+    return false;
+
     setTimeout(function(){
         var isLandscape = window.innerWidth < 1200 && window.innerWidth > 700;
         var innerHeight = window.innerHeight;
