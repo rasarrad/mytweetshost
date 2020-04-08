@@ -650,7 +650,7 @@ function updateTopPosition(obj) {
         if (obj == "linkChange") {
             if (isLandscape) {
 
-                maxHeightStyle = "margin-top: -1px !important;max-height: 310px !important;";
+                maxHeightStyle = "margin-top: -1px !important;max-height: 245px !important;";
     
                 htmlElem.attr("style", maxHeightStyle);     
     
