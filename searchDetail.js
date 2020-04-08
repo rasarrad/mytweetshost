@@ -1650,6 +1650,11 @@ var existsLink = function(text, type, functorun) {
                 }
 
                 if (val.type == "T") {
+
+                    console.log(text.substring(0,10));
+                    console.log(text.substring(20,30));
+                    console.log(text.substring(40,50));
+
                     if (   
                         (text.substring(0,10) != "" && val.tweet.includes(text.substring(0,10)))
                         ||
