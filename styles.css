@@ -24,6 +24,11 @@
   */
 }
 
+
+
+
+
+
 #searchpopup .fa-external-link-square {
   
 }
@@ -1432,179 +1437,192 @@ body.big #editTags {
   margin-top: 119px !important;
 }
 
+
+
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
+/* 
+  ###Device = Low Resolution Tablets, Mobiles (Landscape)
+  Screen = B/w 481px to 767px */
 
-@media only screen and (max-width: 1000px) {
-  #mask > div > i {
-    background: #484848 !important;
-  }   
-  body.big .linkbar.fa-internet-explorer {
-        font-size: 18px;
-        top: 6px !important;
-  }
-  #expand {
-    margin-top: -6px;
-    /* left: 18px; */
-  }     
-  .tweet:first-child #expand {
-      margin-top: -9px;
-  }
-  .tweet:first-child .linkbar {
-      top: -1px !important;
-  }
+  /* 
+  ###Device = Tablets, Ipads (landscape)
+  Screen = B/w 768px to 1024px */
 
-  body.big .tweet:first-child .linkbar {
-      top: -2px !important;
-  }
-        
-  #addtweet {
-      font-size: 22px;
-      top: 15px;
-    }  
-  .tags {
-    margin-top: -14px;
-  }
-  body.big .tags {
-    margin-top: -9px;
-  }
+/* 
+  ###Device = Tablets, Ipads (portrait)
+  Screen = B/w 768px to 1024px */
+  @media (min-width: 481px) and (max-width: 767px), (min-width: 768px) and (max-width: 1024px) and (orientation: landscape), (min-width: 768px) and (max-width: 1024px) {
   
-    body.big .linkbar {
-        font-size: 22px;
-        top: 3px;
-    }
-  .newLayout#mainsettings > div {
-          margin-top: 23px !important;
-          max-height: calc(100% - 65px) !important;
-    }
-    body.big #mainsettings.newLayout > div {
-        margin-top: 31px !important;
-        max-height: calc(100% - 137px) !important;
-    } 
-    body.big .newLayout#mainsettings > div {
-      margin-top: 1px !important;
-      max-height: calc(100% - 79px) !important;
+    #mask > div > i {
+      background: #484848 !important;
     }   
-    #mainmenu > div {
-    margin-top: -3px !important;
-    max-height: 245px !important;
+    body.big .linkbar.fa-internet-explorer {
+          font-size: 18px;
+          top: 6px !important;
     }
-    body.big #mainmenu > div {
-      margin-top: 3px !important;
-      max-height: 246px !important;
-    }    
-    #calendardiv > div {
-      margin-top: -52px !important;
-      max-height: 300px !important;
-    }
-    body.big #calendardiv > div {
-      margin-top: -72px !important;
-      height: 375px !important;
-      max-height: unset !important;
-      border-radius: 0;
-    }
-
-    body > div > i.fa-folder-open {
-      font-size: 74px;
-      height: 76px;
-      top: calc(50% - 62px);
-      left: calc(50% - 47px);
-    }  
-    .tweet.yt iframe {
-        margin-top: 4px !important;
-        height: 289px;
-    }
-    .tweet iframe {
-      position: relative;
-      top: 10px;
-      border-radius: 5px;
-      border: 0px solid white;
-      width: calc(100% - 0px) !important;
-      margin-left: calc(50% - 236px) !important;
-      margin-right: 0px !important;
-      top: -12px;
-      max-width: 470px;
-    }  
-
-      .tweet .innertweet {
-        position: relative;
-        top: 10px;
-        border-radius: 5px;
-        border: 1px solid white;
-        /* width: calc(100% - 0px) !important; */
-        margin-left: calc(50% - 249px) !important;
-        margin-right: 0px !important;
-        top: -12px;
-        max-width: 498px;
-    }
-     .linkbar {
-        left: calc(50% - 240px);
-        top: 2px !important;
-    }
-    .linkbar.fa-internet-explorer {
-        top: 3px !important;
+    #expand {
+      margin-top: -6px;
+      /* left: 18px; */
+    }     
+    .tweet:first-child #expand {
+        margin-top: -9px;
     }
     .tweet:first-child .linkbar {
         top: -1px !important;
     }
-    body.big .linkbar {
-        left: calc(50% - 243px);
-        top: 3px !important;
+  
+    body.big .tweet:first-child .linkbar {
+        top: -2px !important;
     }
-    body.big .linkbar.fa-youtube-play {
-        top: 5px !important;
-    }    
-    #expand {
-        right: calc(50% - 237px);
-    }
-    body.big #expand {
-        right: calc(50% - 241px);
-        top: 12px !important;
-    } 
+          
+    #addtweet {
+        font-size: 22px;
+        top: 15px;
+      }  
     .tags {
-      font-size: 12px !important;
-      top: -2px;
+      margin-top: -14px;
     }
     body.big .tags {
-      font-size: 17px !important;
-      height: 32px;
-      top: 0px;
+      margin-top: -9px;
     }
-    .tweet .tags {
-      padding-left: calc(50% - 209px);
-      /* margin-left: calc(50% - 268px); */
-      /* width: 480px; */
-      /* border-bottom-left-radius: 18px; */
-      /* border-bottom-right-radius: 18px; */
-      max-width: 411px;
-    }
-    .tweet:nth-of-type(1) .tags {
-      /* padding-left: calc(50% - 199px); */
-      top: -5px;
-    }    
-    .tweet:not(:nth-of-type(1)) .gradiantback {
-      /* padding-left: calc(48px); */
-      /* margin-left: calc(50% - 268px); */
-      /* width: 480px; */
-      /* border-bottom-left-radius: 20px; */
-      /* border-bottom-right-radius: 20px; */
-    }   
-    .tweet.yt .gradiantback {
-      top: 16px;
-    } 
-    body.big .tweet.yt .gradiantback {
-      top: 26px;
-    }             
-    .bottomgradiantback:not(:first-of-type) {
-      /* padding-left: calc(48px); */
-      /* margin-left: calc(50% - 268px); */
-      /* width: 480px !important; */
-      /* border-top-left-radius: 10px; */
-      /* border-top-right-radius: 10px; */
-    }      
-    body.big #editTags {
-      margin-top: 93px !important;
-    }
+    
+      body.big .linkbar {
+          font-size: 22px;
+          top: 3px;
+      }
+    .newLayout#mainsettings > div {
+            margin-top: 23px !important;
+            max-height: calc(100% - 65px) !important;
+      }
+      body.big #mainsettings.newLayout > div {
+          margin-top: 31px !important;
+          max-height: calc(100% - 137px) !important;
+      } 
+      body.big .newLayout#mainsettings > div {
+        margin-top: 1px !important;
+        max-height: calc(100% - 79px) !important;
+      }   
+      #mainmenu > div {
+      margin-top: -3px !important;
+      max-height: 245px !important;
+      }
+      body.big #mainmenu > div {
+        margin-top: 3px !important;
+        max-height: 246px !important;
+      }    
+      #calendardiv > div {
+        margin-top: -52px !important;
+        max-height: 300px !important;
+      }
+      body.big #calendardiv > div {
+        margin-top: -72px !important;
+        height: 375px !important;
+        max-height: unset !important;
+        border-radius: 0;
+      }
+  
+      body > div > i.fa-folder-open {
+        font-size: 74px;
+        height: 76px;
+        top: calc(50% - 62px);
+        left: calc(50% - 47px);
+      }  
+      .tweet.yt iframe {
+          margin-top: 4px !important;
+          height: 289px;
+      }
+      .tweet iframe {
+        position: relative;
+        top: 10px;
+        border-radius: 5px;
+        border: 0px solid white;
+        width: calc(100% - 0px) !important;
+        margin-left: calc(50% - 236px) !important;
+        margin-right: 0px !important;
+        top: -12px;
+        max-width: 470px;
+      }  
+  
+        .tweet .innertweet {
+          position: relative;
+          top: 10px;
+          border-radius: 5px;
+          border: 1px solid white;
+          /* width: calc(100% - 0px) !important; */
+          margin-left: calc(50% - 249px) !important;
+          margin-right: 0px !important;
+          top: -12px;
+          max-width: 498px;
+      }
+       .linkbar {
+          left: calc(50% - 240px);
+          top: 2px !important;
+      }
+      .linkbar.fa-internet-explorer {
+          top: 3px !important;
+      }
+      .tweet:first-child .linkbar {
+          top: -1px !important;
+      }
+      body.big .linkbar {
+          left: calc(50% - 243px);
+          top: 3px !important;
+      }
+      body.big .linkbar.fa-youtube-play {
+          top: 5px !important;
+      }    
+      #expand {
+          right: calc(50% - 237px);
+      }
+      body.big #expand {
+          right: calc(50% - 241px);
+          top: 12px !important;
+      } 
+      .tags {
+        font-size: 12px !important;
+        top: -2px;
+      }
+      body.big .tags {
+        font-size: 17px !important;
+        height: 32px;
+        top: 0px;
+      }
+      .tweet .tags {
+        padding-left: calc(50% - 209px);
+        /* margin-left: calc(50% - 268px); */
+        /* width: 480px; */
+        /* border-bottom-left-radius: 18px; */
+        /* border-bottom-right-radius: 18px; */
+        max-width: 411px;
+      }
+      .tweet:nth-of-type(1) .tags {
+        /* padding-left: calc(50% - 199px); */
+        top: -5px;
+      }    
+      .tweet:not(:nth-of-type(1)) .gradiantback {
+        /* padding-left: calc(48px); */
+        /* margin-left: calc(50% - 268px); */
+        /* width: 480px; */
+        /* border-bottom-left-radius: 20px; */
+        /* border-bottom-right-radius: 20px; */
+      }   
+      .tweet.yt .gradiantback {
+        top: 16px;
+      } 
+      body.big .tweet.yt .gradiantback {
+        top: 26px;
+      }             
+      .bottomgradiantback:not(:first-of-type) {
+        /* padding-left: calc(48px); */
+        /* margin-left: calc(50% - 268px); */
+        /* width: 480px !important; */
+        /* border-top-left-radius: 10px; */
+        /* border-top-right-radius: 10px; */
+      }      
+      body.big #editTags {
+        margin-top: 93px !important;
+      }  
 }
 /****************************** FIM LANDSCAPE CSS ****************************/
 /*****************************************************************************/
@@ -1900,10 +1918,15 @@ body.big #splash .titletable {
   width: 468px;
   padding-left: 6px;
 }  
+
+
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
-        
-@media only screen and (max-width: 700px) {
+/* 
+  ###Device = Most of the Smartphones Mobiles (Portrait)
+  Screen = B/w 320px to 479px */
+  @media (min-width: 320px) and (max-width: 480px) {
+  
     #mask > div > i {
       background: #484848 !important;
     }     
@@ -1999,7 +2022,7 @@ body.big #splash .titletable {
         font-style: italic;
         font-weight: normal;
     }
-
+  
     body.big .toptitle > span {
         top: 16px;
         left: 35px;
@@ -2036,7 +2059,7 @@ body.big #splash .titletable {
     body.big #mainmenu .firstsettable {
       margin-top: 42px;
     }  
-
+  
     #mainmenu > div {
       margin-top: 116px !important;
       max-height: 368px !important;
@@ -2044,20 +2067,20 @@ body.big #splash .titletable {
     body.big #mainmenu > div {
       margin-top: 48px !important;
     }  
-
+  
     
     #mainsettings .firstsettable {
         margin-top: 31px !important;
     }
     body.big #mainsettings .firstsettable {
-
+  
     }  
     #mainsettings .fa-window-close {
       right: 19px !important;
       top: -2px;
     } 
     body.big #mainsettings .fa-window-close {
-
+  
     }   
     #mainsettings .buttonstable {
       width: 349px;
@@ -2081,7 +2104,7 @@ body.big #splash .titletable {
       margin: 0px !important;
       height: 44vw !important;
     }
-
+  
     body.big .newLayout #linktable {
         margin-top: 118px !important;
     }
@@ -2142,7 +2165,7 @@ body.big #splash .titletable {
         margin-top: 27px !important;
         max-height: 614px !important;
     } 
-
+  
     body.big .newLayout#mainsettings > div {
         margin-top: 29px !important;
         max-height: calc(100% - 135px) !important;
@@ -2266,7 +2289,7 @@ body.big #splash .titletable {
       body.big #searchtags {
         margin-top: 90px !important;
       }
-
+  
       body.big .newLayout.new #editTags {
         margin-top: 6px !important;
       }      
@@ -2274,7 +2297,7 @@ body.big #splash .titletable {
         margin-top: 20px !important;
         margin-bottom: 20px !important;
       }
-
+  
       .newLayout > div .titletable {
           margin-top: 0.7px !important;
           /* margin-top: 0px !important; */
@@ -2282,13 +2305,13 @@ body.big #splash .titletable {
       .newLayout#mainsettings > div .titletable {
           margin-top: -0.3px !important;
       }      
-
-
+  
+  
     .newLayout#searchpopup > div .titletable {
         width: 344px !important;
     }
-
-}
+    
+  }
 /****************************** FIM PORTRAIT CSS *****************************/
 /*****************************************************************************/
 
@@ -2733,8 +2756,6 @@ body.big #linktable {
     top: -1px;
     cursor: pointer;
 }
-
-/****************************************/
 
 select {
     height: 19px;
@@ -3861,10 +3882,19 @@ body.big #expandedittags, body.big #expandsearchtags {
     font-size: 23px !important;
     background: var(--high-color) !important;
 }
+
+
 /*****************************************************************************/
 /********************************* DESKTOP CSS *******************************/
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px */
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops */
+@media (min-width: 1025px) and (max-width: 1280px), (min-width: 1281px) {
+  
 
-@media only screen and (min-width: 1020px) {
   #mask .fa-circle-o-notch {
     height: 43px !important;
   }
@@ -3962,9 +3992,11 @@ body.big #expandedittags, body.big #expandsearchtags {
       opacity: 0.6 !important;
     }
 }
-
 /******************************* FIM DESKTOP CSS *****************************/
 /*****************************************************************************/
+
+
+
 
 .gradient-border {
   --borderWidth: 1px;
