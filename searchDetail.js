@@ -1652,11 +1652,11 @@ var existsLink = function(text, type, functorun) {
                 if (val.type == "T") {
 
                     if (   
-                        (text.substring(0,10) != "" && val.tweet.includes(text.substring(0,10)))
+                        (text.substring(0,20) != "" && val.tweet.includes(text.substring(0,20)))
                         ||
-                        (text.substring(20,30) != "" && val.tweet.includes(text.substring(20,30)))                        
+                        (text.substring(40,60) != "" && val.tweet.includes(text.substring(40,60)))                        
                         ||
-                        (text.substring(40,50) != "" && val.tweet.includes(text.substring(40,50)))                     
+                        (text.substring(80,100) != "" && val.tweet.includes(text.substring(80,100)))                     
                     ) {
                         console.log(text);
 
