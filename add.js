@@ -284,7 +284,7 @@ function parseTweet(type) {
 
 function createPreview() {
 
-    return false; // xyzxyz
+    //return false; // xyzxyz
     var xclass = "";
     var typefa = "twitter"
     if (addType == "H") {
