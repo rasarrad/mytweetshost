@@ -2270,6 +2270,10 @@ body.big #splash .titletable {
           min-width: auto;
           max-height: 296px;
       }
+      #previewtable #inid.yt {
+          min-width: auto;
+          max-height: 229px;
+      }
       #previewtable #inid > i {
           left: 153px;
       }
