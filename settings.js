@@ -591,13 +591,13 @@ function editSetting(e, obj, flag) {
             setHeight = "30px";
     
         var table = $(obj).parent().parent();
-        if (table.css('height') == setHeight) {
+        if (table.css('max-height') == setHeight) {
             var hasExpanded = false;
             $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
                 var table = $(element);
                 
                 table.css('transition', 'transition: all 0.7s !important');
-                table.css('height', setHeight);
+                table.css('max-height', setHeight);
                 table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').attr('style', '');
                 table.find('td.el').addClass('ellipsis');
             });
@@ -605,14 +605,14 @@ function editSetting(e, obj, flag) {
             table.css('transition', 'transition: all 0.7s !important');
             if (table.attr("cmaxheight")) {
                 if ($('body').hasClass('big')) {
-                    table.css('height', table.attr("cmaxheightbig"));
+                    table.css('max-height', table.attr("cmaxheightbig"));
                 }
                 else {
-                    table.css('height', table.attr("cmaxheight"));
+                    table.css('max-height', table.attr("cmaxheight"));
                 }
             }
             else {
-                table.css('height', "fit-content");
+                table.css('max-height', "fit-content");
             }
             
             if (table.attr("extrastyle")) {
@@ -630,7 +630,7 @@ function editSetting(e, obj, flag) {
         else {
             table.css('transition', 'transition: all 0.7s !important');
             table.css('overflow-y', "hidden");
-            table.css('height', setHeight);
+            table.css('max-height', setHeight);
             table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
             table.find('td.el').addClass('ellipsis');
         }
