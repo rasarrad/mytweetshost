@@ -121,6 +121,7 @@ $( document ).ready(function() {
     setTimeout(function(){
         countalltweets();
 
+        /* 
         $( "#mask" ).fadeOut( 800, function() {
             var style = window.getComputedStyle(body, null);
     
@@ -128,7 +129,7 @@ $( document ).ready(function() {
             $("#mask .fa-folder-open").hide();
             $("#mask > div" ).hide();
             $("#mask > .fa-circle-o-notch").show();
-        });
+        });*/
     }, 1); 
    
     setviewmode();
