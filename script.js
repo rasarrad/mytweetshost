@@ -145,7 +145,7 @@ $( document ).ready(function() {
     }, 1400);  
 
     
-    showSplash();
+    //showSplash();
 
     //openSearchPopup();
     
