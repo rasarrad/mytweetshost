@@ -66,8 +66,7 @@ function changecriteria(e, obj, tableparam) {
             var hasExpanded = false;
             $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
                 var othertable = $(element);
-                
-                othertable.css('transition', 'max-height 0.01s');
+
                 othertable.css('max-height', setHeight);
                 othertable.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", "0px");
                 othertable.find('td.el').addClass('ellipsis');

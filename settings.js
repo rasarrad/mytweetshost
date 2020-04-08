@@ -388,7 +388,6 @@ var openSettingsPopup = function(jsonobj)
         if ($('body').hasClass('big'))
             setHeight = "30px";
         
-        $('#linktable').css('transition', 'max-height 0.01s');
         $('#linktable').css('max-height', setHeight);
 
         $('#linkChange').attr("cid", "new");
