@@ -876,7 +876,6 @@ function openmenu(obj, flag) {
             }
             $("#mainmenu.newLayout table.defaulttablerow").each( function( index, element ) {
                 var table = $(element);
-                table.css('transition', 'max-height .01s');
                 table.css('max-height', setHeight);
             });
 
