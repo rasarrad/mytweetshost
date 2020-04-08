@@ -646,7 +646,7 @@ function updateTopPosition(obj) {
         var htmlElem = $("#" + obj + " > div");
         var maxHeightStyle = "max-height: " + (innerHeight - 125) + "px !important;";
 
-        alert(window.innerWidth + "-" + window.innerHeight)
+        console.log(window.innerWidth + "-" + window.innerHeight)
         if (obj == "linkChange") {
             if (isLandscape && false) {
 
