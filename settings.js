@@ -431,7 +431,7 @@ var openSettingsPopup = function(jsonobj)
     $('#linkChange').attr("style", "top: 0px;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s, background 1.1s, height 0.2s;");
 
     setTimeout(function(){
-        $('#mainmenu').css('background', 'var(--soft-transp-color)');
+        $('#linkChange').css('background', 'var(--soft-transp-color)');
     }, 600);
 } 
 
@@ -577,6 +577,11 @@ function closeSettingsPopup(obj) {
     if (obj)
         fixfocus(obj);
     $('body, html').css('overflow-y', 'auto');
+
+    var setHeight = "18px";
+
+    if ($('body').hasClass('big'))
+        setHeight = "30px";
 
     $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
         var table = $(element);
