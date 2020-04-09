@@ -575,13 +575,7 @@ function closeMenuPopup(obj) {
     if (obj)
         fixfocus(obj);
     $('body, html').css('overflow-y', 'auto');
-    $('#mainmenu').css('transition', 'transition: all 1.4s !important');
-    $('#mainmenu').css('opacity', 0);
-
-    setTimeout(function(){
-        $('#mainmenu').hide();
-        $('#mainmenu').css('opacity', 1);
-    }, 1400);
+    $('#mainmenu').fadeOut(1400);
 
 }
 function editSetting(e, obj, flag) {
