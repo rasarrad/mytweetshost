@@ -577,8 +577,7 @@ function closeMenuPopup(obj) {
  
     $('body, html').css('overflow-y', 'auto');
 
-    $('#mainmenu').css('transition', 'transition: all 1.7s');
-    $('#mainmenu').css('opacity', 0);
+    $('#mainmenu').css('top', '-391px');
 
 }
 
