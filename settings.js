@@ -574,6 +574,8 @@ function closeMainSettingsPopup(obj) {
 function closeMenuPopup(obj) {
     if (obj)
         fixfocus(obj);
+
+    console.log(222222222222222222);    
     $('body, html').css('overflow-y', 'auto');
 
     $('#mainmenu').css('transition', 'transition: all 1.7s');
