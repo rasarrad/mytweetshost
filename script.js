@@ -968,7 +968,7 @@ function openmenu(obj, flag) {
             setTimeout(function(){
                 $('#mainmenu').css('background', 'var(--soft-transp-color)');
             }, 600);
-
+ 
         }
         else {
             closeMenuPopup();
