@@ -581,7 +581,7 @@ function closeMenuPopup(obj) {
     setTimeout(function(){
         $('#mainmenu').hide();
         $('#mainmenu').css('opacity', 1);
-    }, 140);
+    }, 1400);
 
 }
 function editSetting(e, obj, flag) {

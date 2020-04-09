@@ -956,7 +956,6 @@ function openmenu(obj, flag) {
     
 
             $('#mainmenu').css('transition', 'transition: all 0.01s !important');
-            $('#mainmenu').show();
 
             $('#mainmenu').css("top", "-391px");
             $('#mainmenu').css("background", "transparent");
