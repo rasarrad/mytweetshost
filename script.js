@@ -301,7 +301,7 @@ function handleTouchStart(evt) {
 };                                                
 
 function handleTouchEnded(evt) {
-
+alert(4444);
 if (dblFlag) {
     if ( ! xDown || ! yDown ) {
         return;
