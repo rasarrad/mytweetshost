@@ -954,8 +954,14 @@ function openmenu(obj, flag) {
 
             $('body, html').css('overflow-y', 'hidden');
     
-            alert(4535);
-            $('#mainmenu').slideDown(1600);
+
+            $('#mainmenu').css('transition', 'transition: top 0.01s !important');
+            $('#mainmenu').css("top", "-451px");
+
+            $('#mainmenu').show();
+            $('#mainmenu').css('transition', 'transition: top 0.7s !important');
+
+            $('#mainmenu').css("top", "0px");
         }
         else {
             closeallnewlayout();
