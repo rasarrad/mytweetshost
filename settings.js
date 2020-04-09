@@ -578,10 +578,7 @@ function closeMenuPopup(obj) {
     $('body, html').css('overflow-y', 'auto');
 
             
-    $('#mainmenu').slideUp();
-
-    $('#mainmenu').attr("style", "top: -391px;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s;");
-
+    $('#mainmenu').fadeOut(3000);
 }
 function editSetting(e, obj, flag) {
     e.stopPropagation();
