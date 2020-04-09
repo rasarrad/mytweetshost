@@ -955,11 +955,11 @@ function openmenu(obj, flag) {
             $('body, html').css('overflow-y', 'hidden');
     
 
-            $('#mainmenu').css('transition', 'transition: top 0.01s !important');
+            $('#mainmenu').css('transition', 'transition: all 0.01s !important');
             $('#mainmenu').css("top", "-451px");
 
             $('#mainmenu').show();
-            $('#mainmenu').css('transition', 'transition: top 0.7s !important');
+            $('#mainmenu').css('transition', 'transition: all 1.7s !important');
 
             $('#mainmenu').css("top", "0px");
         }
