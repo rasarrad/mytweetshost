@@ -956,13 +956,15 @@ function openmenu(obj, flag) {
     
 
             $('#mainmenu').css('transition', 'transition: all 0.01s !important');
-            $('#mainmenu').css("top", "-451px");
+            $('#mainmenu').css("top", "-351px");
+            $('#mainmenu').css("background", "transparent");
 
             $('#mainmenu').css('transition', 'transition: all 1.7s !important');
 
             $('#mainmenu').slideDown();
             
             $('#mainmenu').css("top", "0px");
+            $('#mainmenu').css("background", "null");
         }
         else {
             closeallnewlayout();
