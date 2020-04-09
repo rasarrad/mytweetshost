@@ -578,12 +578,8 @@ function closeMenuPopup(obj) {
     console.log(222222222222222222);    
     $('body, html').css('overflow-y', 'auto');
 
-    $('#mainmenu').attr("style", "display: block;height: calc(100%) !important;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s !important;position: fixed !important; margin-top: 0px !important;z-index: 9999999998;background: transparent;margin-top: 0px !important;");
-
     $('#mainmenu').css("top", "-391px");
     $('#mainmenu').css("background", "transparent");
-
-    $('#mainmenu').slideUp();
     
 
 }
