@@ -577,11 +577,11 @@ function closeMenuPopup(obj) {
  
     $('body, html').css('overflow-y', 'auto');
 
-    $('#mainmenu').css('top', '-391px');
-    $('#mainmenu').css('background', 'transparent');
+    $('#mainmenu').attr("style", "top: -391px;background: transparent;transition: top 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s, background 2s;");
+
     setTimeout(function(){
         $('#mainmenu').hide();
-    }, 900);
+    }, 1100);
 }
 
 function editSetting(e, obj, flag) {
