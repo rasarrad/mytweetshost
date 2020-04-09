@@ -577,13 +577,13 @@ function closeMenuPopup(obj) {
  
     $('body, html').css('overflow-y', 'auto');
 
-    $('#mainmenu').css('transition', 'transition: all 1.7s');
+    $('#mainmenu').css('transition', 'all 1.7s');
     $('#mainmenu').css('opacity', 0);
 
     setTimeout(function(){
         $('#mainmenu').hide();
         $('#mainmenu').css('opacity', 1);
-    }, 00);
+    }, 700);
 }
 function editSetting(e, obj, flag) {
     e.stopPropagation();
