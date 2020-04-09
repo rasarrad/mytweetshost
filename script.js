@@ -963,8 +963,7 @@ function openmenu(obj, flag) {
 
             $('#mainmenu').slideDown();
             
-            $('#mainmenu').css("top", "0px");
-            $('#mainmenu').css("background", null);
+            $('#mainmenu').attr("style", "display: block;height: calc(100%) !important;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s;position: fixed !important; margin-top: 0px !important;z-index: 9999999998;margin-top: 0px !important;");
         }
         else {
             closeallnewlayout();
