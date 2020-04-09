@@ -954,7 +954,8 @@ function openmenu(obj, flag) {
 
             $('body, html').css('overflow-y', 'hidden');
     
-            $('#mainmenu').slideDown(600);
+            alert(4535);
+            $('#mainmenu').slideDown(1600);
         }
         else {
             closeallnewlayout();
