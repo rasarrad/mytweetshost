@@ -278,7 +278,7 @@ $( document ).ready(function() {
     ///////////////////////////////////////
 
     document.addEventListener('touchstart', handleTouchStart, false);        
-document.addEventListener('touchmove', handleTouchMove, false);
+document.addEventListener('touchend', handleTouchEnded, false);
 
 var xDown = null;                                                        
 var yDown = null;
@@ -291,10 +291,18 @@ function getTouches(evt) {
 function handleTouchStart(evt) {
     const firstTouch = getTouches(evt)[0];                                      
     xDown = firstTouch.clientX;                                      
-    yDown = firstTouch.clientY;                                      
+    yDown = firstTouch.clientY;   
+    
+    dblFlag = true;
+    dblClickTimeout = setTimeout(function() {     
+          dblFlag = false;  
+    }, 100);
+
 };                                                
 
-function handleTouchMove(evt) {
+function handleTouchEnded(evt) {
+
+if (dblFlag) {
     if ( ! xDown || ! yDown ) {
         return;
     }
@@ -322,7 +330,9 @@ function handleTouchMove(evt) {
     }
     /* reset values */
     xDown = null;
-    yDown = null;                                             
+    yDown = null;   
+}
+                                          
 };
 
     
