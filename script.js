@@ -301,7 +301,7 @@ function handleTouchStart(evt) {
     dblFlag = true;          
     dblClickTimeout = setTimeout(function() {    
           dblFlag = false;  
-    }, 500);
+    }, 100);
     
     console.log("---Start-dblFlag--- 1: " + dblFlag);                        
 };                                                
