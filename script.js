@@ -29,8 +29,6 @@ var xDiff = null;
 var yDiff = null;  
 var xDown = null;                                                        
 var yDown = null;
-var target = window; // this can be any scrollable element
-var last_y = 0;
 
 var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
@@ -332,14 +330,6 @@ function handleTouchEnd(evt) {
 }; 
 
 function handleTouchMove(evt) {
-    var scrolly = target.pageYOffset || target.scrollTop || 0;
-    var direction = e.changedTouches[0].pageY > last_y ? 1 : -1;
-    if(direction>0 && scrolly===0){
-        e.preventDefault();
-    }
-    last_y = e.changedTouches[0].pageY;
-
-
     if ( ! xDown || ! yDown ) {
         return;
     }
