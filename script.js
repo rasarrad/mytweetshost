@@ -290,6 +290,7 @@ document.addEventListener('touchend', handleTouchEnd, false);
 
 
 function getTouches(evt) {
+  console.log(event)
   return evt.touches ||             // browser API
          evt.originalEvent.touches; // jQuery
 }                                                     
