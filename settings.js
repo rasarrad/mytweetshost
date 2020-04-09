@@ -416,9 +416,23 @@ var openSettingsPopup = function(jsonobj)
         $("#linkChange #editTags .fa-chevron-down").show();    
     }
 
-    $('#linkChange').fadeIn(); 
+    //$('#linkChange').fadeIn(); 
 
-    updateTopPosition("linkChange"); 
+    //updateTopPosition("linkChange"); 
+    
+    $('#linkChange').css('transition', 'transition: all 0.01s');
+    $('#linkChange').css("height", "calc(100%)");
+
+    $('#linkChange').css("top", "-233px");
+    $('#linkChange').css("background", "transparent");
+
+    $('#linkChange').slideDown();
+
+    $('#linkChange').attr("style", "top: 0px;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s, background 1.1s, height 0.2s;");
+
+    setTimeout(function(){
+        $('#mainmenu').css('background', 'var(--soft-transp-color)');
+    }, 600);
 } 
 
 var openMainSettingsPopup = function(jsonobj) 
@@ -563,8 +577,29 @@ function closeSettingsPopup(obj) {
     if (obj)
         fixfocus(obj);
     $('body, html').css('overflow-y', 'auto');
-    $('#linkChange').fadeOut(600);
+
+    $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
+        var table = $(element);
+        
+        table.css('transition', 'transition: all 0.7s !important');
+        table.css('max-height', setHeight);
+        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').attr('style', '');
+        table.find('td.el').addClass('ellipsis');
+    });
+
+    $('#linkChange').css('transition', 'all 1.7s');
+    $('#linkChange').css('opacity', 0);
+
+    setTimeout(function(){
+        $('#linkChange').hide();
+        $('#linkChange').css('opacity', 1);
+    }, 700);
+
 }
+
+
+
+
 function closeMainSettingsPopup(obj) {
     if (obj)
         fixfocus(obj);
