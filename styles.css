@@ -2381,6 +2381,7 @@ body.big #splash .titletable {
     touch-action: none;
     overscroll-behavior: none;
     margin-top: 49px;
+    margin-top: 0px !important;
 }
 
 .newLayout > div {

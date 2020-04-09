@@ -956,7 +956,7 @@ function openmenu(obj, flag) {
     
 
             $('#mainmenu').css('transition', 'transition: all 0.01s !important');
-            $('#mainmenu').css("top", "-351px");
+            $('#mainmenu').css("top", "-371px");
             $('#mainmenu').css("background", "transparent");
 
             $('#mainmenu').css('transition', 'transition: all 1.7s !important');
@@ -964,7 +964,7 @@ function openmenu(obj, flag) {
             $('#mainmenu').slideDown();
             
             $('#mainmenu').css("top", "0px");
-            $('#mainmenu').css("background", "null");
+            $('#mainmenu').css("background", null);
         }
         else {
             closeallnewlayout();
