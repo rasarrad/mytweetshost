@@ -935,7 +935,7 @@ body.big #main {
 }  
 .newLayout {
     margin-top: 52px !important;
-    height: 60000000px !important;
+    /* height: 60000000px !important; */
 }
 #mainsettings.newLayout > div {
     margin-top: 61px !important;
@@ -4234,8 +4234,8 @@ body.big .newLayout > div {
 
 .newLayout {
     display: block;
-    height: calc(100%) !important;
-    position: fixed !important; 
+    height: calc(100%);
+    position: fixed !important;
     margin-top: 0px !important;
     z-index: 9999999998;
 }

@@ -960,10 +960,9 @@ function openmenu(obj, flag) {
             $('#mainmenu').css("top", "-391px");
             $('#mainmenu').css("background", "transparent");
                
-            
             $('#mainmenu').slideDown();
 
-            $('#mainmenu').attr("style", "top: 0px;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s, background 1s;");
+            $('#mainmenu').attr("style", "top: 0px;height: calc(100%);transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s, background 1s;");
 
             setTimeout(function(){
                 $('#mainmenu').css('background', 'var(--soft-transp-color)');
