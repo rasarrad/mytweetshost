@@ -574,13 +574,13 @@ function closeMainSettingsPopup(obj) {
 function closeMenuPopup(obj) {
     if (obj)
         fixfocus(obj);
-
-    console.log(222222222222222222);    
+ 
     $('body, html').css('overflow-y', 'auto');
 
-    $('#mainmenu').css("top", "-391px");
-    $('#mainmenu').css("background", "transparent");
-    $('#mainmenu').css("display", "none");
+            
+    $('#mainmenu').slideUp();
+
+    $('#mainmenu').attr("style", "top: -391px;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s;");
 
 }
 function editSetting(e, obj, flag) {
