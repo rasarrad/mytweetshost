@@ -278,7 +278,8 @@ $( document ).ready(function() {
     ///////////////////////////////////////
 
     document.addEventListener('touchstart', handleTouchStart, false);        
-document.addEventListener('touchend', handleTouchEnded, false);
+document.addEventListener('touchmove', handleTouchMove, false);
+document.addEventListener('touchend', handleTouchEnd, false);
 
 var xDown = null;                                                        
 var yDown = null;
@@ -291,18 +292,15 @@ function getTouches(evt) {
 function handleTouchStart(evt) {
     const firstTouch = getTouches(evt)[0];                                      
     xDown = firstTouch.clientX;                                      
-    yDown = firstTouch.clientY;   
-    
-    dblFlag = true;
-    dblClickTimeout = setTimeout(function() {     
-          dblFlag = false;  
-    }, 300);
-
+    yDown = firstTouch.clientY;  
+    dblFlag = false;                                    
 };                                                
 
-function handleTouchEnded(evt) {
+function handleTouchEnd(evt) {
+    dblFlag = true;                                   
+}; 
 
-if (dblFlag) {
+function handleTouchMove(evt) {
     if ( ! xDown || ! yDown ) {
         return;
     }
@@ -313,25 +311,31 @@ if (dblFlag) {
     var xDiff = xDown - xUp;
     var yDiff = yDown - yUp;
 
-    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-        if ( xDiff > 0 ) {
-            alert("left");
+    dblClickTimeout = setTimeout(function() {     
+      if (dblFlag) {
+        dblFlag = false;
+        if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+            if ( xDiff > 0 ) {
+                alert("left");
+            } else {
+                alert("right");
+            }                       
         } else {
-            alert("right");
-        }                       
-    } else {
-        if ( yDiff > 0 ) {
-            /* up swipe */ 
-            alert("up");
-        } else { 
-            /* down swipe */
-            alert("down");
-        }                                                                 
-    }
-    /* reset values */
-    xDown = null;
-    yDown = null;   
-}
+            if ( yDiff > 0 ) {
+                /* up swipe */ 
+                alert("up");
+            } else { 
+                /* down swipe */
+                alert("down");
+            }                                                                 
+        }
+        /* reset values */
+        xDown = null;
+        yDown = null;   
+          dblFlag = false;  
+      }
+    }, 500);
+    
                                           
 };
 
