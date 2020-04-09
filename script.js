@@ -954,7 +954,7 @@ function openmenu(obj, flag) {
 
             $('body, html').css('overflow-y', 'hidden');
     
-            $('#mainmenu').fadeIn(600);
+            $('#mainmenu').slideDown(600);
         }
         else {
             closeallnewlayout();
