@@ -4235,7 +4235,6 @@ body.big .newLayout > div {
 .newLayout {
     display: block;
     height: calc(100%) !important;
-    margin-top: 0px;
     position: fixed !important; 
     margin-top: 0px !important;
     z-index: 9999999998;
