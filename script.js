@@ -293,11 +293,13 @@ function handleTouchStart(evt) {
     const firstTouch = getTouches(evt)[0];                                      
     xDown = firstTouch.clientX;                                      
     yDown = firstTouch.clientY;  
-    dblFlag = false;                                    
+    dblFlag = false;            
+    console.log("---Start-dblFlag--- 1: " + dblFlag);                        
 };                                                
 
 function handleTouchEnd(evt) {
-    dblFlag = true;                                   
+    dblFlag = true;   
+    console.log("---end-dblFlag--- 3: " + dblFlag);                                    
 }; 
 
 function handleTouchMove(evt) {
@@ -311,9 +313,13 @@ function handleTouchMove(evt) {
     var xDiff = xDown - xUp;
     var yDiff = yDown - yUp;
 
-    dblClickTimeout = setTimeout(function() {     
+    console.log("---Move-dblFlag--- 2-1: " + dblFlag);    
+
+    dblClickTimeout = setTimeout(function() {    
+        console.log("---Move-dblFlag--- 2-2: " + dblFlag);     
       if (dblFlag) {
         dblFlag = false;
+        console.log("---Move-dblFlag--- 2-3: " + dblFlag);    
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
             if ( xDiff > 0 ) {
                 alert("left");
