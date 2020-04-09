@@ -288,7 +288,7 @@ document.addEventListener('touchmove', handleTouchMove, false);
 document.addEventListener('touchend', handleTouchEnd, false);
 
 
-function getParentObj(obj) {
+function getParentObjId(obj) {
     var found = false;
     var currObj = obj;
     do {
