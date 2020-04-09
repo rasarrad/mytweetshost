@@ -302,34 +302,31 @@ function handleTouchStart(evt) {
     dblClickTimeout = setTimeout(function() {    
           dblFlag = false;  
     }, 100);
-    
-    console.log("---Start-dblFlag--- 1: " + dblFlag);                        
+                     
 };                                                
 
 function handleTouchEnd(evt) {
-    if (dblFlag) {
-        console.log("---Move-dblFlag--- 2-3: " + dblFlag);    
+    if (dblFlag) {  
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
             if ( xDiff > 0 ) {
-                alert("left");
+                console.log("left");
             } else {
-                alert("right");
+                console.log("right");
             }                       
         } else {
             if ( yDiff > 0 ) {
                 /* up swipe */ 
-                alert("up");
+                console.log("up");
             } else { 
                 /* down swipe */
-                alert("down");
+                console.log("down");
             }                                                                 
         }
         /* reset values */
         xDown = null;
         yDown = null;   
         dblFlag = false;  
-    }
-    console.log("---end-dblFlag--- 3: " + dblFlag);                                    
+    }                                  
 }; 
 
 function handleTouchMove(evt) {
@@ -341,9 +338,7 @@ function handleTouchMove(evt) {
     yUp = evt.touches[0].clientY;
 
     xDiff = xDown - xUp;
-    yDiff = yDown - yUp;
-
-    console.log("---Move-dblFlag--- 2-1: " + dblFlag);    
+    yDiff = yDown - yUp; 
     
 };
 
