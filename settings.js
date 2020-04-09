@@ -580,7 +580,7 @@ function closeMenuPopup(obj) {
 
     $('#mainmenu').css("top", "-391px");
     $('#mainmenu').css("background", "transparent");
-    
+    $('#mainmenu').css("display", "none");
 
 }
 function editSetting(e, obj, flag) {

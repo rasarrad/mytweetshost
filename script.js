@@ -959,10 +959,12 @@ function openmenu(obj, flag) {
 
             $('#mainmenu').css("top", "-391px");
             $('#mainmenu').css("background", "transparent");
-                        
+               
+            
+            $('#mainmenu').slideDown();
+            
             $('#mainmenu').attr("style", "background: ssss; top: 0px;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s;");
 
-            $('#mainmenu').slideDown();
 
         }
         else {
