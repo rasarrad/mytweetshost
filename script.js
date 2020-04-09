@@ -296,12 +296,12 @@ function handleTouchStart(evt) {
     dblFlag = true;
     dblClickTimeout = setTimeout(function() {     
           dblFlag = false;  
-    }, 100);
+    }, 300);
 
 };                                                
 
 function handleTouchEnded(evt) {
-alert(4444);
+
 if (dblFlag) {
     if ( ! xDown || ! yDown ) {
         return;
