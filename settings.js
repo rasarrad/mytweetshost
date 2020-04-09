@@ -578,7 +578,10 @@ function closeMenuPopup(obj) {
     $('body, html').css('overflow-y', 'auto');
 
     $('#mainmenu').css('top', '-391px');
-
+    $('#mainmenu').css('background', 'transparent');
+    setTimeout(function(){
+        $('#mainmenu').hide();
+    }, 800);
 }
 
 function editSetting(e, obj, flag) {
