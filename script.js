@@ -959,12 +959,11 @@ function openmenu(obj, flag) {
 
             $('#mainmenu').css("top", "-391px");
             $('#mainmenu').css("background", "transparent");
-
-            $('#mainmenu').css('transition', 'transition: all 1.7s');
+                        
+            $('#mainmenu').attr("style", "background: ssss; top: 0px;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s;");
 
             $('#mainmenu').slideDown();
-            
-            $('#mainmenu').attr("style", "display: block;height: calc(100%) !important;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s !important;position: fixed !important; margin-top: 0px !important;z-index: 9999999998;margin-top: 0px !important;");
+
         }
         else {
             closeMenuPopup();
