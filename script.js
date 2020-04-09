@@ -967,10 +967,7 @@ function openmenu(obj, flag) {
             $('#mainmenu').attr("style", "display: block;height: calc(100%) !important;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s;position: fixed !important; margin-top: 0px !important;z-index: 9999999998;margin-top: 0px !important;");
         }
         else {
-            $('#mainmenu').css('transition', 'transition: all 0.01s');
-            $('#mainmenu').fadeOut(800);
-
-            $('body, html').css('overflow-y', 'auto');
+            closeMenuPopup();
         }
     //}
 }

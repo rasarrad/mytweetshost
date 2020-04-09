@@ -575,13 +575,15 @@ function closeMenuPopup(obj) {
     if (obj)
         fixfocus(obj);
     $('body, html').css('overflow-y', 'auto');
-    $('#mainmenu').css('transition', 'transition: all 0.7s');
-    $('#mainmenu').css('opacity', 0);
 
-    setTimeout(function(){
-        $('#mainmenu').hide();
-        $('#mainmenu').css('opacity', 1);
-    }, 700);
+    $('#mainmenu').css('transition', 'transition: all 1.7s');
+
+    $('#mainmenu').css("top", "-391px");
+    $('#mainmenu').css("background", "transparent");
+
+    $('#mainmenu').slideUp();
+    
+    $('#mainmenu').attr("style", "display: block;height: calc(100%) !important;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s;position: fixed !important; margin-top: 0px !important;z-index: 9999999998;background: transparent;margin-top: 0px !important;");
 
 }
 function editSetting(e, obj, flag) {
