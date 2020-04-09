@@ -635,6 +635,11 @@ function closeMainSettingsPopup(obj) {
     $('body, html').css('overflow-y', 'auto');
     //$('#mainsettings').fadeOut(600);
 
+    var setHeight = "18px";
+
+    if ($('body').hasClass('big'))
+        setHeight = "30px";
+        
     $('#mainsettings').find("table:not(.buttonstable)").each( function( index, element ) {
         var table = $(element);
         
