@@ -423,7 +423,12 @@ var openSettingsPopup = function(jsonobj)
     $('#linkChange').css('transition', 'transition: all 0.01s');
     $('#linkChange').css("height", "calc(100%)");
 
-    $('#linkChange').css("top", "-233px");
+
+    if ($('#linkChange').hasClass("new"))
+        $('#linkChange').css("top", "-700px");
+    else
+        $('#linkChange').css("top", "-233px");
+
     $('#linkChange').css("background", "transparent");
 
     $('#linkChange').slideDown();
