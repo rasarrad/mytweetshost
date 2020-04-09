@@ -963,8 +963,11 @@ function openmenu(obj, flag) {
             
             $('#mainmenu').slideDown();
 
-            $('#mainmenu').attr("style", "background: var(--soft-transp-color); top: 0px;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s;");
+            $('#mainmenu').attr("style", "top: 0px;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s;");
 
+            setTimeout(function(){
+                $('#mainmenu').css('background', 'var(--soft-transp-color)');
+            }, 800);
 
         }
         else {
