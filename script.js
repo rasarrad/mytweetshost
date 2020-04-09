@@ -288,9 +288,29 @@ document.addEventListener('touchmove', handleTouchMove, false);
 document.addEventListener('touchend', handleTouchEnd, false);
 
 
+function getParentObj(obj) {
+    var found = false;
+    var currObj = obj;
+    do {
+        currObj = currObj.parent();
+
+        if (currObj.hasClass("pobj")) {
+
+            if (!currObj.hasClass("body")) {
+                return currObj.attr("id");
+            }
+
+            return "";
+        }
+    }
+    while (!found);
+  }   
+
+
 
 function getTouches(evt) {
-  console.log($(event.target))
+  console.log(getParentObjId($(event.target)));
+
   return evt.touches ||             // browser API
          evt.originalEvent.touches; // jQuery
 }                                                     
