@@ -2365,10 +2365,10 @@ body.big #splash .titletable {
     top: 0px;
     z-index: 1000000;
     font-size: 11px;
-    background-image: linear-gradient(rgb(0, 74, 134), rgb(1, 36, 62));
+    /* background-image: linear-gradient(rgb(0, 74, 134), rgb(1, 36, 62)); */
     display: none;
     border-top: 1px solid var(--softdark-color);
-    background: var(--soft-transp-color);
+    /* background: var(--soft-transp-color); */
     border-top: 1px solid transparent;
     margin: auto;
     position: absolute;
@@ -2377,7 +2377,7 @@ body.big #splash .titletable {
     /* bottom: 0; */
     right: 0;
     align-items: center;
-    background: var(--soft-transp-color);
+    /* background: var(--soft-transp-color); */
     touch-action: none;
     overscroll-behavior: none;
     margin-top: 49px;
