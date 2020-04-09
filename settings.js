@@ -577,17 +577,14 @@ function closeMenuPopup(obj) {
  
     $('body, html').css('overflow-y', 'auto');
 
-    $('#mainmenu').css('transition', 'transition: all 0.01s');
-
-    $('#mainmenu').css("background", "transparent");
-
-    $('#mainmenu').attr("style", "top: -391px;height: 405px;background: transparent;transition: all 0.3s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s;");
+    $('#mainmenu').css('transition', 'transition: all 1.7s');
+    $('#mainmenu').css('opacity', 0);
 
     setTimeout(function(){
         $('#mainmenu').hide();
-    }, 1100);
+        $('#mainmenu').css('opacity', 1);
+    }, 00);
 }
-
 function editSetting(e, obj, flag) {
     e.stopPropagation();
 
