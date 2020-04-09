@@ -575,8 +575,7 @@ function closeMenuPopup(obj) {
     if (obj)
         fixfocus(obj);
     $('body, html').css('overflow-y', 'auto');
-    $('#mainmenu').css('transition', 'transition: all 0.01s !important');
-    $('#mainmenu').fadeOut(800);
+    $('#mainmenu').css('opacity', 0);
 }
 function editSetting(e, obj, flag) {
     e.stopPropagation();
