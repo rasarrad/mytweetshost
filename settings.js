@@ -581,7 +581,7 @@ function closeMenuPopup(obj) {
 
     $('#mainmenu').css("background", "transparent");
 
-    $('#mainmenu').attr("style", "top: -391px;height: 405px;background: transparent;transition: all 0.4s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s, background 1.5s;");
+    $('#mainmenu').attr("style", "top: -391px;height: 405px;background: transparent;transition: all 0.3s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s;");
 
     setTimeout(function(){
         $('#mainmenu').hide();
