@@ -584,7 +584,21 @@ function closeMenuPopup(obj) {
         $('#mainmenu').hide();
         $('#mainmenu').css('opacity', 1);
     }, 700);
+    /*
+        $('body, html').css('overflow-y', 'auto');
+
+    $('#mainmenu').css('transition', 'transition: all 0.01s');
+
+    $('#mainmenu').css("background", "transparent");
+
+    $('#mainmenu').attr("style", "top: -391px;height: 405px;background: transparent;transition: all 0.3s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s;");
+
+    setTimeout(function(){
+        $('#mainmenu').hide();
+    }, 1100);
+    */
 }
+
 function editSetting(e, obj, flag) {
     e.stopPropagation();
 
