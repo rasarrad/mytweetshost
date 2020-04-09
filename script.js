@@ -23,6 +23,12 @@ var calendar = null;
 var filterdate1date = null;
 var filterdate2date = null; 
 var existingId = null;
+var xUp = null;                                    
+var yUp = null;  
+var xDiff = null;  
+var yDiff = null;  
+var xDown = null;                                                        
+var yDown = null;
 
 var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
@@ -281,8 +287,7 @@ $( document ).ready(function() {
 document.addEventListener('touchmove', handleTouchMove, false);
 document.addEventListener('touchend', handleTouchEnd, false);
 
-var xDown = null;                                                        
-var yDown = null;
+
 
 function getTouches(evt) {
   return evt.touches ||             // browser API
@@ -293,32 +298,16 @@ function handleTouchStart(evt) {
     const firstTouch = getTouches(evt)[0];                                      
     xDown = firstTouch.clientX;                                      
     yDown = firstTouch.clientY;  
-    dblFlag = false;            
+    dblFlag = true;          
+    dblClickTimeout = setTimeout(function() {    
+          dblFlag = false;  
+    }, 500);
+    
     console.log("---Start-dblFlag--- 1: " + dblFlag);                        
 };                                                
 
 function handleTouchEnd(evt) {
-    dblFlag = true;   
-    console.log("---end-dblFlag--- 3: " + dblFlag);                                    
-}; 
-
-function handleTouchMove(evt) {
-    if ( ! xDown || ! yDown ) {
-        return;
-    }
-
-    var xUp = evt.touches[0].clientX;                                    
-    var yUp = evt.touches[0].clientY;
-
-    var xDiff = xDown - xUp;
-    var yDiff = yDown - yUp;
-
-    console.log("---Move-dblFlag--- 2-1: " + dblFlag);    
-
-    dblClickTimeout = setTimeout(function() {    
-        console.log("---Move-dblFlag--- 2-2: " + dblFlag);     
-      if (dblFlag) {
-        dblFlag = false;
+    if (dblFlag) {
         console.log("---Move-dblFlag--- 2-3: " + dblFlag);    
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
             if ( xDiff > 0 ) {
@@ -338,11 +327,24 @@ function handleTouchMove(evt) {
         /* reset values */
         xDown = null;
         yDown = null;   
-          dblFlag = false;  
-      }
-    }, 500);
+        dblFlag = false;  
+    }
+    console.log("---end-dblFlag--- 3: " + dblFlag);                                    
+}; 
+
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    xUp = evt.touches[0].clientX;                                    
+    yUp = evt.touches[0].clientY;
+
+    xDiff = xDown - xUp;
+    yDiff = yDown - yUp;
+
+    console.log("---Move-dblFlag--- 2-1: " + dblFlag);    
     
-                                          
 };
 
     
