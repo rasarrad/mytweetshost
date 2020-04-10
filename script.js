@@ -341,6 +341,12 @@ $( document ).ready(function() {
     
     function handleTouchEnd(evt) {
         if (dblFlag) {  
+            const firstTouch = getTouches(evt)[0];                                      
+            var xxDown = firstTouch.clientX;                                      
+            var yyDown = firstTouch.clientY; 
+
+            console.log("xxDown: " + xDown + " " + xxDown);
+            console.log("yyDown: " + yDown + " " + yyDown);
             if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
                 if ( xDiff > 0 ) {
                     executeSwipeFunction(currObjSwipe, "left");
