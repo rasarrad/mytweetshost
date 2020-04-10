@@ -356,11 +356,13 @@ function executeSwipeFunction(obj, type) {
 
     try {
         idLink = parseInt(obj);
+        console.log(11111);
     }
     catch(err) {
+        console.log(44444);
         isLink = false;
     }
-
+console.log(isLink);
     if (isLink) {
         processLinkFuncs(idLink, type);
     }
