@@ -445,6 +445,7 @@ $( document ).ready(function() {
                     var functorun = function(jsonvar) 
                     { 
                         if (jsonvar != null) {
+                            alert(jsonvar.url);
                             $('#linkresult').val(jsonvar.url);
                             $("#linkresult").select();
                             document.execCommand('copy');
