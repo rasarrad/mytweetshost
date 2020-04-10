@@ -338,8 +338,8 @@ $( document ).ready(function() {
             dblClickTimeout = setTimeout(function() {    
                 console.log("333333");
                 dblFlag = false;  
-          }, 200);
-        }, 50);                
+          }, 250);
+        }, 100);                
     };                                                
     
     function handleTouchEnd(evt) {
