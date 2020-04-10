@@ -1119,6 +1119,7 @@ bookmarks <span>
           var doprocess = true;
           var numrecords = Number($('#recordspersearch').val());
           var i = 0;
+          console.log(total)
           do {
               var obj = $("#twitter-widget-" + i);
 
@@ -1126,7 +1127,7 @@ bookmarks <span>
                 
                 doprocess = false;
               }
-              console.log(555)
+              console.log(obj.length)
               if (obj && obj.length > 0) {
                 if (forceProcess || obj.attr("processed") != "yes") {
                     hasFound = true;
