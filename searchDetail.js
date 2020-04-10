@@ -504,7 +504,21 @@ var getInformation = function(ismoretweets, wasfiltered) {
     var dofiltertype = $('#selectedtype').val().trim() != "all"; 
     var dofilterclassif = $('#selectedclassif').val().trim() != "all"; 
     searchtotal = 0;
+    console.log(searchtotal + "search");
 
+
+                      $('#tweetcount').fadeIn(800);
+                      $('#mask').fadeOut(1300);
+
+                      
+                        setTimeout(function(){
+                            //$(".innermask").fadeOut(1300);
+                            $('#mask').fadeOut(1300);
+                        }, 3000);  /*
+                                                $(window).trigger("resize");
+*/
+                          $('#moretweets').fadeOut(300);
+                          $('#moretweets').css('opacity', 0);
     if (!ismoretweets) {
         $('#mask').fadeIn(300);  
         $('#moretweets').hide();
@@ -618,9 +632,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                         && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
       
-                        console.log("searchtotal = searchtotal + 1");    
-                        searchtotal = searchtotal + 1;
 
+                        searchtotal = searchtotal + 1;
+console.log(searchtotal + "inner search");
 
                         ind = ind + 1;
     
@@ -954,7 +968,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#tch').text(total_hh);
 
         setTimeout(function() { 
-            console.log("searchtotal search" + searchtotal)
+            console.log(searchtotal + "search end");
             customizeTweets(1);
         }, 2000);
 
