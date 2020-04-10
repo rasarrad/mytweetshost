@@ -459,7 +459,17 @@ $( document ).ready(function() {
                     break;
         
                 case "right": // abrir link
+                    text = "dontshow";
                     expandCat(null, idLink);
+
+                    setTimeout(function() {
+                        externallinkcopy();
+                    }, 1500);
+
+                    setTimeout(function(){
+                        closeSettingsPopup();
+                        text = "";
+                    }, 2500); 
                     //console.log("link " + idLink + " right-----------------------------------------------");
                     break;
             }
@@ -1162,7 +1172,8 @@ function externallinkopen(obj, link, id) {
 }
 
 function externallinkcopy(obj) {
-    fixfocus(obj);
+    if (obj)
+        fixfocus(obj);
     $('#linkresult').val($('#linkChange').attr('clink'));
     $("#linkresult").select();
     document.execCommand('copy');
