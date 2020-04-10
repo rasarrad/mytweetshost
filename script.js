@@ -352,6 +352,7 @@ $( document ).ready(function() {
     function executeSwipeFunction(obj, type) {
  
         switch(obj) {
+            case "main":
             case "backdiv":
                 processBackdivFuncs(type);
                 break;
@@ -405,6 +406,14 @@ $( document ).ready(function() {
     }  
     
     function processLinkFuncs(idLink, type) {
+
+        if (isNaN(idLink)) {
+            alert("yes");
+        }
+        else {
+            alert("no");
+        }
+
         switch(type) {
             case "up":
                 console.log("link " + idLink + " up-----------------------------------------------");
