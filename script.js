@@ -294,7 +294,7 @@ function getParentObjId(obj) {
     var currObj = obj;
     do {
         currObj = currObj.parent();
-
+        console.log("------44-------- " + currObj);
         if (currObj.hasClass("pobj")) {
 
             if (!currObj.hasClass("body")) {
@@ -347,6 +347,7 @@ function handleTouchEnd(evt) {
         xDown = null;
         yDown = null;   
         dblFlag = false;  
+        currObjSwipe = null;
     }                                  
 }; 
 
@@ -369,7 +370,6 @@ function executeSwipeFunction(obj, type) {
 
         }
     }
-    currObjSwipe = null;
 }
 
 function processBackdivFuncs(type) {
