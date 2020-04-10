@@ -341,6 +341,7 @@ $( document ).ready(function() {
     };                                                
     
     function handleTouchEnd(evt) {
+        console.log(lastTouch);
         if (dblFlag && lastTouch) {                          
             if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
                 if ( xDiff > 0 ) {
@@ -358,7 +359,8 @@ $( document ).ready(function() {
         }  
         dblFlag = false;
         xDown = null;
-        yDown = null;                               
+        yDown = null;   
+        lastTouch = null;                             
     }; 
     
     
