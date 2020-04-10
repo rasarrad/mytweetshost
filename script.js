@@ -30,6 +30,7 @@ var yDiff = null;
 var xDown = null;                                                        
 var yDown = null;
 var currObjSwipe = null;
+var lastTouch = null;
 
 var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
@@ -340,11 +341,9 @@ $( document ).ready(function() {
     };                                                
     
     function handleTouchEnd(evt) {
-        if (dblFlag) {  
-            const firstTouch2 = getTouches(evt)[0]; 
-            console.log(firstTouch2);                             
-            var xxDown = firstTouch2.clientX;                                      
-            var yyDown = firstTouch2.clientY; 
+        if (dblFlag) {                          
+            var xxDown = lastTouch.clientX;                                      
+            var yyDown = lastTouch.clientY; 
 
             console.log("xxDown: " + xDown + " " + xxDown);
             console.log("yyDown: " + yDown + " " + yyDown);
@@ -361,12 +360,11 @@ $( document ).ready(function() {
                     executeSwipeFunction(currObjSwipe, "down");
                 }                                                                 
             }
-            xDown = null;
-            yDown = null;   
-             
-
         }  
-        dblFlag = false;                                 
+        dblFlag = false;
+        xDown = null;
+        yDown = null;   
+        lastTouch = null;                                 
     }; 
     
     
@@ -461,6 +459,8 @@ $( document ).ready(function() {
             return;
         }
     
+        lastTouch = evt.touches[0];
+
         xUp = evt.touches[0].clientX;                                    
         yUp = evt.touches[0].clientY;
     
