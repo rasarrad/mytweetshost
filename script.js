@@ -330,10 +330,13 @@ $( document ).ready(function() {
         xDown = firstTouch.clientX;                                      
         yDown = firstTouch.clientY;   
         
+        console.log("11111");
         dblFlag = false;  
         setTimeout(function() {    
             dblFlag = true; 
+            console.log("222222222");
             dblClickTimeout = setTimeout(function() {    
+                console.log("333333");
                 dblFlag = false;  
           }, 300);
         }, 150);                
@@ -363,7 +366,8 @@ $( document ).ready(function() {
     
     
     function executeSwipeFunction(obj, type) {
- 
+        console.log("---------------------------executa--------------------");
+ /* 
         switch(obj) {
             case "main":
             case "backdiv":
@@ -377,7 +381,9 @@ $( document ).ready(function() {
                 processLinkFuncs(obj, type);
                 break;       
         }
+    */
         currObjSwipe = null;
+    
     }
     
     function processBackdivFuncs(type) {
