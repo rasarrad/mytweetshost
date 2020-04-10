@@ -970,6 +970,7 @@ console.log(searchtotal + "inner search");
         setTimeout(function() { 
             console.log(searchtotal + "search end");
             customizeTweets(1);
+            $('#mask').fadeOut(300);
         }, 2000);
 
         if (!ismoretweets) {
