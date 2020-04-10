@@ -299,7 +299,7 @@ function getParentObjId(obj) {
         if (currObj.hasClass("pobj")) {
 
             if (!currObj.hasClass("body")) {
-                console.log("------44-----gggggggggggggggg--- ";
+                console.log("------44-----gggggggggggggggg--- ");
                 return currObj.attr("id");
             }
 
