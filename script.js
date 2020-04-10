@@ -429,22 +429,22 @@ $( document ).ready(function() {
         if (parseInt(idLink) > -1) {
             switch(type) {
                 case "up":
-                    $(window).scrollTop( 0 );
+                    //$(window).scrollTop( 0 );
                     //console.log("link " + idLink + " up-----------------------------------------------");
                     break;
         
                 case "down":// apagar pesquisa - mantendo os critérios
+                    /*
                     $("#main").empty();
                     $('#moretweets').hide();
                     $('#tweetcount').hide(); 
+                    */
                     //console.log("link " + idLink + " down-----------------------------------------------");
                     break;
                 case "left": // apagar pesquisa - mantendo os critérios 
                     var functorun = function(jsonvar) 
                     { 
-                        
                         if (jsonvar != null) {
-                            openSettingsPopup(jsonvar);
                             $('#linkresult').val(jsonvar.url);
                             $("#linkresult").select();
                             document.execCommand('copy');
