@@ -408,26 +408,26 @@ $( document ).ready(function() {
     function processLinkFuncs(idLink, type) {
 
         if (parseInt(idLink) > -1) {
-            alert("yes");
+            console.log("link " + idLink + " -----------------------------------------------");
         }
         else {
-            alert("no");
+            console.log("no----------------------------------------------");
         }
 
         switch(type) {
             case "up":
-                console.log("link " + idLink + " up-----------------------------------------------");
+                //console.log("link " + idLink + " up-----------------------------------------------");
                 break;
     
             case "down":
-                console.log("link " + idLink + " down-----------------------------------------------");
+                //console.log("link " + idLink + " down-----------------------------------------------");
                 break;
             case "left":
-                console.log("link " + idLink + " left-----------------------------------------------");
+                //console.log("link " + idLink + " left-----------------------------------------------");
                 break;
     
             case "right":
-                console.log("link " + idLink + " right-----------------------------------------------");
+                //console.log("link " + idLink + " right-----------------------------------------------");
                 break;
         }
     }  
