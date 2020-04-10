@@ -330,16 +330,18 @@ function handleTouchStart(evt) {
 function handleTouchEnd(evt) {
     if (dblFlag) {  
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+            console.log("-------------------- " + currObjSwipe);
+
             if ( xDiff > 0 ) {
-                executeSwipeFunction(currObjSwipe, "left");
+                //executeSwipeFunction(currObjSwipe, "left");
             } else {
-                executeSwipeFunction(currObjSwipe, "right");
+                //executeSwipeFunction(currObjSwipe, "right");
             }                       
         } else {
             if ( yDiff > 0 ) {
-                executeSwipeFunction(currObjSwipe, "up");
+                //executeSwipeFunction(currObjSwipe, "up");
             } else {
-                executeSwipeFunction(currObjSwipe, "down");
+                //executeSwipeFunction(currObjSwipe, "down");
             }                                                                 
         }
         xDown = null;
@@ -350,7 +352,7 @@ function handleTouchEnd(evt) {
 
 
 function executeSwipeFunction(obj, type) {
-    console.log("-----------------------------------------------" + isNaN(obj));
+    
     if (isNaN(obj)) {
         processLinkFuncs(obj, type);
     }
