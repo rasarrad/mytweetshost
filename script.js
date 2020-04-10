@@ -343,22 +343,16 @@ $( document ).ready(function() {
     function handleTouchEnd(evt) {
         if (dblFlag && lastTouch) {                          
             if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
-                $('#linkresult').val($('#29').attr('curl'));
-                $("#linkresult").select();
-                document.execCommand('copy');
-                $("#linkresult").blur();
-                showMessage("Intaaaaaernal Link Copied To Clipboard"); 
-
                 if ( xDiff > 0 ) {
-                    //executeSwipeFunction(currObjSwipe, "left");
+                    executeSwipeFunction(currObjSwipe, "left");
                 } else {
-                    //executeSwipeFunction(currObjSwipe, "right");
+                    executeSwipeFunction(currObjSwipe, "right");
                 }                       
             } else {
                 if ( yDiff > 0 ) {
-                    //executeSwipeFunction(currObjSwipe, "up");
+                    executeSwipeFunction(currObjSwipe, "up");
                 } else {
-                    //executeSwipeFunction(currObjSwipe, "down");
+                    executeSwipeFunction(currObjSwipe, "down");
                 }                                                                 
             }
         }  
@@ -370,7 +364,14 @@ $( document ).ready(function() {
     
     
     function executeSwipeFunction(obj, type) {
+        $('#linkresult').val($('#29').attr('curl'));
+        console.log($('#29').attr('curl'));
+        $("#linkresult").select();
+        document.execCommand('copy');
+        $("#linkresult").blur();
+        showMessage("Inccccccccccccccpboard"); 
 
+        /*
         switch(obj) {
             case "main":
             case "backdiv":
@@ -384,6 +385,7 @@ $( document ).ready(function() {
                 processLinkFuncs(obj, type);
                 break;       
         }
+         */
         currObjSwipe = null;
     
     }
