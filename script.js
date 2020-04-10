@@ -360,7 +360,7 @@ $( document ).ready(function() {
                 processMainsettingsFuncs(type);
                 break;
             default:
-                processLinkFuncs(idLink, type);
+                processLinkFuncs(obj, type);
                 break;       
         }
     }
