@@ -404,12 +404,12 @@ $( document ).ready(function() {
     function processMainsettingsFuncs(type) {
         switch(type) {
             case "up":
-                closeMainSettingsPopup();
+                //closeMainSettingsPopup();
                 console.log("mainsettings up-----------------------------------------------");
                 break;
     
             case "down":
-                closeMainSettingsPopup();
+                //closeMainSettingsPopup();
                 console.log("mainsettings down-----------------------------------------------");
                 break;
             case "left":
@@ -447,7 +447,7 @@ $( document ).ready(function() {
                     $("#linkresult").select();
                     document.execCommand('copy');
                     $("#linkresult").blur();
-                    showMessage("Link Copied To Clipboard"); 
+                    showMessage("Internal Link Copied To Clipboard"); 
 
                     //console.log("link " + idLink + " left-----------------------------------------------");
                     break;
