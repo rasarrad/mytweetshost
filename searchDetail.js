@@ -970,11 +970,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
         setTimeout(function() { 
             console.log(searchtotal + "search end");
             customizeTweets(1);
-            setTimeout(function() { 
-                console.log(searchtotal + "mask");
-
-                $('#mask').fadeOut(300);
-            }, 2000);
         }, 2000);
 
         if (!ismoretweets) {

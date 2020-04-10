@@ -1165,8 +1165,13 @@ bookmarks <span>
                     }
                     else {
                       $('#tweetcount').fadeIn(800);
-                      $('#mask').fadeOut(2300);
+                      $('#mask').fadeOut(1300);
 
+                      
+                        setTimeout(function(){
+                            //$(".innermask").fadeOut(1300);
+                            $('#mask').fadeOut(1300);
+                        }, 3000);  /*
                                                 $(window).trigger("resize");
 */
                           $('#moretweets').fadeOut(300);
@@ -1184,7 +1189,9 @@ bookmarks <span>
             while (i < searchtotal); 
 
             $('#tweetcount').fadeIn(800);
-            $('#mask').fadeOut(4000);
+
+
+                            $('#mask').fadeOut(2300);
 
                           $('#moretweets').fadeOut(300);
                           $('#moretweets').css('opacity', 0);
