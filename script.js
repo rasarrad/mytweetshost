@@ -991,6 +991,7 @@ function changetheme(type, desc) {
     document.documentElement.style.setProperty('--high-color', high_color);
     document.documentElement.style.setProperty('--text-color', text_color);
     document.documentElement.style.setProperty('--dark-color', dark_color);
+    document.documentElement.style.setProperty('--dark-color2', dark_color);
     document.documentElement.style.setProperty('--softdark-color', softdark_color);
     document.documentElement.style.setProperty('--soft-color', soft_color);
     document.documentElement.style.setProperty('--soft-transp-color', soft_transp_color);
