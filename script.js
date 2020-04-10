@@ -1267,7 +1267,7 @@ function showMessage(text, speed, icon, iconstyle, undofunc, undotext) {
           mainDiv.css("background", "rgba(0, 0, 0, 0)");
           $("#stripmessage .striptext").css("top", "calc(0% - 71px)");
           setTimeout(function() { 
-               //mainDiv.fadeOut("slow");
+               mainDiv.fadeOut("slow");
             }, dospeed);
         }, 900);
     });
