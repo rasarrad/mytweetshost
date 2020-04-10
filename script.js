@@ -442,15 +442,17 @@ $( document ).ready(function() {
                     //console.log("link " + idLink + " down-----------------------------------------------");
                     break;
                 case "left": // apagar pesquisa - mantendo os critérios 
-                    var link = $('#' + idLink).attr('curl');
-                    $('#linkresult').val(link);
-                    $("#linkresult").select();
-                    console.log(link);
+                    var newid = idLink;
                     setTimeout(function(){ 
+                        var link = $('#' + newid).attr('curl');
+                        $('#linkresult').val(link);
+                        $("#linkresult").select();
+                        console.log(link);
+
                         document.execCommand('copy');
                         $("#linkresult").blur();
-                        showMessage("Internal Link Copied To Clipboard"); 
-                     }, 100);
+                        showMessage("Interyggggnal Link Copied To Clipboard"); 
+                     }, 2100);
 
 
                     //console.log("link " + idLink + " left-----------------------------------------------");
