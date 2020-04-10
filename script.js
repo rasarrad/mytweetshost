@@ -29,6 +29,7 @@ var xDiff = null;
 var yDiff = null;  
 var xDown = null;                                                        
 var yDown = null;
+var currObjSwipe = null;
 
 var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
@@ -288,8 +289,29 @@ document.addEventListener('touchmove', handleTouchMove, false);
 document.addEventListener('touchend', handleTouchEnd, false);
 
 
+function getParentObjId(obj) {
+    var found = false;
+    var currObj = obj;
+    do {
+        currObj = currObj.parent();
+
+        if (currObj.hasClass("pobj")) {
+
+            if (!currObj.hasClass("body")) {
+                return currObj.attr("id");
+            }
+
+            return "";
+        }
+    }
+    while (!found);
+  }   
+
+
 
 function getTouches(evt) {
+  currObjSwipe = getParentObjId($(event.target));
+
   return evt.touches ||             // browser API
          evt.originalEvent.touches; // jQuery
 }                                                     
@@ -301,33 +323,117 @@ function handleTouchStart(evt) {
     dblFlag = true;          
     dblClickTimeout = setTimeout(function() {    
           dblFlag = false;  
-    }, 300);
+    }, 200);
                      
 };                                                
 
 function handleTouchEnd(evt) {
     if (dblFlag) {  
-        if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
             if ( xDiff > 0 ) {
-                console.log("left");
+                executeSwipeFunction(currObjSwipe, "left");
             } else {
-                console.log("right");
+                executeSwipeFunction(currObjSwipe, "right");
             }                       
         } else {
             if ( yDiff > 0 ) {
-                /* up swipe */ 
-                console.log("up");
-            } else { 
-                /* down swipe */
-                console.log("down");
+                executeSwipeFunction(currObjSwipe, "up");
+            } else {
+                executeSwipeFunction(currObjSwipe, "down");
             }                                                                 
         }
-        /* reset values */
         xDown = null;
         yDown = null;   
         dblFlag = false;  
+        currObjSwipe = null;
     }                                  
 }; 
+
+
+function executeSwipeFunction(obj, type) {
+    var isLink = true;
+    var idLink = null;
+
+    try {
+        idLink = parseInt(obj);
+    }
+    catch(err) {
+        isLink = false;
+    }
+
+    if (isLink) {
+        processLinkFuncs(idLink, type);
+    }
+    else {
+        switch(obj) {
+            case "backdiv":
+                processBackdivFuncs(type);
+                break;
+    
+            case "mainsettings":
+                processMainsettingsFuncs(type);
+                break;
+
+        }
+    }
+}
+
+function processBackdivFuncs(type) {
+    switch(type) {
+        case "up":
+            console.log("backdiv up-----------------------------------------------");
+            break;
+
+        case "down":
+            console.log("backdiv down-----------------------------------------------");
+            break;
+        case "left":
+            console.log("backdiv left-----------------------------------------------");
+            break;
+
+        case "right":
+            console.log("backdiv right-----------------------------------------------");
+            break;
+    }
+}  
+
+function processMainsettingsFuncs(type) {
+    switch(type) {
+        case "up":
+            console.log("mainsettings up-----------------------------------------------");
+            break;
+
+        case "down":
+            console.log("mainsettings down-----------------------------------------------");
+            break;
+        case "left":
+            console.log("mainsettings left-----------------------------------------------");
+            break;
+
+        case "right":
+            console.log("mainsettings right-----------------------------------------------");
+            break;
+    }
+}  
+
+function processLinkFuncs(idLink, type) {
+    switch(type) {
+        case "up":
+            console.log("link " + idLink + " up-----------------------------------------------");
+            break;
+
+        case "down":
+            console.log("link " + idLink + " down-----------------------------------------------");
+            break;
+        case "left":
+            console.log("link " + idLink + " left-----------------------------------------------");
+            break;
+
+        case "right":
+            console.log("link " + idLink + " right-----------------------------------------------");
+            break;
+    }
+}  
 
 function handleTouchMove(evt) {
     if ( ! xDown || ! yDown ) {
