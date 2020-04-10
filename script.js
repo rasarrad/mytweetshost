@@ -407,7 +407,7 @@ $( document ).ready(function() {
     
     function processLinkFuncs(idLink, type) {
 
-        if (isNaN(idLink)) {
+        if (parseInt(idLink) > -1) {
             alert("yes");
         }
         else {
