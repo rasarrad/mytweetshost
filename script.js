@@ -334,8 +334,8 @@ $( document ).ready(function() {
             dblFlag = true; 
             dblClickTimeout = setTimeout(function() {    
                 dblFlag = false;  
-          }, 200);
-        }, 100);
+          }, 3000);
+        }, 500);
 
 
                          
