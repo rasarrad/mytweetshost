@@ -364,15 +364,7 @@ $( document ).ready(function() {
     
     
     function executeSwipeFunction(obj, type) {
-        $('#linkresult').val($('#29').attr('curl'));
-        console.log($('#29').attr('curl'));
-        $("#linkresult").focus();
-        $("#linkresult").select();
-        document.execCommand('copy');
-        $("#linkresult").blur();
-        showMessage("ffffffff"); 
 
-        /*
         switch(obj) {
             case "main":
             case "backdiv":
@@ -386,7 +378,6 @@ $( document ).ready(function() {
                 processLinkFuncs(obj, type);
                 break;       
         }
-         */
         currObjSwipe = null;
     
     }
@@ -438,11 +429,13 @@ $( document ).ready(function() {
         if (parseInt(idLink) > -1) {
             switch(type) {
                 case "up":
+                    console.log("UP   UP   UP   UP   UP   UP   UP   UP   UP   UP   UP");
                     //$(window).scrollTop( 0 );
                     //console.log("link " + idLink + " up-----------------------------------------------");
                     break;
         
                 case "down":// apagar pesquisa - mantendo os critérios
+                    console.log("DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   ");
                     /*
                     $("#main").empty();
                     $('#moretweets').hide();
@@ -453,10 +446,11 @@ $( document ).ready(function() {
                 case "left": // apagar pesquisa - mantendo os critérios 
                     
                     $('#linkresult').val($('#' + idLink).attr('curl'));
+                    $("#linkresult").focus();
                     $("#linkresult").select();
                     document.execCommand('copy');
                     $("#linkresult").blur();
-                    showMessage("Internal Link Copied To Clipboard"); 
+                    showMessage("Link Copied To Clipboard"); 
 
                     //console.log("link " + idLink + " left-----------------------------------------------");
                     break;
