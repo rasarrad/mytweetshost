@@ -330,20 +330,16 @@ $( document ).ready(function() {
         xDown = firstTouch.clientX;                                      
         yDown = firstTouch.clientY;   
         
-        console.log("11111");
         dblFlag = false;  
         setTimeout(function() {    
             dblFlag = true; 
-            console.log("222222222");
             dblClickTimeout = setTimeout(function() {    
-                console.log("333333");
                 dblFlag = false;  
           }, 250);
-        }, 100);                
+        }, 150);                
     };                                                
     
     function handleTouchEnd(evt) {
-        console.log("44444" + dblFlag);
         if (dblFlag) {  
             if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
                 if ( xDiff > 0 ) {
