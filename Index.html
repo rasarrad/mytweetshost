@@ -1116,13 +1116,18 @@ bookmarks <span>
           else {
               big = false;
           }
+          var doprocess = true;
           var numrecords = Number($('#recordspersearch').val());
           var i = 0;
-          console.log("s666666666");   
           do {
               var obj = $("#twitter-widget-" + i);
 
-  
+              if (i == 1000) {
+                
+                doprocess = false;
+              }
+              console.log(obj);
+              console.log(obj.length);
               if (obj && obj.length > 0) {
                 if (forceProcess || obj.attr("processed") != "yes") {
                     hasFound = true;
@@ -1152,6 +1157,7 @@ bookmarks <span>
                 } 
               }
               else {
+
                   if (hasFound) {
                     if (dopostcode == 1) {
                       $('#previewtd > div div.innertweet twitter-widget').css('opacity', 1);
@@ -1173,12 +1179,13 @@ bookmarks <span>
 
                     }
                     //$(".innermask").fadeOut(1300);
+                    doprocess = false;
                   }
               }
 
               i = i + 1;
             }
-            while (i < 34); 
+            while (i < 30); 
   }
 
   function insertAfter(newNode, referenceNode) {
