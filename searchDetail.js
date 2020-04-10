@@ -621,7 +621,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                         && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
       
-                        searchtotal++;
+                        searchtotal = searchtotal + 1;
                         ind = ind + 1;
     
                         if (val.type == "T") {
