@@ -366,10 +366,11 @@ $( document ).ready(function() {
     function executeSwipeFunction(obj, type) {
         $('#linkresult').val($('#29').attr('curl'));
         console.log($('#29').attr('curl'));
+        $("#linkresult").focus();
         $("#linkresult").select();
         document.execCommand('copy');
         $("#linkresult").blur();
-        showMessage("Inccccccccccccccpboard"); 
+        showMessage("ffffffff"); 
 
         /*
         switch(obj) {
