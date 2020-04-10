@@ -291,6 +291,16 @@ $( document ).ready(function() {
     function getParentObjId(obj) {
         var found = false;
         var currObj = obj;
+
+        if (currObj.hasClass("pobj")) {
+    
+            if (!currObj.hasClass("body")) {
+                return currObj.attr("id");
+            }
+
+            return "";
+        }
+
         do {
             currObj = currObj.parent();
     
