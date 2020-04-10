@@ -343,6 +343,7 @@ $( document ).ready(function() {
     };                                                
     
     function handleTouchEnd(evt) {
+        console.log("44444" + dblFlag);
         if (dblFlag) {  
             if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
                 if ( xDiff > 0 ) {
@@ -359,9 +360,10 @@ $( document ).ready(function() {
             }
             xDown = null;
             yDown = null;   
-            dblFlag = false;  
+             
 
-        }                                  
+        }  
+        dblFlag = false;                                 
     }; 
     
     
