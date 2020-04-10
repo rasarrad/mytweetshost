@@ -1118,12 +1118,11 @@ bookmarks <span>
           }
           var numrecords = Number($('#recordspersearch').val());
           var i = 0;
-          console.log("searchtotal customizeTweets" + searchtotal)
-
+          console.log("s666666666");   
           do {
               var obj = $("#twitter-widget-" + i);
 
-              console.log(obj.length)
+  
               if (obj && obj.length > 0) {
                 if (forceProcess || obj.attr("processed") != "yes") {
                     hasFound = true;
@@ -1153,7 +1152,6 @@ bookmarks <span>
                 } 
               }
               else {
-                  console.log(9888888888876544434)
                   if (hasFound) {
                     if (dopostcode == 1) {
                       $('#previewtd > div div.innertweet twitter-widget').css('opacity', 1);

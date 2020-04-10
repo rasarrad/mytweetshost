@@ -526,18 +526,15 @@ var getInformation = function(ismoretweets, wasfiltered) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("1 getInformation 1 - Error parsing next id");
     }
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("1 getInformation 1 - nextid vem do cookie: " + nextid);
             nextid = nextid - 1;
         }
         else {
             nextid = parseInt($("#maxid").val());
             createCookie("maxid", nextid);
-            console.log("1 getInformation 1 - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
     }
@@ -621,10 +618,10 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                         && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
       
-                            
+                        console.log("searchtotal = searchtotal + 1");    
                         searchtotal = searchtotal + 1;
-                        console.log("searchtotalasdsadassss " + searchtotal)
-                        
+
+
                         ind = ind + 1;
     
                         if (val.type == "T") {
@@ -657,18 +654,15 @@ var getInformation = function(ismoretweets, wasfiltered) {
             nextid = parseInt(readCookie("maxid"));
         }
         catch(err) {
-            console.log("2 getInformation 2 - Error parsing next id");
         }
         finally {
             if (nextid) {
                 $("#maxid").val(nextid);
-                console.log("2 getInformation 2 - nextid vem do cookie: " + nextid);
                 nextid = nextid - 1;
             }
             else {
                 nextid = parseInt($("#maxid").val());
                 createCookie("maxid", nextid);
-                console.log("2 getInformation 2 - nextid vem do hidden field: " + nextid);
                 nextid = nextid - 1;
             }
         }
