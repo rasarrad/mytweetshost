@@ -351,20 +351,9 @@ function handleTouchEnd(evt) {
 
 
 function executeSwipeFunction(obj, type) {
-    var isLink = true;
-    var idLink = null;
 
-    try {
-        idLink = parseInt(obj);
-        console.log(11111);
-    }
-    catch(err) {
-        console.log(44444);
-        isLink = false;
-    }
-console.log(isLink);
-    if (idLink != NaN) {
-        processLinkFuncs(idLink, type);
+    if (isNaN(obj)) {
+        processLinkFuncs(obj, type);
     }
     else {
         switch(obj) {
