@@ -444,19 +444,21 @@ $( document ).ready(function() {
                     //console.log("link " + idLink + " down-----------------------------------------------");
                     break;
                 case "left": // apagar pesquisa - mantendo os critérios 
-                    
+                console.log("LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   ");
+                /* 
                     $('#linkresult').val($('#' + idLink).attr('curl'));
                     $("#linkresult").focus();
                     $("#linkresult").select();
                     document.execCommand('copy');
                     $("#linkresult").blur();
                     showMessage("Link Copied To Clipboard"); 
-
+*/
                     //console.log("link " + idLink + " left-----------------------------------------------");
                     break;
         
                 case "right": // abrir link
-                    expandCat(null, idLink);
+                console.log("RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   ");
+                    //expandCat(null, idLink);
                     //console.log("link " + idLink + " right-----------------------------------------------");
                     break;
             }
