@@ -363,8 +363,7 @@ $( document ).ready(function() {
         }  
         dblFlag = false;
         xDown = null;
-        yDown = null;   
-        lastTouch = null;                                 
+        yDown = null;                               
     }; 
     
     
@@ -458,8 +457,11 @@ $( document ).ready(function() {
         if ( ! xDown || ! yDown ) {
             return;
         }
-    
-        lastTouch = evt.touches[0];
+        console.log("-----------------------------------------------");
+        console.log(evt.touches[0]);
+
+        if (evt.touches[0] != null)
+            lastTouch = evt.touches[0];
 
         xUp = evt.touches[0].clientX;                                    
         yUp = evt.touches[0].clientY;
