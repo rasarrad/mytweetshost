@@ -34,7 +34,6 @@ var lastTouch = null;
 
 var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
-    alert(1234)
      changetheme(currTheme, true);
 }  
 
@@ -992,7 +991,6 @@ function changetheme(type, desc) {
     document.documentElement.style.setProperty('--high-color', high_color);
     document.documentElement.style.setProperty('--text-color', text_color);
     document.documentElement.style.setProperty('--dark-color', dark_color);
-    document.documentElement.style.setProperty('--dark-color2', dark_color);
     document.documentElement.style.setProperty('--softdark-color', softdark_color);
     document.documentElement.style.setProperty('--soft-color', soft_color);
     document.documentElement.style.setProperty('--soft-transp-color', soft_transp_color);
@@ -1269,7 +1267,7 @@ function showMessage(text, speed, icon, iconstyle, undofunc, undotext) {
           mainDiv.css("background", "rgba(0, 0, 0, 0)");
           $("#stripmessage .striptext").css("top", "calc(0% - 71px)");
           setTimeout(function() { 
-               mainDiv.fadeOut("slow");
+               //mainDiv.fadeOut("slow");
             }, dospeed);
         }, 900);
     });

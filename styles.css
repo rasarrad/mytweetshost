@@ -1,9 +1,8 @@
 :root {
   
   --high-color: #45cae7;
-  --text-color: #001b30;
+  --text-color: #a6eefd;
   --dark-color: #001b30;
-  --dark-color2: #001b30;
   --softdark-color: #003156;
   --soft-color: #004a86;
   --soft-transp-color: #001b30cc;
@@ -725,7 +724,7 @@ body.big #zoomin {
     display: block;
     padding-left: 36px;
     font-weight: bold;
-    color: var(--dark-color2) !important;
+    color: var(--dark-color) !important;
 }
 
 
