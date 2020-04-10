@@ -341,9 +341,10 @@ $( document ).ready(function() {
     
     function handleTouchEnd(evt) {
         if (dblFlag) {  
-            const firstTouch = getTouches(evt)[0];                                      
-            var xxDown = firstTouch.clientX;                                      
-            var yyDown = firstTouch.clientY; 
+            const firstTouch2 = getTouches(evt)[0]; 
+            console.log(firstTouch2);                             
+            var xxDown = firstTouch2.clientX;                                      
+            var yyDown = firstTouch2.clientY; 
 
             console.log("xxDown: " + xDown + " " + xxDown);
             console.log("yyDown: " + yDown + " " + yyDown);
