@@ -634,7 +634,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
       
 
                         searchtotal = searchtotal + 1;
-console.log(searchtotal + "inner search");
+
 
                         ind = ind + 1;
     
