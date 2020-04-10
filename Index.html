@@ -27,8 +27,8 @@
   </head>
 <body id="body" class="notransit pobj body" style="margin: 0;font-family: sans-serif;background-image: linear-gradient(to bottom, var(--soft-color), var(--soft-color));background-repeat: no-repeat;height: 100%;display: block;background-size: 100% 120%;background-attachment: fixed;overflow-x: hidden;border-top:0x solid black;">
   <!-- <div class="topoback"></div>  -->
-  <div class="topoback" style="position: fixed; z-index: 9999999999; background-image: linear-gradient(to bottom, var(--softdark-color)88%, #00000000 100%); height: 58px;height: 52px;background: var(--softdark-color);"></div> 
-  <div class="topoback topoback2" style="position: fixed; z-index: 9999999999;"></div> 
+  <div class="topoback" style="position: fixed; z-index: 99999999; background-image: linear-gradient(to bottom, var(--softdark-color)88%, #00000000 100%); height: 58px;height: 52px;background: var(--softdark-color);"></div> 
+  <div class="topoback topoback2" style="position: fixed; z-index: 99999999;"></div> 
   <div id="tweetcount" onmouseover="javascript: countmove(this)" style="font-weight: bold; padding: 0px 4px; position: fixed; bottom: 54px; right: 25px; background: var(--high-color); border: 2px solid var(--soft-color); border-radius: 4px; color: var(--dark-color); line-height: 20px; text-align: center; transition: all 0.8s ease 0s; cursor: default; font-size: 14px; z-index: 12; opacity: 0.52;display:none;">
       <div id="tcnumber"></div><span id="tccateg"></span>
       <div style="margin-top: 4px;display: block;position: relative;left: -2px;">
@@ -42,7 +42,7 @@
     </div>
     <i onmouseover="javascript: gotop(event)" onclick="javascript: gotop(event)" id="gotop" class="fa fa-angle-up"></i>
       </div>
-<i class="fa fa-bars menubutton clicable" style="position: fixed;z-index: 9999999999;" onclick="javascript: openmenu(this)"></i>
+<i class="fa fa-bars menubutton clicable" style="position: fixed;z-index: 99999999;" onclick="javascript: openmenu(this)"></i>
 <div id="menu" style="Z-INDEX: 999999;">
   <ul>
     <li onclick="javascript: clickmenu('all', 'All Links')">All Links<div id="all">0</div></li>
@@ -60,7 +60,7 @@
 <input id="pasteinput" style="position: absolute;width: 89px;top: 11px;left: 56px;height: 28px;border: 0;cursor: default;background: transparent;">
 <div id="openadd" style="position: absolute;width: 56px;top: 11px;right: 108px;height: 28px;border: 0;cursor: default;background: transparent;"></div>
 
-<i id="sear2" style="position: fixed;z-index: 9999999999;top: 15px;left: 59px;" onclick="javascript: togglecriterions(this)" class="fa fa-search clicable"></i>
+<i id="sear2" style="position: fixed;z-index: 99999999;top: 15px;left: 59px;" onclick="javascript: togglecriterions(this)" class="fa fa-search clicable"></i>
 <span class="label text top">Text</span>
 <input type="text" class="top" style="margin-right: 10px;width: 80px;" id="filtertext2"></input>
 <span class="label tag top">Tag</span>
@@ -74,13 +74,13 @@
 <input type="text" class="top" style="width: 30px;" id="filterid"></input>
 <button id="btnsearch" class="top noeffect" style="position: relative;top: -8px;margin-left: 38px;">Search<i class="fa fa-search"></i></button>
 <button id="btnreset" class="top noeffect" style="position: relative;top: -8px;margin-left: 10px;display:none;">Reset<i class="fa fa-eraser"></i></button>
-<span class="noselect toptitle" style="font-family: Helvetica, Roboto, 'Segoe UI', Calibri, sans-serif !important;font-variant-caps: normal !important;text-transform: uppercase;position: fixed;z-index: 9999999999;" id="toptitle">
+<span class="noselect toptitle" style="font-family: Helvetica, Roboto, 'Segoe UI', Calibri, sans-serif !important;font-variant-caps: normal !important;text-transform: uppercase;position: fixed;z-index: 99999999;" id="toptitle">
 bookmarks <span>
   station</span>
 </span>
-<i id="addtweet" style="position: fixed;z-index: 9999999999;" class="fa fa-plus-square clicable"></i>
-<i id="settings" style="position: fixed;z-index: 9999999999;" class="fa fa-cog clicable"></i>
-<i id="zoomin" style="position: fixed;z-index: 9999999999;" onclick="javascript: zoom(this)" class="fa fa-search-plus clicable"></i>
+<i id="addtweet" style="position: fixed;z-index: 99999999;" class="fa fa-plus-square clicable"></i>
+<i id="settings" style="position: fixed;z-index: 99999999;" class="fa fa-cog clicable"></i>
+<i id="zoomin" style="position: fixed;z-index: 99999999;" onclick="javascript: zoom(this)" class="fa fa-search-plus clicable"></i>
 <input type="hidden" id="selectedcat" value="all">
 <input type="hidden" id="maxid" value="100000">
 <input type="hidden" id="selectedcattext" value="All Links">
