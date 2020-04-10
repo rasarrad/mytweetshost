@@ -336,17 +336,12 @@ $( document ).ready(function() {
             dblFlag = true; 
             dblClickTimeout = setTimeout(function() {    
                 dblFlag = false;  
-          }, 250);
-        }, 150);                
+          }, 220);
+        }, 80);                
     };                                                
     
     function handleTouchEnd(evt) {
-        if (dblFlag) {                          
-            var xxDown = lastTouch.clientX;                                      
-            var yyDown = lastTouch.clientY; 
-
-            console.log("xxDown: " + xDown + " " + xxDown);
-            console.log("yyDown: " + yDown + " " + yyDown);
+        if (dblFlag && lastTouch) {                          
             if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
                 if ( xDiff > 0 ) {
                     executeSwipeFunction(currObjSwipe, "left");
