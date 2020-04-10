@@ -328,11 +328,16 @@ $( document ).ready(function() {
     function handleTouchStart(evt) {
         const firstTouch = getTouches(evt)[0];                                      
         xDown = firstTouch.clientX;                                      
-        yDown = firstTouch.clientY;  
-        dblFlag = true;          
-        dblClickTimeout = setTimeout(function() {    
-              dblFlag = false;  
-        }, 200);
+        yDown = firstTouch.clientY;   
+        
+        setTimeout(function() {    
+            dblFlag = true; 
+            dblClickTimeout = setTimeout(function() {    
+                dblFlag = false;  
+          }, 200);
+        }, 100);
+
+
                          
     };                                                
     
