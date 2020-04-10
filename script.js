@@ -442,21 +442,12 @@ $( document ).ready(function() {
                     //console.log("link " + idLink + " down-----------------------------------------------");
                     break;
                 case "left": // apagar pesquisa - mantendo os critérios 
-                    var functorun = function(jsonvar) 
-                    { 
-                        if (jsonvar != null) {
-                            $('#linkresult').val(jsonvar.url);
-                            console.log(jsonvar.url);
-                            setTimeout(function(){ 
-                                $("#linkresult").select();
-                                document.execCommand('copy');
-                                $("#linkresult").blur();
-                                showMessage("Link Copied To Clipboard"); 
-                             }, 0);
-
-                        }
-                    } 
-                    getJsonbyid(idLink, functorun);
+                    
+                    $('#linkresult').val($('#' + idLink).attr('curl'));
+                    $("#linkresult").select();
+                    document.execCommand('copy');
+                    $("#linkresult").blur();
+                    showMessage("Link Copied To Clipboard"); 
 
                     //console.log("link " + idLink + " left-----------------------------------------------");
                     break;
