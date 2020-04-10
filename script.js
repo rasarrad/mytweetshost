@@ -365,6 +365,9 @@ function executeSwipeFunction(type, obj) {
         isLink = false;
     }
 
+    console.log("3333 " + isLink);
+    console.log("22223332 " + idLink);
+    console.log("22223332 " + type);
     if (isLink) {
         processLinkFuncs(idLink, type);
     }
