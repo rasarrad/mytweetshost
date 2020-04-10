@@ -351,11 +351,12 @@ function handleTouchEnd(evt) {
 
 
 function executeSwipeFunction(obj, type) {
-
+    console.log("-----------------------------------------------" + isNaN(obj));
     if (isNaN(obj)) {
         processLinkFuncs(obj, type);
     }
     else {
+        console.log(obj);
         switch(obj) {
             case "backdiv":
                 processBackdivFuncs(type);
