@@ -319,6 +319,7 @@ function getTouches(evt) {
 }                                                     
 
 function handleTouchStart(evt) {
+    console.log("11111 fdfsdfsfs");
     const firstTouch = getTouches(evt)[0];                                      
     xDown = firstTouch.clientX;                                      
     yDown = firstTouch.clientY;  
