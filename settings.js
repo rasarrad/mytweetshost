@@ -6,10 +6,18 @@
 //                             GENERAL                                 //
 /////////////////////////////////////////////////////////////////////////
 
-function expandCat(obj) {
-    var id = $(obj).parent().attr("id");
-    fixfocus(obj);
+function expandCat(obj, idparam) {
 
+    var id = null;
+
+    if (idparam) {
+        id = idparam;
+    }
+    else {
+        id = $(obj).parent().attr("id");
+        fixfocus(obj);
+    }
+    
     var functorun = function(jsonvar) 
     { 
         
@@ -18,7 +26,6 @@ function expandCat(obj) {
         }
     } 
     getJsonbyid(id, functorun);
-    // getJsonbyid(28, functorun); // xyz
 }
 
 function fixfocus(el)
@@ -639,7 +646,7 @@ function closeMainSettingsPopup(obj) {
 
     if ($('body').hasClass('big'))
         setHeight = "30px";
-        
+
     $('#mainsettings').find("table:not(.buttonstable)").each( function( index, element ) {
         var table = $(element);
         

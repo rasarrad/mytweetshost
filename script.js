@@ -404,17 +404,21 @@ $( document ).ready(function() {
     function processMainsettingsFuncs(type) {
         switch(type) {
             case "up":
+                closeMainSettingsPopup();
                 console.log("mainsettings up-----------------------------------------------");
                 break;
     
             case "down":
+                closeMainSettingsPopup();
                 console.log("mainsettings down-----------------------------------------------");
                 break;
             case "left":
+                closeMainSettingsPopup();
                 console.log("mainsettings left-----------------------------------------------");
                 break;
     
             case "right":
+                closeMainSettingsPopup();
                 console.log("mainsettings right-----------------------------------------------");
                 break;
         }
@@ -423,27 +427,33 @@ $( document ).ready(function() {
     function processLinkFuncs(idLink, type) {
 
         if (parseInt(idLink) > -1) {
-            console.log("link " + idLink + " -----------------------------------------------");
-        }
-        else {
-            console.log("no----------------------------------------------");
-        }
+            switch(type) {
+                case "up":
+                    $(window).scrollTop( 0 );
+                    //console.log("link " + idLink + " up-----------------------------------------------");
+                    break;
+        
+                case "down":
+                    $(window).scrollTop( 888880 );
+                    //console.log("link " + idLink + " down-----------------------------------------------");
+                    break;
+                case "left": // apagar pesquisa - mantendo os critérios
+                    $("#main").empty();
+                    $('#moretweets').hide();
+                    $('#tweetcount').hide();  
+                    //console.log("link " + idLink + " left-----------------------------------------------");
+                    break;
+        
+                case "right": // abrir link
+                    expandCat(null, idLink);
+                    //console.log("link " + idLink + " right-----------------------------------------------");
+                    break;
+            }
 
-        switch(type) {
-            case "up":
-                //console.log("link " + idLink + " up-----------------------------------------------");
-                break;
-    
-            case "down":
-                //console.log("link " + idLink + " down-----------------------------------------------");
-                break;
-            case "left":
-                //console.log("link " + idLink + " left-----------------------------------------------");
-                break;
-    
-            case "right":
-                //console.log("link " + idLink + " right-----------------------------------------------");
-                break;
+            
+
+
+            console.log("link " + idLink + " -----------------------------------------------");
         }
     }  
     
@@ -1108,7 +1118,7 @@ function closeallnewlayout(bj) {
 
 function gotop(e) {
     e.stopPropagation();
-    $(window).scrollTop( 0 );
+    $(window).scrollTop(0);
 }   
 
 
