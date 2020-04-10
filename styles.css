@@ -724,6 +724,7 @@ body.big #zoomin {
     display: block;
     padding-left: 36px;
     font-weight: bold;
+    color: var(--dark-color) !important;
 }
 
 
