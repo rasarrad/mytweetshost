@@ -34,6 +34,7 @@ var lastTouch = null;
 
 var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
+    alert(1234)
      changetheme(currTheme, true);
 }  
 
