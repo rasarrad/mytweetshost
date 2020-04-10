@@ -970,7 +970,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         setTimeout(function() { 
             console.log(searchtotal + "search end");
             customizeTweets(1);
-        }, 2000);
+        }, 500);
 
         if (!ismoretweets) {
             if (totalLinkss > 0) {
