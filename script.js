@@ -327,9 +327,7 @@ $( document ).ready(function() {
     };                                                
     
     function handleTouchEnd(evt) {
-        console.log("2222222-----------------------------------------");
         if (dblFlag) {  
-            console.log("--555555---------------------------------------------");
             if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
                 if ( xDiff > 0 ) {
                     executeSwipeFunction(currObjSwipe, "left");
@@ -352,30 +350,18 @@ $( document ).ready(function() {
     
     
     function executeSwipeFunction(obj, type) {
-        var isLink = true;
-        var idLink = null;
+ 
+        switch(obj) {
+            case "backdiv":
+                processBackdivFuncs(type);
+                break;
     
-        try {
-            idLink = parseInt(obj);
-        }
-        catch(err) {
-            isLink = false;
-        }
-    
-        if (isLink) {
-            processLinkFuncs(idLink, type);
-        }
-        else {
-            switch(obj) {
-                case "backdiv":
-                    processBackdivFuncs(type);
-                    break;
-        
-                case "mainsettings":
-                    processMainsettingsFuncs(type);
-                    break;
-    
-            }
+            case "mainsettings":
+                processMainsettingsFuncs(type);
+                break;
+            default:
+                processLinkFuncs(idLink, type);
+                break;       
         }
     }
     
