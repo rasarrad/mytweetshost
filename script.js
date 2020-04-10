@@ -433,14 +433,27 @@ $( document ).ready(function() {
                     //console.log("link " + idLink + " up-----------------------------------------------");
                     break;
         
-                case "down":
-                    $(window).scrollTop( 888880 );
-                    //console.log("link " + idLink + " down-----------------------------------------------");
-                    break;
-                case "left": // apagar pesquisa - mantendo os critérios
+                case "down":// apagar pesquisa - mantendo os critérios
                     $("#main").empty();
                     $('#moretweets').hide();
-                    $('#tweetcount').hide();  
+                    $('#tweetcount').hide(); 
+                    //console.log("link " + idLink + " down-----------------------------------------------");
+                    break;
+                case "left": // apagar pesquisa - mantendo os critérios 
+                    var functorun = function(jsonvar) 
+                    { 
+                        
+                        if (jsonvar != null) {
+                            openSettingsPopup(jsonvar);
+                            $('#linkresult').val(jsonvar.url);
+                            $("#linkresult").select();
+                            document.execCommand('copy');
+                            $("#linkresult").blur();
+                            showMessage("Link Copied To Clipboard"); 
+                        }
+                    } 
+                    getJsonbyid(idLink, functorun);
+
                     //console.log("link " + idLink + " left-----------------------------------------------");
                     break;
         
@@ -449,11 +462,6 @@ $( document ).ready(function() {
                     //console.log("link " + idLink + " right-----------------------------------------------");
                     break;
             }
-
-            
-
-
-            console.log("link " + idLink + " -----------------------------------------------");
         }
     }  
     
@@ -1267,7 +1275,7 @@ function showMessage(text, speed, icon, iconstyle, undofunc, undotext) {
           mainDiv.css("background", "rgba(0, 0, 0, 0)");
           $("#stripmessage .striptext").css("top", "calc(0% - 71px)");
           setTimeout(function() { 
-               //mainDiv.fadeOut("slow");
+               mainDiv.fadeOut("slow");
             }, dospeed);
         }, 900);
     });
