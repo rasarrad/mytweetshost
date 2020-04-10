@@ -354,7 +354,7 @@ function handleTouchEnd(evt) {
 }; 
 
 
-function executeSwipeFunction(type, obj) {
+function executeSwipeFunction(obj, type) {
     var isLink = true;
     var idLink = null;
 
