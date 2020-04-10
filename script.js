@@ -341,7 +341,6 @@ $( document ).ready(function() {
     };                                                
     
     function handleTouchEnd(evt) {
-        console.log(lastTouch);
         if (dblFlag && lastTouch) {                          
             if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
                 if ( xDiff > 0 ) {
@@ -365,8 +364,7 @@ $( document ).ready(function() {
     
     
     function executeSwipeFunction(obj, type) {
-        console.log("---------------------------executa--------------------");
- /* 
+
         switch(obj) {
             case "main":
             case "backdiv":
@@ -380,7 +378,6 @@ $( document ).ready(function() {
                 processLinkFuncs(obj, type);
                 break;       
         }
-    */
         currObjSwipe = null;
     
     }
