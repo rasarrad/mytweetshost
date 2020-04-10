@@ -445,12 +445,15 @@ $( document ).ready(function() {
                     var functorun = function(jsonvar) 
                     { 
                         if (jsonvar != null) {
-                            alert(jsonvar.url);
                             $('#linkresult').val(jsonvar.url);
-                            $("#linkresult").select();
-                            document.execCommand('copy');
-                            $("#linkresult").blur();
-                            showMessage("Link Copied To Clipboard"); 
+                            console.log(jsonvar.url);
+                            setTimeout(function(){ 
+                                $("#linkresult").select();
+                                document.execCommand('copy');
+                                $("#linkresult").blur();
+                                showMessage("Link Copied To Clipboard"); 
+                             }, 0);
+
                         }
                     } 
                     getJsonbyid(idLink, functorun);
