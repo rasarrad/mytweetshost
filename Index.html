@@ -1133,6 +1133,7 @@ bookmarks <span>
           var j = i;
 
           do {
+            alert(4444);
               var obj = $("#twitter-widget-" + j);
 
               if (obj.length > 0)
@@ -1141,6 +1142,7 @@ bookmarks <span>
                 console.log(222222222222222222);
 
               if (obj && obj.length > 0) {
+                alert(21);
                 if (forceProcess || obj.attr("processed") != "yes") {
                     obj.attr("processed", "yes");
 
@@ -1153,6 +1155,8 @@ bookmarks <span>
                     if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
                         var styleTag = document.getElementById("twitter-widget-" + j).shadowRoot;
                         insertAfter(tweetStyle, styleTag.childNodes[0]);
+                        alert(1);
+                        return false;
                     } else {
                         var tweetWidget = document.getElementById("twitter-widget-" + j).contentDocument;
                         $(tweetWidget.head).prepend(tweetStyle);
