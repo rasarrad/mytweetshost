@@ -452,8 +452,6 @@ $( document ).ready(function() {
         if ( ! xDown || ! yDown ) {
             return;
         }
-        console.log("-----------------------------------------------");
-        console.log(evt.touches[0]);
 
         if (evt.touches[0] != null)
             lastTouch = evt.touches[0];
