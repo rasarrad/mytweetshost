@@ -495,8 +495,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
     var endIndex = currentIndex + Number($('#recordspersearch').val());
     var objToFocus = -1;
     var ind = 0;
-    var hasFinished = false;
-
     var dofiltertext = $('#filtertext').val().trim().length > 0; 
     var dofilterdate1 = $('#filterdate1').val().trim().length > 0; 
     var dofilterdate2 = $('#filterdate2').val().trim().length > 0; 
@@ -505,6 +503,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
     var dofiltercat = $('#selectedcat').val().length > 0 && $('#selectedcat').val() != 'all';  
     var dofiltertype = $('#selectedtype').val().trim() != "all"; 
     var dofilterclassif = $('#selectedclassif').val().trim() != "all"; 
+    searchtotal = 0;
 
     if (!ismoretweets) {
         $('#mask').fadeIn(300);  
@@ -622,6 +621,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                         && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
       
+                        searchtotal++;
                         ind = ind + 1;
     
                         if (val.type == "T") {
@@ -907,15 +907,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 
                         $('#tct').text(total_tt);
                         $('#tcy').text(total_yy);
-                        $('#tch').text(total_hh);
-
-                        setTimeout(function() { 
-                            if (!hasFinished) {
-                                hasFinished = true;
-                                customizeTweets(2);
-                            }
-                          }, 1000);
-                        
+                        $('#tch').text(total_hh);                        
 
                         return false;
                     }
@@ -965,12 +957,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#tch').text(total_hh);
 
         setTimeout(function() { 
-            if (!hasFinished) {
-                
-                hasFinished = true;
-                customizeTweets(1);
-            }
-        }, 1000);
+            console.log("searchtotal search" + searchtotal)
+            customizeTweets(1);
+        }, 2000);
 
         if (!ismoretweets) {
             if (totalLinkss > 0) {
