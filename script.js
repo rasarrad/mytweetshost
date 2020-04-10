@@ -330,6 +330,7 @@ $( document ).ready(function() {
         xDown = firstTouch.clientX;                                      
         yDown = firstTouch.clientY;   
         
+        dblFlag = false;  
         setTimeout(function() {    
             dblFlag = true; 
             dblClickTimeout = setTimeout(function() {    
