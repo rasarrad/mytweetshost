@@ -345,7 +345,6 @@ function handleTouchEnd(evt) {
         xDown = null;
         yDown = null;   
         dblFlag = false;  
-        currObjSwipe = null;
     }                                  
 }; 
 
@@ -368,6 +367,7 @@ function executeSwipeFunction(obj, type) {
 
         }
     }
+    currObjSwipe = null;
 }
 
 function processBackdivFuncs(type) {
