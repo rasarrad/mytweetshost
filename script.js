@@ -343,16 +343,22 @@ $( document ).ready(function() {
     function handleTouchEnd(evt) {
         if (dblFlag && lastTouch) {                          
             if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+                $('#linkresult').val($('#29').attr('curl'));
+                $("#linkresult").select();
+                document.execCommand('copy');
+                $("#linkresult").blur();
+                showMessage("Intaaaaaernal Link Copied To Clipboard"); 
+
                 if ( xDiff > 0 ) {
-                    executeSwipeFunction(currObjSwipe, "left");
+                    //executeSwipeFunction(currObjSwipe, "left");
                 } else {
-                    executeSwipeFunction(currObjSwipe, "right");
+                    //executeSwipeFunction(currObjSwipe, "right");
                 }                       
             } else {
                 if ( yDiff > 0 ) {
-                    executeSwipeFunction(currObjSwipe, "up");
+                    //executeSwipeFunction(currObjSwipe, "up");
                 } else {
-                    executeSwipeFunction(currObjSwipe, "down");
+                    //executeSwipeFunction(currObjSwipe, "down");
                 }                                                                 
             }
         }  
@@ -442,34 +448,18 @@ $( document ).ready(function() {
                     //console.log("link " + idLink + " down-----------------------------------------------");
                     break;
                 case "left": // apagar pesquisa - mantendo os critérios 
-                    var newid = idLink;
-                    setTimeout(function(){ 
-                        var link = $('#' + newid).attr('curl');
-                        $('#linkresult').val(link);
-                        $("#linkresult").select();
-                        console.log(link);
-
-                        document.execCommand('copy');
-                        $("#linkresult").blur();
-                        showMessage("Interyggggnal Link Copied To Clipboard"); 
-                     }, 2100);
-
+                    
+                    $('#linkresult').val($('#' + idLink).attr('curl'));
+                    $("#linkresult").select();
+                    document.execCommand('copy');
+                    $("#linkresult").blur();
+                    showMessage("Internal Link Copied To Clipboard"); 
 
                     //console.log("link " + idLink + " left-----------------------------------------------");
                     break;
         
                 case "right": // abrir link
-                    text = "dontshow";
                     expandCat(null, idLink);
-
-                    setTimeout(function() {
-                        externallinkcopy();
-                    }, 1500);
-
-                    setTimeout(function(){
-                        closeSettingsPopup();
-                        text = "";
-                    }, 2500); 
                     //console.log("link " + idLink + " right-----------------------------------------------");
                     break;
             }
@@ -1172,8 +1162,7 @@ function externallinkopen(obj, link, id) {
 }
 
 function externallinkcopy(obj) {
-    if (obj)
-        fixfocus(obj);
+    fixfocus(obj);
     $('#linkresult').val($('#linkChange').attr('clink'));
     $("#linkresult").select();
     document.execCommand('copy');
