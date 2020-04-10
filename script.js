@@ -363,7 +363,7 @@ function executeSwipeFunction(obj, type) {
         isLink = false;
     }
 console.log(isLink);
-    if (idLink != "NaN") {
+    if (idLink != NaN) {
         processLinkFuncs(idLink, type);
     }
     else {
