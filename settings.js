@@ -431,11 +431,23 @@ var openSettingsPopup = function(jsonobj)
     $('#linkChange').css("height", "calc(100%)");
 
 
-    if ($('#linkChange').hasClass("new"))
-        $('#linkChange').css("top", "-700px");
-    else
-        $('#linkChange').css("top", "-233px");
-
+    if ($('#linkChange').hasClass("new")) {
+        if ($('body').hasClass('big')) {
+            $('#linkChange').css("top", "-815px");
+        }
+        else {
+            $('#linkChange').css("top", "-715px");
+        }
+    }     
+    else {
+        if ($('body').hasClass('big')) {
+            $('#linkChange').css("top", "-233px");
+        }
+        else {
+            $('#linkChange').css("top", "-233px");
+        } 
+    }
+        
     $('#linkChange').css("background", "transparent");
 
     $('#linkChange').slideDown();

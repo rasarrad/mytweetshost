@@ -458,12 +458,12 @@ var openSearchPopup = function(jsonobj)
     $('#searchpopup').css("height", "calc(100%)");
 
     if ($('body').hasClass('big')) {
-        $('#searchpopup').css("top", "-528px");
+        $('#searchpopup').css("top", "-320px");
     }
     else {
-        $('#searchpopup').css("top", "-391px");
+        $('#searchpopup').css("top", "-300px");
     }
-    
+
     $('#searchpopup').css("background", "transparent");
 
     $('#searchpopup').slideDown();
