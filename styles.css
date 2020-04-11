@@ -2025,12 +2025,11 @@ body.big #splash .titletable {
     }
     #mainmenu > div {
       margin-top: 40px !important;
-      height: 377px !important;
       max-width: 361px !important;
     }
     body.big #mainmenu > div {
       margin-top: 40px !important;
-      height: 507px !important;
+      /* height: 507px !important; */
       max-height: 507px !important;
     }      
     .toptitle > span {
@@ -4245,3 +4244,7 @@ body.big .newLayout > div {
 body.big .topoback:not(.topoback2) {
     height: 65px !important;
 }
+
+body.big #mainmenu table:last-child {
+  height: 100px;
+}  
