@@ -981,7 +981,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     }
                 }, 1500);
             }
-        }, 1000);
+        }, 10);
 
         if (!ismoretweets) {
             if (totalLinkss > 0) {
