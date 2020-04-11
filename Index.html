@@ -1155,11 +1155,14 @@ bookmarks <span>
             }
             while (j < i + searchtotal); 
 
-            $('#tweetcount').fadeIn(800);
-            $('#mask').fadeOut(1100);
-                      
-            $('#moretweets').fadeOut(300);
-            $('#moretweets').css('opacity', 0);
+            if (processed) {
+              $('#tweetcount').fadeIn(800);
+              $('#mask').fadeOut(1100);
+                        
+              $('#moretweets').fadeOut(300);
+              $('#moretweets').css('opacity', 0);
+            }
+
             return processed;
           }
           else {
