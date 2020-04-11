@@ -1122,17 +1122,13 @@ bookmarks <span>
 
           console.log(tot)
 
-          var i = -1;
+          var i = findFirstLink(5);
 
-          do {
-            sleep(100); 
-            i = findFirstLink(5);
-          }
-          while (i = -1); 
           console.log(2222222)
           console.log(i)
 
-          var j = i;
+          if (i > 0) {
+            var j = i;
           console.log(j)
           do {
               var obj = $("#twitter-widget-" + j);
@@ -1168,6 +1164,8 @@ bookmarks <span>
                       
             $('#moretweets').fadeOut(300);
             $('#moretweets').css('opacity', 0);
+          }
+
   }
 
   function findFirstLink(tot) {
