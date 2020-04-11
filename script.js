@@ -1241,7 +1241,7 @@ function showMessage(text, speed, icon, iconstyle, undofunc, undotext) {
         mainDiv.find('i.fa').addClass(icon);
 
         if (iconstyle != '')
-            mainDiv.find('i.fa').attr('style', iconstyle);
+            //mainDiv.find('i.fa').attr('style', iconstyle);
         mainDiv.find('i.fa').show();
     }
     else {
