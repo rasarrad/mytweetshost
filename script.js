@@ -337,8 +337,8 @@ $( document ).ready(function() {
             dblFlag = true; 
             dblClickTimeout = setTimeout(function() {    
                 dblFlag = false;  
-          }, 140);
-        }, 40);                
+          }, 110);
+        }, 10);                
     };                                                
     
     function handleTouchEnd(evt) {
@@ -432,7 +432,7 @@ $( document ).ready(function() {
                 case "up":
                     //console.log("UP   UP   UP   UP   UP   UP   UP   UP   UP   UP   UP");
                     $(window).scrollTop( 0 );
-                    showMessage("Scrolled to top"); 
+                    showMessage("Scrolled to top", 2500, null, null, null, null, true, 500);
                     break;
         
                 case "down":// apagar pesquisa - mantendo os critérios
@@ -441,7 +441,7 @@ $( document ).ready(function() {
                     $("#main").empty();
                     $('#moretweets').hide();
                     $('#tweetcount').hide(); 
-                    showMessage("Search cleared"); 
+                    showMessage("Search cleared", 2500, null, null, null, null, true, 500);
 
                     break;
                 case "left": // apagar pesquisa - mantendo os critérios 
@@ -449,8 +449,10 @@ $( document ).ready(function() {
                  
                     $('#linkresult').val($('#' + idLink).attr('curl'));
                     $("#linkresult").focus();
+                    sleep(100);  
                     $("#linkresult").select();
                     document.execCommand('copy');
+                    sleep(100);  
                     $("#linkresult").blur();
                     showMessage("Link Copied To Clipboard", 2500, null, null, null, null, true, 500);
 
