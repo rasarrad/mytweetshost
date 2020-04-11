@@ -452,7 +452,7 @@ $( document ).ready(function() {
                     $("#linkresult").select();
                     document.execCommand('copy');
                     $("#linkresult").blur();
-                    showMessage("Link Copied To Clipboard", 1500, null, null, null, null, true, 1500);
+                    showMessage("Link Copied To Clipboard", 500, null, null, null, null, true, 1500);
 
                     break;
         
