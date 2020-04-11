@@ -1101,7 +1101,13 @@ function openmenu(obj, flag) {
             $('#mainmenu').css('transition', 'transition: all 0.01s');
             $('#mainmenu').css("height", "calc(100%)");
 
-            $('#mainmenu').css("top", "-391px");
+            if ($('body').hasClass('big')) {
+                $('#mainmenu').css("top", "-528px");
+            }
+            else {
+                $('#mainmenu').css("top", "-391px");
+            }
+            
             $('#mainmenu').css("background", "transparent");
 
             $('#mainmenu').slideDown();
