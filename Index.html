@@ -1121,14 +1121,14 @@ bookmarks <span>
           var notFound = true;
           do {
               i = i + 1;
-              console.log(1)
+              console.log(i)
               var obj = $("#twitter-widget-" + i);
 
-              if (obj.length > 0) {
+              if (obj && obj.length > 0) {
                 notFound = false;
               }         
           }
-          while (i < 50); 
+          while (i < 50 && notFound); 
           console.log(2222222)
           var j = i;
 
