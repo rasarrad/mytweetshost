@@ -432,7 +432,7 @@ $( document ).ready(function() {
                 case "up":
                     //console.log("UP   UP   UP   UP   UP   UP   UP   UP   UP   UP   UP");
                     setTimeout(function() { 
-                        $(window).scrollTop(0);
+                        window.scrollTo(0, 0);
                     }, 200); 
                     
                     showMessage("Scrolled to top", 2500, null, null, null, null, true, 500);
