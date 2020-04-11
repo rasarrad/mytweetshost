@@ -448,13 +448,15 @@ $( document ).ready(function() {
                 console.log("Mainmenu down-----------------------------------------------");
                 break;
             case "left":
-                $("#showdeleted2").click();
-                $("#showdeleted").click();
+                showMessage("Show Deleted Links Toggled", 2500, null, null, null, null, true, 500);
+                $("#showdeleted2").trigger("click");
+                $("#showdeleted").trigger("click");
                 console.log("Mainmenu left-----------------------------------------------");
                 break;
     
             case "right":
                 clickmenu('all', 'All Links');
+                showMessage("All Links Displayed", 2500, null, null, null, null, true, 500);
                 console.log("Mainmenu right-----------------------------------------------");
                 break;
         }
@@ -466,11 +468,19 @@ $( document ).ready(function() {
             switch(type) {
                 case "up":
                     //console.log("UP   UP   UP   UP   UP   UP   UP   UP   UP   UP   UP");
+
+                    openSearchPopup()
+
+                    /* 
+                    
+                    https://stackoverflow.com/questions/22629286/scroll-down-a-webpage-by-constant-speed/22629859
+                    
                     setTimeout(function() { 
                         gotop();
                     }, 300); 
                     
                     showMessage("Scrolled to top", 2500, null, null, null, null, true, 500);
+                     */
                     break;
         
                 case "down":// apagar pesquisa - mantendo os critérios
