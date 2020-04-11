@@ -473,9 +473,12 @@ var openMainSettingsPopup = function(jsonobj)
     $('#mainsettings').css('transition', 'transition: all 0.01s');
     $('#mainsettings').css("height", "calc(100%)");
 
-
-    $('#mainsettings').css("top", "-215px");
-
+    if ($('body').hasClass('big')) {
+        $('#mainmenu').css("top", "-275px");
+    }
+    else {
+        $('#mainmenu').css("top", "-215px");
+    }
 
     $('#mainsettings').css("background", "transparent");
 
