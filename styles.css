@@ -4227,10 +4227,10 @@ body.big #mainmenu table:last-child {
   height: 100px;
 }  
 
-#mainmenu table:hover {
+#mainmenu table {
   transition: all 0.7s !important;
 }
 
-#mainmenu table:hover {
+#mainmenu table:not(:first-child):hover {
   opacity: 0.7 !important;
 }
