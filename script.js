@@ -452,7 +452,7 @@ $( document ).ready(function() {
                     $("#linkresult").select();
                     document.execCommand('copy');
                     $("#linkresult").blur();
-                    showMessage("Link Copied To Clipboard"); 
+                    showMessage("Link Copied To Clipboard", 1500, null, null, null, null, true, 1500);
 
                     break;
         
@@ -1230,18 +1230,23 @@ function closetagpopup(obj, id) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function showMessage(text, speed, icon, iconstyle, undofunc, undotext) {
+function showMessage(text, speed, icon, iconstyle, undofunc, undotext, transparent, finalspeed) {
     var mainDiv = $("#stripmessage");
+
     var dospeed = 3500;
     if (speed)
       dospeed = speed;
+
+    var dofinalspeed = 900;
+    if (finalspeed)
+        dofinalspeed = finalspeed;
 
     mainDiv.find('i.fa').attr('class', 'fa');
     if (icon) {
         mainDiv.find('i.fa').addClass(icon);
 
         if (iconstyle != '')
-            //mainDiv.find('i.fa').attr('style', iconstyle);
+            mainDiv.find('i.fa').attr('style', iconstyle);
         mainDiv.find('i.fa').show();
     }
     else {
@@ -1261,7 +1266,14 @@ function showMessage(text, speed, icon, iconstyle, undofunc, undotext) {
     mainDiv.css("transition", "none");
     $("#stripmessage .striptext").css("transition", "none");
     mainDiv.css("top", "0px");
-    mainDiv.css("background", "rgba(0, 0, 0, 0.6)");
+
+    if (transparent) {
+        mainDiv.css("background", "rgba(0, 0, 0, 0)");
+    }
+    else {
+        mainDiv.css("background", "rgba(0, 0, 0, 0.6)");
+    }
+
     $("#stripmessage .striptext").css("top", "calc(50% - 27px)");
     $("#stripmessage .poptitle").text(text);
 
@@ -1276,7 +1288,7 @@ function showMessage(text, speed, icon, iconstyle, undofunc, undotext) {
           setTimeout(function() { 
                mainDiv.fadeOut("slow");
             }, dospeed);
-        }, 900);
+        }, dofinalspeed);
     });
 }   
 
