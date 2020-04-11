@@ -4244,3 +4244,7 @@ body.big .checkstyleddiv.menuincludedeleted i {
     left: 0.2px !important;
     font-size: 6.4px !important;
 }
+
+body.big .checkstyleddiv.showdeleted {
+  left: 0.2px !important;
+}
