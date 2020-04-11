@@ -1937,15 +1937,21 @@ body.big #splash .titletable {
   width: 468px;
   padding-left: 6px;
 }  
-
+.menuincludedeleted {
+    left: 165px;
+}
 
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
 /* 
   ###Device = Most of the Smartphones Mobiles (Portrait)
   Screen = B/w 320px to 479px */
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media (max-width: 480px) {
   
+    .menuincludedeleted {
+      left: 109px;
+     }
+
     #mask > div > i {
       background: #484848 !important;
     }     
@@ -4226,7 +4232,7 @@ body.big .newLayout > div {
 /**********************************************************************************************/
 /******************************** LANDSCAPE --- HEIGHT < 300 CSS ******************************/
 @media (max-height: 300px) {
-  
+
 }
 /******************************** FIM LANDSCAPE --- HEIGHT < 300 CSS ******************************/
 /**************************************************************************************************/
