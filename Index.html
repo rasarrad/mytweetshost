@@ -1125,6 +1125,7 @@ bookmarks <span>
           var i = -1;
 
           do {
+            sleep(100); 
             i = findFirstLink(5);
           }
           while (i = -1); 
@@ -1180,6 +1181,12 @@ bookmarks <span>
               }  
     return -1;
   }
+
+function sleep(seconds) 
+{
+  var e = new Date().getTime() + (seconds);
+  while (new Date().getTime() <= e) {}
+}
 
   function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.previousSibling);
