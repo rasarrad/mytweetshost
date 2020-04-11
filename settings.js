@@ -474,10 +474,10 @@ var openMainSettingsPopup = function(jsonobj)
     $('#mainsettings').css("height", "calc(100%)");
 
     if ($('body').hasClass('big')) {
-        $('#mainmenu').css("top", "-275px");
+        $('#mainsettings').css("top", "-275px");
     }
     else {
-        $('#mainmenu').css("top", "-215px");
+        $('#mainsettings').css("top", "-215px");
     }
 
     $('#mainsettings').css("background", "transparent");
