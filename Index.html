@@ -1122,21 +1122,12 @@ bookmarks <span>
 
           console.log(tot)
 
-          var i = null;
-          var notFound = true;
-          do {
-              for (var z = 0; z < tot; z++) {
-                
-                var obj = $("#twitter-widget-" + z);
+          var i = -1;
 
-                if (!notFound && obj.length > 0) {
-                  i = z;
-                  console.log(4444444)
-                  notFound = false;
-                } 
-              }     
+          do {
+            i = findFirstLink(tot);
           }
-          while (notFound); 
+          while (i = -1); 
           console.log(2222222)
           console.log(i)
 
@@ -1176,6 +1167,18 @@ bookmarks <span>
                       
             $('#moretweets').fadeOut(300);
             $('#moretweets').css('opacity', 0);
+  }
+
+  function findFirstLink(tot) {
+    for (var z = 0; z < tot; z++) {
+                
+                var obj = $("#twitter-widget-" + z);
+
+                if (obj.length > 0) {
+                  return z;
+                } 
+              }  
+    return -1;
   }
 
   function insertAfter(newNode, referenceNode) {
