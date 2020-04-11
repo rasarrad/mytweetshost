@@ -432,8 +432,8 @@ $( document ).ready(function() {
                 case "up":
                     //console.log("UP   UP   UP   UP   UP   UP   UP   UP   UP   UP   UP");
                     setTimeout(function() { 
-                        $(body).scrollTop(0);
-                    }, 200); 
+                        gotop();
+                    }, 300); 
                     
                     showMessage("Scrolled to top", 2500, null, null, null, null, true, 500);
                     break;
@@ -1129,7 +1129,8 @@ function closeallnewlayout(bj) {
 
 
 function gotop(e) {
-    e.stopPropagation();
+    if (e)
+        e.stopPropagation();
     $(window).scrollTop(0);
 }   
 
