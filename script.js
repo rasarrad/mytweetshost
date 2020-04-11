@@ -430,37 +430,35 @@ $( document ).ready(function() {
         if (parseInt(idLink) > -1) {
             switch(type) {
                 case "up":
-                    console.log("UP   UP   UP   UP   UP   UP   UP   UP   UP   UP   UP");
-                    //$(window).scrollTop( 0 );
-                    //console.log("link " + idLink + " up-----------------------------------------------");
+                    //console.log("UP   UP   UP   UP   UP   UP   UP   UP   UP   UP   UP");
+                    $(window).scrollTop( 0 );
+                    showMessage("Scrolled to top"); 
                     break;
         
                 case "down":// apagar pesquisa - mantendo os critérios
-                    console.log("DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   ");
-                    /*
+                    /*console.log("DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   ");*/
+                    
                     $("#main").empty();
                     $('#moretweets').hide();
                     $('#tweetcount').hide(); 
-                    */
-                    //console.log("link " + idLink + " down-----------------------------------------------");
+                    showMessage("Search cleared"); 
+
                     break;
                 case "left": // apagar pesquisa - mantendo os critérios 
-                console.log("LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   ");
-                /* 
+                    /*console.log("LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   ");*/
+                 
                     $('#linkresult').val($('#' + idLink).attr('curl'));
                     $("#linkresult").focus();
                     $("#linkresult").select();
                     document.execCommand('copy');
                     $("#linkresult").blur();
                     showMessage("Link Copied To Clipboard"); 
-*/
-                    //console.log("link " + idLink + " left-----------------------------------------------");
+
                     break;
         
                 case "right": // abrir link
-                console.log("RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   ");
-                    //expandCat(null, idLink);
-                    //console.log("link " + idLink + " right-----------------------------------------------");
+                    //console.log("RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   ");
+                    expandCat(null, idLink);
                     break;
             }
         }

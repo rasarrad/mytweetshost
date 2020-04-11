@@ -983,14 +983,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
             }
         }, 500);
 
-
-        /* 
-        setTimeout(function() { 
-            console.log(searchtotal + "search end");
-            customizeTweets(1);
-        }, 100);
-*/
-
         if (!ismoretweets) {
             if (totalLinkss > 0) {
                 //if (wasfiltered != 2)
