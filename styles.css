@@ -4254,3 +4254,8 @@ body.big .topoback:not(.topoback2) {
 body.big #mainmenu table:last-child {
   height: 100px;
 }  
+
+#mainmenu table:hover {
+  opacity: 0.2 !importamt;
+  background: red !importamt;
+}
