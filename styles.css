@@ -4246,5 +4246,5 @@ body.big .checkstyleddiv.menuincludedeleted i {
 }
 
 body.big .checkstyleddiv.showdeleted i {
-  left: 0.2px !important;
+  left: 1px !important;
 }
