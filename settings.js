@@ -441,7 +441,7 @@ var openSettingsPopup = function(jsonobj)
     }     
     else {
         if ($('body').hasClass('big')) {
-            $('#linkChange').css("top", "-233px");
+            $('#linkChange').css("top", "-300px");
         }
         else {
             $('#linkChange').css("top", "-233px");
