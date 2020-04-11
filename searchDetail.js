@@ -953,13 +953,22 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#tcy').text(total_yy);
         $('#tch').text(total_hh);
 
-        var notFound;
-        
-        do {
-            notFound = customizeTweets(1);
-            sleep(100);    
-        }
-        while (!notFound); 
+
+        setTimeout(function() { 
+            console.log(searchtotal + "search end");
+            var found = customizeTweets(1);
+
+            sleep(100);  
+
+            if (!found) {
+                setTimeout(function() { 
+                    console.log(searchtotal + "search end");
+                    var found = customizeTweets(1);
+    
+                }, 100); 
+            }
+        }, 500);
+
 
         /* 
         setTimeout(function() { 
