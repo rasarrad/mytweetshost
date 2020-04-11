@@ -1230,16 +1230,16 @@ function closetagpopup(obj, id) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function showMessage(text, speed, icon, iconstyle, undofunc, undotext, transparent, finalspeed) {
+function showMessage(text, speed, icon, iconstyle, undofunc, undotext, transparent, inicialspeed) {
     var mainDiv = $("#stripmessage");
 
     var dospeed = 3500;
     if (speed)
       dospeed = speed;
 
-    var dofinalspeed = 900;
-    if (finalspeed)
-        dofinalspeed = finalspeed;
+    var doinicialspeed = 900;
+    if (inicialspeed)
+        doinicialspeed = inicialspeed;
 
     mainDiv.find('i.fa').attr('class', 'fa');
     if (icon) {
@@ -1288,7 +1288,7 @@ function showMessage(text, speed, icon, iconstyle, undofunc, undotext, transpare
           setTimeout(function() { 
                mainDiv.fadeOut("slow");
             }, dospeed);
-        }, dofinalspeed);
+        }, doinicialspeed);
     });
 }   
 
