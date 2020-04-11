@@ -953,7 +953,10 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#tcy').text(total_yy);
         $('#tch').text(total_hh);
 
-
+        setTimeout(function() { 
+            console.log(searchtotal + "search end");
+            customizeTweets(1);
+        }, 1500);
 
         if (!ismoretweets) {
             if (totalLinkss > 0) {
@@ -961,6 +964,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     //showMessage("Search Results", 2000);
             }
             else {
+
                 $('#mask').fadeOut(600);  
                 showMessage("No Links Found", 2000);
             }
