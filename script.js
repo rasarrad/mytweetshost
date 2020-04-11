@@ -431,7 +431,8 @@ $( document ).ready(function() {
             switch(type) {
                 case "up":
                     //console.log("UP   UP   UP   UP   UP   UP   UP   UP   UP   UP   UP");
-                    $(window).scrollTop( 0 );
+                    sleep(100);  
+                    $(window).scrollTop(0);
                     showMessage("Scrolled to top", 2500, null, null, null, null, true, 500);
                     break;
         
