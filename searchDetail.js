@@ -5,7 +5,27 @@ function closeSearchPopup(obj) {
         fixfocus(obj);
 
     $('body, html').css('overflow-y', 'auto');
-    $('#searchpopup').fadeOut(600);
+
+    $('#searchpopup').css('transition', 'all 1.7s');
+    $('#searchpopup').css('opacity', 0);
+
+    setTimeout(function(){
+        $('#searchpopup').hide();
+        $('#searchpopup').css('opacity', 1);
+
+        var setHeight = "18px";
+
+        if ($('body').hasClass('big'))
+            setHeight = "30px";
+    
+        $("#searchpopup table").each( function( index, element ) {
+            var table = $(element);
+    
+            table.css('max-height', setHeight);
+            table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').show();
+            table.find('td.el').addClass('ellipsis');
+        });
+    }, 700);
 }
 
 function expandsection(obj, table) {
@@ -433,10 +453,33 @@ var openSearchPopup = function(jsonobj)
     $('#titlesearch').html("(" + $('#selectedcattext').val() + ")");
 
     updateSearchTablesHeight();
+    
+    $('#searchpopup').css('transition', 'transition: all 0.01s');
+    $('#searchpopup').css("height", "calc(100%)");
+
+    if ($('body').hasClass('big')) {
+        $('#searchpopup').css("top", "-528px");
+    }
+    else {
+        $('#searchpopup').css("top", "-391px");
+    }
+    
+    $('#searchpopup').css("background", "transparent");
+
+    $('#searchpopup').slideDown();
+
+    $('#searchpopup').attr("style", "top: 0px;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s, background 1.1s, height 0.2s;");
+
+    setTimeout(function(){
+        $('#searchpopup').css('background', 'var(--soft-transp-color)');
+    }, 600);
 
     //updateTopPosition("searchpopup"); 
 
     $('#searchpopup').fadeIn(); 
+
+
+
 } 
 
 function updateSearchTablesHeight() {

@@ -452,6 +452,7 @@ var openMainSettingsPopup = function(jsonobj)
     closeallnewlayout();
 
     $('body, html').css('overflow-y', 'hidden');
+
     var setHeight = "18px";
 
     if ($('body').hasClass('big'))
@@ -610,21 +611,8 @@ function showDate(obj) {
 function closeSettingsPopup(obj) {
     if (obj)
         fixfocus(obj);
+
     $('body, html').css('overflow-y', 'auto');
-
-    var setHeight = "18px";
-
-    if ($('body').hasClass('big'))
-        setHeight = "30px";
-
-    $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
-        var table = $(element);
-        
-        table.css('transition', 'transition: all 0.7s !important');
-        table.css('max-height', setHeight);
-        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').attr('style', '');
-        table.find('td.el').addClass('ellipsis');
-    });
 
     $('#linkChange').css('transition', 'all 1.7s');
     $('#linkChange').css('opacity', 0);
@@ -632,6 +620,20 @@ function closeSettingsPopup(obj) {
     setTimeout(function(){
         $('#linkChange').hide();
         $('#linkChange').css('opacity', 1);
+
+        var setHeight = "18px";
+
+        if ($('body').hasClass('big'))
+            setHeight = "30px";
+    
+        $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
+            var table = $(element);
+            
+            table.css('transition', 'transition: all 0.7s !important');
+            table.css('max-height', setHeight);
+            table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').attr('style', '');
+            table.find('td.el').addClass('ellipsis');
+        });
     }, 700);
 
 }
@@ -645,26 +647,26 @@ function closeMainSettingsPopup(obj) {
     $('body, html').css('overflow-y', 'auto');
     //$('#mainsettings').fadeOut(600);
 
-    var setHeight = "18px";
-
-    if ($('body').hasClass('big'))
-        setHeight = "30px";
-
-    $('#mainsettings').find("table:not(.buttonstable)").each( function( index, element ) {
-        var table = $(element);
-        
-        table.css('transition', 'transition: all 0.7s !important');
-        table.css('max-height', setHeight);
-        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').attr('style', '');
-        table.find('td.el').addClass('ellipsis');
-    });
-
     $('#mainsettings').css('transition', 'all 1.7s');
     $('#mainsettings').css('opacity', 0);
 
     setTimeout(function(){
         $('#mainsettings').hide();
         $('#mainsettings').css('opacity', 1);
+
+        var setHeight = "18px";
+
+        if ($('body').hasClass('big'))
+            setHeight = "30px";
+    
+        $('#mainsettings').find("table:not(.buttonstable)").each( function( index, element ) {
+            var table = $(element);
+            
+            table.css('transition', 'transition: all 0.7s !important');
+            table.css('max-height', setHeight);
+            table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').attr('style', '');
+            table.find('td.el').addClass('ellipsis');
+        });
     }, 700);
 
 }
