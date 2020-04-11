@@ -1120,6 +1120,7 @@ bookmarks <span>
           
           var i = findFirstLink();
           var j = i;
+          var processed = false;
 
           if (j > -1) {
             console.log(2222222)
@@ -1128,6 +1129,7 @@ bookmarks <span>
 
               if (obj && obj.length > 0) {
                 if (forceProcess || obj.attr("processed") != "yes") {
+                  processed = true;
                   console.log(3333331111111136666666)
                     obj.attr("processed", "yes");
 
@@ -1158,7 +1160,7 @@ bookmarks <span>
                       
             $('#moretweets').fadeOut(300);
             $('#moretweets').css('opacity', 0);
-            return true;
+            return processed;
           }
           else {
             console.log(3333333)
