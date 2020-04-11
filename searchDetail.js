@@ -504,21 +504,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
     var dofiltertype = $('#selectedtype').val().trim() != "all"; 
     var dofilterclassif = $('#selectedclassif').val().trim() != "all"; 
     searchtotal = 0;
-    console.log(searchtotal + "search");
 
-
-                      $('#tweetcount').fadeIn(800);
-                      $('#mask').fadeOut(1300);
-
-                      
-                        setTimeout(function(){
-                            //$(".innermask").fadeOut(1300);
-                            $('#mask').fadeOut(1300);
-                        }, 3000);  /*
-                                                $(window).trigger("resize");
-*/
-                          $('#moretweets').fadeOut(300);
-                          $('#moretweets').css('opacity', 0);
     if (!ismoretweets) {
         $('#mask').fadeIn(300);  
         $('#moretweets').hide();
