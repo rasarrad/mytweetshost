@@ -386,17 +386,21 @@ $( document ).ready(function() {
     function processBackdivFuncs(type) {
         switch(type) {
             case "up":
+                openSearchPopup()
                 console.log("backdiv up-----------------------------------------------");
                 break;
     
             case "down":
+                openmenu()
                 console.log("backdiv down-----------------------------------------------");
                 break;
             case "left":
+                openmenu()
                 console.log("backdiv left-----------------------------------------------");
                 break;
     
             case "right":
+                openSearchPopup()
                 console.log("backdiv right-----------------------------------------------");
                 break;
         }
@@ -405,21 +409,22 @@ $( document ).ready(function() {
     function processMainsettingsFuncs(type) {
         switch(type) {
             case "up":
-                //closeMainSettingsPopup();
+                closeMainSettingsPopup();
                 console.log("mainsettings up-----------------------------------------------");
                 break;
     
             case "down":
-                //closeMainSettingsPopup();
+                closeMainSettingsPopup();
                 console.log("mainsettings down-----------------------------------------------");
                 break;
             case "left":
-                closeMainSettingsPopup();
+                $("#showdeleted2").click();
+                $("#showdeleted").click();
                 console.log("mainsettings left-----------------------------------------------");
                 break;
     
             case "right":
-                closeMainSettingsPopup();
+                clickmenu('all', 'All Links');
                 console.log("mainsettings right-----------------------------------------------");
                 break;
         }
