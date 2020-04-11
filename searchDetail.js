@@ -953,10 +953,10 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#tcy').text(total_yy);
         $('#tch').text(total_hh);
 
-        setTimeout(function() { 
+
             console.log(searchtotal + "search end");
             customizeTweets(1);
-        }, 1500);
+
 
         if (!ismoretweets) {
             if (totalLinkss > 0) {
