@@ -1102,7 +1102,6 @@ function openmenu(obj, flag) {
             $('#mainmenu').css("height", "calc(100%)");
 
             if ($('body').hasClass('big')) {
-                alert(234)
                 $('#mainmenu').css("top", "-528px");
             }
             else {
