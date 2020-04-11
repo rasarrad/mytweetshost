@@ -977,11 +977,11 @@ var getInformation = function(ismoretweets, wasfiltered) {
                                 $('#moretweets').fadeOut(300);
                                 $('#moretweets').css('opacity', 0);
                             }
-                        }, 2500); 
+                        }, 2000); 
                     }
                 }, 1500);
             }
-        }, 500);
+        }, 1000);
 
         if (!ismoretweets) {
             if (totalLinkss > 0) {
