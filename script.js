@@ -374,7 +374,11 @@ $( document ).ready(function() {
             case "backdiv":
                 processBackdivFuncs(type);
                 break;
-    
+        
+            case "mainmenu":
+                processMainmenuFuncs(type);
+                break;
+
             case "mainsettings":
                 processMainsettingsFuncs(type);
                 break;
@@ -421,18 +425,41 @@ $( document ).ready(function() {
                 console.log("mainsettings down-----------------------------------------------");
                 break;
             case "left":
-                $("#showdeleted2").click();
-                $("#showdeleted").click();
+                closeMainSettingsPopup();
                 console.log("mainsettings left-----------------------------------------------");
                 break;
     
             case "right":
-                clickmenu('all', 'All Links');
+                closeMainSettingsPopup();
                 console.log("mainsettings right-----------------------------------------------");
                 break;
         }
     }  
     
+    function processMainmenuFuncs(type) {
+        switch(type) {
+            case "up":
+                closeMenuPopup()
+                console.log("Mainmenu up-----------------------------------------------");
+                break;
+    
+            case "down":
+                closeMenuPopup()
+                console.log("Mainmenu down-----------------------------------------------");
+                break;
+            case "left":
+                $("#showdeleted2").click();
+                $("#showdeleted").click();
+                console.log("Mainmenu left-----------------------------------------------");
+                break;
+    
+            case "right":
+                clickmenu('all', 'All Links');
+                console.log("Mainmenu right-----------------------------------------------");
+                break;
+        }
+    }  
+
     function processLinkFuncs(idLink, type) {
 
         if (parseInt(idLink) > -1) {
