@@ -322,7 +322,8 @@ $( document ).ready(function() {
     
     function getTouches(evt) {
       currObjSwipe = getParentObjId($(event.target));
-    
+      console.log(2222)
+      console.log(currObjSwipe)
       return evt.touches ||             // browser API
              evt.originalEvent.touches; // jQuery
     }                                                     
@@ -342,7 +343,9 @@ $( document ).ready(function() {
     };                                                
     
     function handleTouchEnd(evt) {
-        if (dblFlag && lastTouch) {                          
+        if (dblFlag && lastTouch) {                       
+           console.log(1111)
+           console.log(currObjSwipe)
             if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
                 if ( xDiff > 0 ) {
                     executeSwipeFunction(currObjSwipe, "left");
