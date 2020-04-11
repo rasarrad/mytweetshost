@@ -4045,8 +4045,8 @@ body.big .author {
 }
 
 body.big .checkstyleddiv.showdeleted {
-  top: -12px; 
-  right: -24px;
+  top: -12px;
+  right: -13px;
 }
 
 body.big .menuincludedeleted {
@@ -4245,6 +4245,6 @@ body.big .checkstyleddiv.menuincludedeleted i {
     font-size: 6.4px !important;
 }
 
-body.big .checkstyleddiv.showdeleted {
+body.big .checkstyleddiv.showdeleted i {
   left: 0.2px !important;
 }
