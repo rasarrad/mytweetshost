@@ -962,10 +962,24 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
             if (!found) {
                 setTimeout(function() { 
-                    console.log(searchtotal + "search end");
-                    var found = customizeTweets(1);
-    
-                }, 100); 
+                    found = customizeTweets(1);
+        
+                    sleep(100);  
+        
+                    if (!found) {
+                        setTimeout(function() { 
+                            console.log(searchtotal + "search end");
+                            var found = customizeTweets(1);
+                            if (!found) {
+                                $('#tweetcount').fadeIn(800);
+                                $('#mask').fadeOut(700);
+                                          
+                                $('#moretweets').fadeOut(300);
+                                $('#moretweets').css('opacity', 0);
+                            }
+                        }, 2500); 
+                    }
+                }, 1500);
             }
         }, 500);
 
