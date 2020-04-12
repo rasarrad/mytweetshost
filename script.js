@@ -117,8 +117,23 @@ $( document ).ready(function() {
 
    var showDeleted = getshowdeletedcookie();
 
-   setShowDeleted(showDeleted);
+   setShowDeleted(showDeleted, true); // faz o count all tweets
 
+   setTimeout(function() { 
+    //countalltweets();
+
+    setTimeout(function(){
+        $( "#mask" ).fadeOut( 800, function() {
+            var style = window.getComputedStyle(body, null);
+    
+            $("#mask").css("background", style.getPropertyValue('--soft-transp-color'));
+            $("#mask .fa-folder-open").hide();
+            $("#mask > div" ).hide();
+            $("#mask > .fa-circle-o-notch").show();
+        });
+    }, 340); 
+
+}, 1); 
 
    
 /*
@@ -128,25 +143,6 @@ $( document ).ready(function() {
         { type: "text/plain;charset=utf-8" });
     saveAs(blob, "static.txt");
 */
-
-
-openmenu(); 
-
-    setTimeout(function(){
-        countalltweets();
-
-        setTimeout(function(){
-            $( "#mask" ).fadeOut( 800, function() {
-                var style = window.getComputedStyle(body, null);
-        
-                $("#mask").css("background", style.getPropertyValue('--soft-transp-color'));
-                $("#mask .fa-folder-open").hide();
-                $("#mask > div" ).hide();
-                $("#mask > .fa-circle-o-notch").show();
-            });
-        }, 340); 
-
-    }, 1); 
    
     setviewmode();
 
@@ -537,7 +533,7 @@ openmenu();
                 showMessage("Show Deleted Links Toggled", 2500, null, null, null, null, true, 500);
 
                 toggleShowDeletedAll();
-                
+
                 console.log("Mainmenu left-----------------------------------------------");
                 break;
     
