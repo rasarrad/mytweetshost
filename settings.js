@@ -689,11 +689,13 @@ function closeMainSettingsPopup(obj) {
 function toggleShowDeleted() {
 
     if ($("#showdeleted2").is(":checked")) {
+        console.log(119);
         $("#showdeleted").prop('checked', false);
         $("#showdeleted").prop('checked', false);
         setshowdeletedcookie("false");
     }
     else {
+        console.log(229);
         $("#showdeleted").prop('checked', true);
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
