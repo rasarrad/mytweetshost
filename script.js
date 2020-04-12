@@ -38,24 +38,6 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
      changetheme(currTheme, true);
 }  
 
-function readTextFile(file)
-{
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var allText = rawFile.responseText;
-                alert(allText);
-            }
-        }
-    }
-    rawFile.send(null);
-}
-
 dosearchmore = false;
 dblFlag = true;
 
@@ -145,6 +127,8 @@ $( document ).ready(function() {
    }
    
 /*
+<script src="./js/FileSaver.js"></script>
+
     var blob = new Blob(["Welcome to Websparrow.org."],
         { type: "text/plain;charset=utf-8" });
     saveAs(blob, "static.txt");
@@ -175,8 +159,6 @@ $( document ).ready(function() {
     setTimeout(function(){
         $('body').removeClass('notransit'); 
     }, 1400);  
-
-    readTextFile("file:///d:file.txt");
 
 
     //showSplash();
