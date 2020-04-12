@@ -130,7 +130,6 @@ $( document ).ready(function() {
     setTimeout(function(){
         countalltweets();
 
-        /* 
         setTimeout(function(){
             $( "#mask" ).fadeOut( 800, function() {
                 var style = window.getComputedStyle(body, null);
@@ -141,7 +140,7 @@ $( document ).ready(function() {
                 $("#mask > .fa-circle-o-notch").show();
             });
         }, 900); 
-*/
+
     }, 1); 
    
     setviewmode();
