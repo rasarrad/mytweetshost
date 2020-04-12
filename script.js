@@ -126,7 +126,12 @@ $( document ).ready(function() {
     $("#showdeleted2").prop('checked', false);
    }
    
-   
+
+    var blob = new Blob(["Welcome to Websparrow.org."],
+        { type: "text/plain;charset=utf-8" });
+    saveAs(blob, "static.txt");
+
+
     setTimeout(function(){
         countalltweets();
 
