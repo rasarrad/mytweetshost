@@ -348,7 +348,7 @@ body.big .gradiantback {
     color: var(--high-color);
     font-size: 122px;
     position: relative;
-    top: calc(50% - 73px);
+    top: calc(50% - 96px);
     left: calc(50% - 71px);
     border: 10px solid var(--high-color) !important;
     padding-left: 8px;
@@ -2110,7 +2110,7 @@ body.big #splash .titletable {
     body > div > i.fa-folder-open {
         font-size: 86px;
         height: 85px;
-        top: calc(50% - 66px);
+        top: calc(50% - 92px);
         left: calc(50% - 55px);
     }
     .tweet iframe {
