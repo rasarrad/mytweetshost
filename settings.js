@@ -683,7 +683,13 @@ function closeMainSettingsPopup(obj) {
 }
 
 
-function closeMenuPopup(obj) {
+
+
+
+function test(obj) {
+
+    $("#showdeleted2").prop('checked', false);
+
 /*
     if ($("#showdeleted2").is(":checked")) {
         $("#showdeleted").prop('checked', true);
@@ -703,6 +709,11 @@ function closeMenuPopup(obj) {
 
     return false;
  */
+
+}
+
+function closeMenuPopup(obj) {
+
     if (obj)
         fixfocus(obj);
  
