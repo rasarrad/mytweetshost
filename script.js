@@ -139,7 +139,7 @@ $( document ).ready(function() {
                 $("#mask > div" ).hide();
                 $("#mask > .fa-circle-o-notch").show();
             });
-        }, 900); 
+        }, 340); 
 
     }, 1); 
    
