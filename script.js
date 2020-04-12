@@ -638,6 +638,7 @@ openmenu();
     });
 
 
+    /*
     $( "#showdeleted2" ).bind( "click", function( event ) {
         if ($("#showdeleted2").is(":checked")) {
             $("#showdeleted").prop('checked', true);
@@ -649,6 +650,17 @@ openmenu();
         }
         countalltweets();
     });
+ */
+
+    function clickshowdeleted2() {
+        if ($("#showdeleted2").is(":checked")) {
+            $("#showdeleted2").prop('checked', false);
+        }
+        else {
+            $("#showdeleted2").prop('checked', true);
+        }
+    }
+
 
     function setshowdeletedcookie(val) {
         createCookie("showdeleted", val, 99999);  
