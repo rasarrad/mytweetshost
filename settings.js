@@ -686,29 +686,20 @@ function closeMainSettingsPopup(obj) {
 
 
 
-function test(obj) {
+function toggleShowDeleted() {
 
-    $("#showdeleted2").prop('checked', false);
-
-/*
     if ($("#showdeleted2").is(":checked")) {
-        $("#showdeleted").prop('checked', true);
+        $("#showdeleted").prop('checked', false);
+        $("#showdeleted").prop('checked', false);
+        setshowdeletedcookie("false");
     }
     else {
-        $("#showdeleted").prop('checked', false);
-    }
-    if ($("#showdeleted").is(":checked")) {
+        $("#showdeleted").prop('checked', true);
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
-    else {
-        $("#showdeleted2").prop('checked', false);
-        setshowdeletedcookie("false");
-    }
-    countalltweets();
 
-    return false;
- */
+    //countalltweets();
 
 }
 
