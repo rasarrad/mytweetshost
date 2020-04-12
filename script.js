@@ -134,6 +134,9 @@ $( document ).ready(function() {
     saveAs(blob, "static.txt");
 */
 
+
+openmenu(); 
+
     setTimeout(function(){
         countalltweets();
 

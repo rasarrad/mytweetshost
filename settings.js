@@ -680,11 +680,29 @@ function closeMainSettingsPopup(obj) {
             table.find('td.el').addClass('ellipsis');
         });
     }, 700);
-
 }
 
 
 function closeMenuPopup(obj) {
+
+    if ($("#showdeleted2").is(":checked")) {
+        $("#showdeleted").prop('checked', true);
+    }
+    else {
+        $("#showdeleted").prop('checked', false);
+    }
+    if ($("#showdeleted").is(":checked")) {
+        $("#showdeleted2").prop('checked', true);
+        setshowdeletedcookie("true");
+    }
+    else {
+        $("#showdeleted2").prop('checked', false);
+        setshowdeletedcookie("false");
+    }
+    countalltweets();
+
+    return false;
+
     if (obj)
         fixfocus(obj);
  
