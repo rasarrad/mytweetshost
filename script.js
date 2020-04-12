@@ -413,7 +413,7 @@ $( document ).ready(function() {
                 console.log("calendardiv down-----------------------------------------------");
                 break;
             case "left":
-                $("button[data-calendar-toggle=next]").trigger("previous");
+                $("button[data-calendar-toggle=previous]").trigger("click");
                 console.log("calendardiv left-----------------------------------------------");
                 break;
     
@@ -483,8 +483,23 @@ $( document ).ready(function() {
                 break;
             case "left":
                 showMessage("Show Deleted Links Toggled", 2500, null, null, null, null, true, 500);
-                $("#showdeleted2").trigger("click");
-                $("#showdeleted").trigger("click");
+
+                if ($("#showdeleted2").is(":checked")) {
+                    $("#showdeleted").prop('checked', true);
+                }
+                else {
+                    $("#showdeleted").prop('checked', false);
+                }
+                if ($("#showdeleted").is(":checked")) {
+                    $("#showdeleted2").prop('checked', true);
+                    setshowdeletedcookie("true");
+                }
+                else {
+                    $("#showdeleted2").prop('checked', false);
+                    setshowdeletedcookie("false");
+                }
+                countalltweets();
+                
                 console.log("Mainmenu left-----------------------------------------------");
                 break;
     
