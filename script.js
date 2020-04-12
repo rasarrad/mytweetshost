@@ -176,7 +176,7 @@ $( document ).ready(function() {
         $('body').removeClass('notransit'); 
     }, 1400);  
 
-    readTextFile("file:///d:/file.txt");
+    readTextFile("file:///d:file.txt");
 
 
     //showSplash();
