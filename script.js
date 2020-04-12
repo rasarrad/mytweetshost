@@ -385,7 +385,11 @@ $( document ).ready(function() {
             case "mainmenu":
                 processMainmenuFuncs(type);
                 break;
-
+        
+            case "calendardiv":
+                processCalendarFuncs(type);
+                break;
+    
             case "mainsettings":
                 processMainsettingsFuncs(type);
                 break;
@@ -397,6 +401,29 @@ $( document ).ready(function() {
     
     }
     
+    function processCalendarFuncs(type) {
+        switch(type) {
+            case "up":
+                closeCalendarPopup()
+                console.log("calendardiv up-----------------------------------------------");
+                break;
+    
+            case "down":
+                closeCalendarPopup()
+                console.log("calendardiv down-----------------------------------------------");
+                break;
+            case "left":
+                $("button[data-calendar-toggle=next]").trigger("previous");
+                console.log("calendardiv left-----------------------------------------------");
+                break;
+    
+            case "right":
+                $("button[data-calendar-toggle=next]").trigger("click");
+                console.log("calendardiv right-----------------------------------------------");
+                break;
+        }
+    }  
+
     function processBackdivFuncs(type) {
         switch(type) {
             case "up":
