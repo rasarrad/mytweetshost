@@ -475,7 +475,7 @@ bookmarks <span>
                       <b style="margin-left: 1px;top: -3px;position: relative;">Search</b>
                       <span  onclick="openmenu(null, true)" id="titlesearch" style="position: absolute;width: 100%;top: 27px;left: 3px;"></span >
                       <div class="checkstyleddiv showdeleted" style="position: absolute;">                  
-                          <input type="checkbox" id="showdeleted" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: 'none'}" style="left: -4px;top: 22px;">
+                          <input onclick="toggleShowDeleted()" type="checkbox" id="showdeleted" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: 'none'}" style="left: -4px;top: 22px;">
                               <label for="showdeleted" style="position: relative;top: -7px;font-size: 12px;">
                                       <span style="width: 10px;height: 10px;">
                                         <i class="fa fa-square" style="top: 2.4px;left: 0.1px;font-size: 6.1px !important;"></i>
@@ -825,7 +825,7 @@ bookmarks <span>
             <tbody>
               <tr class="cursordefault">
                   <td colspan="3" class="firsttd" style="width: 164px;">
-                      <i onclick="toggleShowDeleted()" class="fa fa-bars"></i>
+                      <i class="fa fa-bars"></i>
                       <b>CATEGORY</b>
                   </td>
                   <td style="padding-top: 4px;vertical-align: initial;">
@@ -941,7 +941,7 @@ bookmarks <span>
             <tr class="cursorpointer hover" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
                   <div class="checkstyleddiv menuincludedeleted" style="position: absolute;top: -11px;">                  
-                          <input type="checkbox" id="showdeleted2" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: 'none'}" style="left: -51px;top: 4px;">
+                          <input onclick="toggleShowDeleted2()" type="checkbox" id="showdeleted2" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: 'none'}" style="left: -51px;top: 4px;">
                               <label for="showdeleted2" style="position: relative;top: -7px;font-size: 12px;">
                                       <span style="width: 10px;height: 10px;">
                                         <i class="fa fa-square" style="top: 1.9px;left: 0.2px !important;font-size: 6.4px !important;"></i>

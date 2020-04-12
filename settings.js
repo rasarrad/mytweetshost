@@ -688,9 +688,9 @@ function closeMainSettingsPopup(obj) {
 
 function toggleShowDeleted() {
 
-    if ($("#showdeleted2").is(":checked")) {
+    if ($("#showdeleted").is(":checked")) {
         $("#showdeleted").prop('checked', false);
-        $("#showdeleted").prop('checked', false);
+        $("#showdeleted2").prop('checked', false);
         setshowdeletedcookie("false");
     }
     else {
@@ -702,6 +702,22 @@ function toggleShowDeleted() {
     //countalltweets();
 
 }
+
+function toggleShowDeleted2() {
+
+    if ($("#showdeleted2").is(":checked")) {
+        $("#showdeleted").prop('checked', false);
+        $("#showdeleted2").prop('checked', false);
+        setshowdeletedcookie("false");
+    }
+    else {
+        $("#showdeleted").prop('checked', true);
+        $("#showdeleted2").prop('checked', true);
+        setshowdeletedcookie("true");
+    }
+    //countalltweets();
+}
+
 
 function closeMenuPopup(obj) {
 
