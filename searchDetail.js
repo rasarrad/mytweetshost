@@ -579,6 +579,13 @@ var getInformation = function(ismoretweets, wasfiltered) {
         }
     }
 
+    if (!$("#showdeleted2").is(":checked")) {
+        console.log(111111);
+    }
+    else {
+        console.log(2222222);
+    }
+
     $.getJSON(path, function(data) {
         var processtmp = true;
 
@@ -649,14 +656,10 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     
                     var doShowDeletedLink = true;  
                     if (!$("#showdeleted2").is(":checked")) {
-                        console.log(111111);
                         var isdeleted = readCookie(val.id + "isdeleted");
                         if (isdeleted && isdeleted.length > 0) { 
                             doShowDeletedLink = false; 
                         } 
-                    }
-                    else {
-                        console.log(2222222);
                     }
 
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
