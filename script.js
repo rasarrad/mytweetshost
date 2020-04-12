@@ -117,14 +117,9 @@ $( document ).ready(function() {
 
    var showDeleted = getshowdeletedcookie();
 
-   if (showDeleted == "true") {
-    $("#showdeleted").prop('checked', true);
-    $("#showdeleted2").prop('checked', true);
-   }
-   else {
-    $("#showdeleted").prop('checked', false);
-    $("#showdeleted2").prop('checked', false);
-   }
+   setShowDeleted(showDeleted);
+
+
    
 /*
 <script src="./js/FileSaver.js"></script>

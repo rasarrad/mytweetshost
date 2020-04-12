@@ -719,6 +719,21 @@ function toggleShowDeleted2() {
 }
 
 
+function setShowDeleted(flag) {
+
+    if (flag == "false") {
+        $("#showdeleted").prop('checked', false);
+        $("#showdeleted2").prop('checked', false);
+        setshowdeletedcookie("false");
+    }
+    else {
+        $("#showdeleted").prop('checked', true);
+        $("#showdeleted2").prop('checked', true);
+        setshowdeletedcookie("true");
+    }
+    //countalltweets();
+}
+
 function closeMenuPopup(obj) {
 
     if (obj)
