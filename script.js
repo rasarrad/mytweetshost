@@ -116,7 +116,7 @@ $( document ).ready(function() {
    });
 
    var showDeleted = getshowdeletedcookie();
-   
+   alert(showDeleted);
    if (showDeleted == "true") {
     $("#showdeleted").prop('checked', true);
     $("#showdeleted2").prop('checked', true);
