@@ -2043,7 +2043,6 @@ body.big #splash .titletable {
     }
     body.big #calendardiv > div {
       margin-top: 145px !important;
-      height: 335px !important;
     }  
     .newLayout#mainsettings > div {
           margin-top: 18px !important;
@@ -4247,4 +4246,18 @@ body.big .checkstyleddiv.menuincludedeleted i {
 
 body.big .checkstyleddiv.showdeleted i {
   left: 1px !important;
+}
+
+#calendardiv.newLayout > div .titletable tr:first-child .firsttd {
+    padding-top: 1px;
+}
+
+body.big #calendardiv.newLayout > div .titletable tr:first-child .firsttd {
+    padding-top: 5px;
+}
+
+#calendardiv .fa-calendar {position: relative;top: -1px;}
+
+body.big #calendardiv .fa-calendar {
+    margin-top: 0px;
 }
