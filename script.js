@@ -38,6 +38,24 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
      changetheme(currTheme, true);
 }  
 
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                alert(allText);
+            }
+        }
+    }
+    rawFile.send(null);
+}
+
 dosearchmore = false;
 dblFlag = true;
 
@@ -158,7 +176,9 @@ $( document ).ready(function() {
         $('body').removeClass('notransit'); 
     }, 1400);  
 
-    
+    readTextFile("file:///C:/file.txt");
+
+
     //showSplash();
 
     //openSearchPopup();
