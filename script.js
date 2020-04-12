@@ -541,21 +541,9 @@ openmenu();
             case "left":
                 showMessage("Show Deleted Links Toggled", 2500, null, null, null, null, true, 500);
 
-                if ($("#showdeleted2").is(":checked")) {
-                    $("#showdeleted").prop('checked', true);
-                }
-                else {
-                    $("#showdeleted").prop('checked', false);
-                }
-                if ($("#showdeleted").is(":checked")) {
-                    $("#showdeleted2").prop('checked', true);
-                    setshowdeletedcookie("true");
-                }
-                else {
-                    $("#showdeleted2").prop('checked', false);
-                    setshowdeletedcookie("false");
-                }
-                countalltweets();
+                $("#showdeleted").prop('checked', false);
+                $("#showdeleted2").prop('checked', false);
+
                 
                 console.log("Mainmenu left-----------------------------------------------");
                 break;
