@@ -536,9 +536,7 @@ openmenu();
             case "left":
                 showMessage("Show Deleted Links Toggled", 2500, null, null, null, null, true, 500);
 
-                $("#showdeleted").prop('checked', false);
-                $("#showdeleted2").prop('checked', false);
-
+                toggleShowDeletedAll();
                 
                 console.log("Mainmenu left-----------------------------------------------");
                 break;

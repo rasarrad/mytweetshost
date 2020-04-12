@@ -687,7 +687,6 @@ function closeMainSettingsPopup(obj) {
 
 
 function toggleShowDeleted() {
-
     if (!$("#showdeleted").is(":checked")) {
         $("#showdeleted").prop('checked', false);
         $("#showdeleted2").prop('checked', false);
@@ -698,9 +697,7 @@ function toggleShowDeleted() {
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
-
-    //countalltweets();
-
+    countalltweets();
 }
 
 function toggleShowDeleted2() {
@@ -715,9 +712,23 @@ function toggleShowDeleted2() {
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
-    //countalltweets();
+    countalltweets();
 }
 
+function toggleShowDeletedAll() {
+
+    if ($("#showdeleted2").is(":checked")) {
+        $("#showdeleted").prop('checked', false);
+        $("#showdeleted2").prop('checked', false);
+        setshowdeletedcookie("false");
+    }
+    else {
+        $("#showdeleted").prop('checked', true);
+        $("#showdeleted2").prop('checked', true);
+        setshowdeletedcookie("true");
+    }
+    countalltweets();
+}
 
 function setShowDeleted(flag) {
 
@@ -731,7 +742,7 @@ function setShowDeleted(flag) {
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
-    //countalltweets();
+    countalltweets();
 }
 
 function closeMenuPopup(obj) {

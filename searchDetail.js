@@ -579,13 +579,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
         }
     }
 
-    if (!$("#showdeleted2").is(":checked")) {
-        console.log(111111);
-    }
-    else {
-        console.log(2222222);
-    }
-
     $.getJSON(path, function(data) {
         var processtmp = true;
 
