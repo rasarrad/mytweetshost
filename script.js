@@ -661,15 +661,6 @@ openmenu();
         }
     }
 
-
-    function setshowdeletedcookie(val) {
-        createCookie("showdeleted", val, 99999);  
-    }   
-
-    function getshowdeletedcookie(val) {
-        return readCookie("showdeleted");  
-    }   
-
     $( "#moretweets" ).bind( "click", function( event ) {
         getInformation(true, 3);
     });
@@ -1004,6 +995,14 @@ openmenu();
 
 
 
+
+function setshowdeletedcookie(val) {
+    createCookie("showdeleted", val, 99999);  
+}   
+
+function getshowdeletedcookie(val) {
+    return readCookie("showdeleted");  
+}   
 
 function showSplash()
 {
