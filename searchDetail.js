@@ -648,11 +648,15 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
                     
                     var doShowDeletedLink = true;  
-                    if (!$("#showdeleted").is(":checked")) {
+                    if (!$("#showdeleted2").is(":checked")) {
+                        console.log(111111);
                         var isdeleted = readCookie(val.id + "isdeleted");
                         if (isdeleted && isdeleted.length > 0) { 
                             doShowDeletedLink = false; 
                         } 
+                    }
+                    else {
+                        console.log(2222222);
                     }
 
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
