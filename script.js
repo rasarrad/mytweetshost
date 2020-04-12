@@ -385,7 +385,15 @@ $( document ).ready(function() {
             case "mainmenu":
                 processMainmenuFuncs(type);
                 break;
+
+            case "linkChange":
+                processLinkChangeFuncs(type);
+                break;
         
+            case "searchpopup":
+                processSearchFuncs(type);
+                break;
+                
             case "calendardiv":
                 processCalendarFuncs(type);
                 break;
@@ -401,6 +409,52 @@ $( document ).ready(function() {
     
     }
     
+    function processLinkChangeFuncs(type) {
+        switch(type) {
+            case "up":
+                closeSettingsPopup()
+                console.log("linkChange up-----------------------------------------------");
+                break;
+    
+            case "down":
+                closeSettingsPopup()
+                console.log("linkChange down-----------------------------------------------");
+                break;
+            case "left":
+                closeSettingsPopup()
+                console.log("linkChange left-----------------------------------------------");
+                break;
+    
+            case "right":
+                create();
+                console.log("linkChange right-----------------------------------------------");
+                break;
+        }
+    }  
+
+    function processSearchFuncs(type) {
+        switch(type) {
+            case "up":
+                closeSearchPopup()
+                console.log("searchpopup up-----------------------------------------------");
+                break;
+    
+            case "down":
+                closeSearchPopup()
+                console.log("searchpopup down-----------------------------------------------");
+                break;
+            case "left":
+                resetFields(true)
+                console.log("searchpopup left-----------------------------------------------");
+                break;
+    
+            case "right":
+                getInformation(false, 2);
+                console.log("searchpopup right-----------------------------------------------");
+                break;
+        }
+    }  
+
     function processCalendarFuncs(type) {
         switch(type) {
             case "up":
