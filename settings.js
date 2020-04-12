@@ -684,7 +684,7 @@ function closeMainSettingsPopup(obj) {
 
 
 function closeMenuPopup(obj) {
-
+/*
     if ($("#showdeleted2").is(":checked")) {
         $("#showdeleted").prop('checked', true);
     }
@@ -702,7 +702,7 @@ function closeMenuPopup(obj) {
     countalltweets();
 
     return false;
-
+ */
     if (obj)
         fixfocus(obj);
  
