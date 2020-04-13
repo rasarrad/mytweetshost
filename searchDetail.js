@@ -610,11 +610,12 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         else {
                             if (showAll) {
                                 val = recordfromdata;
-                                processtmp = false;
                             }
                             else {
                                 val = null;
                             }
+                            
+                            processtmp = false;
                         }
                     }
                     else {
@@ -758,103 +759,94 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         nextid = nextid - 1;
                     }
                     else {
-                        val = recordfromdata;
+                        if (showAll) {
+                            val = recordfromdata;
+                        }
+                        else {
+                            val = null;
+                        }
+                        
                         processtmp = false;
                     }
                 }
                 else {
-                    val = recordfromdata;
-                }
-
-                var cat = readCookie(val.id + "catchanged");
-                if (cat && cat.length > 0) {
-                    val.categories = cat;
-                }
-    
-                var tag = readCookie(val.id + "tagchanged");
-                if (tag && tag.length > 0) {
-                    val.tags = tag;
-                }
-    
-                var info = readCookie(val.id + "info");
-                if (info && info.length > 0) {
-                    val.info = info;
-                }
-    
-                var classif = readCookie(val.id + "classif");
-                if (classif && classif.length > 0) {
-                    val.classif = classif;
-                }
-
-                ind = ind + 1;
-                if (ind < processedCount ) {
-
-                    return;
-
-                }
-
-
-                if (currentIndex < endIndex) {
-
-                    dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
-                    dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
-                    dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
-                    dofiltertagfinal = !dofiltertag || searchTags(val.tags.toLowerCase(), $('#filtertag').val().toLowerCase());
-                    dofiltercatfinal = !dofiltercat || val.categories.includes($('#selectedcat').val());
-                    dofilterauthorfinal = !dofilterauthor || val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase());
-                    dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
-                    dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
-                    
-
-                    var isdeleted = null;
-                    var doShowDeletedLink = true;  
-                    if (!$("#showdeleted").is(":checked")) {
-                        isdeleted = readCookie(val.id + "isdeleted");
-                        if (isdeleted && isdeleted.length > 0) { 
-                            doShowDeletedLink = false; 
-                        } 
+                    if (showAll) {
+                        val = recordfromdata;
                     }
+                    else {
+                        val = null;
+                    }
+                }
 
-                    if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
-                        && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
+                if (val) {
+                    var cat = readCookie(val.id + "catchanged");
+                    if (cat && cat.length > 0) {
+                        val.categories = cat;
+                    }
+        
+                    var tag = readCookie(val.id + "tagchanged");
+                    if (tag && tag.length > 0) {
+                        val.tags = tag;
+                    }
+        
+                    var info = readCookie(val.id + "info");
+                    if (info && info.length > 0) {
+                        val.info = info;
+                    }
+        
+                    var classif = readCookie(val.id + "classif");
+                    if (classif && classif.length > 0) {
+                        val.classif = classif;
+                    }
+    
+                    ind = ind + 1;
+                    if (ind < processedCount ) {
+    
+                        return;
+    
+                    }
+    
+    
+                    if (currentIndex < endIndex) {
+    
+                        dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
+                        dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
+                        dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
+                        dofiltertagfinal = !dofiltertag || searchTags(val.tags.toLowerCase(), $('#filtertag').val().toLowerCase());
+                        dofiltercatfinal = !dofiltercat || val.categories.includes($('#selectedcat').val());
+                        dofilterauthorfinal = !dofilterauthor || val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase());
+                        dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
+                        dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
                         
-                        var tagdispalay = " --";
-                        var expandclass = "";
-                        var color = "";
-
-                        var isdeleted = readCookie(val.id + "isdeleted");
-                        if (isdeleted && isdeleted.length > 0) { // ID DELETED
-                            expandclass = hideMode ? "" : "isdeleted";    
-                            color = "color: red;";
-                        } 
-                        else {
-                            if (linkcontent && linkcontent.length > 0) { // IS NEW
-                                expandclass = hideMode ? "" : "isnew";  
-                                color = "color: #00dc00;";
     
-                                var tagchanged = readCookie(val.id + "tagchanged");
-        
-                                if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
-                                    tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
-                                    tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
-                                } 
-                                else {
-                                    if (val.tags.length > 0 && val.tags != 'undefined') {
-                                        tagdispalay = parseTags(val.tags);
-                                    }
-                                }
-                            }
+                        var isdeleted = null;
+                        var doShowDeletedLink = true;  
+                        if (!$("#showdeleted").is(":checked")) {
+                            isdeleted = readCookie(val.id + "isdeleted");
+                            if (isdeleted && isdeleted.length > 0) { 
+                                doShowDeletedLink = false; 
+                            } 
+                        }
+    
+                        if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
+                            && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
+                            
+                            var tagdispalay = " --";
+                            var expandclass = "";
+                            var color = "";
+    
+                            var isdeleted = readCookie(val.id + "isdeleted");
+                            if (isdeleted && isdeleted.length > 0) { // ID DELETED
+                                expandclass = hideMode ? "" : "isdeleted";    
+                                color = "color: red;";
+                            } 
                             else {
-                                var hasChanges = readCookie(val.id + "haschanges");
-                                if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
-                                    color = "color: #f18618;";
-                                    if (expandclass == "isnew")
-                                        expandclass = hideMode ? "" : "isnewmodified";  
-                                    else 
-                                        expandclass = hideMode ? "" : "ismodified";  
-    
-                                    var tagchanged = readCookie(val.id + "tagchanged");
+                                if (linkcontent && linkcontent.length > 0) { // IS NEW
+                                    expandclass = hideMode ? "" : "isnew";  
+                                    color = "color: #00dc00;";
         
+                                    var tagchanged = readCookie(val.id + "tagchanged");
+            
                                     if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
                                         tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
                                         tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
@@ -864,105 +856,130 @@ var getInformation = function(ismoretweets, wasfiltered) {
                                             tagdispalay = parseTags(val.tags);
                                         }
                                     }
-                                } 
-                                else if (val.tags.length > 0 && val.tags != 'undefined') {
-                                    tagdispalay = parseTags(val.tags);
-                                }
-                            }
-                        }
-
-                        var xclass = "";
-                        var typefa = "twitter"
-                        if (val.type == "H") {
-                            xclass = " html";
-                            typefa = "internet-explorer"
-                        }
-                        else if (val.type == "Y") {
-                            xclass = " yt";
-                            typefa = "youtube-play"
-                        }
-
-                        var newtweet = $('#main').append($('<div id="inid" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>'));
-                        var newtweetobj = $('#inid');
-
-                        newtweetobj.append($('<div style="z-index: 0;background: var(--soft-color);height: 39px;" class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
-                        
-                        newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
-                        
-                        if (val.type == "T") {
-                            newtweetobj.append($('<div class="innertweet"></div>'));
-                            newtweetobj.find('.innertweet').append(val.tweet);
-                        }
-                        else {
-                            newtweetobj.append($(val.tweet));
-                        }
-            
-                        newtweetobj.attr('id', val.id);
-        
-                        if (objToFocus < 0) {
-        
-                            objToFocus = currentIndex;
-                            var newtweetobjaction = newtweetobj;
-/*                             $('html, body').animate({
-                                scrollTop: $(newtweetobjaction).offset().top - 60
-                            }, 100); */
-        
-                        }
-                        currentIndex = currentIndex + 1;
-                    }   
-                }
-                else {
-                    if (currentIndex >= endIndex) {
-
-                        $('#moretweets').attr('doshow', 'yes');
-                   
-                        
-            /*               setTimeout(function(){
-                            $('#mask').fadeOut(300);
-                        }, 300);
-                        showMessage("Search Results"); */
-
-                        if (Number($('#recordspersearch').val()) < ind) {
-            
-                            //$('#tweetcount').css('background', '#fff900');
-                            
-                            //$('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
-                            $('#tcnumber').text(totalLinkss + " Links");
-                            $('#tccateg').text("In " + $('#selectedcattext').val());
-                
-                            var aux = ind;
-                
-                            setTimeout(function(){ 
-                                if (aux == toindex) { 
-                                    $('#tcnumber').text(totalLinkss + " Links");
-                                    $('#tccateg').text("In " + $('#selectedcattext').val());
                                 }
                                 else {
-                                    //$('#tcnumber').text(toindex + " of " + aux);
-                                    $('#tcnumber').text(totalLinkss + " Links");
-                                    $('#tccateg').text("In " + $('#selectedcattext').val());
-                                }   
+                                    var hasChanges = readCookie(val.id + "haschanges");
+                                    if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
+                                        color = "color: #f18618;";
+                                        if (expandclass == "isnew")
+                                            expandclass = hideMode ? "" : "isnewmodified";  
+                                        else 
+                                            expandclass = hideMode ? "" : "ismodified";  
+        
+                                        var tagchanged = readCookie(val.id + "tagchanged");
+            
+                                        if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
+                                            tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                                            tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
+                                        } 
+                                        else {
+                                            if (val.tags.length > 0 && val.tags != 'undefined') {
+                                                tagdispalay = parseTags(val.tags);
+                                            }
+                                        }
+                                    } 
+                                    else if (val.tags.length > 0 && val.tags != 'undefined') {
+                                        tagdispalay = parseTags(val.tags);
+                                    }
+                                }
+                            }
+    
+                            var xclass = "";
+                            var typefa = "twitter"
+                            if (val.type == "H") {
+                                xclass = " html";
+                                typefa = "internet-explorer"
+                            }
+                            else if (val.type == "Y") {
+                                xclass = " yt";
+                                typefa = "youtube-play"
+                            }
+    
+                            var newtweet = $('#main').append($('<div id="inid" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>'));
+                            var newtweetobj = $('#inid');
+    
+                            newtweetobj.append($('<div style="z-index: 0;background: var(--soft-color);height: 39px;" class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
+                            
+                            newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
+                            
+                            if (val.type == "T") {
+                                newtweetobj.append($('<div class="innertweet"></div>'));
+                                newtweetobj.find('.innertweet').append(val.tweet);
+                            }
+                            else {
+                                newtweetobj.append($(val.tweet));
+                            }
+                
+                            newtweetobj.attr('id', val.id);
+            
+                            if (objToFocus < 0) {
+            
+                                objToFocus = currentIndex;
+                                var newtweetobjaction = newtweetobj;
+    /*                             $('html, body').animate({
+                                    scrollTop: $(newtweetobjaction).offset().top - 60
+                                }, 100); */
+            
+                            }
+                            currentIndex = currentIndex + 1;
+                        }   
+                    }
+                    else {
+                        if (currentIndex >= endIndex) {
+    
+                            $('#moretweets').attr('doshow', 'yes');
+                       
+                            
+                /*               setTimeout(function(){
+                                $('#mask').fadeOut(300);
+                            }, 300);
+                            showMessage("Search Results"); */
+    
+                            if (Number($('#recordspersearch').val()) < ind) {
+                
+                                //$('#tweetcount').css('background', '#fff900');
                                 
-                                //$('#tweetcount').css('background', 'white');
-                            }, 3000);
-                
+                                //$('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
+                                $('#tcnumber').text(totalLinkss + " Links");
+                                $('#tccateg').text("In " + $('#selectedcattext').val());
+                    
+                                var aux = ind;
+                    
+                                setTimeout(function(){ 
+                                    if (aux == toindex) { 
+                                        $('#tcnumber').text(totalLinkss + " Links");
+                                        $('#tccateg').text("In " + $('#selectedcattext').val());
+                                    }
+                                    else {
+                                        //$('#tcnumber').text(toindex + " of " + aux);
+                                        $('#tcnumber').text(totalLinkss + " Links");
+                                        $('#tccateg').text("In " + $('#selectedcattext').val());
+                                    }   
+                                    
+                                    //$('#tweetcount').css('background', 'white');
+                                }, 3000);
+                    
+                            }
+                            else {  
+                                $('#tcnumber').text(totalLinkss + " Links");
+                                $('#tccateg').text("In " + $('#selectedcattext').val());
+                            }
+                    
+                            $('#tct').text(total_tt);
+                            $('#tcy').text(total_yy);
+                            $('#tch').text(total_hh);                        
+    
+                            return false;
                         }
-                        else {  
-                            $('#tcnumber').text(totalLinkss + " Links");
-                            $('#tccateg').text("In " + $('#selectedcattext').val());
-                        }
-                
-                        $('#tct').text(total_tt);
-                        $('#tcy').text(total_yy);
-                        $('#tch').text(total_hh);                        
-
-                        return false;
+                    }
+                    if (val.id == 0) {
+    
+                        return;
+    
                     }
                 }
-                if (val.id == 0) {
-
+                else {
                     return;
-
                 }
             }
             while (processtmp);
@@ -1374,15 +1391,26 @@ var getInformationbyid = function(id, flag) {
                         nextid = nextid - 1;
                     }
                     else {
-                        val = recordfromdata;
+                        if (showAll) {
+                            val = recordfromdata;
+                        }
+                        else {
+                            val = null;
+                        }
+                        
                         processtmp = false;
                     }
                 }
                 else {
-                    val = recordfromdata;
+                    if (showAll) {
+                        val = recordfromdata;
+                    }
+                    else {
+                        val = null;
+                    }
                 }
 
-                if (val.id.includes(id)) {
+                if (val && val.id.includes(id)) {
                     $("#main").empty();
                     $('#moretweets').hide();
                     $('#tweetcount').hide();  
@@ -1536,41 +1564,56 @@ var getJsonbyid = function(id, functorun) {
                         nextid = nextid - 1;
                     }
                     else {
-                        val = recordfromdata;
+                        if (showAll) {
+                            val = recordfromdata;
+                        }
+                        else {
+                            val = null;
+                        }
+                        
                         processtmp = false;
                     }
                 }
                 else {
-                    val = recordfromdata;
+                    if (showAll) {
+                        val = recordfromdata;
+                    }
+                    else {
+                        val = null;
+                    }
                 }
 
-                var cat = readCookie(val.id + "catchanged");
-                if (cat && cat.length > 0) {
-                    val.categories = cat;
-                }
+                if (val) {
+                    var cat = readCookie(val.id + "catchanged");
+                    if (cat && cat.length > 0) {
+                        val.categories = cat;
+                    }
+        
+                    var tag = readCookie(val.id + "tagchanged");
+                    if (tag && tag.length > 0) {
+                        val.tags = tag;
+                    }
+        
+                    var info = readCookie(val.id + "info");
+                    if (info && info.length > 0) {
+                        val.info = info;
+                    }
+        
+                    var classif = readCookie(val.id + "classif");
+                    if (classif && classif.length > 0) {
+                        val.classif = classif;
+                    }
     
-                var tag = readCookie(val.id + "tagchanged");
-                if (tag && tag.length > 0) {
-                    val.tags = tag;
-                }
+                    if (val.id == id) {
+                        processtmp = false;
     
-                var info = readCookie(val.id + "info");
-                if (info && info.length > 0) {
-                    val.info = info;
-                }
-    
-                var classif = readCookie(val.id + "classif");
-                if (classif && classif.length > 0) {
-                    val.classif = classif;
+                        if (functorun)
+                            functorun(val);
+                        return false;
+                    }
                 }
 
-                if (val.id == id) {
-                    processtmp = false;
 
-                    if (functorun)
-                        functorun(val);
-                    return false;
-                }
             }
             while (processtmp);
         }); 
@@ -1699,7 +1742,13 @@ var existsLink = function(text, type, functorun) {
                         nextid = nextid - 1;
                     }
                     else {
-                        val = recordfromdata;
+                        if (showAll) {
+                            val = recordfromdata;
+                        }
+                        else {
+                            val = null;
+                        }
+                        
                         processtmp = false;
                     }
                 }
@@ -1708,32 +1757,37 @@ var existsLink = function(text, type, functorun) {
                         val = recordfromdata;
                     }
                     else {
+                        val = null;
+                    }
+                }
+
+                if (val) {
+                    if (val.type == "T") {
+
+                        if (   
+                            (text.substring(0,20) != "" && val.tweet.includes(text.substring(0,20)))
+                            ||
+                            (text.substring(40,60) != "" && val.tweet.includes(text.substring(40,60)))                        
+                            ||
+                            (text.substring(80,100) != "" && val.tweet.includes(text.substring(80,100)))                     
+                        ) {
+                            console.log(text);
+    
+                            existingId = val.id;
+                        }
+                    }
+                    else {
+                        if (val.url.localeCompare(text) == 0) {
+                            existingId = val.id;
+                        }
+                    }
+    
+                    if (val.id == "0") {
                         if (functorun)
                             functorun();
                     }
                 }
-
-                if (val.type == "T") {
-
-                    if (   
-                        (text.substring(0,20) != "" && val.tweet.includes(text.substring(0,20)))
-                        ||
-                        (text.substring(40,60) != "" && val.tweet.includes(text.substring(40,60)))                        
-                        ||
-                        (text.substring(80,100) != "" && val.tweet.includes(text.substring(80,100)))                     
-                    ) {
-                        console.log(text);
-
-                        existingId = val.id;
-                    }
-                }
                 else {
-                    if (val.url.localeCompare(text) == 0) {
-                        existingId = val.id;
-                    }
-                }
-
-                if (val.id == "0") {
                     if (functorun)
                         functorun();
                 }
