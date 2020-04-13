@@ -912,6 +912,9 @@ function undogenerate(obj) {
 function hasTweetChanges(callback) {
   var path = "./data.json";
   var ind = false;
+
+  return false;
+  
   $.getJSON(path, function(data) 
   {
     nextid = null;
