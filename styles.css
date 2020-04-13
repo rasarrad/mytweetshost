@@ -1451,7 +1451,7 @@ body.big #editTags {
 /* 
   ###Device = Tablets, Ipads (portrait)
   Screen = B/w 768px to 1024px */
-  @media (min-width: 481px) and (max-width: 767px), (min-width: 768px) and (max-width: 1024px) and (orientation: landscape), (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: 481px) and (max-width: 767px), (min-width: 768px) and (orientation: landscape), (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   
     #mask > div > i {
       background: #484848 !important;
@@ -1622,11 +1622,11 @@ body.big #editTags {
 
 
 /**********************************************************************************************/
-/******************************** LANDSCAPE --- HEIGHT < 300 CSS ******************************/
+/******************************** HEIGHT < 300 CSS ******************************/
   @media (max-height: 300px) {
   
   }
-/******************************** FIM LANDSCAPE --- HEIGHT < 300 CSS ******************************/
+/******************************** FIM HEIGHT < 300 CSS ******************************/
 /**************************************************************************************************/
 
 
@@ -3892,7 +3892,7 @@ body.big #expandedittags, body.big #expandsearchtags {
 /* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops */
-@media (min-width: 1025px) and (max-width: 1280px), (min-width: 1281px) {
+@media (min-width: 1025px) {
   
 
   #mask .fa-circle-o-notch {

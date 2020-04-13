@@ -514,7 +514,7 @@ function countalltweets() {
             tagssloaded = true;
 
         }
-
+        
         // All Links
         $("#all").text(total);
         $("#all2").text(total);
