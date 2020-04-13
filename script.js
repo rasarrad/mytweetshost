@@ -175,11 +175,7 @@ $( document ).ready(function() {
     var hasChanges = readCookie("hasChanges");
 
     if (hasChanges && hasChanges.length > 0) {
-        alert(55555);
         $("#settings").addClass("haschanges");
-    }
-    else {
-        alert(1111);
     }
 
 
