@@ -13,7 +13,7 @@ function saveinfo(obj, id) {
     }
     createCookie("hasChanges", "Yes");
     $("#settings").addClass("haschanges");
-
+    $("#generateicon").addClass("haschanges");
     showMessage("Information About Link Saved"); 
 }   
 
@@ -38,7 +38,7 @@ function saveclassif(obj, id) {
 
     createCookie("hasChanges", "Yes");
     $("#settings").addClass("haschanges");
-
+    $("#generateicon").addClass("haschanges");
     showMessage("Link Classification Saved"); 
 }  
 
@@ -69,10 +69,12 @@ function undosaveclassif(obj, id) {
         if (flag) {
             createCookie("hasChanges", "Yes");
             $("#settings").addClass("haschanges");
+            $("#generateicon").addClass("haschanges");
         }
         else {
             createCookie("hasChanges", "");
             $("#settings").removeClass("haschanges");
+            $("#generateicon").removeClass("haschanges");
         }
 
         showMessage("Link Reclassification Reverted");
@@ -109,10 +111,12 @@ function undosaveinfo(obj, id) {
         if (flag) {
             createCookie("hasChanges", "Yes");
             $("#settings").addClass("haschanges");
+            $("#generateicon").addClass("haschanges");
         }
         else {
             createCookie("hasChanges", "");
             $("#settings").removeClass("haschanges");
+            $("#generateicon").removeClass("haschanges");
         }
 
         showMessage("Information About Link Reverted");
@@ -138,10 +142,12 @@ function removetweet(obj) {
             if (hasTweetChanges()) {
               createCookie("hasChanges", "Yes");
               $("#settings").addClass("haschanges");
+              $("#generateicon").addClass("haschanges");
             }
             else {
               createCookie("hasChanges", "");
               $("#settings").removeClass("haschanges");
+              $("#generateicon").removeClass("haschanges");
             }
             updateLinkColor("", $('#linkChange').attr("cid"));
             showMessage("Link Marked To Delete Reverted");
@@ -151,6 +157,7 @@ function removetweet(obj) {
             $("#seticon").attr("style", "color: red;");
             updateLinkColor("red", $('#linkChange').attr("cid"));
             $("#settings").addClass("haschanges");
+            $("#generateicon").addClass("haschanges");
             createCookie("hasChanges", "Yes");
             showMessage("Link Marked To Delete");
         }
@@ -206,6 +213,7 @@ function acceptTag(obj) {
         $('#' + id).find('.newcat').html('<b> New categories </b>' + $(obj).parent().find('input').val());   
 
         $("#settings").addClass("haschanges");
+        $("#generateicon").addClass("haschanges");
         createCookie("hasChanges", "Yes");
         showMessage("Category Marked To Change");
     }
@@ -223,6 +231,7 @@ function acceptTag(obj) {
         $('#' + id).find('.newtag').html('<b> New tags </b>' + $(obj).parent().find('input').val());
 
         $("#settings").addClass("haschanges");
+        $("#generateicon").addClass("haschanges");
         createCookie("hasChanges", "Yes");
         showMessage("Tag Marked To Change");
     }
@@ -255,6 +264,7 @@ function undotag(obj) {
         }
         if (hasTweetChanges()) {
           $("#settings").addClass("haschanges");
+          $("#generateicon").addClass("haschanges");
           createCookie("hasChanges", "Yes");
         }
         else {
@@ -278,10 +288,12 @@ function undotag(obj) {
         }
         if (hasTweetChanges()) {
           $("#settings").addClass("haschanges");
+          $("#generateicon").addClass("haschanges");
           createCookie("hasChanges", "Yes");
         }
         else {
           $("#settings").removeClass("haschanges");
+          $("#generateicon").removeClass("haschanges");
           createCookie("hasChanges", "");
         }
         showMessage("Category Marked To Change Reverted");
@@ -794,6 +806,7 @@ function undogenerate(obj) {
     
         createCookie("hasChanges", "");
         $("#settings").removeClass("haschanges");
+        $("#generateicon").removeClass("haschanges");
     
         showMessage("Changes Were Cleaned"); 
     }
@@ -896,6 +909,7 @@ function undogenerate(obj) {
       if (ind) {
         createCookie("hasChanges", "Yes");
         $("#settings").addClass("haschanges");
+        $("#generateicon").addClass("haschanges");
       }
 
       showMessage("Processed Changes Were Reverted");

@@ -176,6 +176,7 @@ $( document ).ready(function() {
 
     if (hasChanges && hasChanges.length > 0) {
         $("#settings").addClass("haschanges");
+        $("#generateicon").addClass("haschanges");
     }
 
 

@@ -942,10 +942,12 @@ function tagsInputOnChange(obj) {
         if (flag) {
             createCookie("hasChanges", "Yes");
             $("#settings").addClass("haschanges");
+            $("#generateicon").addClass("haschanges");
         }
         else {
             createCookie("hasChanges", "");
             $("#settings").removeClass("haschanges");
+            $("#generateicon").removeClass("haschanges");
         }
     } 
     hasTweetChanges(callback);
@@ -1186,10 +1188,12 @@ function catsInputOnChange(obj) {
         if (flag) {
             createCookie("hasChanges", "Yes");
             $("#settings").addClass("haschanges");
+            $("#generateicon").addClass("haschanges");
         }
         else {
             createCookie("hasChanges", "");
             $("#settings").removeClass("haschanges");
+            $("#generateicon").removeClass("haschanges");
         }
     } 
     hasTweetChanges(callback);
@@ -1291,10 +1295,12 @@ function classifInputOnChange(obj) {
         if (flag) {
             createCookie("hasChanges", "Yes");
             $("#settings").addClass("haschanges");
+            $("#generateicon").addClass("haschanges");
         }
         else {
             createCookie("hasChanges", "");
             $("#settings").removeClass("haschanges");
+            $("#generateicon").removeClass("haschanges");
         }
     } 
     hasTweetChanges(callback);
@@ -1381,10 +1387,12 @@ function infoInputOnKeyup(obj) {
                 if (flag) {
                     createCookie("hasChanges", "Yes");
                     $("#settings").addClass("haschanges");
+                    $("#generateicon").addClass("haschanges");
                 }
                 else {
                     createCookie("hasChanges", "");
                     $("#settings").removeClass("haschanges");
+                    $("#generateicon").removeClass("haschanges");
                 }
             } 
             hasTweetChanges(callback);
