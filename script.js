@@ -648,6 +648,7 @@ function handleFileSelect(evt) {
     var output = [];
     var reader = new FileReader();
 
+    console.log(files);
     for (var i = 0, f; f = files[i]; i++) {
         //var mydata = JSON.parse();
         console.log(reader.readAsText(f));
