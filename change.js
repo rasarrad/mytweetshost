@@ -1148,5 +1148,6 @@ function generate(obj) {
         
             // Start file download.
             download("BookmarksStationLinks_" + formatDate(date) + ".txt", text);
+        }
     }); 
 } 
