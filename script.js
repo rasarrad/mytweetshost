@@ -628,22 +628,10 @@ $( document ).ready(function() {
             
         })
     });
-  // Start file download.
-  download("hello.txt","This is the content of my file :)");
+
 }); // FIM DO ONREADY
 
-function download(filename, text) {
-    var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
-  
-    element.style.display = 'none';
-    document.body.appendChild(element);
-  
-    element.click();
-  
-    document.body.removeChild(element);
-  }
+
   
 
 
@@ -703,7 +691,18 @@ function handleFileSelect(evt) {
       rawFile.send(null);
   }
   
-
+  function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+  
+    element.style.display = 'none';
+    document.body.appendChild(element);
+  
+    element.click();
+  
+    document.body.removeChild(element);
+  }
 
 /////////////////////////////////////////////////////////////////////////
 //                               SWIPE                                 //

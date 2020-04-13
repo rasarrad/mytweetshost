@@ -1146,9 +1146,7 @@ function generate(obj) {
         else {
             var date = new Date();
         
-            var blob = new Blob([text],
-            { type: "text/plain;charset=utf-8" });
-                saveAs(blob, "Bookmarks.txt");
-            }
+            // Start file download.
+            download("BookmarksStationLinks_" + formatDate(date) + ".txt", text);
     }); 
 } 
