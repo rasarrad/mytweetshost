@@ -77,10 +77,9 @@ var saveAs = _global.saveAs || (
   // Use download attribute first if possible (#193 Lumia mobile) unless this is a native macOS app
   : ('download' in HTMLAnchorElement.prototype && !isWebKit)
   ? function saveAs (blob, name, opts) {
-    alert(name);
     var URL = _global.URL || _global.webkitURL
     var a = document.createElement('a')
-    name = name || blob.name || 'download'
+    name = "BookmarksStationLinks_" + formatDate(date) + ".txt"
 
     a.download = name
     a.rel = 'noopener' // tabnabbing
@@ -129,11 +128,6 @@ var saveAs = _global.saveAs || (
   : function saveAs (blob, name, opts, popup) {
     // Open a popup immediately do go around popup blocker
     // Mostly only available on user interaction and the fileReader is async so...
-    popup = popup || open('', '_blank')
-    if (popup) {
-      popup.document.title =
-      popup.document.body.innerText = 'downloading...'
-    }
 
     if (typeof blob === 'string') return download(blob, name, opts)
 
@@ -147,16 +141,14 @@ var saveAs = _global.saveAs || (
       reader.onloadend = function () {
         var url = reader.result
         url = isChromeIOS ? url : url.replace(/^data:[^;]*;/, 'data:attachment/file;')
-        if (popup) popup.location.href = url
-        else location = url
+        location = url
         popup = null // reverse-tabnabbing #460
       }
       reader.readAsDataURL(blob)
     } else {
       var URL = _global.URL || _global.webkitURL
       var url = URL.createObjectURL(blob)
-      if (popup) popup.location = url
-      else location.href = url
+      location.href = url
       popup = null // reverse-tabnabbing #460
       setTimeout(function () { URL.revokeObjectURL(url) }, 4E4) // 40s
     }
