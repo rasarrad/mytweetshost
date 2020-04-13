@@ -646,6 +646,8 @@ function handleFileSelect(evt) {
 
     // files is a FileList of File objects. List some properties.
     var output = [];
+    var reader = new FileReader();
+    
     for (var i = 0, f; f = files[i]; i++) {
 
         var mydata = JSON.parse(reader.readAsText(f));
