@@ -78,6 +78,7 @@ var saveAs = _global.saveAs || (
   : ('download' in HTMLAnchorElement.prototype && !isWebKit)
   ? function saveAs (blob, name, opts) {
     var URL = _global.URL || _global.webkitURL
+    var a = document.createElement('a')
 
     a.download = name
     a.rel = 'noopener' // tabnabbing
