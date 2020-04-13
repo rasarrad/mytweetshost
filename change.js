@@ -12,7 +12,7 @@ function saveinfo(obj, id) {
       $("#" + id + "undoinfo").css("display", "inline-block");
     }
     createCookie("hasChanges", "Yes");
-    $("#generateicon").addClass("haschanges");
+    $("#settings").addClass("haschanges");
 
     showMessage("Information About Link Saved"); 
 }   
@@ -37,7 +37,7 @@ function saveclassif(obj, id) {
     }
 
     createCookie("hasChanges", "Yes");
-    $("#generateicon").addClass("haschanges");
+    $("#settings").addClass("haschanges");
 
     showMessage("Link Classification Saved"); 
 }  
@@ -68,11 +68,11 @@ function undosaveclassif(obj, id) {
     var callback = function(flag) {      
         if (flag) {
             createCookie("hasChanges", "Yes");
-            $("#generateicon").addClass("haschanges");
+            $("#settings").addClass("haschanges");
         }
         else {
             createCookie("hasChanges", "");
-            $("#generateicon").removeClass("haschanges");
+            $("#settings").removeClass("haschanges");
         }
 
         showMessage("Link Reclassification Reverted");
@@ -108,11 +108,11 @@ function undosaveinfo(obj, id) {
     var callback = function(flag) {      
         if (flag) {
             createCookie("hasChanges", "Yes");
-            $("#generateicon").addClass("haschanges");
+            $("#settings").addClass("haschanges");
         }
         else {
             createCookie("hasChanges", "");
-            $("#generateicon").removeClass("haschanges");
+            $("#settings").removeClass("haschanges");
         }
 
         showMessage("Information About Link Reverted");
@@ -137,11 +137,11 @@ function removetweet(obj) {
     
             if (hasTweetChanges()) {
               createCookie("hasChanges", "Yes");
-              $("#generateicon").addClass("haschanges");
+              $("#settings").addClass("haschanges");
             }
             else {
               createCookie("hasChanges", "");
-              $("#generateicon").removeClass("haschanges");
+              $("#settings").removeClass("haschanges");
             }
             updateLinkColor("", $('#linkChange').attr("cid"));
             showMessage("Link Marked To Delete Reverted");
@@ -150,7 +150,7 @@ function removetweet(obj) {
             createCookie($('#linkChange').attr("cid") + "isdeleted", "a", 99999);
             $("#seticon").attr("style", "color: red;");
             updateLinkColor("red", $('#linkChange').attr("cid"));
-            $("#generateicon").addClass("haschanges");
+            $("#settings").addClass("haschanges");
             createCookie("hasChanges", "Yes");
             showMessage("Link Marked To Delete");
         }
@@ -205,7 +205,7 @@ function acceptTag(obj) {
 
         $('#' + id).find('.newcat').html('<b> New categories </b>' + $(obj).parent().find('input').val());   
 
-        $("#generateicon").addClass("haschanges");
+        $("#settings").addClass("haschanges");
         createCookie("hasChanges", "Yes");
         showMessage("Category Marked To Change");
     }
@@ -222,7 +222,7 @@ function acceptTag(obj) {
 
         $('#' + id).find('.newtag').html('<b> New tags </b>' + $(obj).parent().find('input').val());
 
-        $("#generateicon").addClass("haschanges");
+        $("#settings").addClass("haschanges");
         createCookie("hasChanges", "Yes");
         showMessage("Tag Marked To Change");
     }
@@ -254,11 +254,11 @@ function undotag(obj) {
             $('#' + id).find('.tags').css('background', '#00000021').css('border-bottom', '1px solid #00000038');
         }
         if (hasTweetChanges()) {
-          $("#generateicon").addClass("haschanges");
+          $("#settings").addClass("haschanges");
           createCookie("hasChanges", "Yes");
         }
         else {
-          $("#generateicon").removeClass("haschanges");
+          $("#genersettingsateicon").removeClass("haschanges");
           createCookie("hasChanges", "");
         }
         showMessage("Tag Marked To Change Reverted");
@@ -277,11 +277,11 @@ function undotag(obj) {
             $('#' + id).find('.tags').css('background', '#00000021').css('border-bottom', '1px solid #00000038');
         }
         if (hasTweetChanges()) {
-          $("#generateicon").addClass("haschanges");
+          $("#settings").addClass("haschanges");
           createCookie("hasChanges", "Yes");
         }
         else {
-          $("#generateicon").removeClass("haschanges");
+          $("#settings").removeClass("haschanges");
           createCookie("hasChanges", "");
         }
         showMessage("Category Marked To Change Reverted");
@@ -793,7 +793,7 @@ function undogenerate(obj) {
         while (id >= 0);        
     
         createCookie("hasChanges", "");
-        $("#generateicon").removeClass("haschanges");
+        $("#settings").removeClass("haschanges");
     
         showMessage("Changes Were Cleaned"); 
     }
@@ -895,7 +895,7 @@ function undogenerate(obj) {
 
       if (ind) {
         createCookie("hasChanges", "Yes");
-        $("#generateicon").addClass("haschanges");
+        $("#settings").addClass("haschanges");
       }
 
       showMessage("Processed Changes Were Reverted");

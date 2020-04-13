@@ -417,7 +417,7 @@ function create() {
 
         createCookie(nextid + "templink", encodeURIComponent(JSON.stringify(result)), 99999);
         createCookie("hasChanges", "Yes");
-        $("#generateicon").addClass("haschanges");
+        $("#settings").addClass("haschanges");
     //} 
 
 

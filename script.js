@@ -175,7 +175,7 @@ $( document ).ready(function() {
     var hasChanges = readCookie("hasChanges");
 
     if (hasChanges && hasChanges.length > 0) {
-        $("#generateicon").addClass("haschanges");
+        $("#settings").addClass("haschanges");
     }
 
 

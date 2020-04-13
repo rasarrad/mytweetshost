@@ -941,11 +941,11 @@ function tagsInputOnChange(obj) {
     var callback = function(flag) {      
         if (flag) {
             createCookie("hasChanges", "Yes");
-            $("#generateicon").addClass("haschanges");
+            $("#settings").addClass("haschanges");
         }
         else {
             createCookie("hasChanges", "");
-            $("#generateicon").removeClass("haschanges");
+            $("#settings").removeClass("haschanges");
         }
     } 
     hasTweetChanges(callback);
@@ -1185,11 +1185,11 @@ function catsInputOnChange(obj) {
     var callback = function(flag) {      
         if (flag) {
             createCookie("hasChanges", "Yes");
-            $("#generateicon").addClass("haschanges");
+            $("#settings").addClass("haschanges");
         }
         else {
             createCookie("hasChanges", "");
-            $("#generateicon").removeClass("haschanges");
+            $("#settings").removeClass("haschanges");
         }
     } 
     hasTweetChanges(callback);
@@ -1290,11 +1290,11 @@ function classifInputOnChange(obj) {
     var callback = function(flag) {      
         if (flag) {
             createCookie("hasChanges", "Yes");
-            $("#generateicon").addClass("haschanges");
+            $("#settings").addClass("haschanges");
         }
         else {
             createCookie("hasChanges", "");
-            $("#generateicon").removeClass("haschanges");
+            $("#settings").removeClass("haschanges");
         }
     } 
     hasTweetChanges(callback);
@@ -1380,11 +1380,11 @@ function infoInputOnKeyup(obj) {
             var callback = function(flag) {      
                 if (flag) {
                     createCookie("hasChanges", "Yes");
-                    $("#generateicon").addClass("haschanges");
+                    $("#settings").addClass("haschanges");
                 }
                 else {
                     createCookie("hasChanges", "");
-                    $("#generateicon").removeClass("haschanges");
+                    $("#settings").removeClass("haschanges");
                 }
             } 
             hasTweetChanges(callback);

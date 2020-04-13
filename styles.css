@@ -561,6 +561,10 @@ body.big #zoomin {
       color: #e88e0b;
 }
 
+#settings.haschanges {
+  color: #e88e0b;
+}
+
     .top {
       display: none;
     }
