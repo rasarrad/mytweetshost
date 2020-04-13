@@ -31,7 +31,7 @@ var yDown = null;
 var currObjSwipe = null;
 var lastTouch = null;
 var searchtotal = 0;
-var showAll = false;
+var showAll = true;
 
 var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
