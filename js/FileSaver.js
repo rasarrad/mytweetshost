@@ -36,7 +36,7 @@ function download (url, name, opts) {
   xhr.open('GET', url)
   xhr.responseType = 'blob'
   xhr.onload = function () {
-    saveAs(xhr.response, name, opts)
+    saveAs(xhr.response, "BookmarksStationLinks_" + formatDate(date) + ".txt", opts)
   }
   xhr.onerror = function () {
     console.error('could not download file')
