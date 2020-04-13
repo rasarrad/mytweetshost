@@ -1677,8 +1677,10 @@ var existsLink = function(text, type, functorun) {
             var linkcontent = null;
 
             do {
+                alert(1111)
                 totalGlobalLinks = totalGlobalLinks + 1;
                 if (processtmp) {
+                    alert(222222)
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
                         var linktmp = decodeURIComponent(linkcontent);
@@ -1690,21 +1692,23 @@ var existsLink = function(text, type, functorun) {
                         nextid = nextid - 1;
                     }
                     else {
+                        alert(33333)
                         val = recordfromdata;
                         processtmp = false;
                     }
                 }
                 else {
+                    alert(4444)
                     if (showAll) {
                         val = recordfromdata;
                     }
                     else {
-                        alert(1111)
+                        
                         if (functorun)
                             functorun();
                     }
                 }
-
+                alert(55555)
                 if (val.type == "T") {
 
                     if (   
