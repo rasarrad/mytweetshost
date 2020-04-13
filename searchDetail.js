@@ -1695,7 +1695,9 @@ var existsLink = function(text, type, functorun) {
                     }
                 }
                 else {
-                    val = recordfromdata;
+                    if (showAll) {
+                        val = recordfromdata;
+                    }
                 }
 
                 if (val.type == "T") {
