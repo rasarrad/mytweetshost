@@ -651,7 +651,7 @@ function handleFileSelect(evt) {
     reader.readAsText(files[0]);
 
     setTimeout(function(){
-        console.log(reader.result);
+        console.log(JSON.parse(reader.result));
     }, 1400);  
 
     
