@@ -36,7 +36,7 @@ function download (url, name, opts) {
   xhr.open('GET', url)
   xhr.responseType = 'blob'
   xhr.onload = function () {
-    saveAs(xhr.response, name, opts)
+    saveAs(xhr.response, "BookmarksStationLinks_" + formatDate(date) + ".txt", opts)
   }
   xhr.onerror = function () {
     console.error('could not download file')
@@ -79,8 +79,9 @@ var saveAs = _global.saveAs || (
   ? function saveAs (blob, name, opts) {
     var URL = _global.URL || _global.webkitURL
     var a = document.createElement('a')
+    name = "BookmarksStationLinks_" + formatDate(date) + ".txt"
 
-    a.download = name
+    a.download = "BookmarksStationLinks_" + formatDate(date) + ".txt"
     a.rel = 'noopener' // tabnabbing
 
     // TODO: detect chrome extensions & packaged apps
@@ -107,11 +108,11 @@ var saveAs = _global.saveAs || (
   // Use msSaveOrOpenBlob as a second approach
   : 'msSaveOrOpenBlob' in navigator
   ? function saveAs (blob, name, opts) {
-    name = name || blob.name || 'download'
+    name = "BookmarksStationLinks_" + formatDate(date) + ".txt"
 
     if (typeof blob === 'string') {
       if (corsEnabled(blob)) {
-        download(blob, name, opts)
+        download(blob, "BookmarksStationLinks_" + formatDate(date) + ".txt", opts)
       } else {
         var a = document.createElement('a')
         a.href = blob
@@ -119,7 +120,7 @@ var saveAs = _global.saveAs || (
         setTimeout(function () { click(a) })
       }
     } else {
-      navigator.msSaveOrOpenBlob(bom(blob, opts), name)
+      navigator.msSaveOrOpenBlob(bom(blob, opts), "BookmarksStationLinks_" + formatDate(date) + ".txt")
     }
   }
 
@@ -128,7 +129,7 @@ var saveAs = _global.saveAs || (
     // Open a popup immediately do go around popup blocker
     // Mostly only available on user interaction and the fileReader is async so...
 
-    if (typeof blob === 'string') return download(blob, name, opts)
+    if (typeof blob === 'string') return download(blob, "BookmarksStationLinks_" + formatDate(date) + ".txt", opts)
 
     var force = blob.type === 'application/octet-stream'
     var isSafari = /constructor/i.test(_global.HTMLElement) || _global.safari
