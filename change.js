@@ -378,17 +378,16 @@ function countalltweets() {
                     else {
                         if (showAll) {
                             val = recordfromdata;
-                            processtmp = false;
                         }
                         else {
                             val = null;
                         }
+                        processtmp = false;
                     }
                 }
                 else {
                     if (showAll) {
                         val = recordfromdata;
-                        processtmp = false;
                     }
                     else {
                         val = null;
