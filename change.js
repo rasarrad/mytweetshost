@@ -376,84 +376,98 @@ function countalltweets() {
                         nextid = nextid - 1;
                     }
                     else {
-                        val = recordfromdata;
-                        processtmp = false;
+                        if (showAll) {
+                            val = recordfromdata;
+                            processtmp = false;
+                        }
+                        else {
+                            val = null;
+                        }
                     }
                 }
                 else {
-                    val = recordfromdata;
+                    if (showAll) {
+                        val = recordfromdata;
+                        processtmp = false;
+                    }
+                    else {
+                        val = null;
+                    }
                 }
 
-                var doShowDeletedLink = true;  
-                if (!$("#showdeleted").is(":checked")) {
-                    var isdeleted = readCookie(val.id + "isdeleted");
-                    if (isdeleted && isdeleted.length > 0) { 
-                        doShowDeletedLink = false; 
-                    } 
-                }
-
-                if (doShowDeletedLink) {
-
-                    var cat = readCookie(val.id + "catchanged");
-                    if (cat && cat.length > 0) {
-                        val.categories = cat;
-                    }
-        
-                    var tag = readCookie(val.id + "tagchanged");
-                    if (tag && tag.length > 0) {
-                        val.tags = tag;
-                    }
-        
-                    var info = readCookie(val.id + "info");
-                    if (info && info.length > 0) {
-                        val.info = info;
-                    }
-        
-                    var classif = readCookie(val.id + "classif");
-                    if (classif && classif.length > 0) {
-                        val.classif = classif;
-                    }
-                
-                    var res = val.categories.split(" ");
-                    
-                    for (var i = 0; i < res.length; i++) {
-                        if (counters.has(val.type + res[i])) {
-                            var aux = counters.get(val.type + res[i]);
-                            counters.set(val.type + res[i], aux + 1);
-                        }
-                        else {
-                            counters.set(val.type + res[i], 1);
-                        }
+                if (val) {
+                    var doShowDeletedLink = true;  
+                    if (!$("#showdeleted").is(":checked")) {
+                        var isdeleted = readCookie(val.id + "isdeleted");
+                        if (isdeleted && isdeleted.length > 0) { 
+                            doShowDeletedLink = false; 
+                        } 
                     }
     
-                    if (!tagssloaded) {
-                        var tags = val.tags.split(" ");
+                    if (doShowDeletedLink) {
+    
+                        var cat = readCookie(val.id + "catchanged");
+                        if (cat && cat.length > 0) {
+                            val.categories = cat;
+                        }
             
-                        for (var i = 0; i < tags.length; i++) {
-                            if (tags[i].trim().length > 0) {
-                                if (tagsmap.has(tags[i].trim())) {
-                                    var aux = Number(tagsmap.get(tags[i]));
+                        var tag = readCookie(val.id + "tagchanged");
+                        if (tag && tag.length > 0) {
+                            val.tags = tag;
+                        }
             
-                                    tagsmap.set(tags[i].trim(), aux + 1);
-                                }
-                                else {
-                                    tagsmap.set(tags[i].trim(), 1);
+                        var info = readCookie(val.id + "info");
+                        if (info && info.length > 0) {
+                            val.info = info;
+                        }
+            
+                        var classif = readCookie(val.id + "classif");
+                        if (classif && classif.length > 0) {
+                            val.classif = classif;
+                        }
+                    
+                        var res = val.categories.split(" ");
+                        
+                        for (var i = 0; i < res.length; i++) {
+                            if (counters.has(val.type + res[i])) {
+                                var aux = counters.get(val.type + res[i]);
+                                counters.set(val.type + res[i], aux + 1);
+                            }
+                            else {
+                                counters.set(val.type + res[i], 1);
+                            }
+                        }
+        
+                        if (!tagssloaded) {
+                            var tags = val.tags.split(" ");
+                
+                            for (var i = 0; i < tags.length; i++) {
+                                if (tags[i].trim().length > 0) {
+                                    if (tagsmap.has(tags[i].trim())) {
+                                        var aux = Number(tagsmap.get(tags[i]));
+                
+                                        tagsmap.set(tags[i].trim(), aux + 1);
+                                    }
+                                    else {
+                                        tagsmap.set(tags[i].trim(), 1);
+                                    }
                                 }
                             }
                         }
+        
+                        if (val.type == "T") {
+                            total_t = total_t + 1;
+                        }
+                        else if (val.type == "Y") {
+                            total_y = total_y + 1;
+                        }
+                        else {
+                            total_h = total_h + 1;
+                        }
+                        total = total + 1;
                     }
-    
-                    if (val.type == "T") {
-                        total_t = total_t + 1;
-                    }
-                    else if (val.type == "Y") {
-                        total_y = total_y + 1;
-                    }
-                    else {
-                        total_h = total_h + 1;
-                    }
-                    total = total + 1;
                 }
+
                 
             }
             while (processtmp);

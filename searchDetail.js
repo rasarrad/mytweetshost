@@ -555,7 +555,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
         total_yy = 0;
         total_tt = 0;
         total_hh = 0;
-        totalGlobalLinks = 0;
         $("#main").empty();
     }
 
@@ -597,7 +596,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 var dofilterclassiffinal = false;
 
                 do {
-                    totalGlobalLinks = totalGlobalLinks + 1;
                     if (processtmp) {
                         linkcontent = readCookie(nextid + "templink");
                         if (linkcontent && linkcontent.length > 0) {
@@ -610,68 +608,80 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             nextid = nextid - 1;
                         }
                         else {
-                            val = recordfromdata;
-                            processtmp = false;
+                            if (showAll) {
+                                val = recordfromdata;
+                                processtmp = false;
+                            }
+                            else {
+                                val = null;
+                            }
                         }
                     }
                     else {
-                        val = recordfromdata;
-                    }
-
-                    var cat = readCookie(val.id + "catchanged");
-                    if (cat && cat.length > 0) {
-                        val.categories = cat;
-                    }
-        
-                    var tag = readCookie(val.id + "tagchanged");
-                    if (tag && tag.length > 0) {
-                        val.tags = tag;
-                    }
-        
-                    var info = readCookie(val.id + "info");
-                    if (info && info.length > 0) {
-                        val.info = info;
-                    }
-        
-                    var classif = readCookie(val.id + "classif");
-                    if (classif && classif.length > 0) {
-                        val.classif = classif;
-                    }
-
-                    dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
-                    dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
-                    dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
-                    dofiltertagfinal = !dofiltertag || searchTags(val.tags.toLowerCase(), $('#filtertag').val().toLowerCase());
-                    dofiltercatfinal = !dofiltercat || val.categories.includes($('#selectedcat').val());
-                    dofilterauthorfinal = !dofilterauthor || val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase());
-                    dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
-                    dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
-                    
-                    var doShowDeletedLink = true;  
-                    if (!$("#showdeleted2").is(":checked")) {
-                        var isdeleted = readCookie(val.id + "isdeleted");
-                        if (isdeleted && isdeleted.length > 0) { 
-                            doShowDeletedLink = false; 
-                        } 
-                    }
-
-                    if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
-                        && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
-      
-
-                        searchtotal = searchtotal + 1;
-
-
-                        ind = ind + 1;
-    
-                        if (val.type == "T") {
-                            total_tt = total_tt + 1;
-                        }
-                        else if (val.type == "Y") {
-                            total_yy = total_yy + 1;
+                        if (showAll) {
+                            val = recordfromdata;
                         }
                         else {
-                            total_hh = total_hh + 1;
+                            val = null;
+                        }
+                    }
+
+                    if (val) {
+                        var cat = readCookie(val.id + "catchanged");
+                        if (cat && cat.length > 0) {
+                            val.categories = cat;
+                        }
+            
+                        var tag = readCookie(val.id + "tagchanged");
+                        if (tag && tag.length > 0) {
+                            val.tags = tag;
+                        }
+            
+                        var info = readCookie(val.id + "info");
+                        if (info && info.length > 0) {
+                            val.info = info;
+                        }
+            
+                        var classif = readCookie(val.id + "classif");
+                        if (classif && classif.length > 0) {
+                            val.classif = classif;
+                        }
+    
+                        dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
+                        dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
+                        dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
+                        dofiltertagfinal = !dofiltertag || searchTags(val.tags.toLowerCase(), $('#filtertag').val().toLowerCase());
+                        dofiltercatfinal = !dofiltercat || val.categories.includes($('#selectedcat').val());
+                        dofilterauthorfinal = !dofilterauthor || val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase());
+                        dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
+                        dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
+                        
+                        var doShowDeletedLink = true;  
+                        if (!$("#showdeleted2").is(":checked")) {
+                            var isdeleted = readCookie(val.id + "isdeleted");
+                            if (isdeleted && isdeleted.length > 0) { 
+                                doShowDeletedLink = false; 
+                            } 
+                        }
+    
+                        if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
+                            && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
+          
+    
+                            searchtotal = searchtotal + 1;
+    
+    
+                            ind = ind + 1;
+        
+                            if (val.type == "T") {
+                                total_tt = total_tt + 1;
+                            }
+                            else if (val.type == "Y") {
+                                total_yy = total_yy + 1;
+                            }
+                            else {
+                                total_hh = total_hh + 1;
+                            }
                         }
                     }
                 }
@@ -1677,10 +1687,7 @@ var existsLink = function(text, type, functorun) {
             var linkcontent = null;
 
             do {
-                alert(1111)
-                totalGlobalLinks = totalGlobalLinks + 1;
                 if (processtmp) {
-                    alert(222222)
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
                         var linktmp = decodeURIComponent(linkcontent);
@@ -1692,23 +1699,20 @@ var existsLink = function(text, type, functorun) {
                         nextid = nextid - 1;
                     }
                     else {
-                        alert(33333)
                         val = recordfromdata;
                         processtmp = false;
                     }
                 }
                 else {
-                    alert(4444)
                     if (showAll) {
                         val = recordfromdata;
                     }
                     else {
-                        
                         if (functorun)
                             functorun();
                     }
                 }
-                alert(55555)
+
                 if (val.type == "T") {
 
                     if (   
