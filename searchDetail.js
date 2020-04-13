@@ -1698,6 +1698,10 @@ var existsLink = function(text, type, functorun) {
                     if (showAll) {
                         val = recordfromdata;
                     }
+                    else {
+                        if (functorun)
+                            functorun();
+                    }
                 }
 
                 if (val.type == "T") {
