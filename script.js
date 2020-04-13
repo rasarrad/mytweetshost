@@ -644,15 +644,23 @@ function handleFileSelect(evt) {
 
     var files = evt.dataTransfer.files; // FileList object.
 
+    readTextFile(files[0], function(text){
+        var data = JSON.parse(text);
+        console.log(data);
+    });
+
     // files is a FileList of File objects. List some properties.
+        /*
     var output = [];
     var reader = new FileReader();
+
 
     console.log(files);
     for (var i = 0, f; f = files[i]; i++) {
         //var mydata = JSON.parse();
         console.log(reader.readAsText(f));
     }
+     */
   }
 
   function handleDragOver(evt) {
@@ -661,6 +669,18 @@ function handleFileSelect(evt) {
     evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
   }
 
+  function readTextFile(file, callback) {
+      var rawFile = new XMLHttpRequest();
+      rawFile.overrideMimeType("application/json");
+      rawFile.open("GET", file, true);
+      rawFile.onreadystatechange = function() {
+          if (rawFile.readyState === 4 && rawFile.status == "200") {
+              callback(rawFile.responseText);
+          }
+      }
+      rawFile.send(null);
+  }
+  
 
 
 /////////////////////////////////////////////////////////////////////////
