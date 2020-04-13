@@ -1668,14 +1668,14 @@ var existsLink = function(text, type, functorun) {
         }
     }
     existingId = "no";
-
+    console.log(1111)
     $.getJSON(path, function(data) {
         var processtmp = true;
-
+        console.log(2222)
         $.each(data.Tweets, function(key, val) {
             var recordfromdata = val;
             var linkcontent = null;
-
+            console.log(33333)
             do {
                 totalGlobalLinks = totalGlobalLinks + 1;
                 if (processtmp) {
