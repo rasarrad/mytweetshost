@@ -644,13 +644,18 @@ function handleFileSelect(evt) {
 
     var files = evt.dataTransfer.files; // FileList object.
 
+    console.log(files[0]);
+
     var reader=new FileReader();
     reader.onload = function(e) {}
     reader.readAsText(files[0]);
+
+    console.log(reader);
+    
     var error = reader.error;
     var texte=reader.result;
 
-    console.log(texte);
+    console.log(reader);
 
 
     // files is a FileList of File objects. List some properties.
