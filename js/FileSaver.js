@@ -36,7 +36,7 @@ function download (url, name, opts) {
   xhr.open('GET', url)
   xhr.responseType = 'blob'
   xhr.onload = function () {
-    saveAs(xhr.response, "BookmarksStationLinks_" + formatDate(date) + ".txt", opts)
+    saveAs(xhr.response, name, opts)
   }
   xhr.onerror = function () {
     console.error('could not download file')
@@ -78,8 +78,6 @@ var saveAs = _global.saveAs || (
   : ('download' in HTMLAnchorElement.prototype && !isWebKit)
   ? function saveAs (blob, name, opts) {
     var URL = _global.URL || _global.webkitURL
-    var a = document.createElement('a')
-    name = "BookmarksStationLinks_" + formatDate(date) + ".txt"
 
     a.download = name
     a.rel = 'noopener' // tabnabbing
