@@ -394,7 +394,7 @@ function countalltweets() {
                     }
                 }
 
-                if (val) {
+                if (val && val.deleted != "yes") {
                     var doShowDeletedLink = true;  
                     if (!$("#showdeleted").is(":checked")) {
                         var isdeleted = readCookie(val.id + "isdeleted");
@@ -465,9 +465,7 @@ function countalltweets() {
                         }
                         total = total + 1;
                     }
-                }
-
-                
+                }   
             }
             while (processtmp);
           

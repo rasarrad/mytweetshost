@@ -627,7 +627,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         }
                     }
 
-                    if (val) {
+                    if (val && val.deleted != "yes") {
                         var cat = readCookie(val.id + "catchanged");
                         if (cat && cat.length > 0) {
                             val.categories = cat;
@@ -778,7 +778,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     }
                 }
 
-                if (val) {
+                if (val && val.deleted != "yes") {
                     var cat = readCookie(val.id + "catchanged");
                     if (cat && cat.length > 0) {
                         val.categories = cat;
@@ -840,7 +840,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                                 expandclass = hideMode ? "" : "isdeleted";    
                                 color = "color: red;";
                             } 
-                            else {
+                            else if (showColors) {
                                 if (linkcontent && linkcontent.length > 0) { // IS NEW
                                     expandclass = hideMode ? "" : "isnew";  
                                     color = "color: #00dc00;";
@@ -882,6 +882,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
                                         tagdispalay = parseTags(val.tags);
                                     }
                                 }
+                            }
+                            else {
+                                tagdispalay = parseTags(val.tags);
                             }
     
                             var xclass = "";
@@ -978,7 +981,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
     
                     }
                 }
-                else {
+                else if (val.deleted != "yes") {
                     return;
                 }
             }
@@ -1410,7 +1413,7 @@ var getInformationbyid = function(id, flag) {
                     }
                 }
 
-                if (val && val.id.includes(id)) {
+                if (val && val.deleted != "yes" && val.id.includes(id)) {
                     $("#main").empty();
                     $('#moretweets').hide();
                     $('#tweetcount').hide();  
@@ -1583,7 +1586,7 @@ var getJsonbyid = function(id, functorun) {
                     }
                 }
 
-                if (val) {
+                if (val && val.deleted != "yes") {
                     var cat = readCookie(val.id + "catchanged");
                     if (cat && cat.length > 0) {
                         val.categories = cat;
@@ -1612,8 +1615,6 @@ var getJsonbyid = function(id, functorun) {
                         return false;
                     }
                 }
-
-
             }
             while (processtmp);
         }); 
@@ -1761,7 +1762,7 @@ var existsLink = function(text, type, functorun) {
                     }
                 }
 
-                if (val) {
+                if (val && val.deleted != "yes") {
                     if (val.type == "T") {
 
                         if (   
@@ -1787,9 +1788,8 @@ var existsLink = function(text, type, functorun) {
                             functorun();
                     }
                 }
-                else {
-                    if (functorun)
-                        functorun();
+                else if (val.deleted != "yes" && functorun) {
+                    functorun();
                 }
             }
             while (processtmp);
