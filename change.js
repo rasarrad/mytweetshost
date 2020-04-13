@@ -1015,7 +1015,9 @@ function generate(obj) {
 
     resetFields(false);
     var path = "./data.json";
-    var text = '{"Tweets": [';
+    var text = '';
+    if (isMy) text = '{"Tweets": [';
+
     var ind = false;
     var processtmp = true;
     
@@ -1133,11 +1135,20 @@ function generate(obj) {
           
         });
 
-        text = text + ']}';
-        $('#linkresult').val(text);
-        $("#linkresult").select();
-        document.execCommand('copy'); 
-        $("#linkresult").blur();
-        showMessage("Changes Processed And Copied To Clipboard");
+        if (isMy) {
+            text = text + ']}';
+            $('#linkresult').val(text);
+            $("#linkresult").select();
+            document.execCommand('copy'); 
+            $("#linkresult").blur();
+            showMessage("Changes Processed And Copied To Clipboard");
+        }
+        else {
+            var date = new Date();
+        
+            var blob = new Blob([text],
+            { type: "text/plain;charset=utf-8" });
+                saveAs(blob, "BookmarksStationLinks_" + formatDate(date) + ".txt");
+            }
     }); 
 } 

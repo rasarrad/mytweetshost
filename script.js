@@ -32,8 +32,7 @@ var lastTouch = null;
 var searchtotal = 0;
 var showAll = true;
 var showColors = true;
-dosearchmore = false;
-dblFlag = true;
+var isMy = false;
 
 
 // START do tema
