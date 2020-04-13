@@ -77,6 +77,7 @@ var saveAs = _global.saveAs || (
   // Use download attribute first if possible (#193 Lumia mobile) unless this is a native macOS app
   : ('download' in HTMLAnchorElement.prototype && !isWebKit)
   ? function saveAs (blob, name, opts) {
+    alert(name);
     var URL = _global.URL || _global.webkitURL
     var a = document.createElement('a')
     name = name || blob.name || 'download'
