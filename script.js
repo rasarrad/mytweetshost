@@ -650,12 +650,12 @@ function handleFileSelect(evt) {
     reader.onload = function(e) {}
     reader.readAsText(files[0]);
 
-    console.log(reader);
-    
-    var error = reader.error;
-    var texte=reader.result;
+    setTimeout(function(){
+        console.log(reader.result);
+    }, 1400);  
 
-    console.log(reader);
+    
+    
 
 
     // files is a FileList of File objects. List some properties.
