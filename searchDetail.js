@@ -1699,6 +1699,7 @@ var existsLink = function(text, type, functorun) {
                         val = recordfromdata;
                     }
                     else {
+                        alert(1111)
                         if (functorun)
                             functorun();
                     }
