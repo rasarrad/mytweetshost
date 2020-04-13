@@ -202,6 +202,7 @@ var openSettingsPopup = function(jsonobj)
         
         $(".buttontdtohide").show();  
         $(".originaltr").show();
+        
         $('#removetweetp').attr('class','').addClass('fa').addClass('fa-eraser').addClass('fa-flip-horizontal');
 
     
@@ -221,7 +222,11 @@ var openSettingsPopup = function(jsonobj)
 
         if (tagchanged != null && tagchanged != 'null') {
             hasChanges = true;
-            currenttagdisplay.css('color','#00ff72');
+
+            if (showColors) {
+                currenttagdisplay.css('color','#00ff72');
+            }
+
             if (tagchanged.length > 0)
                 currenttagdisplay.html(parseTags(tagchanged));
             else
@@ -256,7 +261,11 @@ var openSettingsPopup = function(jsonobj)
 
         if (catchanged != null && catchanged != 'null') {
             hasChanges = true;
-            currentcatdisplay.css('color','#00ff72');
+            
+            if (showColors) {
+                currentcatdisplay.css('color','#00ff72');
+            }
+
             if (catchanged.length > 0)
                 currentcatdisplay.html(parseCats(catchanged));
             else
@@ -288,7 +297,11 @@ var openSettingsPopup = function(jsonobj)
 
         if (classifchanged != null && classifchanged != 'null') {
             hasChanges = true;
-            currentclassifdisplay.css('color','#00ff72');
+
+            if (showColors) {            
+                currentclassifdisplay.css('color','#00ff72');
+            }
+
             currentclassifdisplay.html(classifchanged);
             $('#classifinput').val(classifchanged);
             $('#originalclassiftd i').show();
@@ -324,7 +337,10 @@ var openSettingsPopup = function(jsonobj)
 
         if (infochanged != null && infochanged != 'null') {
             hasChanges = true;
-            currentinfodisplay.css('color','#00ff72');
+            
+            if (showColors) {
+                currentinfodisplay.css('color','#00ff72');
+            }
 
             if (infochanged.length > 0)
                 currentinfodisplay.html(decodeURIComponent(infochanged));
@@ -345,12 +361,15 @@ var openSettingsPopup = function(jsonobj)
                 $('#infoinput').val("");
             }
         }
+        if (showColors) {
+            currentinfodisplay.css('color','#00ff72');
+        }
 
         var isdeleted = readCookie(jsonobj.id + "isdeleted");
         if (isdeleted && isdeleted.length > 0) {
             $("#seticon").attr("style", "color: red;");
         }
-        else {
+        else if (showColors) {
             var linkcontent = readCookie(jsonobj.id + "templink");
             if (linkcontent && linkcontent.length > 0) {
                 $("#seticon").attr("style", "color: #00dc00;");
@@ -361,6 +380,9 @@ var openSettingsPopup = function(jsonobj)
                 else 
                     $("#seticon").attr("style", "");
             }
+        }
+        else {
+            $("#seticon").attr("style", "");
         }
 
 
@@ -421,6 +443,13 @@ var openSettingsPopup = function(jsonobj)
         $('#removetweetp').attr('class','').addClass('fa').addClass('fa-floppy-o');
 
         $("#linkChange #editTags .fa-chevron-down").show();    
+    }
+
+    if (showColors) {
+        $(".originaltr").show();
+    }
+    else {
+        $(".originaltr").hide();
     }
 
     //$('#linkChange').fadeIn(); 
