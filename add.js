@@ -105,22 +105,27 @@ function parseTweet(type) {
             var functorun = function() 
             { 
                 if (existingId != "no") {
+                    console.log(1111);
                     getInformationbyid(existingId, true);
                 }
                 else {
                     if (type && type == 2) {
+                        console.log(2222);
                         create();
                         showMessage("Youtube Link Successfully Parsed And Created"); 
                     }
                     else {
                         if (type && type == 1) {
+                            console.log(3333);
                             if ($(".addpopup").css('display') == 'none') {
+                                console.log(4444);
                                 openCreatePopup(true);
                                 
                                 createPreview();
                             }
                         }
                         else {
+                            console.log(55555);
                             createPreview();
                         }
                         
