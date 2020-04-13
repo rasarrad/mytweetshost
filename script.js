@@ -12,7 +12,6 @@ var dblClickTimeout = null;
 var addType = "T";
 var processedCount = 0;
 var totalLinkss = 0;
-var totalGlobalLinks = 0;
 var total_yy = 0; 
 var total_tt = 0;
 var total_hh = 0;
@@ -32,7 +31,7 @@ var yDown = null;
 var currObjSwipe = null;
 var lastTouch = null;
 var searchtotal = 0;
-var showAll = false;
+var showAll = true;
 
 var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
