@@ -30,7 +30,7 @@ var yDown = null;
 var currObjSwipe = null;
 var lastTouch = null;
 var searchtotal = 0;
-var showAll = true;
+var showAll = false;
 var showColors = true;
 var isMy = false;
 
@@ -652,15 +652,31 @@ function handleFileSelect(evt) {
     reader.readAsText(files[0]);
 
     setTimeout(function(){
-        var resultParsed = JSON.parse(reader.result);
+        var currentId = readCookie("maxid");
+        try {
+            var resultParsed = JSON.parse(reader.result);
+    
+            createCookie("maxid", parseInt(resultParsed[0].id));
 
-        for (var x = 0; x < resultParsed.length; x++) {
-            console.log(resultParsed[x].id);
+            for (var x = 0; x < resultParsed.length; x++) {
+                createCookie(resultParsed[x].id + "templink", encodeURIComponent(JSON.stringify(resultParsed[x])), 99999);
+            }
+
+            undogenerate(null, resultParsed[0].id); 
+            
+            showMessage("Links Successfully Imported"); 
+        }
+        catch(err) {
+            showMessage("Error Importing Links");
+            createCookie("maxid", parseInt(currentId)); 
+        }
+        finally {
+
         }
     }, 100);  
 
     
-    
+
 
 
     // files is a FileList of File objects. List some properties.

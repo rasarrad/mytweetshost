@@ -775,15 +775,46 @@ function countalltweets() {
 /////////////////////////////////////////////////////////////////////////
 
 
-function undogenerate(obj) {
-    fixfocus(obj);
+function undogenerate(obj, id) {
 
-    var r = confirm("Remove all Changes?");
-    if (r == true) {
-        resetFields(false);
+    if (obj)
+        fixfocus(obj);
 
-        var id = parseInt(readCookie("maxid")) - 1;
-
+    if (isMy) {
+        var r = confirm("Remove all Changes?");
+        if (r == true) {
+            resetFields(false);
+    
+            var id = parseInt(readCookie("maxid")) - 1;
+    
+            do {
+    
+                eraseCookie(id + "templink");
+        
+                eraseCookie(id + "isdeleted");
+        
+                eraseCookie(id + "catchanged");
+        
+                eraseCookie(id + "tagchanged");
+        
+                eraseCookie(id + "info");
+        
+                eraseCookie(id + "classif");
+    
+                eraseCookie(id + "haschanges");
+    
+                id = id - 1;
+            }
+            while (id >= 0);        
+        
+            createCookie("hasChanges", "");
+            $("#settings").removeClass("haschanges");
+            $("#generateicon").removeClass("haschanges");
+        
+            showMessage("Changes Were Cleaned"); 
+        }
+    }   
+    else {
         do {
 
             eraseCookie(id + "templink");
@@ -802,14 +833,8 @@ function undogenerate(obj) {
 
             id = id - 1;
         }
-        while (id >= 0);        
-    
-        createCookie("hasChanges", "");
-        $("#settings").removeClass("haschanges");
-        $("#generateicon").removeClass("haschanges");
-    
-        showMessage("Changes Were Cleaned"); 
-    }
+        while (id >= 100000);
+    } 
 }
 
 /* function undogenerate() {
