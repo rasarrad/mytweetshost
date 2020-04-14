@@ -659,12 +659,14 @@ function handleFileSelect(evt) {
             console.log(22222);
             createCookie("maxid", parseInt(resultParsed[0].id) + 1);
             console.log(33333);
+            undogenerate(); 
+            console.log(5555); 
+            
             for (var x = 0; x < resultParsed.length; x++) {
                 createCookie(resultParsed[x].id + "templink", encodeURIComponent(JSON.stringify(resultParsed[x])), 99999);
             }
             console.log(4444);
-            undogenerate(); 
-            console.log(5555); 
+
             createCookie("maxid", parseInt(resultParsed[0].id) + 1);
             console.log(66666);
             showMessage("Links Successfully Imported"); 

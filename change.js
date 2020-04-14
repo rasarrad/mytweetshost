@@ -851,7 +851,7 @@ function undogenerate(obj) {
 
             idF = idF - 1;
         }
-        while (idF >= 0);        
+        while (idF >= 100000);        
         console.log(99999);
         createCookie("hasChanges", "");
         $("#settings").removeClass("haschanges");
