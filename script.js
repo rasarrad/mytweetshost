@@ -661,9 +661,14 @@ function handleFileSelect(evt) {
             console.log(33333);
             undogenerate(); 
             console.log(5555); 
-            
+
             for (var x = 0; x < resultParsed.length; x++) {
-                createCookie(resultParsed[x].id + "templink", encodeURIComponent(JSON.stringify(resultParsed[x])), 99999);
+                
+                var link = "{\r\n\"id\": \"" + resultParsed[x].id + "\",\r\n\"creationdate\": \"" + resultParsed[x].creationdate  + "\",\r\n\"type\": \"" + resultParsed[x].type  + "\",\r\n\"url\": \"" + resultParsed[x].url  + "\",\r\n\"ishidden\": \"" + resultParsed[x].ishidden  + "\",\r\n\"date\": \"" + resultParsed[x].date + "\",\r\n\"author\": \"" + resultParsed[x].author  + "\",\r\n\"categories\": \"" + resultParsed[x].categories + "\",\r\n\"tags\": \"" + resultParsed[x].tags + "\",\r\n\"info\": \"" + resultParsed[x].info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "").trim() + "\",\r\n\"classif\": \"" + resultParsed[x].classif + "\",\r\n\"tweet\": " + resultParsed[x].tweet + "\r\n},";
+
+
+
+                createCookie(resultParsed[x].id + "templink", encodeURIComponent(JSON.stringify(link)), 99999);
             }
             console.log(4444);
 
