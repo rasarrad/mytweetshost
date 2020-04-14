@@ -653,7 +653,10 @@ function handleFileSelect(evt) {
 
     setTimeout(function(){
         console.log(JSON.parse(reader.result));
-    }, 1400);  
+        for (var x = 0; x < reader.result.length; x++) {
+            console.log(reader.result[x].id);
+        }
+    }, 100);  
 
     
     
