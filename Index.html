@@ -1122,8 +1122,9 @@ bookmarks <span>
           if (j > -1) {
             do {
               var obj = $("#twitter-widget-" + j);
-
+              console.log(22222)
               if (obj && obj.length > 0) {
+                console.log(3333)
                 if (forceProcess || obj.attr("processed") != "yes") {
                   processed = true;
                     obj.attr("processed", "yes");
@@ -1174,11 +1175,12 @@ bookmarks <span>
         var obj = $("#twitter-widget-" + i);
 
         if (obj && obj.length > 0) {
+          console.log(11111)
           notFound = false;
         }         
     }
     while (i < 200000 && notFound); 
-
+    console.log(i)
     return i;
   }
 
