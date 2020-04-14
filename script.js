@@ -652,9 +652,10 @@ function handleFileSelect(evt) {
     reader.readAsText(files[0]);
 
     setTimeout(function(){
-        console.log(JSON.parse(reader.result));
-        for (var x = 0; x < reader.result.length; x++) {
-            console.log(reader.result[x].id);
+        var resultParsed = JSON.parse(reader.result);
+
+        for (var x = 0; x < resultParsed.length; x++) {
+            console.log(resultParsed[x].id);
         }
     }, 100);  
 
