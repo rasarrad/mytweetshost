@@ -343,7 +343,7 @@ function countalltweets() {
     var text = '{"Tweets": [';
     var ind = false;
     var processtmp = true;
-    
+    console.log(1);
     nextid = null;
     try {
         nextid = parseInt(readCookie("maxid"));
@@ -364,11 +364,13 @@ function countalltweets() {
             nextid = nextid - 1;
         }
     }
-
+    console.log(2);
     $.getJSON(path, function(data) 
     {
+        console.log(3);
       $.each(data.Tweets, function(key, val) 
         {
+            console.log(4);
             var recordfromdata = val;
             var linkcontent = null;
             var linktmp = null;
@@ -377,7 +379,11 @@ function countalltweets() {
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
 
+                    console.log(5);
                     if (linkcontent && linkcontent.length > 0) {
+                        console.log(6);
+                        console.log(linkcontent);
+                        console.log(decodeURIComponent(linkcontent));
                         linktmp = decodeURIComponent(linkcontent);
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
