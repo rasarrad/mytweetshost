@@ -30,7 +30,7 @@ var yDown = null;
 var currObjSwipe = null;
 var lastTouch = null;
 var searchtotal = 0;
-var showAll = true;
+var showAll = false;
 var showColors = true;
 var isMy = false;
 
@@ -110,9 +110,9 @@ $( document ).ready(function() {
 
 
     // START swip binds
-    // document.addEventListener('touchstart', handleTouchStart, false);        
-    // document.addEventListener('touchmove', handleTouchMove, false);
-    // document.addEventListener('touchend', handleTouchEnd, false);
+    document.addEventListener('touchstart', handleTouchStart, false);        
+    document.addEventListener('touchmove', handleTouchMove, false);
+    document.addEventListener('touchend', handleTouchEnd, false);
     
 
     // START filechoser
@@ -652,34 +652,15 @@ function handleFileSelect(evt) {
     reader.readAsText(files[0]);
 
     setTimeout(function(){
-        var currentId = readCookie("maxid");
-        try {
-            console.log(11111);
-            var resultParsed = JSON.parse(reader.result);
-            console.log(22222);
-            createCookie("maxid", parseInt(resultParsed[0].id) + 1);
-            console.log(33333);
-            for (var x = 0; x < resultParsed.length; x++) {
-                createCookie(resultParsed[x].id + "templink", encodeURIComponent(JSON.stringify(resultParsed[x])), 99999);
-            }
-            console.log(4444);
-            undogenerate(); 
-            console.log(5555); 
-            createCookie("maxid", parseInt(resultParsed[0].id) + 1);
-            console.log(66666);
-            showMessage("Links Successfully Imported"); 
-        }
-        catch(err) {
-            showMessage("Error Importing Links");
-            createCookie("maxid", parseInt(currentId)); 
-        }
-        finally {
+        var resultParsed = JSON.parse(reader.result);
 
+        for (var x = 0; x < resultParsed.length; x++) {
+            console.log(resultParsed[x].id);
         }
     }, 100);  
 
     
-
+    
 
 
     // files is a FileList of File objects. List some properties.
