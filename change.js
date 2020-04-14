@@ -890,6 +890,7 @@ function undogenerate(obj) {
                 linkcontent = readCookie(nextid + "templink_bk");
                 if (linkcontent && linkcontent.length > 0) {
                     var linktmp = decodeURIComponent(linkcontent);
+                    linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
                     linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                     linktmp = linktmp.replace(/(\\)/gm, ""); 
                     linktmp = JSON.parse(linktmp);
@@ -1115,6 +1116,7 @@ function generate(obj) {
 
                     if (linkcontent && linkcontent.length > 0) {
                         linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
 

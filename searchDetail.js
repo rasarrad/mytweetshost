@@ -600,6 +600,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         linkcontent = readCookie(nextid + "templink");
                         if (linkcontent && linkcontent.length > 0) {
                             var linktmp = decodeURIComponent(linkcontent);
+                            linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
                             linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                             linktmp = linktmp.replace(/(\\)/gm, ""); 
                             linktmp = JSON.parse(linktmp);
@@ -751,6 +752,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
                         var linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
                         linktmp = JSON.parse(linktmp);
@@ -1386,6 +1388,7 @@ var getInformationbyid = function(id, flag) {
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
                         var linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
                         linktmp = JSON.parse(linktmp);
@@ -1559,6 +1562,7 @@ var getJsonbyid = function(id, functorun) {
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
                         var linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
                         linktmp = JSON.parse(linktmp);
@@ -1735,6 +1739,7 @@ var existsLink = function(text, type, functorun) {
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent && linkcontent.length > 0) {
                         var linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
                         linktmp = JSON.parse(linktmp);
