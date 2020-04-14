@@ -385,7 +385,7 @@ function countalltweets() {
                         
                         linktmp = decodeURIComponent(linkcontent);
                         console.log(6666666666666666666);
-                        console.log(linkcontent);
+                        console.log(linktmp);
 
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
