@@ -414,8 +414,11 @@ function create() {
     
     //if ($("#preview").is(":checked")) {
 
-
-        createCookie(nextid + "templink", encodeURIComponent(JSON.stringify(result)), 99999);
+        console.log("aaaaaaaaaaaaaaaaaaaa");
+        console.log(result);
+        var mlink = encodeURIComponent(JSON.stringify(result));
+        
+        createCookie(nextid + "templink", mlink, 99999);
         createCookie("hasChanges", "Yes");
         $("#settings").addClass("haschanges");
         $("#generateicon").addClass("haschanges");

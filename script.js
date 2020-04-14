@@ -667,8 +667,9 @@ function handleFileSelect(evt) {
                 var link = "{\r\n\"id\": \"" + resultParsed[x].id + "\",\r\n\"creationdate\": \"" + resultParsed[x].creationdate  + "\",\r\n\"type\": \"" + resultParsed[x].type  + "\",\r\n\"url\": \"" + resultParsed[x].url  + "\",\r\n\"ishidden\": \"" + resultParsed[x].ishidden  + "\",\r\n\"date\": \"" + resultParsed[x].date + "\",\r\n\"author\": \"" + resultParsed[x].author  + "\",\r\n\"categories\": \"" + resultParsed[x].categories + "\",\r\n\"tags\": \"" + resultParsed[x].tags + "\",\r\n\"info\": \"" + resultParsed[x].info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "").trim() + "\",\r\n\"classif\": \"" + resultParsed[x].classif + "\",\r\n\"tweet\": " + resultParsed[x].tweet + "\r\n},";
 
                 console.log("bbbbbbbbbbbbbbbb");
+                console.log(link);
                 var mlink = encodeURIComponent(JSON.stringify(link));
-                console.log(mlink);
+
 
                 createCookie(resultParsed[x].id + "templink", mlink, 99999);
             }
