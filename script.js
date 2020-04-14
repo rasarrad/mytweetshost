@@ -30,7 +30,7 @@ var yDown = null;
 var currObjSwipe = null;
 var lastTouch = null;
 var searchtotal = 0;
-var showAll = false;
+var showAll = true;
 var showColors = true;
 var isMy = false;
 
