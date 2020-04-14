@@ -656,7 +656,7 @@ function handleFileSelect(evt) {
         try {
             var resultParsed = JSON.parse(reader.result);
     
-            createCookie("maxid", parseInt(resultParsed[0].id));
+            createCookie("maxid", parseInt(resultParsed[0].id) + 1);
 
             for (var x = 0; x < resultParsed.length; x++) {
                 createCookie(resultParsed[x].id + "templink", encodeURIComponent(JSON.stringify(resultParsed[x])), 99999);
