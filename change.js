@@ -775,37 +775,54 @@ function countalltweets() {
 /////////////////////////////////////////////////////////////////////////
 
 
-function undogenerate(obj, id) {
+function undogenerate(obj) {
 
     if (obj)
         fixfocus(obj);
+
+    var idF = null;
+    
+    try {
+        idF = parseInt(readCookie("maxid"));
+    }
+    catch(err) {
+    }
+    finally {
+        if (idF) {
+            $("#maxid").val(idF);
+            idF = idF - 1;
+        }
+        else {
+            idF = parseInt($("#maxid").val());
+            createCookie("maxid", idF);
+            idF = idF - 1;
+        }
+    }
 
     if (isMy) {
         var r = confirm("Remove all Changes?");
         if (r == true) {
             resetFields(false);
     
-            var id = parseInt(readCookie("maxid")) - 1;
-    
             do {
     
-                eraseCookie(id + "templink");
+                eraseCookie(idF + "templink");
         
-                eraseCookie(id + "isdeleted");
+                eraseCookie(idF + "isdeleted");
         
-                eraseCookie(id + "catchanged");
+                eraseCookie(idF + "catchanged");
         
-                eraseCookie(id + "tagchanged");
+                eraseCookie(idF + "tagchanged");
         
-                eraseCookie(id + "info");
+                eraseCookie(idF + "info");
         
-                eraseCookie(id + "classif");
+                eraseCookie(idF + "classif");
     
-                eraseCookie(id + "haschanges");
+                eraseCookie(idF + "haschanges");
     
-                id = id - 1;
+                idF = idF - 1;
             }
-            while (id >= 0);        
+            while (idF >= 0);        
         
             createCookie("hasChanges", "");
             $("#settings").removeClass("haschanges");
@@ -816,24 +833,28 @@ function undogenerate(obj, id) {
     }   
     else {
         do {
+    
+            eraseCookie(idF + "templink");
+    
+            eraseCookie(idF + "isdeleted");
+    
+            eraseCookie(idF + "catchanged");
+    
+            eraseCookie(idF + "tagchanged");
+    
+            eraseCookie(idF + "info");
+    
+            eraseCookie(idF + "classif");
 
-            eraseCookie(id + "templink");
-    
-            eraseCookie(id + "isdeleted");
-    
-            eraseCookie(id + "catchanged");
-    
-            eraseCookie(id + "tagchanged");
-    
-            eraseCookie(id + "info");
-    
-            eraseCookie(id + "classif");
+            eraseCookie(idF + "haschanges");
 
-            eraseCookie(id + "haschanges");
-
-            id = id - 1;
+            idF = idF - 1;
         }
-        while (id >= 100000);
+        while (idF >= 0);        
+    
+        createCookie("hasChanges", "");
+        $("#settings").removeClass("haschanges");
+        $("#generateicon").removeClass("haschanges");
     } 
 }
 

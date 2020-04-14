@@ -662,8 +662,10 @@ function handleFileSelect(evt) {
                 createCookie(resultParsed[x].id + "templink", encodeURIComponent(JSON.stringify(resultParsed[x])), 99999);
             }
 
-            undogenerate(null, resultParsed[0].id); 
+            undogenerate(); 
             
+            createCookie("maxid", parseInt(resultParsed[0].id) + 1);
+
             showMessage("Links Successfully Imported"); 
         }
         catch(err) {
