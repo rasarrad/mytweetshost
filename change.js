@@ -798,7 +798,7 @@ function undogenerate(obj) {
             idF = idF - 1;
         }
     }
-
+    console.log(7777);
     if (isMy) {
         var r = confirm("Remove all Changes?");
         if (r == true) {
@@ -832,6 +832,7 @@ function undogenerate(obj) {
         }
     }   
     else {
+        console.log("888 " + idF);
         do {
     
             eraseCookie(idF + "templink");
@@ -851,7 +852,7 @@ function undogenerate(obj) {
             idF = idF - 1;
         }
         while (idF >= 0);        
-    
+        console.log(99999);
         createCookie("hasChanges", "");
         $("#settings").removeClass("haschanges");
         $("#generateicon").removeClass("haschanges");

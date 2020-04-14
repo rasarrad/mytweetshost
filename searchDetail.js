@@ -1788,7 +1788,7 @@ var existsLink = function(text, type, functorun) {
                             functorun();
                     }
                 }
-                else if (val.deleted != "yes" && functorun) {
+                else if (val && val.deleted != "yes" && functorun) {
                     functorun();
                 }
             }
