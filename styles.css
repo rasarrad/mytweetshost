@@ -1113,13 +1113,12 @@ body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
 .tweet:last-child .bottomgradiantback {
   position: absolute;
   width: 100%;
-  background: rgba(0, 0, 0, 0.81);
   z-index: 9;
-  height: 24px;
-  background-image: linear-gradient(to bottom, var(--dark-color) 3%, var(--softdark-color) 80%);
+  height: 63px;
   top: auto;
-  bottom: -5px;
-  background: var(--dark-color);
+  bottom: -62px;
+  background: none;
+  background-image: linear-gradient(to bottom, var(--dark-color) 3%, #00315600 80%);
 }
 .tweet.html:not(:last-child) .bottomgradiantback {
     bottom: 9px;
