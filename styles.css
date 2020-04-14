@@ -1155,9 +1155,9 @@ body:not(.big) .yt.tweet .bottomgradiantback {
   .tweet.html iframe {
     margin-top: 19px !important;
     }
-  .tweet.yt iframe {
-    margin-top: 4px !important;
-    height: 369px;
+  .tweet.yt:not(:last-child) iframe {
+    margin-top: 0px !important;
+    height: 317px !important;
     }
 
   .tweet.html iframe {
@@ -1947,6 +1947,12 @@ body.big #splash .titletable {
     left: 165px;
 }
 
+.yt.tweet:last-child .bottomgradiantback {
+    background-image: linear-gradient(to bottom, var(--dark-color) 13%, #004a8600 80%);
+    bottom: -37px !important;
+    height: 47px;
+}
+
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
 /* 
@@ -2139,6 +2145,12 @@ body.big #splash .titletable {
         max-width: 470px;
         height: 56vw !important;
     }
+
+    .tweet.yt:last-child iframe {
+        height: 268px!important;
+        margin-top: 14px !important;
+    }
+    
     .tweet.html iframe {
         height: 84vw !important;
         margin-bottom: 19px;
@@ -2333,6 +2345,19 @@ body.big #splash .titletable {
     background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--soft-color) 85%);
     background-image: linear-gradient(to bottom, #000000 3%, #00315600 80%);
 }
+
+
+    .yt.tweet:last-child .bottomgradiantback {
+      background-image: linear-gradient(to bottom, #000000 13%, #004a8600 80%);
+      bottom: 0px !important;
+      height: 30px;
+      }
+
+      .tweet.yt:last-child {
+          /* background: #101010; */
+          height: 326px;
+      }
+
   }
 /****************************** FIM PORTRAIT CSS *****************************/
 /*****************************************************************************/
