@@ -981,7 +981,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
     
                     }
                 }
-                else if (val.deleted != "yes") {
+                else if (val.deleted && val.deleted != "yes") {
                     return;
                 }
             }
