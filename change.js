@@ -370,7 +370,7 @@ function countalltweets() {
         console.log(3);
       $.each(data.Tweets, function(key, val) 
         {
-            console.log(4);
+            
             var recordfromdata = val;
             var linkcontent = null;
             var linktmp = null;
@@ -382,11 +382,14 @@ function countalltweets() {
                     console.log(5);
                     if (linkcontent && linkcontent.length > 0) {
                         console.log(6);
-                        console.log(linkcontent);
-                        console.log(decodeURIComponent(linkcontent));
+                        
                         linktmp = decodeURIComponent(linkcontent);
+                        console.log(6666666666666666666);
+                        console.log(linkcontent);
+
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
+                        console.log(4444444444444);
                         console.log(linktmp);
                         linktmp = JSON.parse(linktmp);
 
