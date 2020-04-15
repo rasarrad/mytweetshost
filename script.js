@@ -634,8 +634,6 @@ $( document ).ready(function() {
 }); // FIM DO ONREADY
 
 
-  
-
 function tapHandler(event) {
     if(!dblFlag) {
         dblFlag = true;
@@ -653,6 +651,7 @@ function tapHandler(event) {
     alert('You tapped me Twice !!!');
  }
 
+ 
 /////////////////////////////////////////////////////////////////////////
 //                              FILE CHOSER                            //
 /////////////////////////////////////////////////////////////////////////
