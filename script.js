@@ -635,7 +635,7 @@ $( document ).ready(function() {
   
 
 function tapHandler(event) {
-    if(!tapedTwice) {
+    if(!dblFlag) {
         dblFlag = true;
         dblClickTimeout = setTimeout( function() { 
             dblFlag = false; 
