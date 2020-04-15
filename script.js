@@ -629,11 +629,11 @@ $( document ).ready(function() {
         })
     });
     document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
-    document.getElementById("folderopen").addEventListener("click", clickTapHandler);
+    document.getElementById("folderopen").addEventListener("click", tapHandler);
     
 }); // FIM DO ONREADY
 
-var dblFlagControl = true;
+
 function tapHandler(event) {
     if(!dblFlag) {
         dblFlag = true;
@@ -658,27 +658,6 @@ function tapHandler(event) {
     console.log('You tapped me Twice !!!');
  }
 
- function clickTapHandler(event) {
-    setTimeout( function() { 
-        if (dblFlagControl) {
-
-            if(!dblFlag) {
-                dblFlag = true;
-                dblClickTimeout = setTimeout( function() { 
-                    dblFlag = false; 
-                    console.log('2222ONCE');
-            
-                }, 250 );
-                return false;
-            }
-            event.preventDefault();
-            
-            clearTimeout(dblClickTimeout);
-            dblFlag = false;
-            console.log('222You tapped me Twice !!!');
-        }
-    }, 2 );
- }
 
  
 /////////////////////////////////////////////////////////////////////////
