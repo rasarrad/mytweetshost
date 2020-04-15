@@ -628,7 +628,7 @@ $( document ).ready(function() {
             
         })
     });
-    document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
+    document.getElementById("folderopen").addEventListener("touchstart", tapHandler, this);
 }); // FIM DO ONREADY
 
 
@@ -637,7 +637,8 @@ $( document ).ready(function() {
 
 var tapedTwice = false;
 
-function tapHandler(event) {
+function tapHandler(event, obj) {
+    
     if(!tapedTwice) {
         tapedTwice = true;
         setTimeout( function() { tapedTwice = false; }, 300 );
@@ -645,7 +646,7 @@ function tapHandler(event) {
     }
     event.preventDefault();
     //action on double tap goes below
-    alert('You tapped me Twice !!!');
+    alert(obj);
  }
 
 /////////////////////////////////////////////////////////////////////////
