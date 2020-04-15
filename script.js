@@ -633,9 +633,11 @@ $( document ).ready(function() {
     document.getElementById("folderopen").addEventListener("touchstart", function(){
         tapHandler("folderopen");
     });
-    document.getElementById("folderopen").addEventListener("click", function(){
-        clickHandler("folderopen");
-    });
+
+    const someInput = document.getElementById("folderopen");
+    someInput.addEventListener('click', clickHandler, false);
+    someInput.myParam = 'This is my parameter';
+
     
 }); // FIM DO ONREADY
 
@@ -646,8 +648,8 @@ $( document ).ready(function() {
 /////////////////////////////////////////////////////////////////////////
 
 var dblFlagControl = true;
-function tapHandler(event, obj) {
-    alert(obj);
+function tapHandler(event) {
+    alert(event.currentTarget.myParam);
     dblFlagControl = false;
     if(!dblFlag) {
         dblFlag = true;
