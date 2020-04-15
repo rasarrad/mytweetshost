@@ -639,6 +639,7 @@ function tapHandler(event) {
         dblFlag = true;
 
         if (dblClickTimeout) {
+            dblFlag = false; 
             return false;
         }
         else {
