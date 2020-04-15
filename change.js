@@ -415,10 +415,7 @@ function countalltweets() {
                             doShowDeletedLink = false; 
                         } 
                     }
-                    else if (val.isdeleted != "") {
-                        doShowDeletedLink = false; 
-                    }
-                    
+    
                     if (doShowDeletedLink) {
     
                         var cat = readCookie(val.id + "catchanged");
@@ -1186,10 +1183,10 @@ function generate(obj) {
                 }
                 else {
                     if (isdeleted && isdeleted.length > 0) {
-                        val.isdeleted = isdeleted;
+                        val.deleted = isdeleted;
                     }
                     else {
-                        val.isdeleted = "";
+                        val.deleted = "";
                     }
 
                     if (ind) {
@@ -1217,7 +1214,7 @@ function generate(obj) {
         else {
             var date = new Date();
             text = text + ']';
-
+            
             download("BookmarksStationLinks_" + formatDate(date) + ".txt", text);
         }
     }); 
