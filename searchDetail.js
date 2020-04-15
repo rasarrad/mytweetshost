@@ -844,20 +844,24 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             } 
                             else if (showColors) {
                                 if (linkcontent && linkcontent.length > 0) { // IS NEW
-                                    expandclass = hideMode ? "" : "isnew";  
-                                    color = "color: #00dc00;";
-        
-                                    var tagchanged = readCookie(val.id + "tagchanged");
+                                    
+                                    if (val.fromupload != "yes") {
+                                        expandclass = hideMode ? "" : "isnew";  
+                                        color = "color: #00dc00;";
             
-                                    if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
-                                        tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
-                                        tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
-                                    } 
-                                    else {
-                                        if (val.tags.length > 0 && val.tags != 'undefined') {
-                                            tagdispalay = parseTags(val.tags);
-                                        }
+                                        var tagchanged = readCookie(val.id + "tagchanged");
+                
+                                        if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
+                                            tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                                            tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
+                                        } 
+                                        else {
+                                            if (val.tags.length > 0 && val.tags != 'undefined') {
+                                                tagdispalay = parseTags(val.tags);
+                                            }
+                                        } 
                                     }
+
                                 }
                                 else {
                                     var hasChanges = readCookie(val.id + "haschanges");
