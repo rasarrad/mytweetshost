@@ -635,28 +635,26 @@ $( document ).ready(function() {
 
 var dblFlagControl = true;
 function tapHandler(event) {
-    console.log('tapHandler');
     dblFlagControl = false;
     if(!dblFlag) {
         dblFlag = true;
         dblClickTimeout = setTimeout( function() { 
             dblFlag = false; 
             console.log('ONCE 1111');
-            dblFlagControl = true;
+            setTimeout( function() { 
+                dblFlagControl = true;
+            }, 200 );
         }, 250 );
         return false;
     }
     event.preventDefault();
     
-    clearTimeout(dblClickTimeout);
     dblFlag = false;
     dblFlagControl = true;
     console.log('You tapped me Twice 11111!!!');
  }
 
  function clickHandler(event) {
-    console.log('clickHandler 1');
-    console.log('clickHandler 2');
     if (!dblFlagControl) {
         event.preventDefault();
         return false;
@@ -672,8 +670,7 @@ function tapHandler(event) {
         return false;
     }
     event.preventDefault();
-    
-    clearTimeout(dblClickTimeout);
+
     dblFlag = false;
     console.log('You tapped me Twice 22222!!!');
  }
