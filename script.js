@@ -629,7 +629,7 @@ $( document ).ready(function() {
         })
     });
     document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
-    document.getElementById("folderopen").addEventListener("click", tapHandler);
+    document.getElementById("folderopen").addEventListener("click", clickTapHandler);
     
 }); // FIM DO ONREADY
 
@@ -649,6 +649,28 @@ function tapHandler(event) {
     clearTimeout(dblClickTimeout);
     dblFlag = false;
     console.log('You tapped me Twice !!!');
+ }
+
+ function clickTapHandler(event) {
+    setTimeout( function() { 
+        if (!dblFlag) {
+
+            if(!dblFlag) {
+                dblFlag = true;
+                dblClickTimeout = setTimeout( function() { 
+                    dblFlag = false; 
+                    console.log('2222ONCE');
+            
+                }, 250 );
+                return false;
+            }
+            event.preventDefault();
+            
+            clearTimeout(dblClickTimeout);
+            dblFlag = false;
+            console.log('222You tapped me Twice !!!');
+        }
+    }, 2 );
  }
 
  
