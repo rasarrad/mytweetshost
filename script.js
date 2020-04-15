@@ -639,7 +639,7 @@ function tapHandler(event) {
         dblFlag = true;
         dblClickTimeout = setTimeout( function() { 
             dblFlag = false; 
-            alert('ONCE');
+            console.log('ONCE');
     
         }, 250 );
         return false;
@@ -648,7 +648,7 @@ function tapHandler(event) {
     
     clearTimeout(dblClickTimeout);
     dblFlag = false;
-    alert('You tapped me Twice !!!');
+    console.log('You tapped me Twice !!!');
  }
 
  
