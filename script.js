@@ -644,12 +644,13 @@ $( document ).ready(function() {
 
 var dblFlagControl = true;
 function tapHandler(event) {
+    var obj = event.currentTarget.id;
     dblFlagControl = false;
     if(!dblFlag) {
         dblFlag = true;
         dblClickTimeout = setTimeout( function() { 
             dblFlag = false; 
-            alert('ONCE tablet: ' + event.currentTarget.id);
+            alert('ONCE tablet: ' + obj);
             setTimeout( function() { 
                 dblFlagControl = true;
             }, 200 );
@@ -660,10 +661,12 @@ function tapHandler(event) {
     clearTimeout(dblClickTimeout);
     dblFlag = false;
     dblFlagControl = true;
-    alert('DOUBLE tablet: ' + event.currentTarget.id);
+    alert('DOUBLE tablet: ' + obj);
  }
 
  function clickHandler(event) {
+    var obj = event.currentTarget.id;
+
     if (!dblFlagControl) {
         event.preventDefault();
         return false;
@@ -673,7 +676,7 @@ function tapHandler(event) {
         dblFlag = true;
         dblClickTimeout = setTimeout( function() { 
             dblFlag = false; 
-            console.log('ONCE desktop: ' + event.currentTarget.id);
+            console.log('ONCE desktop: ' + obj);
     
         }, 250 );
         return false;
@@ -682,7 +685,7 @@ function tapHandler(event) {
     
     clearTimeout(dblClickTimeout);
     dblFlag = false;
-    console.log('DOUBLE desktop: ' + event.currentTarget.id);
+    console.log('DOUBLE desktop: ' + obj;
  }
 
  
