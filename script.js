@@ -629,7 +629,7 @@ $( document ).ready(function() {
         })
     });
     document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
-    document.getElementById("folderopen").addEventListener("click", clickTapHandler);
+    document.getElementById("folderopen").addEventListener("click", clickHandler);
     
 }); // FIM DO ONREADY
 
@@ -654,30 +654,28 @@ function tapHandler(event) {
     console.log('You tapped me Twice 11111!!!');
  }
 
- function clickTapHandler(event) {
-    console.log('clickTapHandler 1');
-    setTimeout( function() { 
-        console.log('clickTapHandler 2');
-        if (!dblFlagControl) {
-            event.preventDefault();
-            return false;
-        }
-
-        if(!dblFlag) {
-            dblFlag = true;
-            dblClickTimeout = setTimeout( function() { 
-                dblFlag = false; 
-                console.log('ONCE2222');
-        
-            }, 250 );
-            return false;
-        }
+ function clickHandler(event) {
+    console.log('clickHandler 1');
+    console.log('clickHandler 2');
+    if (!dblFlagControl) {
         event.preventDefault();
-        
-        clearTimeout(dblClickTimeout);
-        dblFlag = false;
-        console.log('You tapped me Twice 22222!!!');
-    }, 2 );
+        return false;
+    }
+
+    if(!dblFlag) {
+        dblFlag = true;
+        dblClickTimeout = setTimeout( function() { 
+            dblFlag = false; 
+            console.log('ONCE2222');
+    
+        }, 250 );
+        return false;
+    }
+    event.preventDefault();
+    
+    clearTimeout(dblClickTimeout);
+    dblFlag = false;
+    console.log('You tapped me Twice 22222!!!');
  }
 
  
