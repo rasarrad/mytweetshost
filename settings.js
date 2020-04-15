@@ -370,8 +370,8 @@ var openSettingsPopup = function(jsonobj)
             $("#seticon").attr("style", "color: red;");
         }
         else if (showColors) {
-            var linkcontent = readCookie(jsonobj.id + "templink");
-            if (linkcontent && linkcontent.length > 0) {
+            var isnew = readCookie(jsonobj.id + "isnew");
+            if (isnew && isnew.length > 0) {
                 $("#seticon").attr("style", "color: #00dc00;");
             }
             else {
@@ -542,8 +542,8 @@ var getLinkColor = function(id)
         return "red";
     }
     else {
-        var linkcontent = readCookie(id + "templink");
-        if (linkcontent && linkcontent.length > 0) {
+
+        if (isnew && isnew.length > 0) {
             return "#00dc00";
         }
         else {

@@ -1431,24 +1431,26 @@ var getInformationbyid = function(id, flag) {
                     var color = "";
     
                     var isdeleted = readCookie(val.id + "isdeleted");
-                    if (isdeleted && isdeleted.length > 0) { // ID DELETED
+                    if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { // ID DELETED
                         expandclass = hideMode ? "" : "isdeleted";    
                         color = "color: red;";
                     } 
                     else {
                         if (linkcontent && linkcontent.length > 0) { // IS NEW
-                            expandclass = hideMode ? "" : "isnew";  
-                            color = "color: #00dc00;";
-    
-                            var tagchanged = readCookie(val.id + "tagchanged");
-    
-                            if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
-                                tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
-                                tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
-                            } 
-                            else {
-                                if (val.tags.length > 0 && val.tags != 'undefined') {
-                                    tagdispalay = parseTags(val.tags);
+                            if (val.fromupload != "yes") {
+                                expandclass = hideMode ? "" : "isnew";  
+                                color = "color: #00dc00;";
+        
+                                var tagchanged = readCookie(val.id + "tagchanged");
+        
+                                if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
+                                    tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                                    tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
+                                } 
+                                else {
+                                    if (val.tags.length > 0 && val.tags != 'undefined') {
+                                        tagdispalay = parseTags(val.tags);
+                                    }
                                 }
                             }
                         }

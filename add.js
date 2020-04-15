@@ -406,6 +406,7 @@ function create() {
     showMessage("New Link Created And Copied To Clipboard");
     closeSettingsPopup();
     
+    result.isnew = "sss";
     
     //if ($("#preview").is(":checked")) {
         var mlink = encodeURIComponent(JSON.stringify(result));
