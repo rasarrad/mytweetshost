@@ -641,7 +641,7 @@ function tapHandler(event) {
         dblFlag = true;
         dblClickTimeout = setTimeout( function() { 
             dblFlag = false; 
-            console.log('ONCE');
+            console.log('ONCE 1111');
             dblFlagControl = true;
         }, 250 );
         return false;
@@ -651,7 +651,7 @@ function tapHandler(event) {
     clearTimeout(dblClickTimeout);
     dblFlag = false;
     dblFlagControl = true;
-    console.log('You tapped me Twice !!!');
+    console.log('You tapped me Twice 11111!!!');
  }
 
  function clickTapHandler(event) {
@@ -667,7 +667,7 @@ function tapHandler(event) {
             dblFlag = true;
             dblClickTimeout = setTimeout( function() { 
                 dblFlag = false; 
-                console.log('ONCE');
+                console.log('ONCE2222');
         
             }, 250 );
             return false;
@@ -676,7 +676,7 @@ function tapHandler(event) {
         
         clearTimeout(dblClickTimeout);
         dblFlag = false;
-        console.log('You tapped me Twice !!!');
+        console.log('You tapped me Twice 22222!!!');
     }, 2 );
  }
 
