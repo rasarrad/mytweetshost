@@ -629,33 +629,56 @@ $( document ).ready(function() {
         })
     });
     document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
-    document.getElementById("folderopen").addEventListener("click", tapHandler);
+    document.getElementById("folderopen").addEventListener("click", clickTapHandler);
     
 }); // FIM DO ONREADY
 
-
+var dblFlagControl = true;
 function tapHandler(event) {
+    console.log('tapHandler');
+    dblFlagControl = false;
     if(!dblFlag) {
         dblFlag = true;
-
-        if (!dblClickTimeout) {
-            dblClickTimeout = setTimeout( function() { 
-                dblFlag = false; 
-                console.log('ONCE');
-        
-            }, 250 );
-            
-        }
+        dblClickTimeout = setTimeout( function() { 
+            dblFlag = false; 
+            console.log('ONCE');
+            dblFlagControl = true;
+        }, 250 );
         return false;
-
     }
     event.preventDefault();
     
     clearTimeout(dblClickTimeout);
     dblFlag = false;
+    dblFlagControl = true;
     console.log('You tapped me Twice !!!');
  }
 
+ function clickTapHandler(event) {
+    console.log('clickTapHandler 1');
+    setTimeout( function() { 
+        console.log('clickTapHandler 2');
+        if (!dblFlagControl) {
+            event.preventDefault();
+            return false;
+        }
+
+        if(!dblFlag) {
+            dblFlag = true;
+            dblClickTimeout = setTimeout( function() { 
+                dblFlag = false; 
+                console.log('ONCE');
+        
+            }, 250 );
+            return false;
+        }
+        event.preventDefault();
+        
+        clearTimeout(dblClickTimeout);
+        dblFlag = false;
+        console.log('You tapped me Twice !!!');
+    }, 2 );
+ }
 
  
 /////////////////////////////////////////////////////////////////////////
