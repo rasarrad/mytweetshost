@@ -415,7 +415,10 @@ function countalltweets() {
                             doShowDeletedLink = false; 
                         } 
                     }
-    
+                    else if (val.isdeleted != "") {
+                        doShowDeletedLink = false; 
+                    }
+                    
                     if (doShowDeletedLink) {
     
                         var cat = readCookie(val.id + "catchanged");
@@ -1214,7 +1217,7 @@ function generate(obj) {
         else {
             var date = new Date();
             text = text + ']';
-            
+
             download("BookmarksStationLinks_" + formatDate(date) + ".txt", text);
         }
     }); 

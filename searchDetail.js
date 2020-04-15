@@ -665,7 +665,11 @@ var getInformation = function(ismoretweets, wasfiltered) {
                                 doShowDeletedLink = false; 
                             } 
                         }
-    
+                        else if (val.isdeleted != "") {
+                            doShowDeletedLink = false; 
+                        }
+
+
                         if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                             && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
           
@@ -821,13 +825,17 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
                         
     
-                        var isdeleted = null;
-                        var doShowDeletedLink = true;  
+                        var isdeleted = readCookie(val.id + "isdeleted");
+                        var doShowDeletedLink = true;
+                           
                         if (!$("#showdeleted").is(":checked")) {
-                            isdeleted = readCookie(val.id + "isdeleted");
+                            
                             if (isdeleted && isdeleted.length > 0) { 
                                 doShowDeletedLink = false; 
                             } 
+                        }
+                        else if (val.isdeleted != "") {
+                            doShowDeletedLink = false; 
                         }
     
                         if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
@@ -837,7 +845,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             var expandclass = "";
                             var color = "";
     
-                            var isdeleted = readCookie(val.id + "isdeleted");
                             if (isdeleted && isdeleted.length > 0) { // ID DELETED
                                 expandclass = hideMode ? "" : "isdeleted";    
                                 color = "color: red;";
