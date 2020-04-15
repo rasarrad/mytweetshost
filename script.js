@@ -650,7 +650,7 @@ function tapHandler(event) {
         dblFlag = true;
         dblClickTimeout = setTimeout( function() { 
             dblFlag = false; 
-            alert('ONCE tablet: ' + obj);
+            executeDoubleFunction(obj, "single");
             setTimeout( function() { 
                 dblFlagControl = true;
             }, 200 );
@@ -661,7 +661,7 @@ function tapHandler(event) {
     clearTimeout(dblClickTimeout);
     dblFlag = false;
     dblFlagControl = true;
-    alert('DOUBLE tablet: ' + obj);
+    executeDoubleFunction(obj, "double");
  }
 
  function clickHandler(event) {
@@ -676,8 +676,7 @@ function tapHandler(event) {
         dblFlag = true;
         dblClickTimeout = setTimeout( function() { 
             dblFlag = false; 
-            console.log('ONCE desktop: ' + obj);
-    
+            executeDoubleFunction(obj, "single");
         }, 250 );
         return false;
     }
@@ -685,9 +684,21 @@ function tapHandler(event) {
     
     clearTimeout(dblClickTimeout);
     dblFlag = false;
-    console.log('DOUBLE desktop: ' + obj);
+    executeDoubleFunction(obj, "double");
  }
 
+ function executeDoubleFunction(obj, type) {
+    switch(obj) {
+        case "folderopen":
+            if (type == "double") {
+                alert("Execute double on folderopen");
+            }
+            else {
+                alert("Execute single on folderopen");
+            }
+            break;     
+    }
+ }
  
 /////////////////////////////////////////////////////////////////////////
 //                              FILE CHOSER                            //
