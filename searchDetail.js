@@ -1770,7 +1770,27 @@ var existsLink = function(text, type, functorun) {
                 if (val && val.deleted != "yes") {
                     if (val.type == "T") {
                         console.log(text);
+                        console.log("-------------------------------");
                         console.log(val.tweet);
+                        console.log("-------------------------------");
+                        console.log("-------------------------------");
+                        console.log("-------------------------------");
+                        console.log(text.substring(0,20) );
+                        console.log("-------------------------------");
+                        console.log(val.tweet.substring(0,20) );
+                        console.log("-------------------------------");
+                        console.log("-------------------------------");
+                        console.log("-------------------------------");
+                        console.log(text.substring(40,60) );
+                        console.log("-------------------------------");
+                        console.log(val.tweet.substring(40,60) );
+                        console.log("-------------------------------");
+                        console.log("-------------------------------");
+                        console.log("-------------------------------");
+                        console.log(text.substring(80,100) );
+                        console.log("-------------------------------");
+                        console.log(val.tweet.substring(80,100) );
+
                         if (   
                             (text.substring(0,20) != "" && val.tweet.includes(text.substring(0,20)))
                             ||
@@ -1778,7 +1798,6 @@ var existsLink = function(text, type, functorun) {
                             ||
                             (text.substring(80,100) != "" && val.tweet.includes(text.substring(80,100)))                     
                         ) {
-                            console.log(text);
     
                             existingId = val.id;
                         }
