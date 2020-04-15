@@ -638,18 +638,15 @@ function tapHandler(event) {
     if(!dblFlag) {
         dblFlag = true;
 
-        if (dblClickTimeout) {
-            dblFlag = false; 
-            return false;
-        }
-        else {
+        if (!dblClickTimeout) {
             dblClickTimeout = setTimeout( function() { 
                 dblFlag = false; 
                 console.log('ONCE');
         
             }, 250 );
-            return false;
+            
         }
+        return false;
 
     }
     event.preventDefault();
