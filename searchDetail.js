@@ -843,25 +843,23 @@ var getInformation = function(ismoretweets, wasfiltered) {
                                 color = "color: red;";
                             } 
                             else if (showColors) {
-                                if (linkcontent && linkcontent.length > 0) { // IS NEW
-                                    
-                                    if (val.fromupload != "yes") {
-                                        expandclass = hideMode ? "" : "isnew";  
-                                        color = "color: #00dc00;";
-            
-                                        var tagchanged = readCookie(val.id + "tagchanged");
-                
-                                        if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
-                                            tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
-                                            tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
-                                        } 
-                                        else {
-                                            if (val.tags.length > 0 && val.tags != 'undefined') {
-                                                tagdispalay = parseTags(val.tags);
-                                            }
-                                        } 
-                                    }
+                                var isnew = readCookie(val.id + "isnew");
+                                if (isnew && isnew.length > 0) { // IS NEW
 
+                                    expandclass = hideMode ? "" : "isnew";  
+                                    color = "color: #00dc00;";
+        
+                                    var tagchanged = readCookie(val.id + "tagchanged");
+            
+                                    if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
+                                        tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                                        tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
+                                    } 
+                                    else {
+                                        if (val.tags.length > 0 && val.tags != 'undefined') {
+                                            tagdispalay = parseTags(val.tags);
+                                        }
+                                    } 
                                 }
                                 else {
                                     var hasChanges = readCookie(val.id + "haschanges");
@@ -1436,21 +1434,20 @@ var getInformationbyid = function(id, flag) {
                         color = "color: red;";
                     } 
                     else {
-                        if (linkcontent && linkcontent.length > 0) { // IS NEW
-                            if (val.fromupload != "yes") {
-                                expandclass = hideMode ? "" : "isnew";  
-                                color = "color: #00dc00;";
-        
-                                var tagchanged = readCookie(val.id + "tagchanged");
-        
-                                if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
-                                    tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
-                                    tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
-                                } 
-                                else {
-                                    if (val.tags.length > 0 && val.tags != 'undefined') {
-                                        tagdispalay = parseTags(val.tags);
-                                    }
+                        var isnew = readCookie(val.id + "isnew");
+                        if (isnew && isnew.length > 0) { // IS NEW
+                            expandclass = hideMode ? "" : "isnew";  
+                            color = "color: #00dc00;";
+    
+                            var tagchanged = readCookie(val.id + "tagchanged");
+    
+                            if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
+                                tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                                tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
+                            } 
+                            else {
+                                if (val.tags.length > 0 && val.tags != 'undefined') {
+                                    tagdispalay = parseTags(val.tags);
                                 }
                             }
                         }
