@@ -649,7 +649,7 @@ function tapHandler(event) {
         dblFlag = true;
         dblClickTimeout = setTimeout( function() { 
             dblFlag = false; 
-            console.log('ONCE tablet: ' + event.currentTarget.id);
+            alert('ONCE tablet: ' + event.currentTarget.id);
             setTimeout( function() { 
                 dblFlagControl = true;
             }, 200 );
@@ -660,7 +660,7 @@ function tapHandler(event) {
     clearTimeout(dblClickTimeout);
     dblFlag = false;
     dblFlagControl = true;
-    console.log('DOUBLE tablet: ' + event.currentTarget.id);
+    alert('DOUBLE tablet: ' + event.currentTarget.id);
  }
 
  function clickHandler(event) {
