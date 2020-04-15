@@ -642,6 +642,20 @@ $( document ).ready(function() {
 //                     DOUBLE TAP and DOUBLE CLICK                     //
 /////////////////////////////////////////////////////////////////////////
 
+
+function executeDoubleFunction(obj, type) {
+    switch(obj) {
+        case "folderopen":
+            if (type == "double") {
+                alert("Execute double on folderopen");
+            }
+            else {
+                alert("Execute single on folderopen");
+            }
+            break;     
+    }
+}
+
 var dblFlagControl = true;
 function tapHandler(event) {
     var obj = event.currentTarget.id;
@@ -686,19 +700,8 @@ function tapHandler(event) {
     dblFlag = false;
     executeDoubleFunction(obj, "double");
  }
+ 
 
- function executeDoubleFunction(obj, type) {
-    switch(obj) {
-        case "folderopen":
-            if (type == "double") {
-                alert("Execute double on folderopen");
-            }
-            else {
-                alert("Execute single on folderopen");
-            }
-            break;     
-    }
- }
  
 /////////////////////////////////////////////////////////////////////////
 //                              FILE CHOSER                            //
