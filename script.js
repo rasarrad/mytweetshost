@@ -628,12 +628,25 @@ $( document ).ready(function() {
             
         })
     });
-
+    document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
 }); // FIM DO ONREADY
 
 
   
 
+
+var tapedTwice = false;
+
+function tapHandler(event) {
+    if(!tapedTwice) {
+        tapedTwice = true;
+        setTimeout( function() { tapedTwice = false; }, 300 );
+        return false;
+    }
+    event.preventDefault();
+    //action on double tap goes below
+    alert('You tapped me Twice !!!');
+ }
 
 /////////////////////////////////////////////////////////////////////////
 //                              FILE CHOSER                            //
@@ -643,9 +656,7 @@ function handleFileSelect(evt) {
     evt.stopPropagation();
     evt.preventDefault();
 
-    var files = evt.dataTransfer.files; // FileList object.
-
-    console.log(files[0]);
+    var files = evt.dataTransfer.files; 
 
     var reader=new FileReader();
     reader.onload = function(e) {}
@@ -654,30 +665,24 @@ function handleFileSelect(evt) {
     setTimeout(function(){
         var currentId = readCookie("maxid");
         try {
-            console.log(11111);
             var resultParsed = JSON.parse(reader.result);
-            console.log(22222);
             createCookie("maxid", parseInt(resultParsed[0].id) + 1);
-            console.log(33333);
             undogenerate(); 
-            console.log(5555); 
 
             for (var x = 0; x < resultParsed.length; x++) {
                 
                 var link = "{\r\n\"id\": \"" + resultParsed[x].id + "\",\r\n\"creationdate\": \"" + resultParsed[x].creationdate  + "\",\r\n\"type\": \"" + resultParsed[x].type  + "\",\r\n\"url\": \"" + resultParsed[x].url  + "\",\r\n\"ishidden\": \"" + resultParsed[x].ishidden  + "\",\r\n\"date\": \"" + resultParsed[x].date + "\",\r\n\"author\": \"" + resultParsed[x].author  + "\",\r\n\"categories\": \"" + resultParsed[x].categories + "\",\r\n\"tags\": \"" + resultParsed[x].tags + "\",\r\n\"info\": \"" + resultParsed[x].info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "").trim() + "\",\r\n\"classif\": \"" + resultParsed[x].classif + "\",\r\n\"tweet\": \"" + resultParsed[x].tweet + "\"\r\n},";
 
-                console.log("bbbbbbbbbbbbbbbb");
-                console.log(link);
                 var mlink = encodeURIComponent(JSON.stringify(link));
-
 
                 createCookie(resultParsed[x].id + "templink", mlink, 99999);
             }
-            console.log(4444);
 
             createCookie("maxid", parseInt(resultParsed[0].id) + 1);
-            console.log(66666);
+
             showMessage("Links Successfully Imported"); 
+
+            countalltweets();
         }
         catch(err) {
             showMessage("Error Importing Links");
