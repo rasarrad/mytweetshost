@@ -343,7 +343,6 @@ function countalltweets() {
     var text = '{"Tweets": [';
     var ind = false;
     var processtmp = true;
-    console.log(1);
     nextid = null;
     try {
         nextid = parseInt(readCookie("maxid"));
@@ -364,10 +363,8 @@ function countalltweets() {
             nextid = nextid - 1;
         }
     }
-    console.log(2);
     $.getJSON(path, function(data) 
     {
-        console.log(3);
       $.each(data.Tweets, function(key, val) 
         {
             
@@ -379,20 +376,13 @@ function countalltweets() {
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
 
-                    console.log(5);
                     if (linkcontent && linkcontent.length > 0) {
-                        console.log(6);
                         
                         linktmp = decodeURIComponent(linkcontent);
-                        console.log(6666666666666666666);
-                        console.log(linktmp);
                         linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
-                        console.log(4444444444444);
-
 
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
-                        console.log(linktmp);
                         linktmp = JSON.parse(linktmp);
 
                         val = linktmp;
@@ -809,7 +799,6 @@ function undogenerate(obj) {
             idF = idF - 1;
         }
     }
-    console.log(7777);
     if (isMy) {
         var r = confirm("Remove all Changes?");
         if (r == true) {
@@ -843,7 +832,6 @@ function undogenerate(obj) {
         }
     }   
     else {
-        console.log("888 " + idF);
         do {
     
             eraseCookie(idF + "templink");
@@ -863,7 +851,6 @@ function undogenerate(obj) {
             idF = idF - 1;
         }
         while (idF >= 100000);        
-        console.log(99999);
         createCookie("hasChanges", "");
         $("#settings").removeClass("haschanges");
         $("#generateicon").removeClass("haschanges");

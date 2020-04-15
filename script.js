@@ -702,7 +702,7 @@ function tapHandler(event) {
  }
  
 
- 
+
 /////////////////////////////////////////////////////////////////////////
 //                              FILE CHOSER                            //
 /////////////////////////////////////////////////////////////////////////
@@ -758,7 +758,6 @@ function handleFileSelect(evt) {
     var reader = new FileReader();
 
 
-    console.log(files);
     for (var i = 0, f; f = files[i]; i++) {
         //var mydata = JSON.parse();
         console.log(reader.readAsText(f));
@@ -834,7 +833,6 @@ function handleFileSelect(evt) {
 
 function getTouches(evt) {
   currObjSwipe = getParentObjId($(event.target));
-  console.log(2222)
   console.log(currObjSwipe)
   return evt.touches ||             // browser API
          evt.originalEvent.touches; // jQuery
@@ -856,7 +854,6 @@ function handleTouchStart(evt) {
 
 function handleTouchEnd(evt) {
     if (dblFlag && lastTouch) {                       
-       console.log(1111)
        console.log(currObjSwipe)
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
             if ( xDiff > 0 ) {

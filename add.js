@@ -35,13 +35,10 @@ function parseTweet(type) {
 
             var functorun = function() 
             { 
-                console.log(1111);
                 if (existingId != "no") {
-                    console.log(1111);
                     getInformationbyid(existingId, true);
                 }
                 else {
-                    console.log(1111);
                     origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
             
                     $('#postedby').val(origin);
@@ -58,13 +55,11 @@ function parseTweet(type) {
                     
                     $('#datetoshow').val(formatDateFromNum($('#date').val()));
                     if (type && type == 2) {
-                        console.log(1111);
                         create();
                         showMessage("Tweet Link Successfully Parsed And Created"); 
                     }
                     else {
                         if (type && type == 1) {
-                            console.log(1111);
                             if ($(".addpopup").css('display') == 'none') {
                                 openCreatePopup(true);
                                 
@@ -413,9 +408,6 @@ function create() {
     
     
     //if ($("#preview").is(":checked")) {
-
-        console.log("aaaaaaaaaaaaaaaaaaaa");
-        console.log(result);
         var mlink = encodeURIComponent(JSON.stringify(result));
         
         createCookie(nextid + "templink", mlink, 99999);
