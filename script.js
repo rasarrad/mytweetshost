@@ -629,6 +629,8 @@ $( document ).ready(function() {
         })
     });
     document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
+    document.getElementById("folderopen").addEventListener("click", tapHandler);
+    
 }); // FIM DO ONREADY
 
 
