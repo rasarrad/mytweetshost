@@ -1162,13 +1162,32 @@ function generate(obj) {
                 //createCookie(val.id + "classif", "", 99999);
     
                 var isdeleted = readCookie(val.id + "isdeleted");
-                if (isdeleted && isdeleted.length > 0) {
-                    //createCookie(val.id + "isdeleted_bk", "yes", 99999);
-                    //createCookie(val.id + "isdeleted", "", 99999);
-                } 
+
+                if (isMy) {
+                    if (isdeleted && isdeleted.length > 0) {
+                        //createCookie(val.id + "isdeleted_bk", "yes", 99999);
+                        //createCookie(val.id + "isdeleted", "", 99999);
+                    } 
+                    else {
+                        //createCookie(val.id + "isdeleted", "", 99999);
+                        //createCookie(val.id + "isdeleted_bk", "", 99999);
+                        if (ind) {
+                            text = text + ",";
+                        }
+                        else {
+                            ind = true;
+                        }
+                        text = text + JSON.stringify(val, null, " ");  
+                    }
+                }
                 else {
-                    //createCookie(val.id + "isdeleted", "", 99999);
-                    //createCookie(val.id + "isdeleted_bk", "", 99999);
+                    if (isdeleted && isdeleted.length > 0) {
+                        val.isdeleted = isdeleted;
+                    }
+                    else {
+                        val.isdeleted = "";
+                    }
+
                     if (ind) {
                         text = text + ",";
                     }
@@ -1176,7 +1195,8 @@ function generate(obj) {
                         ind = true;
                     }
                     text = text + JSON.stringify(val, null, " ");  
-                }
+                }     
+
             }
             while (processtmp);
           
