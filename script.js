@@ -634,20 +634,20 @@ $( document ).ready(function() {
 
   
 
-
-var tapedTwice = false;
-
 function tapHandler(event) {
     if(!tapedTwice) {
-        tapedTwice = true;
-        setTimeout( function() { tapedTwice = false; 
+        dblFlag = true;
+        dblClickTimeout = setTimeout( function() { 
+            dblFlag = false; 
             alert('ONCE');
     
-        }, 150 );
+        }, 250 );
         return false;
     }
     event.preventDefault();
-    //action on double tap goes below
+    
+    clearTimeout(dblClickTimeout);
+    dblFlag = false;
     alert('You tapped me Twice !!!');
  }
 
