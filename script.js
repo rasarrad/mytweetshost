@@ -628,7 +628,7 @@ $( document ).ready(function() {
             
         })
     });
-    document.getElementById("folderopen").addEventListener("touchstart", tapHandler, this);
+    document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
 }); // FIM DO ONREADY
 
 
@@ -637,16 +637,18 @@ $( document ).ready(function() {
 
 var tapedTwice = false;
 
-function tapHandler(event, obj) {
-    
+function tapHandler(event) {
     if(!tapedTwice) {
         tapedTwice = true;
-        setTimeout( function() { tapedTwice = false; }, 300 );
+        setTimeout( function() { tapedTwice = false; 
+            alert('ONCE');
+    
+        }, 150 );
         return false;
     }
     event.preventDefault();
     //action on double tap goes below
-    alert(obj);
+    alert('You tapped me Twice !!!');
  }
 
 /////////////////////////////////////////////////////////////////////////
