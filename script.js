@@ -649,7 +649,7 @@ function tapHandler(event) {
         dblFlag = true;
         dblClickTimeout = setTimeout( function() { 
             dblFlag = false; 
-            console.log('ONCE 1111');
+            console.log('ONCE tablet: ' + event.currentTarget.id);
             setTimeout( function() { 
                 dblFlagControl = true;
             }, 200 );
@@ -660,11 +660,10 @@ function tapHandler(event) {
     clearTimeout(dblClickTimeout);
     dblFlag = false;
     dblFlagControl = true;
-    console.log('You tapped me Twice 11111!!!');
+    console.log('DOUBLE tablet: ' + event.currentTarget.id);
  }
 
  function clickHandler(event) {
-    alert(event.currentTarget.id);
     if (!dblFlagControl) {
         event.preventDefault();
         return false;
@@ -674,7 +673,7 @@ function tapHandler(event) {
         dblFlag = true;
         dblClickTimeout = setTimeout( function() { 
             dblFlag = false; 
-            console.log('ONCE2222');
+            console.log('ONCE desktop: ' + event.currentTarget.id);
     
         }, 250 );
         return false;
@@ -683,7 +682,7 @@ function tapHandler(event) {
     
     clearTimeout(dblClickTimeout);
     dblFlag = false;
-    console.log('You tapped me Twice 22222!!!');
+    console.log('DOUBLE desktop: ' + event.currentTarget.id);
  }
 
  
