@@ -1063,6 +1063,7 @@ function generate(obj) {
     var path = "./data.json";
     var text = '';
     if (isMy) text = '{"Tweets": [';
+    else text = '[';
 
     var ind = false;
     var processtmp = true;
@@ -1212,8 +1213,8 @@ function generate(obj) {
         }
         else {
             var date = new Date();
-        
-            // Start file download.
+            text = text + ']';
+            
             download("BookmarksStationLinks_" + formatDate(date) + ".txt", text);
         }
     }); 
