@@ -630,13 +630,8 @@ $( document ).ready(function() {
     });
 
     // DOUBLE TAP and DOUBLE CLICK (icon folderopen da backdiv)
-    document.getElementById("folderopen").addEventListener("touchstart", function(){
-        tapHandler("folderopen");
-    });
-
-    const someInput = document.getElementById("folderopen");
-    someInput.addEventListener('click', clickHandler, false);
-    someInput.myParam = 'This is my parameter';
+    document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
+    document.getElementById("folderopen").addEventListener("click", clickHandler);
 
     
 }); // FIM DO ONREADY
@@ -649,7 +644,6 @@ $( document ).ready(function() {
 
 var dblFlagControl = true;
 function tapHandler(event) {
-    alert(event.currentTarget.myParam);
     dblFlagControl = false;
     if(!dblFlag) {
         dblFlag = true;
@@ -669,7 +663,7 @@ function tapHandler(event) {
     console.log('You tapped me Twice 11111!!!');
  }
 
- function clickHandler(event, obj) {
+ function clickHandler(event) {
     alert(event.currentTarget.id);
     if (!dblFlagControl) {
         event.preventDefault();
