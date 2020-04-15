@@ -648,7 +648,7 @@ function tapHandler(event) {
         return false;
     }
     event.preventDefault();
-    
+    clearTimeout(dblClickTimeout);
     dblFlag = false;
     dblFlagControl = true;
     console.log('You tapped me Twice 11111!!!');
@@ -670,7 +670,8 @@ function tapHandler(event) {
         return false;
     }
     event.preventDefault();
-
+    
+    clearTimeout(dblClickTimeout);
     dblFlag = false;
     console.log('You tapped me Twice 22222!!!');
  }
