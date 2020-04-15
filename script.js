@@ -668,7 +668,7 @@ function tapHandler(event, obj) {
  }
 
  function clickHandler(event, obj) {
-    alert(obj);
+    alert(event.currentTarget.id);
     if (!dblFlagControl) {
         event.preventDefault();
         return false;
