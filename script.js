@@ -685,7 +685,7 @@ function tapHandler(event) {
     
     clearTimeout(dblClickTimeout);
     dblFlag = false;
-    console.log('DOUBLE desktop: ' + obj;
+    console.log('DOUBLE desktop: ' + obj);
  }
 
  
