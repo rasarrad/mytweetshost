@@ -149,7 +149,7 @@ function removetweet(obj) {
                         buttons: {
                           "Yes": function() {
                             jsonvar.deleted = "yes";
-                            createCookie(val.jsonvar + "isdeleted", "", 99999);
+                            createCookie(val.jsonvar + "isdeleted", "yes", 99999);
                             updateLinkCookie(jsonvar);
     
                             $("#main").empty();
