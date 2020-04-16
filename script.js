@@ -641,7 +641,7 @@ $( document ).ready(function() {
         modal: true,
         buttons: {
           "Yes": function() {
-
+            $( this ).dialog( "close" );
           },
           "Restore": function() {
 
