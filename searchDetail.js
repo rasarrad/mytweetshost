@@ -1523,7 +1523,6 @@ var getInformationbyid = function(id, flag) {
 
 var getJsonbyid = function(id, functorun) {
     var path = "./data.json";
-    var found = false;
 
     $.getJSON(path, function(data) {
         var processtmp = true;
@@ -1552,6 +1551,7 @@ var getJsonbyid = function(id, functorun) {
         $.each(data.Tweets, function(key, val) {
             var recordfromdata = val;
             var linkcontent = null;
+            var retObj = null;
 
             do {
                 if (processtmp) {
@@ -1610,17 +1610,17 @@ var getJsonbyid = function(id, functorun) {
                     if (val.id == id) {
                         processtmp = false;
                         console.log("bbbbbb");
-                        found = true;
+                        retObj = val;
                     }
                 }
             }
             while (processtmp);
         }); 
 
-        console.log("ccccc " + found);
-        if (found) {
+        console.log("ccccc ");
+        if (retObj) {
             if (functorun)
-                functorun(val);
+                functorun(retObj);
             return null;
         }
         else {
