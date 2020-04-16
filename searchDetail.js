@@ -837,7 +837,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             var expandclass = "";
                             var color = "";
     
+                            console.log(val)
                             var isdeleted = readCookie(val.id + "isdeleted");
+                            console.log(isdeleted)
                             if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { // ID DELETED
                                 expandclass = hideMode ? "" : "isdeleted";    
                                 color = "color: red;";
@@ -1417,7 +1419,6 @@ var getInformationbyid = function(id, flag) {
                         val = null;
                     }
                 }
-                console.log(val)
                 if (val && val.deleted != "yes" && val.id.includes(id)) {
                     $("#main").empty();
                     $('#moretweets').hide();
