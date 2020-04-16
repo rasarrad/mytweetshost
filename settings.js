@@ -25,6 +25,7 @@ function expandCat(obj, idparam) {
             openSettingsPopup(jsonvar);
         }
     } 
+    console.log("mmmmm " + id);
     getJsonbyid(id, functorun);
 }
 
