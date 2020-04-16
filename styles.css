@@ -4313,7 +4313,6 @@ body.big #calendardiv .fa-calendar {
 .ui-dialog.ui-widget.ui-widget-content.ui-front {
   height: auto;
     width: 400px;
-    margin-top: 132px !important;
     overflow-y: hidden;
     height: 200px !important;
     max-width: 330px;
