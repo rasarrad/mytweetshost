@@ -1529,6 +1529,7 @@ var getInformationbyid = function(id, flag) {
 
 var getJsonbyid = function(id, functorun) {
     var path = "./data.json";
+    var found = false;
 
     $.getJSON(path, function(data) {
         var processtmp = true;
@@ -1553,8 +1554,6 @@ var getJsonbyid = function(id, functorun) {
                 nextid = nextid - 1;
             }
         }
-
-        processtmp = true;
 
         $.each(data.Tweets, function(key, val) {
             var recordfromdata = val;
@@ -1617,9 +1616,7 @@ var getJsonbyid = function(id, functorun) {
                     if (val.id == id) {
                         processtmp = false;
     
-                        if (functorun)
-                            functorun(val);
-                        return false;
+                        found = true;
                     }
                 }
             }
@@ -1627,7 +1624,15 @@ var getJsonbyid = function(id, functorun) {
         }); 
     }); 
 
-    return null;
+    if (found) {
+        if (functorun)
+            functorun(val);
+        return null;
+    }
+    else {
+        return null;
+    }
+
 }
 
 
