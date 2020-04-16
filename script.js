@@ -633,7 +633,24 @@ $( document ).ready(function() {
     document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
     document.getElementById("folderopen").addEventListener("click", clickHandler);
 
-    clickmenu('all', 'All Links');
+
+    $( "#dialog-confirm-delete" ).dialog({
+        resizable: false,
+        height: "auto",
+        width: 400,
+        modal: true,
+        buttons: {
+          "Yes": function() {
+
+          },
+          "Restore": function() {
+
+
+          },
+          Cancel: function() {
+          }
+        }
+      });
 }); // FIM DO ONREADY
 
 
