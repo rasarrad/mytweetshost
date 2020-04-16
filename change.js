@@ -138,7 +138,7 @@ function removetweet(obj) {
 
         var functorun = function(jsonvar) 
         { 
-            console.log(2222);
+            console.log($('#linkChange').attr("cid"));
             var isdeleted = readCookie($('#linkChange').attr("cid") + "isdeleted");
             if (jsonvar.deleted != "" || (isdeleted && isdeleted.length > 0)) {
 
