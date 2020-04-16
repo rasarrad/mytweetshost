@@ -1606,7 +1606,7 @@ var getJsonbyid = function(id, functorun) {
                     if (classif && classif.length > 0) {
                         val.classif = classif;
                     }
-    
+                    console.log("ttttt " + val.id);
                     if (val.id == id) {
                         processtmp = false;
                         console.log("bbbbbb");
