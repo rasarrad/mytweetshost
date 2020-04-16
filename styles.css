@@ -4333,6 +4333,10 @@ body.big #calendardiv .fa-calendar {
 
 .ui-dialog.ui-widget.ui-widget-content.ui-front .ui-dialog-titlebar.ui-widget-header .ui-dialog-title {
     color: var(--high-color);
+    text-align: center;
+    width: 100%;
+    position: relative;
+    top: -1px;
 }
 
 .ui-dialog.ui-widget.ui-widget-content.ui-front .ui-dialog-titlebar.ui-widget-header .ui-button {
@@ -4341,6 +4345,7 @@ body.big #calendardiv .fa-calendar {
 
 .ui-dialog.ui-widget.ui-widget-content .ui-dialog-content.ui-widget-content p {
         color: var(--high-color);
+        /* font-size: 16px; */
 }
 
 .ui-dialog.ui-widget.ui-widget-content .ui-dialog-buttonpane {
