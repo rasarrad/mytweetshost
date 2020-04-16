@@ -138,12 +138,28 @@ function removetweet(obj) {
 
         var functorun = function(jsonvar) 
         { 
-            console.log($('#linkChange').attr("cid"));
+            console.log(2222);
             var isdeleted = readCookie($('#linkChange').attr("cid") + "isdeleted");
             if (jsonvar.deleted != "" || (isdeleted && isdeleted.length > 0)) {
 
 
+                $( "#dialog-confirm-delete" ).dialog({
+                    resizable: false,
+                    height: "auto",
+                    width: 400,
+                    modal: true,
+                    buttons: {
+                      "Yes": function() {
 
+                      },
+                      "Restore": function() {
+
+
+                      },
+                      Cancel: function() {
+                      }
+                    }
+                  });
 
                   $("#mask").fadeIn(500);
                   $("#dialog-confirm-delete").parent().fadeIn(800);
