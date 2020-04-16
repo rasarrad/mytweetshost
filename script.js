@@ -633,7 +633,7 @@ $( document ).ready(function() {
     document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
     document.getElementById("folderopen").addEventListener("click", clickHandler);
 
-    $( "#dialog-confirm" ).dialog({
+    $( "#dialog-confirm-delete" ).dialog({
         resizable: false,
         height: "auto",
         width: 400,
