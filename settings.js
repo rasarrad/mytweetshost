@@ -370,6 +370,7 @@ var openSettingsPopup = function(jsonobj)
             $("#seticon").attr("style", "color: red;");
         }
         else if (showColors) {
+            console.log("-" + jsonobj.isnew + "-")
             if (jsonobj.isnew != "") {
                 $("#seticon").attr("style", "color: #00dc00;");
             }
