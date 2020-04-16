@@ -839,7 +839,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
     
                             console.log(val)
                             var isdeleted = readCookie(val.id + "isdeleted");
-                            console.log(isdeleted)
+                            console.log(val.deleted)
                             if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { // ID DELETED
                                 console.log(val.id)
                                 expandclass = hideMode ? "" : "isdeleted";    

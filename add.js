@@ -407,7 +407,7 @@ function create() {
     closeSettingsPopup();
     
     result.isnew = "sss";
-    
+    result.deleted ="";
     //if ($("#preview").is(":checked")) {
         var mlink = encodeURIComponent(JSON.stringify(result));
         
