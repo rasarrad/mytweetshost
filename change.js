@@ -132,41 +132,60 @@ function undosaveinfo(obj, id) {
 
 function removetweet(obj) {
     fixfocus(obj);
+
+
     if ($('#linkChange').attr("cid") != "new") {
-        var isdeleted = readCookie($('#linkChange').attr("cid") + "isdeleted");
-        if (isdeleted && isdeleted.length > 0) {
-            createCookie($('#linkChange').attr("cid") + "isdeleted", "", 99999);
-    
-            $("#seticon").attr("style", "");
-    
-            if (hasTweetChanges()) {
-              createCookie("hasChanges", "Yes");
-              $("#settings").addClass("haschanges");
-              $("#generateicon").addClass("haschanges");
-            }
+
+        var functorun = function(jsonvar) 
+        { 
+            var isdeleted = readCookie($('#linkChange').attr("cid") + "isdeleted");
+            if (jsonvar.deleted != "" || (isdeleted && isdeleted.length > 0)) {
+                createCookie($('#linkChange').attr("cid") + "isdeleted", "", 99999);
+        
+                $("#seticon").attr("style", "");
+        
+                if (hasTweetChanges()) {
+                  createCookie("hasChanges", "Yes");
+                  $("#settings").addClass("haschanges");
+                  $("#generateicon").addClass("haschanges");
+                }
+                else {
+                  createCookie("hasChanges", "");
+                  $("#settings").removeClass("haschanges");
+                  $("#generateicon").removeClass("haschanges");
+                }
+
+                jsonvar.deleted = "";
+                updateLinkCookie(jsonvar);
+                updateLinkColor("", $('#linkChange').attr("cid"));
+                showMessage("Link Marked To Delete Reverted");
+            } 
             else {
-              createCookie("hasChanges", "");
-              $("#settings").removeClass("haschanges");
-              $("#generateicon").removeClass("haschanges");
+                createCookie($('#linkChange').attr("cid") + "isdeleted", "a", 99999);
+                $("#seticon").attr("style", "color: red;");
+                jsonvar.deleted = "a";
+                updateLinkCookie(jsonvar);
+                updateLinkColor("red", $('#linkChange').attr("cid"));
+                $("#settings").addClass("haschanges");
+                $("#generateicon").addClass("haschanges");
+                createCookie("hasChanges", "Yes");
+                showMessage("Link Marked To Delete");
             }
-            updateLinkColor("", $('#linkChange').attr("cid"));
-            showMessage("Link Marked To Delete Reverted");
         } 
-        else {
-            createCookie($('#linkChange').attr("cid") + "isdeleted", "a", 99999);
-            $("#seticon").attr("style", "color: red;");
-            updateLinkColor("red", $('#linkChange').attr("cid"));
-            $("#settings").addClass("haschanges");
-            $("#generateicon").addClass("haschanges");
-            createCookie("hasChanges", "Yes");
-            showMessage("Link Marked To Delete");
-        }
+        getJsonbyid($('#linkChange').attr("cid"), functorun);
     }
     else {
         create();
     }
 }    
 
+function updateLinkCookie(obj) {
+    var link = "{\r\n\"id\": \"" + obj.id + "\",\r\n\"creationdate\": \"" + obj.creationdate  + "\",\r\n\"type\": \"" + obj.type  + "\",\r\n\"url\": \"" + obj.url  + "\",\r\n\"ishidden\": \"" + obj.ishidden  + "\",\r\n\"date\": \"" + obj.date + "\",\r\n\"author\": \"" + obj.author  + "\",\r\n\"categories\": \"" + obj.categories + "\",\r\n\"fromupload\": \"yes\",\r\n\"tags\": \"" + obj.tags + "\",\r\n\"info\": \"" + obj.info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "").trim() + "\",\r\n\"classif\": \"" + obj.classif + "\",\r\n\"deleted\": \"" + obj.deleted + "\",\r\n\"tweet\": \"" + obj.tweet + "\"\r\n},";
+
+    var mlink = encodeURIComponent(JSON.stringify(link));
+    
+    createCookie(obj.id + "templink", mlink, 99999);
+}
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
@@ -411,7 +430,7 @@ function countalltweets() {
                     var doShowDeletedLink = true;  
                     if (!$("#showdeleted").is(":checked")) {
                         var isdeleted = readCookie(val.id + "isdeleted");
-                        if (isdeleted && isdeleted.length > 0) { 
+                        if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
                             doShowDeletedLink = false; 
                         } 
                     }
@@ -1039,7 +1058,7 @@ function hasTweetChanges(callback) {
             }
 
             var isdeleted = readCookie(val.id + "isdeleted");
-            if (isdeleted && isdeleted.length > 0) {
+            if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
                 ind = true;
                 return false;
             } 
@@ -1182,8 +1201,8 @@ function generate(obj) {
                     }
                 }
                 else {
-                    if (isdeleted && isdeleted.length > 0) {
-                        val.deleted = isdeleted;
+                    if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
+                        val.deleted = "a";
                     }
                     else {
                         val.deleted = "";

@@ -366,12 +366,11 @@ var openSettingsPopup = function(jsonobj)
         }
 
         var isdeleted = readCookie(jsonobj.id + "isdeleted");
-        if (isdeleted && isdeleted.length > 0) {
+        if (jsonobj.deleted != "" || (isdeleted && isdeleted.length > 0)) {
             $("#seticon").attr("style", "color: red;");
         }
         else if (showColors) {
-            var isnew = readCookie(jsonobj.id + "isnew");
-            if (isnew && isnew.length > 0) {
+            if (jsonobj.isnew != "") {
                 $("#seticon").attr("style", "color: #00dc00;");
             }
             else {
@@ -537,44 +536,48 @@ var openMainSettingsPopup = function(jsonobj)
 
 var getLinkColor = function(id) 
 {
-    var isdeleted = readCookie(id + "isdeleted");
-    if (isdeleted && isdeleted.length > 0) {
-        return "red";
-    }
-    else {
-
-        if (isnew && isnew.length > 0) {
-            return "#00dc00";
+    var functorun = function(jsonvar) 
+    { 
+        var isdeleted = readCookie(id + "isdeleted");
+        if (jsonvar.deleted != "" || (isdeleted && isdeleted.length > 0)) {
+            return "red";
         }
         else {
-            var hasChanges = false;
-
-            var tagchanged = readCookie(id + "tagchanged");
-            if (tagchanged != null && tagchanged != 'null') {
-                hasChanges = true;
-            } 
-        
-            var catchanged = readCookie(id + "catchanged");
-            if (catchanged != null && catchanged != 'null') {
-                hasChanges = true;
-            } 
-        
-            var classifchanged = readCookie(id + "classif");
-            if (classifchanged != null && classifchanged != 'null') {
-                hasChanges = true;
-            } 
-        
-            var infochanged = readCookie(id + "info");
-            if (infochanged != null && infochanged != 'null') {
-                hasChanges = true;
+    
+            if (jsonvar.isnew && jsonvar.isnew != "") {
+                return "#00dc00";
             }
-
-            if (hasChanges) 
-                return "#f18618";
-            else 
-               return "";
+            else {
+                var hasChanges = false;
+    
+                var tagchanged = readCookie(id + "tagchanged");
+                if (tagchanged != null && tagchanged != 'null') {
+                    hasChanges = true;
+                } 
+            
+                var catchanged = readCookie(id + "catchanged");
+                if (catchanged != null && catchanged != 'null') {
+                    hasChanges = true;
+                } 
+            
+                var classifchanged = readCookie(id + "classif");
+                if (classifchanged != null && classifchanged != 'null') {
+                    hasChanges = true;
+                } 
+            
+                var infochanged = readCookie(id + "info");
+                if (infochanged != null && infochanged != 'null') {
+                    hasChanges = true;
+                }
+    
+                if (hasChanges) 
+                    return "#f18618";
+                else 
+                   return "";
+            }
         }
-    }
+    } 
+    getJsonbyid(id, functorun);
 } 
 
 

@@ -661,7 +661,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         var doShowDeletedLink = true;  
                         if (!$("#showdeleted2").is(":checked")) {
                             var isdeleted = readCookie(val.id + "isdeleted");
-                            if (isdeleted && isdeleted.length > 0) { 
+                            if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
                                 doShowDeletedLink = false; 
                             } 
                         }
@@ -825,7 +825,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         var doShowDeletedLink = true;  
                         if (!$("#showdeleted").is(":checked")) {
                             isdeleted = readCookie(val.id + "isdeleted");
-                            if (isdeleted && isdeleted.length > 0) { 
+                            if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
                                 doShowDeletedLink = false; 
                             } 
                         }
@@ -846,8 +846,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                                 color = "color: red;";
                             } 
                             else if (showColors) {
-                                var isnew = readCookie(val.id + "isnew");
-                                if (isnew && isnew.length > 0) { // IS NEW
+                                if (val.isnew && val.isnew != "") { // IS NEW
 
                                     expandclass = hideMode ? "" : "isnew";  
                                     color = "color: #00dc00;";
@@ -1436,8 +1435,7 @@ var getInformationbyid = function(id, flag) {
                         color = "color: red;";
                     } 
                     else {
-                        var isnew = readCookie(val.id + "isnew");
-                        if (isnew && isnew.length > 0) { // IS NEW
+                        if (val.isnew && val.isnew != "") { // IS NEW
                             expandclass = hideMode ? "" : "isnew";  
                             color = "color: #00dc00;";
     
