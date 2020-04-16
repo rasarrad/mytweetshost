@@ -11,7 +11,7 @@ function saveinfo(obj, id) {
 
       $("#" + id + "undoinfo").css("display", "inline-block");
     }
-    createCookie("hasChanges", "Yes");
+    createCookie("hasChanges", "yes");
     $("#settings").addClass("haschanges");
     $("#generateicon").addClass("haschanges");
     showMessage("Information About Link Saved"); 
@@ -36,7 +36,7 @@ function saveclassif(obj, id) {
         $("#" + id + "undoinfo").css("display", "inline-block");
     }
 
-    createCookie("hasChanges", "Yes");
+    createCookie("hasChanges", "yes");
     $("#settings").addClass("haschanges");
     $("#generateicon").addClass("haschanges");
     showMessage("Link Classification Saved"); 
@@ -67,7 +67,7 @@ function undosaveclassif(obj, id) {
 
     var callback = function(flag) {      
         if (flag) {
-            createCookie("hasChanges", "Yes");
+            createCookie("hasChanges", "yes");
             $("#settings").addClass("haschanges");
             $("#generateicon").addClass("haschanges");
         }
@@ -109,7 +109,7 @@ function undosaveinfo(obj, id) {
     
     var callback = function(flag) {      
         if (flag) {
-            createCookie("hasChanges", "Yes");
+            createCookie("hasChanges", "yes");
             $("#settings").addClass("haschanges");
             $("#generateicon").addClass("haschanges");
         }
@@ -149,6 +149,7 @@ function removetweet(obj) {
                         buttons: {
                           "Yes": function() {
                             jsonvar.deleted = "yes";
+                            createCookie(val.jsonvar + "isdeleted", "", 99999);
                             updateLinkCookie(jsonvar);
     
                             $("#main").empty();
@@ -168,7 +169,7 @@ function removetweet(obj) {
                             $("#seticon").attr("style", "");
                     
                             if (hasTweetChanges()) {
-                              createCookie("hasChanges", "Yes");
+                              createCookie("hasChanges", "yes");
                               $("#settings").addClass("haschanges");
                               $("#generateicon").addClass("haschanges");
                             }
@@ -211,7 +212,7 @@ function removetweet(obj) {
                 updateLinkColor("red", $('#linkChange').attr("cid"));
                 $("#settings").addClass("haschanges");
                 $("#generateicon").addClass("haschanges");
-                createCookie("hasChanges", "Yes");
+                createCookie("hasChanges", "yes");
                 showMessage("Link Marked To Delete");
             }
         } 
@@ -276,7 +277,7 @@ function acceptTag(obj) {
 
         $("#settings").addClass("haschanges");
         $("#generateicon").addClass("haschanges");
-        createCookie("hasChanges", "Yes");
+        createCookie("hasChanges", "yes");
         showMessage("Category Marked To Change");
     }
     else {
@@ -294,7 +295,7 @@ function acceptTag(obj) {
 
         $("#settings").addClass("haschanges");
         $("#generateicon").addClass("haschanges");
-        createCookie("hasChanges", "Yes");
+        createCookie("hasChanges", "yes");
         showMessage("Tag Marked To Change");
     }
 
@@ -327,7 +328,7 @@ function undotag(obj) {
         if (hasTweetChanges()) {
           $("#settings").addClass("haschanges");
           $("#generateicon").addClass("haschanges");
-          createCookie("hasChanges", "Yes");
+          createCookie("hasChanges", "yes");
         }
         else {
           $("#genersettingsateicon").removeClass("haschanges");
@@ -351,7 +352,7 @@ function undotag(obj) {
         if (hasTweetChanges()) {
           $("#settings").addClass("haschanges");
           $("#generateicon").addClass("haschanges");
-          createCookie("hasChanges", "Yes");
+          createCookie("hasChanges", "yes");
         }
         else {
           $("#settings").removeClass("haschanges");
@@ -1015,7 +1016,7 @@ function undogenerate(obj) {
       });
 
       if (ind) {
-        createCookie("hasChanges", "Yes");
+        createCookie("hasChanges", "yes");
         $("#settings").addClass("haschanges");
         $("#generateicon").addClass("haschanges");
       }

@@ -410,7 +410,7 @@ function create() {
         var mlink = encodeURIComponent(JSON.stringify(result));
         
         createCookie(nextid + "templink", mlink, 99999);
-        createCookie("hasChanges", "Yes");
+        createCookie("hasChanges", "yes");
         $("#settings").addClass("haschanges");
         $("#generateicon").addClass("haschanges");
     //} 

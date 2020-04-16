@@ -942,7 +942,7 @@ function tagsInputOnChange(obj) {
 
     var callback = function(flag) {      
         if (flag) {
-            createCookie("hasChanges", "Yes");
+            createCookie("hasChanges", "yes");
             $("#settings").addClass("haschanges");
             $("#generateicon").addClass("haschanges");
         }
@@ -1188,7 +1188,7 @@ function catsInputOnChange(obj) {
     updateSettingsColor(color);
     var callback = function(flag) {      
         if (flag) {
-            createCookie("hasChanges", "Yes");
+            createCookie("hasChanges", "yes");
             $("#settings").addClass("haschanges");
             $("#generateicon").addClass("haschanges");
         }
@@ -1294,7 +1294,7 @@ function classifInputOnChange(obj) {
     
     var callback = function(flag) {      
         if (flag) {
-            createCookie("hasChanges", "Yes");
+            createCookie("hasChanges", "yes");
             $("#settings").addClass("haschanges");
             $("#generateicon").addClass("haschanges");
         }
@@ -1385,7 +1385,7 @@ function infoInputOnKeyup(obj) {
             updateSettingsColor(color);
             var callback = function(flag) {      
                 if (flag) {
-                    createCookie("hasChanges", "Yes");
+                    createCookie("hasChanges", "yes");
                     $("#settings").addClass("haschanges");
                     $("#generateicon").addClass("haschanges");
                 }
