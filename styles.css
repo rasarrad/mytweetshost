@@ -4322,6 +4322,7 @@ body.big #calendardiv .fa-calendar {
     border-color: var(--soft-color);
     border-radius: 0;
     z-index: 2147483647;
+    display: none;
 }
 
 .ui-dialog.ui-widget.ui-widget-content.ui-front .ui-dialog-titlebar.ui-widget-header {

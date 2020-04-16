@@ -140,25 +140,66 @@ function removetweet(obj) {
         { 
             var isdeleted = readCookie($('#linkChange').attr("cid") + "isdeleted");
             if (jsonvar.deleted != "" || (isdeleted && isdeleted.length > 0)) {
-                createCookie($('#linkChange').attr("cid") + "isdeleted", "", 99999);
-        
-                $("#seticon").attr("style", "");
-        
-                if (hasTweetChanges()) {
-                  createCookie("hasChanges", "Yes");
-                  $("#settings").addClass("haschanges");
-                  $("#generateicon").addClass("haschanges");
-                }
-                else {
-                  createCookie("hasChanges", "");
-                  $("#settings").removeClass("haschanges");
-                  $("#generateicon").removeClass("haschanges");
-                }
 
-                jsonvar.deleted = "";
-                updateLinkCookie(jsonvar);
-                updateLinkColor("", $('#linkChange').attr("cid"));
-                showMessage("Link Marked To Delete Reverted");
+
+                $( "#dialog-confirm-delete" ).dialog({
+                    resizable: false,
+                    height: "auto",
+                    width: 400,
+                    modal: true,
+                    buttons: {
+                      "Yes": function() {
+                        jsonvar.deleted = "yes";
+                        updateLinkCookie(jsonvar);
+
+                        $("#main").empty();
+                        $('#moretweets').hide();
+                        $('#tweetcount').hide(); 
+
+                        countalltweets();
+                        showMessage("Link Deleted Forever");
+                        $("#mask").fadeOut(500);
+                        $("#dialog-confirm-delete").parent().fadeOut( 800, function() {
+                          $("#dialog-confirm-delete").parent().remove();
+                        });
+                      },
+                      "Restore": function() {
+                        createCookie($('#linkChange').attr("cid") + "isdeleted", "", 99999);
+        
+                        $("#seticon").attr("style", "");
+                
+                        if (hasTweetChanges()) {
+                          createCookie("hasChanges", "Yes");
+                          $("#settings").addClass("haschanges");
+                          $("#generateicon").addClass("haschanges");
+                        }
+                        else {
+                          createCookie("hasChanges", "");
+                          $("#settings").removeClass("haschanges");
+                          $("#generateicon").removeClass("haschanges");
+                        }
+        
+                        jsonvar.deleted = "";
+                        updateLinkCookie(jsonvar);
+                        updateLinkColor("", $('#linkChange').attr("cid"));
+                        showMessage("Link Marked To Delete Reverted");
+                          $("#mask").fadeOut(500);
+                          $("#dialog-confirm-delete").parent().fadeOut( 800, function() {
+                            $("#dialog-confirm-delete").parent().remove();
+                          });
+
+                      },
+                      Cancel: function() {
+                          $("#mask").fadeOut(500);
+                          $("#dialog-confirm-delete").parent().fadeOut( 800, function() {
+                            $("#dialog-confirm-delete").parent().remove();
+                          });
+                      }
+                    }
+                  });
+
+                  $("#mask").fadeIn(500);
+                  $("#dialog-confirm-delete").parent().fadeIn(800);
             } 
             else {
                 createCookie($('#linkChange').attr("cid") + "isdeleted", "a", 99999);
