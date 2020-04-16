@@ -601,7 +601,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     if (processtmp) {
                         linkcontent = readCookie(nextid + "templink");
                         if (linkcontent && linkcontent.length > 0) {
-                            console.log("55555")
                             var linktmp = decodeURIComponent(linkcontent);
                             linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
                             linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
@@ -630,7 +629,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             val = null;
                         }
                     }
-                    console.log("3333 " + val.id)
+
                     if (val && val.deleted != "yes") {
                         var cat = readCookie(val.id + "catchanged");
                         if (cat && cat.length > 0) {
@@ -678,13 +677,11 @@ var getInformation = function(ismoretweets, wasfiltered) {
                                 doShowDeletedLink = false; 
                             } 
                         }
-
-                        console.log("111 " + val.id)
     
                         if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                             && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
           
-                                console.log("2222 " + val.id)
+    
                             searchtotal = searchtotal + 1;
     
     

@@ -961,8 +961,6 @@ function eraseAllTmpData(obj) {
     while (idF >= 100000);        
 
     createCookie("hasChanges", "");
-    
-    createCookie("maxid", 100000);
 
     $("#settings").removeClass("haschanges");
     $("#generateicon").removeClass("haschanges");
