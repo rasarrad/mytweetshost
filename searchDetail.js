@@ -1547,11 +1547,11 @@ var getJsonbyid = function(id, functorun) {
                 nextid = nextid - 1;
             }
         }
+        var retObj = null;
 
         $.each(data.Tweets, function(key, val) {
             var recordfromdata = val;
             var linkcontent = null;
-            var retObj = null;
 
             do {
                 if (processtmp) {
