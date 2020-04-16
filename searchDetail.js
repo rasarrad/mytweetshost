@@ -340,6 +340,8 @@ function calendarChanged(date) {
                     otherObj.html(formatDate(date));
                     $("#linkChange").find(".dateinput").val(formatNumDate(date));
                     createCookie($('#linkChange').attr("cid") + "datechanged", formatNumDate(date));
+                    createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
+                    otherObj.css('color','#00ff72');
                 }
                 else {
                     otherObj.html("--"); 

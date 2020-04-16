@@ -635,13 +635,16 @@ function saveAuthor(obj) {
     if ($('#linkChange').attr("cid") != "new") {
         $(obj).hide();
         var otherObj = $(obj).parent().find(".author");
-        if ($(obj).val().length > 0) 
+        if ($(obj).val().length > 0) {
+            createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
+            createCookie($('#linkChange').attr("cid") + "author", $(obj).val());
+            otherObj.css('color','#00ff72');
             otherObj.html($(obj).val());
+        }
         else
             otherObj.html("--"); 
+
         otherObj.show();
-        
-        createCookie($('#linkChange').attr("cid") + "author", $(obj).val());
     }
 }
 
