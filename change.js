@@ -149,7 +149,7 @@ function removetweet(obj) {
                         buttons: {
                           "Yes": function() {
                             jsonvar.deleted = "yes";
-                            createCookie(val.jsonvar + "isdeleted", "yes", 99999);
+                            createCookie(jsonvar.id + "isdeleted", "yes", 99999);
                             updateLinkCookie(jsonvar);
     
                             $("#main").empty();
@@ -158,6 +158,7 @@ function removetweet(obj) {
     
                             countalltweets();
                             showMessage("Link Deleted Forever");
+                            closeSettingsPopup();
                             $("#mask").fadeOut(500);
                             $("#dialog-confirm-delete").parent().fadeOut( 800, function() {
                               $("#dialog-confirm-delete").parent().remove();
