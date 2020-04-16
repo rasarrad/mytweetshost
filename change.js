@@ -201,7 +201,7 @@ function removetweet(obj) {
                     } catch (error) {
                         
                     }
-                    $("#dialog-confirm-delete").parent().css("margin-top", ((window.innerHeight/2) - 100) + "px")
+                    $("#dialog-confirm-delete").parent().css("margin-top", ((window.innerHeight/2) - 100) + "px");
                     $("#mask").fadeIn(500);
                     $("#dialog-confirm-delete").parent().fadeIn(800);
             } 
