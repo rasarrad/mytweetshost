@@ -954,28 +954,7 @@ function eraseAllTmpData(obj) {
     }
 
     do {
-
-        eraseCookie(idF + "templink");
-
-        eraseCookie(idF + "isdeleted");
-
-        eraseCookie(idF + "catchanged");
-
-        eraseCookie(idF + "tagchanged");
-
-        eraseCookie(idF + "info");
-
-        eraseCookie(idF + "classif");
-
-        eraseCookie(idF + "author");
-
-        eraseCookie(idF + "datechanged");
-
-        eraseCookie(idF + "fromupload");
-
-        eraseCookie(idF + "isnew");
-        
-        eraseCookie(idF + "haschanges");
+        eraseLinkTmpData(idF);
 
         idF = idF - 1;
     }
@@ -989,6 +968,30 @@ function eraseAllTmpData(obj) {
     $("#generateicon").removeClass("haschanges");
 }
 
+function eraseLinkTmpData(idF, flag) {
+    if (flag)
+        eraseCookie(idF + "templink");
+
+    eraseCookie(idF + "isdeleted");
+
+    eraseCookie(idF + "catchanged");
+
+    eraseCookie(idF + "tagchanged");
+
+    eraseCookie(idF + "info");
+
+    eraseCookie(idF + "classif");
+
+    eraseCookie(idF + "author");
+
+    eraseCookie(idF + "datechanged");
+
+    eraseCookie(idF + "fromupload");
+
+    eraseCookie(idF + "isnew");
+    
+    eraseCookie(idF + "haschanges");
+}
 /* function undogenerate() {
   var path = "./data.json";
   var ind = false;

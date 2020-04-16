@@ -407,6 +407,9 @@ function create() {
     closeSettingsPopup();
     
     //if ($("#preview").is(":checked")) {
+        
+    eraseLinkTmpData(nextid, true);
+
         var mlink = encodeURIComponent(JSON.stringify(result));
         
         createCookie(nextid + "templink", mlink, 99999);
