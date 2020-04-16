@@ -633,7 +633,7 @@ $( document ).ready(function() {
     document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
     document.getElementById("folderopen").addEventListener("click", clickHandler);
 
-
+    clickmenu('all', 'All Links');
 }); // FIM DO ONREADY
 
 
