@@ -485,6 +485,12 @@ var openSettingsPopup = function(jsonobj)
     }, 600);
 } 
 
+var updateChangeIcons = function(jsonobj) {
+    $("#seticon").attr("style", "color: #f18618;");
+}
+
+
+
 var openMainSettingsPopup = function(jsonobj) 
 {
     closeallnewlayout();
@@ -643,6 +649,8 @@ function saveAuthor(obj) {
         }
         else
             otherObj.html("--"); 
+
+        updateLinkColor(null, $('#linkChange').attr("cid"));
 
         otherObj.show();
     }
@@ -948,9 +956,8 @@ function tagsInputOnChange(obj) {
     else
         createCookie($('#linkChange').attr("cid") + "haschanges", null);
 
-    updateLinkColor(color, $('#linkChange').attr("cid"));
-    updateSettingsColor(color);
-
+    updateLinkColor(null, $('#linkChange').attr("cid"));
+    
     var callback = function(flag) {      
         if (flag) {
             createCookie("hasChanges", "yes");
@@ -976,14 +983,50 @@ function updateSettingsColor(color) {
     }
 }
 
-function updateLinkColor(color, id) {
-    if (color != "") {
-        $(".tweet#" + id).find("i.linkbar").css("color", color); 
+function updateLinkColor(val, id) {
+    var functorun = function(val) 
+    { 
+        var isdeleted = readCookie(val.id + "isdeleted");
+        if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { 
+            if (showColors) {
+                $(".tweet#" + id).find("i.linkbar").css("color", "red"); 
+                $("#seticon").attr("style", "color: red;");
+            }
+            else {
+                updateDeleteButtonBorder("red");
+            }
+        } 
+        else if (showColors) {
+            if (val.isnew && val.isnew != "") { 
+                $(".tweet#" + id).find("i.linkbar").css("color", "#00dc00"); 
+                $("#seticon").attr("style", "color: #00dc00;");
+            }
+            else {
+                var hasChanges = readCookie(val.id + "haschanges");
+                if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
+                    $(".tweet#" + id).find("i.linkbar").css("color", "#f18618"); 
+                    $("#seticon").attr("style", "color: #f18618;");
+                } 
+            }
+        }
+        else {
+            $(".tweet#" + id).find("i.linkbar").css("color", "error"); 
+            $("#seticon").attr("style", "color: error;");
+        }
+    } 
+
+    if (id) {
+        getJsonbyid(id, functorun);
     }
     else {
-        $(".tweet#" + id).find("i.linkbar").css("color", ""); 
+        functorun(val);
     }
 }
+
+function updateDeleteButtonBorder(color) {
+}
+
+
 function updateTagsText(text, id) {
     if (text.trim().length > 0 && text != "undefined")
         $(".tweet#" + id).find(".tags").html("<b>Tags: </b>" + text); 
@@ -1195,8 +1238,8 @@ function catsInputOnChange(obj) {
     else
         createCookie($('#linkChange').attr("cid") + "haschanges", null);
 
-    updateLinkColor(color, $('#linkChange').attr("cid"));
-    updateSettingsColor(color);
+    updateLinkColor(null, $('#linkChange').attr("cid"));
+
     var callback = function(flag) {      
         if (flag) {
             createCookie("hasChanges", "yes");
@@ -1300,8 +1343,7 @@ function classifInputOnChange(obj) {
     else
         createCookie($('#linkChange').attr("cid") + "haschanges", null);
 
-    updateLinkColor(color, $('#linkChange').attr("cid"));
-    updateSettingsColor(color);
+    updateLinkColor(null, $('#linkChange').attr("cid"));
     
     var callback = function(flag) {      
         if (flag) {
@@ -1392,8 +1434,8 @@ function infoInputOnKeyup(obj) {
             else
                 createCookie($('#linkChange').attr("cid") + "haschanges", null);
 
-            updateLinkColor(color, $('#linkChange').attr("cid"));
-            updateSettingsColor(color);
+            updateLinkColor(null, $('#linkChange').attr("cid"));
+
             var callback = function(flag) {      
                 if (flag) {
                     createCookie("hasChanges", "yes");

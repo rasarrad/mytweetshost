@@ -346,6 +346,8 @@ function calendarChanged(date) {
                 else {
                     otherObj.html("--"); 
                 }
+
+                updateLinkColor(null, $('#linkChange').attr("cid"));
             }
             closeCalendarPopup();
             break;    
@@ -858,7 +860,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             var isdeleted = readCookie(val.id + "isdeleted");
                             if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { // ID DELETED
                                 expandclass = hideMode ? "" : "isdeleted";    
-                                color = "color: red;";
+                                if (showColors)
+                                    color = "color: red;";
                             } 
                             else if (showColors) {
                                 if (val.isnew && val.isnew != "") { // IS NEW

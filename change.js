@@ -182,7 +182,7 @@ function removetweet(obj) {
             
                             jsonvar.deleted = "";
                             updateLinkCookie(jsonvar);
-                            updateLinkColor("", $('#linkChange').attr("cid"));
+                            updateLinkColor(jsonvar);
                             showMessage("Link Marked To Delete Reverted");
                               $("#mask").fadeOut(500);
                               $("#dialog-confirm-delete").parent().fadeOut( 800, function() {
@@ -210,7 +210,7 @@ function removetweet(obj) {
                 $("#seticon").attr("style", "color: red;");
                 jsonvar.deleted = "a";
                 updateLinkCookie(jsonvar);
-                updateLinkColor("red", $('#linkChange').attr("cid"));
+                updateLinkColor(jsonvar);
                 $("#settings").addClass("haschanges");
                 $("#generateicon").addClass("haschanges");
                 createCookie("hasChanges", "yes");
