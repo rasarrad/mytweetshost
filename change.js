@@ -970,7 +970,6 @@ function eraseAllTmpData(obj) {
 
 function eraseLinkTmpData(idF, flag) {
     if (flag) {
-        alert(1112);
         eraseCookie(idF + "templink");
     }
 
