@@ -1417,7 +1417,7 @@ var getInformationbyid = function(id, flag) {
                         val = null;
                     }
                 }
-
+                console.log(val)
                 if (val && val.deleted != "yes" && val.id.includes(id)) {
                     $("#main").empty();
                     $('#moretweets').hide();
