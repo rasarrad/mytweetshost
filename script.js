@@ -639,7 +639,10 @@ $( document ).ready(function() {
         width: 400,
         modal: true,
         buttons: {
-          "Delete all items": function() {
+          "Yes": function() {
+            $( this ).dialog( "close" );
+          },
+          "Restore": function() {
             $( this ).dialog( "close" );
           },
           Cancel: function() {
