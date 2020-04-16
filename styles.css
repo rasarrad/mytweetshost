@@ -4321,6 +4321,7 @@ body.big #calendardiv .fa-calendar {
     border-color: var(--soft-color);
     border-radius: 0;
     z-index: 2147483647;
+    position: fixed;
     display: none;
 }
 

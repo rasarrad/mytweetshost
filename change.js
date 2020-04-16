@@ -11,7 +11,7 @@ function saveinfo(obj, id) {
 
       $("#" + id + "undoinfo").css("display", "inline-block");
     }
-    createCookie("hasChanges", "Yes");
+    createCookie("hasChanges", "yes");
     $("#settings").addClass("haschanges");
     $("#generateicon").addClass("haschanges");
     showMessage("Information About Link Saved"); 
@@ -36,7 +36,7 @@ function saveclassif(obj, id) {
         $("#" + id + "undoinfo").css("display", "inline-block");
     }
 
-    createCookie("hasChanges", "Yes");
+    createCookie("hasChanges", "yes");
     $("#settings").addClass("haschanges");
     $("#generateicon").addClass("haschanges");
     showMessage("Link Classification Saved"); 
@@ -67,7 +67,7 @@ function undosaveclassif(obj, id) {
 
     var callback = function(flag) {      
         if (flag) {
-            createCookie("hasChanges", "Yes");
+            createCookie("hasChanges", "yes");
             $("#settings").addClass("haschanges");
             $("#generateicon").addClass("haschanges");
         }
@@ -109,7 +109,7 @@ function undosaveinfo(obj, id) {
     
     var callback = function(flag) {      
         if (flag) {
-            createCookie("hasChanges", "Yes");
+            createCookie("hasChanges", "yes");
             $("#settings").addClass("haschanges");
             $("#generateicon").addClass("haschanges");
         }
@@ -149,7 +149,7 @@ function removetweet(obj) {
                         buttons: {
                           "Yes": function() {
                             jsonvar.deleted = "yes";
-                            createCookie(val.id + "isdeleted", "", 99999);
+                            createCookie(jsonvar.id + "isdeleted", "yes", 99999);
                             updateLinkCookie(jsonvar);
     
                             $("#main").empty();
@@ -158,6 +158,7 @@ function removetweet(obj) {
     
                             countalltweets();
                             showMessage("Link Deleted Forever");
+                            closeSettingsPopup();
                             $("#mask").fadeOut(500);
                             $("#dialog-confirm-delete").parent().fadeOut( 800, function() {
                               $("#dialog-confirm-delete").parent().remove();
@@ -169,7 +170,7 @@ function removetweet(obj) {
                             $("#seticon").attr("style", "");
                     
                             if (hasTweetChanges()) {
-                              createCookie("hasChanges", "Yes");
+                              createCookie("hasChanges", "yes");
                               $("#settings").addClass("haschanges");
                               $("#generateicon").addClass("haschanges");
                             }
@@ -200,7 +201,7 @@ function removetweet(obj) {
                     } catch (error) {
                         
                     }
-                    $("#dialog-confirm-delete").parent().css("margin-top", ((window.innerHeight/2) - 100) + "px")
+                    $("#dialog-confirm-delete").parent().css("top", ((window.innerHeight/2) - 100) + "px")
                     $("#mask").fadeIn(500);
                     $("#dialog-confirm-delete").parent().fadeIn(800);
             } 
@@ -212,7 +213,7 @@ function removetweet(obj) {
                 updateLinkColor("red", $('#linkChange').attr("cid"));
                 $("#settings").addClass("haschanges");
                 $("#generateicon").addClass("haschanges");
-                createCookie("hasChanges", "Yes");
+                createCookie("hasChanges", "yes");
                 showMessage("Link Marked To Delete");
             }
         } 
@@ -277,7 +278,7 @@ function acceptTag(obj) {
 
         $("#settings").addClass("haschanges");
         $("#generateicon").addClass("haschanges");
-        createCookie("hasChanges", "Yes");
+        createCookie("hasChanges", "yes");
         showMessage("Category Marked To Change");
     }
     else {
@@ -295,7 +296,7 @@ function acceptTag(obj) {
 
         $("#settings").addClass("haschanges");
         $("#generateicon").addClass("haschanges");
-        createCookie("hasChanges", "Yes");
+        createCookie("hasChanges", "yes");
         showMessage("Tag Marked To Change");
     }
 
@@ -328,7 +329,7 @@ function undotag(obj) {
         if (hasTweetChanges()) {
           $("#settings").addClass("haschanges");
           $("#generateicon").addClass("haschanges");
-          createCookie("hasChanges", "Yes");
+          createCookie("hasChanges", "yes");
         }
         else {
           $("#genersettingsateicon").removeClass("haschanges");
@@ -352,7 +353,7 @@ function undotag(obj) {
         if (hasTweetChanges()) {
           $("#settings").addClass("haschanges");
           $("#generateicon").addClass("haschanges");
-          createCookie("hasChanges", "Yes");
+          createCookie("hasChanges", "yes");
         }
         else {
           $("#settings").removeClass("haschanges");
@@ -1016,7 +1017,7 @@ function undogenerate(obj) {
       });
 
       if (ind) {
-        createCookie("hasChanges", "Yes");
+        createCookie("hasChanges", "yes");
         $("#settings").addClass("haschanges");
         $("#generateicon").addClass("haschanges");
       }
@@ -1246,7 +1247,13 @@ function generate(obj) {
                 }
                 else {
                     if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
-                        val.deleted = "a";
+                        if (val.deleted == "yes" || (isdeleted && isdeleted == "yes")) {
+                            val.deleted = "yes";
+                        }
+                        else {
+                            val.deleted = "a";
+                        }
+
                     }
                     else {
                         val.deleted = "";
