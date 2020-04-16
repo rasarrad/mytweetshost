@@ -740,6 +740,7 @@ function handleFileSelect(evt) {
             showMessage("Links Successfully Imported"); 
 
             countalltweets();
+            eraseAllTmpData();
         }
         catch(err) {
             showMessage("Error Importing Links");
