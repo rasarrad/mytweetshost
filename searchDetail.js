@@ -1616,17 +1616,19 @@ var getJsonbyid = function(id, functorun) {
             }
             while (processtmp);
         }); 
-    }); 
-    console.log("ccccc " + found);
-    if (found) {
-        if (functorun)
-            functorun(val);
-        return null;
-    }
-    else {
-        return null;
-    }
 
+        console.log("ccccc " + found);
+        if (found) {
+            if (functorun)
+                functorun(val);
+            return null;
+        }
+        else {
+            return null;
+        }
+    }); 
+
+    return null;
 }
 
 
