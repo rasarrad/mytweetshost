@@ -158,7 +158,7 @@ var openSettingsPopup = function(jsonobj)
             }
             else {
                 $("#linkChange .buttonstable tr:first-child td .author").html("--");
-                $("#linkChange .buttonstable tr:first-child td .author").css('color','transparent');
+                $("#linkChange .buttonstable tr:first-child td .author").css('color','aaaa');
                 $("#linkChange .buttonstable tr:first-child td .authorinput").val("");
             }
         } 
@@ -185,7 +185,7 @@ var openSettingsPopup = function(jsonobj)
             }
             else {
                 $("#linkChange .buttonstable tr:first-child td .date").html("--");
-                $("#linkChange .buttonstable tr:first-child td .date").css('color','transparent');
+                $("#linkChange .buttonstable tr:first-child td .date").css('color','aaa');
                 $("#linkChange .buttonstable tr:first-child td .dateinput").val("");
             }
         } 
