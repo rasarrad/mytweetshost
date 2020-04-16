@@ -836,7 +836,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             var tagdispalay = " --";
                             var expandclass = "";
                             var color = "";
-    
+                            console.log(11111111111111)
                             console.log(val)
                             var isdeleted = readCookie(val.id + "isdeleted");
                             console.log(val.deleted)
