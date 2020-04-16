@@ -649,6 +649,16 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             val.classif = classif;
                         }
     
+                        var author = readCookie(val.id + "author");
+                        if (author && author.length > 0) {
+                            val.author = author;
+                        }
+            
+                        var datechanged = readCookie(val.id + "datechanged");
+                        if (datechanged && datechanged.length > 0) {
+                            val.date = datechanged;
+                        }
+                        
                         dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
                         dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
                         dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
@@ -801,13 +811,20 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         val.classif = classif;
                     }
     
+                    var author = readCookie(val.id + "author");
+                    if (author && author.length > 0) {
+                        val.author = author;
+                    }
+        
+                    var datechanged = readCookie(val.id + "datechanged");
+                    if (datechanged && datechanged.length > 0) {
+                        val.date = datechanged;
+                    }
+
                     ind = ind + 1;
                     if (ind < processedCount ) {
-    
                         return;
-    
                     }
-    
     
                     if (currentIndex < endIndex) {
     
@@ -849,7 +866,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         
                                     var tagchanged = readCookie(val.id + "tagchanged");
             
-                                    if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
+                                    if (tagchanged && tagchanged.length > 0) {
                                         tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
                                         tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
                                     } 
@@ -870,7 +887,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         
                                         var tagchanged = readCookie(val.id + "tagchanged");
             
-                                        if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
+                                        if (tagchanged && tagchanged.length > 0) {
                                             tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
                                             tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
                                         } 
@@ -1435,7 +1452,7 @@ var getInformationbyid = function(id, flag) {
     
                             var tagchanged = readCookie(val.id + "tagchanged");
     
-                            if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
+                            if (tagchanged && tagchanged.length > 0 && tagchanged) {
                                 tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
                                 tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
                             } 
@@ -1456,7 +1473,7 @@ var getInformationbyid = function(id, flag) {
     
                                 var tagchanged = readCookie(val.id + "tagchanged");
     
-                                if (tagchanged && tagchanged.length > 0 && tagchanged != 'null' && tagchanged != 'undefined') {
+                                if (tagchanged && tagchanged.length > 0 && tagchanged) {
                                     tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
                                     tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
                                 } 

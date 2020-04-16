@@ -877,7 +877,11 @@ function undogenerate(obj) {
                 eraseCookie(idF + "catchanged");
         
                 eraseCookie(idF + "tagchanged");
-        
+
+                eraseCookie(idF + "datechanged");
+                
+                eraseCookie(idF + "author");
+
                 eraseCookie(idF + "info");
         
                 eraseCookie(idF + "classif");
@@ -909,6 +913,10 @@ function undogenerate(obj) {
             eraseCookie(idF + "info");
     
             eraseCookie(idF + "classif");
+                
+            eraseCookie(idF + "datechanged");
+            
+            eraseCookie(idF + "author");
 
             eraseCookie(idF + "haschanges");
 
@@ -919,6 +927,66 @@ function undogenerate(obj) {
         $("#settings").removeClass("haschanges");
         $("#generateicon").removeClass("haschanges");
     } 
+}
+
+function eraseAllTmpData(obj) {
+
+    if (obj)
+        fixfocus(obj);
+
+    var idF = null;
+    
+    try {
+        idF = parseInt(readCookie("maxid"));
+    }
+    catch(err) {
+    }
+    finally {
+        if (idF) {
+            $("#maxid").val(idF);
+            idF = idF - 1;
+        }
+        else {
+            idF = parseInt($("#maxid").val());
+            createCookie("maxid", idF);
+            idF = idF - 1;
+        }
+    }
+
+    do {
+
+        eraseCookie(idF + "templink");
+
+        eraseCookie(idF + "isdeleted");
+
+        eraseCookie(idF + "catchanged");
+
+        eraseCookie(idF + "tagchanged");
+
+        eraseCookie(idF + "info");
+
+        eraseCookie(idF + "classif");
+
+        eraseCookie(idF + "author");
+
+        eraseCookie(idF + "datechanged");
+
+        eraseCookie(idF + "fromupload");
+
+        eraseCookie(idF + "isnew");
+        
+        eraseCookie(idF + "haschanges");
+
+        idF = idF - 1;
+    }
+    while (idF >= 100000);        
+
+    createCookie("hasChanges", "");
+    
+    createCookie("maxid", 100000);
+
+    $("#settings").removeClass("haschanges");
+    $("#generateicon").removeClass("haschanges");
 }
 
 /* function undogenerate() {
@@ -1102,6 +1170,18 @@ function hasTweetChanges(callback) {
                 return false;
             }
 
+            var author = readCookie(val.id + "author");
+            if (author && author.length > 0) {
+                ind = true;
+                return false;
+            }
+
+            var datechanged = readCookie(val.id + "datechanged");
+            if (datechanged && datechanged.length > 0) {
+                ind = true;
+                return false;
+            }
+
             var isdeleted = readCookie(val.id + "isdeleted");
             if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
                 ind = true;
@@ -1189,53 +1269,39 @@ function generate(obj) {
                 var cat = readCookie(val.id + "catchanged");
                 if (cat && cat.length > 0) {
                     val.categories = cat;
-                    //createCookie(val.id + "catchanged_bk", cat, 99999);
                 }
-                //else {
-                //  createCookie(val.id + "catchanged_bk", "", 99999);
-                //}
-                //createCookie(val.id + "catchanged", "", 99999);
     
                 var tag = readCookie(val.id + "tagchanged");
                 if (tag && tag.length > 0) {
                     val.tags = tag;
-                    // createCookie(val.id + "tagchanged_bk", tag, 99999);
                 }
-                //else {
-                //  createCookie(val.id + "tagchanged_bk", "", 99999);
-                //}
-                //createCookie(val.id + "tagchanged", "", 99999);
     
                 var info = readCookie(val.id + "info");
                 if (info && info.length > 0) {
                     val.info = info;
-                    //createCookie(val.id + "info_bk", info, 99999);
                 }
-                //else {
-                //  createCookie(val.id + "info_bk", "", 99999);
-                //}
-                //createCookie(val.id + "info", "", 99999);
     
                 var classif = readCookie(val.id + "classif");
                 if (classif && classif.length > 0) {
                     val.classif = classif;
-                    //createCookie(val.id + "classif_bk", classif, 99999);
                 }
-                //else {
-                //  createCookie(val.id + "classif_bk", "", 99999);
-                //}
-                //createCookie(val.id + "classif", "", 99999);
-    
+
+                var datechanged = readCookie(val.id + "datechanged");
+                if (datechanged && datechanged.length > 0) {
+                    val.date = datechanged;
+                }
+
+                var author = readCookie(val.id + "author");
+                if (author && author.length > 0) {
+                    val.author = author;
+                }
+
                 var isdeleted = readCookie(val.id + "isdeleted");
 
                 if (isMy) {
                     if (isdeleted && isdeleted.length > 0) {
-                        //createCookie(val.id + "isdeleted_bk", "yes", 99999);
-                        //createCookie(val.id + "isdeleted", "", 99999);
                     } 
                     else {
-                        //createCookie(val.id + "isdeleted", "", 99999);
-                        //createCookie(val.id + "isdeleted_bk", "", 99999);
                         if (ind) {
                             text = text + ",";
                         }
