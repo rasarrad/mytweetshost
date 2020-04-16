@@ -151,18 +151,13 @@ var openSettingsPopup = function(jsonobj)
         $("#linkChange .buttonstable tr:first-child td .authorinput").hide(); 
         var authorchanged = readCookie(jsonobj.id + "author");
         if (authorchanged && authorchanged.length > 0) {
-            if (authorchanged.length > 0) {
-                $("#linkChange .buttonstable tr:first-child td .author").html(authorchanged);
-                $("#linkChange .buttonstable tr:first-child td .author").css('color','#00ff72');
-                $("#linkChange .buttonstable tr:first-child td .authorinput").val(authorchanged);
-            }
-            else {
-                $("#linkChange .buttonstable tr:first-child td .author").html("--");
-                $("#linkChange .buttonstable tr:first-child td .author").css('color','aaaa');
-                $("#linkChange .buttonstable tr:first-child td .authorinput").val("");
-            }
+            $("#linkChange .buttonstable tr:first-child td .author").html(authorchanged);
+            $("#linkChange .buttonstable tr:first-child td .author").css('color','#00ff72');
+            $("#linkChange .buttonstable tr:first-child td .authorinput").val(authorchanged);
         } 
         else {
+            $("#linkChange .buttonstable tr:first-child td .author").css('color','aaaa');
+
             if (jsonobj.author.length > 0) {
                 $("#linkChange .buttonstable tr:first-child td .author").html(jsonobj.author);
                 $("#linkChange .buttonstable tr:first-child td .authorinput").val(jsonobj.author);
@@ -178,18 +173,13 @@ var openSettingsPopup = function(jsonobj)
         $("#linkChange .buttonstable tr:first-child td .datetoshow").hide(); 
         var datechanged = readCookie(jsonobj.id + "datechanged");
         if (datechanged && datechanged.length > 0) {
-            if (datechanged.length > 0) {
-                $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(datechanged));
-                $("#linkChange .buttonstable tr:first-child td .date").css('color','#00ff72');
-                $("#linkChange .buttonstable tr:first-child td .dateinput").val(datechanged);
-            }
-            else {
-                $("#linkChange .buttonstable tr:first-child td .date").html("--");
-                $("#linkChange .buttonstable tr:first-child td .date").css('color','aaa');
-                $("#linkChange .buttonstable tr:first-child td .dateinput").val("");
-            }
+            $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(datechanged));
+            $("#linkChange .buttonstable tr:first-child td .date").css('color','#00ff72');
+            $("#linkChange .buttonstable tr:first-child td .dateinput").val(datechanged);
         } 
         else {
+            $("#linkChange .buttonstable tr:first-child td .date").css('color','aaa');
+
             var date = jsonobj.date.toString();
             if (date.length > 0) {
                 $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(date));
