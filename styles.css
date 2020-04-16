@@ -4309,3 +4309,57 @@ body.big #calendardiv.newLayout > div .titletable tr:first-child .firsttd {
 body.big #calendardiv .fa-calendar {
     margin-top: 0px;
 }
+
+.ui-dialog.ui-widget.ui-widget-content.ui-front {
+  height: auto;
+    width: 400px;
+    margin-top: 132px !important;
+    overflow-y: hidden;
+    height: 200px !important;
+    max-width: 330px;
+    margin-left: calc(50% - 170px);
+    background: var(--dark-color);
+    border-color: var(--soft-color);
+    border-radius: 0;
+    z-index: 2147483647;
+}
+
+.ui-dialog.ui-widget.ui-widget-content.ui-front .ui-dialog-titlebar.ui-widget-header {
+    background: var(--softdark-color);
+    border-color: transparent;
+    border-radius: 0;
+}
+
+.ui-dialog.ui-widget.ui-widget-content.ui-front .ui-dialog-titlebar.ui-widget-header .ui-dialog-title {
+    color: var(--high-color);
+}
+
+.ui-dialog.ui-widget.ui-widget-content.ui-front .ui-dialog-titlebar.ui-widget-header .ui-button {
+    display: none;
+}
+
+.ui-dialog.ui-widget.ui-widget-content .ui-dialog-content.ui-widget-content p {
+        color: var(--high-color);
+}
+
+.ui-dialog.ui-widget.ui-widget-content .ui-dialog-buttonpane {
+     background: var(--softdark-color);
+     border-color: transparent;
+ }
+
+.ui-dialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset {
+    float: none;
+    margin-left: 30px;
+ }
+
+ .ui-dialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset button {
+    background: var(--high-color);
+    color: var(--dark-color);
+    border-color: var(--dark-color);
+    font-weight: bold;
+    font-size: 13px;
+ }
+
+ .ui-dialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset button:hover {
+    opacity: 0.7
+ }
