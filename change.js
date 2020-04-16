@@ -1247,7 +1247,13 @@ function generate(obj) {
                 }
                 else {
                     if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
-                        val.deleted = "a";
+                        if (val.deleted == "yes" || (isdeleted && isdeleted == "yes")) {
+                            val.deleted = "yes";
+                        }
+                        else {
+                            val.deleted = "a";
+                        }
+
                     }
                     else {
                         val.deleted = "";

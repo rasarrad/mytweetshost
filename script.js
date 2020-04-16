@@ -633,7 +633,10 @@ $( document ).ready(function() {
     document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
     document.getElementById("folderopen").addEventListener("click", clickHandler);
 
-    clickmenu('all', 'All Links');
+    setTimeout( function() { 
+        clickmenu('all', 'All Links');
+    }, 1000 );
+
 }); // FIM DO ONREADY
 
 
@@ -725,7 +728,7 @@ function handleFileSelect(evt) {
             undogenerate(); 
 
             for (var x = 0; x < resultParsed.length; x++) {
-                
+                console.log("U id " + resultParsed[x].id + " - deleted " + resultParsed[x].id);
                 var link = "{\r\n\"id\": \"" + resultParsed[x].id + "\",\r\n\"creationdate\": \"" + resultParsed[x].creationdate  + "\",\r\n\"type\": \"" + resultParsed[x].type  + "\",\r\n\"url\": \"" + resultParsed[x].url  + "\",\r\n\"ishidden\": \"" + resultParsed[x].ishidden  + "\",\r\n\"date\": \"" + resultParsed[x].date + "\",\r\n\"author\": \"" + resultParsed[x].author  + "\",\r\n\"categories\": \"" + resultParsed[x].categories + "\",\r\n\"fromupload\": \"yes\",\r\n\"tags\": \"" + resultParsed[x].tags + "\",\r\n\"info\": \"" + resultParsed[x].info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "").trim() + "\",\r\n\"classif\": \"" + resultParsed[x].classif + "\",\r\n\"isnew\": \"\",\r\n\"deleted\": \"" + resultParsed[x].deleted + "\",\r\n\"tweet\": \"" + resultParsed[x].tweet + "\"\r\n},";
 
                 var mlink = encodeURIComponent(JSON.stringify(link));
