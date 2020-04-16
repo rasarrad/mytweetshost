@@ -370,7 +370,6 @@ var openSettingsPopup = function(jsonobj)
             $("#seticon").attr("style", "color: red;");
         }
         else if (showColors) {
-            console.log("-" + jsonobj.isnew + "-")
             if (jsonobj.isnew != "") {
                 $("#seticon").attr("style", "color: #00dc00;");
             }
@@ -1000,7 +999,7 @@ function undoTags(e, obj) {
     $(obj).hide();
     var functorun = function() 
     { 
-        console.log(1);
+        
     } 
     $('#tagsinput').trigger("change");
     removeNonExistentLi();
@@ -1242,7 +1241,6 @@ function undoCats(e, obj) {
     $(obj).hide();
     var functorun = function() 
     { 
-        console.log(1);
     } 
     $('#catsinput').trigger("change");
 
@@ -1345,7 +1343,6 @@ function undoClassif(e, obj) {
     $(obj).hide();
     var functorun = function() 
     { 
-        console.log(1);
     } 
     $('#classifinput').trigger("change");
 
@@ -1413,7 +1410,6 @@ function undoInfo(e, obj) {
     $(obj).hide();
     var functorun = function() 
     { 
-        console.log(1);
     } 
     $('#infoinput').trigger("keyup");
 

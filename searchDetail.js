@@ -836,12 +836,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             var tagdispalay = " --";
                             var expandclass = "";
                             var color = "";
-                            console.log(11111111111111)
-                            console.log(val)
                             var isdeleted = readCookie(val.id + "isdeleted");
-                            console.log(val.deleted)
                             if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { // ID DELETED
-                                console.log(val.id)
                                 expandclass = hideMode ? "" : "isdeleted";    
                                 color = "color: red;";
                             } 
@@ -1031,7 +1027,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
 
         setTimeout(function() { 
-            console.log(searchtotal + "search end");
             var found = customizeTweets(1);
 
             sleep(100);  
@@ -1044,7 +1039,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
         
                     if (!found) {
                         setTimeout(function() { 
-                            console.log(searchtotal + "search end");
                             var found = customizeTweets(1);
                             if (!found) {
                                 $('#tweetcount').fadeIn(800);
@@ -1533,7 +1527,7 @@ var getJsonbyid = function(id, functorun) {
 
     $.getJSON(path, function(data) {
         var processtmp = true;
-
+        console.log("aaaaaa");
         nextid = null;
         try {
             nextid = parseInt(readCookie("maxid"));
@@ -1615,7 +1609,7 @@ var getJsonbyid = function(id, functorun) {
     
                     if (val.id == id) {
                         processtmp = false;
-    
+                        console.log("bbbbbb");
                         found = true;
                     }
                 }
@@ -1623,7 +1617,7 @@ var getJsonbyid = function(id, functorun) {
             while (processtmp);
         }); 
     }); 
-
+    console.log("ccccc " + found);
     if (found) {
         if (functorun)
             functorun(val);
@@ -1777,28 +1771,6 @@ var existsLink = function(text, type, functorun) {
 
                 if (val && val.deleted != "yes") {
                     if (val.type == "T") {
-                        console.log(text);
-                        console.log("-------------------------------");
-                        console.log(val.tweet);
-                        console.log("-------------------------------");
-                        console.log("-------------------------------");
-                        console.log("-------------------------------");
-                        console.log(text.substring(0,20) );
-                        console.log("-------------------------------");
-                        console.log(val.tweet.substring(0,20) );
-                        console.log("-------------------------------");
-                        console.log("-------------------------------");
-                        console.log("-------------------------------");
-                        console.log(text.substring(40,60) );
-                        console.log("-------------------------------");
-                        console.log(val.tweet.substring(40,60) );
-                        console.log("-------------------------------");
-                        console.log("-------------------------------");
-                        console.log("-------------------------------");
-                        console.log(text.substring(80,100) );
-                        console.log("-------------------------------");
-                        console.log(val.tweet.substring(80,100) );
-
                         if (   
                             (text.substring(0,20) != "" && val.tweet.includes(text.substring(0,20)))
                             &&

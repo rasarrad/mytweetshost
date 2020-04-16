@@ -818,7 +818,6 @@ function handleFileSelect(evt) {
 
 function getTouches(evt) {
   currObjSwipe = getParentObjId($(event.target));
-  console.log(currObjSwipe)
   return evt.touches ||             // browser API
          evt.originalEvent.touches; // jQuery
 }                                                     
@@ -839,7 +838,6 @@ function handleTouchStart(evt) {
 
 function handleTouchEnd(evt) {
     if (dblFlag && lastTouch) {                       
-       console.log(currObjSwipe)
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
             if ( xDiff > 0 ) {
                 executeSwipeFunction(currObjSwipe, "left");
