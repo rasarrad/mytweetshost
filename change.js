@@ -11,7 +11,7 @@ function saveinfo(obj, id) {
 
       $("#" + id + "undoinfo").css("display", "inline-block");
     }
-    createCookie("hasChanges", "yes");
+    createCookie("hasChanges", "Yes");
     $("#settings").addClass("haschanges");
     $("#generateicon").addClass("haschanges");
     showMessage("Information About Link Saved"); 
@@ -36,7 +36,7 @@ function saveclassif(obj, id) {
         $("#" + id + "undoinfo").css("display", "inline-block");
     }
 
-    createCookie("hasChanges", "yes");
+    createCookie("hasChanges", "Yes");
     $("#settings").addClass("haschanges");
     $("#generateicon").addClass("haschanges");
     showMessage("Link Classification Saved"); 
@@ -67,7 +67,7 @@ function undosaveclassif(obj, id) {
 
     var callback = function(flag) {      
         if (flag) {
-            createCookie("hasChanges", "yes");
+            createCookie("hasChanges", "Yes");
             $("#settings").addClass("haschanges");
             $("#generateicon").addClass("haschanges");
         }
@@ -109,7 +109,7 @@ function undosaveinfo(obj, id) {
     
     var callback = function(flag) {      
         if (flag) {
-            createCookie("hasChanges", "yes");
+            createCookie("hasChanges", "Yes");
             $("#settings").addClass("haschanges");
             $("#generateicon").addClass("haschanges");
         }
@@ -149,7 +149,7 @@ function removetweet(obj) {
                         buttons: {
                           "Yes": function() {
                             jsonvar.deleted = "yes";
-                            createCookie(jsonvar.id + "isdeleted", "yes", 99999);
+                            createCookie(val.id + "isdeleted", "", 99999);
                             updateLinkCookie(jsonvar);
     
                             $("#main").empty();
@@ -158,7 +158,6 @@ function removetweet(obj) {
     
                             countalltweets();
                             showMessage("Link Deleted Forever");
-                            closeSettingsPopup();
                             $("#mask").fadeOut(500);
                             $("#dialog-confirm-delete").parent().fadeOut( 800, function() {
                               $("#dialog-confirm-delete").parent().remove();
@@ -170,7 +169,7 @@ function removetweet(obj) {
                             $("#seticon").attr("style", "");
                     
                             if (hasTweetChanges()) {
-                              createCookie("hasChanges", "yes");
+                              createCookie("hasChanges", "Yes");
                               $("#settings").addClass("haschanges");
                               $("#generateicon").addClass("haschanges");
                             }
@@ -213,7 +212,7 @@ function removetweet(obj) {
                 updateLinkColor("red", $('#linkChange').attr("cid"));
                 $("#settings").addClass("haschanges");
                 $("#generateicon").addClass("haschanges");
-                createCookie("hasChanges", "yes");
+                createCookie("hasChanges", "Yes");
                 showMessage("Link Marked To Delete");
             }
         } 
@@ -278,7 +277,7 @@ function acceptTag(obj) {
 
         $("#settings").addClass("haschanges");
         $("#generateicon").addClass("haschanges");
-        createCookie("hasChanges", "yes");
+        createCookie("hasChanges", "Yes");
         showMessage("Category Marked To Change");
     }
     else {
@@ -296,7 +295,7 @@ function acceptTag(obj) {
 
         $("#settings").addClass("haschanges");
         $("#generateicon").addClass("haschanges");
-        createCookie("hasChanges", "yes");
+        createCookie("hasChanges", "Yes");
         showMessage("Tag Marked To Change");
     }
 
@@ -329,7 +328,7 @@ function undotag(obj) {
         if (hasTweetChanges()) {
           $("#settings").addClass("haschanges");
           $("#generateicon").addClass("haschanges");
-          createCookie("hasChanges", "yes");
+          createCookie("hasChanges", "Yes");
         }
         else {
           $("#genersettingsateicon").removeClass("haschanges");
@@ -353,7 +352,7 @@ function undotag(obj) {
         if (hasTweetChanges()) {
           $("#settings").addClass("haschanges");
           $("#generateicon").addClass("haschanges");
-          createCookie("hasChanges", "yes");
+          createCookie("hasChanges", "Yes");
         }
         else {
           $("#settings").removeClass("haschanges");
@@ -1017,7 +1016,7 @@ function undogenerate(obj) {
       });
 
       if (ind) {
-        createCookie("hasChanges", "yes");
+        createCookie("hasChanges", "Yes");
         $("#settings").addClass("haschanges");
         $("#generateicon").addClass("haschanges");
       }
