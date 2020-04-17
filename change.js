@@ -517,7 +517,7 @@ function countalltweets(webLinksMap) {
                         console.log("13333")
                         console.log(linkObj)
                         if (linkObj) {
-                            updateWebLink(linkObjm, val);
+                            updateWebLink(linkObj, val);
                         }
                     }
 
