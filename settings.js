@@ -38,7 +38,7 @@ function zoom(obj, flag) {
     if (obj) fixfocus(obj);
 
 
-    $("body").scrollTop(0)
+    $("html").scrollTop(0)
 
     return false;
     $('body').addClass('notransit');
