@@ -512,7 +512,7 @@ function countalltweets(webLinksMap) {
                 if (val && val.deleted != "yes") {
 
                     if (webLinksMap) {
-                        var linkObj = webLinksMap.get(val.id);
+                        var linkObj = webLinksMap.get(parseInt(val.id));
 
                         console.log("13333")
                         console.log(linkObj)
