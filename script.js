@@ -649,6 +649,12 @@ $( document ).ready(function() {
     a.aaa = "aaa val";
     a.bbb = "bbb val";
 
+    var ac = {};
+
+    alert(jQuery.isEmptyObject(a));
+    
+    alert(jQuery.isEmptyObject(ac));
+    
     alert("1: " + a.bbb)
 
     var ccc = JSON.stringify(a, null, " ");
