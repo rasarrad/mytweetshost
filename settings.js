@@ -998,8 +998,10 @@ function updateLinkColor(val, id) {
                     $("#seticon").attr("style", "color: #00dc00;");
                 }
                 else {
+                    
                     $(".tweet#" + id).find("i.linkbar").css("color", ""); 
                     $("#seticon").css("color", ""); 
+                    alert(1111)
                 }
             }
             else {
