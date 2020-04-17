@@ -1162,6 +1162,12 @@ bookmarks <span>
                         
               $('#moretweets').fadeOut(300);
               $('#moretweets').css('opacity', 0);
+
+              setTimeout(function(){
+                var mybody = document.getElementById('body');
+                mybody.scrollTop = 0;
+                mybody.offsetTop = 0;
+              }, 1000);  
             }
 
             return processed;
