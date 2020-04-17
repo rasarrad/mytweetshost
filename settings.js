@@ -34,13 +34,9 @@ function fixfocus(el)
     $(el).remove();
 }
 
-function zoom(obj, flag) {  
+function zoom(obj, flag) {
     if (obj) fixfocus(obj);
-
-
-    $("html").scrollTop(0)
-
-    return false;
+    
     $('body').addClass('notransit');
 
     if (flag || !$('body').hasClass('big')) {

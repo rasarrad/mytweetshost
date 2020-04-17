@@ -550,9 +550,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
     var dofiltertype = $('#selectedtype').val().trim() != "all"; 
     var dofilterclassif = $('#selectedclassif').val().trim() != "all"; 
     searchtotal = 0;
-    var mybody = document.getElementById('body');
-    mybody.scrollTop = 0;
-    mybody.offsetTop = 0;
+
     if (!ismoretweets) {
         $('#mask').fadeIn(300);  
         $('#moretweets').hide();
@@ -564,10 +562,10 @@ var getInformation = function(ismoretweets, wasfiltered) {
         total_tt = 0;
         total_hh = 0;
 
+        $("html").scrollTop(0);
         $("#main").empty();
     }
-    mybody.scrollTop = 0;
-    mybody.offsetTop = 0;
+
     currpage = currpage + 1;
 
     nextid = null;
