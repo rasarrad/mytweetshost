@@ -433,9 +433,7 @@ function changecat(obj, id) {
 
 
 function countalltweets(webLinksMap) {
-    console.log("1111 ")
-    console.log(webLinksMap)
-    
+
     resetFields(false);
     var path = "./data.json";
     var counters = new Map();
@@ -516,6 +514,8 @@ function countalltweets(webLinksMap) {
                     if (webLinksMap) {
                         var linkObj = webLinksMap.get(val.id);
 
+                        console.log("13333")
+                        console.log(linkObj)
                         if (linkObj) {
                             updateWebLink(linkObjm, val);
                         }
