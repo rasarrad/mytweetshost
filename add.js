@@ -410,15 +410,20 @@ function create() {
         
     eraseLinkTmpData(nextid, true);
 
-        var mlink = encodeURIComponent(JSON.stringify(result));
-        
-        createCookie(nextid + "templink", mlink, 99999);
-        createCookie("hasChanges", "yes");
-        $("#settings").addClass("haschanges");
+    var mlink = encodeURIComponent(JSON.stringify(result));
+    
+    createCookie(nextid + "templink", mlink, 99999);
+    createCookie("haschanges", "yes");
+
+
+    if (showColorsAdv) {
         $("#generateicon").addClass("haschanges");
+        if (showColors) {
+            $("#settings").addClass("haschanges");
+        }
+    }  
+
     //} 
-
-
     createCookie("maxid", nextid + 1);
 
     resetFields(false);

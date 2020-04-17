@@ -103,10 +103,14 @@ $( document ).ready(function() {
 
     
     // START da cor caso haja alteracoes
-    var hasChanges = readCookie("hasChanges");
+    var hasChanges = readCookie("haschanges");
     if (hasChanges && hasChanges.length > 0) {
-        $("#settings").addClass("haschanges");
-        $("#generateicon").addClass("haschanges");
+        if (showColorsAdv) {
+            $("#generateicon").addClass("haschanges");
+            if (showColors) {
+                $("#settings").addClass("haschanges");
+            }
+        } 
     }
 
 

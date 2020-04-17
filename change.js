@@ -11,9 +11,13 @@ function saveinfo(obj, id) {
 
       $("#" + id + "undoinfo").css("display", "inline-block");
     }
-    createCookie("hasChanges", "yes");
-    $("#settings").addClass("haschanges");
-    $("#generateicon").addClass("haschanges");
+    createCookie("haschanges", "yes");
+    if (showColorsAdv) {
+        $("#generateicon").addClass("haschanges");
+        if (showColors) {
+            $("#settings").addClass("haschanges");
+        }
+    }  
     showMessage("Information About Link Saved"); 
 }   
 
@@ -36,9 +40,13 @@ function saveclassif(obj, id) {
         $("#" + id + "undoinfo").css("display", "inline-block");
     }
 
-    createCookie("hasChanges", "yes");
-    $("#settings").addClass("haschanges");
-    $("#generateicon").addClass("haschanges");
+    createCookie("haschanges", "yes");
+    if (showColorsAdv) {
+        $("#generateicon").addClass("haschanges");
+        if (showColors) {
+            $("#settings").addClass("haschanges");
+        }
+    }  
     showMessage("Link Classification Saved"); 
 }  
 
@@ -67,12 +75,16 @@ function undosaveclassif(obj, id) {
 
     var callback = function(flag) {      
         if (flag) {
-            createCookie("hasChanges", "yes");
-            $("#settings").addClass("haschanges");
-            $("#generateicon").addClass("haschanges");
+            createCookie("haschanges", "yes");
+            if (showColorsAdv) {
+                $("#generateicon").addClass("haschanges");
+                if (showColors) {
+                    $("#settings").addClass("haschanges");
+                }
+            }  
         }
         else {
-            createCookie("hasChanges", "");
+            createCookie("haschanges", "");
             $("#settings").removeClass("haschanges");
             $("#generateicon").removeClass("haschanges");
         }
@@ -109,12 +121,16 @@ function undosaveinfo(obj, id) {
     
     var callback = function(flag) {      
         if (flag) {
-            createCookie("hasChanges", "yes");
-            $("#settings").addClass("haschanges");
-            $("#generateicon").addClass("haschanges");
+            createCookie("haschanges", "yes");
+            if (showColorsAdv) {
+                $("#generateicon").addClass("haschanges");
+                if (showColors) {
+                    $("#settings").addClass("haschanges");
+                }
+            }  
         }
         else {
-            createCookie("hasChanges", "");
+            createCookie("haschanges", "");
             $("#settings").removeClass("haschanges");
             $("#generateicon").removeClass("haschanges");
         }
@@ -168,12 +184,16 @@ function removetweet(obj) {
                             createCookie($('#linkChange').attr("cid") + "isdeleted", "", 99999);
             
                             if (hasTweetChanges()) {
-                              createCookie("hasChanges", "yes");
-                              $("#settings").addClass("haschanges");
-                              $("#generateicon").addClass("haschanges");
+                                createCookie("haschanges", "yes");
+                                if (showColorsAdv) {
+                                    $("#generateicon").addClass("haschanges");
+                                    if (showColors) {
+                                        $("#settings").addClass("haschanges");
+                                    }
+                                }  
                             }
                             else {
-                              createCookie("hasChanges", "");
+                              createCookie("haschanges", "");
                               $("#settings").removeClass("haschanges");
                               $("#generateicon").removeClass("haschanges");
                             }
@@ -208,9 +228,13 @@ function removetweet(obj) {
                 jsonvar.deleted = "a";
                 updateLinkCookie(jsonvar);
                 updateLinkColor(jsonvar);
-                $("#settings").addClass("haschanges");
-                $("#generateicon").addClass("haschanges");
-                createCookie("hasChanges", "yes");
+                if (showColorsAdv) {
+                    $("#generateicon").addClass("haschanges");
+                    if (showColors) {
+                        $("#settings").addClass("haschanges");
+                    }
+                }  
+                createCookie("haschanges", "yes");
                 showMessage("Link Marked To Delete");
             }
         } 
@@ -273,9 +297,13 @@ function acceptTag(obj) {
 
         $('#' + id).find('.newcat').html('<b> New categories </b>' + $(obj).parent().find('input').val());   
 
-        $("#settings").addClass("haschanges");
-        $("#generateicon").addClass("haschanges");
-        createCookie("hasChanges", "yes");
+        if (showColorsAdv) {
+            $("#generateicon").addClass("haschanges");
+            if (showColors) {
+                $("#settings").addClass("haschanges");
+            }
+        }  
+        createCookie("haschanges", "yes");
         showMessage("Category Marked To Change");
     }
     else {
@@ -291,9 +319,13 @@ function acceptTag(obj) {
 
         $('#' + id).find('.newtag').html('<b> New tags </b>' + $(obj).parent().find('input').val());
 
-        $("#settings").addClass("haschanges");
-        $("#generateicon").addClass("haschanges");
-        createCookie("hasChanges", "yes");
+        if (showColorsAdv) {
+            $("#generateicon").addClass("haschanges");
+            if (showColors) {
+                $("#settings").addClass("haschanges");
+            }
+        }  
+        createCookie("haschanges", "yes");
         showMessage("Tag Marked To Change");
     }
 
@@ -324,13 +356,18 @@ function undotag(obj) {
             $('#' + id).find('.tags').css('background', '#00000021').css('border-bottom', '1px solid #00000038');
         }
         if (hasTweetChanges()) {
-          $("#settings").addClass("haschanges");
-          $("#generateicon").addClass("haschanges");
-          createCookie("hasChanges", "yes");
+            if (showColorsAdv) {
+                $("#generateicon").addClass("haschanges");
+                if (showColors) {
+                    $("#settings").addClass("haschanges");
+                }
+            }  
+            createCookie("haschanges", "yes");
         }
         else {
-          $("#genersettingsateicon").removeClass("haschanges");
-          createCookie("hasChanges", "");
+          $("#generateicon").removeClass("haschanges");
+          $("#settings").removeClass("haschanges");
+          createCookie("haschanges", "");
         }
         showMessage("Tag Marked To Change Reverted");
     }
@@ -348,14 +385,18 @@ function undotag(obj) {
             $('#' + id).find('.tags').css('background', '#00000021').css('border-bottom', '1px solid #00000038');
         }
         if (hasTweetChanges()) {
-          $("#settings").addClass("haschanges");
-          $("#generateicon").addClass("haschanges");
-          createCookie("hasChanges", "yes");
+            if (showColorsAdv) {
+                $("#generateicon").addClass("haschanges");
+                if (showColors) {
+                    $("#settings").addClass("haschanges");
+                }
+            }  
+          createCookie("haschanges", "yes");
         }
         else {
           $("#settings").removeClass("haschanges");
           $("#generateicon").removeClass("haschanges");
-          createCookie("hasChanges", "");
+          createCookie("haschanges", "");
         }
         showMessage("Category Marked To Change Reverted");
     }
@@ -889,7 +930,7 @@ function undogenerate(obj) {
             }
             while (idF >= 0);        
         
-            createCookie("hasChanges", "");
+            createCookie("haschanges", "");
             $("#settings").removeClass("haschanges");
             $("#generateicon").removeClass("haschanges");
         
@@ -920,7 +961,7 @@ function undogenerate(obj) {
             idF = idF - 1;
         }
         while (idF >= 100000);        
-        createCookie("hasChanges", "");
+        createCookie("haschanges", "");
         $("#settings").removeClass("haschanges");
         $("#generateicon").removeClass("haschanges");
     } 
@@ -957,7 +998,7 @@ function eraseAllTmpData(obj) {
     }
     while (idF >= 100000);        
 
-    createCookie("hasChanges", "");
+    createCookie("haschanges", "");
 
     $("#settings").removeClass("haschanges");
     $("#generateicon").removeClass("haschanges");
@@ -1084,9 +1125,13 @@ function eraseLinkTmpData(idF, flag) {
       });
 
       if (ind) {
-        createCookie("hasChanges", "yes");
-        $("#settings").addClass("haschanges");
-        $("#generateicon").addClass("haschanges");
+        createCookie("haschanges", "yes");
+            if (showColorsAdv) {
+                $("#generateicon").addClass("haschanges");
+                if (showColors) {
+                    $("#settings").addClass("haschanges");
+                }
+            } 
       }
 
       showMessage("Processed Changes Were Reverted");

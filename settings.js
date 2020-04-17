@@ -933,12 +933,16 @@ function tagsInputOnChange(obj) {
     
     var callback = function(flag) {      
         if (flag) {
-            createCookie("hasChanges", "yes");
-            $("#settings").addClass("haschanges");
-            $("#generateicon").addClass("haschanges");
+            createCookie("haschanges", "yes");
+            if (showColorsAdv) {
+                $("#generateicon").addClass("haschanges");
+                if (showColors) {
+                    $("#settings").addClass("haschanges");
+                }
+            } 
         }
         else {
-            createCookie("hasChanges", "");
+            createCookie("haschanges", "");
             $("#settings").removeClass("haschanges");
             $("#generateicon").removeClass("haschanges");
         }
@@ -959,24 +963,19 @@ function updateSettingsColor(color) {
 function updateLinkColor(val, id) {
     var functorun = function(val) 
     { 
-        console.log(11111);
         var isdeleted = readCookie(val.id + "isdeleted");
         if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { 
-            console.log(222);
             if (showColors) {
-                console.log(3333);
                 $(".tweet#" + id).find("i.linkbar").css("color", "red"); 
                 $("#seticon").attr("style", "color: red;");
             }
             else {
                 if (showColorsAdv) {
-                    console.log(4444);
                     $("#seticon").attr("style", "color: red;");
                 }
             }
         } 
         else if (showColors) {
-            console.log(5555);
             if (val.isnew && val.isnew != "") { 
                 $(".tweet#" + id).find("i.linkbar").css("color", "#00dc00"); 
                 $("#seticon").attr("style", "color: #00dc00;");
@@ -990,21 +989,16 @@ function updateLinkColor(val, id) {
             }
         }
         else {
-            console.log(6666);
             if (showColorsAdv) {
-                console.log(7777);
                 if (val.isnew && val.isnew != "") { 
-                    console.log(8888);
                     $("#seticon").attr("style", "color: #00dc00;");
                 }
                 else {
-                    console.log(999999);
                     $(".tweet#" + id).find("i.linkbar").css("color", ""); 
                     $("#seticon").css("color", ""); 
                 }
             }
             else {
-                console.log(11111);
                 $(".tweet#" + id).find("i.linkbar").css("color", ""); 
                 $("#seticon").css("color", ""); 
             }
@@ -1235,12 +1229,16 @@ function catsInputOnChange(obj) {
 
     var callback = function(flag) {      
         if (flag) {
-            createCookie("hasChanges", "yes");
-            $("#settings").addClass("haschanges");
-            $("#generateicon").addClass("haschanges");
+            createCookie("haschanges", "yes");
+            if (showColorsAdv) {
+                $("#generateicon").addClass("haschanges");
+                if (showColors) {
+                    $("#settings").addClass("haschanges");
+                }
+            } 
         }
         else {
-            createCookie("hasChanges", "");
+            createCookie("haschanges", "");
             $("#settings").removeClass("haschanges");
             $("#generateicon").removeClass("haschanges");
         }
@@ -1340,12 +1338,16 @@ function classifInputOnChange(obj) {
     
     var callback = function(flag) {      
         if (flag) {
-            createCookie("hasChanges", "yes");
-            $("#settings").addClass("haschanges");
-            $("#generateicon").addClass("haschanges");
+            createCookie("haschanges", "yes");
+            if (showColorsAdv) {
+                $("#generateicon").addClass("haschanges");
+                if (showColors) {
+                    $("#settings").addClass("haschanges");
+                }
+            } 
         }
         else {
-            createCookie("hasChanges", "");
+            createCookie("haschanges", "");
             $("#settings").removeClass("haschanges");
             $("#generateicon").removeClass("haschanges");
         }
@@ -1431,12 +1433,16 @@ function infoInputOnKeyup(obj) {
 
             var callback = function(flag) {      
                 if (flag) {
-                    createCookie("hasChanges", "yes");
-                    $("#settings").addClass("haschanges");
-                    $("#generateicon").addClass("haschanges");
+                    createCookie("haschanges", "yes");
+                    if (showColorsAdv) {
+                        $("#generateicon").addClass("haschanges");
+                        if (showColors) {
+                            $("#settings").addClass("haschanges");
+                        }
+                    } 
                 }
                 else {
-                    createCookie("hasChanges", "");
+                    createCookie("haschanges", "");
                     $("#settings").removeClass("haschanges");
                     $("#generateicon").removeClass("haschanges");
                 }
