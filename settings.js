@@ -355,24 +355,7 @@ var openSettingsPopup = function(jsonobj)
             }
         }
 
-        var isdeleted = readCookie(jsonobj.id + "isdeleted");
-        if (jsonobj.deleted != "" || (isdeleted && isdeleted.length > 0)) {
-            $("#seticon").attr("style", "color: red;");
-        }
-        else if (showColors) {
-            if (jsonobj.isnew != "") {
-                $("#seticon").attr("style", "color: #00dc00;");
-            }
-            else {
-                if (hasChanges) 
-                    $("#seticon").attr("style", "color: #f18618;");
-                else 
-                    $("#seticon").attr("style", "");
-            }
-        }
-        else {
-            $("#seticon").attr("style", "");
-        }
+        updateLinkColor(jsonvar);
     }
     else {
 

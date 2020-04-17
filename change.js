@@ -167,8 +167,6 @@ function removetweet(obj) {
                           "Restore": function() {
                             createCookie($('#linkChange').attr("cid") + "isdeleted", "", 99999);
             
-                            $("#seticon").attr("style", "");
-                    
                             if (hasTweetChanges()) {
                               createCookie("hasChanges", "yes");
                               $("#settings").addClass("haschanges");
@@ -207,7 +205,6 @@ function removetweet(obj) {
             } 
             else {
                 createCookie($('#linkChange').attr("cid") + "isdeleted", "a", 99999);
-                $("#seticon").attr("style", "color: red;");
                 jsonvar.deleted = "a";
                 updateLinkCookie(jsonvar);
                 updateLinkColor(jsonvar);
