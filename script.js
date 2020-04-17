@@ -105,7 +105,9 @@ $( document ).ready(function() {
     // START da cor caso haja alteracoes
     var hasChanges = readCookie("haschanges");
     if (hasChanges && hasChanges.length > 0) {
+        alert(111)
         if (showColorsAdv) {
+            alert(1333)
             $("#generateicon").addClass("haschanges");
             if (showColors) {
                 $("#settings").addClass("haschanges");
