@@ -34,7 +34,7 @@ function fixfocus(el)
     $(el).remove();
 }
 
-function zoom(obj, flag) {
+function zoom(obj, flag) {  
     if (obj) fixfocus(obj);
 
 
