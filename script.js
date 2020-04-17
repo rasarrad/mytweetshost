@@ -760,7 +760,7 @@ function handleFileSelect(evt) {
             for (var x = 0; x < resultParsed.length; x++) {
 
                 if (parseInt(resultParsed[x].id) >= 100000) {
-                    var link = "{\r\n\"id\": \"" + resultParsed[x].id + "\",\r\n\"creationdate\": \"" + resultParsed[x].creationdate  + "\",\r\n\"type\": \"" + resultParsed[x].type  + "\",\r\n\"url\": \"" + resultParsed[x].url  + "\",\r\n\"ishidden\": \"" + resultParsed[x].ishidden  + "\",\r\n\"date\": \"" + resultParsed[x].date + "\",\r\n\"author\": \"" + resultParsed[x].author  + "\",\r\n\"categories\": \"" + resultParsed[x].categories + "\",\r\n\"fromupload\": \"yes\",\r\n\"tags\": \"" + resultParsed[x].tags + "\",\r\n\"info\": \"" + resultParsed[x].info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "").trim() + "\",\r\n\"classif\": \"" + resultParsed[x].classif + "\",\r\n\"isnew\": \"\",\r\n\"deleted\": \"" + resultParsed[x].deleted + "\",\r\n\"tweet\": \"" + resultParsed[x].tweet + "\"\r\n},";
+                    var link = "{\r\n\"id\": \"" + resultParsed[x].id + "\",\r\n\"creationdate\": \"" + resultParsed[x].creationdate  + "\",\r\n\"type\": \"" + resultParsed[x].type  + "\",\r\n\"url\": \"" + resultParsed[x].url  + "\",\r\n\"ishidden\": \"" + resultParsed[x].ishidden  + "\",\r\n\"date\": \"" + resultParsed[x].date + "\",\r\n\"author\": \"" + resultParsed[x].author  + "\",\r\n\"categories\": \"" + resultParsed[x].categories + "\",\r\n\"tags\": \"" + resultParsed[x].tags + "\",\r\n\"info\": \"" + resultParsed[x].info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "").trim() + "\",\r\n\"classif\": \"" + resultParsed[x].classif + "\",\r\n\"isnew\": \"\",\r\n\"deleted\": \"" + resultParsed[x].deleted + "\",\r\n\"tweet\": \"" + resultParsed[x].tweet + "\"\r\n},";
 
                     var mlink = encodeURIComponent(JSON.stringify(link));
     
@@ -790,25 +790,25 @@ function handleFileSelect(evt) {
 
   }
 
-  function updateWebLink(obj) {
+  function updateWebLink(obj, webObj) {
     
-    if(obj.hasOwnProperty("date")) {
+    if(obj.hasOwnProperty("date") && obj.date != webObj.date) {
         createCookie(obj.id + "date", obj.date, 99999);
     }
 
-    if(obj.hasOwnProperty("author")) {
+    if(obj.hasOwnProperty("author") && obj.author != webObj.author) {
         createCookie(obj.id + "author", obj.author, 99999);
     }
 
-    if(obj.hasOwnProperty("categories")) {
+    if(obj.hasOwnProperty("categories") && obj.categories != webObj.categories) {
         createCookie(obj.id + "catchanged", obj.categories, 99999);
     }
 
-    if(obj.hasOwnProperty("tags")) {
+    if(obj.hasOwnProperty("tags") && obj.tags != webObj.tags) {
         createCookie(obj.id + "tagchanged", obj.tags, 99999);
     }
 
-    if(obj.hasOwnProperty("info")) {
+    if(obj.hasOwnProperty("info") && obj.info != webObj.info) {
         createCookie(obj.id + "info", obj.info, 99999);
     }
 
@@ -816,7 +816,7 @@ function handleFileSelect(evt) {
         createCookie(obj.id + "isdeleted", obj.deleted, 99999);
     }
 
-    if(obj.hasOwnProperty("classif")) {
+    if(obj.hasOwnProperty("classif") && obj.classif != webObj.classif) {
         createCookie(obj.id + "classif", obj.classif, 99999);
     }
   }

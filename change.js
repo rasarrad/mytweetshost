@@ -246,7 +246,7 @@ function removetweet(obj) {
 }    
 
 function updateLinkCookie(obj) {
-    var link = "{\r\n\"id\": \"" + obj.id + "\",\r\n\"creationdate\": \"" + obj.creationdate  + "\",\r\n\"type\": \"" + obj.type  + "\",\r\n\"url\": \"" + obj.url  + "\",\r\n\"ishidden\": \"" + obj.ishidden  + "\",\r\n\"date\": \"" + obj.date + "\",\r\n\"author\": \"" + obj.author  + "\",\r\n\"categories\": \"" + obj.categories + "\",\r\n\"fromupload\": \"yes\",\r\n\"tags\": \"" + obj.tags + "\",\r\n\"info\": \"" + obj.info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "").trim() + "\",\r\n\"classif\": \"" + obj.classif + "\",\r\n\"deleted\": \"" + obj.deleted + "\",\r\n\"tweet\": \"" + obj.tweet + "\"\r\n},";
+    var link = "{\r\n\"id\": \"" + obj.id + "\",\r\n\"creationdate\": \"" + obj.creationdate  + "\",\r\n\"type\": \"" + obj.type  + "\",\r\n\"url\": \"" + obj.url  + "\",\r\n\"ishidden\": \"" + obj.ishidden  + "\",\r\n\"date\": \"" + obj.date + "\",\r\n\"author\": \"" + obj.author  + "\",\r\n\"categories\": \"" + obj.categories + "\",\r\n\"tags\": \"" + obj.tags + "\",\r\n\"info\": \"" + obj.info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "").trim() + "\",\r\n\"classif\": \"" + obj.classif + "\",\r\n\"deleted\": \"" + obj.deleted + "\",\r\n\"tweet\": \"" + obj.tweet + "\"\r\n},";
 
     var mlink = encodeURIComponent(JSON.stringify(link));
     
@@ -515,7 +515,7 @@ function countalltweets(webLinksMap) {
                         var linkObj = webLinksMap.get(val.id);
 
                         if (linkObj) {
-                            updateWebLink();
+                            updateWebLink(linkObjm, val);
                         }
                     }
 
@@ -978,7 +978,7 @@ function undogenerate(obj) {
 }
 
 function eraseAllTmpData(obj) {
-
+    console.log("INICIO ERASE DATA");
     if (obj)
         fixfocus(obj);
 
@@ -1006,8 +1006,9 @@ function eraseAllTmpData(obj) {
 
         idF = idF - 1;
     }
-    while (idF >= 100000);        
+    while (idF >= 0);        
 
+    console.log("FIM ERASE DATA");
     createCookie("haschanges", "");
 
     $("#settings").removeClass("haschanges");
@@ -1015,30 +1016,34 @@ function eraseAllTmpData(obj) {
 }
 
 function eraseLinkTmpData(idF, flag) {
-    if (flag) {
-        eraseCookie(idF + "templink");
-    }
-
-    eraseCookie(idF + "isdeleted");
-
-    eraseCookie(idF + "catchanged");
-
-    eraseCookie(idF + "tagchanged");
-
-    eraseCookie(idF + "info");
-
-    eraseCookie(idF + "classif");
-
-    eraseCookie(idF + "author");
-
-    eraseCookie(idF + "datechanged");
-
-    eraseCookie(idF + "fromupload");
-
-    eraseCookie(idF + "isnew");
+    var hasChanges = readCookie("haschanges");
+    if (hasChanges && hasChanges.length > 0) {
+        if (flag) {
+            eraseCookie(idF + "templink");
+        }
     
-    eraseCookie(idF + "haschanges");
+        eraseCookie(idF + "isdeleted");
+    
+        eraseCookie(idF + "catchanged");
+    
+        eraseCookie(idF + "tagchanged");
+    
+        eraseCookie(idF + "info");
+    
+        eraseCookie(idF + "classif");
+    
+        eraseCookie(idF + "author");
+    
+        eraseCookie(idF + "datechanged");
+    
+        eraseCookie(idF + "isnew");
+        
+        eraseCookie(idF + "haschanges");
+    }
 }
+
+
+
 /* function undogenerate() {
   var path = "./data.json";
   var ind = false;
