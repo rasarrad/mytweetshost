@@ -1051,7 +1051,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#tcy').text(total_yy);
         $('#tch').text(total_hh);
 
-        alert();
+        alert(2222);
         setTimeout(function() { 
             var found = customizeTweets(1);
 
