@@ -959,19 +959,24 @@ function updateSettingsColor(color) {
 function updateLinkColor(val, id) {
     var functorun = function(val) 
     { 
+        console.log(11111);
         var isdeleted = readCookie(val.id + "isdeleted");
         if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { 
+            console.log(222);
             if (showColors) {
+                console.log(3333);
                 $(".tweet#" + id).find("i.linkbar").css("color", "red"); 
                 $("#seticon").attr("style", "color: red;");
             }
             else {
                 if (showColorsAdv) {
+                    console.log(4444);
                     $("#seticon").attr("style", "color: red;");
                 }
             }
         } 
         else if (showColors) {
+            console.log(5555);
             if (val.isnew && val.isnew != "") { 
                 $(".tweet#" + id).find("i.linkbar").css("color", "#00dc00"); 
                 $("#seticon").attr("style", "color: #00dc00;");
@@ -985,18 +990,23 @@ function updateLinkColor(val, id) {
             }
         }
         else {
+            console.log(6666);
             showColors = false;
             var showColorsAdv = false;
             if (showColorsAdv) {
+                console.log(7777);
                 if (val.isnew && val.isnew != "") { 
+                    console.log(8888);
                     $("#seticon").attr("style", "color: #00dc00;");
                 }
                 else {
+                    console.log(999999);
                     $(".tweet#" + id).find("i.linkbar").css("color", ""); 
                     $("#seticon").css("color", ""); 
                 }
             }
             else {
+                console.log(11111);
                 $(".tweet#" + id).find("i.linkbar").css("color", ""); 
                 $("#seticon").css("color", ""); 
             }
