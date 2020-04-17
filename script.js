@@ -791,7 +791,9 @@ function handleFileSelect(evt) {
   }
 
   function updateWebLink(obj, webObj) {
-    
+      
+    eraseLinkTmpData(obj.id, true)
+
     if(obj.hasOwnProperty("date") && obj.date != webObj.date) {
         createCookie(obj.id + "date", obj.date, 99999);
     }
