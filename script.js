@@ -31,7 +31,7 @@ var currObjSwipe = null;
 var lastTouch = null;
 var searchtotal = 0;
 var showAll = true;
-var showColors = true;
+var showColors = false;
 var isMy = false;
 
 
