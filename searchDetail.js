@@ -565,7 +565,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
     }
 
     currpage = currpage + 1;
-
+    $(window).scrollTop(0);
     nextid = null;
     try {
         nextid = parseInt(readCookie("maxid"));
