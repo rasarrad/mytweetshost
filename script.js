@@ -637,10 +637,26 @@ $( document ).ready(function() {
     document.getElementById("folderopen").addEventListener("click", clickHandler);
 
 
-    // xyz
+    // xyz 
+    /* 
     setTimeout( function() { 
         clickmenu('all', 'All Links');
     }, 1000 );
+    */
+
+    var a = {};
+
+    a.aaa = "aaa val";
+    a.bbb = "bbb val";
+
+    alert("1: " + a.bbb)
+
+    var ccc = JSON.stringify(a, null, " ");
+    alert("2: " + ccc)
+
+    var ddd = JSON.parse(ccc)
+
+    alert("3: " + ddd.aaa)
 
 }); // FIM DO ONREADY
 
