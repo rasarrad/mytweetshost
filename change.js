@@ -1329,10 +1329,10 @@ function generate(obj) {
                 }
 
                 var auxLink = {};
-                auxLink.id = val.id;
 
                 var cat = readCookie(val.id + "catchanged");
                 if (cat && cat.length > 0) {
+                    alert(cat)
                     val.categories = cat;
                     auxLink.categories = cat;
                 }
@@ -1409,6 +1409,8 @@ function generate(obj) {
                         text = text + JSON.stringify(val, null, " ");  
                     }
                     else if (!jQuery.isEmptyObject(auxLink)) {
+                        auxLink.id = val.id;
+                        
                         text = text + JSON.stringify(val, null, " ");
                     }
                     
