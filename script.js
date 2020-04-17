@@ -31,7 +31,7 @@ var currObjSwipe = null;
 var lastTouch = null;
 var searchtotal = 0;
 var showAll = true;
-var showColors = false;
+var showColors = true;
 var showColorsAdv = true;
 var isMy = false;
 
@@ -802,7 +802,7 @@ function handleFileSelect(evt) {
 
     console.log(obj)
     console.log(webObj)
-    
+
     if(obj.hasOwnProperty("date") && obj.date != webObj.date) {
         createCookie(obj.id + "date", obj.date, 99999);
     }
