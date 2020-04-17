@@ -637,12 +637,11 @@ $( document ).ready(function() {
     document.getElementById("folderopen").addEventListener("click", clickHandler);
 
 
-    // xyz 
-    /* 
+    // xyz
     setTimeout( function() { 
         clickmenu('all', 'All Links');
     }, 1000 );
-    */
+
 }); // FIM DO ONREADY
 
 
