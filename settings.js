@@ -151,14 +151,13 @@ var openSettingsPopup = function(jsonobj)
         $("#linkChange .buttonstable tr:first-child td .authorinput").hide(); 
         var authorchanged = readCookie(jsonobj.id + "author");
         if (authorchanged && authorchanged.length > 0) {
-            alert(1333);
             $("#linkChange .buttonstable tr:first-child td .author").html(authorchanged);
             $("#linkChange .buttonstable tr:first-child td .author").css('color','#00ff72');
             $("#linkChange .buttonstable tr:first-child td .authorinput").val(authorchanged);
         } 
         else {
-            $("#linkChange .buttonstable tr:first-child td .author").css('color','aaaa');
-alert(1111);
+            $("#linkChange .buttonstable tr:first-child td .author").css('color',null);
+
             if (jsonobj.author.length > 0) {
                 $("#linkChange .buttonstable tr:first-child td .author").html(jsonobj.author);
                 $("#linkChange .buttonstable tr:first-child td .authorinput").val(jsonobj.author);
