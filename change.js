@@ -1411,7 +1411,7 @@ function generate(obj) {
                     else if (!jQuery.isEmptyObject(auxLink)) {
                         auxLink.id = val.id;
                         
-                        text = text + JSON.stringify(val, null, " ");
+                        text = text + JSON.stringify(auxLink, null, " ");
                     }
                     
                 }     
