@@ -978,7 +978,7 @@ function undogenerate(obj) {
 }
 
 function eraseAllTmpData(obj) {
-    console.log("INICIO ERASE DATA");
+
     if (obj)
         fixfocus(obj);
 
@@ -1006,9 +1006,8 @@ function eraseAllTmpData(obj) {
 
         idF = idF - 1;
     }
-    while (idF >= 0);        
+    while (idF >= 100000);        
 
-    console.log("FIM ERASE DATA");
     createCookie("haschanges", "");
 
     $("#settings").removeClass("haschanges");
@@ -1016,30 +1015,29 @@ function eraseAllTmpData(obj) {
 }
 
 function eraseLinkTmpData(idF, flag) {
-    var hasChanges = readCookie("haschanges");
-    if (hasChanges && hasChanges.length > 0) {
-        if (flag) {
-            eraseCookie(idF + "templink");
-        }
-    
-        eraseCookie(idF + "isdeleted");
-    
-        eraseCookie(idF + "catchanged");
-    
-        eraseCookie(idF + "tagchanged");
-    
-        eraseCookie(idF + "info");
-    
-        eraseCookie(idF + "classif");
-    
-        eraseCookie(idF + "author");
-    
-        eraseCookie(idF + "datechanged");
-    
-        eraseCookie(idF + "isnew");
-        
-        eraseCookie(idF + "haschanges");
+
+    if (flag) {
+        eraseCookie(idF + "templink");
     }
+
+    eraseCookie(idF + "isdeleted");
+
+    eraseCookie(idF + "catchanged");
+
+    eraseCookie(idF + "tagchanged");
+
+    eraseCookie(idF + "info");
+
+    eraseCookie(idF + "classif");
+
+    eraseCookie(idF + "author");
+
+    eraseCookie(idF + "datechanged");
+
+    eraseCookie(idF + "isnew");
+    
+    eraseCookie(idF + "haschanges");
+
 }
 
 
