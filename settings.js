@@ -156,7 +156,7 @@ var openSettingsPopup = function(jsonobj)
             $("#linkChange .buttonstable tr:first-child td .authorinput").val(authorchanged);
         } 
         else {
-            $("#linkChange .buttonstable tr:first-child td .author").css('color',null);
+            $("#linkChange .buttonstable tr:first-child td .author").css('color','');
 
             if (jsonobj.author.length > 0) {
                 $("#linkChange .buttonstable tr:first-child td .author").html(jsonobj.author);
