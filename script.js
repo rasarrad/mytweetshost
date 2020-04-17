@@ -129,8 +129,6 @@ $( document ).ready(function() {
     // START do view mode (O QUE FAZ?????)    
     setviewmode();
 
-    document.location.reload(false);
-
 
     // TEST CODE
     /*
