@@ -756,10 +756,13 @@ function handleFileSelect(evt) {
             var resultParsed = JSON.parse(reader.result);
 
             var webLinksMap = new Map();
+            var hasTemp = false;
 
             for (var x = 0; x < resultParsed.length; x++) {
 
                 if (parseInt(resultParsed[x].id) >= 100000) {
+                    hasTemp = true;
+
                     var link = "{\r\n\"id\": \"" + resultParsed[x].id + "\",\r\n\"creationdate\": \"" + resultParsed[x].creationdate  + "\",\r\n\"type\": \"" + resultParsed[x].type  + "\",\r\n\"url\": \"" + resultParsed[x].url  + "\",\r\n\"ishidden\": \"" + resultParsed[x].ishidden  + "\",\r\n\"date\": \"" + resultParsed[x].date + "\",\r\n\"author\": \"" + resultParsed[x].author  + "\",\r\n\"categories\": \"" + resultParsed[x].categories + "\",\r\n\"tags\": \"" + resultParsed[x].tags + "\",\r\n\"info\": \"" + resultParsed[x].info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "").trim() + "\",\r\n\"classif\": \"" + resultParsed[x].classif + "\",\r\n\"isnew\": \"\",\r\n\"deleted\": \"" + resultParsed[x].deleted + "\",\r\n\"tweet\": \"" + resultParsed[x].tweet + "\"\r\n},";
 
                     var mlink = encodeURIComponent(JSON.stringify(link));
@@ -771,7 +774,10 @@ function handleFileSelect(evt) {
                 }
             }
 
-            createCookie("maxid", parseInt(resultParsed[0].id) + 1);
+            if (hasTemp)
+                createCookie("maxid", parseInt(resultParsed[0].id) + 1);
+            else 
+                createCookie("maxid", 100000);
 
             showMessage("Links Successfully Imported"); 
 
@@ -791,7 +797,7 @@ function handleFileSelect(evt) {
   }
 
   function updateWebLink(obj, webObj) {
-      
+
     eraseLinkTmpData(obj.id, true)
 
     if(obj.hasOwnProperty("date") && obj.date != webObj.date) {
