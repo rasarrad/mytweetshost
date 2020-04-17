@@ -800,9 +800,6 @@ function handleFileSelect(evt) {
 
     eraseLinkTmpData(obj.id, true)
 
-    console.log(obj)
-    console.log(webObj)
-
     if(obj.hasOwnProperty("date") && obj.date != webObj.date) {
         createCookie(obj.id + "date", obj.date, 99999);
     }

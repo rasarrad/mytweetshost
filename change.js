@@ -514,8 +514,6 @@ function countalltweets(webLinksMap) {
                     if (webLinksMap) {
                         var linkObj = webLinksMap.get(parseInt(val.id));
 
-                        console.log("13333")
-                        console.log(linkObj)
                         if (linkObj) {
                             updateWebLink(linkObj, val);
                         }
@@ -1039,7 +1037,6 @@ function eraseLinkTmpData(idF, flag) {
     eraseCookie(idF + "isnew");
     
     eraseCookie(idF + "haschanges");
-
 }
 
 

@@ -149,10 +149,11 @@ var openSettingsPopup = function(jsonobj)
             //$("#linkChange .buttonstable tr:first-child td .id").html(jsonobj.id);
         $("#linkChange .buttonstable tr:first-child td .author").show();
         $("#linkChange .buttonstable tr:first-child td .authorinput").hide(); 
+
         var authorchanged = readCookie(jsonobj.id + "author");
         if (authorchanged && authorchanged.length > 0) {
             $("#linkChange .buttonstable tr:first-child td .author").html(authorchanged);
-            if (showColors) {
+            if (showColors && jsonobj.author != authorchanged) {
                 $("#linkChange .buttonstable tr:first-child td .author").css('color','#00ff72');
             }
             $("#linkChange .buttonstable tr:first-child td .authorinput").val(authorchanged);
@@ -176,7 +177,7 @@ var openSettingsPopup = function(jsonobj)
         var datechanged = readCookie(jsonobj.id + "datechanged");
         if (datechanged && datechanged.length > 0) {
             $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(datechanged));
-            if (showColors) {
+            if (showColors && jsonobj.date != datechanged) {
                 $("#linkChange .buttonstable tr:first-child td .date").css('color','#00ff72');
             }
             $("#linkChange .buttonstable tr:first-child td .dateinput").val(datechanged);
@@ -220,7 +221,7 @@ var openSettingsPopup = function(jsonobj)
         if (tagchanged && tagchanged.length > 0) {
             hasChanges = true;
 
-            if (showColors) {
+            if (showColors && jsonobj.tags != tagchanged) {
                 currenttagdisplay.css('color','#00ff72');
             }
 
@@ -259,7 +260,7 @@ var openSettingsPopup = function(jsonobj)
         if (catchanged && catchanged.length > 0) {
             hasChanges = true;
             
-            if (showColors) {
+            if (showColors && jsonobj.categories != catchanged) {
                 currentcatdisplay.css('color','#00ff72');
             }
 
@@ -295,7 +296,7 @@ var openSettingsPopup = function(jsonobj)
         if (classifchanged && classifchanged.length > 0) {
             hasChanges = true;
 
-            if (showColors) {            
+            if (showColors && jsonobj.classif != classifchanged) {            
                 currentclassifdisplay.css('color','#00ff72');
             }
 
@@ -332,10 +333,10 @@ var openSettingsPopup = function(jsonobj)
             $('.originalinfo').html("--"); 
         }
 
-        if (infochanged&& infochanged.length > 0) {
+        if (infochanged && infochanged.length > 0) {
             hasChanges = true;
             
-            if (showColors) {
+            if (showColors && jsonobj.info != infochanged) {
                 currentinfodisplay.css('color','#00ff72');
             }
 
