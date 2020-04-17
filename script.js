@@ -642,7 +642,7 @@ $( document ).ready(function() {
     setTimeout( function() { 
         clickmenu('all', 'All Links');
     }, 1000 );
-    */
+
 
     var a = {};
 
@@ -663,6 +663,9 @@ $( document ).ready(function() {
     var ddd = JSON.parse(ccc)
 
     alert("3: " + ddd.aaa)
+    */
+
+
 
 }); // FIM DO ONREADY
 
@@ -751,22 +754,29 @@ function handleFileSelect(evt) {
         var currentId = readCookie("maxid");
         try {
             var resultParsed = JSON.parse(reader.result);
-            createCookie("maxid", parseInt(resultParsed[0].id) + 1);
-            undogenerate(); 
+
+            var webLinksMap = new Map();
 
             for (var x = 0; x < resultParsed.length; x++) {
-                var link = "{\r\n\"id\": \"" + resultParsed[x].id + "\",\r\n\"creationdate\": \"" + resultParsed[x].creationdate  + "\",\r\n\"type\": \"" + resultParsed[x].type  + "\",\r\n\"url\": \"" + resultParsed[x].url  + "\",\r\n\"ishidden\": \"" + resultParsed[x].ishidden  + "\",\r\n\"date\": \"" + resultParsed[x].date + "\",\r\n\"author\": \"" + resultParsed[x].author  + "\",\r\n\"categories\": \"" + resultParsed[x].categories + "\",\r\n\"fromupload\": \"yes\",\r\n\"tags\": \"" + resultParsed[x].tags + "\",\r\n\"info\": \"" + resultParsed[x].info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "").trim() + "\",\r\n\"classif\": \"" + resultParsed[x].classif + "\",\r\n\"isnew\": \"\",\r\n\"deleted\": \"" + resultParsed[x].deleted + "\",\r\n\"tweet\": \"" + resultParsed[x].tweet + "\"\r\n},";
 
-                var mlink = encodeURIComponent(JSON.stringify(link));
+                if (parseInt(resultParsed[x].id) >= 100000) {
+                    var link = "{\r\n\"id\": \"" + resultParsed[x].id + "\",\r\n\"creationdate\": \"" + resultParsed[x].creationdate  + "\",\r\n\"type\": \"" + resultParsed[x].type  + "\",\r\n\"url\": \"" + resultParsed[x].url  + "\",\r\n\"ishidden\": \"" + resultParsed[x].ishidden  + "\",\r\n\"date\": \"" + resultParsed[x].date + "\",\r\n\"author\": \"" + resultParsed[x].author  + "\",\r\n\"categories\": \"" + resultParsed[x].categories + "\",\r\n\"fromupload\": \"yes\",\r\n\"tags\": \"" + resultParsed[x].tags + "\",\r\n\"info\": \"" + resultParsed[x].info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "").trim() + "\",\r\n\"classif\": \"" + resultParsed[x].classif + "\",\r\n\"isnew\": \"\",\r\n\"deleted\": \"" + resultParsed[x].deleted + "\",\r\n\"tweet\": \"" + resultParsed[x].tweet + "\"\r\n},";
 
-                createCookie(resultParsed[x].id + "templink", mlink, 99999);
+                    var mlink = encodeURIComponent(JSON.stringify(link));
+    
+                    createCookie(resultParsed[x].id + "templink", mlink, 99999);
+                }
+                else {
+                    webLinksMap.set(parseInt(resultParsed[0].id), resultParsed[x]);
+                }
             }
 
             createCookie("maxid", parseInt(resultParsed[0].id) + 1);
 
             showMessage("Links Successfully Imported"); 
 
-            countalltweets();
+            countalltweets(webLinksMap);
+
             eraseAllTmpData();
         }
         catch(err) {
@@ -779,6 +789,38 @@ function handleFileSelect(evt) {
     }, 100);  
 
   }
+
+  function updateWebLink(obj) {
+    
+    if(obj.hasOwnProperty("date")) {
+        createCookie(obj.id + "date", obj.date, 99999);
+    }
+
+    if(obj.hasOwnProperty("author")) {
+        createCookie(obj.id + "author", obj.author, 99999);
+    }
+
+    if(obj.hasOwnProperty("categories")) {
+        createCookie(obj.id + "catchanged", obj.categories, 99999);
+    }
+
+    if(obj.hasOwnProperty("tags")) {
+        createCookie(obj.id + "tagchanged", obj.tags, 99999);
+    }
+
+    if(obj.hasOwnProperty("info")) {
+        createCookie(obj.id + "info", obj.info, 99999);
+    }
+
+    if(obj.hasOwnProperty("deleted")) {
+        createCookie(obj.id + "isdeleted", obj.deleted, 99999);
+    }
+
+    if(obj.hasOwnProperty("classif")) {
+        createCookie(obj.id + "classif", obj.classif, 99999);
+    }
+  }
+
 
   function handleDragOver(evt) {
     evt.stopPropagation();

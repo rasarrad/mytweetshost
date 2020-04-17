@@ -432,7 +432,7 @@ function changecat(obj, id) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function countalltweets() {
+function countalltweets(webLinksMap) {
 
     resetFields(false);
     var path = "./data.json";
@@ -510,6 +510,16 @@ function countalltweets() {
                 }
 
                 if (val && val.deleted != "yes") {
+
+                    if (webLinksMap) {
+                        var linkObj = webLinksMap.get(val.id);
+
+                        if (linkObj) {
+                            updateWebLink();
+                        }
+                    }
+
+
                     var doShowDeletedLink = true;  
                     if (!$("#showdeleted").is(":checked")) {
                         var isdeleted = readCookie(val.id + "isdeleted");
@@ -1284,9 +1294,12 @@ function generate(obj) {
             var recordfromdata = val;
             var linkcontent = null;
             var linktmp = null;
-            
+
+            var fromWeb = true; 
+
             do {
                 if (processtmp) {
+                    fromWeb = false; 
 
                     linkcontent = readCookie(nextid + "templink");
 
@@ -1304,40 +1317,51 @@ function generate(obj) {
                     else {
                         val = recordfromdata;
                         processtmp = false;
+                        fromWeb = true; 
                     }
                 }
                 else {
+                    fromWeb = true; 
                     val = recordfromdata;
                 }
+
+                var auxLink = {};
+                auxLink.id = val.id;
 
                 var cat = readCookie(val.id + "catchanged");
                 if (cat && cat.length > 0) {
                     val.categories = cat;
+                    auxLink.categories = cat;
                 }
     
                 var tag = readCookie(val.id + "tagchanged");
                 if (tag && tag.length > 0) {
                     val.tags = tag;
+                    auxLink.tags = tag;
                 }
     
                 var info = readCookie(val.id + "info");
                 if (info && info.length > 0) {
                     val.info = info;
+                    auxLink.info = info;
                 }
     
                 var classif = readCookie(val.id + "classif");
                 if (classif && classif.length > 0) {
                     val.classif = classif;
+                    auxLink.classif = classif;
                 }
 
                 var datechanged = readCookie(val.id + "datechanged");
                 if (datechanged && datechanged.length > 0) {
                     val.date = datechanged;
+                    auxLink.date = datechanged;
                 }
 
                 var author = readCookie(val.id + "author");
                 if (author && author.length > 0) {
                     val.author = author;
+                    auxLink.author = author;
                 }
 
                 var isdeleted = readCookie(val.id + "isdeleted");
@@ -1359,8 +1383,10 @@ function generate(obj) {
                     if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
                         if (val.deleted == "yes" || (isdeleted && isdeleted == "yes")) {
                             val.deleted = "yes";
+                            auxLink.deleted = "yes";
                         }
                         else {
+                            auxLink.deleted = "a";
                             val.deleted = "a";
                         }
 
@@ -1375,7 +1401,14 @@ function generate(obj) {
                     else {
                         ind = true;
                     }
-                    text = text + JSON.stringify(val, null, " ");  
+
+                    if (!fromWeb) {
+                        text = text + JSON.stringify(val, null, " ");  
+                    }
+                    else if (!jQuery.isEmptyObject(auxLink)) {
+                        text = text + JSON.stringify(val, null, " ");
+                    }
+                    
                 }     
 
             }
