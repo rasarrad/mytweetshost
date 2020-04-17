@@ -355,7 +355,7 @@ var openSettingsPopup = function(jsonobj)
             }
         }
 
-        updateLinkColor(jsonvar);
+        updateLinkColor(jsonobj);
     }
     else {
 
