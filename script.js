@@ -1041,16 +1041,7 @@ function processMainmenuFuncs(type) {
             break;
     }
 }  
-function resetScrollPos(selector) {
-    var divs = document.querySelectorAll(selector);
-    for (var p = 0; p < divs.length; p++) {
-      if (Boolean(divs[p].style.transform)) { //for IE(10) and firefox
-        divs[p].style.transform = 'translate3d(0px, 0px, 0px)';
-      } else { //for chrome and safari
-        divs[p].style['-webkit-transform'] = 'translate3d(0px, 0px, 0px)';
-      }
-    }
-  }
+
 function processLinkFuncs(idLink, type) {
 
     if (parseInt(idLink) > -1) {
