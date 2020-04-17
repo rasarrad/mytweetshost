@@ -37,6 +37,11 @@ function fixfocus(el)
 function zoom(obj, flag) {
     if (obj) fixfocus(obj);
     
+    var mybody = document.getElementById('body');
+    mybody.scrollTop = 0;
+    mybody.offsetTop = 0;
+
+    return false;
     $('body').addClass('notransit');
 
     if (flag || !$('body').hasClass('big')) {
