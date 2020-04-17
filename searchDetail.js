@@ -561,11 +561,13 @@ var getInformation = function(ismoretweets, wasfiltered) {
         total_yy = 0;
         total_tt = 0;
         total_hh = 0;
+        $(window).scrollTop(0);
+        
         $("#main").empty();
     }
 
     currpage = currpage + 1;
-    $(window).scrollTop(0);
+
     nextid = null;
     try {
         nextid = parseInt(readCookie("maxid"));
@@ -1114,12 +1116,12 @@ var getInformationOld = function(ismoretweets) {
 
     
     if (!ismoretweets) {
-    $('#mask').fadeIn(300);  
-    $('#moretweets').hide();
-    currentIndex = 0;
-    endIndex = currentIndex + 5;
+        $('#mask').fadeIn(300);  
+        $('#moretweets').hide();
+        currentIndex = 0;
+        endIndex = currentIndex + 5;
 
-    $("#main").empty();
+        $("#main").empty();
     }
 
     currpage = currpage + 1;
