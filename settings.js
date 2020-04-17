@@ -178,7 +178,7 @@ var openSettingsPopup = function(jsonobj)
             $("#linkChange .buttonstable tr:first-child td .dateinput").val(datechanged);
         } 
         else {
-            $("#linkChange .buttonstable tr:first-child td .date").css('color','aaa');
+            $("#linkChange .buttonstable tr:first-child td .date").css('color','');
 
             var date = jsonobj.date.toString();
             if (date.length > 0) {
@@ -1000,8 +1000,8 @@ function updateLinkColor(val, id) {
             }
         }
         else {
-            $(".tweet#" + id).find("i.linkbar").css("color", "error"); 
-            $("#seticon").attr("style", "color: error;");
+            $(".tweet#" + id).find("i.linkbar").css("color", ""); 
+            $("#seticon").css("color", ""); 
         }
     } 
 
