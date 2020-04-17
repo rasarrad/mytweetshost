@@ -965,9 +965,11 @@ function updateLinkColor(val, id) {
     var functorun = function(val) 
     { 
         var isdeleted = readCookie(val.id + "isdeleted");
+        console.log($("---------------------------------"))
         console.log(val.id + "-" + isdeleted + "-" + val.deleted)
         if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { 
             if (showColors) {
+                console.log($(".tweet#" + id).find("i.linkbar"))
                 $(".tweet#" + id).find("i.linkbar").css("color", "red"); 
                 $("#seticon").attr("style", "color: red;");
             }
