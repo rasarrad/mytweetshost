@@ -561,8 +561,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
         total_yy = 0;
         total_tt = 0;
         total_hh = 0;
-        var mybody = document.getElementById('body');
-        mybody.scrollTop = 0;
+        resetScrollPos('#body');
 
         $("#main").empty();
     }
