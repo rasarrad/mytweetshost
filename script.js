@@ -32,6 +32,7 @@ var lastTouch = null;
 var searchtotal = 0;
 var showAll = true;
 var showColors = false;
+var showColorsAdv = true;
 var isMy = false;
 
 

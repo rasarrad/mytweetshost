@@ -152,7 +152,9 @@ var openSettingsPopup = function(jsonobj)
         var authorchanged = readCookie(jsonobj.id + "author");
         if (authorchanged && authorchanged.length > 0) {
             $("#linkChange .buttonstable tr:first-child td .author").html(authorchanged);
-            $("#linkChange .buttonstable tr:first-child td .author").css('color','#00ff72');
+            if (showColors) {
+                $("#linkChange .buttonstable tr:first-child td .author").css('color','#00ff72');
+            }
             $("#linkChange .buttonstable tr:first-child td .authorinput").val(authorchanged);
         } 
         else {
@@ -174,7 +176,9 @@ var openSettingsPopup = function(jsonobj)
         var datechanged = readCookie(jsonobj.id + "datechanged");
         if (datechanged && datechanged.length > 0) {
             $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(datechanged));
-            $("#linkChange .buttonstable tr:first-child td .date").css('color','#00ff72');
+            if (showColors) {
+                $("#linkChange .buttonstable tr:first-child td .date").css('color','#00ff72');
+            }
             $("#linkChange .buttonstable tr:first-child td .dateinput").val(datechanged);
         } 
         else {
@@ -458,12 +462,6 @@ var openSettingsPopup = function(jsonobj)
     }, 600);
 } 
 
-var updateChangeIcons = function(jsonobj) {
-    $("#seticon").attr("style", "color: #f18618;");
-}
-
-
-
 var openMainSettingsPopup = function(jsonobj) 
 {
     closeallnewlayout();
@@ -617,7 +615,9 @@ function saveAuthor(obj) {
         if ($(obj).val().length > 0) {
             createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
             createCookie($('#linkChange').attr("cid") + "author", $(obj).val());
-            otherObj.css('color','#00ff72');
+            if (showColors) {
+                otherObj.css('color','#00ff72');
+            }
             otherObj.html($(obj).val());
         }
         else
@@ -966,7 +966,9 @@ function updateLinkColor(val, id) {
                 $("#seticon").attr("style", "color: red;");
             }
             else {
-                updateDeleteButtonBorder("red");
+                if (showColorsAdv) {
+                    $("#seticon").attr("style", "color: red;");
+                }
             }
         } 
         else if (showColors) {
@@ -983,8 +985,21 @@ function updateLinkColor(val, id) {
             }
         }
         else {
-            $(".tweet#" + id).find("i.linkbar").css("color", ""); 
-            $("#seticon").css("color", ""); 
+            showColors = false;
+            var showColorsAdv = false;
+            if (showColorsAdv) {
+                if (val.isnew && val.isnew != "") { 
+                    $("#seticon").attr("style", "color: #00dc00;");
+                }
+                else {
+                    $(".tweet#" + id).find("i.linkbar").css("color", ""); 
+                    $("#seticon").css("color", ""); 
+                }
+            }
+            else {
+                $(".tweet#" + id).find("i.linkbar").css("color", ""); 
+                $("#seticon").css("color", ""); 
+            }
         }
     } 
 
@@ -994,9 +1009,6 @@ function updateLinkColor(val, id) {
     else {
         functorun(val);
     }
-}
-
-function updateDeleteButtonBorder(color) {
 }
 
 

@@ -341,7 +341,9 @@ function calendarChanged(date) {
                     $("#linkChange").find(".dateinput").val(formatNumDate(date));
                     createCookie($('#linkChange').attr("cid") + "datechanged", formatNumDate(date));
                     createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
-                    otherObj.css('color','#00ff72');
+                    if (showColors) {
+                        otherObj.css('color','#00ff72');
+                    }
                 }
                 else {
                     otherObj.html("--"); 
@@ -1628,10 +1630,9 @@ var getJsonbyid = function(id, functorun) {
                     if (classif && classif.length > 0) {
                         val.classif = classif;
                     }
-                    console.log("ttttt " + val.id);
+
                     if (val.id == id) {
                         processtmp = false;
-                        console.log("bbbbbb");
                         retObj = val;
                     }
                 }
@@ -1639,7 +1640,6 @@ var getJsonbyid = function(id, functorun) {
             while (processtmp);
         }); 
 
-        console.log("ccccc ");
         if (retObj) {
             if (functorun)
                 functorun(retObj);
