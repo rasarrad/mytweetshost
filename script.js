@@ -115,9 +115,9 @@ $( document ).ready(function() {
 
 
     // START swip binds
-    // document.addEventListener('touchstart', handleTouchStart, false);        
-    // document.addEventListener('touchmove', handleTouchMove, false);
-    // document.addEventListener('touchend', handleTouchEnd, false);
+    document.addEventListener('touchstart', handleTouchStart, false);        
+    document.addEventListener('touchmove', handleTouchMove, false);
+    document.addEventListener('touchend', handleTouchEnd, false);
     
 
     // START filechoser
@@ -636,6 +636,8 @@ $( document ).ready(function() {
     document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
     document.getElementById("folderopen").addEventListener("click", clickHandler);
 
+
+    // xyz
     setTimeout( function() { 
         clickmenu('all', 'All Links');
     }, 1000 );
@@ -838,7 +840,7 @@ function handleTouchStart(evt) {
         dblFlag = true; 
         dblClickTimeout = setTimeout(function() {    
             dblFlag = false;  
-      }, 110);
+      }, 90);
     }, 10);                
 };                                                
 
@@ -1048,19 +1050,16 @@ function processLinkFuncs(idLink, type) {
         switch(type) {
             case "up":
                 //console.log("UP   UP   UP   UP   UP   UP   UP   UP   UP   UP   UP");
-
+                /*
                 openSearchPopup()
-
-                /* 
-                
                 https://stackoverflow.com/questions/22629286/scroll-down-a-webpage-by-constant-speed/22629859
-                
+                */
                 setTimeout(function() { 
                     gotop();
-                }, 300); 
+                }, 100); 
                 
                 showMessage("Scrolled to top", 2500, null, null, null, null, true, 500);
-                 */
+                 
                 break;
     
             case "down":// apagar pesquisa - mantendo os critérios
@@ -1412,7 +1411,7 @@ function closeallnewlayout(bj) {
 function gotop(e) {
     if (e)
         e.stopPropagation();
-    $(window).scrollTop(0);
+    $("html").scrollTop(0);
 }   
 
 
