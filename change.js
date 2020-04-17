@@ -465,17 +465,24 @@ function countalltweets() {
             nextid = nextid - 1;
         }
     }
+
+    console.log(11111);
+
     $.getJSON(path, function(data) 
     {
+        console.log(222);
       $.each(data.Tweets, function(key, val) 
         {
-            
+            console.log(33333);
             var recordfromdata = val;
             var linkcontent = null;
             var linktmp = null;
             
             do {
+                console.log(44444);
+
                 if (processtmp) {
+                    console.log(5555);
                     linkcontent = readCookie(nextid + "templink");
 
                     if (linkcontent && linkcontent.length > 0) {
