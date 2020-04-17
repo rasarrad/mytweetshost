@@ -1087,6 +1087,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
             else {
 
                 $('#mask').fadeOut(600);  
+                $('#tweetcount').fadeOut(800);
+                $('#moretweets').fadeOut(300);
+                $('#moretweets').css('opacity', 0);
                 showMessage("No Links Found", 2000);
             }
         }
