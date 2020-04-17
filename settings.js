@@ -965,13 +965,9 @@ function updateLinkColor(val, id) {
     var functorun = function(val) 
     { 
         var isdeleted = readCookie(val.id + "isdeleted");
-        console.log($("---------------------------------"))
-        console.log(val.id + "-" + isdeleted + "-" + val.deleted)
         if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { 
             if (showColors) {
-                console.log("#" + id)
-                console.log($("#" + id).find("i.linkbar"))
-                $("#" + id).find("i.linkbar").css("color", "red"); 
+                $("#" + val.id).find("i.linkbar").css("color", "red"); 
                 $("#seticon").attr("style", "color: red;");
             }
             else {
@@ -982,13 +978,13 @@ function updateLinkColor(val, id) {
         } 
         else if (showColors) {
             if (val.isnew && val.isnew != "") { 
-                $(".tweet#" + id).find("i.linkbar").css("color", "#00dc00"); 
+                $(".tweet#" + val.id).find("i.linkbar").css("color", "#00dc00"); 
                 $("#seticon").attr("style", "color: #00dc00;");
             }
             else {
                 var hasChanges = readCookie(val.id + "haschanges");
                 if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
-                    $(".tweet#" + id).find("i.linkbar").css("color", "#f18618"); 
+                    $(".tweet#" + val.id).find("i.linkbar").css("color", "#f18618"); 
                     $("#seticon").attr("style", "color: #f18618;");
                 } 
             }
@@ -1000,13 +996,13 @@ function updateLinkColor(val, id) {
                 }
                 else {
                     
-                    $(".tweet#" + id).find("i.linkbar").css("color", ""); 
+                    $(".tweet#" + val.id).find("i.linkbar").css("color", ""); 
                     $("#seticon").css("color", ""); 
                     alert(1111)
                 }
             }
             else {
-                $(".tweet#" + id).find("i.linkbar").css("color", ""); 
+                $(".tweet#" + val.id).find("i.linkbar").css("color", ""); 
                 $("#seticon").css("color", ""); 
             }
         }
