@@ -991,8 +991,6 @@ function updateLinkColor(val, id) {
         }
         else {
             console.log(6666);
-            showColors = false;
-            var showColorsAdv = false;
             if (showColorsAdv) {
                 console.log(7777);
                 if (val.isnew && val.isnew != "") { 
