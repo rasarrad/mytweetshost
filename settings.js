@@ -150,6 +150,7 @@ var openSettingsPopup = function(jsonobj)
         $("#linkChange .buttonstable tr:first-child td .author").show();
         $("#linkChange .buttonstable tr:first-child td .authorinput").hide(); 
 
+        $('#postedby').attr("cauthor", jsonobj.author);
         var authorchanged = readCookie(jsonobj.id + "author");
         if (authorchanged && authorchanged.length > 0) {
             $("#linkChange .buttonstable tr:first-child td .author").html(authorchanged);
@@ -175,6 +176,7 @@ var openSettingsPopup = function(jsonobj)
         $("#linkChange .buttonstable tr:first-child td .dateinput").hide(); 
         $("#linkChange .buttonstable tr:first-child td .datetoshow").hide(); 
         var datechanged = readCookie(jsonobj.id + "datechanged");
+        $('#date').attr("cdate", jsonobj.date);
         if (datechanged && datechanged.length > 0) {
             $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(datechanged));
             if (showColors && jsonobj.date != datechanged) {
@@ -614,10 +616,15 @@ function saveAuthor(obj) {
         $(obj).hide();
         var otherObj = $(obj).parent().find(".author");
         if ($(obj).val().length > 0) {
-            createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
-            createCookie($('#linkChange').attr("cid") + "author", $(obj).val());
-            if (showColors) {
-                otherObj.css('color','#00ff72');
+            if ($(obj).val() != $('#postedby').attr("cauthor")) {
+                createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
+                createCookie($('#linkChange').attr("cid") + "author", $(obj).val());
+                if (showColors) {
+                    otherObj.css('color','#00ff72');
+                }
+            }
+            else {
+                createCookie($('#linkChange').attr("cid") + "author", null);
             }
             otherObj.html($(obj).val());
         }
@@ -987,6 +994,10 @@ function updateLinkColor(val, id) {
                     $(".tweet#" + val.id).find("i.linkbar").css("color", "#f18618"); 
                     $("#seticon").attr("style", "color: #f18618;");
                 } 
+                else {
+                    $(".tweet#" + val.id).find("i.linkbar").css("color", ""); 
+                    $("#seticon").css("color", ""); 
+                }
             }
         }
         else {
@@ -995,10 +1006,8 @@ function updateLinkColor(val, id) {
                     $("#seticon").attr("style", "color: #00dc00;");
                 }
                 else {
-                    
                     $(".tweet#" + val.id).find("i.linkbar").css("color", ""); 
                     $("#seticon").css("color", ""); 
-                    alert(1111)
                 }
             }
             else {

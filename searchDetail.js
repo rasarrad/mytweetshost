@@ -339,10 +339,16 @@ function calendarChanged(date) {
                 if (date) {
                     otherObj.html(formatDate(date));
                     $("#linkChange").find(".dateinput").val(formatNumDate(date));
-                    createCookie($('#linkChange').attr("cid") + "datechanged", formatNumDate(date));
-                    createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
-                    if (showColors) {
-                        otherObj.css('color','#00ff72');
+                    
+                    if ($(obj).val() != $('#postedby').attr("cauthor")) {
+                        createCookie($('#linkChange').attr("cid") + "datechanged", formatNumDate(date));
+                        createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
+                        if (showColors) {
+                            otherObj.css('color','#00ff72');
+                        }
+                    }
+                    else {
+                        createCookie($('#linkChange').attr("cid") + "datechanged", null);
                     }
                 }
                 else {
