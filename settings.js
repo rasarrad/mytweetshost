@@ -628,7 +628,7 @@ function saveAuthor(obj) {
                 }
             }
             else {
-                createCookie($('#linkChange').attr("cid") + "author", null);
+                createCookie($('#linkChange').attr("cid") + "author", "");
             }
             otherObj.html($(obj).val());
         }
@@ -921,7 +921,7 @@ function tagsInputOnChange(obj) {
     
     if (oldtags == $(obj).val()) {
         currenttagdisplay.css('color', '');
-        createCookie($('#linkChange').attr("cid") + "tagchanged", null);
+        createCookie($('#linkChange').attr("cid") + "tagchanged", "");
         $('#originaltagtd i').hide();
     }
     else {
@@ -939,7 +939,7 @@ function tagsInputOnChange(obj) {
     if (color == "#f18618")
         createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
     else
-        createCookie($('#linkChange').attr("cid") + "haschanges", null);
+        createCookie($('#linkChange').attr("cid") + "haschanges", "");
 
     updateLinkColor(null, $('#linkChange').attr("cid"));
     
@@ -1224,7 +1224,7 @@ function catsInputOnChange(obj) {
     
     if (oldcats == $(obj).val()) {
         currentcatdisplay.css('color', '');
-        createCookie($('#linkChange').attr("cid") + "catchanged", null);
+        createCookie($('#linkChange').attr("cid") + "catchanged", "");
         $('#originalcattd i').hide();
     }
     else {
@@ -1239,7 +1239,7 @@ function catsInputOnChange(obj) {
     if (color == "#f18618")
         createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
     else
-        createCookie($('#linkChange').attr("cid") + "haschanges", null);
+        createCookie($('#linkChange').attr("cid") + "haschanges", "");
 
     updateLinkColor(null, $('#linkChange').attr("cid"));
 
@@ -1336,7 +1336,7 @@ function classifInputOnChange(obj) {
     
     if (oldclassif == $(obj).val().trim()) {
         currentclassifdisplay.css('color', '');
-        createCookie($('#linkChange').attr("cid") + "classif", null);
+        createCookie($('#linkChange').attr("cid") + "classif", "");
         $('#originalclassiftd i').hide();
     }
     else {
@@ -1348,7 +1348,7 @@ function classifInputOnChange(obj) {
     if (color == "#f18618")
     createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
     else
-        createCookie($('#linkChange').attr("cid") + "haschanges", null);
+        createCookie($('#linkChange').attr("cid") + "haschanges", "");
 
     updateLinkColor(null, $('#linkChange').attr("cid"));
     
@@ -1429,7 +1429,7 @@ function infoInputOnKeyup(obj) {
             
             if (oldinfo == val) {
                 currentinfodisplay.css('color', '');
-                createCookie($('#linkChange').attr("cid") + "info", null);
+                createCookie($('#linkChange').attr("cid") + "info", "");
                 $('#originalinfotd i').hide();
             }
             else {
@@ -1443,7 +1443,7 @@ function infoInputOnKeyup(obj) {
             if (color == "#f18618")
                 createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
             else
-                createCookie($('#linkChange').attr("cid") + "haschanges", null);
+                createCookie($('#linkChange').attr("cid") + "haschanges", "");
 
             updateLinkColor(null, $('#linkChange').attr("cid"));
 

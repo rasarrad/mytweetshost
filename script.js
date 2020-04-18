@@ -44,7 +44,7 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 
 
 $( document ).ready(function() { 
-    createCookie("29datechanged", null);
+    createCookie("29datechanged", "");
     // START mapa categorias
     catsmap.set("tvn", "New/Ongoing");
     catsmap.set("trn", "New / Hot / Trending");
@@ -1688,7 +1688,7 @@ function readCookie(name) {
 
 
 function eraseCookie(name) {
-    createCookie(name, null, -1);
+    createCookie(name, "", -1);
 }  
     
 

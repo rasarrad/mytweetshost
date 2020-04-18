@@ -349,7 +349,7 @@ function calendarChanged(date) {
                         }
                     }
                     else {
-                        createCookie($('#linkChange').attr("cid") + "datechanged", null);
+                        createCookie($('#linkChange').attr("cid") + "datechanged", "");
                     }
                 }
                 else {
