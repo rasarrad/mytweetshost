@@ -1065,6 +1065,10 @@ var getInformation = function(ismoretweets, wasfiltered) {
         $('#tcy').text(total_yy);
         $('#tch').text(total_hh);
 
+        $('#main').find('.tweet').sort(function (a, b) {
+            return Number($(a).attr('cdate')) - Number($(b).attr('cdate'));
+        }).appendTo('#main');
+
         setTimeout(function() { 
             var found = customizeTweets(1);
 

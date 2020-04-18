@@ -1166,9 +1166,6 @@ bookmarks <span>
               setTimeout(function(){
                 $("html").scrollTop(0);
                 /**/
-                $('#main').find('.tweet').sort(function (a, b) {
-                    return Number($(b).attr('cdate')) - Number($(a).attr('cdate'));
-                }).appendTo('#main');
 
               }, 1000);  
             }
