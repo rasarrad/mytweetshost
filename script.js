@@ -33,7 +33,7 @@ var searchtotal = 0;
 var showAll = true;
 var showColors = true;
 var showColorsAdv = true;
-var isMy = true;
+var isMy = false;
 
 
 // START do tema
@@ -71,9 +71,8 @@ $( document ).ready(function() {
 
 
    // START do mascara cinzenta inicial
-   setTimeout(function() { 
+   //setTimeout(function() { 
         //countalltweets(); agora é feito no setTimeout (em cima)
-
         setTimeout(function(){
             $( "#mask" ).fadeOut( 800, function() {
                 var style = window.getComputedStyle(body, null);
@@ -84,8 +83,7 @@ $( document ).ready(function() {
                 $("#mask > .fa-circle-o-notch").show();
             });
         }, 340); 
-
-    }, 1); 
+    //}, 1); 
 
 
     // START do zoom
