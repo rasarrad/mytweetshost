@@ -186,7 +186,7 @@ var openSettingsPopup = function(jsonobj)
             $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(datechanged));
             
             console.log(7777 + "-" + datechanged + "-" + jsonobj.date);
-            if (showColors && jsonobj.date+"" != datechanged+"") {
+            if (showColors && jsonobj.date+"" !== datechanged+"") {
                 console.log(3333);
                 $("#linkChange .buttonstable tr:first-child td .date").css('color','#00ff72');
             }
