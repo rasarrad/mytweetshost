@@ -177,18 +177,22 @@ var openSettingsPopup = function(jsonobj)
         $("#linkChange .buttonstable tr:first-child td .datetoshow").hide(); 
         var datechanged = readCookie(jsonobj.id + "datechanged");
         $('#date').attr("cdate", jsonobj.date);
+        console.log(1111 + "-" + datechanged);
         if (datechanged && datechanged.length > 0) {
+            console.log(2222);
             $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(datechanged));
             if (showColors && jsonobj.date != datechanged) {
+                console.log(3333);
                 $("#linkChange .buttonstable tr:first-child td .date").css('color','#00ff72');
             }
             $("#linkChange .buttonstable tr:first-child td .dateinput").val(datechanged);
         } 
         else {
             $("#linkChange .buttonstable tr:first-child td .date").css('color','');
-
+            console.log(44444);
             var date = jsonobj.date.toString();
             if (date.length > 0) {
+                console.log(55555);
                 $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(date));
             
                 $("#linkChange .buttonstable tr:first-child td .dateinput").val(date);
