@@ -747,15 +747,15 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         processtmp = true;
 
-        /*
-        var sortByProperty = function (property) {
+        
+        var sortByProperty = function () {
             return function (x, y) {
                 return Number(y.date) - Number(x.date);
             };
         };
         
-        data.Tweets.sort(sortByProperty(''));
-    */
+        data.Tweets.sort(sortByProperty());
+    
 
 
         $.each(data.Tweets, function(key, val) {
