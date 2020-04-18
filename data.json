@@ -1,5 +1,19 @@
   
 {"Tweets": [{
+    "id": "1",
+    "creationdate": "20200308",
+    "type": "T",
+    "url": "https://twitter.com/tmbsfm/status/1235619017718730752",
+    "ishidden": "0",
+    "date": "20200305",
+    "author": "TMBS - The Michael Brooks Show (@tmbsfm)",
+    "categories": "tvi",
+    "tags": "max wolf socialism",
+    "info": "",
+    "deleted": "",
+    "classif": "0",
+    "tweet": "<blockquote class=twitter-tweet><p lang=en dir=ltr>Introduction To Marx’s Theory Of Value w/ <a href=https://twitter.com/profwolff?ref_src=twsrc%5Etfw>@profwolff</a><a href=https://t.co/vjnRE3P1kz>https://t.co/vjnRE3P1kz</a> <a href=https://t.co/QdEnfSzCtO>pic.twitter.com/QdEnfSzCtO</a></p>&mdash; TMBS - The Michael Brooks Show (@tmbsfm) <a href=https://twitter.com/tmbsfm/status/1235619017718730752?ref_src=twsrc%5Etfw>March 5, 2020</a></blockquote> <script async src=https://platform.twitter.com/widgets.js charset=utf-8><&#47;script>"
+   },{
     "id": "0",
     "creationdate": "20000101",
     "type": "T",
