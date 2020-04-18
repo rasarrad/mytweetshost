@@ -805,8 +805,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         val = null;
                     }
                 }
-
+console.log(11111+" -" + val.deleted);
                 if (val && val.deleted != "yes") {
+                    console.log(2222222);
                     var cat = readCookie(val.id + "catchanged");
                     if (cat && cat.length > 0) {
                         val.categories = cat;
