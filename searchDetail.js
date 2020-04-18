@@ -340,6 +340,7 @@ function calendarChanged(date) {
                     otherObj.html(formatDate(date));
                     $("#linkChange").find(".dateinput").val(formatNumDate(date));
                     
+                    console.log("-" + formatNumDate(date) + "-" + $('#postedby').attr("cauthor") + "-")
                     if (formatNumDate(date) != $('#postedby').attr("cauthor")) {
                         createCookie($('#linkChange').attr("cid") + "datechanged", formatNumDate(date));
                         createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
