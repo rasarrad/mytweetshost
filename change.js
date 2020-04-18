@@ -1413,6 +1413,9 @@ function generate(obj) {
                             
                             text = text + JSON.stringify(auxLink, null, " ");
                         }
+                        else {
+                            text = text.substring(0, text.length - 1);
+                        }
                     } 
                 }
             }
