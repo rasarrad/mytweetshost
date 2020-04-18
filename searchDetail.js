@@ -340,8 +340,8 @@ function calendarChanged(date) {
                     otherObj.html(formatDate(date));
                     $("#linkChange").find(".dateinput").val(formatNumDate(date));
                     
-                    console.log("-" + formatNumDate(date) + "-" + $('#date').attr("cdate") + "-")
-                    if (formatNumDate(date)+"" !== $('#date').attr("cdate")+"") {
+                    if (formatNumDate(date) != $('#date').attr("cdate")) {
+                        console.log(999)
                         createCookie($('#linkChange').attr("cid") + "datechanged", formatNumDate(date));
                         createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
                         if (showColors) {
@@ -350,6 +350,7 @@ function calendarChanged(date) {
                     }
                     else {
                         createCookie($('#linkChange').attr("cid") + "datechanged", "");
+                        otherObj.css('color','');
                     }
                 }
                 else {
