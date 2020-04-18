@@ -341,7 +341,7 @@ function calendarChanged(date) {
                     $("#linkChange").find(".dateinput").val(formatNumDate(date));
                     
                     console.log("-" + formatNumDate(date) + "-" + $('#date').attr("cdate") + "-")
-                    if (!formatNumDate(date).localeCompare($('#date').attr("cdate"))) {
+                    if (formatNumDate(date)+"" != $('#date').attr("cdate")+"") {
                         createCookie($('#linkChange').attr("cid") + "datechanged", formatNumDate(date));
                         createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
                         if (showColors) {
@@ -1561,7 +1561,7 @@ var getJsonbyid = function(id, functorun) {
 
     $.getJSON(path, function(data) {
         var processtmp = true;
-
+        
         nextid = null;
         try {
             nextid = parseInt(readCookie("maxid"));
