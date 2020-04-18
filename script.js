@@ -33,7 +33,7 @@ var searchtotal = 0;
 var showAll = true;
 var showColors = true;
 var showColorsAdv = true;
-var isMy = false;
+var isMy = true;
 
 
 // START do tema
