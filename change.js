@@ -1327,94 +1327,94 @@ function generate(obj) {
                     val = recordfromdata;
                 }
 
-                var auxLink = {};
+                if (val.id != "0") {
+                    var auxLink = {};
 
-                var cat = readCookie(val.id + "catchanged");
-                if (cat && cat.length > 0) {
-                    alert(cat)
-                    val.categories = cat;
-                    auxLink.categories = cat;
-                }
+                    var cat = readCookie(val.id + "catchanged");
+                    if (cat && cat.length > 0) {
+                        alert(cat)
+                        val.categories = cat;
+                        auxLink.categories = cat;
+                    }
+        
+                    var tag = readCookie(val.id + "tagchanged");
+                    if (tag && tag.length > 0) {
+                        val.tags = tag;
+                        auxLink.tags = tag;
+                    }
+        
+                    var info = readCookie(val.id + "info");
+                    if (info && info.length > 0) {
+                        val.info = info;
+                        auxLink.info = info;
+                    }
+        
+                    var classif = readCookie(val.id + "classif");
+                    if (classif && classif.length > 0) {
+                        val.classif = classif;
+                        auxLink.classif = classif;
+                    }
     
-                var tag = readCookie(val.id + "tagchanged");
-                if (tag && tag.length > 0) {
-                    val.tags = tag;
-                    auxLink.tags = tag;
-                }
+                    var datechanged = readCookie(val.id + "datechanged");
+                    if (datechanged && datechanged.length > 0) {
+                        val.date = datechanged;
+                        auxLink.date = datechanged;
+                    }
     
-                var info = readCookie(val.id + "info");
-                if (info && info.length > 0) {
-                    val.info = info;
-                    auxLink.info = info;
-                }
+                    var author = readCookie(val.id + "author");
+                    if (author && author.length > 0) {
+                        val.author = author;
+                        auxLink.author = author;
+                    }
     
-                var classif = readCookie(val.id + "classif");
-                if (classif && classif.length > 0) {
-                    val.classif = classif;
-                    auxLink.classif = classif;
-                }
-
-                var datechanged = readCookie(val.id + "datechanged");
-                if (datechanged && datechanged.length > 0) {
-                    val.date = datechanged;
-                    auxLink.date = datechanged;
-                }
-
-                var author = readCookie(val.id + "author");
-                if (author && author.length > 0) {
-                    val.author = author;
-                    auxLink.author = author;
-                }
-
-                var isdeleted = readCookie(val.id + "isdeleted");
-
-                if (isMy) {
-                    if (isdeleted && isdeleted.length > 0) {
-                    } 
+                    var isdeleted = readCookie(val.id + "isdeleted");
+    
+                    if (isMy) {
+                        if (isdeleted && isdeleted.length > 0) {
+                        } 
+                        else {
+                            if (ind) {
+                                text = text + ",";
+                            }
+                            else {
+                                ind = true;
+                            }
+                            text = text + JSON.stringify(val, null, " ");  
+                        }
+                    }
                     else {
+                        if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
+                            if (val.deleted == "yes" || (isdeleted && isdeleted == "yes")) {
+                                val.deleted = "yes";
+                                auxLink.deleted = "yes";
+                            }
+                            else {
+                                auxLink.deleted = "a";
+                                val.deleted = "a";
+                            }
+    
+                        }
+                        else {
+                            val.deleted = "";
+                        }
+    
                         if (ind) {
                             text = text + ",";
                         }
                         else {
                             ind = true;
                         }
-                        text = text + JSON.stringify(val, null, " ");  
-                    }
+    
+                        if (!fromWeb) {
+                            text = text + JSON.stringify(val, null, " ");  
+                        }
+                        else if (!jQuery.isEmptyObject(auxLink)) {
+                            auxLink.id = val.id;
+                            
+                            text = text + JSON.stringify(auxLink, null, " ");
+                        }
+                    } 
                 }
-                else {
-                    if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
-                        if (val.deleted == "yes" || (isdeleted && isdeleted == "yes")) {
-                            val.deleted = "yes";
-                            auxLink.deleted = "yes";
-                        }
-                        else {
-                            auxLink.deleted = "a";
-                            val.deleted = "a";
-                        }
-
-                    }
-                    else {
-                        val.deleted = "";
-                    }
-
-                    if (ind) {
-                        text = text + ",";
-                    }
-                    else {
-                        ind = true;
-                    }
-
-                    if (!fromWeb) {
-                        text = text + JSON.stringify(val, null, " ");  
-                    }
-                    else if (!jQuery.isEmptyObject(auxLink)) {
-                        auxLink.id = val.id;
-                        
-                        text = text + JSON.stringify(auxLink, null, " ");
-                    }
-                    
-                }     
-
             }
             while (processtmp);
           
