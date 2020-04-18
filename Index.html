@@ -762,17 +762,17 @@ bookmarks <span>
       </table>   
       <table class="sectiontitletable sectionexpandable">
         <tbody>
-          <tr style="padding-bottom: 15px;">
-            <td class="sectionicontd" style="width: 48px;display: inline-block;white-space: nowrap;">
-                <i class="fa fa-user-circle-o"></i><span style="padding-left: 6px;" class="sectiontitle">About me</span>
+          <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
+            <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
+                <i class="fa fa-picture-o"></i><span style="padding-left: 6px;" class="sectiontitle">Theme</span>
             </td>    
             <td class="sectionicontd el ellipsis">
-                <span class="currenttags titletext" style="top: -1px;text-align: left;padding-left: 0px;"></span>
+                <span class="currenttheme titletext themename" style="top: -1px;text-align: left;padding-left: 0px;">Twitter Lines</span>
             </td>                         
             <td class="sectionedittd">
-                
+                <i class="fa fa-angle-up" style="font-size: 22px; position: relative; top: -6px; display: none;"></i>
             </td>                                        
-        </tr>   
+        </tr>     
           
       <tr>  
           <td colspan="3" style="position: relative;">
@@ -786,7 +786,13 @@ bookmarks <span>
           </td>                                        
       </tr>    
     </tbody>
-    </table>        
+    </table>
+    
+    
+
+
+
+
         <table id="generatetablerow" class="sectiontitletable sectionexpandable defaulttablerow" style="margin-top: 8px;transition: max-height 0.5s ease 0s;max-height: 18px;">
           <tbody>
             <tr class="cursorpointer" style="padding-bottom: 15px;">
