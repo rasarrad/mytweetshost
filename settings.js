@@ -157,6 +157,9 @@ var openSettingsPopup = function(jsonobj)
             if (showColors && jsonobj.author != authorchanged) {
                 $("#linkChange .buttonstable tr:first-child td .author").css('color','#00ff72');
             }
+            else {
+                $("#linkChange .buttonstable tr:first-child td .author").css('color','');
+            }
             $("#linkChange .buttonstable tr:first-child td .authorinput").val(authorchanged);
         } 
         else {
