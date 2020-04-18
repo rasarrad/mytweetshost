@@ -747,15 +747,21 @@ var getInformation = function(ismoretweets, wasfiltered) {
 
         processtmp = true;
 
-        
-        var sortByProperty = function () {
+        /*
+        var sortByProperty = function (property) {
+            return function (x, y) {
+                return y.property - x.property;
+            };
+        };
+        data.Tweets.sort(sortByProperty(''));
+
+        var sortByDate = function () {
             return function (x, y) {
                 return Number(y.date) - Number(x.date);
             };
         };
-        
-        data.Tweets.sort(sortByProperty());
-    
+        data.Tweets.sort(sortByDate());
+        */
 
 
         $.each(data.Tweets, function(key, val) {
@@ -930,8 +936,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
                                 xclass = " yt";
                                 typefa = "youtube-play"
                             }
-    
-                            var newtweet = $('#main').append($('<div id="inid" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>'));
+                            
+                            var newtweet = $('#main').append($('<div id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>'));
                             var newtweetobj = $('#inid');
     
                             newtweetobj.append($('<div style="z-index: 0;background: var(--soft-color);height: 39px;" class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
