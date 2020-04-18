@@ -805,8 +805,9 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         val = null;
                     }
                 }
-console.log(val.id +" -" + val.deleted);
-                if (val && val.deleted != "yes") {
+
+                var isdeleted = readCookie(val.id + "isdeleted");
+                if ((val && val.deleted != "yes") || (isdeleted && val.deleted != "yes")) {
                     console.log(2222222);
                     var cat = readCookie(val.id + "catchanged");
                     if (cat && cat.length > 0) {
@@ -854,11 +855,8 @@ console.log(val.id +" -" + val.deleted);
                         dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
                         dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
                         
-    
-                        var isdeleted = null;
                         var doShowDeletedLink = true;  
                         if (!$("#showdeleted").is(":checked")) {
-                            isdeleted = readCookie(val.id + "isdeleted");
                             if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
                                 doShowDeletedLink = false; 
                             } 
@@ -870,7 +868,6 @@ console.log(val.id +" -" + val.deleted);
                             var tagdispalay = " --";
                             var expandclass = "";
                             var color = "";
-                            var isdeleted = readCookie(val.id + "isdeleted");
                             if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { // ID DELETED
                                 expandclass = hideMode ? "" : "isdeleted";    
                                 if (showColors)
