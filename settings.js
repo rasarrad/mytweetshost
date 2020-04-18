@@ -181,9 +181,14 @@ var openSettingsPopup = function(jsonobj)
         if (datechanged && datechanged.length > 0) {
             console.log(2222);
             $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(datechanged));
+            
+            console.log(7777 + "-" + datechanged + "-" + jsonobj.date);
             if (showColors && jsonobj.date != datechanged) {
                 console.log(3333);
                 $("#linkChange .buttonstable tr:first-child td .date").css('color','#00ff72');
+            }
+            else {
+                $("#linkChange .buttonstable tr:first-child td .date").css('color','');
             }
             $("#linkChange .buttonstable tr:first-child td .dateinput").val(datechanged);
         } 
