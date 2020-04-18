@@ -636,6 +636,9 @@ $( document ).ready(function() {
 
 
     // xyz 
+
+    openMainSettingsPopup();
+    
     /* 
     setTimeout( function() { 
         clickmenu('all', 'All Links');
