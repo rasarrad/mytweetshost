@@ -509,7 +509,8 @@ function countalltweets(webLinksMap) {
                     }
                 }
 
-                if (val && val.deleted != "yes") {
+                var isdeleted = readCookie(val.id + "isdeleted");
+                if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes")) {
 
                     if (webLinksMap) {
                         var linkObj = webLinksMap.get(parseInt(val.id));
@@ -522,7 +523,6 @@ function countalltweets(webLinksMap) {
 
                     var doShowDeletedLink = true;  
                     if (!$("#showdeleted").is(":checked")) {
-                        var isdeleted = readCookie(val.id + "isdeleted");
                         if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
                             doShowDeletedLink = false; 
                         } 

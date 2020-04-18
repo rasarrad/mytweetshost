@@ -644,7 +644,8 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         }
                     }
 
-                    if (val && val.deleted != "yes") {
+                    var isdeleted = readCookie(val.id + "isdeleted");
+                    if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes")) {
                         var cat = readCookie(val.id + "catchanged");
                         if (cat && cat.length > 0) {
                             val.categories = cat;
@@ -686,7 +687,6 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         
                         var doShowDeletedLink = true;  
                         if (!$("#showdeleted2").is(":checked")) {
-                            var isdeleted = readCookie(val.id + "isdeleted");
                             if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
                                 doShowDeletedLink = false; 
                             } 
@@ -807,8 +807,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                 }
 
                 var isdeleted = readCookie(val.id + "isdeleted");
-                if ((val && val.deleted != "yes") || (isdeleted && val.deleted != "yes")) {
-                    console.log(2222222);
+                if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes")) {
                     var cat = readCookie(val.id + "catchanged");
                     if (cat && cat.length > 0) {
                         val.categories = cat;
@@ -1015,8 +1014,11 @@ var getInformation = function(ismoretweets, wasfiltered) {
     
                     }
                 }
-                else if (val && val.deleted != "yes") {
-                    return;
+                else {
+                    var isdeleted = readCookie(val.id + "isdeleted");
+                    if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes")) {
+                        return;
+                    }
                 }
             }
             while (processtmp);
@@ -1447,7 +1449,9 @@ var getInformationbyid = function(id, flag) {
                         val = null;
                     }
                 }
-                if (val && val.deleted != "yes" && val.id.includes(id)) {
+                var isdeleted = readCookie(val.id + "isdeleted");
+
+                if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id.includes(id)) {
                     $("#main").empty();
                     $('#moretweets').hide();
                     $('#tweetcount').hide();  
@@ -1456,8 +1460,7 @@ var getInformationbyid = function(id, flag) {
                     var tagdispalay = " --";
                     var expandclass = "";
                     var color = "";
-    
-                    var isdeleted = readCookie(val.id + "isdeleted");
+
                     if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { // ID DELETED
                         expandclass = hideMode ? "" : "isdeleted";    
                         color = "color: red;";
@@ -1620,7 +1623,8 @@ var getJsonbyid = function(id, functorun) {
                     }
                 }
 
-                if (val && val.deleted != "yes") {
+                var isdeleted = readCookie(val.id + "isdeleted");
+                if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id.includes(id)) {
                     var cat = readCookie(val.id + "catchanged");
                     if (cat && cat.length > 0) {
                         val.categories = cat;
@@ -1803,7 +1807,9 @@ var existsLink = function(text, type, functorun) {
                     }
                 }
 
-                if (val && val.deleted != "yes") {
+                var isdeleted = readCookie(val.id + "isdeleted");
+
+                if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes")) {
                     if (val.type == "T") {
                         if (   
                             (text.substring(0,20) != "" && val.tweet.includes(text.substring(0,20)))
@@ -1827,8 +1833,12 @@ var existsLink = function(text, type, functorun) {
                             functorun();
                     }
                 }
-                else if (val && val.deleted != "yes" && functorun) {
-                    functorun();
+                else { 
+                    var isdeleted = readCookie(val.id + "isdeleted");
+
+                    if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && functorun) {
+                        functorun();
+                    }
                 }
             }
             while (processtmp);
