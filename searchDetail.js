@@ -629,7 +629,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                                 val = recordfromdata;
                             }
                             else {
-                                val = null;
+                                val.id = "0";
                             }
                             
                             processtmp = false;
@@ -640,7 +640,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             val = recordfromdata;
                         }
                         else {
-                            val = null;
+                            val.id = "0";
                         }
                     }
 
@@ -797,7 +797,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             val = recordfromdata;
                         }
                         else {
-                            val = null;
+                            val.id = "0";
                         }
                         
                         processtmp = false;
@@ -808,7 +808,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         val = recordfromdata;
                     }
                     else {
-                        val = null;
+                        val.id = "0";
                     }
                 }
 
@@ -1015,9 +1015,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         }
                     }
                     if (val.id == 0) {
-    
                         return;
-    
                     }
                 }
                 else {
@@ -1445,7 +1443,7 @@ var getInformationbyid = function(id, flag) {
                             val = recordfromdata;
                         }
                         else {
-                            val = null;
+                            val.id = "0";
                         }
                         
                         processtmp = false;
@@ -1456,7 +1454,7 @@ var getInformationbyid = function(id, flag) {
                         val = recordfromdata;
                     }
                     else {
-                        val = null;
+                        val.id = "0";
                     }
                 }
                 var isdeleted = readCookie(val.id + "isdeleted");
@@ -1802,7 +1800,7 @@ var existsLink = function(text, type, functorun) {
                             val = recordfromdata;
                         }
                         else {
-                            val = null;
+                            val.id = "0";
                         }
                         
                         processtmp = false;
@@ -1813,7 +1811,7 @@ var existsLink = function(text, type, functorun) {
                         val = recordfromdata;
                     }
                     else {
-                        val = null;
+                        val.id = "0";
                     }
                 }
 

@@ -495,7 +495,7 @@ function countalltweets(webLinksMap) {
                             val = recordfromdata;
                         }
                         else {
-                            val = null;
+                            val.id = "0";
                         }
                         processtmp = false;
                     }
@@ -505,7 +505,7 @@ function countalltweets(webLinksMap) {
                         val = recordfromdata;
                     }
                     else {
-                        val = null;
+                        val.id = "0";
                     }
                 }
 
