@@ -124,7 +124,7 @@ $( document ).ready(function() {
     
     
     // START victorywillcome tweets
-    var valueVWC = readCookie("swipes");
+    var valueVWC = readCookie("vwc");
     if (valueVWC && valueVWC.length > 0) {
         if (valueVWC == "Yes") {
             showAll = true;
