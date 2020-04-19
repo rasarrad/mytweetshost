@@ -61,7 +61,7 @@ $( document ).ready(function() {
 
     var encrypted = CryptoJS.AES.encrypt("x20#0000002e", "x20#002e");
     //U2FsdGVkX18ZUVvShFSES21qHsQEqZXMxQ9zgHy+bu0=
-    Console.log("encrypted-" + encrypted + "-")
+    console.log("encrypted-" + encrypted + "-")
     var decrypted = CryptoJS.AES.decrypt(encrypted, "x20#002e");
     //4d657373616765
     Console.log("decrypted-" + decrypted + "-")
