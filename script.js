@@ -152,7 +152,7 @@ $( document ).ready(function() {
     var dropZone = document.getElementById('backdiv');
     dropZone.addEventListener('dragover', handleDragOver, false);
     dropZone.addEventListener('drop', handleFileSelect, false);
-    document.getElementById('filestoupload').addEventListener('change', handleFileSelect, false);
+    document.getElementById('files').addEventListener('change', handleFileSelect, false);
 
     // START do view mode (O QUE FAZ?????)    
     setviewmode();
@@ -772,8 +772,6 @@ function tapHandler(event) {
 /////////////////////////////////////////////////////////////////////////
 
 function handleFileSelect(evt) {
-    evt.stopPropagation();
-    evt.preventDefault();
 
     var files = evt.dataTransfer.files; 
 
