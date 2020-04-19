@@ -35,6 +35,7 @@ var showColors = false;
 var showColorsAdv = false;
 var isMy = false;
 var useSwipes = false;
+var ceec = 0; 
 
 // START do tema
 var currTheme = readCookie("currTheme");
