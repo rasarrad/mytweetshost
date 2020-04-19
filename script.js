@@ -57,6 +57,16 @@ $( document ).ready(function() {
     catsmap.set("cli", "My Tweets");
 
 
+
+
+    var encrypted = CryptoJS.AES.encrypt("x20#0000002e", "x20#002e");
+    //U2FsdGVkX18ZUVvShFSES21qHsQEqZXMxQ9zgHy+bu0=
+    Console.log("encrypted-" + encrypted + "-")
+    var decrypted = CryptoJS.AES.decrypt(encrypted, "x20#002e");
+    //4d657373616765
+    Console.log("decrypted-" + decrypted + "-")
+
+
    // START remover speckcheks
    $( "input, textarea" ).each( function( index, element ){
         $(element).attr("spellcheck", "false");
