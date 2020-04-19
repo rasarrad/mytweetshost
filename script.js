@@ -30,7 +30,7 @@ var yDown = null;
 var currObjSwipe = null;
 var lastTouch = null;
 var searchtotal = 0;
-var showAll = true;
+var showAll = false;
 var showColors = false;
 var showColorsAdv = false;
 var isMy = false;
@@ -111,10 +111,6 @@ $( document ).ready(function() {
             showColors = false;
             showColorsAdv = true;   
         }
-        else {
-            showColors = false;
-            showColorsAdv = false;
-        }
     }
 
 
@@ -124,12 +120,18 @@ $( document ).ready(function() {
         if (valueSwipe == "Yes") {
             useSwipes = true;
         }
-        else {
-            useSwipes = false;
-        }
     }
     
     
+    // START victorywillcome tweets
+    var valueVWC = readCookie("swipes");
+    if (valueVWC && valueVWC.length > 0) {
+        if (valueVWC == "Yes") {
+            showAll = true;
+        }
+    }
+
+
     // START da cor caso haja alteracoes
     var hasChanges = readCookie("haschanges");
     if (hasChanges && hasChanges.length > 0) {

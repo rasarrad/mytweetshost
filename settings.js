@@ -549,9 +549,26 @@ var openMainSettingsPopup = function(jsonobj)
         }
     });
     
+    // See victorywillcome tweets
+    value = null;
 
-    //$('#mainsettings').fadeIn(600);  
+    if (showAll) {
+        value = "Yes";
+    }
+    else {
+        value = "No";
+    }
 
+    $("#VWCdisplay").text(value);
+    
+    $('#VWCul').find(".litags").each( function( index, element ) {
+        if($(element).html().trim() == value) {
+            $(element).addClass("selectedtag");
+        }
+        else {
+            $(element).removeClass("selectedtag");
+        }
+    });
     
     $('#mainsettings').css('transition', 'transition: all 0.01s');
     $('#mainsettings').css("height", "calc(100%)");
@@ -1606,6 +1623,35 @@ function clickLiSwipes(e, obj) {
 
         $("#swipedisplay").text(value);
         createCookie("swipes", value, 99999);
+    }  
+}
+
+
+function clickLiVWC(e, obj) {
+    e.stopPropagation();
+
+    if (!$(obj).hasClass("selectedtag")) {
+        var value = $(obj).html().trim();
+        $('#VWCul').find(".litags").each( function( index, element ) {
+            if($(element).html().trim() == value) {
+                $(element).addClass("selectedtag");
+            }
+            else {
+                $(element).removeClass("selectedtag");
+            }
+        });
+
+        if (value == "Yes") {
+            showMessage("VictoryWillCome Tweets Shown", null, null, null, null, null);
+            showAll = true;
+        }
+        else {
+            showMessage("VictoryWillCome Tweets Hidden", null, null, null, null, null);
+            showAll = false;  
+        }
+
+        $("#VWCdisplay").text(value);
+        createCookie("vwc", value, 99999);
     }  
 }
 
