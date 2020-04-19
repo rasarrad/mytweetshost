@@ -1548,6 +1548,7 @@ function clickLiColors(e, obj) {
             showColors = false;
             showColorsAdv = false;
         }
+        createCookie("colors", value, 99999);
 
         showMessage("Color Mode Changed To " + value, null, null, null, null, null);
     }  

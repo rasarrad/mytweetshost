@@ -99,7 +99,29 @@ $( document ).ready(function() {
     // START do splash screen
     //showSplash();
 
-    
+        
+    // START das colos
+    var valueColor = readCookie("colors");
+    if (valueColor && valueColor.length > 0) {
+        if (valueColor == "All") {
+            showColors = true;
+            showColorsAdv = true;
+        }
+        else if (valueColor == "Medium") {
+            showColors = false;
+            showColorsAdv = true;   
+        }
+        else {
+            showColors = false;
+            showColorsAdv = false;
+        }
+    }
+    else {
+        showColors = false;
+        showColorsAdv = false;
+    }
+
+
     // START da cor caso haja alteracoes
     var hasChanges = readCookie("haschanges");
     if (hasChanges && hasChanges.length > 0) {
@@ -638,7 +660,7 @@ $( document ).ready(function() {
     // xyz 
 
     openMainSettingsPopup();
-    
+
     /* 
     setTimeout( function() { 
         clickmenu('all', 'All Links');
