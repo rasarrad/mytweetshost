@@ -509,7 +509,7 @@ function countalltweets(webLinksMap) {
                     }
                 }
 
-                var isdeleted = readCookie(val ? val.id : "" + "isdeleted");
+                var isdeleted = readCookie(val.id + "isdeleted");
                 if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
 
                     if (webLinksMap) {
