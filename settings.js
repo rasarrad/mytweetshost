@@ -1495,5 +1495,38 @@ function undoInfo(e, obj) {
     showMessage("Information reverted", null, "fa-undo", "", null, "undo");
 }
 
+
+
+function clickLiColors(e, obj) {
+    e.stopPropagation();
+
+    if (!$(obj).hasClass("selectedtag")) {
+        var value = $(obj).html().trim();
+        $('#colorul').find(".litags").each( function( index, element ) {
+            if($(element).html().trim() == value) {
+                $(element).addClass("selectedtag");
+            }
+            else {
+                $(element).removeClass("selectedtag");
+            }
+        });
+
+        if (value == "All") {
+            showColors = true;
+            showColorsAdv = true;
+        }
+        else if (value == "Medium") {
+            showColors = false;
+            showColorsAdv = true;   
+        }
+        else {
+            showColors = false;
+            showColorsAdv = false;
+        }
+
+        showMessage("Color Mode Changed To " + value, null, null, null, null, null);
+    }  
+
+}
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
