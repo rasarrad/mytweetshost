@@ -151,8 +151,8 @@ $( document ).ready(function() {
     // START filechoser
     var dropZone = document.getElementById('backdiv');
     dropZone.addEventListener('dragover', handleDragOver, false);
-    dropZone.addEventListener('drop', handleFileSelect, false);
-    document.getElementById('files').addEventListener('change', handleFileSelect, false);
+    dropZone.addEventListener('drop', handleFileSelectDragDrop, false);
+    document.getElementById('files').addEventListener('change', handleFileSelectInput, false);
 
     // START do view mode (O QUE FAZ?????)    
     setviewmode();
@@ -771,10 +771,23 @@ function tapHandler(event) {
 //                              FILE CHOSER                            //
 /////////////////////////////////////////////////////////////////////////
 
-function handleFileSelect(evt) {
+function handleFileSelectInput(evt) {
+
+    var files = evt.target.files;
+
+    uploadFiles(files);
+}
+
+function handleFileSelectDragDrop(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
 
     var files = evt.dataTransfer.files; 
 
+    uploadFiles(files);
+  }
+
+  function uploadFiles(files) {
     var reader=new FileReader();
     reader.onload = function(e) {}
     reader.readAsText(files[0]);
@@ -821,9 +834,9 @@ function handleFileSelect(evt) {
         finally {
 
         }
-    }, 100);  
-
+    }, 100);      
   }
+
 
   function updateWebLink(obj, webObj) {
 
