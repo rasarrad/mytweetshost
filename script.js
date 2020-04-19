@@ -149,7 +149,7 @@ $( document ).ready(function() {
     
 
     // START filechoser
-    var dropZone = document.getElementById('backdiv');
+    var dropZone = document.getElementById('filedrop');
     dropZone.addEventListener('dragover', handleDragOver, false);
     dropZone.addEventListener('drop', handleFileSelectDragDrop, false);
     document.getElementById('files').addEventListener('change', handleFileSelectInput, false);
