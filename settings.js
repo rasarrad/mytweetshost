@@ -718,7 +718,7 @@ function closeMainSettingsPopup(obj) {
         if ($('body').hasClass('big'))
             setHeight = "30px";
     
-        $('#mainsettings').find("table:not(.buttonstable)").each( function( index, element ) {
+        $('#mainsettings').find("table.sectionexpandable:not(.buttonstable)").each( function( index, element ) {
             var table = $(element);
             
             table.css('transition', 'transition: all 0.7s !important');
