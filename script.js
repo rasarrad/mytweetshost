@@ -64,7 +64,7 @@ $( document ).ready(function() {
     console.log("encrypted-" + encrypted + "-")
     var decrypted = CryptoJS.AES.decrypt(encrypted, "x20#002e");
     //4d657373616765
-    Console.log("decrypted-" + decrypted + "-")
+    console.log("decrypted-" + decrypted + "-")
 
 
    // START remover speckcheks
