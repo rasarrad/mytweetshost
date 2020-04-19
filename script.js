@@ -676,7 +676,7 @@ $( document ).ready(function() {
 
     // xyz 
 
-    openMainSettingsPopup();
+    //openMainSettingsPopup();
 
     /* 
     setTimeout( function() { 
