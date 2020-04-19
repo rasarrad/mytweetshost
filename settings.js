@@ -1662,21 +1662,30 @@ function triggerUpload() {
 
 function unl() {
      
-    
-
     var ded = CryptoJS.AES.decrypt("U2FsdGVkX18wrpX9qtgpVRefS/x73IjGWl7asgInrKw=", $('#unlockinput').val());
 
     if (ded.toString(CryptoJS.enc.Utf8) == "x20#0000002e") {
-        alert(1)
+        createCookie("eec", $('#unlockinput').val());
+        showMessage("You Are Now A Primium User!"); 
     }
     else {
-        alert(2)
+        showMessage("Invalid Code"); 
     }
-
-
 }
 
+function dunl() {
+    var ceec = readCookie("eec");
 
+    if (ceec && ceec.length > 0 ) {
+        var ded = CryptoJS.AES.decrypt("U2FsdGVkX18wrpX9qtgpVRefS/x73IjGWl7asgInrKw=", ceec);
+
+        if (ded.toString(CryptoJS.enc.Utf8) == "x20#0000002e") {
+            return true; 
+        }
+    }
+                    
+    return false;                
+}
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////

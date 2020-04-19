@@ -58,16 +58,6 @@ $( document ).ready(function() {
     catsmap.set("cli", "My Tweets");
 
 
-
-
-    var encrypted = CryptoJS.AES.encrypt("x20#0000002e", "x20#002e");
-    //U2FsdGVkX18ZUVvShFSES21qHsQEqZXMxQ9zgHy+bu0=
-    console.log("encrypted-" + encrypted + "-")
-    var decrypted = CryptoJS.AES.decrypt(encrypted, "x20#002e");
-    //4d657373616765
-    console.log("decrypted-" + decrypted + "-")
-
-    console.log("decrypted2-" + decrypted.toString(CryptoJS.enc.Utf8) + "-")
    // START remover speckcheks
    $( "input, textarea" ).each( function( index, element ){
         $(element).attr("spellcheck", "false");
@@ -108,7 +98,8 @@ $( document ).ready(function() {
 
 
     // START do splash screen
-    //showSplash();
+    if (!dunl())
+        showSplash();
 
         
     // START das colos
@@ -435,8 +426,13 @@ $( document ).ready(function() {
     });
 
     $( "#splashbutton" ).bind( "click", function( event ) {
-        if (currentIndex == 0)
+        if (currentIndex == 0) {
             closeSplash(); 
+            if ($("#splashbutton").attr("ceec") == "yes") {
+                $("#splashbutton").attr("ceec", "");
+                getInformation(false, 1, true);
+            }
+        }
     });
     
     $( "#catsinput" ).change(function() {
@@ -707,6 +703,20 @@ $( document ).ready(function() {
     var ddd = JSON.parse(ccc)
 
     alert("3: " + ddd.aaa)
+
+
+    
+
+
+    var encrypted = CryptoJS.AES.encrypt("x20#0000002e", "x20#002e");
+    //U2FsdGVkX18ZUVvShFSES21qHsQEqZXMxQ9zgHy+bu0=
+    console.log("encrypted-" + encrypted + "-")
+    var decrypted = CryptoJS.AES.decrypt(encrypted, "x20#002e");
+    //4d657373616765
+    console.log("decrypted-" + decrypted + "-")
+
+    console.log("decrypted2-" + decrypted.toString(CryptoJS.enc.Utf8) + "-")
+    
     */
 
 

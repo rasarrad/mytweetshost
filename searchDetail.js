@@ -534,7 +534,7 @@ function clickSearchLiClassif(e, obj) {
 
 
 
-var getInformation = function(ismoretweets, wasfiltered) {
+var getInformation = function(ismoretweets, wasfiltered, valid) {
 
     closeSearchPopup();
 
@@ -558,6 +558,20 @@ var getInformation = function(ismoretweets, wasfiltered) {
     var dofiltertype = $('#selectedtype').val().trim() != "all"; 
     var dofilterclassif = $('#selectedclassif').val().trim() != "all"; 
     searchtotal = 0;
+
+    if (valid) {
+    }
+    else if (ceec != 3) {
+        ceec++;
+    }
+    else {
+        ceec = 0;
+
+        if (!dunl()) {
+            $("#splashbutton").attr("ceec", "yes");
+            showSplash();
+        }
+    }
 
     if (!ismoretweets) {
         $('#mask').fadeIn(300);  
