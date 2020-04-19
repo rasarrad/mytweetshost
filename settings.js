@@ -480,6 +480,12 @@ var openMainSettingsPopup = function(jsonobj)
 
     $('body, html').css('overflow-y', 'hidden');
 
+    if (!isMy) {
+        $("#mainsettings table.ismy").each( function( index, element ) {
+            $(element).css('display', 'none');
+        });
+    }
+
     var setHeight = "18px";
 
     if ($('body').hasClass('big'))
