@@ -787,7 +787,32 @@ bookmarks <span>
               </td>
         </tr>   
         </tbody>
-      </table>         
+      </table>       
+      <table cmaxheight="70px" cmaxheightbig="80px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 100px;">
+        <tbody>
+          <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
+            <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
+                <i class="fa fa-arrows "></i><span style="padding-left: 6px;" class="sectiontitle">Swipes</span>
+            </td>    
+            <td class="sectionicontd el ellipsis">
+                <span id="swipedisplay" class="titletext" style="top: -1px;text-align: left;padding-left: 0px;"></span>
+            </td>                         
+            <td class="sectionedittd">
+                <i class="fa fa-angle-down"></i>
+            </td>                                         
+          </tr>     
+          <tr>  
+            <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px;">
+                <ul id="swipeul">
+                    <li onclick="javascript: clickLiSwipes(event, this)" class="litags">
+                    Yes</li>
+                    <li onclick="javascript: clickLiSwipes(event, this)" class="litags">
+                    No</li>
+                </ul>   
+              </td>
+        </tr>   
+        </tbody>
+      </table>           
       <table cmaxheight="70px" cmaxheightbig="80px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 100px;">
         <tbody>
           <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">

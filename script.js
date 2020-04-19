@@ -31,10 +31,10 @@ var currObjSwipe = null;
 var lastTouch = null;
 var searchtotal = 0;
 var showAll = true;
-var showColors = true;
-var showColorsAdv = true;
+var showColors = false;
+var showColorsAdv = false;
 var isMy = false;
-
+var useSwipes = false;
 
 // START do tema
 var currTheme = readCookie("currTheme");
@@ -116,12 +116,20 @@ $( document ).ready(function() {
             showColorsAdv = false;
         }
     }
-    else {
-        showColors = false;
-        showColorsAdv = false;
+
+
+    // START dos swipes
+    var valueSwipe = readCookie("swipes");
+    if (valueSwipe && valueSwipe.length > 0) {
+        if (valueSwipe == "Yes") {
+            useSwipes = true;
+        }
+        else {
+            useSwipes = false;
+        }
     }
-
-
+    
+    
     // START da cor caso haja alteracoes
     var hasChanges = readCookie("haschanges");
     if (hasChanges && hasChanges.length > 0) {
@@ -940,7 +948,7 @@ function handleTouchStart(evt) {
 };                                                
 
 function handleTouchEnd(evt) {
-    if (dblFlag && lastTouch) {                       
+    if (useSwipes && dblFlag && lastTouch) {                       
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
             if ( xDiff > 0 ) {
                 executeSwipeFunction(currObjSwipe, "left");

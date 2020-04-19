@@ -501,8 +501,9 @@ var openMainSettingsPopup = function(jsonobj)
 
     putChoosedThemTop();
 
-    var value = null;
 
+    // Show colors
+    var value = null;
     if (showColorsAdv) {
         if (showColors) {
             value = "All";
@@ -516,7 +517,7 @@ var openMainSettingsPopup = function(jsonobj)
     }
 
     $("#colordisplay").text(value);
-    
+
     $('#colorul').find(".litags").each( function( index, element ) {
         if($(element).html().trim() == value) {
             $(element).addClass("selectedtag");
@@ -526,6 +527,27 @@ var openMainSettingsPopup = function(jsonobj)
         }
     });
 
+
+    // Use swipes
+    value = null;
+
+    if (useSwipes) {
+        value = "Yes";
+    }
+    else {
+        value = "No";
+    }
+
+    $("#swipedisplay").text(value);
+    
+    $('#swipeul').find(".litags").each( function( index, element ) {
+        if($(element).html().trim() == value) {
+            $(element).addClass("selectedtag");
+        }
+        else {
+            $(element).removeClass("selectedtag");
+        }
+    });
     
 
     //$('#mainsettings').fadeIn(600);  
@@ -1556,7 +1578,36 @@ function clickLiColors(e, obj) {
 
         showMessage("Color Mode Changed To " + value, null, null, null, null, null);
     }  
-
 }
+
+
+function clickLiSwipes(e, obj) {
+    e.stopPropagation();
+
+    if (!$(obj).hasClass("selectedtag")) {
+        var value = $(obj).html().trim();
+        $('#swipeul').find(".litags").each( function( index, element ) {
+            if($(element).html().trim() == value) {
+                $(element).addClass("selectedtag");
+            }
+            else {
+                $(element).removeClass("selectedtag");
+            }
+        });
+
+        if (value == "Yes") {
+            showMessage("Swipes turned On", null, null, null, null, null);
+            useSwipes = true;
+        }
+        else {
+            showMessage("Swipes turned Off", null, null, null, null, null);
+            useSwipes = false;  
+        }
+
+        $("#swipedisplay").text(value);
+        createCookie("swipes", value, 99999);
+    }  
+}
+
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
