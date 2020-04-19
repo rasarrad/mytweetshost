@@ -515,6 +515,8 @@ var openMainSettingsPopup = function(jsonobj)
         value = "Minimal";
     }
 
+    $("#colordisplay").text(value);
+    
     $('#colorul').find(".litags").each( function( index, element ) {
         if($(element).html().trim() == value) {
             $(element).addClass("selectedtag");
@@ -1548,6 +1550,8 @@ function clickLiColors(e, obj) {
             showColors = false;
             showColorsAdv = false;
         }
+
+        $("#colordisplay").text(value);
         createCookie("colors", value, 99999);
 
         showMessage("Color Mode Changed To " + value, null, null, null, null, null);
