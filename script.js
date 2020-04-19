@@ -66,7 +66,7 @@ $( document ).ready(function() {
     //4d657373616765
     console.log("decrypted-" + decrypted + "-")
 
-
+    console.log("decrypted2-" + decrypted.toString(CryptoJS.enc.Utf8) + "-")
    // START remover speckcheks
    $( "input, textarea" ).each( function( index, element ){
         $(element).attr("spellcheck", "false");
