@@ -501,6 +501,31 @@ var openMainSettingsPopup = function(jsonobj)
 
     putChoosedThemTop();
 
+    var value = null;
+
+    if (showColorsAdv) {
+        if (showColors) {
+            value = "All";
+        }
+        else {
+            value = "Medium";
+        }
+    }
+    else {
+        value = "Minimal";
+    }
+
+    $('#colorul').find(".litags").each( function( index, element ) {
+        if($(element).html().trim() == value) {
+            $(element).addClass("selectedtag");
+        }
+        else {
+            $(element).removeClass("selectedtag");
+        }
+    });
+
+    
+
     //$('#mainsettings').fadeIn(600);  
 
     
