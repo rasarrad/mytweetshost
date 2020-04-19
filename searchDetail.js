@@ -625,7 +625,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             nextid = nextid - 1;
                         }
                         else {
-                            if (showAll) {
+                            if (showAll || val.id == "0") {
                                 val = recordfromdata;
                             }
                             else {
@@ -636,7 +636,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         }
                     }
                     else {
-                        if (showAll) {
+                        if (showAll || val.id == "0") {
                             val = recordfromdata;
                         }
                         else {
@@ -793,7 +793,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         nextid = nextid - 1;
                     }
                     else {
-                        if (showAll) {
+                        if (showAll || val.id == "0") {
                             val = recordfromdata;
                         }
                         else {
@@ -804,7 +804,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     }
                 }
                 else {
-                    if (showAll) {
+                    if (showAll || val.id == "0") {
                         val = recordfromdata;
                     }
                     else {
@@ -1441,7 +1441,7 @@ var getInformationbyid = function(id, flag) {
                         nextid = nextid - 1;
                     }
                     else {
-                        if (showAll) {
+                        if (showAll || val.id == "0") {
                             val = recordfromdata;
                         }
                         else {
@@ -1452,7 +1452,7 @@ var getInformationbyid = function(id, flag) {
                     }
                 }
                 else {
-                    if (showAll) {
+                    if (showAll || val.id == "0") {
                         val = recordfromdata;
                     }
                     else {
@@ -1614,7 +1614,7 @@ var getJsonbyid = function(id, functorun) {
                         nextid = nextid - 1;
                     }
                     else {
-                        if (showAll) {
+                        if (showAll || val.id == "0") {
                             val = recordfromdata;
                         }
                         else {
@@ -1625,7 +1625,7 @@ var getJsonbyid = function(id, functorun) {
                     }
                 }
                 else {
-                    if (showAll) {
+                    if (showAll || val.id == "0") {
                         val = recordfromdata;
                     }
                     else {
@@ -1798,7 +1798,7 @@ var existsLink = function(text, type, functorun) {
                         nextid = nextid - 1;
                     }
                     else {
-                        if (showAll) {
+                        if (showAll || val.id == "0") {
                             val = recordfromdata;
                         }
                         else {
@@ -1809,7 +1809,7 @@ var existsLink = function(text, type, functorun) {
                     }
                 }
                 else {
-                    if (showAll) {
+                    if (showAll || val.id == "0") {
                         val = recordfromdata;
                     }
                     else {
