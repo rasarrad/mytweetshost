@@ -1660,5 +1660,23 @@ function triggerUpload() {
     $('#files').trigger("click");  
 }
 
+function unl() {
+     
+    
+
+    var ded = CryptoJS.AES.decrypt("U2FsdGVkX18wrpX9qtgpVRefS/x73IjGWl7asgInrKw=", $('#unlockinput').val());
+
+    if (ded == "x20#0000002e") {
+        alert(1)
+    }
+    else {
+        alert(2)
+    }
+
+
+}
+
+
+
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
