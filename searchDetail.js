@@ -625,7 +625,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                             nextid = nextid - 1;
                         }
                         else {
-                            if (showAll || val.id == "0") {
+                            if (showAll) {
                                 val = recordfromdata;
                             }
                             else {
@@ -636,7 +636,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         }
                     }
                     else {
-                        if (showAll || val.id == "0") {
+                        if (showAll) {
                             val = recordfromdata;
                         }
                         else {
@@ -644,7 +644,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         }
                     }
 
-                    var isdeleted = readCookie(val.id + "isdeleted");
+                    var isdeleted = readCookie(val ? val.id : "" + "isdeleted");
                     if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
                         var cat = readCookie(val.id + "catchanged");
                         if (cat && cat.length > 0) {
@@ -793,7 +793,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                         nextid = nextid - 1;
                     }
                     else {
-                        if (showAll || val.id == "0") {
+                        if (showAll) {
                             val = recordfromdata;
                         }
                         else {
@@ -804,7 +804,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     }
                 }
                 else {
-                    if (showAll || val.id == "0") {
+                    if (showAll) {
                         val = recordfromdata;
                     }
                     else {
@@ -812,7 +812,7 @@ var getInformation = function(ismoretweets, wasfiltered) {
                     }
                 }
 
-                var isdeleted = readCookie(val.id + "isdeleted");
+                var isdeleted = readCookie(val ? val.id : "" + "isdeleted");
                 if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
                     var cat = readCookie(val.id + "catchanged");
                     if (cat && cat.length > 0) {
@@ -1441,7 +1441,7 @@ var getInformationbyid = function(id, flag) {
                         nextid = nextid - 1;
                     }
                     else {
-                        if (showAll || val.id == "0") {
+                        if (showAll) {
                             val = recordfromdata;
                         }
                         else {
@@ -1452,14 +1452,14 @@ var getInformationbyid = function(id, flag) {
                     }
                 }
                 else {
-                    if (showAll || val.id == "0") {
+                    if (showAll) {
                         val = recordfromdata;
                     }
                     else {
                         val = null;
                     }
                 }
-                var isdeleted = readCookie(val.id + "isdeleted");
+                var isdeleted = readCookie(val ? val.id : "" + "isdeleted");
 
                 if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id.includes(id) && val.id != "0") {
                     $("#main").empty();
@@ -1614,7 +1614,7 @@ var getJsonbyid = function(id, functorun) {
                         nextid = nextid - 1;
                     }
                     else {
-                        if (showAll || val.id == "0") {
+                        if (showAll) {
                             val = recordfromdata;
                         }
                         else {
@@ -1625,7 +1625,7 @@ var getJsonbyid = function(id, functorun) {
                     }
                 }
                 else {
-                    if (showAll || val.id == "0") {
+                    if (showAll) {
                         val = recordfromdata;
                     }
                     else {
@@ -1633,7 +1633,7 @@ var getJsonbyid = function(id, functorun) {
                     }
                 }
 
-                var isdeleted = readCookie(val.id + "isdeleted");
+                var isdeleted = readCookie(val ? val.id : "" + "isdeleted");
                 if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id.includes(id) && val.id != "0") {
                     var cat = readCookie(val.id + "catchanged");
                     if (cat && cat.length > 0) {
@@ -1798,7 +1798,7 @@ var existsLink = function(text, type, functorun) {
                         nextid = nextid - 1;
                     }
                     else {
-                        if (showAll || val.id == "0") {
+                        if (showAll) {
                             val = recordfromdata;
                         }
                         else {
@@ -1809,7 +1809,7 @@ var existsLink = function(text, type, functorun) {
                     }
                 }
                 else {
-                    if (showAll || val.id == "0") {
+                    if (showAll) {
                         val = recordfromdata;
                     }
                     else {
@@ -1817,7 +1817,7 @@ var existsLink = function(text, type, functorun) {
                     }
                 }
 
-                var isdeleted = readCookie(val.id + "isdeleted");
+                var isdeleted = readCookie(val ? val.id : "" + "isdeleted");
 
                 if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
                     if (val.type == "T") {

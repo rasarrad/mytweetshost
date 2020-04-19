@@ -491,7 +491,7 @@ function countalltweets(webLinksMap) {
                         nextid = nextid - 1;
                     }
                     else {
-                        if (showAll || val.id == "0") {
+                        if (showAll) {
                             val = recordfromdata;
                         }
                         else {
@@ -501,7 +501,7 @@ function countalltweets(webLinksMap) {
                     }
                 }
                 else {
-                    if (showAll || val.id == "0") {
+                    if (showAll) {
                         val = recordfromdata;
                     }
                     else {
@@ -509,7 +509,7 @@ function countalltweets(webLinksMap) {
                     }
                 }
 
-                var isdeleted = readCookie(val.id + "isdeleted");
+                var isdeleted = readCookie(val ? val.id : "" + "isdeleted");
                 if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
 
                     if (webLinksMap) {
