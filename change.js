@@ -491,6 +491,7 @@ function countalltweets(webLinksMap) {
                         nextid = nextid - 1;
                     }
                     else {
+                        console.log(showAll)
                         if (showAll) {
                             val = recordfromdata;
                         }
@@ -501,6 +502,7 @@ function countalltweets(webLinksMap) {
                     }
                 }
                 else {
+                    console.log("222" + showAll)
                     if (showAll) {
                         val = recordfromdata;
                     }
