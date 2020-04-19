@@ -152,7 +152,7 @@ $( document ).ready(function() {
     var dropZone = document.getElementById('backdiv');
     dropZone.addEventListener('dragover', handleDragOver, false);
     dropZone.addEventListener('drop', handleFileSelect, false);
-
+    document.getElementById('filestoupload').addEventListener('change', handleFileSelect, false);
 
     // START do view mode (O QUE FAZ?????)    
     setviewmode();
