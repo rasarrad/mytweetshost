@@ -1691,6 +1691,7 @@ function unl() {
         showMessage("You Are Now A Primium User!"); 
     }
     else {
+        createCookie("eec", "");
         showMessage("Invalid Code"); 
     }
 }

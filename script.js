@@ -99,7 +99,7 @@ $( document ).ready(function() {
 
 
     // START do splash screen
-    createCookie("eec", "sss");
+    //createCookie("eec", "sss");
     if (!dunl())
         showSplash();
 
@@ -1272,7 +1272,7 @@ function showSplash()
 {
     $("#splash").fadeIn(800);
 
-    currentIndex = 5;
+    currentIndex = 10;
     $("#splashbutton").removeClass("active");
     $("#splashbutton").hide();
     dblClickTimeout = setTimeout(function() {  
