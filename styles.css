@@ -3833,21 +3833,21 @@ body.big #mainsettings .sectionedittd > i {
   top: 1px !important;
 }
 
-#mainsettings #generatetablerow td:first-child {
+#mainsettings .generatetablerow td:first-child {
   width: 73px !important;
 }
 
-body.big #mainsettings #generatetablerow td:first-child {
+body.big #mainsettings .generatetablerow td:first-child {
   width: 91px !important;
 }
 
-#mainsettings #generatetablerow td:not(.ellipsis) .titletext {
+#mainsettings .generatetablerow td:not(.ellipsis) .titletext {
     line-height: 18px;
     position: relative;
     top: -2px !important;
 }
 
-body.big #mainsettings #generatetablerow td:not(.ellipsis) .titletext {
+body.big #mainsettings .generatetablerow td:not(.ellipsis) .titletext {
     line-height: 18px;
     position: relative;
     top: 1px !important;

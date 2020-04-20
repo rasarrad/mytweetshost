@@ -867,6 +867,8 @@ function handleFileSelectDragDrop(evt) {
                             countalltweets(webLinksMap);
                 
                             eraseAllTmpData(); 
+
+                            document.getElementById("files").value = "";
                         }, 600); 
                     }
                     catch(err) {
