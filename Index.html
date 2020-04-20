@@ -910,29 +910,6 @@ bookmarks <span>
         <tbody>
           <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
             <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
-                <i class="fa fa-unlock"></i><span style="padding-left: 6px;" class="sectiontitle">Unlock Premium</span>
-            </td>    
-            <td class="sectionicontd el ellipsis">
-                <span id="unlockdisplay" class="titletext" style="top: -1px;text-align: left;padding-left: 0px;">Locked</span>
-            </td>                         
-            <td class="sectionedittd">
-                <i class="fa fa-angle-down"></i>
-            </td>                                         
-          </tr>     
-          <tr>  
-            <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px;position: relative;">
-              <input id="unlockinput" value="" type="text" style="position: relative;top: -3px;width: 84px;padding-top: 2px;">  
-              <i class="fa fa-check clicable" onclick="javascript: unl()" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 18px;top: -3px !important;border-radius: 0px;padding-left: 0px;height: 18px;padding-right: 0px;position: relative;"></i>
-              <i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'unlock')" style="font-size: 16px;position: absolute;right: 4px;bottom: 3px;"></i>  
-            </td>
-        </tr>   
-        </tbody>
-      </table>  
-
-      <table cmaxheight="70px" cmaxheightbig="80px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 100px;">
-        <tbody>
-          <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
-            <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
                 <i class="fa fa-star"></i><span style="padding-left: 6px;" class="sectiontitle">Show VictoryWillCome Links</span>
             </td>    
             <td class="sectionicontd el ellipsis">
@@ -954,6 +931,23 @@ bookmarks <span>
         </tr>   
         </tbody>
       </table>   
+       
+      <table class="sectiontitletable defaulttablerow" style="margin-top: 8px;max-height: 18px;display: block;width: calc(100% - 22px);">
+        <tbody>
+          <tr class="cursorpointer" style="padding-bottom: 15px;">
+            <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: default;">
+                <i class="fa fa-times-circle" id="generateicon" style="font-size: 13px;position: relative;top: 0px;left: -4px;"></i>
+                <span style="padding-left: 6px;position: relative;top: -1px;" class="sectiontitle">Purge deleted links<i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'unlock')" style="font-size: 13px;position: absolute;left: 113px;top: 1px;"></i></span>
+            </td>    
+            <td class="sectionicontd el" style="cursor: default;">
+                <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;cursor: default;"></span>
+            </td>                         
+            <td class="sectionedittd">
+                <i class="fa fa-check clicable" onclick="javascript: eraseAllDeleted(this)" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 16px;top: -3px;border-radius: 3px;padding-left: 0px;height: 16px;padding-right: 0px;"></i>
+            </td>                                        
+          </tr>   
+         </tbody>
+      </table>
 
       <table cmaxheight="170px" cmaxheightbig="180px" cheight="190px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 100px;">
         <tbody>
@@ -985,23 +979,6 @@ bookmarks <span>
           </tr>    
         </tbody>
       </table>  
-       
-      <table class="sectiontitletable defaulttablerow" style="margin-top: 8px;max-height: 18px;display: block;width: calc(100% - 22px);">
-        <tbody>
-          <tr class="cursorpointer" style="padding-bottom: 15px;">
-            <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: default;">
-                <i class="fa fa-times-circle" id="generateicon" style="font-size: 13px;position: relative;top: 0px;left: -4px;"></i>
-                <span style="padding-left: 6px;position: relative;top: -1px;" class="sectiontitle">Purge deleted links<i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'unlock')" style="font-size: 13px;position: absolute;left: 113px;top: 1px;"></i></span>
-            </td>    
-            <td class="sectionicontd el" style="cursor: default;">
-                <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;cursor: default;"></span>
-            </td>                         
-            <td class="sectionedittd">
-                <i class="fa fa-check clicable" onclick="javascript: eraseAllDeleted(this)" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 16px;top: -3px;border-radius: 3px;padding-left: 0px;height: 16px;padding-right: 0px;"></i>
-            </td>                                        
-          </tr>   
-         </tbody>
-      </table>
 
       <table class="sectiontitletable generatetablerow defaulttablerow" style="margin-top: 8px;max-height: 18px;display: block;width: calc(100% - 22px);">
         <tbody>
@@ -1064,6 +1041,29 @@ bookmarks <span>
       </tbody>
     </table>
   
+    <table cmaxheight="70px" cmaxheightbig="80px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 100px;">
+      <tbody>
+        <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
+          <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
+              <i class="fa fa-unlock"></i><span style="padding-left: 6px;" class="sectiontitle">Unlock Premium</span>
+          </td>    
+          <td class="sectionicontd el ellipsis">
+              <span id="unlockdisplay" class="titletext" style="top: -1px;text-align: left;padding-left: 0px;">Locked</span>
+          </td>                         
+          <td class="sectionedittd">
+              <i class="fa fa-angle-down"></i>
+          </td>                                         
+        </tr>     
+        <tr>  
+          <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px;position: relative;">
+            <input id="unlockinput" value="" type="text" style="position: relative;top: -3px;width: 84px;padding-top: 2px;">  
+            <i class="fa fa-check clicable" onclick="javascript: unl()" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 18px;top: -3px !important;border-radius: 0px;padding-left: 0px;height: 18px;padding-right: 0px;position: relative;"></i>
+            <i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'unlock')" style="font-size: 16px;position: absolute;right: 4px;bottom: 3px;"></i>  
+          </td>
+      </tr>   
+      </tbody>
+    </table>  
+    
     </div>
   </div>
 
