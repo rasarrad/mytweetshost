@@ -592,6 +592,21 @@ var openMainSettingsPopup = function(jsonobj)
         }
     });
     
+    // premium
+    var ceec = readCookie("eec");
+
+    // xyz
+    $('#unlockinput').val("x20#002e");
+    
+    if (ceec && ceec.length > 0 ) {
+        $('#unlockdisplay').text("Unlocked");
+    }
+    else {
+        $('#unlockdisplay').text("Locked");
+    }
+    
+
+
     $('#mainsettings').css('transition', 'transition: all 0.01s');
     $('#mainsettings').css("height", "calc(100%)");
 
