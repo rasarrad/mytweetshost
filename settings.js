@@ -1739,10 +1739,11 @@ function openHelp(obj, type) {
 
     switch(type) {
         case "unlock":
-            $('#helpcontent').html("asdkjadasd ashkdasd asdjkkjasd dswadasj dasd jja sdd sd kj ada sd ash"
+            $('#helpcontent').html("<span>asdkjadasd ashkdasd asdjkkjasd dswadasj dasd jja sdd sd kj ada sd ash"
+                + "</span>"
                 + "<br><span style=\"display: block;height: 8px;\">bbsa bbsa baa asbbb bsb bbssbssabbs sbbab sbb"
                 + "</span>" 
-                + "<br><span style=\"display: block;height: 8px;\">ccccjccjccchc chuhc chcuic ccccui cuccu cciucui" +
+                + "<br><span style=\"display: block;height: 8px;\">ccccjccjccchc chuhc chcuic ccccui cuccu cciucui"
                 + "</span>");
 
             $('#helptitle').text("Help Title");

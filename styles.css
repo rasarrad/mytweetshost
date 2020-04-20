@@ -4378,3 +4378,12 @@ body.big #calendardiv .fa-calendar {
 .triggerUpload:hover {
  opacity: 0.85
 }
+
+.pointeropacity {
+  cursor: pointer !important;
+  transition: all 0.6s !important;
+}
+
+.pointeropacity:hover {
+  opacity: 0.6 !important;
+}
