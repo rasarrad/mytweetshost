@@ -95,6 +95,10 @@ bookmarks <span>
     Copyright &copy; <span style="font-size: 11px;">2020</span> Victory Will Come, Inc.  
   </div>
 </div>
+<div id="dialog-confirm-upload" title="Upload links?" style="display: none;">
+  <p>If you upload a file with links the current ones will be erased. Are you sure?</p>
+</div>
+
 <div id="dialog-confirm-delete" title="Delete the link forever?" style="display: none;">
   <p>This link will be deleted forever. Are you sure? (Press restore to unmark for deletion)</p>
 </div>
@@ -889,7 +893,8 @@ bookmarks <span>
                 </div>
                 <div id="filedrop" class="splashtext aboutme" style="width: calc(100% - 12px);position: relative;top: 0px;margin-left: 4px;border: 1px dashed;height: 34px;text-align: center;padding-top: 20px;background: var(--soft-color);opacity: 0.8;cursor: default;">
                   Drop Here
-                </div>           
+                </div>
+                <i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'upload')" style="font-size: 16px;position: absolute;right: 4px;bottom: 3px;"></i>             
               </td>                                        
           </tr>    
         </tbody>
@@ -1044,7 +1049,7 @@ bookmarks <span>
     </div>
   </div>
 
-  
+
   <div id="helppop" style="background: var(--soft-transp-color);margin-top: 0px !important;position: fixed !important;display: block; display: none;" class="newLayout mainsettings pobj" onclick="closeHelpPopup(this)" cid="">
     <div style="background: var(--softdark-color);position: relative;transform: translate(0px, -50%);top: calc(50% - 20px) !important;margin-top: 0px !important;">    
         <table class="titletable buttonstable" style="max-width: calc(100% - 11px);height: 22px;">
