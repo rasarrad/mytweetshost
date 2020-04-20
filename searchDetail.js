@@ -570,6 +570,8 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
         if (!dunl()) {
             $("#splashbutton").attr("ceec", "yes");
             showSplash();
+
+            return false;
         }
     }
 
