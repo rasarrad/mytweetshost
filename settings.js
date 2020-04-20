@@ -88,9 +88,9 @@ function zoom(obj, flag) {
     updateSearchTablesHeight();
 
     // settings
-    $("#mainsettings table#theme")
+    $("#mainsettings table")
     .css('max-height', setHeight)
-    .find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').show()
+    .find('.sectionedittd i.fa-angle-up').addClass('fa-angle-down').removeClass('fa-angle-up').show()
     .find('td.el').addClass('ellipsis');
 
     $(".newLayout table.defaulttablerow").each( function( index, element ) {

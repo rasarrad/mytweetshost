@@ -3827,10 +3827,10 @@ body.big #searchpopup #searchinfo td.el:not(.ellipsis) span.titletext {
 }
 
 #mainsettings .sectionedittd > i {
-  top: -4px !important;
+  top: -2px !important;
 }
 body.big #mainsettings .sectionedittd > i {
-  top: 1px !important;
+  top: -7px !important;
 }
 
 #mainsettings .generatetablerow td:first-child {
