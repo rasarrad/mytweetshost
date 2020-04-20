@@ -1769,21 +1769,31 @@ body.big .newLayout #previewtable {
 
 body.big #mainsettings .fa-cog {
   font-size: 23px !important;
+  top: 5px !important;
 }  
 
+body.big #mainsettings .buttonstable {
+  max-height: 25px !important;
+}
+    
 body.big #mainsettings .fa-window-close {
   font-size: 20px !important;
-  right: 24px !important;
+  right: 22px !important;
+  top: 0px;
 }  
 
+body.big #mainsettings .firstsettable {
+  margin-top: 38px !important;
+}
+    
 body.big #mainsettings .buttonstable tr:first-child .firsttd b {
   font-size: 18px !important;
   margin-left: 0 !important;
-  top: -4px !important;
+  top: -5px !important;
 }
 
 body.big #mainsettings .firstsettable {
-  margin-top: 36px !important;
+  margin-top: 35px !important;
 }
 
 body.big #mainsettings .fa-cogs {
@@ -1827,7 +1837,7 @@ body.big #mainsettings .fa-check {
   width: 18px !important;
 } 
 #mainsettings .fa-window-close {
-  right: 22px !important;
+  right: 20px !important;
 } 
 
 #myCalendar {width: 355px;}
@@ -2093,11 +2103,6 @@ body.big #splash .titletable {
         margin-top: 31px !important;
     }
 
-    #mainsettings .fa-window-close {
-      right: 19px !important;
-      top: -2px;
-    } 
-
     #mainsettings .buttonstable {
       width: 349px;
     }         
@@ -2109,12 +2114,9 @@ body.big #splash .titletable {
         margin-top: 18px !important;
         /* height: 100%; */
     }     
-    body.big #mainsettings .firstsettable {
-      margin-top: 38px !important;
-    }
+
     body.big #mainsettings .buttonstable {
       width: 349px;
-      /* max-height: 29px !important; */
     }
     #previewtd div iframe {
       margin: 0px !important;
@@ -3830,7 +3832,7 @@ body.big #searchpopup #searchinfo td.el:not(.ellipsis) span.titletext {
   top: -2px !important;
 }
 body.big #mainsettings .sectionedittd > i {
-  top: -7px !important;
+  top: 0px !important;
 }
 
 #mainsettings .generatetablerow td:first-child {
