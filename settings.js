@@ -1741,13 +1741,15 @@ function openHelp(obj, type) {
         case "unlock":
             $('#helpcontent').html("<span>asdkjadasd ashkdasd asdjkkjasd dswadasj dasd jja sdd sd kj ada sd ash"
                 + "</span>"
-                + "<br><span style=\"display: block;height: 8px;\">bbsa bbsa baa asbbb bsb bbssbssabbs sbbab sbb"
-                + "</span>" 
-                + "<br><span style=\"display: block;height: 8px;\">ccccjccjccchc chuhc chcuic ccccui cuccu cciucui"
+                + "<span style=\"display: block;height: 8px;\"></span>" 
+                + "<span>cbbb sbsb bbbbs bbbb sab bbbb abbb cbbb sbsb bbbbs bbbb sab bbbb abbb cbbb sbsb bbbbs bbbb sab bbbb abbb cbbb sbsb bbbbs bbbb sab bbbb abbb cbbb sbsb bbbbs bbbb sab bbbb abbb cbbb sbsb bbbbs bbbb sab bbbb abbb "
+                + "</span>"
+                + "<span style=\"display: block;height: 8px;\"></span>" 
+                + "<span>ccccjccjccchc chuhc chcuic ccccui cuccu cciucui"
                 + "</span>");
 
             $('#helptitle').text("Help Title");
-            $('#helpicon').attr("class", "fa fa-upload");
+            $('#helpicon').attr("class", "fa fa-unlock");
             $("#helppop > div").css("height", "200px");   
 
             break;   
