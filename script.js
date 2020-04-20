@@ -882,6 +882,7 @@ function handleFileSelectDragDrop(evt) {
     } catch (error) {
                         
     }
+    $("#dialog-confirm-upload").addClass("uploaddialog");
     
     $("#dialog-confirm-upload").parent().css("top", ((window.innerHeight/2) - 100) + "px")
     $("#mask").fadeIn(500);

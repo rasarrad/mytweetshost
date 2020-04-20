@@ -4358,6 +4358,11 @@ body.big #calendardiv .fa-calendar {
     margin-left: 30px;
  }
 
+.ui-dialog.uploaddialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset {
+    margin-left: 74px;
+ }
+
+
  .ui-dialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset button {
     background: var(--high-color);
     color: var(--dark-color);
