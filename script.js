@@ -883,6 +883,7 @@ function handleFileSelectDragDrop(evt) {
                 $("#dialog-confirm-upload").parent().fadeOut( 800, function() {
                     $("#dialog-confirm-upload").parent().remove();
                 });
+                document.getElementById("files").value = "";
                 }
             }
         });
