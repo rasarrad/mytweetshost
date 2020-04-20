@@ -1014,6 +1014,9 @@ function executeSwipeFunction(obj, type) {
         case "backdiv":
             processBackdivFuncs(type);
             break;
+        case "helppop":
+            processHelpDivFuncs(type);
+            break;
     
         case "mainmenu":
             processMainmenuFuncs(type);
@@ -1041,6 +1044,11 @@ function executeSwipeFunction(obj, type) {
     currObjSwipe = null;
 
 }
+
+function processHelpDivFuncs(type) {
+    closeHelpPopup();
+    console.log("help all-----------------------------------------------");
+} 
 
 function processLinkChangeFuncs(type) {
     switch(type) {
