@@ -4381,7 +4381,7 @@ body.big #mainsettings.newLayout .sectiontitle {
 
 #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-user-circle-o {
   font-size: 13px;
-  left: 11px;
+  left: 12px;
   position: absolute;
   top: 7px;
 }
@@ -4435,6 +4435,49 @@ body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-picture-
   top: 11px;
 }
 
+#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-paint-brush {
+  font-size: 13px;
+  left: 11px;
+  position: absolute;
+  top: 6px;
+}
+
+body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-paint-brush {
+  font-size: 15px;
+  left: 12px;
+  position: absolute;
+  top: 11px;
+}
+
+#mainsettings #colortable td:first-child {
+    width: 63px !important;
+}
+
+body.big #mainsettings #colortable td:first-child {
+    width: 66px !important;
+}
+
+#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-arrows {
+  font-size: 13px;
+  left: 11px;
+  position: absolute;
+  top: 7px;
+}
+
+body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-arrows {
+  font-size: 17px;
+  left: 11px;
+  position: absolute;
+  top: 10px;
+}
+
+#mainsettings #swipestable td:first-child {
+    width: 59px !important;
+}
+
+body.big #mainsettings #swipestable td:first-child {
+    width: 60px !important;
+}
 
 #mainsettings.newLayout .sectiontitletable .sectionicontd i {
 
@@ -4444,23 +4487,32 @@ body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i {
 
 }
 
-.newLayout#mainsettings .themename {
+.newLayout#mainsettings .slicename {
   text-transform: lowercase;
   top: -2px !important;
   font-size: 12px;
+  padding-left: 6px !important;
 }
 
-body.big .newLayout#mainsettings .themename {
+body.big .newLayout#mainsettings .slicename {
   line-height: 30px;
   font-size: 15px;
   top: -2px !important;
   padding-left: 20px !important;
 }
 
-.newLayout#mainsettings .el:not(.ellipsis) .themename {line-height: 18px;position: relative;top: -3px !important;}
+.newLayout#mainsettings .el:not(.ellipsis) .slicename {
+  line-height: 18px;
+  position: relative;
+  top: -3px !important;
+  left: -9px;
+}
 
+.newLayout#mainsettings .el.ellipsis .slicename {
+  /* left: 1px; */
+}
 
-body.big .newLayout#mainsettings .el:not(.ellipsis) .themename {
+body.big .newLayout#mainsettings .el:not(.ellipsis) .slicename {
   line-height: 25px;
   font-size: 15px;
   top: -3px !important;
@@ -4468,6 +4520,10 @@ body.big .newLayout#mainsettings .el:not(.ellipsis) .themename {
   left: 11px;
 }
 
-.newLayout#mainsettings .sectiontitletable .sectionicontd {height: 18px;}
+.newLayout#mainsettings .sectiontitletable .sectionicontd {
+  height: 18px;
+}
 
-body.big .newLayout#mainsettings .sectiontitletable .sectionicontd {height: 25px;}
+body.big .newLayout#mainsettings .sectiontitletable .sectionicontd {
+  height: 25px;
+}
