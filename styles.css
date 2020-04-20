@@ -1799,17 +1799,7 @@ body.big #mainsettings .firstsettable {
 body.big #mainsettings .fa-cogs {
   font-size: 18px !important;
 }  
-#mainsettings .fa-picture-o {
-  position: relative;
-  left: -4px;
-  top: 0px;
-}
-body.big #mainsettings .fa-picture-o {
-  font-size: 18px !important;
-  position: relative;
-  left: -3px;
-  top: 2px;
-}  
+
 
 body.big #mainsettings .fa-eraser {
   font-size: 19px !important;
@@ -3158,19 +3148,7 @@ body.big .newLayout .titletext {
   top: -2px !important;
 }
 
-body.big .newLayout#mainsettings .themename {
-  line-height: 30px;
-  font-size: 15px;
-  top: 0px !important;
-  padding-left: 20px !important;
-}
-body.big .newLayout#mainsettings .el:not(.ellipsis) .themename {
-  line-height: 25px;
-  font-size: 15px;
-  top: -1px !important;
-  padding-left: 0px !important;
-  left: 11px;
-}
+
 td:not(.ellipsis) .titletext {
     position: relative;
     top: -2px !important;
@@ -3883,20 +3861,6 @@ body.big #mainsettings #theme td:first-child {
   width: 56px !important;
 }
 
-#mainsettings #theme td:not(.ellipsis) .titletext {
-    line-height: 18px;
-    position: relative;
-    top: -1px !important;
-}
-
-body.big #mainsettings #theme td:not(.ellipsis) .titletext {
-    line-height: 18px;
-    position: relative;
-    top: 2px !important;
-}
-
-
-
 #expandedittags, #expandsearchtags {
     padding-left: 2px;
     position: relative;
@@ -4394,3 +4358,116 @@ body.big #calendardiv .fa-calendar {
 .pointeropacity:hover {
   opacity: 0.7 !important;
 }
+
+#mainsettings.newLayout .sectionexpandable {
+    position: relative;
+}
+
+#mainsettings.newLayout .sectiontitle {
+  padding-left: 9px;
+  font-weight: bold;
+  font-size: 12px;
+  position: absolute;
+  top: 6px;
+  left: 29px;
+  text-transform: lowercase;
+}
+body.big #mainsettings.newLayout .sectiontitle {
+  font-size: 15px;
+  position: absolute;
+  top: 10px;
+  left: 32px;
+}
+
+#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-user-circle-o {
+  font-size: 13px;
+  left: 11px;
+  position: absolute;
+  top: 7px;
+}
+
+body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-user-circle-o {
+  font-size: 17px;
+  left: 11px;
+  position: absolute;
+  top: 10px;
+}
+
+#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-bookmark {
+  font-size: 14px;
+  left: 13px;
+  position: absolute;
+  top: 6px;
+}
+
+body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-bookmark {
+  font-size: 18px;
+  left: 13px;
+  position: absolute;
+  top: 10px;
+}
+
+#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-credit-card-alt {
+  font-size: 10px;
+  left: 12px;
+  position: absolute;
+  top: 8px;
+}
+
+body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-credit-card-alt {
+  font-size: 14px;
+  left: 10px;
+  position: absolute;
+  top: 12px;
+}
+
+#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-picture-o {
+  font-size: 13px;
+  left: 11px;
+  position: absolute;
+  top: 7px;
+}
+
+body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-picture-o {
+  font-size: 16px;
+  left: 11px;
+  position: absolute;
+  top: 11px;
+}
+
+
+#mainsettings.newLayout .sectiontitletable .sectionicontd i {
+
+}
+
+body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i {
+
+}
+
+.newLayout#mainsettings .themename {
+  text-transform: lowercase;
+  top: -2px !important;
+  font-size: 12px;
+}
+
+body.big .newLayout#mainsettings .themename {
+  line-height: 30px;
+  font-size: 15px;
+  top: -2px !important;
+  padding-left: 20px !important;
+}
+
+.newLayout#mainsettings .el:not(.ellipsis) .themename {line-height: 18px;position: relative;top: -3px !important;}
+
+
+body.big .newLayout#mainsettings .el:not(.ellipsis) .themename {
+  line-height: 25px;
+  font-size: 15px;
+  top: -3px !important;
+  padding-left: 0px !important;
+  left: 11px;
+}
+
+.newLayout#mainsettings .sectiontitletable .sectionicontd {height: 18px;}
+
+body.big .newLayout#mainsettings .sectiontitletable .sectionicontd {height: 25px;}
