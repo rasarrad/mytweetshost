@@ -879,6 +879,7 @@ function handleFileSelectDragDrop(evt) {
         }
       });
 
+    console.log($("#dialog-confirm-upload").parent());
     $("#dialog-confirm-upload").parent().css("top", ((window.innerHeight/2) - 100) + "px")
     $("#mask").fadeIn(500);
     $("#dialog-confirm-upload").parent().fadeIn(800);    
