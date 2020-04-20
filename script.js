@@ -36,6 +36,7 @@ var showColorsAdv = false;
 var isMy = false;
 var useSwipes = false;
 var ceec = 0; 
+var funcg = null;
 
 // START do tema
 var currTheme = readCookie("currTheme");
@@ -431,7 +432,8 @@ $( document ).ready(function() {
             closeSplash(); 
             if ($("#splashbutton").attr("ceec") == "yes") {
                 $("#splashbutton").attr("ceec", "");
-                getInformation(false, 1, true);
+                funcg();
+                funcg = null;
             }
         }
     });
@@ -1270,7 +1272,7 @@ function showSplash()
 {
     $("#splash").fadeIn(800);
 
-    currentIndex = 10;
+    currentIndex = 5;
     $("#splashbutton").removeClass("active");
     $("#splashbutton").hide();
     dblClickTimeout = setTimeout(function() {  

@@ -559,15 +559,21 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
     var dofilterclassif = $('#selectedclassif').val().trim() != "all"; 
     searchtotal = 0;
 
+    // security check
     if (valid) {
     }
-    else if (ceec != 3) {
+    else if (ceec != 4) {
         ceec++;
     }
     else {
         ceec = 0;
 
         if (!dunl()) {
+            funcg = function() 
+            { 
+                getInformation(false, 1, true);
+            } 
+
             $("#splashbutton").attr("ceec", "yes");
             showSplash();
 

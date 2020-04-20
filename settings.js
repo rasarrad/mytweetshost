@@ -6,7 +6,7 @@
 //                             GENERAL                                 //
 /////////////////////////////////////////////////////////////////////////
 
-function expandCat(obj, idparam) {
+function expandCat(obj, idparam, valid) {
 
     var id = null;
 
@@ -18,6 +18,28 @@ function expandCat(obj, idparam) {
         fixfocus(obj);
     }
     
+    // security check
+    if (valid) {
+    }
+    else if (ceec != 4) {
+        ceec++;
+    }
+    else {
+        ceec = 0;
+
+        if (!dunl()) {
+            funcg = function() 
+            { 
+                expandCat(null, id, true);
+            } 
+
+            $("#splashbutton").attr("ceec", "yes");
+            showSplash();
+
+            return false;
+        }
+    }
+
     var functorun = function(jsonvar) 
     { 
         
