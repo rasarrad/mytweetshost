@@ -1586,6 +1586,7 @@ var getInformationbyid = function(id, flag) {
             }
             while (processtmp);
         });
+
     }); 
 }
 
@@ -1877,3 +1878,6 @@ var existsLink = function(text, type, functorun) {
         });     
     }); 
 }
+
+
+

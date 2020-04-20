@@ -1040,6 +1040,121 @@ function eraseLinkTmpData(idF, flag) {
 }
 
 
+function eraseAllDeleted(idF, flag) {
+    try {
+        $( "#dialog-confirm-deleteall" ).dialog({
+            resizable: false,
+            height: "auto",
+            width: 400,
+            modal: true,
+            buttons: {
+              "Yes": function() {
+                eraseAllDeletedFunc();
+              },
+              Cancel: function() {
+                  $("#mask").fadeOut(500);
+                  $("#dialog-confirm-deleteall").parent().fadeOut( 800, function() {
+                    $("#dialog-confirm-deleteall").parent().remove();
+                  });
+              }
+            }
+          });
+    } catch (error) {
+        
+    }
+    $("#dialog-confirm-deleteall").parent().css("top", ((window.innerHeight/2) - 100) + "px")
+    $("#mask").fadeIn(500);
+    $("#dialog-confirm-deleteall").parent().fadeIn(800);
+}
+
+
+
+var eraseAllDeletedFunc = function(text, type, functorun) {
+
+    var path = "./data.json";
+
+    nextid = null;
+    try {
+        nextid = parseInt(readCookie("maxid"));
+    }
+    catch(err) {
+        console.log("eraseAllDeletedFunc - Error parsing next id");
+    }
+    finally {
+        if (nextid) {
+            $("#maxid").val(nextid);
+            console.log("eraseAllDeletedFunc - nextid vem do cookie: " + nextid);
+            nextid = nextid - 1;
+        }
+        else {
+            nextid = parseInt($("#maxid").val());
+            createCookie("maxid", nextid);
+            console.log("eraseAllDeletedFunc - nextid vem do hidden field: " + nextid);
+            nextid = nextid - 1;
+        }
+    }
+
+    $.getJSON(path, function(data) {
+        var processtmp = true;
+
+        $.each(data.Tweets, function(key, val) {
+            var recordfromdata = val;
+            var linkcontent = null;
+
+            do {
+                if (processtmp) {
+                    linkcontent = readCookie(nextid + "templink");
+                    if (linkcontent && linkcontent.length > 0) {
+                        var linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
+                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                        linktmp = linktmp.replace(/(\\)/gm, ""); 
+                        linktmp = JSON.parse(linktmp);
+    
+                        val = linktmp;
+                        nextid = nextid - 1;
+                    }
+                    else {
+                        if (showAll) {
+                            val = recordfromdata;
+                        }
+                        else {
+                            val.id = "0";
+                        }
+                        
+                        processtmp = false;
+                    }
+                }
+                else {
+                    if (showAll) {
+                        val = recordfromdata;
+                    }
+                    else {
+                        val.id = "0";
+                    }
+                }
+
+                var isdeleted = readCookie(val.id + "isdeleted");
+
+                if (((val && val.deleted.length > 0) || (isdeleted && isdeleted.length > 0)) && val.id != "0") {
+                    /*val.deleted = "yes";
+                    createCookie(val.id + "isdeleted", "yes", 99999);
+                    updateLinkCookie(val);
+                    */
+                    console.log("deleted id: " + val.id)
+                }
+            }
+            while (processtmp);
+        });   
+        
+        $("#mask").fadeOut(500);
+        $("#dialog-confirm-deleteall").parent().fadeOut( 800, function() {
+          $("#dialog-confirm-deleteall").parent().remove();
+        });
+        
+        showMessage("Deleted Links Successfully Purged");
+    }); 
+}
 
 /* function undogenerate() {
   var path = "./data.json";
@@ -1332,7 +1447,6 @@ function generate(obj) {
 
                     var cat = readCookie(val.id + "catchanged");
                     if (cat && cat.length > 0) {
-                        alert(cat)
                         val.categories = cat;
                         auxLink.categories = cat;
                     }
