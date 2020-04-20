@@ -53,12 +53,14 @@ function expandsection(obj, table) {
         $(obj).css("bottom", "auto");
     } 
 
+    /*
     if (table == "searchtags") {
-        //updateTopPosition("searchpopup"); 
+        updateTopPosition("searchpopup"); 
     }
     else {
         updateTopPosition("linkChange"); 
     }
+     */
 }
 
 

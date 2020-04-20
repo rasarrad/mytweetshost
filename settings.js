@@ -936,6 +936,14 @@ function editSetting(e, obj, flag) {
         var table = $(obj).parent().parent();
         if (table.css('max-height') == setHeight) {
             var hasExpanded = false;
+            $("#mainsettings table.expd").each( function( index, element ) {
+                var table = $(element);
+        
+                table.css('max-height', setHeight);
+                table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').show();
+                table.find('td.el').addClass('ellipsis');
+            });
+
             $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
                 var table = $(element);
                 
@@ -979,7 +987,7 @@ function editSetting(e, obj, flag) {
         }
     }
     
-    updateTopPosition("linkChange"); 
+    //updateTopPosition("linkChange"); 
 }
 
 function updateTopPosition(obj) { 

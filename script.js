@@ -596,12 +596,13 @@ $( document ).ready(function() {
                 htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle + "top: " + top + "px !important;"); 
             }
       });
+      /*
       $("input, textarea").blur( function(){  
             if ($("#linkChange").css("display") != "none") {
                 updateTopPosition("linkChange");
             }
       });
-
+        */
 
     document.getElementById("toptitle").addEventListener('click', () => {
         navigator.clipboard.readText()
