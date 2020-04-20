@@ -815,71 +815,74 @@ function handleFileSelectDragDrop(evt) {
   }
 
   function uploadFiles(files) {
-    $( "#dialog-confirm-upload" ).dialog({
-        resizable: false,
-        height: "auto",
-        width: 400,
-        modal: true,
-        buttons: {
-          "Yes": function() {
-            var reader=new FileReader();
-            reader.onload = function(e) {}
-            reader.readAsText(files[0]);
-        
-            setTimeout(function(){
-                var currentId = readCookie("maxid");
-                try {
-                    var resultParsed = JSON.parse(reader.result);
-        
-                    var webLinksMap = new Map();
-                    var hasTemp = false;
-        
-                    for (var x = 0; x < resultParsed.length; x++) {
-        
-                        if (parseInt(resultParsed[x].id) >= 100000) {
-                            hasTemp = true;
-        
-                            var link = "{\r\n\"id\": \"" + resultParsed[x].id + "\",\r\n\"creationdate\": \"" + resultParsed[x].creationdate  + "\",\r\n\"type\": \"" + resultParsed[x].type  + "\",\r\n\"url\": \"" + resultParsed[x].url  + "\",\r\n\"ishidden\": \"" + resultParsed[x].ishidden  + "\",\r\n\"date\": \"" + resultParsed[x].date + "\",\r\n\"author\": \"" + resultParsed[x].author  + "\",\r\n\"categories\": \"" + resultParsed[x].categories + "\",\r\n\"tags\": \"" + resultParsed[x].tags + "\",\r\n\"info\": \"" + resultParsed[x].info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "").trim() + "\",\r\n\"classif\": \"" + resultParsed[x].classif + "\",\r\n\"isnew\": \"\",\r\n\"deleted\": \"" + resultParsed[x].deleted + "\",\r\n\"tweet\": \"" + resultParsed[x].tweet + "\"\r\n},";
-        
-                            var mlink = encodeURIComponent(JSON.stringify(link));
+    try {
+        $( "#dialog-confirm-upload" ).dialog({
+            resizable: false,
+            height: "auto",
+            width: 400,
+            modal: true,
+            buttons: {
+            "Yes": function() {
+                var reader=new FileReader();
+                reader.onload = function(e) {}
+                reader.readAsText(files[0]);
             
-                            createCookie(resultParsed[x].id + "templink", mlink, 99999);
+                setTimeout(function(){
+                    var currentId = readCookie("maxid");
+                    try {
+                        var resultParsed = JSON.parse(reader.result);
+            
+                        var webLinksMap = new Map();
+                        var hasTemp = false;
+            
+                        for (var x = 0; x < resultParsed.length; x++) {
+            
+                            if (parseInt(resultParsed[x].id) >= 100000) {
+                                hasTemp = true;
+            
+                                var link = "{\r\n\"id\": \"" + resultParsed[x].id + "\",\r\n\"creationdate\": \"" + resultParsed[x].creationdate  + "\",\r\n\"type\": \"" + resultParsed[x].type  + "\",\r\n\"url\": \"" + resultParsed[x].url  + "\",\r\n\"ishidden\": \"" + resultParsed[x].ishidden  + "\",\r\n\"date\": \"" + resultParsed[x].date + "\",\r\n\"author\": \"" + resultParsed[x].author  + "\",\r\n\"categories\": \"" + resultParsed[x].categories + "\",\r\n\"tags\": \"" + resultParsed[x].tags + "\",\r\n\"info\": \"" + resultParsed[x].info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "").trim() + "\",\r\n\"classif\": \"" + resultParsed[x].classif + "\",\r\n\"isnew\": \"\",\r\n\"deleted\": \"" + resultParsed[x].deleted + "\",\r\n\"tweet\": \"" + resultParsed[x].tweet + "\"\r\n},";
+            
+                                var mlink = encodeURIComponent(JSON.stringify(link));
+                
+                                createCookie(resultParsed[x].id + "templink", mlink, 99999);
+                            }
+                            else {
+                                webLinksMap.set(parseInt(resultParsed[0].id), resultParsed[x]);
+                            }
                         }
-                        else {
-                            webLinksMap.set(parseInt(resultParsed[0].id), resultParsed[x]);
-                        }
+            
+                        if (hasTemp)
+                            createCookie("maxid", parseInt(resultParsed[0].id) + 1);
+                        else 
+                            createCookie("maxid", 100000);
+            
+                        showMessage("Links Successfully Imported"); 
+            
+                        countalltweets(webLinksMap);
+            
+                        eraseAllTmpData();
                     }
-        
-                    if (hasTemp)
-                        createCookie("maxid", parseInt(resultParsed[0].id) + 1);
-                    else 
-                        createCookie("maxid", 100000);
-        
-                    showMessage("Links Successfully Imported"); 
-        
-                    countalltweets(webLinksMap);
-        
-                    eraseAllTmpData();
-                }
-                catch(err) {
-                    showMessage("Error Importing Links");
-                    createCookie("maxid", parseInt(currentId)); 
-                }
-                finally {
-        
-                }
-            }, 100);  
-          },
-          Cancel: function() {
-              $("#mask").fadeOut(500);
-              $("#dialog-confirm-upload").parent().fadeOut( 800, function() {
-                $("#dialog-confirm-upload").parent().remove();
-              });
-          }
-        }
-      });
-
-    console.log($("#dialog-confirm-upload").parent());
+                    catch(err) {
+                        showMessage("Error Importing Links");
+                        createCookie("maxid", parseInt(currentId)); 
+                    }
+                    finally {
+            
+                    }
+                }, 100);  
+            },
+            Cancel: function() {
+                $("#mask").fadeOut(500);
+                $("#dialog-confirm-upload").parent().fadeOut( 800, function() {
+                    $("#dialog-confirm-upload").parent().remove();
+                });
+            }
+            }
+        });
+    } catch (error) {
+                        
+    }
+    
     $("#dialog-confirm-upload").parent().css("top", ((window.innerHeight/2) - 100) + "px")
     $("#mask").fadeIn(500);
     $("#dialog-confirm-upload").parent().fadeIn(800);    
