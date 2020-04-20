@@ -1043,14 +1043,19 @@ bookmarks <span>
     </div>
   </div>
 
-  <div id="helppop" style="top: 0px; transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s, background 1.1s ease 0s, height 0.2s ease 0s; height: calc(100%); margin-top: 0px; background: var(--soft-transp-color);display: none;" class="newLayout mainsettings pobj" onclick="closeMainSettingsPopup(this)" cid="">
-    <div style="position: relative;top: -1px !important;display: block;max-height: calc(100% - 10px) !important;margin-top: 0px !important;border-top: 1px solid var(--soft-color);border-radius: 0px;">    
-        <table class="titletable buttonstable">
+  <div id="helppop" style="background: var(--soft-transp-color);margin-top: 0px !important;position: fixed !important;display: block;/* display: none; */" class="newLayout mainsettings pobj" onclick="closeMainSettingsPopup(this)" cid="">
+    <div style="background: var(--softdark-color);position: relative;transform: translate(0px, -50%);top: calc(50% - 20px) !important;margin-top: 0px !important;height: 169px;">    
+        <table class="titletable buttonstable" style="
+    max-width: calc(100% - 11px);
+    height: 22px;
+">
             <tbody>
-              <tr class="cursordefault">
-                  <td colspan="3" class="firsttd" style="width: 164px;">
-                      <i class="fa fa-question-circle" style="font-size: 18px;position: absolute;left: 10px;top: 6px;"></i>
-                      <b style="position: relative;top: -2px;font-size: 15px;">Help</b>
+              <tr class="cursordefault" style="
+    max-width: calc(100% - 56px);
+">
+                  <td colspan="3" class="firsttd" style="min-width: 158px;">
+                      <i class="fa fa-question-circle" style="font-size: 17px;position: absolute;left: 10px;top: 6px;"></i>
+                      <b style="position: relative;top: -4px;font-size: 15px;">Help</b>
                   </td><td style="padding-top: 4px;vertical-align: initial;">
                     <i onclick="closeHelpPopup(this)" class="fa fa-window-close" style="font-size: 16px;margin-top: 0px;cursor: pointer;position: relative;right: -3px;"></i><div style="position: absolute; height: 41px; width: 2px; top: 0px; right: -1px; background: var(--dark-color);"></div>
                 </td>            
@@ -1088,7 +1093,7 @@ bookmarks <span>
       </table>  
     </div>
   </div>
-
+  
   <div id="mainmenu" style="top: -391px; background: transparent;display: none;" class="newLayout pobj" onclick="closeMenuPopup()">
     <div style="position: relative;top: 0px !important;display: block;max-height: calc(100% - 26px) !important;margin-top: 0px !important;border-top: 1px solid var(--soft-color);border-top-left-radius: 0px;border-top-right-radius: 0px;padding-bottom: 7px;max-height: calc(100% - 11px) !important;">
         <table class="titletable buttonstable">
