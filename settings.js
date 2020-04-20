@@ -1739,18 +1739,14 @@ function openHelp(obj, type) {
 
     switch(type) {
         case "unlock":
-            $('#helpcontent').html("<span>asdkjadasd ashkdasd asdjkkjasd dswadasj dasd jja sdd sd kj ada sd ash"
+            $('#helpcontent').html("<span>If you have a premium code, enter it and press the button to unlock the app."
                 + "</span>"
                 + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>cbbb sbsb bbbbs bbbb sab bbbb abbb cbbb sbsb bbbbs bbbb sab bbbb abbb cbbb sbsb bbbbs bbbb sab bbbb abbb cbbb sbsb bbbbs bbbb sab bbbb abbb cbbb sbsb bbbbs bbbb sab bbbb abbb cbbb sbsb bbbbs bbbb sab bbbb abbb "
-                + "</span>"
-                + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>ccccjccjccchc chuhc chcuic ccccui cuccu cciucui"
+                + "<span>If you don't have it go to the donate section in these settings to get one."
                 + "</span>");
 
-            $('#helptitle').text("Help Title");
+            $('#helptitle').text("Unlocking The App");
             $('#helpicon').attr("class", "fa fa-unlock");
-            $("#helppop > div").css("height", "200px");   
 
             break;   
     }   
