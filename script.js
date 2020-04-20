@@ -856,6 +856,11 @@ function handleFileSelectDragDrop(evt) {
                         else 
                             createCookie("maxid", 100000);
             
+                        $("#mask").fadeOut(500);
+                        $("#dialog-confirm-upload").parent().fadeOut( 800, function() {
+                            $("#dialog-confirm-upload").parent().remove();
+                        });
+
                         showMessage("Links Successfully Imported"); 
             
                         countalltweets(webLinksMap);
@@ -876,7 +881,7 @@ function handleFileSelectDragDrop(evt) {
                 $("#dialog-confirm-upload").parent().fadeOut( 800, function() {
                     $("#dialog-confirm-upload").parent().remove();
                 });
-            }
+                }
             }
         });
     } catch (error) {
