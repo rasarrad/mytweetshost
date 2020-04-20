@@ -861,11 +861,13 @@ function handleFileSelectDragDrop(evt) {
                             $("#dialog-confirm-upload").parent().remove();
                         });
 
-                        showMessage("Links Successfully Imported"); 
+                        setTimeout(function(){
+                            showMessage("Links Successfully Imported"); 
             
-                        countalltweets(webLinksMap);
-            
-                        eraseAllTmpData();
+                            countalltweets(webLinksMap);
+                
+                            eraseAllTmpData(); 
+                        }, 600); 
                     }
                     catch(err) {
                         showMessage("Error Importing Links");
