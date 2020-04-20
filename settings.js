@@ -1688,9 +1688,14 @@ function unl() {
 
     if (ded.toString(CryptoJS.enc.Utf8) == "x20#0000002e") {
         createCookie("eec", $('#unlockinput').val());
+
+        $('#unlockdisplay').text("Unlocked");
+        
         showMessage("You Are Now A Primium User!"); 
     }
     else {
+        $('#unlockdisplay').text("Locked");
+        
         createCookie("eec", "");
         showMessage("Invalid Code"); 
     }
@@ -1708,6 +1713,39 @@ function dunl() {
     }
                     
     return false;                
+}
+
+
+
+
+function openHelp(obj, type) {
+    if (obj)
+        fixfocus(obj);
+
+    switch(type) {
+        case "unlock":
+            $('#helpcontent').html("asdkjadasd ashkdasd asdjkkjasd dswadasj dasd jja sdd sd kj ada sd ash"
+                + "<br><span style=\"display: block;height: 8px;\">bbsa bbsa baa asbbb bsb bbssbssabbs sbbab sbb"
+                + "</span>" 
+                + "<br><span style=\"display: block;height: 8px;\">ccccjccjccchc chuhc chcuic ccccui cuccu cciucui" +
+                + "</span>");
+
+            $('#helptitle').text("Help Title");
+            $('#helpicon').attr("class", "fa fa-upload");
+            $("#helppop > div").css("height", "200px");   
+
+            break;   
+    }   
+
+    $("#helppop").fadeIn(800);              
+}
+
+
+function closeHelpPopup(obj) {
+    if (obj)
+        fixfocus(obj);
+    
+    $("#helppop").fadeOut(800);               
 }
 
 /////////////////////////////////////////////////////////////////////////

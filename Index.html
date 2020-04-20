@@ -830,10 +830,11 @@ bookmarks <span>
             </td>                                         
           </tr>     
           <tr>  
-            <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px;">
+            <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px;position: relative;">
               <input id="unlockinput" value="x20#002e" type="text" style="position: relative;top: -3px;width: 84px;padding-top: 2px;">  
               <i class="fa fa-check clicable" onclick="javascript: unl()" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 18px;top: -3px !important;border-radius: 0px;padding-left: 0px;height: 18px;padding-right: 0px;position: relative;"></i>
-              </td>
+              <i class="fa fa-question-circle" onclick="javascript: openHelp(this, 'unlock')" style="font-size: 16px;position: absolute;right: 4px;bottom: 3px;"></i>  
+            </td>
         </tr>   
         </tbody>
       </table>  
@@ -1043,16 +1044,11 @@ bookmarks <span>
     </div>
   </div>
 
-  <div id="helppop" style="background: var(--soft-transp-color);margin-top: 0px !important;position: fixed !important;display: block;/* display: none; */" class="newLayout mainsettings pobj" onclick="closeMainSettingsPopup(this)" cid="">
+  <div id="helppop" style="background: var(--soft-transp-color);margin-top: 0px !important;position: fixed !important;display: block;/* display: none; */" class="newLayout mainsettings pobj" onclick="closeHelpPopup(this)" cid="">
     <div style="background: var(--softdark-color);position: relative;transform: translate(0px, -50%);top: calc(50% - 20px) !important;margin-top: 0px !important;height: 169px;">    
-        <table class="titletable buttonstable" style="
-    max-width: calc(100% - 11px);
-    height: 22px;
-">
+        <table class="titletable buttonstable" style="max-width: calc(100% - 11px);height: 22px;">
             <tbody>
-              <tr class="cursordefault" style="
-    max-width: calc(100% - 56px);
-">
+              <tr class="cursordefault" style="max-width: calc(100% - 56px);">
                   <td colspan="3" class="firsttd" style="min-width: 158px;">
                       <i class="fa fa-question-circle" style="font-size: 17px;position: absolute;left: 10px;top: 6px;"></i>
                       <b style="position: relative;top: -4px;font-size: 15px;">Help</b>
@@ -1065,11 +1061,11 @@ bookmarks <span>
             </tbody>
         </table>       
           
-      <table cmaxheight="170px" cmaxheightbig="180px" cheight="190px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px;max-height: 170px;overflow-y: hidden;margin-top: 40px;">
+      <table cmaxheight="170px" cmaxheightbig="180px" cheight="190px" class="sectiontitletable helpinner sectionexpandable" style="margin-top: 6px;max-height: 170px;overflow-y: hidden;margin-top: 40px;">
         <tbody>
           <tr class="cursorpointer" style="padding-bottom: 15px;">
             <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
-                <i class="fa fa-upload"></i><span style="padding-left: 6px;" class="sectiontitle">About the App</span>
+                <i id="helpicon" class="fa fa-upload"></i><span id="helptitle" style="padding-left: 6px;" class="sectiontitle"></span>
             </td>    
             <td class="sectionicontd el">
                 <span id="" class="titletext" style="top: -1px;text-align: left;padding-left: 0px;"></span>
@@ -1081,11 +1077,8 @@ bookmarks <span>
           <tr>  
               <td colspan="3" style="position: relative;">
                   
-                <div class="splashtext aboutme" style="width: calc(100% - 2px);position: relative;top: 0px;padding-left: 4px;background-image: linear-gradient(to bottom, transparent 49%, var(--softdark-color) 80%);">
-                  asdkjadasd ashkdasd asdjkkjasd dswadasj dasd jja sdd sd kj ada sd ashkdasd asdjkkjasd dswadasj dasdjjasdd dasd ashkdasd asdjkkjasd dswadasj da
-                  <br><span style="display: block;height: 8px;">asdkjadasd ashkdasd asdjkkjasd dswadasj das dasd ashkdasd asdjkkjasd dswadasj da
-                    <br><span style="display: block;height: 8px;">asdkjadasd ashkdasd asdjkkjasd dswadasj das
-                </span></span></div>
+                <div id="helpcontent" class="splashtext aboutme" style="width: calc(100% - 2px);position: relative;top: 0px;padding-left: 4px;background-image: linear-gradient(to bottom, transparent 49%, var(--softdark-color) 80%);">
+                </div>
                   
               </td>                                        
           </tr>    
@@ -1093,7 +1086,7 @@ bookmarks <span>
       </table>  
     </div>
   </div>
-  
+
   <div id="mainmenu" style="top: -391px; background: transparent;display: none;" class="newLayout pobj" onclick="closeMenuPopup()">
     <div style="position: relative;top: 0px !important;display: block;max-height: calc(100% - 26px) !important;margin-top: 0px !important;border-top: 1px solid var(--soft-color);border-top-left-radius: 0px;border-top-right-radius: 0px;padding-bottom: 7px;max-height: calc(100% - 11px) !important;">
         <table class="titletable buttonstable">
