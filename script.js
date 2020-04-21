@@ -1103,7 +1103,7 @@ function processLinkChangeFuncs(type) {
             break;
 
         case "right":
-            create();
+            closeSettingsPopup();
             console.log("linkChange right-----------------------------------------------");
             break;
     }

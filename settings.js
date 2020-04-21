@@ -1817,7 +1817,7 @@ function openHelp(obj, type) {
                 break; 
                 
             case "swipe":
-                $('#helpcontent').html("<span>If selected, the user can make gestures to execute functions on certain screens."
+                $('#helpcontent').html("<span>If selected, the user can make gestures to execute functions on certain screens. Different functions and swipes:"
                 + "</span>"
                 + "<span style=\"display: block;height: 8px;\"></span>" 
                 + "<span>MAIN SCREEN</span><br>"
@@ -1828,10 +1828,20 @@ function openHelp(obj, type) {
                 + "<span>up or down - Close menu</span><br>"
                 + "<span>left - Toggle show deleted links</span>" 
                 + "<span>right - Open all links</span>"
+                + "<span style=\"display: block;height: 8px;\"></span>" 
                 + "<span>SEARCH SCREEN</span><br>"
                 + "<span>up or down - Close screen</span><br>"
                 + "<span>left - Reset search fields</span>" 
-                + "<span>right - Execute search</span>");
+                + "<span>right - Execute search</span>"
+                + "<span style=\"display: block;height: 8px;\"></span>" 
+                + "<span>LINK DISPLAY AREA</span><br>"
+                + "<span>up - Go to top</span><br>"
+                + "<span>down - Close search</span><br>"
+                + "<span>left - Copy current link to clipboard</span><br>" 
+                + "<span>right - Open current link detail</span>"
+                + "<span style=\"display: block;height: 8px;\"></span>" 
+                + "<span>LINK DETAIL SCREEN</span><br>"
+                + "<span>up or down, left or right - Close screen</span><br>");
 
                 $('#helptitle').text("Use swipes");
                 $('#helpicon').attr("class", "fa fa-arrows");
