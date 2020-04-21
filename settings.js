@@ -1859,20 +1859,20 @@ function openHelp(obj, type) {
                 break;   
                 
             case "colors":
-                $('#helpcontent').html("<span>Colors are used to mark the changes made by him. Changed link field, newly created link or a deleted link."
+                $('#helpcontent').html("<span>Colors are used to mark the changes made by the user. Changed link field, newly created link or a deleted link."
                 + "</span>"
                 + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>MINIMAL - almost no color is shown"
+                + "<span>minimal - almost no color is shown"
                 + "</span>"
                 + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>MEDIUM - the colors are shown only in the link detail"
+                + "<span>medium - the colors are shown only in the link detail"
                 + "</span>"
                 + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>MINIMAL - the colors are shown in both link display area and link detail"
+                + "<span>all - the colors are shown in both link display area and link detail"
                 + "</span>");
     
-                $('#helptitle').text("Show Victory Will Come Links");
-                $('#helpicon').attr("class", "fa fa-star");
+                $('#helptitle').text("Colors display");
+                $('#helpicon').attr("class", "fa fa-paint-brush");
                 break;
     }   
 
