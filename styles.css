@@ -4663,3 +4663,16 @@ body.big .fa-question-circle {
 body.big #uploadtable .fa-question-circle {
   right: 11px !important;
 }
+
+.newLayout#mainsettings table.single {
+    overflow: hidden;
+    display: block;
+    width: calc(100% - 22px);
+    transition: max-height .5s;
+    /* max-height: 21px; */
+    height: 100%;
+}
+
+.newLayout#mainsettings table.single .sectiontitle {
+  top: -2px !important;
+}

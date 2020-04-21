@@ -513,13 +513,21 @@ var openMainSettingsPopup = function(jsonobj)
     if ($('body').hasClass('big'))
         setHeight = "30px";
 
-    $("#mainsettings table").each( function( index, element ) {
+    $("#mainsettings table.expd").each( function( index, element ) {
         var table = $(element);
 
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').show();
         table.find('td.el').addClass('ellipsis');
     });
+
+    $("#mainsettings table.single").each( function( index, element ) {
+        var table = $(element);
+
+        table.css('max-height', setHeight);
+    });
+
+    
 
     putChoosedThemTop();
 
@@ -942,6 +950,12 @@ function editSetting(e, obj, flag) {
                 table.css('max-height', setHeight);
                 table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').show();
                 table.find('td.el').addClass('ellipsis');
+            });
+
+            $("#mainsettings table.single").each( function( index, element ) {
+                var table = $(element);
+        
+                table.css('max-height', setHeight);
             });
 
             $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
