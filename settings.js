@@ -1772,20 +1772,20 @@ function openHelp(obj, type) {
 
             break;   
 
-            case "download":
-                $('#helpcontent').html("<span>Allows to make a backup of the links created, modified and changed by the user."
-                    + "</span>"
-                    + "<span style=\"display: block;height: 8px;\"></span>" 
-                    + "<span>As the links are stored in the browser cookies, so it is advisable to make a backup once in a while."
-                    + "</span>"                    
-                    + "<span style=\"display: block;height: 8px;\"></span>" 
-                    + "<span>If you want to use in different devices, to pass the links to another one, you have to make this download and upload it the desired device."
-                    + "</span>");
-    
-                $('#helptitle').text("Downloading Links");
-                $('#helpicon').attr("class", "fa fa-unlock");
-  
-                break;               
+        case "download":
+            $('#helpcontent').html("<span>Allows to make a backup of the links created, modified and changed by the user."
+                + "</span>"
+                + "<span style=\"display: block;height: 8px;\"></span>" 
+                + "<span>As the links are stored in the browser cookies, so it is advisable to make a backup once in a while."
+                + "</span>"                    
+                + "<span style=\"display: block;height: 8px;\"></span>" 
+                + "<span>If you want to use in different devices, to pass the links to another one, you have to make this download and upload it the desired device."
+                + "</span>");
+
+            $('#helptitle').text("Downloading Links");
+            $('#helpicon').attr("class", "fa fa-unlock");
+
+            break;               
     }   
 
     $("#helppop").fadeIn(800);              
