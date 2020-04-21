@@ -1845,7 +1845,7 @@ function openHelp(obj, type) {
                 + "<span style=\"display: block;height: 8px;\"></span>" 
                 + "<span>CALENDAR POP-UP</span><br>"
                 + "<span>up or down - close pop-up</span><br>"
-                + "<span>left - previous month</span>" 
+                + "<span>left - previous month</span><br>" 
                 + "<span>right - next month</span>"
                 + "<span style=\"display: block;height: 8px;\"></span>" 
                 + "<span>SETTINGS SCREEN</span><br>"
@@ -1857,6 +1857,23 @@ function openHelp(obj, type) {
                 $('#helptitle').text("Use swipes");
                 $('#helpicon').attr("class", "fa fa-arrows");
                 break;   
+                
+            case "colors":
+                $('#helpcontent').html("<span>Colors are used to mark the changes made by him. Changed link field, newly created link or a deleted link."
+                + "</span>"
+                + "<span style=\"display: block;height: 8px;\"></span>" 
+                + "<span>MINIMAL - almost no color is shown"
+                + "</span>"
+                + "<span style=\"display: block;height: 8px;\"></span>" 
+                + "<span>MEDIUM - the colors are shown only in the link detail"
+                + "</span>"
+                + "<span style=\"display: block;height: 8px;\"></span>" 
+                + "<span>MINIMAL - the colors are shown in both link display area and link detail"
+                + "</span>");
+    
+                $('#helptitle').text("Show Victory Will Come Links");
+                $('#helpicon').attr("class", "fa fa-star");
+                break;
     }   
 
     $("#helppop").fadeIn(800);              

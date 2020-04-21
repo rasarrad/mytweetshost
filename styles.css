@@ -4367,7 +4367,7 @@ body.big .ui-dialog.ui-widget.ui-widget-content.ui-front .ui-dialog-titlebar.ui-
 
 .pointeropacity {
   cursor: pointer !important;
-  transition: all 0.6s !important;
+  /* transition: opacity 0.6s !important; */
 }
 
 .pointeropacity:hover {
