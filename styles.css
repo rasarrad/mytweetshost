@@ -4725,11 +4725,12 @@ body.big .fa-question-circle {
 }
 
 #uploadtable .fa-question-circle {
-  right: 13px !important;
+  right: 3px !important;
+  bottom: 0px !important;
 }
 
 body.big #uploadtable .fa-question-circle {
-  right: 11px !important;
+  right: 1px !important;
 }
 
 .newLayout#mainsettings table.single {
