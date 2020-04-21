@@ -1785,7 +1785,19 @@ function openHelp(obj, type) {
             $('#helptitle').text("Downloading Links");
             $('#helpicon').attr("class", "fa fa-download");
 
-            break;               
+            break;
+            
+            case "upload":
+                $('#helpcontent').html("<span>Allows to upload a previous backup."
+                    + "</span>"
+                    + "<span style=\"display: block;height: 8px;\"></span>" 
+                    + "<span>This upload will erase all the current changes in the application and apply the ones in this backup file."
+                    + "</span>");
+    
+                $('#helptitle').text("Uploading Links");
+                $('#helpicon').attr("class", "fa fa-upload");
+    
+                break;            
     }   
 
     $("#helppop").fadeIn(800);              
