@@ -513,7 +513,7 @@ var openMainSettingsPopup = function(jsonobj)
     if ($('body').hasClass('big'))
         setHeight = "30px";
 
-    $("#mainsettings table.expd").each( function( index, element ) {
+    $("#mainsettings table").each( function( index, element ) {
         var table = $(element);
 
         table.css('max-height', setHeight);
