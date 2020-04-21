@@ -1783,7 +1783,7 @@ function openHelp(obj, type) {
                 + "</span>");
 
             $('#helptitle').text("Downloading Links");
-            $('#helpicon').attr("class", "fa fa-unlock");
+            $('#helpicon').attr("class", "fa fa-download");
 
             break;               
     }   
