@@ -1814,7 +1814,28 @@ function openHelp(obj, type) {
     
                 $('#helptitle').text("Show Victory Will Come Links");
                 $('#helpicon').attr("class", "fa fa-star");
-                break;                 
+                break; 
+                
+            case "swipe":
+                $('#helpcontent').html("<span>If selected, the user can make gestures to execute functions on certain screens."
+                + "</span>"
+                + "<span style=\"display: block;height: 8px;\"></span>" 
+                + "<span>MAIN SCREEN</span><br>"
+                + "<span>up or right - Open search screen</span><br>" 
+                + "<span>bottom or left - Open categories menu</span>"
+                + "<span style=\"display: block;height: 8px;\"></span>" 
+                + "<span>CATEGORIES MENU</span><br>"
+                + "<span>up or down - Close menu</span><br>"
+                + "<span>left - Toggle show deleted links</span>" 
+                + "<span>right - Open all links</span>"
+                + "<span>SEARCH SCREEN</span><br>"
+                + "<span>up or down - Close screen</span><br>"
+                + "<span>left - Reset search fields</span>" 
+                + "<span>right - Execute search</span>");
+
+                $('#helptitle').text("Use swipes");
+                $('#helpicon').attr("class", "fa fa-arrows");
+                break;   
     }   
 
     $("#helppop").fadeIn(800);              

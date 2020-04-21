@@ -922,13 +922,14 @@ bookmarks <span>
             </td>                                         
           </tr>     
           <tr>  
-            <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px;">
+            <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px; position: relative;">
                 <ul id="swipeul">
                     <li onclick="javascript: clickLiSwipes(event, this)" class="litags">
                     Yes</li>
                     <li onclick="javascript: clickLiSwipes(event, this)" class="litags">
                     No</li>
-                </ul>   
+                </ul> 
+                <i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'swipe')" style="position: absolute;right: 3px;bottom: 3px;"></i>  
               </td>
         </tr>   
         </tbody>
@@ -992,7 +993,7 @@ bookmarks <span>
             </td>                                         
           </tr>     
           <tr>  
-              <td colspan="3" style="position: relative;">
+              <td colspan="3" style="position: relative;padding-bottom: 18px;">
                   
                 <div class="splashtext aboutme" style="width: calc(100% - 2px);position: relative;top: 0px;padding-left: 4px;height: 37px;">
                   <input type="file" id="files" name="files[]" style="width: calc(100% - 17px);margin-top: 4px;background: var(--high-color);height: 24px;padding-top: 4px;color: var(--dark-color);padding-left: 6px;" />
