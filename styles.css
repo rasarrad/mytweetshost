@@ -4479,6 +4479,101 @@ body.big #mainsettings #swipestable td:first-child {
     width: 60px !important;
 }
 
+#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-star {
+  font-size: 13px;
+  left: 11px;
+  position: absolute;
+  top: 7px;
+}
+
+body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-star {
+  font-size: 17px;
+  left: 12px;
+  position: absolute;
+  top: 10px;
+}
+
+#mainsettings #svwc td:first-child {
+    width: 190px !important;
+}
+
+body.big #mainsettings #svwc td:first-child {
+    width: 223px !important;
+}
+
+#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-unlock {
+  font-size: 14px;
+  left: 11px;
+  position: absolute;
+  top: 6px;
+}
+
+body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-unlock {
+  font-size: 17px;
+  left: 12px;
+  position: absolute;
+  top: 10px;
+}
+
+#mainsettings #unlocktable td:first-child {
+    width: 117px !important;
+}
+
+body.big #mainsettings #unlocktable td:first-child {
+    width: 131px !important;
+}
+
+#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-upload {
+  font-size: 14px;
+  left: 11px;
+  position: absolute;
+  top: 6px;
+}
+
+body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-upload {
+  font-size: 17px;
+  left: 11px;
+  position: absolute;
+  top: 10px;
+}
+
+#uploadtable #filedrop {
+  font-size: 11px;
+}
+
+body.big #uploadtable #filedrop {
+    font-size: 15px;
+    padding-top: 18px !important;
+    height: 40px !important;
+}
+
+#uploadtable input {
+    font-size: 11px;
+    height: 21px !important;
+}
+
+body.big #uploadtable input {
+      font-size: 13px;
+      height: 24px !important;
+}
+
+#uploadtable .triggerUpload {top: -23px !important;height: 14px !important;font-size: 10px;width: 75px !important;}
+
+body.big #uploadtable .triggerUpload {
+  top: -26px !important;
+  height: 17px !important;
+  font-size: 12px;
+  width: 85px !important;
+}
+
+#uploadtable {
+
+}
+
+body.big #uploadtable {
+  
+}
+
 #mainsettings.newLayout .sectiontitletable .sectionicontd i {
 
 }
@@ -4526,4 +4621,20 @@ body.big .newLayout#mainsettings .el:not(.ellipsis) .slicename {
 
 body.big .newLayout#mainsettings .sectiontitletable .sectionicontd {
   height: 25px;
+}
+
+.fa-question-circle {
+  font-size: 13px !important;
+}
+
+body.big .fa-question-circle {
+  font-size: 17px !important;
+}
+
+#uploadtable .fa-question-circle {
+  right: 12px !important;
+}
+
+body.big #uploadtable .fa-question-circle {
+  right: 11px !important;
 }
