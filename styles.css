@@ -4720,6 +4720,8 @@ body.big .newLayout#mainsettings .sectiontitletable .sectionicontd {
 
 body.big .fa-question-circle {
   font-size: 18px !important;
+  right: 3px !important;
+  bottom: 1px !important;
 }
 
 #uploadtable .fa-question-circle {

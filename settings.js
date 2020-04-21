@@ -1804,6 +1804,17 @@ function openHelp(obj, type) {
                 $('#helptitle').text("Purge Deleted Links");
                 $('#helpicon').attr("class", "fa fa-times-circle");
                 break;   
+                
+            case "vwc":
+                $('#helpcontent').html("<span>If selected, Victory Will Come Links will be shown."
+                + "</span>"
+                + "<span style=\"display: block;height: 8px;\"></span>" 
+                + "<span>If not, only the ones added by the user will be shown."
+                + "</span>");
+    
+                $('#helptitle').text("Show Victory Will Come Links");
+                $('#helpicon').attr("class", "fa fa-star");
+                break;                 
     }   
 
     $("#helppop").fadeIn(800);              
