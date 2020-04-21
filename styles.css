@@ -3369,7 +3369,7 @@ body.big .newLayout ul li {
     font-size: 15px;
     padding-bottom: 4px;
     padding-top: 2px;
-    font-weight: normal;
+    /* font-weight: normal; */
     margin-right: 11px;
 }
 
