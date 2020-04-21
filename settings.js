@@ -1841,7 +1841,18 @@ function openHelp(obj, type) {
                 + "<span>right - open current link detail</span>"
                 + "<span style=\"display: block;height: 8px;\"></span>" 
                 + "<span>LINK DETAIL SCREEN</span><br>"
-                + "<span>up, down, left or right - close screen</span><br>");
+                + "<span>up, down, left or right - close screen</span><br>"
+                + "<span style=\"display: block;height: 8px;\"></span>" 
+                + "<span>CALENDAR POP-UP</span><br>"
+                + "<span>up or down - close pop-up</span><br>"
+                + "<span>left - previous month</span>" 
+                + "<span>right - next month</span>"
+                + "<span style=\"display: block;height: 8px;\"></span>" 
+                + "<span>SETTINGS SCREEN</span><br>"
+                + "<span>up, down, left or right - close screen</span><br>"
+                + "<span style=\"display: block;height: 8px;\"></span>" 
+                + "<span>HELP POP-UP</span><br>"
+                + "<span>up, down, left or right - close pop-up</span><br>");
 
                 $('#helptitle').text("Use swipes");
                 $('#helpicon').attr("class", "fa fa-arrows");
