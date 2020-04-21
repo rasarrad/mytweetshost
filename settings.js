@@ -570,7 +570,7 @@ var openMainSettingsPopup = function(jsonobj)
 
     value = readCookie("help");
     value = value == "" ? "Yes" : "No";
-    $('#helpeul').find(".litags").each( function( index, element ) {
+    $('#helpul').find(".litags").each( function( index, element ) {
         if($(element).html().trim() == value) {
             $(element).addClass("selectedtag");
         }
@@ -1709,7 +1709,7 @@ function clickLiHelp(e, obj) {
 
     if (!$(obj).hasClass("selectedtag")) {
         var value = $(obj).html().trim();
-        $('#helpeul').find(".litags").each( function( index, element ) {
+        $('#helpul').find(".litags").each( function( index, element ) {
             if($(element).html().trim() == value) {
                 $(element).addClass("selectedtag");
             }
