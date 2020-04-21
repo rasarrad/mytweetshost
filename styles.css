@@ -4599,9 +4599,7 @@ body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-times-ci
 }
 
 
-#mainsettings.newLayout .sectiontitletable .sectionicontd i {
-
-}
+#mainsettings.newLayout .sectiontitletable .sectionicontd i {}
 
 body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i {
 
@@ -4630,6 +4628,8 @@ body.big .newLayout#mainsettings .slicename {
 
 .newLayout#mainsettings .el.ellipsis .slicename {
   /* left: 1px; */
+  text-align: right !important;
+  margin-right: 9px;
 }
 
 body.big .newLayout#mainsettings .el:not(.ellipsis) .slicename {
@@ -4679,16 +4679,31 @@ body.big #uploadtable .fa-question-circle {
 }
 
 .newLayout#mainsettings table.single .fa-check {
-  top: -2px !important;
-  right: -3px;
+  top: -3px !important;
+  right: -4px;
+  font-size: 14px !important;
+  padding-top: 1px;
+  width: 16px !important;
+  padding-right: 2px !important;
 }
 
 body.big .newLayout#mainsettings table.single .fa-check {
   top: 0px !important;
-  right: -7px;
+  right: -6px;
+  font-size: 17px !important;
+  padding-top: 1px;
+  width: 17px !important;
+  padding-right: 2px !important;
 }
 
 .newLayout#mainsettings table.single .titletext {
   text-transform: lowercase;
 }
 
+table#purgetable .fa-question-circle {left: 136px !important;font-size: 13px !important;top: 1px !important;}
+
+body.big table#purgetable .fa-question-circle {
+  left: 169px !important;
+  font-size: 16px !important;
+  top: 2px !important;
+}
