@@ -4512,6 +4512,17 @@ body.big #mainsettings #swipestable td:first-child {
     width: 60px !important;
 }
 
+body.big #mainsettings.newLayout #downloadtable .sectiontitle {
+  font-size: 15px;
+  position: absolute;
+  top: -3px !important;
+  left: 17px;
+}
+#mainsettings.newLayout #downloadtable .sectiontitle {
+  position: absolute;
+  top: 0px !important;
+  left: 22px;
+}
 #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-star {
   font-size: 13px;
   left: 11px;
@@ -4586,6 +4597,28 @@ body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-upload {
   left: 11px;
   position: absolute;
   top: 10px;
+}
+
+#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-download {
+  font-size: 14px;
+  left: 5px;
+  position: absolute;
+  top: 1px;
+}
+
+body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-download {
+  font-size: 17px;
+  left: 6px;
+  position: absolute;
+  top: 6px;
+}
+
+#mainsettings #downloadtable td:first-child {
+    width: 117px !important;
+}
+
+body.big #mainsettings #downloadtable td:first-child {
+    width: 139px !important;
 }
 
 #uploadtable #filedrop {
