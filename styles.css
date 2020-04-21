@@ -4595,7 +4595,7 @@ body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-times-ci
   font-size: 17px !important;
   left: -2px !important;
   /* position: absolute !important; */
-  top: 10px;
+  top: 1px !important;
 }
 
 
@@ -4674,5 +4674,21 @@ body.big #uploadtable .fa-question-circle {
 }
 
 .newLayout#mainsettings table.single .sectiontitle {
-  top: -2px !important;
+  top: -1px !important;
+  left: 0;
 }
+
+.newLayout#mainsettings table.single .fa-check {
+  top: -2px !important;
+  right: -3px;
+}
+
+body.big .newLayout#mainsettings table.single .fa-check {
+  top: 0px !important;
+  right: -7px;
+}
+
+.newLayout#mainsettings table.single .titletext {
+  text-transform: lowercase;
+}
+
