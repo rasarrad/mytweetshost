@@ -4523,6 +4523,24 @@ body.big #mainsettings #unlocktable td:first-child {
     width: 131px !important;
 }
 
+#mainsettings #unlocktable .fa-check {
+    height: 117px !important;
+    font-size: 18px !important;
+    top: -1px !important;
+}
+
+body.big #mainsettings #unlocktable .fa-check {
+    font-size: 20px !important;
+    top: 1px !important;
+    padding-bottom: 1px;
+    left: -3px;
+}
+
+#mainsettings #unlocktable #unlockinput {/* height: 20px !important; *//* font-size: 14px !important; */}
+
+body.big #mainsettings #unlocktable #unlockinput {height: 20px !important;font-size: 14px !important;left: -5px;}
+
+
 #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-upload {
   font-size: 14px;
   left: 11px;
@@ -4566,13 +4584,20 @@ body.big #uploadtable .triggerUpload {
   width: 85px !important;
 }
 
-#uploadtable {
-
+#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-times-circle {
+  font-size: 14px !important;
+  left: -3px !important;
+  position: absolute;
+  top: 6px;
 }
 
-body.big #uploadtable {
-  
+body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-times-circle {
+  font-size: 17px !important;
+  left: -2px !important;
+  /* position: absolute !important; */
+  top: 10px;
 }
+
 
 #mainsettings.newLayout .sectiontitletable .sectionicontd i {
 
@@ -4624,15 +4649,15 @@ body.big .newLayout#mainsettings .sectiontitletable .sectionicontd {
 }
 
 .fa-question-circle {
-  font-size: 13px !important;
+  font-size: 15px !important;
 }
 
 body.big .fa-question-circle {
-  font-size: 17px !important;
+  font-size: 18px !important;
 }
 
 #uploadtable .fa-question-circle {
-  right: 12px !important;
+  right: 13px !important;
 }
 
 body.big #uploadtable .fa-question-circle {
