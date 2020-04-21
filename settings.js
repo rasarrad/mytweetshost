@@ -1784,7 +1784,6 @@ function openHelp(obj, type) {
 
             $('#helptitle').text("Downloading Links");
             $('#helpicon').attr("class", "fa fa-download");
-
             break;
             
             case "upload":
@@ -1796,8 +1795,15 @@ function openHelp(obj, type) {
     
                 $('#helptitle').text("Uploading Links");
                 $('#helpicon').attr("class", "fa fa-upload");
+                break;    
+                
+            case "purge":
+                $('#helpcontent').html("<span>It will remove forever the links marked as deleted."
+                    + "</span>");
     
-                break;            
+                $('#helptitle').text("Purge Deleted Links");
+                $('#helpicon').attr("class", "fa fa-times-circle");
+                break;   
     }   
 
     $("#helppop").fadeIn(800);              
