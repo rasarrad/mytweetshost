@@ -1814,6 +1814,18 @@ function openHelp(obj, type) {
         fixfocus(obj);
 
     switch(type) {
+        case "help":
+            $('#helpcontent').html("<span>If selected the user will see the help icons throughout the aplication."
+                + "</span>"
+                + "<span style=\"display: block;height: 8px;\"></span>" 
+                + "<span>Clicking in one of the icons will open a pop-up with information about the functionality where it is displayed."
+                + "</span>");
+
+            $('#helptitle').text("Help About Functionalities");
+            $('#helpicon').attr("class", "fa fa-question-circle");
+
+            break; 
+
         case "unlock":
             $('#helpcontent').html("<span>If you have a premium code, enter it and press the button to unlock the app."
                 + "</span>"
