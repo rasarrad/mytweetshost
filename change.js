@@ -1062,6 +1062,7 @@ function eraseAllDeleted(idF, flag) {
     } catch (error) {
         
     }
+    $("#dialog-confirm-deleteall").parent().addClass("purgedialog");
     $("#dialog-confirm-deleteall").parent().css("top", ((window.innerHeight/2) - 100) + "px")
     $("#mask").fadeIn(500);
     $("#dialog-confirm-deleteall").parent().fadeIn(800);
