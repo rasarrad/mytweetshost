@@ -4340,6 +4340,10 @@ body.big .ui-dialog.ui-widget.ui-widget-content.ui-front .ui-dialog-titlebar.ui-
     margin-left: 74px;
  }
  
+ body.big .ui-dialog.purgedialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset {
+    margin-left: 71px;
+ }
+ 
  .ui-dialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset button {
     background: var(--high-color);
     color: var(--dark-color);
