@@ -1685,6 +1685,41 @@ function clickLiSwipes(e, obj) {
     }  
 }
 
+function clickLiHelp(e, obj) {
+    e.stopPropagation();
+
+    if (!$(obj).hasClass("selectedtag")) {
+        var value = $(obj).html().trim();
+        $('#helpeul').find(".litags").each( function( index, element ) {
+            if($(element).html().trim() == value) {
+                $(element).addClass("selectedtag");
+            }
+            else {
+                $(element).removeClass("selectedtag");
+            }
+        });
+
+        if (value == "Yes") {
+            showMessage("Help icons are shown", null, null, null, null, null);
+            $( "fa-question-circle:not(.ashow)" ).each( function( index, element ){
+                $(element).css("display", "block");
+            });
+        }
+        else {
+            showMessage("Help icons are hidden", null, null, null, null, null);
+            $( "fa-question-circle:not(.ashow)" ).each( function( index, element ){
+                $(element).css("display", "none");
+            });
+        }
+
+        $("#helpdisplay").text(value);
+
+        if (value == "Yes")
+            createCookie("help", "", 99999);
+        else
+            createCookie("help", value, 99999);
+    }  
+}
 
 function clickLiVWC(e, obj) {
     e.stopPropagation();

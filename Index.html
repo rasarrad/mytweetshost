@@ -983,10 +983,10 @@ bookmarks <span>
         <tbody>
           <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
             <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
-                <i class="fa fa-question-circle"></i><span style="padding-left: 6px;" class="sectiontitle">Help</span>
+                <i class="fa fa-question-circle ashow"></i><span style="padding-left: 6px;" class="sectiontitle">Help</span>
             </td>    
             <td class="sectionicontd el ellipsis">
-                <span id="swipedisplay" class="titletext slicename" style="top: -1px;text-align: left;padding-left: 0px;"></span>
+                <span id="helpdisplay" class="titletext slicename" style="top: -1px;text-align: left;padding-left: 0px;"></span>
             </td>                         
             <td class="sectionedittd">
                 <i class="fa fa-angle-down"></i>
@@ -994,10 +994,10 @@ bookmarks <span>
           </tr>     
           <tr>  
             <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px; position: relative;">
-                <ul id="swipeul">
-                    <li onclick="javascript: clickLiSwipes(event, this)" class="litags">
+                <ul id="helpul">
+                    <li onclick="javascript: clickLiHelp(event, this)" class="litags">
                     Yes</li>
-                    <li onclick="javascript: clickLiSwipes(event, this)" class="litags">
+                    <li onclick="javascript: clickLiHelp(event, this)" class="litags">
                     No</li>
                 </ul> 
                 <i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'help')" style="position: absolute;right: 3px;bottom: 3px;"></i>  

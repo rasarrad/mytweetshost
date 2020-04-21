@@ -126,7 +126,16 @@ $( document ).ready(function() {
         }
     }
     
-    
+
+    // START da help
+    var valueSwipe = readCookie("help");
+    if (valueSwipe && valueSwipe.length > 0) {
+        $( "fa-question-circle:not(.ashow)" ).each( function( index, element ){
+            $(element).css("display", "none");
+        });
+    }
+
+
     // START victorywillcome tweets
     var valueVWC = readCookie("vwc");
     if (valueVWC && valueVWC.length > 0) {
