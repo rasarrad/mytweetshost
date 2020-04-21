@@ -568,6 +568,25 @@ var openMainSettingsPopup = function(jsonobj)
         value = "No";
     }
 
+    value = readCookie("help");
+    value = value == "" ? "Yes" : "No";
+    $('#helpeul').find(".litags").each( function( index, element ) {
+        if($(element).html().trim() == value) {
+            $(element).addClass("selectedtag");
+        }
+        else {
+            $(element).removeClass("selectedtag");
+        }
+    });
+    
+
+    var value = readCookie("help");
+    if (value && value.length > 0) {
+        $( ".fa-question-circle:not(.ashow)" ).each( function( index, element ){
+            $(element).css("display", "none");
+        });
+    }
+
     $("#swipedisplay").text(value);
     
     $('#swipeul').find(".litags").each( function( index, element ) {
@@ -1701,13 +1720,13 @@ function clickLiHelp(e, obj) {
 
         if (value == "Yes") {
             showMessage("Help icons are shown", null, null, null, null, null);
-            $( "fa-question-circle:not(.ashow)" ).each( function( index, element ){
+            $( ".fa-question-circle:not(.ashow)" ).each( function( index, element ){
                 $(element).css("display", "block");
             });
         }
         else {
             showMessage("Help icons are hidden", null, null, null, null, null);
-            $( "fa-question-circle:not(.ashow)" ).each( function( index, element ){
+            $( ".fa-question-circle:not(.ashow)" ).each( function( index, element ){
                 $(element).css("display", "none");
             });
         }

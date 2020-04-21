@@ -4724,6 +4724,29 @@ body.big .fa-question-circle {
   bottom: 1px !important;
 }
 
+#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-question-circle {
+  font-size: 14px !important;
+  left: 12px;
+  position: absolute;
+  top: 6px;
+}
+
+body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-question-circle {
+  font-size: 17px !important;
+  left: 13px;
+  position: absolute;
+  top: 10px;
+}
+
+#mainsettings #helptable td:first-child {
+    width: 47px !important;
+}
+
+body.big #mainsettings #helptable td:first-child {
+    width: 42px !important;
+}
+
+
 #uploadtable .fa-question-circle {
   right: 3px !important;
   bottom: 0px !important;
