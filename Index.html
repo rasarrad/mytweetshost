@@ -980,7 +980,7 @@ bookmarks <span>
         </tbody>
       </table>  
 
-      <table class="sectiontitletable generatetablerow defaulttablerow single" style="margin-top: 6px;max-height: 18px;display: block;width: calc(100% - 22px);">
+      <table id="downloadtable" class="sectiontitletable generatetablerow defaulttablerow single" style="margin-top: 6px;max-height: 18px;display: block;width: calc(100% - 22px);">
         <tbody>
           <tr class="cursorpointer" style="padding-bottom: 15px;">
             <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: default;">
@@ -1027,7 +1027,7 @@ bookmarks <span>
                     <i class="fa fa-eraser" style="font-size: 14px;position: relative;top: 0px;left: -4px;"></i><span style="padding-left: 6px;position: relative;top: -1px;left: -1px;" class="sectiontitle">Clean data</span>
                 </td>    
                 <td class="sectionicontd el" style="cursor: default;">
-                    <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;cursor: default;">Cleans the current data</span>
+                    <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;cursor: default;">current temp data</span>
                 </td>                         
                 <td class="sectionedittd">
                     <i class="fa fa-check clicable" id="undogenerate" onclick="javascript: undogenerate(this)" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 16px;top: -3px;border-radius: 3px;padding-left: 0px;height: 16px;padding-right: 0px;"></i>
@@ -1042,7 +1042,7 @@ bookmarks <span>
                 <i class="fa fa-hashtag" style="font-size: 14px;position: relative;top: -1px;left: -4px;"></i><span style="padding-left: 6px;position: relative;top: -1px;left: -1px;" class="sectiontitle">Current ID</span>
             </td>    
             <td class="sectionicontd el ellipsis" style="cursor: default;">
-                <input id="maxidinput" value="100000" type="text" style="position: relative;top: -3px;width: 84px;">
+                <input id="maxidinput" value="100000" type="text" style="position: relative;top: -3px;width: 84px;left: 46px;">
             </td>                         
             <td class="sectionedittd">
                 <i class="fa fa-check" id="updatemaxid" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 16px;top: -3px;border-radius: 3px;padding-left: 0px;height: 16px;padding-right: 0px;"></i>
@@ -1054,10 +1054,10 @@ bookmarks <span>
       <tbody>
         <tr class="cursorpointer" style="padding-bottom: 15px;">
             <td class="sectionicontd" style="width: 43px !important;display: inline-block;white-space: nowrap;cursor: default;">
-                <i class="fa fa-plus-square" style="font-size: 14px;position: relative;top: -1px;left: -4px;"></i><span style="padding-left: 6px;position: relative;top: -1px;left: -1px;" class="sectiontitle">New links</span>
+                <i class="fa fa-plus-square" style="font-size: 14px;position: relative;top: -1px;left: -4px;"></i><span style="padding-left: 6px;position: relative;top: -2px !important;left: -1px;" class="sectiontitle">New links</span>
             </td>    
             <td class="sectionicontd el ellipsis" style="cursor: default;">
-                <input id="removetmpinput" type="text" style="position: relative;top: -3px;width: 84px;">
+                <input id="removetmpinput" type="text" style="position: relative;top: -3px;width: 84px;left: 46px;">
             </td>                         
             <td class="sectionedittd">
                 <i class="fa fa-check" id="removetmp" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 16px;top: -3px;border-radius: 3px;padding-left: 0px;height: 16px;padding-right: 0px;"></i>
