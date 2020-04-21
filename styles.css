@@ -4425,6 +4425,7 @@ body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-info-cir
 #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-folder-open {
   font-size: 11px;
   left: 10px;
+  padding-top: 1px;
   position: absolute;
   top: 6px;
   border: 1px solid !important;
@@ -4434,7 +4435,8 @@ body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-folder-o
   font-size: 14px;
   left: 9px;
   position: absolute;
-  top: 10px;
+  padding-bottom: 1px;
+  top: 9px;
   border: 2px solid !important;
 }
 
