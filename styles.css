@@ -1770,6 +1770,7 @@ body.big .newLayout #previewtable {
 body.big #mainsettings .fa-cog {
   font-size: 23px !important;
   top: 5px !important;
+  left: 9px !important;
 }  
 
 body.big #mainsettings .buttonstable {
@@ -1802,13 +1803,13 @@ body.big #mainsettings .fa-cogs {
 
 
 body.big #mainsettings .fa-eraser {
-  font-size: 19px !important;
+  font-size: 18px !important;
 }  
 body.big #mainsettings .fa-hashtag {
-  font-size: 18px !important;
+  font-size: 17px !important;
 }  
 body.big #mainsettings .fa-plus-square {
-  font-size: 18px !important;
+  font-size: 17px !important;
   margin-right:2px;
 }  
 
@@ -3845,12 +3846,13 @@ body.big #mainsettings #cleandatatable td:first-child {
     line-height: 18px;
     position: relative;
     top: -2px !important;
+    font-size: 12px;
 }
 
 body.big #mainsettings #cleandatatable td:not(.ellipsis) .titletext {
     line-height: 18px;
     position: relative;
-    top: 1px !important;
+    top: -3px !important;
 }
 
 #mainsettings #theme td:first-child {
@@ -4524,7 +4526,7 @@ body.big #mainsettings #unlocktable td:first-child {
 }
 
 #mainsettings #unlocktable .fa-check {
-    height: 117px !important;
+    /* height: 117px !important; */
     font-size: 18px !important;
     top: -1px !important;
 }
@@ -4532,7 +4534,7 @@ body.big #mainsettings #unlocktable td:first-child {
 body.big #mainsettings #unlocktable .fa-check {
     font-size: 20px !important;
     top: 1px !important;
-    padding-bottom: 1px;
+    padding-bottom: 0px;
     left: -3px;
 }
 
@@ -4700,10 +4702,67 @@ body.big .newLayout#mainsettings table.single .fa-check {
   text-transform: lowercase;
 }
 
-table#purgetable .fa-question-circle {left: 136px !important;font-size: 13px !important;top: 1px !important;}
+table#purgetable .fa-question-circle {
+  left: 136px !important;
+  font-size: 13px !important;
+  top: 1px !important;}
 
 body.big table#purgetable .fa-question-circle {
   left: 169px !important;
   font-size: 16px !important;
   top: 2px !important;
 }
+
+table#downloadtable .fa-question-circle {
+  left: 110px !important;
+  font-size: 13px !important;
+  top: 1px !important;
+  }
+
+body.big table#downloadtable .fa-question-circle {
+  left: 136px !important;
+  font-size: 16px !important;
+  top: 2px !important;
+}
+
+#helppop {
+
+}
+
+body.big #helppop {
+  
+}
+
+#helppop .fa-question-circle {
+  font-size: 17px !important;
+}
+
+body.big #helppop .fa-question-circle {
+  font-size: 20px !important;
+  top: 5px !important;
+}
+
+body.big #helppop .fa-window-close {
+  right: 20px !important;
+  font-size: 19px !important;
+  top: -1px !important;
+}
+
+body.big #helppop .firsttd b {
+  font-size: 18px !important;
+  top: -7px !important;
+}
+
+body.big #helppop #helptitle {
+  font-size: 17px !important;
+}
+
+body.big #helppop #helpicon {
+  font-size: 18px !important;
+}
+
+body.big #helppop #helpcontent {
+  font-size: 16px !important;
+}
+
+
