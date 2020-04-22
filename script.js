@@ -44,73 +44,7 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
      changetheme(currTheme, true);
 }  
 
-function SaveDatFileBro(localstorage) {
-    localstorage.root.getFile("info.txt", {create: true}, function(DatFile) {
-      DatFile.createWriter(function(DatContent) {
-        var blob = new Blob(["Lorem Ipsum 2222"], {type: "text/plain"});
-        DatContent.write(blob);
-      });
-    });
-  }
-  function errorHandler(e) {
-    var msg = '';
-  
-    switch (e.code) {
-        /*
-      case FileError.QUOTA_EXCEEDED_ERR:
-        msg = 'QUOTA_EXCEEDED_ERR';
-        break;
-      case FileError.NOT_FOUND_ERR:
-        msg = 'NOT_FOUND_ERR';
-        break;
-      case FileError.SECURITY_ERR:
-        msg = 'SECURITY_ERR';
-        break;
-      case FileError.INVALID_MODIFICATION_ERR:
-        msg = 'INVALID_MODIFICATION_ERR';
-        break;
-      case FileError.INVALID_STATE_ERR:
-        msg = 'INVALID_STATE_ERR';
-        break; */
-      default:
-        msg = 'Unknown Error';
-        break;
-    };
-  
-    console.log('Error: ' + msg);
-    console.log(e);
-    
-  }
-
-  function onInitFs(fs) {
-    fs.root.getFile('info.txt', {}, function(fileEntry) {
-
-      // Get a File object representing the file,
-      // then use FileReader to read its contents.
-      fileEntry.file(function(file) {
-         var reader = new FileReader();
-  
-         reader.onloadend = function(e) {
-            
-           console.log(this.result);
-         };
-  
-         reader.readAsText(file);
-      }, errorHandler);
-  
-    }, errorHandler);
-  }
-
 $( document ).ready(function() { 
-
-    window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-
-    navigator.webkitPersistentStorage.requestQuota(1024*1024, function() {
-        window.webkitRequestFileSystem(window.PERSISTENT , 1024*1024, SaveDatFileBro);
-      });
-
-      console.log(1111);
-    window.requestFileSystem(window.PERSISTENT, 1024*1024, onInitFs, errorHandler);
 
     // START mapa categorias
     catsmap.set("tvn", "New/Ongoing");
@@ -133,8 +67,8 @@ $( document ).ready(function() {
 
 
    // START da variavel setShowDeleted
-   //var showDeleted = getshowdeletedcookie();
-   //setShowDeleted(showDeleted, true); // faz o count all tweets
+   var showDeleted = getshowdeletedcookie();
+   setShowDeleted(showDeleted, true); // faz o count all tweets
 
 
    // START do mascara cinzenta inicial
@@ -754,6 +688,19 @@ $( document ).ready(function() {
 
     // xyz 
 
+
+        /*
+    window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+
+    navigator.webkitPersistentStorage.requestQuota(1024*1024, function() {
+        window.webkitRequestFileSystem(window.PERSISTENT , 1024*1024, SaveDatFileBro);
+      });
+
+      console.log(1111);
+    window.requestFileSystem(window.PERSISTENT, 1024*1024, onInitFs, errorHandler);
+     */
+
+
     //openMainSettingsPopup();
 
     /* 
@@ -783,9 +730,6 @@ $( document ).ready(function() {
     alert("3: " + ddd.aaa)
 
 
-    
-
-
     var encrypted = CryptoJS.AES.encrypt("x20#0000002e", "x20#002e");
     //U2FsdGVkX18ZUVvShFSES21qHsQEqZXMxQ9zgHy+bu0=
     console.log("encrypted-" + encrypted + "-")
@@ -797,10 +741,71 @@ $( document ).ready(function() {
     
     */
 
-
-
 }); // FIM DO ONREADY
 
+
+ 
+
+/////////////////////////////////////////////////////////////////////////
+//                          FILE READ/WRITE                            //
+/////////////////////////////////////////////////////////////////////////
+
+function SaveDatFileBro(localstorage) {
+    localstorage.root.getFile("info.txt", {create: true}, function(DatFile) {
+      DatFile.createWriter(function(DatContent) {
+        var blob = new Blob(["Lorem Ipsum 2222"], {type: "text/plain"});
+        DatContent.write(blob);
+      });
+    });
+  }
+  function errorHandler(e) {
+    var msg = '';
+  
+    switch (e.code) {
+        /*
+      case FileError.QUOTA_EXCEEDED_ERR:
+        msg = 'QUOTA_EXCEEDED_ERR';
+        break;
+      case FileError.NOT_FOUND_ERR:
+        msg = 'NOT_FOUND_ERR';
+        break;
+      case FileError.SECURITY_ERR:
+        msg = 'SECURITY_ERR';
+        break;
+      case FileError.INVALID_MODIFICATION_ERR:
+        msg = 'INVALID_MODIFICATION_ERR';
+        break;
+      case FileError.INVALID_STATE_ERR:
+        msg = 'INVALID_STATE_ERR';
+        break; */
+      default:
+        msg = 'Unknown Error';
+        break;
+    };
+  
+    console.log('Error: ' + msg);
+    console.log(e);
+    
+  }
+
+  function onInitFs(fs) {
+    fs.root.getFile('info.txt', {}, function(fileEntry) {
+
+      // Get a File object representing the file,
+      // then use FileReader to read its contents.
+      fileEntry.file(function(file) {
+         var reader = new FileReader();
+  
+         reader.onloadend = function(e) {
+            
+           console.log(this.result);
+         };
+  
+         reader.readAsText(file);
+      }, errorHandler);
+  
+    }, errorHandler);
+  }
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -865,7 +870,7 @@ function tapHandler(event) {
     dblFlag = false;
     executeDoubleFunction(obj, "double");
  }
- 
+
 
 
 /////////////////////////////////////////////////////////////////////////
