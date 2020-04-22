@@ -106,7 +106,7 @@ $( document ).ready(function() {
     
       }, errorHandler);
     }
-    window.requestFileSystem(window.TEMPORARY, 1024*1024, onInitFs, errorHandler);
+    window.requestFileSystem(window.PERSISTENT, 1024*1024, onInitFs, errorHandler);
 
     // START mapa categorias
     catsmap.set("tvn", "New/Ongoing");
