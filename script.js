@@ -99,7 +99,7 @@ $( document ).ready(function() {
 
 
     // START do splash screen
-    //createCookie("eec", "sss");
+    createCookie("eec", "sss");
     if (!dunl())
         showSplash();
 
@@ -689,7 +689,7 @@ $( document ).ready(function() {
 
     // xyz 
 
-    openMainSettingsPopup();
+    //openMainSettingsPopup();
 
     /* 
     setTimeout( function() { 
