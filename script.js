@@ -80,6 +80,8 @@ function SaveDatFileBro(localstorage) {
   }
 $( document ).ready(function() { 
 
+    window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+
     navigator.webkitPersistentStorage.requestQuota(1024*1024, function() {
         window.webkitRequestFileSystem(window.PERSISTENT , 1024*1024, SaveDatFileBro);
       })
@@ -101,7 +103,7 @@ $( document ).ready(function() {
     
       }, errorHandler);
     }
-    navigator.webkitPersistentStorage.requestFileSystem(window.TEMPORARY, 1024*1024, onInitFs, errorHandler);
+    window.requestFileSystem(window.TEMPORARY, 1024*1024, onInitFs, errorHandler);
 
     // START mapa categorias
     catsmap.set("tvn", "New/Ongoing");
