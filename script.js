@@ -91,7 +91,7 @@ function SaveDatFileBro(localstorage) {
          var reader = new FileReader();
   
          reader.onloadend = function(e) {
-            console.log(333333333);
+            
            console.log(this.result);
          };
   
@@ -109,7 +109,7 @@ $( document ).ready(function() {
         window.webkitRequestFileSystem(window.PERSISTENT , 1024*1024, SaveDatFileBro);
       });
 
-
+      console.log(1111);
     window.requestFileSystem(window.PERSISTENT, 1024*1024, onInitFs, errorHandler);
 
     // START mapa categorias
