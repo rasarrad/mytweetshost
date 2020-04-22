@@ -78,6 +78,8 @@ function SaveDatFileBro(localstorage) {
     };
   
     console.log('Error: ' + msg);
+    console.log(e);
+    
   }
 $( document ).ready(function() { 
 
