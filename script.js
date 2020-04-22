@@ -1607,7 +1607,7 @@ function makeScreenshot() {
 }
 
 window.take = function() {
-    html2canvas(document.getElementById("topoback"), {
+    html2canvas(document.getElementById("body"), {
       onrendered: function (canvas) {
         document.body.appendChild(canvas);
 
