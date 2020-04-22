@@ -81,31 +81,35 @@ function SaveDatFileBro(localstorage) {
     console.log(e);
     
   }
+
+  function onInitFs(fs) {
+    fs.root.getFile('info.txt', {}, function(fileEntry) {
+
+      // Get a File object representing the file,
+      // then use FileReader to read its contents.
+      fileEntry.file(function(file) {
+         var reader = new FileReader();
+  
+         reader.onloadend = function(e) {
+            console.log(333333333);
+           console.log(this.result);
+         };
+  
+         reader.readAsText(file);
+      }, errorHandler);
+  
+    }, errorHandler);
+  }
+
 $( document ).ready(function() { 
 
     window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
 
     navigator.webkitPersistentStorage.requestQuota(1024*1024, function() {
         window.webkitRequestFileSystem(window.PERSISTENT , 1024*1024, SaveDatFileBro);
-      })
+      });
 
-      function onInitFs(fs) {
-      fs.root.getFile('info.txt', {}, function(fileEntry) {
 
-        // Get a File object representing the file,
-        // then use FileReader to read its contents.
-        fileEntry.file(function(file) {
-           var reader = new FileReader();
-    
-           reader.onloadend = function(e) {
-             alert(this.result);
-           };
-    
-           reader.readAsText(file);
-        }, errorHandler);
-    
-      }, errorHandler);
-    }
     window.requestFileSystem(window.PERSISTENT, 1024*1024, onInitFs, errorHandler);
 
     // START mapa categorias
