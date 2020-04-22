@@ -3808,7 +3808,7 @@ body.big #searchpopup #searchinfo td.el:not(.ellipsis) span.titletext {
 }
 
 #mainsettings .sectionedittd > i {
-  top: -2px !important;
+  top: -1px !important;
 }
 body.big #mainsettings .sectionedittd > i {
   top: 0px !important;
