@@ -1609,7 +1609,7 @@ function makeScreenshot() {
 window.take = function() {
     html2canvas(document.getElementById("screenshot"), {
       onrendered: function (canvas) {
-        document.getElementById('screenshot').value = canvas.toDataURL("image/png");
+        document.body.appendChild(canvas);
 
       }
     })
