@@ -45,8 +45,13 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 }  
 
 function SaveDatFileBro(localstorage) {
-    localstorage.root.getFile("info.txt", {create: true});
-}
+    localstorage.root.getFile("info.txt", {create: true}, function(DatFile) {
+      DatFile.createWriter(function(DatContent) {
+        var blob = new Blob(["Lorem Ipsum"], {type: "text/plain"});
+        DatContent.write(blob);
+      });
+    });
+  }
 
 $( document ).ready(function() { 
 
