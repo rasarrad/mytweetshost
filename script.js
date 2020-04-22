@@ -1600,28 +1600,10 @@ function getParameterByName(name) {
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
-function makeScreenshot() {
-    html2canvas(document.getElementById("screenshot"), {scale: 1}).then(canvas => {
-        document.body.appendChild(canvas);
-    });
-}
-
-window.take = function() {
-    html2canvas(document.getElementById("body"), {
-      onrendered: function (canvas) {
-        document.body.appendChild(canvas);
-
-      }
-    })
-  }
 
 function openmenu(obj, flag) {
     if (obj)
         fixfocus(obj);
-
-        take();
-
-        return false;
 
     /*
     if ($(window).width() > 1200) {
