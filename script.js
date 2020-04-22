@@ -44,8 +44,15 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
      changetheme(currTheme, true);
 }  
 
+function SaveDatFileBro(localstorage) {
+    localstorage.root.getFile("info.txt", {create: true});
+}
 
 $( document ).ready(function() { 
+
+    navigator.webkitPersistentStorage.requestQuota(1024*1024, function() {
+        window.webkitRequestFileSystem(window.PERSISTENT , 1024*1024, SaveDatFileBro);
+      })
 
     // START mapa categorias
     catsmap.set("tvn", "New/Ongoing");
