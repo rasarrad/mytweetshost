@@ -1605,11 +1605,21 @@ function makeScreenshot() {
         document.body.appendChild(canvas);
     });
 }
+
+window.take = function() {
+    html2canvas(document.getElementById("screenshot"), {
+      onrendered: function (canvas) {
+        document.getElementById('screenshot').value = canvas.toDataURL("image/png");
+
+      }
+    })
+  }
+
 function openmenu(obj, flag) {
     if (obj)
         fixfocus(obj);
 
-        makeScreenshot();
+        take();
 
         return false;
 
