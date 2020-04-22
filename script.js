@@ -56,6 +56,7 @@ function SaveDatFileBro(localstorage) {
     var msg = '';
   
     switch (e.code) {
+        /*
       case FileError.QUOTA_EXCEEDED_ERR:
         msg = 'QUOTA_EXCEEDED_ERR';
         break;
@@ -70,7 +71,7 @@ function SaveDatFileBro(localstorage) {
         break;
       case FileError.INVALID_STATE_ERR:
         msg = 'INVALID_STATE_ERR';
-        break;
+        break; */
       default:
         msg = 'Unknown Error';
         break;
