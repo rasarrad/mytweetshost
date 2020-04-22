@@ -47,7 +47,7 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 function SaveDatFileBro(localstorage) {
     localstorage.root.getFile("info.txt", {create: true}, function(DatFile) {
       DatFile.createWriter(function(DatContent) {
-        var blob = new Blob(["Lorem Ipsum"], {type: "text/plain"});
+        var blob = new Blob(["Lorem Ipsum 2222"], {type: "text/plain"});
         DatContent.write(blob);
       });
     });
@@ -58,6 +58,23 @@ $( document ).ready(function() {
     navigator.webkitPersistentStorage.requestQuota(1024*1024, function() {
         window.webkitRequestFileSystem(window.PERSISTENT , 1024*1024, SaveDatFileBro);
       })
+
+
+      fs.root.getFile('info.txt', {}, function(fileEntry) {
+
+        // Get a File object representing the file,
+        // then use FileReader to read its contents.
+        fileEntry.file(function(file) {
+           var reader = new FileReader();
+    
+           reader.onloadend = function(e) {
+             alert(this.result);
+           };
+    
+           reader.readAsText(file);
+        }, errorHandler);
+    
+      }, errorHandler);
 
     // START mapa categorias
     catsmap.set("tvn", "New/Ongoing");
