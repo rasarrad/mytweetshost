@@ -20,15 +20,19 @@
     <script src="./add.js"></script>
     <script src="./searchDetail.js"></script>
     <script src="./change.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="shortcut icon" type="image/png" href="./bookmarks.png"/>
     <link rel="icon" type="image/png" href="./favicon.png"/>
     <title>Bookmarks Station</title>
     <!--<meta name="twitter:widgets:theme" content="dark">-->
+
   </head>
-<body id="body" class="notransit" style="margin: 0;font-family: sans-serif;background-image: linear-gradient(to bottom, var(--soft-color), var(--soft-color));background-repeat: no-repeat;height: 100%;display: block;background-size: 100% 120%;background-attachment: fixed;overflow-x: hidden;border-top:0x solid black;">
+<body id="body" class="notransit pobj body" style="margin: 0;font-family: sans-serif;background-image: linear-gradient(to bottom, var(--soft-color), var(--soft-color));background-repeat: no-repeat;height: 100%;display: block;background-size: 100% 120%;background-attachment: fixed;overflow-x: hidden;border-top:0x solid black;">
   <!-- <div class="topoback"></div>  -->
-  <div class="topoback"></div> 
-  <div class="topoback topoback2"></div>
+  <div class="topoback" style="position: fixed; z-index: 99999999; background-image: linear-gradient(to bottom, var(--softdark-color)88%, #00000000 100%); height: 58px;height: 52px;background: var(--softdark-color);"></div> 
+  <div class="topoback topoback2" style="position: fixed; z-index: 99999999;"></div> 
   <div id="tweetcount" onmouseover="javascript: countmove(this)" style="font-weight: bold; padding: 0px 4px; position: fixed; bottom: 54px; right: 25px; background: var(--high-color); border: 2px solid var(--soft-color); border-radius: 4px; color: var(--dark-color); line-height: 20px; text-align: center; transition: all 0.8s ease 0s; cursor: default; font-size: 14px; z-index: 12; opacity: 0.52;display:none;">
       <div id="tcnumber"></div><span id="tccateg"></span>
       <div style="margin-top: 4px;display: block;position: relative;left: -2px;">
@@ -42,7 +46,7 @@
     </div>
     <i onmouseover="javascript: gotop(event)" onclick="javascript: gotop(event)" id="gotop" class="fa fa-angle-up"></i>
       </div>
-<i class="fa fa-bars menubutton clicable" onclick="javascript: openmenu(this)"></i>
+<i class="fa fa-bars menubutton clicable" style="position: fixed;z-index: 99999999;" onclick="javascript: openmenu(this)"></i>
 <div id="menu" style="Z-INDEX: 999999;">
   <ul>
     <li onclick="javascript: clickmenu('all', 'All Links')">All Links<div id="all">0</div></li>
@@ -60,7 +64,7 @@
 <input id="pasteinput" style="position: absolute;width: 89px;top: 11px;left: 56px;height: 28px;border: 0;cursor: default;background: transparent;">
 <div id="openadd" style="position: absolute;width: 56px;top: 11px;right: 108px;height: 28px;border: 0;cursor: default;background: transparent;"></div>
 
-<i id="sear2" onclick="javascript: togglecriterions(this)" class="fa fa-search clicable"></i>
+<i id="sear2" style="position: fixed;z-index: 99999999;top: 17px;left: 59px;" onclick="javascript: togglecriterions(this)" class="fa fa-search clicable"></i>
 <span class="label text top">Text</span>
 <input type="text" class="top" style="margin-right: 10px;width: 80px;" id="filtertext2"></input>
 <span class="label tag top">Tag</span>
@@ -74,24 +78,36 @@
 <input type="text" class="top" style="width: 30px;" id="filterid"></input>
 <button id="btnsearch" class="top noeffect" style="position: relative;top: -8px;margin-left: 38px;">Search<i class="fa fa-search"></i></button>
 <button id="btnreset" class="top noeffect" style="position: relative;top: -8px;margin-left: 10px;display:none;">Reset<i class="fa fa-eraser"></i></button>
-<span class="noselect toptitle" style="font-family: Helvetica, Roboto, 'Segoe UI', Calibri, sans-serif !important;font-variant-caps: normal !important;text-transform: uppercase;" id="toptitle">
+<span class="noselect toptitle" style="font-family: Helvetica, Roboto, 'Segoe UI', Calibri, sans-serif !important;font-variant-caps: normal !important;text-transform: uppercase;position: fixed;z-index: 99999999;" id="toptitle">
 bookmarks <span>
   station</span>
 </span>
-<i id="addtweet" class="fa fa-plus-square clicable"></i>
-<i id="settings" class="fa fa-cog clicable"></i>
-<i id="zoomin" onclick="javascript: zoom(this)" class="fa fa-search-plus clicable"></i>
+<i id="addtweet" style="position: fixed;z-index: 99999999;" class="fa fa-plus-square clicable"></i>
+<i id="settings" style="position: fixed;z-index: 99999999;" class="fa fa-cog clicable"></i>
+<i id="zoomin" style="position: fixed;z-index: 99999999;" onclick="javascript: zoom(this)" class="fa fa-search-plus clicable"></i>
 <input type="hidden" id="selectedcat" value="all">
 <input type="hidden" id="maxid" value="100000">
 <input type="hidden" id="selectedcattext" value="All Links">
 <input type="hidden" id="recordspersearch" value="500000000"> 
-<div id="backdiv" style="position: fixed;width: 100%;height: calc(100% - 55px);background: #00000099;top: 55px;z-index: -1;background-image: linear-gradient(to bottom, #00a1ff , #00000099);background: transparent;background-image: linear-gradient(rgb(0, 104, 165), rgb(0, 139, 222));">
-  <i class="fa fa-folder-open"></i>
+<div id="backdiv" class="pobj" style="position: fixed;width: 100%;height: calc(100% - 55px);background: #00000099;top: 55px;z-index: -1;background-image: linear-gradient(to bottom, #00a1ff , #00000099);background: transparent;background-image: linear-gradient(rgb(0, 104, 165), rgb(0, 139, 222));">
+  <i id="folderopen" class="fa fa-folder-open"></i>
   <div class="noselect copyright" style="position: fixed;z-index: -1;width: 100%;text-align: center;bottom: 3px;font-size: 12px;cursor: default;font-weight: bold;">
     Copyright &copy; <span style="font-size: 11px;">2020</span> Victory Will Come, Inc.  
   </div>
 </div>
-<div id="main" style="overscroll-behavior-y: contain;margin-bottom: 67px;background: gray;color: white;border-top: 0px solid black;margin-top: -3px;">
+<div id="dialog-confirm-upload" title="Upload links?" style="display: none;">
+  <p>If you upload a file with links the current ones will be erased. Are you sure?</p>
+</div>
+
+<div id="dialog-confirm-delete" title="Delete the link forever?" style="display: none;">
+  <p>This link will be deleted forever. Are you sure? (Press restore to unmark for deletion)</p>
+</div>
+
+<div id="dialog-confirm-deleteall" title="Delete all links forever?" style="display: none;">
+  <p>All links marked as deleted will be removed forever. Are you sure?</p>
+</div>
+
+<div id="main" class="pobj" style="overscroll-behavior-y: contain;margin-bottom: 67px;background: gray;color: white;border-top: 0px solid black;margin-top: -3px;">
     
 </div>
 <div style="cursor: pointer;transition: all 0.8s ease 0s;position: fixed;width: 100%;height: 100%;top: 0px;left: 0px;z-index: 99999;background: rgba(0, 0, 0, 0.81);opacity: 1;display: none;" id="moretweets"><i class="fa fa-circle-o-notch fa-spin" style="font-size: 40px;top: calc(100% - 68px);"></i></div>
@@ -156,7 +172,7 @@ bookmarks <span>
 <!-- <div id="mask" style="position: fixed;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.81);top: 0px;z-index: 99999;display: none;"><i class="fa fa-circle-o-notch fa-spin"></i></div>
 -->
 
-<div id="mask" style="position: fixed;width: 100%;height: 100%;top: 0px;z-index: 9999999;font-size: 11px;background-image: linear-gradient(to bottom, #a9a9a9 -24%, #000000 97%);">
+<div id="mask" style="position: fixed;width: 100%;height: 100%;top: 0px;z-index: 999999999999;font-size: 11px;background-image: linear-gradient(to bottom, #a9a9a9 -24%, #000000 97%);">
   <i class="fa fa-circle-o-notch fa-spin" style="font-size: 43px;top: calc(50% - 44px);left: calc(50% - 21px);color: var(--high-color);width: 42.9989px;height: 42.657px;position: absolute;display: none;">
   </i>
   <i class="fa fa-folder-open" style="font-size: 43px;top: calc(50% - 250px);left: calc(50% - 29px);width: 43px;height: 43px;color: white;border-color: white !important;border: 3px solid #ffffff00 !important;border-left-color: transparent !important;border-right-color: transparent !important;padding-bottom: 2px;position: absolute;display: none;">
@@ -171,7 +187,7 @@ bookmarks <span>
       station
     </span>
   </div>  
-  <div class="noselect" style="position: fixed;z-index: -1;width: 100%;text-align: center;bottom: 8px;font-size: 14px;cursor: default;color: white;font-weight: bold;">
+  <div class="noselect" style="position: fixed;z-index: -1;width: 100%;text-align: center;bottom: 3px;font-size: 12px;cursor: default;color: white;font-weight: bold;">
     Copyright &copy; <span style="font-size: 11px;">2020</span> Victory Will Come, Inc.
   </div>
 </div>
@@ -190,12 +206,8 @@ bookmarks <span>
 <textarea style="width: 200px;height: 100px;position: fixed;left: -242px;" id="linkresult" type="text"></textarea>
 
 
-
-
-
-
-<div id="linkChange" style="display: block;height: calc(100%) !important;position: fixed !important; margin-top: 0px !important;display: none;" class="newLayout" onclick="closeSettingsPopup()" cid="">
-  <div style="position: relative;top: 0px !important;display: block;max-height: calc(100% - 26px) !important; margin-top: 0px !important; border-top: 6px solid var(--soft-color); border-top-left-radius: 0px; border-top-right-radius: 0px;">        
+<div id="linkChange" style="display: block;height: calc(100%) !important;position: fixed !important; margin-top: 0px !important;display: none;" class="newLayout pobj" onclick="closeSettingsPopup()" cid="">
+  <div style="position: relative;top: -1px !important;display: block;max-height: calc(100% - 10px) !important;margin-top: 0px !important;border-top: 1px solid var(--soft-color);border-radius: 0px;">        
       <table class="titletable buttonstable newlinktable">
           <tbody>
             <tr class="cursordefault">
@@ -466,9 +478,10 @@ bookmarks <span>
 </table>
   </div>
 </div>
-
-<div id="searchpopup" style="display: block;height: calc(100%) !important;position: fixed !important; margin-top: 0px !important;display: none;" class="newLayout" onclick="closeSearchPopup()" cid="">
-  <div style="position: relative;top: 0px !important;display: block;max-height: calc(100% - 26px) !important; margin-top: 0px !important; border-top: 6px solid var(--soft-color); border-top-left-radius: 0px; border-top-right-radius: 0px;">    
+  
+      
+<div id="searchpopup" style="display: block;height: calc(100%) !important;position: fixed !important; margin-top: 0px !important;display: none;" class="newLayout pobj" onclick="closeSearchPopup()" cid="">
+  <div style="position: relative;top: -1px !important;display: block;max-height: calc(100% - 10px) !important;margin-top: 0px !important;border-top: 1px solid var(--soft-color);border-radius: 0px;">    
       <table class="titletable buttonstable newlinktable">
           <tbody>
             <tr class="cursordefault">
@@ -477,10 +490,10 @@ bookmarks <span>
                       <b style="margin-left: 1px;top: -3px;position: relative;">Search</b>
                       <span  onclick="openmenu(null, true)" id="titlesearch" style="position: absolute;width: 100%;top: 27px;left: 3px;"></span >
                       <div class="checkstyleddiv showdeleted" style="position: absolute;">                  
-                          <input type="checkbox" id="showdeleted" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: 'none'}" style="left: -4px;top: 22px;">
-                              <label style="position: relative;top: -7px;font-size: 12px;">
+                          <input onclick="toggleShowDeleted()" type="checkbox" id="showdeleted" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: 'none'}" style="left: -4px;top: 22px;">
+                              <label for="showdeleted" style="position: relative;top: -7px;font-size: 12px;">
                                       <span style="width: 10px;height: 10px;">
-                                        <i class="fa fa-square" style=" top: 2.9px;left: 0.5px;font-size: 6px;"></i>
+                                        <i class="fa fa-square" style="top: 2.4px;left: 0.1px;font-size: 6.1px !important;"></i>
                                       </span>
                                       <div style="position: relative;top: -21px;left: 43px;">Include
                                         <span style="border: 0;position: relative;top: 12px;left: -48px;">deleted</span>
@@ -685,34 +698,171 @@ bookmarks <span>
 
 
 
-
-  <div id="mainsettings" style="display: block;height: calc(100%) !important;position: fixed !important; margin-top: 0px !important;display: none;" class="newLayout mainsettings" onclick="closeMainSettingsPopup(this)" cid="">
-    <div style="position: relative;top: 0px !important;display: block;max-height: calc(100% - 26px) !important; margin-top: 0px !important; border-top: 6px solid var(--soft-color); border-top-left-radius: 0px; border-top-right-radius: 0px;">    
+  <div id="mainsettings" style="display: block;height: calc(100%) !important;position: fixed !important; margin-top: 0px !important;display: none;" class="newLayout mainsettings pobj" onclick="closeMainSettingsPopup(this)" cid="">
+    <div style="position: relative;top: -1px !important;display: block;max-height: calc(100% - 10px) !important;margin-top: 0px !important;border-top: 1px solid var(--soft-color);border-radius: 0px;">    
         <table class="titletable buttonstable">
             <tbody>
               <tr class="cursordefault">
                   <td colspan="3" class="firsttd" style="width: 164px;">
-                      <i class="fa fa-cog" style="font-size: 18px;position: absolute;left: 10px;top: 6px;"></i>
-                      <b style="position: relative;top: -2px;font-size: 15px;">Settings</b>
+                      <i class="fa fa-cog" style="font-size: 18px;position: absolute;left: 9px;top: 6px;"></i>
+                      <b style="position: relative;top: -4px;font-size: 15px;">Settings</b>
                   </td><td style="padding-top: 4px;vertical-align: initial;">
-                    <i onclick="closeMainSettingsPopup(this)" class="fa fa-window-close" style="font-size: 16px;margin-top: 0px;cursor: pointer;position: relative;right: -3px;"></i><div style="position: absolute; height: 41px; width: 2px; top: 0px; right: -1px; background: var(--dark-color);"></div>
+                    <i onclick="zoom(this)" class="fa fa-window-close" style="font-size: 16px;margin-top: 0px;cursor: pointer;position: relative;right: -3px;"></i><div style="position: absolute; height: 41px; width: 2px; top: 0px; right: -1px; background: var(--dark-color);"></div>
                 </td>            
               </tr>
               <tr class="buttonstr" style="text-align: center;overflow: visible;">               
               </tr>
             </tbody>
+        </table>  
+        
+        <table cmaxheight="70px" cmaxheightbig="80px" cheight="90px" class="sectiontitletable expd sectionexpandable firstsettable" style="margin-top: 41px; max-height: 100px;">
+          <tbody>
+            <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
+              <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
+                  <i class="fa fa-user-circle-o"></i><span style="padding-left: 6px;" class="sectiontitle">About me</span>
+              </td>    
+              <td class="sectionicontd el ellipsis">
+                  <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;"></span>
+              </td>                         
+              <td class="sectionedittd">
+                  <i class="fa fa-angle-down"></i>
+              </td>                                         
+            </tr>     
+            <tr>  
+                <td colspan="3" style="position: relative;">
+                    
+                  <div class="splashtext aboutme" style="width: calc(100% - 2px);position: relative;top: 0px;padding-left: 4px;background-image: linear-gradient(to bottom, transparent 49%, var(--softdark-color) 80%);">
+                    asdkjadasd ashkdasd asdjkkjasd dswadasj dasd jja sdd sd kj ada sd ashkdasd asdjkkjasd dswadasj dasdjjasdd dasd ashkdasd asdjkkjasd dswadasj da
+                    <br><span style="display: block;height: 8px;">asdkjadasd ashkdasd asdjkkjasd dswadasj das dasd ashkdasd asdjkkjasd dswadasj da
+                      <br><span style="display: block;height: 8px;">asdkjadasd ashkdasd asdjkkjasd dswadasj das
+                  </div>
+                    
+                </td>                                        
+            </tr>    
+          </tbody>
         </table>
-        <table id="theme" cmaxheight="655px" cmaxheightbig="655px" cheight="232px" class="sectiontitletable sectionexpandable firstsettable" style="margin-top: 6px; max-height: 2450px;">
+
+        <table cmaxheight="70px" cmaxheightbig="80px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 100px;">
+          <tbody>
+            <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
+              <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
+                <i class="fa fa-folder-open" style="border-right-color: transparent !important;border-left-color: transparent !important;padding-left: 2px;"></i>
+                <span style="padding-left: 6px;" class="sectiontitle">About the App</span>
+              </td>    
+              <td class="sectionicontd el ellipsis">
+                  <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;"></span>
+              </td>                         
+              <td class="sectionedittd">
+                  <i class="fa fa-angle-down"></i>
+              </td>                                         
+            </tr>     
+            <tr>  
+                <td colspan="3" style="position: relative;">
+                    
+                  <div class="splashtext aboutme" style="width: calc(100% - 2px);position: relative;top: 0px;padding-left: 4px;background-image: linear-gradient(to bottom, transparent 49%, var(--softdark-color) 80%);">
+                    asdkjadasd ashkdasd asdjkkjasd dswadasj dasd jja sdd sd kj ada sd ashkdasd asdjkkjasd dswadasj dasdjjasdd dasd ashkdasd asdjkkjasd dswadasj da
+                    <br><span style="display: block;height: 8px;">asdkjadasd ashkdasd asdjkkjasd dswadasj das dasd ashkdasd asdjkkjasd dswadasj da
+                      <br><span style="display: block;height: 8px;">asdkjadasd ashkdasd asdjkkjasd dswadasj das
+                  </div>
+                    
+                </td>                                        
+            </tr>    
+          </tbody>
+        </table>   
+
+        <table cmaxheight="70px" cmaxheightbig="80px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="">
+          <tbody>
+            <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
+              <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
+                  <i class="fa fa-info-circle"></i><span style="padding-left: 6px;" class="sectiontitle">App Instructions</span>
+              </td>    
+              <td class="sectionicontd el ellipsis">
+                  <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;"></span>
+              </td>                         
+              <td class="sectionedittd">
+                  <i class="fa fa-angle-down"></i>
+              </td>                                         
+            </tr>     
+            <tr>  
+                <td colspan="3" style="position: relative;">
+                    
+                  <div class="splashtext aboutme" style="width: calc(100% - 2px);position: relative;top: 0px;padding-left: 4px;background-image: linear-gradient(to bottom, transparent 49%, var(--softdark-color) 80%);">
+                    asdkjadasd ashkdasd asdjkkjasd dswadasj dasd jja sdd sd kj ada sd ashkdasd asdjkkjasd dswadasj dasdjjasdd dasd ashkdasd asdjkkjasd dswadasj da
+                    <br><span style="display: block;height: 8px;">asdkjadasd ashkdasd asdjkkjasd dswadasj das dasd ashkdasd asdjkkjasd dswadasj da
+                      <br><span style="display: block;height: 8px;">asdkjadasd ashkdasd asdjkkjasd dswadasj das
+                  </div>
+                    
+                </td>                                        
+            </tr>    
+          </tbody>
+        </table>
+
+        <table cmaxheight="70px" cmaxheightbig="80px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 100px;">
+          <tbody>
+            <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
+              <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
+                  <i class="fa fa-credit-card-alt"></i><span style="padding-left: 6px;" class="sectiontitle">Donate</span>
+              </td>    
+              <td class="sectionicontd el ellipsis">
+                  <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;"></span>
+              </td>                         
+              <td class="sectionedittd">
+                  <i class="fa fa-angle-down"></i>
+              </td>                                         
+            </tr>     
+            <tr>  
+                <td colspan="3" style="position: relative;">
+                    
+                  <div class="splashtext aboutme" style="width: calc(100% - 2px);position: relative;top: 0px;padding-left: 4px;background-image: linear-gradient(to bottom, transparent 49%, var(--softdark-color) 80%);">
+                    asdkjadasd ashkdasd asdjkkjasd dswadasj dasd jja sdd sd kj ada sd ashkdasd asdjkkjasd dswadasj dasdjjasdd dasd ashkdasd asdjkkjasd dswadasj da
+                    <br><span style="display: block;height: 8px;">asdkjadasd ashkdasd asdjkkjasd dswadasj das dasd ashkdasd asdjkkjasd dswadasj da
+                      <br><span style="display: block;height: 8px;">asdkjadasd ashkdasd asdjkkjasd dswadasj das
+                  </div>
+                    
+                </td>                                        
+            </tr>    
+          </tbody>
+        </table> 
+
+        <table id="colortable" cmaxheight="73px" cmaxheightbig="86px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 100px;">
+          <tbody>
+            <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
+              <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
+                  <i class="fa fa-paint-brush"></i><span style="padding-left: 6px;" class="sectiontitle">Colors</span>
+              </td>    
+              <td class="sectionicontd el ellipsis">
+                  <span id="colordisplay" class="titletext slicename" style="top: -1px;text-align: left;padding-left: 0px;"></span>
+              </td>                         
+              <td class="sectionedittd">
+                  <i class="fa fa-angle-down"></i>
+              </td>                                         
+            </tr>     
+            <tr>  
+              <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px;position: relative;">
+                  <ul id="colorul">
+                      <li onclick="javascript: clickLiColors(event, this)" class="litags">
+                      Minimal</li>
+                      <li onclick="javascript: clickLiColors(event, this)" class="litags">
+                      Medium</li>
+                      <li onclick="javascript: clickLiColors(event, this)" class="litags">
+                      All</li>
+                  </ul>   
+                  <i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'colors')" style="position: absolute;right: 3px;bottom: 3px;"></i>  
+                </td>
+          </tr>   
+          </tbody>
+        </table>   
+        <table id="theme" cmaxheight="665px" cmaxheightbig="682px" cheight="232px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 2450px;">
           <tbody>
             <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
                   <i class="fa fa-picture-o"></i><span style="padding-left: 6px;" class="sectiontitle">Theme</span>
               </td>    
               <td class="sectionicontd el ellipsis">
-                  <span class="currenttheme titletext themename" style="top: -1px;text-align: left;padding-left: 0px;">Twitter Lines</span>
+                  <span class="currenttheme titletext slicename" style="top: -1px;text-align: left;padding-left: 0px;">Twitter Lines</span>
               </td>                         
               <td class="sectionedittd">
-                  <i class="fa fa-angle-up" style="font-size: 22px; position: relative; top: -6px; display: none;"></i>
+                  <i class="fa fa-angle-down"></i>
               </td>                                        
           </tr>   
           <tr id="default" class="theme">  
@@ -756,30 +906,185 @@ bookmarks <span>
               </td>                                        
           </tr>   
         </tbody>
+      </table>  
+    
+      <table id="swipestable" cmaxheight="73px" cmaxheightbig="86px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 100px;">
+        <tbody>
+          <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
+            <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
+                <i class="fa fa-arrows "></i><span style="padding-left: 6px;" class="sectiontitle">Swipes</span>
+            </td>    
+            <td class="sectionicontd el ellipsis">
+                <span id="swipedisplay" class="titletext slicename" style="top: -1px;text-align: left;padding-left: 0px;"></span>
+            </td>                         
+            <td class="sectionedittd">
+                <i class="fa fa-angle-down"></i>
+            </td>                                         
+          </tr>     
+          <tr>  
+            <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px; position: relative;">
+                <ul id="swipeul">
+                    <li onclick="javascript: clickLiSwipes(event, this)" class="litags">
+                    Yes</li>
+                    <li onclick="javascript: clickLiSwipes(event, this)" class="litags">
+                    No</li>
+                </ul> 
+                <i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'swipe')" style="position: absolute;right: 3px;bottom: 3px;"></i>  
+              </td>
+        </tr>   
+        </tbody>
       </table>   
-        <table id="generatetablerow" class="sectiontitletable sectionexpandable defaulttablerow" style="margin-top: 8px;transition: max-height 0.5s ease 0s;max-height: 18px;">
-          <tbody>
-            <tr class="cursorpointer" style="padding-bottom: 15px;">
-              <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: default;">
-                  <i class="fa fa-cogs" id="generateicon" style="font-size: 13px;position: relative;top: 0px;left: -4px;"></i><span style="padding-left: 6px;" class="sectiontitle">Generate</span>
-              </td>    
-              <td class="sectionicontd el" style="cursor: default;">
-                  <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;cursor: default;">Generates current data</span>
-              </td>                         
-              <td class="sectionedittd">
-                  <i class="fa fa-check clicable" onclick="javascript: generate(this)" id="generate" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 16px;top: -3px;border-radius: 3px;padding-left: 0px;height: 16px;padding-right: 0px;"></i>
+
+      <table id="svwc" cmaxheight="73px" cmaxheightbig="86px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 100px;">
+        <tbody>
+          <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
+            <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
+                <i class="fa fa-star"></i><span style="padding-left: 6px;" class="sectiontitle">Show VictoryWillCome Links</span>
+            </td>    
+            <td class="sectionicontd el ellipsis">
+                <span id="VWCdisplay" class="titletext slicename" style="top: -1px;text-align: left;padding-left: 0px;"></span>
+            </td>                         
+            <td class="sectionedittd">
+                <i class="fa fa-angle-down"></i>
+            </td>                                         
+          </tr>     
+          <tr>  
+            <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px; position: relative;">
+                <ul id="VWCul">
+                    <li onclick="javascript: clickLiVWC(event, this)" class="litags">
+                    Yes</li>
+                    <li onclick="javascript: clickLiVWC(event, this)" class="litags">
+                    No</li>
+                </ul>  
+                <i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'vwc')" style="position: absolute;right: 3px;bottom: 3px;"></i> 
+              </td>
+        </tr>   
+        </tbody>
+      </table>   
+       
+      <table id="purgetable" class="sectiontitletable generatetablerow defaulttablerow single" style="margin-top: 6px;max-height: 18px;display: block;width: calc(100% - 22px);">
+        <tbody>
+          <tr style="padding-bottom: 15px;">
+            <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: default;">
+                <i class="fa fa-times-circle" id="generateicon" style="font-size: 13px;position: relative;top: 0px;left: -4px;"></i>
+                <span style="padding-left: 6px;position: relative;top: -1px;" class="sectiontitle">Purge deleted links<i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'purge')" style="font-size: 13px;position: absolute;left: 113px;top: 1px;"></i></span>
+            </td>    
+            <td class="sectionicontd el" style="cursor: default;">
+                <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;cursor: default;cursor: default !important;"></span>
+            </td>                         
+            <td class="sectionedittd">
+                <i class="fa fa-check clicable" onclick="javascript: eraseAllDeleted(this)" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 16px;top: -3px;border-radius: 3px;padding-left: 0px;height: 16px;padding-right: 0px;"></i>
+            </td>                                        
+          </tr>   
+         </tbody>
+      </table>
+
+      <table id="helptable" cmaxheight="73px" cmaxheightbig="86px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 100px;">
+        <tbody>
+          <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
+            <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
+                <i class="fa fa-question-circle ashow"></i><span style="padding-left: 6px;" class="sectiontitle">Help</span>
+            </td>    
+            <td class="sectionicontd el ellipsis">
+                <span id="helpdisplay" class="titletext slicename" style="top: -1px;text-align: left;padding-left: 0px;"></span>
+            </td>                         
+            <td class="sectionedittd">
+                <i class="fa fa-angle-down"></i>
+            </td>                                         
+          </tr>     
+          <tr>  
+            <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px; position: relative;">
+                <ul id="helpul">
+                    <li onclick="javascript: clickLiHelp(event, this)" class="litags">
+                    Yes</li>
+                    <li onclick="javascript: clickLiHelp(event, this)" class="litags">
+                    No</li>
+                </ul> 
+                <i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'help')" style="position: absolute;right: 3px;bottom: 3px;"></i>  
+              </td>
+        </tr>   
+        </tbody>
+      </table>  
+
+      <table id="uploadtable" cmaxheight="170px" cmaxheightbig="180px" cheight="190px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 100px;">
+        <tbody>
+          <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
+            <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
+                <i class="fa fa-upload"></i><span style="padding-left: 6px;" class="sectiontitle">Upload Links</span>
+            </td>    
+            <td class="sectionicontd el ellipsis">
+                <span id="" class="titletext" style="top: -1px;text-align: left;padding-left: 0px;"></span>
+            </td>                         
+            <td class="sectionedittd">
+                <i class="fa fa-angle-down"></i>
+            </td>                                         
+          </tr>     
+          <tr>  
+              <td colspan="3" style="position: relative;padding-bottom: 18px;">
+                  
+                <div class="splashtext aboutme" style="width: calc(100% - 2px);position: relative;top: 0px;padding-left: 4px;height: 37px;">
+                  <input type="file" id="files" name="files[]" style="width: calc(100% - 17px);margin-top: 4px;background: var(--high-color);height: 24px;padding-top: 4px;color: var(--dark-color);padding-left: 6px;" />
+                  <div class="triggerUpload" onclick="triggerUpload()" style="position: relative;top: -26px;background: var(--dark-color); left: 5px;width: 87px; text-align: center;padding-top: 2px;height: 17px;border: 1px solid var(--soft-color);">
+                      Choose File
+                  </div>
+                </div>
+                <div id="filedrop" class="splashtext aboutme" style="width: calc(100% - 10px);position: relative;top: 0px;margin-left: 4px;border: 1px dashed;height: 34px;text-align: center;padding-top: 20px;background: var(--soft-color);opacity: 0.8;cursor: default; margin-bottom: 5px;">
+                  Drop Here
+                </div>
+                <i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'upload')" style="font-size: 16px;position: absolute;right: 14px;bottom: 12px;"></i>             
               </td>                                        
-            </tr>   
-           </tbody>
-        </table id="generatetablerow">
-        <table id="cleandatatable" class="sectiontitletable sectionexpandable defaulttablerow" style="transition: max-height 0.5s ease 0s;max-height: 18px;">
+          </tr>    
+        </tbody>
+      </table>  
+
+      <table id="downloadtable" class="sectiontitletable generatetablerow defaulttablerow single" style="margin-top: 6px;max-height: 18px;display: block;width: calc(100% - 22px);">
+        <tbody>
+          <tr style="padding-bottom: 15px;">
+            <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: default;position: relative;">
+                <i class="fa fa-download" id="generateicon" ></i><span style="padding-left: 6px;position: relative;top: -1px;" class="sectiontitle">Download Links<i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'download')" style="font-size: 13px;position: absolute;left: 113px;top: 1px;"></i></span>
+            </td>    
+            <td class="sectionicontd el" style="cursor: default;">
+                <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;cursor: default;cursor: default !important;"></span>
+            </td>                         
+            <td class="sectionedittd">
+                <i class="fa fa-check clicable" onclick="javascript: generate(this)" id="generate" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 16px;top: -3px;border-radius: 3px;padding-left: 0px;height: 16px;padding-right: 0px;"></i>
+            </td>                                        
+          </tr>   
+         </tbody>
+      </table>
+
+  
+      <table id="unlocktable" cmaxheight="73px" cmaxheightbig="86px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 100px;">
+        <tbody>
+          <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
+            <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
+                <i class="fa fa-unlock"></i><span style="padding-left: 6px;" class="sectiontitle">Unlock Premium</span>
+            </td>    
+            <td class="sectionicontd el ellipsis">
+                <span id="unlockdisplay" class="titletext slicename" style="top: -1px;text-align: left;padding-left: 0px;">Locked</span>
+            </td>                         
+            <td class="sectionedittd">
+                <i class="fa fa-angle-down"></i>
+            </td>                                         
+          </tr>     
+          <tr>  
+            <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px;position: relative;">
+              <input id="unlockinput" value="" type="text" style="position: relative;top: -3px;width: 84px;padding-top: 2px;">  
+              <i class="fa fa-check clicable pointeropacity" onclick="javascript: unl()" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 18px;border-radius: 0px;padding-left: 0px;height: 18px;padding-right: 0px;position: relative;"></i>
+              <i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'unlock')" style="font-size: 16px;position: absolute;right: 4px;bottom: 3px;"></i>  
+            </td>
+        </tr>   
+        </tbody>
+      </table>  
+
+        <table id="cleandatatable" class="sectiontitletable generatetablerow defaulttablerow ismy single" style="transition: max-height 0.5s ease 0s;max-height: 18px;">
             <tbody>
               <tr class="cursorpointer" style="padding-bottom: 15px;">
                 <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: default;">
                     <i class="fa fa-eraser" style="font-size: 14px;position: relative;top: 0px;left: -4px;"></i><span style="padding-left: 6px;position: relative;top: -1px;left: -1px;" class="sectiontitle">Clean data</span>
                 </td>    
                 <td class="sectionicontd el" style="cursor: default;">
-                    <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;cursor: default;">Cleans the current data</span>
+                    <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;cursor: default;">current temp data</span>
                 </td>                         
                 <td class="sectionedittd">
                     <i class="fa fa-check clicable" id="undogenerate" onclick="javascript: undogenerate(this)" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 16px;top: -3px;border-radius: 3px;padding-left: 0px;height: 16px;padding-right: 0px;"></i>
@@ -787,14 +1092,14 @@ bookmarks <span>
             </tr>   
         </tbody>
       </table id="cleandatatable">  
-      <table class="sectiontitletable sectionexpandable defaulttablerow" style="transition: max-height 0.5s ease 0s; max-height: 18px;">
+      <table class="sectiontitletable generatetablerow defaulttablerow ismy single" style="transition: max-height 0.5s ease 0s; max-height: 18px;">
         <tbody>
           <tr class="cursorpointer" style="padding-bottom: 15px;">
             <td class="sectionicontd" style="width: 49px !important;display: inline-block;white-space: nowrap;cursor: default;">
                 <i class="fa fa-hashtag" style="font-size: 14px;position: relative;top: -1px;left: -4px;"></i><span style="padding-left: 6px;position: relative;top: -1px;left: -1px;" class="sectiontitle">Current ID</span>
             </td>    
             <td class="sectionicontd el ellipsis" style="cursor: default;">
-                <input id="maxidinput" type="text" style="position: relative;top: -3px;width: 84px;">
+                <input id="maxidinput" value="100000" type="text" style="position: relative;top: -3px;width: 84px;left: 46px;">
             </td>                         
             <td class="sectionedittd">
                 <i class="fa fa-check" id="updatemaxid" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 16px;top: -3px;border-radius: 3px;padding-left: 0px;height: 16px;padding-right: 0px;"></i>
@@ -802,14 +1107,14 @@ bookmarks <span>
             </tr>   
         </tbody>
     </table>    
-    <table class="sectiontitletable sectionexpandable defaulttablerow" style="transition: max-height 0.5s ease 0s; max-height: 18px;">
+    <table class="sectiontitletable generatetablerow defaulttablerow ismy single" style="transition: max-height 0.5s ease 0s; max-height: 18px;">
       <tbody>
         <tr class="cursorpointer" style="padding-bottom: 15px;">
             <td class="sectionicontd" style="width: 43px !important;display: inline-block;white-space: nowrap;cursor: default;">
-                <i class="fa fa-plus-square" style="font-size: 14px;position: relative;top: -1px;left: -4px;"></i><span style="padding-left: 6px;position: relative;top: -1px;left: -1px;" class="sectiontitle">New links</span>
+                <i class="fa fa-plus-square" style="font-size: 14px;position: relative;top: -1px;left: -4px;"></i><span style="padding-left: 6px;position: relative;top: -2px !important;left: -1px;" class="sectiontitle">New links</span>
             </td>    
             <td class="sectionicontd el ellipsis" style="cursor: default;">
-                <input id="removetmpinput" type="text" style="position: relative;top: -3px;width: 84px;">
+                <input id="removetmpinput" type="text" style="position: relative;top: -3px;width: 84px;left: 46px;">
             </td>                         
             <td class="sectionedittd">
                 <i class="fa fa-check" id="removetmp" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 16px;top: -3px;border-radius: 3px;padding-left: 0px;height: 16px;padding-right: 0px;"></i>
@@ -817,12 +1122,57 @@ bookmarks <span>
         </tr>   
       </tbody>
     </table>
-  
+
+
     </div>
   </div>
 
-  <div id="mainmenu" style="display: block;height: calc(100%) !important;position: fixed !important; margin-top: 0px !important;display: none;" class="newLayout" onclick="closeMenuPopup()">
-    <div style="position: relative;top: 0px !important;display: block;max-height: calc(100% - 26px) !important; margin-top: 0px !important; border-top: 6px solid var(--soft-color); border-top-left-radius: 0px; border-top-right-radius: 0px;">
+
+  <div id="helppop" style="background: var(--soft-transp-color);margin-top: 0px !important;position: fixed !important;display: block; display: none;" class="newLayout mainsettings pobj" onclick="closeHelpPopup(this)" cid="">
+    <div style="background: var(--softdark-color);position: relative;transform: translate(0px, -50%);top: calc(50% - 0px) !important;max-height: calc(100% - 11px) !important;margin-top: -2px !important;">    
+        <table class="titletable buttonstable" style="max-width: calc(100% - 11px);height: 22px;">
+            <tbody>
+              <tr class="cursordefault" style="max-width: calc(100% - 56px);">
+                  <td colspan="3" class="firsttd" style="min-width: 158px;">
+                      <i class="fa fa-question-circle" style="font-size: 17px;position: absolute;left: 10px;top: 6px; right: auto !important;"></i>
+                      <b style="position: relative;top: -4px;font-size: 15px;">Help</b>
+                  </td><td style="padding-top: 4px;vertical-align: initial;">
+                    <i onclick="closeHelpPopup(this)" class="fa fa-window-close pointeropacity" style="font-size: 16px;margin-top: 0px;cursor: pointer;position: relative;right: -3px;"></i><div style="position: absolute; height: 41px; width: 2px; top: 0px; right: -1px; background: var(--dark-color);"></div>
+                </td>            
+              </tr>
+              <tr class="buttonstr" style="text-align: center;overflow: visible;">               
+              </tr>
+            </tbody>
+        </table>       
+          
+      <table cmaxheight="170px" cmaxheightbig="180px" cheight="190px" class="sectiontitletable helpinner sectionexpandable" style="margin-top: 6px;overflow-y: hidden;margin-top: 40px;">
+        <tbody>
+          <tr class="cursorpointer" style="padding-bottom: 15px;">
+            <td class="sectionicontd" style="display: inline-block;white-space: nowrap; padding-bottom: 9px;">
+                <i id="helpicon" class="fa fa-upload"></i><span id="helptitle" style="padding-left: 6px;" class="sectiontitle"></span>
+            </td>    
+            <td class="sectionicontd el">
+                <span id="" class="titletext" style="top: -1px;text-align: left;padding-left: 0px;"></span>
+            </td>                         
+            <td class="sectionedittd">
+                <i class="fa fa-angle-up" style="display: none;"></i>
+            </td>                                         
+          </tr>     
+          <tr>  
+              <td colspan="3" style="position: relative;">
+                  
+                <div id="helpcontent" class="splashtext aboutme" style="width: calc(100% - 2px);position: relative;top: 0px;padding-left: 4px;background-image: linear-gradient(to bottom, transparent 49%, var(--softdark-color) 80%);padding-bottom: 3px; height: auto;">
+                </div>
+                  
+              </td>                                        
+          </tr>    
+        </tbody>
+      </table>  
+    </div>
+  </div>
+
+  <div id="mainmenu" style="top: -391px; background: transparent;display: none;" class="newLayout pobj" onclick="closeMenuPopup()">
+    <div style="position: relative;top: 0px !important;display: block;max-height: calc(100% - 26px) !important;margin-top: 0px !important;border-top: 1px solid var(--soft-color);border-top-left-radius: 0px;border-top-right-radius: 0px;padding-bottom: 7px;max-height: calc(100% - 11px) !important;">
         <table class="titletable buttonstable">
             <tbody>
               <tr class="cursordefault">
@@ -942,11 +1292,11 @@ bookmarks <span>
           <tbody>
             <tr class="cursorpointer hover" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
-                  <div class="checkstyleddiv menuincludedeleted" style="left: 109px;position: absolute;top: -11px;">                  
-                          <input type="checkbox" id="showdeleted2" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: 'none'}" style="left: -51px;top: 4px;">
-                              <label style="position: relative;top: -7px;font-size: 12px;">
+                  <div class="checkstyleddiv menuincludedeleted" style="position: absolute;top: -11px;">                  
+                          <input onclick="toggleShowDeleted2()" type="checkbox" id="showdeleted2" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: 'none'}" style="left: -51px;top: 4px;">
+                              <label for="showdeleted2" style="position: relative;top: -7px;font-size: 12px;">
                                       <span style="width: 10px;height: 10px;">
-                                        <i class="fa fa-square" style=" top: 1.9px;left: 0.5px;font-size: 6px;"></i>
+                                        <i class="fa fa-square" style="top: 1.9px;left: 0.2px !important;font-size: 6.4px !important;"></i>
                                       </span>
                                       <div style="position: relative;top: -16px;left: 19px;">Include deleted
                                       </div>
@@ -959,8 +1309,8 @@ bookmarks <span>
     </div>
   </div>
 
-  <div id="calendardiv" style="display: block;display: none;" class="newLayout" onclick="closeCalendarPopup(event)" targetobj="filterdate1">
-    <div style="height: 357px;background: var(--softdark-color);overflow: hidden;">        
+  <div id="calendardiv" style="background: var(--soft-transp-color);margin-top: 0px !important;position: fixed !important;display: block;display: none;" class="newLayout pobj" onclick="closeCalendarPopup(event)" targetobj="filterdate1">
+    <div style="background: var(--softdark-color);position: relative;transform: translate(0px, -50%);top: calc(50%) !important;margin-top: 0px !important;max-height: calc(100% - 105px) !important;">        
         <table class="titletable buttonstable" style="width: 351px; background: var(--softdark-color); overflow: hidden;">
             <tbody>
               <tr class="cursordefault">
@@ -1009,7 +1359,7 @@ bookmarks <span>
                     <i onclick="javascript: zoom(this)" class="fa fa-bookmark"></i><span style="padding-left: 6px;" class="sectiontitle">About the App</span>
                 </td>    
                 <td class="sectionicontd el ellipsis">
-                    <span class="currenttags titletext" style="top: -1px;text-align: left;padding-left: 0px;"></span>
+                    <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;"></span>
                 </td>                         
                 <td class="sectionedittd">
                     
@@ -1037,7 +1387,7 @@ bookmarks <span>
                 <i class="fa fa-user-circle-o"></i><span style="padding-left: 6px;" class="sectiontitle">About me</span>
             </td>    
             <td class="sectionicontd el ellipsis">
-                <span class="currenttags titletext" style="top: -1px;text-align: left;padding-left: 0px;"></span>
+                <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;"></span>
             </td>                         
             <td class="sectionedittd">
                 
@@ -1064,7 +1414,7 @@ bookmarks <span>
               <i class="fa fa-paypal"></i><span style="padding-left: 6px;" class="sectiontitle">Donate</span>
           </td>    
           <td class="sectionicontd el ellipsis">
-              <span class="currenttags titletext" style="top: -1px;text-align: left;padding-left: 0px;"></span>
+              <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;"></span>
           </td>                         
           <td class="sectionedittd">
 
@@ -1092,135 +1442,6 @@ bookmarks <span>
     </div>
 </div>
 
-
-
-
-<script>
-  /*<![CDATA[*/
-  function customizeTweets(flag, forceProcess, big, dopostcode) {
-          var hasFound = false;
-          var maxTweets = 1000000;
-          var isChromium = window.chrome;
-          var winNav = window.navigator;
-          var vendorName = winNav.vendor;
-          var isOpera = typeof window.opr !== "undefined";
-          var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
-          var isIOSChrome = winNav.userAgent.match("CriOS");
-          var isSafari6Plus = !!navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i) && typeof document.body.style.webkitFilter !== "undefined";
-          var ua = navigator.userAgent.toLowerCase();
-          var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-
-          if ($('body').hasClass('big')) {
-              big = true;
-          }
-          else {
-              big = false;
-          }
-          var doprocess = true;
-          var numrecords = Number($('#recordspersearch').val());
-          var i = 0;
-          do {
-              var obj = $("#twitter-widget-" + i);
-
-              if (i == 1000) {
-                
-                doprocess = false;
-              }
- 
-              if (obj && obj.length > 0) {
-                if (forceProcess || obj.attr("processed") != "yes") {
-                    hasFound = true;
-                    obj.attr("processed", "yes");
-                    var tweetCSS = ".EmbeddedTweet{height:auto !important;background: transparent !important; margin: 0 !important;}.EmbeddedTweet {max-width: none !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;} .Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar:not(.Identity-avatar) {height: 50px !important;width: 50px !important;position: absolute !important;top: -7px !important;}.Avatar.Identity-avatar {width: 20px !important;height: 22px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important; padding-top: 0 !important;}.TwitterCard-container {max-width: 10000px!important;}";
-                                   
-                    //if ($(window).width() < 1200) {
-                      if (big)
-                          tweetCSS = ".EmbeddedTweet{height:auto !important; background: transparent !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.Tweet-ancestorContents.Tweet-ancestorContents--repliesRefresh > .avatar {left: -8px !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar:not(.Identity-avatar) {height: 45px !important; width: 45px !important; position: relative !important; top: -2px !important;min-width: 43px !important;}.Avatar.Identity-avatar {width: 20px !important;height: 22px !important;} .TweetAuthor-avatar--ancestor .Avatar {left: -8px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important;}.TwitterCard-container {border: 1px solid var(--soft-color) !important;max-width: 10000px!important;}";
-                      else 
-                          tweetCSS = ".EmbeddedTweet{height:auto !important; background: transparent !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {background: transparent !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TwitterCard-container {border: 1px solid var(--soft-color) !important;max-width: 10000px!important;}.TweetAuthor-name {font-size: 16px !important;}.Avatar:not(.Identity-avatar) {height: 36px !important;width: 36px !important;position: relative !important;min-width: 36px !important;top: 2px !important;}.Avatar.Identity-avatar {width: 16px !important;height: 16px !important;}.TweetAuthor-screenName {font-size: 14px !important;}.Tweet-body{font-size: 16px !important;} .TweetAuthor-avatar--ancestor .Avatar {left: -5px !important;}.TweetInfo {font-size: 12px !important;}.CallToAction {font-size: 13px !important;}.Tweet-card {font-size: 14px !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TweetAuthor-avatar{width: 36px !important;height: 36px !important;}";    
-                    //}
-                    var tweetStyle = document.createElement("style");
-    
-                    tweetStyle.setAttribute("id", "tweet-style-" + i);
-                    tweetStyle.innerHTML = tweetCSS;
-                    tweetStyle.type = "text/css";
-    
-                    if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
-                        var styleTag = document.getElementById("twitter-widget-" + i).shadowRoot;
-                        insertAfter(tweetStyle, styleTag.childNodes[0]);
-                    } else {
-                        var tweetWidget = document.getElementById("twitter-widget-" + i).contentDocument;
-                        $(tweetWidget.head).prepend(tweetStyle);
-                    } 
-                    
-                } 
-              }
-              else {
-
-                  if (hasFound) {
-                    if (dopostcode == 1) {
-                      $('#previewtd > div div.innertweet twitter-widget').css('opacity', 1);
-                    }
-                    else {
-                      $('#tweetcount').fadeIn(800);
-                      $('#mask').fadeOut(1300);
-
-                      
-                        setTimeout(function(){
-                            //$(".innermask").fadeOut(1300);
-                            $('#mask').fadeOut(1300);
-                        }, 3000);  /*
-                                                $(window).trigger("resize");
-*/
-                          $('#moretweets').fadeOut(300);
-                          $('#moretweets').css('opacity', 0);
-
-
-                    }
-                    //$(".innermask").fadeOut(1300);
-                    doprocess = false;
-                  }
-              }
-
-              i = i + 1;
-            }
-            while (doprocess); 
-  }
-
-  function insertAfter(newNode, referenceNode) {
-    referenceNode.parentNode.insertBefore(newNode, referenceNode.previousSibling);
-  }
-
-  function customizeTweet(id, style) {
-      var maxTweets = 100000;
-      var isChromium = window.chrome;
-      var winNav = window.navigator;
-      var vendorName = winNav.vendor;
-      var isOpera = typeof window.opr !== "undefined";
-      var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
-      var isIOSChrome = winNav.userAgent.match("CriOS");
-      var isSafari6Plus = !!navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i) && typeof document.body.style.webkitFilter !== "undefined";
-
-      var ua = navigator.userAgent.toLowerCase();
-      var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-
-      var tweetCSS = ".EmbeddedTweet{height:auto !important; background: transparent !important;border: 1px solid #b0b0b0 !important; margin: 0 !important;}" + style;
-      var tweetStyle = document.createElement("style");
-      $("#tweet-style-" + id).remove();
-      tweetStyle.setAttribute("id", "tweet-style-" + id);
-      tweetStyle.innerHTML = tweetCSS;
-      tweetStyle.type = "text/css";
-
-      if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
-          var styleTag = document.getElementById("twitter-widget-" + id).shadowRoot;
-          styleTag.insertBefore(tweetStyle, styleTag.childNodes[0]);
-      } else {
-          var tweetWidget = document.getElementById("twitter-widget-" + id).contentDocument;
-          tweetWidget.head.appendChild(tweetStyle);
-      } 
-}
-  /*]]>*/
-  </script>
 
 </body>
 
