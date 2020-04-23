@@ -53,7 +53,7 @@ function getDataUri(url, callback) {
 
         canvas.getContext('2d').drawImage(this, 0, 0);
 
-        console.log(canvas.toDataURL('image/png'));
+        console.log(canvas.toDataURL('image/jpg'));
     };
 
     image.src = url;
