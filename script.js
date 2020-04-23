@@ -75,16 +75,16 @@ $( document ).ready(function() {
    // START do mascara cinzenta inicial
    //setTimeout(function() { 
         //countalltweets(); agora é feito no setTimeout (em cima)
-        setTimeout(function(){
-            $( "#mask" ).fadeOut( 800, function() {
-                var style = window.getComputedStyle(body, null);
-        
-                $("#mask").css("background", style.getPropertyValue('--soft-transp-color'));
-                $("#mask .fa-folder-open").hide();
-                $("#mask > div" ).hide();
-                $("#mask > .fa-circle-o-notch").show();
-            });
-        }, 340); 
+    setTimeout(function(){
+        $( "#mask" ).fadeOut( 800, function() {
+            var style = window.getComputedStyle(body, null);
+    
+            $("#mask").css("background", style.getPropertyValue('--soft-transp-color'));
+            $("#mask .fa-folder-open").hide();
+            $("#mask > div" ).hide();
+            $("#mask > .fa-circle-o-notch").show();
+        });
+    }, 340); 
     //}, 1); 
 
 
@@ -99,10 +99,11 @@ $( document ).ready(function() {
 
 
     // START do splash screen
-    /*createCookie("eec", "sss");
+    /**/
+    createCookie("eec", "sss");
     if (!dunl())
         showSplash();
-*/
+
         
     // START das colos
     var valueColor = readCookie("colors");
