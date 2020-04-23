@@ -11,13 +11,9 @@ function saveinfo(obj, id) {
 
       $("#" + id + "undoinfo").css("display", "inline-block");
     }
-    createCookie("haschanges", "yes");
-    if (showColorsAdv) {
-        $("#generateicon").addClass("haschanges");
-        if (showColors) {
-            $("#settings").addClass("haschanges");
-        }
-    }  
+    createCookie("hasChanges", "Yes");
+    $("#generateicon").addClass("haschanges");
+
     showMessage("Information About Link Saved"); 
 }   
 
@@ -40,13 +36,9 @@ function saveclassif(obj, id) {
         $("#" + id + "undoinfo").css("display", "inline-block");
     }
 
-    createCookie("haschanges", "yes");
-    if (showColorsAdv) {
-        $("#generateicon").addClass("haschanges");
-        if (showColors) {
-            $("#settings").addClass("haschanges");
-        }
-    }  
+    createCookie("hasChanges", "Yes");
+    $("#generateicon").addClass("haschanges");
+
     showMessage("Link Classification Saved"); 
 }  
 
@@ -75,17 +67,11 @@ function undosaveclassif(obj, id) {
 
     var callback = function(flag) {      
         if (flag) {
-            createCookie("haschanges", "yes");
-            if (showColorsAdv) {
-                $("#generateicon").addClass("haschanges");
-                if (showColors) {
-                    $("#settings").addClass("haschanges");
-                }
-            }  
+            createCookie("hasChanges", "Yes");
+            $("#generateicon").addClass("haschanges");
         }
         else {
-            createCookie("haschanges", "");
-            $("#settings").removeClass("haschanges");
+            createCookie("hasChanges", "");
             $("#generateicon").removeClass("haschanges");
         }
 
@@ -121,17 +107,11 @@ function undosaveinfo(obj, id) {
     
     var callback = function(flag) {      
         if (flag) {
-            createCookie("haschanges", "yes");
-            if (showColorsAdv) {
-                $("#generateicon").addClass("haschanges");
-                if (showColors) {
-                    $("#settings").addClass("haschanges");
-                }
-            }  
+            createCookie("hasChanges", "Yes");
+            $("#generateicon").addClass("haschanges");
         }
         else {
-            createCookie("haschanges", "");
-            $("#settings").removeClass("haschanges");
+            createCookie("hasChanges", "");
             $("#generateicon").removeClass("haschanges");
         }
 
@@ -148,110 +128,38 @@ function undosaveinfo(obj, id) {
 
 function removetweet(obj) {
     fixfocus(obj);
-
-
     if ($('#linkChange').attr("cid") != "new") {
-
-        var functorun = function(jsonvar) 
-        { 
-            var isdeleted = readCookie($('#linkChange').attr("cid") + "isdeleted");
-            if (jsonvar.deleted != "" || (isdeleted && isdeleted.length > 0)) {
-                try {
-                    $( "#dialog-confirm-delete" ).dialog({
-                        resizable: false,
-                        height: "auto",
-                        width: 400,
-                        modal: true,
-                        buttons: {
-                          "Yes": function() {
-                            jsonvar.deleted = "yes";
-                            createCookie(jsonvar.id + "isdeleted", "yes", 99999);
-                            updateLinkCookie(jsonvar);
+        var isdeleted = readCookie($('#linkChange').attr("cid") + "isdeleted");
+        if (isdeleted && isdeleted.length > 0) {
+            createCookie($('#linkChange').attr("cid") + "isdeleted", "", 99999);
     
-                            $("#main").empty();
-                            $('#moretweets').hide();
-                            $('#tweetcount').hide(); 
+            $("#seticon").attr("style", "");
     
-                            countalltweets();
-                            showMessage("Link Deleted Forever");
-                            closeSettingsPopup();
-                            $("#mask").fadeOut(500);
-                            $("#dialog-confirm-delete").parent().fadeOut( 800, function() {
-                              $("#dialog-confirm-delete").parent().remove();
-                            });
-                          },
-                          "Restore": function() {
-                            createCookie($('#linkChange').attr("cid") + "isdeleted", "", 99999);
-            
-                            if (hasTweetChanges()) {
-                                createCookie("haschanges", "yes");
-                                if (showColorsAdv) {
-                                    $("#generateicon").addClass("haschanges");
-                                    if (showColors) {
-                                        $("#settings").addClass("haschanges");
-                                    }
-                                }  
-                            }
-                            else {
-                              createCookie("haschanges", "");
-                              $("#settings").removeClass("haschanges");
-                              $("#generateicon").removeClass("haschanges");
-                            }
-            
-                            jsonvar.deleted = "";
-                            updateLinkCookie(jsonvar);
-                            updateLinkColor(jsonvar);
-                            showMessage("Link Marked To Delete Reverted");
-                              $("#mask").fadeOut(500);
-                              $("#dialog-confirm-delete").parent().fadeOut( 800, function() {
-                                $("#dialog-confirm-delete").parent().remove();
-                              });
-    
-                          },
-                          Cancel: function() {
-                              $("#mask").fadeOut(500);
-                              $("#dialog-confirm-delete").parent().fadeOut( 800, function() {
-                                $("#dialog-confirm-delete").parent().remove();
-                              });
-                          }
-                        }
-                      });
-                    } catch (error) {
-                        
-                    }
-                    $("#dialog-confirm-delete").parent().css("top", ((window.innerHeight/2) - 100) + "px")
-                    $("#mask").fadeIn(500);
-                    $("#dialog-confirm-delete").parent().fadeIn(800);
-            } 
-            else {
-                createCookie($('#linkChange').attr("cid") + "isdeleted", "a", 99999);
-                jsonvar.deleted = "a";
-                updateLinkCookie(jsonvar);
-                updateLinkColor(jsonvar);
-                if (showColorsAdv) {
-                    $("#generateicon").addClass("haschanges");
-                    if (showColors) {
-                        $("#settings").addClass("haschanges");
-                    }
-                }  
-                createCookie("haschanges", "yes");
-                showMessage("Link Marked To Delete");
+            if (hasTweetChanges()) {
+              createCookie("hasChanges", "Yes");
+              $("#generateicon").addClass("haschanges");
             }
+            else {
+              createCookie("hasChanges", "");
+              $("#generateicon").removeClass("haschanges");
+            }
+            updateLinkColor("", $('#linkChange').attr("cid"));
+            showMessage("Link Marked To Delete Reverted");
         } 
-        getJsonbyid($('#linkChange').attr("cid"), functorun);
+        else {
+            createCookie($('#linkChange').attr("cid") + "isdeleted", "a", 99999);
+            $("#seticon").attr("style", "color: red;");
+            updateLinkColor("red", $('#linkChange').attr("cid"));
+            $("#generateicon").addClass("haschanges");
+            createCookie("hasChanges", "Yes");
+            showMessage("Link Marked To Delete");
+        }
     }
     else {
         create();
     }
 }    
 
-function updateLinkCookie(obj) {
-    var link = "{\r\n\"id\": \"" + obj.id + "\",\r\n\"creationdate\": \"" + obj.creationdate  + "\",\r\n\"type\": \"" + obj.type  + "\",\r\n\"url\": \"" + obj.url  + "\",\r\n\"ishidden\": \"" + obj.ishidden  + "\",\r\n\"date\": \"" + obj.date + "\",\r\n\"author\": \"" + obj.author  + "\",\r\n\"categories\": \"" + obj.categories + "\",\r\n\"tags\": \"" + obj.tags + "\",\r\n\"info\": \"" + obj.info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "").trim() + "\",\r\n\"classif\": \"" + obj.classif + "\",\r\n\"deleted\": \"" + obj.deleted + "\",\r\n\"tweet\": \"" + obj.tweet + "\"\r\n},";
-
-    var mlink = encodeURIComponent(JSON.stringify(link));
-    
-    createCookie(obj.id + "templink", mlink, 99999);
-}
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
@@ -297,13 +205,8 @@ function acceptTag(obj) {
 
         $('#' + id).find('.newcat').html('<b> New categories </b>' + $(obj).parent().find('input').val());   
 
-        if (showColorsAdv) {
-            $("#generateicon").addClass("haschanges");
-            if (showColors) {
-                $("#settings").addClass("haschanges");
-            }
-        }  
-        createCookie("haschanges", "yes");
+        $("#generateicon").addClass("haschanges");
+        createCookie("hasChanges", "Yes");
         showMessage("Category Marked To Change");
     }
     else {
@@ -319,13 +222,8 @@ function acceptTag(obj) {
 
         $('#' + id).find('.newtag').html('<b> New tags </b>' + $(obj).parent().find('input').val());
 
-        if (showColorsAdv) {
-            $("#generateicon").addClass("haschanges");
-            if (showColors) {
-                $("#settings").addClass("haschanges");
-            }
-        }  
-        createCookie("haschanges", "yes");
+        $("#generateicon").addClass("haschanges");
+        createCookie("hasChanges", "Yes");
         showMessage("Tag Marked To Change");
     }
 
@@ -356,18 +254,12 @@ function undotag(obj) {
             $('#' + id).find('.tags').css('background', '#00000021').css('border-bottom', '1px solid #00000038');
         }
         if (hasTweetChanges()) {
-            if (showColorsAdv) {
-                $("#generateicon").addClass("haschanges");
-                if (showColors) {
-                    $("#settings").addClass("haschanges");
-                }
-            }  
-            createCookie("haschanges", "yes");
+          $("#generateicon").addClass("haschanges");
+          createCookie("hasChanges", "Yes");
         }
         else {
           $("#generateicon").removeClass("haschanges");
-          $("#settings").removeClass("haschanges");
-          createCookie("haschanges", "");
+          createCookie("hasChanges", "");
         }
         showMessage("Tag Marked To Change Reverted");
     }
@@ -385,18 +277,12 @@ function undotag(obj) {
             $('#' + id).find('.tags').css('background', '#00000021').css('border-bottom', '1px solid #00000038');
         }
         if (hasTweetChanges()) {
-            if (showColorsAdv) {
-                $("#generateicon").addClass("haschanges");
-                if (showColors) {
-                    $("#settings").addClass("haschanges");
-                }
-            }  
-          createCookie("haschanges", "yes");
+          $("#generateicon").addClass("haschanges");
+          createCookie("hasChanges", "Yes");
         }
         else {
-          $("#settings").removeClass("haschanges");
           $("#generateicon").removeClass("haschanges");
-          createCookie("haschanges", "");
+          createCookie("hasChanges", "");
         }
         showMessage("Category Marked To Change Reverted");
     }
@@ -432,19 +318,20 @@ function changecat(obj, id) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function countalltweets(webLinksMap) {
+function countalltweets() {
 
     resetFields(false);
     var path = "./data.json";
     var counters = new Map();
     var tagsmap = new Map();
-    total = 0;
+    var total = 0;
     var total_y = 0;
     var total_t = 0;
     var total_h = 0;    
     var text = '{"Tweets": [';
     var ind = false;
     var processtmp = true;
+    
     nextid = null;
     try {
         nextid = parseInt(readCookie("maxid"));
@@ -465,11 +352,11 @@ function countalltweets(webLinksMap) {
             nextid = nextid - 1;
         }
     }
+
     $.getJSON(path, function(data) 
     {
       $.each(data.Tweets, function(key, val) 
         {
-            
             var recordfromdata = val;
             var linkcontent = null;
             var linktmp = null;
@@ -479,118 +366,95 @@ function countalltweets(webLinksMap) {
                     linkcontent = readCookie(nextid + "templink");
 
                     if (linkcontent && linkcontent.length > 0) {
-                        
                         linktmp = decodeURIComponent(linkcontent);
-                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
-
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
+
                         linktmp = JSON.parse(linktmp);
 
                         val = linktmp;
                         nextid = nextid - 1;
                     }
                     else {
-                        if (showAll) {
-                            val = recordfromdata;
-                        }
-                        else {
-                            val.id = "0";
-                        }
+                        val = recordfromdata;
                         processtmp = false;
                     }
                 }
                 else {
-                    if (showAll) {
-                        val = recordfromdata;
-                    }
-                    else {
-                        val.id = "0";
-                    }
+                    val = recordfromdata;
                 }
 
-                var isdeleted = readCookie(val.id + "isdeleted");
-                if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
+                var doShowDeletedLink = true;  
+                if (!$("#showdeleted").is(":checked")) {
+                    var isdeleted = readCookie(val.id + "isdeleted");
+                    if (isdeleted && isdeleted.length > 0) { 
+                        doShowDeletedLink = false; 
+                    } 
+                }
 
-                    if (webLinksMap) {
-                        var linkObj = webLinksMap.get(parseInt(val.id));
+                if (doShowDeletedLink) {
 
-                        if (linkObj) {
-                            updateWebLink(linkObj, val);
-                        }
+                    var cat = readCookie(val.id + "catchanged");
+                    if (cat && cat.length > 0) {
+                        val.categories = cat;
                     }
-
-
-                    var doShowDeletedLink = true;  
-                    if (!$("#showdeleted").is(":checked")) {
-                        if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
-                            doShowDeletedLink = false; 
-                        } 
-                    }
-    
-                    if (doShowDeletedLink) {
-    
-                        var cat = readCookie(val.id + "catchanged");
-                        if (cat && cat.length > 0) {
-                            val.categories = cat;
-                        }
-            
-                        var tag = readCookie(val.id + "tagchanged");
-                        if (tag && tag.length > 0) {
-                            val.tags = tag;
-                        }
-            
-                        var info = readCookie(val.id + "info");
-                        if (info && info.length > 0) {
-                            val.info = info;
-                        }
-            
-                        var classif = readCookie(val.id + "classif");
-                        if (classif && classif.length > 0) {
-                            val.classif = classif;
-                        }
-                    
-                        var res = val.categories.split(" ");
-                        
-                        for (var i = 0; i < res.length; i++) {
-                            if (counters.has(val.type + res[i])) {
-                                var aux = counters.get(val.type + res[i]);
-                                counters.set(val.type + res[i], aux + 1);
-                            }
-                            else {
-                                counters.set(val.type + res[i], 1);
-                            }
-                        }
         
-                        if (!tagssloaded) {
-                            var tags = val.tags.split(" ");
+                    var tag = readCookie(val.id + "tagchanged");
+                    if (tag && tag.length > 0) {
+                        val.tags = tag;
+                    }
+        
+                    var info = readCookie(val.id + "info");
+                    if (info && info.length > 0) {
+                        val.info = info;
+                    }
+        
+                    var classif = readCookie(val.id + "classif");
+                    if (classif && classif.length > 0) {
+                        val.classif = classif;
+                    }
                 
-                            for (var i = 0; i < tags.length; i++) {
-                                if (tags[i].trim().length > 0) {
-                                    if (tagsmap.has(tags[i].trim())) {
-                                        var aux = Number(tagsmap.get(tags[i]));
-                
-                                        tagsmap.set(tags[i].trim(), aux + 1);
-                                    }
-                                    else {
-                                        tagsmap.set(tags[i].trim(), 1);
-                                    }
+                    var res = val.categories.split(" ");
+                    
+                    for (var i = 0; i < res.length; i++) {
+                        if (counters.has(val.type + res[i])) {
+                            var aux = counters.get(val.type + res[i]);
+                            counters.set(val.type + res[i], aux + 1);
+                        }
+                        else {
+                            counters.set(val.type + res[i], 1);
+                        }
+                    }
+    
+                    if (!tagssloaded) {
+                        var tags = val.tags.split(" ");
+            
+                        for (var i = 0; i < tags.length; i++) {
+                            if (tags[i].trim().length > 0) {
+                                if (tagsmap.has(tags[i].trim())) {
+                                    var aux = Number(tagsmap.get(tags[i]));
+            
+                                    tagsmap.set(tags[i].trim(), aux + 1);
+                                }
+                                else {
+                                    tagsmap.set(tags[i].trim(), 1);
                                 }
                             }
                         }
-        
-                        if (val.type == "T") {
-                            total_t = total_t + 1;
-                        }
-                        else if (val.type == "Y") {
-                            total_y = total_y + 1;
-                        }
-                        else {
-                            total_h = total_h + 1;
-                        }
-                        total = total + 1;
                     }
-                }   
+    
+                    if (val.type == "T") {
+                        total_t = total_t + 1;
+                    }
+                    else if (val.type == "Y") {
+                        total_y = total_y + 1;
+                    }
+                    else {
+                        total_h = total_h + 1;
+                    }
+                    total = total + 1;
+                }
+                
             }
             while (processtmp);
           
@@ -650,7 +514,7 @@ function countalltweets(webLinksMap) {
             tagssloaded = true;
 
         }
-        
+
         // All Links
         $("#all").text(total);
         $("#all2").text(total);
@@ -889,272 +753,39 @@ function countalltweets(webLinksMap) {
 
 
 function undogenerate(obj) {
+    fixfocus(obj);
 
-    if (obj)
-        fixfocus(obj);
+    var r = confirm("Remove all Changes?");
+    if (r == true) {
+        resetFields(false);
 
-    var idF = null;
-    
-    try {
-        idF = parseInt(readCookie("maxid"));
-    }
-    catch(err) {
-    }
-    finally {
-        if (idF) {
-            $("#maxid").val(idF);
-            idF = idF - 1;
-        }
-        else {
-            idF = parseInt($("#maxid").val());
-            createCookie("maxid", idF);
-            idF = idF - 1;
-        }
-    }
-    if (isMy) {
-        var r = confirm("Remove all Changes?");
-        if (r == true) {
-            resetFields(false);
-    
-            do {
-    
-                eraseCookie(idF + "templink");
-        
-                eraseCookie(idF + "isdeleted");
-        
-                eraseCookie(idF + "catchanged");
-        
-                eraseCookie(idF + "tagchanged");
+        var id = parseInt(readCookie("maxid")) - 1;
 
-                eraseCookie(idF + "datechanged");
-                
-                eraseCookie(idF + "author");
-
-                eraseCookie(idF + "info");
-        
-                eraseCookie(idF + "classif");
-    
-                eraseCookie(idF + "haschanges");
-    
-                idF = idF - 1;
-            }
-            while (idF >= 0);        
-        
-            createCookie("haschanges", "");
-            $("#settings").removeClass("haschanges");
-            $("#generateicon").removeClass("haschanges");
-        
-            showMessage("Changes Were Cleaned"); 
-        }
-    }   
-    else {
         do {
-    
-            eraseCookie(idF + "templink");
-    
-            eraseCookie(idF + "isdeleted");
-    
-            eraseCookie(idF + "catchanged");
-    
-            eraseCookie(idF + "tagchanged");
-    
-            eraseCookie(idF + "info");
-    
-            eraseCookie(idF + "classif");
-                
-            eraseCookie(idF + "datechanged");
-            
-            eraseCookie(idF + "author");
 
-            eraseCookie(idF + "haschanges");
+            eraseCookie(id + "templink");
+    
+            eraseCookie(id + "isdeleted");
+    
+            eraseCookie(id + "catchanged");
+    
+            eraseCookie(id + "tagchanged");
+    
+            eraseCookie(id + "info");
+    
+            eraseCookie(id + "classif");
 
-            idF = idF - 1;
+            eraseCookie(id + "haschanges");
+
+            id = id - 1;
         }
-        while (idF >= 100000);        
-        createCookie("haschanges", "");
-        $("#settings").removeClass("haschanges");
+        while (id >= 0);        
+    
+        createCookie("hasChanges", "");
         $("#generateicon").removeClass("haschanges");
-    } 
-}
-
-function eraseAllTmpData(obj) {
-
-    if (obj)
-        fixfocus(obj);
-
-    var idF = null;
     
-    try {
-        idF = parseInt(readCookie("maxid"));
+        showMessage("Changes Were Cleaned"); 
     }
-    catch(err) {
-    }
-    finally {
-        if (idF) {
-            $("#maxid").val(idF);
-            idF = idF - 1;
-        }
-        else {
-            idF = parseInt($("#maxid").val());
-            createCookie("maxid", idF);
-            idF = idF - 1;
-        }
-    }
-
-    do {
-        eraseLinkTmpData(idF);
-
-        idF = idF - 1;
-    }
-    while (idF >= 100000);        
-
-    createCookie("haschanges", "");
-
-    $("#settings").removeClass("haschanges");
-    $("#generateicon").removeClass("haschanges");
-}
-
-function eraseLinkTmpData(idF, flag) {
-
-    if (flag) {
-        eraseCookie(idF + "templink");
-    }
-
-    eraseCookie(idF + "isdeleted");
-
-    eraseCookie(idF + "catchanged");
-
-    eraseCookie(idF + "tagchanged");
-
-    eraseCookie(idF + "info");
-
-    eraseCookie(idF + "classif");
-
-    eraseCookie(idF + "author");
-
-    eraseCookie(idF + "datechanged");
-
-    eraseCookie(idF + "isnew");
-    
-    eraseCookie(idF + "haschanges");
-}
-
-
-function eraseAllDeleted(idF, flag) {
-    try {
-        $( "#dialog-confirm-deleteall" ).dialog({
-            resizable: false,
-            height: "auto",
-            width: 400,
-            modal: true,
-            buttons: {
-              "Yes": function() {
-                eraseAllDeletedFunc();
-              },
-              Cancel: function() {
-                  $("#mask").fadeOut(500);
-                  $("#dialog-confirm-deleteall").parent().fadeOut( 800, function() {
-                    $("#dialog-confirm-deleteall").parent().remove();
-                  });
-              }
-            }
-          });
-    } catch (error) {
-        
-    }
-    $("#dialog-confirm-deleteall").parent().addClass("purgedialog");
-    $("#dialog-confirm-deleteall").parent().css("top", ((window.innerHeight/2) - 100) + "px")
-    $("#mask").fadeIn(500);
-    $("#dialog-confirm-deleteall").parent().fadeIn(800);
-}
-
-
-
-var eraseAllDeletedFunc = function(text, type, functorun) {
-
-    var path = "./data.json";
-
-    nextid = null;
-    try {
-        nextid = parseInt(readCookie("maxid"));
-    }
-    catch(err) {
-        console.log("eraseAllDeletedFunc - Error parsing next id");
-    }
-    finally {
-        if (nextid) {
-            $("#maxid").val(nextid);
-            console.log("eraseAllDeletedFunc - nextid vem do cookie: " + nextid);
-            nextid = nextid - 1;
-        }
-        else {
-            nextid = parseInt($("#maxid").val());
-            createCookie("maxid", nextid);
-            console.log("eraseAllDeletedFunc - nextid vem do hidden field: " + nextid);
-            nextid = nextid - 1;
-        }
-    }
-
-    $.getJSON(path, function(data) {
-        var processtmp = true;
-
-        $.each(data.Tweets, function(key, val) {
-            var recordfromdata = val;
-            var linkcontent = null;
-
-            do {
-                if (processtmp) {
-                    linkcontent = readCookie(nextid + "templink");
-                    if (linkcontent && linkcontent.length > 0) {
-                        var linktmp = decodeURIComponent(linkcontent);
-                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
-                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
-                        linktmp = linktmp.replace(/(\\)/gm, ""); 
-                        linktmp = JSON.parse(linktmp);
-    
-                        val = linktmp;
-                        nextid = nextid - 1;
-                    }
-                    else {
-                        if (showAll) {
-                            val = recordfromdata;
-                        }
-                        else {
-                            val.id = "0";
-                        }
-                        
-                        processtmp = false;
-                    }
-                }
-                else {
-                    if (showAll) {
-                        val = recordfromdata;
-                    }
-                    else {
-                        val.id = "0";
-                    }
-                }
-
-                var isdeleted = readCookie(val.id + "isdeleted");
-
-                if (((val && val.deleted.length > 0) || (isdeleted && isdeleted.length > 0)) && val.id != "0") {
-                    /*val.deleted = "yes";
-                    createCookie(val.id + "isdeleted", "yes", 99999);
-                    updateLinkCookie(val);
-                    */
-                    console.log("deleted id: " + val.id)
-                }
-            }
-            while (processtmp);
-        });   
-        
-        $("#mask").fadeOut(500);
-        $("#dialog-confirm-deleteall").parent().fadeOut( 800, function() {
-          $("#dialog-confirm-deleteall").parent().remove();
-        });
-        
-        showMessage("Deleted Links Successfully Purged");
-    }); 
 }
 
 /* function undogenerate() {
@@ -1177,7 +808,6 @@ var eraseAllDeletedFunc = function(text, type, functorun) {
                 linkcontent = readCookie(nextid + "templink_bk");
                 if (linkcontent && linkcontent.length > 0) {
                     var linktmp = decodeURIComponent(linkcontent);
-                    linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
                     linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                     linktmp = linktmp.replace(/(\\)/gm, ""); 
                     linktmp = JSON.parse(linktmp);
@@ -1253,13 +883,8 @@ var eraseAllDeletedFunc = function(text, type, functorun) {
       });
 
       if (ind) {
-        createCookie("haschanges", "yes");
-            if (showColorsAdv) {
-                $("#generateicon").addClass("haschanges");
-                if (showColors) {
-                    $("#settings").addClass("haschanges");
-                }
-            } 
+        createCookie("hasChanges", "Yes");
+        $("#generateicon").addClass("haschanges");
       }
 
       showMessage("Processed Changes Were Reverted");
@@ -1274,7 +899,6 @@ var eraseAllDeletedFunc = function(text, type, functorun) {
 function hasTweetChanges(callback) {
   var path = "./data.json";
   var ind = false;
-  
   $.getJSON(path, function(data) 
   {
     nextid = null;
@@ -1342,20 +966,8 @@ function hasTweetChanges(callback) {
                 return false;
             }
 
-            var author = readCookie(val.id + "author");
-            if (author && author.length > 0) {
-                ind = true;
-                return false;
-            }
-
-            var datechanged = readCookie(val.id + "datechanged");
-            if (datechanged && datechanged.length > 0) {
-                ind = true;
-                return false;
-            }
-
             var isdeleted = readCookie(val.id + "isdeleted");
-            if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
+            if (isdeleted && isdeleted.length > 0) {
                 ind = true;
                 return false;
             } 
@@ -1377,10 +989,7 @@ function generate(obj) {
 
     resetFields(false);
     var path = "./data.json";
-    var text = '';
-    if (isMy) text = '{"Tweets": [';
-    else text = '[';
-
+    var text = '{"Tweets": [';
     var ind = false;
     var processtmp = true;
     
@@ -1412,18 +1021,14 @@ function generate(obj) {
             var recordfromdata = val;
             var linkcontent = null;
             var linktmp = null;
-
-            var fromWeb = true; 
-
+            
             do {
                 if (processtmp) {
-                    fromWeb = false; 
 
                     linkcontent = readCookie(nextid + "templink");
 
                     if (linkcontent && linkcontent.length > 0) {
                         linktmp = decodeURIComponent(linkcontent);
-                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
 
@@ -1435,122 +1040,78 @@ function generate(obj) {
                     else {
                         val = recordfromdata;
                         processtmp = false;
-                        fromWeb = true; 
                     }
                 }
                 else {
-                    fromWeb = true; 
                     val = recordfromdata;
                 }
 
-                if (val.id != "0") {
-                    var auxLink = {};
-
-                    var cat = readCookie(val.id + "catchanged");
-                    if (cat && cat.length > 0) {
-                        val.categories = cat;
-                        auxLink.categories = cat;
-                    }
-        
-                    var tag = readCookie(val.id + "tagchanged");
-                    if (tag && tag.length > 0) {
-                        val.tags = tag;
-                        auxLink.tags = tag;
-                    }
-        
-                    var info = readCookie(val.id + "info");
-                    if (info && info.length > 0) {
-                        val.info = info;
-                        auxLink.info = info;
-                    }
-        
-                    var classif = readCookie(val.id + "classif");
-                    if (classif && classif.length > 0) {
-                        val.classif = classif;
-                        auxLink.classif = classif;
-                    }
+                var cat = readCookie(val.id + "catchanged");
+                if (cat && cat.length > 0) {
+                    val.categories = cat;
+                    //createCookie(val.id + "catchanged_bk", cat, 99999);
+                }
+                //else {
+                //  createCookie(val.id + "catchanged_bk", "", 99999);
+                //}
+                //createCookie(val.id + "catchanged", "", 99999);
     
-                    var datechanged = readCookie(val.id + "datechanged");
-                    if (datechanged && datechanged.length > 0) {
-                        val.date = datechanged;
-                        auxLink.date = datechanged;
-                    }
+                var tag = readCookie(val.id + "tagchanged");
+                if (tag && tag.length > 0) {
+                    val.tags = tag;
+                    // createCookie(val.id + "tagchanged_bk", tag, 99999);
+                }
+                //else {
+                //  createCookie(val.id + "tagchanged_bk", "", 99999);
+                //}
+                //createCookie(val.id + "tagchanged", "", 99999);
     
-                    var author = readCookie(val.id + "author");
-                    if (author && author.length > 0) {
-                        val.author = author;
-                        auxLink.author = author;
-                    }
+                var info = readCookie(val.id + "info");
+                if (info && info.length > 0) {
+                    val.info = info;
+                    //createCookie(val.id + "info_bk", info, 99999);
+                }
+                //else {
+                //  createCookie(val.id + "info_bk", "", 99999);
+                //}
+                //createCookie(val.id + "info", "", 99999);
     
-                    var isdeleted = readCookie(val.id + "isdeleted");
+                var classif = readCookie(val.id + "classif");
+                if (classif && classif.length > 0) {
+                    val.classif = classif;
+                    //createCookie(val.id + "classif_bk", classif, 99999);
+                }
+                //else {
+                //  createCookie(val.id + "classif_bk", "", 99999);
+                //}
+                //createCookie(val.id + "classif", "", 99999);
     
-                    if (isMy) {
-                        if (isdeleted && isdeleted.length > 0) {
-                        } 
-                        else {
-                            if (ind) {
-                                text = text + ",";
-                            }
-                            else {
-                                ind = true;
-                            }
-                            text = text + JSON.stringify(val, null, " ");  
-                        }
+                var isdeleted = readCookie(val.id + "isdeleted");
+                if (isdeleted && isdeleted.length > 0) {
+                    //createCookie(val.id + "isdeleted_bk", "yes", 99999);
+                    //createCookie(val.id + "isdeleted", "", 99999);
+                } 
+                else {
+                    //createCookie(val.id + "isdeleted", "", 99999);
+                    //createCookie(val.id + "isdeleted_bk", "", 99999);
+                    if (ind) {
+                        text = text + ",";
                     }
                     else {
-                        if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
-                            if (val.deleted == "yes" || (isdeleted && isdeleted == "yes")) {
-                                val.deleted = "yes";
-                                auxLink.deleted = "yes";
-                            }
-                            else {
-                                auxLink.deleted = "a";
-                                val.deleted = "a";
-                            }
-    
-                        }
-                        else {
-                            val.deleted = "";
-                        }
-    
-                        if (ind) {
-                            text = text + ",";
-                        }
-                        else {
-                            ind = true;
-                        }
-    
-                        if (!fromWeb) {
-                            text = text + JSON.stringify(val, null, " ");  
-                        }
-                        else if (!jQuery.isEmptyObject(auxLink)) {
-                            auxLink.id = val.id;
-                            
-                            text = text + JSON.stringify(auxLink, null, " ");
-                        }
-                        else {
-                            text = text.substring(0, text.length - 1);
-                        }
-                    } 
+                        ind = true;
+                    }
+                    text = text + JSON.stringify(val, null, " ");  
                 }
             }
             while (processtmp);
           
         });
 
-        if (isMy) {
-            text = text + ']}';
-            $('#linkresult').val(text);
-            $("#linkresult").select();
-            document.execCommand('copy'); 
-            $("#linkresult").blur();
-            showMessage("Changes Processed And Copied To Clipboard");
-        }
-        else {
-            var date = new Date();
-            text = text + ']';
-            
-            download("BookmarksStationLinks_" + formatDate(date) + ".txt", text);
-        }
+        text = text + ']}';
+        $('#linkresult').val(text);
+        $("#linkresult").select();
+        document.execCommand('copy'); 
+        $("#linkresult").blur();
+        showMessage("Changes Processed And Copied To Clipboard");
     }); 
 } 

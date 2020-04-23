@@ -1,3 +1,4 @@
+
 var text = "";  
 var origin = "";
 var nextid = "";
@@ -11,6 +12,7 @@ var dblClickTimeout = null;
 var addType = "T";
 var processedCount = 0;
 var totalLinkss = 0;
+var totalGlobalLinks = 0;
 var total_yy = 0; 
 var total_tt = 0;
 var total_hh = 0;
@@ -21,171 +23,50 @@ var calendar = null;
 var filterdate1date = null;
 var filterdate2date = null; 
 var existingId = null;
-var xUp = null;                                    
-var yUp = null;  
-var xDiff = null;  
-var yDiff = null;  
-var xDown = null;                                                        
-var yDown = null;
-var currObjSwipe = null;
-var lastTouch = null;
-var searchtotal = 0;
-var showAll = false;
-var showColors = false;
-var showColorsAdv = false;
-var isMy = true;
-var useSwipes = false;
-var ceec = 0; 
-var funcg = null;
 
-// START do tema
 var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
      changetheme(currTheme, true);
 }  
 
-$( document ).ready(function() { 
+dosearchmore = false;
+dblFlag = true;
 
-    
-    // START mapa categorias
-    catsmap.set("tvn", "New/Ongoing");
-    catsmap.set("trn", "New / Hot / Trending");
-    catsmap.set("tvi", "To Watch");
-    catsmap.set("tvl", "Documentaries / Films");
-    catsmap.set("tre", "Fast Reading");
-    catsmap.set("trl", "Long Reading");
-    catsmap.set("tke", "Important / To Keep");
-    catsmap.set("imp", "Shocking Truth");
-    catsmap.set("cli", "My Tweets");
+console.log("----window.innerWidth-----window.innerHeight------navigator.userAgent-----");
+console.log(window.innerWidth + " - " + window.innerHeight + " - " + navigator.userAgent);
+console.log("--------------------------------------------------------------------------");
+/* 
+setTimeout(function() {
+  dosearchmore = true;    
+  if (!dblFlag) {
+      $( "#mask" ).fadeOut( 800, function() {
+            var style = window.getComputedStyle(body, null);
 
-
-   // START remover speckcheks
-   $( "input, textarea" ).each( function( index, element ){
-        $(element).attr("spellcheck", "false");
-        $(element).attr("autocomplete", "none");
-        $(element).attr("additionalAttributes", "{autocomplete: 'none'}");
-   });
-
-
-   // START da variavel setShowDeleted
-   var showDeleted = getshowdeletedcookie();
-   setShowDeleted(showDeleted, true); // faz o count all tweets
-
-
-   // START do mascara cinzenta inicial
-   //setTimeout(function() { 
-        //countalltweets(); agora é feito no setTimeout (em cima)
-        setTimeout(function(){
-            $( "#mask" ).fadeOut( 800, function() {
-                var style = window.getComputedStyle(body, null);
-        
-                $("#mask").css("background", style.getPropertyValue('--soft-transp-color'));
-                $("#mask .fa-folder-open").hide();
-                $("#mask > div" ).hide();
-                $("#mask > .fa-circle-o-notch").show();
-            });
-        }, 340); 
-    //}, 1); 
-
-
-    // START do zoom
-    var hasZoom = readCookie("hasZoom");
-    if (hasZoom && hasZoom.length > 0)
-        zoom(null, true);
-
-    setTimeout(function(){
-        $('body').removeClass('notransit'); 
-    }, 1400);  
-
-
-    // START do splash screen
-    /*createCookie("eec", "sss");
-    if (!dunl())
-        showSplash();
+            $("#mask").css("background", style.getPropertyValue('--soft-transp-color'));
+            $("#mask .fa-folder-open").hide();
+            $("#mask > div" ).hide();
+            $("#mask > .fa-circle-o-notch").show();
+      });
+  }
+}, 2500);
 */
-        
-    // START das colos
-    var valueColor = readCookie("colors");
-    if (valueColor && valueColor.length > 0) {
-        if (valueColor == "All") {
-            showColors = true;
-            showColorsAdv = true;
-        }
-        else if (valueColor == "Medium") {
-            showColors = false;
-            showColorsAdv = true;   
-        }
+function visibilityHandler() {
+    var hash = '#bg';
+    if (document.hidden && !window.location.hash) {
+      window.history.replaceState(null, null, window.location + hash);
+    } else if (!document.hidden && window.location.hash == hash) {
+      var l = '' + window.location;
+      window.history.replaceState(null, null, l.substr(0, l.length - hash.length));
     }
+  };
 
-
-    // START dos swipes
-    var valueSwipe = readCookie("swipes");
-    if (valueSwipe && valueSwipe.length > 0) {
-        if (valueSwipe == "Yes") {
-            useSwipes = true;
-        }
-    }
-    
-
-    // START da help
-    var value = readCookie("help");
-    if (value && value.length > 0) {
-        $( ".fa-question-circle:not(.ashow)" ).each( function( index, element ){
-            $(element).css("display", "none");
-        });
-    }
-
-
-    // START victorywillcome tweets
-    var valueVWC = readCookie("vwc");
-    if (valueVWC && valueVWC.length > 0) {
-        if (valueVWC == "Yes") {
-            showAll = true;
-        }
-    }
-
-
-    // START da cor caso haja alteracoes
-    var hasChanges = readCookie("haschanges");
-    if (hasChanges && hasChanges.length > 0) {
-        if (showColorsAdv) {
-            $("#generateicon").addClass("haschanges");
-            if (showColors) {
-                $("#settings").addClass("haschanges");
-            }
-        } 
-    }
-
-
-    // START swip binds
-    document.addEventListener('touchstart', handleTouchStart, false);        
-    document.addEventListener('touchmove', handleTouchMove, false);
-    document.addEventListener('touchend', handleTouchEnd, false);
-    
-
-    // START filechoser
-    var dropZone = document.getElementById('filedrop');
-    dropZone.addEventListener('dragover', handleDragOver, false);
-    dropZone.addEventListener('drop', handleFileSelectDragDrop, false);
-    document.getElementById('files').addEventListener('change', handleFileSelectInput, false);
-
-    // START do view mode (O QUE FAZ?????)    
-    setviewmode();
-
-
-    // TEST CODE
+$( document ).ready(function() { 
     /*
     window.mobileAndTabletcheck = function() {
         var check = false;
         (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
         return check;
       };
-    */
-
-    /* 
-    console.log("----window.innerWidth-----window.innerHeight------navigator.userAgent-----");
-    console.log(window.innerWidth + " - " + window.innerHeight + " - " + navigator.userAgent);
-    console.log("--------------------------------------------------------------------------");
     */
 
     /*
@@ -199,33 +80,100 @@ $( document ).ready(function() {
 
     nextid = parseInt(readCookie("maxid"));
 
-    function visibilityHandler() {
-        var hash = '#bg';
-        if (document.hidden && !window.location.hash) {
-        window.history.replaceState(null, null, window.location + hash);
-        } else if (!document.hidden && window.location.hash == hash) {
-        var l = '' + window.location;
-        window.history.replaceState(null, null, l.substr(0, l.length - hash.length));
-        }
-    };
+
+
+
     document.addEventListener('visibilitychange', visibilityHandler, false);
     visibilityHandler();
+    
+*/
 
-    */  
-    /*
-    <script src="./js/FileSaver.js"></script>
+   //createCookie("28tagchanged", null);
 
-        var blob = new Blob(["Welcome to Websparrow.org."],
-            { type: "text/plain;charset=utf-8" });
-        saveAs(blob, "static.txt");
-    */
+   catsmap.set("tvn", "New/Ongoing");
+   catsmap.set("trn", "New / Hot / Trending");
+   catsmap.set("tvi", "To Watch");
+   catsmap.set("tvl", "Documentaries / Films");
+   catsmap.set("tre", "Fast Reading");
+   catsmap.set("trl", "Long Reading");
+   catsmap.set("tke", "Important / To Keep");
+   catsmap.set("imp", "Shocking Truth");
+   catsmap.set("cli", "My Tweets");
+
+   $( "input, textarea" ).each( function( index, element ){
+        $(element).attr("spellcheck", "false");
+        $(element).attr("autocomplete", "none");
+        $(element).attr("additionalAttributes", "{autocomplete: 'none'}");
+   });
+
+   var showDeleted = getshowdeletedcookie();
    
+   if (showDeleted == "true") {
+    $("#showdeleted").prop('checked', true);
+    $("#showdeleted2").prop('checked', true);
+   }
+   else {
+    $("#showdeleted").prop('checked', false);
+    $("#showdeleted2").prop('checked', false);
+   }
+   
+   
+    setTimeout(function(){
+        countalltweets();
+
+        setTimeout(function(){
+            $( "#mask" ).fadeOut( 800, function() {
+                var style = window.getComputedStyle(body, null);
+        
+                $("#mask").css("background", style.getPropertyValue('--soft-transp-color'));
+                $("#mask .fa-folder-open").hide();
+                $("#mask > div" ).hide();
+                $("#mask > .fa-circle-o-notch").show();
+            });
+        }, 900); 
+
+    }, 1); 
+   
+    setviewmode();
+
+    var hasZoom = readCookie("hasZoom");
+    if (hasZoom && hasZoom.length > 0)
+        zoom(null, true);
+    
+    setTimeout(function(){
+        $('body').removeClass('notransit'); 
+    }, 1400);  
+
+    
+    //showSplash();
+
+    //openSearchPopup();
+    
+    /*
+    var functorun = function(jsonvar) 
+   { 
+       if (jsonvar != null) {
+           openSettingsPopup(jsonvar);
+       }
+   } 
+
+   getJsonbyid(28, functorun);
+ */
+    //openMainSettingsPopup();
+    
+    var hasChanges = readCookie("hasChanges");
+
+    if (hasChanges && hasChanges.length > 0) {
+        $("#generateicon").addClass("haschanges");
+    }
 
 
 
-/////////////////////////////////////////////////////////////////////////
-//                           BINDS ON READY                            //
-/////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////
+
+
+
+    ///////////////////////////////////////
 
     window.onscroll = function(ev) {
         if ((window.innerHeight + window.scrollY + 1800) >= document.body.offsetHeight && dosearchmore) {
@@ -312,7 +260,6 @@ $( document ).ready(function() {
     /*$("#typeTT, #typeYY, #typeHH").on("click", function() {
         parseTweet();
     });*/ 
-
     $("#tweet").on("paste", function() {
         parseTweet();
     });
@@ -328,6 +275,9 @@ $( document ).ready(function() {
 
     });
 
+    ///////////////////////////////////////
+
+    
     $( "#showdeleted" ).bind( "click", function( event ) {
         if ($("#showdeleted").is(":checked")) {
             $("#showdeleted2").prop('checked', true);
@@ -340,6 +290,26 @@ $( document ).ready(function() {
         countalltweets();
     });
 
+
+    $( "#showdeleted2" ).bind( "click", function( event ) {
+        if ($("#showdeleted2").is(":checked")) {
+            $("#showdeleted").prop('checked', true);
+            setshowdeletedcookie("true");
+        }
+        else {
+            $("#showdeleted").prop('checked', false);
+            setshowdeletedcookie("false");
+        }
+        countalltweets();
+    });
+
+    function setshowdeletedcookie(val) {
+        createCookie("showdeleted", val, 99999);  
+    }   
+
+    function getshowdeletedcookie(val) {
+        return readCookie("showdeleted");  
+    }   
 
     $( "#moretweets" ).bind( "click", function( event ) {
         getInformation(true, 3);
@@ -437,14 +407,8 @@ $( document ).ready(function() {
     });
 
     $( "#splashbutton" ).bind( "click", function( event ) {
-        if (currentIndex == 0) {
+        if (currentIndex == 0)
             closeSplash(); 
-            if ($("#splashbutton").attr("ceec") == "yes") {
-                $("#splashbutton").attr("ceec", "");
-                funcg();
-                funcg = null;
-            }
-        }
     });
     
     $( "#catsinput" ).change(function() {
@@ -453,66 +417,62 @@ $( document ).ready(function() {
 
     $( "#tagsinput" ).change(function() {
         tagsInputOnChange(this);
-    });
-
-    $( "#filtertag" ).change(function() {
+      });
+      $( "#filtertag" ).change(function() {
         filtertagOnChange(this);
-    });
-
-    $("#filtertag").keyup(function(e) {
+      });
+      $("#filtertag").keyup(function(e) {
         filtertagOnChange(this);
-    });
+      });
 
-    $( "#classifinput" ).change(function() {
+      $( "#classifinput" ).change(function() {
         classifInputOnChange(this);
-    });
+      });
 
-    $( ".newLayout > div" ).click(function(event) {
+      $( ".newLayout > div" ).click(function(event) {
         event.stopPropagation();
-    });
+      });
 
-    $("#filtertext").keyup(function() {
+      $("#filtertext").keyup(function() {
         filterinfoOnChange(this);
-    });
-
-    $("#filtertext").change(function() {
+      });
+      $("#filtertext").change(function() {
         filterinfoOnChange(this);
-    });
+      });
 
-    $("#infoinput").keyup(function() {
+      $("#infoinput").keyup(function() {
         infoInputOnKeyup(this);
-    });
+      });
 
-    $("#filterauthor").keyup(function() {
+      $("#filterauthor").keyup(function() {
         filterauthorOnChange(this);
-    });
-
-    $("#filterauthor").change(function() {
+      });
+      $("#filterauthor").change(function() {
         filterauthorOnChange(this);
-    });
+      });
 
-    $("#addtaginput").keyup(function(event) {
+      $("#addtaginput").keyup(function(event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13' && $(this).val().length > 0){
             addTextTag();
         }
-    });
-    
-    $( "#filterdate1display" ).click(function() {
+      });
+      
+      $( "#filterdate1display" ).click(function() {
         $( "#filterdate1display" ).blur();  
         var value = new Date();
-        if (filterdate1date != null)
-        value = filterdate1date;
-        $('#searchpopup').css("background", "transparent");
-        
-        openCalendar("filterdate1", value)
-    });
+          if (filterdate1date != null)
+            value = filterdate1date;
+          $('#searchpopup').css("background", "transparent");
+          
+          openCalendar("filterdate1", value)
+      });
 
-    $( "#filterdate1" ).change(function() {
+      $( "#filterdate1" ).change(function() {
         filterdate1change();
-    });
+      });
 
-    $( "#filterdate2display" ).click(function() {
+      $( "#filterdate2display" ).click(function() {
         $( "#filterdate2display" ).blur();
 
         var value = new Date();
@@ -605,13 +565,12 @@ $( document ).ready(function() {
                 htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle + "top: " + top + "px !important;"); 
             }
       });
-      /*
       $("input, textarea").blur( function(){  
             if ($("#linkChange").css("display") != "none") {
                 updateTopPosition("linkChange");
             }
       });
-        */
+
 
     document.getElementById("toptitle").addEventListener('click', () => {
         navigator.clipboard.readText()
@@ -682,721 +641,16 @@ $( document ).ready(function() {
         })
     });
 
-    // DOUBLE TAP and DOUBLE CLICK (icon folderopen da backdiv)
-    document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
-    document.getElementById("folderopen").addEventListener("click", clickHandler);
+});
 
 
-    // xyz 
 
-
-        /*
-    window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-
-    navigator.webkitPersistentStorage.requestQuota(1024*1024, function() {
-        window.webkitRequestFileSystem(window.PERSISTENT , 1024*1024, SaveDatFileBro);
-      });
-
-      console.log(1111);
-    window.requestFileSystem(window.PERSISTENT, 1024*1024, onInitFs, errorHandler);
-     */
-
-
-    //openMainSettingsPopup();
-
-    /* 
-    setTimeout( function() { 
-        clickmenu('all', 'All Links');
-    }, 1000 );
-
-
-    var a = {};
-
-    a.aaa = "aaa val";
-    a.bbb = "bbb val";
-
-    var ac = {};
-
-    alert(jQuery.isEmptyObject(a));
-    
-    alert(jQuery.isEmptyObject(ac));
-    
-    alert("1: " + a.bbb)
-
-    var ccc = JSON.stringify(a, null, " ");
-    alert("2: " + ccc)
-
-    var ddd = JSON.parse(ccc)
-
-    alert("3: " + ddd.aaa)
-
-
-    var encrypted = CryptoJS.AES.encrypt("x20#0000002e", "x20#002e");
-    //U2FsdGVkX18ZUVvShFSES21qHsQEqZXMxQ9zgHy+bu0=
-    console.log("encrypted-" + encrypted + "-")
-    var decrypted = CryptoJS.AES.decrypt(encrypted, "x20#002e");
-    //4d657373616765
-    console.log("decrypted-" + decrypted + "-")
-
-    console.log("decrypted2-" + decrypted.toString(CryptoJS.enc.Utf8) + "-")
-    
-    */
-
-}); // FIM DO ONREADY
-
-
- 
-
-/////////////////////////////////////////////////////////////////////////
-//                          FILE READ/WRITE                            //
-/////////////////////////////////////////////////////////////////////////
-
-function SaveDatFileBro(localstorage) {
-    localstorage.root.getFile("info.txt", {create: true}, function(DatFile) {
-      DatFile.createWriter(function(DatContent) {
-        var blob = new Blob(["Lorem Ipsum 2222"], {type: "text/plain"});
-        DatContent.write(blob);
-      });
-    });
-  }
-  function errorHandler(e) {
-    var msg = '';
-  
-    switch (e.code) {
-        /*
-      case FileError.QUOTA_EXCEEDED_ERR:
-        msg = 'QUOTA_EXCEEDED_ERR';
-        break;
-      case FileError.NOT_FOUND_ERR:
-        msg = 'NOT_FOUND_ERR';
-        break;
-      case FileError.SECURITY_ERR:
-        msg = 'SECURITY_ERR';
-        break;
-      case FileError.INVALID_MODIFICATION_ERR:
-        msg = 'INVALID_MODIFICATION_ERR';
-        break;
-      case FileError.INVALID_STATE_ERR:
-        msg = 'INVALID_STATE_ERR';
-        break; */
-      default:
-        msg = 'Unknown Error';
-        break;
-    };
-  
-    console.log('Error: ' + msg);
-    console.log(e);
-    
-  }
-
-  function onInitFs(fs) {
-    fs.root.getFile('info.txt', {}, function(fileEntry) {
-
-      // Get a File object representing the file,
-      // then use FileReader to read its contents.
-      fileEntry.file(function(file) {
-         var reader = new FileReader();
-  
-         reader.onloadend = function(e) {
-            
-           console.log(this.result);
-         };
-  
-         reader.readAsText(file);
-      }, errorHandler);
-  
-    }, errorHandler);
-  }
-
-
-/////////////////////////////////////////////////////////////////////////
-//                     DOUBLE TAP and DOUBLE CLICK                     //
-/////////////////////////////////////////////////////////////////////////
-
-
-function executeDoubleFunction(obj, type) {
-    switch(obj) {
-        case "folderopen":
-            if (type == "double") {
-                alert("Execute double on folderopen");
-            }
-            else {
-                alert("Execute single on folderopen");
-            }
-            break;     
-    }
-}
-
-var dblFlagControl = true;
-function tapHandler(event) {
-    var obj = event.currentTarget.id;
-    dblFlagControl = false;
-    if(!dblFlag) {
-        dblFlag = true;
-        dblClickTimeout = setTimeout( function() { 
-            dblFlag = false; 
-            executeDoubleFunction(obj, "single");
-            setTimeout( function() { 
-                dblFlagControl = true;
-            }, 200 );
-        }, 250 );
-        return false;
-    }
-    event.preventDefault();
-    clearTimeout(dblClickTimeout);
-    dblFlag = false;
-    dblFlagControl = true;
-    executeDoubleFunction(obj, "double");
- }
-
- function clickHandler(event) {
-    var obj = event.currentTarget.id;
-
-    if (!dblFlagControl) {
-        event.preventDefault();
-        return false;
-    }
-
-    if(!dblFlag) {
-        dblFlag = true;
-        dblClickTimeout = setTimeout( function() { 
-            dblFlag = false; 
-            executeDoubleFunction(obj, "single");
-        }, 250 );
-        return false;
-    }
-    event.preventDefault();
-    
-    clearTimeout(dblClickTimeout);
-    dblFlag = false;
-    executeDoubleFunction(obj, "double");
- }
-
-
-
-/////////////////////////////////////////////////////////////////////////
-//                              FILE CHOSER                            //
-/////////////////////////////////////////////////////////////////////////
-
-function handleFileSelectInput(evt) {
-
-    var files = evt.target.files;
-
-    uploadFiles(files);
-}
-
-function handleFileSelectDragDrop(evt) {
-    evt.stopPropagation();
-    evt.preventDefault();
-
-    var files = evt.dataTransfer.files; 
-
-    uploadFiles(files);
-  }
-
-  function uploadFiles(files) {
-    try {
-        $( "#dialog-confirm-upload" ).dialog({
-            resizable: false,
-            height: "auto",
-            width: 400,
-            modal: true,
-            buttons: {
-            "Yes": function() {
-                var reader=new FileReader();
-                reader.onload = function(e) {}
-                reader.readAsText(files[0]);
-            
-                setTimeout(function(){
-                    var currentId = readCookie("maxid");
-                    try {
-                        var resultParsed = JSON.parse(reader.result);
-            
-                        var webLinksMap = new Map();
-                        var hasTemp = false;
-            
-                        for (var x = 0; x < resultParsed.length; x++) {
-            
-                            if (parseInt(resultParsed[x].id) >= 100000) {
-                                hasTemp = true;
-            
-                                var link = "{\r\n\"id\": \"" + resultParsed[x].id + "\",\r\n\"creationdate\": \"" + resultParsed[x].creationdate  + "\",\r\n\"type\": \"" + resultParsed[x].type  + "\",\r\n\"url\": \"" + resultParsed[x].url  + "\",\r\n\"ishidden\": \"" + resultParsed[x].ishidden  + "\",\r\n\"date\": \"" + resultParsed[x].date + "\",\r\n\"author\": \"" + resultParsed[x].author  + "\",\r\n\"categories\": \"" + resultParsed[x].categories + "\",\r\n\"tags\": \"" + resultParsed[x].tags + "\",\r\n\"info\": \"" + resultParsed[x].info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "").trim() + "\",\r\n\"classif\": \"" + resultParsed[x].classif + "\",\r\n\"isnew\": \"\",\r\n\"deleted\": \"" + resultParsed[x].deleted + "\",\r\n\"tweet\": \"" + resultParsed[x].tweet + "\"\r\n},";
-            
-                                var mlink = encodeURIComponent(JSON.stringify(link));
-                
-                                createCookie(resultParsed[x].id + "templink", mlink, 99999);
-                            }
-                            else {
-                                webLinksMap.set(parseInt(resultParsed[0].id), resultParsed[x]);
-                            }
-                        }
-            
-                        if (hasTemp)
-                            createCookie("maxid", parseInt(resultParsed[0].id) + 1);
-                        else 
-                            createCookie("maxid", 100000);
-            
-                        $("#mask").fadeOut(500);
-                        $("#dialog-confirm-upload").parent().fadeOut( 800, function() {
-                            $("#dialog-confirm-upload").parent().remove();
-                        });
-
-                        setTimeout(function(){
-                            showMessage("Links Successfully Imported"); 
-            
-                            countalltweets(webLinksMap);
-                
-                            eraseAllTmpData(); 
-
-                            document.getElementById("files").value = "";
-                        }, 600); 
-                    }
-                    catch(err) {
-                        showMessage("Error Importing Links");
-                        createCookie("maxid", parseInt(currentId)); 
-                    }
-                    finally {
-            
-                    }
-                }, 100);  
-            },
-            Cancel: function() {
-                $("#mask").fadeOut(500);
-                $("#dialog-confirm-upload").parent().fadeOut( 800, function() {
-                    $("#dialog-confirm-upload").parent().remove();
-                });
-                document.getElementById("files").value = "";
-                }
-            }
-        });
-    } catch (error) {
-                        
-    }
-    $("#dialog-confirm-upload").parent().addClass("uploaddialog");
-    
-    $("#dialog-confirm-upload").parent().css("top", ((window.innerHeight/2) - 100) + "px")
-    $("#mask").fadeIn(500);
-    $("#dialog-confirm-upload").parent().fadeIn(800);    
-  }
-
-
-  function updateWebLink(obj, webObj) {
-
-    eraseLinkTmpData(obj.id, true)
-
-    if(obj.hasOwnProperty("date") && obj.date != webObj.date) {
-        createCookie(obj.id + "date", obj.date, 99999);
-    }
-
-    if(obj.hasOwnProperty("author") && obj.author != webObj.author) {
-        createCookie(obj.id + "author", obj.author, 99999);
-    }
-
-    if(obj.hasOwnProperty("categories") && obj.categories != webObj.categories) {
-        createCookie(obj.id + "catchanged", obj.categories, 99999);
-    }
-
-    if(obj.hasOwnProperty("tags") && obj.tags != webObj.tags) {
-        createCookie(obj.id + "tagchanged", obj.tags, 99999);
-    }
-
-    if(obj.hasOwnProperty("info") && obj.info != webObj.info) {
-        createCookie(obj.id + "info", obj.info, 99999);
-    }
-
-    if(obj.hasOwnProperty("deleted")) {
-        createCookie(obj.id + "isdeleted", obj.deleted, 99999);
-    }
-
-    if(obj.hasOwnProperty("classif") && obj.classif != webObj.classif) {
-        createCookie(obj.id + "classif", obj.classif, 99999);
-    }
-  }
-
-
-  function handleDragOver(evt) {
-    evt.stopPropagation();
-    evt.preventDefault();
-    evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
-  }
-
-  function readTextFile(file, callback) {
-      var rawFile = new XMLHttpRequest();
-      rawFile.overrideMimeType("application/json");
-      rawFile.open("GET", file, true);
-      rawFile.onreadystatechange = function() {
-          if (rawFile.readyState === 4 && rawFile.status == "200") {
-              callback(rawFile.responseText);
-          }
-      }
-      rawFile.send(null);
-  }
-  
-  function download(filename, text) {
-    var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
-  
-    element.style.display = 'none';
-    document.body.appendChild(element);
-  
-    element.click();
-  
-    document.body.removeChild(element);
-  }
-
-/////////////////////////////////////////////////////////////////////////
-//                               SWIPE                                 //
-/////////////////////////////////////////////////////////////////////////
-
-    
-  function getParentObjId(obj) {
-    var found = false;
-    var currObj = obj;
-
-    if (currObj.hasClass("pobj")) {
-
-        if (!currObj.hasClass("body")) {
-            return currObj.attr("id");
-        }
-
-        return "";
-    }
-
-    do {
-        currObj = currObj.parent();
-
-        if (currObj.hasClass("pobj")) {
-
-            if (!currObj.hasClass("body")) {
-                return currObj.attr("id");
-            }
-
-            return "";
-        }
-    }
-    while (!found);
-  }   
-
-
-
-function getTouches(evt) {
-  currObjSwipe = getParentObjId($(event.target));
-  return evt.touches ||             // browser API
-         evt.originalEvent.touches; // jQuery
-}                                                     
-
-function handleTouchStart(evt) {
-    const firstTouch = getTouches(evt)[0];                                      
-    xDown = firstTouch.clientX;                                      
-    yDown = firstTouch.clientY;   
-    
-    dblFlag = false;  
-    setTimeout(function() {    
-        dblFlag = true; 
-        dblClickTimeout = setTimeout(function() {    
-            dblFlag = false;  
-      }, 90);
-    }, 10);                
-};                                                
-
-function handleTouchEnd(evt) {
-    if (useSwipes && dblFlag && lastTouch) {                       
-        if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
-            if ( xDiff > 0 ) {
-                executeSwipeFunction(currObjSwipe, "left");
-            } else {
-                executeSwipeFunction(currObjSwipe, "right");
-            }                       
-        } else {
-            if ( yDiff > 0 ) {
-                executeSwipeFunction(currObjSwipe, "up");
-            } else {
-                executeSwipeFunction(currObjSwipe, "down");
-            }                                                                 
-        }
-    }  
-    dblFlag = false;
-    xDown = null;
-    yDown = null;   
-    lastTouch = null;                             
-}; 
-
-
-function executeSwipeFunction(obj, type) {
-
-    switch(obj) {
-        case "main":
-        case "backdiv":
-            processBackdivFuncs(type);
-            break;
-        case "helppop":
-            processHelpDivFuncs(type);
-            break;
-    
-        case "mainmenu":
-            processMainmenuFuncs(type);
-            break;
-
-        case "linkChange":
-            processLinkChangeFuncs(type);
-            break;
-    
-        case "searchpopup":
-            processSearchFuncs(type);
-            break;
-            
-        case "calendardiv":
-            processCalendarFuncs(type);
-            break;
-
-        case "mainsettings":
-            processMainsettingsFuncs(type);
-            break;
-        default:
-            processLinkFuncs(obj, type);
-            break;       
-    }
-    currObjSwipe = null;
-
-}
-
-function processHelpDivFuncs(type) {
-    closeHelpPopup();
-    console.log("help all-----------------------------------------------");
-} 
-
-function processLinkChangeFuncs(type) {
-    switch(type) {
-        case "up":
-            closeSettingsPopup()
-            console.log("linkChange up-----------------------------------------------");
-            break;
-
-        case "down":
-            closeSettingsPopup()
-            console.log("linkChange down-----------------------------------------------");
-            break;
-        case "left":
-            closeSettingsPopup()
-            console.log("linkChange left-----------------------------------------------");
-            break;
-
-        case "right":
-            closeSettingsPopup();
-            console.log("linkChange right-----------------------------------------------");
-            break;
-    }
-}  
-
-function processSearchFuncs(type) {
-    switch(type) {
-        case "up":
-            closeSearchPopup()
-            console.log("searchpopup up-----------------------------------------------");
-            break;
-
-        case "down":
-            closeSearchPopup()
-            console.log("searchpopup down-----------------------------------------------");
-            break;
-        case "left":
-            resetFields(true)
-            console.log("searchpopup left-----------------------------------------------");
-            break;
-
-        case "right":
-            getInformation(false, 2);
-            console.log("searchpopup right-----------------------------------------------");
-            break;
-    }
-}  
-
-function processCalendarFuncs(type) {
-    switch(type) {
-        case "up":
-            closeCalendarPopup()
-            console.log("calendardiv up-----------------------------------------------");
-            break;
-
-        case "down":
-            closeCalendarPopup()
-            console.log("calendardiv down-----------------------------------------------");
-            break;
-        case "left":
-            $("button[data-calendar-toggle=previous]").trigger("click");
-            console.log("calendardiv left-----------------------------------------------");
-            break;
-
-        case "right":
-            $("button[data-calendar-toggle=next]").trigger("click");
-            console.log("calendardiv right-----------------------------------------------");
-            break;
-    }
-}  
-
-function processBackdivFuncs(type) {
-    switch(type) {
-        case "up":
-            openSearchPopup()
-            console.log("backdiv up-----------------------------------------------");
-            break;
-
-        case "down":
-            openmenu()
-            console.log("backdiv down-----------------------------------------------");
-            break;
-        case "left":
-            openmenu()
-            console.log("backdiv left-----------------------------------------------");
-            break;
-
-        case "right":
-            openSearchPopup()
-            console.log("backdiv right-----------------------------------------------");
-            break;
-    }
-}  
-
-function processMainsettingsFuncs(type) {
-    switch(type) {
-        case "up":
-            closeMainSettingsPopup();
-            console.log("mainsettings up-----------------------------------------------");
-            break;
-
-        case "down":
-            closeMainSettingsPopup();
-            console.log("mainsettings down-----------------------------------------------");
-            break;
-        case "left":
-            closeMainSettingsPopup();
-            console.log("mainsettings left-----------------------------------------------");
-            break;
-
-        case "right":
-            closeMainSettingsPopup();
-            console.log("mainsettings right-----------------------------------------------");
-            break;
-    }
-}  
-
-function processMainmenuFuncs(type) {
-    switch(type) {
-        case "up":
-            closeMenuPopup()
-            console.log("Mainmenu up-----------------------------------------------");
-            break;
-
-        case "down":
-            closeMenuPopup()
-            console.log("Mainmenu down-----------------------------------------------");
-            break;
-        case "left":
-            showMessage("Show Deleted Links Toggled", 2500, null, null, null, null, true, 500);
-
-            toggleShowDeletedAll();
-
-            console.log("Mainmenu left-----------------------------------------------");
-            break;
-
-        case "right":
-            clickmenu('all', 'All Links');
-            showMessage("All Links Displayed", 2500, null, null, null, null, true, 500);
-            console.log("Mainmenu right-----------------------------------------------");
-            break;
-    }
-}  
-
-function processLinkFuncs(idLink, type) {
-
-    if (parseInt(idLink) > -1) {
-        switch(type) {
-            case "up":
-                //console.log("UP   UP   UP   UP   UP   UP   UP   UP   UP   UP   UP");
-                /*
-                openSearchPopup()
-                https://stackoverflow.com/questions/22629286/scroll-down-a-webpage-by-constant-speed/22629859
-                */
-                setTimeout(function() { 
-                    gotop();
-                }, 100); 
-                
-                showMessage("Scrolled to top", 2500, null, null, null, null, true, 500);
-                 
-                break;
-    
-            case "down":// apagar pesquisa - mantendo os critérios
-                /*console.log("DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   ");*/
-                
-                $("#main").empty();
-                $('#moretweets').hide();
-                $('#tweetcount').hide(); 
-                showMessage("Search cleared", 2500, null, null, null, null, true, 500);
-
-                break;
-            case "left": // apagar pesquisa - mantendo os critérios 
-                /*console.log("LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   ");*/
-             
-                $('#linkresult').val($('#' + idLink).attr('curl'));
-                $("#linkresult").focus();
-                sleep(100);  
-                $("#linkresult").select();
-                document.execCommand('copy');
-                sleep(100);  
-                $("#linkresult").blur();
-                showMessage("Link Copied To Clipboard", 2500, null, null, null, null, true, 500);
-
-                break;
-    
-            case "right": // abrir link
-                //console.log("RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   ");
-                expandCat(null, idLink);
-                break;
-        }
-    }
-}  
-
-function handleTouchMove(evt) {
-    if ( ! xDown || ! yDown ) {
-        return;
-    }
-
-    if (evt.touches[0] != null)
-        lastTouch = evt.touches[0];
-
-    xUp = evt.touches[0].clientX;                                    
-    yUp = evt.touches[0].clientY;
-
-    xDiff = xDown - xUp;
-    yDiff = yDown - yUp; 
-    
-};
-
-
-
-
-
-/////////////////////////////////////////////////////////////////////////
-//                              TRATAR                                 //
-/////////////////////////////////////////////////////////////////////////
-
-
-
-
-function setshowdeletedcookie(val) {
-    createCookie("showdeleted", val, 99999);  
-}   
-
-function getshowdeletedcookie(val) {
-    return readCookie("showdeleted");  
-}   
 
 function showSplash()
 {
     $("#splash").fadeIn(800);
 
-    currentIndex = 10;
+    currentIndex = 16;
     $("#splashbutton").removeClass("active");
     $("#splashbutton").hide();
     dblClickTimeout = setTimeout(function() {  
@@ -1635,30 +889,12 @@ function openmenu(obj, flag) {
 
             $('body, html').css('overflow-y', 'hidden');
     
-
-            $('#mainmenu').css('transition', 'transition: all 0.01s');
-            $('#mainmenu').css("height", "calc(100%)");
-
-            if ($('body').hasClass('big')) {
-                $('#mainmenu').css("top", "-528px");
-            }
-            else {
-                $('#mainmenu').css("top", "-391px");
-            }
-            
-            $('#mainmenu').css("background", "transparent");
-
-            $('#mainmenu').slideDown();
-
-            $('#mainmenu').attr("style", "top: 0px;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s, background 1.1s, height 0.2s;");
-
-            setTimeout(function(){
-                $('#mainmenu').css('background', 'var(--soft-transp-color)');
-            }, 600);
- 
+            $('#mainmenu').fadeIn(600);
         }
         else {
-            closeMenuPopup();
+            closeallnewlayout();
+
+            $('body, html').css('overflow-y', 'auto');
         }
     //}
 }
@@ -1673,9 +909,8 @@ function closeallnewlayout(bj) {
 
 
 function gotop(e) {
-    if (e)
-        e.stopPropagation();
-    $("html").scrollTop(0);
+    e.stopPropagation();
+    $(window).scrollTop( 0 );
 }   
 
 
@@ -1715,7 +950,7 @@ function externallinkcopy(obj) {
     $("#linkresult").select();
     document.execCommand('copy');
     $("#linkresult").blur();
-    showMessage("Link Copied To Clipboard"); 
+    showMessage("External Link Copied To Clipboard"); 
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -1780,16 +1015,11 @@ function closetagpopup(obj, id) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function showMessage(text, speed, icon, iconstyle, undofunc, undotext, transparent, inicialspeed) {
+function showMessage(text, speed, icon, iconstyle, undofunc, undotext) {
     var mainDiv = $("#stripmessage");
-
     var dospeed = 3500;
     if (speed)
       dospeed = speed;
-
-    var doinicialspeed = 900;
-    if (inicialspeed)
-        doinicialspeed = inicialspeed;
 
     mainDiv.find('i.fa').attr('class', 'fa');
     if (icon) {
@@ -1816,14 +1046,7 @@ function showMessage(text, speed, icon, iconstyle, undofunc, undotext, transpare
     mainDiv.css("transition", "none");
     $("#stripmessage .striptext").css("transition", "none");
     mainDiv.css("top", "0px");
-
-    if (transparent) {
-        mainDiv.css("background", "rgba(0, 0, 0, 0)");
-    }
-    else {
-        mainDiv.css("background", "rgba(0, 0, 0, 0.6)");
-    }
-
+    mainDiv.css("background", "rgba(0, 0, 0, 0.6)");
     $("#stripmessage .striptext").css("top", "calc(50% - 27px)");
     $("#stripmessage .poptitle").text(text);
 
@@ -1838,7 +1061,7 @@ function showMessage(text, speed, icon, iconstyle, undofunc, undotext, transpare
           setTimeout(function() { 
                mainDiv.fadeOut("slow");
             }, dospeed);
-        }, doinicialspeed);
+        }, 900);
     });
 }   
 
@@ -1880,7 +1103,7 @@ function readCookie(name) {
 
 
 function eraseCookie(name) {
-    createCookie(name, "", -1);
+    createCookie(name, null, -1);
 }  
     
 
@@ -2008,109 +1231,3 @@ function expandscreen(obj) {
         }
     }
 }  
-
-function customizeTweets(flag, forceProcess, big, dopostcode) {
-    var isChromium = window.chrome;
-    var winNav = window.navigator;
-    var vendorName = winNav.vendor;
-    var isOpera = typeof window.opr !== "undefined";
-    var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
-    var isIOSChrome = winNav.userAgent.match("CriOS");
-    var isSafari6Plus = !!navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i) && typeof document.body.style.webkitFilter !== "undefined";
-    var ua = navigator.userAgent.toLowerCase();
-    var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-
-    var tweetCSS = ".EmbeddedTweet{height:auto !important;background: transparent !important; margin: 0 !important;}.EmbeddedTweet {max-width: none !important;width: 100%;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;} .Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar:not(.Identity-avatar) {height: 50px !important;width: 50px !important;position: absolute !important;top: -7px !important;}.Avatar.Identity-avatar {width: 20px !important;height: 22px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important; padding-top: 0 !important;}.TwitterCard-container {max-width: 10000px!important;}";
-      
-    if ($('body').hasClass('big')) {
-        tweetCSS = ".EmbeddedTweet{height:auto !important; background: transparent !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;width: 100%;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.Tweet-ancestorContents.Tweet-ancestorContents--repliesRefresh > .avatar {left: -8px !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar:not(.Identity-avatar) {height: 45px !important; width: 45px !important; position: relative !important; top: -2px !important;min-width: 43px !important;}.Avatar.Identity-avatar {width: 20px !important;height: 22px !important;} .TweetAuthor-avatar--ancestor .Avatar {left: -8px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important;}.TwitterCard-container {border: 1px solid var(--soft-color) !important;max-width: 10000px!important;}";
-    }
-    else {
-        tweetCSS = ".EmbeddedTweet{height:auto !important; background: transparent !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;width: 100%;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {background: transparent !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TwitterCard-container {border: 1px solid var(--soft-color) !important;max-width: 10000px!important;}.TweetAuthor-name {font-size: 16px !important;}.Avatar:not(.Identity-avatar) {height: 36px !important;width: 36px !important;position: relative !important;min-width: 36px !important;top: 2px !important;}.Avatar.Identity-avatar {width: 16px !important;height: 16px !important;}.TweetAuthor-screenName {font-size: 14px !important;}.Tweet-body{font-size: 16px !important;} .TweetAuthor-avatar--ancestor .Avatar {left: -5px !important;}.TweetInfo {font-size: 12px !important;}.CallToAction {font-size: 13px !important;}.Tweet-card {font-size: 14px !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TweetAuthor-avatar{width: 36px !important;height: 36px !important;}";    
-    }
-
-    var i = findFirstLink();
-    var j = i;
-    var processed = false;
-
-    if (j > -1) {
-      do {
-        var obj = $("#twitter-widget-" + j);
-
-        if (obj && obj.length > 0) {
-
-          if (forceProcess || obj.attr("processed") != "yes") {
-            processed = true;
-              obj.attr("processed", "yes");
-
-              var tweetStyle = document.createElement("style");
-
-              tweetStyle.setAttribute("id", "tweet-style-" + j);
-              tweetStyle.innerHTML = tweetCSS;
-              tweetStyle.type = "text/css";
-
-              //if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
-                  var styleTag = document.getElementById("twitter-widget-" + j).shadowRoot;
-                  insertAfter(tweetStyle, styleTag.childNodes[0]);
-
-              //} else {
-              //    var tweetWidget = document.getElementById("twitter-widget-" + j).contentDocument;
-              //    $(tweetWidget.head).prepend(tweetStyle);
-              //} 
-              
-          } 
-        }
-
-        j++;
-      }
-      while (j < i + searchtotal); 
-
-      if (processed) {
-        $('#tweetcount').fadeIn(800);
-        $('#mask').fadeOut(1100);
-                  
-        $('#moretweets').fadeOut(300);
-        $('#moretweets').css('opacity', 0);
-
-        setTimeout(function(){
-          $("html").scrollTop(0);
-          /**/
-
-        }, 1000);  
-      }
-
-      return processed;
-    }
-    else {
-      return false;
-    }
-}
-
-
-function findFirstLink() {
-var notFound = true;
-var i = -1;
-do {
-  i = i + 1;
-  var obj = $("#twitter-widget-" + i);
-
-  if (obj && obj.length > 0) {
-    notFound = false;
-  }         
-}
-while (i < 10000 && notFound); 
-
-return i;
-}
-
-function sleep(seconds) 
-{
-var e = new Date().getTime() + (seconds);
-while (new Date().getTime() <= e) {}
-}
-
-
-function insertAfter(newNode, referenceNode) {
-referenceNode.parentNode.insertBefore(newNode, referenceNode.previousSibling);
-}
-
