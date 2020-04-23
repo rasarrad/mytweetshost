@@ -43,10 +43,31 @@ var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
      changetheme(currTheme, true);
 }  
+function getDataUri(url, callback) {
+    var image = new Image();
 
+    image.onload = function () {
+        var canvas = document.createElement('canvas');
+        canvas.width = this.naturalWidth; // or 'width' if you want a special/scaled size
+        canvas.height = this.naturalHeight; // or 'height' if you want a special/scaled size
+
+        canvas.getContext('2d').drawImage(this, 0, 0);
+
+        alert(canvas.toDataURL('image/png'));
+    };
+
+    image.src = url;
+}
 $( document ).ready(function() { 
 
+
     
+    // Usage
+    getDataUri('https://s.wordpress.com/mshots/v1/https://www.flashscore.pt', function(dataUri) {
+        // Do whatever you'd like with the Data URI!
+    });
+
+
     // START mapa categorias
     catsmap.set("tvn", "New/Ongoing");
     catsmap.set("trn", "New / Hot / Trending");
