@@ -6,39 +6,9 @@
 //                             GENERAL                                 //
 /////////////////////////////////////////////////////////////////////////
 
-function expandCat(obj, idparam, valid) {
-
-    var id = null;
-
-    if (idparam) {
-        id = idparam;
-    }
-    else {
-        id = $(obj).parent().attr("id");
-        fixfocus(obj);
-    }
-    
-    // security check
-    if (valid) {
-    }
-    else if (ceec != 4) {
-        ceec++;
-    }
-    else {
-        ceec = 0;
-
-        if (!dunl()) {
-            funcg = function() 
-            { 
-                expandCat(null, id, true);
-            } 
-
-            $("#splashbutton").attr("ceec", "yes");
-            showSplash();
-
-            return false;
-        }
-    }
+function expandCat(obj) {
+    var id = $(obj).parent().attr("id");
+    fixfocus(obj);
 
     var functorun = function(jsonvar) 
     { 
@@ -48,6 +18,7 @@ function expandCat(obj, idparam, valid) {
         }
     } 
     getJsonbyid(id, functorun);
+    // getJsonbyid(28, functorun); // xyz
 }
 
 function fixfocus(el)
@@ -88,9 +59,9 @@ function zoom(obj, flag) {
     updateSearchTablesHeight();
 
     // settings
-    $("#mainsettings table")
+    $("#mainsettings table#theme")
     .css('max-height', setHeight)
-    .find('.sectionedittd i.fa-angle-up').addClass('fa-angle-down').removeClass('fa-angle-up').show()
+    .find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').show()
     .find('td.el').addClass('ellipsis');
 
     $(".newLayout table.defaulttablerow").each( function( index, element ) {
@@ -171,22 +142,18 @@ var openSettingsPopup = function(jsonobj)
             //$("#linkChange .buttonstable tr:first-child td .id").html(jsonobj.id);
         $("#linkChange .buttonstable tr:first-child td .author").show();
         $("#linkChange .buttonstable tr:first-child td .authorinput").hide(); 
-
-        $('#postedby').attr("cauthor", jsonobj.author);
-        var authorchanged = readCookie(jsonobj.id + "author");
-        if (authorchanged && authorchanged.length > 0) {
-            $("#linkChange .buttonstable tr:first-child td .author").html(authorchanged);
-            if (showColors && jsonobj.author != authorchanged) {
-                $("#linkChange .buttonstable tr:first-child td .author").css('color','#00ff72');
+        var authorchanged = readCookie(jsonobj.id + "authorchanged");
+        if (authorchanged != null && authorchanged != 'null') {
+            if (authorchanged.length > 0) {
+                $("#linkChange .buttonstable tr:first-child td .author").html(authorchanged);
+                $("#linkChange .buttonstable tr:first-child td .authorinput").val(authorchanged);
             }
             else {
-                $("#linkChange .buttonstable tr:first-child td .author").css('color','');
+                $("#linkChange .buttonstable tr:first-child td .author").html("--");
+                $("#linkChange .buttonstable tr:first-child td .authorinput").val("");
             }
-            $("#linkChange .buttonstable tr:first-child td .authorinput").val(authorchanged);
         } 
         else {
-            $("#linkChange .buttonstable tr:first-child td .author").css('color','');
-
             if (jsonobj.author.length > 0) {
                 $("#linkChange .buttonstable tr:first-child td .author").html(jsonobj.author);
                 $("#linkChange .buttonstable tr:first-child td .authorinput").val(jsonobj.author);
@@ -200,26 +167,21 @@ var openSettingsPopup = function(jsonobj)
         $("#linkChange .buttonstable tr:first-child td .date").show();
         $("#linkChange .buttonstable tr:first-child td .dateinput").hide(); 
         $("#linkChange .buttonstable tr:first-child td .datetoshow").hide(); 
-        
         var datechanged = readCookie(jsonobj.id + "datechanged");
-        $('#date').attr("cdate", jsonobj.date);
-        if (datechanged && datechanged.length > 0) {
-            $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(datechanged));
+        if (datechanged != null && datechanged != 'null') {
+            if (datechanged.length > 0) {
+                $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(datechanged));
             
-            if (showColors && jsonobj.date != datechanged) {
-                $("#linkChange .buttonstable tr:first-child td .date").css('color','#00ff72');
+                $("#linkChange .buttonstable tr:first-child td .dateinput").val(datechanged);
             }
             else {
-                $("#linkChange .buttonstable tr:first-child td .date").css('color','');
+                $("#linkChange .buttonstable tr:first-child td .date").html("--");
+                $("#linkChange .buttonstable tr:first-child td .dateinput").val("");
             }
-            $("#linkChange .buttonstable tr:first-child td .dateinput").val(datechanged);
         } 
         else {
-            $("#linkChange .buttonstable tr:first-child td .date").css('color','');
-            console.log(44444);
             var date = jsonobj.date.toString();
             if (date.length > 0) {
-                console.log(55555);
                 $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(date));
             
                 $("#linkChange .buttonstable tr:first-child td .dateinput").val(date);
@@ -233,7 +195,6 @@ var openSettingsPopup = function(jsonobj)
         
         $(".buttontdtohide").show();  
         $(".originaltr").show();
-        
         $('#removetweetp').attr('class','').addClass('fa').addClass('fa-eraser').addClass('fa-flip-horizontal');
 
     
@@ -251,13 +212,9 @@ var openSettingsPopup = function(jsonobj)
             $('.originaltags').html("--");  
         }
 
-        if (tagchanged && tagchanged.length > 0) {
+        if (tagchanged != null && tagchanged != 'null') {
             hasChanges = true;
-
-            if (showColors && jsonobj.tags != tagchanged) {
-                currenttagdisplay.css('color','#00ff72');
-            }
-
+            currenttagdisplay.css('color','#00ff72');
             if (tagchanged.length > 0)
                 currenttagdisplay.html(parseTags(tagchanged));
             else
@@ -290,13 +247,9 @@ var openSettingsPopup = function(jsonobj)
             $('.originalcats').html("--"); 
         }
 
-        if (catchanged && catchanged.length > 0) {
+        if (catchanged != null && catchanged != 'null') {
             hasChanges = true;
-            
-            if (showColors && jsonobj.categories != catchanged) {
-                currentcatdisplay.css('color','#00ff72');
-            }
-
+            currentcatdisplay.css('color','#00ff72');
             if (catchanged.length > 0)
                 currentcatdisplay.html(parseCats(catchanged));
             else
@@ -326,13 +279,9 @@ var openSettingsPopup = function(jsonobj)
             $('.originalclassif').html("--"); 
         }
 
-        if (classifchanged && classifchanged.length > 0) {
+        if (classifchanged != null && classifchanged != 'null') {
             hasChanges = true;
-
-            if (showColors && jsonobj.classif != classifchanged) {            
-                currentclassifdisplay.css('color','#00ff72');
-            }
-
+            currentclassifdisplay.css('color','#00ff72');
             currentclassifdisplay.html(classifchanged);
             $('#classifinput').val(classifchanged);
             $('#originalclassiftd i').show();
@@ -366,12 +315,9 @@ var openSettingsPopup = function(jsonobj)
             $('.originalinfo').html("--"); 
         }
 
-        if (infochanged && infochanged.length > 0) {
+        if (infochanged != null && infochanged != 'null') {
             hasChanges = true;
-            
-            if (showColors && jsonobj.info != infochanged) {
-                currentinfodisplay.css('color','#00ff72');
-            }
+            currentinfodisplay.css('color','#00ff72');
 
             if (infochanged.length > 0)
                 currentinfodisplay.html(decodeURIComponent(infochanged));
@@ -393,7 +339,24 @@ var openSettingsPopup = function(jsonobj)
             }
         }
 
-        updateLinkColor(jsonobj);
+        var isdeleted = readCookie(jsonobj.id + "isdeleted");
+        if (isdeleted && isdeleted.length > 0) {
+            $("#seticon").attr("style", "color: red;");
+        }
+        else {
+            var linkcontent = readCookie(jsonobj.id + "templink");
+            if (linkcontent && linkcontent.length > 0) {
+                $("#seticon").attr("style", "color: #00dc00;");
+            }
+            else {
+                if (hasChanges) 
+                    $("#seticon").attr("style", "color: #f18618;");
+                else 
+                    $("#seticon").attr("style", "");
+            }
+        }
+
+
     }
     else {
 
@@ -453,47 +416,9 @@ var openSettingsPopup = function(jsonobj)
         $("#linkChange #editTags .fa-chevron-down").show();    
     }
 
-    if (showColors) {
-        $(".originaltr").show();
-    }
-    else {
-        $(".originaltr").hide();
-    }
+    $('#linkChange').fadeIn(); 
 
-    //$('#linkChange').fadeIn(); 
-
-    //updateTopPosition("linkChange"); 
-    
-    $('#linkChange').css('transition', 'transition: all 0.01s');
-    $('#linkChange').css("height", "calc(100%)");
-
-
-    if ($('#linkChange').hasClass("new")) {
-        if ($('body').hasClass('big')) {
-            $('#linkChange').css("top", "-815px");
-        }
-        else {
-            $('#linkChange').css("top", "-715px");
-        }
-    }     
-    else {
-        if ($('body').hasClass('big')) {
-            $('#linkChange').css("top", "-300px");
-        }
-        else {
-            $('#linkChange').css("top", "-233px");
-        } 
-    }
-        
-    $('#linkChange').css("background", "transparent");
-
-    $('#linkChange').slideDown();
-
-    $('#linkChange').attr("style", "top: 0px;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s, background 1.1s, height 0.2s;");
-
-    setTimeout(function(){
-        $('#linkChange').css('background', 'var(--soft-transp-color)');
-    }, 600);
+    updateTopPosition("linkChange"); 
 } 
 
 var openMainSettingsPopup = function(jsonobj) 
@@ -501,19 +426,12 @@ var openMainSettingsPopup = function(jsonobj)
     closeallnewlayout();
 
     $('body, html').css('overflow-y', 'hidden');
-
-    if (!isMy) {
-        $("#mainsettings table.ismy").each( function( index, element ) {
-            $(element).css('display', 'none');
-        });
-    }
-
     var setHeight = "18px";
 
     if ($('body').hasClass('big'))
         setHeight = "30px";
 
-    $("#mainsettings table.expd").each( function( index, element ) {
+    $("#mainsettings table#theme").each( function( index, element ) {
         var table = $(element);
 
         table.css('max-height', setHeight);
@@ -521,196 +439,52 @@ var openMainSettingsPopup = function(jsonobj)
         table.find('td.el').addClass('ellipsis');
     });
 
-    $("#mainsettings table.single").each( function( index, element ) {
-        var table = $(element);
-
-        table.css('max-height', setHeight);
-    });
-
-    
-
     putChoosedThemTop();
 
-
-    // Show colors
-    var value = null;
-    if (showColorsAdv) {
-        if (showColors) {
-            value = "All";
-        }
-        else {
-            value = "Medium";
-        }
-    }
-    else {
-        value = "Minimal";
-    }
-
-    $("#colordisplay").text(value);
-
-    $('#colorul').find(".litags").each( function( index, element ) {
-        if($(element).html().trim() == value) {
-            $(element).addClass("selectedtag");
-        }
-        else {
-            $(element).removeClass("selectedtag");
-        }
-    });
-
-
-    // Use swipes
-    value = null;
-
-    if (useSwipes) {
-        value = "Yes";
-    }
-    else {
-        value = "No";
-    }
-
-    value = readCookie("help");
-    value = value == "" ? "Yes" : "No";
-    $('#helpul').find(".litags").each( function( index, element ) {
-        if($(element).html().trim() == value) {
-            $(element).addClass("selectedtag");
-        }
-        else {
-            $(element).removeClass("selectedtag");
-        }
-    });
-    
-
-    var value = readCookie("help");
-    if (value && value.length > 0) {
-        $( ".fa-question-circle:not(.ashow)" ).each( function( index, element ){
-            $(element).css("display", "none");
-        });
-    }
-
-    $("#swipedisplay").text(value);
-    
-    $('#swipeul').find(".litags").each( function( index, element ) {
-        if($(element).html().trim() == value) {
-            $(element).addClass("selectedtag");
-        }
-        else {
-            $(element).removeClass("selectedtag");
-        }
-    });
-    
-    // See victorywillcome tweets
-    value = null;
-
-    if (showAll) {
-        value = "Yes";
-    }
-    else {
-        value = "No";
-    }
-
-    $("#VWCdisplay").text(value);
-    
-    $('#VWCul').find(".litags").each( function( index, element ) {
-        if($(element).html().trim() == value) {
-            $(element).addClass("selectedtag");
-        }
-        else {
-            $(element).removeClass("selectedtag");
-        }
-    });
-    
-    // premium
-    var ceec = readCookie("eec");
-
-    // xyz
-    $('#unlockinput').val("x20#002e");
-    
-    if (ceec && ceec.length > 0 ) {
-        $('#unlockdisplay').text("Unlocked");
-    }
-    else {
-        $('#unlockdisplay').text("Locked");
-    }
-    
-
-
-    $('#mainsettings').css('transition', 'transition: all 0.01s');
-    $('#mainsettings').css("height", "calc(100%)");
-
-    if ($('body').hasClass('big')) {
-        $('#mainsettings').css("top", "-275px");
-    }
-    else {
-        $('#mainsettings').css("top", "-215px");
-    }
-
-    $('#mainsettings').css("background", "transparent");
-
-    $('#mainsettings').slideDown();
-
-    $('#mainsettings').attr("style", "top: 0px;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s, background 1.1s, height 0.2s;");
-
-    setTimeout(function(){
-        $('#mainsettings').css('background', 'var(--soft-transp-color)');
-    }, 600);
-
+    $('#mainsettings').fadeIn(600);  
 } 
 
 
 var getLinkColor = function(id) 
 {
-    var functorun = function(jsonvar) 
-    { 
-        var isdeleted = readCookie(id + "isdeleted");
-        if (jsonvar.deleted != "" || (isdeleted && isdeleted.length > 0)) {
-            return "red";
+    var isdeleted = readCookie(id + "isdeleted");
+    if (isdeleted && isdeleted.length > 0) {
+        return "red";
+    }
+    else {
+        var linkcontent = readCookie(id + "templink");
+        if (linkcontent && linkcontent.length > 0) {
+            return "#00dc00";
         }
         else {
-    
-            if (jsonvar.isnew && jsonvar.isnew != "") {
-                return "#00dc00";
-            }
-            else {
-                var hasChanges = false;
-    
-                var tagchanged = readCookie(id + "tagchanged");
-                if (tagchanged && tagchanged.length > 0) {
-                    hasChanges = true;
-                } 
-            
-                var catchanged = readCookie(id + "catchanged");
-                if (catchanged && catchanged.length > 0) {
-                    hasChanges = true;
-                } 
-            
-                var classifchanged = readCookie(id + "classif");
-                if (classifchanged && classifchanged.length > 0) {
-                    hasChanges = true;
-                } 
-            
-                var infochanged = readCookie(id + "info");
-                if (infochanged && infochanged.length > 0) {
-                    hasChanges = true;
-                }
-    
-                var author = readCookie(id + "author");
-                if (author && author.length > 0) {
-                    hasChanges = true;
-                }
+            var hasChanges = false;
 
-                var datechanged = readCookie(id + "datechanged");
-                if (datechanged && datechanged.length > 0) {
-                    hasChanges = true;
-                }
-                
-                if (hasChanges) 
-                    return "#f18618";
-                else 
-                   return "";
+            var tagchanged = readCookie(id + "tagchanged");
+            if (tagchanged != null && tagchanged != 'null') {
+                hasChanges = true;
+            } 
+        
+            var catchanged = readCookie(id + "catchanged");
+            if (catchanged != null && catchanged != 'null') {
+                hasChanges = true;
+            } 
+        
+            var classifchanged = readCookie(id + "classif");
+            if (classifchanged != null && classifchanged != 'null') {
+                hasChanges = true;
+            } 
+        
+            var infochanged = readCookie(id + "info");
+            if (infochanged != null && infochanged != 'null') {
+                hasChanges = true;
             }
+
+            if (hasChanges) 
+                return "#f18618";
+            else 
+               return "";
         }
-    } 
-    getJsonbyid(id, functorun);
+    }
 } 
 
 
@@ -760,25 +534,13 @@ function saveAuthor(obj) {
     if ($('#linkChange').attr("cid") != "new") {
         $(obj).hide();
         var otherObj = $(obj).parent().find(".author");
-        if ($(obj).val().length > 0) {
-            if ($(obj).val() != $('#postedby').attr("cauthor")) {
-                createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
-                createCookie($('#linkChange').attr("cid") + "author", $(obj).val());
-                if (showColors) {
-                    otherObj.css('color','#00ff72');
-                }
-            }
-            else {
-                createCookie($('#linkChange').attr("cid") + "author", "");
-            }
+        if ($(obj).val().length > 0) 
             otherObj.html($(obj).val());
-        }
         else
             otherObj.html("--"); 
-
-        updateLinkColor(null, $('#linkChange').attr("cid"));
-
         otherObj.show();
+        
+        createCookie($('#linkChange').attr("cid") + "authorchanged", $(obj).val());
     }
 }
 
@@ -800,157 +562,21 @@ function showDate(obj) {
 function closeSettingsPopup(obj) {
     if (obj)
         fixfocus(obj);
-
     $('body, html').css('overflow-y', 'auto');
-
-    $('#linkChange').css('transition', 'all 1.7s');
-    $('#linkChange').css('opacity', 0);
-
-    setTimeout(function(){
-        $('#linkChange').hide();
-        $('#linkChange').css('opacity', 1);
-
-        var setHeight = "18px";
-
-        if ($('body').hasClass('big'))
-            setHeight = "30px";
-    
-        $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
-            var table = $(element);
-            
-            table.css('transition', 'transition: all 0.7s !important');
-            table.css('max-height', setHeight);
-            table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').attr('style', '');
-            table.find('td.el').addClass('ellipsis');
-        });
-    }, 700);
-
+    $('#linkChange').fadeOut(600);
 }
-
-
-
-
 function closeMainSettingsPopup(obj) {
     if (obj)
         fixfocus(obj);
     $('body, html').css('overflow-y', 'auto');
-    //$('#mainsettings').fadeOut(600);
-
-    $('#mainsettings').css('transition', 'all 1.7s');
-    $('#mainsettings').css('opacity', 0);
-
-    setTimeout(function(){
-        $('#mainsettings').hide();
-        $('#mainsettings').css('opacity', 1);
-
-        var setHeight = "18px";
-
-        if ($('body').hasClass('big'))
-            setHeight = "30px";
-    
-        $('#mainsettings').find("table.sectionexpandable:not(.buttonstable)").each( function( index, element ) {
-            var table = $(element);
-            
-            table.css('transition', 'transition: all 0.7s !important');
-            table.css('max-height', setHeight);
-            table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').attr('style', '');
-            table.find('td.el').addClass('ellipsis');
-        });
-    }, 700);
+    $('#mainsettings').fadeOut(600);
 }
-
-
-
-
-
-function toggleShowDeleted() {
-    if (!$("#showdeleted").is(":checked")) {
-        $("#showdeleted").prop('checked', false);
-        $("#showdeleted2").prop('checked', false);
-        setshowdeletedcookie("false");
-    }
-    else {
-        $("#showdeleted").prop('checked', true);
-        $("#showdeleted2").prop('checked', true);
-        setshowdeletedcookie("true");
-    }
-    countalltweets();
-}
-
-function toggleShowDeleted2() {
-
-    if (!$("#showdeleted2").is(":checked")) {
-        $("#showdeleted").prop('checked', false);
-        $("#showdeleted2").prop('checked', false);
-        setshowdeletedcookie("false");
-    }
-    else {
-        $("#showdeleted").prop('checked', true);
-        $("#showdeleted2").prop('checked', true);
-        setshowdeletedcookie("true");
-    }
-    countalltweets();
-}
-
-function toggleShowDeletedAll() {
-
-    if ($("#showdeleted2").is(":checked")) {
-        $("#showdeleted").prop('checked', false);
-        $("#showdeleted2").prop('checked', false);
-        setshowdeletedcookie("false");
-    }
-    else {
-        $("#showdeleted").prop('checked', true);
-        $("#showdeleted2").prop('checked', true);
-        setshowdeletedcookie("true");
-    }
-    countalltweets();
-}
-
-function setShowDeleted(flag) {
-
-    if (flag == "false") {
-        $("#showdeleted").prop('checked', false);
-        $("#showdeleted2").prop('checked', false);
-        setshowdeletedcookie("false");
-    }
-    else {
-        $("#showdeleted").prop('checked', true);
-        $("#showdeleted2").prop('checked', true);
-        setshowdeletedcookie("true");
-    }
-    countalltweets();
-}
-
 function closeMenuPopup(obj) {
-
     if (obj)
         fixfocus(obj);
- 
     $('body, html').css('overflow-y', 'auto');
-
-    $('#mainmenu').css('transition', 'all 1.7s');
-    $('#mainmenu').css('opacity', 0);
-
-    setTimeout(function(){
-        $('#mainmenu').hide();
-        $('#mainmenu').css('opacity', 1);
-    }, 700);
-    /*
-        $('body, html').css('overflow-y', 'auto');
-
-    $('#mainmenu').css('transition', 'transition: all 0.01s');
-
-    $('#mainmenu').css("background", "transparent");
-
-    $('#mainmenu').attr("style", "top: -391px;height: 405px;background: transparent;transition: all 0.3s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s;");
-
-    setTimeout(function(){
-        $('#mainmenu').hide();
-    }, 1100);
-    */
+    $('#mainmenu').fadeOut(600);
 }
-
 function editSetting(e, obj, flag) {
     e.stopPropagation();
 
@@ -963,20 +589,6 @@ function editSetting(e, obj, flag) {
         var table = $(obj).parent().parent();
         if (table.css('max-height') == setHeight) {
             var hasExpanded = false;
-            $("#mainsettings table.expd").each( function( index, element ) {
-                var table = $(element);
-        
-                table.css('max-height', setHeight);
-                table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').show();
-                table.find('td.el').addClass('ellipsis');
-            });
-
-            $("#mainsettings table.single").each( function( index, element ) {
-                var table = $(element);
-        
-                table.css('max-height', setHeight);
-            });
-
             $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
                 var table = $(element);
                 
@@ -1020,7 +632,7 @@ function editSetting(e, obj, flag) {
         }
     }
     
-    //updateTopPosition("linkChange"); 
+    updateTopPosition("linkChange"); 
 }
 
 function updateTopPosition(obj) { 
@@ -1032,6 +644,7 @@ function updateTopPosition(obj) {
         var htmlElem = $("#" + obj + " > div");
         var maxHeightStyle = "max-height: " + (innerHeight - 125) + "px !important;";
 
+        console.log(window.innerWidth + "ssss-" + window.innerHeight)
         if (obj == "linkChange") {
             if (isLandscape) {
 
@@ -1076,7 +689,7 @@ function tagsInputOnChange(obj) {
     
     if (oldtags == $(obj).val()) {
         currenttagdisplay.css('color', '');
-        createCookie($('#linkChange').attr("cid") + "tagchanged", "");
+        createCookie($('#linkChange').attr("cid") + "tagchanged", null);
         $('#originaltagtd i').hide();
     }
     else {
@@ -1094,23 +707,18 @@ function tagsInputOnChange(obj) {
     if (color == "#f18618")
         createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
     else
-        createCookie($('#linkChange').attr("cid") + "haschanges", "");
+        createCookie($('#linkChange').attr("cid") + "haschanges", null);
 
-    updateLinkColor(null, $('#linkChange').attr("cid"));
-    
+    updateLinkColor(color, $('#linkChange').attr("cid"));
+    updateSettingsColor(color);
+
     var callback = function(flag) {      
         if (flag) {
-            createCookie("haschanges", "yes");
-            if (showColorsAdv) {
-                $("#generateicon").addClass("haschanges");
-                if (showColors) {
-                    $("#settings").addClass("haschanges");
-                }
-            } 
+            createCookie("hasChanges", "Yes");
+            $("#generateicon").addClass("haschanges");
         }
         else {
-            createCookie("haschanges", "");
-            $("#settings").removeClass("haschanges");
+            createCookie("hasChanges", "");
             $("#generateicon").removeClass("haschanges");
         }
     } 
@@ -1127,64 +735,14 @@ function updateSettingsColor(color) {
     }
 }
 
-function updateLinkColor(val, id) {
-    var functorun = function(val) 
-    { 
-        var isdeleted = readCookie(val.id + "isdeleted");
-        if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { 
-            if (showColors) {
-                $("#" + val.id).find("i.linkbar").css("color", "red"); 
-                $("#seticon").attr("style", "color: red;");
-            }
-            else {
-                if (showColorsAdv) {
-                    $("#seticon").attr("style", "color: red;");
-                }
-            }
-        } 
-        else if (showColors) {
-            if (val.isnew && val.isnew != "") { 
-                $(".tweet#" + val.id).find("i.linkbar").css("color", "#00dc00"); 
-                $("#seticon").attr("style", "color: #00dc00;");
-            }
-            else {
-                var hasChanges = readCookie(val.id + "haschanges");
-                if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
-                    $(".tweet#" + val.id).find("i.linkbar").css("color", "#f18618"); 
-                    $("#seticon").attr("style", "color: #f18618;");
-                } 
-                else {
-                    $(".tweet#" + val.id).find("i.linkbar").css("color", ""); 
-                    $("#seticon").css("color", ""); 
-                }
-            }
-        }
-        else {
-            if (showColorsAdv) {
-                if (val.isnew && val.isnew != "") { 
-                    $("#seticon").attr("style", "color: #00dc00;");
-                }
-                else {
-                    $(".tweet#" + val.id).find("i.linkbar").css("color", ""); 
-                    $("#seticon").css("color", ""); 
-                }
-            }
-            else {
-                $(".tweet#" + val.id).find("i.linkbar").css("color", ""); 
-                $("#seticon").css("color", ""); 
-            }
-        }
-    } 
-
-    if (id) {
-        getJsonbyid(id, functorun);
+function updateLinkColor(color, id) {
+    if (color != "") {
+        $(".tweet#" + id).find("i.linkbar").css("color", color); 
     }
     else {
-        functorun(val);
+        $(".tweet#" + id).find("i.linkbar").css("color", ""); 
     }
 }
-
-
 function updateTagsText(text, id) {
     if (text.trim().length > 0 && text != "undefined")
         $(".tweet#" + id).find(".tags").html("<b>Tags: </b>" + text); 
@@ -1211,7 +769,7 @@ function undoTags(e, obj) {
     $(obj).hide();
     var functorun = function() 
     { 
-        
+        console.log(1);
     } 
     $('#tagsinput').trigger("change");
     removeNonExistentLi();
@@ -1379,7 +937,7 @@ function catsInputOnChange(obj) {
     
     if (oldcats == $(obj).val()) {
         currentcatdisplay.css('color', '');
-        createCookie($('#linkChange').attr("cid") + "catchanged", "");
+        createCookie($('#linkChange').attr("cid") + "catchanged", null);
         $('#originalcattd i').hide();
     }
     else {
@@ -1394,23 +952,17 @@ function catsInputOnChange(obj) {
     if (color == "#f18618")
         createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
     else
-        createCookie($('#linkChange').attr("cid") + "haschanges", "");
+        createCookie($('#linkChange').attr("cid") + "haschanges", null);
 
-    updateLinkColor(null, $('#linkChange').attr("cid"));
-
+    updateLinkColor(color, $('#linkChange').attr("cid"));
+    updateSettingsColor(color);
     var callback = function(flag) {      
         if (flag) {
-            createCookie("haschanges", "yes");
-            if (showColorsAdv) {
-                $("#generateicon").addClass("haschanges");
-                if (showColors) {
-                    $("#settings").addClass("haschanges");
-                }
-            } 
+            createCookie("hasChanges", "Yes");
+            $("#generateicon").addClass("haschanges");
         }
         else {
-            createCookie("haschanges", "");
-            $("#settings").removeClass("haschanges");
+            createCookie("hasChanges", "");
             $("#generateicon").removeClass("haschanges");
         }
     } 
@@ -1457,6 +1009,7 @@ function undoCats(e, obj) {
     $(obj).hide();
     var functorun = function() 
     { 
+        console.log(1);
     } 
     $('#catsinput').trigger("change");
 
@@ -1491,7 +1044,7 @@ function classifInputOnChange(obj) {
     
     if (oldclassif == $(obj).val().trim()) {
         currentclassifdisplay.css('color', '');
-        createCookie($('#linkChange').attr("cid") + "classif", "");
+        createCookie($('#linkChange').attr("cid") + "classif", null);
         $('#originalclassiftd i').hide();
     }
     else {
@@ -1503,23 +1056,18 @@ function classifInputOnChange(obj) {
     if (color == "#f18618")
     createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
     else
-        createCookie($('#linkChange').attr("cid") + "haschanges", "");
+        createCookie($('#linkChange').attr("cid") + "haschanges", null);
 
-    updateLinkColor(null, $('#linkChange').attr("cid"));
+    updateLinkColor(color, $('#linkChange').attr("cid"));
+    updateSettingsColor(color);
     
     var callback = function(flag) {      
         if (flag) {
-            createCookie("haschanges", "yes");
-            if (showColorsAdv) {
-                $("#generateicon").addClass("haschanges");
-                if (showColors) {
-                    $("#settings").addClass("haschanges");
-                }
-            } 
+            createCookie("hasChanges", "Yes");
+            $("#generateicon").addClass("haschanges");
         }
         else {
-            createCookie("haschanges", "");
-            $("#settings").removeClass("haschanges");
+            createCookie("hasChanges", "");
             $("#generateicon").removeClass("haschanges");
         }
     } 
@@ -1562,6 +1110,7 @@ function undoClassif(e, obj) {
     $(obj).hide();
     var functorun = function() 
     { 
+        console.log(1);
     } 
     $('#classifinput').trigger("change");
 
@@ -1584,7 +1133,7 @@ function infoInputOnKeyup(obj) {
             
             if (oldinfo == val) {
                 currentinfodisplay.css('color', '');
-                createCookie($('#linkChange').attr("cid") + "info", "");
+                createCookie($('#linkChange').attr("cid") + "info", null);
                 $('#originalinfotd i').hide();
             }
             else {
@@ -1598,23 +1147,17 @@ function infoInputOnKeyup(obj) {
             if (color == "#f18618")
                 createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
             else
-                createCookie($('#linkChange').attr("cid") + "haschanges", "");
+                createCookie($('#linkChange').attr("cid") + "haschanges", null);
 
-            updateLinkColor(null, $('#linkChange').attr("cid"));
-
+            updateLinkColor(color, $('#linkChange').attr("cid"));
+            updateSettingsColor(color);
             var callback = function(flag) {      
                 if (flag) {
-                    createCookie("haschanges", "yes");
-                    if (showColorsAdv) {
-                        $("#generateicon").addClass("haschanges");
-                        if (showColors) {
-                            $("#settings").addClass("haschanges");
-                        }
-                    } 
+                    createCookie("hasChanges", "Yes");
+                    $("#generateicon").addClass("haschanges");
                 }
                 else {
-                    createCookie("haschanges", "");
-                    $("#settings").removeClass("haschanges");
+                    createCookie("hasChanges", "");
                     $("#generateicon").removeClass("haschanges");
                 }
             } 
@@ -1633,324 +1176,11 @@ function undoInfo(e, obj) {
     $(obj).hide();
     var functorun = function() 
     { 
+        console.log(1);
     } 
     $('#infoinput').trigger("keyup");
 
     showMessage("Information reverted", null, "fa-undo", "", null, "undo");
-}
-
-
-
-function clickLiColors(e, obj) {
-    e.stopPropagation();
-
-    if (!$(obj).hasClass("selectedtag")) {
-        var value = $(obj).html().trim();
-        $('#colorul').find(".litags").each( function( index, element ) {
-            if($(element).html().trim() == value) {
-                $(element).addClass("selectedtag");
-            }
-            else {
-                $(element).removeClass("selectedtag");
-            }
-        });
-
-        if (value == "All") {
-            showColors = true;
-            showColorsAdv = true;
-        }
-        else if (value == "Medium") {
-            showColors = false;
-            showColorsAdv = true;   
-        }
-        else {
-            showColors = false;
-            showColorsAdv = false;
-        }
-
-        $("#colordisplay").text(value);
-        createCookie("colors", value, 99999);
-
-        showMessage("Color Mode Changed To " + value, null, null, null, null, null);
-    }  
-}
-
-
-function clickLiSwipes(e, obj) {
-    e.stopPropagation();
-
-    if (!$(obj).hasClass("selectedtag")) {
-        var value = $(obj).html().trim();
-        $('#swipeul').find(".litags").each( function( index, element ) {
-            if($(element).html().trim() == value) {
-                $(element).addClass("selectedtag");
-            }
-            else {
-                $(element).removeClass("selectedtag");
-            }
-        });
-
-        if (value == "Yes") {
-            showMessage("Swipes turned On", null, null, null, null, null);
-            useSwipes = true;
-        }
-        else {
-            showMessage("Swipes turned Off", null, null, null, null, null);
-            useSwipes = false;  
-        }
-
-        $("#swipedisplay").text(value);
-        createCookie("swipes", value, 99999);
-    }  
-}
-
-function clickLiHelp(e, obj) {
-    e.stopPropagation();
-
-    if (!$(obj).hasClass("selectedtag")) {
-        var value = $(obj).html().trim();
-        $('#helpul').find(".litags").each( function( index, element ) {
-            if($(element).html().trim() == value) {
-                $(element).addClass("selectedtag");
-            }
-            else {
-                $(element).removeClass("selectedtag");
-            }
-        });
-
-        if (value == "Yes") {
-            showMessage("Help icons are shown", null, null, null, null, null);
-            $( ".fa-question-circle:not(.ashow)" ).each( function( index, element ){
-                $(element).css("display", "block");
-            });
-        }
-        else {
-            showMessage("Help icons are hidden", null, null, null, null, null);
-            $( ".fa-question-circle:not(.ashow)" ).each( function( index, element ){
-                $(element).css("display", "none");
-            });
-        }
-
-        $("#helpdisplay").text(value);
-
-        if (value == "Yes")
-            createCookie("help", "", 99999);
-        else
-            createCookie("help", value, 99999);
-    }  
-}
-
-function clickLiVWC(e, obj) {
-    e.stopPropagation();
-
-    if (!$(obj).hasClass("selectedtag")) {
-        var value = $(obj).html().trim();
-        $('#VWCul').find(".litags").each( function( index, element ) {
-            if($(element).html().trim() == value) {
-                $(element).addClass("selectedtag");
-            }
-            else {
-                $(element).removeClass("selectedtag");
-            }
-        });
-
-        if (value == "Yes") {
-            showMessage("VictoryWillCome Tweets Shown", null, null, null, null, null);
-            showAll = true;
-        }
-        else {
-            showMessage("VictoryWillCome Tweets Hidden", null, null, null, null, null);
-            showAll = false;  
-        }
-
-        $("#VWCdisplay").text(value);
-        createCookie("vwc", value, 99999);
-        countalltweets();
-    }  
-}
-
-function triggerUpload() {
-    $('#files').trigger("click");  
-}
-
-function unl() {
-     
-    var ded = CryptoJS.AES.decrypt("U2FsdGVkX18wrpX9qtgpVRefS/x73IjGWl7asgInrKw=", $('#unlockinput').val());
-
-    if (ded.toString(CryptoJS.enc.Utf8) == "x20#0000002e") {
-        createCookie("eec", $('#unlockinput').val());
-
-        $('#unlockdisplay').text("Unlocked");
-        
-        showMessage("You Are Now A Primium User!"); 
-    }
-    else {
-        $('#unlockdisplay').text("Locked");
-        
-        createCookie("eec", "");
-        showMessage("Invalid Code"); 
-    }
-}
-
-function dunl() {
-    var ceec = readCookie("eec");
-
-    if (ceec && ceec.length > 0 ) {
-        var ded = CryptoJS.AES.decrypt("U2FsdGVkX18wrpX9qtgpVRefS/x73IjGWl7asgInrKw=", ceec);
-
-        if (ded.toString(CryptoJS.enc.Utf8) == "x20#0000002e") {
-            return true; 
-        }
-    }
-                    
-    return false;                
-}
-
-
-
-
-function openHelp(obj, type) {
-    if (obj)
-        fixfocus(obj);
-
-    switch(type) {
-        case "help":
-            $('#helpcontent').html("<span>If selected the user will see the help icons throughout the aplication."
-                + "</span>"
-                + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>Clicking in one of the icons will open a pop-up with information about the functionality where it is displayed."
-                + "</span>");
-
-            $('#helptitle').text("Help About Functionalities");
-            $('#helpicon').attr("class", "fa fa-question-circle");
-
-            break; 
-
-        case "unlock":
-            $('#helpcontent').html("<span>If you have a premium code, enter it and press the button to unlock the app."
-                + "</span>"
-                + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>If you don't have it, go to the donate section in these settings to get one."
-                + "</span>");
-
-            $('#helptitle').text("Unlocking The App");
-            $('#helpicon').attr("class", "fa fa-unlock");
-
-            break;   
-
-        case "download":
-            $('#helpcontent').html("<span>Allows to make a backup of the links created, modified and changed by the user."
-                + "</span>"
-                + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>As the links are stored in the browser cookies, so it is advisable to make a backup once in a while."
-                + "</span>"                    
-                + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>If you want to use in different devices, to pass the links to another one, you have to make this download and upload it the desired device."
-                + "</span>");
-
-            $('#helptitle').text("Downloading Links");
-            $('#helpicon').attr("class", "fa fa-download");
-            break;
-            
-            case "upload":
-                $('#helpcontent').html("<span>Allows to upload a previous backup."
-                    + "</span>"
-                    + "<span style=\"display: block;height: 8px;\"></span>" 
-                    + "<span>This upload will erase all the current changes in the application and apply the ones in this backup file."
-                    + "</span>");
-    
-                $('#helptitle').text("Uploading Links");
-                $('#helpicon').attr("class", "fa fa-upload");
-                break;    
-                
-            case "purge":
-                $('#helpcontent').html("<span>It will remove forever the links marked as deleted."
-                    + "</span>");
-    
-                $('#helptitle').text("Purge Deleted Links");
-                $('#helpicon').attr("class", "fa fa-times-circle");
-                break;   
-                
-            case "vwc":
-                $('#helpcontent').html("<span>If selected, Victory Will Come Links will be shown."
-                + "</span>"
-                + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>If not, only the ones added by the user will be shown."
-                + "</span>");
-    
-                $('#helptitle').text("Show Victory Will Come Links");
-                $('#helpicon').attr("class", "fa fa-star");
-                break; 
-                
-            case "swipe":
-                $('#helpcontent').html("<span>If selected, the user can make gestures to execute functions on certain screens. Different functions and swipes:"
-                + "</span>"
-                + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>MAIN SCREEN</span><br>"
-                + "<span>up or right - open search screen</span><br>" 
-                + "<span>bottom or left - open categories menu</span>"
-                + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>CATEGORIES MENU</span><br>"
-                + "<span>up or down - close menu</span><br>"
-                + "<span>left - toggle show deleted links</span>" 
-                + "<span>right - open all links</span>"
-                + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>SEARCH SCREEN</span><br>"
-                + "<span>up or down - close screen</span><br>"
-                + "<span>left - reset search fields</span>" 
-                + "<span>right - execute search</span>"
-                + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>LINK DISPLAY AREA</span><br>"
-                + "<span>up - go to top</span><br>"
-                + "<span>down - close search</span><br>"
-                + "<span>left - copy current link to clipboard</span><br>" 
-                + "<span>right - open current link detail</span>"
-                + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>LINK DETAIL SCREEN</span><br>"
-                + "<span>up, down, left or right - close screen</span><br>"
-                + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>CALENDAR POP-UP</span><br>"
-                + "<span>up or down - close pop-up</span><br>"
-                + "<span>left - previous month</span><br>" 
-                + "<span>right - next month</span>"
-                + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>SETTINGS SCREEN</span><br>"
-                + "<span>up, down, left or right - close screen</span><br>"
-                + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>HELP POP-UP</span><br>"
-                + "<span>up, down, left or right - close pop-up</span><br>");
-
-                $('#helptitle').text("Use swipes");
-                $('#helpicon').attr("class", "fa fa-arrows");
-                break;   
-                
-            case "colors":
-                $('#helpcontent').html("<span>Colors are used to mark the changes made by the user. Changed link field, newly created link or a deleted link."
-                + "</span>"
-                + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>minimal - almost no color is shown"
-                + "</span>"
-                + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>medium - the colors are shown only in the link detail"
-                + "</span>"
-                + "<span style=\"display: block;height: 8px;\"></span>" 
-                + "<span>all - the colors are shown in both link display area and link detail"
-                + "</span>");
-    
-                $('#helptitle').text("Colors display");
-                $('#helpicon').attr("class", "fa fa-paint-brush");
-                break;
-    }   
-
-    $("#helppop").fadeIn(800);              
-}
-
-
-function closeHelpPopup(obj) {
-    if (obj)
-        fixfocus(obj);
-    
-    $("#helppop").fadeOut(800);               
 }
 
 /////////////////////////////////////////////////////////////////////////

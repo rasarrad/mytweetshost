@@ -348,7 +348,7 @@ body.big .gradiantback {
     color: var(--high-color);
     font-size: 122px;
     position: relative;
-    top: calc(50% - 96px);
+    top: calc(50% - 73px);
     left: calc(50% - 71px);
     border: 10px solid var(--high-color) !important;
     padding-left: 8px;
@@ -561,10 +561,6 @@ body.big #zoomin {
       color: #e88e0b;
 }
 
-#settings.haschanges {
-  color: #e88e0b;
-}
-
     .top {
       display: none;
     }
@@ -704,18 +700,18 @@ body.big #zoomin {
   transition: top 1s;
   margin-left: 10px;
   margin-right: 10px;
-  color: var(--dark-color);
+  color: var(--softdark-color);
 }
 
 #stripmessage {
       position: fixed;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0);
-      top: 100%;
-      z-index: 99999999999999999;
-      transition: top 1s ease 0s;
-      display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    top: 100%;
+    z-index: 999999999;
+    transition: top 1s ease 0s;
+    display: none;
 }
 
 .striptext .poptitle {
@@ -728,7 +724,6 @@ body.big #zoomin {
     display: block;
     padding-left: 36px;
     font-weight: bold;
-    color: var(--dark-color) !important;
 }
 
 
@@ -911,7 +906,7 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
 }   
 
 .topoback {
-    background: #ffffff00;
+    background: white;
     width: 100%;
     height: 52px;
     position: absolute;
@@ -919,7 +914,7 @@ body.big .newLayout > div .titletable tr:first-child .firsttd {
     border: 0px solid #004a86;
     width: calc(100% - 0px);
     height: 62px;
-    background-image: linear-gradient(to bottom, var(--softdark-color)78%, #00000000 100%);
+    background-image: linear-gradient(to bottom, var(--softdark-color), var(--soft-color));
     /* background: transparent; */
     /* background-image: linear-gradient(to bottom, red, var(--soft-color)); */
   } 
@@ -933,14 +928,14 @@ body.big #backdiv {
   height: calc(100% - 64px) !important;
 } 
 #main {
-      margin-top: 79px !important;
+      margin-top: 2px !important;
 }
 body.big #main {
-      margin-top: 90px !important;
+      margin-top: 20px !important;
 }  
 .newLayout {
     margin-top: 52px !important;
-    /* height: 60000000px !important; */
+    height: 60000000px !important;
 }
 #mainsettings.newLayout > div {
     margin-top: 61px !important;
@@ -956,7 +951,7 @@ body.big .newLayout > div {
     max-height: calc(100% - 29px) !important;
 } 
 body.big .newLayout {
-    margin-top: 0px !important;
+    margin-top: 64px !important;
     /* height: calc(100% - 49px) !important; */
 }
 
@@ -1113,15 +1108,14 @@ body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
 .tweet:last-child .bottomgradiantback {
   position: absolute;
   width: 100%;
+  background: rgba(0, 0, 0, 0.81);
   z-index: 9;
-  height: 63px;
+  height: 24px;
+  background-image: linear-gradient(to bottom, var(--dark-color) 3%, var(--softdark-color) 80%);
   top: auto;
-  bottom: -62px;
-  background: none;
-  background-image: linear-gradient(to bottom, var(--dark-color) 3%, #00315600 80%);
+  bottom: -5px;
+  background: var(--dark-color);
 }
-
-
 .tweet.html:not(:last-child) .bottomgradiantback {
     bottom: 9px;
 }
@@ -1138,10 +1132,6 @@ body:not(.big) .yt.tweet .bottomgradiantback {
   .html.tweet .bottomgradiantback {
   background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--soft-color) 85%);
 } 
-
-.html.tweet:last-child .bottomgradiantback {
-    background-image: linear-gradient(to bottom, var(--dark-color) 15%, #004a8600 85%);
-}
   .tweet iframe {
   width: calc(100% - 0px) !important;
   margin-left: 0px !important;
@@ -1155,15 +1145,15 @@ body:not(.big) .yt.tweet .bottomgradiantback {
   .tweet.html iframe {
     margin-top: 19px !important;
     }
-  .tweet.yt:not(:last-child) iframe {
-    margin-top: 0px !important;
-    height: 317px !important;
+  .tweet.yt iframe {
+    margin-top: 4px !important;
+    height: 369px;
     }
 
   .tweet.html iframe {
       width: calc(100% - 0px) !important;
       border: 0px solid #bbbbbb;
-      height: 302px;
+      height: 48vw;
       margin-bottom: 18px;
   }
 
@@ -1173,13 +1163,7 @@ body:not(.big) .yt.tweet .bottomgradiantback {
           .tweet.html {
       /* background: #002646; */
       top: 0px;
-      height: 340px;
-      /* overflow: hidden; */
   }
-            .tweet.html:last-child {
-      height: 340px;
-  }
-  
   #backdiv {
     background-image: linear-gradient(var(--soft-color), var(--dark-color)) !important;
   }
@@ -1371,6 +1355,8 @@ body.big #mainsettings.newLayout > div {
     margin-top: 31px !important;
     max-height: calc(100% - 137px) !important;
 } 
+#mainmenu > div {margin-top: 3px !important;max-height: 245px !important;}
+body.big #mainmenu > div {margin-top: 3px !important;max-height: 478px !important;}  
 
 .authorinput {
   width: 211px;
@@ -1466,7 +1452,7 @@ body.big #editTags {
 /* 
   ###Device = Tablets, Ipads (portrait)
   Screen = B/w 768px to 1024px */
-  @media (min-width: 481px) and (max-width: 767px), (min-width: 768px) and (orientation: landscape), (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  @media (min-width: 481px) and (max-width: 767px), (min-width: 768px) and (max-width: 1024px) and (orientation: landscape), (min-width: 768px) and (max-width: 1024px) {
   
     #mask > div > i {
       background: #484848 !important;
@@ -1517,7 +1503,14 @@ body.big #editTags {
         margin-top: 1px !important;
         max-height: calc(100% - 79px) !important;
       }   
-
+      #mainmenu > div {
+      margin-top: -3px !important;
+      max-height: 245px !important;
+      }
+      body.big #mainmenu > div {
+        margin-top: 3px !important;
+        max-height: 246px !important;
+      }    
       #calendardiv > div {
         margin-top: -52px !important;
         max-height: 300px !important;
@@ -1532,7 +1525,7 @@ body.big #editTags {
       body > div > i.fa-folder-open {
         font-size: 74px;
         height: 76px;
-        top: calc(50% - 92px);
+        top: calc(50% - 62px);
         left: calc(50% - 47px);
       }  
       .tweet.yt iframe {
@@ -1637,11 +1630,11 @@ body.big #editTags {
 
 
 /**********************************************************************************************/
-/******************************** HEIGHT < 300 CSS ******************************/
+/******************************** LANDSCAPE --- HEIGHT < 300 CSS ******************************/
   @media (max-height: 300px) {
   
   }
-/******************************** FIM HEIGHT < 300 CSS ******************************/
+/******************************** FIM LANDSCAPE --- HEIGHT < 300 CSS ******************************/
 /**************************************************************************************************/
 
 
@@ -1676,8 +1669,7 @@ body.big #sear, body.big #sear2 {
     font-size: 25px;
     padding-left: 17px;
     padding-right: 17px;
-    top: 20px !important;
-    left: 62px !important;
+    top: -12px;
 }
 .tweetcount {
   background: rgba(255, 255, 255, 0.65) !important;
@@ -1769,47 +1761,46 @@ body.big .newLayout #previewtable {
 
 body.big #mainsettings .fa-cog {
   font-size: 23px !important;
-  top: 5px !important;
-  left: 9px !important;
 }  
 
-body.big #mainsettings .buttonstable {
-  max-height: 25px !important;
-}
-    
 body.big #mainsettings .fa-window-close {
   font-size: 20px !important;
-  right: 22px !important;
-  top: 0px;
+  right: 24px !important;
 }  
 
-body.big #mainsettings .firstsettable {
-  margin-top: 38px !important;
-}
-    
 body.big #mainsettings .buttonstable tr:first-child .firsttd b {
   font-size: 18px !important;
   margin-left: 0 !important;
-  top: -5px !important;
+  top: -4px !important;
 }
 
 body.big #mainsettings .firstsettable {
-  margin-top: 35px !important;
+  margin-top: 36px !important;
 }
 
 body.big #mainsettings .fa-cogs {
   font-size: 18px !important;
 }  
-
+#mainsettings .fa-picture-o {
+  position: relative;
+  left: -4px;
+  top: 0px;
+}
+body.big #mainsettings .fa-picture-o {
+  font-size: 18px !important;
+  position: relative;
+  left: -3px;
+  top: 2px;
+}  
 
 body.big #mainsettings .fa-eraser {
-  font-size: 18px !important;
+  font-size: 19px !important;
 }  
 body.big #mainsettings .fa-hashtag {
-  font-size: 17px !important;
+  font-size: 18px !important;
 }  
 body.big #mainsettings .fa-plus-square {
-  font-size: 17px !important;
+  font-size: 18px !important;
   margin-right:2px;
 }  
 
@@ -1828,7 +1819,7 @@ body.big #mainsettings .fa-check {
   width: 18px !important;
 } 
 #mainsettings .fa-window-close {
-  right: 20px !important;
+  right: 22px !important;
 } 
 
 #myCalendar {width: 355px;}
@@ -1944,27 +1935,15 @@ body.big #splash .titletable {
   width: 468px;
   padding-left: 6px;
 }  
-.menuincludedeleted {
-    left: 165px;
-}
 
-.yt.tweet:last-child .bottomgradiantback {
-    background-image: linear-gradient(to bottom, var(--dark-color) 13%, #004a8600 80%);
-    bottom: -37px !important;
-    height: 47px;
-}
 
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
 /* 
   ###Device = Most of the Smartphones Mobiles (Portrait)
   Screen = B/w 320px to 479px */
-  @media (max-width: 480px) {
+  @media (min-width: 320px) and (max-width: 480px) {
   
-    .menuincludedeleted {
-      left: 109px;
-     }
-
     #mask > div > i {
       background: #484848 !important;
     }     
@@ -2043,8 +2022,15 @@ body.big #splash .titletable {
       height: 20px;
     }
     #mainmenu > div {
+      margin-top: 40px !important;
+      height: 377px !important;
       max-width: 361px !important;
-    }    
+    }
+    body.big #mainmenu > div {
+      margin-top: 40px !important;
+      height: 507px !important;
+      max-height: 507px !important;
+    }      
     .toptitle > span {
         position: absolute;
         top: 16px;
@@ -2065,6 +2051,7 @@ body.big #splash .titletable {
     }
     body.big #calendardiv > div {
       margin-top: 145px !important;
+      height: 335px !important;
     }  
     .newLayout#mainsettings > div {
           margin-top: 18px !important;
@@ -2089,11 +2076,29 @@ body.big #splash .titletable {
     body.big #mainmenu .firstsettable {
       margin-top: 42px;
     }  
-
+  
+    #mainmenu > div {
+      margin-top: 116px !important;
+      max-height: 368px !important;
+    }  
+    body.big #mainmenu > div {
+      margin-top: 48px !important;
+    }  
+  
+    
     #mainsettings .firstsettable {
         margin-top: 31px !important;
     }
-
+    body.big #mainsettings .firstsettable {
+  
+    }  
+    #mainsettings .fa-window-close {
+      right: 19px !important;
+      top: -2px;
+    } 
+    body.big #mainsettings .fa-window-close {
+  
+    }   
     #mainsettings .buttonstable {
       width: 349px;
     }         
@@ -2105,9 +2110,12 @@ body.big #splash .titletable {
         margin-top: 18px !important;
         /* height: 100%; */
     }     
-
+    body.big #mainsettings .firstsettable {
+      margin-top: 38px !important;
+    }
     body.big #mainsettings .buttonstable {
       width: 349px;
+      /* max-height: 29px !important; */
     }
     #previewtd div iframe {
       margin: 0px !important;
@@ -2123,7 +2131,7 @@ body.big #splash .titletable {
     body > div > i.fa-folder-open {
         font-size: 86px;
         height: 85px;
-        top: calc(50% - 92px);
+        top: calc(50% - 66px);
         left: calc(50% - 55px);
     }
     .tweet iframe {
@@ -2138,17 +2146,10 @@ body.big #splash .titletable {
         max-width: 470px;
         height: 56vw !important;
     }
-
-    .tweet.yt:last-child iframe {
-        height: 268px!important;
-        margin-top: 14px !important;
-    }
-    
     .tweet.html iframe {
-        height: 84vw !important;
+        height: 100vw !important;
         margin-bottom: 19px;
         margin-top: 17px !important;
-        max-height: 302px;
     }  
     .tweet .innertweet {
         position: relative;
@@ -2330,27 +2331,7 @@ body.big #splash .titletable {
     .newLayout#searchpopup > div .titletable {
         width: 344px !important;
     }
-      .html.tweet .bottomgradiantback {
-      background-image: linear-gradient(to bottom, #000000 15%, var(--soft-color) 85%);
-    } 
-
-    .html.tweet:last-child .bottomgradiantback {
-    background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--soft-color) 85%);
-    background-image: linear-gradient(to bottom, #000000 3%, #00315600 80%);
-}
-
-
-    .yt.tweet:last-child .bottomgradiantback {
-      background-image: linear-gradient(to bottom, #000000 13%, #004a8600 80%);
-      bottom: 0px !important;
-      height: 30px;
-      }
-
-      .tweet.yt:last-child {
-          /* background: #101010; */
-          height: 326px;
-      }
-
+    
   }
 /****************************** FIM PORTRAIT CSS *****************************/
 /*****************************************************************************/
@@ -2384,10 +2365,10 @@ body.big #splash .titletable {
     top: 0px;
     z-index: 1000000;
     font-size: 11px;
-    /* background-image: linear-gradient(rgb(0, 74, 134), rgb(1, 36, 62)); */
+    background-image: linear-gradient(rgb(0, 74, 134), rgb(1, 36, 62));
     display: none;
     border-top: 1px solid var(--softdark-color);
-    /* background: var(--soft-transp-color); */
+    background: var(--soft-transp-color);
     border-top: 1px solid transparent;
     margin: auto;
     position: absolute;
@@ -2396,11 +2377,10 @@ body.big #splash .titletable {
     /* bottom: 0; */
     right: 0;
     align-items: center;
-    /* background: var(--soft-transp-color); */
+    background: var(--soft-transp-color);
     touch-action: none;
     overscroll-behavior: none;
     margin-top: 49px;
-    margin-top: 0px !important;
 }
 
 .newLayout > div {
@@ -2680,7 +2660,7 @@ body.big .newLayout .sectiontitletable .sectionedittd i {
   font-size: 24px !important;
   position: relative;
   width: 11px;
-  right: 2px;
+  right: 1px;
 }
 
 
@@ -2872,7 +2852,7 @@ body.big .newLayout .fa-file-text {
 .topoback2 {
     background: white;
     left: 57px;
-    width: calc(100% - 67px);
+    width: calc(100% - 68px);
     top: 7px;
     height: 34px;
     border-radius: 5px;
@@ -3149,7 +3129,19 @@ body.big .newLayout .titletext {
   top: -2px !important;
 }
 
-
+body.big .newLayout#mainsettings .themename {
+  line-height: 30px;
+  font-size: 15px;
+  top: 0px !important;
+  padding-left: 20px !important;
+}
+body.big .newLayout#mainsettings .el:not(.ellipsis) .themename {
+  line-height: 25px;
+  font-size: 15px;
+  top: -1px !important;
+  padding-left: 0px !important;
+  left: 11px;
+}
 td:not(.ellipsis) .titletext {
     position: relative;
     top: -2px !important;
@@ -3370,7 +3362,7 @@ body.big .newLayout ul li {
     font-size: 15px;
     padding-bottom: 4px;
     padding-top: 2px;
-    /* font-weight: normal; */
+    font-weight: normal;
     margin-right: 11px;
 }
 
@@ -3808,27 +3800,27 @@ body.big #searchpopup #searchinfo td.el:not(.ellipsis) span.titletext {
 }
 
 #mainsettings .sectionedittd > i {
-  top: -1px !important;
+  top: -4px !important;
 }
 body.big #mainsettings .sectionedittd > i {
-  top: 0px !important;
+  top: 1px !important;
 }
 
-#mainsettings .generatetablerow td:first-child {
+#mainsettings #generatetablerow td:first-child {
   width: 73px !important;
 }
 
-body.big #mainsettings .generatetablerow td:first-child {
+body.big #mainsettings #generatetablerow td:first-child {
   width: 91px !important;
 }
 
-#mainsettings .generatetablerow td:not(.ellipsis) .titletext {
+#mainsettings #generatetablerow td:not(.ellipsis) .titletext {
     line-height: 18px;
     position: relative;
     top: -2px !important;
 }
 
-body.big #mainsettings .generatetablerow td:not(.ellipsis) .titletext {
+body.big #mainsettings #generatetablerow td:not(.ellipsis) .titletext {
     line-height: 18px;
     position: relative;
     top: 1px !important;
@@ -3846,13 +3838,12 @@ body.big #mainsettings #cleandatatable td:first-child {
     line-height: 18px;
     position: relative;
     top: -2px !important;
-    font-size: 12px;
 }
 
 body.big #mainsettings #cleandatatable td:not(.ellipsis) .titletext {
     line-height: 18px;
     position: relative;
-    top: -3px !important;
+    top: 1px !important;
 }
 
 #mainsettings #theme td:first-child {
@@ -3862,6 +3853,20 @@ body.big #mainsettings #cleandatatable td:not(.ellipsis) .titletext {
 body.big #mainsettings #theme td:first-child {
   width: 56px !important;
 }
+
+#mainsettings #theme td:not(.ellipsis) .titletext {
+    line-height: 18px;
+    position: relative;
+    top: -1px !important;
+}
+
+body.big #mainsettings #theme td:not(.ellipsis) .titletext {
+    line-height: 18px;
+    position: relative;
+    top: 2px !important;
+}
+
+
 
 #expandedittags, #expandsearchtags {
     padding-left: 2px;
@@ -3908,7 +3913,7 @@ body.big #expandedittags, body.big #expandsearchtags {
 /* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops */
-@media (min-width: 1025px) {
+@media (min-width: 1025px) and (max-width: 1280px), (min-width: 1281px) {
   
 
   #mask .fa-circle-o-notch {
@@ -4060,8 +4065,8 @@ body.big .author {
 }
 
 body.big .checkstyleddiv.showdeleted {
-  top: -12px;
-  right: -13px;
+  top: -12px; 
+  right: -24px;
 }
 
 body.big .menuincludedeleted {
@@ -4069,7 +4074,7 @@ body.big .menuincludedeleted {
 }
 
 body.big .menuincludedeleted label > div {
-    top: -14px !important;
+    top: -13px !important;
 }
 
 #splash.newLayout .firstTable {
@@ -4219,655 +4224,8 @@ body.big .newLayout > div {
 /**********************************************************************************************/
 /******************************** LANDSCAPE --- HEIGHT < 300 CSS ******************************/
 @media (max-height: 300px) {
-
+  
 }
 /******************************** FIM LANDSCAPE --- HEIGHT < 300 CSS ******************************/
 /**************************************************************************************************/
 
-
-
-.newLayout {
-    display: block;
-    height: calc(100%);
-    position: fixed !important;
-    margin-top: 0px !important;
-    z-index: 999999998;
-}
-
-body.big .topoback:not(.topoback2) {
-    height: 65px !important;
-}
-
-body.big #mainmenu table:last-child {
-  height: 100px;
-}  
-
-#mainmenu table {
-  transition: all 0.7s !important;
-}
-
-#mainmenu table:not(:first-child):not(:last-child):hover {
-  opacity: 0.7 !important;
-}
-
-.checkstyleddiv label {
-  cursor: pointer;
-}
-
-body.big .checkstyleddiv.menuincludedeleted i {
-    top: 1.9px;
-    left: 0.2px !important;
-    font-size: 6.4px !important;
-}
-
-body.big .checkstyleddiv.showdeleted i {
-  left: 1px !important;
-}
-
-#calendardiv.newLayout > div .titletable tr:first-child .firsttd {
-    padding-top: 1px;
-}
-
-body.big #calendardiv.newLayout > div .titletable tr:first-child .firsttd {
-    padding-top: 5px;
-}
-
-#calendardiv .fa-calendar {position: relative;top: -1px;}
-
-body.big #calendardiv .fa-calendar {
-    margin-top: 0px;
-}
-
-.ui-dialog.ui-widget.ui-widget-content.ui-front {
-  height: auto;
-    width: 400px;
-    overflow-y: hidden;
-    height: 200px !important;
-    max-width: 330px;
-    margin-left: calc(50% - 170px);
-    background: var(--dark-color);
-    border-color: var(--soft-color);
-    border-radius: 0;
-    z-index: 2147483647;
-    position: fixed;
-    display: none;
-}
-
-.ui-dialog.ui-widget.ui-widget-content.ui-front .ui-dialog-titlebar.ui-widget-header {
-    background: var(--softdark-color);
-    border-color: transparent;
-    border-radius: 0;
-}
-
-.ui-dialog.ui-widget.ui-widget-content.ui-front .ui-dialog-titlebar.ui-widget-header .ui-dialog-title {
-    color: var(--high-color);
-    text-align: center;
-    width: 100%;
-    position: relative;
-    top: -1px;
-    font-size: 14px;
-}
-
-body.big .ui-dialog.ui-widget.ui-widget-content.ui-front .ui-dialog-titlebar.ui-widget-header .ui-dialog-title {
-    font-size: 16px;
-}
-
-.ui-dialog.ui-widget.ui-widget-content.ui-front .ui-dialog-titlebar.ui-widget-header .ui-button {
-    display: none;
-}
-
-.ui-dialog.ui-widget.ui-widget-content .ui-dialog-content.ui-widget-content p {
-        color: var(--high-color);
-        /* font-size: 16px; */
-}
-
-.ui-dialog.ui-widget.ui-widget-content .ui-dialog-buttonpane {
-     background: var(--softdark-color);
-     border-color: transparent;
-     max-height: 40px;
- }
-
-.ui-dialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset {
-    float: none;
-    margin-left: 30px;
- }
-
-.ui-dialog.uploaddialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset {
-    margin-left: 74px;
- }
-
-.ui-dialog.purgedialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset {
-    margin-left: 74px;
- }
- 
- body.big .ui-dialog.purgedialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset {
-    margin-left: 71px;
- }
- 
- .ui-dialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset button {
-    background: var(--high-color);
-    color: var(--dark-color);
-    border-color: var(--dark-color);
-    font-weight: bold;
-    font-size: 12px;
- }
-
- .ui-dialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset button:hover {
-    opacity: 0.7
- }
-
- .triggerUpload {
-  transition: opacity 0.7s;
-  cursor: pointer;
-}
-
-.triggerUpload:hover {
- opacity: 0.85
-}
-
-.pointeropacity {
-  cursor: pointer !important;
-  /* transition: opacity 0.6s !important; */
-}
-
-.pointeropacity:hover {
-  opacity: 0.7 !important;
-}
-
-#mainsettings.newLayout .sectionexpandable {
-    position: relative;
-}
-
-#mainsettings.newLayout .sectiontitle {
-  padding-left: 9px;
-  font-weight: bold;
-  font-size: 12px;
-  position: absolute;
-  top: 6px;
-  left: 29px;
-  text-transform: lowercase;
-}
-body.big #mainsettings.newLayout .sectiontitle {
-  font-size: 15px;
-  position: absolute;
-  top: 10px;
-  left: 32px;
-}
-
-#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-user-circle-o {
-  font-size: 13px;
-  left: 12px;
-  position: absolute;
-  top: 7px;
-}
-
-body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-user-circle-o {
-  font-size: 17px;
-  left: 11px;
-  position: absolute;
-  top: 10px;
-}
-
-#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-info-circle {
-  font-size: 14px;
-  left: 13px;
-  position: absolute;
-  top: 6px;
-}
-
-body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-info-circle {
-  font-size: 18px;
-  left: 12px;
-  position: absolute;
-  top: 11px;
-}
-
-#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-folder-open {
-  font-size: 11px;
-  left: 10px;
-  padding-top: 1px;
-  position: absolute;
-  top: 6px;
-  border: 1px solid !important;
-}
-
-body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-folder-open {
-  font-size: 14px;
-  left: 9px;
-  position: absolute;
-  padding-bottom: 1px;
-  top: 9px;
-  border: 2px solid !important;
-}
-
-#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-credit-card-alt {
-  font-size: 10px;
-  left: 12px;
-  position: absolute;
-  top: 8px;
-}
-
-body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-credit-card-alt {
-  font-size: 14px;
-  left: 10px;
-  position: absolute;
-  top: 12px;
-}
-
-#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-picture-o {
-  font-size: 13px;
-  left: 11px;
-  position: absolute;
-  top: 7px;
-}
-
-body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-picture-o {
-  font-size: 16px;
-  left: 11px;
-  position: absolute;
-  top: 11px;
-}
-
-#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-paint-brush {
-  font-size: 13px;
-  left: 11px;
-  position: absolute;
-  top: 6px;
-}
-
-body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-paint-brush {
-  font-size: 15px;
-  left: 12px;
-  position: absolute;
-  top: 11px;
-}
-
-#mainsettings #colortable td:first-child {
-    width: 63px !important;
-}
-
-body.big #mainsettings #colortable td:first-child {
-    width: 66px !important;
-}
-
-#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-arrows {
-  font-size: 13px;
-  left: 11px;
-  position: absolute;
-  top: 7px;
-}
-
-body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-arrows {
-  font-size: 17px;
-  left: 11px;
-  position: absolute;
-  top: 10px;
-}
-
-#mainsettings #swipestable td:first-child {
-    width: 59px !important;
-}
-
-body.big #mainsettings #swipestable td:first-child {
-    width: 60px !important;
-}
-
-body.big #mainsettings.newLayout #downloadtable .sectiontitle {
-  font-size: 15px;
-  position: absolute;
-  top: 0px !important;
-  left: 17px;
-}
-#mainsettings.newLayout #downloadtable .sectiontitle {
-  position: absolute;
-  top: 0px !important;
-  left: 14px;
-}
-#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-star {
-  font-size: 13px;
-  left: 11px;
-  position: absolute;
-  top: 7px;
-}
-
-body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-star {
-  font-size: 17px;
-  left: 12px;
-  position: absolute;
-  top: 10px;
-}
-
-#mainsettings #svwc td:first-child {
-    width: 190px !important;
-}
-
-body.big #mainsettings #svwc td:first-child {
-    width: 223px !important;
-}
-
-#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-unlock {
-  font-size: 14px;
-  left: 11px;
-  position: absolute;
-  top: 6px;
-}
-
-body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-unlock {
-  font-size: 17px;
-  left: 12px;
-  position: absolute;
-  top: 10px;
-}
-
-#mainsettings #unlocktable td:first-child {
-    width: 117px !important;
-}
-
-body.big #mainsettings #unlocktable td:first-child {
-    width: 131px !important;
-}
-
-#mainsettings #unlocktable .fa-check {
-    /* height: 117px !important; */
-    font-size: 18px !important;
-    top: -1px !important;
-}
-
-body.big #mainsettings #unlocktable .fa-check {
-    font-size: 20px !important;
-    top: 1px !important;
-    padding-bottom: 0px;
-    left: -3px;
-}
-
-#mainsettings #unlocktable #unlockinput {/* height: 20px !important; *//* font-size: 14px !important; */}
-
-body.big #mainsettings #unlocktable #unlockinput {height: 20px !important;font-size: 14px !important;left: -5px;}
-
-
-#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-upload {
-  font-size: 14px;
-  left: 11px;
-  position: absolute;
-  top: 6px;
-}
-
-body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-upload {
-  font-size: 17px;
-  left: 11px;
-  position: absolute;
-  top: 10px;
-}
-
-#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-download {
-  font-size: 14px;
-  left: 5px;
-  position: absolute;
-  top: 2px;
-}
-
-body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-download {
-  font-size: 17px;
-  left: 5px;
-  position: absolute;
-  top: 5px;
-}
-
-#mainsettings #downloadtable td:first-child {
-    width: 117px !important;
-}
-
-body.big #mainsettings #downloadtable td:first-child {
-    width: 139px !important;
-}
-
-#uploadtable #filedrop {
-  font-size: 11px;
-}
-
-body.big #uploadtable #filedrop {
-    font-size: 15px;
-    padding-top: 18px !important;
-    height: 40px !important;
-}
-
-#uploadtable input {
-    font-size: 11px;
-    height: 21px !important;
-}
-
-body.big #uploadtable input {
-      font-size: 13px;
-      height: 24px !important;
-}
-
-#uploadtable .triggerUpload {top: -23px !important;height: 14px !important;font-size: 10px;width: 75px !important;}
-
-body.big #uploadtable .triggerUpload {
-  top: -26px !important;
-  height: 17px !important;
-  font-size: 12px;
-  width: 85px !important;
-}
-
-#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-times-circle {
-  font-size: 14px !important;
-  left: -3px !important;
-  position: absolute;
-  top: 6px;
-}
-
-body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-times-circle {
-  font-size: 17px !important;
-  left: -2px !important;
-  /* position: absolute !important; */
-  top: 1px !important;
-}
-
-
-#mainsettings.newLayout .sectiontitletable .sectionicontd i {}
-
-body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i {
-
-}
-
-.newLayout#mainsettings .slicename {
-  text-transform: lowercase;
-  top: -2px !important;
-  font-size: 12px;
-  padding-left: 6px !important;
-}
-
-body.big .newLayout#mainsettings .slicename {
-  line-height: 30px;
-  font-size: 15px;
-  top: -2px !important;
-  padding-left: 20px !important;
-}
-
-.newLayout#mainsettings .el:not(.ellipsis) .slicename {
-  line-height: 18px;
-  position: relative;
-  top: -3px !important;
-  left: -9px;
-}
-
-.newLayout#mainsettings .el.ellipsis .slicename {
-  /* left: 1px; */
-  text-align: right !important;
-  margin-right: 9px;
-}
-
-body.big .newLayout#mainsettings .el:not(.ellipsis) .slicename {
-  line-height: 25px;
-  font-size: 15px;
-  top: -3px !important;
-  padding-left: 0px !important;
-  left: 11px;
-}
-
-.newLayout#mainsettings .sectiontitletable .sectionicontd {
-  height: 18px;
-}
-
-body.big .newLayout#mainsettings .sectiontitletable .sectionicontd {
-  height: 25px;
-}
-
-.fa-question-circle {
-  font-size: 15px !important;
-}
-
-body.big .fa-question-circle {
-  font-size: 18px !important;
-  right: 3px !important;
-  bottom: 1px !important;
-}
-
-#mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-question-circle {
-  font-size: 14px !important;
-  left: 12px;
-  position: absolute;
-  top: 6px;
-}
-
-body.big #mainsettings.newLayout .sectiontitletable .sectionicontd i.fa-question-circle {
-  font-size: 17px !important;
-  left: 13px;
-  position: absolute;
-  top: 10px;
-}
-
-#mainsettings #helptable td:first-child {
-    width: 47px !important;
-}
-
-body.big #mainsettings #helptable td:first-child {
-    width: 42px !important;
-}
-
-
-#uploadtable .fa-question-circle {
-  right: 3px !important;
-  bottom: 0px !important;
-}
-
-body.big #uploadtable .fa-question-circle {
-  right: 3px !important;
-}
-
-.newLayout#mainsettings table.single {
-    overflow: hidden;
-    display: block;
-    width: calc(100% - 22px);
-    transition: max-height .5s;
-    /* max-height: 21px; */
-    height: 100%;
-}
-
-.newLayout#mainsettings table.single .sectiontitle {
-  top: -1px !important;
-  left: 0;
-}
-
-.newLayout#mainsettings table.single .fa-check {
-  top: -3px !important;
-  right: -4px;
-  font-size: 14px !important;
-  padding-top: 1px;
-  width: 16px !important;
-  padding-right: 2px !important;
-}
-
-body.big .newLayout#mainsettings table.single .fa-check {
-  top: 0px !important;
-  right: -6px;
-  font-size: 17px !important;
-  padding-top: 1px;
-  width: 17px !important;
-  padding-right: 2px !important;
-}
-
-.newLayout#mainsettings table.single .titletext {
-  text-transform: lowercase;
-}
-
-table#purgetable .fa-question-circle {
-  left: 136px !important;
-  font-size: 13px !important;
-  top: 1px !important;
-  }
-
-body.big table#purgetable .fa-question-circle {
-  left: 169px !important;
-  font-size: 16px !important;
-  top: 2px !important;
-}
-
-table#downloadtable .fa-question-circle {
-  left: 110px !important;
-  font-size: 13px !important;
-  top: 0px !important;
-  }
-
-body.big table#downloadtable .fa-question-circle {
-  left: 136px !important;
-  font-size: 16px !important;
-  top: 2px !important;
-}
-
-#helppop {
-
-}
-
-body.big #helppop {
-  
-}
-
-#helppop .fa-question-circle {
-  font-size: 17px !important;
-}
-
-body.big #helppop .fa-question-circle {
-  font-size: 20px !important;
-  top: 5px !important;
-}
-
-body.big #helppop .fa-window-close {
-  right: 20px !important;
-  font-size: 19px !important;
-  top: -1px !important;
-}
-
-body.big #helppop .firsttd b {
-  font-size: 18px !important;
-  top: -7px !important;
-}
-
-body.big #helppop #helptitle {
-  font-size: 17px !important;
-}
-
-body.big #helppop #helpicon {
-  font-size: 18px !important;
-}
-
-body.big #helppop #helpcontent {
-  font-size: 16px !important;
-}
-
-.ui-dialog .ui-dialog-content.ui-widget-content {
-  min-height: 93px !important;
-  font-size: 13px !important;
-  padding-right: 10px;
-}
-
-body.big .ui-dialog .ui-dialog-content.ui-widget-content {
-  font-size: 16px !important;
-    min-height: 87px !important;
-}
-
-body.big .ui-dialog button {
-  font-size: 15px !important;
-  padding-top: 3px;
-}
