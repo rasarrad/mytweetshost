@@ -13,10 +13,10 @@ function closeSearchPopup(obj) {
         $('#searchpopup').hide();
         $('#searchpopup').css('opacity', 1);
 
-        var setHeight = "18px";
+        var setHeight = "26px";
 
         if ($('body').hasClass('big'))
-            setHeight = "30px";
+            setHeight = "37px";
     
         $("#searchpopup table").each( function( index, element ) {
             var table = $(element);
@@ -78,10 +78,10 @@ function changecriteria(e, obj, tableparam) {
     if (e)
         e.stopPropagation();
 
-    var setHeight = "18px";
+    var setHeight = "26px";
 
     if ($('body').hasClass('big'))
-        setHeight = "29px";
+        setHeight = "37px";
 
     if (table.css('max-height') == setHeight) {
         if (obj) {
@@ -496,9 +496,9 @@ var openSearchPopup = function(jsonobj)
 } 
 
 function updateSearchTablesHeight() {
-    var setHeight = "18px";
+    var setHeight = "26px";
     if ($('body').hasClass('big'))
-        setHeight = "29px";
+        setHeight = "37px";
 
     $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
         var table = $(element);

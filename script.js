@@ -1616,9 +1616,9 @@ function openmenu(obj, flag) {
     }
     else { */
         if ($('#mainmenu').css("display") == "none") {
-            var setHeight = "18px";
+            var setHeight = "26px";
             if ($('body').hasClass('big')) {
-                setHeight = "28px";
+                setHeight = "36px";
             }
             $("#mainmenu.newLayout table.defaulttablerow").each( function( index, element ) {
                 var table = $(element);

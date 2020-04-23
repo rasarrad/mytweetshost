@@ -77,11 +77,11 @@ function zoom(obj, flag) {
     }
 
     // create
-    var setHeight = "18px";
-    var setHeight2 = "18px";
+    var setHeight = "26px";
+    var setHeight2 = "26px";
     if ($('body').hasClass('big')) {
-        setHeight = "30px";
-        setHeight2 = "28px";
+        setHeight = "37px";
+        setHeight2 = "36px";
     }
 
     // search
@@ -131,10 +131,10 @@ var openSettingsPopup = function(jsonobj)
     $('body, html').css('overflow-y', 'hidden');
 
     if (jsonobj) {
-        var setHeight = "18px";
+        var setHeight = "26px";
 
         if ($('body').hasClass('big'))
-            setHeight = "30px";
+            setHeight = "37px";
     
         $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
             var table = $(element);
@@ -418,10 +418,10 @@ var openSettingsPopup = function(jsonobj)
             table.find('.sectionedittd i').hide();
         });
         
-        var setHeight = "18px";
+        var setHeight = "26px";
 
         if ($('body').hasClass('big'))
-            setHeight = "30px";
+            setHeight = "37px";
         
         $('#linktable').css('max-height', setHeight);
 
@@ -508,10 +508,10 @@ var openMainSettingsPopup = function(jsonobj)
         });
     }
 
-    var setHeight = "18px";
+    var setHeight = "26px";
 
     if ($('body').hasClass('big'))
-        setHeight = "30px";
+        setHeight = "37px";
 
     $("#mainsettings table.expd").each( function( index, element ) {
         var table = $(element);
@@ -810,10 +810,10 @@ function closeSettingsPopup(obj) {
         $('#linkChange').hide();
         $('#linkChange').css('opacity', 1);
 
-        var setHeight = "18px";
+        var setHeight = "26px";
 
         if ($('body').hasClass('big'))
-            setHeight = "30px";
+            setHeight = "37px";
     
         $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
             var table = $(element);
@@ -843,10 +843,10 @@ function closeMainSettingsPopup(obj) {
         $('#mainsettings').hide();
         $('#mainsettings').css('opacity', 1);
 
-        var setHeight = "18px";
+        var setHeight = "26px";
 
         if ($('body').hasClass('big'))
-            setHeight = "30px";
+            setHeight = "37px";
     
         $('#mainsettings').find("table.sectionexpandable:not(.buttonstable)").each( function( index, element ) {
             var table = $(element);
@@ -955,10 +955,10 @@ function editSetting(e, obj, flag) {
     e.stopPropagation();
 
     if ($('#linkChange').attr("cid") != "new" || flag) {
-        var setHeight = "18px";
+        var setHeight = "26px";
 
         if ($('body').hasClass('big'))
-            setHeight = "30px";
+            setHeight = "37px";
     
         var table = $(obj).parent().parent();
         if (table.css('max-height') == setHeight) {

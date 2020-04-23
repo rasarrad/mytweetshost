@@ -2451,7 +2451,7 @@ body.big #splash .titletable {
     max-width: none;
     overflow: hidden;
     display: block;
-    /* width: calc(100% - 22px); */
+    /* width: calc(100% - 14px); */
 }
 
 
@@ -2702,7 +2702,7 @@ body.big .newLayout .sectiontitletable .sectionedittd i {
 .newLayout .sectionexpandable {
     overflow: hidden;
     display: block;
-    width: calc(100% - 22px);
+    width: calc(100% - 14px);
     transition: max-height .5s;
     /* max-height: 21px; */
     height: 100%;
@@ -4759,7 +4759,7 @@ body.big #uploadtable .fa-question-circle {
 .newLayout#mainsettings table.single {
     overflow: hidden;
     display: block;
-    width: calc(100% - 22px);
+    width: calc(100% - 14px);
     transition: max-height .5s;
     /* max-height: 21px; */
     height: 100%;
