@@ -1235,11 +1235,11 @@ body.big .newLayout.new #editTags {
     margin-top: 6px !important;
 }
 #mainsettings .buttonstable {
-  width: 470px;
-  max-height: 23px;
+  width: 483px;
+  max-height: 31px !important;
 }         
 body.big #mainsettings .buttonstable {
-  width: 468px;
+  width: 483px;
   max-height: 28px;
 }
 body.big .newLayout > div .titletable tr:first-child .firsttd {
@@ -1774,7 +1774,7 @@ body.big #mainsettings .fa-cog {
 }  
 
 body.big #mainsettings .buttonstable {
-  max-height: 25px !important;
+  max-height: 35px !important;
 }
     
 body.big #mainsettings .fa-window-close {
@@ -2095,7 +2095,8 @@ body.big #splash .titletable {
     }
 
     #mainsettings .buttonstable {
-      width: 349px;
+      width: 362px;
+      max-height: 30px !important;
     }         
     body.big #mainsettings .buttonstable {
       width: 468px;
@@ -2107,7 +2108,7 @@ body.big #splash .titletable {
     }     
 
     body.big #mainsettings .buttonstable {
-      width: 349px;
+      width: 357px;
     }
     #previewtd div iframe {
       margin: 0px !important;
