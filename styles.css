@@ -1896,19 +1896,6 @@ body.big #linkChange.newLayout > div .titletable tr:first-child .firsttd {
     width: 207px;
 } 
 
-#splash.newLayout > div .titletable tr:first-child .firsttd {
-  min-width: 345px;
-  /* min-width: 236px !important; */
-  width: 207px;
-  padding-bottom: 2px;
-} 
-
-body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
-  min-width: 345px;
-  /* min-width: 236px !important; */
-  width: 207px;
-} 
-
 #postedby {
   width: 202px;
   margin-left: 3px;
@@ -1954,6 +1941,26 @@ body.big #splash .titletable {
     height: 47px;
 }
 
+#splash.newLayout > div .titletable tr:first-child .firsttd {
+  min-width: 345px;
+  /* min-width: 236px !important; */
+  width: 207px;
+  padding-bottom: 2px;
+  padding-top: 7px;
+} 
+
+body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
+  min-width: 345px;
+  /* min-width: 236px !important; */
+  width: 207px;
+} 
+
+#splash.newLayout table:nth-of-type(2) {
+ height: 256px;
+} 
+
+
+
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
 /* 
@@ -1961,6 +1968,16 @@ body.big #splash .titletable {
   Screen = B/w 320px to 479px */
   @media (max-width: 480px) {
   
+    #splash.newLayout table:nth-of-type(2) {
+      height: 297px;
+    }
+    #splash.newLayout table:nth-of-type(3) {
+      height: 215px;
+    }
+    #splash.newLayout table:nth-of-type(4) {
+      height: 215px;
+    }
+        
     .menuincludedeleted {
       left: 109px;
      }
@@ -2026,9 +2043,10 @@ body.big #splash .titletable {
       padding-left: 6px;
     }    
     #splash .titletable {
-      width: 343px;
+      width: 358px;
       padding-left: 6px;
-      height: 24px;
+      height: 38px;
+      margin-top: -0.5px !important;
     }
     body.big #splash .titletable {
       width: 343px;
@@ -4136,7 +4154,12 @@ body.big #splash.newLayout .sectiontitle {
 } 
 
 #splash > div {
-  margin-top: 34px !important;
+  position: relative;
+  transform: translate(0px, -50%);
+  top: calc(50%) !important;
+  margin-top: 0px !important;
+  height: calc(100% - 40px) !important;
+  max-height: calc(100% - 40px) !important;
 }
 
 body.big #splash > div {
@@ -4172,9 +4195,9 @@ body.big .splashtext.aboutbs {
   border: 1px solid var(--dark-color);
   background: var(--high-color);
   color: var(--dark-color);
-  position: relative;
+  position: sticky;
   width: 50px;
-  display: block;
+  display: none;
   text-align: center;
   line-height: 19px;
   font-size: 13px;
@@ -4182,10 +4205,10 @@ body.big .splashtext.aboutbs {
   padding-top: 2px;
   font-weight: bold;
   padding-left: 0;
-  right: 3px;
+  right: 14px;
   cursor: default !important;
   float: right;
-  bottom: 4px;
+  bottom: 6px;
 }
 
 #splash .splashbutton.active {
