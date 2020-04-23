@@ -284,7 +284,6 @@ function parseTweet(type) {
 
 function createPreview() {
 
-    //return false; // xyzxyz
     var xclass = "";
     var typefa = "twitter"
     if (addType == "H") {
@@ -375,13 +374,13 @@ function create() {
     var creationdate = formatNumDate(date);
 
     if (addType == "T") {
-        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"tweet\": " + text + "\r\n},");
+        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
     }
     else if (addType == "Y") {
-        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + urldirect  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"tweet\": " + text + "\r\n},");
+        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + urldirect  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
     }
     else {
-        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"tweet\": " + text + "\r\n},");
+        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
     }
 
     var result = $('#result').val();
@@ -407,16 +406,24 @@ function create() {
     showMessage("New Link Created And Copied To Clipboard");
     closeSettingsPopup();
     
-    
     //if ($("#preview").is(":checked")) {
+        
+    eraseLinkTmpData(nextid, true);
+
+    var mlink = encodeURIComponent(JSON.stringify(result));
+    
+    createCookie(nextid + "templink", mlink, 99999);
+    createCookie("haschanges", "yes");
 
 
-        createCookie(nextid + "templink", encodeURIComponent(JSON.stringify(result)), 99999);
-        createCookie("hasChanges", "Yes");
+    if (showColorsAdv) {
         $("#generateicon").addClass("haschanges");
+        if (showColors) {
+            $("#settings").addClass("haschanges");
+        }
+    }  
+
     //} 
-
-
     createCookie("maxid", nextid + 1);
 
     resetFields(false);
