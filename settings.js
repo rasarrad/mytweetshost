@@ -1764,12 +1764,16 @@ function clickLiVWC(e, obj) {
 
             showMessage("VictoryWillCome Tweets Shown", null, null, null, null, null);
             showAll = true;
+
+            changeCatsText(false);
         }
         else {
             createCookie("cat-cli", "", 99999);
 
             showMessage("VictoryWillCome Tweets Hidden", null, null, null, null, null);
             showAll = false;  
+
+            changeCatsText(true);
         }
 
         $("#VWCdisplay").text(value);
@@ -1786,8 +1790,8 @@ function changeCatsText(changed) {
     }
     else {
         createCookie("cat-cli", "", 99999);
-        $(".cat-cli").text("Victory Will Come Tweets");
-        catsmap.set("cli", "Victory Will Come Tweets");
+        $(".cat-cli").text("VictoryWillCome Tweets");
+        catsmap.set("cli", "VictoryWillCome Tweets");
     }
 }
 

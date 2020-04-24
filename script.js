@@ -51,9 +51,8 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 }  
 
 $( document ).ready(function() { 
-    createCookie("cat-cli", "", 99999);
 
-    // START mapa categorias
+    // START do texto das categorias
     var catschanged = readCookie("cat-cli");
 
     if (catschanged && catschanged.length > 0 ) {
