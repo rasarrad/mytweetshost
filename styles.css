@@ -2979,7 +2979,7 @@ input[type="checkbox"] + label {
     color: var(--text-color);
 }
 
-input[type="checkbox"] + label span {
+input[type="checkbox"] + label span:not(.text) {
     display:inline-block;
     width: 16px;
     height: 15px;
@@ -3006,7 +3006,7 @@ input[type="radio"] + label {
     font-family:Arial, sans-serif;
 }
 
-input[type="radio"] + label span {
+input[type="radio"] + label span:not(.text) {
     display:inline-block;
     width:19px;
     height:19px;
@@ -3016,7 +3016,7 @@ input[type="radio"] + label span {
     cursor:pointer;
 }
 
-input[type="radio"]:checked + label span {
+input[type="radio"]:checked + label span:not(.text) {
     background:url(./check_radio_sheet.png) -57px top no-repeat;
 }
 
