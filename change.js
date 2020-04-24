@@ -657,7 +657,7 @@ function countalltweets(webLinksMap) {
         $("#all").parent().attr("title", "Twitter: " + total_t + " - Youtube: " + total_y + " - Website: " + total_h);
         $("#all2").parent().attr("title", "Twitter: " + total_t + " - Youtube: " + total_y + " - Website: " + total_h);
 
-        // New/Ongoing
+        // New / Ongoing
         var toview = 0;
         var toviewT = 0;
         var toviewY = 0;
@@ -680,7 +680,7 @@ function countalltweets(webLinksMap) {
         $("#tvn2").text(toview);
         $("#tvn2").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
 
-        // New / Hot / Trending
+        // Hot / Trending
         var trending = 0;
         var trendingT = 0;
         var trendingY = 0;

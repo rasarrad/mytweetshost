@@ -96,8 +96,8 @@ $( document ).ready(function() {
         catsmap.set("cli", catschanged);
         $(".cat-cli").text(catschanged);
         */
-       catsmap.set("tvn", "New/Ongoing");
-       catsmap.set("trn", "New / Hot / Trending");
+       catsmap.set("tvn", "New / Ongoing");
+       catsmap.set("trn", "Hot / Trending");
        catsmap.set("tvi", "To Watch");
        catsmap.set("tvl", "Documentaries / Films");
        catsmap.set("tre", "Fast Reading");
@@ -106,8 +106,8 @@ $( document ).ready(function() {
        catsmap.set("imp", "Shocking Truth");
     }
     else {
-        catsmap.set("tvn", "New/Ongoing");
-        catsmap.set("trn", "New / Hot / Trending");
+        catsmap.set("tvn", "New / Ongoing");
+        catsmap.set("trn", "Hot / Trending");
         catsmap.set("tvi", "To Watch");
         catsmap.set("tvl", "Documentaries / Films");
         catsmap.set("tre", "Fast Reading");
@@ -753,8 +753,8 @@ $( document ).ready(function() {
 
 
         /*
-    createCookie("cat-tvn", "New/Ongoing 2222", 99999);
-    createCookie("cat-trn", "New / Hot / Trending 2222", 99999);
+    createCookie("cat-tvn", "New / Ongoing 2222", 99999);
+    createCookie("cat-trn", "Hot / Trending 2222", 99999);
     createCookie("cat-tvi", "To Watch 2222", 99999);
     createCookie("cat-tvl", "Documentaries / Films 2222", 99999);
     createCookie("cat-tre", "Fast Reading 2222", 99999);
