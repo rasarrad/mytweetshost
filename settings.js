@@ -41,7 +41,7 @@ function expandCat(obj, idparam, valid) {
         }
     }
     */
-   
+
     var functorun = function(jsonvar) 
     { 
         
@@ -624,7 +624,7 @@ var openMainSettingsPopup = function(jsonobj)
     // premium
     var ceec = readCookie("eec");
 
-    // xyz
+    // xyz fakepass
     $('#unlockinput').val("x20#002e");
     
     if (ceec && ceec.length > 0 ) {

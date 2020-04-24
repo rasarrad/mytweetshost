@@ -1952,7 +1952,10 @@ body.big #splash .titletable {
   padding-top: 5px;
 } 
 
-#splash.newLayout > div .titletable tr:first-child {display: inline-table;width: 464px;} 
+#splash.newLayout > div .titletable tr:first-child {
+  display: inline-table;
+  width: 464px;
+} 
 
 body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
   min-width: 345px;
@@ -1964,17 +1967,17 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
   height: 256px;
 }
 #splash.newLayout table:nth-of-type(3) {
-  height: 189px;
+  height: 208px;
 }
 #splash.newLayout table:nth-of-type(4) {
   height: 154px;
 }
     
 body.big #splash.newLayout table:nth-of-type(2) {
-  height: 256px;
+  height: 261px;
 }
 body.big #splash.newLayout table:nth-of-type(3) {
-  height: 189px;
+  height: 261px;
 }
 body.big #splash.newLayout table:nth-of-type(4) {
   height: 205px;
@@ -1994,10 +1997,10 @@ body.big #splash.newLayout table:nth-of-type(4) {
       height: 349px;
     }
     #splash.newLayout table:nth-of-type(3) {
-      height: 215px;
+      height: 239px;
     }
     body.big #splash.newLayout table:nth-of-type(3) {
-      height: 295px;
+      height: 316px;
     }
     #splash.newLayout table:nth-of-type(4) {
       height: 186px;
@@ -2327,7 +2330,13 @@ body.big #splash.newLayout table:nth-of-type(4) {
       }
       body.big .newLayout > div .titletable tr:first-child .firsttd {
           min-width: 343px !important;
-      }     
+      }  
+
+      #splash.newLayout > div .titletable tr:first-child {
+        display: inline-table;
+        width: 347px;
+      } 
+   
         #previewtable #inid {
           min-width: auto;
           max-height: 296px;
@@ -4188,7 +4197,7 @@ body.big #splash.newLayout .sectiontitle {
   transform: translate(0px, -50%);
   top: calc(50%) !important;
   margin-top: 0px !important;
-  height: calc(100% - 40px) !important;
+  /* height: calc(100% - 40px) !important; */
   max-height: calc(100% - 40px) !important;
 }
 
