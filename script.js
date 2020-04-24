@@ -51,6 +51,7 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 
 $( document ).ready(function() { 
 
+    
     createCookie("cat-tvn", "New/Ongoing 2222", 99999);
     createCookie("cat-trn", "New / Hot / Trending 2222", 99999);
     createCookie("cat-tvi", "To Watch 2222", 99999);
@@ -60,17 +61,34 @@ $( document ).ready(function() {
     createCookie("cat-tke", "Important / To Keep 2222", 99999);
     createCookie("cat-imp", "Shocking Truth 2222", 99999);
     createCookie("cat-cli", "My Tweets 2222", 99999);
+    
 
     // START mapa categorias
-    catsmap.set("tvn", "New/Ongoing");
-    catsmap.set("trn", "New / Hot / Trending");
-    catsmap.set("tvi", "To Watch");
-    catsmap.set("tvl", "Documentaries / Films");
-    catsmap.set("tre", "Fast Reading");
-    catsmap.set("trl", "Long Reading");
-    catsmap.set("tke", "Important / To Keep");
-    catsmap.set("imp", "Shocking Truth");
-    catsmap.set("cli", "My Tweets");
+    var catschanged = readCookie("cat-tvn");
+
+    if (catschanged && catschanged.length > 0 ) {
+        catsmap.set("tvn", readCookie("cat-tvn"));
+        catsmap.set("trn", readCookie("cat-trn"));
+        catsmap.set("tvi", readCookie("cat-tvi"));
+        catsmap.set("tvl", readCookie("cat-tvl"));
+        catsmap.set("tre", readCookie("cat-tre"));
+        catsmap.set("trl", readCookie("cat-trl"));
+        catsmap.set("tke", readCookie("cat-tke"));
+        catsmap.set("imp", readCookie("cat-imp"));
+        catsmap.set("cli", readCookie("cat-cli"));
+    }
+    else {
+        catsmap.set("tvn", "New/Ongoing");
+        catsmap.set("trn", "New / Hot / Trending");
+        catsmap.set("tvi", "To Watch");
+        catsmap.set("tvl", "Documentaries / Films");
+        catsmap.set("tre", "Fast Reading");
+        catsmap.set("trl", "Long Reading");
+        catsmap.set("tke", "Important / To Keep");
+        catsmap.set("imp", "Shocking Truth");
+        catsmap.set("cli", "My Tweets");
+    }
+
 
 
    // START remover speckcheks
