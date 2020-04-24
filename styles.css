@@ -1924,8 +1924,11 @@ body.big #linkChange .titletable {
 }   
 
 #splash .titletable {
-  width: 464px;
+  width: 480px;
   padding-left: 7px;
+  max-width: 600px;
+  display: inline-table;
+  margin-top: 1px;
 }
 body.big #splash .titletable {
   width: 468px;
@@ -1946,7 +1949,7 @@ body.big #splash .titletable {
   /* min-width: 236px !important; */
   width: 207px;
   padding-bottom: 2px;
-  padding-top: 7px;
+  padding-top: 5px;
 } 
 
 body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
@@ -1956,10 +1959,24 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
 } 
 
 #splash.newLayout table:nth-of-type(2) {
- height: 256px;
-} 
-
-
+  height: 256px;
+}
+#splash.newLayout table:nth-of-type(3) {
+  height: 189px;
+}
+#splash.newLayout table:nth-of-type(4) {
+  height: 154px;
+}
+    
+body.big #splash.newLayout table:nth-of-type(2) {
+  height: 256px;
+}
+body.big #splash.newLayout table:nth-of-type(3) {
+  height: 189px;
+}
+body.big #splash.newLayout table:nth-of-type(4) {
+  height: 154px;
+}
 
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
@@ -1971,13 +1988,21 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
     #splash.newLayout table:nth-of-type(2) {
       height: 297px;
     }
+    body.big #splash.newLayout table:nth-of-type(2) {
+      height: 349px;
+    }
     #splash.newLayout table:nth-of-type(3) {
       height: 215px;
     }
-    #splash.newLayout table:nth-of-type(4) {
-      height: 215px;
+    body.big #splash.newLayout table:nth-of-type(3) {
+      height: 295px;
     }
-        
+    #splash.newLayout table:nth-of-type(4) {
+      height: 186px;
+    }
+    body.big #splash.newLayout table:nth-of-type(4) {
+      height: 218px;
+    }    
     .menuincludedeleted {
       left: 109px;
      }
@@ -4099,13 +4124,16 @@ body.big #splash.newLayout .firstTable {
     margin-top: 40px;
 }
 
-#splash.newLayout .fa-bookmark {
+#splash.newLayout .fa-folder-open {
     font-size: 14px;
-    top: 0px;
-    left: -2px;
+    top: 1px;
+    left: -3px;
+    border: 1px solid var(--high-color);
+    padding-bottom: 1px;
+    position: relative;
 }
 
-body.big #splash.newLayout .fa-bookmark {
+body.big #splash.newLayout .fa-folder-open {
     font-size: 18px;
     top: 1px;
     left: -2px;
@@ -4124,16 +4152,16 @@ body.big #splash.newLayout .fa-user-circle-o {
     left: -2px;
 }
 
-#splash.newLayout .fa-paypal {
-    font-size: 15px;
+#splash.newLayout .fa-credit-card-alt {
+    font-size: 12px;
     top: 0px;
     left: -3px;
     position: relative;
 }
 
-body.big #splash.newLayout .fa-paypal {
-    font-size: 18px;
-    top: 1px;
+body.big #splash.newLayout .fa-credit-card-alt {
+    font-size: 16px;
+    top: 0px;
     left: -2px;
 }
 
@@ -4163,7 +4191,7 @@ body.big #splash.newLayout .sectiontitle {
 }
 
 body.big #splash > div {
-  margin-top: 45px !important;
+  /* margin-top: 45px !important; */
 }
 
 .splashtext.aboutme {
@@ -4195,9 +4223,8 @@ body.big .splashtext.aboutbs {
   border: 1px solid var(--dark-color);
   background: var(--high-color);
   color: var(--dark-color);
-  position: sticky;
   width: 50px;
-  display: none;
+  position: absolute;
   text-align: center;
   line-height: 19px;
   font-size: 13px;
@@ -4205,10 +4232,10 @@ body.big .splashtext.aboutbs {
   padding-top: 2px;
   font-weight: bold;
   padding-left: 0;
-  right: 14px;
+  right: 0px;
   cursor: default !important;
   float: right;
-  bottom: 6px;
+  bottom: -18px;
 }
 
 #splash .splashbutton.active {
@@ -4216,9 +4243,7 @@ body.big .splashtext.aboutbs {
   line-height: 15px;
 }
 
-body.big #splash .splashbutton {
-
-}
+body.big #splash .splashbutton {font-size: 16px;width: 60px;}
 
 body.big #splash .splashbutton > span {
 
