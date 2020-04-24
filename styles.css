@@ -1927,11 +1927,11 @@ body.big #linkChange .titletable {
   width: 480px;
   padding-left: 7px;
   max-width: 600px;
-  display: inline-table;
+  display: block;
   margin-top: 1px;
 }
 body.big #splash .titletable {
-  width: 468px;
+  width: 478px;
   padding-left: 6px;
 }  
 .menuincludedeleted {
@@ -1951,6 +1951,8 @@ body.big #splash .titletable {
   padding-bottom: 2px;
   padding-top: 5px;
 } 
+
+#splash.newLayout > div .titletable tr:first-child {display: inline-table;width: 464px;} 
 
 body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
   min-width: 345px;
@@ -1975,7 +1977,7 @@ body.big #splash.newLayout table:nth-of-type(3) {
   height: 189px;
 }
 body.big #splash.newLayout table:nth-of-type(4) {
-  height: 154px;
+  height: 205px;
 }
 
 /*****************************************************************************/
