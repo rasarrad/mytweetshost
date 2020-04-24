@@ -51,7 +51,16 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 
 $( document ).ready(function() { 
 
-    
+    createCookie("cat-tvn", "New/Ongoing 2222", 99999);
+    createCookie("cat-trn", "New / Hot / Trending 2222", 99999);
+    createCookie("cat-tvi", "To Watch 2222", 99999);
+    createCookie("cat-tvl", "Documentaries / Films 2222", 99999);
+    createCookie("cat-tre", "Fast Reading 2222", 99999);
+    createCookie("cat-trl", "Long Reading 2222", 99999);
+    createCookie("cat-tke", "Important / To Keep 2222", 99999);
+    createCookie("cat-imp", "Shocking Truth 2222", 99999);
+    createCookie("cat-cli", "My Tweets 2222", 99999);
+
     // START mapa categorias
     catsmap.set("tvn", "New/Ongoing");
     catsmap.set("trn", "New / Hot / Trending");
@@ -104,7 +113,7 @@ $( document ).ready(function() {
 
     // START do splash screen
     /* xyz splash
-    createCookie("eec", "sss");
+    createCookie("eec", "sss", 99999);
     if (!dunl())
         showSplash();
     */
@@ -1722,11 +1731,11 @@ function externallinkcopy(obj) {
 /////////////////////////////////////////////////////////////////////////
 
 
-var clickmenu = function(val, text) {    
+var clickmenu = function(val) {    
     resetFields();
 
     $('#selectedcat').val(val);
-    $('#selectedcattext').val(text);
+    $('#selectedcattext').val(catsmap.get(val));
 
     alert(text)
 
