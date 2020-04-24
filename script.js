@@ -43,6 +43,7 @@ var funcg = null;
     xyz fakepass
     xyz splash
 */
+
 // START do tema
 var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
@@ -50,23 +51,16 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 }  
 
 $( document ).ready(function() { 
-
-    /*
-    createCookie("cat-tvn", "New/Ongoing 2222", 99999);
-    createCookie("cat-trn", "New / Hot / Trending 2222", 99999);
-    createCookie("cat-tvi", "To Watch 2222", 99999);
-    createCookie("cat-tvl", "Documentaries / Films 2222", 99999);
-    createCookie("cat-tre", "Fast Reading 2222", 99999);
-    createCookie("cat-trl", "Long Reading 2222", 99999);
-    createCookie("cat-tke", "Important / To Keep 2222", 99999);
-    createCookie("cat-imp", "Shocking Truth 2222", 99999);
-    createCookie("cat-cli", "My Tweets 2222", 99999);
-    */
+    createCookie("cat-cli", "", 99999);
 
     // START mapa categorias
-    var catschanged = readCookie("cat-tvn");
+    var catschanged = readCookie("cat-cli");
 
     if (catschanged && catschanged.length > 0 ) {
+        catsmap.set("cli", catschanged);
+        $(".cat-cli").text(catschanged);
+
+        catschanged = readCookie("cat-tvn")
         catsmap.set("tvn", catschanged);
         $(".cat-tvn").text(catschanged);
 
@@ -752,7 +746,19 @@ $( document ).ready(function() {
     closeSplash(); 
 
 
-    
+        /*
+    createCookie("cat-tvn", "New/Ongoing 2222", 99999);
+    createCookie("cat-trn", "New / Hot / Trending 2222", 99999);
+    createCookie("cat-tvi", "To Watch 2222", 99999);
+    createCookie("cat-tvl", "Documentaries / Films 2222", 99999);
+    createCookie("cat-tre", "Fast Reading 2222", 99999);
+    createCookie("cat-trl", "Long Reading 2222", 99999);
+    createCookie("cat-tke", "Important / To Keep 2222", 99999);
+    createCookie("cat-imp", "Shocking Truth 2222", 99999);
+    createCookie("cat-cli", "My Tweets 2222", 99999);
+    */
+
+
         /*
     window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
 
