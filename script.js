@@ -38,6 +38,12 @@ var useSwipes = false;
 var ceec = 0; 
 var funcg = null;
 
+/* 
+    xyz startcode
+    xyz fakepass
+    xyz splash
+*/
+
 // START do tema
 var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
@@ -98,11 +104,13 @@ $( document ).ready(function() {
 
 
     // START do splash screen
-    /**/
+    /* xyz splash
     createCookie("eec", "sss");
     if (!dunl())
         showSplash();
-
+    */
+    showSplash();
+    //////////////
         
     // START das colos
     var valueColor = readCookie("colors");
@@ -687,7 +695,7 @@ $( document ).ready(function() {
     document.getElementById("folderopen").addEventListener("click", clickHandler);
 
 
-    // xyz 
+    // xyz startcode
 
 
         /*

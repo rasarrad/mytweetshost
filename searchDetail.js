@@ -562,6 +562,7 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
     searchtotal = 0;
 
     // security check
+    /* xyz splash 
     if (valid) {
     }
     else if (ceec != 4) {
@@ -582,6 +583,7 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
             return false;
         }
     }
+    */
 
     if (!ismoretweets) {
         $('#mask').fadeIn(300);  

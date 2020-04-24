@@ -19,6 +19,7 @@ function expandCat(obj, idparam, valid) {
     }
     
     // security check
+    /* xyz splash 
     if (valid) {
     }
     else if (ceec != 4) {
@@ -39,7 +40,8 @@ function expandCat(obj, idparam, valid) {
             return false;
         }
     }
-
+    */
+   
     var functorun = function(jsonvar) 
     { 
         
