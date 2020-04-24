@@ -311,63 +311,63 @@ bookmarks <span>
             <input id="catsinput" style="margin-left: 3px;display:none;">
             <div class="checkstyleddiv">                  
                 <input type="checkbox" onclick="javascript: clickCheckCat(this, 'tvn')" id="cattvn">
-                <label for="cattrn" style="position: relative;top: -7px;">
+                <label class="cat-tvn" for="cattvn" style="position: relative;top: -7px;">
                     <span><i class="fa fa-square"></i></span>
                     New/Ongoing
                 </label>
             </div>
             <div class="checkstyleddiv">                  
                 <input type="checkbox" onclick="javascript: clickCheckCat(this, 'trn')" id="cattrn">
-                <label for="cattrn" style="position: relative;top: -7px;">
+                <label class="cat-trn" for="cattrn" style="position: relative;top: -7px;">
                     <span><i class="fa fa-square"></i></span>
                     New / Hot / Trending
                 </label>
             </div>
             <div class="checkstyleddiv">                  
                 <input type="checkbox" onclick="javascript: clickCheckCat(this, 'tvi')" id="cattvi">
-                <label for="cattvi" style="position: relative;top: -7px;">
+                <label class="cat-tvi" for="cattvi" style="position: relative;top: -7px;">
                     <span><i class="fa fa-square"></i></span>
                     To Watch
                 </label>
             </div>
             <div class="checkstyleddiv">                  
                 <input type="checkbox" onclick="javascript: clickCheckCat(this, 'tvl')" id="cattvl">
-                <label for="cattvl" style="position: relative;top: -7px;">
+                <label class="cat-tvl" for="cattvl" style="position: relative;top: -7px;">
                     <span><i class="fa fa-square"></i></span>
                     Documentaries / Films
                 </label>
             </div>
             <div class="checkstyleddiv">                  
                 <input type="checkbox" onclick="javascript: clickCheckCat(this, 'tre')" id="cattre">
-                <label for="cattre" style="position: relative;top: -7px;">
+                <label class="cat-tre" for="cattre" style="position: relative;top: -7px;">
                     <span><i class="fa fa-square"></i></span>
                     Fast Reading
                 </label>
             </div>
             <div class="checkstyleddiv">                  
                 <input type="checkbox" onclick="javascript: clickCheckCat(this, 'trl')" id="cattrl">
-                <label for="cattrl" style="position: relative;top: -7px;">
+                <label class="cat-trl" for="cattrl" style="position: relative;top: -7px;">
                     <span><i class="fa fa-square"></i></span>
                     Long Reading
                 </label>
             </div>
             <div class="checkstyleddiv">                  
                 <input type="checkbox" onclick="javascript: clickCheckCat(this, 'tke')" id="cattke">
-                <label for="cattke" style="position: relative;top: -7px;">
+                <label class="cat-tke" for="cattke" style="position: relative;top: -7px;">
                     <span><i class="fa fa-square"></i></span>
                     Important / To Keep
                 </label>
             </div>
             <div class="checkstyleddiv">                  
                 <input type="checkbox" onclick="javascript: clickCheckCat(this, 'imp')" id="catimp">
-                <label for="catimp" style="position: relative;top: -7px;">
+                <label class="cat-imp" for="catimp" style="position: relative;top: -7px;">
                     <span><i class="fa fa-square"></i></span>
                     Shocking Truth
                 </label>
             </div>
             <div class="checkstyleddiv">                  
                 <input type="checkbox" onclick="javascript: clickCheckCat(this, 'cli')" id="catcli">
-                <label for="catcli" style="position: relative;top: -7px;">
+                <label class="cat-cli" for="catcli" style="position: relative;top: -7px;">
                     <span><i class="fa fa-square"></i></span>
                     My Tweets
                 </label>
@@ -1190,7 +1190,7 @@ bookmarks <span>
         </table>
         <table class="sectiontitletable sectionexpandable defaulttablerow firstsettable">
           <tbody>
-            <tr onclick="javascript: clickmenu('all', 'All Links')" class="cursorpointer hover" style="padding-bottom: 15px;">
+            <tr onclick="javascript: clickmenu('all')" class="cursorpointer hover" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
                   <span style="padding-left: 6px;" class="sectiontitle">All Links</span>
                   <div class="menuitemcounter" id="all2"></div>
@@ -1200,9 +1200,9 @@ bookmarks <span>
         </table>
         <table class="sectiontitletable sectionexpandable defaulttablerow">
           <tbody>
-            <tr onclick="javascript: clickmenu('tvn', 'New/Ongoing')" class="cursorpointer hover" style="padding-bottom: 15px;">
+            <tr onclick="javascript: clickmenu('tvn')" class="cursorpointer hover" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
-                  <span style="padding-left: 6px;" class="sectiontitle">New/Ongoing</span>
+                  <span style="padding-left: 6px;" class="sectiontitle cat-tvn">New/Ongoing</span>
                   <div class="menuitemcounter" id="tvn2"></div>
               </td>                                                                   
             </tr>   
@@ -1210,9 +1210,9 @@ bookmarks <span>
         </table>
         <table class="sectiontitletable sectionexpandable defaulttablerow">
           <tbody>
-            <tr onclick="javascript: clickmenu('trn', 'New / Hot / Trending')" class="cursorpointer hover" style="padding-bottom: 15px;">
+            <tr onclick="javascript: clickmenu('trn')" class="cursorpointer hover" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
-                  <span style="padding-left: 6px;" class="sectiontitle">New / Hot / Trending</span>
+                  <span style="padding-left: 6px;" class="sectiontitle cat-trn">New / Hot / Trending</span>
                   <div class="menuitemcounter" id="trn2"></div>
               </td>                                                                   
             </tr>   
@@ -1220,9 +1220,9 @@ bookmarks <span>
         </table>
         <table class="sectiontitletable sectionexpandable defaulttablerow">
           <tbody>
-            <tr onclick="javascript: clickmenu('tvi', 'To Watch')" class="cursorpointer hover" style="padding-bottom: 15px;">
+            <tr onclick="javascript: clickmenu('tvi')" class="cursorpointer hover" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
-                  <span style="padding-left: 6px;" class="sectiontitle">To Watch</span>
+                  <span style="padding-left: 6px;" class="sectiontitle cat-tvi">To Watch</span>
                   <div class="menuitemcounter" id="tvi2"></div>
               </td>                                                                   
             </tr>   
@@ -1230,9 +1230,9 @@ bookmarks <span>
         </table>
         <table class="sectiontitletable sectionexpandable defaulttablerow">
           <tbody>
-            <tr onclick="javascript: clickmenu('tvl', 'Documentaries / Films')" class="cursorpointer hover" style="padding-bottom: 15px;">
+            <tr onclick="javascript: clickmenu('tvl')" class="cursorpointer hover" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
-                  <span style="padding-left: 6px;" class="sectiontitle">Documentaries / Films</span>
+                  <span style="padding-left: 6px;" class="sectiontitle cat-tvl">Documentaries / Films</span>
                   <div class="menuitemcounter" id="tvl2"></div>
               </td>                                                                   
             </tr>   
@@ -1240,9 +1240,9 @@ bookmarks <span>
         </table>
         <table class="sectiontitletable sectionexpandable defaulttablerow">
           <tbody>
-            <tr onclick="javascript: clickmenu('tre', 'Fast Reading')" class="cursorpointer hover" style="padding-bottom: 15px;">
+            <tr onclick="javascript: clickmenu('tre')" class="cursorpointer hover" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
-                  <span style="padding-left: 6px;" class="sectiontitle">Fast Reading</span>
+                  <span style="padding-left: 6px;" class="sectiontitle cat-tre">Fast Reading</span>
                   <div class="menuitemcounter" id="tre2"></div>
               </td>                                                                   
             </tr>   
@@ -1250,9 +1250,9 @@ bookmarks <span>
         </table>
         <table class="sectiontitletable sectionexpandable defaulttablerow">
           <tbody>
-            <tr onclick="javascript: clickmenu('trl', 'Long Reading')" class="cursorpointer hover" style="padding-bottom: 15px;">
+            <tr onclick="javascript: clickmenu('trl')" class="cursorpointer hover" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
-                  <span style="padding-left: 6px;" class="sectiontitle">Long Reading</span>
+                  <span style="padding-left: 6px;" class="sectiontitle cat-trl">Long Reading</span>
                   <div class="menuitemcounter" id="trl2"></div>
               </td>                                                                   
             </tr>   
@@ -1260,9 +1260,9 @@ bookmarks <span>
         </table>
         <table class="sectiontitletable sectionexpandable defaulttablerow">
           <tbody>
-            <tr onclick="javascript: clickmenu('tke', 'Important / To Keep')" class="cursorpointer hover" style="padding-bottom: 15px;">
+            <tr onclick="javascript: clickmenu('tke')" class="cursorpointer hover" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
-                  <span style="padding-left: 6px;" class="sectiontitle">Important / To Keep</span>
+                  <span style="padding-left: 6px;" class="sectiontitle cat-tke">Important / To Keep</span>
                   <div class="menuitemcounter" id="tke2"></div>
               </td>                                                                   
             </tr>   
@@ -1270,9 +1270,9 @@ bookmarks <span>
         </table>
         <table class="sectiontitletable sectionexpandable defaulttablerow">
           <tbody>
-            <tr onclick="javascript: clickmenu('imp', 'Shocking Truth')" class="cursorpointer hover" style="padding-bottom: 15px;">
+            <tr onclick="javascript: clickmenu('imp')" class="cursorpointer hover" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
-                  <span style="padding-left: 6px;" class="sectiontitle">Shocking Truth</span>
+                  <span style="padding-left: 6px;" class="sectiontitle cat-imp">Shocking Truth</span>
                   <div class="menuitemcounter" id="imp2"></div>
               </td>                                                                   
             </tr>   
@@ -1282,7 +1282,7 @@ bookmarks <span>
           <tbody>
             <tr onclick="javascript: clickmenu('cli')" class="cursorpointer hover" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
-                  <span style="padding-left: 6px;" class="sectiontitle">My Tweets</span>
+                  <span style="padding-left: 6px;" class="sectiontitle cat-cli">My Tweets</span>
                   <div class="menuitemcounter" id="cli2"></div>
               </td>                                                                   
             </tr>   

@@ -67,15 +67,41 @@ $( document ).ready(function() {
     var catschanged = readCookie("cat-tvn");
 
     if (catschanged && catschanged.length > 0 ) {
-        catsmap.set("tvn", readCookie("cat-tvn"));
-        catsmap.set("trn", readCookie("cat-trn"));
-        catsmap.set("tvi", readCookie("cat-tvi"));
-        catsmap.set("tvl", readCookie("cat-tvl"));
-        catsmap.set("tre", readCookie("cat-tre"));
-        catsmap.set("trl", readCookie("cat-trl"));
-        catsmap.set("tke", readCookie("cat-tke"));
-        catsmap.set("imp", readCookie("cat-imp"));
-        catsmap.set("cli", readCookie("cat-cli"));
+        catsmap.set("tvn", catschanged);
+        $(".cat-tvn").text(catschanged);
+
+        catschanged = readCookie("cat-trn")
+        catsmap.set("trn", catschanged);
+        $(".cat-trn").text(catschanged);
+
+        catschanged = readCookie("cat-tvi")
+        catsmap.set("tvi", catschanged);
+        $(".cat-tvi").text(catschanged);
+
+        catschanged = readCookie("cat-tvl")
+        catsmap.set("tvl", catschanged);
+        $(".cat-tvl").text(catschanged);
+      
+        catschanged = readCookie("cat-tre")
+        catsmap.set("tre", catschanged);
+        $(".cat-tre").text(catschanged);
+
+        catschanged = readCookie("cat-trl")
+        catsmap.set("trl", catschanged);
+        $(".cat-trl").text(catschanged);
+
+        catschanged = readCookie("cat-tke")
+        catsmap.set("tke", catschanged);
+        $(".cat-tke").text(catschanged);
+
+        catschanged = readCookie("cat-imp")
+        catsmap.set("imp", catschanged);
+        $(".cat-imp").text(catschanged);
+
+        catschanged = readCookie("cat-cli")
+        catsmap.set("cli", catschanged);
+        $(".cat-cli").text(catschanged);
+
     }
     else {
         catsmap.set("tvn", "New/Ongoing");
