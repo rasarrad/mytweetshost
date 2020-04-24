@@ -1757,10 +1757,17 @@ function clickLiVWC(e, obj) {
         });
 
         if (value == "Yes") {
+            
+
+            // START mapa categorias
+            var catschanged = readCookie("cat-cli");
+
             showMessage("VictoryWillCome Tweets Shown", null, null, null, null, null);
             showAll = true;
         }
         else {
+            createCookie("cat-cli", "", 99999);
+
             showMessage("VictoryWillCome Tweets Hidden", null, null, null, null, null);
             showAll = false;  
         }
@@ -1769,6 +1776,19 @@ function clickLiVWC(e, obj) {
         createCookie("vwc", value, 99999);
         countalltweets();
     }  
+}
+
+function changeCatsText(changed) {
+    if (changed) {
+        createCookie("cat-cli", "My Tweets", 99999);
+        $(".cat-cli").text("My Tweets");
+        catsmap.set("cli", "My Tweets");
+    }
+    else {
+        createCookie("cat-cli", "", 99999);
+        $(".cat-cli").text("Victory Will Come Tweets");
+        catsmap.set("cli", "Victory Will Come Tweets");
+    }
 }
 
 function triggerUpload() {

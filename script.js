@@ -60,6 +60,7 @@ $( document ).ready(function() {
         catsmap.set("cli", catschanged);
         $(".cat-cli").text(catschanged);
 
+        /*
         catschanged = readCookie("cat-tvn")
         catsmap.set("tvn", catschanged);
         $(".cat-tvn").text(catschanged);
@@ -95,7 +96,15 @@ $( document ).ready(function() {
         catschanged = readCookie("cat-cli")
         catsmap.set("cli", catschanged);
         $(".cat-cli").text(catschanged);
-
+        */
+       catsmap.set("tvn", "New/Ongoing");
+       catsmap.set("trn", "New / Hot / Trending");
+       catsmap.set("tvi", "To Watch");
+       catsmap.set("tvl", "Documentaries / Films");
+       catsmap.set("tre", "Fast Reading");
+       catsmap.set("trl", "Long Reading");
+       catsmap.set("tke", "Important / To Keep");
+       catsmap.set("imp", "Shocking Truth");
     }
     else {
         catsmap.set("tvn", "New/Ongoing");
@@ -108,8 +117,6 @@ $( document ).ready(function() {
         catsmap.set("imp", "Shocking Truth");
         catsmap.set("cli", "My Tweets");
     }
-
-
 
    // START remover speckcheks
    $( "input, textarea" ).each( function( index, element ){
