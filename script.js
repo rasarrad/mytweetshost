@@ -2101,9 +2101,9 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
              
 
 
-        document.getElementById("100003").querySelectorAll("iframe").onload = function() { alert('loaded!'); };
+        document.getElementById("111").onload = function() { alert('loaded!'); };
 
-        document.getElementById("100003").querySelectorAll("iframe").src = "https://www.flashscore.pt/basquetebol/";
+        document.getElementById("111").src = "https://www.flashscore.pt/basquetebol/";
 
 
 
