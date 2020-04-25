@@ -2101,7 +2101,7 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
              
 
 
-        document.getElementById("100003").querySelectorAll("iframe").addEventListener("load", myFunction);
+        document.getElementById("100003").querySelectorAll("iframe").onload = function() { alert('loaded!'); };
 
         //$("#100003 > iframe").attr("src", "http://www.example.com/");
 
