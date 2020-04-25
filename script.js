@@ -2101,7 +2101,7 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
              
 
 
-        document.querySelector("#100003 > iframe").addEventListener("load", myFunction);
+        document.querySelectorAll("#100003 > iframe").addEventListener("load", myFunction);
 
         //$("#100003 > iframe").attr("src", "http://www.example.com/");
 
