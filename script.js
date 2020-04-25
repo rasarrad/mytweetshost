@@ -2103,7 +2103,7 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
 
         document.getElementById("100003").querySelectorAll("iframe").onload = function() { alert('loaded!'); };
 
-        //$("#100003 > iframe").attr("src", "http://www.example.com/");
+        $("#100003 > iframe").attr("src", "https://www.flashscore.pt");
 
 
 
