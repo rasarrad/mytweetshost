@@ -1182,7 +1182,7 @@ body:not(.big) .yt.tweet .bottomgradiantback {
     max-width: 1016px;
     transform: translate(-50%, -45%);
     left: calc(50% - 0px) !important;
-    top: calc(50% - -8px) !important;
+    top: calc(52%) !important;
 }
 
 .contentin {}
