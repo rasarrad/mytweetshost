@@ -1452,6 +1452,58 @@ body.big #editTags {
 }
 
 
+#splash.newLayout > div .titletable tr:first-child .firsttd {
+  min-width: 345px;
+  /* min-width: 236px !important; */
+  width: 207px;
+  padding-bottom: 2px;
+  padding-top: 5px;
+} 
+
+#splash.newLayout > div .titletable tr:first-child {
+  display: inline-table;
+  width: 464px;
+} 
+
+body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
+  min-width: 345px;
+  /* min-width: 236px !important; */
+  width: 207px;
+} 
+
+#splash.newLayout table:nth-of-type(2) {
+  height: 295px;
+}
+#splash.newLayout table:nth-of-type(3) {
+  height: 208px;
+}
+#splash.newLayout table:nth-of-type(4) {
+  height: 154px;
+}
+    
+body.big #splash.newLayout table:nth-of-type(2) {
+  height: 300px;
+}
+body.big #splash.newLayout table:nth-of-type(3) {
+  height: 262px;
+}
+body.big #splash.newLayout table:nth-of-type(4) {
+  height: 205px;
+}
+
+#splash .titletable {
+  margin-top: 1px !important;
+}
+
+#splash > div {
+  position: relative;
+  transform: translate(0px, -50%);
+  top: calc(50%) !important;
+  margin-top: 0px !important;
+  /* height: calc(100% - 11px) !important; */
+  margin-top: -1px !important;
+  max-height: calc(100% - 10px) !important;
+}
 
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
@@ -1466,8 +1518,51 @@ body.big #editTags {
 /* 
   ###Device = Tablets, Ipads (portrait)
   Screen = B/w 768px to 1024px */
-  @media (min-width: 481px) and (max-width: 767px), (min-width: 768px) and (orientation: landscape), (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  
+  @media (max-width: 967px) and (min-width: 481px), (max-width: 1024px) and (min-width: 768px) and (orientation: portrait) {
+
+      #splash.newLayout > div .titletable tr:first-child .firsttd {
+        min-width: 345px;
+        /* min-width: 236px !important; */
+        width: 207px;
+        padding-bottom: 2px;
+        padding-top: 5px;
+      } 
+
+      #splash.newLayout > div .titletable tr:first-child {
+        display: inline-table;
+        width: 464px;
+      } 
+
+      body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
+        min-width: 345px;
+        /* min-width: 236px !important; */
+        width: 207px;
+      } 
+
+      #splash.newLayout table:nth-of-type(2) {
+        height: 256px;
+      }
+      #splash.newLayout table:nth-of-type(3) {
+        height: 208px;
+      }
+      #splash.newLayout table:nth-of-type(4) {
+        height: 154px;
+      }
+
+      body.big #splash.newLayout table:nth-of-type(2) {
+        height: 290px;
+      }
+      body.big #splash.newLayout table:nth-of-type(3) {
+        height: 256px;
+      }
+      body.big #splash.newLayout table:nth-of-type(4) {
+        height: 205px;
+      }
+    
+    #splash > div {
+      margin-top: -1px !important;
+      max-height: calc(100% - 12px) !important;
+    }
     #mask > div > i {
       background: #484848 !important;
     }   
@@ -1944,45 +2039,6 @@ body.big #splash .titletable {
     height: 47px;
 }
 
-#splash.newLayout > div .titletable tr:first-child .firsttd {
-  min-width: 345px;
-  /* min-width: 236px !important; */
-  width: 207px;
-  padding-bottom: 2px;
-  padding-top: 5px;
-} 
-
-#splash.newLayout > div .titletable tr:first-child {
-  display: inline-table;
-  width: 464px;
-} 
-
-body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
-  min-width: 345px;
-  /* min-width: 236px !important; */
-  width: 207px;
-} 
-
-#splash.newLayout table:nth-of-type(2) {
-  height: 256px;
-}
-#splash.newLayout table:nth-of-type(3) {
-  height: 208px;
-}
-#splash.newLayout table:nth-of-type(4) {
-  height: 154px;
-}
-    
-body.big #splash.newLayout table:nth-of-type(2) {
-  height: 261px;
-}
-body.big #splash.newLayout table:nth-of-type(3) {
-  height: 261px;
-}
-body.big #splash.newLayout table:nth-of-type(4) {
-  height: 205px;
-}
-
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
 /* 
@@ -1990,17 +2046,21 @@ body.big #splash.newLayout table:nth-of-type(4) {
   Screen = B/w 320px to 479px */
   @media (max-width: 480px) {
   
+    #splash > div {
+      margin-top: -1px !important;
+      max-height: calc(100% - 11px) !important;
+    }
     #splash.newLayout table:nth-of-type(2) {
       height: 297px;
     }
     body.big #splash.newLayout table:nth-of-type(2) {
-      height: 349px;
+      height: 357px;
     }
     #splash.newLayout table:nth-of-type(3) {
       height: 239px;
     }
     body.big #splash.newLayout table:nth-of-type(3) {
-      height: 316px;
+      height: 304px;
     }
     #splash.newLayout table:nth-of-type(4) {
       height: 186px;
@@ -4192,15 +4252,6 @@ body.big #splash.newLayout .sectiontitle {
     font-size: 16px;
 } 
 
-#splash > div {
-  position: relative;
-  transform: translate(0px, -50%);
-  top: calc(50%) !important;
-  margin-top: 0px !important;
-  /* height: calc(100% - 40px) !important; */
-  max-height: calc(100% - 40px) !important;
-}
-
 body.big #splash > div {
   /* margin-top: 45px !important; */
 }
@@ -4240,7 +4291,7 @@ body.big .splashtext.aboutbs {
   line-height: 19px;
   font-size: 13px;
   height: 20px;
-  padding-top: 3px;
+  padding-top: 4px;
   font-weight: bold;
   padding-left: 0;
   right: 0px;
