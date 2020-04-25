@@ -44,6 +44,10 @@ var funcg = null;
     xyz splash
 */
 
+function myFunction() {
+  alert("Iframe is loaded);
+}
+
 // START do tema
 var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
@@ -51,7 +55,7 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 }  
 
 $( document ).ready(function() { 
-
+    
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");
 
@@ -2094,7 +2098,16 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
       if (processed) {
         $('#tweetcount').fadeIn(800);
         $('#mask').fadeOut(1100);
-                  
+             
+
+
+        document.querySelector("#100003 iframe").addEventListener("load", myFunction);
+
+        //$("#100003 iframe").attr("src", "http://www.example.com/");
+
+
+
+
         $('#moretweets').fadeOut(300);
         $('#moretweets').css('opacity', 0);
 
