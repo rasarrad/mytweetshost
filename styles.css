@@ -1167,10 +1167,10 @@ body:not(.big) .yt.tweet .bottomgradiantback {
   }
   .tweet.html {
       /* background: #002646; */
-    top: 0px;
-    height: 68vw;
-    /* height: 91vw; */
-    max-height: 640px;
+      top: 0px;
+      height: 68vw;
+      /* height: 91vw; */
+      max-height: 808px;
   }
 
   
@@ -1179,7 +1179,7 @@ body:not(.big) .yt.tweet .bottomgradiantback {
     background-blend-mode: luminosity;
     height: 100%;
     width: 80%;
-    max-width: 760px;
+    max-width: 1016px;
     transform: translate(-50%, 0px);
     left: calc(50% - 0px) !important;
 }
