@@ -96,7 +96,7 @@ $( document ).ready(function() {
     // START do mascara cinzenta inicial
     // setTimeout(function() { 
     //      countalltweets(); agora é feito no showDeleted (em cima)
-/* 
+
     setTimeout(function(){
         $( "#mask" ).fadeOut( 800, function() {
             var style = window.getComputedStyle(body, null);
@@ -108,7 +108,7 @@ $( document ).ready(function() {
         });
     }, 340); 
     //}, 1); 
-*/
+
 
     // START do zoom
     var hasZoom = readCookie("hasZoom");
