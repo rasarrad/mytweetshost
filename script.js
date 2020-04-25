@@ -45,7 +45,7 @@ var funcg = null;
 */
 
 function myFunction() {
-  alert("Iframe is loaded);
+  alert("Iframe is loaded");
 }
 
 // START do tema
