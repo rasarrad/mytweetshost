@@ -97,10 +97,12 @@ function parseTweet(type) {
 
             url = text.substring(text.indexOf('https://www.youtube'), text.indexOf('frameborder') - 2); 
             
-            urldirect = "https://www.youtube.com/watch?v=" + text.substring(text.indexOf('embed') + 6, text.indexOf('frameborder') - 2); 
+            var code = text.substring(text.indexOf('embed') + 6, text.indexOf('frameborder') - 2);
 
-            text = "\"" + ("<iframe " 
-                    + text.substring(8)).replace(/"/g, "'")  + "\""; 
+            urldirect = "https://www.youtube.com/watch?v=" + code; 
+
+            text = "\"<div class='contentin' style='background: url(https://img.youtube.com/vi/" 
+                    + code  + "/0.jpg); background-size: 100%;'></div>\""; 
 
             var functorun = function() 
             { 
@@ -158,9 +160,9 @@ function parseTweet(type) {
                 urltemp = urltemp.replace("&t=","?start=");
                 urltemp = urltemp.substring(0, urltemp.length -1);
             }
-
-            text = "\"<iframe src='https://www.youtube.com/embed/" 
-            + urltemp + "' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>\""; 
+            
+            text = "\"<div class='contentin' style='background: url(https://img.youtube.com/vi/" 
+                    + urltemp  + "/0.jpg); background-size: 100%;'></div>\""; 
 
             var functorun = function() 
             { 
@@ -210,8 +212,8 @@ function parseTweet(type) {
 
             url = text; 
 
-            text = "\"<iframe src='" 
-                    + text + "'></iframe><div style='position: relative;left: 0px;width: 100px;height: 0px;top: -451px;'><div style='position: relative;left: 0px;width: 83px;height: 62vh;top: 0px;'></div></div><div style='position: relative;right: -16px !important;width: 100px;height: 0px;top: -451px;float: right;'><div style='position: relative;left: 0px;width: 83px;height: 62vh;top: 0px;'></div></div>\""; 
+            text = "\"<div class='contentin' style='background: url(https://s.wordpress.com/mshots/v1/" 
+                    + text + "); background-size: 100%;'></div>\""; 
 
             var functorun = function() 
             { 

@@ -2378,13 +2378,15 @@ body.big #splash.newLayout table:nth-of-type(4) {
         height: 91vw;
       }
             
-      .tweet div.contentin {    
+      .tweet div.contentin {
         width: 100%;
+        top: auto !important;
+        transform: translate(-50%, 0px);
       }
    
         
       .html.tweet .bottomgradiantback {
-        background-image: linear-gradient(to bottom, #000000 15%, var(--soft-color) 85%);
+        background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--soft-color) 85%);
       } 
 
       .html.tweet:last-child .bottomgradiantback {
