@@ -125,7 +125,7 @@ $( document ).ready(function() {
     if (!dunl())
         showSplash();
     */
-    showSplash();
+    // showSplash();
     //////////////
         
     // START das colos
@@ -1753,9 +1753,6 @@ var clickmenu = function(val) {
 
     $('#selectedcat').val(val);
     $('#selectedcattext').val(catsmap.get(val));
-
-    alert(text)
-
 
     if ($('#mainmenu').attr("fromsearch") == "yes") {
         closeMenuPopup();
