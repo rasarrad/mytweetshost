@@ -59,51 +59,14 @@ $( document ).ready(function() {
         catsmap.set("cli", catschanged);
         $(".cat-cli").text(catschanged);
 
-        /*
-        catschanged = readCookie("cat-tvn")
-        catsmap.set("tvn", catschanged);
-        $(".cat-tvn").text(catschanged);
-
-        catschanged = readCookie("cat-trn")
-        catsmap.set("trn", catschanged);
-        $(".cat-trn").text(catschanged);
-
-        catschanged = readCookie("cat-tvi")
-        catsmap.set("tvi", catschanged);
-        $(".cat-tvi").text(catschanged);
-
-        catschanged = readCookie("cat-tvl")
-        catsmap.set("tvl", catschanged);
-        $(".cat-tvl").text(catschanged);
-      
-        catschanged = readCookie("cat-tre")
-        catsmap.set("tre", catschanged);
-        $(".cat-tre").text(catschanged);
-
-        catschanged = readCookie("cat-trl")
-        catsmap.set("trl", catschanged);
-        $(".cat-trl").text(catschanged);
-
-        catschanged = readCookie("cat-tke")
-        catsmap.set("tke", catschanged);
-        $(".cat-tke").text(catschanged);
-
-        catschanged = readCookie("cat-imp")
-        catsmap.set("imp", catschanged);
-        $(".cat-imp").text(catschanged);
-
-        catschanged = readCookie("cat-cli")
-        catsmap.set("cli", catschanged);
-        $(".cat-cli").text(catschanged);
-        */
-       catsmap.set("tvn", "New / Ongoing");
-       catsmap.set("trn", "Hot / Trending");
-       catsmap.set("tvi", "To Watch");
-       catsmap.set("tvl", "Documentaries / Films");
-       catsmap.set("tre", "Fast Reading");
-       catsmap.set("trl", "Long Reading");
-       catsmap.set("tke", "Important / To Keep");
-       catsmap.set("imp", "Shocking Truth");
+        catsmap.set("tvn", "New / Ongoing");
+        catsmap.set("trn", "Hot / Trending");
+        catsmap.set("tvi", "To Watch");
+        catsmap.set("tvl", "Documentaries / Films");
+        catsmap.set("tre", "Fast Reading");
+        catsmap.set("trl", "Long Reading");
+        catsmap.set("tke", "Important / To Keep");
+        catsmap.set("imp", "Shocking Truth");
     }
     else {
         catsmap.set("tvn", "New / Ongoing");
@@ -117,22 +80,23 @@ $( document ).ready(function() {
         catsmap.set("cli", "My Tweets");
     }
 
-   // START remover speckcheks
-   $( "input, textarea" ).each( function( index, element ){
+    // START remover speckcheks
+    $( "input, textarea" ).each( function( index, element ){
         $(element).attr("spellcheck", "false");
         $(element).attr("autocomplete", "none");
         $(element).attr("additionalAttributes", "{autocomplete: 'none'}");
-   });
+    });
 
 
-   // START da variavel setShowDeleted
-   var showDeleted = getshowdeletedcookie();
-   setShowDeleted(showDeleted, true); // faz o count all tweets
+    // START da variavel setShowDeleted
+    var showDeleted = getshowdeletedcookie();
+    setShowDeleted(showDeleted, true); // faz o count all tweets
 
 
-   // START do mascara cinzenta inicial
-   //setTimeout(function() { 
-        //countalltweets(); agora é feito no setTimeout (em cima)
+    // START do mascara cinzenta inicial
+    // setTimeout(function() { 
+    //      countalltweets(); agora é feito no showDeleted (em cima)
+/* 
     setTimeout(function(){
         $( "#mask" ).fadeOut( 800, function() {
             var style = window.getComputedStyle(body, null);
@@ -144,7 +108,7 @@ $( document ).ready(function() {
         });
     }, 340); 
     //}, 1); 
-
+*/
 
     // START do zoom
     var hasZoom = readCookie("hasZoom");
@@ -752,7 +716,45 @@ $( document ).ready(function() {
     closeSplash(); 
 
 
-        /*
+    
+    /* CATEGORIES RENAMING
+
+    catschanged = readCookie("cat-tvn")
+    catsmap.set("tvn", catschanged);
+    $(".cat-tvn").text(catschanged);
+
+    catschanged = readCookie("cat-trn")
+    catsmap.set("trn", catschanged);
+    $(".cat-trn").text(catschanged);
+
+    catschanged = readCookie("cat-tvi")
+    catsmap.set("tvi", catschanged);
+    $(".cat-tvi").text(catschanged);
+
+    catschanged = readCookie("cat-tvl")
+    catsmap.set("tvl", catschanged);
+    $(".cat-tvl").text(catschanged);
+    
+    catschanged = readCookie("cat-tre")
+    catsmap.set("tre", catschanged);
+    $(".cat-tre").text(catschanged);
+
+    catschanged = readCookie("cat-trl")
+    catsmap.set("trl", catschanged);
+    $(".cat-trl").text(catschanged);
+
+    catschanged = readCookie("cat-tke")
+    catsmap.set("tke", catschanged);
+    $(".cat-tke").text(catschanged);
+
+    catschanged = readCookie("cat-imp")
+    catsmap.set("imp", catschanged);
+    $(".cat-imp").text(catschanged);
+
+    catschanged = readCookie("cat-cli")
+    catsmap.set("cli", catschanged);
+    $(".cat-cli").text(catschanged);
+
     createCookie("cat-tvn", "New / Ongoing 2222", 99999);
     createCookie("cat-trn", "Hot / Trending 2222", 99999);
     createCookie("cat-tvi", "To Watch 2222", 99999);
@@ -765,7 +767,7 @@ $( document ).ready(function() {
     */
 
 
-        /*
+    /* FILE SAVE
     window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
 
     navigator.webkitPersistentStorage.requestQuota(1024*1024, function() {
@@ -774,47 +776,6 @@ $( document ).ready(function() {
 
       console.log(1111);
     window.requestFileSystem(window.PERSISTENT, 1024*1024, onInitFs, errorHandler);
-     */
-
-
-    //openMainSettingsPopup();
-
-    /* 
-    setTimeout( function() { 
-        clickmenu('all', 'All Links');
-    }, 1000 );
-
-
-    var a = {};
-
-    a.aaa = "aaa val";
-    a.bbb = "bbb val";
-
-    var ac = {};
-
-    alert(jQuery.isEmptyObject(a));
-    
-    alert(jQuery.isEmptyObject(ac));
-    
-    alert("1: " + a.bbb)
-
-    var ccc = JSON.stringify(a, null, " ");
-    alert("2: " + ccc)
-
-    var ddd = JSON.parse(ccc)
-
-    alert("3: " + ddd.aaa)
-
-
-    var encrypted = CryptoJS.AES.encrypt("x20#0000002e", "x20#002e");
-    //U2FsdGVkX18ZUVvShFSES21qHsQEqZXMxQ9zgHy+bu0=
-    console.log("encrypted-" + encrypted + "-")
-    var decrypted = CryptoJS.AES.decrypt(encrypted, "x20#002e");
-    //4d657373616765
-    console.log("decrypted-" + decrypted + "-")
-
-    console.log("decrypted2-" + decrypted.toString(CryptoJS.enc.Utf8) + "-")
-    
     */
 
 }); // FIM DO ONREADY
