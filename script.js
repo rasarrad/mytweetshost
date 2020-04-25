@@ -44,10 +44,6 @@ var funcg = null;
     xyz splash
 */
 
-function myFunction() {
-  alert("Iframe is loaded");
-}
-
 // START do tema
 var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
@@ -2098,16 +2094,6 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
       if (processed) {
         $('#tweetcount').fadeIn(800);
         $('#mask').fadeOut(1100);
-             
-
-
-        //document.getElementById("111").onload = function() { alert('loaded!'); };
-
-        //document.getElementById("111").src = "https://www.flashscore.pt/basquetebol/";
-
-
-
-
         $('#moretweets').fadeOut(300);
         $('#moretweets').css('opacity', 0);
 

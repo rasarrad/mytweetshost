@@ -1152,33 +1152,38 @@ body:not(.big) .yt.tweet .bottomgradiantback {
   margin-top: 0px !important;
   border: 0px solid white;
   }
-  .tweet.html iframe {
-    margin-top: 19px !important;
-    }
+
   .tweet.yt:not(:last-child) iframe {
     margin-top: 0px !important;
     height: 317px !important;
     }
 
-  .tweet.html iframe {
-      width: calc(100% - 0px) !important;
-      border: 0px solid #bbbbbb;
-      height: 302px;
-      margin-bottom: 18px;
+  .tweet.yt {
+      /* background: #101010; */
+      top: 0px;
+      height: 68vw;
+      /* height: 91vw; */
+      max-height: 640px;
+  }
+  .tweet.html {
+      /* background: #002646; */
+    top: 0px;
+    height: 68vw;
+    /* height: 91vw; */
+    max-height: 640px;
   }
 
-          .tweet.yt {
-      /* background: #101010; */
-  }
-          .tweet.html {
-      /* background: #002646; */
-      top: 0px;
-      height: 340px;
-      /* overflow: hidden; */
-  }
-            .tweet.html:last-child {
-      height: 340px;
-  }
+  
+.tweet div.contentin {
+    position: absolute;
+    background-blend-mode: luminosity;
+    height: 100%;
+    width: 80%;
+    max-width: 760px;
+    transform: translate(-50%, 0px);
+    left: calc(50% - 0px) !important;
+}
+         
   
   #backdiv {
     background-image: linear-gradient(var(--soft-color), var(--dark-color)) !important;
@@ -1534,33 +1539,19 @@ body.big #editTags {
         height: 76px;
         top: calc(50% - 57px);
         left: calc(50% - 47px);
-      }  
-      .tweet.yt iframe {
-          margin-top: 4px !important;
-          height: 289px;
-      }
-      .tweet iframe {
-        position: relative;
-        top: 10px;
-        border-radius: 5px;
-        border: 0px solid white;
-        width: calc(100% - 0px) !important;
-        margin-left: calc(50% - 236px) !important;
-        margin-right: 0px !important;
-        top: -12px;
-        max-width: 470px;
-      }  
+      }   
   
         .tweet .innertweet {
           position: relative;
           top: 10px;
           border-radius: 5px;
           border: 1px solid white;
-          /* width: calc(100% - 0px) !important; */
-          margin-left: calc(50% - 249px) !important;
+          width: calc(80%) !important;
+          margin-left: calc(10%) !important;
           margin-right: 0px !important;
           top: -12px;
-          max-width: 498px;
+          max-width: none;
+          display: block;
       }
        .linkbar {
           left: calc(50% - 240px);
@@ -2188,17 +2179,6 @@ body.big #splash.newLayout table:nth-of-type(4) {
         height: 56vw !important;
     }
 
-    .tweet.yt:last-child iframe {
-        height: 268px!important;
-        margin-top: 14px !important;
-    }
-    
-    .tweet.html iframe {
-        height: 84vw !important;
-        margin-bottom: 19px;
-        margin-top: 17px !important;
-        max-height: 302px;
-    }  
     .tweet .innertweet {
         position: relative;
         top: 10px;
@@ -2381,29 +2361,39 @@ body.big #splash.newLayout table:nth-of-type(4) {
           margin-top: -0.3px !important;
       }      
   
-  
-    .newLayout#searchpopup > div .titletable {
+      .newLayout#searchpopup > div .titletable {
         width: 344px !important;
-    }
-      .html.tweet .bottomgradiantback {
-      background-image: linear-gradient(to bottom, #000000 15%, var(--soft-color) 85%);
-    } 
-
-    .html.tweet:last-child .bottomgradiantback {
-    background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--soft-color) 85%);
-    background-image: linear-gradient(to bottom, #000000 3%, #00315600 80%);
-}
-
-
-    .yt.tweet:last-child .bottomgradiantback {
-      background-image: linear-gradient(to bottom, #000000 13%, #004a8600 80%);
-      bottom: 0px !important;
-      height: 30px;
+      }
+  
+      .tweet.html {
+        top: 0px;
+        height: 91vw;
       }
 
-      .tweet.yt:last-child {
-          /* background: #101010; */
-          height: 326px;
+      .tweet.yt {
+        top: 0px;
+        height: 91vw;
+      }
+            
+      .tweet div.contentin {    
+        width: 100%;
+      }
+   
+        
+      .html.tweet .bottomgradiantback {
+        background-image: linear-gradient(to bottom, #000000 15%, var(--soft-color) 85%);
+      } 
+
+      .html.tweet:last-child .bottomgradiantback {
+          background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--soft-color) 85%);
+          background-image: linear-gradient(to bottom, #000000 3%, #00315600 80%);
+      }
+
+
+     .yt.tweet:last-child .bottomgradiantback {
+        background-image: linear-gradient(to bottom, #000000 13%, #004a8600 80%);
+        bottom: 0px !important;
+        height: 30px;
       }
 
   }
