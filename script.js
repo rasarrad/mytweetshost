@@ -44,6 +44,11 @@ var funcg = null;
     xyz splash
 */
 
+function getMetaContent(html, name) {
+    return html.filter(
+    (index, tag) => tag && tag.name && tag.name == name).attr('content');
+}
+
 // START do tema
 var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
@@ -51,7 +56,17 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 }  
 
 $( document ).ready(function() { 
+    $.ajax({
+        url: 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy'
+      }).then(function(data) {
+        var html = $(data);
     
+        console.log(getMetaContent(html, 'description') || 'no keywords found');
+        console.log(getMetaContent(html, 'keywords') || 'no description found');
+        console.log(html.find('img').attr('src') || 'no image found');
+      });
+
+
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");
 
