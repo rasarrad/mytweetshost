@@ -1016,11 +1016,13 @@ body.big #addtweet {
     border-radius: 5px;
     border: 1px solid white;
     /* width: calc(100% - 0px) !important; */
-    margin-left: calc(50% - 350px) !important;
+    margin-left: calc(0%) !important;
     margin-right: 0px !important;
     top: -12px;
     max-width: 700px;
     background: var(--dark-color) !important;
+    transform: translate(-50%, 0px);
+    left: calc(50% - 0px) !important;
 }  
 .tweet {
   padding-bottom: 0px;
@@ -1163,14 +1165,14 @@ body:not(.big) .yt.tweet .bottomgradiantback {
       top: 0px;
       height: 67vw;
       /* height: 91vw; */
-      /* max-height: 688px; */
+      max-height: 605px;
   }
   .tweet.html {
       /* background: #002646; */
       top: 0px;
       height: 68vw;
       /* height: 91vw; */
-      max-height: 808px;
+      max-height: 606px;
   }
 
   
@@ -1179,10 +1181,30 @@ body:not(.big) .yt.tweet .bottomgradiantback {
     background-blend-mode: luminosity;
     height: 100%;
     width: 80%;
-    max-width: 1016px;
+    max-width: 711px;
     transform: translate(-50%, -45%);
     left: calc(50% - 0px) !important;
     top: calc(52%) !important;
+    cursor: pointer;
+}
+.tweet div.contentin .logo {
+    color: var(--dark-color);
+    font-size: 20vw;
+    position: relative;
+    top: 20px;
+    transform: translate(-50%, -96%);
+    left: calc(50% - 0px) !important;
+    top: calc(52%) !important;
+    background: var(--high-color);
+    padding: 5px 15px;
+    border-radius: 4px;
+    border: 2px solid var(--dark-color);
+}
+           
+.tweet.yt div.contentin {
+    transform: translate(-50%, -50%);
+    top: calc(50% + 1px) !important;
+    margin-top: 43px;
 }
 
 .contentin {}
@@ -1474,8 +1496,12 @@ body.big #editTags {
 /* 
   ###Device = Tablets, Ipads (portrait)
   Screen = B/w 768px to 1024px */
-  @media (min-width: 481px) and (max-width: 767px), (min-width: 768px) and (orientation: landscape), (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  
+  @media (max-width: 999px) and (min-width: 481px), (max-width: 1024px) and (min-width: 768px) and (orientation: portrait) {
+    .tweet.yt div.contentin {
+        transform: translate(-50%, -50%);
+        top: calc(50% + 0px) !important;
+        margin-top: 32px;
+    }  
     #mask > div > i {
       background: #484848 !important;
     }   
@@ -1550,10 +1576,10 @@ body.big #editTags {
           border-radius: 5px;
           border: 1px solid white;
           width: calc(80%) !important;
-          margin-left: calc(10%) !important;
+          margin-left: calc(0%) !important;
           margin-right: 0px !important;
           top: -12px;
-          max-width: none;
+          max-width: 700px;
           display: block;
       }
        .linkbar {
@@ -2383,8 +2409,14 @@ body.big #splash.newLayout table:nth-of-type(4) {
         top: auto !important;
         transform: translate(-50%, 0px);
       }
-   
-        
+   .tweet.yt div.contentin {
+        transform: translate(-50%, -50%);
+        top: calc(50% + 0px) !important;
+        margin-top: 40px;
+    }
+
+      .tweet div.contentin .logo {transform: translate(-50%, -112%);font-size: 22vw;}
+              
       .html.tweet .bottomgradiantback {
         background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--soft-color) 85%);
       } 
