@@ -1187,6 +1187,10 @@ body:not(.big) .yt.tweet .bottomgradiantback {
     top: calc(52%) !important;
     cursor: pointer;
 }
+
+  
+.tweet div.contentin.error {background: var(--softdark-color) !important;border: 1px solid var(--softdark-color);}
+
 .tweet div.contentin .logo {
     color: var(--dark-color);
     font-size: 10vw;

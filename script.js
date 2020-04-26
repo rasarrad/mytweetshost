@@ -51,7 +51,7 @@ function hasAvailableImage(id, url) {
     }).always(function(jqXHR, textStatus) {
         console.log('--------------------' + jqXHR.length + '-----------------');
         if (jqXHR.length == 26584) {
-            console.log("Error: " + id); // add class logo.large
+            console.log("Error: " + id); // addclass "error" to contentin 
         }
         else {
             console.log("OK: " + id);
@@ -874,8 +874,11 @@ function executeDoubleFunction(obj, type) {
             if (type == "double") {
                 alert("Execute double on folderopen");
             }
+            else if (type == "single") {
+                alert("Execute double on folderopen 1111");
+            }
             else {
-                alert("Execute single on folderopen");
+                alert("Execute single on folderopen 2222");
             }
             break;     
     }
@@ -889,7 +892,7 @@ function tapHandler(event) {
         dblFlag = true;
         dblClickTimeout = setTimeout( function() { 
             dblFlag = false; 
-            executeDoubleFunction(obj, "single");
+            executeDoubleFunction(obj, "single22");
             setTimeout( function() { 
                 dblFlagControl = true;
             }, 200 );
