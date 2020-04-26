@@ -871,14 +871,12 @@ function SaveDatFileBro(localstorage) {
 function executeDoubleFunction(obj, type) {
     switch(obj) {
         case "folderopen":
+            console.log("---------- " + type);
             if (type == "double") {
                 console.log("Execute double on folderopen");
             }
             else if (type == "single") {
                 console.log("Execute single on folderopen 1111");
-            }
-            else {
-                console.log("Execute double tap on folderopen 2222");
             }
             break;     
     }
