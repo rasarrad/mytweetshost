@@ -917,24 +917,25 @@ function tapHandler(event) {
  function clickHandler(event) {
     var obj = event.currentTarget.id;
 
-    if (!dblFlagControl && dblFlag2) {
+    if (!dblFlagControl || dblFlag2) {
         event.preventDefault();
         return false;
     }
-
-    if(!dblFlag2) {
-        dblFlag2 = true;
-        dblClickTimeout2 = setTimeout( function() { 
-            dblFlag2 = false; 
-            executeDoubleFunction(obj, "single2");
-        }, 250 );
-        return false;
+    else {
+        if(!dblFlag2) {
+            dblFlag2 = true;
+            dblClickTimeout2 = setTimeout( function() { 
+                dblFlag2 = false; 
+                executeDoubleFunction(obj, "single2");
+            }, 250 );
+            return false;
+        }
+        event.preventDefault();
+        
+        clearTimeout(dblClickTimeout2);
+        dblFlag2 = false;
+        executeDoubleFunction(obj, "double2");
     }
-    event.preventDefault();
-    
-    clearTimeout(dblClickTimeout2);
-    dblFlag2 = false;
-    executeDoubleFunction(obj, "double2");
  }
 
 
