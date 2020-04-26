@@ -887,7 +887,6 @@ function executeDoubleFunction(obj, type) {
     }
     console.log("------------------------------------------------");
     console.log("------------------------------------------------");
-    console.log("------------------------------------------------");
 }
 
 var dblFlagControl = true;
