@@ -946,10 +946,7 @@ window.openLinkInside = function(id) {
 
         $("#fsPopup iframe").attr("src", url);
     
-        dblFlag = true;  
-        setTimeout(function() {    
-            dblFlag = false; 
-        }, 150);  
+        console.log(url);
 
         $("#fsPopup").fadeIn(1000);
     }
@@ -978,10 +975,6 @@ function closeFSPopup(obj) {
 function iframeFSloadFunc(obj) {
     if ($(obj).attr("cid") == "none")
         return false;
-
-    if (dblFlag) {
-        window.open($(obj).attr("src"), '_blank');
-    }
 } 
 
 
