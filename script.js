@@ -900,8 +900,10 @@ function tapHandler(event) {
         }, 250 );
         return false;
     }
-    event.preventDefault();
     clearTimeout(dblClickTimeout);
+    
+    event.preventDefault();
+
     dblFlag = false;
     dblFlagControl = true;
     executeDoubleFunction(obj, "double");
@@ -923,9 +925,9 @@ function tapHandler(event) {
         }, 250 );
         return false;
     }
+    clearTimeout(dblClickTimeout);
     event.preventDefault();
     
-    clearTimeout(dblClickTimeout);
     dblFlag = false;
     executeDoubleFunction(obj, "double");
  }
