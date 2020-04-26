@@ -938,6 +938,8 @@ window.openLinkInside = function(id) {
     $("#fsPopup").attr("cid", id);
     
     $("#fsPopup").attr("src", $("#" + id).attr("curl"));
+
+    $("#fsPopup").fadeIn(1000);
 };
 
 
@@ -946,7 +948,7 @@ function iframeFSloadFunc(obj) {
         return false;
 
 
-    alert("Iframe is loaded"); 
+    console.log("Iframe is loaded: " + $(obj).attr("cid")); 
 } 
 
 
