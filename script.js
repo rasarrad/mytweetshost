@@ -729,10 +729,14 @@ $( document ).ready(function() {
     });
 
     // DOUBLE TAP and DOUBLE CLICK (icon folderopen da backdiv)
-    document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
-    document.getElementById("folderopen").addEventListener("click", clickHandler);
+    if (isMobile) {
+        document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
+    }
+    else {
+        document.getElementById("folderopen").addEventListener("click", tapHandler);
+    }
 
-
+ 
     // xyz startcode
     
     closeSplash(); 
@@ -913,28 +917,6 @@ function tapHandler(event) {
     executeDoubleFunction(obj, "double");
  }
 
- function clickHandler(event) {
-    var obj = event.currentTarget.id;
-
-    if ((isMobile && !dblFlagControl) && (!dblFlagControl || dblFlag2)) {
-        event.preventDefault();
-        return false;
-    }
-
-    if(!dblFlag2) {
-        dblFlag2 = true;
-        dblClickTimeout2 = setTimeout( function() { 
-            dblFlag2 = false; 
-            executeDoubleFunction(obj, "single");
-        }, 250 );
-        return false;
-    }
-    event.preventDefault();
-    
-    clearTimeout(dblClickTimeout2);
-    dblFlag2 = false;
-    executeDoubleFunction(obj, "double");
- }
 
  window.mobileAndTabletCheck = function() {
     let check = false;
