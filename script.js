@@ -949,7 +949,7 @@ window.openLinkInside = function(id) {
 
         url = "https://www.youtube.com/embed/" + url;
     }
-
+console.log("----" + url + "----")
     $("#fsPopup").attr("src", url);
 
     $("#fsPopup").fadeIn(1000);
