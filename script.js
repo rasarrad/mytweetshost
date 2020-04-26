@@ -937,7 +937,20 @@ window.openLinkOutside = function(id) {
 window.openLinkInside = function(id) {
     $("#fsPopup").attr("cid", id);
     
-    $("#fsPopup").attr("src", $("#" + id).attr("curl"));
+    var url = $("#" + id).attr("curl");
+
+    if (url.indexOf('watch?v=')) {
+        url = url.substring(text.indexOf('watch?v=') + 8);
+
+        if (url.indexOf("&t=") > 0) {
+            url = url.replace("&t=","?start=");
+            url = url.substring(0, url.length -1);
+        }
+
+        url = "https://www.youtube.com/embed/" + url;
+    }
+
+    $("#fsPopup").attr("src", url);
 
     $("#fsPopup").fadeIn(1000);
 };
