@@ -68,6 +68,7 @@ $( document ).ready(function() {
         console.log("Error: " + jqXHR.statusText);
     }
     console.log("Error: " + jqXHR.statusText);
+    console.log(jqXHR);
 });
 
     // START do texto das categorias
