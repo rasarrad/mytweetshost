@@ -1189,7 +1189,7 @@ body:not(.big) .yt.tweet .bottomgradiantback {
 }
 .tweet div.contentin .logo {
     color: var(--dark-color);
-    font-size: 20vw;
+    font-size: 10vw;
     position: relative;
     top: 20px;
     transform: translate(-50%, -96%);
@@ -1200,15 +1200,16 @@ body:not(.big) .yt.tweet .bottomgradiantback {
     border-radius: 4px;
     border: 2px solid var(--dark-color);
 }
-           
+.tweet div.contentin .logo.large {
+    font-size: 20vw;
+}
+                     
 .tweet.yt div.contentin {
     transform: translate(-50%, -50%);
     top: calc(50% + 1px) !important;
     margin-top: 43px;
 }
-
-.contentin {}
-         
+       
   
   #backdiv {
     background-image: linear-gradient(var(--soft-color), var(--dark-color)) !important;
@@ -2415,7 +2416,14 @@ body.big #splash.newLayout table:nth-of-type(4) {
         margin-top: 40px;
     }
 
-      .tweet div.contentin .logo {transform: translate(-50%, -112%);font-size: 22vw;}
+      .tweet div.contentin .logo {
+          transform: translate(-50%, -112%);
+          font-size: 11vw;
+      }
+      
+      .tweet div.contentin .logo.large {
+          font-size: 22vw;
+      }
               
       .html.tweet .bottomgradiantback {
         background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--soft-color) 85%);

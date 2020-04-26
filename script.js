@@ -51,7 +51,7 @@ function hasAvailableImage(id, url) {
     }).always(function(jqXHR, textStatus) {
         console.log('-------------------------------------');
         if (jqXHR.length == 26584) {
-            console.log("Error: " + id);
+            console.log("Error: " + id); // add class logo.large
         }
         else {
             console.log("OK: " + id);
@@ -68,7 +68,7 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 
 $( document ).ready(function() { 
 
-    hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
+    //hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
 
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");
