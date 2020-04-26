@@ -70,7 +70,7 @@ $( document ).ready(function() {
     console.log("Error: " + jqXHR.statusText);
     console.log(jqXHR);
 
-    if (jqXHR.includes("��(��(��(��(��(")) {
+    if (jqXHR.includes("*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxy")) {
 
         alert('sim')
     }
