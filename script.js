@@ -90,7 +90,7 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 $( document ).ready(function() { 
 
     //hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
-    hasAvailable('45', 'https://www.youtube.com/embed/0xcgzUdTO5M')
+    hasAvailable('45', 'https://www.youtube.com/watch?v=0xcgzUdTO5M')
 
 
 
