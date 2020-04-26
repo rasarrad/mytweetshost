@@ -63,6 +63,10 @@ $( document ).ready(function() {
           success: function (data, status, xhr) {// success callback function
             var html = $(data);
     
+            console.log(status);
+            console.log('-------------------------------');
+            console.log(xhr);
+            console.log('-------------------------------');
             console.log(html);
       }
   });
