@@ -918,7 +918,7 @@ function tapHandler(event) {
     console.log("Entrou no clickHandler");
     var obj = event.currentTarget.id;
 
-    if (!dblFlagControl || dblFlag2) {
+    if (!dblFlagControl) {
         event.preventDefault();
         return false;
     }
