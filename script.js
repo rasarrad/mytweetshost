@@ -951,7 +951,7 @@ window.openLinkInside = function(id) {
                 url = url.replace("&t=","?start=");
                 url = url.substring(0, url.length -1);
             }
-            url = "https://www.youtube.com/embed/" + url + "?autoplay=1";
+            url = "https://www.youtube.com/embed/" + url;
         }
     
         $("#fsPopup iframe").attr("src", url);
