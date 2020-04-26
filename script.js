@@ -903,8 +903,8 @@ function tapHandler(event) {
 
     console.log("---------2222--------");
 
-    event.preventDefault();
     clearTimeout(dblClickTimeout);
+    event.preventDefault();
     dblFlag = false;
     dblFlagControl = true;
     executeDoubleFunction(obj, "double");
