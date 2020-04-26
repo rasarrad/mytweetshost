@@ -899,12 +899,12 @@ function tapHandler(event) {
     if(!dblFlag2) {
         dblFlag2 = true;
         dblClickTimeout2 = setTimeout( function() { 
-            dblFlag = false; 
+            dblFlag2 = false; 
             executeDoubleFunction(obj, "single");
             setTimeout( function() { 
                 dblFlagControl = true;
             }, 200 );
-        }, 1250 );
+        }, 450 );
         return false;
     }
     event.preventDefault();
