@@ -58,18 +58,18 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 $( document ).ready(function() { 
 
 try {
-    $.ajax('https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://zzsmallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/',   // request url
-    {
-        success: function (data, status, xhr) {// success callback function
-          var html = $(data);
-  
-          console.log(status);
-          console.log('-------------------------------');
-          console.log(xhr);
-          console.log('-------------------------------');
-          console.log(html);
+
+    $.ajax({
+        url: 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://zzsmallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/',
+        type: 'GET',
+        error: function (err) {
+            console.log("AJAX error in request: " + JSON.stringify(err, null, 2));
+        }    
+}).always(function(jqXHR, textStatus) {
+    if (textStatus != "success") {
+        console.log("Error: " + jqXHR.statusText);
     }
-}); 
+});
 } catch (error) {
     console.log('-------------------------------');
     console.log(error);
