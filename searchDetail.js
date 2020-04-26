@@ -977,12 +977,14 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
                             else {
                                 newtweetobj.append($(val.tweet));
 
-                                if (isMobile) {
-                                    document.getElementById("contentin" + val.id).addEventListener("touchstart", tapHandler);
-                                }
-                                else {
-                                    document.getElementById("contentin" + val.id).addEventListener("click", tapHandler);
-                                }
+                                setTimeout( function() {                                 
+                                    if (isMobile) {
+                                        document.getElementById("contentin" + val.id).addEventListener("touchstart", tapHandler);
+                                    }
+                                    else {
+                                        document.getElementById("contentin" + val.id).addEventListener("click", tapHandler);
+                                    }
+                                }, 200 );
                             }
                 
                             newtweetobj.attr('id', val.id);
