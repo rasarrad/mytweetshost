@@ -940,7 +940,7 @@ window.openLinkInside = function(id) {
     var url = $("#" + id).attr("curl");
     console.log("---- 1 " + url + "----")
     if (url.indexOf('watch?v=')) {
-        url = url.substring(text.indexOf('watch?v=') + 8);
+        url = url.substring(url.indexOf('watch?v=') + 8);
         console.log("---- 2 " + url + "----")
         if (url.indexOf("&t=") > 0) {
             url = url.replace("&t=","?start=");
@@ -951,6 +951,13 @@ window.openLinkInside = function(id) {
         //https://www.youtube.com/embed//www.youtube.com/watch?v=0xcgzUdTO5M----
         url = "https://www.youtube.com/embed/" + url;
     }
+
+
+    ---- 1 https://www.youtube.com/watch?v=0xcgzUdTO5M----
+15:49:19.508 script.js:944 ---- 2 /www.youtube.com/watch?v=0xcgzUdTO5M----
+15:49:19.508 script.js:950 ---- 4 /www.youtube.com/watch?v=0xcgzUdTO5M----
+
+
 
     $("#fsPopup").attr("src", url);
 
