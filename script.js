@@ -878,15 +878,10 @@ function executeDoubleFunction(obj, type) {
             if (type == "double") {
                 console.log("Execute double");
             }
-            else if (type == "single") {
+            else {
                 console.log("Execute single");
             }
-            else if (type == "double2") {
-                console.log("Execute double 2");
-            }
-            else if (type == "single2") {
-                console.log("Execute single 2");
-            }
+
             break;     
     }
     console.log("------------------------------------------------");
@@ -908,7 +903,7 @@ function tapHandler(event) {
             setTimeout( function() { 
                 dblFlagControl = true;
             }, 200 );
-        }, 450 );
+        }, 350 );
         return false;
     }
     event.preventDefault();
@@ -919,10 +914,9 @@ function tapHandler(event) {
  }
 
  function clickHandler(event) {
-    console.log("---------------------- is mobile: " + isMobile + "------------------------");
     var obj = event.currentTarget.id;
 
-    if (!dblFlagControl || dblFlag2) {
+    if (isMobile || !dblFlagControl || dblFlag2) {
         event.preventDefault();
         return false;
     }
@@ -931,7 +925,7 @@ function tapHandler(event) {
         dblFlag2 = true;
         dblClickTimeout2 = setTimeout( function() { 
             dblFlag2 = false; 
-            executeDoubleFunction(obj, "single2");
+            executeDoubleFunction(obj, "single");
         }, 250 );
         return false;
     }
@@ -939,7 +933,7 @@ function tapHandler(event) {
     
     clearTimeout(dblClickTimeout2);
     dblFlag2 = false;
-    executeDoubleFunction(obj, "double2");
+    executeDoubleFunction(obj, "double");
  }
 
  window.mobileAndTabletCheck = function() {
