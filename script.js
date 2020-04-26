@@ -877,6 +877,12 @@ function executeDoubleFunction(obj, type) {
             else if (type == "single") {
                 console.log("Execute single");
             }
+            else if (type == "double2") {
+                console.log("Execute double 2");
+            }
+            else if (type == "single2") {
+                console.log("Execute single 2");
+            }
             break;     
     }
     console.log("------------------------------------------------");
@@ -922,7 +928,7 @@ function tapHandler(event) {
         dblFlag2 = true;
         dblClickTimeout2 = setTimeout( function() { 
             dblFlag2 = false; 
-            executeDoubleFunction(obj, "single");
+            executeDoubleFunction(obj, "single2");
         }, 250 );
         return false;
     }
@@ -930,7 +936,7 @@ function tapHandler(event) {
     
     clearTimeout(dblClickTimeout2);
     dblFlag2 = false;
-    executeDoubleFunction(obj, "double");
+    executeDoubleFunction(obj, "double2");
  }
 
 
