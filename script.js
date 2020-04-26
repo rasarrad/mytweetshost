@@ -889,6 +889,7 @@ function tapHandler(event) {
     var obj = event.currentTarget.id;
     dblFlagControl = false;
     if(!dblFlag) {
+        console.log("-----------------");
         dblFlag = true;
         dblClickTimeout = setTimeout( function() { 
             dblFlag = false; 
