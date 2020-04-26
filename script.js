@@ -897,7 +897,7 @@ function tapHandler(event) {
             setTimeout( function() { 
                 dblFlagControl = true;
             }, 200 );
-        }, 250 );
+        }, 1250 );
         return false;
     }
     event.preventDefault();
