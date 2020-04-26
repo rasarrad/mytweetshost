@@ -941,6 +941,7 @@ window.openLinkInside = function(id) {
     //}
     //else {
         //$("#fsPopup iframe").attr("cerror", "");
+        $('body, html').css('overflow-y', 'hidden');
 
         $("#fsPopup iframe").attr("cid", id);
    
@@ -974,6 +975,7 @@ function generateUrl(url) {
 
 
 function closeFSPopup(obj) {
+    $('body, html').css('overflow-y', 'auto');
     $("#fsPopup iframe").attr("src", "");
     $("#fsPopup").fadeOut(700);
 } 
