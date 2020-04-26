@@ -941,18 +941,18 @@ window.openLinkInside = function(id) {
     }
     else {
         $("#fsPopup iframe").attr("cerror", "");
-        
+
         $("#fsPopup iframe").attr("cid", id);
    
         var url = generateUrl($("#" + id).attr("curl"))
 
         $("#fsPopup iframe").attr("src", url);
-    
+        $("#fsPopup").fadeIn(1000);
         console.log(111111111);
         dblFlag = true;  
         setTimeout(function() {    
             dblFlag = false; 
-        }, 250);  
+        }, 400);  
     }
 };
 
@@ -986,10 +986,8 @@ function iframeFSloadFunc(obj) {
 
     if (dblFlag) {
         $(obj).attr("cerror", "yes");
+        $("#fsPopup").fadeOut(200);
         window.open($(obj).attr("src"), '_blank');
-    }
-    else {
-        $("#fsPopup").fadeIn(750);
     }
 } 
 
