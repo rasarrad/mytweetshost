@@ -941,24 +941,33 @@ window.openLinkInside = function(id) {
     }
     else {
         $("#fsPopup iframe").attr("cid", id);
-    
-        var url = $("#" + id).attr("curl");
-    
-        if (url.indexOf('watch?v=') >= 0) {
-            url = url.substring(url.indexOf('watch?v=') + 8);
-    
-            if (url.indexOf("&t=") > 0) {
-                url = url.replace("&t=","?start=");
-                url = url.substring(0, url.length -1);
-            }
-            url = "https://www.youtube.com/embed/" + url + "?autoplay=1";
-        }
-    
+   
+        var url = generateUrl($("#" + id).attr("curl"), true)
+
         $("#fsPopup iframe").attr("src", url);
     
+        dblFlag = true;  
+        setTimeout(function() {    
+            dblFlag = false; 
+        }, 150);  
+
         $("#fsPopup").fadeIn(1000);
     }
 };
+
+
+function generateUrl(url, withEmbedYT) {
+
+    if (withEmbedYT && url.indexOf('watch?v=') >= 0) {
+        url = url.substring(url.indexOf('watch?v=') + 8);
+
+        if (url.indexOf("&t=") > 0) {
+            url = url.replace("&t=","?start=");
+            url = url.substring(0, url.length -1);
+        }
+        url = "https://www.youtube.com/embed/" + url + "?autoplay=1";
+    }
+} 
 
 
 function closeFSPopup(obj) {
@@ -970,8 +979,9 @@ function iframeFSloadFunc(obj) {
     if ($(obj).attr("cid") == "none")
         return false;
 
-
-    console.log("Iframe is loaded: " + $(obj).attr("cid")); 
+    if (dblFlag) {
+        window.open($(obj).attr("src"), '_blank');
+    }
 } 
 
 
