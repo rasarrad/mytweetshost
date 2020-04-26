@@ -900,7 +900,6 @@ function tapHandler(event) {
         }, 250 );
         return false;
     }
-    event.preventDefault();
     clearTimeout(dblClickTimeout2);
     dblFlag2 = false;
     dblFlagControl = true;
