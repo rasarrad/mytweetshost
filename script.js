@@ -950,9 +950,7 @@ window.openLinkInside = function(id) {
         dblFlag = true;  
         setTimeout(function() {    
             dblFlag = false; 
-        }, 150);  
-
-        $("#fsPopup").fadeIn(1000);
+        }, 250);  
     }
 };
 
@@ -986,6 +984,9 @@ function iframeFSloadFunc(obj) {
 
     if (dblFlag) {
         window.open($(obj).attr("src"), '_blank');
+    }
+    else {
+        $("#fsPopup").fadeIn(750);
     }
 } 
 
