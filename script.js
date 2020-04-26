@@ -58,7 +58,7 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 $( document ).ready(function() { 
 
     $.ajax({
-        url: 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/',
+        url: 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://zzsmallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/',
         type: 'POST',
         error: function (err) {
             console.log("AJAX error in request: " + JSON.stringify(err, null, 2));
