@@ -168,7 +168,8 @@ $( document ).ready(function() {
     var valueSwipe = readCookie("swipes");
     if (valueSwipe && valueSwipe.length > 0) {
         if (valueSwipe == "Yes") {
-            useSwipes = true;
+            // xyz
+            //useSwipes = true;
         }
     }
     
