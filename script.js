@@ -900,6 +900,7 @@ function tapHandler(event) {
         }, 250 );
         return false;
     }
+    event.preventDefault();
     clearTimeout(dblClickTimeout2);
     dblFlag2 = false;
     dblFlagControl = true;
@@ -907,6 +908,7 @@ function tapHandler(event) {
  }
 
  function clickHandler(event) {
+    console.log("Entrou no clickHandler");
     var obj = event.currentTarget.id;
 
     if (!dblFlagControl) {
