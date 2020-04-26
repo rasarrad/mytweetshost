@@ -916,7 +916,7 @@ function tapHandler(event) {
  function clickHandler(event) {
     var obj = event.currentTarget.id;
 
-    if (isMobile || !dblFlagControl || dblFlag2) {
+    if (isMobile && !dblFlagControl) {
         event.preventDefault();
         return false;
     }
