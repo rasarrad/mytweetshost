@@ -946,7 +946,7 @@ window.openLinkInside = function(id) {
 
         $("#fsPopup iframe").attr("src", url);
     
-        console.log(url);
+        console.log(111111111);
         dblFlag = true;  
         setTimeout(function() {    
             dblFlag = false; 
@@ -981,6 +981,8 @@ function closeFSPopup(obj) {
 function iframeFSloadFunc(obj) {
     if ($(obj).attr("cid") == "none")
         return false;
+
+        console.log(222222);
 
     if (dblFlag) {
         window.open($(obj).attr("src"), '_blank');
