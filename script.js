@@ -68,7 +68,7 @@ function hasAvailable(id, url) {
 function hasAvailableImage(id, url) {
     $.ajax({
         url: url,
-        type: 'POST'
+        type: 'GET'
     }).always(function(jqXHR, textStatus) {
         console.log('--------------------' + jqXHR.length + '-----------------');
         if (jqXHR.length == 26584) {
