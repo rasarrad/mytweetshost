@@ -877,6 +877,16 @@ function SaveDatFileBro(localstorage) {
 
 
 function executeDoubleFunction(obj, type) {
+    if (type == "double") {
+        console.log(obj + " double");
+    }
+    else {
+        console.log(obj + " single");
+    }
+
+    return false;
+
+    console.log("Execute double");
     switch(obj) {
         case "folderopen":
             if (type == "double") {
