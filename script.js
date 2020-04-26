@@ -872,13 +872,13 @@ function executeDoubleFunction(obj, type) {
     switch(obj) {
         case "folderopen":
             if (type == "double") {
-                alert("Execute double on folderopen");
+                console.log("Execute double on folderopen");
             }
             else if (type == "single") {
-                alert("Execute double on folderopen 1111");
+                console.log("Execute double on folderopen 1111");
             }
             else {
-                alert("Execute single on folderopen 2222");
+                console.log("Execute single on folderopen 2222");
             }
             break;     
     }
