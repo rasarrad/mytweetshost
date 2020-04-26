@@ -69,6 +69,14 @@ $( document ).ready(function() {
     }
     console.log("Error: " + jqXHR.statusText);
     console.log(jqXHR);
+
+    if (jqXHR.includes("��(��(��(��(��(")) {
+
+        alert('sim')
+    }
+    else {
+        alert('nao')
+    }
 });
 
     // START do texto das categorias
