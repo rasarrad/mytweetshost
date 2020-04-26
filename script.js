@@ -58,21 +58,19 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 $( document ).ready(function() { 
 
     $.ajax({
-        url: 'https://cors-anywhere.herokuapp.com/http://www.html5rocks.com/en/tutorials/cors/',
-        type: 'POST',
-        error: function (err) {
-            console.log("AJAX error in request: " + JSON.stringify(err, null, 2));
-        }    
-}).always(function(jqXHR, textStatus) {
-    if (textStatus != "success") {
-        console.log("Error: " + jqXHR.statusText);
-    }
-    console.log("Error: " + jqXHR.statusText);
-    console.log(jqXHR);
-
-    alert(jqXHR.length)
-
-});//26584      311342
+        //url: 'https://cors-anywhere.herokuapp.com/http://www.html5rocks.com/en/tutorials/cors/',
+        url: 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://zzsmallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/',
+        type: 'POST'
+    }).always(function(jqXHR, textStatus) {
+        console.log('-------------------------------------');
+        if (jqXHR.length == 26584) {
+            console.log("Error");
+        }
+        else {
+            console.log("OK");
+        }
+        console.log('-------------------------------------');
+    });
 
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");
