@@ -45,6 +45,26 @@ var isMobile = null;
     xyz splash
 */
 
+function hasAvailable(id, url) {
+    $.ajax({
+        url: url,
+        type: 'POST',
+        success: function (data, status, xhr) {// success callback function
+            var html = $(data);
+    
+            console.log(status);
+            console.log('-------------------------------');
+            console.log(xhr);
+            console.log('-------------------------------');
+            console.log(data);
+            console.log('-------------------------------');
+            console.log(html);
+      }
+    }).always(function(jqXHR, textStatus) {
+        console.log('--------------------' + jqXHR + '-----------------');
+    });
+}
+
 function hasAvailableImage(id, url) {
     $.ajax({
         url: url,
@@ -69,7 +89,10 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 
 $( document ).ready(function() { 
 
-    hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
+    //hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
+    hasAvailable('45', 'https://cors-anywhere.herokuapp.com/https://www.youtube.com/watch?v=0xcgzUdTO5M/')
+
+
 
     // IS MOBILE
     isMobile = window.mobileAndTabletCheck();
