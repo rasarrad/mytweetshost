@@ -59,7 +59,7 @@ $( document ).ready(function() {
 
     $.ajax({
         url: 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://zzsmallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/',
-        type: 'GET',
+        type: 'POST',
         error: function (err) {
             console.log("AJAX error in request: " + JSON.stringify(err, null, 2));
         }    
