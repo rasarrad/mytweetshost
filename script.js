@@ -886,7 +886,7 @@ function executeDoubleFunction(obj, type) {
             break;     
     }
     console.log("------------------------------------------------");
-    console.log("------------------------------------------------");
+
 }
 
 var dblFlagControl = true;
@@ -915,10 +915,9 @@ function tapHandler(event) {
  }
 
  function clickHandler(event) {
-    console.log("Entrou no clickHandler");
     var obj = event.currentTarget.id;
 
-    if (!dblFlagControl) {
+    if (!dblFlagControl && dblFlag2) {
         event.preventDefault();
         return false;
     }
