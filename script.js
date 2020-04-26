@@ -904,9 +904,10 @@ function tapHandler(event) {
     console.log("---------2222--------");
 
     clearTimeout(dblClickTimeout);
-    event.preventDefault();
+    
     dblFlag = false;
     dblFlagControl = true;
+    event.preventDefault();
     executeDoubleFunction(obj, "double");
  }
 
