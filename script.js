@@ -58,7 +58,7 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 $( document ).ready(function() { 
 
 
-      $.ajax('https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/http://www.html5rocks.com/en/tutorials/cors/',   // request url
+      $.ajax('https://cors-anywhere.herokuapp.com/http://www.html5rocks.com/en/tutorials/cors/',   // request url
       {
           success: function (data, status, xhr) {// success callback function
             var html = $(data);
