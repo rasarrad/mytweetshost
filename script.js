@@ -871,15 +871,17 @@ function SaveDatFileBro(localstorage) {
 function executeDoubleFunction(obj, type) {
     switch(obj) {
         case "folderopen":
-            console.log("---------- " + type);
             if (type == "double") {
-                console.log("Execute double on folderopen");
+                console.log("Execute double");
             }
             else if (type == "single") {
-                console.log("Execute single on folderopen 1111");
+                console.log("Execute single");
             }
             break;     
     }
+    console.log("------------------------------------------------");
+    console.log("------------------------------------------------");
+    console.log("------------------------------------------------");
 }
 
 var dblFlagControl = true;
