@@ -46,8 +46,9 @@ var isMobile = null;
 */
 
 function hasAvailable(id, url) {
+
     $.ajax({
-        url: url,
+        url: 'https://cors-anywhere.herokuapp.com/' + url,
         success: function (data, status, xhr) {// success callback function
             var html = $(data);
     
