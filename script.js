@@ -935,24 +935,34 @@ window.openLinkOutside = function(id) {
 
 
 window.openLinkInside = function(id) {
-    $("#fsPopup").attr("cid", id);
-    
-    var url = $("#" + id).attr("curl");
-    
-    if (url.indexOf('watch?v=')) {
-        url = url.substring(url.indexOf('watch?v=') + 8);
-
-        if (url.indexOf("&t=") > 0) {
-            url = url.replace("&t=","?start=");
-            url = url.substring(0, url.length -1);
-        }
-        url = "https://www.youtube.com/embed/" + url;
+    if ($("#fsPopup iframe").attr("cid") == id) {
+        $("#fsPopup").fadeIn(500);
     }
-
-    $("#fsPopup").attr("src", url);
-
-    $("#fsPopup").fadeIn(1000);
+    else {
+        $("#fsPopup iframe").attr("cid", id);
+    
+        var url = $("#" + id).attr("curl");
+    
+        if (url.indexOf('watch?v=')) {
+            url = url.substring(url.indexOf('watch?v=') + 8);
+    
+            if (url.indexOf("&t=") > 0) {
+                url = url.replace("&t=","?start=");
+                url = url.substring(0, url.length -1);
+            }
+            url = "https://www.youtube.com/embed/" + url;
+        }
+    
+        $("#fsPopup iframe").attr("src", url);
+    
+        $("#fsPopup").fadeIn(1000);
+    }
 };
+
+
+function closeFSPopup(obj) {
+    $("#fsPopup").fadeOut(700);
+} 
 
 
 function iframeFSloadFunc(obj) {
