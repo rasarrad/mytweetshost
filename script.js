@@ -48,7 +48,6 @@ var isMobile = null;
 function hasAvailable(id, url) {
     $.ajax({
         url: url,
-        type: 'GET',
         success: function (data, status, xhr) {// success callback function
             var html = $(data);
     
