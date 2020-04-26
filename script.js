@@ -68,7 +68,7 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 
 $( document ).ready(function() { 
 
-    hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
+    hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://ssssmallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
 
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");
@@ -885,29 +885,27 @@ function executeDoubleFunction(obj, type) {
 }
 
 var dblFlagControl = true;
+var dblFlag2 = false;
+var dblClickTimeout2 = null;
+
 function tapHandler(event) {
     var obj = event.currentTarget.id;
-    dblFlagControl = false;
-    if(!dblFlag) {
-        console.log("-----------------");
-        dblFlag = true;
-        dblClickTimeout = setTimeout( function() { 
+    dblFlagControl2 = false;
+    if(!dblFlag2) {
+        dblFlag2 = true;
+        dblClickTimeout2 = setTimeout( function() { 
             dblFlag = false; 
-            executeDoubleFunction(obj, "single22");
+            executeDoubleFunction(obj, "single");
             setTimeout( function() { 
                 dblFlagControl = true;
             }, 200 );
         }, 250 );
         return false;
     }
-
-    console.log("---------2222--------");
-
-    clearTimeout(dblClickTimeout);
-    
-    dblFlag = false;
-    dblFlagControl = true;
     event.preventDefault();
+    clearTimeout(dblClickTimeout2);
+    dblFlag2 = false;
+    dblFlagControl = true;
     executeDoubleFunction(obj, "double");
  }
 
@@ -919,18 +917,18 @@ function tapHandler(event) {
         return false;
     }
 
-    if(!dblFlag) {
-        dblFlag = true;
-        dblClickTimeout = setTimeout( function() { 
-            dblFlag = false; 
+    if(!dblFlag2) {
+        dblFlag2 = true;
+        dblClickTimeout2 = setTimeout( function() { 
+            dblFlag2 = false; 
             executeDoubleFunction(obj, "single");
         }, 250 );
         return false;
     }
     event.preventDefault();
     
-    clearTimeout(dblClickTimeout);
-    dblFlag = false;
+    clearTimeout(dblClickTimeout2);
+    dblFlag2 = false;
     executeDoubleFunction(obj, "double");
  }
 
