@@ -915,30 +915,48 @@ function tapHandler(event) {
  }
 
  function clickHandler(event) {
+    console.log("---------------------- is mobile: " + mobile + "------------------------");
     var obj = event.currentTarget.id;
 
     if (!dblFlagControl || dblFlag2) {
         event.preventDefault();
         return false;
     }
-    else {
-        if(!dblFlag2) {
-            dblFlag2 = true;
-            dblClickTimeout2 = setTimeout( function() { 
-                dblFlag2 = false; 
-                executeDoubleFunction(obj, "single2");
-            }, 250 );
-            return false;
-        }
-        event.preventDefault();
-        
-        clearTimeout(dblClickTimeout2);
-        dblFlag2 = false;
-        executeDoubleFunction(obj, "double2");
+
+    if(!dblFlag2) {
+        dblFlag2 = true;
+        dblClickTimeout2 = setTimeout( function() { 
+            dblFlag2 = false; 
+            executeDoubleFunction(obj, "single2");
+        }, 250 );
+        return false;
     }
+    event.preventDefault();
+    
+    clearTimeout(dblClickTimeout2);
+    dblFlag2 = false;
+    executeDoubleFunction(obj, "double2");
  }
 
 
+ var mobile = isMobile();
+ function isMobile() {
+    var isChromium = window.chrome;
+    var winNav = window.navigator;
+    var vendorName = winNav.vendor;
+    var isOpera = typeof window.opr !== "undefined";
+    var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+    var isIOSChrome = winNav.userAgent.match("CriOS");
+    var isSafari6Plus = !!navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i) && typeof document.body.style.webkitFilter !== "undefined";
+    var ua = navigator.userAgent.toLowerCase();
+    var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+
+    if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
+        return true;
+    } else {
+        return false;
+    } 
+ }
 
 /////////////////////////////////////////////////////////////////////////
 //                              FILE CHOSER                            //
