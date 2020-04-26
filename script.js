@@ -877,6 +877,7 @@ function SaveDatFileBro(localstorage) {
 
 
 function executeDoubleFunction(obj, type) {
+    debugger;
     if (type == "double") {
         console.log(obj + " double");
     }
