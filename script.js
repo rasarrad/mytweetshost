@@ -875,10 +875,10 @@ function executeDoubleFunction(obj, type) {
                 console.log("Execute double on folderopen");
             }
             else if (type == "single") {
-                console.log("Execute double on folderopen 1111");
+                console.log("Execute single on folderopen 1111");
             }
             else {
-                console.log("Execute single on folderopen 2222");
+                console.log("Execute double tap on folderopen 2222");
             }
             break;     
     }
