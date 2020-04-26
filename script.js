@@ -938,26 +938,16 @@ window.openLinkInside = function(id) {
     $("#fsPopup").attr("cid", id);
     
     var url = $("#" + id).attr("curl");
-    console.log("---- 1 " + url + "----")
+    
     if (url.indexOf('watch?v=')) {
         url = url.substring(url.indexOf('watch?v=') + 8);
-        console.log("---- 2 " + url + "----")
+
         if (url.indexOf("&t=") > 0) {
             url = url.replace("&t=","?start=");
             url = url.substring(0, url.length -1);
-            console.log("---- 3 " + url + "----")
         }
-        console.log("---- 4 " + url + "----")
-        //https://www.youtube.com/embed//www.youtube.com/watch?v=0xcgzUdTO5M----
         url = "https://www.youtube.com/embed/" + url;
     }
-
-
-    ---- 1 https://www.youtube.com/watch?v=0xcgzUdTO5M----
-15:49:19.508 script.js:944 ---- 2 /www.youtube.com/watch?v=0xcgzUdTO5M----
-15:49:19.508 script.js:950 ---- 4 /www.youtube.com/watch?v=0xcgzUdTO5M----
-
-
 
     $("#fsPopup").attr("src", url);
 
