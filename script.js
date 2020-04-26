@@ -943,7 +943,7 @@ window.openLinkInside = function(id) {
     
         var url = $("#" + id).attr("curl");
     
-        if (url.indexOf('watch?v=')) {
+        if (url.indexOf('watch?v=') >= 0) {
             url = url.substring(url.indexOf('watch?v=') + 8);
     
             if (url.indexOf("&t=") > 0) {
