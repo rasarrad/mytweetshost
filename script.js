@@ -70,13 +70,8 @@ $( document ).ready(function() {
     console.log("Error: " + jqXHR.statusText);
     console.log(jqXHR);
 
-    if (jqXHR.includes("*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxy")) {
+    alert(jqXHR.length)
 
-        alert('sim')
-    }
-    else {
-        alert('nao')
-    }
 });
 
     // START do texto das categorias
