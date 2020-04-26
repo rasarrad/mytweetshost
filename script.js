@@ -936,10 +936,12 @@ window.openLinkOutside = function(id) {
 
 
 window.openLinkInside = function(id) {
-    if ($("#fsPopup iframe").attr("cid") == id) {
+    if ($("#fsPopup iframe").attr("cid") == id && $("#fsPopup iframe").attr("cerror") != "yes") {
         $("#fsPopup").fadeIn(500);
     }
     else {
+        $("#fsPopup iframe").attr("cerror", "");
+        
         $("#fsPopup iframe").attr("cid", id);
    
         var url = generateUrl($("#" + id).attr("curl"))
@@ -983,6 +985,7 @@ function iframeFSloadFunc(obj) {
         console.log(222222);
 
     if (dblFlag) {
+        $(obj).attr("cerror", "yes");
         window.open($(obj).attr("src"), '_blank');
     }
     else {
