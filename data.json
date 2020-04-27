@@ -13,7 +13,7 @@
    "classif": "0",
    "deleted": "",
    "isnew": "",
-   "tweet": "<div id='contentin32' class='contentin' style='background: url(https://img.youtube.com/vi/edicDsSwYpk/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div><div class='bottomstrip'><span class='bottomstripline line1'>aaaaaaaaaaa aaaaaaaaaaa aaaaa aaaaaaaaaaa aaaaaaaaaaa aaaaa aaaaaaaaaaa aaaaaaaaaaa aaaaa</span><span class='bottomstripline line2'>bbbb bbbbbbbb bbbbbb bbbb bbbbbbbb bbbbbb bbbb bbbbbbbb bbbbbb</span></div>"
+   "tweet": "<div id='contentin32' class='contentin' style='background: url(https://img.youtube.com/vi/edicDsSwYpk/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div><div class='bottomstripdiv'><div class='bottomstrip'><span class='bottomstripline line1'>aaaaaaaaaaa aaaaaaaaaaa aaaaa aaaaaaaaaaa aaaaaaaaaaa aaaaa aaaaaaaaaaa aaaaaaaaaaa aaaaa</span><span class='bottomstripline line2'>bbbb bbbbbbbb bbbbbb bbbb bbbbbbbb bbbbbb bbbb bbbbbbbb bbbbbb</span></div></div>"
    }, {
    "id": "31",
    "creationdate": "20200423",

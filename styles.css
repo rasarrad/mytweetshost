@@ -4976,41 +4976,44 @@ body.big .ui-dialog button {
 
 .bottomstrip {
   position: absolute;
-  height: 84px;
+  height: 79px;
   bottom: 3vw;
-  background-image: linear-gradient(to bottom, transparent -5%, var(--soft-color) 25%, var(--dark-color) 74%);
-  width: 80.5%;
+  background-image: linear-gradient(to bottom, transparent -5%, var(--high-color) 25%, var(--high-color) 74%);
+  width: calc(80.5% - 50px);
   max-width: 712px;
   transform: translate(-50%, 0px);
   left: calc(50% - 0px) !important;
   transform: translate(-50%, 10px);
   text-align: center;
-  color: var(--high-color);
+  color: var(--dark-color);
   text-overflow: ellipsis;
+  padding-bottom: 3px;
   overflow: hidden;
+  padding: 0px 25px;
 }
 
 .bottomstrip .bottomstripline {
-  padding-top: 19px;
+  /* padding-top: 19px; */
   display: block;
   position: relative;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  padding: 19px 20px 0px 20px;
+  /* padding: 19px 20px 0px 20px; */
   left: 0%;
   width: 93%;
   -webkit-transition: left 3s, width 3s;
   -moz-transition: left 3s, width 3s;
-  transition: left 3s, width 3s;  
+  transition: left 3s, width 3s;
 }
 
-.bottomstrip .bottomstripline .line1 {
-  
+.bottomstrip .bottomstripline.line1 {
+  /* margin: 19px 20px 0px 20px; */
+  padding-top: 17px;
 }
 
-.bottomstrip .bottomstripline .line2 {
-  
+.bottomstrip .bottomstripline.line2 {
+  padding-bottom: 13px;
 }
 
 .bottomstrip:hover .bottomstripline {
