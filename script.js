@@ -50,13 +50,7 @@ function hasAvailable(id, url) {
         url: url,
         type: 'GET',
         success: function (data, status, xhr) {// success callback function
-            var html = $(data);
-    
-            console.log(status);
-            console.log('-------------------------------');
-            console.log(xhr);
-            console.log('-------------------------------');
-            console.log(data);
+
       }
     }).always(function(jqXHR, textStatus) {
         console.log(jqXHR);
