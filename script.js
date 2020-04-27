@@ -49,15 +49,11 @@ function hasAvailable(id, url) {
     $.ajax({
         url: url,
         success: function (data, status, xhr) {// success callback function
-
-            console.log(status);
+            var result = decodeURIComponent(data); 
             console.log('-------------------------------');
-            console.log(xhr);
-            console.log('-------------------------------');
-            console.log(decodeURIComponent(data));
+            console.log(result.substring(result.indexOf(",\"title\":\""), result.indexOf("\",\"lengthSeconds\"")));
       }
     }).always(function(jqXHR, textStatus) {
-        console.log(jqXHR);
     });
 }
 
