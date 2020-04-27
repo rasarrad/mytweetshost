@@ -69,15 +69,13 @@ function getYoutubeData(videoId) {
 }
 
 function getWebsiteData(url) {
+
     $.ajax({
-        url: "https://cors-anywhere.herokuapp.com/https://www.newscientist.com/article/2237475-covid-19-news-us-not-involved-in-global-who-plan-to-tackle-pandemic/",
-        success: function (data, status, xhr) {// success callback function
-            var result = decodeURIComponent(data); 
-            console.log('-------------------------------');
-            //console.log(result.substring(result.indexOf(",\"title\":\"") + 10, result.indexOf("\",\"lengthSeconds\"")).replace(/\+/g, ' '));
-            console.log(result);
-      }
-    });
+        url: 'https://cors-anywhere.herokuapp.com/https://www.newscientist.com/article/2237475-covid-19-news-us-not-involved-in-global-who-plan-to-tackle-pandemic/'
+      }).then(function(data) {
+        console.log(data);
+      });
+
 }
 
 function hasAvailableImage(id, url) {
