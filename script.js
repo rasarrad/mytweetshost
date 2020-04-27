@@ -45,9 +45,9 @@ var isMobile = null;
     xyz splash
 */
 
-function hasAvailable(id, url) {
+function getYoutubeData(videoId) {
     $.ajax({
-        url: url,
+        url: "https://cors-anywhere.herokuapp.com/https://youtube.com/get_video_info?video_id=" + videoId,
         success: function (data, status, xhr) {// success callback function
             var result = decodeURIComponent(data); 
             console.log('-------------------------------');
@@ -55,24 +55,28 @@ function hasAvailable(id, url) {
             console.log(result.substring(result.indexOf("\",\"lengthSeconds\":\"") + 19, result.indexOf("\",\"keywords\":")).replace(/\+/g, ' '));
 
             let totalSeconds = parseInt(result.substring(result.indexOf("\",\"lengthSeconds\":\"") + 19, result.indexOf("\",\"keywords\":")).replace(/\+/g, ' '));
-let hours = Math.floor(totalSeconds / 3600);
-totalSeconds %= 3600;
-let minutes = Math.floor(totalSeconds / 60);
-let seconds = totalSeconds % 60;
+            let hours = Math.floor(totalSeconds / 3600);
+            totalSeconds %= 3600;
+            let minutes = Math.floor(totalSeconds / 60);
+            let seconds = totalSeconds % 60;
 
-console.log("hours: " + hours);
-console.log("minutes: " + minutes);
-console.log("seconds: " + seconds);
-
-// If you want strings with leading zeroes:
-minutes = String(minutes).padStart(2, "0");
-hours = String(hours).padStart(2, "0");
-seconds = String(seconds).padStart(2, "0");
-console.log(hours + ":" + minutes + ":" + seconds);
-
-
+            minutes = String(minutes).padStart(2, "0");
+            hours = String(hours).padStart(2, "0");
+            seconds = String(seconds).padStart(2, "0");
+            console.log(hours + ":" + minutes + ":" + seconds);
       }
-    }).always(function(jqXHR, textStatus) {
+    });
+}
+
+function getWebsiteData(url) {
+    $.ajax({
+        url: "https://cors-anywhere.herokuapp.com/" + url,
+        success: function (data, status, xhr) {// success callback function
+            var result = decodeURIComponent(data); 
+            console.log('-------------------------------');
+            //console.log(result.substring(result.indexOf(",\"title\":\"") + 10, result.indexOf("\",\"lengthSeconds\"")).replace(/\+/g, ' '));
+            console.log(result);
+      }
     });
 }
 
@@ -101,7 +105,8 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 $( document ).ready(function() { 
 
     //hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
-    hasAvailable('45', 'https://cors-anywhere.herokuapp.com/https://youtube.com/get_video_info?video_id=0xcgzUdTO5M')
+    //getYoutubeData('0xcgzUdTO5M')
+    getWebsiteData('https://www.euronews.com/2020/04/26/dolphins-take-advantage-of-turkey-s-lockdown-to-explore-istanbul-s-bosphorus')
 
 
     isMobile = window.mobileAndTabletCheck();
