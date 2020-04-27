@@ -50,9 +50,9 @@ function getYoutubeData(videoId) {
         url: "https://cors-anywhere.herokuapp.com/https://youtube.com/get_video_info?video_id=" + videoId,
         success: function (data, status, xhr) {// success callback function
             var result = decodeURIComponent(data); 
-            console.log('-------------------------------');
-            console.log(result.substring(result.indexOf(",\"title\":\"") + 10, result.indexOf("\",\"lengthSeconds\"")).replace(/\+/g, ' '));
-            console.log(result.substring(result.indexOf("\",\"lengthSeconds\":\"") + 19, result.indexOf("\",\"keywords\":")).replace(/\+/g, ' '));
+            console.log('---------------YOUTUBE ' + videoId + ' ----------------');
+            console.log("Titulo: " + result.substring(result.indexOf(",\"title\":\"") + 10, result.indexOf("\",\"lengthSeconds\"")).replace(/\+/g, ' '));
+            //console.log(result.substring(result.indexOf("\",\"lengthSeconds\":\"") + 19, result.indexOf("\",\"keywords\":")).replace(/\+/g, ' '));
 
             let totalSeconds = parseInt(result.substring(result.indexOf("\",\"lengthSeconds\":\"") + 19, result.indexOf("\",\"keywords\":")).replace(/\+/g, ' '));
             let hours = Math.floor(totalSeconds / 3600);
@@ -63,7 +63,9 @@ function getYoutubeData(videoId) {
             minutes = String(minutes).padStart(2, "0");
             hours = String(hours).padStart(2, "0");
             seconds = String(seconds).padStart(2, "0");
-            console.log(hours + ":" + minutes + ":" + seconds);
+            
+            // checar se há horas e minutos
+            console.log("Time: " + hours + ":" + minutes + ":" + seconds);
       }
     });
 }
@@ -71,11 +73,14 @@ function getYoutubeData(videoId) {
 function getWebsiteData(url) {
 
     $.ajax({
-        url: 'https://cors-anywhere.herokuapp.com/https://www.bbc.com/news/world-52424709'
+        url: 'https://cors-anywhere.herokuapp.com/' + url
       }).then(function(data) {
-        console.log(data.substring(data.indexOf("<title>") + 7, data.indexOf("</title>")));
+        console.log('---------------WEBSITE ' + url + ' ----------------');
+        // titulo - checar se é vazia         
+        console.log("Titulo: " + data.substring(data.indexOf("<title>") + 7, data.indexOf("</title>")));
         var html = $(data);
-        console.log(getMetaContent(html, 'description') );
+        // descricao - checar se é vazia
+        console.log("Descricao: " + getMetaContent(html, 'description') );
       });
 
 }
@@ -109,8 +114,9 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 $( document ).ready(function() { 
 
     //hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
-    //getYoutubeData('0xcgzUdTO5M')
-    getWebsiteData('')
+    
+    getYoutubeData('0xcgzUdTO5M')
+    getWebsiteData('https://www.bbc.com/news/world-52424709')
 
 
     isMobile = window.mobileAndTabletCheck();
