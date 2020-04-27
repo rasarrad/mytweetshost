@@ -70,7 +70,7 @@ function getYoutubeData(videoId) {
 
 function getWebsiteData(url) {
     $.ajax({
-        url: "https://cors-anywhere.herokuapp.com/" + url,
+        url: "https://cors-anywhere.herokuapp.com/https://www.euronews.com/2020/04/26/dolphins-take-advantage-of-turkey-s-lockdown-to-explore-istanbul-s-bosphorus",
         success: function (data, status, xhr) {// success callback function
             var result = decodeURIComponent(data); 
             console.log('-------------------------------');
@@ -106,7 +106,7 @@ $( document ).ready(function() {
 
     //hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
     //getYoutubeData('0xcgzUdTO5M')
-    getWebsiteData('https://www.euronews.com/2020/04/26/dolphins-take-advantage-of-turkey-s-lockdown-to-explore-istanbul-s-bosphorus/')
+    getWebsiteData('')
 
 
     isMobile = window.mobileAndTabletCheck();
