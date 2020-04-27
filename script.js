@@ -87,10 +87,10 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 $( document ).ready(function() { 
 
     //hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
-    hasAvailable('45', 'https://cors-anywhere.herokuapp.com/https://www.youtube.com/embed/0xcgzUdTO5M')
+    hasAvailable('45', 'http://youtube.com/get_video_info?video_id=0xcgzUdTO5M')
 
-
-
+    http://gdata.youtube.com/feeds/api/videos?v=2&q=0xcgzUdTO5M&max-results=1&fields=entry(title)&prettyprint=true
+    http://gdata.youtube.com/feeds/api/videos/0xcgzUdTO5M?v=2&alt=json
     // IS MOBILE
     isMobile = window.mobileAndTabletCheck();
 
