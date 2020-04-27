@@ -106,7 +106,7 @@ $( document ).ready(function() {
 
     //hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
     //getYoutubeData('0xcgzUdTO5M')
-    getWebsiteData('https://www.euronews.com/2020/04/26/dolphins-take-advantage-of-turkey-s-lockdown-to-explore-istanbul-s-bosphorus')
+    getWebsiteData('https://www.euronews.com/2020/04/26/dolphins-take-advantage-of-turkey-s-lockdown-to-explore-istanbul-s-bosphorus/')
 
 
     isMobile = window.mobileAndTabletCheck();
