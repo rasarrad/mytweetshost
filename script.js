@@ -45,8 +45,8 @@ var isMobile = null;
     xyz splash
 */
 
-function showTooltip(event, this) {
-    var $element = $(this);
+function showTooltip(event, obj) {
+    var $element = $(obj);
     var $c = $element
            .clone()
            .css({display: 'inline', width: 'auto', visibility: 'hidden'})
