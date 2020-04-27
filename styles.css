@@ -1181,7 +1181,7 @@ body:not(.big) .yt.tweet .bottomgradiantback {
     background-blend-mode: luminosity;
     height: 100%;
     width: 80%;
-    max-width: 711px;
+    max-width: 759px;
     transform: translate(-50%, -45%);
     left: calc(50% - 0px) !important;
     top: calc(52%) !important;
@@ -4976,7 +4976,7 @@ body.big .ui-dialog button {
 
 .bottomstrip {
   position: absolute;
-  height: 79px;
+  height: 70px;
   bottom: 3vw;
   background-image: linear-gradient(to bottom, transparent -5%, var(--high-color) 25%, var(--high-color) 74%);
   width: calc(80.5% - 50px);
@@ -4984,10 +4984,9 @@ body.big .ui-dialog button {
   transform: translate(-50%, 0px);
   left: calc(50% - 0px) !important;
   transform: translate(-50%, 10px);
-  text-align: center;
+  text-align: left;
   color: var(--dark-color);
   text-overflow: ellipsis;
-  padding-bottom: 3px;
   overflow: hidden;
   padding: 0px 25px;
 }
@@ -5013,9 +5012,7 @@ body.big .ui-dialog button {
   padding-top: 17px;
 }
 
-.bottomstrip .bottomstripline.line2 {
-  padding-bottom: 13px;
-}
+.bottomstrip .bottomstripline.line2 {}
 
 .bottomstripZZZ:hover .bottomstripline {
   left: -100%;
