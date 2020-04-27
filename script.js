@@ -73,9 +73,15 @@ function getWebsiteData(url) {
     $.ajax({
         url: 'https://cors-anywhere.herokuapp.com/https://www.bbc.com/news/world-52424709'
       }).then(function(data) {
-        console.log(data);
+        console.log(data.substring(data.indexOf("<title>") + 7, data.indexOf("</title>")));
+        var html = $(data);
+        console.log(getMetaContent(html, 'description') );
       });
 
+}
+function getMetaContent(html, name) {
+  return html.filter(
+  (index, tag) => tag && tag.name && tag.name == name).attr('content');
 }
 
 function hasAvailableImage(id, url) {
