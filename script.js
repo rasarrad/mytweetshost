@@ -45,6 +45,24 @@ var isMobile = null;
     xyz splash
 */
 
+function showTooltip(event, this) {
+    var $element = $(this);
+    var $c = $element
+           .clone()
+           .css({display: 'inline', width: 'auto', visibility: 'hidden'})
+           .appendTo('body');
+
+    if( $c.width() > $element.width() ) {
+        alert(1);
+    }
+    else {
+        alert(2);
+    }
+
+    $c.remove();
+}
+
+
 function getYoutubeData(videoId) {
     $.ajax({
         url: "https://cors-anywhere.herokuapp.com/https://youtube.com/get_video_info?video_id=" + videoId,
@@ -85,8 +103,7 @@ function getWebsiteData(url) {
 
 }
 function getMetaContent(html, name) {
-  return html.filter(
-  (index, tag) => tag && tag.name && tag.name == name).attr('content');
+  return html.filter((index, tag) => tag && tag.name && tag.name == name).attr('content');
 }
 
 function hasAvailableImage(id, url) {

@@ -5001,7 +5001,7 @@ body.big .ui-dialog button {
   overflow: hidden;
   /* padding: 19px 20px 0px 20px; */
   left: 0%;
-  width: 93%;
+  width: 101%;
   -webkit-transition: left 3s, width 3s;
   -moz-transition: left 3s, width 3s;
   transition: left 3s, width 3s;
@@ -5016,7 +5016,7 @@ body.big .ui-dialog button {
   padding-bottom: 13px;
 }
 
-.bottomstrip:hover .bottomstripline {
+.bottomstripZZZ:hover .bottomstripline {
   left: -100%;
   width: 200%;
 }
