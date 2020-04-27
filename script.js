@@ -51,7 +51,7 @@ function hasAvailable(id, url) {
         success: function (data, status, xhr) {// success callback function
             var result = decodeURIComponent(data); 
             console.log('-------------------------------');
-            console.log(result.substring(result.indexOf(",\"title\":\""), result.indexOf("\",\"lengthSeconds\"")));
+            console.log(result.substring(result.indexOf(",\"title\":\"") + 10, result.indexOf("\",\"lengthSeconds\"")).replace(/+/g, ' '));
       }
     }).always(function(jqXHR, textStatus) {
     });
