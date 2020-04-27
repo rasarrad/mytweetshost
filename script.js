@@ -57,8 +57,6 @@ function hasAvailable(id, url) {
             console.log(xhr);
             console.log('-------------------------------');
             console.log(data);
-            console.log('-------------------------------');
-            console.log(html);
       }
     }).always(function(jqXHR, textStatus) {
         console.log(jqXHR);
