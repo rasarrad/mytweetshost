@@ -1019,7 +1019,7 @@ body.big #addtweet {
     margin-left: calc(0%) !important;
     margin-right: 0px !important;
     top: -12px;
-    max-width: 700px;
+    max-width: 753px;
     background: var(--dark-color) !important;
     transform: translate(-50%, 0px);
     left: calc(50% - 0px) !important;
@@ -1580,12 +1580,14 @@ body.big #editTags {
           top: 10px;
           border-radius: 5px;
           border: 1px solid white;
-          width: calc(80%) !important;
+          width: calc(85%) !important;
           margin-left: calc(0%) !important;
           margin-right: 0px !important;
           top: -12px;
-          max-width: 700px;
           display: block;
+          max-width: 747px;
+          transform: translate(-50%, 0px);
+          left: calc(50% - 0px) !important;
       }
        .linkbar {
           left: calc(50% - 240px);
@@ -4969,4 +4971,49 @@ body.big .ui-dialog .ui-dialog-content.ui-widget-content {
 body.big .ui-dialog button {
   font-size: 15px !important;
   padding-top: 3px;
+}
+
+
+.bottomstrip {
+  position: absolute;
+  height: 84px;
+  bottom: 3vw;
+  background-image: linear-gradient(to bottom, transparent -5%, var(--soft-color) 25%, var(--dark-color) 74%);
+  width: 80.5%;
+  max-width: 712px;
+  transform: translate(-50%, 0px);
+  left: calc(50% - 0px) !important;
+  transform: translate(-50%, 10px);
+  text-align: center;
+  color: var(--high-color);
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.bottomstrip .bottomstripline {
+  padding-top: 19px;
+  display: block;
+  position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 19px 20px 0px 20px;
+  left: 0%;
+  width: 93%;
+  -webkit-transition: left 3s, width 3s;
+  -moz-transition: left 3s, width 3s;
+  transition: left 3s, width 3s;  
+}
+
+.bottomstrip .bottomstripline .line1 {
+  
+}
+
+.bottomstrip .bottomstripline .line2 {
+  
+}
+
+.bottomstrip:hover .bottomstripline {
+  left: -100%;
+  width: 200%;
 }
