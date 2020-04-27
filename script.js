@@ -70,7 +70,7 @@ function getYoutubeData(videoId) {
 
 function getWebsiteData(url) {
     $.ajax({
-        url: "https://cors-anywhere.herokuapp.com/https://www.euronews.com/2020/04/26/dolphins-take-advantage-of-turkey-s-lockdown-to-explore-istanbul-s-bosphorus",
+        url: "https://cors-anywhere.herokuapp.com/http://www.html5rocks.com/en/tutorials/cors/",
         success: function (data, status, xhr) {// success callback function
             var result = decodeURIComponent(data); 
             console.log('-------------------------------');
