@@ -47,19 +47,38 @@ var isMobile = null;
 
 function showTooltip(event, obj) {
     var $element = $(obj);
+
+    if (hasOverflow(obj)) {
+        var tooltip = $("#tooltip");
+        tooltip.text($element.text())
+    
+        tooltip.css("top", (event.pageY - 50) + "px");
+        tooltip.css("left", event.pageX + "px");
+    
+        tooltip.fadeIn(700);
+        
+        setTimeout(function(){
+            tooltip.fadeOut(700);
+        }, 3300);
+    }
+}
+
+function hasOverflow(obj) {
+    var $element = $(obj);
+    
     var $c = $element
            .clone()
            .css({display: 'inline', width: 'auto', visibility: 'hidden'})
            .appendTo('body');
 
     if( $c.width() > $element.width() ) {
-        alert(1);
+        $c.remove();
+        return true;
     }
     else {
-        alert(2);
+        $c.remove();
+        return false;
     }
-
-    $c.remove();
 }
 
 
