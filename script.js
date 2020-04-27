@@ -48,7 +48,7 @@ var isMobile = null;
 function hasAvailable(id, url) {
 
     $.ajax({
-        url: 'https://cors-anywhere.herokuapp.com/' + url,
+        url: 'http://youtube.com/get_video_info?video_id=0xcgzUdTO5M',
         success: function (data, status, xhr) {// success callback function
             var html = $(data);
     
@@ -58,7 +58,7 @@ function hasAvailable(id, url) {
             console.log('-------------------------------');
             console.log(data);
             console.log('-------------------------------');
-            console.log(html);
+            console.log(decodeURIComponent(data));
       }
     }).always(function(jqXHR, textStatus) {
         console.log(jqXHR);
