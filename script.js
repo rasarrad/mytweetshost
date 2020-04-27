@@ -52,13 +52,13 @@ function showTooltip(event, obj) {
         var tooltip = $("#tooltip");
         tooltip.text($element.text())
     
-        tooltip.css("top", (event.pageY - 50) + "px");
+        tooltip.css("top", (event.pageY - 100) + "px");
         tooltip.css("left", event.pageX + "px");
     
         tooltip.fadeIn(700);
         
         setTimeout(function(){
-            tooltip.fadeOut(700);
+            //tooltip.fadeOut(700);
         }, 3300);
     }
 }
@@ -823,7 +823,9 @@ $( document ).ready(function() {
  
     // xyz startcode
     
-    closeSplash(); 
+    clickmenu('all');
+
+    //closeSplash(); 
 
 
     

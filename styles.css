@@ -5005,6 +5005,7 @@ body.big .ui-dialog button {
   -webkit-transition: left 3s, width 3s;
   -moz-transition: left 3s, width 3s;
   transition: left 3s, width 3s;
+  cursor: default;
 }
 
 .bottomstrip .bottomstripline.line1 {
