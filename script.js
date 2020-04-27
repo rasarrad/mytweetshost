@@ -70,7 +70,7 @@ function getYoutubeData(videoId) {
 
 function getWebsiteData(url) {
     $.ajax({
-        url: "https://cors-anywhere.herokuapp.com/https://www.bbc.com/news/world-52424709",
+        url: "https://cors-anywhere.herokuapp.com/https://www.bbc.com/news/world-52424709/",
         success: function (data, status, xhr) {// success callback function
             var result = decodeURIComponent(data); 
             console.log('-------------------------------');
