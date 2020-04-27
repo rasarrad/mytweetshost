@@ -52,6 +52,7 @@ function hasAvailable(id, url) {
             var result = decodeURIComponent(data); 
             console.log('-------------------------------');
             console.log(result.substring(result.indexOf(",\"title\":\"") + 10, result.indexOf("\",\"lengthSeconds\"")).replace(/\+/g, ' '));
+            console.log(result.substring(result.indexOf("\",\"lengthSeconds\":\"") + 19, result.indexOf("\",\"keywords\":")).replace(/\+/g, ' '));
       }
     }).always(function(jqXHR, textStatus) {
     });
