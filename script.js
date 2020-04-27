@@ -51,6 +51,11 @@ function hasAvailable(id, url) {
         type: 'GET',
         success: function (data, status, xhr) {// success callback function
 
+            console.log(status);
+            console.log('-------------------------------');
+            console.log(xhr);
+            console.log('-------------------------------');
+            console.log(decodeURIComponent(data));
       }
     }).always(function(jqXHR, textStatus) {
         console.log(jqXHR);
