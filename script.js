@@ -1302,6 +1302,8 @@ function getTouches(evt) {
 }                                                     
 
 function handleTouchStart(evt) {
+    
+    $('body, html').css('overflow-y', 'hidden');
     const firstTouch = getTouches(evt)[0];                                      
     xDown = firstTouch.clientX;                                      
     yDown = firstTouch.clientY;   
@@ -1311,6 +1313,8 @@ function handleTouchStart(evt) {
         dblFlag = true; 
         dblClickTimeout = setTimeout(function() {    
             dblFlag = false;  
+            
+          $('body, html').css('overflow-y', 'auto');
       }, 90);
     }, 10);                
 };                                                
@@ -1338,7 +1342,9 @@ function handleTouchEnd(evt) {
     dblFlag = false;
     xDown = null;
     yDown = null;   
-    lastTouch = null;                             
+    lastTouch = null;   
+    
+    $('body, html').css('overflow-y', 'auto');                          
 }; 
 
 
@@ -2328,10 +2334,6 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
 
         setTimeout(function(){
           $("html").scrollTop(0);
-
-          $('body, html').css('overflow-y', 'hidden');
-          /**/
-
         }, 1000);  
       }
 
