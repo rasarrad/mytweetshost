@@ -1048,7 +1048,7 @@ window.openLinkInside = function(id) {
 
 
 function generateUrl(url) {
-
+ 
     if (url.indexOf('watch?v=') >= 0) {
         url = url.substring(url.indexOf('watch?v=') + 8);
 
@@ -1320,15 +1320,19 @@ function handleTouchEnd(evt) {
     if (useSwipes && dblFlag && lastTouch) {                       
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
             if ( xDiff > 0 ) {
-                executeSwipeFunction(currObjSwipe, "left");
+                console.log("left");
+                //executeSwipeFunction(currObjSwipe, "left");
             } else {
-                executeSwipeFunction(currObjSwipe, "right");
+                console.log("right");
+                //executeSwipeFunction(currObjSwipe, "right");
             }                       
         } else {
             if ( yDiff > 0 ) {
-                executeSwipeFunction(currObjSwipe, "up");
+                console.log("up");
+                //executeSwipeFunction(currObjSwipe, "up");
             } else {
-                executeSwipeFunction(currObjSwipe, "down");
+                console.log("down");
+                //executeSwipeFunction(currObjSwipe, "down");
             }                                                                 
         }
     }  
