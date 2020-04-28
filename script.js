@@ -154,7 +154,7 @@ $( document ).ready(function() {
     getYoutubeData('0xcgzUdTO5M')
     getWebsiteData('https://www.bbc.com/news/world-52424709')
 
-
+    $('body, html').css('overflow-y', 'hidden');
     isMobile = window.mobileAndTabletCheck();
 
     // START do texto das categorias
