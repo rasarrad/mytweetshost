@@ -4505,6 +4505,11 @@ body.big .newLayout > div {
 /**************************************************************************************************/
 
 
+#fsPopup.yt i {
+  background: black !important;
+  border-top-color: black !important;
+  color: var(--high-color) !important;
+}
 
 .newLayout {
     display: block;

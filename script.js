@@ -1031,9 +1031,9 @@ window.openLinkInside = function(id) {
         $("#fsPopup iframe").attr("cid", id);
 
         if ($("#" + id).hasClass("yt"))
-            $("#fsPopup iframe").addClass("yt");
+            $("#fsPopup").addClass("yt");
         else
-            $("#fsPopup iframe").removeClass("yt");
+            $("#fsPopup").removeClass("yt");
 
         var url = generateUrl($("#" + id).attr("curl"))
 
