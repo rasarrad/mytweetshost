@@ -220,6 +220,8 @@ body.big #searchpopup .fa-times-circle {
     color: var(--high-color);
     cursor: default;
     text-transform: uppercase;
+    transform: translate(-50%, 0px);
+    left: calc(50% - 168px);
   }
   .EmbeddedTweet-tweet {
     background: #80808061;
@@ -261,6 +263,8 @@ body.big #searchpopup .fa-times-circle {
     background: transparent;
     color: var(--high-color);
     left: auto;
+    transform: translate(-50%, 0px);
+    left: calc(50% - 247px);
    }
 
    .tweet:first-child #expand {margin-top: 6.5px;}
@@ -322,6 +326,10 @@ ol > li {
     transform: translate(-50%, 0px);
     left: calc(50% - 0px) !important;
 }
+.tweet:not(:first-child) .innermask {
+    width: 850px;
+}
+
 .gradiantback {
     position: absolute;
     width: 100%;
@@ -820,6 +828,8 @@ twitter-widget {
       z-index: 9;
       cursor: pointer;
       transition: all 0.6s;
+      transform: translate(-50%, 0px);
+      left: calc(50% - 0px) !important;
 }
 
 .linkbar.fa-internet-explorer {
@@ -1022,7 +1032,7 @@ body.big #addtweet {
     margin-left: calc(0%) !important;
     margin-right: 0px !important;
     top: -12px;
-    max-width: 753px;
+    width: 884px;
     background: var(--dark-color) !important;
     transform: translate(-50%, 0px);
     left: calc(50% - 0px) !important;
@@ -1066,7 +1076,7 @@ body.big .linkbar {
     left: calc(50% - 334px);
 }
 #expand {
-    right: calc(50% - 334px);
+    right: calc(50% - 417px);
 }
 body.big #expand {
     /* right: calc(50% - 331px); */
@@ -1075,15 +1085,20 @@ body.big #expand {
     display: block;
     transform: translate(-50%, 0px);
     left: calc(50% - 0px) !important;
-}
+}    
+.tweet:not(:first-child) .gradiantback {
+    width: 850px;
+}   
+
     .bottomgradiantback {
     display: block;
     transform: translate(-50%, 0px);
     left: calc(50% - 0px) !important;
+    width: 850px;
 }
   .yt .gradiantback {
     position: absolute;
-    width: 100%;
+    /* width: 853px; */
     background: rgba(0, 0, 0, 0.81);
     /* top: 9px; */
     z-index: 9;
@@ -1103,7 +1118,7 @@ body.big #expand {
 }
 .tweet:not(:last-child) .bottomgradiantback {
   position: absolute;
-  width: 100%;
+  /* width: 100%; */
   background: rgba(0, 0, 0, 0.81);
   z-index: 9;
   height: 21px;
@@ -1140,6 +1155,7 @@ body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
 .yt.tweet .bottomgradiantback {
   background-image: linear-gradient(to bottom, var(--dark-color) 13%, var(--soft-color) 80%);
   bottom: 9px;
+  /* width: 828px; */
   }
 body:not(.big) .yt.tweet .bottomgradiantback {
   /* height: 15px; */
@@ -1171,16 +1187,21 @@ body:not(.big) .yt.tweet .bottomgradiantback {
   .tweet.yt {
       /* background: #101010; */
       top: 0px;
-      height: 67vw;
+      height: 808px;
       /* height: 91vw; */
-      max-height: 605px;
+      /* max-height: 782px; */
   }
+
+body.big .tweet.yt {
+    margin-top: -10px;
+  }
+  
   .tweet.html {
       /* background: #002646; */
       top: 0px;
-      height: 68vw;
+      height: 805px;
       /* height: 91vw; */
-      max-height: 606px;
+      /* max-height: 606px; */
   }
 
   
@@ -1188,21 +1209,25 @@ body:not(.big) .yt.tweet .bottomgradiantback {
     position: absolute;
     background-blend-mode: luminosity;
     height: 100%;
-    width: 80%;
-    max-width: 759px;
-    transform: translate(-50%, -45%);
+    width: 848px;
+    /* max-width: 759px; */
+    transform: translate(-50%, 0px);
     left: calc(50% - 0px) !important;
-    top: calc(52%) !important;
+    /* top: calc(50%) !important; */
     cursor: pointer;
     background-repeat: no-repeat !important;
 }
 
-  
+.tweet.html div.contentin {
+    width: 847px;
+    margin-top: 7px;
+}
+
 .tweet div.contentin.error {background: var(--softdark-color) !important;border: 1px solid var(--softdark-color);}
 
 .tweet div.contentin .logo {
     color: var(--dark-color);
-    font-size: 44px;
+    font-size: 31px;
     position: relative;
     transform: translate(-50%, 0px);
     left: calc(50% - 0px) !important;
@@ -1212,6 +1237,11 @@ body:not(.big) .yt.tweet .bottomgradiantback {
     border-radius: 4px;
     border: 2px solid var(--dark-color);
 }
+
+body.big .tweet div.contentin .logo {
+    font-size: 44px;
+}
+
 .tweet div.contentin .logo.large {
     font-size: 20vw;
 }
@@ -1219,7 +1249,7 @@ body:not(.big) .yt.tweet .bottomgradiantback {
 .tweet.yt div.contentin {
     transform: translate(-50%, -50%);
     top: calc(50% + 1px) !important;
-    margin-top: 43px;
+    margin-top: 31px;
 }
        
   
@@ -1245,7 +1275,7 @@ body:not(.big) .yt.tweet .bottomgradiantback {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 594px;
+  max-width: 753px;
 }
 .tweet:first-child .tags {
   top: -4px;
@@ -1255,6 +1285,7 @@ body.big .tags {
   height: 32px;
   top: -3px;
   margin-top: -9px;
+  max-width: 735px;
 }
 .newLayout.mainsettings > div {
     /* max-height: calc(100% - 66px) !important; */
@@ -1425,6 +1456,7 @@ body.big #mainsettings.newLayout > div {
     font-size: 15px;
     top: 2px;
     width: 20px;
+    left: calc(50% - 396px) !important;
 }
 
 body.big .linkbar {
@@ -1451,8 +1483,8 @@ body.big .linkbar.fa-internet-explorer {
 }
 body.big .linkbar.fa-youtube-play{
     /* left: 9px; */
-    font-size: 19px;
-    top: 2px;
+    font-size: 20px;
+    top: 1px;
 }
 
 
@@ -1465,7 +1497,7 @@ body.big .linkbar.fa-youtube-play{
 
 body.big #expand {
     font-size: 20px;
-    top: 9px;
+    top: 8px;
     left: auto;
 }
 
@@ -1500,7 +1532,7 @@ body.big #editTags {
   position: absolute;
   height: 59px;
   background-image: linear-gradient(to bottom, white -5%, var(--high-color) 25%, var(--high-color) 74%);
-  width: 554px;
+  width: 797px;
   left: calc(50% - 0px) !important;
   transform: translate(-50%, 10px);
   text-align: left;
@@ -1508,8 +1540,16 @@ body.big #editTags {
   overflow: hidden;
   border-bottom: 4px solid var(--soft-color);
   padding: 0px 25px;
-  top: 82vw;
+  top: 656px;
+  font-size: 14px;
 }
+
+
+body.big .bottomstrip {
+  font-size: 16px;
+}
+
+
 .yt .bottomstrip {
   background-image: linear-gradient(to bottom, black -5%, var(--high-color) 25%, var(--high-color) 74%);
   /* width: calc(100% - 50px); */
@@ -1556,6 +1596,13 @@ body.big #editTags {
   ###Device = Tablets, Ipads (portrait)
   Screen = B/w 768px to 1024px */
   @media (max-width: 999px) and (min-width: 481px), (max-width: 1024px) and (min-width: 768px) and (orientation: portrait) {
+
+    #expand {
+        right: calc(50% - 334px);
+    }
+    .tags {
+      max-width: 594px;
+    }
     .tweet.yt {
         top: 0px;
         height: 614px;
@@ -1590,8 +1637,12 @@ body.big #editTags {
     }
      
     .tweet .bottomstrip {
-      top: 479px;
+      top: 470px;
       bottom: auto;
+    }
+    
+    .bottomstrip {
+      width: 554px;
     }
     .tweet.yt .bottomstrip {
       background-image: linear-gradient(to bottom, black -5%, var(--high-color) 25%, var(--high-color) 74%);
@@ -2148,16 +2199,15 @@ body.big #splash.newLayout table:nth-of-type(4) {
     body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
       bottom: 16px;
     }
-    #expand {
-      margin-top: -6px;
-      /* left: 18px; */
-    }     
+    
     .tweet:first-child #expand {
         margin-top: -10px;
     }
     .linkbar {
         left: calc(50% - 240px);
         top: 6px !important;
+        transform: none;
+        left: ant;
     }
     .checkstyleddiv {
         width: 107px !important;
@@ -2347,7 +2397,9 @@ body.big #splash.newLayout table:nth-of-type(4) {
     } 
     .tags {
       padding-left: 38px !important;
-      max-width: calc(100% - 87px) !important;
+      max-width: calc(100% - 79px) !important;
+      left: 0px;
+      transform: none;
     }   
     body.big .tags {
       padding-left: 42px !important;
@@ -2355,21 +2407,22 @@ body.big #splash.newLayout table:nth-of-type(4) {
     }   
     
     #expand {
-        right: 11px;
+        right: 2px;
+        margin-top: -6px;
     }
     body.big #expand {
         right: 13px;
     }  
     .linkbar {
-        left: 9px;
-        top: 2px !important;
+        left: 9px !important;
+        top: 1px !important;
     }
     body.big .linkbar {
         left: 9px;
         top: -1px !important;
     }
     .linkbar.fa-youtube-play {
-        top: 3px !important;
+        top: 2px !important;
     }    
     .linkbar.fa-internet-explorer {
         top: 3px !important;
@@ -2379,7 +2432,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
         top: 0px !important;
     }
     body.big .linkbar.fa-youtube-play {
-        top: 3px !important;
+        top: 2px !important;
     }    
     body.big .linkbar.fa-internet-explorer {
         top: 3px !important;
@@ -2497,12 +2550,12 @@ body.big #splash.newLayout table:nth-of-type(4) {
   
       .tweet.html {
         top: 0px;
-        height: 91vw;
+        height: 113vw;
       }
 
       .tweet.yt {
         top: 0px;
-        height: 115vw;
+        height: 113vw;
       }
             
       .tweet div.contentin {
@@ -2513,19 +2566,39 @@ body.big #splash.newLayout table:nth-of-type(4) {
    .tweet.yt div.contentin {
         transform: translate(-50%, -50%);
         top: calc(50% + 0px) !important;
-        margin-top: 40px;
+        margin-top: 35px;
     }
+    .tweet.html div.contentin {
+        margin-top: 6px;
+        width: 100%;
+    }
+     body.big .tweet.yt div.contentin {
+          transform: translate(-50%, -50%);
+          top: calc(50% + 0px) !important;
+          margin-top: 40px;
+      }  
+      body.big .tweet.html div.contentin {
+          transform: translate(-50%, -50%);
+          top: calc(50% + 0px) !important;
+          margin-top: 40px;
+      } 
+      
       .yt .bottomstrip {
           width: calc(100% - 50px);
+          top: 81vw;
       }
       .html .bottomstrip {
           width: calc(100% - 50px);
+          top: 81vw;
       }
       .tweet div.contentin .logo {
           transform: translate(-50%, -112%);
-          font-size: 11vw;
+          font-size: 8vw;
       }
-      
+       .tweet.html div.contentin .logo {
+          transform: translate(-50%, -73%);
+          font-size: 9vw;
+      }     
       .tweet div.contentin .logo.large {
           font-size: 22vw;
       }
