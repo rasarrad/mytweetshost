@@ -251,13 +251,12 @@ $( document ).ready(function() {
     var valueSwipe = readCookie("swipes");
     if (valueSwipe && valueSwipe.length > 0) {
         if (valueSwipe == "Yes") {
-            // xyz
-            //useSwipes = true;
+            useSwipes = true;
 
             // START swip binds
-            //document.addEventListener('touchstart', handleTouchStart, false);        
-            //document.addEventListener('touchmove', handleTouchMove, false);
-            //document.addEventListener('touchend', handleTouchEnd, false);
+            document.addEventListener('touchstart', handleTouchStart, false);        
+            document.addEventListener('touchmove', handleTouchMove, false);
+            document.addEventListener('touchend', handleTouchEnd, false);
         }
     }
     
