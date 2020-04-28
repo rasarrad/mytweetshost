@@ -1666,7 +1666,7 @@ body.big .bottomstrip {
     }
   
     body.big .tweet:first-child .linkbar {
-        top: -1px !important;
+        top: -2.5px !important;
     }
           
     #addtweet {
@@ -1779,6 +1779,11 @@ body.big .bottomstrip {
         /* border-bottom-right-radius: 18px; */
         max-width: 512px;
       }
+      body.big .tags {
+        max-width: 512px;
+      }
+
+
       .tweet:nth-of-type(1) .tags {
         /* padding-left: calc(50% - 199px); */
         top: -5px;

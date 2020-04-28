@@ -1033,7 +1033,7 @@ window.openLinkInside = function(id) {
         var url = generateUrl($("#" + id).attr("curl"))
 
         $("#fsPopup iframe").attr("src", url);
-        $("#fsPopup").fadeIn(1000);
+        $("#fsPopup").fadeIn(1600);
         console.log(111111111);
         dblFlag = true;  
         setTimeout(function() {    
