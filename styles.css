@@ -1186,6 +1186,7 @@ body:not(.big) .yt.tweet .bottomgradiantback {
     left: calc(50% - 0px) !important;
     top: calc(52%) !important;
     cursor: pointer;
+    background-repeat: no-repeat !important;
 }
 
   
@@ -1193,12 +1194,11 @@ body:not(.big) .yt.tweet .bottomgradiantback {
 
 .tweet div.contentin .logo {
     color: var(--dark-color);
-    font-size: 10vw;
+    font-size: 44px;
     position: relative;
-    top: 20px;
-    transform: translate(-50%, -96%);
+    transform: translate(-50%, 0px);
     left: calc(50% - 0px) !important;
-    top: calc(52%) !important;
+    top: calc(39%) !important;
     background: var(--high-color);
     padding: 5px 15px;
     border-radius: 4px;
@@ -1488,6 +1488,48 @@ body.big #editTags {
 
 
 
+.bottomstrip {
+  position: absolute;
+  height: 59px;
+  background-image: linear-gradient(to bottom, transparent -5%, var(--high-color) 25%, var(--high-color) 74%);
+  width: 554px;
+  left: calc(50% - 0px) !important;
+  transform: translate(-50%, 10px);
+  text-align: left;
+  color: var(--dark-color);
+  overflow: hidden;
+  border-bottom: 4px solid var(--soft-color);
+  padding: 0px 25px;
+}
+
+.bottomstrip .bottomstripline {
+  /* padding-top: 19px; */
+  display: block;
+  position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  /* padding: 19px 20px 0px 20px; */
+  left: 0%;
+  width: 101%;
+  -webkit-transition: left 3s, width 3s;
+  -moz-transition: left 3s, width 3s;
+  transition: left 3s, width 3s;
+  cursor: default;
+}
+
+.bottomstrip .bottomstripline.line1 {
+  /* margin: 19px 20px 0px 20px; */
+  padding-top: 17px;
+}
+
+.bottomstrip .bottomstripline.line2 {}
+
+.bottomstripZZZ:hover .bottomstripline {
+  left: -100%;
+  width: 200%;
+}
+
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
 /* 
@@ -1502,11 +1544,46 @@ body.big #editTags {
   ###Device = Tablets, Ipads (portrait)
   Screen = B/w 768px to 1024px */
   @media (max-width: 999px) and (min-width: 481px), (max-width: 1024px) and (min-width: 768px) and (orientation: portrait) {
+    .tweet.yt {
+        top: 0px;
+        height: 614px;
+        max-height: none;
+    }
+    .tweet.html {
+        top: 0px;
+        height: 601px;
+        max-height: none;
+    }        
     .tweet.yt div.contentin {
-        transform: translate(-50%, -50%);
-        top: calc(50% + 0px) !important;
-        margin-top: 32px;
+        transform: translate(-50%, 0px);
+        top: auto !important;
+        margin-top: -2px;
+        width: 605px;
+        height: 480px;
+    }
+    .tweet.html div.contentin {
+        transform: translate(-50%, 0px);
+        top: auto !important;
+        margin-top: -2px;
+        width: 605px;
+        height: 454px;
     }  
+    .tweet.html div.contentin .logo {
+       top: calc(39%) !important;
+ 
+    }
+    
+    .tweet.html div.contentin .logo {
+       top: calc(46%) !important;
+    }
+     
+    .tweet .bottomstrip {
+      top: 479px;
+      bottom: auto;
+    }
+    .tweet.yt .bottomstrip {
+      background-image: linear-gradient(to bottom, black -5%, var(--high-color) 25%, var(--high-color) 74%);
+    }
     #mask > div > i {
       background: #484848 !important;
     }   
@@ -4971,50 +5048,4 @@ body.big .ui-dialog .ui-dialog-content.ui-widget-content {
 body.big .ui-dialog button {
   font-size: 15px !important;
   padding-top: 3px;
-}
-
-
-.bottomstrip {
-  position: absolute;
-  height: 70px;
-  bottom: 3vw;
-  background-image: linear-gradient(to bottom, transparent -5%, var(--high-color) 25%, var(--high-color) 74%);
-  width: calc(80.5% - 50px);
-  max-width: 712px;
-  transform: translate(-50%, 0px);
-  left: calc(50% - 0px) !important;
-  transform: translate(-50%, 10px);
-  text-align: left;
-  color: var(--dark-color);
-  text-overflow: ellipsis;
-  overflow: hidden;
-  padding: 0px 25px;
-}
-
-.bottomstrip .bottomstripline {
-  /* padding-top: 19px; */
-  display: block;
-  position: relative;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  /* padding: 19px 20px 0px 20px; */
-  left: 0%;
-  width: 101%;
-  -webkit-transition: left 3s, width 3s;
-  -moz-transition: left 3s, width 3s;
-  transition: left 3s, width 3s;
-  cursor: default;
-}
-
-.bottomstrip .bottomstripline.line1 {
-  /* margin: 19px 20px 0px 20px; */
-  padding-top: 17px;
-}
-
-.bottomstrip .bottomstripline.line2 {}
-
-.bottomstripZZZ:hover .bottomstripline {
-  left: -100%;
-  width: 200%;
 }
