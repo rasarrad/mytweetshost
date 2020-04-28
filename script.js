@@ -1555,17 +1555,20 @@ function processLinkFuncs(idLink, type) {
     if (parseInt(idLink) > -1) {
         switch(type) {
             case "up":
+
+                openLinkInside(idLink);
+
                 //console.log("UP   UP   UP   UP   UP   UP   UP   UP   UP   UP   UP");
                 /*
                 openSearchPopup()
                 https://stackoverflow.com/questions/22629286/scroll-down-a-webpage-by-constant-speed/22629859
-                */
+       
                 setTimeout(function() { 
                     gotop();
                 }, 100); 
                 
                 showMessage("Scrolled to top", 2500, null, null, null, null, true, 500);
-                 
+                         */ 
                 break;
     
             case "down":// apagar pesquisa - mantendo os critérios
