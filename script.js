@@ -1302,8 +1302,6 @@ function getTouches(evt) {
 }                                                     
 
 function handleTouchStart(evt) {
-    
-    $('body, html').css('overflow-y', 'hidden');
     const firstTouch = getTouches(evt)[0];                                      
     xDown = firstTouch.clientX;                                      
     yDown = firstTouch.clientY;   
@@ -1313,8 +1311,6 @@ function handleTouchStart(evt) {
         dblFlag = true; 
         dblClickTimeout = setTimeout(function() {    
             dblFlag = false;  
-            
-          $('body, html').css('overflow-y', 'auto');
       }, 90);
     }, 10);                
 };                                                
@@ -1324,18 +1320,18 @@ function handleTouchEnd(evt) {
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
             if ( xDiff > 0 ) {
                 console.log("left: " + currObjSwipe);
-                //executeSwipeFunction(currObjSwipe, "left");
+                executeSwipeFunction(currObjSwipe, "left");
             } else {
                 console.log("right: " + currObjSwipe);
-                //executeSwipeFunction(currObjSwipe, "right");
+                executeSwipeFunction(currObjSwipe, "right");
             }                       
         } else {
             if ( yDiff > 0 ) {
                 console.log("up: " + currObjSwipe);
-                //executeSwipeFunction(currObjSwipe, "up");
+                executeSwipeFunction(currObjSwipe, "up");
             } else {
                 console.log("down: " + currObjSwipe);
-                //executeSwipeFunction(currObjSwipe, "down");
+                executeSwipeFunction(currObjSwipe, "down");
             }                                                                 
         }
     }  
@@ -1343,8 +1339,7 @@ function handleTouchEnd(evt) {
     xDown = null;
     yDown = null;   
     lastTouch = null;   
-    
-    $('body, html').css('overflow-y', 'auto');                          
+                              
 }; 
 
 
@@ -1565,7 +1560,7 @@ function processLinkFuncs(idLink, type) {
         switch(type) {
             case "up":
 
-                openLinkInside(idLink);
+                //openLinkInside(idLink);
 
                 //console.log("UP   UP   UP   UP   UP   UP   UP   UP   UP   UP   UP");
                 /*
@@ -1581,16 +1576,16 @@ function processLinkFuncs(idLink, type) {
                 break;
     
             case "down":// apagar pesquisa - mantendo os critérios
-                /*console.log("DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   ");*/
+                /*console.log("DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   ");
                 
                 $("#main").empty();
                 $('#moretweets').hide();
                 $('#tweetcount').hide(); 
                 showMessage("Search cleared", 2500, null, null, null, null, true, 500);
-
+*/
                 break;
             case "left": // apagar pesquisa - mantendo os critérios 
-                /*console.log("LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   ");*/
+                /*console.log("LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   ");
              
                 $('#linkresult').val($('#' + idLink).attr('curl'));
                 $("#linkresult").focus();
@@ -1600,6 +1595,8 @@ function processLinkFuncs(idLink, type) {
                 sleep(100);  
                 $("#linkresult").blur();
                 showMessage("Link Copied To Clipboard", 2500, null, null, null, null, true, 500);
+*/
+                openLinkInside(idLink);
 
                 break;
     
