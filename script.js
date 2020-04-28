@@ -1320,18 +1320,18 @@ function handleTouchEnd(evt) {
     if (useSwipes && dblFlag && lastTouch) {                       
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
             if ( xDiff > 0 ) {
-                console.log("left");
+                console.log("left: " + currObjSwipe);
                 //executeSwipeFunction(currObjSwipe, "left");
             } else {
-                console.log("right");
+                console.log("right: " + currObjSwipe);
                 //executeSwipeFunction(currObjSwipe, "right");
             }                       
         } else {
             if ( yDiff > 0 ) {
-                console.log("up");
+                console.log("up: " + currObjSwipe);
                 //executeSwipeFunction(currObjSwipe, "up");
             } else {
-                console.log("down");
+                console.log("down: " + currObjSwipe);
                 //executeSwipeFunction(currObjSwipe, "down");
             }                                                                 
         }

@@ -984,7 +984,7 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
                                     //    document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
                                     //}
                                     //else {
-                                        document.getElementById("contentin" + val.id).addEventListener("click", tapHandler);
+                                        //document.getElementById("contentin" + val.id).addEventListener("click", tapHandler);
                                     //}
                                 }, 200 );
                             }
