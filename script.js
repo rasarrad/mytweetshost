@@ -1037,7 +1037,7 @@ window.openLinkInside = function(id) {
 
         var url = generateUrl($("#" + id).attr("curl"))
 
-        //$("#fsPopup iframe").attr("src", url);
+        $("#fsPopup iframe").attr("src", url);
         $("#fsPopup").fadeIn(1600);
         console.log(111111111);
         dblFlag = true;  
@@ -1079,8 +1079,8 @@ function iframeFSloadFunc(obj) {
 
     if (dblFlag) {
         //$(obj).attr("cerror", "yes");
-        //$("#fsPopup").fadeOut(200);
-        //window.open($(obj).attr("src"), '_blank');
+        $("#fsPopup").fadeOut(200);
+        window.open($(obj).attr("src"), '_blank');
     }
 } 
 
@@ -1927,9 +1927,10 @@ function externallinkCopyPre() {
 
 
 function externallinkcopy(obj, link) {
-    fixfocus(link);
+    if (obj)
+        fixfocus(obj);
 
-    if (externallinkcopy)
+    if (link)
         $('#linkresult').val(link);
     else
         $('#linkresult').val($('#linkChange').attr('clink'));

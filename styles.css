@@ -4533,50 +4533,73 @@ body.big .newLayout > div {
   color: var(--high-color) !important;
 }
 
-#fsPopup i.fa-edit {bottom: 5px;font-size: 22px;padding-left: 12px;width: 22px;padding-top: 7px;height: 22px;font-weight: bold;left: calc(50% - 76px) !important;}
+#fsPopup i.fa-edit {bottom: 5px;padding-left: 13px;width: 21px;padding-top: 9px;font-size: 19px;height: 20px;left: calc(50% - 76px) !important;}
 body.big #fsPopup i.fa-edit {
-  
+    bottom: 5px;
+    font-weight: bold;
+    font-size: 21px;
+    padding-left: 12px;
+    width: 22px;
+    padding-top: 8px;
+    height: 21px;
 }
 
 #fsPopup i.fa-files-o {
   left: calc(50% - 25px) !important;
   bottom: 5px;
-  font-size: 21px;
-  padding-left: 12px;
-  width: 22px;
-  padding-top: 7px;
-  height: 22px;
-  font-weight: bold;
+  font-size: 17px;
+  padding-left: 13px;
+  width: 21px;
+  padding-top: 8px;
+  height: 21px;
+  /* font-weight: bold; */
 }
 body.big #fsPopup i.fa-files-o {
-  
+    bottom: 5px;
+    font-size: 19px;
+    padding-left: 13px;
+    width: 21px;
+    padding-top: 8px;
+    height: 21px;
+    font-weight: bold;
 }
 
 #fsPopup i.fa-external-link {
   left: calc(50% + 26px) !important;
   bottom: 5px;
+  font-size: 19px;
+  padding-left: 13px;
+  width: 21px;
+  padding-top: 9px;
+  height: 20px;
+  /* font-weight: bold; */
+}
+body.big #fsPopup i.fa-external-link {
+    bottom: 5px;
   font-size: 21px;
   padding-left: 12px;
   width: 22px;
-  padding-top: 10px;
+  padding-top: 8px;
   height: 21px;
   font-weight: bold;
-}
-body.big #fsPopup i.fa-external-link {
-  
 }
 
 #fsPopup i.fa-times-circle {
   left: calc(50% + 77px) !important;
   bottom: 5px;
+  font-size: 19px;
+  padding-left: 14px;
+  width: 20px;
+  padding-top: 8px;
+  height: 21px;
+}
+body.big #fsPopup i.fa-times-circle {
+  bottom: 5px;
   font-size: 23px;
   padding-left: 12px;
   width: 22px;
-  padding-top: 7px;
+  padding-top: 5px;
   height: 24px;
-}
-body.big #fsPopup i.fa-times-circle {
-    font-size: 28px;
 }
 
 
