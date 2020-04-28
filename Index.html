@@ -1476,36 +1476,15 @@ bookmarks <span>
     border-radius: 3px;
     display: none;
 "></div>
-<div id="fsPopup" style="
-    padding: 15px;
-    position: fixed;
-    top: 0px;
-    z-index: 999999997;
-    width: calc(100% - 30px);
-    height: calc(100% - 30px);
-    background: var(--soft-transp-color);
-    display: none;
-"><iframe cid="none" onload="iframeFSloadFunc(this)" scrolling="yes" frameborder="0" allowtransparency="true" style="position: relative;/* top: 0px; *//* z-index: 2147483647; */width: calc(100% - 4px);height: calc(100% - 31px);margin-left: -2px;border: 2px solid var(--high-color);border-radius: 5px;"></iframe>
-<i onclick="javascript: closeFSPopup()" class="logo fa fa-times-circle" style="
-    color: var(--high-color);
-    font-size: 27px;
-    position: relative;
-    top: -6px;
-    transform: translate(-50%, 0px);
-    left: calc(50% - 0px) !important;
-    background: black;
-    padding: 3px 11px 6px 11px;
-    border-radius: 4px;
-    border: 2px solid var(--high-color);
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-top-color: black;
-    cursor: pointer;
-    
-    border-top-color: white;
-    color: var(--dark-color);
-    background: white;
-"></i></div>
+
+
+<div id="fsPopup" style="padding: 15px;position: fixed;top: 0px;z-index: 999999997; width: calc(100% - 30px); height: calc(100% - 30px); background: var(--soft-transp-color); display: none;">
+    <iframe cid="none" onload="iframeFSloadFunc(this)" scrolling="yes" frameborder="0" allowtransparency="true" style="position: relative;/* top: 0px; *//* z-index: 2147483647; */width: calc(100% - 4px);height: calc(100% - 31px);margin-left: -2px;border: 2px solid var(--high-color);border-radius: 5px;"></iframe>
+    <i onclick="javascript: closeFSPopup()" class="logo fa fa-edit"></i>
+    <i onclick="javascript: closeFSPopup()" class="logo fa fa-files-o"></i>
+    <i onclick="javascript: closeFSPopup()" class="logo fa fa-external-link"></i>
+    <i onclick="javascript: closeFSPopup()" class="logo fa fa-times-circle"></i>
+</div>
 
 </body>
 

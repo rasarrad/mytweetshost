@@ -4505,11 +4505,36 @@ body.big .newLayout > div {
 /**************************************************************************************************/
 
 
+#fsPopup i {
+  color: var(--high-color);
+  font-size: 27px;
+  position: relative;
+  top: -6px;
+  transform: translate(-50%, 0px);
+  left: calc(50% - 0px) !important;
+  background: black;
+  padding: 3px 11px 6px 11px;
+  border-radius: 4px;
+  border: 2px solid var(--high-color);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-top-color: black;
+  cursor: pointer;
+  border-top-color: white;
+  color: var(--dark-color);
+  background: white;
+}
+
 #fsPopup.yt i {
   background: black !important;
   border-top-color: black !important;
   color: var(--high-color) !important;
 }
+
+
+
+
+
 
 .newLayout {
     display: block;
