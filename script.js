@@ -1029,7 +1029,12 @@ window.openLinkInside = function(id) {
         $('body, html').css('overflow-y', 'hidden');
 
         $("#fsPopup iframe").attr("cid", id);
-   
+
+        if ($("#" + id).hasClass("yt"))
+            $("#fsPopup iframe").addClass("yt");
+        else
+            $("#fsPopup iframe").removeClass("yt");
+
         var url = generateUrl($("#" + id).attr("curl"))
 
         $("#fsPopup iframe").attr("src", url);
