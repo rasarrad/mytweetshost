@@ -1037,7 +1037,7 @@ window.openLinkInside = function(id) {
 
         var url = generateUrl($("#" + id).attr("curl"))
 
-        $("#fsPopup iframe").attr("src", url);
+        //$("#fsPopup iframe").attr("src", url);
         $("#fsPopup").fadeIn(1600);
         console.log(111111111);
         dblFlag = true;  
@@ -1079,8 +1079,8 @@ function iframeFSloadFunc(obj) {
 
     if (dblFlag) {
         //$(obj).attr("cerror", "yes");
-        $("#fsPopup").fadeOut(200);
-        window.open($(obj).attr("src"), '_blank');
+        //$("#fsPopup").fadeOut(200);
+        //window.open($(obj).attr("src"), '_blank');
     }
 } 
 
@@ -1904,9 +1904,13 @@ function internallinkcopy(obj) {
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
+function externallinkopenPre() {
+    externallinkopen(null, $("#" + $("#fsPopup iframe").attr("cid")).attr("curl"));
+}
+function externallinkopen(obj, link) {
+    if (obj)
+        fixfocus(obj);
 
-function externallinkopen(obj, link, id) {
-    fixfocus(obj);
     $('#linkresult').val(link);
     $("#linkresult").select();
     document.execCommand('copy');
@@ -1916,10 +1920,22 @@ function externallinkopen(obj, link, id) {
     //showMessage("External Link Copied To Clipboard"); 
 }
 
-function externallinkcopy(obj) {
-    fixfocus(obj);
-    $('#linkresult').val($('#linkChange').attr('clink'));
-    $("#linkresult").select();
+
+function externallinkCopyPre() {
+    externallinkcopy(null, $("#" + $("#fsPopup iframe").attr("cid")).attr("curl"));
+}
+
+
+function externallinkcopy(obj, link) {
+    fixfocus(link);
+
+    if (externallinkcopy)
+        $('#linkresult').val(link);
+    else
+        $('#linkresult').val($('#linkChange').attr('clink'));
+    
+        $("#linkresult").select();
+        
     document.execCommand('copy');
     $("#linkresult").blur();
     showMessage("Link Copied To Clipboard"); 

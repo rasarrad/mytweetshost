@@ -6,6 +6,10 @@
 //                             GENERAL                                 //
 /////////////////////////////////////////////////////////////////////////
 
+function expandCatPre() {
+    expandCat(null, $("#fsPopup iframe").attr("cid"));
+}
+
 function expandCat(obj, idparam, valid) {
 
     var id = null;
