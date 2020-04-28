@@ -812,12 +812,13 @@ $( document ).ready(function() {
     });
 
     // DOUBLE TAP and DOUBLE CLICK (icon folderopen da backdiv)
-    if (isMobile) {
-        document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
-    }
-    else {
-        document.getElementById("folderopen").addEventListener("click", tapHandler);
-    }
+    // xyz
+    //if (isMobile) {
+    //    document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
+    //}
+    //else {
+    //    document.getElementById("folderopen").addEventListener("click", tapHandler);
+    //}
 
  
     // xyz startcode

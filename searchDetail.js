@@ -978,12 +978,14 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
                                 newtweetobj.append($(val.tweet));
 
                                 setTimeout( function() {                                 
-                                    if (isMobile) {
-                                        document.getElementById("contentin" + val.id).addEventListener("touchstart", tapHandler);
-                                    }
-                                    else {
+              
+                                    // xyz
+                                    //if (isMobile) {
+                                    //    document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
+                                    //}
+                                    //else {
                                         document.getElementById("contentin" + val.id).addEventListener("click", tapHandler);
-                                    }
+                                    //}
                                 }, 200 );
                             }
                 
