@@ -1506,7 +1506,7 @@ body.big #expand {
 }
 
 body.big .tweet:first-child .linkbar {
-    top: 0px !important;
+    top: -1px !important;
 }
 
 #expand {
@@ -2201,7 +2201,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
     }
     
     .tweet:first-child #expand {
-        margin-top: -10px;
+        margin-top: -9px;
     }
     .linkbar {
         left: calc(50% - 240px);
@@ -2372,7 +2372,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
     }
     body.big #expand {
         right: calc(50% - 241px);
-        top: 8px !important;
+        top: 8.5px !important;
     }     
   .newLayout > div {
         /* margin-top: 20px !important; */
@@ -2400,10 +2400,12 @@ body.big #splash.newLayout table:nth-of-type(4) {
       max-width: calc(100% - 79px) !important;
       left: 0px;
       transform: none;
+         
     }   
     body.big .tags {
       padding-left: 42px !important;
       top: -2px;
+      max-width: calc(100% - 83px) !important;
     }   
     
     #expand {
@@ -2411,7 +2413,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
         margin-top: -6px;
     }
     body.big #expand {
-        right: 13px;
+        right: 0px;
     }  
     .linkbar {
         left: 9px !important;
