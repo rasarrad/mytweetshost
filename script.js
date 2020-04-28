@@ -1349,7 +1349,9 @@ function executeSwipeFunction(obj, type) {
         case "helppop":
             processHelpDivFuncs(type);
             break;
-    
+        case "fsPopup":
+            processFSPopupFuncs(type);
+            break;
         case "mainmenu":
             processMainmenuFuncs(type);
             break;
@@ -1381,6 +1383,30 @@ function processHelpDivFuncs(type) {
     closeHelpPopup();
     console.log("help all-----------------------------------------------");
 } 
+
+function processFSPopupFuncs(type) {
+    switch(type) {
+        case "up":
+            externallinkCopyPre()
+            console.log("FSPopup up-----------------------------------------------");
+            break;
+
+        case "down":
+            closeFSPopup()
+            console.log("FSPopup down-----------------------------------------------");
+            break;
+        case "left":
+            externallinkCopyPre()
+            expandCatPre()
+            console.log("FSPopup left-----------------------------------------------");
+            break;
+
+        case "right":
+            externallinkopenPre();
+            console.log("FSPopup right-----------------------------------------------");
+            break;
+    }
+}  
 
 function processLinkChangeFuncs(type) {
     switch(type) {
