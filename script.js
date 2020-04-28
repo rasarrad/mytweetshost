@@ -253,6 +253,11 @@ $( document ).ready(function() {
         if (valueSwipe == "Yes") {
             // xyz
             //useSwipes = true;
+
+            // START swip binds
+            //document.addEventListener('touchstart', handleTouchStart, false);        
+            //document.addEventListener('touchmove', handleTouchMove, false);
+            //document.addEventListener('touchend', handleTouchEnd, false);
         }
     }
     
@@ -285,12 +290,6 @@ $( document ).ready(function() {
             }
         } 
     }
-
-
-    // START swip binds
-    document.addEventListener('touchstart', handleTouchStart, false);        
-    document.addEventListener('touchmove', handleTouchMove, false);
-    document.addEventListener('touchend', handleTouchEnd, false);
     
 
     // START filechoser
