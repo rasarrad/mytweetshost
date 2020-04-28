@@ -1474,7 +1474,7 @@ body.big #expand {
 }
 
 body.big .tweet:first-child .linkbar {
-    top: -1px !important;
+    top: 0px !important;
 }
 
 #expand {
@@ -1508,8 +1508,12 @@ body.big #editTags {
   overflow: hidden;
   border-bottom: 4px solid var(--soft-color);
   padding: 0px 25px;
+  top: 82vw;
 }
-
+.yt .bottomstrip {
+  background-image: linear-gradient(to bottom, black -5%, var(--high-color) 25%, var(--high-color) 74%);
+  /* width: calc(100% - 50px); */
+}
 .bottomstrip .bottomstripline {
   /* padding-top: 19px; */
   display: block;
@@ -2149,7 +2153,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
       /* left: 18px; */
     }     
     .tweet:first-child #expand {
-        margin-top: -8px;
+        margin-top: -10px;
     }
     .linkbar {
         left: calc(50% - 240px);
@@ -2318,7 +2322,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
     }
     body.big #expand {
         right: calc(50% - 241px);
-        top: 10px !important;
+        top: 8px !important;
     }     
   .newLayout > div {
         /* margin-top: 20px !important; */
@@ -2343,7 +2347,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
     } 
     .tags {
       padding-left: 38px !important;
-      max-width: 338px !important;
+      max-width: calc(100% - 87px) !important;
     }   
     body.big .tags {
       padding-left: 42px !important;
@@ -2372,13 +2376,13 @@ body.big #splash.newLayout table:nth-of-type(4) {
     }      
     body.big .linkbar {
         left: 8px;
-        top: 1px !important;
+        top: 0px !important;
     }
     body.big .linkbar.fa-youtube-play {
         top: 3px !important;
     }    
     body.big .linkbar.fa-internet-explorer {
-        top: 4px !important;
+        top: 3px !important;
     }     
   .toptitle {
       top: 12px;
@@ -2498,7 +2502,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
 
       .tweet.yt {
         top: 0px;
-        height: 91vw;
+        height: 115vw;
       }
             
       .tweet div.contentin {
@@ -2511,7 +2515,12 @@ body.big #splash.newLayout table:nth-of-type(4) {
         top: calc(50% + 0px) !important;
         margin-top: 40px;
     }
-
+      .yt .bottomstrip {
+          width: calc(100% - 50px);
+      }
+      .html .bottomstrip {
+          width: calc(100% - 50px);
+      }
       .tweet div.contentin .logo {
           transform: translate(-50%, -112%);
           font-size: 11vw;
