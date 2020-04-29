@@ -23,7 +23,7 @@ function parseTweet(type) {
     setTimeout(function() {
         $('#tweetid').val(nextid);
         youtubeId = "";
-
+        $("#infoinput").val("");
         text = $('#tweet').val();
 
         if (text.substring(0,4) == "<blo") {
