@@ -171,6 +171,7 @@ $( document ).ready(function() {
         catsmap.set("trl", "Long Reading");
         catsmap.set("tke", "Important / To Keep");
         catsmap.set("imp", "Shocking Truth");
+        catsmap.set("all", "All");
     }
     else {
         catsmap.set("tvn", "New / Ongoing");
@@ -182,6 +183,7 @@ $( document ).ready(function() {
         catsmap.set("tke", "Important / To Keep");
         catsmap.set("imp", "Shocking Truth");
         catsmap.set("cli", "My Tweets");
+        catsmap.set("all", "All");
     }
 
     // START remover speckcheks
@@ -1962,7 +1964,6 @@ var clickmenu = function(val) {
     resetFields();
 
     $('#selectedcat').val(val);
-    alert(catsmap.get(val));
     $('#selectedcattext').val(catsmap.get(val));
 
     if ($('#mainmenu').attr("fromsearch") == "yes") {
