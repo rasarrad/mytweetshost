@@ -60,11 +60,9 @@ function parseTweet(type) {
                     }
                     else {
                         if (type && type == 1) {
-                            if ($(".addpopup").css('display') == 'none') {
-                                openCreatePopup(true);
-                                
-                                createPreview();
-                            }
+                            openCreatePopup(true);
+                            
+                            createPreview();
                         }
                         else {
                             createPreview();
@@ -116,11 +114,9 @@ function parseTweet(type) {
                     }
                     else {
                         if (type && type == 1) {
-                            if ($(".addpopup").css('display') == 'none') {
-                                openCreatePopup(true);
-                                
-                                createPreview();
-                            }
+                            openCreatePopup(true);
+                            
+                            createPreview();
                         }
                         else {
                             createPreview();
@@ -176,11 +172,9 @@ function parseTweet(type) {
                     }
                     else {
                         if (type && type == 1) {
-                            if ($(".addpopup").css('display') == 'none') {
-                                openCreatePopup(true);
-                                
-                                createPreview();
-                            }
+                            openCreatePopup(true);
+                            
+                            createPreview();
                         }
                         else {
                             createPreview();
@@ -227,11 +221,9 @@ function parseTweet(type) {
                     }
                     else {
                         if (type && type == 1) {
-                            if ($(".addpopup").css('display') == 'none') {
-                                openCreatePopup(true);
-                                
-                                createPreview();
-                            }
+                            openCreatePopup(true);
+                            
+                            createPreview();
                         }
                         else {
                             createPreview();
@@ -262,7 +254,6 @@ function parseTweet(type) {
             }
             else {
                 $('#tweet').val("");
-                if ($(".addpopup").css('display') == 'none') {
                     $('#tweet').focus();
                     $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
 
@@ -270,7 +261,6 @@ function parseTweet(type) {
                 
                     dblFlag = true;
                     openCreatePopup(true);
-
                 }
             }
         }
@@ -396,15 +386,6 @@ function create() {
 
     //resetFieldsPopup();
 
-    /*
-    if ($("#onemore").is(":checked")) {
-        showMessage("New Link Created And Copied To Clipboard. You Can Add One More Now");
-        $('#tweet').focus();
-    } 
-    else {
-        showMessage("New Link Created And Copied To Clipboard");
-        $('.addpopup').fadeOut(2000);
-    }        */
     showMessage("New Link Created And Copied To Clipboard");
     closeSettingsPopup();
     
@@ -497,7 +478,6 @@ var closePopup = function()
     $('#tagsinput').val('');
     $('#infoinput').val('');
     $('#result').val('');  
-    $('.addpopup').fadeOut();
     $('#typeTT').css('border-color', 'white'); 
     $('#typeHH').css('border-color', 'white'); 
     $('#typeYY').css('border-color', 'white');  

@@ -621,10 +621,7 @@ function countalltweets(webLinksMap) {
                 $("#tagsselect").append(o);
             }*/
     
-    
-            $("#addpopup").css("top", "4000px");
-            $("#addpopup").show();
-            var hasOverflow = false;
+
     
             for (let [key, value] of tagsmap) {     // get data sorted
                 /*
@@ -642,10 +639,6 @@ function countalltweets(webLinksMap) {
                 var elem2 = $("<li  onclick='javascript: clickLiTag(event, this)' class='litags'>" + key + "</li>");
                 $('#tagsearchul').append(elem2);
             }  
-    
-            $("#addpopup").hide();
-            
-            $("#addpopup").css("top", "calc(50% - 189px)");
 
             tagssloaded = true;
 
