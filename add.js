@@ -104,7 +104,7 @@ function parseTweet(type) {
             urldirect = "https://www.youtube.com/watch?v=" + youtubeId; 
 
             text = "\"<div class='contentin' style='background: url(https://img.youtube.com/vi/" 
-                    + youtubeId  + "/0.jpg); background-size: 100%;'></div>\""; 
+                    + youtubeId  + "/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div>\""; 
 
             var functorun = function() 
             { 
@@ -166,7 +166,7 @@ function parseTweet(type) {
             }
             
             text = "\"<div class='contentin' style='background: url(https://img.youtube.com/vi/" 
-                    + youtubeId  + "/0.jpg); background-size: 100%;'></div>\""; 
+                    + youtubeId  + "/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div>\""; 
 
             var functorun = function() 
             { 
@@ -218,7 +218,7 @@ function parseTweet(type) {
             url = text; 
 
             text = "\"<div class='contentin' style='background: url(https://s.wordpress.com/mshots/v1/" 
-                    + text + "); background-size: 100%;'></div>\""; 
+                    + text + "); background-size: 100%;'><i class='logo fa fa-html5'></i></div>\""; 
 
             var functorun = function() 
             { 
@@ -438,6 +438,7 @@ function create() {
         countalltweets();
     }
     else {
+        console.log('-------XXXX 1111--creationdate---' + creationdate)  
         getLinkDescriptionAndCreate(creationdate, cats, tags, resinfo, classif);
     }
 }
@@ -448,7 +449,7 @@ function create() {
 
 var getLinkDescriptionAndCreate = function(creationdate, cats, tags, resinfo, classif) 
 {
-
+    console.log('-------XXXX 22222--creationdate---' + creationdate)  
 
     if (addType == "Y") {
         getYoutubeData(creationdate, cats, tags, resinfo, classif)
@@ -469,7 +470,7 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
 
     resinfo = resinfo.replace(/"/g, "");
     resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "").trim();
-
+    console.log('-------XXXX 66666--creationdate---' + creationdate)  
 
     if (addType == "Y") {
         text = text.substring(0, text.length -1) + "<div class='bottomstrip'><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line1'>" + resinfo + "</span><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line2'>" + urldirect + "</span></div>\""; 
@@ -481,7 +482,7 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
     }
 
     var result = $('#result').val();
-    console.log('-------GGGGGG--result---' + result)  
+
     $('#linkresult').val(result);
     $("#linkresult").select();
 
@@ -512,6 +513,7 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
 }
 
 function getYoutubeData(creationdate, cats, tags, resinfo, classif) {
+    console.log('-------XXXX 333333--creationdate---' + creationdate)  
     $.ajax({
         url: "https://cors-anywhere.herokuapp.com/https://youtube.com/get_video_info?video_id=" + youtubeId,
         success: function (data, status, xhr) {// success callback function
@@ -521,6 +523,8 @@ function getYoutubeData(creationdate, cats, tags, resinfo, classif) {
             //console.log(result.substring(result.indexOf("\",\"lengthSeconds\":\"") + 19, result.indexOf("\",\"keywords\":")).replace(/\+/g, ' '));
 
             let totalSeconds = parseInt(result.substring(result.indexOf("\",\"lengthSeconds\":\"") + 19, result.indexOf("\",\"keywords\":")).replace(/\+/g, ' '));
+            
+            console.log('-------DDDDDD-----totalSeconds ' + totalSeconds)
             let hours = Math.floor(totalSeconds / 3600);
             totalSeconds %= 3600;
             let minutes = Math.floor(totalSeconds / 60);
@@ -534,17 +538,13 @@ function getYoutubeData(creationdate, cats, tags, resinfo, classif) {
             //console.log("Time: " + hours + ":" + minutes + ":" + seconds);
 
             resinfo = resinfo + " " + (hours != "00" ? hours : "") + minutes + seconds + " - " + result.substring(result.indexOf(",\"title\":\"") + 10, result.indexOf("\",\"lengthSeconds\"")).replace(/\+/g, ' ');
-            
-            
-            console.log('-------DDDDDD-----' + resinfo)
-
 
             $("#infoinput").val(resinfo);
 
             if (dblFlag) {
                 clearTimeout(dblClickTimeout);
                 console.log("created youtube link in getYoutubeData");
-
+                console.log('-------XXXX 44444--creationdate---' + creationdate)  
                 createLinkAfterDescription(creationdate, cats, tags, resinfo, classif);
             }
         }
