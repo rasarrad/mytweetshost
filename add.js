@@ -405,8 +405,6 @@ function create() {
     showMessage("New Link Created And Copied To Clipboard");
     closeSettingsPopup();
 
-    console.log('-------AAAAAA-----')
-
     if (hasProcessedDescription || addType == "T") {
 
         $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
@@ -422,9 +420,6 @@ function create() {
 
         var mlink = encodeURIComponent(JSON.stringify(result));
     
-        console.log('---------------------')
-        console.log(result)
-
         createCookie(nextid + "templink", mlink, 99999);
         createCookie("haschanges", "yes");
     
@@ -443,7 +438,6 @@ function create() {
         countalltweets();
     }
     else {
-        console.log('-------BBBBBB-----')
         getLinkDescriptionAndCreate(creationdate, cats, tags, resinfo, classif);
     }
 }
@@ -455,7 +449,6 @@ function create() {
 var getLinkDescriptionAndCreate = function(creationdate, cats, tags, resinfo, classif) 
 {
 
-    console.log('-------CCCCCC-----' + resinfo)
 
     if (addType == "Y") {
         getYoutubeData()
@@ -473,17 +466,14 @@ var getLinkDescriptionAndCreate = function(creationdate, cats, tags, resinfo, cl
 } 
 
 function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) {       
-    console.log('-------FFFFFFF urldirect-----' + urldirect)
 
     resinfo = resinfo.replace(/"/g, "");
     resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "").trim();
 
-    console.log('-------GGGGGG--addType---' + addType)
-    console.log('-------GGGGGG--text---' + text)
-
 
     if (addType == "Y") {
         text = text + "<div class='bottomstrip'><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line1'>" + resinfo + "</span><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line2'>" + urldirect + "</span></div>\""; 
+        console.log('-------GGGGGG--text---' + text)
         $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + urldirect  + "\",\r\n\"ishidden\": \"0\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
     }
     else {
@@ -492,7 +482,7 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
     }
 
     var result = $('#result').val();
-        
+    console.log('-------GGGGGG--result---' + result)  
     $('#linkresult').val(result);
     $("#linkresult").select();
 
