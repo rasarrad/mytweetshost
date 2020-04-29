@@ -141,7 +141,7 @@ $( document ).ready(function() {
 
     //hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
 
-    getWebsiteData('https://www.codementor.io/blog/senior-developer-interview-questions-6on7cl3reg#senior-software-engineer-interview-questions')
+    getWebsiteData('https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy')
 
     isMobile = window.mobileAndTabletCheck();
 
