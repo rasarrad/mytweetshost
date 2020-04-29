@@ -420,6 +420,9 @@ function create() {
 
         var mlink = encodeURIComponent(JSON.stringify(result));
     
+        console.log('---------------------')
+        console.log(mlink)
+
         createCookie(nextid + "templink", mlink, 99999);
         createCookie("haschanges", "yes");
     
@@ -485,6 +488,8 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
 
     $("#linkresult").blur();
 
+    console.log('-----------555----------')
+    console.log(mlink)
     var mlink = encodeURIComponent(JSON.stringify(result));
     
     createCookie(nextid + "templink", mlink, 99999);
