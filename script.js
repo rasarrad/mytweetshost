@@ -1302,6 +1302,8 @@ function getTouches(evt) {
 }                                                     
 
 function handleTouchStart(evt) {
+    evt.preventDefault();
+    evt.stopPropagation();
     const firstTouch = getTouches(evt)[0];                                      
     xDown = firstTouch.clientX;                                      
     yDown = firstTouch.clientY;   
