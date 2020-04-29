@@ -1541,6 +1541,8 @@ body.big #editTags {
   border-bottom: 4px solid var(--soft-color);
   padding: 0px 25px;
   top: 656px;
+  font-weight: bold;
+  text-transform: lowercase;
   font-size: 14px;
 }
 

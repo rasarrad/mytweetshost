@@ -84,6 +84,33 @@ function hasOverflow(obj) {
 }
 
 
+
+
+
+
+function getWebsiteData(url) {
+
+    $.ajax({
+        url: 'https://cors-anywhere.herokuapp.com/' + url
+      }).then(function(data) {
+        console.log('---------------WEBSITE ' + url + ' ----------------');
+        // titulo - checar se é vazia         
+        console.log("Titulo: " + data.substring(data.indexOf("<title>") + 7, data.indexOf("</title>")));
+        var html = $(data);
+        // descricao - checar se é vazia
+        console.log("Descricao: " + getMetaContent(html, 'description') );
+
+        console.log(data)
+
+      });
+
+}
+
+
+
+
+
+
 function getMetaContent(html, name) {
   return html.filter((index, tag) => tag && tag.name && tag.name == name).attr('content');
 }
@@ -114,6 +141,7 @@ $( document ).ready(function() {
 
     //hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
 
+    getWebsiteData('https://www.codementor.io/blog/senior-developer-interview-questions-6on7cl3reg#senior-software-engineer-interview-questions')
 
     isMobile = window.mobileAndTabletCheck();
 
