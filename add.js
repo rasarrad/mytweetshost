@@ -515,13 +515,9 @@ function getYoutubeData(creationdate, cats, tags, resinfo, classif) {
         url: "https://cors-anywhere.herokuapp.com/https://youtube.com/get_video_info?video_id=" + youtubeId,
         success: function (data, status, xhr) {// success callback function
             var result = decodeURIComponent(data); 
-            //console.log('---------------YOUTUBE ' + videoId + ' ----------------');
-            //console.log("Titulo: " + result.substring(result.indexOf(",\"title\":\"") + 10, result.indexOf("\",\"lengthSeconds\"")).replace(/\+/g, ' '))
-            //console.log(result.substring(result.indexOf("\",\"lengthSeconds\":\"") + 19, result.indexOf("\",\"keywords\":")).replace(/\+/g, ' '));
 
             let totalSeconds = parseInt(result.substring(result.indexOf("\",\"lengthSeconds\":\"") + 19, result.indexOf("\",\"keywords\":")).replace(/\+/g, ' '));
             
-
             let hours = Math.floor(totalSeconds / 3600);
             totalSeconds %= 3600;
             let minutes = Math.floor(totalSeconds / 60);
@@ -536,8 +532,6 @@ function getYoutubeData(creationdate, cats, tags, resinfo, classif) {
                 resf = hours + ":";
 
             resf = resf + minutes + ":" + seconds;
-            // checar se há horas e minutos
-            //console.log("Time: " + hours + ":" + minutes + ":" + seconds);
 
             resinfo = resinfo + resf + "s - " + result.substring(result.indexOf(",\"title\":\"") + 10, result.indexOf("\",\"lengthSeconds\"")).replace(/\+/g, ' ');
 
@@ -554,20 +548,14 @@ function getYoutubeData(creationdate, cats, tags, resinfo, classif) {
 
 function getWebsiteData(creationdate, cats, tags, resinfo, classif) {
 
-    console.log('-------DDDDDD-----url ' + url)
     $.ajax({
         url: 'https://cors-anywhere.herokuapp.com/' + url
       }).then(function(data) {
-        // titulo - checar se é vazia         
-        //console.log("Titulo: " + data.substring(data.indexOf("<title>") + 7, data.indexOf("</title>")));
         var html = $(data);
+        var title = data.substring(data.indexOf("<title") + 7, data.indexOf("</title>"));
+        title = title.substring(title.indexOf(">") + 1, data.indexOf("</title>"));
 
-        console.log('-------DDDDDD-----title ' + data.substring(data.indexOf("<title>") + 7, data.indexOf("</title>")))
-
-        console.log('-------DDDDDD-----description ' + getMetaContent(html, 'description'))
-        // descricao - checar se é vazia
-        //console.log("Descricao: " + getMetaContent(html, 'description') );
-        resinfo = resinfo + " " + data.substring(data.indexOf("<title>") + 7, data.indexOf("</title>")) + " " + getMetaContent(html, 'description')
+        resinfo = (resinfo + " ").trim() + title + " - " + getMetaContent(html, 'description');
         $("#infoinput").val(resinfo);
 
         if (dblFlag) {
