@@ -438,7 +438,6 @@ function create() {
         countalltweets();
     }
     else {
-        console.log('-------XXXX 1111--creationdate---' + creationdate)  
         getLinkDescriptionAndCreate(creationdate, cats, tags, resinfo, classif);
     }
 }
@@ -449,7 +448,6 @@ function create() {
 
 var getLinkDescriptionAndCreate = function(creationdate, cats, tags, resinfo, classif) 
 {
-    console.log('-------XXXX 22222--creationdate---' + creationdate)  
 
     if (addType == "Y") {
         getYoutubeData(creationdate, cats, tags, resinfo, classif)
@@ -470,7 +468,6 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
 
     resinfo = resinfo.replace(/"/g, "");
     resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "").trim();
-    console.log('-------XXXX 66666--creationdate---' + creationdate)  
 
     if (resinfo.length == 0)
         resinfo = "No Info About The Link"
@@ -493,8 +490,6 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
 
     $("#linkresult").blur();
 
-    console.log('-----------555----------')
-    console.log(result)
     var mlink = encodeURIComponent(JSON.stringify(result));
     
     createCookie(nextid + "templink", mlink, 99999);
@@ -516,7 +511,6 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
 }
 
 function getYoutubeData(creationdate, cats, tags, resinfo, classif) {
-    console.log('-------XXXX 333333--creationdate---' + creationdate)  
     $.ajax({
         url: "https://cors-anywhere.herokuapp.com/https://youtube.com/get_video_info?video_id=" + youtubeId,
         success: function (data, status, xhr) {// success callback function
@@ -527,7 +521,7 @@ function getYoutubeData(creationdate, cats, tags, resinfo, classif) {
 
             let totalSeconds = parseInt(result.substring(result.indexOf("\",\"lengthSeconds\":\"") + 19, result.indexOf("\",\"keywords\":")).replace(/\+/g, ' '));
             
-            console.log('-------DDDDDD-----totalSeconds ' + totalSeconds)
+
             let hours = Math.floor(totalSeconds / 3600);
             totalSeconds %= 3600;
             let minutes = Math.floor(totalSeconds / 60);
@@ -537,17 +531,25 @@ function getYoutubeData(creationdate, cats, tags, resinfo, classif) {
             hours = String(hours).padStart(2, "0");
             seconds = String(seconds).padStart(2, "0");
             
+            console.log('-------DDDDDD-----hours ' + hours)
+
+            let resf = ""
+            if (hours != "00")
+                resf = hours + ":";
+
+            resf = resf + ":" + minutes + ":" + seconds;
             // checar se há horas e minutos
             //console.log("Time: " + hours + ":" + minutes + ":" + seconds);
 
-            resinfo = resinfo + " " + (hours != "00" ? hours : "") + minutes + seconds + " - " + result.substring(result.indexOf(",\"title\":\"") + 10, result.indexOf("\",\"lengthSeconds\"")).replace(/\+/g, ' ');
+            console.log('-------DDDDDD-----resf ' + resf)
+
+            resinfo = resinfo + resf + " - " + result.substring(result.indexOf(",\"title\":\"") + 10, result.indexOf("\",\"lengthSeconds\"")).replace(/\+/g, ' ');
 
             $("#infoinput").val(resinfo);
 
             if (dblFlag) {
                 clearTimeout(dblClickTimeout);
                 console.log("created youtube link in getYoutubeData");
-                console.log('-------XXXX 44444--creationdate---' + creationdate)  
                 createLinkAfterDescription(creationdate, cats, tags, resinfo, classif);
             }
         }
@@ -559,7 +561,6 @@ function getWebsiteData(creationdate, cats, tags, resinfo, classif) {
     $.ajax({
         url: 'https://cors-anywhere.herokuapp.com/' + url
       }).then(function(data) {
-        //console.log('---------------WEBSITE ' + url + ' ----------------');
         // titulo - checar se é vazia         
         //console.log("Titulo: " + data.substring(data.indexOf("<title>") + 7, data.indexOf("</title>")));
         var html = $(data);
