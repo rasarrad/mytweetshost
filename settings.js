@@ -573,9 +573,21 @@ var openMainSettingsPopup = function(jsonobj)
     else {
         value = "No";
     }
+    $("#swipedisplay").text(value);
+    
+    $('#swipeul').find(".litags").each( function( index, element ) {
+        if($(element).html().trim() == value) {
+            $(element).addClass("selectedtag");
+        }
+        else {
+            $(element).removeClass("selectedtag");
+        }
+    });
 
     value = readCookie("help");
     value = value == "" ? "Yes" : "No";
+    $("#helpdisplay").text(value);
+
     $('#helpul').find(".litags").each( function( index, element ) {
         if($(element).html().trim() == value) {
             $(element).addClass("selectedtag");
