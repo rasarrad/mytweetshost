@@ -460,7 +460,7 @@ var getLinkDescriptionAndCreate = function(creationdate, cats, tags, resinfo, cl
     dblClickTimeout = setTimeout(function() {     
         createLinkAfterDescription(creationdate, cats, tags, resinfo, classif);
         dblFlag = false;  
-    }, 5500);
+    }, 8500);
 
 } 
 
@@ -528,22 +528,22 @@ function getYoutubeData(creationdate, cats, tags, resinfo, classif) {
             let seconds = totalSeconds % 60;
 
             minutes = String(minutes).padStart(2, "0");
-            hours = String(hours).padStart(2, "0");
+            hours = String(hours);
             seconds = String(seconds).padStart(2, "0");
             
             console.log('-------DDDDDD-----hours ' + hours)
 
             let resf = ""
-            if (hours != "00")
+            if (hours != "0")
                 resf = hours + ":";
 
-            resf = resf + ":" + minutes + ":" + seconds;
+            resf = resf + minutes + ":" + seconds;
             // checar se há horas e minutos
             //console.log("Time: " + hours + ":" + minutes + ":" + seconds);
 
             console.log('-------DDDDDD-----resf ' + resf)
 
-            resinfo = resinfo + resf + " - " + result.substring(result.indexOf(",\"title\":\"") + 10, result.indexOf("\",\"lengthSeconds\"")).replace(/\+/g, ' ');
+            resinfo = resinfo + resf + "s - " + result.substring(result.indexOf(",\"title\":\"") + 10, result.indexOf("\",\"lengthSeconds\"")).replace(/\+/g, ' ');
 
             $("#infoinput").val(resinfo);
 
