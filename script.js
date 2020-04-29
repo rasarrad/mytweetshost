@@ -1355,7 +1355,7 @@ function executeSwipeFunction(obj, type) {
         case "helppop":
             processHelpDivFuncs(type);
             break;
-        case "fsPopup":
+        case "fsiframe":
             processFSPopupFuncs(type);
             break;
         case "mainmenu":
