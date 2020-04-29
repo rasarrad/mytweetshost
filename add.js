@@ -356,9 +356,13 @@ function create() {
     if ($("#ishidden").is(":checked")) {
         ishidden = "1";
     } 
-    var resinfo = $('#infoinput').val().replace(/"/g, "");
-    resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "").trim();
-
+    var resinfo = $('#infoinput').val();
+    
+    if (resinfo != "") {
+        resinfo = resinfo.replace(/"/g, "");
+        resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "").trim();    
+    }
+    
     var cats = $('#catsinput').val();
 
     if (cats == "undefined" || cats.length == 0) {
