@@ -356,7 +356,7 @@ function create() {
     if ($("#ishidden").is(":checked")) {
         ishidden = "1";
     } 
-    resinfo = $('#infoinput').val().replace(/"/g, "");
+    var resinfo = $('#infoinput').val().replace(/"/g, "");
     resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "").trim();
 
     var cats = $('#catsinput').val();
@@ -438,7 +438,7 @@ function create() {
         countalltweets();
     }
     else {
-        getLinkDescriptionAndCreate();
+        getLinkDescriptionAndCreate(creationdate, cats, tags, resinfo, classif);
     }
 }
 
@@ -446,7 +446,7 @@ function create() {
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
-var getLinkDescriptionAndCreate = function() 
+var getLinkDescriptionAndCreate = function(creationdate, cats, tags, resinfo, classif) 
 {
     if (addType == "Y") {
         getYoutubeData()
@@ -457,20 +457,20 @@ var getLinkDescriptionAndCreate = function()
 
     dblFlag = true;
     dblClickTimeout = setTimeout(function() {     
-        createLinkAfterDescription();
+        createLinkAfterDescription(creationdate, cats, tags, resinfo, classif);
         dblFlag = false;  
     }, 5500);
 
 } 
 
-function createLinkAfterDescription() {       
+function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) {       
     if (addType == "Y") {
         text = text + "<div class='bottomstrip'><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line1'>" + resinfo + "</span><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line2'>" + urldirect + "</span></div>\""; 
-        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + urldirect  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
+        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + urldirect  + "\",\r\n\"ishidden\": \"0\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
     }
     else {
         text = text + "<div class='bottomstrip'><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line1'>" + resinfo + "</span><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line2'>" + url + "</span></div>\""; 
-        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
+        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"0\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
     }
 
     var result = $('#result').val();
@@ -502,7 +502,7 @@ function createLinkAfterDescription() {
     countalltweets();
 }
 
-function getYoutubeData() {
+function getYoutubeData(creationdate, cats, tags, resinfo, classif) {
     $.ajax({
         url: "https://cors-anywhere.herokuapp.com/https://youtube.com/get_video_info?video_id=" + youtubeId,
         success: function (data, status, xhr) {// success callback function
@@ -532,13 +532,13 @@ function getYoutubeData() {
                 clearTimeout(dblClickTimeout);
                 console.log("created youtube link in getYoutubeData");
 
-                createLinkAfterDescription();
+                createLinkAfterDescription(creationdate, cats, tags, resinfo, classif);
             }
         }
     });
 }
 
-function getWebsiteData() {
+function getWebsiteData(creationdate, cats, tags, resinfo, classif) {
 
     $.ajax({
         url: 'https://cors-anywhere.herokuapp.com/' + url
@@ -555,7 +555,7 @@ function getWebsiteData() {
         if (dblFlag) {
             clearTimeout(dblClickTimeout);
             console.log("created html link in getWebsiteData")
-            createLinkAfterDescription();
+            createLinkAfterDescription(creationdate, cats, tags, resinfo, classif);
         }
 
       });
