@@ -88,7 +88,7 @@ function hasOverflow(obj) {
 
 
 
-function getWebsiteData(url) {
+function getWebsiteData2(url) {
 
     $.ajax({
         url: 'https://cors-anywhere.herokuapp.com/' + url
@@ -141,7 +141,7 @@ $( document ).ready(function() {
 
     //hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
 
-    getWebsiteData('https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy')
+    getWebsiteData2('https://www.codementor.io/blog/senior-developer-interview-questions-6on7cl3reg#senior-software-engineer-interview-questions')
 
     isMobile = window.mobileAndTabletCheck();
 
