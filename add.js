@@ -473,12 +473,13 @@ var getLinkDescriptionAndCreate = function(creationdate, cats, tags, resinfo, cl
 } 
 
 function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) {       
-    console.log('-------FFFFFFF-----' + resinfo)
+    console.log('-------FFFFFFF urldirect-----' + urldirect)
 
     resinfo = resinfo.replace(/"/g, "");
     resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "").trim();
 
-    console.log('-------GGGGGG-----' + resinfo)
+    console.log('-------GGGGGG--addType---' + addType)
+    console.log('-------GGGGGG--text---' + text)
 
 
     if (addType == "Y") {
