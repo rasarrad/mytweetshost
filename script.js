@@ -821,7 +821,7 @@ $( document ).ready(function() {
  
     // xyz startcode
     
-    clickmenu('all');
+    //clickmenu('all');
 
     //closeSplash(); 
 
@@ -1035,7 +1035,7 @@ window.openLinkInside = function(id) {
 
         var url = generateUrl($("#" + id).attr("curl"))
 
-        //$("#fsPopup iframe").attr("src", url);
+        $("#fsPopup iframe").attr("src", url);
         $("#fsPopup").fadeIn(1600);
         console.log(111111111);
         dblFlag = true;  
@@ -1077,8 +1077,8 @@ function iframeFSloadFunc(obj) {
 
     if (dblFlag) {
         //$(obj).attr("cerror", "yes");
-        //$("#fsPopup").fadeOut(200);
-        //window.open($(obj).attr("src"), '_blank');
+        $("#fsPopup").fadeOut(200);
+        window.open($(obj).attr("src"), '_blank');
     }
 } 
 
@@ -1297,8 +1297,6 @@ function handleFileSelectDragDrop(evt) {
 
 function getTouches(evt) {
   currObjSwipe = getParentObjId($(event.target));
-
-  console.log(currObjSwipe)
   return evt.touches ||             // browser API
          evt.originalEvent.touches; // jQuery
 }                                                     
@@ -1321,18 +1319,18 @@ function handleTouchEnd(evt) {
     if (useSwipes && dblFlag && lastTouch) {                       
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
             if ( xDiff > 0 ) {
-                console.log("left: " + currObjSwipe);
+                //console.log("left: " + currObjSwipe);
                 executeSwipeFunction(currObjSwipe, "left");
             } else {
-                console.log("right: " + currObjSwipe);
+                //console.log("right: " + currObjSwipe);
                 executeSwipeFunction(currObjSwipe, "right");
             }                       
         } else {
             if ( yDiff > 0 ) {
-                console.log("up: " + currObjSwipe);
+                //console.log("up: " + currObjSwipe);
                 executeSwipeFunction(currObjSwipe, "up");
             } else {
-                console.log("down: " + currObjSwipe);
+                //console.log("down: " + currObjSwipe);
                 executeSwipeFunction(currObjSwipe, "down");
             }                                                                 
         }
@@ -1354,9 +1352,6 @@ function executeSwipeFunction(obj, type) {
             break;
         case "helppop":
             processHelpDivFuncs(type);
-            break;
-        case "fsiframe":
-            processFSPopupFuncs(type);
             break;
         case "mainmenu":
             processMainmenuFuncs(type);
@@ -1389,30 +1384,6 @@ function processHelpDivFuncs(type) {
     closeHelpPopup();
     console.log("help all-----------------------------------------------");
 } 
-
-function processFSPopupFuncs(type) {
-    switch(type) {
-        case "up":
-            externallinkCopyPre()
-            console.log("FSPopup up-----------------------------------------------");
-            break;
-
-        case "down":
-            closeFSPopup()
-            console.log("FSPopup down-----------------------------------------------");
-            break;
-        case "left":
-            externallinkCopyPre()
-            expandCatPre()
-            console.log("FSPopup left-----------------------------------------------");
-            break;
-
-        case "right":
-            externallinkopenPre();
-            console.log("FSPopup right-----------------------------------------------");
-            break;
-    }
-}  
 
 function processLinkChangeFuncs(type) {
     switch(type) {
