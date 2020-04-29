@@ -1925,11 +1925,13 @@ function externallinkopen(obj, link) {
     if (obj)
         fixfocus(obj);
 
-    $('#linkresult').val(link);
-    $("#linkresult").select();
-    document.execCommand('copy');
-    $("#linkresult").blur();
-    var win = window.open(link, '_blank');
+    var linkToOpen = ""; 
+    if (link)
+        linkToOpen = link;
+    else
+        linkToOpen = $('#linkChange').attr('clink');
+
+    var win = window.open(linkToOpen, '_blank');
     win.focus();
     //showMessage("External Link Copied To Clipboard"); 
 }
