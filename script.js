@@ -1340,7 +1340,7 @@ function handleTouchEnd(evt) {
     xDown = null;
     yDown = null;   
     lastTouch = null;   
-                              
+    $('body, html').css('overflow', 'auto');                       
 }; 
 
 
