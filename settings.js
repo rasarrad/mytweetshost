@@ -573,6 +573,7 @@ var openMainSettingsPopup = function(jsonobj)
     else {
         value = "No";
     }
+    alert(value)
     $("#swipedisplay").text(value);
     
     $('#swipeul').find(".litags").each( function( index, element ) {
