@@ -1962,6 +1962,7 @@ var clickmenu = function(val) {
     resetFields();
 
     $('#selectedcat').val(val);
+    alert(catsmap.get(val));
     $('#selectedcattext').val(catsmap.get(val));
 
     if ($('#mainmenu').attr("fromsearch") == "yes") {
