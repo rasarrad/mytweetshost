@@ -1297,6 +1297,8 @@ function handleFileSelectDragDrop(evt) {
 
 function getTouches(evt) {
   currObjSwipe = getParentObjId($(event.target));
+
+  console.log(currObj)
   return evt.touches ||             // browser API
          evt.originalEvent.touches; // jQuery
 }                                                     
