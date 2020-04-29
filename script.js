@@ -4,7 +4,7 @@ var nextid = "";
 var currentIndex = 0;
 var currpage = 0;
 var dosearchmore = true;
-var youtubeId = "";
+var youtubeId = "";var youtubeId = "";
 var hasProcessedDescription = false;
 var url = "";
 var urldirect = "";
