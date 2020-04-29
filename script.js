@@ -1024,16 +1024,21 @@ window.openLinkInside = function(id) {
     //}
     //else {
         //$("#fsPopup iframe").attr("cerror", "");
+        var obj = $("#" + id);
+
+        if (!obj.hasClass("yt") && !obj.hasClass("html"))
+            return false;
+
         $('body, html').css('overflow-y', 'hidden');
 
         $("#fsPopup iframe").attr("cid", id);
 
-        if ($("#" + id).hasClass("yt"))
+        if (obj.hasClass("yt"))
             $("#fsPopup").addClass("yt");
         else
             $("#fsPopup").removeClass("yt");
 
-        var url = generateUrl($("#" + id).attr("curl"))
+        var url = generateUrl(obj.attr("curl"))
 
         $("#fsPopup iframe").attr("src", url);
         $("#fsPopup").fadeIn(1600);
