@@ -19,8 +19,9 @@ function parseTweet(type) {
         }
     }
 
-    setTimeout(function(){
+    setTimeout(function() {
         $('#tweetid').val(nextid);
+        var youtubeId = "";
 
         text = $('#tweet').val();
 
@@ -97,12 +98,12 @@ function parseTweet(type) {
 
             url = text.substring(text.indexOf('https://www.youtube'), text.indexOf('frameborder') - 2); 
             
-            var code = text.substring(text.indexOf('embed') + 6, text.indexOf('frameborder') - 2);
+            youtubeId = text.substring(text.indexOf('embed') + 6, text.indexOf('frameborder') - 2);
 
-            urldirect = "https://www.youtube.com/watch?v=" + code; 
+            urldirect = "https://www.youtube.com/watch?v=" + youtubeId; 
 
             text = "\"<div class='contentin' style='background: url(https://img.youtube.com/vi/" 
-                    + code  + "/0.jpg); background-size: 100%;'></div>\""; 
+                    + youtubeId  + "/0.jpg); background-size: 100%;'></div>\""; 
 
             var functorun = function() 
             { 
@@ -154,15 +155,15 @@ function parseTweet(type) {
             
             urldirect = text; 
             
-            var urltemp = text.substring(text.indexOf('watch?v=') + 8);
+            youtubeId = text.substring(text.indexOf('watch?v=') + 8);
 
-            if (urltemp.indexOf("&t=") > 0) {
-                urltemp = urltemp.replace("&t=","?start=");
-                urltemp = urltemp.substring(0, urltemp.length -1);
+            if (youtubeId.indexOf("&t=") > 0) {
+                youtubeId = youtubeId.replace("&t=","?start=");
+                youtubeId = youtubeId.substring(0, youtubeId.length -1);
             }
             
             text = "\"<div class='contentin' style='background: url(https://img.youtube.com/vi/" 
-                    + urltemp  + "/0.jpg); background-size: 100%;'></div>\""; 
+                    + youtubeId  + "/0.jpg); background-size: 100%;'></div>\""; 
 
             var functorun = function() 
             { 
@@ -375,24 +376,6 @@ function create() {
             
     var creationdate = formatNumDate(date);
 
-    if (addType == "T") {
-        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
-    }
-    else if (addType == "Y") {
-        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + urldirect  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
-    }
-    else {
-        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
-    }
-
-    var result = $('#result').val();
-    
-    $('#linkresult').val(result);
-    $("#linkresult").select();
-
-    document.execCommand('copy');
-
-    $("#linkresult").blur();
 
     //resetFieldsPopup();
 
@@ -405,12 +388,91 @@ function create() {
         showMessage("New Link Created And Copied To Clipboard");
         $('.addpopup').fadeOut(2000);
     }        */
-    showMessage("New Link Created And Copied To Clipboard");
-    closeSettingsPopup();
+
     
     //if ($("#preview").is(":checked")) {
-        
+    
     eraseLinkTmpData(nextid, true);
+    showMessage("New Link Created And Copied To Clipboard");
+    closeSettingsPopup();
+
+    if (addType == "T") {
+
+        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
+    
+        var result = $('#result').val();
+        
+        $('#linkresult').val(result);
+        $("#linkresult").select();
+    
+        document.execCommand('copy');
+    
+        $("#linkresult").blur();
+
+        var mlink = encodeURIComponent(JSON.stringify(result));
+    
+        createCookie(nextid + "templink", mlink, 99999);
+        createCookie("haschanges", "yes");
+    
+    
+        if (showColorsAdv) {
+            $("#generateicon").addClass("haschanges");
+            if (showColors) {
+                $("#settings").addClass("haschanges");
+            }
+        }  
+    
+        //} 
+        createCookie("maxid", nextid + 1);
+    
+        resetFields(false);
+        countalltweets();
+    }
+    else {
+        
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+var getLinkDescriptionAndCreate = function() 
+{
+    if (addType == "Y") {
+        getYoutubeData()
+    }
+    else {
+        getWebsiteData()
+    }
+
+    dblFlag = true;
+    dblClickTimeout = setTimeout(function() {     
+        createLinkAfterDescription();
+        dblFlag = false;  
+    }, 5500);
+
+} 
+
+function createLinkAfterDescription() {
+    text = "\"<div class='contentin' style='background: url(https://img.youtube.com/vi/" 
+                    + youtubeId  + "/0.jpg); background-size: 100%;'></div>\""; 
+                    
+    if (addType == "Y") {
+        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + urldirect  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
+    }
+    else {
+        $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
+    }
+
+    var result = $('#result').val();
+        
+    $('#linkresult').val(result);
+    $("#linkresult").select();
+
+    document.execCommand('copy');
+
+    $("#linkresult").blur();
 
     var mlink = encodeURIComponent(JSON.stringify(result));
     
@@ -430,13 +492,66 @@ function create() {
 
     resetFields(false);
     countalltweets();
-
 }
 
+function getYoutubeData(videoId) {
+    $.ajax({
+        url: "https://cors-anywhere.herokuapp.com/https://youtube.com/get_video_info?video_id=" + youtubeId,
+        success: function (data, status, xhr) {// success callback function
+            var result = decodeURIComponent(data); 
+            //console.log('---------------YOUTUBE ' + videoId + ' ----------------');
+            //console.log("Titulo: " + result.substring(result.indexOf(",\"title\":\"") + 10, result.indexOf("\",\"lengthSeconds\"")).replace(/\+/g, ' '))
+            //console.log(result.substring(result.indexOf("\",\"lengthSeconds\":\"") + 19, result.indexOf("\",\"keywords\":")).replace(/\+/g, ' '));
 
-/////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
+            let totalSeconds = parseInt(result.substring(result.indexOf("\",\"lengthSeconds\":\"") + 19, result.indexOf("\",\"keywords\":")).replace(/\+/g, ' '));
+            let hours = Math.floor(totalSeconds / 3600);
+            totalSeconds %= 3600;
+            let minutes = Math.floor(totalSeconds / 60);
+            let seconds = totalSeconds % 60;
 
+            minutes = String(minutes).padStart(2, "0");
+            hours = String(hours).padStart(2, "0");
+            seconds = String(seconds).padStart(2, "0");
+            
+            // checar se há horas e minutos
+            //console.log("Time: " + hours + ":" + minutes + ":" + seconds);
+
+            resinfo = resinfo + " " + (hours != "00" ? hours : "") + minutes + seconds + " - " + result.substring(result.indexOf(",\"title\":\"") + 10, result.indexOf("\",\"lengthSeconds\"")).replace(/\+/g, ' ');
+            
+            if (dblFlag) {
+                clearTimeout(dblClickTimeout);
+                console.log("created youtube link in getYoutubeData");
+
+                <div class='bottomstrip'><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line1'>aaaaaaaaaaa aaaaaaaaaaa aaaaa aaaaaaaaaaa aaaaaaaaaaa aaaaa aaaaaaaaaaa aaaaaaaaaaa aaaaa</span><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line2'>bbbb bbbbbbbb bbb</span></div>
+
+                createLinkAfterDescription();
+            }
+        }
+    });
+}
+
+function getWebsiteData() {
+
+    $.ajax({
+        url: 'https://cors-anywhere.herokuapp.com/' + url
+      }).then(function(data) {
+        //console.log('---------------WEBSITE ' + url + ' ----------------');
+        // titulo - checar se é vazia         
+        //console.log("Titulo: " + data.substring(data.indexOf("<title>") + 7, data.indexOf("</title>")));
+        var html = $(data);
+        // descricao - checar se é vazia
+        //console.log("Descricao: " + getMetaContent(html, 'description') );
+        resinfo = resinfo + " " + data.substring(data.indexOf("<title>") + 7, data.indexOf("</title>")) + " " + getMetaContent(html, 'description')
+
+        if (dblFlag) {
+            clearTimeout(dblClickTimeout);
+            console.log("created html link in getWebsiteData")
+            createLinkAfterDescription();
+        }
+
+      });
+
+}
 
 var openCreatePopup = function(flag) 
 {
