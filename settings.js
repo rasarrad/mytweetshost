@@ -564,31 +564,14 @@ var openMainSettingsPopup = function(jsonobj)
     });
 
 
-    // Use swipes
+    // Use help
     value = null;
-
-    if (useSwipes) {
-        value = "Yes";
-    }
-    else {
-        value = "No";
-    }
-    alert(value)
-    $("#swipedisplay").text(value);
-    
-    $('#swipeul').find(".litags").each( function( index, element ) {
-        if($(element).html().trim() == value) {
-            $(element).addClass("selectedtag");
-        }
-        else {
-            $(element).removeClass("selectedtag");
-        }
-    });
 
     value = readCookie("help");
     value = value == "" ? "Yes" : "No";
-    $("#helpdisplay").text(value);
 
+    $("#helpdisplay").text(value);
+    
     $('#helpul').find(".litags").each( function( index, element ) {
         if($(element).html().trim() == value) {
             $(element).addClass("selectedtag");
@@ -597,13 +580,21 @@ var openMainSettingsPopup = function(jsonobj)
             $(element).removeClass("selectedtag");
         }
     });
-    
 
-    var value = readCookie("help");
-    if (value && value.length > 0) {
+    if (value == "No") {
         $( ".fa-question-circle:not(.ashow)" ).each( function( index, element ){
             $(element).css("display", "none");
         });
+    }
+
+    // Use swipes
+    value = null;
+
+    if (useSwipes) {
+        value = "Yes";
+    }
+    else {
+        value = "No";
     }
 
     $("#swipedisplay").text(value);
