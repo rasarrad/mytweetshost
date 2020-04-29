@@ -99,7 +99,7 @@ function getWebsiteData2(url) {
         
         var title = data.substring(data.indexOf("<title") + 7, data.indexOf("</title>"));
         console.log("Titulo111: " + title);
-        title = title.substring(data.indexOf(">") + 1, data.indexOf("</title>"));
+        title = title.substring(title.indexOf(">") + 1, data.indexOf("</title>"));
         console.log("Titulo: " + title);
         var html = $(data);
         // descricao - checar se é vazia
