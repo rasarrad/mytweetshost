@@ -94,13 +94,16 @@ function getWebsiteData2(url) {
         url: 'https://cors-anywhere.herokuapp.com/' + url
       }).then(function(data) {
         console.log('---------------WEBSITE ' + url + ' ----------------');
-        // titulo - checar se é vazia         
-        console.log("Titulo: " + data.substring(data.indexOf("<title>") + 7, data.indexOf("</title>")));
+        // titulo - checar se é vazia
+        
+        
+        var title = data.substring(data.indexOf("<title") + 7, data.indexOf("</title>"));
+
+        title = title.substring(data.indexOf(">") + 1, data.indexOf("</title>"));
+        console.log("Titulo: " + title);
         var html = $(data);
         // descricao - checar se é vazia
         console.log("Descricao: " + getMetaContent(html, 'description') );
-
-        console.log(data)
 
       });
 
