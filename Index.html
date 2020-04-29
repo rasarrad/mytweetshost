@@ -99,6 +99,63 @@ bookmarks <span>
 </div>
 <div style="cursor: pointer;transition: all 0.8s ease 0s;position: fixed;width: 100%;height: 100%;top: 0px;left: 0px;z-index: 99999;background: rgba(0, 0, 0, 0.81);opacity: 1;display: none;" id="moretweets"><i class="fa fa-circle-o-notch fa-spin" style="font-size: 40px;top: calc(100% - 68px);"></i></div>
 
+<div class="addpopup" id="addpopup" style="display: none;">
+  <i id="closepopup" class="fa fa-remove"></i>
+  <i class="fa fa-gavel"></i>
+  <i class="fa fa-remove"></i>
+    <span style="margin-left: auto;margin-right: auto;width: 100%;display: block;text-align: center;font-size: 20px; height: 32px; padding-top: 3px;">Add new</span>
+    Link <input style="width: 45px;" type="text">
+    Date <input style="width: 61px;" type="text">
+    Id <input style="display: inline; width: 28px;" id="tweetid" type="text"> 
+    Posted by <input type="text" style="display: inline;text-overflow: clip;width: 246px;"></input>
+    <div style="display: inline;position: absolute;right: 172px;">
+      <i id="typeTT" class="fa fa-twitter-square" style="font-size: 28px;position: absolute;left: 20px; top: -19px; border: 2px solid white; padding: 2px 4px; border-radius: 4px;"></i>
+      <i id="typeYY" class="fa fa-youtube-square" style=" font-size: 28px; position: absolute; left: 62px;top: -19px; border: 2px solid white; padding: 2px 4px; border-radius: 4px;"></i>
+      <i id="typeHH" class="fa fa-internet-explorer" style="font-size: 28px; position: absolute;left: 103px;top: -19px; border: 2px solid white; padding: 2px; border-radius: 4px;"></i>
+    </div>
+
+    <br><br>
+    Categories 
+    <!--
+<div style="float: right;position: absolute;right: 457px;top: 66px;height: 19px;width: 78px;color: #0082cd;font-size: 11px;font-weight: bold;">View Now</div>
+<input type="checkbox" style="float: right;position: absolute;right: 489px;top: 78px;height: 19px;width: 33px;color: #0082cd;background: #0082cd;border: 1px solid #0082cd;" onclick="javascript: clickCheckCat(this, 'tvn')" id="cattvn">
+<div style="float: right;position: absolute;right: 395px;top: 66px;height: 19px;width: 78px;color: #0082cd;font-size: 11px;font-weight: bold;">Trend</div>
+<input type="checkbox" style="float: right;position: absolute;right: 436px;top: 78px;height: 19px;width: 33px;color: #0082cd;background: #0082cd;border: 1px solid #0082cd;" id="cattrn" onclick="javascript: clickCheckCat(this, 'trn')">
+<div style="float: right;position: absolute;right: 350px;top: 66px;height: 19px;width: 78px;color: #0082cd;font-size: 11px;font-weight: bold;">View</div>
+<input type="checkbox" style="float: right;position: absolute;right: 396px;top: 78px;height: 19px;width: 33px;color: #0082cd;background: #0082cd;border: 1px solid #0082cd;" id="cattvi" onclick="javascript: clickCheckCat(this, 'tvi')">
+<div style="float: right;position: absolute;right: 314px;top: 66px;height: 19px;width: 78px;color: #0082cd;font-size: 11px;font-weight: bold;">View Long</div>
+<input type="checkbox" style="float: right;position: absolute;right: 346px;top: 78px;height: 19px;width: 33px;color: #0082cd;background: #0082cd;border: 1px solid #0082cd;" id="cattvl" onclick="javascript: clickCheckCat(this, 'tvl')">
+<div style="float: right;position: absolute;right: 248px;top: 66px;height: 19px;width: 78px;color: #0082cd;font-size: 11px;font-weight: bold;">Read</div>
+<input type="checkbox" style="float: right;position: absolute;right: 293px;top: 78px;height: 19px;width: 33px;color: #0082cd;background: #0082cd;border: 1px solid #0082cd;" id="cattre" onclick="javascript: clickCheckCat(this, 'tre')">
+<div style="float: right;position: absolute;right: 206px;top: 66px;height: 19px;width: 78px;color: #0082cd;font-size: 11px;font-weight: bold;">Read Long</div>
+<input type="checkbox" style="float: right;position: absolute;right: 234px;top: 78px;height: 19px;width: 33px;color: #0082cd;background: #0082cd;border: 1px solid #0082cd;" id="cattrl" onclick="javascript: clickCheckCat(this, 'trl')">
+<div style="float: right;position: absolute;right: 139px;top: 66px;height: 19px;width: 78px;color: #0082cd;font-size: 11px;font-weight: bold;">Keep</div>
+<input type="checkbox" style="float: right;position: absolute;right: 184px;top: 78px;height: 19px;width: 33px;color: #0082cd;background: #0082cd;border: 1px solid #0082cd;" id="cattke" onclick="javascript: clickCheckCat(this, 'tke')">
+<div style="float: right;position: absolute;right: 99px;top: 66px;height: 19px;width: 78px;color: #0082cd;font-size: 11px;font-weight: bold;">Impor</div>
+<input type="checkbox" style="float: right;position: absolute;right: 141px;top: 78px;height: 19px;width: 33px;color: #0082cd;background: #0082cd;border: 1px solid #0082cd;" id="catimp" onclick="javascript: clickCheckCat(this, 'imp')">
+<div style="float: right;position: absolute;right: 56px;top: 66px;height: 19px;width: 78px;color: #0082cd;font-size: 11px;font-weight: bold;">Clima</div>
+<input type="checkbox" style="float: right;position: absolute;right: 98px;top: 78px;height: 19px;width: 33px;color: #0082cd;background: #0082cd;border: 1px solid #0082cd;" id="catcli" onclick="javascript: clickCheckCat(this, 'cli')">--><input style="width: 155px;margin-right: 455px;" type="text">Class <input style="width: 13px;" value="0" type="text">
+
+    <br><br>
+    Tags <input style="width: 172px;padding-left: 469px;" id="tags" type="text">
+    <div style="position: relative;height: 36px;width: 486px;display: grid;background: white;top: -26px;padding-right: 20px;">
+        <ul id="tagsulxxx" style="width: 532px;background: white;height: 253px;max-width: 490px;padding-left: 3px;padding-top: 3px;border: 2px solid #006ba9;overflow-y: auto;z-index: 99;display: block;margin-top: 6px;margin-bottom: 0;">
+
+        </ul>
+    </div>
+
+    <select style="width: 96px;float: right;position: absolute;right: 14px;top: 109px;height: 19px;" id="tagsselectxxxx"></select><br><br>
+    <span style="margin-left: auto;margin-right: auto;width: 100%;display: block;font-size: 16px;height: 32px;padding-top: 3px;text-align: left;position: relative;top: 241px;">Result</span>
+    <div style="float: right;position: absolute;right: 460px;top: 150px;height: 19px;width: 163px;color: #0082cd;">Preview And Include</div>
+    <input type="checkbox" style="float: right;position: absolute;right: 389px;top: 148px;height: 19px;width: 112px;color: #484848;" id="preview" checked="checked">
+    <div style="float: right;position: absolute;right: 337px;top: 150px;height: 19px;width: 78px;color: #0082cd;">Is secret</div><input type="checkbox" style="float: right;position: absolute;right: 308px;top: 148px;height: 19px;width: 33px;color: #0082cd;background: #0082cd;border: 1px solid #0082cd;" id="ishidden">
+    <div style="float: right;position: absolute;right: 178px;top: 150px;height: 19px;width: 112px;color: #0082cd;">Add one more</div><input type="checkbox" style="float: right;position: absolute;right: 106px;top: 148px;height: 19px;width: 112px;color: #484848;" id="onemore" checked="">
+    <button style="cursor: pointer;float: right;position: absolute;right: 11px;top: 146px;height: 28px;width: 112px;font-size: 16px;" id="create">Create</button>
+    <textarea style="width: 282px;height: 161px;color: white;font-weight: bold;background: #007cc391;border: 1px solid #007dc5;padding-left: 4px;padding-right: 4px;position: relative;font-size: 15px;top: -35px;left: 506px;" id="info" type="text"></textarea>
+    <textarea style="width: 784px;height: 67px;margin-top: 23px;border: 1px solid #00629a;color: white;font-weight: bold;background: #007cc391;border: 1px solid #007dc5;padding-left: 4px;padding-right: 4px;" id="result" type="text"></textarea>
+    <span style="right: 203px;width: 100%;display: block;font-size: 17px;height: 32px;padding-top: 3px;text-align: right;position: relative;top: -333px;">Extra info</span>
+</div>
+
 <!-- <div id="mask" style="position: fixed;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.81);top: 0px;z-index: 99999;display: none;"><i class="fa fa-circle-o-notch fa-spin"></i></div>
 -->
 

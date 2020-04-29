@@ -403,6 +403,12 @@ $( document ).ready(function() {
     });*/
 
     ///////////////////////////////////////
+    
+    $( "#create" ).bind( "click", function( event ) {
+        create();      
+    });
+
+    ///////////////////////////////////////
 
     $(window).scroll(function (event) {
         var scroll = $(window).scrollTop();
