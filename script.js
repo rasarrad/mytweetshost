@@ -1312,6 +1312,7 @@ function handleTouchStart(evt) {
         dblFlag = true; 
         dblClickTimeout = setTimeout(function() {    
             dblFlag = false;  
+            $('body, html').css('overflow', 'auto');    
       }, 90);
     }, 10);                
 };                                                
@@ -1336,11 +1337,13 @@ function handleTouchEnd(evt) {
             }                                                                 
         }
     }  
+    else {
+        $('body, html').css('overflow', 'auto');    
+    }
     dblFlag = false;
     xDown = null;
     yDown = null;   
-    lastTouch = null;   
-    $('body, html').css('overflow', 'auto');                       
+    lastTouch = null;                      
 }; 
 
 
