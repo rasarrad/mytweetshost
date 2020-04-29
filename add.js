@@ -568,10 +568,8 @@ function getWebsiteData(creationdate, cats, tags, resinfo, classif) {
         var html = $(data);
         var title = data.substring(data.indexOf("<title") + 7, data.indexOf("</title>"));
         title = title.substring(title.indexOf(">") + 1, data.indexOf("</title>"));
-
-        if (resinfo != "")
-            resinfo = resinfo + ""; 
-        resinfo = resinfo + title + " - " + getMetaContent(html, 'description');
+ 
+        resinfo = title + " - " + getMetaContent(html, 'description');
         $("#infoinput").val(resinfo);
 
         if (dblFlag) {
