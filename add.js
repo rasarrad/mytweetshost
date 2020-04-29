@@ -157,7 +157,7 @@ function parseTweet(type) {
             url = text; 
             
             urldirect = text; 
-            console.log("1111 " + urldirect);
+            
             youtubeId = text.substring(text.indexOf('watch?v=') + 8);
 
             if (youtubeId.indexOf("&t=") > 0) {
@@ -405,6 +405,8 @@ function create() {
     showMessage("New Link Created And Copied To Clipboard");
     closeSettingsPopup();
 
+    console.log('-------AAAAAA-----')
+
     if (hasProcessedDescription || addType == "T") {
 
         $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
@@ -441,6 +443,7 @@ function create() {
         countalltweets();
     }
     else {
+        console.log('-------BBBBBB-----')
         getLinkDescriptionAndCreate(creationdate, cats, tags, resinfo, classif);
     }
 }
@@ -451,6 +454,9 @@ function create() {
 
 var getLinkDescriptionAndCreate = function(creationdate, cats, tags, resinfo, classif) 
 {
+
+    console.log('-------CCCCCC-----' + resinfo)
+
     if (addType == "Y") {
         getYoutubeData()
     }
@@ -467,9 +473,14 @@ var getLinkDescriptionAndCreate = function(creationdate, cats, tags, resinfo, cl
 } 
 
 function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) {       
+    console.log('-------FFFFFFF-----' + resinfo)
+
     resinfo = resinfo.replace(/"/g, "");
     resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "").trim();
-    console.log("2222 " + urldirect);
+
+    console.log('-------GGGGGG-----' + resinfo)
+
+
     if (addType == "Y") {
         text = text + "<div class='bottomstrip'><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line1'>" + resinfo + "</span><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line2'>" + urldirect + "</span></div>\""; 
         $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + urldirect  + "\",\r\n\"ishidden\": \"0\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
@@ -534,6 +545,10 @@ function getYoutubeData(creationdate, cats, tags, resinfo, classif) {
 
             resinfo = resinfo + " " + (hours != "00" ? hours : "") + minutes + seconds + " - " + result.substring(result.indexOf(",\"title\":\"") + 10, result.indexOf("\",\"lengthSeconds\"")).replace(/\+/g, ' ');
             
+            
+            console.log('-------DDDDDD-----' + resinfo)
+
+
             $("#infoinput").val(resinfo);
 
             if (dblFlag) {
