@@ -356,7 +356,7 @@ function create() {
     if ($("#ishidden").is(":checked")) {
         ishidden = "1";
     } 
-    var resinfo = $('#infoinput').val().replace(/"/g, "");
+    resinfo = $('#infoinput').val().replace(/"/g, "");
     resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "").trim();
 
     var cats = $('#catsinput').val();
