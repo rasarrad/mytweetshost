@@ -531,8 +531,6 @@ function getYoutubeData(creationdate, cats, tags, resinfo, classif) {
             hours = String(hours);
             seconds = String(seconds).padStart(2, "0");
             
-            console.log('-------DDDDDD-----hours ' + hours)
-
             let resf = ""
             if (hours != "0")
                 resf = hours + ":";
@@ -540,8 +538,6 @@ function getYoutubeData(creationdate, cats, tags, resinfo, classif) {
             resf = resf + minutes + ":" + seconds;
             // checar se há horas e minutos
             //console.log("Time: " + hours + ":" + minutes + ":" + seconds);
-
-            console.log('-------DDDDDD-----resf ' + resf)
 
             resinfo = resinfo + resf + "s - " + result.substring(result.indexOf(",\"title\":\"") + 10, result.indexOf("\",\"lengthSeconds\"")).replace(/\+/g, ' ');
 
@@ -558,12 +554,17 @@ function getYoutubeData(creationdate, cats, tags, resinfo, classif) {
 
 function getWebsiteData(creationdate, cats, tags, resinfo, classif) {
 
+    console.log('-------DDDDDD-----url ' + url)
     $.ajax({
         url: 'https://cors-anywhere.herokuapp.com/' + url
       }).then(function(data) {
         // titulo - checar se é vazia         
         //console.log("Titulo: " + data.substring(data.indexOf("<title>") + 7, data.indexOf("</title>")));
         var html = $(data);
+
+        console.log('-------DDDDDD-----title ' + data.substring(data.indexOf("<title>") + 7, data.indexOf("</title>")))
+
+        console.log('-------DDDDDD-----description ' + getMetaContent(html, 'description'))
         // descricao - checar se é vazia
         //console.log("Descricao: " + getMetaContent(html, 'description') );
         resinfo = resinfo + " " + data.substring(data.indexOf("<title>") + 7, data.indexOf("</title>")) + " " + getMetaContent(html, 'description')
