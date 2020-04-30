@@ -1310,8 +1310,6 @@ var datet = null;
 function handleTouchStart(evt) {
     datet = new Date();
     console.log("------------------------------------");
-    console.log("touchstart");
-
 
     //$('body, html').css('overflow', 'hidden');
     const firstTouch = getTouches(evt)[0];                                      
@@ -1375,8 +1373,12 @@ function handleTouchEnd(evt) {
         }      
     }
     else {
-        console.log(datet.getTime() + "-" + new Date().getTime());
-        console.log("single click: " + currObjSwipe);
+        if (new Date().getTime() - datet.getTime() > 300) {
+            console.log("DOUBLE click: " + currObjSwipe);
+        }
+        else {
+            console.log("single click: " + currObjSwipe);
+        }
     }
     singleClick = true;
     dblFlag = false;
