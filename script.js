@@ -1305,11 +1305,12 @@ function getTouches(evt) {
 
 //var allowScroll = false;
 var singleClick = true;
+var datet = null;
 
 function handleTouchStart(evt) {
+    datet = new Date();
     console.log("------------------------------------");
     console.log("touchstart");
-    console.log(evt.touches[0]);
 
 
     //$('body, html').css('overflow', 'hidden');
@@ -1351,13 +1352,8 @@ function handleTouchMove(evt) {
 };
 
 function handleTouchEnd(evt) {
-    console.log("TouchEnd lastTouch");
-    console.log(lastTouch);
-    console.log("handleTouchEnd: " + singleClick);
-    if (singleClick) {
-        console.log("single click: " + currObjSwipe);
-    }
-    else {
+
+    if (lastTouch) {
         if (useSwipes && dblFlag && lastTouch) {                       
             if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
                 if ( xDiff > 0 ) {
@@ -1377,6 +1373,10 @@ function handleTouchEnd(evt) {
                 }                                                                 
             }
         }      
+    }
+    else {
+        console.log(datet + "-" + new Date());
+        console.log("single click: " + currObjSwipe);
     }
     singleClick = true;
     dblFlag = false;
