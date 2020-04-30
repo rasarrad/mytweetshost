@@ -2306,7 +2306,7 @@ function getTooltipPosition(pageX) {
     size = window.innerWidth - pageX - size;
 
     if (size < 0)
-        pageX = pageX + size - 120;
+        pageX = pageX + size - 40;
 
     return pageX;
 }
