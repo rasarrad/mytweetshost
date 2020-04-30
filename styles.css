@@ -27,7 +27,9 @@
 
 
 
-
+#tooltip {
+  max-width: 500px;
+}
 
 #searchpopup .fa-external-link-square {
   
@@ -1630,6 +1632,11 @@ body.big .bottomstrip {
         width: 605px;
         height: 480px;
     }
+
+    #tooltip {
+      max-width: 387px;
+    }
+
     .tweet.html div.contentin {
         transform: translate(-50%, 0px);
         top: auto !important;
@@ -2589,6 +2596,11 @@ body.big #splash.newLayout table:nth-of-type(4) {
         margin-top: 6px;
         width: 100%;
     }
+    
+    #tooltip {
+      max-width: 251px;
+    }
+
      body.big .tweet.yt div.contentin {
           transform: translate(-50%, -50%);
           top: calc(50% + 0px) !important;

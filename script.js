@@ -2312,7 +2312,7 @@ function getTooltipPosition(pageX) {
 }
 
 function closeTooltip() {
-    tooltip.fadeOut(700);
+    $("#tooltip").fadeOut(700);
 }
 
 function hasOverflow(obj) {
