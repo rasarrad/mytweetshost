@@ -1373,11 +1373,14 @@ function handleTouchEnd(evt) {
         }      
     }
     else {
-        if (new Date().getTime() - datet.getTime() > 300) {
-            console.log("DOUBLE click: " + currObjSwipe);
+        if (new Date().getTime() - datet.getTime() < 300) {
+            console.log("click: " + currObjSwipe);
+        }
+        else if (new Date().getTime() - datet.getTime() < 800) {
+            console.log("long: " + currObjSwipe);
         }
         else {
-            console.log("single click: " + currObjSwipe);
+            console.log("very long click: " + currObjSwipe);
         }
     }
     singleClick = true;
