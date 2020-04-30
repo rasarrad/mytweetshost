@@ -2283,14 +2283,14 @@ function showTooltip(event, obj) {
         tooltip.text($element.text())
     
 
-        tooltip.css("top", (event.pageY - 100) + "px");
+        tooltip.css("top", (event.pageY - 70) + "px");
         tooltip.css("left", getTooltipPosition(event.pageX) + "px");
     
         tooltip.fadeIn(700);
 
         setTimeout(function(){
-            //  closeTooltip();
-        }, 3300);
+            closeTooltip();
+        }, 4000);
     }
 }
 

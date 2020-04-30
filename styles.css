@@ -28,6 +28,7 @@
 
 
 #tooltip {
+  cursor: pointer;
   max-width: 500px;
 }
 
