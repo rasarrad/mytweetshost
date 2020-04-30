@@ -1342,19 +1342,19 @@ function handleTouchEnd(evt) {
     if (useSwipes && dblFlag && lastTouch) {                       
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
             if ( xDiff > 0 ) {
-                //console.log("left: " + currObjSwipe);
-                executeSwipeFunction(currObjSwipe, "left");
+                console.log("left: " + currObjSwipe);
+                //executeSwipeFunction(currObjSwipe, "left");
             } else {
-                //console.log("right: " + currObjSwipe);
-                executeSwipeFunction(currObjSwipe, "right");
+                console.log("right: " + currObjSwipe);
+                //executeSwipeFunction(currObjSwipe, "right");
             }                       
         } else {
             if ( yDiff > 0 ) {
-                //console.log("up: " + currObjSwipe);
-                executeSwipeFunction(currObjSwipe, "up");
+                console.log("up: " + currObjSwipe);
+                //executeSwipeFunction(currObjSwipe, "up");
             } else {
-                //console.log("down: " + currObjSwipe);
-                executeSwipeFunction(currObjSwipe, "down");
+                console.log("down: " + currObjSwipe);
+                //executeSwipeFunction(currObjSwipe, "down");
             }                                                                 
         }
     }  
