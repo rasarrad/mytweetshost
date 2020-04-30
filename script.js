@@ -1347,6 +1347,7 @@ function handleTouchMove(evt) {
 };
 
 function handleTouchEnd(evt) {
+    console.log("handleTouchEnd: " + singleClick);
     if (singleClick) {
         console.log("single click: " + currObjSwipe);
     }
