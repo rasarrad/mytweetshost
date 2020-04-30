@@ -1311,13 +1311,13 @@ function handleTouchStart(evt) {
     xDown = firstTouch.clientX;                                      
     yDown = firstTouch.clientY;   
     
+    ddd = false;
     dblFlag = false;  
     setTimeout(function() {    
         ddd = true;
         dblFlag = true; 
         dblClickTimeout = setTimeout(function() {    
             dblFlag = false; 
-            ddd = false; 
         }, 90);
     }, 10);                
 };                                                
