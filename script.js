@@ -249,10 +249,12 @@ $( document ).ready(function() {
         if (valueSwipe == "Yes") {
             useSwipes = true;
 
-            // START swip binds
-            document.addEventListener('touchstart', handleTouchStart, false);        
-            document.addEventListener('touchmove', handleTouchMove, false);
-            document.addEventListener('touchend', handleTouchEnd, false);
+            if (isMobile) {
+                // START swip binds
+                document.addEventListener('touchstart', handleTouchStart, false);        
+                document.addEventListener('touchmove', handleTouchMove, false);
+                document.addEventListener('touchend', handleTouchEnd, false);
+            }
         }
     }
     
@@ -806,15 +808,6 @@ $( document ).ready(function() {
         })
     });
 
-    // DOUBLE TAP and DOUBLE CLICK (icon folderopen da backdiv)
-    // xyz
-    //if (isMobile) {
-    //    document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
-    //}
-    //else {
-    //    document.getElementById("folderopen").addEventListener("click", tapHandler);
-    //}
-
  
     // xyz startcode
     
@@ -1226,7 +1219,7 @@ function clickHandler(event) {
         dblTapFlag = true;
         dblTapTimeout = setTimeout( function() { 
             dblTapFlag = false; 
-            executeDoubleFunction(obj, "single");
+            executeSingleDoubleFunction(obj, "single");
             setTimeout( function() { 
                 dblTapFlagControl = true;
             }, 200 );
@@ -1237,36 +1230,10 @@ function clickHandler(event) {
     clearTimeout(dblTapTimeout);
     dblTapFlag = false;
     dblTapFlagControl = true;
-    executeDoubleFunction(obj, "double");
+    executeSingleDoubleFunction(obj, "double");
  }
 
- 
-function executeDoubleFunction(obj, type) {
-    switch(obj.substring(0, 9)) {
-               
-        case "folderope":
-            if (type == "double") {
-                console.log("Execute double");
-            }
-            else {
-                console.log("Execute single");
-            }
 
-            break;    
-        case "contentin":
-            if (type == "double") { // Execute double/long touch
-                //openLinkOutside(obj.substring(9, 11));
-                console.log("Execute double/long touch:" + obj);
-            }
-            else { // Execute single/touch
-                //openLinkInside(obj.substring(9, 11));
-                console.log("Execute single/touch:" + obj);
-            }
-
-            break;  
-
-    }
-}
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -1355,7 +1322,6 @@ function handleTouchMove(evt) {
 };
 
 function handleTouchEnd(evt) {
-
     if (lastTouch) {
         if (useSwipes && dblFlag && lastTouch) {                       
             if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
@@ -1379,14 +1345,14 @@ function handleTouchEnd(evt) {
     }
     else {
         if (new Date().getTime() - datet.getTime() < 300) {
-            executeDoubleFunction(currObjSwipe, "single");
-            //console.log("click: " + currObjSwipe);
+            executeSingleDoubleFunction(currObjSwipe, "single");
         }
-        //else if (new Date().getTime() - datet.getTime() < 800) {
-        //    executeDoubleFunction(currObjSwipe, "double");
+        // FOR LONG AND VERY LONG
+        //else if (new Date().getTime() - datet.getTime() < 800) { 
+        //    executeSingleDoubleFunction(currObjSwipe, "double");
         //}
         else {
-            executeDoubleFunction(currObjSwipe, "double");
+            executeSingleDoubleFunction(currObjSwipe, "double");
         }
     }
     dblFlag = false;
@@ -1395,7 +1361,24 @@ function handleTouchEnd(evt) {
     lastTouch = null;                  
 }; 
 
+// xyzdouble 
+function executeSingleDoubleFunction(obj, type) {
+    switch(obj.substring(0, 9)) {
 
+        case "contentin":
+            if (type == "double") { // Execute double/long touch
+                openLinkOutside(obj.substring(9, 11));
+                console.log("Execute double/long touch:" + obj);
+            }
+            else { // Execute single/touch
+                openLinkInside(obj.substring(9, 11));
+                console.log("Execute single/touch:" + obj);
+            }
+
+            break;  
+
+    }
+}
 function executeSwipeFunction(obj, type) {
 
     switch(obj) {

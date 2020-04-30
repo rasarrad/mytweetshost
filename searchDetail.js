@@ -980,12 +980,8 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
                                 newtweetobj.find(".bottomstripline.line1").html(val.info);
                                     
                                 setTimeout( function() {                                 
-              
-                                    // xyz
-                                    if (isMobile) {
-                                        //document.getElementById("contentin" + val.id).addEventListener("touchstart", tapHandler);
-                                    }
-                                    else {
+                                    // xyzdouble
+                                    if (!isMobile) {
                                         document.getElementById("contentin" + val.id).addEventListener("click", clickHandler);
                                     }
                                 }, 200 );

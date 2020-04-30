@@ -103,7 +103,7 @@ function parseTweet(type) {
 
             urldirect = "https://www.youtube.com/watch?v=" + youtubeId; 
 
-            text = "\"<div class='contentin' style='background: url(https://img.youtube.com/vi/" 
+            text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://img.youtube.com/vi/" 
                     + youtubeId  + "/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div>\""; 
 
             var functorun = function() 
@@ -165,7 +165,7 @@ function parseTweet(type) {
                 youtubeId = youtubeId.substring(0, youtubeId.length -1);
             }
             
-            text = "\"<div class='contentin' style='background: url(https://img.youtube.com/vi/" 
+            text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://img.youtube.com/vi/" 
                     + youtubeId  + "/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div>\""; 
 
             var functorun = function() 
@@ -217,7 +217,7 @@ function parseTweet(type) {
 
             url = text; 
 
-            text = "\"<div class='contentin' style='background: url(https://s.wordpress.com/mshots/v1/" 
+            text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://s.wordpress.com/mshots/v1/" 
                     + text + "); background-size: 100%;'><i class='logo fa fa-html5'></i></div>\""; 
 
             var functorun = function() 
