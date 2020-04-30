@@ -1303,19 +1303,22 @@ function getTouches(evt) {
          evt.originalEvent.touches; // jQuery
 }                                                     
 
-var ddd = false;
+//var allowScroll = false;
+var singleClick = false;
 
 function handleTouchStart(evt) {
-    //S$('body, html').css('overflow', 'hidden');
+    //$('body, html').css('overflow', 'hidden');
     const firstTouch = getTouches(evt)[0];                                      
     xDown = firstTouch.clientX;                                      
     yDown = firstTouch.clientY;   
     
-    ddd = false;
+    //allowScroll = false;
+    singleClick = true;
     dblFlag = false;  
     setTimeout(function() {    
-        ddd = true;
-        dblFlag = true; 
+        //allowScroll = true;
+        dblFlag = true;
+        singleClick = false; 
         dblClickTimeout = setTimeout(function() {    
             dblFlag = false; 
         }, 90);
@@ -1324,8 +1327,8 @@ function handleTouchStart(evt) {
 
 
 function handleTouchMove(evt) {
-    if (!dblFlag && ddd)
-        $('body, html').css('overflow', 'auto');
+    //if (!dblFlag && allowScroll)
+    //    $('body, html').css('overflow', 'auto');
 
     if ( ! xDown || ! yDown ) {
         return;
@@ -1343,25 +1346,31 @@ function handleTouchMove(evt) {
 };
 
 function handleTouchEnd(evt) {
-    if (useSwipes && dblFlag && lastTouch) {                       
-        if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
-            if ( xDiff > 0 ) {
-                console.log("left: " + currObjSwipe);
-                //executeSwipeFunction(currObjSwipe, "left");
+    if (singleClick) {
+        console.log("single click: " + currObjSwipe);
+    }
+    else {
+        if (useSwipes && dblFlag && lastTouch) {                       
+            if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+                if ( xDiff > 0 ) {
+                    console.log("left: " + currObjSwipe);
+                    //executeSwipeFunction(currObjSwipe, "left");
+                } else {
+                    console.log("right: " + currObjSwipe);
+                    //executeSwipeFunction(currObjSwipe, "right");
+                }                       
             } else {
-                console.log("right: " + currObjSwipe);
-                //executeSwipeFunction(currObjSwipe, "right");
-            }                       
-        } else {
-            if ( yDiff > 0 ) {
-                console.log("up: " + currObjSwipe);
-                //executeSwipeFunction(currObjSwipe, "up");
-            } else {
-                console.log("down: " + currObjSwipe);
-                //executeSwipeFunction(currObjSwipe, "down");
-            }                                                                 
-        }
-    }  
+                if ( yDiff > 0 ) {
+                    console.log("up: " + currObjSwipe);
+                    //executeSwipeFunction(currObjSwipe, "up");
+                } else {
+                    console.log("down: " + currObjSwipe);
+                    //executeSwipeFunction(currObjSwipe, "down");
+                }                                                                 
+            }
+        }      
+    }
+
     dblFlag = false;
     xDown = null;
     yDown = null;   
