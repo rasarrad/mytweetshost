@@ -1306,7 +1306,7 @@ function getTouches(evt) {
 var ddd = false;
 
 function handleTouchStart(evt) {
-    $('body, html').css('overflow', 'hidden');
+    //S$('body, html').css('overflow', 'hidden');
     const firstTouch = getTouches(evt)[0];                                      
     xDown = firstTouch.clientX;                                      
     yDown = firstTouch.clientY;   
