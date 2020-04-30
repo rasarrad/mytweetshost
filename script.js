@@ -1307,6 +1307,7 @@ function getTouches(evt) {
 var singleClick = false;
 
 function handleTouchStart(evt) {
+    console.log("touchstart");
     //$('body, html').css('overflow', 'hidden');
     const firstTouch = getTouches(evt)[0];                                      
     xDown = firstTouch.clientX;                                      
