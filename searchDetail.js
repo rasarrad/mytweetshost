@@ -976,7 +976,9 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
                             }
                             else {
                                 newtweetobj.append($(val.tweet));
-
+                                
+                                newtweetobj.find(".bottomstripline.line1").html(val.info);
+                                    
                                 setTimeout( function() {                                 
               
                                     // xyz

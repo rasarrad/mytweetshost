@@ -1046,6 +1046,7 @@ body.big #addtweet {
   background: var(--soft-color);
   /* background-image: linear-gradient(to bottom, var(--soft-color) 4%, var(--dark-color) 7% ); */
   background: var(--dark-color);
+  margin-top: -10px;
 }
 .tweet:first-child {
       margin-top: 26px;
@@ -1544,6 +1545,11 @@ body.big #editTags {
   font-weight: bold;
   text-transform: lowercase;
   font-size: 14px;
+  filter: brightness(53%);
+  border-bottom: 0px solid;
+  height: 95px;
+  color: var(--high-color);
+  background-image: linear-gradient(to bottom, var(--dark-color) -84%, var(--dark-color) 60%, transparent 81%);
 }
 
 
@@ -1553,8 +1559,9 @@ body.big .bottomstrip {
 
 
 .yt .bottomstrip {
-  background-image: linear-gradient(to bottom, black -5%, var(--high-color) 25%, var(--high-color) 74%);
   /* width: calc(100% - 50px); */
+  background-color: linear-gradient(to bottom, var(--dark-color) -84%, var(--dark-color) 60%, transparent 81%);
+  to bottom, var(--dark-color) -84%, var(--dark-color) 60%, transparent 81%):;
 }
 .bottomstrip .bottomstripline {
   /* padding-top: 19px; */
@@ -1574,7 +1581,7 @@ body.big .bottomstrip {
 
 .bottomstrip .bottomstripline.line1 {
   /* margin: 19px 20px 0px 20px; */
-  padding-top: 17px;
+  padding-top: 15px;
 }
 
 .bottomstrip .bottomstripline.line2 {}
@@ -1644,10 +1651,10 @@ body.big .bottomstrip {
     }
     
     .bottomstrip {
-      width: 554px;
+      width: 555px;
     }
     .tweet.yt .bottomstrip {
-      background-image: linear-gradient(to bottom, black -5%, var(--high-color) 25%, var(--high-color) 74%);
+      background-image: linear-gradient(to bottom, var(--dark-color) -84%, var(--dark-color) 60%, transparent 81%);
     }
     #mask > div > i {
       background: #484848 !important;
