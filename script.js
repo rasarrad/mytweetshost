@@ -1307,7 +1307,9 @@ function getTouches(evt) {
 var singleClick = true;
 
 function handleTouchStart(evt) {
-    console.log("touchstart");
+    console.log("touchstart: " + evt.touches[0]);
+
+
     //$('body, html').css('overflow', 'hidden');
     const firstTouch = getTouches(evt)[0];                                      
     xDown = firstTouch.clientX;                                      
@@ -1321,8 +1323,8 @@ function handleTouchStart(evt) {
         singleClick = false; 
         dblClickTimeout = setTimeout(function() {    
             dblFlag = false; 
-        }, 90);
-    }, 10);                
+        }, 180);
+    }, 80);                
 };                                                
 
 
@@ -1346,6 +1348,7 @@ function handleTouchMove(evt) {
 };
 
 function handleTouchEnd(evt) {
+    console.log("handleTouchEnd: " + evt.touches[0]);
     console.log("handleTouchEnd: " + singleClick);
     if (singleClick) {
         console.log("single click: " + currObjSwipe);
