@@ -5297,3 +5297,20 @@ body.big .ui-dialog button {
   font-size: 15px !important;
   padding-top: 3px;
 }
+
+.disable {
+  cursor: default !important;
+  opacity: 0.5 !important;
+}
+
+.otherOptText {
+    height: 37px;
+    padding-left: 7px;
+    width: calc(100% - 201px);
+    padding-bottom: 5px;
+    cursor: default;
+}
+
+body.big .otherOptText {
+  font-size: 14px;
+}
