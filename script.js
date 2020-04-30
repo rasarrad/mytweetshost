@@ -1316,7 +1316,8 @@ function handleTouchStart(evt) {
         ddd = true;
         dblFlag = true; 
         dblClickTimeout = setTimeout(function() {    
-            dblFlag = false;  
+            dblFlag = false; 
+            ddd = false; 
         }, 90);
     }, 10);                
 };                                                
