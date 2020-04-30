@@ -1304,6 +1304,7 @@ function getTouches(evt) {
 }                                                     
 
 function handleTouchStart(evt) {
+    $('body, html').css('overflow', 'hidden');
     const firstTouch = getTouches(evt)[0];                                      
     xDown = firstTouch.clientX;                                      
     yDown = firstTouch.clientY;   
@@ -1316,6 +1317,26 @@ function handleTouchStart(evt) {
       }, 90);
     }, 10);                
 };                                                
+
+
+function handleTouchMove(evt) {
+    if (!dblFlag)
+        $('body, html').css('overflow', 'auto');
+
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    if (evt.touches[0] != null)
+        lastTouch = evt.touches[0];
+
+    xUp = evt.touches[0].clientX;                                    
+    yUp = evt.touches[0].clientY;
+
+    xDiff = xDown - xUp;
+    yDiff = yDown - yUp; 
+    
+};
 
 function handleTouchEnd(evt) {
     if (useSwipes && dblFlag && lastTouch) {                       
@@ -1583,21 +1604,6 @@ function processLinkFuncs(idLink, type) {
     }
 }  
 
-function handleTouchMove(evt) {
-    if ( ! xDown || ! yDown ) {
-        return;
-    }
-
-    if (evt.touches[0] != null)
-        lastTouch = evt.touches[0];
-
-    xUp = evt.touches[0].clientX;                                    
-    yUp = evt.touches[0].clientY;
-
-    xDiff = xDown - xUp;
-    yDiff = yDown - yUp; 
-    
-};
 
 
 
