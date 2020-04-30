@@ -4643,9 +4643,13 @@ body.big #fsPopup i.fa-times-circle {
   border-radius: 4px !important;
 }
 
-#fsPopup.full:not(.yt) i {
+#fsPopup.full i {
   background: var(--dark-color) !important;
   color: var(--high-color) !important;
+}
+
+#fsPopup.full i {
+    bottom: 5px !important;
 }
 
 .newLayout {
