@@ -4527,6 +4527,19 @@ body.big .newLayout > div {
 /******************************** FIM LANDSCAPE --- HEIGHT < 300 CSS ******************************/
 /**************************************************************************************************/
 
+#fsPopup.full {
+  width: calc(100% - 0px) !important;
+  height: calc(100% - 0px) !important;
+  padding: 0px !important;
+}
+
+#fsPopup.full iframe {
+    width: calc(100% - 0px) !important;
+    height: calc(100% - 0px) !important;
+    margin-left: 0px !important;
+    border: 0px solid var(--high-color) !important;
+    border-radius: 0px !important;
+}
 
 #fsPopup i {
   color: var(--high-color);
@@ -4625,6 +4638,15 @@ body.big #fsPopup i.fa-times-circle {
   height: 24px;
 }
 
+#fsPopup.full i.fa {
+  border-top-color: var(--high-color) !important;
+  border-radius: 4px !important;
+}
+
+#fsPopup.full:not(.yt) i {
+  background: var(--dark-color) !important;
+  color: var(--high-color) !important;
+}
 
 .newLayout {
     display: block;
