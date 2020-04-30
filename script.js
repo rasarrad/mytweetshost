@@ -1375,7 +1375,7 @@ function handleTouchEnd(evt) {
         }      
     }
     else {
-        console.log(datet + "-" + new Date());
+        console.log(datet.getTime() + "-" + new Date().getTime());
         console.log("single click: " + currObjSwipe);
     }
     singleClick = true;
