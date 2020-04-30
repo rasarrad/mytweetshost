@@ -982,12 +982,12 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
                                 setTimeout( function() {                                 
               
                                     // xyz
-                                    //if (isMobile) {
-                                    //    document.getElementById("folderopen").addEventListener("touchstart", tapHandler);
-                                    //}
-                                    //else {
-                                        document.getElementById("contentin" + val.id).addEventListener("click", tapHandler);
-                                    //}
+                                    if (isMobile) {
+                                        //document.getElementById("contentin" + val.id).addEventListener("touchstart", tapHandler);
+                                    }
+                                    else {
+                                        document.getElementById("contentin" + val.id).addEventListener("click", clickHandler);
+                                    }
                                 }, 200 );
                             }
                 

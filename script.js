@@ -953,62 +953,8 @@ function SaveDatFileBro(localstorage) {
 
 
 /////////////////////////////////////////////////////////////////////////
-//                     DOUBLE TAP and DOUBLE CLICK                     //
+//                              FULSCREEN                              //
 /////////////////////////////////////////////////////////////////////////
-
-
-function executeDoubleFunction(obj, type) {
-    switch(obj.substring(0, 9)) {
-               
-        case "folderope":
-            if (type == "double") {
-                console.log("Execute double");
-            }
-            else {
-                console.log("Execute single");
-            }
-
-            break;    
-        case "contentin":
-            if (type == "double") {
-                openLinkOutside(obj.substring(9, 11));
-                //console.log("Execute double");
-            }
-            else {
-                openLinkInside(obj.substring(9, 11));
-                //console.log("Execute single");
-            }
-
-            break;  
-
-    }
-}
-
-var dblTapFlagControl = true;
-var dblTapFlag = false;
-var dblTapTimeout = null;
-
-function tapHandler(event) {
-    var obj = event.currentTarget.id;
-    dblTapFlagControl = false;
-    if(!dblTapFlag) {
-        dblTapFlag = true;
-        dblTapTimeout = setTimeout( function() { 
-            dblTapFlag = false; 
-            executeDoubleFunction(obj, "single");
-            setTimeout( function() { 
-                dblTapFlagControl = true;
-            }, 200 );
-        }, 350 );
-        return false;
-    }
-    event.preventDefault();
-    clearTimeout(dblTapTimeout);
-    dblTapFlag = false;
-    dblTapFlagControl = true;
-    executeDoubleFunction(obj, "double");
- }
-
 
 window.openLinkOutside = function(id) {
     window.open($("#" + id).attr("curl"), '_blank');
@@ -1262,8 +1208,69 @@ function handleFileSelectDragDrop(evt) {
     document.body.removeChild(element);
   }
 
+
+
 /////////////////////////////////////////////////////////////////////////
-//                               SWIPE                                 //
+//                         CLICK AND DOUBLE CLICK                      //
+/////////////////////////////////////////////////////////////////////////
+
+
+var dblTapFlagControl = true;
+var dblTapFlag = false;
+var dblTapTimeout = null;
+
+function clickHandler(event) {
+    var obj = event.currentTarget.id;
+    dblTapFlagControl = false;
+    if(!dblTapFlag) {
+        dblTapFlag = true;
+        dblTapTimeout = setTimeout( function() { 
+            dblTapFlag = false; 
+            executeDoubleFunction(obj, "single");
+            setTimeout( function() { 
+                dblTapFlagControl = true;
+            }, 200 );
+        }, 350 );
+        return false;
+    }
+    event.preventDefault();
+    clearTimeout(dblTapTimeout);
+    dblTapFlag = false;
+    dblTapFlagControl = true;
+    executeDoubleFunction(obj, "double");
+ }
+
+ 
+function executeDoubleFunction(obj, type) {
+    switch(obj.substring(0, 9)) {
+               
+        case "folderope":
+            if (type == "double") {
+                console.log("Execute double");
+            }
+            else {
+                console.log("Execute single");
+            }
+
+            break;    
+        case "contentin":
+            if (type == "double") { // Execute double/long touch
+                //openLinkOutside(obj.substring(9, 11));
+                console.log("Execute double/long touch:" + obj);
+            }
+            else { // Execute single/touch
+                //openLinkInside(obj.substring(9, 11));
+                console.log("Execute single/touch:" + obj);
+            }
+
+            break;  
+
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////////////
+//                     SWIPE TOUCH E LONG TOUCH                        //
 /////////////////////////////////////////////////////////////////////////
 
     
@@ -1298,18 +1305,17 @@ function handleFileSelectDragDrop(evt) {
 
 
 function getTouches(evt) {
-  currObjSwipe = getParentObjId($(event.target));
   return evt.touches ||             // browser API
          evt.originalEvent.touches; // jQuery
 }                                                     
 
 //var allowScroll = false;
-var singleClick = true;
 var datet = null;
 
 function handleTouchStart(evt) {
     datet = new Date();
     console.log("------------------------------------");
+    currObjSwipe = getParentObjId($(event.target));
 
     //$('body, html').css('overflow', 'hidden');
     const firstTouch = getTouches(evt)[0];                                      
@@ -1324,7 +1330,6 @@ function handleTouchStart(evt) {
          
         dblClickTimeout = setTimeout(function() {    
             dblFlag = false;
-            singleClick = false; 
         }, 180);
     }, 80);                
 };                                                
@@ -1374,21 +1379,20 @@ function handleTouchEnd(evt) {
     }
     else {
         if (new Date().getTime() - datet.getTime() < 300) {
-            console.log("click: " + currObjSwipe);
+            executeDoubleFunction(currObjSwipe, "single");
+            //console.log("click: " + currObjSwipe);
         }
-        else if (new Date().getTime() - datet.getTime() < 800) {
-            console.log("long: " + currObjSwipe);
-        }
+        //else if (new Date().getTime() - datet.getTime() < 800) {
+        //    executeDoubleFunction(currObjSwipe, "double");
+        //}
         else {
-            console.log("very long click: " + currObjSwipe);
+            executeDoubleFunction(currObjSwipe, "double");
         }
     }
-    singleClick = true;
     dblFlag = false;
     xDown = null;
     yDown = null;   
-    lastTouch = null;   
-                              
+    lastTouch = null;                  
 }; 
 
 
