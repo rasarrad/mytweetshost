@@ -2325,9 +2325,12 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
         $('#moretweets').fadeOut(300);
         $('#moretweets').css('opacity', 0);
 
+        /*
         setTimeout(function(){
           $("html").scrollTop(0);
-        }, 1000);  
+        }, 1000);
+        
+        */
       }
 
       return processed;
