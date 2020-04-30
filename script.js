@@ -1303,6 +1303,8 @@ function getTouches(evt) {
          evt.originalEvent.touches; // jQuery
 }                                                     
 
+var ddd = false;
+
 function handleTouchStart(evt) {
     $('body, html').css('overflow', 'hidden');
     const firstTouch = getTouches(evt)[0];                                      
@@ -1311,16 +1313,17 @@ function handleTouchStart(evt) {
     
     dblFlag = false;  
     setTimeout(function() {    
+        ddd = true;
         dblFlag = true; 
         dblClickTimeout = setTimeout(function() {    
             dblFlag = false;  
-      }, 90);
+        }, 90);
     }, 10);                
 };                                                
 
 
 function handleTouchMove(evt) {
-    if (!dblFlag)
+    if (!dblFlag && ddd)
         $('body, html').css('overflow', 'auto');
 
     if ( ! xDown || ! yDown ) {
