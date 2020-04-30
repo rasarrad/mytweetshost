@@ -47,95 +47,6 @@ var isMobile = null;
     xyz splash
 */
 
-function showTooltip(event, obj) {
-    var $element = $(obj);
-
-    if (hasOverflow(obj)) {
-        var tooltip = $("#tooltip");
-        tooltip.text($element.text())
-    
-        tooltip.css("top", (event.pageY - 100) + "px");
-        tooltip.css("left", event.pageX + "px");
-    
-        tooltip.fadeIn(700);
-        
-        setTimeout(function(){
-            //tooltip.fadeOut(700);
-        }, 3300);
-    }
-}
-
-function hasOverflow(obj) {
-    var $element = $(obj);
-    
-    var $c = $element
-           .clone()
-           .css({display: 'inline', width: 'auto', visibility: 'hidden'})
-           .appendTo('body');
-
-    if( $c.width() > $element.width() ) {
-        $c.remove();
-        return true;
-    }
-    else {
-        $c.remove();
-        return false;
-    }
-}
-
-
-
-
-
-
-function getWebsiteData2(url) {
-
-    $.ajax({
-        url: 'https://cors-anywhere.herokuapp.com/' + url
-      }).then(function(data) {
-        console.log('---------------WEBSITE ' + url + ' ----------------');
-        // titulo - checar se é vazia
-        
-        
-        var title = data.substring(data.indexOf("<title") + 7, data.indexOf("</title>"));
-        console.log("Titulo111: " + title);
-        title = title.substring(title.indexOf(">") + 1, data.indexOf("</title>"));
-        console.log("Titulo: " + title);
-        var html = $(data);
-        // descricao - checar se é vazia
-        console.log("Descricao: " + getMetaContent(html, 'description') );
-
-        console.log(data)
-
-      });
-
-}
-
-
-
-
-
-
-function getMetaContent(html, name) {
-  return html.filter((index, tag) => tag && tag.name && tag.name == name).attr('content');
-}
-
-function hasAvailableImage(id, url) {
-    $.ajax({
-        url: url,
-        type: 'GET'
-    }).always(function(jqXHR, textStatus) {
-        console.log('--------------------' + jqXHR.length + '-----------------');
-        if (jqXHR.length == 26584) {
-            console.log("Error: " + id); // addclass "error" to contentin 
-        }
-        else {
-            console.log("OK: " + id);
-        }
-        console.log('-------------------------------------');
-    });
-}
-
 // START do tema
 var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
@@ -143,11 +54,6 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 }  
 
 $( document ).ready(function() { 
-
-    //hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
-
-    
-    //getWebsiteData2('https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy')
 
     isMobile = window.mobileAndTabletCheck();
 
@@ -2365,6 +2271,117 @@ while (new Date().getTime() <= e) {}
 
 
 function insertAfter(newNode, referenceNode) {
-referenceNode.parentNode.insertBefore(newNode, referenceNode.previousSibling);
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.previousSibling);
 }
 
+    
+function showTooltip(event, obj) {
+    var $element = $(obj);
+
+    if (hasOverflow(obj)) {
+        var tooltip = $("#tooltip");
+        tooltip.text($element.text())
+    
+
+        tooltip.css("top", (event.pageY - 100) + "px");
+        tooltip.css("left", getTooltipPosition(event.pageX) + "px");
+    
+        tooltip.fadeIn(700);
+
+        setTimeout(function(){
+            //  closeTooltip();
+        }, 3300);
+    }
+}
+
+function getTooltipPosition(pageX) {
+    var size = 500;
+    if (window.innerWidth < 481) {
+        size = 251;
+    } 
+    else if (window.innerWidth < 1000) {
+        size = 387;
+    }
+
+    size = window.innerWidth - pageX - size;
+
+    if (size < 0)
+        pageX = pageX + size - 20;
+
+    return pageX;
+}
+
+function closeTooltip() {
+    tooltip.fadeOut(700);
+}
+
+function hasOverflow(obj) {
+    var $element = $(obj);
+    
+    var $c = $element
+           .clone()
+           .css({display: 'inline', width: 'auto', visibility: 'hidden'})
+           .appendTo('body');
+
+    if( $c.width() > $element.width() ) {
+        $c.remove();
+        return true;
+    }
+    else {
+        $c.remove();
+        return false;
+    }
+}
+
+
+
+
+
+//getWebsiteData2('https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy')
+function getWebsiteData2(url) {
+
+    $.ajax({
+        url: 'https://cors-anywhere.herokuapp.com/' + url
+      }).then(function(data) {
+        console.log('---------------WEBSITE ' + url + ' ----------------');
+        // titulo - checar se é vazia
+        
+        
+        var title = data.substring(data.indexOf("<title") + 7, data.indexOf("</title>"));
+        console.log("Titulo111: " + title);
+        title = title.substring(title.indexOf(">") + 1, data.indexOf("</title>"));
+        console.log("Titulo: " + title);
+        var html = $(data);
+        // descricao - checar se é vazia
+        console.log("Descricao: " + getMetaContent(html, 'description') );
+
+        console.log(data)
+
+      });
+
+}
+
+function getMetaContent(html, name) {
+  return html.filter((index, tag) => tag && tag.name && tag.name == name).attr('content');
+}
+
+
+//hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
+function hasAvailableImage(id, url) {
+    $.ajax({
+        url: url,
+        type: 'GET'
+    }).always(function(jqXHR, textStatus) {
+        console.log('--------------------' + jqXHR.length + '-----------------');
+        if (jqXHR.length == 26584) {
+            console.log("Error: " + id); // addclass "error" to contentin 
+        }
+        else {
+            console.log("OK: " + id);
+        }
+        console.log('-------------------------------------');
+    });
+}
+
+
+    
