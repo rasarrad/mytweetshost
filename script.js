@@ -1304,7 +1304,7 @@ function getTouches(evt) {
 }                                                     
 
 //var allowScroll = false;
-var singleClick = false;
+var singleClick = true;
 
 function handleTouchStart(evt) {
     console.log("touchstart");
@@ -1314,7 +1314,6 @@ function handleTouchStart(evt) {
     yDown = firstTouch.clientY;   
     
     //allowScroll = false;
-    singleClick = true;
     dblFlag = false;  
     setTimeout(function() {    
         //allowScroll = true;
@@ -1372,7 +1371,7 @@ function handleTouchEnd(evt) {
             }
         }      
     }
-
+    singleClick = true;
     dblFlag = false;
     xDown = null;
     yDown = null;   
