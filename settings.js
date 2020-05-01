@@ -656,10 +656,10 @@ var openMainSettingsPopup = function(jsonobj)
     value = readCookie("maximumfs");
 
     if (value && value.length > 0) {
-        value = "No";
+        value = "Yes";
     }
     else {
-        value = "Yes";
+        value = "No";
     }
     $('#maximumfsul').find(".litags").each( function( index, element ) {
         if($(element).html().trim() == value) {
