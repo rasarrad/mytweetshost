@@ -219,7 +219,7 @@ function parseTweet(type) {
 
             url = text; 
 
-            text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://s.wordpress.com/mshots/v1/ss" 
+            text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://s.wordpress.com/mshots/v1/" 
                     + text + "); background-size: 100%;'><i class='logo fa fa-html5'></i></div>\""; 
 
             var functorun = function() 
@@ -587,7 +587,7 @@ function getWebsiteData(creationdate, cats, tags, resinfo, classif) {
 
 function hasAvailableImage(url) {
     $.ajax({
-        url: 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/ss' + url,
+        url: 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/' + url,
         type: 'GET'
     }).always(function(jqXHR, textStatus) {
         //console.log('--------------------' + jqXHR.length + '-----------------');
