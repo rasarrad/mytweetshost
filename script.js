@@ -888,6 +888,7 @@ window.openLinkInside = function(id) {
         $("#fsPopup iframe").attr("src", url);
         $("#fsPopup").fadeIn(1600);
         dblFlag = true;  
+        console.log("aaaaaaaaaaaaaa");
         setTimeout(function() {    
             dblFlag = false; 
         }, 600);  
@@ -933,7 +934,7 @@ function moveFSPopup(obj) {
 function iframeFSloadFunc(obj) {
     if ($(obj).attr("cid") == "none")
         return false;
-   
+        console.log("BBBBBBBBBBBBBBBBBBBB");
     if (dblFlag) {
         //$(obj).attr("cerror", "yes");
         $("#fsPopup").fadeOut(200);
