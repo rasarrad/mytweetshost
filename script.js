@@ -1284,11 +1284,39 @@ function executeSingleDoubleFunction(obj, type) {
 
         case "contentin":
             if (type == "double") { // Execute double/long touch
-                openLinkOutside(obj.substring(9, 11));
+                var value = readCookie("linksinside");
+
+                if (value && value.length > 0) {
+                    openLinkOutside(obj.substring(9, 11));
+                }
+                else {
+                    value = readCookie("doublefs");
+
+                    if (value && value.length > 0) {
+                        openLinkInside(obj.substring(9, 11));
+                    }
+                    else {
+                        openLinkOutside(obj.substring(9, 11));
+                    }
+                }
                 console.log("Execute double/long touch:" + obj);
             }
             else { // Execute single/touch
-                openLinkInside(obj.substring(9, 11));
+                var value = readCookie("linksinside");
+
+                if (value && value.length > 0) {
+                    openLinkOutside(obj.substring(9, 11));
+                }
+                else {
+                    value = readCookie("doublefs");
+
+                    if (value && value.length > 0) {
+                        openLinkOutside(obj.substring(9, 11));
+                    }
+                    else {
+                        openLinkInside(obj.substring(9, 11));
+                    }
+                }
                 console.log("Execute single/touch:" + obj);
             }
 
