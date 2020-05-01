@@ -219,7 +219,7 @@ function parseTweet(type) {
 
             url = text; 
 
-            text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://s.wordpress.com/mshots/v1/" 
+            text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://s.wordpress.com/mshots/v1/ss" 
                     + text + "); background-size: 100%;'><i class='logo fa fa-html5'></i></div>\""; 
 
             var functorun = function() 
