@@ -836,7 +836,8 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
                         val.id = "0";
                     }
                 }
-
+                console.log('--------------------------')
+                console.log(val.id)
                 var isdeleted = readCookie(val.id + "isdeleted");
                 if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
                     var cat = readCookie(val.id + "catchanged");
@@ -981,7 +982,7 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
                                 setTimeout( function() {                                 
                                     // xyzdouble
                                     if (!isMobile) {
-                                        console.log('--------------------------')
+                                        console.log('----------')
                                         console.log(val.id)
                                         console.log(document.getElementById("contentin" + val.id))
                                         document.getElementById("contentin" + val.id).addEventListener("click", clickHandler);
