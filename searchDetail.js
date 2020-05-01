@@ -343,7 +343,6 @@ function calendarChanged(date) {
                     $("#linkChange").find(".dateinput").val(formatNumDate(date));
                     
                     if (formatNumDate(date) != $('#date').attr("cdate")) {
-                        console.log(999)
                         createCookie($('#linkChange').attr("cid") + "datechanged", formatNumDate(date));
                         createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
                         if (showColors) {

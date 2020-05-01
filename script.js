@@ -216,7 +216,6 @@ $( document ).ready(function() {
     /* 
     console.log("----window.innerWidth-----window.innerHeight------navigator.userAgent-----");
     console.log(window.innerWidth + " - " + window.innerHeight + " - " + navigator.userAgent);
-    console.log("--------------------------------------------------------------------------");
     */
 
     /*
@@ -779,7 +778,6 @@ $( document ).ready(function() {
         window.webkitRequestFileSystem(window.PERSISTENT , 1024*1024, SaveDatFileBro);
       });
 
-      console.log(1111);
     window.requestFileSystem(window.PERSISTENT, 1024*1024, onInitFs, errorHandler);
     */
 
@@ -825,9 +823,6 @@ function SaveDatFileBro(localstorage) {
         break;
     };
   
-    console.log('Error: ' + msg);
-    console.log(e);
-    
   }
 
   function onInitFs(fs) {
@@ -840,7 +835,7 @@ function SaveDatFileBro(localstorage) {
   
          reader.onloadend = function(e) {
             
-           console.log(this.result);
+           //console.log(this.result);
          };
   
          reader.readAsText(file);
@@ -892,7 +887,6 @@ window.openLinkInside = function(id) {
 
         $("#fsPopup iframe").attr("src", url);
         $("#fsPopup").fadeIn(1600);
-        console.log(111111111);
         dblFlag = true;  
         setTimeout(function() {    
             dblFlag = false; 
@@ -939,8 +933,6 @@ function moveFSPopup(obj) {
 function iframeFSloadFunc(obj) {
     if ($(obj).attr("cid") == "none")
         return false;
-
-        console.log(222222);
 
     if (dblFlag) {
         //$(obj).attr("cerror", "yes");
@@ -1207,7 +1199,6 @@ var datet = null;
 
 function handleTouchStart(evt) {
     datet = new Date();
-    console.log("------------------------------------");
     currObjSwipe = getParentObjId($(event.target));
 
     //$('body, html').css('overflow', 'hidden');
@@ -2379,9 +2370,8 @@ function getWebsiteData2(url) {
         
         
         var title = data.substring(data.indexOf("<title") + 7, data.indexOf("</title>"));
-        console.log("Titulo111: " + title);
         title = title.substring(title.indexOf(">") + 1, data.indexOf("</title>"));
-        console.log("Titulo: " + title);
+        
         var html = $(data);
         // descricao - checar se é vazia
         console.log("Descricao: " + getMetaContent(html, 'description') );

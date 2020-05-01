@@ -222,10 +222,8 @@ var openSettingsPopup = function(jsonobj)
         } 
         else {
             $("#linkChange .buttonstable tr:first-child td .date").css('color','');
-            console.log(44444);
             var date = jsonobj.date.toString();
             if (date.length > 0) {
-                console.log(55555);
                 $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(date));
             
                 $("#linkChange .buttonstable tr:first-child td .dateinput").val(date);
