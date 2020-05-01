@@ -891,7 +891,7 @@ window.openLinkInside = function(id) {
         console.log("aaaaaaaaaaaaaa");
         setTimeout(function() {    
             dblFlag = false; 
-        }, 1300);  
+        }, 1500);  
    // }
 };
 
