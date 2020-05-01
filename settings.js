@@ -594,16 +594,27 @@ var openMainSettingsPopup = function(jsonobj)
 
     if (value && value.length > 0) {
         value = "No";
+
         $('#doublefstr').css("opacity", 0.5);
         $('#doublefsul').find(".litags").each( function( index, element ) {
+            $(element).addClass("disable");
+        });
+        
+        $('#maximumfstr').css("opacity", 0.5);
+        $('#maximumfsul').find(".litags").each( function( index, element ) {
             $(element).addClass("disable");
         });
     }
     else {
         value = "Yes";
-        $('#doublefstr').css("opacity", 1);
 
+        $('#doublefstr').css("opacity", 1);
         $('#doublefsul').find(".litags").each( function( index, element ) {
+            $(element).removeClass("disable");
+        });
+
+        $('#maximumfstr').css("opacity", 1);
+        $('#maximumfsul').find(".litags").each( function( index, element ) {
             $(element).removeClass("disable");
         });
     }
@@ -637,7 +648,29 @@ var openMainSettingsPopup = function(jsonobj)
             $(element).removeClass("selectedtag");
         }
     });
-        
+   
+
+    // maximum fs
+    value = null;
+
+    value = readCookie("maximumfs");
+
+    if (value && value.length > 0) {
+        value = "No";
+    }
+    else {
+        value = "Yes";
+    }
+    $('#maximumfsul').find(".litags").each( function( index, element ) {
+        if($(element).html().trim() == value) {
+            $(element).addClass("selectedtag");
+        }
+        else {
+            $(element).removeClass("selectedtag");
+        }
+    });
+
+
     // Use swipes
     value = null;
 
@@ -1766,6 +1799,35 @@ function clickLiDoublefs(e, obj) {
 
 }
 
+function clickLiMaximumfs(e, obj) {
+    e.stopPropagation();
+
+    if (!$(obj).hasClass("disable")) {
+        if (!$(obj).hasClass("selectedtag")) {
+            var value = $(obj).html().trim();
+            $('#maximumfsul').find(".litags").each( function( index, element ) {
+                if($(element).html().trim() == value) {
+                    $(element).addClass("selectedtag");
+                }
+                else {
+                    $(element).removeClass("selectedtag");
+                }
+            });
+    
+            if (value == "Yes") {
+                showMessage("Use maximum available space in fullscreen on", null, null, null, null, null);
+                
+                createCookie("maximumfs", "", 99999);
+            }
+            else {
+                showMessage("Use maximum available space in fullscreen off", null, null, null, null, null); 
+                createCookie("maximumfs", "s", 99999);
+            }
+        }  
+    }
+
+}
+
 function clickLiLinksinside(e, obj) {
     e.stopPropagation();
 
@@ -1789,6 +1851,11 @@ function clickLiLinksinside(e, obj) {
             $('#doublefsul').find(".litags").each( function( index, element ) {
                 $(element).removeClass("disable");
             });
+            $('#maximumfstr').css("opacity", 1);
+
+            $('#maximumfsul').find(".litags").each( function( index, element ) {
+                $(element).removeClass("disable");
+            });
 
             createCookie("linksinside", "", 99999);
         }
@@ -1801,7 +1868,12 @@ function clickLiLinksinside(e, obj) {
             $('#doublefsul').find(".litags").each( function( index, element ) {
                 $(element).addClass("disable");
             });
-            
+                    
+            $('#maximumfstr').css("opacity", 0.5);
+
+            $('#maximumfsul').find(".litags").each( function( index, element ) {
+                $(element).addClass("disable");
+            });    
         }
     }  
 
