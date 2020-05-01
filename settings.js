@@ -618,6 +618,26 @@ var openMainSettingsPopup = function(jsonobj)
     });
 
 
+    // double click outside
+    value = null;
+
+    value = readCookie("doublefs");
+
+    if (value && value.length > 0) {
+        value = "No";
+    }
+    else {
+        value = "Yes";
+    }
+    $('#doublefsul').find(".litags").each( function( index, element ) {
+        if($(element).html().trim() == value) {
+            $(element).addClass("selectedtag");
+        }
+        else {
+            $(element).removeClass("selectedtag");
+        }
+    });
+        
     // Use swipes
     value = null;
 
