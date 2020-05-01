@@ -1131,7 +1131,6 @@ var dblTapFlag = false;
 var dblTapTimeout = null;
 
 function clickHandler(event) {
-alert(1111);
     var obj = event.currentTarget.id;
     dblTapFlagControl = false;
     if(!dblTapFlag) {
@@ -1284,20 +1283,21 @@ function executeSingleDoubleFunction(obj, type) {
     switch(obj.substring(0, 9)) {
 
         case "contentin":
+            
             if (type == "double") { // Execute double/long touch
                 var value = readCookie("linksinside");
 
                 if (value && value.length > 0) {
-                    openLinkOutside(obj.substring(9, 11));
+                    openLinkOutside(obj.substring(9));
                 }
                 else {
                     value = readCookie("doublefs");
 
                     if (value && value.length > 0) {
-                        openLinkInside(obj.substring(9, 11));
+                        openLinkInside(obj.substring(9));
                     }
                     else {
-                        openLinkOutside(obj.substring(9, 11));
+                        openLinkOutside(obj.substring(9));
                     }
                 }
                 console.log("Execute double/long touch:" + obj);
@@ -1306,16 +1306,16 @@ function executeSingleDoubleFunction(obj, type) {
                 var value = readCookie("linksinside");
 
                 if (value && value.length > 0) {
-                    openLinkOutside(obj.substring(9, 11));
+                    openLinkOutside(obj.substring(9));
                 }
                 else {
                     value = readCookie("doublefs");
 
                     if (value && value.length > 0) {
-                        openLinkOutside(obj.substring(9, 11));
+                        openLinkOutside(obj.substring(9));
                     }
                     else {
-                        openLinkInside(obj.substring(9, 11));
+                        openLinkInside(obj.substring(9));
                     }
                 }
                 console.log("Execute single/touch:" + obj);
