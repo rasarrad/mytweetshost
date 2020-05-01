@@ -215,6 +215,8 @@ function parseTweet(type) {
             
             $('#datetoshow').val(formatDate(date));
 
+            hasAvailableImage(text);
+
             url = text; 
 
             text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://s.wordpress.com/mshots/v1/" 
@@ -486,6 +488,7 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
     if (resinfo.length == 0)
         resinfo = "No Info About The Link"
 
+        console.log('-----------------TEXT USAGE--------------------');   
     if (addType == "Y") {
         text = text.substring(0, text.length -1) + "<div class='bottomstrip'><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line1'>" + resinfo + "</span><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line2'>" + urldirect + "</span></div>\""; 
         $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + urldirect  + "\",\r\n\"ishidden\": \"0\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
@@ -581,6 +584,25 @@ function getWebsiteData(creationdate, cats, tags, resinfo, classif) {
       });
 
 }
+
+function hasAvailableImage(url) {
+    $.ajax({
+        url: 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/ss' + url,
+        type: 'GET'
+    }).always(function(jqXHR, textStatus) {
+        //console.log('--------------------' + jqXHR.length + '-----------------');
+        if (jqXHR.length > 26570 && jqXHR.length < 26594) {
+            //console.log("Error: " + id); // addclass "error" to contentin 
+            
+            text = text.replace("class='contentin", "class='contentin error")
+            console.log('-----------------TEXT REPLACE--------------------');   
+        }
+        else {
+            //console.log("OK: " + id);
+        }
+    });
+}
+
 
 var openCreatePopup = function(flag) 
 {

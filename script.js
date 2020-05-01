@@ -94,7 +94,6 @@ $( document ).ready(function() {
         $(element).attr("additionalAttributes", "{autocomplete: 'none'}");
     });
 
-    hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://zzzsmallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
     // START da variavel setShowDeleted
     var showDeleted = getshowdeletedcookie();
     setShowDeleted(showDeleted, true); // faz o count all tweets
@@ -2378,21 +2377,6 @@ function getMetaContent(html, name) {
 
 
 //hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://zzzsmallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
-function hasAvailableImage(id, url) {
-    $.ajax({
-        url: url,
-        type: 'GET'
-    }).always(function(jqXHR, textStatus) {
-        console.log('--------------------' + jqXHR.length + '-----------------');
-        if (jqXHR.length > 26570 && jqXHR.length < 26594) {
-            console.log("Error: " + id); // addclass "error" to contentin 
-        }
-        else {
-            console.log("OK: " + id);
-        }
-        console.log('-------------------------------------');
-    });
-}
 
 
     

@@ -1227,15 +1227,18 @@ body.big .tweet.yt {
     margin-top: 7px;
 }
 
-.tweet div.contentin.error {background: var(--softdark-color) !important;border: 1px solid var(--softdark-color);}
+.tweet div.contentin.error {
+  background: var(--softdark-color) !important;
+  border: 1px solid var(--softdark-color);
+}
 
 .tweet div.contentin .logo {
     color: var(--dark-color);
-    font-size: 31px;
+    font-size: 43px;
     position: relative;
     transform: translate(-50%, 0px);
     left: calc(50% - 0px) !important;
-    top: calc(39%) !important;
+    top: calc(36%) !important;
     background: var(--high-color);
     padding: 5px 15px;
     border-radius: 4px;
@@ -1243,7 +1246,13 @@ body.big .tweet.yt {
 }
 
 body.big .tweet div.contentin .logo {
-    font-size: 44px;
+    top: calc(35%) !important;
+    font-size: 31px;
+}
+
+
+body.big .tweet div.contentin .logo {
+    font-size: 62px;
 }
 
 .tweet div.contentin .logo.large {
@@ -1595,6 +1604,10 @@ body.big .bottomstrip {
   width: 200%;
 }
 
+.contentin.error {
+
+}
+
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
 /* 
@@ -1616,6 +1629,10 @@ body.big .bottomstrip {
     .tags {
       max-width: 594px;
     }
+    body.big .tweet div.contentin .logo {
+        /* font-size: 44px; */
+        top: calc(39%) !important;
+    }
     .tweet.yt {
         top: 0px;
         height: 614px;
@@ -1634,6 +1651,16 @@ body.big .bottomstrip {
         height: 480px;
     }
 
+    .tweet div.contentin .logo {
+        font-size: 31px;
+        top: calc(42%) !important;
+    }
+
+    body.big .tweet div.contentin .logo {
+        font-size: 44px;
+        top: calc(41%) !important;
+    }
+    
     #tooltip {
       max-width: 387px;
     }
@@ -1651,7 +1678,7 @@ body.big .bottomstrip {
     }
     
     .tweet.html div.contentin .logo {
-       top: calc(49%) !important;
+       top: calc(41.5%) !important;
     }
      
     .tweet .bottomstrip {
@@ -2597,7 +2624,15 @@ body.big #splash.newLayout table:nth-of-type(4) {
         margin-top: 6px;
         width: 100%;
     }
+    .tweet div.contentin.error {max-height: 85vw;transform: translate(-50%, -1%) !important;}
     
+    body.big .tweet div.contentin.error {max-height: 85vw;transform: translate(-50%, -70%) !important;}
+    
+
+    .tweet div.contentin.error i {
+    transform: translate(-50%, -13%) !important;
+}
+
     #tooltip {
       max-width: 251px;
     }
@@ -2623,11 +2658,17 @@ body.big #splash.newLayout table:nth-of-type(4) {
       }
       .tweet div.contentin .logo {
           transform: translate(-50%, -112%);
-          font-size: 8vw;
+          font-size: 25px;
+          top: calc(39%) !important;
       }
+      body.big .tweet div.contentin .logo {
+          top: calc(40%) !important;
+          font-size: 41px;
+      }
+
        .tweet.html div.contentin .logo {
-          transform: translate(-50%, -73%);
-          font-size: 9vw;
+          transform: translate(-50%, -97%);
+          font-size: 30px;
       }     
       .tweet div.contentin .logo.large {
           font-size: 22vw;
