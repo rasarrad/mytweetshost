@@ -1817,11 +1817,11 @@ function clickLiMaximumfs(e, obj) {
             if (value == "Yes") {
                 showMessage("Use maximum available space in fullscreen on", null, null, null, null, null);
                 
-                createCookie("maximumfs", "", 99999);
+                createCookie("maximumfs", "aa", 99999);
             }
             else {
                 showMessage("Use maximum available space in fullscreen off", null, null, null, null, null); 
-                createCookie("maximumfs", "s", 99999);
+                createCookie("maximumfs", "", 99999);
             }
         }  
     }
