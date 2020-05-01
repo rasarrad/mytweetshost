@@ -2384,7 +2384,7 @@ function hasAvailableImage(id, url) {
         type: 'GET'
     }).always(function(jqXHR, textStatus) {
         console.log('--------------------' + jqXHR.length + '-----------------');
-        if (jqXHR.length > 26570 && jqXHR.length > 26594) {
+        if (jqXHR.length > 26570 && jqXHR.length < 26594) {
             console.log("Error: " + id); // addclass "error" to contentin 
         }
         else {
