@@ -849,6 +849,7 @@ function SaveDatFileBro(localstorage) {
 //                              FULSCREEN                              //
 /////////////////////////////////////////////////////////////////////////
 
+var dblFlag2 = false;
 window.openLinkOutside = function(id) {
     window.open($("#" + id).attr("curl"), '_blank');
 };
@@ -887,9 +888,9 @@ window.openLinkInside = function(id) {
 
         $("#fsPopup iframe").attr("src", url);
         $("#fsPopup").fadeIn(1600);
-        dblFlag = true;  
+        dblFlag2 = true;  
         setTimeout(function() {    
-            dblFlag = false; 
+            dblFlag2 = false; 
         }, 400);  
    // }
 };
@@ -933,8 +934,8 @@ function moveFSPopup(obj) {
 function iframeFSloadFunc(obj) {
     if ($(obj).attr("cid") == "none")
         return false;
-
-    if (dblFlag) {
+   
+    if (dblFlag2) {
         //$(obj).attr("cerror", "yes");
         $("#fsPopup").fadeOut(200);
         window.open($(obj).attr("src"), '_blank');
