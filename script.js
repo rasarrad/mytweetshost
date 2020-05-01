@@ -1131,6 +1131,7 @@ var dblTapFlag = false;
 var dblTapTimeout = null;
 
 function clickHandler(event) {
+    alert(1212)
     var obj = event.currentTarget.id;
     dblTapFlagControl = false;
     if(!dblTapFlag) {
