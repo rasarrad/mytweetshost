@@ -218,7 +218,7 @@ function parseTweet(type) {
             hasAvailableImage(text);
 
             url = text; 
-
+alert(nextid);
             text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://s.wordpress.com/mshots/v1/" 
                     + text + "); background-size: 100%;'><i class='logo fa fa-html5'></i></div>\""; 
 
