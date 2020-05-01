@@ -587,6 +587,37 @@ var openMainSettingsPopup = function(jsonobj)
         });
     }
 
+    // Open links inside
+    value = null;
+
+    value = readCookie("linksinside");
+
+    if (value && value.length > 0) {
+        value = "No";
+        $('#doublefstr').css("opacity", 0.5);
+        $('#doublefsul').find(".litags").each( function( index, element ) {
+            $(element).addClass("disable");
+        });
+    }
+    else {
+        value = "Yes";
+        $('#doublefstr').css("opacity", 1);
+
+        $('#doublefsul').find(".litags").each( function( index, element ) {
+            $(element).removeClass("disable");
+        });
+    }
+    
+    $('#linksinsideul').find(".litags").each( function( index, element ) {
+        if($(element).html().trim() == value) {
+            $(element).addClass("selectedtag");
+        }
+        else {
+            $(element).removeClass("selectedtag");
+        }
+    });
+
+
     // Use swipes
     value = null;
 
@@ -1684,6 +1715,81 @@ function clickLiColors(e, obj) {
         showMessage("Color Mode Changed To " + value, null, null, null, null, null);
     }  
 }
+
+
+function clickLiDoublefs(e, obj) {
+    e.stopPropagation();
+
+    if (!$(obj).hasClass("disable")) {
+        if (!$(obj).hasClass("selectedtag")) {
+            var value = $(obj).html().trim();
+            $('#doublefsul').find(".litags").each( function( index, element ) {
+                if($(element).html().trim() == value) {
+                    $(element).addClass("selectedtag");
+                }
+                else {
+                    $(element).removeClass("selectedtag");
+                }
+            });
+    
+            if (value == "Yes") {
+                showMessage("Double click/long press opens the link outside on", null, null, null, null, null);
+                
+                createCookie("doublefs", "", 99999);
+            }
+            else {
+                showMessage("Double click/long press opens the link outside off", null, null, null, null, null); 
+                createCookie("doublefs", "s", 99999);
+            }
+        }  
+    }
+
+}
+
+function clickLiLinksinside(e, obj) {
+    e.stopPropagation();
+
+
+    if (!$(obj).hasClass("selectedtag")) {
+        var value = $(obj).html().trim();
+        $('#linksinsideul').find(".litags").each( function( index, element ) {
+            if($(element).html().trim() == value) {
+                $(element).addClass("selectedtag");
+            }
+            else {
+                $(element).removeClass("selectedtag");
+            }
+        });
+
+        if (value == "Yes") {
+            showMessage("Open HTLM/Youtube links inside the application on", null, null, null, null, null);
+            
+            $('#doublefstr').css("opacity", 1);
+
+            $('#doublefsul').find(".litags").each( function( index, element ) {
+                $(element).removeClass("disable");
+            });
+
+            createCookie("linksinside", "", 99999);
+        }
+        else {
+            showMessage("Open HTLM/Youtube links inside the application off", null, null, null, null, null); 
+            createCookie("linksinside", "s", 99999);
+
+            $('#doublefstr').css("opacity", 0.5);
+
+            $('#doublefsul').find(".litags").each( function( index, element ) {
+                $(element).addClass("disable");
+            });
+            
+        }
+    }  
+
+}
+
+
+
+
 
 
 function clickLiSwipes(e, obj) {
