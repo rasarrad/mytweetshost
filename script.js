@@ -937,8 +937,10 @@ function iframeFSloadFunc(obj) {
         console.log("BBBBBBBBBBBBBBBBBBBB");
     if (dblFlag) {
         //$(obj).attr("cerror", "yes");
-        closeFSPopup();
+ 
         window.open($(obj).attr("src"), '_blank');
+
+        closeFSPopup();
     }
 } 
 
