@@ -973,14 +973,18 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
                             if (val.type == "T") {
                                 newtweetobj.append($('<div class="innertweet"></div>'));
                                 newtweetobj.find('.innertweet').append(val.tweet);
+
+                                newtweetobj.attr('id', val.id);
                             }
                             else {
                                 newtweetobj.append($(val.tweet));
                                 
                                 newtweetobj.find(".bottomstripline.line1").html(val.info);
                                 
+                                newtweetobj.attr('id', val.id);
+
                                 var currid = val.id;
-                                setTimeout( function() {                                 
+                                //setTimeout( function() {                                 
                                     // xyzdouble
                                     if (!isMobile) {
                                         console.log('----------')
@@ -988,10 +992,8 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
                                         console.log(document.getElementById("contentin" + currid))
                                         document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
                                     }
-                                }, 200 );
+                                //}, 200 );
                             }
-                
-                            newtweetobj.attr('id', val.id);
             
                             if (objToFocus < 0) {
             
