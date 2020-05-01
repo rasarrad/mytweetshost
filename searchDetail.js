@@ -978,14 +978,15 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
                                 newtweetobj.append($(val.tweet));
                                 
                                 newtweetobj.find(".bottomstripline.line1").html(val.info);
-                                    
+                                
+                                var currid = val.id;
                                 setTimeout( function() {                                 
                                     // xyzdouble
                                     if (!isMobile) {
                                         console.log('----------')
-                                        console.log(val.id)
-                                        console.log(document.getElementById("contentin" + val.id))
-                                        document.getElementById("contentin" + val.id).addEventListener("click", clickHandler);
+                                        console.log(currid)
+                                        console.log(document.getElementById("contentin" + currid))
+                                        document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
                                     }
                                 }, 200 );
                             }
