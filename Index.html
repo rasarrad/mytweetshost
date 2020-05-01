@@ -969,23 +969,6 @@ bookmarks <span>
         </tr>   
         </tbody>
       </table>   
-       
-      <table id="purgetable" class="sectiontitletable generatetablerow defaulttablerow single" style="margin-top: 6px;max-height: 18px;display: block;width: calc(100% - 14px);">
-        <tbody>
-          <tr style="padding-bottom: 15px;">
-            <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: default;">
-                <i class="fa fa-times-circle" style="font-size: 13px;position: relative;top: 0px;left: -4px;"></i>
-                <span style="padding-left: 6px;position: relative;top: -1px;" class="sectiontitle">Purge deleted links<i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'purge')" style="font-size: 13px;position: absolute;left: 113px;top: 1px;"></i></span>
-            </td>    
-            <td class="sectionicontd el" style="cursor: default;">
-                <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;cursor: default;cursor: default !important;"></span>
-            </td>                         
-            <td class="sectionedittd">
-                <i class="fa fa-check clicable" onclick="javascript: eraseAllDeleted(this)" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 16px;top: -3px;border-radius: 3px;padding-left: 0px;height: 16px;padding-right: 0px;"></i>
-            </td>                                        
-          </tr>   
-         </tbody>
-      </table>
 
       <table cmaxheight="173px" cmaxheightbig="213px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 37px; overflow-y: hidden; display: block;">
         <tbody style="display: table;width: 100%;">
@@ -1039,32 +1022,6 @@ bookmarks <span>
         </tbody>
       </table>
 
-      <table id="helptable" cmaxheight="73px" cmaxheightbig="86px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 100px;">
-        <tbody>
-          <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
-            <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
-                <i class="fa fa-question-circle ashow"></i><span style="padding-left: 6px;" class="sectiontitle">Help</span>
-            </td>    
-            <td class="sectionicontd el ellipsis">
-                <span id="helpdisplay" class="titletext slicename" style="top: -1px;text-align: left;padding-left: 0px;"></span>
-            </td>                         
-            <td class="sectionedittd">
-                <i class="fa fa-angle-down"></i>
-            </td>                                         
-          </tr>     
-          <tr>  
-            <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px; position: relative;">
-                <ul id="helpul">
-                    <li onclick="javascript: clickLiHelp(event, this)" class="litags">
-                    Yes</li>
-                    <li onclick="javascript: clickLiHelp(event, this)" class="litags">
-                    No</li>
-                </ul> 
-                <i class="fa fa-question-circle ashow pointeropacity" onclick="javascript: openHelp(this, 'help')" style="position: absolute;right: 3px;bottom: 3px;"></i>  
-              </td>
-        </tr>   
-        </tbody>
-      </table>  
 
       <table id="uploadtable" cmaxheight="170px" cmaxheightbig="180px" cheight="190px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 100px;">
         <tbody>
@@ -1113,6 +1070,51 @@ bookmarks <span>
          </tbody>
       </table>
 
+      <table id="purgetable" class="sectiontitletable generatetablerow defaulttablerow single" style="margin-top: 6px;max-height: 18px;display: block;width: calc(100% - 14px);">
+        <tbody>
+          <tr style="padding-bottom: 15px;">
+            <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: default;">
+                <i class="fa fa-times-circle" style="font-size: 13px;position: relative;top: 0px;left: -4px;"></i>
+                <span style="padding-left: 6px;position: relative;top: -1px;" class="sectiontitle">Purge deleted links<i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'purge')" style="font-size: 13px;position: absolute;left: 113px;top: 1px;"></i></span>
+            </td>    
+            <td class="sectionicontd el" style="cursor: default;">
+                <span class="titletext" style="top: -1px;text-align: left;padding-left: 0px;cursor: default;cursor: default !important;"></span>
+            </td>                         
+            <td class="sectionedittd">
+                <i class="fa fa-check clicable" onclick="javascript: eraseAllDeleted(this)" style="font-size: 16px;color: var(--softdark-color);background: var(--high-color);width: 16px;top: -3px;border-radius: 3px;padding-left: 0px;height: 16px;padding-right: 0px;"></i>
+            </td>                                        
+          </tr>   
+         </tbody>
+      </table>
+
+      
+      <table id="helptable" cmaxheight="73px" cmaxheightbig="86px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 100px;">
+        <tbody>
+          <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;">
+            <td class="sectionicontd" style="display: inline-block;white-space: nowrap;">
+                <i class="fa fa-question-circle ashow"></i><span style="padding-left: 6px;" class="sectiontitle">Help</span>
+            </td>    
+            <td class="sectionicontd el ellipsis">
+                <span id="helpdisplay" class="titletext slicename" style="top: -1px;text-align: left;padding-left: 0px;"></span>
+            </td>                         
+            <td class="sectionedittd">
+                <i class="fa fa-angle-down"></i>
+            </td>                                         
+          </tr>     
+          <tr>  
+            <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px; position: relative;">
+                <ul id="helpul">
+                    <li onclick="javascript: clickLiHelp(event, this)" class="litags">
+                    Yes</li>
+                    <li onclick="javascript: clickLiHelp(event, this)" class="litags">
+                    No</li>
+                </ul> 
+                <i class="fa fa-question-circle ashow pointeropacity" onclick="javascript: openHelp(this, 'help')" style="position: absolute;right: 3px;bottom: 3px;"></i>  
+              </td>
+        </tr>   
+        </tbody>
+      </table>  
+      
       <!-- xyz splash - inserido display: none; no fim do style -->
       <table id="unlocktable" cmaxheight="73px" cmaxheightbig="86px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 100px;display: none;">
         <tbody>
