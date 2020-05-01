@@ -982,6 +982,7 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
                                     // xyzdouble
                                     if (!isMobile) {
                                         alert(val.id)
+                                        alert(document.getElementById("contentin" + val.id))
                                         document.getElementById("contentin" + val.id).addEventListener("click", clickHandler);
                                     }
                                 }, 200 );
