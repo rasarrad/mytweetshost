@@ -987,7 +987,7 @@ bookmarks <span>
          </tbody>
       </table>
 
-      <table cmaxheight="173px" cmaxheightbig="196px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 37px; overflow-y: hidden; display: block;">
+      <table cmaxheight="173px" cmaxheightbig="213px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 37px; overflow-y: hidden; display: block;">
         <tbody style="display: table;width: 100%;">
           <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;/* cursor: default !important; */">
             <td style="display: inline-block;white-space: nowrap;width: 100% !important;" class="sectionicontd">
@@ -1001,7 +1001,9 @@ bookmarks <span>
             </td>                                         
           </tr>     
           <tr>  
-            <td class="otherOptText" valign="middle" colspan="2">Open HTLM/Youtube links inside the application?<i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'linksinside')" style="position: relative;top: 3px;left: 9px;"></i></td><td style="width: 155px;text-align: right;padding-bottom: 5px;position: relative;height: 31px;padding-right: 5px;">
+            <td class="otherOptText" valign="middle" colspan="2">
+                Open HTLM/Youtube links inside the application?
+                <i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'linksinside')" style="position: relative;top: 3px;left: 9px;"></i></td><td style="width: 155px;text-align: right;padding-bottom: 5px;position: relative;height: 31px;padding-right: 5px;">
                 <ul id="linksinsideul">
                     <li onclick="javascript: clickLiLinksinside(event, this)" class="litags">
                     Yes</li>
@@ -1011,7 +1013,9 @@ bookmarks <span>
             </td>
         </tr>
         <tr id="doublefstr">  
-          <td class="otherOptText" valign="middle" colspan="2">When clicking in a HTML/Youtube link, double click/long press opens the link outside?<i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'doublefs')" style="position: relative;top: 3px;left: 9px;"></i></td><td style="width: 155px;text-align: right;padding-bottom: 5px;position: relative;height: 31px;padding-right: 5px;">
+          <td class="otherOptText" valign="middle" colspan="2">
+              When clicking in a HTML/Youtube link, double click/long press opens the link outside?
+              <i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'doublefs')" style="position: relative;top: 3px;left: 9px;"></i></td><td style="width: 155px;text-align: right;padding-bottom: 5px;position: relative;height: 31px;padding-right: 5px;">
               <ul id="doublefsul">
                   <li onclick="javascript: clickLiDoublefs(event, this)" class="litags">
                   Yes</li>
@@ -1021,7 +1025,9 @@ bookmarks <span>
           </td>
         </tr>
         <tr id="maximumfstr" style="opacity: 1;">  
-          <td class="otherOptText" valign="middle" colspan="2">Use maximum available space in fullscreen? <i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'doublefs')" style="position: relative;top: 3px;left: 9px;"></i></td><td style="width: 155px;text-align: right;padding-bottom: 5px;position: relative;height: 31px;padding-right: 5px;">
+          <td class="otherOptText" valign="middle" colspan="2">
+              Use maximum available space in fullscreen? 
+              <i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'maximumfs')" style="position: relative;top: 3px;left: 9px;"></i></td><td style="width: 155px;text-align: right;padding-bottom: 5px;position: relative;height: 31px;padding-right: 5px;">
               <ul id="maximumfsul">
                   <li onclick="javascript: clickLiMaximumfs(event, this)" class="litags">
                   Yes</li>
@@ -1029,27 +1035,7 @@ bookmarks <span>
                   No</li>
               </ul>    
           </td>
-        </tr>
-        <tr style="opacity: 0.5;">  
-            <td class="otherOptText" valign="middle" colspan="2">dasdsadsa dasdsfdsafsa fsdfasdfds dasd dasda d4sas das das das da dads<i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'colors')" style="position: relative;top: 3px;left: 9px;"></i></td><td style="width: 80%;width: calc(23% - 0px);text-align: right;padding-bottom: 5px;position: relative;height: 31px;padding-right: 5px;">
-                <ul id="swipeul">
-                    <li onclick="javascript: clickLiSwipes(event, this)" class="litags selectedtag">
-                    Yes</li>
-                    <li onclick="javascript: clickLiSwipes(event, this)" class="litags">
-                    No</li>
-                </ul>        
-            </td>
-        </tr>
-        <tr>  
-            <td class="otherOptText" valign="middle" colspan="2">dasdsadsa dasdsfdsafsa fsdfasdfds dasd dasda d4sas das das das da dads</td><td style="width: 80%;width: calc(23% - 0px);text-align: right;padding-bottom: 5px;position: relative;height: 31px;padding-right: 5px;">
-                <ul id="swipeul">
-                    <li onclick="javascript: clickLiSwipes(event, this)" class="litags selectedtag">
-                    Yes</li>
-                    <li onclick="javascript: clickLiSwipes(event, this)" class="litags">
-                    No</li>
-                </ul>         
-              </td>
-          </tr>   
+        </tr> 
         </tbody>
       </table>
 
@@ -1550,6 +1536,7 @@ bookmarks <span>
     <i onclick="javascript: externallinkCopyPre()" class="logo fa fa-files-o"></i>
     <i onclick="javascript: externallinkopenPre()" class="logo fa fa-external-link"></i>
     <i onclick="javascript: closeFSPopup()" class="logo fa fa-times-circle"></i>
+    <i onclick="javascript: moveFSPopup(this)" class="logo fa arrow fa-arrow-circle-up"></i>
 </div>
 
 </body>

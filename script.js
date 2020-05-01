@@ -56,7 +56,7 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 $( document ).ready(function() { 
 
     isMobile = window.mobileAndTabletCheck();
-    createCookie("maximumfs", "", 99999);
+
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");
 
@@ -874,6 +874,15 @@ window.openLinkInside = function(id) {
 
         $("#fsPopup iframe").attr("cid", id);
 
+        var value = readCookie("maximumfs");
+
+        if (value && value.length > 0) {
+            $("#fsPopup").addClass("full");
+        }
+        else {
+            $("#fsPopup").removeClass("full");
+        }
+
         if (obj.hasClass("yt"))
             $("#fsPopup").addClass("yt");
         else
@@ -914,6 +923,14 @@ function closeFSPopup(obj) {
     $("#fsPopup").fadeOut(700);
 } 
 
+function moveFSPopup(obj) {
+    if ($(obj).hasClass('fa-arrow-circle-up')) {
+        $(obj).removeClass('fa-arrow-circle-up')
+    }
+    else {
+        $(obj).addClass('fa-arrow-circle-up')
+    }
+}
 
 function iframeFSloadFunc(obj) {
     if ($(obj).attr("cid") == "none")

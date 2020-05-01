@@ -4602,6 +4602,7 @@ body.big .newLayout > div {
   background: white;
   width: 23px;
   height: 26px;
+  transition: bottom 0.8s;
 }
 
 #fsPopup.yt i {
@@ -4609,6 +4610,13 @@ body.big .newLayout > div {
   border-top-color: black !important;
   color: var(--high-color) !important;
 }
+
+
+#fsPopup:not(.full) i.arrow {
+  display: none !important;
+}
+
+
 
 #fsPopup i.fa-edit {bottom: 5px;padding-left: 13px;width: 21px;padding-top: 9px;font-size: 19px;height: 20px;left: calc(50% - 76px) !important;}
 body.big #fsPopup i.fa-edit {
@@ -4684,13 +4692,31 @@ body.big #fsPopup i.fa-times-circle {
   border-radius: 4px !important;
 }
 
-#fsPopup.full i {
-  background: var(--dark-color) !important;
-  color: var(--high-color) !important;
+#fsPopup.full i.arrow {
+  border-top-color: var(--high-color) !important;
+  border-radius: 4px !important;
+  font-size: 15px !important;
+  padding: 3px 2px;
+  padding-left: 4px;
+  height: 15px !important;
+  width: 15px !important;
+  left: calc(50% + 123px) !important;
+  bottom: 11px !important;
+}
+
+#fsPopup.full.up i.arrow {
+  bottom: 80px !important;
 }
 
 #fsPopup.full i {
-    bottom: 5px !important;
+  background: var(--dark-color) !important;
+  color: var(--high-color) !important;
+  bottom: 5px !important;
+
+}
+
+#fsPopup.full.up i {
+  bottom: 74px !important;
 }
 
 .newLayout {
