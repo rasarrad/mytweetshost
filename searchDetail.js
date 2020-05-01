@@ -981,8 +981,9 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
                                 setTimeout( function() {                                 
                                     // xyzdouble
                                     if (!isMobile) {
-                                        alert(val.id)
-                                        alert(document.getElementById("contentin" + val.id))
+                                        console.log('--------------------------')
+                                        console.log(val.id)
+                                        console.log(document.getElementById("contentin" + val.id))
                                         document.getElementById("contentin" + val.id).addEventListener("click", clickHandler);
                                     }
                                 }, 200 );
