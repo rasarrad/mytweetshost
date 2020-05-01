@@ -925,10 +925,14 @@ function closeFSPopup(obj) {
 
 function moveFSPopup(obj) {
     if ($(obj).hasClass('fa-arrow-circle-up')) {
-        $(obj).removeClass('fa-arrow-circle-up')
+        $(obj).removeClass('fa-arrow-circle-up');
+        $(obj).addClass('fa-arrow-circle-down');
+        $("#fsPopup").addClass('up');
     }
     else {
-        $(obj).addClass('fa-arrow-circle-up')
+        $(obj).addClass('fa-arrow-circle-up');
+        $(obj).removeClass('fa-arrow-circle-down');
+        $("#fsPopup").removeClass('up');
     }
 }
 
