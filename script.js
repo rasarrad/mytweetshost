@@ -900,19 +900,19 @@ window.openLinkInline = function(id) {
 
     var obj = $("#" + id);
 
-    $("#contentin" + id).prepend("<iframe id='contentiniframe" + id + "' onload='iframeloadFunc(this)' scrolling='yes' frameborder='0' allowtransparency='true' style='border: 0px solid;margin-top: 0px !important;width: 100% !important;transform: translate(-50%, -50%) !important; display: none;'></iframe>");
-    $("#contentiniframe" + id).attr("cid", id);
+    var url = generateUrl(obj.attr("curl"));
 
-    var url = generateUrl(obj.attr("curl"))
+    $("#contentin" + id).prepend("<iframe src='" + url + "' id='contentiniframe" + id + "' onload='iframeloadFunc(this)' scrolling='yes' frameborder='0' allowtransparency='true' style='border: 0px solid;margin-top: 0px !important;width: 100% !important;transform: translate(-50%, -50%) !important; display: none;'></iframe>");
+    $("#contentiniframe" + id).attr("cid", id);
+    dblFlag = true;  
+    setTimeout(function() {    
+        dblFlag = false; 
+    }, 1500); 
 
     $("#contentiniframe" + id).attr("src", url);
     $("#contentiniframe" + id).fadeIn(1600);
     $("#contentin" + id).fadeOut(1600);
-    dblFlag = true;  
-    console.log("aaaaaaaaaaaaaa2222");
-    setTimeout(function() {    
-        dblFlag = false; 
-    }, 1500);  
+ 
 };
 
 function iframeloadFunc(obj) {
