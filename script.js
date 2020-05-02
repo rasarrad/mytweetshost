@@ -916,7 +916,7 @@ window.openLinkInline = function(id) {
         console.log("cccccccccccc");
     }, timer); 
 
-    $("#contentiniframe" + id).fadeIn(1600);
+    $("#contentiniframe" + id).fadeIn(1900);
  
 };
 
