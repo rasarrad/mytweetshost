@@ -850,7 +850,7 @@ function SaveDatFileBro(localstorage) {
 /////////////////////////////////////////////////////////////////////////
 
 window.openLinkOutside = function(id) {
-    window.open($("#" + id).attr("curl"), '_blank');
+    window.open($("#" + id).attr("curl"));
 };
 
 var dblFlag2 = false;
