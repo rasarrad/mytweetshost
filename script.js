@@ -915,7 +915,7 @@ window.openLinkInline = function(id) {
     }, 1500);  
 };
 
-function iframeFSloadFunc(obj) {
+function iframeloadFunc(obj) {
         console.log("BBBBBBBBBBBBBBBBBBBB2222");
     if (dblFlag) {
         window.open($(obj).attr("src"), '_blank');
