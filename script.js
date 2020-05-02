@@ -911,10 +911,11 @@ window.openLinkInline = function(id) {
     if (obj.hasClass("yt"))
         timer = 1;
 
+        alert(timer)
     setTimeout(function() {    
         dblFlag2 = false; 
         console.log("cccccccccccc");
-    }, 1500); 
+    }, timer); 
 
     $("#contentiniframe" + id).fadeIn(1600);
     $("#contentin" + id).fadeOut(1600);
