@@ -970,7 +970,53 @@ bookmarks <span>
         </tbody>
       </table>   
 
-      <table cmaxheight="173px" cmaxheightbig="213px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 37px; overflow-y: hidden; display: block;">
+      <table cmaxheight="173px" cmaxheightbig="213px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 173px; overflow-y: hidden; display: block;">
+        <tbody style="display: table;width: 100%;">
+          <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;/* cursor: default !important; */">
+            <td style="display: inline-block;white-space: nowrap;width: 100% !important;" class="sectionicontd">
+                <i class="fa fa-expand" style="font-size: 17px;left: -4px; position: relative; top: 2px;"></i>
+                <span style="padding-left: 6px;" class="sectiontitle">Fullscreen</span>
+            </td>
+            <td>
+            </td>
+            <td class="sectionedittd" style="min-width: 87px;">
+                  <i class="fa fa-angle-up" style=""></i>
+            </td>                                         
+          </tr>     
+          
+        <tr>  
+          <td class="otherOptText" valign="middle" colspan="2">Double click/long press opens the link in fullscreen inside the app?&nbsp;&nbsp;<i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'doublefs')" style="position: relative;top: 1px;/* left: 9px; */"></i></td><td style="width: 77px;text-align: right;padding-bottom: 5px;position: relative;height: 31px;padding-right: 12px;padding-left: 14px;">
+              <ul id="doublefsul" style="display: table-row;">
+                  <li onclick="javascript: clickLiLinksinside(event, this)" class="litags selectedtag" style="display: table-cell;height: 17px;padding-bottom: 0; max-height: 12px;">
+                  Yes</li>
+                  <li onclick="javascript: clickLiLinksinside(event, this)" class="litags" style="display: table-cell;position: relative;left: 5px;">
+                  No</li>
+              </ul>    
+          </td>
+        </tr>
+        <tr id="maximumfstr" style="opacity: 0.5;">  
+          <td class="otherOptText" valign="middle" colspan="2">Use maximum available space in fullscreen?&nbsp;&nbsp;<i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'doublefs')" style="position: relative;top: 1px;"></i></td><td style="width: 77px;text-align: right;padding-bottom: 5px;position: relative;height: 31px;padding-right: 12px;padding-left: 14px;">
+              <ul id="doublefsul" style="display: table-row;">
+                  <li onclick="javascript: clickLiMaximumfs(event, this)" class="litags selectedtag disable" style="display: table-cell;height: 17px;padding-bottom: 0;max-height: 12px;">
+                  Yes</li>
+                  <li onclick="javascript: clickLiMaximumfs(event, this)" class="litags disable" style="display: table-cell;position: relative;left: 5px;">
+                  No</li>
+              </ul>    
+          </td>
+        </tr><tr>  
+          <td class="otherOptText" valign="middle" colspan="2">Change click/press and double click/long press functions?&nbsp;&nbsp;<i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'doublefs')" style="position: relative;top: 1px;/* left: 9px; */"></i></td><td style="width: 77px;text-align: right;padding-bottom: 5px;position: relative;height: 31px;padding-right: 12px;padding-left: 14px;">
+              <ul id="doublefsul" style="display: table-row;float: right;">
+                  <li onclick="javascript: clickLiDoublefs(event, this)" class="litags selectedtag" style="display: table-cell;height: 17px;padding-bottom: 0;max-height: 12px;">
+                  Yes</li>
+                  <li onclick="javascript: clickLiDoublefs(event, this)" class="litags" style="display: table-cell;position: relative;left: 5px;">
+                  No</li>
+              </ul>    
+          </td>
+        </tr> 
+        </tbody>
+      </table>
+
+      <table cmaxheight="173px" cmaxheightbig="213px" cheight="90px" class="sectiontitletable expd sectionexpandable" style="margin-top: 6px; max-height: 37px; overflow-y: hidden; display: block; display: none;">
         <tbody style="display: table;width: 100%;">
           <tr class="cursorpointer" onclick="editSetting(event,this, true)" style="padding-bottom: 15px;/* cursor: default !important; */">
             <td style="display: inline-block;white-space: nowrap;width: 100% !important;" class="sectionicontd">
@@ -1007,7 +1053,7 @@ bookmarks <span>
               </ul>    
           </td>
         </tr>
-        <tr id="maximumfstr" style="opacity: 1;">  
+        <tr style="opacity: 1;">  
           <td class="otherOptText" valign="middle" colspan="2">
               Use maximum available space in fullscreen? 
               <i class="fa fa-question-circle pointeropacity" onclick="javascript: openHelp(this, 'maximumfs')" style="position: relative;top: 3px;left: 9px;"></i></td><td style="width: 155px;text-align: right;padding-bottom: 5px;position: relative;height: 31px;padding-right: 5px;">

@@ -591,29 +591,19 @@ var openMainSettingsPopup = function(jsonobj)
     value = readCookie("linksinside");
 
     if (value && value.length > 0) {
-        value = "No";
-
-        $('#doublefstr').css("opacity", 0.5);
-        $('#doublefsul').find(".litags").each( function( index, element ) {
-            $(element).addClass("disable");
-        });
-        
-        $('#maximumfstr').css("opacity", 0.5);
-        $('#maximumfsul').find(".litags").each( function( index, element ) {
-            $(element).addClass("disable");
-        });
-    }
-    else {
         value = "Yes";
-
-        $('#doublefstr').css("opacity", 1);
-        $('#doublefsul').find(".litags").each( function( index, element ) {
-            $(element).removeClass("disable");
-        });
 
         $('#maximumfstr').css("opacity", 1);
         $('#maximumfsul').find(".litags").each( function( index, element ) {
-            $(element).removeClass("disable");
+            $(element).addClass("removeClass");
+        });
+    }
+    else {
+        value = "No";
+
+        $('#maximumfstr').css("opacity", 0.5);
+        $('#maximumfsul').find(".litags").each( function( index, element ) {
+            $(element).addClass("disable");
         });
     }
     
@@ -627,16 +617,16 @@ var openMainSettingsPopup = function(jsonobj)
     });
 
 
-    // double click outside
+    // double and click changed
     value = null;
 
     value = readCookie("doublefs");
 
     if (value && value.length > 0) {
-        value = "No";
+        value = "Yes";
     }
     else {
-        value = "Yes";
+        value = "No";
     }
     $('#doublefsul').find(".litags").each( function( index, element ) {
         if($(element).html().trim() == value) {
@@ -1784,13 +1774,13 @@ function clickLiDoublefs(e, obj) {
             });
     
             if (value == "Yes") {
-                showMessage("Double click/long press opens the link outside on", null, null, null, null, null);
+                showMessage("Change click/press and double click/long press functions on", null, null, null, null, null);
                 
-                createCookie("doublefs", "", 99999);
+                createCookie("doublefs", "s", 99999);
             }
             else {
-                showMessage("Double click/long press opens the link outside off", null, null, null, null, null); 
-                createCookie("doublefs", "s", 99999);
+                showMessage("Change click/press and double click/long press functions off", null, null, null, null, null); 
+                createCookie("doublefs", "", 99999);
             }
         }  
     }
@@ -1842,30 +1832,19 @@ function clickLiLinksinside(e, obj) {
         });
 
         if (value == "Yes") {
-            showMessage("Open HTLM/Youtube links inside the application on", null, null, null, null, null);
+            showMessage("Double click/long press opens the link in fullscreen inside the app on", null, null, null, null, null);
             
-            $('#doublefstr').css("opacity", 1);
-
-            $('#doublefsul').find(".litags").each( function( index, element ) {
-                $(element).removeClass("disable");
-            });
             $('#maximumfstr').css("opacity", 1);
 
             $('#maximumfsul').find(".litags").each( function( index, element ) {
                 $(element).removeClass("disable");
             });
 
-            createCookie("linksinside", "", 99999);
+            createCookie("linksinside", "s", 99999);
         }
         else {
-            showMessage("Open HTLM/Youtube links inside the application off", null, null, null, null, null); 
-            createCookie("linksinside", "s", 99999);
-
-            $('#doublefstr').css("opacity", 0.5);
-
-            $('#doublefsul').find(".litags").each( function( index, element ) {
-                $(element).addClass("disable");
-            });
+            showMessage("Double click/long press opens the link in fullscreen inside the app off", null, null, null, null, null); 
+            createCookie("linksinside", "n", 99999);
                     
             $('#maximumfstr').css("opacity", 0.5);
 
