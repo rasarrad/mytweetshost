@@ -853,7 +853,7 @@ window.openLinkOutside = function(id) {
     window.open($("#" + id).attr("curl"), '_blank');
 };
 
-
+var dblFlag2 = false;
 window.openLinkInside = function(id) {
     //if ($("#fsPopup iframe").attr("cid") == id && $("#fsPopup iframe").attr("cerror") != "yes") {
     //    $("#fsPopup").fadeIn(500);
@@ -887,10 +887,10 @@ window.openLinkInside = function(id) {
 
         $("#fsPopup iframe").attr("src", url);
         $("#fsPopup").fadeIn(1600);
-        dblFlag = true;  
+        dblFlag2 = true;  
         console.log("aaaaaaaaaaaaaa");
         setTimeout(function() {    
-            dblFlag = false; 
+            dblFlag2 = false; 
         }, 1500);  
    // }
 };
@@ -904,7 +904,7 @@ window.openLinkInline = function(id) {
 
     $("#contentin" + id).prepend("<iframe src='" + url + "' id='contentiniframe" + id + "' onload='iframeloadFunc(this)' scrolling='yes' frameborder='0' allowtransparency='true' style='border: 0px solid;margin-top: 0px !important;width: 100% !important;transform: translate(-50%, -50%) !important; display: none;'></iframe>");
     $("#contentiniframe" + id).attr("cid", id);
-    dblFlag = true; 
+    dblFlag2 = true; 
     console.log("aaaaaaaaaaaaaa"); 
 
     var timer = 1500;
@@ -912,7 +912,7 @@ window.openLinkInline = function(id) {
         timer = 1;
 
     setTimeout(function() {    
-        dblFlag = false; 
+        dblFlag2 = false; 
     }, 1500); 
 
     $("#contentiniframe" + id).fadeIn(1600);
@@ -921,8 +921,8 @@ window.openLinkInline = function(id) {
 };
 
 function iframeloadFunc(obj) {
-        console.log("BBBBBBBBBBBBBBBBBBBB2222 " + dblFlag);
-    if (dblFlag) {
+        console.log("BBBBBBBBBBBBBBBBBBBB2222 " + dblFlag2);
+    if (dblFlag2) {
         window.open($(obj).attr("src"), '_blank');
         $("#contentiniframe" + $(obj).attr("cid")).fadeOut(800);
         $("#contentin" + $(obj).attr("cid")).fadeIn(800);
@@ -968,7 +968,7 @@ function iframeFSloadFunc(obj) {
     if ($(obj).attr("cid") == "none")
         return false;
         console.log("BBBBBBBBBBBBBBBBBBBB");
-    if (dblFlag) {
+    if (dblFlag2) {
         //$(obj).attr("cerror", "yes");
  
         window.open($(obj).attr("src"), '_blank');
