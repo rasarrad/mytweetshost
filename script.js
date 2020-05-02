@@ -905,7 +905,7 @@ window.openLinkInline = function(id) {
     $("#contentin" + id).prepend("<iframe src='" + url + "' id='contentiniframe" + id + "' onload='iframeloadFunc(this)' scrolling='yes' frameborder='0' allowtransparency='true' style='border: 0px solid;margin-top: 0px !important;width: 100% !important;transform: translate(-50%, -50%) !important; display: none;'></iframe>");
     $("#contentiniframe" + id).attr("cid", id);
     dblFlag2 = true; 
-    console.log("aaaaaaaaaaaaaa"); 
+    console.log("aaaaaaaaaaaaaa" + obj.hasClass("yt")); 
 
     var timer = 1500;
     if (obj.hasClass("yt"))
@@ -913,6 +913,7 @@ window.openLinkInline = function(id) {
 
     setTimeout(function() {    
         dblFlag2 = false; 
+        console.log("cccccccccccc");
     }, 1500); 
 
     $("#contentiniframe" + id).fadeIn(1600);
