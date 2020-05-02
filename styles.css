@@ -1185,13 +1185,13 @@ body:not(.big) .yt.tweet .bottomgradiantback {
 
   .tweet.yt:not(:last-child) iframe {
     margin-top: 0px !important;
-    height: 317px !important;
+    /* height: 317px !important; */
     }
 
   .tweet.yt {
       /* background: #101010; */
       top: 0px;
-      height: 808px;
+      height: 660px;
       /* height: 91vw; */
       /* max-height: 782px; */
   }
@@ -1213,13 +1213,14 @@ body.big .tweet.yt {
     position: absolute;
     background-blend-mode: luminosity;
     height: 100%;
-    width: 848px;
+    width: 851px;
     /* max-width: 759px; */
     transform: translate(-50%, 0px);
     left: calc(50% - 0px) !important;
     /* top: calc(50%) !important; */
     cursor: pointer;
     background-repeat: no-repeat !important;
+    background-position-y: 6px !important;
 }
 
 .tweet.html div.contentin {
@@ -1261,8 +1262,10 @@ body.big .tweet div.contentin .logo {
                      
 .tweet.yt div.contentin {
     transform: translate(-50%, -50%);
-    top: calc(50% + 1px) !important;
+    top: calc(50% + -49px) !important;
     margin-top: 31px;
+    height: 531px;
+    background-position-y: -80px !important;
 }
        
   
@@ -1276,10 +1279,13 @@ body.big .tweet div.contentin .logo {
   border-radius: 5px;
   border: 0px solid white;
   width: calc(100% - 0px) !important;
-  margin-left: calc(50% - 327px) !important;
+  margin-left: calc(0px) !important;
   margin-right: 0px !important;
   top: -12px;
-  max-width: 656px;
+  max-width: 849px;
+  left: calc(50% - 0px) !important;
+  top: calc(50% - 26px) !important;
+  height: 481px !important;
 }   
 .tags {
   font-size: 12px !important;
@@ -1545,7 +1551,7 @@ body.big #editTags {
   position: absolute;
   height: 59px;
   background-image: linear-gradient(to bottom, white -5%, var(--high-color) 25%, var(--high-color) 74%);
-  width: 797px;
+  width: 802px;
   left: calc(50% - 0px) !important;
   transform: translate(-50%, 10px);
   text-align: left;
@@ -1553,7 +1559,7 @@ body.big #editTags {
   overflow: hidden;
   border-bottom: 4px solid var(--soft-color);
   padding: 0px 25px;
-  top: 656px;
+  top: 514px;
   font-weight: bold;
   text-transform: lowercase;
   font-size: 14px;
@@ -1622,7 +1628,20 @@ body.big .bottomstrip {
   ###Device = Tablets, Ipads (portrait)
   Screen = B/w 768px to 1024px */
   @media (max-width: 999px) and (min-width: 481px), (max-width: 1024px) and (min-width: 768px) and (orientation: portrait) {
-
+    .tweet iframe {
+      position: relative;
+      top: 10px;
+      border-radius: 5px;
+      border: 0px solid white;
+      width: calc(100% - 0px) !important;
+      margin-left: calc(1px) !important;
+      margin-right: 0px !important;
+      top: -12px;
+      max-width: 604px;
+      left: calc(50% - 0px) !important;
+      top: calc(50% - -8px) !important;
+      height: 430px !important;
+    }   
     #expand {
         right: calc(50% - 334px);
     }
@@ -1635,7 +1654,7 @@ body.big .bottomstrip {
     }
     .tweet.yt {
         top: 0px;
-        height: 614px;
+        height: 595px;
         max-height: none;
     }
     .tweet.html {
@@ -1644,11 +1663,12 @@ body.big .bottomstrip {
         max-height: none;
     }        
     .tweet.yt div.contentin {
-        transform: translate(-50%, 0px);
+        transform: translate(-50%, -11px);
         top: auto !important;
         margin-top: -2px;
-        width: 605px;
-        height: 480px;
+        width: 606px;
+        height: 440px;
+        background-position-y: -2px !important;
     }
 
     .tweet div.contentin .logo {
@@ -1682,7 +1702,7 @@ body.big .bottomstrip {
     }
      
     .tweet .bottomstrip {
-      top: 470px;
+      top: 459px;
       bottom: auto;
     }
     
@@ -2406,7 +2426,12 @@ body.big #splash.newLayout table:nth-of-type(4) {
         margin-right: 0px !important;
         top: -12px;
         max-width: 470px;
+        transform: translate(-50%, -50%) !important;
+        left: calc(50% - 0px) !important;
+        top: calc(50% - 19.8vw) !important;
         height: 56vw !important;
+        margin-left: -2px !important;
+        height: 74vw !important;
     }
 
     .tweet .innertweet {
@@ -2641,6 +2666,8 @@ body.big #splash.newLayout table:nth-of-type(4) {
           transform: translate(-50%, -50%);
           top: calc(50% + 0px) !important;
           margin-top: 40px;
+          background-position-y: calc(50% - 20vw) !important;
+          height: 566px;
       }  
       body.big .tweet.html div.contentin {
           transform: translate(-50%, -50%);
@@ -2650,7 +2677,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
       
       .yt .bottomstrip {
           width: calc(100% - 50px);
-          top: 81vw;
+          top: 80vw;
       }
       .html .bottomstrip {
           width: calc(100% - 50px);
