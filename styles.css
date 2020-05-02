@@ -1224,8 +1224,8 @@ body.big .tweet.yt {
 }
 
 .tweet.html div.contentin {
-    width: 847px;
-    margin-top: 7px;
+    width: 850px;
+    margin-top: -7px;
 }
 
 .tweet div.contentin.error {
@@ -1263,7 +1263,7 @@ body.big .tweet div.contentin .logo {
 .tweet.yt div.contentin {
     transform: translate(-50%, -50%);
     top: calc(50% + -49px) !important;
-    margin-top: 31px;
+    margin-top: 19px;
     height: 531px;
     background-position-y: -80px !important;
 }
@@ -1286,6 +1286,20 @@ body.big .tweet div.contentin .logo {
   left: calc(50% - 0px) !important;
   top: calc(50% - 26px) !important;
   height: 481px !important;
+}   
+.tweet.html iframe {
+  top: -12px;
+  max-width: 850px;
+  left: calc(50% - 0px) !important;
+  top: calc(50% - 74px) !important;
+  height: 630px !important;
+}   
+body.big .tweet.html iframe {
+  top: -12px;
+  max-width: 850px;
+  left: calc(50% - 0px) !important;
+  top: calc(50% - 78px) !important;
+  height: 637px !important;
 }   
 .tags {
   font-size: 12px !important;
@@ -1559,7 +1573,7 @@ body.big #editTags {
   overflow: hidden;
   border-bottom: 4px solid var(--soft-color);
   padding: 0px 25px;
-  top: 514px;
+  top: 503px;
   font-weight: bold;
   text-transform: lowercase;
   font-size: 14px;
@@ -1570,7 +1584,12 @@ body.big #editTags {
   background-image: linear-gradient(to bottom, var(--dark-color) -84%, var(--dark-color) 60%, transparent 81%);
 }
 
-
+.tweet.html .bottomstrip {
+  top: 657px;
+}
+body.big .tweet.html .bottomstrip {
+  top: 668px;
+}
 body.big .bottomstrip {
   font-size: 16px;
 }
@@ -1642,6 +1661,25 @@ body.big .bottomstrip {
       top: calc(50% - -8px) !important;
       height: 430px !important;
     }   
+        .tweet.html iframe {
+      position: relative;
+      top: 10px;
+      border-radius: 5px;
+      border: 0px solid white;
+      width: calc(100% - 0px) !important;
+      margin-left: calc(0px) !important;
+      margin-right: 0px !important;
+      top: -12px;
+      max-width: 604px;
+      left: calc(50% - 0px) !important;
+      top: calc(50% - -3px) !important;
+      height: 449px !important;
+    }  
+     body.big .tweet.html iframe {
+      margin-left: calc(0px) !important;
+      top: calc(50% - 1px) !important;
+      height: 452px !important;
+    }  
     #expand {
         right: calc(50% - 334px);
     }
@@ -1656,6 +1694,7 @@ body.big .bottomstrip {
         top: 0px;
         height: 595px;
         max-height: none;
+        /* margin-top: -6px; */
     }
     .tweet.html {
         top: 0px;
@@ -1688,9 +1727,16 @@ body.big .bottomstrip {
     .tweet.html div.contentin {
         transform: translate(-50%, 0px);
         top: auto !important;
-        margin-top: -2px;
+        margin-top: 1px;
         width: 603px;
         height: 454px;
+    }  
+    body.big .tweet.html div.contentin {
+        transform: translate(-50%, 0px);
+        top: auto !important;
+        margin-top: -6px;
+        width: 603px;
+        height: 465px;
     }  
     .tweet.html div.contentin .logo {
        top: calc(39%) !important;
@@ -1702,10 +1748,20 @@ body.big .bottomstrip {
     }
      
     .tweet .bottomstrip {
+      top: 446px;
+      bottom: auto;
+    }
+
+    body.big .tweet .bottomstrip {
       top: 459px;
       bottom: auto;
     }
-    
+    .tweet.html .bottomstrip {
+        top: 476px;
+    }
+    body.big .tweet.html .bottomstrip {
+        top: 487px;
+    }
     .bottomstrip {
       width: 555px;
     }
@@ -2428,12 +2484,23 @@ body.big #splash.newLayout table:nth-of-type(4) {
         max-width: 470px;
         transform: translate(-50%, -50%) !important;
         left: calc(50% - 0px) !important;
-        top: calc(50% - 19.8vw) !important;
+        top: calc(50% - 19.4vw) !important;
         height: 56vw !important;
         margin-left: -2px !important;
-        height: 74vw !important;
+        height: 75vw !important;
     }
-
+    .tweet.html iframe {
+        margin-left: 0px !important;
+        height: 75vw !important;
+        top: calc(0% - -38vw - 4px) !important;
+        height: calc(100% - 38vw) !important;
+    }
+    body.big .tweet.html iframe {
+        margin-left: 0px !important;
+        height: 75vw !important;
+        top: calc(50% - 19.2vw) !important;
+        height: calc(100% - 39vw) !important;
+    }
     .tweet .innertweet {
         position: relative;
         top: 10px;
@@ -2644,6 +2711,8 @@ body.big #splash.newLayout table:nth-of-type(4) {
         transform: translate(-50%, -50%);
         top: calc(50% + 0px) !important;
         margin-top: 35px;
+        background-position-y: calc(50% - 20vw) !important;
+        height: 566px;
     }
     .tweet.html div.contentin {
         margin-top: 6px;
@@ -2681,7 +2750,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
       }
       .html .bottomstrip {
           width: calc(100% - 50px);
-          top: 81vw;
+          top: 81vw !important;
       }
       .tweet div.contentin .logo {
           transform: translate(-50%, -112%);
