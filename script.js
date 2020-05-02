@@ -910,7 +910,7 @@ window.openLinkInline = function(id) {
     var timer = 1500;
     if (obj.hasClass("yt"))
         timer = 1;
-        
+
     setTimeout(function() {    
         dblFlag = false; 
     }, 1500); 
@@ -921,7 +921,7 @@ window.openLinkInline = function(id) {
 };
 
 function iframeloadFunc(obj) {
-        console.log("BBBBBBBBBBBBBBBBBBBB2222");
+        console.log("BBBBBBBBBBBBBBBBBBBB2222 " + dblFlag);
     if (dblFlag) {
         window.open($(obj).attr("src"), '_blank');
         $("#contentiniframe" + $(obj).attr("cid")).fadeOut(800);
