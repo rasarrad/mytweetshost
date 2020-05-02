@@ -1832,6 +1832,7 @@ function clickLiLinksinside(e, obj) {
         });
 
         if (value == "Yes") {
+            alert(1)
             showMessage("Double click/long press opens the link in fullscreen inside the app on", null, null, null, null, null);
             
             $('#maximumfstr').css("opacity", 1);
@@ -1843,6 +1844,7 @@ function clickLiLinksinside(e, obj) {
             createCookie("linksinside", "s", 99999);
         }
         else {
+            alert(2)
             showMessage("Double click/long press opens the link in fullscreen inside the app off", null, null, null, null, null); 
             createCookie("linksinside", "n", 99999);
                     
