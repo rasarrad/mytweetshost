@@ -911,7 +911,6 @@ window.openLinkInline = function(id) {
     if (obj.hasClass("yt"))
         timer = 1;
 
-        alert(timer)
     setTimeout(function() {    
         dblFlag2 = false; 
         console.log("cccccccccccc");

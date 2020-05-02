@@ -1667,11 +1667,11 @@ body.big .bottomstrip {
       border-radius: 5px;
       border: 0px solid white;
       width: calc(100% - 0px) !important;
-      margin-left: calc(0px) !important;
+      margin-left: calc(1px) !important;
       margin-right: 0px !important;
       top: -12px;
       max-width: 604px;
-      left: calc(50% - 0px) !important;
+      left: calc(50% - 1px) !important;
       top: calc(50% - -3px) !important;
       height: 449px !important;
     }  
@@ -1728,14 +1728,14 @@ body.big .bottomstrip {
         transform: translate(-50%, 0px);
         top: auto !important;
         margin-top: 1px;
-        width: 603px;
+        width: 602px;
         height: 454px;
     }  
     body.big .tweet.html div.contentin {
         transform: translate(-50%, 0px);
         top: auto !important;
         margin-top: -6px;
-        width: 603px;
+        width: 602px;
         height: 465px;
     }  
     .tweet.html div.contentin .logo {
