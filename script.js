@@ -918,7 +918,6 @@ window.openLinkInline = function(id) {
     }, timer); 
 
     $("#contentiniframe" + id).fadeIn(1600);
-    $("#contentin" + id).fadeOut(1600);
  
 };
 
@@ -927,7 +926,6 @@ function iframeloadFunc(obj) {
     if (dblFlag2) {
         window.open($(obj).attr("src"), '_blank');
         $("#contentiniframe" + $(obj).attr("cid")).fadeOut(800);
-        $("#contentin" + $(obj).attr("cid")).fadeIn(800);
     }
 } 
 
