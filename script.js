@@ -906,6 +906,11 @@ window.openLinkInline = function(id) {
     $("#contentiniframe" + id).attr("cid", id);
     dblFlag = true; 
     console.log("aaaaaaaaaaaaaa"); 
+
+    var timer = 1500;
+    if (obj.hasClass("yt"))
+        timer = 1;
+        
     setTimeout(function() {    
         dblFlag = false; 
     }, 1500); 
