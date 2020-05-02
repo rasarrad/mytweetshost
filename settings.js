@@ -1823,6 +1823,7 @@ function clickLiLinksinside(e, obj) {
     if (!$(obj).hasClass("selectedtag")) {
         var value = $(obj).html().trim();
         $('#linksinsideul').find(".litags").each( function( index, element ) {
+            console.log("-" + $(element).html().trim() + "-" + value + "-");
             if($(element).html().trim() == value) {
                 $(element).addClass("selectedtag");
             }
