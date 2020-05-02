@@ -850,6 +850,7 @@ function SaveDatFileBro(localstorage) {
 /////////////////////////////////////////////////////////////////////////
 
 window.openLinkOutside = function(id) {
+    console.log(88888)
     window.open($("#" + id).attr("curl"));
 };
 
