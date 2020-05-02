@@ -904,7 +904,8 @@ window.openLinkInline = function(id) {
 
     $("#contentin" + id).prepend("<iframe src='" + url + "' id='contentiniframe" + id + "' onload='iframeloadFunc(this)' scrolling='yes' frameborder='0' allowtransparency='true' style='border: 0px solid;margin-top: 0px !important;width: 100% !important;transform: translate(-50%, -50%) !important; display: none;'></iframe>");
     $("#contentiniframe" + id).attr("cid", id);
-    dblFlag = true;  
+    dblFlag = true; 
+    console.log("aaaaaaaaaaaaaa"); 
     setTimeout(function() {    
         dblFlag = false; 
     }, 1500); 
