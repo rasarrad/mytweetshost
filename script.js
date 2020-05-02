@@ -909,7 +909,6 @@ window.openLinkInline = function(id) {
         dblFlag = false; 
     }, 1500); 
 
-    $("#contentiniframe" + id).attr("src", url);
     $("#contentiniframe" + id).fadeIn(1600);
     $("#contentin" + id).fadeOut(1600);
  
