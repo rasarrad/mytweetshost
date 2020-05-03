@@ -2268,7 +2268,7 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
     var processed = false;
 
     console.log("11111: " + (totalrenderedtweets - 1)) 
-    if (j > -1) {
+    if (j > -2) {
       do {
         var obj = $("#twitter-widget-" + j);
 
