@@ -1242,7 +1242,7 @@ var getInformationbyid = function(id, flag) {
                             totalrenderedtweets = totalrenderedtweets + 1;
                             $('#tweetcount').hide();
                             $('body, html').css('overflow-y', 'auto');
-                      }, 300);
+                      }, 800);
                     return false;
                 }
             }
