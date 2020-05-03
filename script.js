@@ -2272,9 +2272,7 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
       do {
         var obj = $("#twitter-widget-" + j);
 
-        if (obj && obj.length > 0) {
-            console.log("2222222: " + j) 
-          if (forceProcess || obj.attr("processed") != "yes") {
+        if (obj && obj.length > 0 && (forceProcess || obj.attr("processed") != "yes")) {
             processed = true;
             console.log("3333333: " + j)
               obj.attr("processed", "yes");
@@ -2296,13 +2294,8 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
 
               totalrenderedtweets = j + 1;
               console.log("444444: " + totalrenderedtweets)               
-          } 
-          j++;
         }
-        else {
-            return false;
-        }
-
+        j++;
       }
       while (j < totalrenderedtweets + searchtotal); 
 
