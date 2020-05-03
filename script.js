@@ -268,7 +268,7 @@ $( document ).ready(function() {
             rendermapcurr = rendermapcurr + 1;
 
             if (val)
-                renderLink(val);
+                renderLink(val, true);
         }
          
     };
