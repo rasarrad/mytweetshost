@@ -1223,9 +1223,21 @@ var getInformationbyid = function(id, flag) {
                     if (val.type == "T") {
                         newtweetobj.append($('<div class="innertweet"></div>'));
                         newtweetobj.find('.innertweet').append(val.tweet);
+                        newtweetobj.attr('id', val.id);
                     }
                     else {
                         newtweetobj.append($(val.tweet));
+
+                        newtweetobj.find(".bottomstripline.line1").html(val.info);
+                        
+                        newtweetobj.attr('id', val.id);
+                
+                        var currid = val.id;
+                        //setTimeout( function() {                                 
+                            // xyzdouble
+                            if (!isMobile) {
+                                document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
+                            }
                     }
         
                     newtweetobj.attr('id', val.id);
