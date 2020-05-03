@@ -967,7 +967,8 @@ function moveFSPopup(obj) {
 function iframeFSloadFunc(obj) {
     if ($(obj).attr("cid") == "none")
         return false;
-        console.log("BBBBBBBBBBBBBBBBBBBB");
+    
+    console.log("BBBBBBBBBBBBBBBBBBBB");
     if (dblFlag2) {
         //$(obj).attr("cerror", "yes");
  
@@ -1330,17 +1331,26 @@ function executeSingleDoubleFunction(obj, type) {
                 value = readCookie("linksinside");
 
                 if (value && value.length > 0) {
-                    openLinkInside(obj.substring(9));
+                     value = readCookie("maximumfs");
+
+                    if (value && value.length > 0) {
+                        console.log("openLinkInside FS Max" + obj);
+                    }
+                    else {
+                        console.log("openLinkInside fs" + obj);
+                    }
+                    //openLinkInside(obj.substring(9));
                 }
                 else {
-                    openLinkOutside(obj.substring(9));
+                    console.log("openLinkOutside" + obj);
+                    //openLinkOutside(obj.substring(9));
                 }
-                console.log("Execute double/long touch:" + obj);
+                //console.log("Execute double/long touch:" + obj);
             }
             else { // Execute single/touch
-                openLinkInline(obj.substring(9));
-
-                console.log("Execute single/touch:" + obj);
+                //openLinkInline(obj.substring(9));
+                console.log("openLinkInline" + obj);
+                //console.log("Execute single/touch:" + obj);
             }
 
             break;  
@@ -1537,7 +1547,6 @@ function processLinkFuncs(idLink, type) {
         switch(type) {
             case "up":
 
-                //openLinkInside(idLink);
 
                 //console.log("UP   UP   UP   UP   UP   UP   UP   UP   UP   UP   UP");
                 /*
