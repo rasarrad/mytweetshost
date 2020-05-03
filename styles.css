@@ -2053,6 +2053,8 @@ body.big #searchtags {
 #previewtable #inid {
   min-width: auto;
   max-height: 296px;
+  width: 455px;
+  margin-top: 6px !important;
 }
 
 #previewtable #inid.yt {
@@ -3959,15 +3961,22 @@ body.big .newLayout.new #seticon {font-size: 24px;top: 3px;}
 }
 
 #previewtd div:not(.innertweet):not(.tweet) {
-  max-height: 251px;
   margin: 0;
   top: 10px;
   background: transparent;
 }
 
+#previewtd .html div:not(.innertweet):not(.tweet) {
+  height: 324px;
+  width: 452px;
+  margin: 0;
+  top: -6px !important;
+  background: transparent;
+}
+
 
 #previewtd > div div:not(.innertweet):not(.glasscover) {
-  display: none !important;
+  /* display: none !important; */
 }
 
 #previewtd > div div.innertweet twitter-widget {
