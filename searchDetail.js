@@ -594,6 +594,8 @@ var getInformation = function(wasfiltered, valid) {
 
     rendermap = new Map();
     rendermapindex = 0;
+    rendermapcurr = 0;
+    scrollcurr = 0;
 
     nextid = null;
     try {
@@ -948,6 +950,7 @@ function storeInMap(val) {
 
     rendermap.set(rendermapindex, val);
     rendermapindex = rendermapindex + 1;
+
     console.log("storeInMap: " + val.id);
 }
 

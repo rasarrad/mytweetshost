@@ -38,6 +38,9 @@ var funcg = null;
 var isMobile = null;
 var rendermap = new Map();
 var rendermapindex = 0;
+var rendermapcurr = 0;
+var scrollcurr = 0;
+
 /* 
     xyz startcode
     xyz fakepass
@@ -255,8 +258,10 @@ $( document ).ready(function() {
 /////////////////////////////////////////////////////////////////////////
 
     window.onscroll = function(ev) {
-        if ((window.innerHeight + window.scrollY + 1800) >= document.body.offsetHeight){ // && dosearchmore) {
 
+        if (window.scrollY > scrollcurr + 400) {
+            scrollcurr = window.scrollY;
+            console.log("ccccc: " + scrollcurr);
         }
     };
 
