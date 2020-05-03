@@ -535,7 +535,7 @@ function clickSearchLiClassif(e, obj) {
 
 
 
-var getInformation = function(wasfiltered, valid) {
+var getInformation = function(wasfiltered, valid, flag) {
 
     closeSearchPopup();
 
@@ -581,6 +581,16 @@ var getInformation = function(wasfiltered, valid) {
         }
     }
     */
+    if (flag) {
+    }
+    else {
+        $("html, body").scrollTop(0);
+        setTimeout(function() {    
+            getInformation(wasfiltered, null, true); 
+        }, 150); 
+        
+        return false;
+    }
 
     $('#mask').fadeIn(300);  
 
@@ -589,11 +599,7 @@ var getInformation = function(wasfiltered, valid) {
     total_tt = 0;
     total_hh = 0;
 
-    $("html, body").scrollTop(0);
-    setTimeout(function() {    
-        $("#main").empty(); 
-    }, 50); 
-
+    $("#main").empty();
     rendermap = new Map();
     rendermapindex = 0;
     rendermapcurr = 0;
