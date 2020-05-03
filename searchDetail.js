@@ -871,7 +871,7 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                         && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
                         
-                        if (ind < 4)
+                        if (ind < 5)
                             renderLink(val);
                         else 
                             storeInMap(val);

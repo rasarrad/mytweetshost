@@ -1171,6 +1171,7 @@ body:not(.big) .yt.tweet .bottomgradiantback {
 
 .html.tweet:last-child .bottomgradiantback {
     background-image: linear-gradient(to bottom, var(--dark-color) 15%, #004a8600 85%);
+    background: transparent;
 }
   .tweet iframe {
   width: calc(100% - 0px) !important;
