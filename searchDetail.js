@@ -1238,10 +1238,11 @@ var getInformationbyid = function(id, flag) {
                         showMessage("This Link is the same as the one you are trying to add", 6000); 
 
                     setTimeout(function() { 
-                            customizeTweets(2);
+                            customizeSingleTweet(totalrenderedtweets);
+                            totalrenderedtweets = totalrenderedtweets + 1;
                             $('#tweetcount').hide();
                             $('body, html').css('overflow-y', 'auto');
-                      }, 1000);
+                      }, 300);
                     return false;
                 }
             }
