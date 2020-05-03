@@ -923,14 +923,22 @@ window.openLinkInline = function(id) {
  
 };
 
+function getOffset(el) {
+    const rect = el.getBoundingClientRect();
+    return {
+      left: rect.left + window.scrollX,
+      top: rect.top + window.scrollY
+    };
+  }
+
 function iframeloadFunc(obj) {
     if (dblFlag2) {
         window.open($(obj).attr("src"));
-        var bodyRect = document.body.getBoundingClientRect(),
-        elemRect = document.getElementById("#" + $(obj).attr("cid")).getBoundingClientRect(),
-        offsetTop   = elemRect.top - bodyRect.top;
-        offsetLeft   = elemRect.left - bodyRect.left;
-        showFreeTooltip(offsetLeft, offsetTop, "This link can't be open inside the app.");
+
+        console.log("ZZZZ: " + "#" + $(obj).attr("cid"))
+        var element = document.getElementById("#" + $(obj).attr("cid"));
+        
+        showFreeTooltip(getOffset(element).left, getOffset(element).top, "This link can't be open inside the app.");
 
         $("#contentiniframe" + $(obj).attr("cid")).fadeOut(800);
     }
@@ -980,11 +988,11 @@ function iframeFSloadFunc(obj) {
  
         window.open($(obj).attr("src"));
 
-        var bodyRect = document.body.getBoundingClientRect(),
-        elemRect = document.getElementById("#" + $(obj).attr("cid")).getBoundingClientRect(),
-        offsetTop   = elemRect.top - bodyRect.top;
-        offsetLeft   = elemRect.left - bodyRect.left;
-        showFreeTooltip(offsetLeft, offsetTop, "This link can't be open inside the app.");
+        console.log("ZZZZ: " + "#" + $(obj).attr("cid"))
+        var element = document.getElementById("#" + $(obj).attr("cid"));
+        
+        showFreeTooltip(getOffset(element).left, getOffset(element).top, "This link can't be open inside the app.");
+
 
         closeFSPopup();
     }
