@@ -865,20 +865,6 @@ function countalltweets(webLinksMap) {
           getInformationbyid(paramid);   
         }
 
-
-        /*
-        if (dosearchmore) {
-            $( "#mask" ).fadeOut( 800, function() {
-                var style = window.getComputedStyle(body, null);
-        
-                $("#mask").css("background", style.getPropertyValue('--soft-transp-color'));
-                $("#mask .fa-folder-open").hide();
-                $("#mask > div" ).hide();
-                $("#mask > .fa-circle-o-notch").show();
-            });
-        }
-
-         */
     }); 
 
 } 

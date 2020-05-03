@@ -2241,6 +2241,7 @@ body.big #splash .titletable {
     background-image: linear-gradient(to bottom, var(--dark-color) 13%, #004a8600 80%);
     bottom: -37px !important;
     height: 47px;
+    background: transparent;
 }
 
 #splash.newLayout > div .titletable tr:first-child .firsttd {

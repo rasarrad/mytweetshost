@@ -584,7 +584,7 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
 
     $('#mask').fadeIn(300);  
     $('#moretweets').hide();
-    totalLinkss = 0;
+    var totalLinkss = 0;
     total_yy = 0;
     total_tt = 0;
     total_hh = 0;
@@ -1077,8 +1077,6 @@ var getInformationOld = function(ismoretweets) {
 
         $("#main").empty();
     }
-
-    currpage = currpage + 1;
 
     $.getJSON(path, function(data) 
     {

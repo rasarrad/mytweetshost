@@ -2,8 +2,6 @@ var text = "";
 var origin = "";
 var nextid = "";
 var currentIndex = 0;
-var currpage = 0;
-var dosearchmore = true;
 var youtubeId = "";
 var hasProcessedDescription = false;
 var url = "";
@@ -11,8 +9,6 @@ var urldirect = "";
 var dblFlag = false;
 var dblClickTimeout = null;
 var addType = "T";
-var processedCount = 0;
-var totalLinkss = 0;
 var total_yy = 0; 
 var total_tt = 0;
 var total_hh = 0;
@@ -259,7 +255,6 @@ $( document ).ready(function() {
 
     window.onscroll = function(ev) {
         if ((window.innerHeight + window.scrollY + 1800) >= document.body.offsetHeight && dosearchmore) {
-            dosearchmore = false;
 
             if ($('#moretweets').attr('doshow') && $('#moretweets').attr('doshow') == 'yes') {
                 $('#moretweets').css('opacity', 1);
@@ -268,9 +263,6 @@ $( document ).ready(function() {
                 $('#moretweets').attr('doshow', 'no'); 
                 $("#moretweets").click();
             }
-            setTimeout(function() { 
-              dosearchmore = true;
-            }, 2000);
         }
     };
 
