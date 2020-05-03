@@ -1040,7 +1040,9 @@ function renderLink(val, customize) {
         newtweetobj.attr('id', val.id);
 
         if (customize) {
-            customizeSingleTweet();
+            setTimeout(function(){
+                customizeSingleTweet();
+            }, 40);
         }
     }
     else {
