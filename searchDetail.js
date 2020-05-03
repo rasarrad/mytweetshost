@@ -950,6 +950,7 @@ function storeInMap(val) {
 }
 
 function renderLink(val) {
+    console.log("renderLink: " + val.id);
     var tagdispalay = " --";
     var expandclass = "";
     var color = "";
