@@ -592,9 +592,6 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
     $("html").scrollTop(0);
     $("#main").empty();
 
-
-    currpage = currpage + 1;
-
     nextid = null;
     try {
         nextid = parseInt(readCookie("maxid"));
@@ -874,102 +871,7 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                         && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
                         
-                        var tagdispalay = " --";
-                        var expandclass = "";
-                        var color = "";
-                        if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { // ID DELETED
-                            expandclass = hideMode ? "" : "isdeleted";    
-                            if (showColors)
-                                color = "color: red;";
-                        } 
-                        else if (showColors) {
-                            if (val.isnew && val.isnew != "") { // IS NEW
-
-                                expandclass = hideMode ? "" : "isnew";  
-                                color = "color: #00dc00;";
-    
-                                var tagchanged = readCookie(val.id + "tagchanged");
-        
-                                if (tagchanged && tagchanged.length > 0) {
-                                    tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
-                                    tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
-                                } 
-                                else {
-                                    if (val.tags.length > 0 && val.tags != 'undefined') {
-                                        tagdispalay = parseTags(val.tags);
-                                    }
-                                } 
-                            }
-                            else {
-                                var hasChanges = readCookie(val.id + "haschanges");
-                                if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
-                                    color = "color: #f18618;";
-                                    if (expandclass == "isnew")
-                                        expandclass = hideMode ? "" : "isnewmodified";  
-                                    else 
-                                        expandclass = hideMode ? "" : "ismodified";  
-    
-                                    var tagchanged = readCookie(val.id + "tagchanged");
-        
-                                    if (tagchanged && tagchanged.length > 0) {
-                                        tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
-                                        tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
-                                    } 
-                                    else {
-                                        if (val.tags.length > 0 && val.tags != 'undefined') {
-                                            tagdispalay = parseTags(val.tags);
-                                        }
-                                    }
-                                } 
-                                else if (val.tags.length > 0 && val.tags != 'undefined') {
-                                    tagdispalay = parseTags(val.tags);
-                                }
-                            }
-                        }
-                        else {
-                            tagdispalay = parseTags(val.tags);
-                        }
-
-                        var xclass = "";
-                        var typefa = "twitter"
-                        if (val.type == "H") {
-                            xclass = " html";
-                            typefa = "internet-explorer"
-                        }
-                        else if (val.type == "Y") {
-                            xclass = " yt";
-                            typefa = "youtube-play"
-                        }
-                        
-                        var newtweet = $('#main').append($('<div id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>'));
-                        var newtweetobj = $('#inid');
-
-                        newtweetobj.append($('<div style="z-index: 0;background: var(--soft-color);height: 39px;" class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
-                        
-                        newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
-                        
-                        if (val.type == "T") {
-                            newtweetobj.append($('<div class="innertweet"></div>'));
-                            newtweetobj.find('.innertweet').append(val.tweet);
-
-                            newtweetobj.attr('id', val.id);
-                        }
-                        else {
-                            newtweetobj.append($(val.tweet));
-                            
-                            newtweetobj.find(".bottomstripline.line1").html(val.info);
-                            
-                            newtweetobj.attr('id', val.id);
-
-                            var currid = val.id;
-                            //setTimeout( function() {                                 
-                                // xyzdouble
-                                if (!isMobile) {
-                                    document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
-                                }
-                            //}, 200 );
-                        }
-        
+                        renderLink(val);
                     }   
     
                     if (val.id == 0) {
@@ -1040,6 +942,105 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
     }); 
 }
   
+
+
+function renderLink(val) {
+    var tagdispalay = " --";
+    var expandclass = "";
+    var color = "";
+    if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { // ID DELETED
+        expandclass = hideMode ? "" : "isdeleted";    
+        if (showColors)
+            color = "color: red;";
+    } 
+    else if (showColors) {
+        if (val.isnew && val.isnew != "") { // IS NEW
+
+            expandclass = hideMode ? "" : "isnew";  
+            color = "color: #00dc00;";
+
+            var tagchanged = readCookie(val.id + "tagchanged");
+
+            if (tagchanged && tagchanged.length > 0) {
+                tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
+            } 
+            else {
+                if (val.tags.length > 0 && val.tags != 'undefined') {
+                    tagdispalay = parseTags(val.tags);
+                }
+            } 
+        }
+        else {
+            var hasChanges = readCookie(val.id + "haschanges");
+            if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
+                color = "color: #f18618;";
+                if (expandclass == "isnew")
+                    expandclass = hideMode ? "" : "isnewmodified";  
+                else 
+                    expandclass = hideMode ? "" : "ismodified";  
+
+                var tagchanged = readCookie(val.id + "tagchanged");
+
+                if (tagchanged && tagchanged.length > 0) {
+                    tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                    tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
+                } 
+                else {
+                    if (val.tags.length > 0 && val.tags != 'undefined') {
+                        tagdispalay = parseTags(val.tags);
+                    }
+                }
+            } 
+            else if (val.tags.length > 0 && val.tags != 'undefined') {
+                tagdispalay = parseTags(val.tags);
+            }
+        }
+    }
+    else {
+        tagdispalay = parseTags(val.tags);
+    }
+
+    var xclass = "";
+    var typefa = "twitter"
+    if (val.type == "H") {
+        xclass = " html";
+        typefa = "internet-explorer"
+    }
+    else if (val.type == "Y") {
+        xclass = " yt";
+        typefa = "youtube-play"
+    }
+    
+    var newtweet = $('#main').append($('<div id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>'));
+    var newtweetobj = $('#inid');
+
+    newtweetobj.append($('<div style="z-index: 0;background: var(--soft-color);height: 39px;" class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
+    
+    newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
+    
+    if (val.type == "T") {
+        newtweetobj.append($('<div class="innertweet"></div>'));
+        newtweetobj.find('.innertweet').append(val.tweet);
+
+        newtweetobj.attr('id', val.id);
+    }
+    else {
+        newtweetobj.append($(val.tweet));
+        
+        newtweetobj.find(".bottomstripline.line1").html(val.info);
+        
+        newtweetobj.attr('id', val.id);
+
+        var currid = val.id;
+        //setTimeout( function() {                                 
+            // xyzdouble
+            if (!isMobile) {
+                document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
+            }
+        //}, 200 );
+    }
+}
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
