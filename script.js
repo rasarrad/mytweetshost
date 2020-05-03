@@ -710,7 +710,7 @@ $( document ).ready(function() {
  
     // xyz startcode
     
-    clickmenu('all');
+    //clickmenu('all');
 
     //closeSplash(); 
 
