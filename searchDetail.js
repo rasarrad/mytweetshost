@@ -589,8 +589,10 @@ var getInformation = function(wasfiltered, valid) {
     total_tt = 0;
     total_hh = 0;
 
-    $("html").scrollTop(0);
-    $("#main").empty();
+    $("html, body").scrollTop(0);
+    setTimeout(function() {    
+        $("#main").empty(); 
+    }, 50); 
 
     rendermap = new Map();
     rendermapindex = 0;
