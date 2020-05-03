@@ -871,7 +871,7 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                         && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
                         
-                        renderLink(val, isdeleted);
+                        renderLink(val);
                     }   
     
                     if (val.id == 0) {
@@ -944,10 +944,11 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
   
 
 
-function renderLink(val, isdeleted) {
+function renderLink(val) {
     var tagdispalay = " --";
     var expandclass = "";
     var color = "";
+    var isdeleted = readCookie(val.id + "isdeleted");
     if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { // ID DELETED
         expandclass = hideMode ? "" : "isdeleted";    
         if (showColors)
