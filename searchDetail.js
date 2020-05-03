@@ -954,7 +954,7 @@ function storeInMap(val) {
     console.log("storeInMap: " + val.id);
 }
 
-function renderLink(val) {
+function renderLink(val, customize) {
     console.log("renderLink: " + val.id);
     var tagdispalay = " --";
     var expandclass = "";
@@ -1032,10 +1032,16 @@ function renderLink(val) {
     newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
     
     if (val.type == "T") {
+        totalrenderedtweets = totalrenderedtweets + 1;
+
         newtweetobj.append($('<div class="innertweet"></div>'));
         newtweetobj.find('.innertweet').append(val.tweet);
 
         newtweetobj.attr('id', val.id);
+
+        if (customize) {
+            customizeSingleTweet();
+        }
     }
     else {
         newtweetobj.append($(val.tweet));
