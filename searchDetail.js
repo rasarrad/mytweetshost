@@ -870,8 +870,11 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
 
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                         && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
-                        console.log(ind)
-                        renderLink(val);
+                        
+                        if (ind < 5)
+                            renderLink(val);
+                        else 
+                            storeInMap(val);
                     }   
     
                     if (val.id == 0) {
@@ -942,7 +945,9 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
     }); 
 }
   
-
+function storeInMap(val) {
+    console.log("storeInMap: " + val.id);
+}
 
 function renderLink(val) {
     var tagdispalay = " --";
