@@ -878,19 +878,25 @@ window.openLinkInside = function(id) {
             $("#fsPopup").removeClass("full");
         }
 
-        if (obj.hasClass("yt"))
+        var timer = 1500;
+
+        if (obj.hasClass("yt")) {
             $("#fsPopup").addClass("yt");
-        else
+            timer = 1;
+        }
+        else {
             $("#fsPopup").removeClass("yt");
+        }
 
         var url = generateUrl(obj.attr("curl"))
 
         $("#fsPopup iframe").attr("src", url);
         $("#fsPopup").fadeIn(1600);
         dblFlag2 = true;  
+    
         setTimeout(function() {    
             dblFlag2 = false; 
-        }, 1500);  
+        }, timer);  
    // }
 };
 
