@@ -65,11 +65,11 @@ function parseTweet(type) {
                             if ($(".addpopup").css('display') == 'none') {
                                 openCreatePopup(true);
                                 
-                                createPreview(val.id);
+                                createPreview();
                             }
                         }
                         else {
-                            createPreview(val.id);
+                            createPreview();
                         }
         
                         if ($(window).width() > 1200) {
@@ -296,7 +296,7 @@ function parseTweet(type) {
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
-function createPreview(id) {
+function createPreview() {
 
     var xclass = "";
     var typefa = "twitter"
@@ -317,7 +317,7 @@ function createPreview(id) {
     if (addType == "T") {
         newtweetobj.append($('<div class="innertweet" style="max-height: 290px;min-height: 200px;margin-left: 0 !important;"><i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;height: 33px;width: 33px;top: 69px;color: var(--high-color);font-size: 33px; display: none; "></i></div>'));
         newtweetobj.find('.innertweet').append(text.substring(1, text.length -1));
-        setTimeout(function(){ customizeSingleTweet(id); }, 1300);
+        setTimeout(function(){ customizeSingleTweet(nextid); }, 1300);
 
     }
     else {
