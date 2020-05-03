@@ -257,6 +257,13 @@ $( document ).ready(function() {
 //                           BINDS ON READY                            //
 /////////////////////////////////////////////////////////////////////////
 
+    window.onscroll = function(ev) {
+
+        if (window.scrollY > scrollcurr + 400) {
+            scrollcurr = window.scrollY;
+            console.log("ccccc: " + scrollcurr);
+        }
+    };
 
     ///////////////////////////////////////
 
