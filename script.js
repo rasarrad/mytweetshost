@@ -2349,12 +2349,12 @@ function customizeSingleTweet() {
 
           var tweetStyle = document.createElement("style");
 
-          tweetStyle.setAttribute("id", "tweet-style-" + j);
+          tweetStyle.setAttribute("id", "tweet-style-" + totalrenderedtweets);
           tweetStyle.innerHTML = tweetCSS;
           tweetStyle.type = "text/css";
 
           //if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
-              var styleTag = document.getElementById("twitter-widget-" + j).shadowRoot;
+              var styleTag = document.getElementById("twitter-widget-" + totalrenderedtweets).shadowRoot;
               insertAfter(tweetStyle, styleTag.childNodes[0]);
 
           //} else {
