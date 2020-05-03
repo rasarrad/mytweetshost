@@ -2383,17 +2383,13 @@ function showTooltip(event, obj) {
 }
 
 function showFreeTooltip(x, y, text) {
-    var $element = $(obj);
+    var tooltip = $("#tooltip");
+    tooltip.text(text);
 
-        var tooltip = $("#tooltip");
-        tooltip.text(text);
-    
+    tooltip.css("top", (y + 70) + "px");
+    tooltip.css("left",  (x + 70) + "px");
 
-        tooltip.css("top", (y + 70) + "px");
-        tooltip.css("left",  (x + 70) + "px");
-    
-        console.log("aaaaaa");
-        tooltip.fadeIn(700);
+    tooltip.fadeIn(700);
 }
 
 
