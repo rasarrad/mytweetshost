@@ -1236,6 +1236,7 @@ var getInformationbyid = function(id, flag) {
                         //setTimeout( function() {                                 
                             // xyzdouble
                             if (!isMobile) {
+                                alert(currid)
                                 document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
                             }
                     }
