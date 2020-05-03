@@ -36,7 +36,8 @@ var useSwipes = false;
 var ceec = 0; 
 var funcg = null;
 var isMobile = null;
-
+var rendermap = new Map();
+var rendermapindex = 0;
 /* 
     xyz startcode
     xyz fakepass

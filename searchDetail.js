@@ -592,6 +592,9 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
     $("html").scrollTop(0);
     $("#main").empty();
 
+    rendermap = new Map();
+    rendermapindex = 0;
+
     nextid = null;
     try {
         nextid = parseInt(readCookie("maxid"));
@@ -946,6 +949,9 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
 }
   
 function storeInMap(val) {
+
+    rendermap.set(rendermapindex, val);
+    rendermapindex = rendermapindex + 1;
     console.log("storeInMap: " + val.id);
 }
 
