@@ -169,7 +169,6 @@ function removetweet(obj) {
                             updateLinkCookie(jsonvar);
     
                             $("#main").empty();
-                            $('#moretweets').hide();
                             $('#tweetcount').hide(); 
     
                             countalltweets();

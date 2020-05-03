@@ -257,13 +257,6 @@ $( document ).ready(function() {
     window.onscroll = function(ev) {
         if ((window.innerHeight + window.scrollY + 1800) >= document.body.offsetHeight){ // && dosearchmore) {
 
-            if ($('#moretweets').attr('doshow') && $('#moretweets').attr('doshow') == 'yes') {
-                $('#moretweets').css('opacity', 1);
-                //$('#moretweets').show();
-
-                $('#moretweets').attr('doshow', 'no'); 
-                $("#moretweets").click();
-            }
         }
     };
 
@@ -363,10 +356,6 @@ $( document ).ready(function() {
         countalltweets();
     });
 
-
-    $( "#moretweets" ).bind( "click", function( event ) {
-        getInformation(true, 3);
-    });
 
     ///////////////////////////////////////
 
@@ -1568,7 +1557,6 @@ function processLinkFuncs(idLink, type) {
                 /*console.log("DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   ");
                 
                 $("#main").empty();
-                $('#moretweets').hide();
                 $('#tweetcount').hide(); 
                 showMessage("Search cleared", 2500, null, null, null, null, true, 500);
 */
@@ -2303,8 +2291,6 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
       if (processed) {
         $('#tweetcount').fadeIn(800);
         $('#mask').fadeOut(1100);
-        $('#moretweets').fadeOut(300);
-        $('#moretweets').css('opacity', 0);
 
         /*
         setTimeout(function(){
