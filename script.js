@@ -2323,7 +2323,7 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
 }
 
 
-function customizeSingleTweet(id) {
+function customizeSingleTweet(id, flag) {
     var isChromium = window.chrome;
     var winNav = window.navigator;
     var vendorName = winNav.vendor;
