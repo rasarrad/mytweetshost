@@ -1041,11 +1041,10 @@ function renderLink(val, customize) {
         newtweetobj.attr('id', val.id);
 
         if (customize) {
-            alert(111111);
             setTimeout(function(){
                 customizeSingleTweet(totalrenderedtweets);
                 totalrenderedtweets = totalrenderedtweets + 1;
-            }, 640);
+            }, 240);
         }
     }
     else {
