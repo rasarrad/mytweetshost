@@ -254,7 +254,7 @@ $( document ).ready(function() {
 /////////////////////////////////////////////////////////////////////////
 
     window.onscroll = function(ev) {
-        if ((window.innerHeight + window.scrollY + 1800) >= document.body.offsetHeight && dosearchmore) {
+        if ((window.innerHeight + window.scrollY + 1800) >= document.body.offsetHeight){ // && dosearchmore) {
 
             if ($('#moretweets').attr('doshow') && $('#moretweets').attr('doshow') == 'yes') {
                 $('#moretweets').css('opacity', 1);
