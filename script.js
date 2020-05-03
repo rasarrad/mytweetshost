@@ -262,7 +262,7 @@ $( document ).ready(function() {
         /**/
         if (window.scrollY > scrollcurr + 400) {
             scrollcurr = window.scrollY;
-            console.log("ccccc: " + scrollcurr);
+            
             var val = rendermap.get(rendermapcurr);
 
             rendermapcurr = rendermapcurr + 1;
@@ -2346,7 +2346,7 @@ function customizeSingleTweet() {
     if (obj && obj.length > 0) {
 
           obj.attr("processed", "yes");
-
+          console.log("customize: " + totalrenderedtweets);
           var tweetStyle = document.createElement("style");
 
           tweetStyle.setAttribute("id", "tweet-style-" + totalrenderedtweets);
