@@ -936,7 +936,7 @@ function iframeloadFunc(obj) {
         window.open($(obj).attr("src"));
 
         console.log("ZZZZ: " + "#" + $(obj).attr("cid"))
-        var element = document.getElementById("#" + $(obj).attr("cid"));
+        var element = document.getElementById($(obj).attr("cid"));
         
         showFreeTooltip(getOffset(element).left, getOffset(element).top, "This link can't be open inside the app.");
 
@@ -989,7 +989,7 @@ function iframeFSloadFunc(obj) {
         window.open($(obj).attr("src"));
 
         console.log("ZZZZ: " + "#" + $(obj).attr("cid"))
-        var element = document.getElementById("#" + $(obj).attr("cid"));
+        var element = document.getElementById($(obj).attr("cid"));
         
         showFreeTooltip(getOffset(element).left, getOffset(element).top, "This link can't be open inside the app.");
 
