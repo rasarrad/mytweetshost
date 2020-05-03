@@ -1149,7 +1149,35 @@ var getInformationbyid = function(id, flag) {
                     $("#main").empty();
                     $('#tweetcount').hide();  
     
+                    var cat = readCookie(val.id + "catchanged");
+                    if (cat && cat.length > 0) {
+                        val.categories = cat;
+                    }
+        
+                    var tag = readCookie(val.id + "tagchanged");
+                    if (tag && tag.length > 0) {
+                        val.tags = tag;
+                    }
+        
+                    var info = readCookie(val.id + "info");
+                    if (info && info.length > 0) {
+                        val.info = info;
+                    }
+        
+                    var classif = readCookie(val.id + "classif");
+                    if (classif && classif.length > 0) {
+                        val.classif = classif;
+                    }
     
+                    var author = readCookie(val.id + "author");
+                    if (author && author.length > 0) {
+                        val.author = author;
+                    }
+        
+                    var datechanged = readCookie(val.id + "datechanged");
+                    if (datechanged && datechanged.length > 0) {
+                        val.date = datechanged;
+                    }
                     var tagdispalay = " --";
                     var expandclass = "";
                     var color = "";
