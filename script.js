@@ -925,7 +925,11 @@ window.openLinkInline = function(id) {
 
 function iframeloadFunc(obj) {
     if (dblFlag2) {
-        window.open($(obj).attr("src"), '_blank');
+        window.open($(obj).attr("src"));
+        var rect = $("#" + $(obj).attr("cid")).getBoundingClientRect();
+
+        showFreeTooltip(rect.left, rect.top, "This link can't be open inside the app.");
+
         $("#contentiniframe" + $(obj).attr("cid")).fadeOut(800);
     }
 } 
@@ -972,8 +976,12 @@ function iframeFSloadFunc(obj) {
     if (dblFlag2) {
         //$(obj).attr("cerror", "yes");
  
-        window.open($(obj).attr("src"), '_blank');
+        window.open($(obj).attr("src"));
 
+        var rect = $("#" + $(obj).attr("cid")).getBoundingClientRect();
+
+        showFreeTooltip(rect.left, rect.top, "This link can't be open inside the app.");
+        
         closeFSPopup();
     }
 } 
@@ -1331,27 +1339,16 @@ function executeSingleDoubleFunction(obj, type) {
                 value = readCookie("linksinside");
 
                 if (value && value.length > 0) {
-                     value = readCookie("maximumfs");
-
-                    if (value && value.length > 0) {
-                        console.log("openLinkInside FS Max - " + obj);
-                    }
-                    else {
-                        console.log("openLinkInside fs - " + obj);
-                    }
                     openLinkInside(obj.substring(9));
                 }
                 else {
-                    console.log("openLinkOutside " + obj);
                     openLinkOutside(obj.substring(9));
                 }
-                //console.log("Execute double/long touch:" + obj);
+                console.log("Execute double/long touch:" + obj);
             }
             else { // Execute single/touch
-                console.log("openLinkInline" + obj);
-                
                 openLinkInline(obj.substring(9));
-                //console.log("Execute single/touch:" + obj);
+                console.log("Execute single/touch:" + obj);
             }
 
             break;  
@@ -2372,6 +2369,20 @@ function showTooltip(event, obj) {
         }, 4000);
     }
 }
+
+function showFreeTooltip(x, y, text) {
+    var $element = $(obj);
+
+        var tooltip = $("#tooltip");
+        tooltip.text(text);
+    
+
+        tooltip.css("top", (y + 70) + "px");
+        tooltip.css("left",  (x + 70) + "px");
+    
+        tooltip.fadeIn(700);
+}
+
 
 function getTooltipPosition(pageX) {
     var size = 500;
