@@ -848,7 +848,6 @@ window.openLinkOutside = function(id) {
     window.open($("#" + id).attr("curl"));
 };
 
-var dblFlag2 = false;
 window.openLinkInside = function(id) {
     //if ($("#fsPopup iframe").attr("cid") == id && $("#fsPopup iframe").attr("cerror") != "yes") {
     //    $("#fsPopup").fadeIn(500);
@@ -887,10 +886,10 @@ window.openLinkInside = function(id) {
 
         $("#fsPopup iframe").attr("src", url);
         $("#fsPopup").fadeIn(1600);
-        dblFlag2 = true;  
+        dblFlag = true;  
     
         setTimeout(function() {    
-            dblFlag2 = false; 
+            dblFlag = false; 
         }, timer);  
    // }
 };
@@ -904,14 +903,14 @@ window.openLinkInline = function(id) {
 
     $("#contentin" + id).prepend("<iframe src='" + url + "' id='contentiniframe" + id + "' onload='iframeloadFunc(this)' scrolling='yes' frameborder='0' allowtransparency='true' style='border: 0px solid;margin-top: 0px !important;width: 100% !important;transform: translate(-50%, -50%) !important; display: none;'></iframe>");
     $("#contentiniframe" + id).attr("cid", id);
-    dblFlag2 = true; 
+    dblFlag = true; 
 
     var timer = 1500;
     if (obj.hasClass("yt"))
         timer = 1;
 
     setTimeout(function() {    
-        dblFlag2 = false; 
+        dblFlag = false; 
     }, timer); 
 
     $("#contentiniframe" + id).fadeIn(1900);
@@ -927,7 +926,7 @@ function getOffset(el) {
   }
 
 function iframeloadFunc(obj) {
-    if (dblFlag2) {
+    if (dblFlag) {
         window.open($(obj).attr("src"));
 
         console.log("ZZZZ: " + "#" + $(obj).attr("cid"))
@@ -978,7 +977,7 @@ function iframeFSloadFunc(obj) {
     if ($(obj).attr("cid") == "none")
         return false;
     
-    if (dblFlag2) {
+    if (dblFlag) {
         //$(obj).attr("cerror", "yes");
  
         window.open($(obj).attr("src"));
