@@ -1041,8 +1041,9 @@ function renderLink(val, customize) {
 
         if (customize) {
             setTimeout(function(){
-                customizeSingleTweet();
-            }, 40);
+                customizeSingleTweet(totalrenderedtweets);
+                totalrenderedtweets = totalrenderedtweets + 1;
+            }, 240);
         }
     }
     else {
