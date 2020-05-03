@@ -914,6 +914,8 @@ var getInformation = function(wasfiltered, valid) {
             var found = customizeTweets(1);
 
             sleep(100);  
+            $('#tweetcount').fadeIn(1200);
+            $('#mask').fadeOut(1200);
 
             if (!found) {
                 setTimeout(function() { 
