@@ -535,7 +535,7 @@ function clickSearchLiClassif(e, obj) {
 
 
 
-var getInformation = function(ismoretweets, wasfiltered, valid) {
+var getInformation = function(wasfiltered, valid) {
 
     closeSearchPopup();
 
@@ -571,7 +571,7 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
         if (!dunl()) {
             funcg = function() 
             { 
-                getInformation(false, 1, true);
+                getInformation(1, true);
             } 
 
             $("#splashbutton").attr("ceec", "yes");
@@ -583,7 +583,7 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
     */
 
     $('#mask').fadeIn(300);  
-    
+
     var totalLinkss = 0;
     total_yy = 0;
     total_tt = 0;

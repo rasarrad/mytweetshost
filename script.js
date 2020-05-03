@@ -313,7 +313,7 @@ $( document ).ready(function() {
       
         var keycode = (event.keyCode ? event.keyCode : event.which);
       if(keycode == '13' && $(this).val().length > 0){
-        getInformation(false, 1);
+        getInformation(1);
 
         if ($(window).width() < 1200) {
             $(this).blur();
@@ -360,7 +360,7 @@ $( document ).ready(function() {
     ///////////////////////////////////////
 
     $( "#btnsearch" ).bind( "click", function( event ) {
-      getInformation(false , 1);
+      getInformation(1);
     });
 
     ///////////////////////////////////////
@@ -1431,7 +1431,7 @@ function processSearchFuncs(type) {
             break;
 
         case "right":
-            getInformation(false, 2);
+            getInformation(2);
             console.log("searchpopup right-----------------------------------------------");
             break;
     }
@@ -1961,7 +1961,7 @@ var clickmenu = function(val) {
             closeMenuPopup();
         //}
         
-        getInformation(false, 2);
+        getInformation(2);
     }
 } 
   
