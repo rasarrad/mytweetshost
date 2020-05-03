@@ -1712,6 +1712,15 @@ body.big .bottomstrip {
         background-position-y: -2px !important;
     }
 
+    #previewtd .tweet.yt div.contentin {
+        transform: translate(-50%, -28px);
+        top: auto !important;
+        margin-top: -2px;
+        width: 606px;
+        height: 459px;
+        background-position-y: -2px !important;
+    }
+    
     .tweet div.contentin .logo {
         font-size: 31px;
         top: calc(42%) !important;
@@ -2054,12 +2063,14 @@ body.big #searchtags {
   min-width: auto;
   max-height: 296px;
   width: 455px;
+  height: 400px;
   margin-top: 6px !important;
 }
 
 #previewtable #inid.yt {
   min-width: auto;
-  max-height: 243px;
+  max-height: 389px;
+  top: -1px !important;
 }
 
 body.big .newLayout #linktable {
@@ -2652,10 +2663,13 @@ body.big #splash.newLayout table:nth-of-type(4) {
         #previewtable #inid {
           min-width: auto;
           max-height: 296px;
+          height: 240px;
+          width: 334px;
       }
       #previewtable #inid.yt {
           min-width: auto;
-          max-height: 229px;
+          max-height: 241px;
+          top: -1px !important;
       }
       #previewtable #inid > i {
           left: 153px;
@@ -2749,6 +2763,20 @@ body.big #splash.newLayout table:nth-of-type(4) {
           margin-top: 40px;
       } 
       
+       #previewtd .tweet.yt div.contentin {
+          transform: translate(-50%, 0px);
+          top: calc(0px) !important;
+          margin-top: 0px;
+          background-position-y: 0px !important;
+          height: 383px;
+      }  
+      
+      body.big #previewtd .tweet.html div.contentin {
+          transform: translate(-50%, 0px);
+          height: 400px;
+          width: 334px;
+      } 
+
       .yt .bottomstrip {
           width: calc(100% - 50px);
           top: 80vw;
@@ -3968,7 +3996,7 @@ body.big .newLayout.new #seticon {font-size: 24px;top: 3px;}
 
 #previewtd .html div:not(.innertweet):not(.tweet) {
   height: 324px;
-  width: 452px;
+  width: 454px;
   margin: 0;
   top: -6px !important;
   background: transparent;
