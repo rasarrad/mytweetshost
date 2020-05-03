@@ -1034,7 +1034,6 @@ function renderLink(val, customize) {
     newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
     
     if (val.type == "T") {
-        totalrenderedtweets = totalrenderedtweets + 1;
 
         newtweetobj.append($('<div class="innertweet"></div>'));
         newtweetobj.find('.innertweet').append(val.tweet);
