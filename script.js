@@ -2392,6 +2392,7 @@ function showFreeTooltip(x, y, text) {
         tooltip.css("top", (y + 70) + "px");
         tooltip.css("left",  (x + 70) + "px");
     
+        console.log("aaaaaa");
         tooltip.fadeIn(700);
 }
 
