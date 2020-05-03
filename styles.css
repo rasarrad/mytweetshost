@@ -2781,7 +2781,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
 
 
      .yt.tweet:last-child .bottomgradiantback {
-        background-image: linear-gradient(to bottom, #000000 13%, #004a8600 80%);
+        background-image: linear-gradient(to bottom, #00000000 13%, #004a8600 80%);
         bottom: 0px !important;
         height: 30px;
       }
