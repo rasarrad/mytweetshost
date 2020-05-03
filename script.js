@@ -2351,7 +2351,7 @@ function customizeSingleTweet() {
 
           tweetStyle.setAttribute("id", "tweet-style-" + totalrenderedtweets);
           tweetStyle.innerHTML = tweetCSS;
-          tweetStyle.type = "text/css";
+          tweetStyle.type = "text/css"; 
 
           //if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
               var styleTag = document.getElementById("twitter-widget-" + totalrenderedtweets).shadowRoot;
