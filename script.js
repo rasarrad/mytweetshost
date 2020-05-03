@@ -2267,14 +2267,16 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
     var j = totalrenderedtweets - 1;
     var processed = false;
 
+    console.log("11111: " + totalrenderedtweets - 1) 
     if (j > -1) {
       do {
         var obj = $("#twitter-widget-" + j);
 
         if (obj && obj.length > 0) {
-
+            console.log("2222222: " + j) 
           if (forceProcess || obj.attr("processed") != "yes") {
             processed = true;
+            console.log("3333333: " + j)
               obj.attr("processed", "yes");
 
               var tweetStyle = document.createElement("style");
@@ -2291,7 +2293,9 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
               //    var tweetWidget = document.getElementById("twitter-widget-" + j).contentDocument;
               //    $(tweetWidget.head).prepend(tweetStyle);
               //} 
-              
+
+              totalrenderedtweets = j + 1;
+              console.log("11111: " + totalrenderedtweets)               
           } 
           j++;
         }

@@ -1023,7 +1023,7 @@ body.big #settings {
 }  
 body.big #addtweet {
   font-size: 26px;
-  top: 20px;
+  top: 21px;
 }  
 
 .tweet .innertweet {
@@ -1794,7 +1794,7 @@ body.big .bottomstrip {
           
     #addtweet {
         font-size: 22px;
-        top: 15px;
+        top: 14px;
       }  
     .tags {
       margin-top: -14px;
