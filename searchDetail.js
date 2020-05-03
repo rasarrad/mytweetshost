@@ -871,7 +871,7 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                         && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
                         
-                        renderLink(val);
+                        renderLink(val, isdeleted);
                     }   
     
                     if (val.id == 0) {
@@ -944,7 +944,7 @@ var getInformation = function(ismoretweets, wasfiltered, valid) {
   
 
 
-function renderLink(val) {
+function renderLink(val, isdeleted) {
     var tagdispalay = " --";
     var expandclass = "";
     var color = "";
