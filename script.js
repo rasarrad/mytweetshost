@@ -850,7 +850,6 @@ function SaveDatFileBro(localstorage) {
 /////////////////////////////////////////////////////////////////////////
 
 window.openLinkOutside = function(id) {
-    console.log(88888)
     window.open($("#" + id).attr("curl"));
 };
 
@@ -889,7 +888,6 @@ window.openLinkInside = function(id) {
         $("#fsPopup iframe").attr("src", url);
         $("#fsPopup").fadeIn(1600);
         dblFlag2 = true;  
-        console.log("aaaaaaaaaaaaaa");
         setTimeout(function() {    
             dblFlag2 = false; 
         }, 1500);  
@@ -906,7 +904,6 @@ window.openLinkInline = function(id) {
     $("#contentin" + id).prepend("<iframe src='" + url + "' id='contentiniframe" + id + "' onload='iframeloadFunc(this)' scrolling='yes' frameborder='0' allowtransparency='true' style='border: 0px solid;margin-top: 0px !important;width: 100% !important;transform: translate(-50%, -50%) !important; display: none;'></iframe>");
     $("#contentiniframe" + id).attr("cid", id);
     dblFlag2 = true; 
-    console.log("aaaaaaaaaaaaaa" + obj.hasClass("yt")); 
 
     var timer = 1500;
     if (obj.hasClass("yt"))
@@ -914,7 +911,6 @@ window.openLinkInline = function(id) {
 
     setTimeout(function() {    
         dblFlag2 = false; 
-        console.log("cccccccccccc");
     }, timer); 
 
     $("#contentiniframe" + id).fadeIn(1900);
@@ -922,7 +918,6 @@ window.openLinkInline = function(id) {
 };
 
 function iframeloadFunc(obj) {
-        console.log("BBBBBBBBBBBBBBBBBBBB2222 " + dblFlag2);
     if (dblFlag2) {
         window.open($(obj).attr("src"), '_blank');
         $("#contentiniframe" + $(obj).attr("cid")).fadeOut(800);
@@ -930,7 +925,7 @@ function iframeloadFunc(obj) {
 } 
 
 function generateUrl(url) {
- 
+    console.log("URL 1: " + url);
     if (url.indexOf('watch?v=') >= 0) {
         url = url.substring(url.indexOf('watch?v=') + 8);
 
@@ -940,7 +935,7 @@ function generateUrl(url) {
         }
         url = "https://www.youtube.com/embed/" + url + "?autoplay=1";
     }
-
+    console.log("URL 2: " + url);
     return url;
 } 
 
@@ -968,7 +963,6 @@ function iframeFSloadFunc(obj) {
     if ($(obj).attr("cid") == "none")
         return false;
     
-    console.log("BBBBBBBBBBBBBBBBBBBB");
     if (dblFlag2) {
         //$(obj).attr("cerror", "yes");
  
@@ -1334,22 +1328,23 @@ function executeSingleDoubleFunction(obj, type) {
                      value = readCookie("maximumfs");
 
                     if (value && value.length > 0) {
-                        console.log("openLinkInside FS Max" + obj);
+                        console.log("openLinkInside FS Max - " + obj);
                     }
                     else {
-                        console.log("openLinkInside fs" + obj);
+                        console.log("openLinkInside fs - " + obj);
                     }
-                    //openLinkInside(obj.substring(9));
+                    openLinkInside(obj.substring(9));
                 }
                 else {
-                    console.log("openLinkOutside" + obj);
-                    //openLinkOutside(obj.substring(9));
+                    console.log("openLinkOutside " + obj);
+                    openLinkOutside(obj.substring(9));
                 }
                 //console.log("Execute double/long touch:" + obj);
             }
             else { // Execute single/touch
-                //openLinkInline(obj.substring(9));
                 console.log("openLinkInline" + obj);
+                
+                openLinkInline(obj.substring(9));
                 //console.log("Execute single/touch:" + obj);
             }
 

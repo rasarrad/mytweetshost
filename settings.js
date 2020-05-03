@@ -595,7 +595,7 @@ var openMainSettingsPopup = function(jsonobj)
 
         $('#maximumfstr').css("opacity", 1);
         $('#maximumfsul').find(".litags").each( function( index, element ) {
-            $(element).addClass("removeClass");
+            $(element).addClass("disable");
         });
     }
     else {
