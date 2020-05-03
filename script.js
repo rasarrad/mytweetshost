@@ -262,6 +262,12 @@ $( document ).ready(function() {
         if (window.scrollY > scrollcurr + 400) {
             scrollcurr = window.scrollY;
             console.log("ccccc: " + scrollcurr);
+            var val = rendermap.get(rendermapcurr);
+
+            rendermapcurr = rendermapcurr + 1;
+
+            if (val)
+                renderLink(val);
         }
     };
 
