@@ -926,9 +926,11 @@ window.openLinkInline = function(id) {
 function iframeloadFunc(obj) {
     if (dblFlag2) {
         window.open($(obj).attr("src"));
-        var rect = $("#" + $(obj).attr("cid")).getBoundingClientRect();
-
-        showFreeTooltip(rect.left, rect.top, "This link can't be open inside the app.");
+        var bodyRect = document.body.getBoundingClientRect(),
+        elemRect = document.getElementById("#" + $(obj).attr("cid")).getBoundingClientRect(),
+        offsetTop   = elemRect.top - bodyRect.top;
+        offsetLeft   = elemRect.left - bodyRect.left;
+        showFreeTooltip(offsetLeft, offsetTop, "This link can't be open inside the app.");
 
         $("#contentiniframe" + $(obj).attr("cid")).fadeOut(800);
     }
@@ -978,10 +980,12 @@ function iframeFSloadFunc(obj) {
  
         window.open($(obj).attr("src"));
 
-        var rect = $("#" + $(obj).attr("cid")).getBoundingClientRect();
+        var bodyRect = document.body.getBoundingClientRect(),
+        elemRect = document.getElementById("#" + $(obj).attr("cid")).getBoundingClientRect(),
+        offsetTop   = elemRect.top - bodyRect.top;
+        offsetLeft   = elemRect.left - bodyRect.left;
+        showFreeTooltip(offsetLeft, offsetTop, "This link can't be open inside the app.");
 
-        showFreeTooltip(rect.left, rect.top, "This link can't be open inside the app.");
-        
         closeFSPopup();
     }
 } 
