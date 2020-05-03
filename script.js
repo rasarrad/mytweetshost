@@ -2267,7 +2267,7 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
     var j = totalrenderedtweets - 1;
     var processed = false;
 
-    console.log("11111: " + totalrenderedtweets - 1) 
+    console.log("11111: " + (totalrenderedtweets - 1)) 
     if (j > -1) {
       do {
         var obj = $("#twitter-widget-" + j);
@@ -2295,7 +2295,7 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
               //} 
 
               totalrenderedtweets = j + 1;
-              console.log("11111: " + totalrenderedtweets)               
+              console.log("444444: " + totalrenderedtweets)               
           } 
           j++;
         }
