@@ -279,13 +279,13 @@ $( document ).ready(function() {
             linksarraypos = window.scrollY;
             setTimeout(function() {
                 console.log("-------666666------: " + window.scrollY)
-                if (window.scrollY - linksarraypos + 30 < 0) {
+                if (window.scrollY - linksarraypos + 200 < 0) {
                     console.log("-------777777------: YES")
                     addRenderedElement();
                 }
 
                 linksarraypos = 0; 
-            }, 100);
+            }, 200);
         }
     };
     
