@@ -961,7 +961,7 @@ function storeInMap(val) {
     rendermap.set(rendermapindex, val);
     rendermapindex = rendermapindex + 1;
 
-    console.log("storeInMap: " + val.id);
+    //console.log("storeInMap: " + val.id);
 }
 
 function renderLink(val, customize) {
