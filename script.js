@@ -41,6 +41,7 @@ var rendermapindex = 0;
 var rendermapcurr = 0;
 var scrollcurr = 0;
 var totalrenderedtweets = 0;
+var renderTimeout = null;
 /* 
     xyz startcode
     xyz fakepass
@@ -258,8 +259,10 @@ $( document ).ready(function() {
 /////////////////////////////////////////////////////////////////////////
 
     window.onscroll = function(ev) {
+        clearTimeout(renderTimeout);
+        hasLinkToRender();
 
-        /**/
+        /*
         if (window.scrollY > scrollcurr + 400) {
             scrollcurr = window.scrollY;
             
@@ -270,8 +273,21 @@ $( document ).ready(function() {
             if (val)
                 renderLink(val, true);
         }
-         
+         */
     };
+
+    function hasLinkToRender() {
+        renderTimeout = setTimeout(function() {
+            var val = rendermap.get(rendermapcurr);
+
+            if (val) {
+                rendermapcurr = rendermapcurr + 1;
+                renderLink(val, true);
+            }    
+            
+            hasLinkToRender();
+        }, 200);
+    }
 
     ///////////////////////////////////////
 
