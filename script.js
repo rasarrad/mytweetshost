@@ -80,7 +80,7 @@ function processUnRendered() {
     $('#main').find(".tweet").each( function( index, element ) {
         
         var tweet = $(element).find("twitter-widget.twitter-tweet")[0];
-
+console.log(tweet.attr("id"))
         if(tweet && tweet.length > 0) {
             if (tweet.attr("processed") != "yes") {
                 customizeSingleTweet(0, null, tweet); 
