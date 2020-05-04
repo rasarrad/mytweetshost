@@ -41,6 +41,8 @@ var rendermapindex = 0;
 var rendermapcurr = 0;
 var scrollcurr = 0;
 var totalrenderedtweets = 0;
+var linksarray = new Array();
+var linksarraypos = 0;
 /* 
     xyz startcode
     xyz fakepass
@@ -53,47 +55,10 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
      changetheme(currTheme, true);
 }  
 
-
-
-function hasLinkToRender() {
-    var currpos = window.scrollY;
-
-    setTimeout(function() {
-        var interval = window.scrollY - currpos; 
-        if (interval < 40 && interval > -40) {
-            var val = rendermap.get(rendermapcurr);
-
-            if (val) {
-                rendermapcurr = rendermapcurr + 1;
-    
-                renderLink(val, true);
-            }
-            else {
-                processUnRendered();
-            }
-        }
-        hasLinkToRender();
-    }, 400);
-}
-
-function processUnRendered() {
-    $('#main').find(".tweet").each( function( index, element ) {
-        var tweet = $(element).find(".twitter-tweet");
-
-        if(tweet && tweet.length > 0) {
-            console.log(tweet.attr("id") + " - " + tweet.attr("processed"))
-            if (tweet.attr("processed") != "yes") {
-                customizeSingleTweet(0, null, tweet); 
-                return false;
-            }
-        }
-    });
-}
-
 $( document ).ready(function() { 
 
     isMobile = window.mobileAndTabletCheck();
-    hasLinkToRender();
+
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");
 
@@ -295,7 +260,8 @@ $( document ).ready(function() {
 /////////////////////////////////////////////////////////////////////////
 
     window.onscroll = function(ev) {
-        /*
+
+        /**/
         if (window.scrollY > scrollcurr + 400) {
             scrollcurr = window.scrollY;
             
@@ -306,8 +272,34 @@ $( document ).ready(function() {
             if (val)
                 renderLink(val, true);
         }
-        */ 
+        
+
+        if (linksarraypos == 0) {
+            console.log("-------55555------: " + window.scrollY)
+            linksarraypos = window.scrollY;
+            setTimeout(function() {
+                console.log("-------666666------: " + window.scrollY)
+                if (window.scrollY - linksarraypos + 200 < 0) {
+                    console.log("-------777777------: YES")
+                    addRenderedElement();
+                }
+
+                linksarraypos = 0; 
+            }, 200);
+        }
     };
+    
+    function addRenderedElement(url) {
+        var id = linksarray[0];
+        console.log("-------333------: " + id)
+        if (id) {
+            $("#" + id).appendTo("#main");
+            $("#" + id).fadeIn(400);
+            linksarray.shift();
+        }
+    }
+
+
 
     ///////////////////////////////////////
 
@@ -2303,14 +2295,14 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
     var j = totalrenderedtweets - 1;
     var processed = false;
 
-    //console.log("11111: " + (totalrenderedtweets - 1)) 
+    console.log("11111: " + (totalrenderedtweets - 1)) 
     if (j > -2) {
       do {
         var obj = $("#twitter-widget-" + j);
 
         if (obj && obj.length > 0 && (forceProcess || obj.attr("processed") != "yes")) {
             processed = true;
-            //console.log("3333333: " + j)
+            console.log("3333333: " + j)
               obj.attr("processed", "yes");
 
               var tweetStyle = document.createElement("style");
@@ -2329,7 +2321,7 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
               //} 
 
               totalrenderedtweets = j + 1;
-              //console.log("444444: " + totalrenderedtweets)               
+              console.log("444444: " + totalrenderedtweets)               
         }
         j++;
       }
@@ -2355,7 +2347,7 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
 }
 
 
-function customizeSingleTweet(id, flag, objParam) {
+function customizeSingleTweet(id, flag, link) {
     var isChromium = window.chrome;
     var winNav = window.navigator;
     var vendorName = winNav.vendor;
@@ -2374,19 +2366,11 @@ function customizeSingleTweet(id, flag, objParam) {
     else {
         tweetCSS = ".EmbeddedTweet{height:auto !important; background: transparent !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;padding-bottom: 25px !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;width: 100%;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {background: transparent !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TwitterCard-container {border: 1px solid var(--soft-color) !important;max-width: 10000px!important;}.TweetAuthor-name {font-size: 16px !important;}.Avatar:not(.Identity-avatar) {height: 36px !important;width: 36px !important;position: relative !important;min-width: 36px !important;top: 2px !important;}.Avatar.Identity-avatar {width: 16px !important;height: 16px !important;}.TweetAuthor-screenName {font-size: 14px !important;}.Tweet-body{font-size: 16px !important;} .TweetAuthor-avatar--ancestor .Avatar {left: -5px !important;}.TweetInfo {font-size: 12px !important;}.CallToAction {font-size: 13px !important;}.Tweet-card {font-size: 14px !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TweetAuthor-avatar{width: 36px !important;height: 36px !important;}";    
     }
-    id = id - 1;
     console.log("customize111: " + id);
     var obj = $("#twitter-widget-" + id);
-
-    if (objParam) {
-        obj = objParam;
-        console.log("-" + objParam.attr("id").substring(15) + "-");
-        id = Number(objParam.attr("id").substring(15));
-    }
-
-
+    console.log(link)
     if (obj && obj.length > 0) {
-
+        console.log("customize222222222222222: " + id);
           obj.attr("processed", "yes");
           console.log("customize: " + (id));
           var tweetStyle = document.createElement("style");
@@ -2403,7 +2387,9 @@ function customizeSingleTweet(id, flag, objParam) {
           //    var tweetWidget = document.getElementById("twitter-widget-" + j).contentDocument;
           //    $(tweetWidget.head).prepend(tweetStyle);
           //} 
-          
+          console.log(link)
+
+          linksarray.push(link);
     }
 }
 
