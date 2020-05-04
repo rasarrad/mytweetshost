@@ -69,7 +69,6 @@ function hasLinkToRender() {
                 renderLink(val, true);
             }
             else {
-                alert(34324);
                 processUnRendered();
             }
         }
@@ -79,7 +78,7 @@ function hasLinkToRender() {
 
 function processUnRendered() {
     $('#main').find(".tweet").each( function( index, element ) {
-        
+        console.log(555555)
         var tweet = $(element).find(".twitter-tweet")[0];
 
         if(tweet && tweet.length > 0) {
