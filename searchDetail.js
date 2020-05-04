@@ -1047,7 +1047,7 @@ function renderLink(val, customize) {
         newtweetobj.find('.innertweet').append(val.tweet);
 
         newtweetobj.attr('id', val.id);
-
+        console.log("111-" + val.id + "-");
         if (customize) {
             preCustomize(newtweetobj);
         }
