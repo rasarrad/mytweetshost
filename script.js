@@ -2360,7 +2360,7 @@ function customizeSingleTweet(id, flag, link) {
           //    $(tweetWidget.head).prepend(tweetStyle);
           //} 
           console.log(link)
-          $("#main").append(link);
+          link.appendTo("#main");
     }
 }
 

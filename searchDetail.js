@@ -1039,6 +1039,9 @@ function renderLink(val, customize) {
 
     if (customize) {
         newtweetobj = $('<div style="display: none;" id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>');
+
+        $('#hiddendiv').append(newtweetobj);
+            
     }
     else {
         newtweet = $('#main').append($('<div id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>'));
@@ -1074,7 +1077,7 @@ function renderLink(val, customize) {
         //setTimeout( function() {                                 
             // xyzdouble
             if (!isMobile) {
-                //document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
+                document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
             }
         //}, 200 );
     }
