@@ -41,8 +41,6 @@ var rendermapindex = 0;
 var rendermapcurr = 0;
 var scrollcurr = 0;
 var totalrenderedtweets = 0;
-var linksarray = new Array();
-var linksarraypos = 0;
 /* 
     xyz startcode
     xyz fakepass
@@ -55,10 +53,30 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
      changetheme(currTheme, true);
 }  
 
+
+
+function hasLinkToRender() {
+    var currpos = window.scrollY;
+
+    setTimeout(function() {
+        var interval = window.scrollY - currpos; 
+        if (interval < 40 && interval > -40) {
+            var val = rendermap.get(rendermapcurr);
+
+            if (val) {
+                rendermapcurr = rendermapcurr + 1;
+    
+                renderLink(val, true);
+            }
+        }
+        hasLinkToRender()
+    }, 300);
+}
+
 $( document ).ready(function() { 
 
     isMobile = window.mobileAndTabletCheck();
-
+    hasLinkToRender();
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");
 
@@ -260,8 +278,7 @@ $( document ).ready(function() {
 /////////////////////////////////////////////////////////////////////////
 
     window.onscroll = function(ev) {
-
-        /**/
+        /*
         if (window.scrollY > scrollcurr + 400) {
             scrollcurr = window.scrollY;
             
@@ -272,34 +289,8 @@ $( document ).ready(function() {
             if (val)
                 renderLink(val, true);
         }
-        
-
-        if (linksarraypos == 0) {
-            console.log("-------55555------: " + window.scrollY)
-            linksarraypos = window.scrollY;
-            setTimeout(function() {
-                console.log("-------666666------: " + window.scrollY)
-                if (window.scrollY - linksarraypos + 200 < 0) {
-                    console.log("-------777777------: YES")
-                    addRenderedElement();
-                }
-
-                linksarraypos = 0; 
-            }, 200);
-        }
+        */ 
     };
-    
-    function addRenderedElement(url) {
-        var id = linksarray[0];
-        console.log("-------333------: " + id)
-        if (id) {
-            $("#" + id).appendTo("#main");
-            $("#" + id).fadeIn(400);
-            linksarray.shift();
-        }
-    }
-
-
 
     ///////////////////////////////////////
 
@@ -2347,7 +2338,7 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
 }
 
 
-function customizeSingleTweet(id, flag, link) {
+function customizeSingleTweet(id, flag) {
     var isChromium = window.chrome;
     var winNav = window.navigator;
     var vendorName = winNav.vendor;
@@ -2368,9 +2359,9 @@ function customizeSingleTweet(id, flag, link) {
     }
     console.log("customize111: " + id);
     var obj = $("#twitter-widget-" + id);
-    console.log(link)
+
     if (obj && obj.length > 0) {
-        console.log("customize222222222222222: " + id);
+
           obj.attr("processed", "yes");
           console.log("customize: " + (id));
           var tweetStyle = document.createElement("style");
@@ -2387,9 +2378,7 @@ function customizeSingleTweet(id, flag, link) {
           //    var tweetWidget = document.getElementById("twitter-widget-" + j).contentDocument;
           //    $(tweetWidget.head).prepend(tweetStyle);
           //} 
-          console.log(link)
-
-          linksarray.push(link);
+          
     }
 }
 

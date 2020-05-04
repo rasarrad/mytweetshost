@@ -604,8 +604,7 @@ var getInformation = function(wasfiltered, valid, flag) {
     rendermapindex = 0;
     rendermapcurr = 0;
     scrollcurr = 0;
-    linksarray = new Array();
-    
+
     nextid = null;
     try {
         nextid = parseInt(readCookie("maxid"));
@@ -885,7 +884,7 @@ var getInformation = function(wasfiltered, valid, flag) {
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                         && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
                         
-                        if (ind < 15)
+                        if (ind < 7)
                             renderLink(val);
                         else 
                             storeInMap(val);
@@ -1035,19 +1034,8 @@ function renderLink(val, customize) {
         typefa = "youtube-play"
     }
     
-    var newtweet = null;
-    var newtweetobj = null; 
-
-    if (customize) {
-        newtweetobj = $('<div style="display: none;" id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>');
-
-        $('#hiddendiv').append(newtweetobj);
-            
-    }
-    else {
-        newtweet = $('#main').append($('<div id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>'));
-        newtweetobj = $('#inid');
-    }
+    var newtweet = $('#main').append($('<div id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>'));
+    var newtweetobj = $('#inid');
 
     newtweetobj.append($('<div style="z-index: 0;background: var(--soft-color);height: 39px;" class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
     
@@ -1062,7 +1050,7 @@ function renderLink(val, customize) {
 
         if (customize) {
             setTimeout(function(){
-                customizeSingleTweet(totalrenderedtweets, null, val.id);
+                customizeSingleTweet(totalrenderedtweets);
                 totalrenderedtweets = totalrenderedtweets + 1;
             }, 250);
         }
@@ -1078,7 +1066,7 @@ function renderLink(val, customize) {
         //setTimeout( function() {                                 
             // xyzdouble
             if (!isMobile) {
-                //document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
+                document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
             }
         //}, 200 );
     }
