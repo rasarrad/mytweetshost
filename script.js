@@ -2387,7 +2387,7 @@ function customizeSingleTweet(id, flag, link) {
           //} 
           console.log(link)
 
-          linksarray.push(push);
+          linksarray.push(link);
     }
 }
 
