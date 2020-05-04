@@ -41,6 +41,8 @@ var rendermapindex = 0;
 var rendermapcurr = 0;
 var scrollcurr = 0;
 var totalrenderedtweets = 0;
+var linksarray = new Array();
+var linksarraypos = 0;
 /* 
     xyz startcode
     xyz fakepass
@@ -270,8 +272,32 @@ $( document ).ready(function() {
             if (val)
                 renderLink(val, true);
         }
-         
+        
+
+        if (linksarraypos == 0) {
+            
+            linksarraypos = window.scrollY;
+            setTimeout(function() {
+
+                if (window.scrollY - linksarraypos + 30 < 0)
+                    addRenderedElement();
+
+                linksarraypos = 0; 
+            }, 100);
+        }
     };
+    
+    function addRenderedElement(url) {
+        var id = linksarray[0];
+        console.log("-------333------: " + id)
+        if (id) {
+            $("#" + id).appendTo("#main");
+            $("#" + id).fadeIn(400);
+            linksarray.shift();
+        }
+    }
+
+
 
     ///////////////////////////////////////
 
@@ -2360,8 +2386,8 @@ function customizeSingleTweet(id, flag, link) {
           //    $(tweetWidget.head).prepend(tweetStyle);
           //} 
           console.log(link)
-          //link.show();
-          //link.appendTo("#main");
+
+          linksarray.push(push);
     }
 }
 

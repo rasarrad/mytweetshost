@@ -604,7 +604,8 @@ var getInformation = function(wasfiltered, valid, flag) {
     rendermapindex = 0;
     rendermapcurr = 0;
     scrollcurr = 0;
-
+    linksarray = new Array();
+    
     nextid = null;
     try {
         nextid = parseInt(readCookie("maxid"));
@@ -1061,7 +1062,7 @@ function renderLink(val, customize) {
 
         if (customize) {
             setTimeout(function(){
-                customizeSingleTweet(totalrenderedtweets, null, newtweetobj);
+                customizeSingleTweet(totalrenderedtweets, null, val.id);
                 totalrenderedtweets = totalrenderedtweets + 1;
             }, 250);
         }
