@@ -1047,9 +1047,11 @@ function renderLink(val, customize) {
         newtweetobj.find('.innertweet').append(val.tweet);
 
         newtweetobj.attr('id', val.id);
-
+        console.log("-------- id: " + val.id);
         if (customize) {
             setTimeout(function(){
+                console.log("-------- tweet id: " + newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr(id));
+                
                 customizeSingleTweet(totalrenderedtweets);
                 totalrenderedtweets = totalrenderedtweets + 1;
             }, 250);

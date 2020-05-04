@@ -1128,7 +1128,6 @@ var eraseAllDeletedFunc = function(text, type, functorun) {
                     updateLinkCookie(val);
                     */
                     // xyz eraseall
-                    console.log("deleted id: " + val.id)
                 }
             }
             while (processtmp);
