@@ -2340,9 +2340,9 @@ function customizeSingleTweet(id, flag, link) {
     }
     console.log("customize111: " + id);
     var obj = $("#twitter-widget-" + id);
-
+    console.log(link)
     if (obj && obj.length > 0) {
-        console.log("customize111: " + 2222222);
+        console.log("customize222222222222222: " + id);
           obj.attr("processed", "yes");
           console.log("customize: " + (id));
           var tweetStyle = document.createElement("style");
