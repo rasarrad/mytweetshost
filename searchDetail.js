@@ -1052,7 +1052,8 @@ function renderLink(val, customize) {
             setTimeout(function(){
                 console.log("-------- tweet id: " + newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id"));
                 
-                if (newtweetobj.find(".twitter-tweet.twitter-tweet-rendered")) {
+                if (newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").length > 0) {
+                    console.log("-----customizeSingleTweet--- ");
                     customizeSingleTweet(totalrenderedtweets);
                     totalrenderedtweets = totalrenderedtweets + 1;
                 }
