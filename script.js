@@ -830,7 +830,6 @@ function SaveDatFileBro(localstorage) {
   
          reader.onloadend = function(e) {
             
-           //console.log(this.result);
          };
   
          reader.readAsText(file);
@@ -929,7 +928,6 @@ function iframeloadFunc(obj) {
     if (dblFlag) {
         window.open($(obj).attr("src"));
 
-        console.log("ZZZZ: " + "#" + $(obj).attr("cid"))
         var element = document.getElementById($(obj).attr("cid"));
         
         showFreeTooltip(getOffset(element).left, getOffset(element).top, "This link can't be open inside the app.");
@@ -939,7 +937,6 @@ function iframeloadFunc(obj) {
 } 
 
 function generateUrl(url) {
-    console.log("URL 1: " + url);
     if (url.indexOf('watch?v=') >= 0) {
         url = url.substring(url.indexOf('watch?v=') + 8);
 
@@ -949,7 +946,6 @@ function generateUrl(url) {
         }
         url = "https://www.youtube.com/embed/" + url + "?autoplay=1";
     }
-    console.log("URL 2: " + url);
     return url;
 } 
 
@@ -982,7 +978,6 @@ function iframeFSloadFunc(obj) {
  
         window.open($(obj).attr("src"));
 
-        console.log("ZZZZ: " + "#" + $(obj).attr("cid"))
         var element = document.getElementById($(obj).attr("cid"));
         
         showFreeTooltip(getOffset(element).left, getOffset(element).top, "This link can't be open inside the app.");
@@ -2267,14 +2262,12 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
     var j = totalrenderedtweets - 1;
     var processed = false;
 
-    console.log("11111: " + (totalrenderedtweets - 1)) 
     if (j > -2) {
       do {
         var obj = $("#twitter-widget-" + j);
 
         if (obj && obj.length > 0 && (forceProcess || obj.attr("processed") != "yes")) {
             processed = true;
-            console.log("3333333: " + j)
               obj.attr("processed", "yes");
 
               var tweetStyle = document.createElement("style");
@@ -2293,7 +2286,6 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
               //} 
 
               totalrenderedtweets = j + 1;
-              console.log("444444: " + totalrenderedtweets)               
         }
         j++;
       }
@@ -2338,13 +2330,11 @@ function customizeSingleTweet(id, flag) {
     else {
         tweetCSS = ".EmbeddedTweet{height:auto !important; background: transparent !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;padding-bottom: 25px !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;width: 100%;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {background: transparent !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TwitterCard-container {border: 1px solid var(--soft-color) !important;max-width: 10000px!important;}.TweetAuthor-name {font-size: 16px !important;}.Avatar:not(.Identity-avatar) {height: 36px !important;width: 36px !important;position: relative !important;min-width: 36px !important;top: 2px !important;}.Avatar.Identity-avatar {width: 16px !important;height: 16px !important;}.TweetAuthor-screenName {font-size: 14px !important;}.Tweet-body{font-size: 16px !important;} .TweetAuthor-avatar--ancestor .Avatar {left: -5px !important;}.TweetInfo {font-size: 12px !important;}.CallToAction {font-size: 13px !important;}.Tweet-card {font-size: 14px !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TweetAuthor-avatar{width: 36px !important;height: 36px !important;}";    
     }
-    console.log("customize111: " + id);
     var obj = $("#twitter-widget-" + id);
 
     if (obj && obj.length > 0) {
 
           obj.attr("processed", "yes");
-          console.log("customize: " + (id));
           var tweetStyle = document.createElement("style");
 
           tweetStyle.setAttribute("id", "tweet-style-" + id);

@@ -1052,8 +1052,22 @@ function renderLink(val, customize) {
             setTimeout(function(){
                 console.log("-------- tweet id: " + newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id"));
                 
-                customizeSingleTweet(totalrenderedtweets);
-                totalrenderedtweets = totalrenderedtweets + 1;
+                if (newtweetobj.find(".twitter-tweet.twitter-tweet-rendered")) {
+                    customizeSingleTweet(totalrenderedtweets);
+                    totalrenderedtweets = totalrenderedtweets + 1;
+                }
+                else {
+                    setTimeout(function(){
+                        console.log("-------- tweet id 22222: " + newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id"));
+                        
+                        if (newtweetobj.find(".twitter-tweet.twitter-tweet-rendered")) {
+                            customizeSingleTweet(totalrenderedtweets);
+                            totalrenderedtweets = totalrenderedtweets + 1;
+                        }
+        
+                    }, 250);
+                }
+
             }, 250);
         }
     }
