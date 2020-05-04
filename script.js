@@ -2378,8 +2378,12 @@ function customizeSingleTweet(id, flag, objParam) {
     console.log("customize111: " + id);
     var obj = $("#twitter-widget-" + id);
 
-    if (objParam) 
+    if (objParam) {
         obj = objParam;
+        console.log("-" + objParam.attr("id").substring(15) + "-");
+        id = Number(objParam.attr("id").substring(16));
+    }
+
 
     if (obj && obj.length > 0) {
 
