@@ -2359,6 +2359,7 @@ function customizeSingleTweet(id, flag, link) {
           //    var tweetWidget = document.getElementById("twitter-widget-" + j).contentDocument;
           //    $(tweetWidget.head).prepend(tweetStyle);
           //} 
+          console.log(link)
           $("#main").append(link);
     }
 }
