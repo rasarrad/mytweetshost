@@ -79,7 +79,7 @@ function hasLinkToRender() {
 function processUnRendered() {
     $('#main').find(".tweet").each( function( index, element ) {
         
-        var tweet = $(element).find("twitter-widget.twitter-tweet")[0];
+        var tweet = $(element).find(".twitter-tweet")[0];
 
         if(tweet && tweet.length > 0) {
             console.log(tweet.attr("id") + " - " + tweet.attr("processed"))
