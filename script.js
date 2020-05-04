@@ -69,6 +69,7 @@ function hasLinkToRender() {
                 renderLink(val, true);
             }
             else {
+                alert(34324);
                 processUnRendered();
             }
         }
