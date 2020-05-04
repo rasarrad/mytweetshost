@@ -1049,29 +1049,7 @@ function renderLink(val, customize) {
         newtweetobj.attr('id', val.id);
 
         if (customize) {
-            setTimeout(function(){
-                
-                var tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
-
-                if (tweetId > 0) {
-                    console.log("tweetId:" + tweetId.substring(14) + "-");
-                    customizeSingleTweet(totalrenderedtweets);
-                    totalrenderedtweets = totalrenderedtweets + 1;
-                }
-                else {
-                    setTimeout(function(){
-                        tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
-
-                        if (tweetId > 0) {
-                            console.log("tweetId:" + tweetId.substring(14) + "-");
-                            customizeSingleTweet(totalrenderedtweets);
-                            totalrenderedtweets = totalrenderedtweets + 1;
-                        }
-        
-                    }, 250);
-                }
-
-            }, 250);
+            preCustomize(newtweetobj);
         }
     }
     else {
@@ -1091,7 +1069,37 @@ function renderLink(val, customize) {
     }
 }
 
+function preCustomize(newtweetobj) {
 
+    setTimeout(function(){
+                
+        var tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
+
+        if (tweetId > 0) {
+            customizeSingleTweet(tweetId);
+        }
+        else {
+            setTimeout(function(){
+                tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
+
+                if (tweetId > 0) {
+                    customizeSingleTweet(tweetId);
+                }
+                else {
+                    setTimeout(function(){
+                        tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
+
+                        if (tweetId > 0) {
+                            customizeSingleTweet(tweetId);
+                        }
+        
+                    }, 250);
+                }
+            }, 250);
+        }
+    }, 250);
+
+}
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
@@ -1271,6 +1279,8 @@ var getInformationbyid = function(id, flag) {
                         newtweetobj.append($('<div class="innertweet"></div>'));
                         newtweetobj.find('.innertweet').append(val.tweet);
                         newtweetobj.attr('id', val.id);
+
+                        preCustomize(newtweetobj);
                     }
                     else {
                         newtweetobj.append($(val.tweet));
@@ -1280,28 +1290,20 @@ var getInformationbyid = function(id, flag) {
                         newtweetobj.attr('id', val.id);
                 
                         var currid = val.id;
-                        //setTimeout( function() {                                 
-                            // xyzdouble
-                            if (!isMobile) {
-                                document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
-                            }
+                        
+                        if (!isMobile) {
+                            document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
+                        }
                     }
         
-                    newtweetobj.attr('id', val.id);
-    
-                    var newtweetobjaction = newtweetobj;
-                    
                     $('#mask').fadeOut(300);
     
                     if (flag)
                         showMessage("This Link is the same as the one you are trying to add", 6000); 
 
-                    setTimeout(function() { 
-                            customizeSingleTweet(totalrenderedtweets, true);
-                            totalrenderedtweets = totalrenderedtweets + 1;
-                            $('#tweetcount').hide();
-                            $('body, html').css('overflow-y', 'auto');
-                      }, 800);
+                    $('#tweetcount').hide();
+                    $('body, html').css('overflow-y', 'auto');
+
                     return false;
                 }
             }
