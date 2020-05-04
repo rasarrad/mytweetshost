@@ -284,9 +284,9 @@ $( document ).ready(function() {
                 rendermapcurr = rendermapcurr + 1;
                 renderLink(val, true);
             }    
-            
+
             hasLinkToRender();
-        }, 200);
+        }, 50);
     }
 
     ///////////////////////////////////////
