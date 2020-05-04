@@ -2319,7 +2319,7 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
 }
 
 
-function customizeSingleTweet(id, flag) {
+function customizeSingleTweet(id, flag, link) {
     var isChromium = window.chrome;
     var winNav = window.navigator;
     var vendorName = winNav.vendor;
@@ -2359,7 +2359,7 @@ function customizeSingleTweet(id, flag) {
           //    var tweetWidget = document.getElementById("twitter-widget-" + j).contentDocument;
           //    $(tweetWidget.head).prepend(tweetStyle);
           //} 
-          
+          $("#main").append(link);
     }
 }
 
