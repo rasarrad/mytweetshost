@@ -1076,6 +1076,7 @@ function preCustomize(newtweetobj) {
         var tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
 
         if (tweetId.length > 0) {
+            console.log("Encontrou 1 - " + tweetId);
             customizeSingleTweet(tweetId.substring(15));
         }
         else {
@@ -1083,10 +1084,12 @@ function preCustomize(newtweetobj) {
                 tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
 
                 if (tweetId.length > 0) {
+                    console.log("Encontrou 2 - " + tweetId);
                     customizeSingleTweet(tweetId.substring(15));
                 }
                 else {
                     setTimeout(function(){
+                        console.log("Encontrou 2 - " + tweetId);
                         tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
 
                         if (tweetId.length > 0) {

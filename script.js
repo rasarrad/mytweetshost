@@ -41,6 +41,9 @@ var rendermapindex = 0;
 var rendermapcurr = 0;
 var scrollcurr = 0;
 var totalrenderedtweets = 0;
+var renderTimeout = null;
+var renderTimeout2 = null;
+
 /* 
     xyz startcode
     xyz fakepass
@@ -54,7 +57,15 @@ function startWorker() {
         w = new Worker("worker.js");
       }
       w.onmessage = function(event) {
-        console.log("data: " + event.data);
+          //console.log("data: " + event.data);
+          renderTimeout = setTimeout(function() {     
+            var val = rendermap.get(rendermapcurr);
+            
+            rendermapcurr = rendermapcurr + 1;
+
+            if (val)
+                renderLink(val, true);
+        }, 100);
       };
     } 
   }
@@ -279,17 +290,29 @@ $( document ).ready(function() {
 /////////////////////////////////////////////////////////////////////////
 
     window.onscroll = function(ev) {
+        clearTimeout(renderTimeout);
+        clearTimeout(renderTimeout2);
+
+        var scroll = $(window).scrollTop();
+        if (scroll > 200) {
+          $('#gotop').fadeIn(700); 
+        }
+        else {
+          $('#gotop').fadeOut(700);
+        }
 
         /**/
-        if (window.scrollY > scrollcurr + 400) {
-            scrollcurr = window.scrollY;
+        if (window.scrollY > scrollcurr + 600) {
+            renderTimeout2 = setTimeout(function() {     
+                scrollcurr = window.scrollY;
             
-            var val = rendermap.get(rendermapcurr);
-
-            rendermapcurr = rendermapcurr + 1;
-
-            if (val)
-                renderLink(val, true);
+                var val = rendermap.get(rendermapcurr);
+    
+                rendermapcurr = rendermapcurr + 1;
+    
+                if (val)
+                    renderLink(val, true);
+            }, 100);
         }
          
     };
