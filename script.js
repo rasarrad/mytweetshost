@@ -2381,7 +2381,7 @@ function customizeSingleTweet(id, flag, objParam) {
     if (objParam) {
         obj = objParam;
         console.log("-" + objParam.attr("id").substring(15) + "-");
-        id = Number(objParam.attr("id").substring(16));
+        id = Number(objParam.attr("id").substring(15));
     }
 
 
