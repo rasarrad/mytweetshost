@@ -68,9 +68,26 @@ function hasLinkToRender() {
     
                 renderLink(val, true);
             }
+            else {
+                processUnRendered();
+            }
         }
-        hasLinkToRender()
-    }, 700);
+        hasLinkToRender();
+    }, 400);
+}
+
+function processUnRendered() {
+    $('#main').find(".tweet").each( function( index, element ) {
+        
+        var tweet = $(element).find("twitter-widget.twitter-tweet")[0];
+
+        if(tweet && tweet.length > 0) {
+            if (tweet.attr("processed") != "yes") {
+                customizeSingleTweet(0, null, tweet); 
+                return false;
+            }
+        }
+    });
 }
 
 $( document ).ready(function() { 
@@ -2338,7 +2355,7 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
 }
 
 
-function customizeSingleTweet(id, flag) {
+function customizeSingleTweet(id, flag, objParam) {
     var isChromium = window.chrome;
     var winNav = window.navigator;
     var vendorName = winNav.vendor;
@@ -2360,6 +2377,9 @@ function customizeSingleTweet(id, flag) {
     id = id - 1;
     console.log("customize111: " + id);
     var obj = $("#twitter-widget-" + id);
+
+    if (objParam) 
+        obj = objParam;
 
     if (obj && obj.length > 0) {
 
