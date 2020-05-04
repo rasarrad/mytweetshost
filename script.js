@@ -2342,7 +2342,7 @@ function customizeSingleTweet(id, flag, link) {
     var obj = $("#twitter-widget-" + id);
 
     if (obj && obj.length > 0) {
-
+        console.log("customize111: " + 2222222);
           obj.attr("processed", "yes");
           console.log("customize: " + (id));
           var tweetStyle = document.createElement("style");
