@@ -43,7 +43,7 @@ var scrollcurr = 0;
 var totalrenderedtweets = 0;
 var renderTimeout = null;
 var renderTimeout2 = null;
-
+var isRendering = false;
 /* 
     xyz startcode
     xyz fakepass
@@ -59,12 +59,17 @@ function startWorker() {
       w.onmessage = function(event) {
           //console.log("data: " + event.data);
           renderTimeout = setTimeout(function() {     
-            var val = rendermap.get(rendermapcurr);
+            if (!isRendering) {
+                var val = rendermap.get(rendermapcurr);
             
-            rendermapcurr = rendermapcurr + 1;
-
-            if (val)
-                renderLink(val, true);
+                rendermapcurr = rendermapcurr + 1;
+    
+                if (val) {
+                    isRendering = true;
+                    
+                    renderLink(val, true);
+                }
+            }
         }, 100);
       };
     } 
@@ -303,14 +308,20 @@ $( document ).ready(function() {
         /**/
         if (window.scrollY > scrollcurr + 600) {
             renderTimeout2 = setTimeout(function() {     
-                scrollcurr = window.scrollY;
             
-                var val = rendermap.get(rendermapcurr);
-    
-                rendermapcurr = rendermapcurr + 1;
-    
-                if (val)
-                    renderLink(val, true);
+                if (!isRendering) {
+                    scrollcurr = window.scrollY;
+
+                    var val = rendermap.get(rendermapcurr);
+                
+                    rendermapcurr = rendermapcurr + 1;
+        
+                    if (val) {
+                        isRendering = true;
+                        
+                        renderLink(val, true);
+                    }
+                }
             }, 100);
         }
          
@@ -2394,6 +2405,7 @@ function customizeSingleTweet(id) {
     //    var tweetWidget = document.getElementById("twitter-widget-" + j).contentDocument;
     //    $(tweetWidget.head).prepend(tweetStyle);
     //} 
+    isRendering = false;
 }
 
 

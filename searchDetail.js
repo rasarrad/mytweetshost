@@ -1046,7 +1046,18 @@ function renderLink(val, customize) {
         newtweetobj.attr('id', val.id);
 
         if (customize) {
-            preCustomize(newtweetobj);
+            var hasFound = false;
+            do {
+                var tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
+
+                if (typeof tweetId !== 'undefined') {
+                    hasFound = true;
+                    console.log("Encontrou 1 - " + tweetId);
+                    customizeSingleTweet(tweetId.substring(15));
+                }
+            }
+            while (!hasFound)
+            //preCustomize(newtweetobj);
         }
     }
     else {
