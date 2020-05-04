@@ -1055,12 +1055,14 @@ function renderLink(val, customize) {
                     console.log("Encontrou 1 - " + tweetId);
                     customizeSingleTweet(tweetId.substring(15));
                 }
+                console.log("NNNnE    gg ncontrou ");
             }
             while (!hasFound)
             //preCustomize(newtweetobj);
         }
     }
     else {
+        isRendering = false;
         newtweetobj.append($(val.tweet));
         
         newtweetobj.find(".bottomstripline.line1").html(val.info);
