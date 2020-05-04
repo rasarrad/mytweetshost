@@ -275,12 +275,14 @@ $( document ).ready(function() {
         
 
         if (linksarraypos == 0) {
-            
+            console.log("-------55555------: " + window.scrollY)
             linksarraypos = window.scrollY;
             setTimeout(function() {
-
-                if (window.scrollY - linksarraypos + 30 < 0)
+                console.log("-------666666------: " + window.scrollY)
+                if (window.scrollY - linksarraypos + 30 < 0) {
+                    console.log("-------777777------: YES")
                     addRenderedElement();
+                }
 
                 linksarraypos = 0; 
             }, 100);
