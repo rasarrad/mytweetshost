@@ -1050,18 +1050,20 @@ function renderLink(val, customize) {
         console.log("-------- id: " + val.id);
         if (customize) {
             setTimeout(function(){
-                console.log("-------- tweet id: " + newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id"));
                 
-                if (newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").length > 0) {
-                    console.log("-----customizeSingleTweet--- ");
+                var tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
+
+                if (tweetId > 0) {
+                    console.log("tweetId: " + tweetId);
                     customizeSingleTweet(totalrenderedtweets);
                     totalrenderedtweets = totalrenderedtweets + 1;
                 }
                 else {
                     setTimeout(function(){
-                        console.log("-------- tweet id 22222: " + newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id"));
-                        
-                        if (newtweetobj.find(".twitter-tweet.twitter-tweet-rendered")) {
+                        tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
+
+                        if (tweetId > 0) {
+                            console.log("tweetId: " + tweetId);
                             customizeSingleTweet(totalrenderedtweets);
                             totalrenderedtweets = totalrenderedtweets + 1;
                         }
