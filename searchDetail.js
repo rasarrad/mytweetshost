@@ -1047,14 +1047,14 @@ function renderLink(val, customize) {
         newtweetobj.find('.innertweet').append(val.tweet);
 
         newtweetobj.attr('id', val.id);
-        console.log("-------- id: " + val.id);
+
         if (customize) {
             setTimeout(function(){
                 
                 var tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
 
                 if (tweetId > 0) {
-                    console.log("tweetId: " + tweetId);
+                    console.log("tweetId:" + tweetId.substring(14) + "-");
                     customizeSingleTweet(totalrenderedtweets);
                     totalrenderedtweets = totalrenderedtweets + 1;
                 }
@@ -1063,7 +1063,7 @@ function renderLink(val, customize) {
                         tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
 
                         if (tweetId > 0) {
-                            console.log("tweetId: " + tweetId);
+                            console.log("tweetId:" + tweetId.substring(14) + "-");
                             customizeSingleTweet(totalrenderedtweets);
                             totalrenderedtweets = totalrenderedtweets + 1;
                         }
