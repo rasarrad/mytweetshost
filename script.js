@@ -46,6 +46,24 @@ var totalrenderedtweets = 0;
     xyz fakepass
     xyz splash
 */
+var w;
+
+function startWorker() {
+    if (typeof(Worker) !== "undefined") {
+      if (typeof(w) == "undefined") {
+        w = new Worker("worker.js");
+      }
+      w.onmessage = function(event) {
+        console.log("data: " + event.data);
+      };
+    } 
+  }
+  
+function stopWorker() {
+    w.terminate();
+    w = undefined;
+}
+
 
 // START do tema
 var currTheme = readCookie("currTheme");
@@ -54,6 +72,8 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 }  
 
 $( document ).ready(function() { 
+
+    startWorker();
 
     isMobile = window.mobileAndTabletCheck();
 
