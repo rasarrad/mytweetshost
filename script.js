@@ -75,6 +75,7 @@ $( document ).ready(function() {
 
     startWorker();
 
+    w.aaa("123");
     isMobile = window.mobileAndTabletCheck();
 
     // START do texto das categorias

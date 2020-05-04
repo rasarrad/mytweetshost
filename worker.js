@@ -6,4 +6,9 @@ function timedCount() {
   setTimeout("timedCount()",500);
 }
 
+
+function aaa(aa) {
+    alert(aa);
+}
+
 timedCount();
