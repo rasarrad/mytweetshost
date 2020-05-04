@@ -1047,7 +1047,7 @@ function renderLink(val, customize) {
         newtweetobj.find('.innertweet').append(val.tweet);
 
         newtweetobj.attr('id', val.id);
-        console.log("12112val.id-" + val.id + "-")
+
         if (customize) {
             preCustomize(newtweetobj);
         }
@@ -1074,23 +1074,23 @@ function preCustomize(newtweetobj) {
     setTimeout(function(){
                 
         var tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
-console.log("12112-" + tweetId.substring(14) + "-")
-        if (tweetId > 0) {
-            customizeSingleTweet(tweetId.substring(14));
+
+        if (tweetId.length > 0) {
+            customizeSingleTweet(tweetId);
         }
         else {
             setTimeout(function(){
                 tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
 
-                if (tweetId > 0) {
-                    customizeSingleTweet(tweetId.substring(14));
+                if (tweetId.length > 0) {
+                    customizeSingleTweet(tweetId);
                 }
                 else {
                     setTimeout(function(){
                         tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
 
-                        if (tweetId > 0) {
-                            customizeSingleTweet(tweetId.substring(14));
+                        if (tweetId.length > 0) {
+                            customizeSingleTweet(tweetId);
                         }
         
                     }, 250);
@@ -1290,7 +1290,7 @@ var getInformationbyid = function(id, flag) {
                         newtweetobj.attr('id', val.id);
                 
                         var currid = val.id;
-
+                        
                         if (!isMobile) {
                             document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
                         }
