@@ -1076,21 +1076,21 @@ function preCustomize(newtweetobj) {
         var tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
 
         if (tweetId.length > 0) {
-            customizeSingleTweet(tweetId);
+            customizeSingleTweet(tweetId.substring(14));
         }
         else {
             setTimeout(function(){
                 tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
 
                 if (tweetId.length > 0) {
-                    customizeSingleTweet(tweetId);
+                    customizeSingleTweet(tweetId.substring(14));
                 }
                 else {
                     setTimeout(function(){
                         tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
 
                         if (tweetId.length > 0) {
-                            customizeSingleTweet(tweetId);
+                            customizeSingleTweet(tweetId.substring(14));
                         }
         
                     }, 250);
