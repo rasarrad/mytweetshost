@@ -884,9 +884,6 @@ var getInformation = function(wasfiltered, valid, flag) {
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                         && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
                         
-                        if (ind < 7)
-                            renderLink(val);
-                        else 
                             storeInMap(val);
                     }   
     
