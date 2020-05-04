@@ -1075,7 +1075,7 @@ function preCustomize(newtweetobj) {
                 
         var tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
 
-        if (tweetId && tweetId.length > 0) {
+        if (tweetId.length > 0) {
             console.log("Encontrou 1 - " + tweetId);
             customizeSingleTweet(tweetId.substring(15));
         }
@@ -1083,7 +1083,7 @@ function preCustomize(newtweetobj) {
             setTimeout(function(){
                 tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
 
-                if (tweetId && tweetId.length > 0) {
+                if (tweetId) {
                     console.log("Encontrou 2 - " + tweetId);
                     customizeSingleTweet(tweetId.substring(15));
                 }
@@ -1092,9 +1092,12 @@ function preCustomize(newtweetobj) {
                         console.log("Encontrou 2 - " + tweetId);
                         tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
 
-                        if (tweetId && tweetId.length > 0) {
+                        if (tweetId.length > 0) {
                             customizeSingleTweet(tweetId.substring(15));
                         }
+                        else {
+                            console.log("NNNNNAO Encontrou");
+                        } 
         
                     }, 250);
                 }
