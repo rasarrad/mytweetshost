@@ -80,7 +80,7 @@ function startWorker() {
                 else {
                     console.log("NO OTHER");
                 }
-            }, 100);
+            }, 500);
         }
 
 
