@@ -54,7 +54,7 @@ var w;
 function startWorker() {
     if (typeof(Worker) !== "undefined") {
       if (typeof(w) == "undefined") {
-        w = new Worker("worker.js");
+        w = new Worker("worker.js", "pppamm");
       }
       w.onmessage = function(event) {
         

@@ -537,7 +537,7 @@ function clickSearchLiClassif(e, obj) {
 
 var getInformation = function(wasfiltered, valid, flag) {
 
-    closeSearchPopup();
+    $('#mask').fadeIn(100);
 
     if (wasfiltered == 1) {
         $('#countfilter').show();
@@ -593,9 +593,7 @@ var getInformation = function(wasfiltered, valid, flag) {
         }, 150); 
         
         return false;
-    }
-
-    $('#mask').fadeIn(300);  
+    }  
 
     var totalLinkss = 0;
     total_yy = 0;
