@@ -2463,6 +2463,7 @@ function customizeSingleTweet(id) {
     
     totalrenderedtweets = totalrenderedtweets + 1;
     if (id) {
+        alert(id)
         $("#" + id).fadeIn(1000);
     }
     else {
