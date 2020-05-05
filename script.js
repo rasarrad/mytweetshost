@@ -62,6 +62,7 @@ function startWorker() {
       //w.postMessage({ "args": [ 500 ] });
 
       w.onmessage = function(event) {
+          console.log(linkArray[currrenderedtweets])
           if (linkArray[currrenderedtweets]) {
             if (currrenderedtweets < 5) {
                 if (currrenderedtweets == 0) {
