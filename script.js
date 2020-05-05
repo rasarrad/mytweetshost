@@ -2271,7 +2271,7 @@ $(document).on({
     'drop': function(e) {
         e.preventDefault();  
         e.stopPropagation();
-
+console.log(e)
         e.originalEvent.dataTransfer.items[0].getAsString(function(str)
         {
             if (str.substring(0,3) == "www") {
