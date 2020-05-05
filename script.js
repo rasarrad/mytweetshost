@@ -98,7 +98,7 @@ function startWorker() {
                 }
             }
             else {
-                
+                console.log(searchtotal + "-" + currrenderedtweets)
                 if (currrenderedtweets == 5) {
                     closeMenuPopup(null, "2.7");
                     $('#mask').fadeOut(3000);  
@@ -127,7 +127,7 @@ function startWorker() {
             }
           }
           else {
-            console.log(searchtotal + "-" + currrenderedtweets)
+
             if (searchtotal > 0 && currrenderedtweets == searchtotal)
                 stopWorker();
           }
