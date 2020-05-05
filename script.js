@@ -2412,7 +2412,7 @@ function customizeSingleTweet() {
     //} 
     
     totalrenderedtweets = totalrenderedtweets + 1;
-
+    obj.parent().parent().appendTo($("#main")).fadeIn(400);
 }
 
 
