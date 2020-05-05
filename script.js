@@ -62,49 +62,12 @@ function startWorker() {
       //w.postMessage({ "args": [ 500 ] });
 
       w.onmessage = function(event) {
-        console.log(currrenderedtweets + " - " + searchtotal);
-        if (currrenderedtweets > searchtotal)
-            stopWorker();
-
-        if (currrenderedtweets < 5) {
-            if (linkArray[currrenderedtweets] == "T") {
-                if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                    currrenderedtweets++;
+          if (searchtotal > 0) {
+            console.log(currrenderedtweets + " - " + searchtotal);
+            if (currrenderedtweets > searchtotal)
+                stopWorker();
     
-                    if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
-                        customizeSingleTweet();
-                    }
-                }
-                else {
-                    console.log("NO");
-                }
-            }
-            else {
-                $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
-                
-                if (!isMobile) {
-                    console.log(linkArray);
-                    console.log(currrenderedtweets);
-                    idCurr = linkArray[currrenderedtweets];
-                    console.log("idCurr 1111: " + idCurr);
-                    setTimeout(function(){
-                        console.log("idCurr 2222: " + idCurr);
-                        document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
-                    }, 0);
-                }
-                currrenderedtweets++;
-            }
-        }
-        else {
-            
-            if (currrenderedtweets == 5) {
-                closeMenuPopup(null, "2.7");
-                $('#mask').fadeOut(3000);  
-                $('#tweetcount').fadeIn(3800);
-                
-            }
-
-            renderTimeout = setTimeout(function() {     
+            if (currrenderedtweets < 5) {
                 if (linkArray[currrenderedtweets] == "T") {
                     if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
                         currrenderedtweets++;
@@ -119,28 +82,49 @@ function startWorker() {
                 }
                 else {
                     $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
+                    
+                    if (!isMobile) {
+                        console.log(linkArray);
+                        console.log(currrenderedtweets);
+                        idCurr = linkArray[currrenderedtweets];
+                        console.log("idCurr 1111: " + idCurr);
+                        setTimeout(function(){
+                            console.log("idCurr 2222: " + idCurr);
+                            document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
+                        }, 0);
+                    }
                     currrenderedtweets++;
                 }
-            }, 190);
-        }
-
-
-          //console.log("data: " + event.data);
-          /* 
-          renderTimeout = setTimeout(function() {     
-            if (!isRendering) {
-                var val = rendermap.get(rendermapcurr);
-            
-                rendermapcurr = rendermapcurr + 1;
-    
-                if (val) {
-                    isRendering = true;
-                    
-                    renderLink(val, true);
-                }
             }
-        }, 100);
-        */
+            else {
+                
+                if (currrenderedtweets == 5) {
+                    closeMenuPopup(null, "2.7");
+                    $('#mask').fadeOut(3000);  
+                    $('#tweetcount').fadeIn(3800);
+                    
+                }
+    
+                renderTimeout = setTimeout(function() {     
+                    if (linkArray[currrenderedtweets] == "T") {
+                        if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
+                            currrenderedtweets++;
+            
+                            if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
+                                customizeSingleTweet();
+                            }
+                        }
+                        else {
+                            console.log("NO");
+                        }
+                    }
+                    else {
+                        $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
+                        currrenderedtweets++;
+                    }
+                }, 190);
+            }
+          }
       };
     } 
   }
