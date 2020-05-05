@@ -539,7 +539,7 @@ var getInformation = function(wasfiltered, valid) {
 
     $('#mask').fadeIn(100);
     stopWorker();
-    
+
     if (wasfiltered == 1) {
         $('#countfilter').show();
     }
@@ -561,8 +561,6 @@ var getInformation = function(wasfiltered, valid) {
     currrenderedtweets = 0;
     linkArray = new Array();
     var localCounter = 0;    
-
-    startWorker();
 
     // security check
     /* xyz splash 
@@ -776,7 +774,8 @@ var getInformation = function(wasfiltered, valid) {
         data.Tweets.sort(sortByDate());
         */
 
-
+       startWorker();
+       
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
             var dofiltertextfinal = false;
