@@ -2271,14 +2271,10 @@ $(document).on({
     'drop': function(e) {
         e.preventDefault();  
         e.stopPropagation();
-//console.log() e.target == "span#toptitle.noselect.toptitle"
+
         e.originalEvent.dataTransfer.items[0].getAsString(function(str)
         {
-/*             if (str.substring(0,3) == "www") {
-                showMessage("Invalid Link - Must be HTTPS"); 
-            }
-            else { */
-
+            if (e.target == "span#toptitle.noselect.toptitle") {
                 dblFlag = true;
                 dblClickTimeout = setTimeout(function() {     
                   if (dblFlag) {
@@ -2286,7 +2282,19 @@ $(document).on({
                       dblFlag = false;  
                   }
                 }, 500);
-     /*        } */
+            }
+            else {
+                resetFieldsPopup(); 
+                closeallnewlayout();
+                $('body, html').css('overflow-y', 'hidden');
+                
+                if ($(".addpopup").css('display') == 'none') {
+                  openCreatePopup(true);
+                }
+
+                $('#tweet').val("https://www." + str);
+                parseTweet();
+            }
             
         })
 
