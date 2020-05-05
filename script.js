@@ -57,7 +57,10 @@ function startWorker() {
         w = new Worker("worker.js");
       }
       w.onmessage = function(event) {
+
+        //if ()
           //console.log("data: " + event.data);
+          /* 
           renderTimeout = setTimeout(function() {     
             if (!isRendering) {
                 var val = rendermap.get(rendermapcurr);
@@ -71,6 +74,7 @@ function startWorker() {
                 }
             }
         }, 100);
+        */
       };
     } 
   }
@@ -88,8 +92,6 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 }  
 
 $( document ).ready(function() { 
-
-    startWorker();
 
     isMobile = window.mobileAndTabletCheck();
 

@@ -71,14 +71,16 @@ function zoom(obj, flag) {
         $('#zoomin').addClass('fa-search-minus');
         $('#zoomin').removeClass('fa-search-plus');
         $('body').addClass('big');
-        customizeTweets(null, true, true);
+        //xyzxyz
+        //customizeTweets(null, true, true);
         createCookie("hasZoom", true);
     }
     else {
         $('#zoomin').addClass('fa-search-plus');
         $('#zoomin').removeClass('fa-search-minus');
         $('body').removeClass('big');
-        customizeTweets(null, true, false);
+        //xyzxyz
+        //customizeTweets(null, true, false);
         createCookie("hasZoom", "");
     }
 

@@ -1272,7 +1272,7 @@ body.big .tweet div.contentin .logo {
   
   #backdiv {
     background-image: linear-gradient(var(--soft-color), var(--dark-color)) !important;
-    background-image: linear-gradient(var(--softdark-color) 0%, var(--soft-color) 24%, var(--dark-color) 78%) !important;
+    background-image: linear-gradient(var(--softdark-color) 0%, var(--soft-color) 35%, var(--dark-color) 85%) !important;
   }
 
 .tweet iframe {

@@ -545,6 +545,8 @@ var getInformation = function(wasfiltered, valid, flag) {
     else if (wasfiltered == 2) {
         $('#countfilter').hide();
     }
+    stopWorker();
+    startWorker();
 
     var path = "./data.json";
     var ind = 0;
@@ -913,6 +915,7 @@ var getInformation = function(wasfiltered, valid, flag) {
             return Number($(b).attr('cdate')) - Number($(a).attr('cdate'));
         }).appendTo('#main');
         
+        /* 
         setTimeout(function() { 
             var found = customizeTweets(1);
 
@@ -939,7 +942,7 @@ var getInformation = function(wasfiltered, valid, flag) {
                 }, 1500);
             }
         }, 500);
-
+        */
         if (totalLinkss > 0) {
             //if (wasfiltered != 2)
                 //showMessage("Search Results", 2000);
@@ -1048,6 +1051,10 @@ function renderLink(val, customize) {
         newtweetobj.find('.innertweet').append(val.tweet);
 
         newtweetobj.attr('id', val.id);
+
+        setTimeout(function(){
+            newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id"); 
+        }, 6400);  
     }
     else {
         newtweetobj.append($(val.tweet));
