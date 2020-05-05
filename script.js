@@ -2271,7 +2271,7 @@ $(document).on({
     'drop': function(e) {
         e.preventDefault();  
         e.stopPropagation();
-console.log(e)
+//console.log() e.target == "span#toptitle.noselect.toptitle"
         e.originalEvent.dataTransfer.items[0].getAsString(function(str)
         {
             if (str.substring(0,3) == "www") {
@@ -2283,7 +2283,7 @@ console.log(e)
                 if ($(".addpopup").css('display') == 'none') {
                   openCreatePopup(true);
                 }
-
+alert(str)
                 $('#tweet').val("https://www." + str);
                 parseTweet();
             }
