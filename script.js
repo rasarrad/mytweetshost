@@ -41,9 +41,6 @@ var rendermapindex = 0;
 var rendermapcurr = 0;
 var scrollcurr = 0;
 var totalrenderedtweets = 0;
-var renderTimeout = null;
-var renderTimeout2 = null;
-var isRendering = false;
 /* 
     xyz startcode
     xyz fakepass
@@ -58,9 +55,9 @@ function startWorker() {
       }
       w.onmessage = function(event) {
         
-        if ($("#twitter-widget-0") && $("#twitter-widget-0").length > 0) {
-            console.log("YES");
-            stopWorker();
+        if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0
+            && $("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
+                customizeSingleTweet();
         }
         else {
             console.log("NO");
@@ -305,8 +302,6 @@ $( document ).ready(function() {
 /////////////////////////////////////////////////////////////////////////
 
     window.onscroll = function(ev) {
-        clearTimeout(renderTimeout);
-        clearTimeout(renderTimeout2);
 
         var scroll = $(window).scrollTop();
         if (scroll > 200) {
@@ -316,7 +311,7 @@ $( document ).ready(function() {
           $('#gotop').fadeOut(700);
         }
 
-        /**/
+        /*
         if (window.scrollY > scrollcurr + 600) {
             renderTimeout2 = setTimeout(function() {     
             
@@ -335,7 +330,7 @@ $( document ).ready(function() {
                 }
             }, 100);
         }
-         
+         */
     };
 
     ///////////////////////////////////////
@@ -2376,7 +2371,7 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
 }
 
 
-function customizeSingleTweet(id) {
+function customizeSingleTweet() {
     var isChromium = window.chrome;
     var winNav = window.navigator;
     var vendorName = winNav.vendor;
@@ -2396,27 +2391,28 @@ function customizeSingleTweet(id) {
         tweetCSS = ".EmbeddedTweet{height:auto !important; background: transparent !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;padding-bottom: 25px !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;width: 100%;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {background: transparent !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TwitterCard-container {border: 1px solid var(--soft-color) !important;max-width: 10000px!important;}.TweetAuthor-name {font-size: 16px !important;}.Avatar:not(.Identity-avatar) {height: 36px !important;width: 36px !important;position: relative !important;min-width: 36px !important;top: 2px !important;}.Avatar.Identity-avatar {width: 16px !important;height: 16px !important;}.TweetAuthor-screenName {font-size: 14px !important;}.Tweet-body{font-size: 16px !important;} .TweetAuthor-avatar--ancestor .Avatar {left: -5px !important;}.TweetInfo {font-size: 12px !important;}.CallToAction {font-size: 13px !important;}.Tweet-card {font-size: 14px !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TweetAuthor-avatar{width: 36px !important;height: 36px !important;}";    
     }
 
-    console.log("-" + id + "-");
-    var obj = $("#twitter-widget-" + id);
+    console.log("-" + totalrenderedtweets + "-");
+    var obj = $("#twitter-widget-" + totalrenderedtweets);
 
+    console.log(obj.parent().parent());
     obj.attr("processed", "yes");
     var tweetStyle = document.createElement("style");
 
-    tweetStyle.setAttribute("id", "tweet-style-" + id);
+    tweetStyle.setAttribute("id", "tweet-style-" + totalrenderedtweets);
     tweetStyle.innerHTML = tweetCSS;
     tweetStyle.type = "text/css"; 
 
-    totalrenderedtweets = totalrenderedtweets + 1;
-
     //if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
-        var styleTag = document.getElementById("twitter-widget-" + id).shadowRoot;
+        var styleTag = document.getElementById("twitter-widget-" + totalrenderedtweets).shadowRoot;
         insertAfter(tweetStyle, styleTag.childNodes[0]);
 
     //} else {
     //    var tweetWidget = document.getElementById("twitter-widget-" + j).contentDocument;
     //    $(tweetWidget.head).prepend(tweetStyle);
     //} 
-    isRendering = false;
+    
+    totalrenderedtweets = totalrenderedtweets + 1;
+
 }
 
 
