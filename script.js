@@ -71,9 +71,9 @@ function startWorker() {
         }
         else {
             if ($('#mask').is(":visible")) {
-                closeMenuPopup(null, 1700);
-                $('#mask').fadeOut(2000);  
-                $('#tweetcount').fadeIn(1800);
+                closeMenuPopup(null, 4700);
+                $('#mask').fadeOut(5000);  
+                $('#tweetcount').fadeIn(5800);
             }
 
             renderTimeout = setTimeout(function() {     
