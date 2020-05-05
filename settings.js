@@ -1013,18 +1013,19 @@ function closeMenuPopup(obj, timer) {
  
     $('body, html').css('overflow-y', 'auto');
 
-    $('#mainmenu').css('transition', 'all 1.7s');
-    $('#mainmenu').css('opacity', 0);
-
-    var delay = 700;
+    
+    var delay = "1.7";
 
     if (timer)
         delay = timer;
 
+    $('#mainmenu').css('transition', 'all ' + delay + 's');
+    $('#mainmenu').css('opacity', 0);
+
     setTimeout(function(){
         $('#mainmenu').hide();
         $('#mainmenu').css('opacity', 1);
-    }, delay);
+    }, 700);
     /*
         $('body, html').css('overflow-y', 'auto');
 
