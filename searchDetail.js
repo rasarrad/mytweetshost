@@ -775,7 +775,7 @@ var getInformation = function(wasfiltered, valid) {
         */
 
        startWorker();
-       
+
         $.each(data.Tweets, function(key, val) {
             var newtweet = null;
             var dofiltertextfinal = false;
@@ -1245,8 +1245,8 @@ var getInformationbyid = function(id, flag) {
                         newtweetobj.find('.innertweet').append(val.tweet);
                         newtweetobj.attr('id', val.id);
 
-                        // xyzxyz
-                        //preCustomize(newtweetobj);
+                        newtweetobj.css("display", "none");
+                        preCustomize(newtweetobj);
                     }
                     else {
                         newtweetobj.append($(val.tweet));
@@ -1258,7 +1258,10 @@ var getInformationbyid = function(id, flag) {
                         var currid = val.id;
                         
                         if (!isMobile) {
-                            document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
+                            setTimeout(function(){
+                                document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
+                
+                            }, 750);
                         }
                     }
         
@@ -1277,6 +1280,37 @@ var getInformationbyid = function(id, flag) {
         });
 
     }); 
+}
+
+function preCustomize(newtweetobj) {
+
+    setTimeout(function(){
+                
+        var tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
+
+        if (tweetId && tweetId.length > 0) {
+            customizeSingleTweet(tweetId.substring(15));
+        }
+        else {
+            setTimeout(function(){
+                tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
+
+                if (tweetId && tweetId.length > 0) {
+                    customizeSingleTweet(tweetId.substring(15));
+                }
+                else {
+                    setTimeout(function(){
+                        tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
+
+                        if (tweetId && tweetId.length > 0) {
+                            customizeSingleTweet(tweetId.substring(15));
+                        }
+        
+                    }, 350);
+                }
+            }, 350);
+        }
+    }, 350);
 }
 
 

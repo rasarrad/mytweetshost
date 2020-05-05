@@ -2421,7 +2421,7 @@ function customizeTweets(flag, forceProcess, big, dopostcode) {
 }
 
 
-function customizeSingleTweet() {
+function customizeSingleTweet(id) {
     var isChromium = window.chrome;
     var winNav = window.navigator;
     var vendorName = winNav.vendor;
@@ -2462,7 +2462,12 @@ function customizeSingleTweet() {
     //} 
     
     totalrenderedtweets = totalrenderedtweets + 1;
-    obj.parent().parent().appendTo($("#main")).fadeIn(1000);
+    if (id) {
+        $("#" + id).fadeIn(1000);
+    }
+    else {
+        obj.parent().parent().appendTo($("#main")).fadeIn(1000);
+    }
 }
 
 
