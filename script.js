@@ -68,6 +68,10 @@ function startWorker() {
                 stopWorker();
     
             if (currrenderedtweets < 5) {
+                if (currrenderedtweets == 0) {
+                    $("html, body").scrollTop(0);
+                    $("#main").empty();
+                }
                 if (linkArray[currrenderedtweets] == "T") {
                     if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
                         currrenderedtweets++;

@@ -535,7 +535,7 @@ function clickSearchLiClassif(e, obj) {
 
 
 
-var getInformation = function(wasfiltered, valid, flag) {
+var getInformation = function(wasfiltered, valid) {
 
     $('#mask').fadeIn(100);
 
@@ -586,23 +586,12 @@ var getInformation = function(wasfiltered, valid, flag) {
         }
     }
     */
-    if (flag) {
-    }
-    else {
-        $("html, body").scrollTop(0);
-        setTimeout(function() {    
-            getInformation(wasfiltered, null, true); 
-        }, 150); 
-        
-        return false;
-    }  
 
     var totalLinkss = 0;
     total_yy = 0;
     total_tt = 0;
     total_hh = 0;
 
-    $("#main").empty();
     rendermap = new Map();
     rendermapindex = 0;
     rendermapcurr = 0;
