@@ -538,7 +538,8 @@ function clickSearchLiClassif(e, obj) {
 var getInformation = function(wasfiltered, valid) {
 
     $('#mask').fadeIn(100);
-
+    stopWorker();
+    
     if (wasfiltered == 1) {
         $('#countfilter').show();
     }
