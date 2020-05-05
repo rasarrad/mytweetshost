@@ -1036,7 +1036,7 @@ function renderLink(val, customize) {
     var newtweet = null;
     var newtweetobj = null; 
 
-    newtweetobj = $('<div style="display: none;" id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>');
+    newtweetobj = $('<div style="display: none;max-height: 0px;" id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>');
 
     $('#hiddendiv').append(newtweetobj);
         

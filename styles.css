@@ -1050,6 +1050,7 @@ body.big #addtweet {
   /* background-image: linear-gradient(to bottom, var(--soft-color) 4%, var(--dark-color) 7% ); */
   background: var(--dark-color);
   margin-top: -10px;
+  transition: max-height 1s;
 }
 .tweet:first-child {
       margin-top: 26px;
