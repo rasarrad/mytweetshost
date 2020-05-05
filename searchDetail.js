@@ -884,7 +884,7 @@ var getInformation = function(wasfiltered, valid, flag) {
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                         && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
                         
-                            storeInMap(val);
+                            renderLink(val);
                     }   
     
                     if (val.id == 0) {
