@@ -134,7 +134,7 @@ function startWorker() {
   }
   
 function stopWorker() {
-    if (typeof(w) == "undefined") {
+    if (typeof(w) != "undefined") {
         w.terminate();
         w = undefined;
     }
