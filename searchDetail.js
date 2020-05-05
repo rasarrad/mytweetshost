@@ -941,14 +941,17 @@ var getInformation = function(wasfiltered, valid, flag) {
             }
         }, 500);
         */
+       $('#mask').fadeOut(600);  
+       $('#tweetcount').fadeOut(800);
+       setTimeout(function(){
+        $("body").find(".twitter-tweet.twitter-tweet-rendered").attr("id"); 
+        }, 6400);  
+
         if (totalLinkss > 0) {
             //if (wasfiltered != 2)
                 //showMessage("Search Results", 2000);
         }
         else {
-
-            $('#mask').fadeOut(600);  
-            $('#tweetcount').fadeOut(800);
             showMessage("No Links Found", 2000);
         }
     }); 
@@ -1049,10 +1052,6 @@ function renderLink(val, customize) {
         newtweetobj.find('.innertweet').append(val.tweet);
 
         newtweetobj.attr('id', val.id);
-
-        setTimeout(function(){
-            newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id"); 
-        }, 6400);  
     }
     else {
         newtweetobj.append($(val.tweet));
