@@ -1565,6 +1565,7 @@ var existsLink = function(text, type, functorun) {
                 var isdeleted = readCookie(val.id + "isdeleted");
 
                 if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
+                    console.log("-" + val.url + "-" + url + "-")
                     if (val.url.localeCompare(url) == 0) {
                         existingId = val.id;
                     }
