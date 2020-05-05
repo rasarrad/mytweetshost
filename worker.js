@@ -1,8 +1,13 @@
+var currTimer = 200;
+
+self.addEventListener("message", function(e) {
+  currTimer = Number(e.data.args);
+}, false);
 
 function timedCount() {
   postMessage("exec");
 
-  setTimeout("timedCount()",200);
+  currTimeout = setTimeout("timedCount()", currTimer);
 }
 
 timedCount();

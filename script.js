@@ -54,8 +54,11 @@ var w;
 function startWorker() {
     if (typeof(Worker) !== "undefined") {
       if (typeof(w) == "undefined") {
-        w = new Worker("worker.js", "pppamm");
+        w = new Worker("worker.js");
       }
+      // mudar o timeout
+      //w.postMessage({ "args": [ 500 ] });
+
       w.onmessage = function(event) {
         
         if (currrenderedtweets < 5) {
