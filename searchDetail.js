@@ -1568,7 +1568,7 @@ var existsLink = function(text, type, functorun) {
                     if (val.type == "T") {
                         console.log("a-" + text + "-")
                         console.log("b-" + val.tweet + "-")
-                        if (text.substring(0,130) != "" && val.tweet.includes(text.substring(0,130))) {
+                        if (val.tweet.includes(text.substring(1,130))) {
                             existingId = val.id;
                         }
                     }
