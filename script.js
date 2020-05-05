@@ -59,39 +59,16 @@ function startWorker() {
       w.onmessage = function(event) {
         console.log("111: " + currrenderedtweets);
         if (currrenderedtweets > 4) {
-            if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                currrenderedtweets++;
+            currrenderedtweets++;
+            console.log("333 menos 5: " + currrenderedtweets);
 
-                //if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
-                //    customizeSingleTweet();
-                //}
-                
-            }
-            else {
-                //console.log("NO");
-            }
         }
         else {
             console.log("222: " + currrenderedtweets);
             if (currrenderedtweets == 5) {
                 console.log("AAADASDASDASDSADAS");
-                closeMenuPopup(null, "3.7");
-                $('#mask').fadeOut(5000);  
-                $('#tweetcount').fadeIn(5800);
                 
             }
-
-            renderTimeout = setTimeout(function() {     
-                if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                    if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
-                        customizeSingleTweet();
-                    }
-                    currrenderedtweets++;
-                }
-                else {
-                    //console.log("NO OTHER");
-                }
-            }, 500);
         }
 
 
