@@ -81,6 +81,10 @@ function startWorker() {
             }
             else {
                 $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
+                
+                if (!isMobile) {
+                    document.getElementById("contentin" + linkArray[currrenderedtweets]).addEventListener("click", clickHandler);
+                }
                 currrenderedtweets++;
             }
         }
