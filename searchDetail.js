@@ -1067,45 +1067,6 @@ function renderLink(val, customize) {
 }
 
 
-function preCustomize(newtweetobj) {
-
-    setTimeout(function(){
-                
-        var tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
-
-        if (typeof tweetId !== 'undefined') {
-            console.log("Encontrou 1 - " + tweetId);
-            customizeSingleTweet(tweetId.substring(15));
-        }
-        else {
-            setTimeout(function(){
-                tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
-
-                if (typeof tweetId !== 'undefined') {
-                    console.log("Encontrou 2 - " + tweetId);
-                    customizeSingleTweet(tweetId.substring(15));
-                }
-                else {
-                    setTimeout(function(){
-                        
-                        tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
-
-                        if (typeof tweetId !== 'undefined') {
-                            console.log("Encontrou 3 - " + tweetId);
-                            customizeSingleTweet(tweetId.substring(15));
-                        }
-                        else {
-                            console.log("NNNNNAO Encontrou");
-                        } 
-        
-                    }, 250);
-                }
-            }, 250);
-        }
-    }, 250);
-
-}
-
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
  
