@@ -1031,9 +1031,13 @@ function renderLink(val, customize) {
         typefa = "youtube-play"
     }
     
-    var newtweet = $('#main').append($('<div id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>'));
-    var newtweetobj = $('#inid');
+    var newtweet = null;
+    var newtweetobj = null; 
 
+    newtweetobj = $('<div style="display: none;height: 0px;" id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>');
+
+    $('#hiddendiv').append(newtweetobj);
+        
     newtweetobj.append($('<div style="z-index: 0;background: var(--soft-color);height: 39px;" class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
     
     newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
@@ -1044,25 +1048,8 @@ function renderLink(val, customize) {
         newtweetobj.find('.innertweet').append(val.tweet);
 
         newtweetobj.attr('id', val.id);
-
-        if (customize) {
-            var hasFound = false;
-            do {
-                var tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
-
-                if (typeof tweetId !== 'undefined') {
-                    hasFound = true;
-                    console.log("Encontrou 1 - " + tweetId);
-                    customizeSingleTweet(tweetId.substring(15));
-                }
-                console.log("NNNnE    gg ncontrou ");
-            }
-            while (!hasFound)
-            //preCustomize(newtweetobj);
-        }
     }
     else {
-        isRendering = false;
         newtweetobj.append($(val.tweet));
         
         newtweetobj.find(".bottomstripline.line1").html(val.info);
@@ -1078,6 +1065,7 @@ function renderLink(val, customize) {
         //}, 200 );
     }
 }
+
 
 function preCustomize(newtweetobj) {
 
@@ -1297,7 +1285,8 @@ var getInformationbyid = function(id, flag) {
                         newtweetobj.find('.innertweet').append(val.tweet);
                         newtweetobj.attr('id', val.id);
 
-                        preCustomize(newtweetobj);
+                        // xyzxyz
+                        //preCustomize(newtweetobj);
                     }
                     else {
                         newtweetobj.append($(val.tweet));
