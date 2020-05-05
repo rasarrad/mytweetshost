@@ -76,7 +76,6 @@ function startWorker() {
         else {
             
             if (currrenderedtweets == 5) {
-                w.postMessage({ "args": [ 500 ] });
                 closeMenuPopup(null, "2.7");
                 $('#mask').fadeOut(3000);  
                 $('#tweetcount').fadeIn(3800);
@@ -93,7 +92,7 @@ function startWorker() {
                 else {
                     //console.log("NO OTHER");
                 }
-            }, 500);
+            }, 190);
         }
 
 
