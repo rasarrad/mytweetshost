@@ -1288,21 +1288,21 @@ function preCustomize(newtweetobj) {
         var tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
 
         if (tweetId && tweetId.length > 0) {
-            customizeSingleTweet(tweetId.substring(15));
+            customizeSingleTweet(newtweetobj.attr("id"));
         }
         else {
             setTimeout(function(){
                 tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
 
                 if (tweetId && tweetId.length > 0) {
-                    customizeSingleTweet(tweetId.substring(15));
+                    customizeSingleTweet(newtweetobj.attr("id"));
                 }
                 else {
                     setTimeout(function(){
                         tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
 
                         if (tweetId && tweetId.length > 0) {
-                            customizeSingleTweet(tweetId.substring(15));
+                            customizeSingleTweet(newtweetobj.attr("id"));
                         }
         
                     }, 350);
