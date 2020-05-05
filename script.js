@@ -127,6 +127,7 @@ function startWorker() {
             }
           }
           else {
+            console.log(searchtotal + "-" + currrenderedtweets)
             if (searchtotal > 0 && currrenderedtweets == searchtotal)
                 stopWorker();
           }
