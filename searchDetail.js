@@ -557,7 +557,10 @@ var getInformation = function(wasfiltered, valid, flag) {
     var dofiltertype = $('#selectedtype').val().trim() != "all"; 
     var dofilterclassif = $('#selectedclassif').val().trim() != "all"; 
     searchtotal = 0;
-
+    currrenderedtweets = 0;
+        
+    startWorker();
+    
     // security check
     /* xyz splash 
     if (valid) {

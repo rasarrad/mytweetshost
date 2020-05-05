@@ -41,6 +41,8 @@ var rendermapindex = 0;
 var rendermapcurr = 0;
 var scrollcurr = 0;
 var totalrenderedtweets = 0;
+var currrenderedtweets = 0;
+
 /* 
     xyz startcode
     xyz fakepass
@@ -58,6 +60,9 @@ function startWorker() {
         if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0
             && $("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
                 customizeSingleTweet();
+                currrenderedtweets++;
+                if (currrenderedtweets == 4)
+                    stopWorker()
         }
         else {
             console.log("NO");
@@ -96,8 +101,6 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 }  
 
 $( document ).ready(function() { 
-    
-    startWorker();
     
     isMobile = window.mobileAndTabletCheck();
 
