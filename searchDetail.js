@@ -1565,23 +1565,8 @@ var existsLink = function(text, type, functorun) {
                 var isdeleted = readCookie(val.id + "isdeleted");
 
                 if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
-                    if (val.type == "T") {
-                        console.log("-" + text + "-" + val.tweet + "-")
-                        if (   
-                            (text.substring(0,20) != "" && val.tweet.includes(text.substring(0,20)))
-                            &&
-                            (text.substring(40,60) != "" && val.tweet.includes(text.substring(40,60)))                        
-                            &&
-                            (text.substring(80,100) != "" && val.tweet.includes(text.substring(80,100)))                     
-                        ) {
-    
-                            existingId = val.id;
-                        }
-                    }
-                    else {
-                        if (val.url.localeCompare(text) == 0) {
-                            existingId = val.id;
-                        }
+                    if (val.url.localeCompare(text) == 0) {
+                        existingId = val.id;
                     }
     
                     if (val.id == "0") {
