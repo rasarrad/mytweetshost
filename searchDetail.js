@@ -1245,6 +1245,7 @@ var getInformationbyid = function(id, flag) {
                         newtweetobj.find('.innertweet').append(val.tweet);
                         newtweetobj.attr('id', val.id);
 
+                        newtweetobj.css("display", "none");
                         preCustomize(newtweetobj);
                     }
                     else {
