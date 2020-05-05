@@ -57,8 +57,15 @@ function startWorker() {
         w = new Worker("worker.js");
       }
       w.onmessage = function(event) {
+        
+        if ($("#twitter-widget-0") && $("#twitter-widget-0").length > 0) {
+            console.log("YES");
+            stopWorker();
+        }
+        else {
+            console.log("NO");
+        }
 
-        //if ()
           //console.log("data: " + event.data);
           /* 
           renderTimeout = setTimeout(function() {     
@@ -93,7 +100,7 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 
 $( document ).ready(function() { 
     
-    //startWorker();
+    startWorker();
     
     isMobile = window.mobileAndTabletCheck();
 
