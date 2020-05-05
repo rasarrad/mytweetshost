@@ -126,7 +126,7 @@ function startWorker() {
             }
           }
           else {
-            console.log(currrenderedtweets + " - " + searchtotal);
+            if (searchtotal > 0 && currrenderedtweets == searchtotal)
                 stopWorker();
           }
       };
