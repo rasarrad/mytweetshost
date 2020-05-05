@@ -72,7 +72,7 @@ function startWorker() {
         else {
             if ($('#mask').is(":visible")) {
                 closeMenuPopup();
-                $('#mask').fadeOut(600);  
+                $('#mask').fadeOut(1600);  
                 $('#tweetcount').fadeOut(800);
             }
 

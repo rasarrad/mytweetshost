@@ -1006,7 +1006,7 @@ function setShowDeleted(flag) {
     countalltweets();
 }
 
-function closeMenuPopup(obj) {
+function closeMenuPopup(obj, timer) {
 
     if (obj)
         fixfocus(obj);
@@ -1016,10 +1016,15 @@ function closeMenuPopup(obj) {
     $('#mainmenu').css('transition', 'all 1.7s');
     $('#mainmenu').css('opacity', 0);
 
+    var delay = 700;
+
+    if (timer)
+        delay = timer;
+
     setTimeout(function(){
         $('#mainmenu').hide();
         $('#mainmenu').css('opacity', 1);
-    }, 700);
+    }, delay);
     /*
         $('body, html').css('overflow-y', 'auto');
 

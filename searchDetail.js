@@ -944,9 +944,6 @@ var getInformation = function(wasfiltered, valid, flag) {
             }
         }, 500);
         */
-       $('#mask').fadeOut(600);  
-       $('#tweetcount').fadeOut(800);
-
 
         if (totalLinkss > 0) {
             //if (wasfiltered != 2)
