@@ -42,6 +42,8 @@ var rendermapcurr = 0;
 var scrollcurr = 0;
 var totalrenderedtweets = 0;
 var currrenderedtweets = 0;
+var linkArray = new Array();
+
 var renderTimeout = null;
 
 /* 
@@ -65,15 +67,21 @@ function startWorker() {
             stopWorker();
 
         if (currrenderedtweets < 5) {
-            if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                currrenderedtweets++;
-
-                if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
-                    customizeSingleTweet();
+            if (linkArray[currrenderedtweets] == "T") {
+                if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
+                    currrenderedtweets++;
+    
+                    if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
+                        customizeSingleTweet();
+                    }
+                }
+                else {
+                    console.log("NO");
                 }
             }
             else {
-                console.log("NO");
+                $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
+                currrenderedtweets++;
             }
         }
         else {
@@ -86,14 +94,21 @@ function startWorker() {
             }
 
             renderTimeout = setTimeout(function() {     
-                if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                    if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
-                        customizeSingleTweet();
+                if (linkArray[currrenderedtweets] == "T") {
+                    if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
+                        currrenderedtweets++;
+        
+                        if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
+                            customizeSingleTweet();
+                        }
                     }
-                    currrenderedtweets++;
+                    else {
+                        console.log("NO");
+                    }
                 }
                 else {
-                    //console.log("NO OTHER");
+                    $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
+                    currrenderedtweets++;
                 }
             }, 190);
         }

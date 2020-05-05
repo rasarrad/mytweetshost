@@ -558,7 +558,9 @@ var getInformation = function(wasfiltered, valid, flag) {
     var dofilterclassif = $('#selectedclassif').val().trim() != "all"; 
     searchtotal = 0;
     currrenderedtweets = 0;
-        
+    linkArray = new Array();
+    var localCounter = 0;    
+
     startWorker();
 
     // security check
@@ -884,7 +886,12 @@ var getInformation = function(wasfiltered, valid, flag) {
 
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                         && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
-                        
+                            if (val.type == "T")
+                                linkArray[localCounter] = val.type;
+                            else
+                                linkArray[localCounter] = val.id;
+                            
+                            localCounter++;
                             renderLink(val);
                     }   
     
@@ -1043,7 +1050,6 @@ function renderLink(val, customize) {
     newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
     
     if (val.type == "T") {
-
         newtweetobj.append($('<div class="innertweet"></div>'));
         newtweetobj.find('.innertweet').append(val.tweet);
 
@@ -1056,6 +1062,7 @@ function renderLink(val, customize) {
         
         newtweetobj.attr('id', val.id);
 
+        /*
         newtweetobj.appendTo($("#main")).fadeIn(1000);
 
         var currid = val.id;
@@ -1065,6 +1072,7 @@ function renderLink(val, customize) {
                 //document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
             }
         }, 20);
+        */
     }
 }
 
