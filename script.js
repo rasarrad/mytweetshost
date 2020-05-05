@@ -83,9 +83,12 @@ function startWorker() {
                 $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
                 
                 if (!isMobile) {
+                    idCurr = linkArray[currrenderedtweets];
+                    console.log("idCurr 1111: " + idCurr);
                     setTimeout(function(){
-                        document.getElementById("contentin" + linkArray[currrenderedtweets]).addEventListener("click", clickHandler);
-                    }, 0);
+                        console.log("idCurr 2222: " + idCurr);
+                        document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
+                    }, 180);
                 }
                 currrenderedtweets++;
             }
