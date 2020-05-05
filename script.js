@@ -60,7 +60,9 @@ function startWorker() {
       //w.postMessage({ "args": [ 500 ] });
 
       w.onmessage = function(event) {
-        
+        if (currrenderedtweets > searchtotal)
+            stopWorker();
+            
         if (currrenderedtweets < 5) {
             if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
                 currrenderedtweets++;
