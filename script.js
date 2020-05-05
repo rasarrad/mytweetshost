@@ -63,10 +63,6 @@ function startWorker() {
 
       w.onmessage = function(event) {
           if (linkArray[currrenderedtweets]) {
-            console.log(currrenderedtweets + " - " + searchtotal);
-            if (currrenderedtweets > searchtotal)
-                stopWorker();
-    
             if (currrenderedtweets < 5) {
                 if (currrenderedtweets == 0) {
                     $("html, body").scrollTop(0);
@@ -128,6 +124,10 @@ function startWorker() {
                     }
                 }, 190);
             }
+          }
+          else {
+            console.log(currrenderedtweets + " - " + searchtotal);
+                stopWorker();
           }
       };
     } 
