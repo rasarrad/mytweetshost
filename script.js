@@ -62,7 +62,7 @@ function startWorker() {
       //w.postMessage({ "args": [ 500 ] });
 
       w.onmessage = function(event) {
-          if (searchtotal > 0) {
+          if (linkArray[currrenderedtweets]) {
             console.log(currrenderedtweets + " - " + searchtotal);
             if (currrenderedtweets > searchtotal)
                 stopWorker();
