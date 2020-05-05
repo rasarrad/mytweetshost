@@ -1566,7 +1566,7 @@ var existsLink = function(text, type, functorun) {
 
                 if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
                     if (val.type == "T") {
-                        console.log("FFFFFFFFFFHHHHHHHHHHHJJJJJJJJJJJJJ")
+                        console.log("-" + text + "-" + val.tweet + "-")
                         if (   
                             (text.substring(0,20) != "" && val.tweet.includes(text.substring(0,20)))
                             &&
