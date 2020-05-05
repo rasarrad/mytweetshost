@@ -944,7 +944,7 @@ var getInformation = function(wasfiltered, valid, flag) {
        $('#mask').fadeOut(600);  
        $('#tweetcount').fadeOut(800);
        setTimeout(function(){
-        $("body").find(".twitter-tweet.twitter-tweet-rendered").attr("id"); 
+            console.log($("body").find(".twitter-tweet.twitter-tweet-rendered")[0].attr("id")); 
         }, 6400);  
 
         if (totalLinkss > 0) {
