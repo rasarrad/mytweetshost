@@ -42,6 +42,7 @@ var rendermapcurr = 0;
 var scrollcurr = 0;
 var totalrenderedtweets = 0;
 var currrenderedtweets = 0;
+var renderTimeout = null;
 
 /* 
     xyz startcode
@@ -57,16 +58,31 @@ function startWorker() {
       }
       w.onmessage = function(event) {
         
-        if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0
-            && $("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
-                customizeSingleTweet();
+        if (currrenderedtweets > 4) {
+            if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
+                if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
+                    customizeSingleTweet();
+                }
                 currrenderedtweets++;
-                if (currrenderedtweets == 4)
-                    stopWorker()
+            }
+            else {
+                console.log("NO");
+            }
         }
         else {
-            console.log("NO");
+            renderTimeout = setTimeout(function() {     
+                if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
+                    if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
+                        customizeSingleTweet();
+                    }
+                    currrenderedtweets++;
+                }
+                else {
+                    console.log("NO OTHER");
+                }
+            }, 100);
         }
+
 
           //console.log("data: " + event.data);
           /* 
@@ -305,7 +321,7 @@ $( document ).ready(function() {
 /////////////////////////////////////////////////////////////////////////
 
     window.onscroll = function(ev) {
-
+        clearTimeout(renderTimeout);
         var scroll = $(window).scrollTop();
         if (scroll > 200) {
           $('#gotop').fadeIn(700); 
