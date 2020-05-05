@@ -2431,7 +2431,7 @@ function customizeSingleTweet() {
     //} 
     
     totalrenderedtweets = totalrenderedtweets + 1;
-    obj.parent().parent().appendTo($("#main")).show().css("max-height", "2000px");
+    obj.parent().parent().appendTo($("#main")).fadeIn(1000);
 }
 
 
