@@ -2274,19 +2274,19 @@ $(document).on({
 //console.log() e.target == "span#toptitle.noselect.toptitle"
         e.originalEvent.dataTransfer.items[0].getAsString(function(str)
         {
-            if (str.substring(0,3) == "www") {
+/*             if (str.substring(0,3) == "www") {
                 showMessage("Invalid Link - Must be HTTPS"); 
             }
-            else {
-                resetFieldsPopup(); 
+            else { */
 
-                if ($(".addpopup").css('display') == 'none') {
-                  openCreatePopup(true);
-                }
-alert(str)
-                $('#tweet').val("https://www." + str);
-                parseTweet();
-            }
+                dblFlag = true;
+                dblClickTimeout = setTimeout(function() {     
+                  if (dblFlag) {
+                      openPopupParsed("https://www." + str, 2);
+                      dblFlag = false;  
+                  }
+                }, 500);
+     /*        } */
             
         })
 
