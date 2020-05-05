@@ -70,6 +70,12 @@ function startWorker() {
             }
         }
         else {
+            if ($('#mask').is(":visible")) {
+                closeMenuPopup();
+                $('#mask').fadeOut(600);  
+                $('#tweetcount').fadeOut(800);
+            }
+
             renderTimeout = setTimeout(function() {     
                 if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
                     if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
@@ -2044,7 +2050,7 @@ var clickmenu = function(val) {
             openmenu();
         }
         else {*/
-            closeMenuPopup();
+            
         //}
         
         getInformation(2);
