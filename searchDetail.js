@@ -944,8 +944,8 @@ var getInformation = function(wasfiltered, valid, flag) {
        $('#mask').fadeOut(600);  
        $('#tweetcount').fadeOut(800);
        setTimeout(function(){
-            console.log($("#32")); 
-        }, 16400);  
+            console.log($("#30")); 
+        }, 6400);  
 
         if (totalLinkss > 0) {
             //if (wasfiltered != 2)
