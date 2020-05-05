@@ -60,9 +60,10 @@ function startWorker() {
       //w.postMessage({ "args": [ 500 ] });
 
       w.onmessage = function(event) {
+        console.log(currrenderedtweets + " - " + searchtotal);
         if (currrenderedtweets > searchtotal)
             stopWorker();
-            
+
         if (currrenderedtweets < 5) {
             if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
                 currrenderedtweets++;
@@ -72,7 +73,7 @@ function startWorker() {
                 }
             }
             else {
-                //console.log("NO");
+                console.log("NO");
             }
         }
         else {

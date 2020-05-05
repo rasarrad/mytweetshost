@@ -1062,7 +1062,7 @@ function renderLink(val, customize) {
         setTimeout( function() {                                 
             // xyzdouble
             if (!isMobile) {
-                document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
+                //document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
             }
         }, 20);
     }
