@@ -2278,7 +2278,7 @@ $(document).on({
                 dblFlag = true;
                 dblClickTimeout = setTimeout(function() {     
                   if (dblFlag) {
-                      openPopupParsed("https://www." + str, 2);
+                      openPopupParsed(str, 2);
                       dblFlag = false;  
                   }
                 }, 500);
@@ -2287,12 +2287,12 @@ $(document).on({
                 resetFieldsPopup(); 
                 closeallnewlayout();
                 $('body, html').css('overflow-y', 'hidden');
-                
+
                 if ($(".addpopup").css('display') == 'none') {
                   openCreatePopup(true);
                 }
 
-                $('#tweet').val("https://www." + str);
+                $('#tweet').val(str);
                 parseTweet();
             }
             
