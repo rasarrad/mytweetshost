@@ -60,10 +60,12 @@ function startWorker() {
         console.log("111: " + currrenderedtweets);
         if (currrenderedtweets > 4) {
             if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
+                currrenderedtweets++;
+                
                 if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
                     customizeSingleTweet();
                 }
-                currrenderedtweets++;
+                
             }
             else {
                 //console.log("NO");
