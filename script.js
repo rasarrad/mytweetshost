@@ -61,10 +61,10 @@ function startWorker() {
         if (currrenderedtweets > 4) {
             if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
                 currrenderedtweets++;
-                
-                if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
-                    customizeSingleTweet();
-                }
+
+                //if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
+                //    customizeSingleTweet();
+                //}
                 
             }
             else {
