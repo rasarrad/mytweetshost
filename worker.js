@@ -7,6 +7,8 @@ self.addEventListener("message", function(e) {
 function timedCount() {
   postMessage("exec");
 
+  console.log(currTimer);
+
   currTimeout = setTimeout("timedCount()", currTimer);
 }
 
