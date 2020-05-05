@@ -92,7 +92,9 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 }  
 
 $( document ).ready(function() { 
-
+    
+    //startWorker();
+    
     isMobile = window.mobileAndTabletCheck();
 
     // START do texto das categorias

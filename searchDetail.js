@@ -545,8 +545,6 @@ var getInformation = function(wasfiltered, valid, flag) {
     else if (wasfiltered == 2) {
         $('#countfilter').hide();
     }
-    stopWorker();
-    startWorker();
 
     var path = "./data.json";
     var ind = 0;
