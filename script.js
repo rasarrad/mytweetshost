@@ -83,6 +83,8 @@ function startWorker() {
                 $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
                 
                 if (!isMobile) {
+                    console.log(linkArray);
+                    console.log(currrenderedtweets);
                     idCurr = linkArray[currrenderedtweets];
                     console.log("idCurr 1111: " + idCurr);
                     setTimeout(function(){
