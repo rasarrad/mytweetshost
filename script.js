@@ -90,7 +90,7 @@ function startWorker() {
                     setTimeout(function(){
                         console.log("idCurr 2222: " + idCurr);
                         document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
-                    }, 580);
+                    }, 0);
                 }
                 currrenderedtweets++;
             }
