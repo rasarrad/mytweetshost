@@ -70,8 +70,9 @@ function startWorker() {
             }
         }
         else {
+            console.log(currrenderedtweets);
             if (currrenderedtweets == 5) {
-                
+                console.log("AAADASDASDASDSADAS");
                 closeMenuPopup(null, "3.7");
                 $('#mask').fadeOut(5000);  
                 $('#tweetcount').fadeIn(5800);
@@ -86,7 +87,7 @@ function startWorker() {
                     currrenderedtweets++;
                 }
                 else {
-                    console.log("NO OTHER");
+                    //console.log("NO OTHER");
                 }
             }, 500);
         }
