@@ -130,8 +130,9 @@ $( document ).ready(function() {
 
     // START do tweet counter
     var tweetCounter = readCookie("tweetCounter");
-    alert(tweetCounter)
+
     if (tweetCounter && tweetCounter > 0) {
+        alert(tweetCounter)
         $('#tweetcount').addClass(tweetCounter); 
     }
     
