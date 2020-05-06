@@ -583,6 +583,51 @@ var openMainSettingsPopup = function(jsonobj)
         });
     }
 
+    // Tweet counter
+    value = null;
+    var valuegotop = null;
+
+    value = readCookie("tweetCounter");
+
+    if (value && value.length > 0) {
+
+        if (value == "hidall") {
+            value = "No";
+            valuegotop = "No";
+        }
+        else if (value == "hidcontent") {
+            value = "No";
+            valuegotop = "Yes";
+        }
+        else {
+            value = "Yes";
+            valuegotop = "No";
+        }
+    }
+    else {
+        value = "Yes";
+        valuegotop = "Yes";
+    }
+    
+    $('#linkscounterul').find(".litags").each( function( index, element ) {
+        if($(element).html().trim() == value) {
+            $(element).addClass("selectedtag");
+        }
+        else {
+            $(element).removeClass("selectedtag");
+        }
+    });
+
+    $('#gotopul').find(".litags").each( function( index, element ) {
+        if($(element).html().trim() == valuegotop) {
+            $(element).addClass("selectedtag");
+        }
+        else {
+            $(element).removeClass("selectedtag");
+        }
+    });
+
+
     // Open links inside
     value = null;
 
@@ -1817,7 +1862,6 @@ function clickLiMaximumfs(e, obj) {
             }
         }  
     }
-
 }
 
 function clickLiLinksinside(e, obj) {
@@ -1858,6 +1902,118 @@ function clickLiLinksinside(e, obj) {
         }
     }  
 
+}
+
+function clickLiLinkscounter(e, obj) {
+    e.stopPropagation();
+
+    if (!$(obj).hasClass("selectedtag")) {
+        var value = $(obj).html().trim();
+        $('#linkscounterul').find(".litags").each( function( index, element ) {
+            if($(element).html().trim() == value) {
+                $(element).addClass("selectedtag");
+            }
+            else {
+                $(element).removeClass("selectedtag");
+            }
+        });
+
+        if (value == "Yes") {
+            showMessage("Show links counter when displaying the links on", null, null, null, null, null);
+            
+            if (getGotopulValue() == "Yes") {
+                createCookie("tweetCounter", "", 99999);
+
+                $('#tweetcount').attr("class", "pobj"); 
+            }
+            else {
+                createCookie("tweetCounter", "hidicon", 99999);
+
+                $('#tweetcount').attr("class", "hidicon pobj"); 
+            }
+        }
+        else {
+            showMessage("Show links counter when displaying the links off", null, null, null, null, null); 
+             
+            if (getGotopulValue() == "Yes") {
+                createCookie("tweetCounter", "hidcontent", 99999);
+
+                $('#tweetcount').attr("class", "hidcontent pobj"); 
+            }
+            else {
+                createCookie("tweetCounter", "hidall", 99999);
+
+                $('#tweetcount').attr("class", "hidall pobj"); 
+            }
+        }
+    }  
+}
+
+function getGotopulValue() {
+    var value = "";
+    $('#gotopul').find(".litags").each( function( index, element ) {
+        if($(element).hasClass("selectedtag")) {
+            value = $(element).html().trim();
+        }
+    });
+
+    return value;
+}
+
+function clickLiGotop(e, obj) {
+    e.stopPropagation();
+
+    if (!$(obj).hasClass("selectedtag")) {
+        var value = $(obj).html().trim();
+        $('#gotopul').find(".litags").each( function( index, element ) {
+            if($(element).html().trim() == value) {
+                $(element).addClass("selectedtag");
+            }
+            else {
+                $(element).removeClass("selectedtag");
+            }
+        });
+
+        if (value == "Yes") {
+            showMessage("Show GoTop button when displaying the links on", null, null, null, null, null);
+            
+            if (getLinksCounterValue() == "Yes") {
+                createCookie("tweetCounter", "", 99999);
+
+                $('#tweetcount').attr("class", "pobj"); 
+            }
+            else {
+                createCookie("tweetCounter", "hidcontent", 99999);
+
+                $('#tweetcount').attr("class", "hidcontent pobj"); 
+            }
+        }
+        else {
+            showMessage("Show GoTop button when displaying the links off", null, null, null, null, null); 
+             
+            if (getLinksCounterValue() == "Yes") {
+                createCookie("tweetCounter", "hidicon", 99999);
+
+                $('#tweetcount').attr("class", "hidicon pobj"); 
+            }
+            else {
+                createCookie("tweetCounter", "hidall", 99999);
+
+                $('#tweetcount').attr("class", "hidall pobj"); 
+            }
+        }
+    }  
+}
+
+function getLinksCounterValue() {
+    var value = "";
+    $('#linkscounterul').find(".litags").each( function( index, element ) {
+        if($(element).hasClass("selectedtag")) {
+            value = $(element).html().trim();
+        }
+    });
+
+    return value;
 }
 
 

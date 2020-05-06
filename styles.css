@@ -3862,6 +3862,7 @@ body.big .newLayout ul#classiful li {
 
 #tweetcount {
     transition: all 0.6s;
+    cursor: pointer;
     padding: 0px 4px !important;
     line-height: 16px !important;
     font-size: 11.5px !important;
@@ -5516,4 +5517,25 @@ body.big .ui-dialog button {
 
 body.big .otherOptText {
   font-size: 14px;
+}
+
+#tweetcount.hidcontent {
+  border-color: transparent !important;
+  background: transparent !important;
+}
+
+#tweetcount.hidcontent > div {
+  display: none !important;
+}
+
+#tweetcount.hidcontent > span {
+  display: none;
+}
+
+#tweetcount.hidicon > i {
+  opacity: 0 !important;
+}
+
+#tweetcount.hidall {
+  display: none !important;
 }

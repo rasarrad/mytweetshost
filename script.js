@@ -128,6 +128,12 @@ $( document ).ready(function() {
     }, 1400);  
 
 
+    // START do tweet counter
+    var tweetCounter = readCookie("tweetCounter");
+    if (tweetCounter && tweetCounter > 0) {
+        $('#tweetcount').addClass(tweetCounter); 
+    }
+    
     // START do splash screen
     /* xyz splash
     createCookie("eec", "sss", 99999);
@@ -137,7 +143,7 @@ $( document ).ready(function() {
     // showSplash();
     //////////////
         
-    // START das colos
+    // START das colors
     var valueColor = readCookie("colors");
     if (valueColor && valueColor.length > 0) {
         if (valueColor == "All") {
@@ -1887,7 +1893,9 @@ function closeallnewlayout(bj) {
 function gotop(e) {
     if (e)
         e.stopPropagation();
-    $("html").scrollTop(0);
+    
+    if (!$("tweetcount").hasClass("hidicon"))
+        $("html").scrollTop(0);
 }   
 
 
