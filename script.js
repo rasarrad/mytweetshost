@@ -2277,6 +2277,7 @@ $(document).on({
 
         e.originalEvent.dataTransfer.items[0].getAsString(function(str)
         {
+            
             if (e.target == "span#toptitle.noselect.toptitle") {
                 dblFlag = true;
                 dblClickTimeout = setTimeout(function() {     
@@ -2287,17 +2288,19 @@ $(document).on({
                 }, 500);
             }
             else {
-                resetFieldsPopup(); 
+                $( "#addtweet" ).blur();
                 closeallnewlayout();
+                resetFieldsPopup(); 
                 $('body, html').css('overflow-y', 'hidden');
-                
-                if ($(".addpopup").css('display') == 'none') {
-                  openCreatePopup(true);
-                }
 
-                console.log("----" + str + "----")
-                $('#tweet').val("https://www." + str);
-                parseTweet();
+                dblFlag = true;
+                dblClickTimeout = setTimeout(function() {     
+                  if (dblFlag) {
+                      console.log("----" + text + "----")
+                      openPopupParsed("https://" + text, 1);
+                      dblFlag = false;  
+                  }
+                }, 500);
             }
             
         })
