@@ -2210,9 +2210,7 @@ $(document).on({
 /////////////////////////////////////////////////////////////////////////
 
 
-function countdoubleclick(obj) {
-    if (obj)
-        fixfocus(obj);
+function countdoubleclick() {
 
     $("#tweetcount").fadeOut(500);
     
@@ -2221,10 +2219,7 @@ function countdoubleclick(obj) {
     }, 5500);
 }  
 
-function countclick(obj) {
-    if (obj)
-        fixfocus(obj);
-
+function countclick() {
     $("#tweetcount").css('opacity', '1');
     
     setTimeout(function() { 
