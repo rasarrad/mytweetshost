@@ -1894,8 +1894,11 @@ function gotop(e) {
     if (e)
         e.stopPropagation();
     
-    if (!$("tweetcount").hasClass("hidicon"))
+    console.log($("tweetcount").attr("class"))
+    if (!$("tweetcount").hasClass("hidicon")) {
+        alert(1122);
         $("html").scrollTop(0);
+    }
 }   
 
 
