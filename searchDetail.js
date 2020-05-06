@@ -945,7 +945,6 @@ var getInformation = function(wasfiltered, valid) {
         }
         else {
             stopWorker();
-            closeMenuPopup(null, "2.7");
             $('#mask').fadeOut(3000);  
             $('#tweetcount').fadeIn(3800);
             showMessage("No Links Found", 2000);
