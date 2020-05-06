@@ -602,28 +602,7 @@ $( document ).ready(function() {
         }
       });
 
-      $("input, textarea").focus(function(){  
-            if ($("#linkChange").css("display") != "none") {
-                var innerHeight = window.innerHeight;
-                var htmlElem = $("#linkChange > div");
-                var maxHeightStyle = "max-height: " + (innerHeight - 125) + "px !important;";
 
-                var top = 1;
-                var isLandscape = window.innerWidth < 1200 && window.innerWidth > 700;
-                if ($('#linkChange').attr("cid") == "new" && $(this).attr("id") == "infoinput")
-                    if (isLandscape)
-                        top = -50;
-                    else 
-                        top = -250;
-                    
-                if ($('body').hasClass('big')) {
-                    maxHeightStyle = "max-height: " + (innerHeight - 137) + "px !important;";
-                }
-                htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle);     
-    
-                htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle + "top: " + top + "px !important;"); 
-            }
-      });
       /*
       $("input, textarea").blur( function(){  
             if ($("#linkChange").css("display") != "none") {
@@ -2213,7 +2192,7 @@ function countdoubleclick() {
     $("#tweetcount").fadeOut(500);
     
     setTimeout(function() { 
-        $("#tweetcount").fadeIn(500);
+        $("#tweetcount").fadeIn(1500);
     }, 4000);
 }  
 
