@@ -591,11 +591,6 @@ var getInformation = function(wasfiltered, valid) {
     total_tt = 0;
     total_hh = 0;
 
-    rendermap = new Map();
-    rendermapindex = 0;
-    rendermapcurr = 0;
-    scrollcurr = 0;
-
     nextid = null;
     try {
         nextid = parseInt(readCookie("maxid"));
@@ -923,14 +918,6 @@ var getInformation = function(wasfiltered, valid) {
     }); 
 }
   
-function storeInMap(val) {
-
-    rendermap.set(rendermapindex, val);
-    rendermapindex = rendermapindex + 1;
-
-    //console.log("storeInMap: " + val.id);
-}
-
 function renderLink(val, customize) {
     //console.log("renderLink: " + val.id);
     var tagdispalay = " --";

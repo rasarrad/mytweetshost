@@ -36,14 +36,10 @@ var useSwipes = false;
 var ceec = 0; 
 var funcg = null;
 var isMobile = null;
-var rendermap = new Map();
-var rendermapindex = 0;
-var rendermapcurr = 0;
-var scrollcurr = 0;
 var totalrenderedtweets = 0;
 var currrenderedtweets = 0;
 var linkArray = new Array();
-
+var timeoutWorker;
 var renderTimeout = null;
 
 /* 
@@ -51,102 +47,6 @@ var renderTimeout = null;
     xyz fakepass
     xyz splash
 */
-var w;
-
-function startWorker() {
-    if (typeof(Worker) !== "undefined") {
-      if (typeof(w) == "undefined") {
-        w = new Worker("worker.js");
-      }
-      // mudar o timeout
-      //w.postMessage({ "args": [ 500 ] });
-
-      w.onmessage = function(event) {
-          console.log(linkArray[currrenderedtweets])
-          if (linkArray[currrenderedtweets]) {
-            if (currrenderedtweets < 5) {
-                if (currrenderedtweets == 0) {
-                    $("html, body").scrollTop(0);
-                    $("#main").empty();
-                }
-                if (linkArray[currrenderedtweets] == "T") {
-                    if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                        currrenderedtweets++;
-        
-                        if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
-                            customizeSingleTweet();
-                        }
-                    }
-                    else {
-                        console.log("NO");
-                    }
-                }
-                else {
-                    $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
-                    
-                    if (!isMobile) {
-                        console.log(linkArray);
-                        console.log(currrenderedtweets);
-                        idCurr = linkArray[currrenderedtweets];
-                        console.log("idCurr 1111: " + idCurr);
-                        setTimeout(function(){
-                            console.log("idCurr 2222: " + idCurr);
-                            document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
-                        }, 0);
-                    }
-                    currrenderedtweets++;
-                }
-            }
-            else {
-                console.log(searchtotal + "-" + currrenderedtweets)
-                if (currrenderedtweets == 5) {
-                    stopWorker();
-                    closeMenuPopup(null, "2.7");
-                    closeSearchPopup();
-                    $('#mask').fadeOut(3000);  
-                    $('#tweetcount').fadeIn(3800);
-                }
-    
-                renderTimeout = setTimeout(function() {     
-                    if (linkArray[currrenderedtweets] == "T") {
-                        if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                            currrenderedtweets++;
-            
-                            if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
-                                customizeSingleTweet();
-                            }
-                        }
-                        else {
-                            console.log("NO");
-                        }
-                    }
-                    else {
-                        $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
-                        currrenderedtweets++;
-                    }
-                }, 190);
-            }
-          }
-          else {
-
-            if (searchtotal > 0 && currrenderedtweets == searchtotal) {
-                stopWorker();
-                closeMenuPopup(null, "2.7");
-                closeSearchPopup();
-                $('#mask').fadeOut(3000);  
-                $('#tweetcount').fadeIn(3800);
-            }
-          }
-      };
-    } 
-  }
-  
-function stopWorker() {
-    if (typeof(w) != "undefined") {
-        w.terminate();
-        w = undefined;
-    }
-}
 
 
 // START do tema
@@ -154,6 +54,7 @@ var currTheme = readCookie("currTheme");
 if (currTheme && currTheme.length > 0 && currTheme != 'default') {
      changetheme(currTheme, true);
 }  
+
 
 $( document ).ready(function() { 
     
@@ -361,6 +262,7 @@ $( document ).ready(function() {
 
     window.onscroll = function(ev) {
         clearTimeout(renderTimeout);
+
         var scroll = $(window).scrollTop();
         if (scroll > 200) {
           $('#gotop').fadeIn(700); 
@@ -368,27 +270,6 @@ $( document ).ready(function() {
         else {
           $('#gotop').fadeOut(700);
         }
-
-        /*
-        if (window.scrollY > scrollcurr + 600) {
-            renderTimeout2 = setTimeout(function() {     
-            
-                if (!isRendering) {
-                    scrollcurr = window.scrollY;
-
-                    var val = rendermap.get(rendermapcurr);
-                
-                    rendermapcurr = rendermapcurr + 1;
-        
-                    if (val) {
-                        isRendering = true;
-                        
-                        renderLink(val, true);
-                    }
-                }
-            }, 100);
-        }
-         */
     };
 
     ///////////////////////////////////////
@@ -2567,4 +2448,102 @@ function getMetaContent(html, name) {
 //hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://zzzsmallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
 
 
+function startWorker() {
+    if (typeof(Worker) !== "undefined") {
+      if (typeof(timeoutWorker) == "undefined") {
+        timeoutWorker = new Worker("worker.js");
+      }
+      // mudar o timeout
+      //w.postMessage({ "args": [ 500 ] });
+
+      timeoutWorker.onmessage = function(event) {
+          console.log(linkArray[currrenderedtweets])
+          if (linkArray[currrenderedtweets]) {
+            if (currrenderedtweets < 5) {
+                if (currrenderedtweets == 0) {
+                    $("html, body").scrollTop(0);
+                    $("#main").empty();
+                }
+                if (linkArray[currrenderedtweets] == "T") {
+                    if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
+                        currrenderedtweets++;
+        
+                        if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
+                            customizeSingleTweet();
+                        }
+                    }
+                    else {
+                        console.log("NO");
+                    }
+                }
+                else {
+                    $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
+                    
+                    if (!isMobile) {
+                        console.log(linkArray);
+                        console.log(currrenderedtweets);
+                        idCurr = linkArray[currrenderedtweets];
+                        console.log("idCurr 1111: " + idCurr);
+                        setTimeout(function(){
+                            console.log("idCurr 2222: " + idCurr);
+                            document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
+                        }, 0);
+                    }
+                    currrenderedtweets++;
+                }
+            }
+            else {
+                console.log(searchtotal + "-" + currrenderedtweets)
+                if (currrenderedtweets == 5) {
+                    stopWorker();
+                    closeMenuPopup(null, "2.7");
+                    closeSearchPopup();
+                    $('#mask').fadeOut(3000);  
+                    $('#tweetcount').fadeIn(3800);
+                }
     
+                renderTimeout = setTimeout(function() {     
+                    if (linkArray[currrenderedtweets] == "T") {
+                        if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
+                            currrenderedtweets++;
+            
+                            if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
+                                customizeSingleTweet();
+                            }
+                        }
+                        else {
+                            console.log("NO");
+                        }
+                    }
+                    else {
+                        $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
+                        currrenderedtweets++;
+                    }
+                }, 190);
+            }
+          }
+          else {
+
+            if (searchtotal > 0 && currrenderedtweets == searchtotal) {
+                stopWorker();
+                closeMenuPopup(null, "2.7");
+                closeSearchPopup();
+                $('#mask').fadeOut(3000);  
+                $('#tweetcount').fadeIn(3800);
+            }
+          }
+      };
+    } 
+  }
+  
+function stopWorker() {
+    if (typeof(timeoutWorker) != "undefined") {
+        timeoutWorker.terminate();
+        timeoutWorker = undefined;
+    }
+}
+
+
+
+
+
