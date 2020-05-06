@@ -2493,14 +2493,6 @@ function startWorker() {
                 }
             }
             else {
-                console.log(searchtotal + "-" + currrenderedtweets)
-                if (currrenderedtweets == 5) {
-                    stopWorker();
-                    closeMenuPopup(null, "2.7");
-                    closeSearchPopup();
-                    $('#mask').fadeOut(3000);  
-                    $('#tweetcount').fadeIn(3800);
-                }
     
                 renderTimeout = setTimeout(function() {     
                     if (linkArray[currrenderedtweets] == "T") {
