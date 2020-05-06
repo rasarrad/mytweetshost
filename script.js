@@ -2493,7 +2493,7 @@ function startWorker() {
                 }
             }
             else {
-                console.log(searchtotal + "-" + currrenderedtweets)
+                
                 if (currrenderedtweets == 5) {
                     //stopWorker();
                     closeMenuPopup(null, "2.7");
@@ -2523,7 +2523,7 @@ function startWorker() {
             }
           }
           else {
-alert(11111);
+            console.log(searchtotal + "-" + currrenderedtweets)
             if (searchtotal > 0 && currrenderedtweets == searchtotal) {
                 stopWorker();
                 closeMenuPopup(null, "2.7");
