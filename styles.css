@@ -2809,8 +2809,6 @@ body.big #splash.newLayout table:nth-of-type(4) {
       } 
 
       .html.tweet:last-child .bottomgradiantback {
-          background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--soft-color) 85%);
-          background-image: linear-gradient(to bottom, #000000 3%, #00315600 80%);
       }
 
 
