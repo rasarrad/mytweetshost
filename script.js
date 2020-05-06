@@ -309,18 +309,6 @@ $( document ).ready(function() {
 
     ///////////////////////////////////////
 
-    $(window).scroll(function (event) {
-        var scroll = $(window).scrollTop();
-        if (scroll > 200) {
-          $('#gotop').fadeIn(700); 
-        }
-        else {
-          $('#gotop').fadeOut(700);
-        }
-    });
-
-    ///////////////////////////////////////
-
     $('#filtertext, #filterauthor, #filtertag').keypress(function(event){
       
         var keycode = (event.keyCode ? event.keyCode : event.which);
