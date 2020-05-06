@@ -174,7 +174,7 @@ $( document ).ready(function() {
         catsmap.set("trl", "Long Reading");
         catsmap.set("tke", "Important / To Keep");
         catsmap.set("imp", "Shocking Truth");
-        catsmap.set("all", "All");
+        catsmap.set("all", "All Links");
     }
     else {
         catsmap.set("tvn", "New / Ongoing");
@@ -186,7 +186,7 @@ $( document ).ready(function() {
         catsmap.set("tke", "Important / To Keep");
         catsmap.set("imp", "Shocking Truth");
         catsmap.set("cli", "My Tweets");
-        catsmap.set("all", "All");
+        catsmap.set("all", "All Links");
     }
 
     // START remover speckcheks
