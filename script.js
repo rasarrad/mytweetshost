@@ -2277,8 +2277,9 @@ $(document).on({
 
         e.originalEvent.dataTransfer.items[0].getAsString(function(str)
         {
-            
+            alert(e.target)
             if (e.target == "span#toptitle.noselect.toptitle") {
+                alert(1)
                 dblFlag = true;
                 dblClickTimeout = setTimeout(function() {     
                   if (dblFlag) {
@@ -2288,6 +2289,7 @@ $(document).on({
                 }, 500);
             }
             else {
+                alert(2)
                 $( "#addtweet" ).blur();
                 closeallnewlayout();
                 resetFieldsPopup(); 
