@@ -19,7 +19,7 @@ function parseTweet(type) {
             console.log("parseTweet - nextid vem do hidden field: " + nextid);
         }
     }
-
+console.log("ssss: " + type)
     setTimeout(function() {
         $('#tweetid').val(nextid);
         youtubeId = "";
