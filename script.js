@@ -2278,13 +2278,12 @@ $(document).on({
 
         e.originalEvent.dataTransfer.items[0].getAsString(function(str)
         {
-            alert(String(e.target))
+            console.log(e.target)
             if (String(e.target) == "span#toptitle.noselect.toptitle") {
-                alert(1)
 
             }
             else {
-                alert(2)
+
             }
             
         })
