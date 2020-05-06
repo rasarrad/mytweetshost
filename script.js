@@ -706,8 +706,13 @@ $( document ).ready(function() {
         })
     });
 
-    if (!isMobile)
+    if (!isMobile) {
+
+        alert(1111);
+        console.log('------');
+        console.log(document.getElementById("tweetcount"));
         document.getElementById("tweetcount").addEventListener("click", clickHandler);
+    }
     
     // xyz startcode
     

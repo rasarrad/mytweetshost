@@ -1011,18 +1011,6 @@ function renderLink(val, customize) {
         newtweetobj.find(".bottomstripline.line1").html(val.info);
         
         newtweetobj.attr('id', val.id);
-
-        /*
-        newtweetobj.appendTo($("#main")).fadeIn(1000);
-
-        var currid = val.id;
-        setTimeout( function() {                                 
-            // xyzdouble
-            if (!isMobile) {
-                //document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
-            }
-        }, 20);
-        */
     }
 }
 
