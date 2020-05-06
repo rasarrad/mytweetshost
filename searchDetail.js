@@ -944,6 +944,10 @@ var getInformation = function(wasfiltered, valid) {
                 //showMessage("Search Results", 2000);
         }
         else {
+            stopWorker();
+            closeMenuPopup(null, "2.7");
+            $('#mask').fadeOut(3000);  
+            $('#tweetcount').fadeIn(3800);
             showMessage("No Links Found", 2000);
         }
     }); 
