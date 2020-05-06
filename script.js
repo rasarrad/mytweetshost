@@ -2493,6 +2493,11 @@ function startWorker() {
                 }
             }
             else {
+                console.log(searchtotal + "-" + currrenderedtweets)
+                if (currrenderedtweets == 5) {
+                    $('#mask').fadeOut(3000);  
+                    $('#tweetcount').fadeIn(3800);
+                }
     
                 renderTimeout = setTimeout(function() {     
                     if (linkArray[currrenderedtweets] == "T") {
