@@ -2216,7 +2216,7 @@ function countdoubleclick() {
     
     setTimeout(function() { 
         $("#tweetcount").fadeIn(500);
-    }, 5500);
+    }, 4000);
 }  
 
 function countclick() {
