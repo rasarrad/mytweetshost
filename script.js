@@ -2278,31 +2278,13 @@ $(document).on({
 
         e.originalEvent.dataTransfer.items[0].getAsString(function(str)
         {
-            //alert(e.target)
-            if (e.target == "span#toptitle.noselect.toptitle") {
+            alert(String(e.target))
+            if (String(e.target) == "span#toptitle.noselect.toptitle") {
                 alert(1)
-                dblFlag = true;
-                dblClickTimeout = setTimeout(function() {     
-                  if (dblFlag) {
-                      openPopupParsed("https://www." + str, 2);
-                      dblFlag = false;  
-                  }
-                }, 500);
+
             }
             else {
-                //alert(2)
-                $( "#addtweet" ).blur();
-                closeallnewlayout();
-                resetFieldsPopup(); 
-                $('body, html').css('overflow-y', 'hidden');
-
-                dblFlag = true;
-                dblClickTimeout = setTimeout(function() {     
-                  if (dblFlag) {
-                      openPopupParsed("https://" + str, 1);
-                      dblFlag = false;  
-                  }
-                }, 500);
+                alert(2)
             }
             
         })
