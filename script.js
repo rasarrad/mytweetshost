@@ -707,11 +707,8 @@ $( document ).ready(function() {
     });
 
     if (!isMobile) {
-
-        alert(1111);
-        console.log('------');
-        console.log(document.getElementById("tweetcount"));
         document.getElementById("tweetcount").addEventListener("click", clickHandler);
+        document.getElementById("tweetcount").addEventListener("onmouseover", countclick);
     }
     
     // xyz startcode
