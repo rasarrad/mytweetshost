@@ -5533,7 +5533,7 @@ body.big .otherOptText {
 }
 
 #tweetcount.hidicon > i {
-  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 #tweetcount.hidall {
