@@ -130,6 +130,7 @@ $( document ).ready(function() {
 
     // START do tweet counter
     var tweetCounter = readCookie("tweetCounter");
+    alert(tweetCounter)
     if (tweetCounter && tweetCounter > 0) {
         $('#tweetcount').addClass(tweetCounter); 
     }
@@ -1894,9 +1895,7 @@ function gotop(e) {
     if (e)
         e.stopPropagation();
     
-    console.log($("tweetcount").attr("class"))
-    if (!$("tweetcount").hasClass("hidicon")) {
-        alert(1122);
+    if (!$("#tweetcount").hasClass("hidicon")) {
         $("html").scrollTop(0);
     }
 }   
