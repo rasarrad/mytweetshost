@@ -706,7 +706,9 @@ $( document ).ready(function() {
         })
     });
 
- 
+    if (!isMobile) {
+        document.getElementById("tweetcount").addEventListener("click", clickHandler);
+    
     // xyz startcode
     
     //clickmenu('all');
@@ -1352,7 +1354,16 @@ function executeSingleDoubleFunction(obj, type) {
             }
 
             break;  
+        case "tweetcoun":
 
+            if (type == "double") { // Execute double/long touch
+                countdoubleclick();
+            }
+            else { // Execute single/touch
+                countclick();
+            }
+
+            break;  
     }
 }
 function executeSwipeFunction(obj, type) {
@@ -2197,27 +2208,29 @@ $(document).on({
 /////////////////////////////////////////////////////////////////////////
 
 
-function countmove(obj) {
-    if (!dblFlag) {
-        dblFlag = true;
+function countdoubleclick(obj) {
+    if (obj)
+        fixfocus(obj);
 
-        $(obj).css('opacity', '0.8');
-        
-        if ($(obj).css('bottom') == "54px") {
-            $(obj).css('bottom', 'calc(100% - 140px)');
-        }
-        else {
-            $(obj).css('bottom', '54px');
-        }
-        setTimeout(function() { 
-            dblFlag = false;
-            setTimeout(function() { 
-                $(obj).css('opacity', '0.52');
-            }, 2500);
-        }, 500);
-    }
+    $("#tweetcount").fadeOut(500);
+    
+    setTimeout(function() { 
+        $("#tweetcount").fadeIn(500);
+    }, 5500);
 }  
 
+function countclick(obj) {
+    if (obj)
+        fixfocus(obj);
+
+    $("#tweetcount").css('opacity', '1');
+    
+    setTimeout(function() { 
+        setTimeout(function() { 
+            $("#tweetcount").css('opacity', '0.52');
+        }, 2500);
+    }, 500);
+}  
 
 
 function expandscreen(obj) {
@@ -2457,7 +2470,6 @@ function startWorker() {
       //w.postMessage({ "args": [ 500 ] });
 
       timeoutWorker.onmessage = function(event) {
-          console.log(linkArray[currrenderedtweets])
           if (linkArray[currrenderedtweets]) {
             if (currrenderedtweets < 5) {
                 if (currrenderedtweets == 0) {
@@ -2472,20 +2484,13 @@ function startWorker() {
                             customizeSingleTweet();
                         }
                     }
-                    else {
-                        console.log("NO");
-                    }
                 }
                 else {
                     $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
                     
                     if (!isMobile) {
-                        console.log(linkArray);
-                        console.log(currrenderedtweets);
                         idCurr = linkArray[currrenderedtweets];
-                        console.log("idCurr 1111: " + idCurr);
                         setTimeout(function(){
-                            console.log("idCurr 2222: " + idCurr);
                             document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
                         }, 0);
                     }
@@ -2511,9 +2516,6 @@ function startWorker() {
                                 customizeSingleTweet();
                             }
                         }
-                        else {
-                            console.log("NO");
-                        }
                     }
                     else {
                         $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
@@ -2523,7 +2525,7 @@ function startWorker() {
             }
           }
           else {
-            console.log(searchtotal + "-" + currrenderedtweets)
+            console.log("Fim da search: " + searchtotal + "-" + currrenderedtweets)
             if (searchtotal > 0 && currrenderedtweets == searchtotal) {
                 stopWorker();
                 closeMenuPopup(null, "2.7");

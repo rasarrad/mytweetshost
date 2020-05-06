@@ -147,8 +147,8 @@ function undosaveinfo(obj, id) {
 
 
 function removetweet(obj) {
-    fixfocus(obj);
-
+    if (obj)
+        fixfocus(obj);
 
     if ($('#linkChange').attr("cid") != "new") {
 
