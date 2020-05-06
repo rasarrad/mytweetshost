@@ -706,7 +706,7 @@ $( document ).ready(function() {
         })
     });
 
-    if (!isMobile) {
+    if (!isMobile)
         document.getElementById("tweetcount").addEventListener("click", clickHandler);
     
     // xyz startcode
