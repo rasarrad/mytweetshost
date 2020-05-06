@@ -632,7 +632,7 @@ function resetFieldsPopup()
     $('#typeHH').css('border-color', 'white'); 
     $('#typeYY').css('border-color', 'white');   
 
-    $( ".litags" ).each( function( index, element ){
+    $( "#tagsul .litags" ).each( function( index, element ){
         $(this).removeClass("selectedtag");
     });
 
