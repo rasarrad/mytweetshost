@@ -909,35 +909,6 @@ var getInformation = function(wasfiltered, valid) {
         $('#main').find('.tweet').sort(function (a, b) {
             return Number($(b).attr('cdate')) - Number($(a).attr('cdate'));
         }).appendTo('#main');
-        
-        /* 
-        setTimeout(function() { 
-            var found = customizeTweets(1);
-
-            sleep(100);  
-            $('#tweetcount').fadeIn(1200);
-            $('#mask').fadeOut(1200);
-
-            if (!found) {
-                setTimeout(function() { 
-                    found = customizeTweets(1);
-        
-                    sleep(100);  
-        
-                    if (!found) {
-                        setTimeout(function() { 
-                            var found = customizeTweets(1);
-                            if (!found) {
-                                $('#tweetcount').fadeIn(800);
-                                $('#mask').fadeOut(700);
-                                          
-                            }
-                        }, 2500); 
-                    }
-                }, 1500);
-            }
-        }, 500);
-        */
 
         if (totalLinkss > 0) {
             //if (wasfiltered != 2)
