@@ -800,7 +800,6 @@ $( document ).ready(function() {
                 dblFlag = true;
                 dblClickTimeout = setTimeout(function() {     
                   if (dblFlag) {
-                      console.log("----" + text + "----")
                       openPopupParsed(text, 1);
                       dblFlag = false;  
                   }
@@ -1786,6 +1785,8 @@ $.fn.isChildOverflowing = function (child) {
         $('#mask').fadeIn(600);  
         setTimeout(function() { 
             resetFieldsPopup(); 
+            console.log("--111--" + text + "----")
+
             $('#tweet').val(text);
 
             parseTweet(type);
@@ -2298,7 +2299,6 @@ $(document).on({
                 dblFlag = true;
                 dblClickTimeout = setTimeout(function() {     
                   if (dblFlag) {
-                      console.log("----" + text + "----")
                       openPopupParsed("https://" + text, 1);
                       dblFlag = false;  
                   }
