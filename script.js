@@ -708,7 +708,7 @@ $( document ).ready(function() {
 
     if (!isMobile) {
         document.getElementById("tweetcount").addEventListener("click", clickHandler);
-        document.getElementById("tweetcount").addEventListener("onmouseover", countclick);
+        document.getElementById("tweetcount").addEventListener("mouseover", countclick);
     }
     
     // xyz startcode
