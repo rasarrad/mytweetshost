@@ -2279,11 +2279,36 @@ $(document).on({
         e.originalEvent.dataTransfer.items[0].getAsString(function(str)
         {
             console.log(e.target)
-            if (String(e.target) == "span#toptitle.noselect.toptitle") {
 
+
+            if ($(e.target) && $(e.target).attr("id") == "toptitle") {
+                $( "#addtweet" ).blur();
+                closeallnewlayout();
+                resetFieldsPopup(); 
+                $('body, html').css('overflow-y', 'hidden');
+                
+                dblFlag = true;
+                dblClickTimeout = setTimeout(function() {     
+                  if (dblFlag) {
+                      openPopupParsed("https://" + str, 2);
+                      dblFlag = false;  
+                  }
+                }, 500);
             }
             else {
+                //alert(2)
+                $( "#addtweet" ).blur();
+                closeallnewlayout();
+                resetFieldsPopup(); 
+                $('body, html').css('overflow-y', 'hidden');
 
+                dblFlag = true;
+                dblClickTimeout = setTimeout(function() {     
+                  if (dblFlag) {
+                      openPopupParsed("https://" + str, 1);
+                      dblFlag = false;  
+                  }
+                }, 500);
             }
             
         })
