@@ -2278,7 +2278,7 @@ $(document).on({
 
         e.originalEvent.dataTransfer.items[0].getAsString(function(str)
         {
-            alert(e.target)
+            //alert(e.target)
             if (e.target == "span#toptitle.noselect.toptitle") {
                 alert(1)
                 dblFlag = true;
@@ -2290,7 +2290,7 @@ $(document).on({
                 }, 500);
             }
             else {
-                alert(2)
+                //alert(2)
                 $( "#addtweet" ).blur();
                 closeallnewlayout();
                 resetFieldsPopup(); 
@@ -2299,7 +2299,7 @@ $(document).on({
                 dblFlag = true;
                 dblClickTimeout = setTimeout(function() {     
                   if (dblFlag) {
-                      openPopupParsed("https://" + text, 1);
+                      openPopupParsed("https://" + str, 1);
                       dblFlag = false;  
                   }
                 }, 500);

@@ -214,7 +214,7 @@ console.log("ssss: " + type)
             $('#date').val(formatNumDate(date));
             
             $('#datetoshow').val(formatDate(date));
-alert(text);
+
             hasAvailableImage(text);
 
             url = text; 
