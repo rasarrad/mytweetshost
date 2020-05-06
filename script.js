@@ -704,7 +704,7 @@ $( document ).ready(function() {
         .catch(err => {
             
         })
-    });
+    }); 
 
     if (!isMobile) {
         document.getElementById("tweetcount").addEventListener("click", clickHandler);
@@ -1358,9 +1358,7 @@ function executeSingleDoubleFunction(obj, type) {
 
             break;  
         case "tweetcoun":
-            alert(156656)
             if (type == "double") { // Execute double/long touch
-
                 countdoubleclick();
             }
             else { // Execute single/touch
