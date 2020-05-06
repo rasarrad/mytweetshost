@@ -1355,7 +1355,6 @@ function executeSingleDoubleFunction(obj, type) {
 
             break;  
         case "tweetcoun":
-            alert(156656)
             if (type == "double") { // Execute double/long touch
 
                 countdoubleclick();
