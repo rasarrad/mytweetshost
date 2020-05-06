@@ -2523,7 +2523,7 @@ function startWorker() {
             }
           }
           else {
-
+alert(11111);
             if (searchtotal > 0 && currrenderedtweets == searchtotal) {
                 stopWorker();
                 closeMenuPopup(null, "2.7");
