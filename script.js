@@ -571,7 +571,7 @@ $( document ).ready(function() {
                 createCookie(nextid + "templink", "", 99999);
                 nextid = nextid - 1;
             }
-            while (nextid > 99999);
+            while (nextid > 99990);
     
             showMessage("Temp Links Removed");
         } 
