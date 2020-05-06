@@ -1357,6 +1357,7 @@ function executeSingleDoubleFunction(obj, type) {
         case "tweetcoun":
 
             if (type == "double") { // Execute double/long touch
+                alert(133)
                 countdoubleclick();
             }
             else { // Execute single/touch
@@ -2525,13 +2526,19 @@ function startWorker() {
             }
           }
           else {
-            console.log("Fim da search: " + searchtotal + "-" + currrenderedtweets)
+            console.log("Fim da search: " + searchtotal + "-" + currrenderedtweets);
             if (searchtotal > 0 && currrenderedtweets == searchtotal) {
                 stopWorker();
                 closeMenuPopup(null, "2.7");
                 closeSearchPopup();
                 $('#mask').fadeOut(3000);  
                 $('#tweetcount').fadeIn(3800);
+            }
+            else {
+                renderTimeout = setTimeout(function() {     
+                    stopWorker();
+                    console.log("Fim da search - stopWorker - FORCED " + searchtotal + "-" + currrenderedtweets)
+                }, 1000);  
             }
           }
       };
