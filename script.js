@@ -800,6 +800,7 @@ $( document ).ready(function() {
                 dblFlag = true;
                 dblClickTimeout = setTimeout(function() {     
                   if (dblFlag) {
+                      console.log("----" + text + "----")
                       openPopupParsed(text, 1);
                       dblFlag = false;  
                   }
@@ -2294,6 +2295,7 @@ $(document).on({
                   openCreatePopup(true);
                 }
 
+                console.log("----" + str + "----")
                 $('#tweet').val("https://www." + str);
                 parseTweet();
             }
