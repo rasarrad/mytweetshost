@@ -2278,8 +2278,6 @@ $(document).on({
 
         e.originalEvent.dataTransfer.items[0].getAsString(function(str)
         {
-            console.log(e.target)
-
 
             if ($(e.target) && $(e.target).attr("id") == "toptitle") {
                 $( "#addtweet" ).blur();
@@ -2296,7 +2294,6 @@ $(document).on({
                 }, 500);
             }
             else {
-                //alert(2)
                 $( "#addtweet" ).blur();
                 closeallnewlayout();
                 resetFieldsPopup(); 
