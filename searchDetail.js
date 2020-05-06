@@ -945,8 +945,8 @@ var getInformation = function(wasfiltered, valid) {
         }
         else {
             stopWorker();
-            $('#mask').fadeOut(3000);  
-            $('#tweetcount').fadeIn(3800);
+            $('#mask').fadeOut(2000);  
+            $('#tweetcount').fadeOut(1000);
             showMessage("No Links Found", 2000);
         }
     }); 
