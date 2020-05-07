@@ -554,7 +554,7 @@ button > i {
 body.big #zoomin {
     font-size: 21px;
     top: 22px;
-    right: 81px;
+    right: 89px;
 }
 
 #settings {
@@ -944,6 +944,9 @@ body.big .topoback {
     height: 76px;
 }     
 
+body.big #recoilback {
+  height: 66px !important;
+}
 
 body.big #backdiv {
   top: 64px !important;
@@ -1015,7 +1018,7 @@ body.big .toptitle {
 body.big #settings {
   font-size: 19px;
   top: 22px;
-  right: 44px;
+  right: 51px;
   padding-left: 3px;
  }  
 #addtweet {
@@ -1025,6 +1028,7 @@ body.big #settings {
 body.big #addtweet {
   font-size: 26px;
   top: 21px;
+  right: 20px;
 }  
 
 .tweet .innertweet {
@@ -1620,16 +1624,6 @@ body.big .bottomstrip {
   padding-bottom: 3px;
 }
 
-.bottomstrip .bottomstripline.line2 {}
-
-.bottomstripZZZ:hover .bottomstripline {
-  left: -100%;
-  width: 200%;
-}
-
-.contentin.error {
-
-}
 
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
@@ -1995,8 +1989,8 @@ body.big #sear, body.big #sear2 {
     font-size: 25px;
     padding-left: 17px;
     padding-right: 17px;
-    top: 20px !important;
-    left: 62px !important;
+    top: -11px !important;
+    left: 6px !important;
 }
 .tweetcount {
   background: rgba(255, 255, 255, 0.65) !important;
@@ -3374,7 +3368,7 @@ body.big .newLayout .fa-file-text {
 }
 body.big .topoback2 {
     left: 66px;
-    width: calc(100% - 77px);
+    width: calc(100% - 78px);
     top: 9px;
     height: 45px;
 }
@@ -3976,7 +3970,7 @@ body.big .buttonstable tr:first-child .firsttd i.fa-twitter {
     left: 1px !important;
 }
 
-i.clicable:active {
+clicable:active {
    color: #ffff6c !important;
 }
 
@@ -4182,17 +4176,6 @@ body.big .iconul li div {
 
 #searchpopup table.withvalue {
   background: var(--soft-color);
-}
-
-.vanilla-calendar-date:hover {
-    transition: all 0.6s;
-}
-
-.vanilla-calendar-date:hover {
-    opacity: 0.6;
-    background: var(--high-color);
-color: var(--dark-color);
-
 }
 
 #myCalendar {
@@ -4402,8 +4385,9 @@ body.big #expandedittags, body.big #expandsearchtags {
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops */
 @media (min-width: 1025px) {
+
   ::-webkit-scrollbar {
-	width: 5px;
+	  width: 5px;
   }
   ::-webkit-scrollbar-track {
       background-color: var(--softdark-color);
@@ -4416,10 +4400,20 @@ body.big #expandedittags, body.big #expandsearchtags {
       cursor: pointer !important;
   }
 
-
   #mask .fa-circle-o-notch {
     height: 43px !important;
   }
+
+  .vanilla-calendar-date:hover {
+      transition: all 0.6s;
+  }
+
+  .vanilla-calendar-date:hover {
+      opacity: 0.6;
+      background: var(--high-color);
+      color: var(--dark-color);
+  }
+
   .sectionedittd:hover {
     opacity: 0.6;
   }
@@ -4455,7 +4449,7 @@ body.big #expandedittags, body.big #expandsearchtags {
   #settings:hover {
     opacity: 0.4;
     opacity: 0.6;
-}
+  }
 
   .buttonIcon:hover {
     color: #e4e4e4;
@@ -4497,15 +4491,16 @@ body.big #expandedittags, body.big #expandsearchtags {
       color: var(--dark-color);
       background: var(--high-color);
   }
-      #addtweet:hover {
+      
+  #addtweet:hover {
       /* color: var(--soft-color); */
       opacity: 0.6;
-    }
+  }
 
-    #sear:hover {
+  #sear:hover {
       /* color: var(--soft-color); */
       opacity: 0.6;
-    }
+  }
     
     .clicable:hover {
       opacity: 0.6 !important;
