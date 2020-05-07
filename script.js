@@ -291,7 +291,7 @@ $( document ).ready(function() {
         if (topMenuMode == 2) {
             if (scrollLastPos > $(window).scrollTop()) {
                 $("#recoilback").css("position", "fixed");
-                $("#recoilback").fadeIn(520);
+                $("#recoilback").slideDown(1220);
     
                 if ($(window).scrollTop() == 0) {
                     $("#recoilback").css("border-bottom", "0px solid var(--dark-color)");
