@@ -271,8 +271,6 @@ $( document ).ready(function() {
     window.onscroll = function(ev) {
         clearTimeout(renderTimeout);
 
-/*         var scrollp = scrollLastPos - $(window).scrollTop();
-        console.log(scrollp) */
         if (scrollLastPos > $(window).scrollTop()) {
             $("#recoilback").css("position", "fixed");
             $("#recoilback").fadeIn(520);

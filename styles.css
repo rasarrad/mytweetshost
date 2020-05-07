@@ -855,8 +855,9 @@ twitter-widget {
 }
 
 #backdiv {
-  background-image: linear-gradient(to bottom, #0081cd, #008ada) !important;
+  background-image: linear-gradient(var(--softdark-color) 0%, var(--soft-color) 45%, var(--dark-color) 99%) !important;
 }
+
 .tweet iframe {
     position: relative;
     top: 4px;
@@ -1270,12 +1271,6 @@ body.big .tweet div.contentin .logo {
     background-position-y: -80px !important;
 }
        
-  
-  #backdiv {
-    background-image: linear-gradient(var(--soft-color), var(--dark-color)) !important;
-    background-image: linear-gradient(var(--softdark-color) 0%, var(--soft-color) 35%, var(--dark-color) 85%) !important;
-  }
-
 .tweet iframe {
   position: relative;
   top: 10px;
@@ -1650,6 +1645,7 @@ body.big .bottomstrip {
   ###Device = Tablets, Ipads (portrait)
   Screen = B/w 768px to 1024px */
   @media (max-width: 999px) and (min-width: 481px), (max-width: 1024px) and (min-width: 768px) and (orientation: portrait) {
+
     ::-webkit-scrollbar {
         width: 0px;  /* Remove scrollbar space */
         background: transparent;  /* Optional: just make scrollbar invisible */
@@ -2317,6 +2313,10 @@ body.big #splash.newLayout table:nth-of-type(4) {
   ###Device = Most of the Smartphones Mobiles (Portrait)
   Screen = B/w 320px to 479px */
   @media (max-width: 480px) {
+      #backdiv {
+        background-image: linear-gradient(var(--softdark-color) 0%, var(--soft-color) 45%, var(--dark-color) 99%) !important;
+      }
+  
     ::-webkit-scrollbar {
         width: 0px;  /* Remove scrollbar space */
         background: transparent; 
