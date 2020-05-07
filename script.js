@@ -272,7 +272,8 @@ $( document ).ready(function() {
         clearTimeout(renderTimeout);
 
         var scrollp = scrollLastPos - $(window).scrollTop();
-        if (scrollp > 20) {
+        console.log(scrollp)
+        if (scrollLastPos > $(window).scrollTop()) {
             $("#recoilback").css("position", "fixed");
             $("#recoilback").fadeIn(650);
 
@@ -283,7 +284,7 @@ $( document ).ready(function() {
                 $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
             }
         }
-        else if (scrollp < -20) {
+        else {
             $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
             $("#recoilback").slideUp(650, function() {
                 $("#recoilback").css("position", "absolute");
