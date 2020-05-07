@@ -3970,14 +3970,12 @@ body.big .buttonstable tr:first-child .firsttd i.fa-twitter {
     left: 1px !important;
 }
 
-clicable:active {
+i.clicable:active {
    color: #ffff6c !important;
 }
-
-body.big .newLayout > div .buttonstable tr:last-child td {
-    /* padding: 9px 0px 8px 0px; */
+span.toptitle.clicable:active {
+  color: #ffff6c !important;
 }
-
 
 body.notransit * {
   -o-transition-property: none !important;
@@ -4508,6 +4506,35 @@ body.big #expandedittags, body.big #expandsearchtags {
     .checkstyleddiv:hover {
       opacity: 0.6 !important;
     }
+
+    #mainmenu table:not(:first-child):not(:last-child):hover {
+      opacity: 0.7 !important;
+    }
+
+    .ui-dialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset button:hover {
+      opacity: 0.7
+   }
+
+   .triggerUpload {
+    transition: opacity 0.7s;
+    cursor: pointer;
+  }
+  
+  
+  
+  .pointeropacity {
+    cursor: pointer !important;
+    /* transition: opacity 0.6s !important; */
+  }
+  
+  .pointeropacity:hover {
+    opacity: 0.7 !important;
+  }
+  
+   .triggerUpload:hover {
+    opacity: 0.85
+   }
+  
 }
 /******************************* FIM DESKTOP CSS *****************************/
 /*****************************************************************************/
@@ -4901,9 +4928,7 @@ body.big #mainmenu table:last-child {
   transition: all 0.7s !important;
 }
 
-#mainmenu table:not(:first-child):not(:last-child):hover {
-  opacity: 0.7 !important;
-}
+
 
 .checkstyleddiv label {
   cursor: pointer;
@@ -5007,28 +5032,8 @@ body.big .ui-dialog.ui-widget.ui-widget-content.ui-front .ui-dialog-titlebar.ui-
     font-size: 12px;
  }
 
- .ui-dialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset button:hover {
-    opacity: 0.7
- }
 
- .triggerUpload {
-  transition: opacity 0.7s;
-  cursor: pointer;
-}
-
-.triggerUpload:hover {
- opacity: 0.85
-}
-
-.pointeropacity {
-  cursor: pointer !important;
-  /* transition: opacity 0.6s !important; */
-}
-
-.pointeropacity:hover {
-  opacity: 0.7 !important;
-}
-
+ 
 #mainsettings.newLayout .sectionexpandable {
     position: relative;
 }
