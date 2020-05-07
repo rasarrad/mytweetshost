@@ -4,6 +4,7 @@ var nextid = "";
 var currentIndex = 0;
 var youtubeId = "";
 var scrollLastPos = 0;
+var topMenuMode = 1;
 var hasProcessedDescription = false;
 var url = "";
 var urldirect = "";
@@ -159,6 +160,22 @@ $( document ).ready(function() {
     }
 
 
+    // START do top menu
+    var value = readCookie("topmenu");
+    if (value && value.length > 0) {
+        if (value == "0") {
+            topMenuMode = 0;
+        }
+        else {
+            topMenuMode = 1;
+            $("#recoilback").css("position", "absolute");   
+        }
+    }
+    else {
+        topMenuMode = 2;
+    }
+
+
     // START dos swipes
     var valueSwipe = readCookie("swipes");
     if (valueSwipe && valueSwipe.length > 0) {
@@ -176,7 +193,7 @@ $( document ).ready(function() {
     
 
     // START da help
-    var value = readCookie("help");
+    value = readCookie("help");
     if (value && value.length > 0) {
         $( ".fa-question-circle:not(.ashow)" ).each( function( index, element ){
             $(element).css("display", "none");
@@ -271,23 +288,26 @@ $( document ).ready(function() {
     window.onscroll = function(ev) {
         clearTimeout(renderTimeout);
 
-        if (scrollLastPos > $(window).scrollTop()) {
-            $("#recoilback").css("position", "fixed");
-            $("#recoilback").fadeIn(520);
-
-            if ($(window).scrollTop() == 0) {
-                $("#recoilback").css("border-bottom", "0px solid var(--dark-color)");
+        if (topMenuMode == 2) {
+            if (scrollLastPos > $(window).scrollTop()) {
+                $("#recoilback").css("position", "fixed");
+                $("#recoilback").fadeIn(520);
+    
+                if ($(window).scrollTop() == 0) {
+                    $("#recoilback").css("border-bottom", "0px solid var(--dark-color)");
+                }
+                else {
+                    $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
+                }
             }
             else {
                 $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
+                $("#recoilback").slideUp(650, function() {
+                    $("#recoilback").css("position", "absolute");
+                });
             }
         }
-        else {
-            $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
-            $("#recoilback").slideUp(650, function() {
-                $("#recoilback").css("position", "absolute");
-            });
-        }
+
         var scroll = scrollLastPos = $(window).scrollTop();
         if (scroll > 200) {
           $('#gotop').fadeIn(700); 

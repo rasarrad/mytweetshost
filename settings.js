@@ -701,6 +701,29 @@ var openMainSettingsPopup = function(jsonobj)
         }
     });
 
+    // Top Menu
+    value = null;
+
+    if (topMenuMode > 0) {
+        if (topMenuMode > 1) {
+            value = "Auto Hide";
+        }
+        else {
+            value = "Fixed On Top";
+        }
+    }
+    else {
+        value = "Visible";
+    }
+
+    $('#topmenuul').find(".litags").each( function( index, element ) {
+        if($(element).html().trim() == value) {
+            $(element).addClass("selectedtag");
+        }
+        else {
+            $(element).removeClass("selectedtag");
+        }
+    });
 
     // Use swipes
     value = null;
@@ -2001,6 +2024,44 @@ function clickLiGotop(e, obj) {
 
                 $('#tweetcount').attr("class", "hidall pobj"); 
             }
+        }
+    }  
+}
+
+function clickLiTopmenu(e, obj) {
+    e.stopPropagation();
+    
+    if (!$(obj).hasClass("selectedtag")) {
+        var value = $(obj).html().trim();
+        $('#topmenuul').find(".litags").each( function( index, element ) {
+            if($(element).html().trim() == value) {
+                $(element).addClass("selectedtag");
+            }
+            else {
+                $(element).removeClass("selectedtag");
+            }
+        });
+
+        if (value == "Visible") {
+            showMessage("Top menu visibility: " + value, null, null, null, null, null);
+            
+            createCookie("topmenu", "0", 99999);
+            topMenuMode = 0;
+            $("#recoilback").css("position", "fixed");  
+        }
+        else if (value == "Fixed On Top") {
+            showMessage("Top menu visibility: " + value, null, null, null, null, null);
+            
+            createCookie("topmenu", "1", 99999);
+            topMenuMode = 1;
+            $("#recoilback").css("position", "absolute");   
+        }
+        else {
+            showMessage("Top menu visibility: " + value, null, null, null, null, null);
+            
+            createCookie("topmenu", "", 99999);
+            topMenuMode = 2;
+            $("#recoilback").css("position", "fixed"); 
         }
     }  
 }
