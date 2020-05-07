@@ -271,8 +271,8 @@ $( document ).ready(function() {
     window.onscroll = function(ev) {
         clearTimeout(renderTimeout);
 
-        
-        if (scrollLastPos > $(window).scrollTop()) {
+        var scrollp = scrollLastPos - $(window).scrollTop();
+        if (scrollp > 40) {
             $("#recoilback").css("position", "fixed");
             $("#recoilback").slideDown(450);
 
@@ -283,7 +283,7 @@ $( document ).ready(function() {
                 $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
             }
         }
-        else {
+        else if (scrollp < -40) {
             $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
             $("#recoilback").slideUp(450, function() {
                 $("#recoilback").css("position", "absolute");
