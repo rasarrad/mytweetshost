@@ -3,6 +3,7 @@ var origin = "";
 var nextid = "";
 var currentIndex = 0;
 var youtubeId = "";
+var scrollLastPos = 0;
 var hasProcessedDescription = false;
 var url = "";
 var urldirect = "";
@@ -270,7 +271,14 @@ $( document ).ready(function() {
     window.onscroll = function(ev) {
         clearTimeout(renderTimeout);
 
-        var scroll = $(window).scrollTop();
+        if (scrollLastPos > $(window).scrollTop()) {
+            $("#menuhide").fadeIn(500);
+        }
+        else {
+            $("#menuhide").fadeOut(500);
+        }
+
+        var scroll = scrollLastPos = $(window).scrollTop();
         if (scroll > 200) {
           $('#gotop').fadeIn(700); 
         }
@@ -602,8 +610,30 @@ $( document ).ready(function() {
         }
       });
 
+            /*
+      $("input, textarea").focus(function(){  
+            if ($("#linkChange").css("display") != "none") {
+                var innerHeight = window.innerHeight;
+                var htmlElem = $("#linkChange > div");
+                var maxHeightStyle = "max-height: " + (innerHeight - 125) + "px !important;";
 
-      /*
+                var top = 1;
+                var isLandscape = window.innerWidth < 1200 && window.innerWidth > 700;
+                if ($('#linkChange').attr("cid") == "new" && $(this).attr("id") == "infoinput")
+                    if (isLandscape)
+                        top = -50;
+                    else 
+                        top = -250;
+                    
+                if ($('body').hasClass('big')) {
+                    maxHeightStyle = "max-height: " + (innerHeight - 137) + "px !important;";
+                }
+                htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle);     
+    
+                htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle + "top: " + top + "px !important;"); 
+            }
+      });
+
       $("input, textarea").blur( function(){  
             if ($("#linkChange").css("display") != "none") {
                 updateTopPosition("linkChange");
