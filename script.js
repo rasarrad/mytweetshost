@@ -273,23 +273,7 @@ $( document ).ready(function() {
 
 /*         var scrollp = scrollLastPos - $(window).scrollTop();
         console.log(scrollp) */
-        if (scrollLastPos > $(window).scrollTop()) {
-            $("#recoilback").css("position", "fixed");
-            $("#recoilback").fadeIn(400);
 
-            if ($(window).scrollTop() == 0) {
-                $("#recoilback").css("border-bottom", "0px solid var(--dark-color)");
-            }
-            else {
-                $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
-            }
-        }
-        else {
-            $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
-            $("#recoilback").slideUp(650, function() {
-                $("#recoilback").css("position", "absolute");
-            });
-        }
         var scroll = scrollLastPos = $(window).scrollTop();
         if (scroll > 200) {
           $('#gotop').fadeIn(700); 
