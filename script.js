@@ -274,7 +274,7 @@ $( document ).ready(function() {
         
         if (scrollLastPos > $(window).scrollTop()) {
             $("#recoilback").css("position", "fixed");
-            $("#recoilback").slideDown(300);
+            $("#recoilback").slideDown(450);
 
             if ($(window).scrollTop() == 0) {
                 $("#recoilback").css("border-bottom", "0px solid var(--dark-color)");
@@ -285,7 +285,7 @@ $( document ).ready(function() {
         }
         else {
             $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
-            $("#recoilback").slideUp(300, function() {
+            $("#recoilback").slideUp(450, function() {
                 $("#recoilback").css("position", "absolute");
             });
         }
