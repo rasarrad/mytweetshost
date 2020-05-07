@@ -273,10 +273,10 @@ $( document ).ready(function() {
 
         if (scrollLastPos > $(window).scrollTop()) {
             $(".menuhide").css("position", "fixed");
-            $(".menuhide").fadeIn(300);
+            $(".menuhide").slideDown(300);
         }
         else {
-            $(".menuhide").fadeOut(300, function() {
+            $(".menuhide").slideUp(300, function() {
                 $(".menuhide").css("position", "absolute");
             });
         }
