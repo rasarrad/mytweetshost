@@ -271,6 +271,7 @@ $( document ).ready(function() {
     window.onscroll = function(ev) {
         clearTimeout(renderTimeout);
 
+        /*
         if (scrollLastPos > $(window).scrollTop()) {
             $(".menuhide").css("position", "fixed");
             $(".menuhide").slideDown(300);
@@ -280,7 +281,7 @@ $( document ).ready(function() {
                 $(".menuhide").css("position", "absolute");
             });
         }
-
+*/
         var scroll = scrollLastPos = $(window).scrollTop();
         if (scroll > 200) {
           $('#gotop').fadeIn(700); 
