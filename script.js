@@ -271,11 +271,11 @@ $( document ).ready(function() {
     window.onscroll = function(ev) {
         clearTimeout(renderTimeout);
 
-        var scrollp = scrollLastPos - $(window).scrollTop();
-        console.log(scrollp)
+/*         var scrollp = scrollLastPos - $(window).scrollTop();
+        console.log(scrollp) */
         if (scrollLastPos > $(window).scrollTop()) {
             $("#recoilback").css("position", "fixed");
-            $("#recoilback").fadeIn(650);
+            $("#recoilback").fadeIn(400);
 
             if ($(window).scrollTop() == 0) {
                 $("#recoilback").css("border-bottom", "0px solid var(--dark-color)");
