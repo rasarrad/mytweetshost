@@ -286,14 +286,9 @@ $( document ).ready(function() {
         }
         else {
             $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
-
-            var sss = $("#recoilback").scrollTop();
-            $("#recoilback").css("position", "absolute");
-            $("#recoilback").css("top", sss + "px");
-
-            /* $("#recoilback").slideUp(650, function() {
+            $("#recoilback").slideUp(650, function() {
                 $("#recoilback").css("position", "absolute");
-            }); */
+            });
         }
         var scroll = scrollLastPos = $(window).scrollTop();
         if (scroll > 200) {
