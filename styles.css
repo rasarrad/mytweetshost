@@ -3970,7 +3970,7 @@ body.big .buttonstable tr:first-child .firsttd i.fa-twitter {
     left: 1px !important;
 }
 
-i.clicable:active {
+clicable:active {
    color: #ffff6c !important;
 }
 
