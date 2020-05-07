@@ -272,10 +272,13 @@ $( document ).ready(function() {
         clearTimeout(renderTimeout);
 
         if (scrollLastPos > $(window).scrollTop()) {
-            $("#menuhide").fadeIn(500);
+            $(".menuhide").css("position", "fixed");
+            $(".menuhide").fadeIn(500);
         }
         else {
-            $("#menuhide").fadeOut(500);
+            $(".menuhide").fadeOut(500, function() {
+                $(".menuhide").css("position", "absolute");
+            });
         }
 
         var scroll = scrollLastPos = $(window).scrollTop();
