@@ -271,17 +271,16 @@ $( document ).ready(function() {
     window.onscroll = function(ev) {
         clearTimeout(renderTimeout);
 
-        /*
+        
         if (scrollLastPos > $(window).scrollTop()) {
-            $(".menuhide").css("position", "fixed");
-            $(".menuhide").slideDown(300);
+            $("#recoilback").css("position", "fixed");
+            $("#recoilback").slideDown(700);
         }
         else {
-            $(".menuhide").slideUp(300, function() {
-                $(".menuhide").css("position", "absolute");
+            $("#recoilback").slideUp(700, function() {
+                $("#recoilback").css("position", "absolute");
             });
         }
-*/
         var scroll = scrollLastPos = $(window).scrollTop();
         if (scroll > 200) {
           $('#gotop').fadeIn(700); 
