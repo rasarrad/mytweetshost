@@ -1624,16 +1624,6 @@ body.big .bottomstrip {
   padding-bottom: 3px;
 }
 
-.bottomstrip .bottomstripline.line2 {}
-
-.bottomstripZZZ:hover .bottomstripline {
-  left: -100%;
-  width: 200%;
-}
-
-.contentin.error {
-
-}
 
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
@@ -4195,8 +4185,7 @@ body.big .iconul li div {
 .vanilla-calendar-date:hover {
     opacity: 0.6;
     background: var(--high-color);
-color: var(--dark-color);
-
+    color: var(--dark-color);
 }
 
 #myCalendar {
