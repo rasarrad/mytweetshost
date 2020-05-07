@@ -4404,6 +4404,16 @@ body.big #expandedittags, body.big #expandsearchtags {
     height: 43px !important;
   }
 
+  .vanilla-calendar-date:hover {
+      transition: all 0.6s;
+  }
+
+  .vanilla-calendar-date:hover {
+      opacity: 0.6;
+      background: var(--high-color);
+      color: var(--dark-color);
+  }
+
   .sectionedittd:hover {
     opacity: 0.6;
   }
@@ -4439,7 +4449,7 @@ body.big #expandedittags, body.big #expandsearchtags {
   #settings:hover {
     opacity: 0.4;
     opacity: 0.6;
-}
+  }
 
   .buttonIcon:hover {
     color: #e4e4e4;
@@ -4481,15 +4491,16 @@ body.big #expandedittags, body.big #expandsearchtags {
       color: var(--dark-color);
       background: var(--high-color);
   }
-      #addtweet:hover {
+      
+  #addtweet:hover {
       /* color: var(--soft-color); */
       opacity: 0.6;
-    }
+  }
 
-    #sear:hover {
+  #sear:hover {
       /* color: var(--soft-color); */
       opacity: 0.6;
-    }
+  }
     
     .clicable:hover {
       opacity: 0.6 !important;
