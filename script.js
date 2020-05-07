@@ -273,7 +273,28 @@ $( document ).ready(function() {
 
 /*         var scrollp = scrollLastPos - $(window).scrollTop();
         console.log(scrollp) */
+        if (scrollLastPos > $(window).scrollTop()) {
+            $("#recoilback").css("position", "fixed");
+            $("#recoilback").fadeIn(520);
 
+            if ($(window).scrollTop() == 0) {
+                $("#recoilback").css("border-bottom", "0px solid var(--dark-color)");
+            }
+            else {
+                $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
+            }
+        }
+        else {
+            $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
+
+            var sss = $("#recoilback").scrollTop();
+            $("#recoilback").css("position", "absolute");
+            $("#recoilback").css("top", sss + "px");
+
+            /* $("#recoilback").slideUp(650, function() {
+                $("#recoilback").css("position", "absolute");
+            }); */
+        }
         var scroll = scrollLastPos = $(window).scrollTop();
         if (scroll > 200) {
           $('#gotop').fadeIn(700); 
