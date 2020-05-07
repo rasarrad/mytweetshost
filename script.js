@@ -274,10 +274,18 @@ $( document ).ready(function() {
         
         if (scrollLastPos > $(window).scrollTop()) {
             $("#recoilback").css("position", "fixed");
-            $("#recoilback").slideDown(700);
+            $("#recoilback").slideDown(300);
+
+            if ($(window).scrollTop() == 0) {
+                $("#recoilback").css("border-bottom", "0px solid var(--dark-color)");
+            }
+            else {
+                $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
+            }
         }
         else {
-            $("#recoilback").slideUp(700, function() {
+            $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
+            $("#recoilback").slideUp(300, function() {
                 $("#recoilback").css("position", "absolute");
             });
         }
