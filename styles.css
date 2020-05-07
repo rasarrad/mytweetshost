@@ -554,7 +554,7 @@ button > i {
 body.big #zoomin {
     font-size: 21px;
     top: 22px;
-    right: 81px;
+    right: 89px;
 }
 
 #settings {
@@ -1018,7 +1018,7 @@ body.big .toptitle {
 body.big #settings {
   font-size: 19px;
   top: 22px;
-  right: 44px;
+  right: 51px;
   padding-left: 3px;
  }  
 #addtweet {
@@ -1028,6 +1028,7 @@ body.big #settings {
 body.big #addtweet {
   font-size: 26px;
   top: 21px;
+  right: 20px;
 }  
 
 .tweet .innertweet {
@@ -1998,8 +1999,8 @@ body.big #sear, body.big #sear2 {
     font-size: 25px;
     padding-left: 17px;
     padding-right: 17px;
-    top: 20px !important;
-    left: 62px !important;
+    top: -11px !important;
+    left: 6px !important;
 }
 .tweetcount {
   background: rgba(255, 255, 255, 0.65) !important;
@@ -3377,7 +3378,7 @@ body.big .newLayout .fa-file-text {
 }
 body.big .topoback2 {
     left: 66px;
-    width: calc(100% - 77px);
+    width: calc(100% - 78px);
     top: 9px;
     height: 45px;
 }
