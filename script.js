@@ -2495,6 +2495,16 @@ function getMetaContent(html, name) {
 //hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://zzzsmallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
 
 
+function nextLink(direction) {
+    if (direction == "up") {
+
+    }
+    else {
+        
+    }
+}
+
+
 function startWorker() {
     if (typeof(Worker) !== "undefined") {
       if (typeof(timeoutWorker) == "undefined") {
@@ -2539,6 +2549,10 @@ function startWorker() {
                     closeSearchPopup();
                     $('#mask').fadeOut(3000);  
                     $('#tweetcount').fadeIn(3800);
+
+                    setTimeout(function() {     
+                        $('#13').focus();  
+                    }, 5190);
                 }
     
                 renderTimeout = setTimeout(function() {     
