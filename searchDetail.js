@@ -1515,15 +1515,12 @@ var existsLink = function(text, type, functorun) {
 
                 if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
                     if (val.type == "T") {
-                        console.log("a-" + text + "-")
-                        console.log("b-" + val.tweet + "-")
                         if (val.tweet.includes(text.substring(1,130))) {
                             existingId = val.id;
                         }
                     }
                     else {
                         if (val.url.localeCompare(text) == 0) {
-                            console.log(val.url+"-" + text)
                             existingId = val.id;
                         }
                     }
