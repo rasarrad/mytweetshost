@@ -97,10 +97,10 @@ console.log("ssss: " + type)
             
             $('#datetoshow').val(formatDate(date));
 
-            url = text.substring(text.indexOf('https://www.youtube'), text.indexOf('frameborder') - 2); 
-            
             youtubeId = text.substring(text.indexOf('embed') + 6, text.indexOf('embed') + 17);
 
+            url = "https://www.youtube.com/embed/" + youtubeId; 
+            
             urldirect = "https://www.youtube.com/watch?v=" + youtubeId; 
 
             text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://img.youtube.com/vi/" 
