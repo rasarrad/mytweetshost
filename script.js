@@ -2552,12 +2552,12 @@ function startWorker() {
 
                     setTimeout(function() {     
                         console.log("--------------ffff")
-                        var element = document.querySelector("#13");
+                        var element = document.getElementById("13");
 
                         // smooth scroll to element and align it at the bottom
                         element.scrollIntoView({ behavior: 'smooth', block: 'end'});
 
-                    }, 5190);
+                    }, 15190);
                 }
     
                 renderTimeout = setTimeout(function() {     
