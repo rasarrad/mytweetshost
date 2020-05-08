@@ -99,8 +99,8 @@ console.log("ssss: " + type)
 
             url = text.substring(text.indexOf('https://www.youtube'), text.indexOf('frameborder') - 2); 
             
-            youtubeId = text.substring(text.indexOf('embed') + 6, text.indexOf('frameborder') - 2);
-
+            youtubeId = text.substring(text.indexOf('embed') + 6, text.indexOf('embed') + 17);
+            alert("-" + youtubeId + -"");
             urldirect = "https://www.youtube.com/watch?v=" + youtubeId; 
 
             text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://img.youtube.com/vi/" 
@@ -158,13 +158,10 @@ console.log("ssss: " + type)
             
             urldirect = text; 
             
-            youtubeId = text.substring(text.indexOf('watch?v=') + 8);
+            youtubeId = text.substring(text.indexOf('watch?v=') + 8, text.indexOf('watch?v=') + 19);
 
-            if (youtubeId.indexOf("&t=") > 0) {
-                youtubeId = youtubeId.replace("&t=","?start=");
-                youtubeId = youtubeId.substring(0, youtubeId.length -1);
-            }
-            
+            alert("-" + youtubeId + -"");
+
             text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://img.youtube.com/vi/" 
                     + youtubeId  + "/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div>\""; 
 
