@@ -944,8 +944,12 @@ body.big .topoback {
     height: 76px;
 }     
 
+#recoilback {
+  height: 53px;
+}
+
 body.big #recoilback {
-  height: 66px !important;
+  height: 66px;
 }
 
 body.big #backdiv {

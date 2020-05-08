@@ -2550,14 +2550,14 @@ function startWorker() {
                     $('#mask').fadeOut(3000);  
                     $('#tweetcount').fadeIn(3800);
 
-                    setTimeout(function() {     
+/*                     setTimeout(function() {     
                         console.log("--------------ffff")
                         var element = document.getElementById("13");
 
                         // smooth scroll to element and align it at the bottom
                         element.scrollIntoView({ behavior: 'smooth', block: 'start'});
 
-                    }, 15190);
+                    }, 15190); */
                 }
     
                 renderTimeout = setTimeout(function() {     
