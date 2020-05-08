@@ -1523,6 +1523,7 @@ var existsLink = function(text, type, functorun) {
                     }
                     else {
                         if (val.url.localeCompare(text) == 0) {
+                            console.log(val.url+"-" + text)
                             existingId = val.id;
                         }
                     }
