@@ -2555,7 +2555,7 @@ function startWorker() {
                         var element = document.getElementById("13");
 
                         // smooth scroll to element and align it at the bottom
-                        element.scrollIntoView({ behavior: 'smooth', block: 'end'});
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start'});
 
                     }, 15190);
                 }
