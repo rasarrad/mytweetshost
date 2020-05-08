@@ -2551,7 +2551,12 @@ function startWorker() {
                     $('#tweetcount').fadeIn(3800);
 
                     setTimeout(function() {     
-                        $('#13').focus();  
+                        console.log("--------------ffff")
+                        var element = document.querySelector("#13");
+
+                        // smooth scroll to element and align it at the bottom
+                        element.scrollIntoView({ behavior: 'smooth', block: 'end'});
+
                     }, 5190);
                 }
     
