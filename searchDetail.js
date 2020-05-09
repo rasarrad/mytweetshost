@@ -182,7 +182,10 @@ function expandtags(obj) {
     else {
         $(obj).removeClass("fa-chevron-up");
         $(obj).addClass("fa-chevron-down");
-
+        tagstable.css('transition', 'transition: all 0.01s');
+        setTimeout(function(){
+            $('#tagstable').css('transition', 'max-height 0.7s ease 0s');
+        }, 800);
         $(obj).css("top", "");
 
         if ($('body').hasClass('big'))
