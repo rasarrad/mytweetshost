@@ -167,6 +167,31 @@ function filtertagOnChange(obj) {
     createNonExistentLi("tagsearchul", "filtertag");
 }
 
+function expandtags(obj) {
+    var tagstable = $('#searchtags'); 
+        
+    if ($(obj).hasClass("fa-chevron-down")) {
+        $(obj).removeClass("fa-chevron-down");
+        $(obj).addClass("fa-chevron-up");
+
+        $(obj).css("top", "auto");
+
+        tagstable.css("max-height", "4000px");
+    }
+    else {
+        $(obj).removeClass("fa-chevron-up");
+        $(obj).addClass("fa-chevron-down");
+
+        $(obj).css("top", null);
+
+        if ($('body').hasClass('big'))
+            tagstable.css("max-height", tagstable.attr("cmaxheightbig"));
+        else
+            tagstable.css("max-height", tagstable.attr("cmaxheight"));
+    }
+
+}
+
 function filterinfoOnChange(obj) {
     var currentinfosearchdisplay = $('.currentinfosearch'); 
 
