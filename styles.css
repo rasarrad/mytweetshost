@@ -358,7 +358,7 @@ body.big .gradiantback {
   top: 42px;
 }
 
-   body > div > i.fa-folder-open {
+body > div > i.fa-folder-open {
     color: var(--high-color);
     font-size: 122px;
     position: relative;
@@ -375,12 +375,13 @@ body.big .gradiantback {
     border-right-color: transparent !important;
     border-width: 4px !important;
 }
-   .menubutton {
+
+.menubutton {
     font-size: 40px;
     background: #004a86;
     padding-left: 0px;
     padding-right: 5px;
-    padding: 6px 11px;
+    padding: 5px 12px;
     color: var(--high-color);
     background: #001b30;
     cursor: pointer;
@@ -390,93 +391,99 @@ body.big .gradiantback {
     width: 37px;
     background-image: linear-gradient(to bottom, #003056, #004a86);
     background: transparent;
-    }
+}
+
+body.big .menubutton {
+    padding: 6px 11px;
+}
+
 body.big .menubutton {
     font-size: 54px;
 }
     
-    #menu {
-      width: 0px;
-      overflow: hidden;
-      position: fixed;
-      background: white;
-      transition: all 0.6s;
-      border: 1px solid gray;
-      border-left-width: 0px;
-      position: absolute;
-      left: -1px;
-      top: 52px;
-    }
-    
+#menu {
+  width: 0px;
+  overflow: hidden;
+  position: fixed;
+  background: white;
+  transition: all 0.6s;
+  border: 1px solid gray;
+  border-left-width: 0px;
+  position: absolute;
+  left: -1px;
+  top: 52px;
+}
 
-    #menu > ul {
-      list-style: none;
-      margin: 0;
-      padding-left: 0px;
-    }
 
-    #menu > ul > li {
-      overflow: hidden;
-      white-space: nowrap;
-      padding: 10px 0px;
-      padding-left: 17px;
-      color: #005484;
-      border-bottom: 1px solid #c1c1c1;
-      cursor: pointer;
-      transition: all 0.6s;
-      font-weight: bold;
-      position: relative;
-    }
-    #menu > ul > li > div {
-    position: absolute;
-    right: 3px;
-    top: 12px;
-    font-size: 13px;
-    color: #0169bd;
-    text-align: center;
-    width: 25px;
-    /* top: 10px; */
-    }
+#menu > ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0px;
+}
 
-    .label {
-      color: #0084d0;
-      position: absolute;
-      top: 8px;
-      display: inline;
-      font-size: 12px;
-      font-weight: bold;
-    }          
-    
-    .label.text {
-      left: 124px;
-    }
-     
-    .label.tag {
-      left: 315px;
-    }
-              
-    .label.author {
-      left: 441px;
-    }
-              
-    .label.date {
-      left: 564px;
-    }
-              
-    .label.id {
-      left: 724px;
-    }
+#menu > ul > li {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0px;
+  padding-left: 17px;
+  color: #005484;
+  border-bottom: 1px solid #c1c1c1;
+  cursor: pointer;
+  transition: all 0.6s;
+  font-weight: bold;
+  position: relative;
+}
+#menu > ul > li > div {
+position: absolute;
+right: 3px;
+top: 12px;
+font-size: 13px;
+color: #0169bd;
+text-align: center;
+width: 25px;
+/* top: 10px; */
+}
 
-    #sear,#sear2 {
-      position: relative;
-      color: #004a86;
-      font-size: 22px;
-      padding-left: 7px;
-      padding-right: 17px;
-      top: -7px;
-      cursor: pointer;
-      transition: all 0.6s;
-    }
+.label {
+  color: #0084d0;
+  position: absolute;
+  top: 8px;
+  display: inline;
+  font-size: 12px;
+  font-weight: bold;
+}          
+
+.label.text {
+  left: 124px;
+}
+
+.label.tag {
+  left: 315px;
+}
+
+.label.author {
+  left: 441px;
+}
+
+.label.date {
+  left: 564px;
+}
+
+.label.id {
+  left: 724px;
+}
+
+#sear,#sear2 {
+  position: relative;
+  color: #004a86;
+  font-size: 22px;
+  padding-left: 7px;
+  padding-right: 17px;
+  top: -7px;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+
 .toptitle {
   color: var(--high-color) !important;
   text-shadow: 3px 3px #c5c5c5;
@@ -1655,6 +1662,31 @@ body.big #splash.newLayout table:nth-of-type(4) {
 }
 
 
+#sear, #sear2  {
+    position: relative;
+    color: var(--high-color);
+    font-size: 18px;
+    padding-left: 7px;
+    padding-right: 17px;
+    top: -7px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+
+
+body.big #sear, body.big #sear2  {
+    top: -9px;
+}
+
+body.big #sear, body.big #sear2 {
+    font-size: 25px;
+    padding-left: 17px;
+    padding-right: 17px;
+    top: -11px !important;
+    left: 6px !important;
+}
+
+
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
 /* 
@@ -1862,7 +1894,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
           
     #addtweet {
         font-size: 22px;
-        top: 14px;
+        top: 15px;
       }  
     .tags {
       margin-top: -14px;
@@ -1998,6 +2030,9 @@ body.big #splash.newLayout table:nth-of-type(4) {
       body.big #editTags {
         margin-top: 93px !important;
       }  
+      body.big #addtweet {
+        top: 20px;
+      }  
 }
 /****************************** FIM LANDSCAPE CSS ****************************/
 /*****************************************************************************/
@@ -2030,23 +2065,6 @@ height: 101px;
   right: 129px !important;
 }
 
-#sear, #sear2  {
-    position: relative;
-    color: var(--high-color);
-    font-size: 18px;
-    padding-left: 7px;
-    padding-right: 17px;
-    top: -9px;
-    cursor: pointer;
-    transition: all 0.6s;
-}
-body.big #sear, body.big #sear2 {
-    font-size: 25px;
-    padding-left: 17px;
-    padding-right: 17px;
-    top: -11px !important;
-    left: 6px !important;
-}
 .tweetcount {
   background: rgba(255, 255, 255, 0.65) !important;
 }
@@ -2343,6 +2361,16 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
   ###Device = Most of the Smartphones Mobiles (Portrait)
   Screen = B/w 320px to 479px */
   @media (max-width: 480px) {
+    
+    body.big #sear, body.big #sear2 {
+        left: 0px !important;
+    }
+    #addtweet {
+        top: 15px;
+    }
+    body.big #addtweet {
+        top: 20px;
+    }
       #backdiv {
         background-image: linear-gradient(var(--softdark-color) 0%, var(--soft-color) 45%, var(--dark-color) 99%) !important;
       }
