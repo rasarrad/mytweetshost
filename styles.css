@@ -1628,6 +1628,32 @@ body.big .bottomstrip {
   padding-bottom: 3px;
 }
 
+#splash.newLayout table:nth-of-type(2) {
+  height: 198px;
+}
+body.big #splash.newLayout table:nth-of-type(2) {
+  height: 256px;
+}
+#splash.newLayout table:nth-of-type(3) {
+  height: 219px;
+}
+body.big #splash.newLayout table:nth-of-type(3) {
+  height: 208px;
+}
+#splash.newLayout table:nth-of-type(4) {
+  height: 154px;
+}
+    
+body.big #splash.newLayout table:nth-of-type(2) {
+  height: 273px;
+}
+body.big #splash.newLayout table:nth-of-type(3) {
+  height: 261px;
+}
+body.big #splash.newLayout table:nth-of-type(4) {
+  height: 205px;
+}
+
 
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
@@ -1643,6 +1669,31 @@ body.big .bottomstrip {
   ###Device = Tablets, Ipads (portrait)
   Screen = B/w 768px to 1024px */
   @media (max-width: 999px) and (min-width: 481px), (max-width: 1024px) and (min-width: 768px) and (orientation: portrait) {
+    #splash.newLayout table:nth-of-type(2) {
+      height: 206px;
+    }
+    body.big #splash.newLayout table:nth-of-type(2) {
+      height: 256px;
+    }
+    #splash.newLayout table:nth-of-type(3) {
+      height: 209px;
+    }
+    body.big #splash.newLayout table:nth-of-type(3) {
+      height: 208px;
+    }
+    #splash.newLayout table:nth-of-type(4) {
+      height: 154px;
+    }
+
+    body.big #splash.newLayout table:nth-of-type(2) {
+      height: 250px;
+    }
+    body.big #splash.newLayout table:nth-of-type(3) {
+      height: 261px;
+    }
+    body.big #splash.newLayout table:nth-of-type(4) {
+      height: 205px;
+    }
 
     ::-webkit-scrollbar {
         width: 0px;  /* Remove scrollbar space */
@@ -2285,31 +2336,6 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
   width: 207px;
 } 
 
-#splash.newLayout table:nth-of-type(2) {
-  height: 198px;
-}
-body.big #splash.newLayout table:nth-of-type(2) {
-  height: 256px;
-}
-#splash.newLayout table:nth-of-type(3) {
-  height: 219px;
-}
-body.big #splash.newLayout table:nth-of-type(3) {
-  height: 208px;
-}
-#splash.newLayout table:nth-of-type(4) {
-  height: 154px;
-}
-    
-body.big #splash.newLayout table:nth-of-type(2) {
-  height: 273px;
-}
-body.big #splash.newLayout table:nth-of-type(3) {
-  height: 261px;
-}
-body.big #splash.newLayout table:nth-of-type(4) {
-  height: 205px;
-}
 
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
