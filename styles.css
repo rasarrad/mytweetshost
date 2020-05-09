@@ -1389,12 +1389,12 @@ body.big .newLayout#mainsettings > div {
   display: block;
   text-align: center;
   font-size: 15px;
-  max-height: 24px;
+  max-height: 31px;
   margin-top: 0px;
 }
 body.big #mainmenu .buttonstable {
   font-size: 15px;
-  max-height: 32px;
+  max-height: 38px;
   margin-top: 0px;
 }        
 #mainmenu span {
@@ -1445,7 +1445,7 @@ body.big #mainmenu .fa-window-close {
     right: 24px;
 } 
 #mainmenu .firstsettable {
-  margin-top: 35px;
+  margin-top: 32px;
 }  
 #mainmenu table:not(.firstsettable):not(.buttonstable) {
   margin-top: 5px;
@@ -2606,7 +2606,7 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
         max-height: calc(100% - 137px) !important;
     } 
     #mainmenu .firstsettable {
-      margin-top: 34px;
+      margin-top: 32px;
     }  
     #mainmenu .buttonstable {
       width: 358px;
@@ -2870,7 +2870,7 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
       }
   
       .newLayout > div .titletable {
-          margin-top: 0.7px !important;
+          margin-top: 0px !important;
           /* margin-top: 0px !important; */
       }      
       .newLayout#mainsettings > div .titletable {
