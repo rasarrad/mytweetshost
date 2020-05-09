@@ -1150,7 +1150,7 @@ body.big #expand {
 body:not(.big) .tweet:not(:last-child) .bottomgradiantback {
   height: 19px;
   top: auto;
-  bottom: 4px;
+  bottom: 2px;
 }
 body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
   top: auto;
@@ -1190,7 +1190,7 @@ body:not(.big) .yt.tweet .bottomgradiantback {
     background-image: linear-gradient(to bottom, var(--dark-color) 15%, #004a8600 85%);
     background: transparent;
 }
-  .tweet iframe {
+.tweet iframe {
   width: calc(100% - 0px) !important;
   margin-left: 0px !important;
   margin-right: 12px !important;
@@ -1199,32 +1199,32 @@ body:not(.big) .yt.tweet .bottomgradiantback {
   margin-bottom: 1px;
   margin-top: 0px !important;
   border: 0px solid white;
-  }
+}
 
-  .tweet.yt:not(:last-child) iframe {
-    margin-top: 0px !important;
-    /* height: 317px !important; */
-    }
+.tweet.yt:not(:last-child) iframe {
+  margin-top: 0px !important;
+  /* height: 317px !important; */
+}
 
-  .tweet.yt {
-      /* background: #101010; */
-      top: 0px;
-      height: 660px;
-      /* height: 91vw; */
-      /* max-height: 782px; */
-  }
+.tweet.yt {
+    /* background: #101010; */
+    top: 0px;
+    height: 660px;
+    /* height: 91vw; */
+    /* max-height: 782px; */
+}
 
 body.big .tweet.yt {
     margin-top: -10px;
-  }
+}
   
-  .tweet.html {
-      /* background: #002646; */
-      top: 0px;
-      height: 805px;
-      /* height: 91vw; */
-      /* max-height: 606px; */
-  }
+.tweet.html {
+    /* background: #002646; */
+    top: 0px;
+    height: 805px;
+    /* height: 91vw; */
+    /* max-height: 606px; */
+}
 
   
 .tweet div.contentin {
@@ -1725,7 +1725,13 @@ body.big #sear, body.big #sear2 {
   ###Device = Tablets, Ipads (portrait)
   Screen = B/w 768px to 1024px */
   @media (max-width: 999px) and (min-width: 481px), (max-width: 1024px) and (min-width: 768px) and (orientation: portrait) {
-    
+ 
+    .tweet.yt {
+        margin-top: 13px;
+    }   
+    body.big .tweet.yt {
+        margin-top: -10px;
+    }       
     #splash .splashbutton {
       height: 23px;
     }
