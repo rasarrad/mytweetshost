@@ -1674,7 +1674,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
 }
 
 
-#sear, #sear2  {
+#sear2  {
     position: relative;
     color: var(--high-color);
     font-size: 18px;
@@ -1685,17 +1685,39 @@ body.big #splash.newLayout table:nth-of-type(4) {
     transition: all 0.6s;
 }
 
-
-body.big #sear, body.big #sear2  {
-    top: -9px;
+#sear {
+  position: absolute;
+  top: calc(100% - 60px) !important;
+  bottom: auto;
+  z-index: 33333;
+  top: auto;
+  background: var(--high-color);
+  color: var(--softdark-color);
+  width: 17px;
+  padding-left: 10px;
+  padding-top: 6px;
+  height: 35px;
+  border-radius: 4px;
+  left: calc(100% - 63px);
+  border: 1px solid var(--softdark-color);
+  font-size: 28px;
+  transition: all 0.6s ease 0s !important;
 }
 
-body.big #sear, body.big #sear2 {
+body.big #sear2 {
     font-size: 25px;
     padding-left: 17px;
     padding-right: 17px;
-    top: -11px !important;
-    left: 6px !important;
+    top: -9px;
+}
+
+body.big #sear {
+    font-size: 33px;
+    padding-left: 13px;
+    padding-right: 24px;
+    padding-bottom: 6px;
+    left: calc(100% - 70px);
+    top: calc(100% - 63px) !important;
 }
 
 #splash .splashbutton {
@@ -1754,10 +1776,9 @@ body.big .checkstyleddiv.menuincludedeleted i {
 }
 
 .checkstyleddiv.showdeleted span {
-    width: 11px !important;
+    width: 10px !important;
     height: 9.6px !important;
 }
-
 
 body.big .checkstyleddiv.showdeleted i {
   left: 0.5px !important;
