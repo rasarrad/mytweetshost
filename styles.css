@@ -1747,6 +1747,13 @@ body.big .checkstyleddiv.menuincludedeleted i {
 }
 
 
+.newLayout#searchpopup > div .titletable {
+  width: 475px;
+  height: 87px;
+  /* background: green; */
+}
+
+
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
 /* 
@@ -2237,7 +2244,7 @@ body.big .buttonstable .date {
 
 
 #searchtags {
-  margin-top: 93px !important;
+  margin-top: 88px !important;
 }
 body.big #searchtags {
   margin-top: 93px !important;
@@ -2899,7 +2906,7 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
           min-width: 344px;
       }
       body.big .newLayout > div .titletable tr:first-child .firsttd {
-          min-width: 343px !important;
+          min-width: 346px !important;
       }  
 
       #splash.newLayout > div .titletable tr:first-child {
@@ -2955,7 +2962,7 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
       }      
   
       .newLayout#searchpopup > div .titletable {
-        width: 344px !important;
+        width: 354px !important;
       }
   
       .tweet.html {
@@ -3190,8 +3197,6 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
 }
 
 
-
-.newLayout#searchpopup > div .titletable {width: 465px;}
 
 .newLayout.new > div .titletable #seticon {
     color: var(--high-color) !important;
