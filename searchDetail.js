@@ -128,7 +128,7 @@ function changecriteria(e, obj, tableparam) {
                 var offset = 0;
                 if (table.attr("cheight") && table.attr("cheight").trim() != "")
                     offset = Number(table.attr("cheight"));   
-                $("#sear").css("top", (table.offset().top - 69 + offset) + "px");
+                $("#sear").css("top", (table.offset().top - 143 + offset) + "px");
             }, 100);
         }
     }
