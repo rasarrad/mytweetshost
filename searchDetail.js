@@ -1378,6 +1378,9 @@ var getJsonbyid = function(id, functorun) {
 
 
 var togglecriterions = function(obj) {
+    if (obj)
+        fixfocus(obj);
+    
     closeallnewlayout();
 
     if ($("#searchpopup").css("display") == "none")

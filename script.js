@@ -751,6 +751,7 @@ $( document ).ready(function() {
 
     //closeSplash(); 
 
+    togglecriterions();
 
     
     /* CATEGORIES RENAMING
