@@ -177,23 +177,22 @@ function expandtags(obj) {
         $(obj).css("top", "auto");
         $(obj).css("bottom", "3px");
 
-        tagstable.css("max-height", "4000px");
+        tagstable.css("max-height", tagstable.css("height"));
     }
     else {
         $(obj).removeClass("fa-chevron-up");
         $(obj).addClass("fa-chevron-down");
-        tagstable.css('transition', 'all 0.01s');
+        tagstable.css("max-height", tagstable.attr("cmaxheight"));
         setTimeout(function(){
-            tagstable.css('transition', 'max-height 0.7s ease');
+            $(obj).css("top", "");
         }, 800);
-        $(obj).css("top", "");
+        
 
         if ($('body').hasClass('big'))
             tagstable.css("max-height", tagstable.attr("cmaxheightbig"));
         else
             tagstable.css("max-height", tagstable.attr("cmaxheight"));
     }
-
 }
 
 function filterinfoOnChange(obj) {
