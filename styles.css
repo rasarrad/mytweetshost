@@ -2296,7 +2296,7 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
 }
     
 body.big #splash.newLayout table:nth-of-type(2) {
-  height: 261px;
+  height: 273px;
 }
 body.big #splash.newLayout table:nth-of-type(3) {
   height: 261px;
@@ -4655,10 +4655,11 @@ body.big #splash.newLayout .fa-credit-card-alt {
 
 .splashtext {
   font-size: 12px;
+  text-transform: uppercase;
 }
 
 body.big .splashtext {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 #splash.newLayout .sectiontitle {
