@@ -183,7 +183,7 @@ function expandtags(obj) {
         $(obj).removeClass("fa-chevron-up");
         $(obj).addClass("fa-chevron-down");
 
-        $(obj).css("top", null);
+        $(obj).css("top", "");
 
         if ($('body').hasClass('big'))
             tagstable.css("max-height", tagstable.attr("cmaxheightbig"));
