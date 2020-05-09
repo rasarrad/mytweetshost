@@ -73,6 +73,19 @@ function changecriteria(e, obj, tableparam) {
         table = $("#" + tableparam);
     }
 
+    var iTop = "0px";
+    var ibuttontop = "calc(100% - 53px)";
+    
+    if (tableparam == "searchtags") {
+        if ($('body').hasClass('big')) {
+            iTop = "-1px";
+            ibuttontop = "calc(100% - 60px)";
+        }
+        else {
+            iTop = "-2px";
+            ibuttontop = "calc(100% - 63px)";
+        }
+    }
     var maindiv = table.parent();
     
     if (e)
@@ -90,7 +103,7 @@ function changecriteria(e, obj, tableparam) {
                 var othertable = $(element);
 
                 othertable.css('max-height', setHeight);
-                othertable.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", "0px");
+                othertable.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
                 othertable.find('td.el').addClass('ellipsis');
             });
             
@@ -108,7 +121,7 @@ function changecriteria(e, obj, tableparam) {
                 table.css('max-height', "fit-content");
             }
     
-            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down').css("top", "-6px");
+            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down').css("top", "-4px");
     
             table.find('td.el').removeClass('ellipsis');
             setTimeout(function() { 
@@ -122,10 +135,10 @@ function changecriteria(e, obj, tableparam) {
     else {
         table.css('transition', 'max-height 1s');
         table.css('max-height', setHeight);
-        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", "0px");
+        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
         table.find('td.el').addClass('ellipsis');
         setTimeout(function() { 
-            $("#sear").css("top", "calc(100% - 53px)");
+            $("#sear").css("top", ibuttontop);
         }, 100);
     }
     setTimeout(function() { 

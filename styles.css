@@ -477,7 +477,16 @@ width: 25px;
   left: 724px;
 }
 
-#sear,#sear2 {
+#sear {
+  position: relative;
+  font-size: 22px;
+  padding-left: 7px;
+  padding-right: 17px;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+
+#sear2 {
   position: relative;
   color: #004a86;
   font-size: 22px;
@@ -487,6 +496,7 @@ width: 25px;
   cursor: pointer;
   transition: all 0.6s;
 }
+
 
 .toptitle {
   color: var(--high-color) !important;
@@ -1687,10 +1697,9 @@ body.big #splash.newLayout table:nth-of-type(4) {
 
 #sear {
   position: absolute;
-  top: calc(100% - 60px) !important;
+  top: calc(100% - 60px);
   bottom: auto;
   z-index: 33333;
-  top: auto;
   background: var(--high-color);
   color: var(--softdark-color);
   width: 17px;
@@ -1717,7 +1726,7 @@ body.big #sear {
     padding-right: 24px;
     padding-bottom: 6px;
     left: calc(100% - 70px);
-    top: calc(100% - 63px) !important;
+    top: calc(100% - 63px);
 }
 
 #splash .splashbutton {
@@ -4663,25 +4672,6 @@ body.big #titlesearch {
 
 body.big #searchpopup .titletable tr:first-child {
   height: 50px;
-}
-
-
-body.big #searchpopup td span.titletext.currenttagsearch {
-    position: relative;
-    top: -0.5px !important;
-    left: auto;
-    padding-left: 0px !important;
-}
-
-#searchpopup td.ellipsis span.titletext.currenttagsearch {
-    position: absolute;
-    top: 3px !important;
-    width: 236px;
-    display: block;
-}
-body.big #searchpopup.ellipsis td span.titletext.currenttagsearch {
-    position: absolute;
-    top: 3px !important;
 }
 
 body.big #searchpopup #searchdate td.ellipsis .titletext {
