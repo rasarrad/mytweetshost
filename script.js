@@ -1916,7 +1916,7 @@ function openmenu(obj, flag) {
 
         setTimeout(function(){
             $('#mainmenu').css('background', 'var(--soft-transp-color)');
-        }, 1000);
+        }, 800);
 
     }
     else {
