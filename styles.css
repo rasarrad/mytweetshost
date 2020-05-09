@@ -1753,6 +1753,16 @@ body.big .checkstyleddiv.menuincludedeleted i {
   /* background: green; */
 }
 
+.checkstyleddiv.showdeleted span {
+    width: 11px !important;
+    height: 9.6px !important;
+}
+
+
+body.big .checkstyleddiv.showdeleted i {
+  left: 0.7px !important;
+}
+
 
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
@@ -2493,6 +2503,16 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
   width: 9px !important;
 } 
 
+.checkstyleddiv.showdeleted {
+  top: -4px;
+  right: 6px;
+}
+
+body.big .checkstyleddiv.showdeleted {
+  top: -12px;
+  right: -13px;
+}
+
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
 /* 
@@ -3092,6 +3112,33 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
           left: 0.2px !important;
           font-size: 6.4px !important;
       }
+
+      .checkstyleddiv.showdeleted {
+        top: -4px;
+        right: 6px;
+      }
+
+      body.big .checkstyleddiv.showdeleted {
+        top: -12px;
+        right: -13px;
+      }    
+
+      .checkstyleddiv.showdeleted span {
+        width: 9.9px !important;
+        height: 9.6px !important;
+      }
+
+      body.big .checkstyleddiv.showdeleted span {
+        width: 10px !important;
+        height: 9.6px !important;
+        padding-right: 1px;
+      }  
+
+
+      body.big .checkstyleddiv.showdeleted i {
+        left: 0.9px !important;
+      }
+       
 
   }
 /****************************** FIM PORTRAIT CSS *****************************/
@@ -4843,15 +4890,7 @@ body.big .author {
   font-size: 19px;
 }
   
-.checkstyleddiv.showdeleted {
-  top: -4px;
-  right: 6px;
-}
 
-body.big .checkstyleddiv.showdeleted {
-  top: -12px;
-  right: -13px;
-}
 
 body.big .menuincludedeleted {
     top: -7px !important;
@@ -5175,10 +5214,6 @@ body.big #mainmenu table:last-child {
   cursor: pointer;
 }
 
-
-body.big .checkstyleddiv.showdeleted i {
-  left: 1px !important;
-}
 
 #calendardiv.newLayout > div .titletable tr:first-child .firsttd {
     padding-top: 1px;
