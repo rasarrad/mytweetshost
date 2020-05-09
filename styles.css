@@ -1413,6 +1413,14 @@ body.big #mainmenu span {
   font-size: 18px;
   top: -1px;
 } 
+
+body.big #mainmenu .checkstyleddiv span {
+  font-size: 18px;
+  top: 0px;
+  width: 13px !important;
+  height: 13px !important;
+} 
+
 #mainmenu .fa-bars {
     font-size: 18px;
     position: absolute;
@@ -2421,6 +2429,9 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
   width: 207px;
 } 
 
+#mainmenu .checkstyleddiv span {
+  top: -4px;
+} 
 
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
@@ -2534,13 +2545,6 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
         display: inline-block;
     }  
 
-    body.big #mainmenu .checkstyleddiv {
-      top: -9px !important;
-    }
-    #mainmenu .checkstyleddiv {
-      top: -14px !important;
-    }
-    
     #postedby {
       width: 98px;
       margin-left: 3px;
@@ -3004,6 +3008,13 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
 /*****************************************************************************/
 
 
+#mainmenu .checkstyleddiv {
+  top: -14px !important;
+}
+    
+body.big #mainmenu .checkstyleddiv {
+  top: -13px !important;
+}
 
 .newLayout > div {
     background: var(--dark-color);
@@ -3908,6 +3919,9 @@ input[type="checkbox"] + label {
 body.big input[type="checkbox"] + label {
     font-size: 14px;
 }
+body.big #mainmenu input[type="checkbox"] + label {
+    font-size: 16px !important;
+}
 
 
 .newLayout textarea {
@@ -4763,7 +4777,8 @@ body.big .menuincludedeleted {
 }
 
 body.big .menuincludedeleted label > div {
-    top: -14px !important;
+    top: -17px !important;
+    padding-left: 3px;
 }
 
 #splash.newLayout .firstTable {
@@ -5079,8 +5094,14 @@ body.big #mainmenu table:last-child {
   cursor: pointer;
 }
 
-body.big .checkstyleddiv.menuincludedeleted i {
+.checkstyleddiv.menuincludedeleted i {
     top: 1.9px;
+    left: 0.2px !important;
+    font-size: 6.4px !important;
+}
+
+body.big .checkstyleddiv.menuincludedeleted i {
+    top: 3.3px;
     left: 0.2px !important;
     font-size: 6.4px !important;
 }
