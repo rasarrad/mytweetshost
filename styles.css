@@ -85,6 +85,10 @@ body.big #searchpopup .fa-calendar {
   top: 0 !important;
 }
 
+#showdeleted2 {
+  font-size: 14px !important;
+}
+
 .newLayout#searchpopup #searchtypes.sectiontitletable .firsticon {
 
 }
@@ -2529,6 +2533,14 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
         width: 162px !important;
         display: inline-block;
     }  
+
+    body.big #mainmenu .checkstyleddiv {
+      top: -9px !important;
+    }
+    #mainmenu .checkstyleddiv {
+      top: -14px !important;
+    }
+    
     #postedby {
       width: 98px;
       margin-left: 3px;
