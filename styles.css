@@ -1686,7 +1686,31 @@ body.big #sear, body.big #sear2 {
     left: 6px !important;
 }
 
+#splash .splashbutton {
+  border: 1px solid var(--dark-color);
+  background: var(--high-color);
+  color: var(--dark-color);
+  width: 70px;
+  position: absolute;
+  text-align: center;
+  line-height: 19px;
+  font-size: 13px;
+  height: 24px;
+  padding-top: 3px;
+  font-weight: bold;
+  padding-left: 0;
+  right: 0px;
+  cursor: default !important;
+  float: right;
+  bottom: -7px;
+  padding-right: 2px;
+  border-radius: 3px;
+}
 
+#splash .splashbutton.active {
+  cursor: pointer !important;
+  /* line-height: 15px; */
+}
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
 /* 
@@ -1701,6 +1725,11 @@ body.big #sear, body.big #sear2 {
   ###Device = Tablets, Ipads (portrait)
   Screen = B/w 768px to 1024px */
   @media (max-width: 999px) and (min-width: 481px), (max-width: 1024px) and (min-width: 768px) and (orientation: portrait) {
+    
+    #splash .splashbutton {
+      height: 23px;
+    }
+    
     #splash.newLayout table:nth-of-type(2) {
       height: 206px;
     }
@@ -2361,7 +2390,10 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
   ###Device = Most of the Smartphones Mobiles (Portrait)
   Screen = B/w 320px to 479px */
   @media (max-width: 480px) {
-    
+
+    #splash .splashbutton {
+      height: 23px;
+    }
     body.big #sear, body.big #sear2 {
         left: 0px !important;
     }
@@ -4772,31 +4804,7 @@ body.big .splashtext.aboutbs {
 }
 
 
-#splash .splashbutton {
-  border: 1px solid var(--dark-color);
-  background: var(--high-color);
-  color: var(--dark-color);
-  width: 70px;
-  position: absolute;
-  text-align: center;
-  line-height: 19px;
-  font-size: 13px;
-  height: 24px;
-  padding-top: 3px;
-  font-weight: bold;
-  padding-left: 0;
-  right: 0px;
-  cursor: default !important;
-  float: right;
-  bottom: -7px;
-  padding-right: 2px;
-  border-radius: 3px;
-}
 
-#splash .splashbutton.active {
-  cursor: pointer !important;
-  /* line-height: 15px; */
-}
 
 body.big #splash .splashbutton {font-size: 16px;width: 74px;}
 
