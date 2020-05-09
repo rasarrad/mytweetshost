@@ -64,7 +64,7 @@ body.big #searchpopup .fa-user-circle {
   margin-right: 4px;
 }
 #searchpopup .fa-file-text {
-  
+  position: absolute;
 }
 body.big #searchpopup .fa-file-text {
   font-size: 16px;
@@ -2540,6 +2540,101 @@ body.big .checkstyleddiv.showdeleted {
   right: -13px;
 }
 
+.newLayout .fa-tags {
+    font-size: 13px;
+    position: relative;
+    top: 0px;
+    left: -3px;
+}
+body.big .newLayout .fa-tags {
+    font-size: 17px;
+    top: 1px;
+    left: -3px;
+}
+
+.newLayout#searchpopup .sectionexpandable {
+    position: relative;
+}
+
+.newLayout#searchpopup .sectiontitle {
+  padding-left: 9px;
+  font-weight: bold;
+  font-size: 12px;
+  position: absolute;
+  top: 6px;
+  left: 29px;
+  text-transform: lowercase;
+}
+body.big .newLayout#searchpopup .sectiontitle {
+  font-size: 15px;
+  position: absolute;
+  top: 10px;
+  left: 32px;
+}
+
+
+.newLayout#searchpopup .sectiontitle {
+  position: absolute;
+  top: 6px;
+}
+
+body.big .newLayout#searchpopup .sectiontitle {
+
+}
+
+.newLayout#searchpopup .fa-tags {
+    top: 0px;
+    left: -3px;
+}
+body.big .newLayout#searchpopup .fa-tags {
+    font-size: 17px;
+    top: 1px;
+    left: -3px;
+}
+
+.newLayout#searchpopup .slicename {
+  text-transform: lowercase;
+  top: -2px !important;
+  font-size: 12px;
+  padding-left: 6px !important;
+}
+
+body.big .newLayout#searchpopup .slicename {
+  line-height: 30px;
+  font-size: 15px;
+  top: -2px !important;
+  padding-left: 20px !important;
+}
+
+.newLayout#searchpopup .el:not(.ellipsis) .slicename {
+  line-height: 18px;
+  position: relative;
+  top: -3px !important;
+  left: -9px;
+}
+
+.newLayout#searchpopup .el.ellipsis .slicename {
+  /* left: 1px; */
+  text-align: right !important;
+  margin-right: 9px;
+}
+
+body.big .newLayout#searchpopup .el:not(.ellipsis) .slicename {
+  line-height: 25px;
+  font-size: 15px;
+  top: -3px !important;
+  padding-left: 0px !important;
+  left: 11px;
+}
+
+.newLayout#searchpopup .sectiontitletable .sectionicontd {
+  height: 18px;
+}
+
+body.big .newLayout#searchpopup .sectiontitletable .sectionicontd {
+  height: 25px;
+}
+
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
 /* 
@@ -4155,17 +4250,6 @@ body.big #closepopupp {
 
 /* TAGS das settings */
 
-.newLayout .fa-tags {
-    font-size: 13px;
-    position: relative;
-    top: 0px;
-    left: -3px;
-}
-body.big .newLayout .fa-tags {
-    font-size: 17px;
-    top: 1px;
-    left: -3px;
-}
 
 
 .newLayout ul li {
