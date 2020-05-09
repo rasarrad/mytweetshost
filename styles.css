@@ -1416,9 +1416,9 @@ body.big #mainmenu span {
 
 body.big #mainmenu .checkstyleddiv span {
   font-size: 18px;
-  top: 0px;
-  width: 13px !important;
-  height: 13px !important;
+  top: -1px;
+  width: 13.9px !important;
+  height: 14px !important;
 } 
 
 #mainmenu .fa-bars {
@@ -1723,6 +1723,30 @@ body.big #sear, body.big #sear2 {
   cursor: pointer !important;
   /* line-height: 15px; */
 }
+
+
+#mainmenu .checkstyleddiv {
+  top: -11px !important;
+}
+    
+body.big #mainmenu .checkstyleddiv {
+  top: -10px !important;
+}
+
+
+.checkstyleddiv.menuincludedeleted i {
+    top: 1.9px;
+    left: 0.2px !important;
+    font-size: 6.4px !important;
+}
+
+body.big .checkstyleddiv.menuincludedeleted i {
+    top: 3.3px;
+    left: -0.1px !important;
+    font-size: 6.4px !important;
+}
+
+
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
 /* 
@@ -2107,6 +2131,34 @@ body.big #sear, body.big #sear2 {
     body.big #mainmenu .fa-bars {
         top: 7px;
     }    
+
+    #mainmenu .checkstyleddiv {
+      top: -14px !important;
+    }
+
+    body.big #mainmenu .checkstyleddiv {
+      top: -13px !important;
+    }
+
+    body.big #mainmenu .checkstyleddiv span {
+      font-size: 18px;
+      top: 0px;
+      width: 13px !important;
+      height: 13px !important;
+    }     
+
+
+    .checkstyleddiv.menuincludedeleted i {
+        top: 1.9px;
+        left: 0.2px !important;
+        font-size: 6.4px !important;
+    }
+
+    body.big .checkstyleddiv.menuincludedeleted i {
+        top: 3.3px;
+        left: 0.2px !important;
+        font-size: 6.4px !important;
+    }    
               
 }
 /****************************** FIM LANDSCAPE CSS ****************************/
@@ -2431,6 +2483,7 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
 
 #mainmenu .checkstyleddiv span {
   top: -4px;
+  width: 9px !important;
 } 
 
 /*****************************************************************************/
@@ -2439,6 +2492,14 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
   ###Device = Most of the Smartphones Mobiles (Portrait)
   Screen = B/w 320px to 479px */
   @media (max-width: 480px) {
+
+
+    body.big #mainmenu .checkstyleddiv span {
+      font-size: 18px;
+      top: 0px;
+      width: 13px !important;
+      height: 13px !important;
+    } 
 
     #mainmenu .fa-window-close {
         margin-top: 1px;
@@ -3003,18 +3064,33 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
         height: 30px;
       }
 
+
+      #mainmenu .checkstyleddiv {
+        top: -14px !important;
+      }
+
+      body.big #mainmenu .checkstyleddiv {
+        top: -13px !important;
+      }
+
+
+      .checkstyleddiv.menuincludedeleted i {
+          top: 1.9px;
+          left: 0.2px !important;
+          font-size: 6.4px !important;
+      }
+
+      body.big .checkstyleddiv.menuincludedeleted i {
+          top: 3.3px;
+          left: 0.2px !important;
+          font-size: 6.4px !important;
+      }
+
   }
 /****************************** FIM PORTRAIT CSS *****************************/
 /*****************************************************************************/
 
 
-#mainmenu .checkstyleddiv {
-  top: -14px !important;
-}
-    
-body.big #mainmenu .checkstyleddiv {
-  top: -13px !important;
-}
 
 .newLayout > div {
     background: var(--dark-color);
@@ -5094,17 +5170,6 @@ body.big #mainmenu table:last-child {
   cursor: pointer;
 }
 
-.checkstyleddiv.menuincludedeleted i {
-    top: 1.9px;
-    left: 0.2px !important;
-    font-size: 6.4px !important;
-}
-
-body.big .checkstyleddiv.menuincludedeleted i {
-    top: 3.3px;
-    left: 0.2px !important;
-    font-size: 6.4px !important;
-}
 
 body.big .checkstyleddiv.showdeleted i {
   left: 1px !important;
