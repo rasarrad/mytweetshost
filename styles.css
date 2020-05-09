@@ -3678,7 +3678,7 @@ body.big #linktable {
     z-index: 99;
     display: block;
     margin-top: 6px;
-    margin-bottom: 0;
+    margin-bottom: 26px;
 }
 .newLayout ul#classiful {
     height: 100%;
@@ -4754,6 +4754,7 @@ body.big #mainsettings #theme td:first-child {
     position: absolute;
     padding-left: 159px;
     left: 2px;
+    padding-bottom: 2px;
     background: var(--soft-color) !important;
 }
 
