@@ -4744,22 +4744,17 @@ body.big #mainsettings #theme td:first-child {
 }
 
 #expandedittags, #expandsearchtags {
-    padding-left: 2px;
-    position: relative;
-    padding-right: 11px;
-    padding-top: 1px;
-    /* height: 22px; */
-    width: 10px;
-    top: 88px;
+    width: calc(100% - 166px);
     border-radius: 4px;
-    bottom: auto;
-    left: calc(100% - 28px);
-    color: var(--soft-color);
-    border: 1px solid var(--soft-color);
-    font-size: 19px !important;
-    background: var(--high-color) !important;
-    height: 22px;
-    left: calc(100% - 23px);
+    top: 122px;
+    color: var(--high-color) !important;
+    border: 1px solid var(--high-color) !important;
+    font-size: 15px !important;
+    height: 17px;
+    position: absolute;
+    padding-left: 159px;
+    left: 2px;
+    background: var(--soft-color) !important;
 }
 
 body.big #expandedittags, body.big #expandsearchtags {
