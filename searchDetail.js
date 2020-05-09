@@ -487,7 +487,7 @@ var openSearchPopup = function(jsonobj)
 
     setTimeout(function(){
         $('#searchpopup').css('background', 'var(--soft-transp-color)');
-    }, 600);
+    }, 800);
 
     //updateTopPosition("searchpopup"); 
 

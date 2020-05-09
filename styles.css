@@ -1385,7 +1385,7 @@ body.big .newLayout#mainsettings > div {
   top: -2px !important;
 }
 #mainmenu .buttonstable {
-  width: 471px;
+  width: 474px;
   display: block;
   text-align: center;
   font-size: 15px;
@@ -1418,17 +1418,17 @@ body.big #mainmenu span {
 body.big #mainmenu .fa-bars {
     font-size: 23px;
     left: 10px;
-    top: 8px;
+    top: 6px;
 } 
 
 #mainmenu .firsttd b {
     position: relative;
-    top: 0px;
+    top: -1px;
     font-size: 16px;
 }
 
 body.big #mainmenu .firsttd b {
-    top: 1px;
+    top: -3px;
     font-size: 18px;
 }
 
@@ -1437,11 +1437,11 @@ body.big #mainmenu .firsttd b {
     margin-top: 2px;
     cursor: pointer;
     position: relative;
-    right: 23px;
+    right: 22px;
 } 
 body.big #mainmenu .fa-window-close {
     font-size: 19px;
-    margin-top: 3px;
+    margin-top: 2px;
     right: 24px;
 } 
 #mainmenu .firstsettable {
@@ -2404,6 +2404,26 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
   Screen = B/w 320px to 479px */
   @media (max-width: 480px) {
 
+    #mainmenu .fa-window-close {
+        margin-top: 0px;
+    }
+    #mainmenu .firsttd b {
+        top: -3px;
+    }
+    #mainmenu .fa-bars {
+        top: 6px;
+    }  
+
+    body.big #mainmenu .fa-window-close {
+        margin-top: 2px;
+    }
+    body.big #mainmenu .firsttd b {
+        top: -2px;
+    }
+    body.big #mainmenu .fa-bars {
+        top: 7px;
+    }    
+          
     #splash .splashbutton {
       height: 23px;
     }
@@ -2568,7 +2588,7 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
       margin-top: 34px;
     }  
     #mainmenu .buttonstable {
-      width: 345px;
+      width: 358px;
     }   
     #mainmenu span {
       width: 304px;

@@ -495,7 +495,7 @@ var openSettingsPopup = function(jsonobj)
 
     setTimeout(function(){
         $('#linkChange').css('background', 'var(--soft-transp-color)');
-    }, 600);
+    }, 800);
 } 
 
 var openMainSettingsPopup = function(jsonobj) 
@@ -800,7 +800,7 @@ var openMainSettingsPopup = function(jsonobj)
 
     setTimeout(function(){
         $('#mainsettings').css('background', 'var(--soft-transp-color)');
-    }, 600);
+    }, 800);
 
 } 
 
