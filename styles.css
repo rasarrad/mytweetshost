@@ -2335,13 +2335,13 @@ body.big #splash.newLayout table:nth-of-type(4) {
       -ms-overflow-style: none;
     }  
     #splash.newLayout table:nth-of-type(2) {
-      height: 297px;
+      height: 233px;
     }
     body.big #splash.newLayout table:nth-of-type(2) {
       height: 349px;
     }
     #splash.newLayout table:nth-of-type(3) {
-      height: 239px;
+      height: 230px;
     }
     body.big #splash.newLayout table:nth-of-type(3) {
       height: 316px;
