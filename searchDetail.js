@@ -175,6 +175,7 @@ function expandtags(obj) {
         $(obj).addClass("fa-chevron-up");
 
         $(obj).css("top", "auto");
+        $(obj).css("bottom", "3px");
 
         tagstable.css("max-height", "4000px");
     }
