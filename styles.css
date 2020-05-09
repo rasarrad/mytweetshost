@@ -4103,6 +4103,7 @@ body.big .newLayout.new .sectiontitle {
   cursor: pointer !important
 }
 
+
 .cursorpointer {
   transition: opacity 0.6s !important;
   cursor: pointer !important
@@ -4507,6 +4508,9 @@ body.big #expandedittags, body.big #expandsearchtags {
     .clicable:hover {
       opacity: 0.6 !important;
     }
+    #splashbutton.active:hover {
+      opacity: 0.7 !important;
+    }
     .checkstyleddiv:hover {
       opacity: 0.6 !important;
     }
@@ -4731,7 +4735,7 @@ body.big .splashtext.aboutbs {
 
 #splash .splashbutton.active {
   cursor: pointer !important;
-  line-height: 15px;
+  /* line-height: 15px; */
 }
 
 body.big #splash .splashbutton {font-size: 16px;width: 74px;}
