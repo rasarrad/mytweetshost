@@ -126,8 +126,8 @@ function changecriteria(e, obj, tableparam) {
             table.find('td.el').removeClass('ellipsis');
             setTimeout(function() { 
                 var offset = 0;
-                //if (table.attr("cheight") && table.attr("cheight").trim() != "")
-                //    offset = Number(table.attr("cheight"));   
+                if (table.attr("cheight"))
+                    offset = Number(table.attr("cheight"));   
                 $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
             }, 720);
         }
