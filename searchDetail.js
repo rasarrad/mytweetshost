@@ -18,7 +18,7 @@ function closeSearchPopup(obj) {
         if ($('body').hasClass('big'))
             setHeight = "37px";
     
-        $("#searchpopup table").each( function( index, element ) {
+        $("#searchpopup table:not(.buttonstable)").each( function( index, element ) {
             var table = $(element);
     
             table.css('max-height', setHeight);
