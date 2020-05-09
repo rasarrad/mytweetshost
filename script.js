@@ -1675,7 +1675,7 @@ function showSplash()
 function updateSplashCounter()
 {
     if (currentIndex == 1) {
-        $("#splashbutton").html("close");
+        $("#splashbutton").html("<i class='fa fa-times' style='padding-left: 0px;padding-right: 4px;font-size: 17px;position: relative;top: 1px;'></i>close");
         $("#splashbutton").addClass("active");
         currentIndex = 0;
         //updateSplashInnerCounter();
