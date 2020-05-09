@@ -1142,7 +1142,7 @@ body.big #expand {
   /* width: 100%; */
   background: rgba(0, 0, 0, 0.81);
   z-index: 9;
-  height: 21px;
+  height: 23px;
   background-image: linear-gradient(to bottom, var(--dark-color) 3%, var(--soft-color) 80%);
   top: auto;
   bottom: -1px;
@@ -1169,7 +1169,7 @@ body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
 
 
 .tweet.html:not(:last-child) .bottomgradiantback {
-    bottom: 9px;
+    bottom: 7px;
 }
 
 
@@ -1328,7 +1328,7 @@ body.big .tweet.html iframe {
 }
 body.big .tags {
   font-size: 17px !important;
-  height: 32px;
+  height: 36px;
   top: -3px;
   margin-top: -9px;
   max-width: 735px;
@@ -1725,12 +1725,15 @@ body.big #sear, body.big #sear2 {
   ###Device = Tablets, Ipads (portrait)
   Screen = B/w 768px to 1024px */
   @media (max-width: 999px) and (min-width: 481px), (max-width: 1024px) and (min-width: 768px) and (orientation: portrait) {
- 
+     body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
+      top: auto;
+      bottom: 14px;
+    }
     .tweet.yt {
         margin-top: 13px;
     }   
     body.big .tweet.yt {
-        margin-top: -10px;
+        margin-top: -11px;
     }       
     #splash .splashbutton {
       height: 23px;
@@ -1910,7 +1913,7 @@ body.big #sear, body.big #sear2 {
     }   
     body.big .linkbar.fa-internet-explorer {
           font-size: 18px;
-          top: 6px !important;
+          top: 4px !important;
     }
     #expand {
       margin-top: -6px;
@@ -2009,7 +2012,7 @@ body.big #sear, body.big #sear2 {
           top: 3px !important;
       }
       body.big .linkbar.fa-youtube-play {
-          top: 5px !important;
+          top: 4px !important;
       }    
       #expand {
           transform: translate(-50%, 0px);
@@ -2018,16 +2021,17 @@ body.big #sear, body.big #sear2 {
       }
       body.big #expand {
           /* right: calc(50% - 241px); */
-          top: 12px !important;
+          top: 10px !important;
       } 
       .tags {
         font-size: 12px !important;
         top: -2px;
+        height: 24px;
       }
       body.big .tags {
         font-size: 17px !important;
-        height: 32px;
-        top: 1px;
+        height: 39px;
+        top: -1px;
       }
       .tweet .tags {
         padding-left: calc(50% - 209px);
@@ -2051,6 +2055,9 @@ body.big #sear, body.big #sear2 {
       }
       .tweet {
         margin-top: -10px;
+      }
+      body.big .tweet {
+        margin-top: -11px;
       }
       .tweet:not(:first-of-type) .innermask {
         width: 605px;
@@ -2455,13 +2462,13 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
         top: 18px;
     }
     body:not(.big) .tweet:not(:last-child) .bottomgradiantback {
-      bottom: 4px;
+      bottom: 2px;
     }
     body:not(.big) .yt.tweet:not(:last-child) .bottomgradiantback {
-      bottom: 15px;
+      bottom: 13px;
     }
     body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
-      bottom: 16px;
+      bottom: 14px;
     }
     
     .tweet:first-child #expand {
