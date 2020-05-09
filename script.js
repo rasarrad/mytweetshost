@@ -1675,7 +1675,11 @@ function showSplash()
 function updateSplashCounter()
 {
     if (currentIndex == 1) {
-        $("#splashbutton").html("<i class='fa fa-times' style='padding-left: 0px;padding-right: 4px;font-size: 17px;position: relative;top: 1px;'></i>close");
+        if ($('body').hasClass('big'))
+            $("#splashbutton").html("<i class='fa fa-times' style='padding-left: 0px;padding-right: 4px;font-size: 17px;position: relative;top: 1px;'></i>close");
+        else
+            $("#splashbutton").html("<i class='fa fa-times' style='padding-left: 0px;padding-right: 4px;font-size: 14px;position: relative;top: 1px;'></i>close");
+        
         $("#splashbutton").addClass("active");
         currentIndex = 0;
         //updateSplashInnerCounter();

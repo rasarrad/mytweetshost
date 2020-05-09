@@ -2292,6 +2292,9 @@ body.big #splash.newLayout table:nth-of-type(2) {
   height: 256px;
 }
 #splash.newLayout table:nth-of-type(3) {
+  height: 219px;
+}
+body.big #splash.newLayout table:nth-of-type(3) {
   height: 208px;
 }
 #splash.newLayout table:nth-of-type(4) {
@@ -4719,7 +4722,7 @@ body.big .splashtext.aboutbs {
   border: 1px solid var(--dark-color);
   background: var(--high-color);
   color: var(--dark-color);
-  width: 50px;
+  width: 70px;
   position: absolute;
   text-align: center;
   line-height: 19px;
