@@ -107,7 +107,7 @@ function changecriteria(e, obj, tableparam) {
                 othertable.find('td.el').addClass('ellipsis');
             });
             
-            table.css('transition', 'max-height 1s');
+            table.css('transition', 'max-height 0.7s');
     
             if (table.attr("cmaxheight")) {
                 if ($('body').hasClass('big')) {
@@ -129,7 +129,7 @@ function changecriteria(e, obj, tableparam) {
                 //if (table.attr("cheight") && table.attr("cheight").trim() != "")
                 //    offset = Number(table.attr("cheight"));   
                 $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
-            }, 500);
+            }, 720);
         }
     }
     else {
