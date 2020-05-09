@@ -1760,7 +1760,7 @@ body.big .checkstyleddiv.menuincludedeleted i {
 
 
 body.big .checkstyleddiv.showdeleted i {
-  left: 0.7px !important;
+  left: 0.5px !important;
 }
 
 
@@ -1782,6 +1782,12 @@ body.big .checkstyleddiv.showdeleted i {
       top: auto;
       bottom: 14px;
     }
+
+    .checkstyleddiv.showdeleted span {
+        width: 11px !important;
+        height: 10.6px !important;
+    }
+
     .tweet.yt {
         margin-top: 13px;
     }   
@@ -2974,7 +2980,7 @@ body.big .checkstyleddiv.showdeleted {
       }
   
       .newLayout > div .titletable {
-          margin-top: 0px !important;
+          margin-top: -0.5px !important;
           /* margin-top: 0px !important; */
       }      
       .newLayout#mainsettings > div .titletable {
@@ -3130,13 +3136,13 @@ body.big .checkstyleddiv.showdeleted {
 
       body.big .checkstyleddiv.showdeleted span {
         width: 10px !important;
-        height: 9.6px !important;
+        height: 10px !important;
         padding-right: 1px;
       }  
 
 
       body.big .checkstyleddiv.showdeleted i {
-        left: 0.9px !important;
+        left: 0.5px !important;
       }
        
 
