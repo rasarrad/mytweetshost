@@ -2075,6 +2075,27 @@ body.big #sear, body.big #sear2 {
       body.big #addtweet {
         top: 20px;
       }  
+
+    #mainmenu .fa-window-close {
+        margin-top: 2px;
+    }
+    #mainmenu .firsttd b {
+        top: -3px;
+    }
+    #mainmenu .fa-bars {
+        top: 8px;
+    }  
+
+    body.big #mainmenu .fa-window-close {
+        margin-top: 2px;
+    }
+    body.big #mainmenu .firsttd b {
+        top: -3px;
+    }
+    body.big #mainmenu .fa-bars {
+        top: 7px;
+    }    
+              
 }
 /****************************** FIM LANDSCAPE CSS ****************************/
 /*****************************************************************************/
@@ -2405,23 +2426,23 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
   @media (max-width: 480px) {
 
     #mainmenu .fa-window-close {
-        margin-top: 0px;
+        margin-top: 1px;
     }
     #mainmenu .firsttd b {
         top: -3px;
     }
     #mainmenu .fa-bars {
-        top: 6px;
+        top: 7px;
     }  
 
     body.big #mainmenu .fa-window-close {
-        margin-top: 2px;
+        margin-top: 3px;
     }
     body.big #mainmenu .firsttd b {
         top: -2px;
     }
     body.big #mainmenu .fa-bars {
-        top: 7px;
+        top: 8px;
     }    
           
     #splash .splashbutton {
