@@ -139,10 +139,10 @@ function changecriteria(e, obj, tableparam) {
         table.css('transition', 'max-height 0.7s');
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
-        table.find('td.el').addClass('ellipsis');
         setTimeout(function() { 
             $("#sear").css("top", ibuttontop);
             table.find(".togglepos").css("position", "absolute"); 
+            table.find('td.el').addClass('ellipsis');
         }, 700);
     }
     setTimeout(function() { 
