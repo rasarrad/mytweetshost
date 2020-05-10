@@ -94,7 +94,7 @@ body.big #searchpopup .fa-calendar {
 
 }
 body.big .newLayout#searchpopup #searchtypes.sectiontitletable .firsticon {
-  width: 88px !important;
+  width: 85px !important;
 }
 .newLayout#searchpopup #searchtypes.searchclassif .firsticon {
 
@@ -4320,6 +4320,14 @@ body.big .newLayout ul li {
     padding-top: 2px;
     /* font-weight: normal; */
     margin-right: 11px;
+
+}
+
+body.big .newLayout ul.iconul li {
+    font-size: 15px;
+    margin-right: 0px;
+    width: 38px;
+    height: 32px !important;
 }
 
 
@@ -4606,11 +4614,12 @@ body.big .newLayout.new .sectiontitle {
     margin-left: 3px;
 }
 body.big .iconul li {
-    display: inline-block;
-    border: 1px solid var(--high-color);
-    border-radius: 4px;
-    width: 30px;
-    height: 25px;
+    /* display: inline-block; */
+    /* border: 1px solid var(--high-color); */
+    /* border-radius: 4px; */
+    /* width: 35px; */
+    /* margin-right: 0px !important; */
+    /* height: 29px !important; */
 }
 .iconul li i {
     font-size: 20px;
@@ -4619,10 +4628,15 @@ body.big .iconul li {
     left: 6px;
 }
 body.big .iconul li i {
+    top: 4px;
+    left: 7px;
     font-size: 23px;
-    padding-left: 4px;
-    float: left;
 }
+
+body.big .iconul li i.fa-internet-explorer {
+    /* font-size: 20px; */
+}
+
 
 .iconul li div {
     font-size: 14px;
@@ -4632,11 +4646,9 @@ body.big .iconul li i {
     font-weight: bold;
 }
 body.big .iconul li div {
-    font-size: 15px;
-    font-weight: bold;
-    position: absolute;
-    margin-top: 4px;
-    padding-left: 2px;
+    font-size: 17px;
+    top: 6px;
+    left: -17px;
 }
 
 .iconul li.selected {
@@ -5975,4 +5987,8 @@ body.big .otherOptText {
 
 .ellipsis .slicename i {
   margin-left: 15px !important;
+}
+
+body.big .iconul {
+  margin-bottom: 16px !important;
 }
