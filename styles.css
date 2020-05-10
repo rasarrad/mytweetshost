@@ -192,7 +192,7 @@ body.big #searchpopup .fa-times-circle {
     position: relative;
     top: 2px !important;
     font-size: 15px;
-    margin-left: 3px;
+    margin-left: 3px !important;
 }
 
 
@@ -1861,6 +1861,31 @@ body.big #expandsearchtags {
     top: 233px;
 }
 
+#filterdate1display {
+  width: calc(50% - 165px);
+  margin-left: 9px !important;
+}
+
+body.big #filterdate1display {
+  width: calc(50% - 160px);
+  margin-left: 1px !important;
+  margin-right: 11px !important;
+  padding-left: 2px;
+}
+
+
+#filterdate2display {
+  width: calc(50% - 165px);
+  margin-left: 9px !important;
+}
+
+body.big #filterdate2display {
+  width: calc(50% - 161px);
+  margin-left: 1px !important;
+  padding-left: 2px;
+}
+
+
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
 /* 
@@ -2899,7 +2924,8 @@ body.big .newLayout#searchpopup .sectiontitletable .sectionicontd {
     }  
     #calendardiv > div {
       margin-top: 164px !important;
-      height: 300px !important;
+      height: auto !important;
+      padding-bottom: 1px;
     }
     body.big #calendardiv > div {
       margin-top: 145px !important;
@@ -3342,6 +3368,29 @@ body.big .newLayout#searchpopup .sectiontitletable .sectionicontd {
         left: 0.5px !important;
       }
        
+      #filterdate1display {
+        width: calc(50% - 106px);
+        margin-left: 9px !important;
+      }
+
+      body.big #filterdate1display {
+        width: calc(50% - 102px);
+        margin-left: 1px !important;
+        margin-right: 11px !important;
+        padding-left: 2px;
+      }
+
+
+      #filterdate2display {
+        width: calc(50% - 106px);
+        margin-left: 9px !important;
+      }
+
+      body.big #filterdate2display {
+        width: calc(50% - 102px);
+        margin-left: 1px !important;
+        padding-left: 2px;
+      }
 
   }
 /****************************** FIM PORTRAIT CSS *****************************/
@@ -4723,29 +4772,6 @@ body.big .iconul li div {
   border-bottom-right-radius: 5px !important;
 }
 
-#filterdate1display {
-  width: calc(50% - 106px);
-  margin-left: 9px !important;
-}
-
-body.big #filterdate1display {
-  width: calc(50% - 102px);
-  margin-left: 1px !important;
-  margin-right: 11px !important;
-  padding-left: 2px;
-}
-
-
-#filterdate2display {
-  width: calc(50% - 106px);
-  margin-left: 9px !important;
-}
-
-body.big #filterdate2display {
-  width: calc(50% - 102px);
-  margin-left: 1px !important;
-  padding-left: 2px;
-}
 
 #filterdate1clean {
 
