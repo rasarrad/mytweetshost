@@ -106,7 +106,7 @@ body.big .newLayout#searchpopup #searchclassif.sectiontitletable .firsticon {
     width: 37px !important;
 }
 body.big .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
-  width: 49px !important;
+  width: 35px !important;
 }
 
 .newLayout#searchpopup #searchauthor.sectiontitletable .firsticon {
@@ -150,14 +150,16 @@ body.big #searchdate tr:nth-of-type(2) span {
 
 
 #searchpopup .fa-times-circle {
-  
+  margin-left: 5px;
+  position: relative;
+  top: 1px;
+  font-size: 13px;
 }
 body.big #searchpopup .fa-times-circle {
-    display: inline;
     position: relative;
     top: 1.2px;
     font-size: 16px;
-    left: 7px;  
+   margin-left: 5px;
 }
 
 
@@ -678,11 +680,13 @@ body.big #zoomin {
       background: #007cc391;
       border: 1px solid var(--dark-color);
       color: var(--dark-color);
-    background: var(--high-color);
+      background: var(--high-color);
       padding-left: 4px;
       padding-right: 4px;
-      font-family: Helvetica, Roboto, "Segoe UI", Calibri, sans-serif;
+      font-family: sans-serif;
       font-variant-caps: normal;
+      text-transform: lowercase;
+      font-variant: small-caps;
      }
 
     #removetweet {
@@ -1800,14 +1804,16 @@ body.big .checkstyleddiv.showdeleted i {
     border-radius: 4px;
     top: 150px;
     color: var(--high-color) !important;
-    border: 1px solid var(--high-color) !important;
+    /* border: 1px solid var(--high-color) !important; */
     font-size: 15px !important;
-    height: 17px;
+    height: 19px;
     position: absolute;
     padding-left: 220px;
     left: 2px;
+    z-index: 1;
     padding-bottom: 2px;
     background: var(--soft-color) !important;
+    background: var(--softdark-color) !important;
 }
 
 body.big #expandedittags {
@@ -1817,7 +1823,7 @@ body.big #expandedittags {
 }
 
 body.big #expandsearchtags {
-    top: 165px;
+    top: 233px;
 }
 
 /*****************************************************************************/
@@ -3740,12 +3746,13 @@ body.big #linktable {
     margin-left: 8px;
     position: relative;
     color: var(--dark-color);
-    font-weight: bold;
+    font-weight: bold !important;
     background: var(--high-color);
     padding: 0px 4px;
     border: 1px solid var(--dark-color);
     top: -1px;
     cursor: pointer;
+    text-transform: uppercase;
 }
 
 select {
@@ -4038,6 +4045,9 @@ body.big select {
   height: 22px;
 }
 
+body.big select#tagsearchselect {
+  top: 43px !important;
+}
 
 .newLayout .sectiontitle {
   padding-left: 9px;
