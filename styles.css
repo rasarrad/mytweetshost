@@ -1798,7 +1798,7 @@ body.big .checkstyleddiv.showdeleted i {
     /* width: calc(100% - 166px); */
     width: calc(100% - 226px);
     border-radius: 4px;
-    top: 165px;
+    top: 150px;
     color: var(--high-color) !important;
     border: 1px solid var(--high-color) !important;
     font-size: 15px !important;
@@ -1817,7 +1817,7 @@ body.big #expandedittags {
 }
 
 body.big #expandsearchtags {
-
+    top: 165px;
 }
 
 /*****************************************************************************/
