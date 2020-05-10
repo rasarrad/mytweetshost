@@ -44,6 +44,26 @@ body.big #searchpopup .fa-external-link-square {
   top: 10px !important;
 }
 
+.newLayout#searchpopup #searchdate.sectiontitletable .firsticon {
+    width: 37px !important;
+}
+body.big .newLayout#searchpopup #searchdate.sectiontitletable .firsticon {
+    width: 85px !important;
+}
+
+#searchpopup .fa-calendar {
+  position: absolute;
+  left: 14px;
+  top: 7px !important;
+}
+body.big #searchpopup .fa-calendar {
+  font-size: 17px;
+  position: absolute;
+  left: 12px;
+  top: 10px !important;
+}
+
+
 
 #searchpopup .fa-star-half-o {
   
