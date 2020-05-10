@@ -92,9 +92,11 @@ function changecriteria(e, obj, tableparam) {
         e.stopPropagation();
 
     var setHeight = "26px";
-
-    if ($('body').hasClass('big'))
+    var offset = 0;
+    if ($('body').hasClass('big')) {
         setHeight = "37px";
+        offset = 4;
+    }
 
     if (table.css('max-height') == setHeight) {
         if (obj) {
@@ -127,7 +129,6 @@ function changecriteria(e, obj, tableparam) {
     
             table.find('td.el').removeClass('ellipsis');
             setTimeout(function() { 
-                var offset = 0;
                 if (table.attr("cheight"))
                     offset = Number(table.attr("cheight"));   
                 $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
