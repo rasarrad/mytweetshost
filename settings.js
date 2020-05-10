@@ -235,7 +235,7 @@ var openSettingsPopup = function(jsonobj)
         $(".buttontdtohide").show();  
         $(".originaltr").show();
         
-        $('#removetweetp').attr('class','').addClass('fa').addClass('fa-eraser').addClass('fa-flip-horizontal');
+        $('#removetweetp2').attr('class','').addClass('fa').addClass('fa-eraser').addClass('fa-flip-horizontal');
 
     
         // TAGS
@@ -449,7 +449,7 @@ var openSettingsPopup = function(jsonobj)
 
         $(".buttontdtohide").hide();
         $(".originaltr").hide();
-        $('#removetweetp').attr('class','').addClass('fa').addClass('fa-floppy-o');
+        $('#removetweetp2').attr('class','').addClass('fa').addClass('fa-floppy-o');
 
         $("#linkChange #editTags .fa-chevron-down").show();    
     }
