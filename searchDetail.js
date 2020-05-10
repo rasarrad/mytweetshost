@@ -106,7 +106,9 @@ function changecriteria(e, obj, tableparam) {
                 othertable.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
                 othertable.find('td.el').addClass('ellipsis');
             });
+    
             
+            table.find(".togglepos").css("position", ""); 
             table.css('transition', 'max-height 0.7s');
     
             if (table.attr("cmaxheight")) {
@@ -133,6 +135,8 @@ function changecriteria(e, obj, tableparam) {
         }
     }
     else {
+        table.find(".togglepos").css("position", "absolute"); 
+
         table.css('transition', 'max-height 1s');
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
@@ -177,7 +181,6 @@ function expandtags(e, obj) {
 
         $(obj).css("top", "auto");
         $(obj).css("bottom", "3px");
-
         tagstable.css("max-height", "4000px");
     }
     else {
