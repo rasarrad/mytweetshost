@@ -167,7 +167,8 @@ function filtertagOnChange(obj) {
     createNonExistentLi("tagsearchul", "filtertag");
 }
 
-function expandtags(obj) {
+function expandtags(e, obj) {
+    e.stopPropagation();
     var tagstable = $('#searchtags'); 
         
     if ($(obj).hasClass("fa-chevron-down")) {
