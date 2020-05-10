@@ -64,6 +64,9 @@ body.big #searchpopup .fa-calendar {
 }
 
 
+body.big td.datetd {
+  padding-bottom: 12px !important;
+}
 
 #searchpopup .fa-star-half-o {
   
@@ -152,12 +155,12 @@ body.big .newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {
 
 }
 body.big .newLayout#searchpopup #searchdate.sectiontitletable .firsticon {
-  width: 54px !important;
-  padding-top: 4px !important;
+  width: 46px !important;
 }
 
-#searchdate span {
-  
+#searchdate span.to {
+  position: relative;
+  left: 6px;
 }
 body.big #searchdate tr:nth-of-type(2) span {
   font-size: 14px;
