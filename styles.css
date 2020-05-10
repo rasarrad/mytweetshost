@@ -108,7 +108,7 @@ body.big #searchpopup .fa-calendar {
   position: relative;
   left: -2px;
   margin-right: 4px;
-  top: 0 !important;
+  top: 2px !important;
 }
 
 #showdeleted2 {
