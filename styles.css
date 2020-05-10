@@ -161,7 +161,13 @@ body.big .newLayout#searchpopup #searchdate.sectiontitletable .firsticon {
 #searchdate span.to {
   position: relative;
   left: 6px;
+  top: 1px;
 }
+
+body.big #searchdate span.to {
+  top: 1px !important;
+}
+
 body.big #searchdate tr:nth-of-type(2) span {
   font-size: 14px;
   position: relative;
@@ -4783,9 +4789,6 @@ body.big #searchpopup .titletable tr:first-child {
   height: 50px;
 }
 
-body.big #searchpopup #searchdate td.ellipsis .titletext {
-    top: 5px !important;
-}
 
 #classifsearchul .litags {
   min-width: 16px;
