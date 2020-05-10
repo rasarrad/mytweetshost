@@ -205,7 +205,7 @@ function filterinfoOnChange(obj) {
         $("#searchinfo").removeClass("withvalue");
     }
     else {
-        currentinfosearchdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filtertext\", \"searchinfo\")' class='fa fa-times-circle'></i>");
+        currentinfosearchdisplay.html("<i onclick='clearcriterion(event,this, \"filtertext\", \"searchinfo\")' class='fa fa-times-circle'></i>" + $(obj).val().trim());
         currentinfosearchdisplay.removeClass("emptyvalue");
         $("#searchinfo").removeClass("emptyvalue");
         $("#searchinfo").addClass("withvalue");
@@ -222,7 +222,7 @@ function filterauthorOnChange(obj) {
         $("#searchinfo").removeClass("withvalue");
     }
     else {
-        currentinfosearchdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filterauthor\", \"searchauthor\")' class='fa fa-times-circle'></i>");
+        currentinfosearchdisplay.html("<i onclick='clearcriterion(event,this, \"filterauthor\", \"searchauthor\")' class='fa fa-times-circle'></i>" + $(obj).val().trim());
         currentinfosearchdisplay.removeClass("emptyvalue");
         $("#searchinfo").removeClass("emptyvalue");
         $("#searchinfo").addClass("withvalue"); 
@@ -324,11 +324,11 @@ function updatedatedisplay() {
     if ($( "#filterdate1display" ).val().trim().length > 0) {
         if ($( "#filterdate2display" ).val().trim().length > 0) {
             if ($( "#filterdate2display" ).val().trim() == $( "#filterdate1display" ).val().trim()) {
-                $( ".currentdate" ).html("On " + $( "#filterdate1display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
+                $( ".currentdate" ).html("<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>" + "On " + $( "#filterdate1display" ).val());
             }
             else {
                 $( ".currentdate" ).css("font-size", "13px");
-                $( ".currentdate" ).html("Between " + $( "#filterdate1display" ).val() + " & " + $( "#filterdate2display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
+                $( ".currentdate" ).html("<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>" + "Between " + $( "#filterdate1display" ).val() + " & " + $( "#filterdate2display" ).val());
             }
             $( "#filterdate1clean" ).show();
             $( "#filterdate2clean" ).show();
@@ -336,13 +336,13 @@ function updatedatedisplay() {
         else {
             $( "#filterdate1clean" ).show();
             $( "#filterdate2clean" ).hide();
-            $( ".currentdate" ).html("After " + $( "#filterdate1display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
+            $( ".currentdate" ).html("<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>" + "After " + $( "#filterdate1display" ).val());
         }
     }
     else if ($( "#filterdate2display" ).val().trim().length > 0) {
         $( "#filterdate1clean" ).hide();
         $( "#filterdate2clean" ).show();
-        $( ".currentdate" ).html("Before " + $( "#filterdate2display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
+        $( ".currentdate" ).html("<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>" + "Before " + $( "#filterdate2display" ).val());
     }
     else {
         $( "#filterdate1clean" ).hide();
@@ -494,7 +494,7 @@ function changesearchtype(e, obj, code, desc) {
         $("#searchtypes").removeClass("withvalue");
     }
     else {
-        currenttagdisplay.html(desc + "<i onclick='clearcriterion(event,this, \"selectedtype\", \"searchtypes\")' class='fa fa-times-circle'></i>");
+        currenttagdisplay.html("<i onclick='clearcriterion(event,this, \"selectedtype\", \"searchtypes\")' class='fa fa-times-circle'></i>" + desc);
         currenttagdisplay.removeClass("emptyvalue");
         $("#searchtypes").removeClass("emptyvalue");
         $("#searchtypes").addClass("withvalue");
