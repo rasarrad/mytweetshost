@@ -135,15 +135,15 @@ function changecriteria(e, obj, tableparam) {
         }
     }
     else {
-        table.find(".togglepos").css("position", "absolute"); 
 
-        table.css('transition', 'max-height 1s');
+        table.css('transition', 'max-height 0.7s');
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
         table.find('td.el').addClass('ellipsis');
         setTimeout(function() { 
             $("#sear").css("top", ibuttontop);
-        }, 100);
+            table.find(".togglepos").css("position", "absolute"); 
+        }, 700);
     }
     setTimeout(function() { 
         //updateTopPosition("searchpopup"); 
