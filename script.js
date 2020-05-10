@@ -2392,13 +2392,16 @@ function insertAfter(newNode, referenceNode) {
 
 
     
-function showTooltip(event, obj) {
+function showTooltip(event, obj, flag, text) {
     var $element = $(obj);
 
-    if (hasOverflow(obj)) {
+    if (flag || hasOverflow(obj)) {
         var tooltip = $("#tooltip");
-        tooltip.text($element.text())
-    
+
+        if (text)
+            tooltip.text(text);
+        else
+            tooltip.text($element.text());
 
         tooltip.css("top", (event.pageY - 70) + "px");
         tooltip.css("left", getTooltipPosition(event.pageX) + "px");
