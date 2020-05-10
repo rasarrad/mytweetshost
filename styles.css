@@ -1794,6 +1794,32 @@ body.big .checkstyleddiv.showdeleted i {
 }
 
 
+#expandedittags, #expandsearchtags {
+    /* width: calc(100% - 166px); */
+    width: calc(100% - 226px);
+    border-radius: 4px;
+    top: 165px;
+    color: var(--high-color) !important;
+    border: 1px solid var(--high-color) !important;
+    font-size: 15px !important;
+    height: 17px;
+    position: absolute;
+    padding-left: 220px;
+    left: 2px;
+    padding-bottom: 2px;
+    background: var(--soft-color) !important;
+}
+
+body.big #expandedittags {
+    /* padding-left: 2px; */
+    position: absolute;
+    padding-right: 11px;
+}
+
+body.big #expandsearchtags {
+
+}
+
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
 /* 
@@ -2650,6 +2676,12 @@ body.big .newLayout#searchpopup .sectiontitletable .sectionicontd {
   ###Device = Most of the Smartphones Mobiles (Portrait)
   Screen = B/w 320px to 479px */
   @media (max-width: 480px) {
+
+
+    #expandedittags, #expandsearchtags {
+        padding-left: 159px;
+        width: calc(100% - 166px);
+    }
 
 
     body.big #mainmenu .checkstyleddiv span {
@@ -4741,38 +4773,6 @@ body.big #mainsettings #cleandatatable td:not(.ellipsis) .titletext {
 
 body.big #mainsettings #theme td:first-child {
   width: 56px !important;
-}
-
-#expandedittags, #expandsearchtags {
-    width: calc(100% - 166px);
-    border-radius: 4px;
-    top: 122px;
-    color: var(--high-color) !important;
-    border: 1px solid var(--high-color) !important;
-    font-size: 15px !important;
-    height: 17px;
-    position: absolute;
-    padding-left: 159px;
-    left: 2px;
-    padding-bottom: 2px;
-    background: var(--soft-color) !important;
-}
-
-body.big #expandedittags, body.big #expandsearchtags {
-    padding-left: 2px;
-    position: absolute;
-    padding-right: 11px;
-    padding-top: 1px;
-    height: 26px;
-    width: 14px;
-    top: auto;
-    border-radius: 4px;
-    bottom: 23px;
-    left: calc(100% - 32px);
-    color: var(--soft-color);
-    border: 1px solid var(--soft-color);
-    font-size: 23px !important;
-    background: var(--high-color) !important;
 }
 
 
