@@ -1539,8 +1539,9 @@ body.big .menuitemcounter {
 }
 body.big #calendardiv > div {
   margin-top: 40px !important;
-  height: 331px !important;
+  height: auto !important;
   max-width: 361px !important;
+  padding-bottom: 1px;
 }
 
 .newLayout#mainsettings > div {
