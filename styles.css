@@ -65,13 +65,14 @@ body.big #searchpopup .fa-user-circle {
 }
 #searchpopup .fa-file-text {
   position: absolute;
+  left: 14px;
+  top: 7px !important;
 }
 body.big #searchpopup .fa-file-text {
   font-size: 16px;
-  position: relative;
-  left: -2px;
-  margin-right: 4px;
-  top: 0 !important;
+  left: 13px;
+  top: 11px !important;
+  position: absolute;
 }
 
 #searchpopup .fa-calendar {
@@ -120,7 +121,7 @@ body.big .newLayout#searchpopup #searchauthor.sectiontitletable .firsticon {
 
 }
 body.big .newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {
-  width: 51px !important;
+  width: 45px !important;
   padding-top: 4px !important;
 }
 
@@ -4596,11 +4597,13 @@ body.big .newLayout.new .sectiontitle {
 }
 
 .iconul li {
-    display: inline-block;
+    display: inline-flex;
     border: 1px solid var(--high-color);
-    border-radius: 4px;
-    width: 25px;
-    height: 20px;
+    border-radius: 2px;
+    width: 32px;
+    height: 27px !important;
+    padding: 0 !important;
+    margin-left: 3px;
 }
 body.big .iconul li {
     display: inline-block;
@@ -4611,6 +4614,9 @@ body.big .iconul li {
 }
 .iconul li i {
     font-size: 20px;
+    position: relative;
+    top: 3px;
+    left: 6px;
 }
 body.big .iconul li i {
     font-size: 23px;
@@ -4619,7 +4625,11 @@ body.big .iconul li i {
 }
 
 .iconul li div {
-    font-size: 20px;
+    font-size: 14px;
+    position: relative;
+    top: 5px;
+    left: -15px;
+    font-weight: bold;
 }
 body.big .iconul li div {
     font-size: 15px;

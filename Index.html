@@ -562,7 +562,7 @@
         
   </tbody>
 </table>  
-  <table id="searchtypes" cmaxheight="60px" cmaxheightbig="80px" cheight="4" class="sectiontitletable sectionexpandable emptyvalue" 
+  <table id="searchtypes" cmaxheight="89px" cmaxheightbig="80px" cheight="0" class="sectiontitletable sectionexpandable emptyvalue" 
       style="position: relative;overflow: hidden;">
     <tbody>
       <tr class="cursorpointer" onclick="changecriteria(event,this)" style="padding-bottom: 15px;">
@@ -579,14 +579,20 @@
 
     <tr>  
         <td colspan="3">
-            <ul class="iconul" style="text-align: center;overflow: hidden;">
-              <li id="alltypesoption" class="selected" onclick="changesearchtype(event, this, 'all', 'All')"><i class="fa fa-twitter" style="opacity: 0;"></i>
+            <ul class="iconul" style="text-align: center;overflow: hidden;margin-bottom: 10px;">
+              <li id="alltypesoption" class="selected" onclick="changesearchtype(event, this, 'all', 'All')">
+                  <i class="fa fa-twitter" style="opacity: 0;"></i>
                   <div>All</div>
               </li>
-              <li onclick="changesearchtype(event, this, 'T', 'twitter')"><i class="fa fa-twitter" style="padding-left: 5px;padding-top: 2px;"></i></li>
-              <li onclick="changesearchtype(event, this, 'H', 'html')"><i class="fa fa-twitter" style="opacity: 0;"></i>
-                  <i class="fa fa-internet-explorer" style="font-size: 19px;position: absolute; margin-left: -27px;margin-top: 4px;"></i></li>
-              <li onclick="changesearchtype(event, this, 'Y', 'youtube')"><i class="fa fa-youtube-play" style="padding-top: 2px;"></i></li>
+              <li onclick="changesearchtype(event, this, 'T', 'twitter')">
+                  <i class="fa fa-twitter"></i>
+              </li>
+              <li onclick="changesearchtype(event, this, 'H', 'html')">
+                  <i class="fa fa-internet-explorer"></i>
+              </li>
+              <li onclick="changesearchtype(event, this, 'Y', 'youtube')">
+                  <i class="fa fa-youtube-play"></i>
+              </li>
             </ul>
             <input type="hidden" id="selectedtype" value="all">
         </td>                                        
