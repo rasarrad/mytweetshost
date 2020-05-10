@@ -1724,7 +1724,7 @@ body.big #sear2 {
     font-size: 25px;
     padding-left: 17px;
     padding-right: 17px;
-    top: -9px;
+    top: -10px;
 }
 
 body.big #sear {
@@ -4798,6 +4798,14 @@ body.big #mainsettings #theme td:first-child {
   width: 56px !important;
 }
 
+.newLayout ul li {
+  opacity:1;
+  transition: all 0.6s;
+}
+
+.newLayout ul li.selected {
+    cursor: default !important;
+}
 
 /*****************************************************************************/
 /********************************* DESKTOP CSS *******************************/
@@ -4808,6 +4816,10 @@ body.big #mainsettings #theme td:first-child {
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops */
 @media (min-width: 1025px) {
+    .newLayout ul li:not(.selected):hover {
+        opacity: 0.7;
+    }
+
 
   ::-webkit-scrollbar {
 	  width: 5px;
