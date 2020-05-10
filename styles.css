@@ -145,7 +145,7 @@ body.big #searchdate tr:nth-of-type(2) span {
 
 #searchpopup .emptyvalue:not(table) {
     /* text-align: right !important; */
-    padding-right: 9px !important;
+    /* padding-right: 9px !important; */
 }
 
 
@@ -2609,7 +2609,7 @@ body.big .newLayout .fa-tags {
   text-transform: lowercase;
 }
 body.big .newLayout#searchpopup .sectiontitle {
-  font-size: 15px;
+  font-size: 16px;
   position: absolute;
   top: 10px;
   left: 32px;
@@ -3552,7 +3552,7 @@ body.big .newLayout #editTags.sectiontitletable tr:first-child td {
 }
 
 .newLayout table.emptyvalue .sectionicontd.el.ellipsis > span {
-  padding-right: 13px;
+  /* padding-right: 13px; */
 }
 .newLayout table.emptyvalue .sectionicontd.el.ellipsis > span > i {
     position: absolute !important;
