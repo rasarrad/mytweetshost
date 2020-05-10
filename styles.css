@@ -183,16 +183,16 @@ body.big #searchdate tr:nth-of-type(2) span {
 
 #searchpopup .fa-times-circle {
   margin-right: 6px;
-  margin-left: 6px;
+  margin-left: 2px;
   position: relative;
   top: 1px;
   font-size: 13px;
 }
 body.big #searchpopup .fa-times-circle {
     position: relative;
-    top: 1.2px;
-    font-size: 16px;
-   margin-left: 5px;
+    top: 2px !important;
+    font-size: 15px;
+    margin-left: 3px;
 }
 
 
@@ -4724,27 +4724,27 @@ body.big .iconul li div {
 }
 
 #filterdate1display {
-  width: calc(50% - 99px);
+  width: calc(50% - 106px);
   margin-left: 9px !important;
 }
 
 body.big #filterdate1display {
-  width: calc(50% - 89px);
+  width: calc(50% - 102px);
   margin-left: 1px !important;
   margin-right: 11px !important;
-  padding-left: 1px;
+  padding-left: 2px;
 }
 
 
 #filterdate2display {
-  width: calc(50% - 99px);
+  width: calc(50% - 106px);
   margin-left: 9px !important;
 }
 
 body.big #filterdate2display {
-  width: calc(50% - 88px);
+  width: calc(50% - 102px);
   margin-left: 1px !important;
-  padding-left: 1px;
+  padding-left: 2px;
 }
 
 #filterdate1clean {
