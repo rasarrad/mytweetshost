@@ -130,7 +130,7 @@ function changecriteria(e, obj, tableparam) {
             table.find('td.el').removeClass('ellipsis');
             setTimeout(function() { 
                 if (table.attr("cheight"))
-                    offset = Number(table.attr("cheight"));   
+                    offset = offset + Number(table.attr("cheight"));   
                 $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
             }, 720);
         }
