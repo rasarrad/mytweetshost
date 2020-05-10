@@ -33,17 +33,19 @@
 }
 
 #searchpopup .fa-external-link-square {
-  
+  position: absolute;
+  left: 14px;
+  top: 7px !important;
 }
 body.big #searchpopup .fa-external-link-square {
   font-size: 17px;
-  position: relative;
-  left: -2px;
-  margin-right: 4px;
+  position: absolute;
+  left: 12px;
+  top: 10px !important;
 }
 
 
-#searchpopup .fa-external-link-square {
+#searchpopup .fa-star-half-o {
   
 }
 body.big #searchpopup .fa-star-half-o {
