@@ -103,7 +103,7 @@ body.big .newLayout#searchpopup #searchclassif.sectiontitletable .firsticon {
 }
 
 .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
-    width: 26px !important;
+    width: 30px !important;
 }
 body.big .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
   width: 35px !important;
@@ -150,7 +150,8 @@ body.big #searchdate tr:nth-of-type(2) span {
 
 
 #searchpopup .fa-times-circle {
-  margin-left: 5px;
+  margin-right: 6px;
+  margin-left: 6px;
   position: relative;
   top: 1px;
   font-size: 13px;
@@ -685,7 +686,8 @@ body.big #zoomin {
       padding-right: 4px;
       font-family: sans-serif;
       font-variant-caps: normal;
-      text-transform: lowercase;
+      text-transform: uppercase;
+      line-height: 17px;
       font-variant: small-caps;
      }
 
@@ -2651,7 +2653,6 @@ body.big .newLayout#searchpopup .slicename {
   line-height: 18px;
   position: relative;
   top: -3px !important;
-  /* left: -9px; */
 }
 
 .newLayout#searchpopup .el.ellipsis .slicename {
@@ -4010,7 +4011,7 @@ body.big td.ellipsis span.currentcats {
 }
 
 input[type=text] {
-  font-size: 12px !important;
+  font-size: 11px !important;
   height: 15px;
 }
 input, select, textarea {
@@ -4021,8 +4022,9 @@ input[type=text]#date {
 }
 
 body.big input[type=text] {
-  font-size: 15px !important;
+  font-size: 12px !important;
   height: 18px;
+  line-height: 13px;
 }
 
 body.big .newLayout.new #postedby {
@@ -4038,15 +4040,16 @@ body.big postedby {
   height: 18px;
 }
 select {
-  font-size: 11px !important;
+  font-size: 10px !important;
 }
 body.big select {
-  font-size: 15px !important;
+  font-size: 12px !important;
   height: 22px;
+  padding-top: 1px;
 }
 
 body.big select#tagsearchselect {
-  top: 43px !important;
+  /* top: 43px !important; */
 }
 
 .newLayout .sectiontitle {
@@ -5948,3 +5951,6 @@ body.big .otherOptText {
   display: none !important;
 }
 
+.ellipsis .slicename i {
+  margin-left: 15px !important;
+}
