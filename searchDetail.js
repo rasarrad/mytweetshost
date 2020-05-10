@@ -76,16 +76,15 @@ function changecriteria(e, obj, tableparam) {
     var iTop = "0px";
     var ibuttontop = "calc(100% - 53px)";
     
-    if (tableparam == "searchtags") {
-        if ($('body').hasClass('big')) {
-            iTop = "-1px";
-            ibuttontop = "calc(100% - 60px)";
-        }
-        else {
-            iTop = "-2px";
-            ibuttontop = "calc(100% - 63px)";
-        }
+    if ($('body').hasClass('big')) {
+        iTop = "-1px";
+        ibuttontop = "calc(100% - 60px)";
     }
+    else {
+        iTop = "-2px";
+        ibuttontop = "calc(100% - 63px)";
+    }
+    
     var maindiv = table.parent();
     
     if (e)
