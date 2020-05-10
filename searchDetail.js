@@ -73,18 +73,14 @@ function changecriteria(e, obj, tableparam) {
         table = $("#" + tableparam);
     }
 
-    var iTop = "0px";
-    var ibuttontop = "calc(100% - 53px)";
+    var iTop = "-2px";
+    var ibuttontop = "calc(100% - 60px)";
     
     if ($('body').hasClass('big')) {
         iTop = "-1px";
-        ibuttontop = "calc(100% - 60px)";
-    }
-    else {
-        iTop = "-2px";
         ibuttontop = "calc(100% - 63px)";
     }
-    
+
     var maindiv = table.parent();
     
     if (e)
@@ -542,10 +538,14 @@ var openSearchPopup = function(jsonobj)
 function updateSearchTablesHeight() {
     var setHeight = "26px";
     var iTop = "-2px";
+    var ibuttontop = "calc(100% - 60px)";
     if ($('body').hasClass('big')) {
+        ibuttontop = "calc(100% - 63px)";
         setHeight = "37px";
         iTop = "-1px";
     }
+
+    $("#sear").css("top", ibuttontop);
 
     $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
         var table = $(element);
