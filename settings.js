@@ -129,7 +129,6 @@ var openSettingsPopup = function(jsonobj)
 {
     // GENERAL
     var hasChanges = false;
-
     
     // OTHER SETTINGS
     $('body, html').css('overflow-y', 'hidden');

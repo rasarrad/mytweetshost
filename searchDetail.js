@@ -541,13 +541,16 @@ var openSearchPopup = function(jsonobj)
 
 function updateSearchTablesHeight() {
     var setHeight = "26px";
-    if ($('body').hasClass('big'))
+    var iTop = "-2px";
+    if ($('body').hasClass('big')) {
         setHeight = "37px";
+        iTop = "-1px";
+    }
 
     $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
         var table = $(element);
         table.css('max-height', setHeight);
-        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').show();
+        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop).show();
         table.find('td.el').addClass('ellipsis');
     });
 } 
