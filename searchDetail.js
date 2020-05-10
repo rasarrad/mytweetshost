@@ -156,7 +156,7 @@ function filtertagOnChange(obj) {
         $("#searchtags").removeClass("withvalue");
     }
     else {
-        currenttagdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filtertag\", \"searchtags\")' class='fa fa-times-circle'></i>");
+        currenttagdisplay.html("<i onclick='clearcriterion(event,this, \"filtertag\", \"searchtags\")' class='fa fa-times-circle'></i>" + $(obj).val().trim());
         currenttagdisplay.removeClass("emptyvalue");
         $("#searchtags").removeClass("emptyvalue");
         $("#searchtags").addClass("withvalue");
