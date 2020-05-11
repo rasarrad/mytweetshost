@@ -125,17 +125,13 @@ function changecriteria(e, obj, tableparam) {
             table.find('td.el').removeClass('ellipsis');
 
             $("#sear").animate({
-                left: '307px'
-              },
-              {
-                easing: 'swing',
-                duration: 720,
-                complete: function(){
+                left: '307px',
+                duration: 720
+              }, function() {
                     if (table.attr("cheight"))
                         offset = offset + Number(table.attr("cheight"));   
                     $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
-                }
-           });
+              });
         }
     }
     else {
@@ -145,15 +141,11 @@ function changecriteria(e, obj, tableparam) {
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
         $("#sear").animate({
-            top: '8px'
-          },
-          {
-            easing: 'swing',
-            duration: 300,
-            complete: function(){
-                $("#sear").css("left", "18px");
-            }
-       });
+            top: '8px',
+            duration: 720
+          }, function() {
+            $("#sear").css("left", "18px");
+          });
     }
 /*     setTimeout(function() { 
         updateTopPosition("searchpopup"); 
