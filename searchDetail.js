@@ -125,7 +125,7 @@ function changecriteria(e, obj, tableparam) {
             table.find('td.el').removeClass('ellipsis');
 
             $("#sear").animate({
-                left: 'calc(100% - 63px)'
+                left: '307px'
               },
               {
                 easing: 'swing',
