@@ -73,6 +73,7 @@ function changecriteria(e, obj, tableparam) {
         table = $("#" + tableparam);
     }
 
+    var searchbutton = searchbutton;
     var iTop = "-2px";
     var ibuttontop = "calc(100% - -14px)";
     
@@ -124,17 +125,19 @@ function changecriteria(e, obj, tableparam) {
     
             table.find('td.el').removeClass('ellipsis');
 
-            $("#sear").css("opacity", 0);
-            $("#sear").animate({
+            searchbutton.css('transition', 'all 0.01s ease');
+            searchbutton.css("opacity", 0);
+            searchbutton.animate({
                 left: '307px'
               },
               {
                 duration: 720,
                 complete: function(){
-                        if (table.attr("cheight"))
-                            offset = offset + Number(table.attr("cheight"));   
-                        $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
-                        $("#sear").css("opacity", 1);
+                    searchbutton.css('transition', 'all 0.6s ease');
+                    if (table.attr("cheight"))
+                        offset = offset + Number(table.attr("cheight"));   
+                    searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
+                    searchbutton.css("opacity", 1);
                 }
            });
         }
@@ -145,15 +148,17 @@ function changecriteria(e, obj, tableparam) {
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
-        $("#sear").css("opacity", 0);
-        $("#sear").animate({
+        searchbutton.css('transition', 'all 0.01s ease');
+        searchbutton.css("opacity", 0);
+        searchbutton.animate({
             top: '8px'
           },
           {
             duration: 300,
             complete: function(){
-                    $("#sear").css("left", "18px");
-                    $("#sear").css("opacity", 1);
+                searchbutton.css('transition', 'all 0.6s ease');
+                searchbutton.css("left", "18px");
+                searchbutton.css("opacity", 1);
             }
        });
     }
