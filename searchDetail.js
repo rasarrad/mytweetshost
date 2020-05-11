@@ -73,6 +73,7 @@ function changecriteria(e, obj, tableparam) {
         table = $("#" + tableparam);
     }
 
+    var searchbutton = $("#sear");
     var iTop = "-2px";
     var ibuttontop = "calc(100% - -14px)";
     
@@ -124,15 +125,26 @@ function changecriteria(e, obj, tableparam) {
     
             table.find('td.el').removeClass('ellipsis');
 
-            $("#sear").css('transition', 'all .8s ease');
-            $("#sear").css("left", "307px");
-
-            setTimeout(function() { 
-                if (table.attr("cheight"))
-                    offset = offset + Number(table.attr("cheight"));   
-                $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
-                $("#sear").css('transition', 'all .6s ease-in');
-            }, 801);
+            if (searchbutton.css("top") == "18px") {
+                searchbutton.css('transition', 'all .8s ease');
+                searchbutton.css("left", "307px");
+    
+                setTimeout(function() { 
+                    if (table.attr("cheight"))
+                        offset = offset + Number(table.attr("cheight"));   
+                    searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
+                    searchbutton.css('transition', 'all .6s ease-in');
+                }, 801);
+            }
+            else {
+                setTimeout(function() { 
+                    if (table.attr("cheight"))
+                        offset = offset + Number(table.attr("cheight"));  
+                    searchbutton.css('transition', 'all .6s ease'); 
+                    searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
+                    
+                }, 721);
+            }
         }
     }
     else {
@@ -141,18 +153,15 @@ function changecriteria(e, obj, tableparam) {
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
-        $("#sear").css('transition', 'all .8s ease');
+        searchbutton.css('transition', 'all .8s ease');
         
-        $("#sear").css("top", "8px");
+        searchbutton.css("top", "8px");
         setTimeout(function() { 
             if (table.attr("cheight"))
                 offset = offset + Number(table.attr("cheight"));   
-            $("#sear").css("left", "18px");
-            $("#sear").css('transition', 'all .6s ease-in');
+            searchbutton.css("left", "18px");
+            searchbutton.css('transition', 'all .6s ease-in');
         }, 801);
-
-
-
     }
 /*     setTimeout(function() { 
         updateTopPosition("searchpopup"); 
@@ -558,7 +567,13 @@ function updateSearchTablesHeight() {
         iTop = "-1px";
     }
 
-    $("#sear").css("top", ibuttontop);
+    var searchbutton = $("#sear");
+    searchbutton.css('transition', 'all 0.01s ease');
+
+    searchbutton.css("top", "8px");
+    searchbutton.css("left", "18px");
+
+    searchbutton.css('transition', 'all 0.6s ease');
 
     $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
         var table = $(element);
