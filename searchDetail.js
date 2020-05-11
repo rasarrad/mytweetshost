@@ -173,9 +173,9 @@ function changecriteria(e, obj, tableparam) {
 
 
             setTimeout(function() { 
-                searchbutton.fadeIn(500); 
+                searchbutton.fadeIn(1200); 
                 searchbutton.css('transition', 'all 0.6s ease');
-            }, 1100);
+            }, 700);
 
         });
     }
@@ -576,14 +576,16 @@ var openSearchPopup = function(jsonobj)
 function updateSearchTablesHeight() {
     var setHeight = "26px";
     var iTop = "-2px";
-    var ibuttontop = "calc(100% - -14px)";
     if ($('body').hasClass('big')) {
-        ibuttontop = "calc(100% - -14px)";
         setHeight = "37px";
         iTop = "-1px";
     }
-
-    $("#sear").css("top", ibuttontop);
+    
+    var searchbutton = $("#sear");
+    searchbutton.css('transition', 'all 0.01s ease');
+    searchbutton.css("top", "8px");
+    searchbutton.css("left", "18px");
+    searchbutton.css('transition', 'all 0.6s ease');
 
     $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
         var table = $(element);
