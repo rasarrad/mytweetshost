@@ -125,7 +125,7 @@ function changecriteria(e, obj, tableparam) {
     
             table.find('td.el').removeClass('ellipsis');
 
-            searchbutton.fadeOut( 720, function() {
+            searchbutton.fadeOut( 920, function() {
                 searchbutton.css('transition', 'all 0.01s ease');
                 if (table.attr("cheight"))
                     offset = offset + Number(table.attr("cheight"));   
@@ -135,7 +135,7 @@ function changecriteria(e, obj, tableparam) {
                 searchbutton.css('transition', 'all 0.6s ease');
 
                 setTimeout(function() { 
-                    searchbutton.fadeIn(400); 
+                    searchbutton.fadeIn(1000); 
                 }, 200);
 
             });
@@ -162,7 +162,7 @@ function changecriteria(e, obj, tableparam) {
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
 
-        searchbutton.fadeOut( 720, function() {
+        searchbutton.fadeOut( 920, function() {
             searchbutton.css('transition', 'all 0.01s ease');
 
             searchbutton.css("top", "8px");
@@ -171,7 +171,7 @@ function changecriteria(e, obj, tableparam) {
             searchbutton.css('transition', 'all 0.6s ease');
 
             setTimeout(function() { 
-                searchbutton.fadeIn(400); 
+                searchbutton.fadeIn(1000); 
             }, 200);
 
         });
