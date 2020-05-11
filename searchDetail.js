@@ -141,10 +141,12 @@ function changecriteria(e, obj, tableparam) {
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
         $("#sear").animate({
+            opacity: 0.4,
             top: '8px',
             duration: 720
           }, function() {
             $("#sear").css("left", "18px");
+            $("#sear").css("opacity", 1);
           });
     }
 /*     setTimeout(function() { 
