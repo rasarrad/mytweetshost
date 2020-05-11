@@ -124,14 +124,14 @@ function changecriteria(e, obj, tableparam) {
     
             table.find('td.el').removeClass('ellipsis');
 
-            $("#sear").css('transition', 'all 4.0s ease');
+            $("#sear").css('transition', 'all 2.0s ease');
 
             $("#sear").css("opacity", 0);
             $("#sear").animate({
                 top: (table.offset().top + 8 + offset) + "px"
               },
               {
-                duration: 1720,
+                duration: 720,
                 complete: function(){
                     setTimeout(function() { 
                         if (table.attr("cheight"))
