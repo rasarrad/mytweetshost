@@ -143,13 +143,16 @@ function changecriteria(e, obj, tableparam) {
 
         $("#sear").css('transition', 'all .8s ease');
         
-        $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
+        $("#sear").css("top", "8px");
         setTimeout(function() { 
             if (table.attr("cheight"))
                 offset = offset + Number(table.attr("cheight"));   
-            $("#sear").css("left", "307px");
+            $("#sear").css("left", "18px");
             $("#sear").css('transition', 'all .6s ease-in');
         }, 801);
+
+
+
     }
 /*     setTimeout(function() { 
         updateTopPosition("searchpopup"); 
