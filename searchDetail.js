@@ -126,7 +126,7 @@ function changecriteria(e, obj, tableparam) {
             table.find('td.el').removeClass('ellipsis');
             
             if (searchbutton.css("left") == "18px") {
-                searchbutton.fadeOut( 720, function() {
+                searchbutton.fadeOut( 1020, function() {
                     searchbutton.css('transition', 'all 0.01s ease');
                     if (table.attr("cheight"))
                         offset = offset + Number(table.attr("cheight"));   
@@ -135,15 +135,13 @@ function changecriteria(e, obj, tableparam) {
                     searchbutton.css("left", "307px");
                     searchbutton.css("opacity", 0);
                     searchbutton.show();
-                    searchbutton.css('transition', 'all 6.0s ease');
+                    searchbutton.css('transition', 'all 2.0s ease');
 
                     searchbutton.css("opacity", 1);
 
-                        setTimeout(function() { 
-                            searchbutton.css('transition', 'all 0.6s ease');
-    }, 5000); 
-                   
-    
+                    setTimeout(function() { 
+                        searchbutton.css('transition', 'all 0.6s ease');
+                    }, 2000); 
                 });
             }
             else {
@@ -170,17 +168,21 @@ function changecriteria(e, obj, tableparam) {
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
 
-        searchbutton.fadeOut( 720, function() {
+        searchbutton.fadeOut( 1020, function() {
             searchbutton.css('transition', 'all 0.01s ease');
 
             searchbutton.css("top", "8px");
             searchbutton.css("left", "18px");
 
+            searchbutton.css("opacity", 0);
+            searchbutton.show();
+            searchbutton.css('transition', 'all 2.0s ease');
+
+            searchbutton.css("opacity", 1);
 
             setTimeout(function() { 
-                searchbutton.fadeIn(1200); 
                 searchbutton.css('transition', 'all 0.6s ease');
-            }, 1200);
+            }, 2000); 
 
         });
     }
