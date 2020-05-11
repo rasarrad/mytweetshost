@@ -132,10 +132,10 @@ function changecriteria(e, obj, tableparam) {
 
                 searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
                 searchbutton.css("left", "307px");
-                searchbutton.css('transition', 'all 0.6s ease');
 
                 setTimeout(function() { 
                     searchbutton.fadeIn(1000); 
+                    searchbutton.css('transition', 'all 0.6s ease');
                 }, 200);
 
             });
@@ -168,10 +168,10 @@ function changecriteria(e, obj, tableparam) {
             searchbutton.css("top", "8px");
             searchbutton.css("left", "18px");
 
-            searchbutton.css('transition', 'all 0.6s ease');
 
             setTimeout(function() { 
                 searchbutton.fadeIn(1000); 
+                searchbutton.css('transition', 'all 0.6s ease');
             }, 200);
 
         });
