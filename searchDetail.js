@@ -124,15 +124,18 @@ function changecriteria(e, obj, tableparam) {
     
             table.find('td.el').removeClass('ellipsis');
 
-            $("#sear").css('transition', 'all 2.2s ease');
+            $("#sear").css('transition', 'all 1.5s ease');
             $("#sear").css("left", "307px");
 
             setTimeout(function() { 
                 if (table.attr("cheight"))
                     offset = offset + Number(table.attr("cheight"));   
                 $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
-                $("#sear").css('transition', 'all .6s ease-in');
-            }, 2201);
+                
+                setTimeout(function() { 
+                    $("#sear").css('transition', 'all .6s ease');
+                }, 2201);
+            }, 1300);
 
         }
     }
