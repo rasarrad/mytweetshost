@@ -125,14 +125,15 @@ function changecriteria(e, obj, tableparam) {
     
             table.find('td.el').removeClass('ellipsis');
 
-            console.log(searchbutton.css("left"))
             if (searchbutton.css("left") == "18px") {
                 searchbutton.css('transition', 'all .8s ease');
                 searchbutton.css("left", "307px");
     
                 setTimeout(function() { 
+                    console.log(offset)
                     if (table.attr("cheight"))
-                        offset = offset + Number(table.attr("cheight"));   
+                        offset = offset + Number(table.attr("cheight"));  
+                    console.log(offset) 
                     searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
                     searchbutton.css('transition', 'all .6s ease-in');
                 }, 801);
