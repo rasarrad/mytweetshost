@@ -125,19 +125,17 @@ function changecriteria(e, obj, tableparam) {
             table.find('td.el').removeClass('ellipsis');
 
             $("#sear").animate({
-                top: '8px'
+                left: 'calc(100% - 63px)'
               },
               {
                 easing: 'swing',
-                duration: 300,
+                duration: 720,
                 complete: function(){
-                    $("#sear").css("left", "18px");
+                    if (table.attr("cheight"))
+                        offset = offset + Number(table.attr("cheight"));   
+                    $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
                 }
            });
-
-            setTimeout(function() { 
-                
-            }, 720);
         }
     }
     else {
@@ -147,27 +145,19 @@ function changecriteria(e, obj, tableparam) {
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
         $("#sear").animate({
-            left: 'calc(100% - 63px)'
+            top: '8px'
           },
           {
             easing: 'swing',
-            duration: 720,
+            duration: 300,
             complete: function(){
-                if (table.attr("cheight"))
-                    offset = offset + Number(table.attr("cheight"));   
-                $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
+                $("#sear").css("left", "18px");
             }
        });
-
-        setTimeout(function() { 
-            $("#sear").css("top", ibuttontop);
-            table.find(".togglepos").css("position", "absolute"); 
-            table.find('td.el').addClass('ellipsis');
-        }, 700);
     }
-    setTimeout(function() { 
-        //updateTopPosition("searchpopup"); 
-    }, 1000);
+/*     setTimeout(function() { 
+        updateTopPosition("searchpopup"); 
+    }, 1000); */
 }
 
 function filtertagOnChange(obj) {
