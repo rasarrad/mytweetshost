@@ -124,40 +124,22 @@ function changecriteria(e, obj, tableparam) {
             table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down').css("top", "-4px");
     
             table.find('td.el').removeClass('ellipsis');
-            
-            if (searchbutton.css("left") == "18px") {
-                searchbutton.fadeOut( 1020, function() {
-                    searchbutton.css('transition', 'all 0.01s ease');
+
+            searchbutton.css('transition', 'all 0.72s ease');
+            searchbutton.css("opacity", 0);
+            searchbutton.animate({
+                left: '307px'
+              },
+              {
+                duration: 720,
+                complete: function(){
+                    searchbutton.css('transition', 'all 0.6s ease');
                     if (table.attr("cheight"))
                         offset = offset + Number(table.attr("cheight"));   
-    
                     searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
-                    searchbutton.css("left", "307px");
-                    searchbutton.css("opacity", 0);
-                    searchbutton.show();
-
-                    setTimeout(function() { 
-                        searchbutton.css('transition', 'all 4.0s ease');
-
-                        searchbutton.css("opacity", 1);
-                    }, 1000); 
-                });
-            }
-            else {
-                searchbutton.animate({
-                    left: '307px'
-                  },
-                  {
-                    duration: 720,
-                    complete: function(){
-                        searchbutton.css('transition', 'all 0.6s ease');
-                        if (table.attr("cheight"))
-                            offset = offset + Number(table.attr("cheight"));   
-                        searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
-                        searchbutton.css("opacity", 1);
-                    }
-               });
-            }
+                    searchbutton.css("opacity", 1);
+                }
+           });
         }
     }
     else {
@@ -166,24 +148,23 @@ function changecriteria(e, obj, tableparam) {
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
-
-        searchbutton.fadeOut( 620, function() {
-            searchbutton.css('transition', 'all 0.01s ease');
-
-            searchbutton.css("top", "8px");
-            searchbutton.css("left", "18px");
-
-            searchbutton.css("opacity", 0);
-            searchbutton.show();
-
-            setTimeout(function() { 
-                searchbutton.css('transition', 'all 2.2s ease');
-
+        searchbutton.css('transition', 'all 0.3s ease');
+        searchbutton.css("opacity", 0);
+        searchbutton.animate({
+            top: '8px'
+          },
+          {
+            duration: 300,
+            complete: function(){
+                searchbutton.css('transition', 'all 0.6s ease');
+                searchbutton.css("left", "18px");
                 searchbutton.css("opacity", 1);
-            }, 2000); 
-
-        });
+            }
+       });
     }
+/*     setTimeout(function() { 
+        updateTopPosition("searchpopup"); 
+    }, 1000); */
 }
 
 function filtertagOnChange(obj) {
@@ -578,16 +559,14 @@ var openSearchPopup = function(jsonobj)
 function updateSearchTablesHeight() {
     var setHeight = "26px";
     var iTop = "-2px";
+    var ibuttontop = "calc(100% - -14px)";
     if ($('body').hasClass('big')) {
+        ibuttontop = "calc(100% - -14px)";
         setHeight = "37px";
         iTop = "-1px";
     }
-    
-    var searchbutton = $("#sear");
-    searchbutton.css('transition', 'all 0.01s ease');
-    searchbutton.css("top", "8px");
-    searchbutton.css("left", "18px");
-    searchbutton.css('transition', 'all 0.6s ease');
+
+    $("#sear").css("top", ibuttontop);
 
     $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
         var table = $(element);
