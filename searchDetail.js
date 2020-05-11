@@ -124,35 +124,38 @@ function changecriteria(e, obj, tableparam) {
             table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down').css("top", "-4px");
     
             table.find('td.el').removeClass('ellipsis');
-
-            searchbutton.fadeOut( 720, function() {
-                searchbutton.css('transition', 'all 0.01s ease');
-                if (table.attr("cheight"))
-                    offset = offset + Number(table.attr("cheight"));   
-
-                searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
-                searchbutton.css("left", "307px");
-
-                setTimeout(function() { 
-                    searchbutton.fadeIn(500); 
-                    searchbutton.css('transition', 'all 0.6s ease');
-                }, 700);
-
-            });
-
-/*             searchbutton.animate({
-                left: '307px'
-              },
-              {
-                duration: 720,
-                complete: function(){
-                    searchbutton.css('transition', 'all 0.6s ease');
+            
+            if (searchbutton.css("left") == "18px") {
+                searchbutton.fadeOut( 720, function() {
+                    searchbutton.css('transition', 'all 0.01s ease');
                     if (table.attr("cheight"))
                         offset = offset + Number(table.attr("cheight"));   
+    
                     searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
-                    searchbutton.css("opacity", 1);
-                }
-           }); */
+                    searchbutton.css("left", "307px");
+    
+                    setTimeout(function() { 
+                        searchbutton.fadeIn(500); 
+                        searchbutton.css('transition', 'all 0.6s ease');
+                    }, 1100);
+    
+                });
+            }
+            else {
+                searchbutton.animate({
+                    left: '307px'
+                  },
+                  {
+                    duration: 720,
+                    complete: function(){
+                        searchbutton.css('transition', 'all 0.6s ease');
+                        if (table.attr("cheight"))
+                            offset = offset + Number(table.attr("cheight"));   
+                        searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
+                        searchbutton.css("opacity", 1);
+                    }
+               });
+            }
         }
     }
     else {
@@ -172,7 +175,7 @@ function changecriteria(e, obj, tableparam) {
             setTimeout(function() { 
                 searchbutton.fadeIn(500); 
                 searchbutton.css('transition', 'all 0.6s ease');
-            }, 700);
+            }, 1100);
 
         });
     }
