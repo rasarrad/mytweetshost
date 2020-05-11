@@ -65,7 +65,7 @@ function expandsection(obj, table) {
 
 
 function changecriteria(e, obj, tableparam) {
-
+alert(1111)
     if (dblTapFlag)
         return false;
 
@@ -159,6 +159,7 @@ function changecriteria(e, obj, tableparam) {
                     searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
 
                     setTimeout(function() { 
+                        alert(1222)
                         dblTapFlag = false;
                     }, 600);
 
@@ -180,6 +181,7 @@ function changecriteria(e, obj, tableparam) {
             searchbutton.css('transition', 'all .6s ease-in');
             
             setTimeout(function() { 
+                alert(133333)
                 dblTapFlag = false;
             }, 600);
 
