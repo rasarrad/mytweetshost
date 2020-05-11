@@ -65,6 +65,12 @@ function expandsection(obj, table) {
 
 
 function changecriteria(e, obj, tableparam) {
+
+    if (dblTapFlag)
+        return false;
+
+    dblTapFlag = true;
+    
     var table = null;
     if (obj) {
         table = $(obj).parent().parent();
@@ -149,9 +155,13 @@ function changecriteria(e, obj, tableparam) {
                     
                     console.log(offset);
                     
-                    searchbutton.css("left", "307px");  
                     searchbutton.css('transition', 'all .6s ease'); 
                     searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
+
+                    setTimeout(function() { 
+                        dblTapFlag = false;
+                    }, 600);
+
                 }, 721);
             }
         }
@@ -163,19 +173,18 @@ function changecriteria(e, obj, tableparam) {
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
         table.find('td.el').addClass('ellipsis');
 
-        searchbutton.stop();
-
         searchbutton.css('transition', 'all .8s ease');
-        
         searchbutton.css("top", "8px");
         setTimeout(function() { 
             searchbutton.css("left", "18px");
             searchbutton.css('transition', 'all .6s ease-in');
+            
+            setTimeout(function() { 
+                dblTapFlag = false;
+            }, 600);
+
         }, 801);
     }
-/*     setTimeout(function() { 
-        updateTopPosition("searchpopup"); 
-    }, 1000); */
 }
 
 function filtertagOnChange(obj) {
