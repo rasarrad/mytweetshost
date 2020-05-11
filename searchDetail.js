@@ -129,7 +129,6 @@ function changecriteria(e, obj, tableparam) {
                 left: '307px'
               },
               {
-                easing: 'swing',
                 duration: 720,
                 complete: function(){
                     setTimeout(function() { 
@@ -152,7 +151,6 @@ function changecriteria(e, obj, tableparam) {
             top: '8px'
           },
           {
-            easing: 'swing',
             duration: 300,
             complete: function(){
                 setTimeout(function() { 
