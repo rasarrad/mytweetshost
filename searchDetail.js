@@ -134,7 +134,9 @@ function changecriteria(e, obj, tableparam) {
                 searchbutton.css("left", "307px");
                 searchbutton.css('transition', 'all 0.6s ease');
 
-                searchbutton.fadeIn(400);
+                setTimeout(function() { 
+                    searchbutton.fadeIn(400); 
+                }, 200);
 
             });
 
@@ -168,7 +170,9 @@ function changecriteria(e, obj, tableparam) {
 
             searchbutton.css('transition', 'all 0.6s ease');
 
-            searchbutton.fadeIn(400);
+            setTimeout(function() { 
+                searchbutton.fadeIn(400); 
+            }, 200);
 
         });
     }
