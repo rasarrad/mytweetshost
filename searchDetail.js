@@ -131,7 +131,7 @@ function changecriteria(e, obj, tableparam) {
                 top: (table.offset().top + 8 + offset) + "px"
               },
               {
-                duration: 720,
+                duration: 1720,
                 complete: function(){
                     setTimeout(function() { 
                         if (table.attr("cheight"))
