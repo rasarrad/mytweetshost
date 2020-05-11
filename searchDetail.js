@@ -124,7 +124,7 @@ function changecriteria(e, obj, tableparam) {
     
             table.find('td.el').removeClass('ellipsis');
 
-            $("#sear").css('transition', 'all .6s ease');
+            $("#sear").css('transition', 'all .8s ease');
             $("#sear").css("left", "307px");
 
             setTimeout(function() { 
@@ -132,8 +132,7 @@ function changecriteria(e, obj, tableparam) {
                     offset = offset + Number(table.attr("cheight"));   
                 $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
                 $("#sear").css('transition', 'all .6s ease-in');
-            }, 601);
-
+            }, 801);
         }
     }
     else {
@@ -142,19 +141,15 @@ function changecriteria(e, obj, tableparam) {
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
-        $("#sear").css("opacity", 0);
-        $("#sear").animate({
-            left: '18px'
-          },
-          {
-            duration: 300,
-            complete: function(){
-                setTimeout(function() { 
-                    $("#sear").css("top", "8px");
-                    $("#sear").css("opacity", 1);
-                }, 1);
-            }
-       });
+        $("#sear").css('transition', 'all .8s ease');
+        
+        $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
+        setTimeout(function() { 
+            if (table.attr("cheight"))
+                offset = offset + Number(table.attr("cheight"));   
+            $("#sear").css("left", "307px");
+            $("#sear").css('transition', 'all .6s ease-in');
+        }, 801);
     }
 /*     setTimeout(function() { 
         updateTopPosition("searchpopup"); 
