@@ -176,19 +176,16 @@ function changecriteria(e, obj, tableparam) {
 
             searchbutton.css("opacity", 0);
             searchbutton.show();
-            searchbutton.css('transition', 'all 3.0s ease');
-
-            searchbutton.css("opacity", 1);
 
             setTimeout(function() { 
-                searchbutton.css('transition', 'all 0.6s ease');
+                searchbutton.css('transition', 'all 3.0s ease');
+
+                searchbutton.css("opacity", 1);
+    
             }, 3000); 
 
         });
     }
-/*     setTimeout(function() { 
-        updateTopPosition("searchpopup"); 
-    }, 1000); */
 }
 
 function filtertagOnChange(obj) {
