@@ -125,7 +125,7 @@ function changecriteria(e, obj, tableparam) {
     
             table.find('td.el').removeClass('ellipsis');
 
-            searchbutton.fadeOut( 920, function() {
+            searchbutton.fadeOut( 720, function() {
                 searchbutton.css('transition', 'all 0.01s ease');
                 if (table.attr("cheight"))
                     offset = offset + Number(table.attr("cheight"));   
@@ -162,7 +162,7 @@ function changecriteria(e, obj, tableparam) {
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
 
-        searchbutton.fadeOut( 920, function() {
+        searchbutton.fadeOut( 720, function() {
             searchbutton.css('transition', 'all 0.01s ease');
 
             searchbutton.css("top", "8px");
