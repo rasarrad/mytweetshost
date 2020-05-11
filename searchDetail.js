@@ -110,11 +110,11 @@ function changecriteria(e, obj, tableparam, flag) {
                 var othertable = $(element);
 
                 othertable.css('max-height', setHeight);
+                othertable.find(".togglepos").css("position", "absolute"); 
                 othertable.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
                 othertable.find('td.el').addClass('ellipsis');
             });
     
-            
             table.find(".togglepos").css("position", ""); 
             table.css('transition', 'max-height 0.7s');
     
@@ -180,6 +180,7 @@ function changecriteria(e, obj, tableparam, flag) {
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
         table.find('td.el').addClass('ellipsis');
+        table.find(".togglepos").css("position", "absolute");
 
         searchbutton.css('transition', 'all .8s ease');
         searchbutton.css("top", "8px");
