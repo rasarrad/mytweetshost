@@ -131,6 +131,7 @@ function changecriteria(e, obj, tableparam) {
               },
               {
                 duration: 20,
+                easing: 'easeInOutBounce',
                 complete: function(){
                     setTimeout(function() { 
                         if (table.attr("cheight"))
