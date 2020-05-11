@@ -124,7 +124,7 @@ function changecriteria(e, obj, tableparam) {
     
             table.find('td.el').removeClass('ellipsis');
 
-            $("#sear").css('transition', 'all 2.7s ease');
+            $("#sear").css('transition', 'all 3.2s ease-in');
 
             $("#sear").animate({
                 top: (table.offset().top + 8 + offset) + "px"
@@ -136,7 +136,7 @@ function changecriteria(e, obj, tableparam) {
                         if (table.attr("cheight"))
                             offset = offset + Number(table.attr("cheight"));   
                         $("#sear").css("left", "307px");
-                        $("#sear").css('transition', 'all .6s ease');
+                        $("#sear").css('transition', 'all .6s ease-in');
                     }, 1);
 
                 }
