@@ -125,7 +125,7 @@ function changecriteria(e, obj, tableparam) {
     
             table.find('td.el').removeClass('ellipsis');
 
-            if (searchbutton.css("top") == "18px") {
+            if (searchbutton.css("left") == "18px") {
                 searchbutton.css('transition', 'all .8s ease');
                 searchbutton.css("left", "307px");
     
