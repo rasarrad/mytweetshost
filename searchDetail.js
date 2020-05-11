@@ -168,7 +168,7 @@ function changecriteria(e, obj, tableparam) {
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
 
-        searchbutton.fadeOut( 1620, function() {
+        searchbutton.fadeOut( 320, function() {
             searchbutton.css('transition', 'all 0.01s ease');
 
             searchbutton.css("top", "8px");
@@ -176,13 +176,13 @@ function changecriteria(e, obj, tableparam) {
 
             searchbutton.css("opacity", 0);
             searchbutton.show();
-            searchbutton.css('transition', 'all 2.0s ease');
+            searchbutton.css('transition', 'all 3.0s ease');
 
             searchbutton.css("opacity", 1);
 
             setTimeout(function() { 
                 searchbutton.css('transition', 'all 0.6s ease');
-            }, 2000); 
+            }, 3000); 
 
         });
     }
