@@ -721,6 +721,7 @@ body.big #zoomin {
       text-transform: uppercase;
       line-height: 17px;
       font-variant: small-caps;
+      border-radius: 3px;
      }
 
     #removetweet {
@@ -3798,6 +3799,7 @@ body.big #linktable {
     font-size: 17px;
     font-family: Helvetica, Roboto, "Segoe UI", Calibri, sans-serif;
     font-variant-caps: normal;
+        border-radius: 3px;
 }
 .newLayout ul {
     width: 100%;
@@ -3845,6 +3847,7 @@ body.big #linktable {
     top: -1px;
     cursor: pointer;
     text-transform: uppercase;
+    border-radius: 3px;
 }
 
 select {
