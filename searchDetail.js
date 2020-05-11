@@ -124,24 +124,16 @@ function changecriteria(e, obj, tableparam) {
     
             table.find('td.el').removeClass('ellipsis');
 
-            $("#sear").css('transition', 'all 3.2s ease-in');
+            $("#sear").css('transition', 'all 2.2s ease');
+            $("#sear").css("left", "307px");
 
-            $("#sear").animate({
-                top: (table.offset().top + 8 + offset) + "px"
-              },
-              {
-                duration: 20,
-                easing: 'easeInOutBounce',
-                complete: function(){
-                    setTimeout(function() { 
-                        if (table.attr("cheight"))
-                            offset = offset + Number(table.attr("cheight"));   
-                        $("#sear").css("left", "307px");
-                        $("#sear").css('transition', 'all .6s ease-in');
-                    }, 1);
+            setTimeout(function() { 
+                if (table.attr("cheight"))
+                    offset = offset + Number(table.attr("cheight"));   
+                $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
+                $("#sear").css('transition', 'all .6s ease-in');
+            }, 2201);
 
-                }
-           });
         }
     }
     else {
