@@ -134,6 +134,7 @@ function changecriteria(e, obj, tableparam) {
                     searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
                     searchbutton.css("left", "307px");
                     searchbutton.css("opacity", 0);
+                    searchbutton.show();
                     searchbutton.css('transition', 'all 2.0s ease');
 
                     searchbutton.css("opacity", 1);
