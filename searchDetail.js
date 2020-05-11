@@ -125,12 +125,6 @@ function changecriteria(e, obj, tableparam) {
     
             table.find('td.el').removeClass('ellipsis');
 
-            searchbutton.css('transition', 'all 1.72s ease');
-            
-            if (searchbutton.css("left") == "18px")
-                searchbutton.css("opacity", 0);
-
-
             searchbutton.fadeOut( 720, function() {
                 searchbutton.css('transition', 'all 0.01s ease');
                 if (table.attr("cheight"))
