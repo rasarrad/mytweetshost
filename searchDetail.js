@@ -66,6 +66,7 @@ function expandsection(obj, table) {
 
 function changecriteria(e, obj, tableparam, flag) {
 
+    console.log("2000000")
     if (flag) {
 
     }
@@ -73,7 +74,8 @@ function changecriteria(e, obj, tableparam, flag) {
         return false;
 
     dblTapFlag = true;
-    
+    console.log("22000")
+
     var table = null;
     if (obj) {
         table = $(obj).parent().parent();
@@ -160,7 +162,7 @@ function changecriteria(e, obj, tableparam, flag) {
                     
                     searchbutton.css('transition', 'all .6s ease'); 
                     searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
-
+                    console.log("11111111")
                         dblTapFlag = false;
 
                 }, 721);
@@ -179,7 +181,7 @@ function changecriteria(e, obj, tableparam, flag) {
         setTimeout(function() { 
             searchbutton.css("left", "18px");
             searchbutton.css('transition', 'all .6s ease-in');
-            
+            console.log("222222")
                 dblTapFlag = false;
 
         }, 801);
