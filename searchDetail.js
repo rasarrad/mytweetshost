@@ -125,6 +125,8 @@ function changecriteria(e, obj, tableparam) {
     
             table.find('td.el').removeClass('ellipsis');
 
+            searchbutton.stop();
+            
             if (searchbutton.css("left") == "18px") {
                 searchbutton.css('transition', 'all .8s ease');
                 searchbutton.css("left", "307px");
@@ -160,12 +162,12 @@ function changecriteria(e, obj, tableparam) {
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
+        searchbutton.stop();
+
         searchbutton.css('transition', 'all .8s ease');
         
         searchbutton.css("top", "8px");
         setTimeout(function() { 
-            if (table.attr("cheight"))
-                offset = offset + Number(table.attr("cheight"));   
             searchbutton.css("left", "18px");
             searchbutton.css('transition', 'all .6s ease-in');
         }, 801);
