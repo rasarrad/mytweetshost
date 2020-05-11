@@ -124,14 +124,22 @@ function changecriteria(e, obj, tableparam) {
     
             table.find('td.el').removeClass('ellipsis');
 
+            
             $("#sear").animate({
-                left: '307px',
-                duration: 720
-              }, function() {
-                    if (table.attr("cheight"))
-                        offset = offset + Number(table.attr("cheight"));   
-                    $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
-              });
+                left: '307px'
+              },
+              {
+                easing: 'swing',
+                duration: 720,
+                complete: function(){
+                    setTimeout(function() { 
+                        if (table.attr("cheight"))
+                            offset = offset + Number(table.attr("cheight"));   
+                        $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
+                    }, 1);
+
+                }
+           });
         }
     }
     else {
@@ -141,13 +149,17 @@ function changecriteria(e, obj, tableparam) {
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
         $("#sear").animate({
-            opacity: 0.4,
-            top: '8px',
-            duration: 720
-          }, function() {
-            $("#sear").css("left", "18px");
-            $("#sear").css("opacity", 1);
-          });
+            top: '8px'
+          },
+          {
+            easing: 'swing',
+            duration: 300,
+            complete: function(){
+                setTimeout(function() { 
+                    $("#sear").css("left", "18px");
+                }, 1);
+            }
+       });
     }
 /*     setTimeout(function() { 
         updateTopPosition("searchpopup"); 
