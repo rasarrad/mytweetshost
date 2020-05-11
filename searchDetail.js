@@ -167,7 +167,7 @@ function changecriteria(e, obj, tableparam) {
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
 
-        searchbutton.fadeOut( 620, function() {
+        searchbutton.fadeOut( 1220, function() {
             searchbutton.css('transition', 'all 0.01s ease');
 
             searchbutton.css("top", "8px");
