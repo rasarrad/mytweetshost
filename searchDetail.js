@@ -135,7 +135,7 @@ function changecriteria(e, obj, tableparam) {
                     searchbutton.css("left", "307px");
                     searchbutton.css("opacity", 0);
                     searchbutton.show();
-                    searchbutton.css('transition', 'all 2.0s ease');
+                    searchbutton.css('transition', 'all 6.0s ease');
 
                     searchbutton.css("opacity", 1);
                     searchbutton.css('transition', 'all 0.6s ease');
