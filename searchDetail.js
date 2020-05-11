@@ -73,7 +73,7 @@ function changecriteria(e, obj, tableparam) {
         table = $("#" + tableparam);
     }
 
-    var searchbutton = searchbutton;
+    var searchbutton = $("#sear");
     var iTop = "-2px";
     var ibuttontop = "calc(100% - -14px)";
     
