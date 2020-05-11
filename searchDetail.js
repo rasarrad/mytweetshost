@@ -140,11 +140,16 @@ function changecriteria(e, obj, tableparam) {
             }
             else {
                 setTimeout(function() { 
+                    console.log(offset);
+
                     if (table.attr("cheight"))
-                        offset = offset + Number(table.attr("cheight"));  
+                        offset = offset + Number(table.attr("cheight"));
+                    
+                    console.log(offset);
+                    
+                    searchbutton.css("left", "307px");  
                     searchbutton.css('transition', 'all .6s ease'); 
                     searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
-                    
                 }, 721);
             }
         }
