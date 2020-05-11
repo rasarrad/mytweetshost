@@ -1737,7 +1737,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
 
 #sear {
   position: absolute;
-  top: calc(100% - 60px);
+  top: calc(100% - -14px);
   bottom: auto;
   z-index: 33333;
   background: var(--high-color);
@@ -1747,7 +1747,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
   padding-top: 6px;
   height: 35px;
   border-radius: 4px;
-  left: calc(100% - 63px);
+  left: calc(100% - -14px);
   border: 1px solid var(--softdark-color);
   font-size: 28px;
   transition: all 0.6s ease 0s !important;
@@ -1766,7 +1766,7 @@ body.big #sear {
     padding-right: 24px;
     padding-bottom: 6px;
     left: calc(100% - 70px);
-    top: calc(100% - 63px);
+    top: calc(100% - -14px);
 }
 
 #splash .splashbutton {

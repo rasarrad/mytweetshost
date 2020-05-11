@@ -74,11 +74,11 @@ function changecriteria(e, obj, tableparam) {
     }
 
     var iTop = "-2px";
-    var ibuttontop = "calc(100% - 60px)";
+    var ibuttontop = "calc(100% - -14px)";
     
     if ($('body').hasClass('big')) {
         iTop = "-1px";
-        ibuttontop = "calc(100% - 63px)";
+        ibuttontop = "calc(100% - -14px)";
     }
 
     var maindiv = table.parent();
@@ -538,9 +538,9 @@ var openSearchPopup = function(jsonobj)
 function updateSearchTablesHeight() {
     var setHeight = "26px";
     var iTop = "-2px";
-    var ibuttontop = "calc(100% - 60px)";
+    var ibuttontop = "calc(100% - -14px)";
     if ($('body').hasClass('big')) {
-        ibuttontop = "calc(100% - 63px)";
+        ibuttontop = "calc(100% - -14px)";
         setHeight = "37px";
         iTop = "-1px";
     }
