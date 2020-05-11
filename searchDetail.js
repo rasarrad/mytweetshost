@@ -137,10 +137,10 @@ function changecriteria(e, obj, tableparam) {
                     searchbutton.show();
 
                     setTimeout(function() { 
-                        searchbutton.css('transition', 'all 2.0s ease');
+                        searchbutton.css('transition', 'all 4.0s ease');
 
                         searchbutton.css("opacity", 1);
-                    }, 2000); 
+                    }, 1000); 
                 });
             }
             else {
@@ -167,7 +167,7 @@ function changecriteria(e, obj, tableparam) {
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
 
-        searchbutton.fadeOut( 1220, function() {
+        searchbutton.fadeOut( 620, function() {
             searchbutton.css('transition', 'all 0.01s ease');
 
             searchbutton.css("top", "8px");
@@ -177,10 +177,10 @@ function changecriteria(e, obj, tableparam) {
             searchbutton.show();
 
             setTimeout(function() { 
-                searchbutton.css('transition', 'all 1.2s ease');
+                searchbutton.css('transition', 'all 2.2s ease');
 
                 searchbutton.css("opacity", 1);
-            }, 1000); 
+            }, 2000); 
 
         });
     }
