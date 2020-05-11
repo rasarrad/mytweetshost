@@ -69,7 +69,7 @@ body.big td.datetd {
 }
 
 #searchpopup .fa-star-half-o {
-  
+  top: -2px !important;
 }
 body.big #searchpopup .fa-star-half-o {
   font-size: 17px;
