@@ -130,12 +130,10 @@ function changecriteria(e, obj, tableparam) {
             setTimeout(function() { 
                 if (table.attr("cheight"))
                     offset = offset + Number(table.attr("cheight"));   
-                $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
-                
-                setTimeout(function() { 
                     $("#sear").css('transition', 'all .6s ease');
-                }, 2201);
-            }, 1300);
+                $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
+
+            }, 1);
 
         }
     }
