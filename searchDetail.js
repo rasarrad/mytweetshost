@@ -64,9 +64,12 @@ function expandsection(obj, table) {
 }
 
 
-function changecriteria(e, obj, tableparam) {
-alert(1111)
-    if (dblTapFlag)
+function changecriteria(e, obj, tableparam, flag) {
+
+    if (flag) {
+
+    }
+    else if (dblTapFlag)
         return false;
 
     dblTapFlag = true;
@@ -158,10 +161,7 @@ alert(1111)
                     searchbutton.css('transition', 'all .6s ease'); 
                     searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
 
-                    setTimeout(function() { 
-                        alert(1222)
                         dblTapFlag = false;
-                    }, 600);
 
                 }, 721);
             }
@@ -180,10 +180,7 @@ alert(1111)
             searchbutton.css("left", "18px");
             searchbutton.css('transition', 'all .6s ease-in');
             
-            setTimeout(function() { 
-                alert(133333)
                 dblTapFlag = false;
-            }, 600);
 
         }, 801);
     }
@@ -513,7 +510,7 @@ function clearcriterion(e, obj, affectedobj, affectedtable) {
             break; 
     }
 
-    changecriteria(null,null, affectedtable);
+    changecriteria(null,null, affectedtable, true);
 
     if (e)
         e.stopPropagation();
