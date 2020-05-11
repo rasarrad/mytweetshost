@@ -128,7 +128,7 @@ function changecriteria(e, obj, tableparam) {
 
             $("#sear").css("opacity", 0);
             $("#sear").animate({
-                left: '307px'
+                top: (table.offset().top + 8 + offset) + "px"
               },
               {
                 duration: 720,
@@ -136,7 +136,7 @@ function changecriteria(e, obj, tableparam) {
                     setTimeout(function() { 
                         if (table.attr("cheight"))
                             offset = offset + Number(table.attr("cheight"));   
-                        $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
+                        $("#sear").css("left", "307px");
                         $("#sear").css("opacity", 1);
                         $("#sear").css('transition', 'all .6s ease');
                     }, 1);
@@ -153,13 +153,13 @@ function changecriteria(e, obj, tableparam) {
 
         $("#sear").css("opacity", 0);
         $("#sear").animate({
-            top: '8px'
+            left: '18px'
           },
           {
             duration: 300,
             complete: function(){
                 setTimeout(function() { 
-                    $("#sear").css("left", "18px");
+                    $("#sear").css("top", "8px");
                     $("#sear").css("opacity", 1);
                 }, 1);
             }
