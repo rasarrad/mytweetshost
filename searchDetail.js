@@ -149,6 +149,7 @@ function changecriteria(e, obj, tableparam, flag) {
                     console.log(offset) 
                     searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
                     searchbutton.css('transition', 'all .6s ease-in');
+                    dblTapFlag = false;
                 }, 801);
             }
             else {
@@ -163,7 +164,7 @@ function changecriteria(e, obj, tableparam, flag) {
                     searchbutton.css('transition', 'all .6s ease'); 
                     searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
                     console.log("11111111")
-                        dblTapFlag = false;
+                    dblTapFlag = false;
 
                 }, 721);
             }
