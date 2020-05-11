@@ -124,18 +124,18 @@ function changecriteria(e, obj, tableparam) {
     
             table.find('td.el').removeClass('ellipsis');
 
-            
+            $("#sear").css("opacity", 0);
             $("#sear").animate({
                 left: '307px'
               },
               {
-                easing: 'swing',
                 duration: 720,
                 complete: function(){
                     setTimeout(function() { 
                         if (table.attr("cheight"))
                             offset = offset + Number(table.attr("cheight"));   
                         $("#sear").css("top", (table.offset().top + 8 + offset) + "px");
+                        $("#sear").css("opacity", 1);
                     }, 1);
 
                 }
@@ -148,15 +148,16 @@ function changecriteria(e, obj, tableparam) {
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
+        $("#sear").css("opacity", 0);
         $("#sear").animate({
             top: '8px'
           },
           {
-            easing: 'swing',
             duration: 300,
             complete: function(){
                 setTimeout(function() { 
                     $("#sear").css("left", "18px");
+                    $("#sear").css("opacity", 1);
                 }, 1);
             }
        });
