@@ -2542,6 +2542,7 @@ function startWorker() {
                     //stopWorker();
                     closeMenuPopup(null, "2.7");
                     closeSearchPopup();
+                    console.log("11111 close mask");
                     $('#mask').fadeOut(3000);  
                     $('#tweetcount').fadeIn(3800);
 
@@ -2574,7 +2575,7 @@ function startWorker() {
           else {
             if (searchtotal > 0 && currrenderedtweets == searchtotal) {
                 stopWorker();
-                console.log("11111 stopWorker");
+                console.log("11111 stopWorker - close mask");
                 closeMenuPopup(null, "2.7");
                 closeSearchPopup();
                 $('#mask').fadeOut(3000);  
