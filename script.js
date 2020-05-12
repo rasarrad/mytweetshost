@@ -2403,7 +2403,7 @@ function showTooltip(event, obj, flag, text) {
         else
             tooltip.text($element.text());
 
-        tooltip.css("top", (event.pageY + 140) + "px");
+        tooltip.css("top", (event.pageY + 30) + "px");
         /* tooltip.css("left", getTooltipPosition(event.pageX) + "px"); */
     
         tooltip.fadeIn(700);
