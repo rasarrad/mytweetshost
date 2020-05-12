@@ -39,7 +39,7 @@
   font-size: 14px;
 }
 body.big #searchpopup .fa-external-link-square {
-  font-size: 17px;
+  font-size: 18px;
   position: absolute;
   left: 12px;
   top: 10px !important;
@@ -75,10 +75,10 @@ body.big td.datetd {
   left: -5px;
 }
 body.big #searchpopup .fa-star-half-o {
-  font-size: 17px;
-  position: relative;
-  left: -3px;
-  margin-right: 4px;
+  font-size: 19px;
+  position: absolute;
+  left: 10px;
+  top: 9px !important;
 }
 
 
@@ -90,9 +90,9 @@ body.big #searchpopup .fa-star-half-o {
 }
 body.big #searchpopup .fa-user-circle {
   font-size: 17px;
-  position: relative;
-  left: -3px;
-  margin-right: 4px;
+  position: absolute;
+  left: 10px;
+  top: 9px !important;
 }
 #searchpopup .fa-file-text {
   position: absolute;
@@ -112,18 +112,16 @@ body.big #searchpopup .fa-file-text {
 body.big #searchpopup .fa-calendar {
   font-size: 16px;
   position: relative;
-  left: -2px;
+  left: -3px;
   margin-right: 4px;
-  top: 2px !important;
+  top: 1px !important;
 }
 
 #showdeleted2 {
   font-size: 14px !important;
 }
 
-.newLayout#searchpopup #searchtypes.sectiontitletable .firsticon {
-
-}
+.newLayout#searchpopup #searchtypes.sectiontitletable .firsticon {width: 65px !important;}
 body.big .newLayout#searchpopup #searchtypes.sectiontitletable .firsticon {
   width: 85px !important;
 }
@@ -131,26 +129,22 @@ body.big .newLayout#searchpopup #searchtypes.sectiontitletable .firsticon {
 
 }
 body.big .newLayout#searchpopup #searchclassif.sectiontitletable .firsticon {
-  width: 124px !important;
+  width: 122px !important;
 }
 
 .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
     width: 30px !important;
 }
 body.big .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
-  width: 35px !important;
+  width: 27px !important;
 }
 
-.newLayout#searchpopup #searchauthor.sectiontitletable .firsticon {
-
-}
+.newLayout#searchpopup #searchauthor.sectiontitletable .firsticon {width: 52px !important;}
 body.big .newLayout#searchpopup #searchauthor.sectiontitletable .firsticon {
-  width: 77px !important;
+  width: 67px !important;
 }
 
-.newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {
-
-}
+.newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {width: 35px !important;}
 body.big .newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {
   width: 45px !important;
   padding-top: 4px !important;
@@ -2733,8 +2727,8 @@ body.big .newLayout#searchpopup .el:not(.ellipsis) .slicename {
   left: 11px;
 }
 
-.newLayout#searchpopup .sectiontitletable .sectionicontd {
-  height: 18px;
+.newLayout#searchpopup .sectiontitletable .sectionicontd.firsticon {
+  width: 92px !important;
 }
 
 body.big .newLayout#searchpopup .sectiontitletable .sectionicontd {
