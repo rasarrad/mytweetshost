@@ -64,35 +64,23 @@ $( document ).ready(function() {
 
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");
-
     if (catschanged && catschanged.length > 0 ) {
-        alert(1)
-        catsmap.set("cli", catschanged);
-        $(".cat-cli").text(catschanged);
-
-        catsmap.set("tvn", "New / Ongoing");
-        catsmap.set("trn", "Hot / Trending");
-        catsmap.set("tvi", "To Watch");
-        catsmap.set("tvl", "Documentaries / Films");
-        catsmap.set("tre", "Fast Reading");
-        catsmap.set("trl", "Long Reading");
-        catsmap.set("tke", "Important / To Keep");
-        catsmap.set("imp", "Shocking Truth");
-        catsmap.set("all", "All Links");
+        catsmap.set("cli", "My Tweets");
+        $(".cat-cli").text("My Tweets");
     }
     else {
-        alert(2)
-        catsmap.set("tvn", "New / Ongoing");
-        catsmap.set("trn", "Hot / Trending");
-        catsmap.set("tvi", "To Watch");
-        catsmap.set("tvl", "Documentaries / Films");
-        catsmap.set("tre", "Fast Reading");
-        catsmap.set("trl", "Long Reading");
-        catsmap.set("tke", "Important / To Keep");
-        catsmap.set("imp", "Shocking Truth");
-        catsmap.set("cli", "My Tweets");
-        catsmap.set("all", "All Links");
+        catsmap.set("cli", "VictoryWillCome Tweets");
     }
+    catsmap.set("all", "All Links");
+    catsmap.set("tvn", "New / Ongoing");
+    catsmap.set("trn", "Hot / Trending");
+    catsmap.set("tvi", "To Watch");
+    catsmap.set("tvl", "Documentaries / Films");
+    catsmap.set("tre", "Fast Reading");
+    catsmap.set("trl", "Long Reading");
+    catsmap.set("tke", "Important / To Keep");
+    catsmap.set("imp", "Shocking Truth");
+
 
     // START remover speckcheks
     $( "input, textarea" ).each( function( index, element ){
@@ -100,6 +88,7 @@ $( document ).ready(function() {
         $(element).attr("autocomplete", "none");
         $(element).attr("additionalAttributes", "{autocomplete: 'none'}");
     });
+
 
     // START da variavel setShowDeleted
     var showDeleted = getshowdeletedcookie();

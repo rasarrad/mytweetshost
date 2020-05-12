@@ -2180,10 +2180,7 @@ function clickLiVWC(e, obj) {
         });
 
         if (value == "Yes") {
-            
-
-            // START mapa categorias
-            var catschanged = readCookie("cat-cli");
+            createCookie("cat-cli", "", 99999);
 
             showMessage("VictoryWillCome Tweets Shown", null, null, null, null, null);
             showAll = true;
@@ -2191,7 +2188,7 @@ function clickLiVWC(e, obj) {
             changeCatsText(false);
         }
         else {
-            createCookie("cat-cli", "", 99999);
+            createCookie("cat-cli", "aaa", 99999);
 
             showMessage("VictoryWillCome Tweets Hidden", null, null, null, null, null);
             showAll = false;  
