@@ -65,7 +65,7 @@ function expandsection(obj, table) {
 
 
 function changecriteria(e, obj, tableparam, flag) {
-console.log(dblTapFlag);
+
     if (flag) {
 
     }
@@ -82,30 +82,21 @@ console.log(dblTapFlag);
         table = $("#" + tableparam);
     }
 
-    var searchbutton = $("#sear");
-    var iTop = "-2px";
-    var ibuttontop = "calc(100% - -14px)";
-    
-    if ($('body').hasClass('big')) {
-        iTop = "-1px";
-        ibuttontop = "calc(100% - -14px)";
-    }
-
-    var maindiv = table.parent();
-    
     if (e)
         e.stopPropagation();
 
+    var searchbutton = $("#sear");
+    var iTop = "-2px";
     var setHeight = "26px";
     var offset = 0;
     if ($('body').hasClass('big')) {
         setHeight = "37px";
+        iTop = "-1px";
         offset = 5;
     }
 
     if (table.css('max-height') == setHeight) {
         if (obj) {
-            var hasExpanded = false;
             $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
                 var othertable = $(element);
 
@@ -205,6 +196,39 @@ console.log(dblTapFlag);
 
         }, 801);
     }
+}
+
+function changecriteriasilent(tableparam) {
+
+    var table = $("#" + tableparam);
+
+    var setHeight = "26px";
+    var iTop = "-2px";
+    if ($('body').hasClass('big')) {
+        setHeight = "37px";
+        iTop = "-1px";
+    }
+
+    var searchbutton = $("#sear");
+
+    table.css('transition', 'max-height 0.01s');
+    searchbutton.css('transition', 'all .01s ease');
+
+    if (table.css('max-height') == setHeight) {
+
+    }
+    else {
+
+        table.css('max-height', setHeight);
+        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
+        table.find('td.el').addClass('ellipsis');
+        table.find(".togglepos").css("position", "absolute");
+        searchbutton.css("top", "8px");
+        searchbutton.css("left", "18px");
+    }
+    
+    table.css('transition', 'max-height 0.7s');
+    searchbutton.css('transition', 'all .8s ease');
 }
 
 function filtertagOnChange(obj) {
@@ -482,7 +506,7 @@ function calendarChanged(date) {
 
 
 
-function clearcriterion(e, obj, affectedobj, affectedtable) {
+function clearcriterion(e, obj, affectedobj, affectedtable, silent) {
     switch(affectedobj) {
         case "selectedtype":
             $('#' + affectedobj).val("all");
@@ -530,8 +554,11 @@ function clearcriterion(e, obj, affectedobj, affectedtable) {
             $('#' + affectedobj).trigger("change");
             break; 
     }
-console.log("eeee eee")
-    changecriteria(null,null, affectedtable, true);
+
+    if (silent)
+        changecriteriasilent(affectedtable);
+    else 
+        changecriteria(null,null, affectedtable, true);
 
     if (e)
         e.stopPropagation();
@@ -641,7 +668,7 @@ function clickSearchLiClassif(e, obj) {
         desc = "Less than ";
     }
 
-    $(".currentsearchclassif").html(desc + $(obj).html().trim() + "<i onclick='clearcriterion(event,this, \"selectedclassif\", \"searchclassif\")' class='fa fa-times-circle'></i>");
+    $(".currentsearchclassif").html("<i onclick='clearcriterion(event,this, \"selectedclassif\", \"searchclassif\")' class='fa fa-times-circle'></i>" + desc + $(obj).html().trim());
     $(".currentsearchclassif").removeClass("emptyvalue");
     $("#searchclassif").removeClass("emptyvalue");
     $("#searchclassif").addClass("withvalue");
@@ -1547,13 +1574,13 @@ var togglecriterions = function(obj) {
 function resetFields(flag) {
     $("#main").empty();
     $('#tweetcount').hide();  
-    clearcriterion(null,null, "filterdate1", "searchdate");
-    clearcriterion(null,null, "filterdate2", "searchdate");
-    clearcriterion(null,null, "selectedtype", "searchtypes");
-    clearcriterion(null,null, "filterauthor", "searchauthor");
-    clearcriterion(null,null, "filtertext", "searchinfo");
-    clearcriterion(null,null, "filtertag", "searchtags");
-    clearcriterion(null,null, "selectedclassif", "searchclassif");
+    clearcriterion(null,null, "filterdate1", "searchdate", true);
+    clearcriterion(null,null, "filterdate2", "searchdate", true);
+    clearcriterion(null,null, "selectedtype", "searchtypes", true);
+    clearcriterion(null,null, "filterauthor", "searchauthor", true);
+    clearcriterion(null,null, "filtertext", "searchinfo", true);
+    clearcriterion(null,null, "filtertag", "searchtags", true);
+    clearcriterion(null,null, "selectedclassif", "searchclassif", true);
     filterdate1date = null;
     filterdate2date = null;
     
