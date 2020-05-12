@@ -110,17 +110,20 @@ function changecriteria(e, obj, tableparam, flag) {
                 var othertable = $(element);
 
                 othertable.css('max-height', setHeight);
-                setTimeout(function() { 
-                    othertable.find(".togglepos").css("position", "absolute"); 
-                }, 600);
                 othertable.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
                 othertable.find('td.el').addClass('ellipsis');
             });
     
             setTimeout(function() { 
-                table.find(".togglepos").css("position", ""); 
+                $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
+                    var othertable = $(element);
+    
+                    if (othertable.attr("id") != table.attr("id"))
+                        othertable.find(".togglepos").css("position", "absolute"); 
+                });
             }, 600);
 
+            table.find(".togglepos").css("position", ""); 
             table.css('transition', 'max-height 0.7s');
     
             if (table.attr("cmaxheight")) {
