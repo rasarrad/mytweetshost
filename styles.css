@@ -4548,13 +4548,14 @@ body.big .buttonstable tr:first-child .firsttd i.fa-twitter {
     left: 1px !important;
 }
 
+/*
 i.clicable:active {
    color: #ffff6c !important;
 }
 span.toptitle.clicable:active {
   color: #ffff6c !important;
 }
-
+*/
 body.notransit * {
   -o-transition-property: none !important;
   -moz-transition-property: none !important;
