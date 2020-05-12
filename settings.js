@@ -58,18 +58,18 @@ function expandCat(obj, idparam, valid) {
 
 function fixfocus(el, flag)
 {
-    $(el).clone(el).insertAfter($(el));
+    var newel = $(el).clone(el).insertAfter($(el));
     $(el).remove();
 
     if (flag) {
 
     }
     else {
-        console.log($(el))
-        $(el).css("transition", "color 0.3s").css("color", "#ffff6c");
+        console.log(newel)
+        newel.css("transition", "color 0.3s").css("color", "#ffff6c");
         setTimeout(function(){
-            console.log($(el))
-            $(el).css("color", "").css("transition", "");
+            console.log(newel)
+            newel.css("color", "").css("transition", "");
         }, 1800);  
     }
 }
