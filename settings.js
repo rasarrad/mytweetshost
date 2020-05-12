@@ -56,7 +56,7 @@ function expandCat(obj, idparam, valid) {
     getJsonbyid(id, functorun);
 }
 
-function fixfocus(el, flag)
+function fixfocus(el, flag, otherproperty)
 {
     var newel = $(el).clone(el).insertAfter($(el));
     $(el).remove();
@@ -65,12 +65,14 @@ function fixfocus(el, flag)
 
     }
     else {
-        console.log(newel)
-        newel.css("transition", "color 0.3s").css("color", "#ffff6c");
+        var property = "color";
+        if (otherproperty)
+            property = otherproperty;
+            
+        newel.css("transition", property + " 0.3s").css(property, "#ffff6c");
         setTimeout(function(){
-            console.log(newel)
-            newel.css("color", "").css("transition", "");
-        }, 1800);  
+            newel.css(property, "").css("transition", "");
+        }, 700);  
     }
 }
 
