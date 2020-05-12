@@ -117,7 +117,10 @@ function changecriteria(e, obj, tableparam, flag) {
                 othertable.find('td.el').addClass('ellipsis');
             });
     
-            table.find(".togglepos").css("position", ""); 
+            setTimeout(function() { 
+                table.find(".togglepos").css("position", ""); 
+            }, 600);
+
             table.css('transition', 'max-height 0.7s');
     
             if (table.attr("cmaxheight")) {
@@ -135,8 +138,6 @@ function changecriteria(e, obj, tableparam, flag) {
             table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down').css("top", "-4px");
     
             table.find('td.el').removeClass('ellipsis');
-
-            searchbutton.stop();
 
             if (searchbutton.css("left") == "18px") {
                 searchbutton.css('transition', 'all .8s ease');
@@ -187,7 +188,6 @@ function changecriteria(e, obj, tableparam, flag) {
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
         table.find('td.el').addClass('ellipsis');
-        table.find(".togglepos").css("position", "absolute");
 
         searchbutton.css('transition', 'all .8s ease');
         searchbutton.css("top", "8px");
