@@ -2403,15 +2403,18 @@ function showTooltip(event, obj, flag, text) {
         else
             tooltip.text($element.text());
 
-        tooltip.css("top", (event.pageY - 140) + "px");
-        tooltip.css("left", getTooltipPosition(event.pageX) + "px");
+        tooltip.css("top", (event.pageY + 140) + "px");
+        /* tooltip.css("left", getTooltipPosition(event.pageX) + "px"); */
     
         tooltip.fadeIn(700);
 
+/*         setTimeout(function(){
+            closeTooltip();
+        }, 4000); */
     }
 }
 
-function showFreeTooltip(x, y, text) {
+/* function showFreeTooltip(x, y, text) {
     var tooltip = $("#tooltip");
     tooltip.text(text);
 
@@ -2419,7 +2422,7 @@ function showFreeTooltip(x, y, text) {
     tooltip.css("left",  (x + 70) + "px");
 
     tooltip.fadeIn(700);
-}
+} */
 
 
 function getTooltipPosition(pageX) {
