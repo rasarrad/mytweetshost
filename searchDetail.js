@@ -1586,7 +1586,8 @@ function resetFields(flag) {
     
     $('#selectedcat').val("all");
     $('#selectedcattext').val("All Links");
-    
+    $('#titlesearch').html("(All Links)");
+
     if (flag) 
         showMessage("Search Criterions Cleaned"); 
 } 
