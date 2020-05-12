@@ -100,7 +100,7 @@ function changecriteria(e, obj, tableparam, flag) {
     var offset = 0;
     if ($('body').hasClass('big')) {
         setHeight = "37px";
-        offset = 4;
+        offset = 5;
     }
 
     if (table.css('max-height') == setHeight) {
