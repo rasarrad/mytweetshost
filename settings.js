@@ -1089,9 +1089,9 @@ function closeMenuPopup(obj, timer) {
         fixfocus(obj);
  
     $('body, html').css('overflow-y', 'auto');
+    
+    $('#searchpopup').css("background", window.getComputedStyle(body, null).getPropertyValue('--soft-transp-color'));
 
-    $('#searchpopup').css("background", style.getPropertyValue('--soft-transp-color'));
-        
     var delay = "1.7";
 
     if (timer)
