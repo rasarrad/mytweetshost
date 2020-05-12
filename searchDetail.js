@@ -169,7 +169,7 @@ function changecriteria(e, obj, tableparam, flag) {
                     console.log(offset);
                     
                     searchbutton.css('transition', 'all .6s ease'); 
-                    searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
+                    searchbutton.css("top", (table.offset().top + 14 + offset) + "px");
 
                     setTimeout(function() { 
                         dblTapFlag = false;
