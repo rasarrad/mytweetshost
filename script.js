@@ -2008,6 +2008,9 @@ var clickmenu = function(val) {
 
     $('#selectedcat').val(val);
     $('#selectedcattext').val(catsmap.get(val));
+    console.log("-----------------");
+    console.log(val);
+    console.log(catsmap);
 
     if ($('#mainmenu').attr("fromsearch") == "yes") {
         closeMenuPopup();
