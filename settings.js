@@ -68,8 +68,9 @@ function fixfocus(el, flag)
         console.log($(el))
         $(el).css("transition", "color 0.3s").css("color", "#ffff6c");
         setTimeout(function(){
+            console.log($(el))
             $(el).css("color", "").css("transition", "");
-        }, 800);  
+        }, 1800);  
     }
 }
 
