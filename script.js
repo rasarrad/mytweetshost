@@ -66,6 +66,7 @@ $( document ).ready(function() {
     var catschanged = readCookie("cat-cli");
 
     if (catschanged && catschanged.length > 0 ) {
+        alert(1)
         catsmap.set("cli", catschanged);
         $(".cat-cli").text(catschanged);
 
@@ -80,6 +81,7 @@ $( document ).ready(function() {
         catsmap.set("all", "All Links");
     }
     else {
+        alert(2)
         catsmap.set("tvn", "New / Ongoing");
         catsmap.set("trn", "Hot / Trending");
         catsmap.set("tvi", "To Watch");
