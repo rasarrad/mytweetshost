@@ -138,7 +138,12 @@ function changecriteria(e, obj, tableparam, flag) {
 
             if (searchbutton.css("left") == "18px") {
                 searchbutton.css('transition', 'all .8s ease');
+
                 searchbutton.css("left", "307px");
+
+                if (window.innerWidth > 480) {
+                    searchbutton.css("left", "426px");
+                }
     
                 setTimeout(function() { 
                     console.log(offset)
