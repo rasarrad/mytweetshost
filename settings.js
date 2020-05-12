@@ -56,9 +56,20 @@ function expandCat(obj, idparam, valid) {
     getJsonbyid(id, functorun);
 }
 
-function fixfocus(el)
+function fixfocus(el, flag)
 {
+    $(el).clone(el).insertAfter($(el));
+    $(el).remove();
 
+    if (flag) {
+
+    }
+    else {
+        $(el).css("transition", "color 0.3s").css("color", "#ffff6c");
+        setTimeout(function(){
+            $(el).css("color", "").css("transition", "");
+        }, 800);  
+    }
 }
 
 function zoom(obj, flag) {
