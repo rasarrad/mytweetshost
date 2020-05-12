@@ -58,8 +58,7 @@ function expandCat(obj, idparam, valid) {
 
 function fixfocus(el)
 {
-    $(el).clone(el).insertAfter($(el));
-    $(el).remove();
+
 }
 
 function zoom(obj, flag) {
