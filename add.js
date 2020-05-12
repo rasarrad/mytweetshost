@@ -6,20 +6,20 @@ function parseTweet(type) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("parseTweet - Error parsing next id");
+        //cnonsole.log("parseTweet - Error parsing next id");
     }
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("parseTweet - nextid vem do cookie: " + nextid);
+            //cnonsole.log("parseTweet - nextid vem do cookie: " + nextid);
         }
         else {
             nextid = parseInt($("#maxid").val());
             createCookie("maxid", nextid);
-            console.log("parseTweet - nextid vem do hidden field: " + nextid);
+            //cnonsole.log("parseTweet - nextid vem do hidden field: " + nextid);
         }
     }
-console.log("ssss: " + type)
+    
     setTimeout(function() {
         $('#tweetid').val(nextid);
         youtubeId = "";
@@ -340,17 +340,17 @@ function create() {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("create - Error parsing next id");
+        //cnonsole.log("create - Error parsing next id");
     }
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("create - nextid vem do cookie: " + nextid);
+            //cnonsole.log("create - nextid vem do cookie: " + nextid);
         }
         else {
             nextid = parseInt($("#maxid").val());
             createCookie("maxid", nextid);
-            console.log("create - nextid vem do hidden field: " + nextid);
+            //cnonsole.log("create - nextid vem do hidden field: " + nextid);
         }
     }
 

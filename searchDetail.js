@@ -143,10 +143,10 @@ function changecriteria(e, obj, tableparam, flag) {
                 }
     
                 setTimeout(function() { 
-                    console.log(offset)
+                    //cnonsole.log(offset)
                     if (table.attr("cheight"))
                         offset = offset + Number(table.attr("cheight"));  
-                    console.log(offset) 
+                    //cnonsole.log(offset) 
                     searchbutton.css("top", (table.offset().top + 15 + offset) + "px");
                     searchbutton.css('transition', 'all .6s ease-in');
 
@@ -158,12 +158,12 @@ function changecriteria(e, obj, tableparam, flag) {
             }
             else {
                 setTimeout(function() { 
-                    console.log(offset);
+                    //cnonsole.log(offset);
 
                     if (table.attr("cheight"))
                         offset = offset + Number(table.attr("cheight"));
                     
-                    console.log(offset);
+                    //cnonsole.log(offset);
                     
                     searchbutton.css('transition', 'all .6s ease'); 
                     searchbutton.css("top", (table.offset().top + 15 + offset) + "px");
@@ -501,11 +501,6 @@ function calendarChanged(date) {
     }
 }          
 
-
-
-
-
-
 function clearcriterion(e, obj, affectedobj, affectedtable, silent) {
     switch(affectedobj) {
         case "selectedtype":
@@ -727,6 +722,8 @@ var getInformation = function(wasfiltered, valid) {
         }
     }
     */
+
+    console.log("inicio search");
 
     var totalLinkss = 0;
     total_yy = 0;
@@ -1047,6 +1044,8 @@ var getInformation = function(wasfiltered, valid) {
             return Number($(b).attr('cdate')) - Number($(a).attr('cdate'));
         }).appendTo('#main');
 
+        console.log("fim search");
+
         if (totalLinkss > 0) {
             //if (wasfiltered != 2)
                 //showMessage("Search Results", 2000);
@@ -1061,7 +1060,6 @@ var getInformation = function(wasfiltered, valid) {
 }
   
 function renderLink(val, customize) {
-    //console.log("renderLink: " + val.id);
     var tagdispalay = " --";
     var expandclass = "";
     var color = "";
@@ -1170,18 +1168,18 @@ var getInformationbyid = function(id, flag) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("getInformationbyid - Error parsing next id");
+        //cnonsole.log("getInformationbyid - Error parsing next id");
     }
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("getInformationbyid - nextid vem do cookie: " + nextid);
+            //cnonsole.loglog("getInformationbyid - nextid vem do cookie: " + nextid);
             nextid = nextid - 1;
         }
         else {
             nextid = parseInt($("#maxid").val());
             createCookie("maxid", nextid);
-            console.log("getInformationbyid - nextid vem do hidden field: " + nextid);
+            //cnonsole.log("getInformationbyid - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
     }
@@ -1416,18 +1414,18 @@ var getJsonbyid = function(id, functorun) {
             nextid = parseInt(readCookie("maxid"));
         }
         catch(err) {
-            console.log("getJsonbyid - Error parsing next id");
+            //cnonsole.log("getJsonbyid - Error parsing next id");
         }
         finally {
             if (nextid) {
                 $("#maxid").val(nextid);
-                console.log("getJsonbyid - nextid vem do cookie: " + nextid);
+                //cnonsole.log("getJsonbyid - nextid vem do cookie: " + nextid);
                 nextid = nextid - 1;
             }
             else {
                 nextid = parseInt($("#maxid").val());
                 createCookie("maxid", nextid);
-                console.log("getJsonbyid - nextid vem do hidden field: " + nextid);
+                //cnonsole.log("getJsonbyid - nextid vem do hidden field: " + nextid);
                 nextid = nextid - 1;
             }
         }
@@ -1603,18 +1601,18 @@ var existsLink = function(text, type, functorun) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("existsLink - Error parsing next id");
+        //cnonsole.log("existsLink - Error parsing next id");
     }
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("existsLink - nextid vem do cookie: " + nextid);
+            //cnonsole.log("existsLink - nextid vem do cookie: " + nextid);
             nextid = nextid - 1;
         }
         else {
             nextid = parseInt($("#maxid").val());
             createCookie("maxid", nextid);
-            console.log("existsLink - nextid vem do hidden field: " + nextid);
+            //cnonsole.log("existsLink - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
     }

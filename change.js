@@ -449,18 +449,18 @@ function countalltweets(webLinksMap) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("countalltweets - Error parsing next id");
+        //cnonsole.log("countalltweets - Error parsing next id");
     }
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("countalltweets - nextid vem do cookie: " + nextid);
+            //cnonsole.log("countalltweets - nextid vem do cookie: " + nextid);
             nextid = nextid - 1;
         }
         else {
             nextid = parseInt($("#maxid").val());
             createCookie("maxid", nextid);
-            console.log("countalltweets - nextid vem do hidden field: " + nextid);
+            //cnonsole.log("countalltweets - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
     }
@@ -1064,18 +1064,18 @@ var eraseAllDeletedFunc = function(text, type, functorun) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("eraseAllDeletedFunc - Error parsing next id");
+        //cnonsole.log("eraseAllDeletedFunc - Error parsing next id");
     }
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("eraseAllDeletedFunc - nextid vem do cookie: " + nextid);
+            //cnonsole.log("eraseAllDeletedFunc - nextid vem do cookie: " + nextid);
             nextid = nextid - 1;
         }
         else {
             nextid = parseInt($("#maxid").val());
             createCookie("maxid", nextid);
-            console.log("eraseAllDeletedFunc - nextid vem do hidden field: " + nextid);
+            //cnonsole.log("eraseAllDeletedFunc - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
     }
@@ -1267,18 +1267,18 @@ function hasTweetChanges(callback) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("hasTweetChanges - Error parsing next id");
+        //cnonsole.log("hasTweetChanges - Error parsing next id");
     }
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("hasTweetChanges - nextid vem do cookie: " + nextid);
+            //cnonsole.log("hasTweetChanges - nextid vem do cookie: " + nextid);
             nextid = nextid - 1;
         }
         else {
             nextid = parseInt($("#maxid").val());
             createCookie("maxid", nextid);
-            console.log("hasTweetChanges - nextid vem do hidden field: " + nextid);
+            //cnonsole.log("hasTweetChanges - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
     }
@@ -1374,18 +1374,18 @@ function generate(obj) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("generate - Error parsing next id");
+        //cnonsole.log("generate - Error parsing next id");
     }
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("generate - nextid vem do cookie: " + nextid);
+            //cnonsole.log("generate - nextid vem do cookie: " + nextid);
             nextid = nextid - 1;
         }
         else {
             nextid = parseInt($("#maxid").val());
             createCookie("maxid", nextid);
-            console.log("generate - nextid vem do hidden field: " + nextid);
+            //cnonsole.log("generate - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
     }

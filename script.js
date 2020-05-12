@@ -232,8 +232,8 @@ $( document ).ready(function() {
     */
 
     /* 
-    console.log("----window.innerWidth-----window.innerHeight------navigator.userAgent-----");
-    console.log(window.innerWidth + " - " + window.innerHeight + " - " + navigator.userAgent);
+    //cnonsole.log("----window.innerWidth-----window.innerHeight------navigator.userAgent-----");
+    //cnonsole.log(window.innerWidth + " - " + window.innerHeight + " - " + navigator.userAgent);
     */
 
     /*
@@ -459,17 +459,17 @@ $( document ).ready(function() {
                 nextid = parseInt(readCookie("maxid"));
             }
             catch(err) {
-                console.log("removetmp click - Error parsing next id");
+                //cnonsole.log("removetmp click - Error parsing next id");
             }
             finally {
                 if (nextid) {
                     $("#maxid").val(nextid);
-                    console.log("removetmp click - nextid vem do cookie: " + nextid);
+                    //cnonsole.log("removetmp click - nextid vem do cookie: " + nextid);
                 }
                 else {
                     nextid = parseInt($("#maxid").val());
                     createCookie("maxid", nextid);
-                    console.log("removetmp click - nextid vem do hidden field: " + nextid);
+                    //cnonsole.log("removetmp click - nextid vem do hidden field: " + nextid);
                 }
             }
 
@@ -1205,7 +1205,6 @@ var dblTapFlag = false;
 var dblTapTimeout = null;
 
 function clickHandler(event) {
-    console.log(event.currentTarget);
     var obj = event.currentTarget.id;
     dblTapFlagControl = false;
     if(!dblTapFlag) {
@@ -1318,18 +1317,18 @@ function handleTouchEnd(evt) {
         if (useSwipes && dblFlag && lastTouch) {                       
             if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
                 if ( xDiff > 0 ) {
-                    console.log("left: " + currObjSwipe);
+                    //cnonsole.log("left: " + currObjSwipe);
                     //executeSwipeFunction(currObjSwipe, "left");
                 } else {
-                    console.log("right: " + currObjSwipe);
+                    //cnonsole.log("right: " + currObjSwipe);
                     //executeSwipeFunction(currObjSwipe, "right");
                 }                       
             } else {
                 if ( yDiff > 0 ) {
-                    console.log("up: " + currObjSwipe);
+                    //cnonsole.log("up: " + currObjSwipe);
                     //executeSwipeFunction(currObjSwipe, "up");
                 } else {
-                    console.log("down: " + currObjSwipe);
+                    //cnonsole.log("down: " + currObjSwipe);
                     //executeSwipeFunction(currObjSwipe, "down");
                 }                                                                 
             }
@@ -1374,11 +1373,11 @@ function executeSingleDoubleFunction(obj, type) {
                 else {
                     openLinkOutside(obj.substring(9));
                 }
-                console.log("Execute double/long touch:" + obj);
+                //cnonsole.log("Execute double/long touch:" + obj);
             }
             else { // Execute single/touch
                 openLinkInline(obj.substring(9));
-                console.log("Execute single/touch:" + obj);
+                //cnonsole.log("Execute single/touch:" + obj);
             }
 
             break;  
@@ -1432,28 +1431,28 @@ function executeSwipeFunction(obj, type) {
 
 function processHelpDivFuncs(type) {
     closeHelpPopup();
-    console.log("help all-----------------------------------------------");
+    //cnonsole.log("help all-----------------------------------------------");
 } 
 
 function processLinkChangeFuncs(type) {
     switch(type) {
         case "up":
             closeSettingsPopup()
-            console.log("linkChange up-----------------------------------------------");
+            //cnonsole.log("linkChange up-----------------------------------------------");
             break;
 
         case "down":
             closeSettingsPopup()
-            console.log("linkChange down-----------------------------------------------");
+            //cnonsole.log("linkChange down-----------------------------------------------");
             break;
         case "left":
             closeSettingsPopup()
-            console.log("linkChange left-----------------------------------------------");
+            //cnonsole.log("linkChange left-----------------------------------------------");
             break;
 
         case "right":
             closeSettingsPopup();
-            console.log("linkChange right-----------------------------------------------");
+            //cnonsole.log("linkChange right-----------------------------------------------");
             break;
     }
 }  
@@ -1462,21 +1461,21 @@ function processSearchFuncs(type) {
     switch(type) {
         case "up":
             closeSearchPopup()
-            console.log("searchpopup up-----------------------------------------------");
+            //cnonsole.log("searchpopup up-----------------------------------------------");
             break;
 
         case "down":
             closeSearchPopup()
-            console.log("searchpopup down-----------------------------------------------");
+            //cnonsole.log("searchpopup down-----------------------------------------------");
             break;
         case "left":
             resetFields(true)
-            console.log("searchpopup left-----------------------------------------------");
+            //cnonsole.log("searchpopup left-----------------------------------------------");
             break;
 
         case "right":
             getInformation(2);
-            console.log("searchpopup right-----------------------------------------------");
+            //cnonsole.log("searchpopup right-----------------------------------------------");
             break;
     }
 }  
@@ -1485,21 +1484,21 @@ function processCalendarFuncs(type) {
     switch(type) {
         case "up":
             closeCalendarPopup()
-            console.log("calendardiv up-----------------------------------------------");
+            //cnonsole.log("calendardiv up-----------------------------------------------");
             break;
 
         case "down":
             closeCalendarPopup()
-            console.log("calendardiv down-----------------------------------------------");
+            //cnonsole.log("calendardiv down-----------------------------------------------");
             break;
         case "left":
             $("button[data-calendar-toggle=previous]").trigger("click");
-            console.log("calendardiv left-----------------------------------------------");
+            //cnonsole.log("calendardiv left-----------------------------------------------");
             break;
 
         case "right":
             $("button[data-calendar-toggle=next]").trigger("click");
-            console.log("calendardiv right-----------------------------------------------");
+            //cnonsole.log("calendardiv right-----------------------------------------------");
             break;
     }
 }  
@@ -1508,21 +1507,21 @@ function processBackdivFuncs(type) {
     switch(type) {
         case "up":
             openSearchPopup()
-            console.log("backdiv up-----------------------------------------------");
+            //cnonsole.log("backdiv up-----------------------------------------------");
             break;
 
         case "down":
             openmenu()
-            console.log("backdiv down-----------------------------------------------");
+            //cnonsole.log("backdiv down-----------------------------------------------");
             break;
         case "left":
             openmenu()
-            console.log("backdiv left-----------------------------------------------");
+            //cnonsole.log("backdiv left-----------------------------------------------");
             break;
 
         case "right":
             openSearchPopup()
-            console.log("backdiv right-----------------------------------------------");
+            //cnonsole.log("backdiv right-----------------------------------------------");
             break;
     }
 }  
@@ -1531,21 +1530,21 @@ function processMainsettingsFuncs(type) {
     switch(type) {
         case "up":
             closeMainSettingsPopup();
-            console.log("mainsettings up-----------------------------------------------");
+            //cnonsole.log("mainsettings up-----------------------------------------------");
             break;
 
         case "down":
             closeMainSettingsPopup();
-            console.log("mainsettings down-----------------------------------------------");
+            //cnonsole.log("mainsettings down-----------------------------------------------");
             break;
         case "left":
             closeMainSettingsPopup();
-            console.log("mainsettings left-----------------------------------------------");
+            //cnonsole.log("mainsettings left-----------------------------------------------");
             break;
 
         case "right":
             closeMainSettingsPopup();
-            console.log("mainsettings right-----------------------------------------------");
+            //cnonsole.log("mainsettings right-----------------------------------------------");
             break;
     }
 }  
@@ -1554,25 +1553,25 @@ function processMainmenuFuncs(type) {
     switch(type) {
         case "up":
             closeMenuPopup()
-            console.log("Mainmenu up-----------------------------------------------");
+            //cnonsole.log("Mainmenu up-----------------------------------------------");
             break;
 
         case "down":
             closeMenuPopup()
-            console.log("Mainmenu down-----------------------------------------------");
+            //cnonsole.log("Mainmenu down-----------------------------------------------");
             break;
         case "left":
             showMessage("Show Deleted Links Toggled", 2500, null, null, null, null, true, 500);
 
             toggleShowDeletedAll();
 
-            console.log("Mainmenu left-----------------------------------------------");
+            //cnonsole.log("Mainmenu left-----------------------------------------------");
             break;
 
         case "right":
             clickmenu('all', 'All Links');
             showMessage("All Links Displayed", 2500, null, null, null, null, true, 500);
-            console.log("Mainmenu right-----------------------------------------------");
+            //cnonsole.log("Mainmenu right-----------------------------------------------");
             break;
     }
 }  
@@ -1584,7 +1583,7 @@ function processLinkFuncs(idLink, type) {
             case "up":
 
 
-                //console.log("UP   UP   UP   UP   UP   UP   UP   UP   UP   UP   UP");
+                ////cnonsole.log("UP   UP   UP   UP   UP   UP   UP   UP   UP   UP   UP");
                 /*
                 openSearchPopup()
                 https://stackoverflow.com/questions/22629286/scroll-down-a-webpage-by-constant-speed/22629859
@@ -1598,7 +1597,7 @@ function processLinkFuncs(idLink, type) {
                 break;
     
             case "down":// apagar pesquisa - mantendo os critérios
-                /*console.log("DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   ");
+                /*//cnonsole.log("DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   ");
                 
                 $("#main").empty();
                 $('#tweetcount').hide(); 
@@ -1606,7 +1605,7 @@ function processLinkFuncs(idLink, type) {
 */
                 break;
             case "left": // apagar pesquisa - mantendo os critérios 
-                /*console.log("LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   ");
+                /*//cnonsole.log("LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   ");
              
                 $('#linkresult').val($('#' + idLink).attr('curl'));
                 $("#linkresult").focus();
@@ -1622,7 +1621,7 @@ function processLinkFuncs(idLink, type) {
                 break;
     
             case "right": // abrir link
-                //console.log("RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   ");
+                ////cnonsole.log("RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   ");
                 expandCat(null, idLink);
                 break;
         }
@@ -1708,7 +1707,6 @@ $.fn.isChildOverflowing = function (child) {
         $('#mask').fadeIn(600);  
         setTimeout(function() { 
             resetFieldsPopup(); 
-            console.log("--111--" + text + "----")
 
             $('#tweet').val(text);
 
@@ -1998,9 +1996,6 @@ var clickmenu = function(val) {
 
     $('#selectedcat').val(val);
     $('#selectedcattext').val(catsmap.get(val));
-    console.log("-----------------");
-    console.log(val);
-    console.log(catsmap);
 
     if ($('#mainmenu').attr("fromsearch") == "yes") {
         closeMenuPopup();
@@ -2321,10 +2316,8 @@ function customizeSingleTweet(id) {
         tweetCSS = ".EmbeddedTweet{height:auto !important; background: transparent !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;padding-bottom: 25px !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;width: 100%;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {background: transparent !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TwitterCard-container {border: 1px solid var(--soft-color) !important;max-width: 10000px!important;}.TweetAuthor-name {font-size: 16px !important;}.Avatar:not(.Identity-avatar) {height: 36px !important;width: 36px !important;position: relative !important;min-width: 36px !important;top: 2px !important;}.Avatar.Identity-avatar {width: 16px !important;height: 16px !important;}.TweetAuthor-screenName {font-size: 14px !important;}.Tweet-body{font-size: 16px !important;} .TweetAuthor-avatar--ancestor .Avatar {left: -5px !important;}.TweetInfo {font-size: 12px !important;}.CallToAction {font-size: 13px !important;}.Tweet-card {font-size: 14px !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TweetAuthor-avatar{width: 36px !important;height: 36px !important;} .TweetInfo-like {display: none !important;} .CallToAction-icon {display: none !important;} .TweetInfo-timeGeo {margin-left: 5px !important;} .CallToAction-text { color: var(--text-color) !important;} .CallToAction-text:hover { opacity: 0.6 !important;} a:hover { opacity: 0.6 !important;}";    
     }
 
-    //console.log("-" + totalrenderedtweets + "-");
     var obj = $("#twitter-widget-" + totalrenderedtweets);
 
-    //console.log(obj.parent().parent());
     obj.attr("processed", "yes");
     var tweetStyle = document.createElement("style");
 
@@ -2471,7 +2464,7 @@ function getWebsiteData2(url) {
     $.ajax({
         url: 'https://cors-anywhere.herokuapp.com/' + url
       }).then(function(data) {
-        console.log('---------------WEBSITE ' + url + ' ----------------');
+        //cnonsole.log('---------------WEBSITE ' + url + ' ----------------');
         // titulo - checar se é vazia
         
         
@@ -2480,9 +2473,9 @@ function getWebsiteData2(url) {
         
         var html = $(data);
         // descricao - checar se é vazia
-        console.log("Descricao: " + getMetaContent(html, 'description') );
+        //cnonsole.log("Descricao: " + getMetaContent(html, 'description') );
 
-        console.log(data)
+        //cnonsole.log(data)
 
       });
 
@@ -2515,6 +2508,7 @@ function startWorker() {
       //w.postMessage({ "args": [ 500 ] });
 
       timeoutWorker.onmessage = function(event) {
+        console.log("primeiro startWorker");
           if (linkArray[currrenderedtweets]) {
             if (currrenderedtweets < 5) {
                 if (currrenderedtweets == 0) {
@@ -2552,7 +2546,6 @@ function startWorker() {
                     $('#tweetcount').fadeIn(3800);
 
 /*                     setTimeout(function() {     
-                        console.log("--------------ffff")
                         var element = document.getElementById("13");
 
                         // smooth scroll to element and align it at the bottom
@@ -2579,9 +2572,9 @@ function startWorker() {
             }
           }
           else {
-            console.log("Fim da search: " + searchtotal + "-" + currrenderedtweets);
             if (searchtotal > 0 && currrenderedtweets == searchtotal) {
                 stopWorker();
+                console.log("11111 stopWorker");
                 closeMenuPopup(null, "2.7");
                 closeSearchPopup();
                 $('#mask').fadeOut(3000);  
@@ -2589,8 +2582,8 @@ function startWorker() {
             }
             else {
                 renderTimeout = setTimeout(function() {     
+                    console.log("2222 stopWorker");
                     stopWorker();
-                    console.log("Fim da search - stopWorker - FORCED " + searchtotal + "-" + currrenderedtweets)
                 }, 1000);  
             }
           }
