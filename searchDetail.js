@@ -530,7 +530,7 @@ function clearcriterion(e, obj, affectedobj, affectedtable) {
             $('#' + affectedobj).trigger("change");
             break; 
     }
-
+console.log("eeee eee")
     changecriteria(null,null, affectedtable, true);
 
     if (e)
