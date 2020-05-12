@@ -1087,11 +1087,16 @@ function closeMenuPopup(obj, timer) {
 
     if (obj)
         fixfocus(obj);
- 
-    $('body, html').css('overflow-y', 'auto');
-    
-    $('#searchpopup').css("background", window.getComputedStyle(body, null).getPropertyValue('--soft-transp-color'));
 
+    if ($('#mainmenu').attr("fromsearch") == "yes") {
+        var style = window.getComputedStyle(body, null);
+        $('#searchpopup').css("background", style.getPropertyValue('--soft-transp-color'));
+        $('#mainmenu').attr("fromsearch", "");
+    }
+    else {
+        $('body, html').css('overflow-y', 'auto');
+    }
+        
     var delay = "1.7";
 
     if (timer)
