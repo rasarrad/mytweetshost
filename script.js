@@ -81,7 +81,6 @@ $( document ).ready(function() {
     catsmap.set("tke", "Important / To Keep");
     catsmap.set("imp", "Shocking Truth");
 
-
     // START remover speckcheks
     $( "input, textarea" ).each( function( index, element ){
         $(element).attr("spellcheck", "false");

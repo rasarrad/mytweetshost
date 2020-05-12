@@ -65,7 +65,7 @@ function expandsection(obj, table) {
 
 
 function changecriteria(e, obj, tableparam, flag) {
-
+alert(dblTapFlag);
     if (flag) {
 
     }
@@ -1556,6 +1556,9 @@ function resetFields(flag) {
     clearcriterion(null,null, "selectedclassif", "searchclassif");
     filterdate1date = null;
     filterdate2date = null;
+    
+    $('#selectedcat').val("all");
+    $('#selectedcattext').val("All Links");
     
     if (flag) 
         showMessage("Search Criterions Cleaned"); 
