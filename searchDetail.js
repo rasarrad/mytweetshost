@@ -145,7 +145,7 @@ function changecriteria(e, obj, tableparam, flag) {
                     if (table.attr("cheight"))
                         offset = offset + Number(table.attr("cheight"));  
                     console.log(offset) 
-                    searchbutton.css("top", (table.offset().top + 8 + offset) + "px");
+                    searchbutton.css("top", (table.offset().top + 14 + offset) + "px");
                     searchbutton.css('transition', 'all .6s ease-in');
 
                     setTimeout(function() { 
