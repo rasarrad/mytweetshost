@@ -65,7 +65,7 @@ function expandsection(obj, table) {
 
 
 function changecriteria(e, obj, tableparam, flag) {
-alert(dblTapFlag);
+console.log(dblTapFlag);
     if (flag) {
 
     }
