@@ -68,11 +68,11 @@ function fixfocus(el, flag, otherproperty)
         var property = "color";
         if (otherproperty)
             property = otherproperty;
-            
+
         newel.css("transition", property + " 0.3s").css(property, "#ffff6c");
         setTimeout(function(){
             newel.css(property, "").css("transition", "");
-        }, 700);  
+        }, 400);  
     }
 }
 
