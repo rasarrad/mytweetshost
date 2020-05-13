@@ -472,45 +472,6 @@ function countalltweets(webLinksMap) {
             val = data.Tweets[i];
 
              
-            var recordfromdata = val;
-            var linkcontent = null;
-            var linktmp = null;
-            
-            do {
-                if (processtmp) {
-                    linkcontent = readCookie(nextid + "templink");
-
-                    if (linkcontent && linkcontent.length > 0) {
-                        
-                        linktmp = decodeURIComponent(linkcontent);
-                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
-
-                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
-                        linktmp = linktmp.replace(/(\\)/gm, ""); 
-                        linktmp = JSON.parse(linktmp);
-
-                        val = linktmp;
-                        nextid = nextid - 1;
-                    }
-                    else {
-                        if (showAll) {
-                            val = recordfromdata;
-                        }
-                        else {
-                            val.id = "0";
-                        }
-                        processtmp = false;
-                    }
-                }
-                else {
-                    if (showAll) {
-                        val = recordfromdata;
-                    }
-                    else {
-                        val.id = "0";
-                    }
-                }
-
                 var isdeleted = readCookie(val.id + "isdeleted");
                 if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
 
@@ -525,8 +486,6 @@ function countalltweets(webLinksMap) {
                         }
                         total = total + 1;
                 }   
-            }
-            while (processtmp);
 
         }
 
