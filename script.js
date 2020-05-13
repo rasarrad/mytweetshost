@@ -2557,23 +2557,41 @@ function startWorker() {
 
                     }, 15190); */
                 }
-                renderTimeout = setTimeout(function() {  
-                    console.log("processou: " + currrenderedtweets + "-" + linkArray[currrenderedtweets]);     
-                    if (linkArray[currrenderedtweets] == "T") {
-                        if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                            currrenderedtweets++;
-            
-                            if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
-                                customizeSingleTweet();
-                            }
-                        }
+    
+                var doExec = true;
+
+                if (countercontrol == 5) {
+                    console.log("countercontrol == 5: " + currrenderedtweets + "-" + (new Date().getTime() - datecontrol.getTime()));  
+                    if (new Date().getTime() - datecontrol.getTime() > 5000) {
+                        countercontrol = 0;
+                        datecontrol = new Date();
+    
+                        doExec = true;
                     }
                     else {
-                        $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
-                        currrenderedtweets++;
-                        countercontrol++;
+                        doExec = false;
                     }
-                }, 190);
+                }
+
+                if (doExec) {
+                    renderTimeout = setTimeout(function() {  
+                        console.log("processou: " + currrenderedtweets + "-" + linkArray[currrenderedtweets]);     
+                        if (linkArray[currrenderedtweets] == "T") {
+                            if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
+                                currrenderedtweets++;
+                
+                                if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
+                                    customizeSingleTweet();
+                                }
+                            }
+                        }
+                        else {
+                            $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
+                            currrenderedtweets++;
+                            countercontrol++;
+                        }
+                    }, 190);
+                }
             }
           }
           else {
