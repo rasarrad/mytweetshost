@@ -2575,7 +2575,7 @@ function startWorker() {
 
                 if (doExec) {
                     renderTimeout = setTimeout(function() {  
-                        console.log("processou: " + currrenderedtweets + "-" + linkArray[currrenderedtweets]);     
+                        //console.log("processou: " + currrenderedtweets + "-" + linkArray[currrenderedtweets]);     
                         if (linkArray[currrenderedtweets] == "T") {
                             if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
                                 currrenderedtweets++;
