@@ -468,8 +468,9 @@ function countalltweets(webLinksMap) {
     {
         console.log("countalltweets 22222");
 
-      $.each(data.Tweets, function(key, val) 
-        {
+        for(i=0; i < data.Tweets.length; i++) {
+            val = data.Tweets[i];
+
             
             var recordfromdata = val;
             var linkcontent = null;
@@ -544,8 +545,9 @@ function countalltweets(webLinksMap) {
                 }   
             }
             while (processtmp);
-          
-        });
+
+        }
+
 
 
         console.log("countalltweets 333333");
