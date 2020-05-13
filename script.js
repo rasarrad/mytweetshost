@@ -41,6 +41,7 @@ var isMobile = null;
 var totalrenderedtweets = 0;
 var currrenderedtweets = 0;
 var linkArray = new Array();
+var linkArrayToRender = new Array();
 var timeoutWorker;
 var renderTimeout = null;
 var datecontrol = new Date();
@@ -2538,6 +2539,9 @@ function startWorker() {
                     }
                     currrenderedtweets++;
                 }
+                if (linkArrayToRender[currrenderedtweets + 5]) {
+                    renderLink(linkArrayToRender[currrenderedtweets + 5]);
+                }
             }
             else {
                 
@@ -2583,9 +2587,21 @@ function startWorker() {
                         }
                         else {
                             $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
+                    
+                            if (!isMobile) {
+                                idCurr = linkArray[currrenderedtweets];
+                                setTimeout(function(){
+                                    document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
+                                }, 0);
+                            }
                             currrenderedtweets++;
                             countercontrol++;
                         }
+
+                        if (linkArrayToRender[currrenderedtweets + 5]) {
+                            renderLink(linkArrayToRender[currrenderedtweets + 5]);
+                        }
+                        
                     }, 190);
                 }
             }

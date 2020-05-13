@@ -697,6 +697,7 @@ var getInformation = function(wasfiltered, valid) {
     searchtotal = 0;
     currrenderedtweets = 0;
     linkArray = new Array();
+    linkArrayToRender = new Array();
     var localCounter = 0;    
 
     // security check
@@ -1009,13 +1010,19 @@ var getInformation = function(wasfiltered, valid) {
 
                     if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                         && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
-                            if (val.type == "T")
-                                linkArray[localCounter] = val.type;
-                            else
-                                linkArray[localCounter] = val.id;
                             
-                            localCounter++;
+                        if (val.type == "T")
+                            linkArray[localCounter] = val.type;
+                        else
+                            linkArray[localCounter] = val.id;
+
+                        if (localCounter < 5) {
                             renderLink(val);
+                        } 
+                        else {
+                            linkArrayToRender[localCounter] = val;
+                        }
+                        localCounter++;
                     }   
     
                     if (val.id == 0) {
