@@ -467,6 +467,7 @@ function countalltweets(webLinksMap) {
     $.getJSON(path, function(data) 
     {
         console.log("countalltweets 22222");
+
       $.each(data.Tweets, function(key, val) 
         {
             
@@ -529,7 +530,6 @@ function countalltweets(webLinksMap) {
                     }
     
                     if (doShowDeletedLink) {
-                        console.log("countalltweets " + total);
                         if (val.type == "T") {
                             total_t = total_t + 1;
                         }
