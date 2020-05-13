@@ -471,7 +471,7 @@ function countalltweets(webLinksMap) {
         for(i=0; i < data.Tweets.length; i++) {
             val = data.Tweets[i];
 
-            
+             
             var recordfromdata = val;
             var linkcontent = null;
             var linktmp = null;
