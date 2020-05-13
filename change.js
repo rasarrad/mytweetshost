@@ -529,7 +529,7 @@ function countalltweets(webLinksMap) {
                         } 
                     }
     
-                    if (doShowDeletedLink) {
+                    if (doShowDeletedLink) {   
                         if (val.type == "T") {
                             total_t = total_t + 1;
                         }
