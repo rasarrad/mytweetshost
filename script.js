@@ -2558,9 +2558,21 @@ function startWorker() {
                     }, 15190); */
                 }
     
-                if (countercontrol == 5 && new Date().getTime() - datecontrol.getTime() > 5000) {
-                    countercontrol = 0;
+                var doExec = true;
 
+                if (countercontrol == 5) {
+                    if (new Date().getTime() - datecontrol.getTime() > 5000) {
+                        countercontrol = 0;
+                        datecontrol = new Date();
+    
+                        doExec = true;
+                    }
+                    else {
+                        doExec = false;
+                    }
+                }
+
+                if (doExec) {
                     renderTimeout = setTimeout(function() {     
                         if (linkArray[currrenderedtweets] == "T") {
                             if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
@@ -2577,7 +2589,6 @@ function startWorker() {
                             countercontrol++;
                         }
                     }, 190);
-                    
                 }
             }
           }
