@@ -43,6 +43,8 @@ var currrenderedtweets = 0;
 var linkArray = new Array();
 var timeoutWorker;
 var renderTimeout = null;
+var datecontrol = new Date();
+var countercontrol = 0;
 
 /* 
     xyz startcode
@@ -2508,8 +2510,9 @@ function startWorker() {
       //w.postMessage({ "args": [ 500 ] });
 
       timeoutWorker.onmessage = function(event) {
-        console.log("primeiro startWorker");
+        
           if (linkArray[currrenderedtweets]) {
+            console.log("primeiro startWorker: " + currrenderedtweets + "-" + linkArray[currrenderedtweets]);  
             if (currrenderedtweets < 5) {
                 if (currrenderedtweets == 0) {
                     $("html, body").scrollTop(0);
@@ -2568,6 +2571,7 @@ function startWorker() {
                     else {
                         $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
                         currrenderedtweets++;
+                        countercontrol++;
                     }
                 }, 190);
             }
