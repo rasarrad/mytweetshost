@@ -2559,19 +2559,15 @@ function startWorker() {
                 }
     
                 var doExec = false;
-                console.log("countercontrol ALL: " + currrenderedtweets + "-" + countercontrol);  
-                if (countercontrol == 5) {
-                    console.log("countercontrol == 5: " + currrenderedtweets + "-" + (new Date().getTime() - datecontrol.getTime()));  
-                    if (new Date().getTime() - datecontrol.getTime() > 5000) {
-                        countercontrol = 0;
-                        datecontrol = new Date();
-    
-                        doExec = true;
-                    }
-                }
-                else {
+
+                if (new Date().getTime() - datecontrol.getTime() > 2000) {
+                    datecontrol = new Date();
+
                     doExec = true;
                 }
+                
+                console.log("countercontrol ALL: " + currrenderedtweets + "-" + doExec);  
+
 
                 if (doExec) {
                     renderTimeout = setTimeout(function() {  
