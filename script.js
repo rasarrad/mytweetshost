@@ -2558,7 +2558,7 @@ function startWorker() {
                     }, 15190); */
                 }
     
-                var doExec = true;
+                var doExec = false;
                 console.log("countercontrol ALL: " + currrenderedtweets + "-" + countercontrol);  
                 if (countercontrol == 5) {
                     console.log("countercontrol == 5: " + currrenderedtweets + "-" + (new Date().getTime() - datecontrol.getTime()));  
@@ -2568,9 +2568,9 @@ function startWorker() {
     
                         doExec = true;
                     }
-                    else {
-                        doExec = false;
-                    }
+                }
+                else {
+                    doExec = true;
                 }
 
                 if (doExec) {
