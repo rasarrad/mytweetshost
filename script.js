@@ -2559,7 +2559,7 @@ function startWorker() {
                 }
     
                 var doExec = true;
-
+                console.log("countercontrol ALL: " + currrenderedtweets + "-" + countercontrol);  
                 if (countercontrol == 5) {
                     console.log("countercontrol == 5: " + currrenderedtweets + "-" + (new Date().getTime() - datecontrol.getTime()));  
                     if (new Date().getTime() - datecontrol.getTime() > 5000) {
