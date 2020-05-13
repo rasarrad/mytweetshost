@@ -2558,22 +2558,27 @@ function startWorker() {
                     }, 15190); */
                 }
     
-                renderTimeout = setTimeout(function() {     
-                    if (linkArray[currrenderedtweets] == "T") {
-                        if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                            currrenderedtweets++;
-            
-                            if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
-                                customizeSingleTweet();
+                if (countercontrol == 5 && new Date().getTime() - datecontrol.getTime() > 5000) {
+                    countercontrol = 0;
+
+                    renderTimeout = setTimeout(function() {     
+                        if (linkArray[currrenderedtweets] == "T") {
+                            if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
+                                currrenderedtweets++;
+                
+                                if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
+                                    customizeSingleTweet();
+                                }
                             }
                         }
-                    }
-                    else {
-                        $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
-                        currrenderedtweets++;
-                        countercontrol++;
-                    }
-                }, 190);
+                        else {
+                            $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
+                            currrenderedtweets++;
+                            countercontrol++;
+                        }
+                    }, 190);
+                    
+                }
             }
           }
           else {
