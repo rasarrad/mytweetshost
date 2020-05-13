@@ -528,7 +528,6 @@ function countalltweets(webLinksMap) {
                     }
     
                     if (doShowDeletedLink) {
-                        console.log("countalltweets " + total);
                         if (val.type == "T") {
                             total_t = total_t + 1;
                         }
