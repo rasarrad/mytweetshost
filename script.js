@@ -2579,7 +2579,7 @@ function startWorker() {
                         if (linkArray[currrenderedtweets] == "T") {
                             if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
                                 currrenderedtweets++;
-                
+                                countercontrol++;
                                 if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
                                     customizeSingleTweet();
                                 }
