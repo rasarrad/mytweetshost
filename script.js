@@ -2524,7 +2524,7 @@ function startCLWorker(data) {
                 console.log(event.data.msg);
                 processCountBlock();
             }
-
+ 
         };
     }
 }
