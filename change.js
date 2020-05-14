@@ -467,14 +467,70 @@ function countalltweets(webLinksMap) {
     $.getJSON(path, function(data) 
     {
         console.log("countalltweets 22222");
+        
+      $.each(data.Tweets, function(key, val) 
+        {
+            
+            var recordfromdata = val;
+            var linkcontent = null;
+            var linktmp = null;
+            
+            do {
+                if (processtmp) {
+                    linkcontent = readCookie(nextid + "templink");
 
-        for(i=0; i < data.Tweets.length; i++) {
-            val = data.Tweets[i];
+                    if (linkcontent && linkcontent.length > 0) {
+                        
+                        linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
 
-             
+                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                        linktmp = linktmp.replace(/(\\)/gm, ""); 
+                        linktmp = JSON.parse(linktmp);
+
+                        val = linktmp;
+                        nextid = nextid - 1;
+                    }
+                    else {
+                        if (showAll) {
+                            val = recordfromdata;
+                        }
+                        else {
+                            val.id = "0";
+                        }
+                        processtmp = false;
+                    }
+                }
+                else {
+                    if (showAll) {
+                        val = recordfromdata;
+                    }
+                    else {
+                        val.id = "0";
+                    }
+                }
+
                 var isdeleted = readCookie(val.id + "isdeleted");
                 if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
 
+                    if (webLinksMap) {
+                        var linkObj = webLinksMap.get(parseInt(val.id));
+
+                        if (linkObj) {
+                            updateWebLink(linkObj, val);
+                        }
+                    }
+
+
+                    var doShowDeletedLink = true;  
+                    if (!$("#showdeleted").is(":checked")) {
+                        if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
+                            doShowDeletedLink = false; 
+                        } 
+                    }
+    
+                    if (doShowDeletedLink) {
+                        console.log("countalltweets " + total);
                         if (val.type == "T") {
                             total_t = total_t + 1;
                         }
@@ -485,10 +541,12 @@ function countalltweets(webLinksMap) {
                             total_h = total_h + 1;
                         }
                         total = total + 1;
+                    }
                 }   
-
-        }
-
+            }
+            while (processtmp);
+          
+        });
 
 
         console.log("countalltweets 333333");
