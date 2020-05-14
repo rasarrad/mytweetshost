@@ -39,6 +39,8 @@ var total_h = 0;
 var total = 0;   
 
 function processCount(inputArray, showDeleted) {
+
+    console.log("---process");
     for (var j = 0; j < inputArray.length; j++) {
         var val = inputArray[j];
 
@@ -80,6 +82,7 @@ function processCount(inputArray, showDeleted) {
             total = total + 1;
         }   
     }
+    console.log("---FIM process");
 } 
 
 
