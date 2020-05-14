@@ -7,8 +7,6 @@ self.addEventListener("message", function(e) {
 
   console.log("------------");
   console.log(aaa.length);
-
-
   var isdeleted = readCookie("isdeleted");
   if (isdeleted && isdeleted.length > 0) {
     console.log("-----33333-------");
@@ -18,10 +16,6 @@ self.addEventListener("message", function(e) {
   else {
     createCookie("isdeleted", "0");
   }
-  
-}
-
-
 }, false);
 
 function timedCount() {
