@@ -509,19 +509,7 @@ function processCountBlock() {
 
         if (val) {
             var isdeleted = readCookie(val.id + "isdeleted");
-            if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
-    
-                var cat = readCookie(val.id + "catchanged");
-                if (cat && cat.length > 0) {
-                    val.categories = cat;
-                }
-    
-                var tag = readCookie(val.id + "tagchanged");
-                if (tag && tag.length > 0) {
-                    val.tags = tag;
-                }
-    
-            } 
+
             allLinks[i] = val;  
         }
     }
