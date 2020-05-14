@@ -778,6 +778,7 @@ var getInformation = function(wasfiltered, valid) {
                     
                 if (localCounter < 100) {
                     renderLink(val);
+                    console.log(val);
                 } 
                 else {
                     hasntFinnished = false; 
