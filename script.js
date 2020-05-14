@@ -68,6 +68,8 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 
 $( document ).ready(function() { 
     
+    eraseAllTmpData();
+
     isMobile = window.mobileAndTabletCheck();
 
     // START do texto das categorias
