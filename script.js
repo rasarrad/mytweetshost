@@ -2509,15 +2509,15 @@ function nextLink(direction) {
 }
 function startCLWorker(data) {
     if (typeof(Worker) !== "undefined") {
-        console.log(11111111);
-        console.log(clWorker);
+        console.log("worker 1");
         if (typeof(clWorker) == "undefined") {
-            console.log(clWorker);
+            console.log(333333333);
             clWorker = new Worker("workers/countLinksW.js");
-            clWorker.postMessage(data);
+            
         }
-        console.log(clWorker);
-        console.log(222222);
+        console.log("worker 2");
+        clWorker.postMessage(data);
+
         clWorker.onmessage = function(event) {
             console.log("resposta worker");
             
