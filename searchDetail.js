@@ -747,7 +747,10 @@ var getInformation = function(wasfiltered, valid) {
     }
 
     try {
-        for (i = 0; i < allLinks.length; i++) {
+
+        var i = 0;
+        var hasntFinnished = true; 
+        while (allLinks[i] && hasntFinnished) {
             var val = allLinks[i];
         
             //startWorker();
@@ -777,12 +780,12 @@ var getInformation = function(wasfiltered, valid) {
                     renderLink(val);
                 } 
                 else {
-                    console.log(12345)
-                    return false;
+                    hasntFinnished = false; 
                 }
 
                 localCounter++;
-            }   
+            }  
+            i++;
         }
     }
     catch(err) {
