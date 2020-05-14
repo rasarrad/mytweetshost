@@ -39,21 +39,35 @@ var total_h = 0;
 var total = 0;   
 
 function processCount(inputArray, showDeleted) {
-  
-/*     setTimeout(function() {     
-        var result = {};
+    for (var j = 0; j < inputArray.length; j++) {
+        var val = inputArray[j];
 
-        self.postMessage({ "finnish": "yes", "result": result});
-    }, 8500); */
-
-    console.log(inputArray)
-    for (var i = 0; i < inputArray.length; i++) {
-        var val = inputArray[i];
-        console.log(val.id)
         if (val.deleted != "yes") {
             
+            var res = val.categories.split(" ");
+            for (var i = 0; i < res.length; i++) {
+                if (counters.has(val.type + res[i])) {
+                    var aux = counters.get(val.type + res[i]);
+                    counters.set(val.type + res[i], aux + 1);
+                }
+                else {
+                    counters.set(val.type + res[i], 1);
+                }
+            }
+            var tags = val.tags.split(" ");
 
-            console.log("aaaaa 22222")
+            for (var i = 0; i < tags.length; i++) {
+                if (tags[i].trim().length > 0) {
+                    if (tagsmap.has(tags[i].trim())) {
+                        var aux = Number(tagsmap.get(tags[i]));
+
+                        tagsmap.set(tags[i].trim(), aux + 1);
+                    }
+                    else {
+                        tagsmap.set(tags[i].trim(), 1);
+                    }
+                }
+            }
             if (val.type == "T") {
                 total_t = total_t + 1;
             }
@@ -64,7 +78,6 @@ function processCount(inputArray, showDeleted) {
                 total_h = total_h + 1;
             }
             total = total + 1;
-            console.log("aaaaa 333333")
         }   
     }
 } 

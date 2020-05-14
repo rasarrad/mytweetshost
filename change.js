@@ -455,7 +455,7 @@ function countalltweets(webLinksMap) {
     }
     $.getJSON(path, function(data) 
     {
-        console.log("countalltweets 22222");
+        console.log("countalltweets process");
         
         allLinks = data.Tweets;
 
@@ -489,6 +489,8 @@ function countalltweets(webLinksMap) {
         allLinks = tempLinks.concat(allLinks); 
         allLinks.pop();
 
+        console.log("countalltweets FIM process");
+
         processCountBlock();
     }); 
 
@@ -497,9 +499,9 @@ function countalltweets(webLinksMap) {
 
 
 function processCountBlock() {
-    var path = "./data.json";
 
-    var processtmp = true;
+    console.log("processCountBlock process");
+
     var i = counterAllLinks;
 
     for (i; i < counterAllLinks + 5; i++) {
@@ -537,6 +539,8 @@ function processCountBlock() {
         }
     }
 
+    console.log("processCountBlock FIM process");
+
     startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 5)));
     
     counterAllLinks = i;
@@ -546,8 +550,8 @@ function processCountBlock() {
 
 
 function processCountUpdate(countersParam) {
-    console.log("processCountUpdate")
-    console.log(countersParam)
+    console.log("processCountUpdate process");
+
     tagsmap = new Map(JSON.parse(countersParam.tagsmap));
     counters = new Map(JSON.parse(countersParam.counters));
 
@@ -804,12 +808,14 @@ function processCountUpdate(countersParam) {
     $("#cli").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
     $("#cli2").text(climate);
     $("#cli2").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
+
+    console.log("processCountUpdate FIM process");
+    
 } 
 
 
 
 function countalltweetsORI(webLinksMap) {
-    console.log(" 111111");
     resetFields(false);
     var path = "./data.json";
     var counters = new Map();

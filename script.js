@@ -2515,10 +2515,8 @@ function startCLWorker(data) {
         clWorker.postMessage(data);
 
         clWorker.onmessage = function(event) {
-            console.log("resposta worker");
             
             if (event.data.finnish == "yes") {
-                console.log("startCLWorker yes")
                 processCountUpdate(event.data.result);
             }
             else {
@@ -2540,7 +2538,6 @@ function startWorker() {
       timeoutWorker.onmessage = function(event) {
         
           if (linkArray[currrenderedtweets]) {
-            //console.log("primeiro startWorker: " + currrenderedtweets + "-" + linkArray[currrenderedtweets]);  
             if (currrenderedtweets < 5) {
                 if (currrenderedtweets == 0) {
                     $("html, body").scrollTop(0);
@@ -2576,7 +2573,6 @@ function startWorker() {
                     //stopWorker();
                     closeMenuPopup(null, "2.7");
                     closeSearchPopup();
-                    console.log("11111 close mask");
                     $('#mask').fadeOut(3000);  
                     $('#tweetcount').fadeIn(3800);
 
@@ -2597,12 +2593,9 @@ function startWorker() {
                     doExec = true;
                 }
                 
-                console.log("countercontrol ALL: " + currrenderedtweets + "-" + doExec);  
-
 
                 if (doExec) {
                     renderTimeout = setTimeout(function() {  
-                        //console.log("processou: " + currrenderedtweets + "-" + linkArray[currrenderedtweets]);     
                         if (linkArray[currrenderedtweets] == "T") {
                             if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
                                 currrenderedtweets++;
@@ -2636,7 +2629,6 @@ function startWorker() {
           else {
             if (searchtotal > 0 && currrenderedtweets == searchtotal) {
                 stopWorker();
-                console.log("11111 stopWorker - close mask");
                 closeMenuPopup(null, "2.7");
                 closeSearchPopup();
                 $('#mask').fadeOut(3000);  
@@ -2644,7 +2636,6 @@ function startWorker() {
             }
             else {
                 renderTimeout = setTimeout(function() {     
-                    console.log("2222 stopWorker");
                     stopWorker();
                 }, 1000);  
             }

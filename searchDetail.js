@@ -724,8 +724,6 @@ var getInformation = function(wasfiltered, valid) {
     }
     */
 
-    console.log("inicio search");
-
     var totalLinkss = 0;
     total_yy = 0;
     total_tt = 0;
@@ -1050,8 +1048,6 @@ var getInformation = function(wasfiltered, valid) {
         $('#main').find('.tweet').sort(function (a, b) {
             return Number($(b).attr('cdate')) - Number($(a).attr('cdate'));
         }).appendTo('#main');
-
-        console.log("fim search");
 
         if (totalLinkss > 0) {
             //if (wasfiltered != 2)
