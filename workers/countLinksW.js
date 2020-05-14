@@ -39,12 +39,6 @@ var total_h = 0;
 var total = 0;   
 
 function processCount(inputArray, showDeleted) {
-  
-    setTimeout(function() {     
-        var result = {};
-
-        self.postMessage({ "finnish": "yes", "result": result});
-    }, 8500);
 
     console.log(inputArray)
     for (var i = 0; i < inputArray.length; i++) {
