@@ -41,9 +41,49 @@ var total = 0;
 function processCount(inputArray, showDeleted) {
   
     console.log(inputArray)
-    for (var i = 0; i < inputArray.length - 1; i++) {
+    for (var i = 0; i < inputArray.length; i++) {
         var val = inputArray[i];
         console.log(val.id)
+        if (val.deleted != "yes") {
+            
+            var res = val.categories.split(" ");
+            for (var i = 0; i < res.length; i++) {
+                if (counters.has(val.type + res[i])) {
+                    var aux = counters.get(val.type + res[i]);
+                    counters.set(val.type + res[i], aux + 1);
+                }
+                else {
+                    counters.set(val.type + res[i], 1);
+                }
+            }
+            console.log("aaaaa 1111111")
+            var tags = val.tags.split(" ");
+
+            for (var i = 0; i < tags.length; i++) {
+                if (tags[i].trim().length > 0) {
+                    if (tagsmap.has(tags[i].trim())) {
+                        var aux = Number(tagsmap.get(tags[i]));
+
+                        tagsmap.set(tags[i].trim(), aux + 1);
+                    }
+                    else {
+                        tagsmap.set(tags[i].trim(), 1);
+                    }
+                }
+            }
+            console.log("aaaaa 22222")
+            if (val.type == "T") {
+                total_t = total_t + 1;
+            }
+            else if (val.type == "Y") {
+                total_y = total_y + 1;
+            }
+            else {
+                total_h = total_h + 1;
+            }
+            total = total + 1;
+            console.log("aaaaa 333333")
+        }   
     }
 } 
 
