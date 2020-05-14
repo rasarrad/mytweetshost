@@ -547,7 +547,8 @@ function processCountBlock() {
 
 
 function processCountUpdate(countersParam) {
-
+    console.log("processCountUpdate")
+    console.log(countersParam)
     tagsmap = new Map(JSON.parse(countersParam.tagsmap));
     counters = new Map(JSON.parse(countersParam.counters));
 

@@ -2518,6 +2518,7 @@ function startCLWorker(data) {
             console.log("resposta worker");
             
             if (event.data.finnish == "yes") {
+                console.log("startCLWorker yes")
                 processCountUpdate(event.data.result);
             }
             else {
