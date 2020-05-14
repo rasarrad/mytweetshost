@@ -2513,6 +2513,7 @@ function startCLWorker(data) {
             clWorker = new Worker("workers/countLinksW.js");
             clWorker.postMessage(data);
         }
+        console.log(clWorker);
         clWorker.onmessage = function(event) {
             console.log("resposta worker");
             
