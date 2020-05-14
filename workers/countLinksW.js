@@ -12,7 +12,7 @@ self.addEventListener("message", function(e) {
         self.postMessage({ "finnish": "no", "msg": result});
     }
     else {
-        if (aaa[0].id)
+        if (aaa[0])
             result = "tamanho: " + aaa.length + " - id 1: " + aaa[0].id + " - id 2: --";
         else
             result = "tamanho: " + aaa.length + " - id 1: -- id 2: --";
