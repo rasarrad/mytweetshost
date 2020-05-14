@@ -777,6 +777,7 @@ var getInformation = function(wasfiltered, valid) {
                     renderLink(val);
                 } 
                 else {
+                    console.log(12345)
                     return false;
                 }
 
