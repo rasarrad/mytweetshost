@@ -747,7 +747,7 @@ var getInformation = function(wasfiltered, valid) {
     }
 
     try {
-        for (i = 0; i < counterAllLinks; i++) {
+        for (i = 0; i < allLinks.length; i++) {
             var val = allLinks[i];
         
             //startWorker();
