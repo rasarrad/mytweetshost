@@ -504,7 +504,7 @@ function processCountBlock() {
 
     var i = counterAllLinks;
 
-    for (i; i < counterAllLinks + 5; i++) {
+    for (i; i < counterAllLinks + 1000; i++) {
         var val = allLinks[i];
 
         if (val) {
@@ -541,7 +541,7 @@ function processCountBlock() {
 
     console.log("processCountBlock FIM process");
 
-    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 5)));
+    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 1000)));
     
     counterAllLinks = i;
 } 
@@ -810,7 +810,7 @@ function processCountUpdate(countersParam) {
     $("#cli2").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
 
     console.log("processCountUpdate FIM process");
-    
+
 } 
 
 
