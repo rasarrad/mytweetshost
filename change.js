@@ -548,7 +548,7 @@ function countalltweets(webLinksMap) {
           
         });
 
-
+        startCLWorker(JSON.stringify(data.Tweets));
         console.log("countalltweets 333333");
     }); 
 

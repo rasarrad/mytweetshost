@@ -2500,7 +2500,16 @@ function nextLink(direction) {
         
     }
 }
+function startCLWorker(data) {
+    if (typeof(Worker) !== "undefined") {
+      if (typeof(clWorker) == "undefined") {
+        timeoutWorker = new Worker("workers/countLinksW.js");
 
+        clWorker.postMessage(data);
+      }
+
+    }
+}
 
 function startWorker() {
     if (typeof(Worker) !== "undefined") {
@@ -2601,7 +2610,7 @@ function startWorker() {
                         if (linkArrayToRender[currrenderedtweets + 5]) {
                             renderLink(linkArrayToRender[currrenderedtweets + 5]);
                         }
-                        
+
                     }, 190);
                 }
             }
