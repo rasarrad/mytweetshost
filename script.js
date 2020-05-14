@@ -2503,7 +2503,7 @@ function nextLink(direction) {
 function startCLWorker(data) {
     if (typeof(Worker) !== "undefined") {
       if (typeof(clWorker) == "undefined") {
-        timeoutWorker = new Worker("workers/countLinksW.js");
+        clWorker = new Worker("workers/countLinksW.js");
 
         clWorker.postMessage(data);
       }
