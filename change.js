@@ -508,6 +508,8 @@ function processCountBlock() {
         var val = allLinks[i];
 
         // garantir que tem sempre valor para poder tirar a primeira condicao 
+        console.log(val.id)
+        console.log(val.deleted)
         if (val.deleted && val.deleted != "yes") {
             var haschanges = readCookie(val.id + "haschanges");
 
