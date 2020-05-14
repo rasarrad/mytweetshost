@@ -507,11 +507,7 @@ function processCountBlock() {
     for (i; i < counterAllLinks + 1000; i++) {
         var val = allLinks[i];
 
-        if (val) {
-            var isdeleted = readCookie(val.id + "isdeleted");
-
             allLinks[i] = val;  
-        }
     }
 
     console.log("processCountBlock FIM process");
