@@ -499,7 +499,7 @@ function processCountBlock() {
     var processtmp = true;
     var i = counterAllLinks;
 
-    for (i; i < counterAllLinks + 1000; i++) {
+    for (i; i < counterAllLinks + 5; i++) {
         var val = allLinks[i];
 
         if (val) {
@@ -534,7 +534,7 @@ function processCountBlock() {
         }
     }
 
-    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 1000)));
+    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 5)));
     
     counterAllLinks = i;
 } 
