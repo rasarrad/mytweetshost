@@ -2509,23 +2509,18 @@ function nextLink(direction) {
 }
 function startCLWorker(data) {
     if (typeof(Worker) !== "undefined") {
-        console.log("worker 1");
         if (typeof(clWorker) == "undefined") {
-            console.log(333333333);
             clWorker = new Worker("workers/countLinksW.js");
-            
         }
-        console.log("worker 2");
         clWorker.postMessage(data);
 
         clWorker.onmessage = function(event) {
             console.log("resposta worker");
             
             if (event.data.finnish == "yes") {
-                console.log(event.data.msg);
+                processCountUpdate(event.data.result);
             }
             else {
-                console.log(event.data.msg);
                 processCountBlock();
             }
  
