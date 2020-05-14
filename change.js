@@ -504,10 +504,10 @@ function processCountBlock() {
 
     var i = counterAllLinks;
 
-    for (i; i < counterAllLinks + 1000; i++) {
+    for (i; i < counterAllLinks + 200; i++) {
         var val = allLinks[i];
 
-        if (val && val.deleted != "yes") {
+        if (val.deleted != "yes") {
             var haschanges = readCookie(val.id + "haschanges");
 
             if (haschanges && haschanges.length > 0) {
@@ -545,7 +545,7 @@ function processCountBlock() {
 
     console.log("processCountBlock FIM process");
 
-    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 1000)));
+    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 200)));
     
     counterAllLinks = i;
 } 
