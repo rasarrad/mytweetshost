@@ -41,7 +41,7 @@ var total = 0;
 function processCount(inputArray, showDeleted) {
   
     console.log(inputArray)
-    for (var i = 0; i < inputArray - 1; i++) {
+    for (var i = 0; i < inputArray.length - 1; i++) {
         var val = inputArray[i];
         console.log(val.deleted)
         if (val.deleted != "yes") {
