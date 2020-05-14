@@ -477,6 +477,8 @@ function countalltweets(webLinksMap) {
 
                 tempLinks[tempCounter] = linktmp;
                 tempCounter++;
+
+                nextid--;
             }
             else {
                 processtmp = false;
