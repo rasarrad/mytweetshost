@@ -47,6 +47,11 @@ var renderTimeout = null;
 var datecontrol = new Date();
 var countercontrol = 0;
 
+
+var allLinks = new Array();
+var counterAllLinks = 0;
+var clWorker = null;
+
 /* 
     xyz startcode
     xyz fakepass
@@ -2502,12 +2507,22 @@ function nextLink(direction) {
 }
 function startCLWorker(data) {
     if (typeof(Worker) !== "undefined") {
-      if (typeof(clWorker) == "undefined") {
-        clWorker = new Worker("workers/countLinksW.js");
+        if (typeof(clWorker) == "undefined") {
+            clWorker = new Worker("workers/countLinksW.js");
+            clWorker.postMessage(data);
+        }
+        clWorker.onmessage = function(event) {
+            console.log("resposta worker");
+            
+            if (event.data.finnish == "yes") {
+                console.log(event.data.msg);
+            }
+            else {
+                console.log(event.data.msg);
+                processCountBlock();
+            }
 
-        clWorker.postMessage(data);
-      }
-
+        };
     }
 }
 

@@ -1,47 +1,19 @@
-var currTimer = 200;
 
 self.addEventListener("message", function(e) {
-  console.log(e.data);
+    var aaa = JSON.parse(e.data);
 
-  var aaa = JSON.parse(e.data);
+    console.log("------esta no worker------");
 
-  console.log("------------");
-  console.log(aaa.length);
-  var isdeleted = readCookie("isdeleted");
-  if (isdeleted && isdeleted.length > 0) {
-    console.log("-----33333-------");
-    console.log(isdeleted);
-    createCookie("isdeleted", Number(isdeleted) + 1);
-  }
-  else {
-    createCookie("isdeleted", "0");
-  }
+    var result = "";
+
+    if (aaa[aaa.length -1]) {
+        result = "tamanho: " + aaa.length + " - id 1: " + aaa[0].id + " - id 2: " + aaa[aaa.length - 1].id;
+        self.postMessage({ "finnish": "no", "msg": result});
+    }
+    else {
+        result = "tamanho: " + aaa.length + " - id 1: " + aaa[0].id + " - id 2: --";
+
+        self.postMessage({ "finnish": "yes", "msg": result});
+    }
+
 }, false);
-
-function timedCount() {
-  postMessage("exec");
-
-
-}
-
-function createCookie(name, value, days) {
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        var expires = "; expires=" + date.toGMTString();
-    }
-    else var expires = "";               
-
-    document.cookie = name + "=" + value + expires + "; path=/";
-}
-
-function readCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
-}
