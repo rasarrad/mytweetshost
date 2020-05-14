@@ -3,6 +3,7 @@ self.addEventListener("message", function(e) {
     var aaa = JSON.parse(e.data);
 
     console.log("------esta no worker------");
+    console.log(aaa);
 
     var result = "";
 
@@ -11,8 +12,10 @@ self.addEventListener("message", function(e) {
         self.postMessage({ "finnish": "no", "msg": result});
     }
     else {
-        result = "tamanho: " + aaa.length + " - id 1: " + aaa[0].id + " - id 2: --";
-
+        if (aaa[0].id)
+            result = "tamanho: " + aaa.length + " - id 1: " + aaa[0].id + " - id 2: --";
+        else
+            result = "tamanho: " + aaa.length + " - id 1: -- id 2: --";
         self.postMessage({ "finnish": "yes", "msg": result});
     }
 
