@@ -490,7 +490,9 @@ function countalltweets(webLinksMap) {
         console.log(tempLinks)
         console.log(allLinks.length)
         console.log("-------------")
-        allLinks = tempLinks.concat(allLinks).pop(); 
+        allLinks = tempLinks.concat(allLinks); 
+        console.log(allLinks.length)
+        allLinks.pop()
         console.log(allLinks.length)
         console.log(allLinks)
 
