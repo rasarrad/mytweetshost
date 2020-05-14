@@ -684,8 +684,7 @@ var getInformation = function(wasfiltered, valid) {
         $('#countfilter').hide();
     }
 
-    var path = "./data.json";
-    var ind = 0;
+    console.log("inicio de search")
     var dofiltertext = $('#filtertext').val().trim().length > 0; 
     var dofilterdate1 = $('#filterdate1').val().trim().length > 0; 
     var dofilterdate2 = $('#filterdate2').val().trim().length > 0; 
@@ -747,170 +746,11 @@ var getInformation = function(wasfiltered, valid) {
         }
     }
 
-    $.getJSON(path, function(data) {
-        var processtmp = true;
-
-        $.each(data.Tweets, function(key, val) {
-            var newtweet = null;
-            var dofiltertextfinal = false;
-            var dofilterdate1final = false;
-            var dofilterdate2final = false;
-            var dofiltertagfinal = false;
-            var dofiltercatfinal = false;
-            var dofilterauthorfinal = false;
-            var recordfromdata = val;
-            var linkcontent = null;
-            var dofiltertypefinal = false;
-            var dofilterclassiffinal = false;
-
-            do {
-                if (processtmp) {
-                    linkcontent = readCookie(nextid + "templink");
-                    if (linkcontent && linkcontent.length > 0) {
-                        var linktmp = decodeURIComponent(linkcontent);
-                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
-                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
-                        linktmp = linktmp.replace(/(\\)/gm, ""); 
-                        linktmp = JSON.parse(linktmp);
-    
-                        val = linktmp;
-                        nextid = nextid - 1;
-                    }
-                    else {
-                        if (showAll) {
-                            val = recordfromdata;
-                        }
-                        else {
-                            val.id = "0";
-                        }
-                        
-                        processtmp = false;
-                    }
-                }
-                else {
-                    if (showAll) {
-                        val = recordfromdata;
-                    }
-                    else {
-                        val.id = "0";
-                    }
-                }
-
-                var isdeleted = readCookie(val.id + "isdeleted");
-                if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
-                    var cat = readCookie(val.id + "catchanged");
-                    if (cat && cat.length > 0) {
-                        val.categories = cat;
-                    }
+    try {
+        for (i = 0; i < counterAllLinks; i++) {
+            var val = allLinks[i];
         
-                    var tag = readCookie(val.id + "tagchanged");
-                    if (tag && tag.length > 0) {
-                        val.tags = tag;
-                    }
-        
-                    var info = readCookie(val.id + "info");
-                    if (info && info.length > 0) {
-                        val.info = info;
-                    }
-        
-                    var classif = readCookie(val.id + "classif");
-                    if (classif && classif.length > 0) {
-                        val.classif = classif;
-                    }
-
-                    var author = readCookie(val.id + "author");
-                    if (author && author.length > 0) {
-                        val.author = author;
-                    }
-        
-                    var datechanged = readCookie(val.id + "datechanged");
-                    if (datechanged && datechanged.length > 0) {
-                        val.date = datechanged;
-                    }
-                    
-                    dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
-                    dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
-                    dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
-                    dofiltertagfinal = !dofiltertag || searchTags(val.tags.toLowerCase(), $('#filtertag').val().toLowerCase());
-                    dofiltercatfinal = !dofiltercat || val.categories.includes($('#selectedcat').val());
-                    dofilterauthorfinal = !dofilterauthor || val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase());
-                    dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
-                    dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
-                    
-                    var doShowDeletedLink = true;  
-                    if (!$("#showdeleted2").is(":checked")) {
-                        if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
-                            doShowDeletedLink = false; 
-                        } 
-                    }
-
-                    if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
-                        && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
-        
-
-                        searchtotal = searchtotal + 1;
-
-
-                        ind = ind + 1;
-    
-                        if (val.type == "T") {
-                            total_tt = total_tt + 1;
-                        }
-                        else if (val.type == "Y") {
-                            total_yy = total_yy + 1;
-                        }
-                        else {
-                            total_hh = total_hh + 1;
-                        }
-                    }
-                }
-            }
-            while (processtmp);
-        });     
-        totalLinkss = ind; 
-
-        ind = 0;
-
-        nextid = null;
-        try {
-            nextid = parseInt(readCookie("maxid"));
-        }
-        catch(err) {
-        }
-        finally {
-            if (nextid) {
-                $("#maxid").val(nextid);
-                nextid = nextid - 1;
-            }
-            else {
-                nextid = parseInt($("#maxid").val());
-                createCookie("maxid", nextid);
-                nextid = nextid - 1;
-            }
-        }
-
-        processtmp = true;
-
-        /*
-        var sortByProperty = function (property) {
-            return function (x, y) {
-                return y.property - x.property;
-            };
-        };
-        data.Tweets.sort(sortByProperty(''));
-
-        var sortByDate = function () {
-            return function (x, y) {
-                return Number(y.date) - Number(x.date);
-            };
-        };
-        data.Tweets.sort(sortByDate());
-        */
-
-       startWorker();
-
-        $.each(data.Tweets, function(key, val) {
-            var newtweet = null;
+            //startWorker();
             var dofiltertextfinal = false;
             var dofilterdate1final = false;
             var dofilterdate2final = false;
@@ -919,149 +759,55 @@ var getInformation = function(wasfiltered, valid) {
             var dofilterauthorfinal = false;
             var dofiltertypefinal = false;
             var dofilterclassiffinal = false;
-            recordfromdata = val;
-            
-            linkcontent = null;
-
-            do {
-
-                if (processtmp) {
-                    linkcontent = readCookie(nextid + "templink");
-                    if (linkcontent && linkcontent.length > 0) {
-                        var linktmp = decodeURIComponent(linkcontent);
-                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
-                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
-                        linktmp = linktmp.replace(/(\\)/gm, ""); 
-                        linktmp = JSON.parse(linktmp);
-    
-                        val = linktmp;
-                        nextid = nextid - 1;
-                    }
-                    else {
-                        if (showAll) {
-                            val = recordfromdata;
-                        }
-                        else {
-                            val.id = "0";
-                        }
-                        
-                        processtmp = false;
-                    }
-                }
-                else {
-                    if (showAll) {
-                        val = recordfromdata;
-                    }
-                    else {
-                        val.id = "0";
-                    }
-                }
-                var isdeleted = readCookie(val.id + "isdeleted");
-                if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
-                    var cat = readCookie(val.id + "catchanged");
-                    if (cat && cat.length > 0) {
-                        val.categories = cat;
-                    }
-        
-                    var tag = readCookie(val.id + "tagchanged");
-                    if (tag && tag.length > 0) {
-                        val.tags = tag;
-                    }
-        
-                    var info = readCookie(val.id + "info");
-                    if (info && info.length > 0) {
-                        val.info = info;
-                    }
-        
-                    var classif = readCookie(val.id + "classif");
-                    if (classif && classif.length > 0) {
-                        val.classif = classif;
-                    }
-    
-                    var author = readCookie(val.id + "author");
-                    if (author && author.length > 0) {
-                        val.author = author;
-                    }
-        
-                    var datechanged = readCookie(val.id + "datechanged");
-                    if (datechanged && datechanged.length > 0) {
-                        val.date = datechanged;
-                    }
-
-                    ind = ind + 1;
-    
-                    dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
-                    dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
-                    dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
-                    dofiltertagfinal = !dofiltertag || searchTags(val.tags.toLowerCase(), $('#filtertag').val().toLowerCase());
-                    dofiltercatfinal = !dofiltercat || val.categories.includes($('#selectedcat').val());
-                    dofilterauthorfinal = !dofilterauthor || val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase());
-                    dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
-                    dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
                     
-                    var doShowDeletedLink = true;  
-                    if (!$("#showdeleted").is(":checked")) {
-                        if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
-                            doShowDeletedLink = false; 
-                        } 
-                    }
+            dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
+            dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
+            dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
+            dofiltertagfinal = !dofiltertag || searchTags(val.tags.toLowerCase(), $('#filtertag').val().toLowerCase());
+            dofiltercatfinal = !dofiltercat || val.categories.includes($('#selectedcat').val());
+            dofilterauthorfinal = !dofilterauthor || val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase());
+            dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
+            dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
+        
 
-                    if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
-                        && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
-                            
-                        if (val.type == "T")
-                            linkArray[localCounter] = val.type;
-                        else
-                            linkArray[localCounter] = val.id;
-
-                        if (localCounter < 5) {
-                            renderLink(val);
-                        } 
-                        else {
-                            linkArrayToRender[localCounter] = val;
-                        }
-                        localCounter++;
-                    }   
-    
-                    if (val.id == 0) {
-                        return;
-                    }
-                }
+            if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
+                && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal) {
+                    
+                if (localCounter < 100) {
+                    renderLink(val);
+                } 
                 else {
-                    var isdeleted = readCookie(val.id + "isdeleted");
-                    if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
-                        return;
-                    }
+                    return false;
                 }
-            }
-            while (processtmp);
 
-        });
-
-        $('#tcnumber').text(totalLinkss + " Links");
-        $('#tccateg').text("In " + $('#selectedcattext').val());
-
-        $('#tct').text(total_tt);
-        $('#tcy').text(total_yy);
-        $('#tch').text(total_hh);
-
-        $('#main').find('.tweet').sort(function (a, b) {
-            return Number($(b).attr('cdate')) - Number($(a).attr('cdate'));
-        }).appendTo('#main');
-
-        if (totalLinkss > 0) {
-            //if (wasfiltered != 2)
-                //showMessage("Search Results", 2000);
+                localCounter++;
+            }   
         }
-        else {
-            stopWorker();
-            $('#mask').fadeOut(2000);  
-            $('#tweetcount').fadeOut(1000);
-            showMessage("No Links Found", 2000);
-        }
-    }); 
+    }
+    catch(err) {
+    }
+
+
+    console.log("fim de search")
+    /* $('#main').find('.tweet').sort(function (a, b) {
+        return Number($(b).attr('cdate')) - Number($(a).attr('cdate'));
+    }).appendTo('#main'); */
+
+    if (totalLinkss > 0) {
+        //if (wasfiltered != 2)
+            //showMessage("Search Results", 2000);
+    }
+    else {
+        //stopWorker();
+        $('#mask').fadeOut(2000);  
+        $('#tweetcount').fadeOut(1000);
+        showMessage("No Links Found", 2000);
+    }
 }
   
+
+
+
 function renderLink(val, customize) {
     var tagdispalay = " --";
     var expandclass = "";

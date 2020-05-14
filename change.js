@@ -538,6 +538,16 @@ function processCountBlock() {
                         if (classif && classif.length > 0) {
                             val.classif = classif;
                         }
+                        
+                        var author = readCookie(val.id + "author");
+                        if (author && author.length > 0) {
+                            val.author = author;
+                        }
+
+                        var datechanged = readCookie(val.id + "datechanged");
+                        if (datechanged && datechanged.length > 0) {
+                            val.date = datechanged;
+                        }
                     } 
                     allLinks[i] = val; 
                 } 
