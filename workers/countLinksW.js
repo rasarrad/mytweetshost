@@ -22,6 +22,7 @@ self.addEventListener("message", function(e) {
         result.total_h = total_h;
         result.total = total;
 
+        
         self.postMessage({ "finnish": "yes", "result": result});
 
         resetVars();
@@ -44,7 +45,7 @@ function processCount(inputArray, showDeleted) {
         var val = inputArray[i];
 
         if (val.deleted != "yes") {
-
+            console.log("PROCESSOU yes")
             var res = val.categories.split(" ");
             for (var i = 0; i < res.length; i++) {
                 if (counters.has(val.type + res[i])) {
