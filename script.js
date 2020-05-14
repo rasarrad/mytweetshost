@@ -50,7 +50,7 @@ var countercontrol = 0;
 
 var allLinks = new Array();
 var counterAllLinks = 0;
-var clWorker = "undefined";
+var clWorker;
 
 /* 
     xyz startcode
@@ -2509,11 +2509,15 @@ function nextLink(direction) {
 }
 function startCLWorker(data) {
     if (typeof(Worker) !== "undefined") {
+        console.log(11111111);
+        console.log(clWorker);
         if (typeof(clWorker) == "undefined") {
+            console.log(clWorker);
             clWorker = new Worker("workers/countLinksW.js");
             clWorker.postMessage(data);
         }
         console.log(clWorker);
+        console.log(222222);
         clWorker.onmessage = function(event) {
             console.log("resposta worker");
             
