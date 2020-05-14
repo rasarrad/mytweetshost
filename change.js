@@ -534,6 +534,7 @@ function processCountBlock() {
         }
     }
 
+    console.log(allLinks)
     startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 5)));
     
     counterAllLinks = i;
