@@ -484,10 +484,13 @@ function countalltweets(webLinksMap) {
         }
         while (processtmp);
 
+        console.log(allLinks)
+        console.log(tempLinks)
+        console.log("-------------")
         allLinks = tempLinks.concat(allLinks).pop(); 
 
         console.log(allLinks)
-        
+
         processCountBlock();
     }); 
 
