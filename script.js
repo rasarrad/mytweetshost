@@ -50,7 +50,7 @@ var countercontrol = 0;
 
 var allLinks = new Array();
 var counterAllLinks = 0;
-var clWorker = null;
+var clWorker = "undefined";
 
 /* 
     xyz startcode
