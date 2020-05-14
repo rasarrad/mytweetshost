@@ -507,35 +507,39 @@ function processCountBlock() {
     for (i; i < counterAllLinks + 1000; i++) {
         var val = allLinks[i];
 
-        if (val) {
-            var isdeleted = readCookie(val.id + "isdeleted");
-            if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
-    
-                if (isdeleted && isdeleted.length > 0) {
-                    val.deleted = isdeleted;
+        if (val && val.deleted != "yes") {
+            var haschanges = readCookie(val.id + "haschanges");
+
+            if (haschanges && haschanges.length > 0) {
+                var isdeleted = readCookie(val.id + "isdeleted");
+                if (!(isdeleted && isdeleted == "yes")) {
+        
+                    if (isdeleted && isdeleted.length > 0) {
+                        val.deleted = isdeleted;
+                    } 
+        
+                    var cat = readCookie(val.id + "catchanged");
+                    if (cat && cat.length > 0) {
+                        val.categories = cat;
+                    }
+        
+                    var tag = readCookie(val.id + "tagchanged");
+                    if (tag && tag.length > 0) {
+                        val.tags = tag;
+                    }
+        
+                    var info = readCookie(val.id + "info");
+                    if (info && info.length > 0) {
+                        val.info = info;
+                    }
+        
+                    var classif = readCookie(val.id + "classif");
+                    if (classif && classif.length > 0) {
+                        val.classif = classif;
+                    }
                 } 
-    
-                var cat = readCookie(val.id + "catchanged");
-                if (cat && cat.length > 0) {
-                    val.categories = cat;
-                }
-    
-                var tag = readCookie(val.id + "tagchanged");
-                if (tag && tag.length > 0) {
-                    val.tags = tag;
-                }
-    
-                var info = readCookie(val.id + "info");
-                if (info && info.length > 0) {
-                    val.info = info;
-                }
-    
-                var classif = readCookie(val.id + "classif");
-                if (classif && classif.length > 0) {
-                    val.classif = classif;
-                }
+                allLinks[i] = val; 
             } 
-            allLinks[i] = val;  
         }
     }
 
