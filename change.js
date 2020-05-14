@@ -504,46 +504,47 @@ function processCountBlock() {
 
     var i = counterAllLinks;
 
-    for (i; i < counterAllLinks + 200; i++) {
-        var val = allLinks[i];
-
-        // garantir que tem sempre valor para poder tirar a primeira condicao 
-        console.log(val.id)
-        console.log(val.deleted)
-        if (val.deleted && val.deleted != "yes") {
-            var haschanges = readCookie(val.id + "haschanges");
-
-            if (haschanges && haschanges.length > 0) {
-                var isdeleted = readCookie(val.id + "isdeleted");
-                if (!(isdeleted && isdeleted == "yes")) {
-        
-                    if (isdeleted && isdeleted.length > 0) {
-                        val.deleted = isdeleted;
+    try {
+        for (i; i < counterAllLinks + 200; i++) {
+            var val = allLinks[i];
+    
+            if (val.deleted != "yes") {
+                var haschanges = readCookie(val.id + "haschanges");
+    
+                if (haschanges && haschanges.length > 0) {
+                    var isdeleted = readCookie(val.id + "isdeleted");
+                    if (!(isdeleted && isdeleted == "yes")) {
+            
+                        if (isdeleted && isdeleted.length > 0) {
+                            val.deleted = isdeleted;
+                        } 
+            
+                        var cat = readCookie(val.id + "catchanged");
+                        if (cat && cat.length > 0) {
+                            val.categories = cat;
+                        }
+            
+                        var tag = readCookie(val.id + "tagchanged");
+                        if (tag && tag.length > 0) {
+                            val.tags = tag;
+                        }
+            
+                        var info = readCookie(val.id + "info");
+                        if (info && info.length > 0) {
+                            val.info = info;
+                        }
+            
+                        var classif = readCookie(val.id + "classif");
+                        if (classif && classif.length > 0) {
+                            val.classif = classif;
+                        }
                     } 
-        
-                    var cat = readCookie(val.id + "catchanged");
-                    if (cat && cat.length > 0) {
-                        val.categories = cat;
-                    }
-        
-                    var tag = readCookie(val.id + "tagchanged");
-                    if (tag && tag.length > 0) {
-                        val.tags = tag;
-                    }
-        
-                    var info = readCookie(val.id + "info");
-                    if (info && info.length > 0) {
-                        val.info = info;
-                    }
-        
-                    var classif = readCookie(val.id + "classif");
-                    if (classif && classif.length > 0) {
-                        val.classif = classif;
-                    }
+                    allLinks[i] = val; 
                 } 
-                allLinks[i] = val; 
-            } 
+            }
         }
+    }
+    catch(err) {
     }
 
     console.log("processCountBlock FIM process");
