@@ -458,8 +458,7 @@ $( document ).ready(function() {
 
     $( "#removetmp" ).bind( "click", function( event ) {
         if ($('#removetmpinput').val() != "") {
-            createCookie2($('#removetmpinput').val(), "templink", "");
-
+            eraseLinkTmpData($('#removetmpinput').val(), true);
             showMessage("Removed link number: " +  $('#removetmpinput').val());
             $('#removetmpinput').val('');
         }
@@ -484,7 +483,7 @@ $( document ).ready(function() {
             }
 
             do {
-                createCookie(nextid + "templink", "", 99999);
+                eraseLinkTmpData(nextid, true);
                 nextid = nextid - 1;
             }
             while (nextid > 99990);
@@ -1082,7 +1081,8 @@ function handleFileSelectDragDrop(evt) {
             
                                 var mlink = encodeURIComponent(JSON.stringify(link));
                 
-                                createCookie2(resultParsed[x].id, "templink", mlink);
+                                eraseLinkTmpData(resultParsed[x].id, false);
+                                createCookie(resultParsed[x].id + "templink", mlink);
                             }
                             else {
                                 webLinksMap.set(parseInt(resultParsed[0].id), resultParsed[x]);
@@ -2137,9 +2137,91 @@ function createCookie(name, value, days) {
     document.cookie = name + "=" + value + expires + "; path=/";
 }
 
-function createCookie2(id, name, value) {            
+function createCookie2(id, name, value, obj) {            
+    val = getJsonbyid(id);
 
-    document.cookie = name + "=" + value + "; path=/";
+    if (name != "templink") {
+        val = updateObject(val, name, value);
+        document.cookie = name + "=" + value + "; path=/";
+        
+        if (hasChanges(val)) {
+            document.cookie = id + "haschanges=yes; path=/";
+        }
+        else {
+            document.cookie = id + "haschanges=; path=/";
+        }
+    }
+
+    if (val) {
+        var isTemp = readCookie(id + "templink");
+        if (isTemp && isTemp.length > 0) {
+            updateLinkCookie(val);
+        }
+    }
+    else {
+        insertInMainArray(obj);
+        updateLinkCookie(obj);
+    }
+}
+
+
+function insertInMainArray(val) { 
+    allLinks.unshift(val);
+}
+
+
+function hasChanges(val) { 
+    if (val.tags != val.tagsOri) {
+        return true;
+    }  
+    if (val.categories != val.categoriesOri) {
+        return true;
+    }         
+    if (val.deleted != val.deletedOri) {
+        return true;
+    }
+    if (val.info != val.infoOri) {
+        return true;
+    }
+    if (val.classif != val.classifOri) {
+        return true;
+    }
+    if (val.author != val.authorOri) {
+        return true;
+    }
+    if (val.date != val.dateOri) {
+        return true;
+    }
+    
+    return false;
+}
+
+
+function updateObject(val, name, value) {            
+    switch(name) {
+        case "info":
+            val.info = value;
+            break;  
+        case "classif":
+            val.classif = value;
+            break;  
+        case "catchanged":
+            val.categories = value;
+            break;  
+        case "tagchanged":
+            val.tags = value;
+            break;  
+        case "author":
+            val.author = value;
+            break;  
+        case "datechanged":
+            val.date = value;
+            break;  
+        case "isdeleted":
+            val.deleted = value;
+            break;  
+    }
+    return val;
 }
 
 /////////////////////////////////////////////////////////////////////////

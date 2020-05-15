@@ -114,7 +114,6 @@ function removetweet(obj) {
                           "Yes": function() {
                             jsonvar.deleted = "yes";
                             createCookie2(jsonvar.id, "isdeleted", "yes");
-                            updateLinkCookie(jsonvar);
     
                             $("#main").empty();
                             $('#tweetcount').hide(); 
@@ -131,7 +130,6 @@ function removetweet(obj) {
                             createCookie2($('#linkChange').attr("cid"), "isdeleted", "");
             
                             jsonvar.deleted = "";
-                            updateLinkCookie(jsonvar);
                             updateLinkColor(jsonvar);
                             showMessage("Link Marked To Delete Reverted");
                               $("#mask").fadeOut(500);
@@ -158,7 +156,6 @@ function removetweet(obj) {
             else {
                 createCookie2($('#linkChange').attr("cid"), "isdeleted", "a");
                 jsonvar.deleted = "a";
-                updateLinkCookie(jsonvar);
                 updateLinkColor(jsonvar);
 
                 showMessage("Link Marked To Delete");
@@ -178,7 +175,7 @@ function updateLinkCookie(obj) {
 
     var mlink = encodeURIComponent(JSON.stringify(link));
     
-    createCookie2(obj.id, "templink", mlink);
+    createCookie(obj.id + "templink", mlink);
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -1558,106 +1555,6 @@ var eraseAllDeletedFunc = function(text, type, functorun) {
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
-
-function hasTweetChanges(callback) {
-  var path = "./data.json";
-  var ind = false;
-  
-  $.getJSON(path, function(data) 
-  {
-    nextid = null;
-    try {
-        nextid = parseInt(readCookie("maxid"));
-    }
-    catch(err) {
-        //cnonsole.log("hasTweetChanges - Error parsing next id");
-    }
-    finally {
-        if (nextid) {
-            $("#maxid").val(nextid);
-            //cnonsole.log("hasTweetChanges - nextid vem do cookie: " + nextid);
-            nextid = nextid - 1;
-        }
-        else {
-            nextid = parseInt($("#maxid").val());
-            createCookie("maxid", nextid);
-            //cnonsole.log("hasTweetChanges - nextid vem do hidden field: " + nextid);
-            nextid = nextid - 1;
-        }
-    }
-
-    var processtmp = true;
-
-    $.each(data.Tweets, function(key, val) 
-      {
-        var recordfromdata = val;
-        var linkcontent = null;
-        
-
-        do {
-            if (processtmp) {
-                linkcontent = readCookie(nextid + "templink");
-                if (linkcontent && linkcontent.length > 0) {
-                    nextid = nextid - 1;
-                    
-                    ind = true;
-                    return false;
-                }
-                else {
-                    val = recordfromdata;
-                    processtmp = false;
-                }
-            }
-            else {
-                val = recordfromdata;
-            }
-
-            var cat = readCookie(val.id + "catchanged");
-            if (cat && cat.length > 0) {
-                ind = true;
-                return false;
-            }
-
-            var tag = readCookie(val.id + "tagchanged");
-            if (tag && tag.length > 0) {
-                ind = true;
-                return false;
-            }
-
-            var info = readCookie(val.id + "info");
-            if (info && info.length > 0) {
-                ind = true;
-                return false;
-            }
-
-            var author = readCookie(val.id + "author");
-            if (author && author.length > 0) {
-                ind = true;
-                return false;
-            }
-
-            var datechanged = readCookie(val.id + "datechanged");
-            if (datechanged && datechanged.length > 0) {
-                ind = true;
-                return false;
-            }
-
-            var isdeleted = readCookie(val.id + "isdeleted");
-            if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
-                ind = true;
-                return false;
-            } 
-        }
-        while (processtmp);
-      });
-
-      if (callback)
-          callback(ind);
-
-      return ind;
-  }); 
-  return ind;
-} 
 
 function generate(obj) {
     if (obj)
