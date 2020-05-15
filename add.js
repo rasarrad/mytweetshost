@@ -436,9 +436,7 @@ function create() {
 
         var mlink = encodeURIComponent(JSON.stringify(result));
     
-        createCookie(nextid + "templink", mlink, 99999);
-        createCookie("haschanges", "yes");
-    
+        createCookie2(nextid,"templink", mlink);
     
         if (showColorsAdv) {
             $("#generateicon").addClass("haschanges");
@@ -508,18 +506,8 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
 
     var mlink = encodeURIComponent(JSON.stringify(result));
     
-    createCookie(nextid + "templink", mlink, 99999);
-    createCookie("haschanges", "yes");
+    createCookie2(nextid, "templink", mlink);
 
-
-    if (showColorsAdv) {
-        $("#generateicon").addClass("haschanges");
-        if (showColors) {
-            $("#settings").addClass("haschanges");
-        }
-    }  
-
-    //} 
     createCookie("maxid", nextid + 1);
 
     resetFields(false);

@@ -469,14 +469,13 @@ function calendarChanged(date) {
                     $("#linkChange").find(".dateinput").val(formatNumDate(date));
                     
                     if (formatNumDate(date) != $('#date').attr("cdate")) {
-                        createCookie($('#linkChange').attr("cid") + "datechanged", formatNumDate(date));
-                        createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
+                        createCookie2($('#linkChange').attr("cid"), "datechanged", formatNumDate(date));
                         if (showColors) {
                             otherObj.css('color','#00ff72');
                         }
                     }
                     else {
-                        createCookie($('#linkChange').attr("cid") + "datechanged", "");
+                        createCookie2($('#linkChange').attr("cid"), "datechanged", "");
                         otherObj.css('color','');
                     }
                 }

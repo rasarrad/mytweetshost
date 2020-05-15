@@ -1,6 +1,6 @@
 
 function saveinfo(obj, id) {
-    createCookie(id + "info", encodeURIComponent($("#" + id + "info").val()), 99999);
+    createCookie2(id, "info", encodeURIComponent($("#" + id + "info").val()));
     
     $(obj).parent().parent().find("#expand").addClass("infomodified");
     
@@ -11,13 +11,7 @@ function saveinfo(obj, id) {
 
       $("#" + id + "undoinfo").css("display", "inline-block");
     }
-    createCookie("haschanges", "yes");
-    if (showColorsAdv) {
-        $("#generateicon").addClass("haschanges");
-        if (showColors) {
-            $("#settings").addClass("haschanges");
-        }
-    }  
+  
     showMessage("Information About Link Saved"); 
 }   
 
@@ -27,7 +21,7 @@ function saveinfo(obj, id) {
 
 
 function saveclassif(obj, id) {
-    createCookie(id + "classif", $("#" + id + "classif").val(), 99999);
+    createCookie2(id, "classif", $("#" + id + "classif").val());
 
     $(obj).parent().parent().parent().find("#expand").addClass("infomodified");
 
@@ -40,13 +34,6 @@ function saveclassif(obj, id) {
         $("#" + id + "undoinfo").css("display", "inline-block");
     }
 
-    createCookie("haschanges", "yes");
-    if (showColorsAdv) {
-        $("#generateicon").addClass("haschanges");
-        if (showColors) {
-            $("#settings").addClass("haschanges");
-        }
-    }  
     showMessage("Link Classification Saved"); 
 }  
 
@@ -66,33 +53,14 @@ function undosaveclassif(obj, id) {
         $("#" + id + "oldclassif").remove();
     }
 
-    createCookie(id + "classif", "", 99999);
+    createCookie2(id, "classif", "");
     
     $(obj).parent().parent().parent().find("#expand").removeClass("infomodified");
     
     $(obj).parent().find("#" + id + "classif").val(oldtext);
     $(obj).parent().find("#" + id + "classif").css("border", "none");
 
-    var callback = function(flag) {      
-        if (flag) {
-            createCookie("haschanges", "yes");
-            if (showColorsAdv) {
-                $("#generateicon").addClass("haschanges");
-                if (showColors) {
-                    $("#settings").addClass("haschanges");
-                }
-            }  
-        }
-        else {
-            createCookie("haschanges", "");
-            $("#settings").removeClass("haschanges");
-            $("#generateicon").removeClass("haschanges");
-        }
-
-        showMessage("Link Reclassification Reverted");
-    } 
-
-    hasTweetChanges(callback);
+    showMessage("Link Reclassification Reverted");
 }  
 
 
@@ -106,7 +74,7 @@ function undosaveinfo(obj, id) {
     if ($("#" + id + "oldinfo").length > 0)
         oldtext = encodeURIComponent($("#" + id + "oldinfo").text());
 
-    createCookie(id + "info", "", 99999);
+    createCookie2(id, "info", "");
 
     $(obj).parent().parent().find("#expand").removeClass("infomodified");
 
@@ -119,26 +87,7 @@ function undosaveinfo(obj, id) {
         $("#" + id + "oldinfo").remove();
     }          
     
-    var callback = function(flag) {      
-        if (flag) {
-            createCookie("haschanges", "yes");
-            if (showColorsAdv) {
-                $("#generateicon").addClass("haschanges");
-                if (showColors) {
-                    $("#settings").addClass("haschanges");
-                }
-            }  
-        }
-        else {
-            createCookie("haschanges", "");
-            $("#settings").removeClass("haschanges");
-            $("#generateicon").removeClass("haschanges");
-        }
-
-        showMessage("Information About Link Reverted");
-    } 
-
-    hasTweetChanges(callback);
+    showMessage("Information About Link Reverted");
 }  
 
 
@@ -165,7 +114,7 @@ function removetweet(obj) {
                         buttons: {
                           "Yes": function() {
                             jsonvar.deleted = "yes";
-                            createCookie(jsonvar.id + "isdeleted", "yes", 99999);
+                            createCookie2(jsonvar.id, "isdeleted", "yes");
                             updateLinkCookie(jsonvar);
     
                             $("#main").empty();
@@ -180,22 +129,7 @@ function removetweet(obj) {
                             });
                           },
                           "Restore": function() {
-                            createCookie($('#linkChange').attr("cid") + "isdeleted", "", 99999);
-            
-                            if (hasTweetChanges()) {
-                                createCookie("haschanges", "yes");
-                                if (showColorsAdv) {
-                                    $("#generateicon").addClass("haschanges");
-                                    if (showColors) {
-                                        $("#settings").addClass("haschanges");
-                                    }
-                                }  
-                            }
-                            else {
-                              createCookie("haschanges", "");
-                              $("#settings").removeClass("haschanges");
-                              $("#generateicon").removeClass("haschanges");
-                            }
+                            createCookie2($('#linkChange').attr("cid"), "isdeleted", "");
             
                             jsonvar.deleted = "";
                             updateLinkCookie(jsonvar);
@@ -223,17 +157,11 @@ function removetweet(obj) {
                     $("#dialog-confirm-delete").parent().fadeIn(800);
             } 
             else {
-                createCookie($('#linkChange').attr("cid") + "isdeleted", "a", 99999);
+                createCookie2($('#linkChange').attr("cid"), "isdeleted", "a");
                 jsonvar.deleted = "a";
                 updateLinkCookie(jsonvar);
                 updateLinkColor(jsonvar);
-                if (showColorsAdv) {
-                    $("#generateicon").addClass("haschanges");
-                    if (showColors) {
-                        $("#settings").addClass("haschanges");
-                    }
-                }  
-                createCookie("haschanges", "yes");
+
                 showMessage("Link Marked To Delete");
             }
         } 
@@ -249,7 +177,7 @@ function updateLinkCookie(obj) {
 
     var mlink = encodeURIComponent(JSON.stringify(link));
     
-    createCookie(obj.id + "templink", mlink, 99999);
+    createCookie2(obj.id, "templink", mlink);
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -284,7 +212,7 @@ function acceptTag(obj) {
     var iscat = $("#changetags").attr('iscat');
 
     if (iscat && iscat == "yes") { 
-        createCookie(id + "catchanged", $(obj).parent().find('input').val());
+        createCookie2(id, "catchanged", $(obj).parent().find('input').val());
     
         var text = readCookie(id + "tagchanged");
         if (text && text.length > 0) {
@@ -296,17 +224,10 @@ function acceptTag(obj) {
 
         $('#' + id).find('.newcat').html('<b> New categories </b>' + $(obj).parent().find('input').val());   
 
-        if (showColorsAdv) {
-            $("#generateicon").addClass("haschanges");
-            if (showColors) {
-                $("#settings").addClass("haschanges");
-            }
-        }  
-        createCookie("haschanges", "yes");
         showMessage("Category Marked To Change");
     }
     else {
-        createCookie(id + "tagchanged", $(obj).parent().find('input').val());
+        createCookie2(id, "tagchanged", $(obj).parent().find('input').val());
     
         var text = readCookie(id + "catchanged");
         if (text && text.length > 0) {
@@ -318,13 +239,6 @@ function acceptTag(obj) {
 
         $('#' + id).find('.newtag').html('<b> New tags </b>' + $(obj).parent().find('input').val());
 
-        if (showColorsAdv) {
-            $("#generateicon").addClass("haschanges");
-            if (showColors) {
-                $("#settings").addClass("haschanges");
-            }
-        }  
-        createCookie("haschanges", "yes");
         showMessage("Tag Marked To Change");
     }
 
@@ -354,20 +268,7 @@ function undotag(obj) {
         else {
             $('#' + id).find('.tags').css('background', '#00000021').css('border-bottom', '1px solid #00000038');
         }
-        if (hasTweetChanges()) {
-            if (showColorsAdv) {
-                $("#generateicon").addClass("haschanges");
-                if (showColors) {
-                    $("#settings").addClass("haschanges");
-                }
-            }  
-            createCookie("haschanges", "yes");
-        }
-        else {
-          $("#generateicon").removeClass("haschanges");
-          $("#settings").removeClass("haschanges");
-          createCookie("haschanges", "");
-        }
+
         showMessage("Tag Marked To Change Reverted");
     }
     else {
@@ -382,20 +283,6 @@ function undotag(obj) {
         }
         else {
             $('#' + id).find('.tags').css('background', '#00000021').css('border-bottom', '1px solid #00000038');
-        }
-        if (hasTweetChanges()) {
-            if (showColorsAdv) {
-                $("#generateicon").addClass("haschanges");
-                if (showColors) {
-                    $("#settings").addClass("haschanges");
-                }
-            }  
-          createCookie("haschanges", "yes");
-        }
-        else {
-          $("#settings").removeClass("haschanges");
-          $("#generateicon").removeClass("haschanges");
-          createCookie("haschanges", "");
         }
         showMessage("Category Marked To Change Reverted");
     }
@@ -491,11 +378,19 @@ function countalltweets(webLinksMap) {
 
         console.log("countalltweets FIM process");
 
+            
+        $( "#mask" ).fadeOut( 800, function() {
+            var style = window.getComputedStyle(body, null);
+
+            $("#mask").css("background", style.getPropertyValue('--soft-transp-color'));
+            $("#mask .fa-folder-open").hide();
+            $("#mask > div" ).hide();
+            $("#mask > .fa-circle-o-notch").show();
+        });
+
         processCountBlock();
     }); 
-
 } 
-
 
 
 function processCountBlock() {
@@ -558,15 +453,6 @@ function processCountBlock() {
     }
 
     console.log("processCountBlock FIM process");
-    
-    $( "#mask" ).fadeOut( 800, function() {
-        var style = window.getComputedStyle(body, null);
-
-        $("#mask").css("background", style.getPropertyValue('--soft-transp-color'));
-        $("#mask .fa-folder-open").hide();
-        $("#mask > div" ).hide();
-        $("#mask > .fa-circle-o-notch").show();
-    });
 
     startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 200)));
     
@@ -1533,7 +1419,7 @@ var eraseAllDeletedFunc = function(text, type, functorun) {
 
                 if (((val && val.deleted.length > 0) || (isdeleted && isdeleted.length > 0)) && val.id != "0") {
                     /*val.deleted = "yes";
-                    createCookie(val.id + "isdeleted", "yes", 99999);
+                    createCookie2(val.id, "isdeleted", "yes");
                     updateLinkCookie(val);
                     */
                     // xyz eraseall
@@ -1593,54 +1479,54 @@ var eraseAllDeletedFunc = function(text, type, functorun) {
             var cat = readCookie(val.id + "catchanged_bk");
             if (cat && cat.length > 0) {
                 ind = true;
-                createCookie(val.id + "catchanged_bk", "", 99999);
-                createCookie(val.id + "catchanged", cat, 99999);
+                createCookie2(val.id, "catchanged_bk", "", 99999);
+                createCookie2(val.id, "catchanged", cat, 99999);
             }
             else {
-                createCookie(val.id + "catchanged", "", 99999);
+                createCookie2(val.id, "catchanged", "", 99999);
             }
 
             var tag = readCookie(val.id + "tagchanged_bk");
             if (tag && tag.length > 0) {
                 ind = true;
                 val.tags = tag;
-                createCookie(val.id + "tagchanged", tag, 99999);
-                createCookie(val.id + "tagchanged_bk", "", 99999);
+                createCookie2(val.id, "tagchanged", tag, 99999);
+                createCookie2(val.id, "tagchanged_bk", "", 99999);
             }
             else {
-                createCookie(val.id + "tagchanged", "", 99999);
+                createCookie2(val.id, "tagchanged", "", 99999);
             }
 
             var info = readCookie(val.id + "info_bk");
             if (info && info.length > 0) {
                 ind = true;
                 val.info = info;
-                createCookie(val.id + "info", info, 99999);
-                createCookie(val.id + "info_bk", "", 99999);
+                createCookie2(val.id, "info", info, 99999);
+                createCookie2(val.id, "info_bk", "", 99999);
             }
             else {
-                createCookie(val.id + "info", "", 99999);
+                createCookie2(val.id, "info", "", 99999);
             }
 
             var classif = readCookie(val.id + "classif_bk");
             if (classif && classif.length > 0) {
                 ind = true;
                 val.classif = classif;
-                createCookie(val.id + "classif", classif, 99999);
-                createCookie(val.id + "classif_bk", "", 99999);
+                createCookie2(val.id, "classif", classif, 99999);
+                createCookie2(val.id, "classif_bk", "", 99999);
             }
             else {
-                createCookie(val.id + "classif", "", 99999);
+                createCookie2(val.id, "classif", "", 99999);
             }
 
             var isdeleted = readCookie(val.id + "isdeleted_bk");
             if (isdeleted && isdeleted.length > 0) {
                 ind = true;
-                createCookie(val.id + "isdeleted", "yes", 99999);
-                createCookie(val.id + "isdeleted_bk", "", 99999);
+                createCookie2(val.id, "isdeleted", "yes", 99999);
+                createCookie2(val.id, "isdeleted_bk", "", 99999);
             } 
             else {
-                createCookie(val.id + "isdeleted", "", 99999);
+                createCookie2(val.id, "isdeleted", "", 99999);
             }    
         }
         while (processtmp);        

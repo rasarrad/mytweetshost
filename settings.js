@@ -923,14 +923,13 @@ function saveAuthor(obj) {
         var otherObj = $(obj).parent().find(".author");
         if ($(obj).val().length > 0) {
             if ($(obj).val() != $('#postedby').attr("cauthor")) {
-                createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
-                createCookie($('#linkChange').attr("cid") + "author", $(obj).val());
+                createCookie2($('#linkChange').attr("cid"), "author", $(obj).val());
                 if (showColors) {
                     otherObj.css('color','#00ff72');
                 }
             }
             else {
-                createCookie($('#linkChange').attr("cid") + "author", "");
+                createCookie2($('#linkChange').attr("cid"), "author", "");
             }
             otherObj.html($(obj).val());
         }
@@ -1249,12 +1248,12 @@ function tagsInputOnChange(obj) {
     
     if (oldtags == $(obj).val()) {
         currenttagdisplay.css('color', '');
-        createCookie($('#linkChange').attr("cid") + "tagchanged", "");
+        createCookie2($('#linkChange').attr("cid"), "tagchanged", "");
         $('#originaltagtd i').hide();
     }
     else {
         currenttagdisplay.css('color','#00ff72');
-        createCookie($('#linkChange').attr("cid") + "tagchanged", $(obj).val());
+        createCookie2($('#linkChange').attr("cid"), "tagchanged", $(obj).val());
         $('#originaltagtd i').show();
     }
     removeNonExistentLi();
@@ -1263,31 +1262,7 @@ function tagsInputOnChange(obj) {
     
     updateTagsText($(obj).val(), $('#linkChange').attr("cid"));
 
-    var color = getLinkColor($('#linkChange').attr("cid"));
-    if (color == "#f18618")
-        createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
-    else
-        createCookie($('#linkChange').attr("cid") + "haschanges", "");
-
     updateLinkColor(null, $('#linkChange').attr("cid"));
-    
-    var callback = function(flag) {      
-        if (flag) {
-            createCookie("haschanges", "yes");
-            if (showColorsAdv) {
-                $("#generateicon").addClass("haschanges");
-                if (showColors) {
-                    $("#settings").addClass("haschanges");
-                }
-            } 
-        }
-        else {
-            createCookie("haschanges", "");
-            $("#settings").removeClass("haschanges");
-            $("#generateicon").removeClass("haschanges");
-        }
-    } 
-    hasTweetChanges(callback);
 }
 
  
@@ -1552,42 +1527,19 @@ function catsInputOnChange(obj) {
     
     if (oldcats == $(obj).val()) {
         currentcatdisplay.css('color', '');
-        createCookie($('#linkChange').attr("cid") + "catchanged", "");
+        createCookie2($('#linkChange').attr("cid"), "catchanged", "");
         $('#originalcattd i').hide();
     }
     else {
         currentcatdisplay.css('color','#00ff72');
-        createCookie($('#linkChange').attr("cid") + "catchanged", $(obj).val());
+        createCookie2($('#linkChange').attr("cid"), "catchanged", $(obj).val());
         $('#originalcattd i').show();
     }
 
     markCategoriesCheckBoxs();
 
-    var color = getLinkColor($('#linkChange').attr("cid"));
-    if (color == "#f18618")
-        createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
-    else
-        createCookie($('#linkChange').attr("cid") + "haschanges", "");
-
     updateLinkColor(null, $('#linkChange').attr("cid"));
 
-    var callback = function(flag) {      
-        if (flag) {
-            createCookie("haschanges", "yes");
-            if (showColorsAdv) {
-                $("#generateicon").addClass("haschanges");
-                if (showColors) {
-                    $("#settings").addClass("haschanges");
-                }
-            } 
-        }
-        else {
-            createCookie("haschanges", "");
-            $("#settings").removeClass("haschanges");
-            $("#generateicon").removeClass("haschanges");
-        }
-    } 
-    hasTweetChanges(callback);
 }
 
 function clickCheckCat(obj, cat) {
@@ -1664,39 +1616,16 @@ function classifInputOnChange(obj) {
     
     if (oldclassif == $(obj).val().trim()) {
         currentclassifdisplay.css('color', '');
-        createCookie($('#linkChange').attr("cid") + "classif", "");
+        createCookie2($('#linkChange').attr("cid"), "classif", "");
         $('#originalclassiftd i').hide();
     }
     else {
         currentclassifdisplay.css('color','#00ff72');
-        createCookie($('#linkChange').attr("cid") + "classif", $(obj).val().trim());
+        createCookie2($('#linkChange').attr("cid"), "classif", $(obj).val().trim());
         $('#originalclassiftd i').show();
     }
-    var color = getLinkColor($('#linkChange').attr("cid"));
-    if (color == "#f18618")
-    createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
-    else
-        createCookie($('#linkChange').attr("cid") + "haschanges", "");
 
     updateLinkColor(null, $('#linkChange').attr("cid"));
-    
-    var callback = function(flag) {      
-        if (flag) {
-            createCookie("haschanges", "yes");
-            if (showColorsAdv) {
-                $("#generateicon").addClass("haschanges");
-                if (showColors) {
-                    $("#settings").addClass("haschanges");
-                }
-            } 
-        }
-        else {
-            createCookie("haschanges", "");
-            $("#settings").removeClass("haschanges");
-            $("#generateicon").removeClass("haschanges");
-        }
-    } 
-    hasTweetChanges(callback);
 
     markClassif($(obj).val().trim());
 }
@@ -1757,41 +1686,17 @@ function infoInputOnKeyup(obj) {
             
             if (oldinfo == val) {
                 currentinfodisplay.css('color', '');
-                createCookie($('#linkChange').attr("cid") + "info", "");
+                createCookie2($('#linkChange').attr("cid"), "info", "");
                 $('#originalinfotd i').hide();
             }
             else {
                 currentinfodisplay.css('color','#00ff72');
-                createCookie($('#linkChange').attr("cid") + "info", val);
+                createCookie2($('#linkChange').attr("cid"), "info", val);
                 $('#originalinfotd i').show();
             }
 
-            var color = getLinkColor($('#linkChange').attr("cid"));
-
-            if (color == "#f18618")
-                createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
-            else
-                createCookie($('#linkChange').attr("cid") + "haschanges", "");
-
             updateLinkColor(null, $('#linkChange').attr("cid"));
 
-            var callback = function(flag) {      
-                if (flag) {
-                    createCookie("haschanges", "yes");
-                    if (showColorsAdv) {
-                        $("#generateicon").addClass("haschanges");
-                        if (showColors) {
-                            $("#settings").addClass("haschanges");
-                        }
-                    } 
-                }
-                else {
-                    createCookie("haschanges", "");
-                    $("#settings").removeClass("haschanges");
-                    $("#generateicon").removeClass("haschanges");
-                }
-            } 
-            hasTweetChanges(callback);
             dblFlag = false;
         }, 300);
     }

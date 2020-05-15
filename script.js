@@ -250,7 +250,7 @@ $( document ).ready(function() {
     nextid = parseInt(readCookie("maxid"));
 
     do {
-        createCookie(nextid + "templink", "", 99999);
+        createCookie2(nextid, "templink", "");
         nextid = nextid - 1;
     }
     while (nextid > 0);
@@ -458,7 +458,7 @@ $( document ).ready(function() {
 
     $( "#removetmp" ).bind( "click", function( event ) {
         if ($('#removetmpinput').val() != "") {
-            createCookie($('#removetmpinput').val() + "templink", "", 99999);
+            createCookie2($('#removetmpinput').val(), "templink", "");
 
             showMessage("Removed link number: " +  $('#removetmpinput').val());
             $('#removetmpinput').val('');
@@ -1082,7 +1082,7 @@ function handleFileSelectDragDrop(evt) {
             
                                 var mlink = encodeURIComponent(JSON.stringify(link));
                 
-                                createCookie(resultParsed[x].id + "templink", mlink, 99999);
+                                createCookie2(resultParsed[x].id, "templink", mlink);
                             }
                             else {
                                 webLinksMap.set(parseInt(resultParsed[0].id), resultParsed[x]);
@@ -1143,31 +1143,31 @@ function handleFileSelectDragDrop(evt) {
     eraseLinkTmpData(obj.id, true)
 
     if(obj.hasOwnProperty("date") && obj.date != webObj.date) {
-        createCookie(obj.id + "date", obj.date, 99999);
+        createCookie2(obj.id, "datechanged", obj.date);
     }
 
     if(obj.hasOwnProperty("author") && obj.author != webObj.author) {
-        createCookie(obj.id + "author", obj.author, 99999);
+        createCookie2(obj.id, "author", obj.author);
     }
 
     if(obj.hasOwnProperty("categories") && obj.categories != webObj.categories) {
-        createCookie(obj.id + "catchanged", obj.categories, 99999);
+        createCookie2(obj.id, "catchanged", obj.categories);
     }
 
     if(obj.hasOwnProperty("tags") && obj.tags != webObj.tags) {
-        createCookie(obj.id + "tagchanged", obj.tags, 99999);
+        createCookie2(obj.id, "tagchanged", obj.tags);
     }
 
     if(obj.hasOwnProperty("info") && obj.info != webObj.info) {
-        createCookie(obj.id + "info", obj.info, 99999);
+        createCookie2(obj.id, "info", obj.info);
     }
 
     if(obj.hasOwnProperty("deleted")) {
-        createCookie(obj.id + "isdeleted", obj.deleted, 99999);
+        createCookie2(obj.id, "isdeleted", obj.deleted);
     }
 
     if(obj.hasOwnProperty("classif") && obj.classif != webObj.classif) {
-        createCookie(obj.id + "classif", obj.classif, 99999);
+        createCookie2(obj.id, "classif", obj.classif);
     }
   }
 
@@ -2137,6 +2137,10 @@ function createCookie(name, value, days) {
     document.cookie = name + "=" + value + expires + "; path=/";
 }
 
+function createCookie2(id, name, value) {            
+
+    document.cookie = name + "=" + value + "; path=/";
+}
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////@ts-check
