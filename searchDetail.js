@@ -746,11 +746,12 @@ var getInformation = function(wasfiltered, valid) {
         }
     }
 
+    startWorker();
+
     try {
 
         var i = 0;
-        var hasntFinnished = true; 
-        while (allLinks[i] && hasntFinnished) {
+        while (allLinks[i]) {
             var val = allLinks[i];
         
             //startWorker();
@@ -775,15 +776,18 @@ var getInformation = function(wasfiltered, valid) {
 
             if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                 && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal) {
-                    
-                if (localCounter < 100) {
+                
+                if (val.type == "T")
+                    linkArray[localCounter] = val.type;
+                else
+                    linkArray[localCounter] = val.id;
+
+                if (localCounter < 5) {
                     renderLink(val);
-                    console.log(val);
                 } 
                 else {
-                    hasntFinnished = false; 
+                    linkArrayToRender[localCounter] = val;
                 }
-
                 localCounter++;
             }  
             i++;
@@ -798,7 +802,7 @@ var getInformation = function(wasfiltered, valid) {
         return Number($(b).attr('cdate')) - Number($(a).attr('cdate'));
     }).appendTo('#main'); */
 
-    if (totalLinkss > 0) {
+    if (localCounter > 0) {
         //if (wasfiltered != 2)
             //showMessage("Search Results", 2000);
     }
