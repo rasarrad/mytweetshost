@@ -2587,7 +2587,7 @@ function startWorker() {
     
                 var doExec = false;
 
-                if (new Date().getTime() - datecontrol.getTime() > 600) {
+                if (new Date().getTime() - datecontrol.getTime() > 300) {
                     datecontrol = new Date();
 
                     doExec = true;
