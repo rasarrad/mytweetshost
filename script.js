@@ -2585,45 +2585,34 @@ function startWorker() {
                     }, 15190); */
                 }
     
-                var doExec = false;
-
-                if (new Date().getTime() - datecontrol.getTime() > 300) {
-                    datecontrol = new Date();
-
-                    doExec = true;
-                }
-                
-
-                if (doExec) {
-                    renderTimeout = setTimeout(function() {  
-                        if (linkArray[currrenderedtweets] == "T") {
-                            if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                                currrenderedtweets++;
-                                countercontrol++;
-                                if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
-                                    customizeSingleTweet();
-                                }
-                            }
-                        }
-                        else {
-                            $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
-                    
-                            if (!isMobile) {
-                                idCurr = linkArray[currrenderedtweets];
-                                setTimeout(function(){
-                                    document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
-                                }, 0);
-                            }
+                renderTimeout = setTimeout(function() {  
+                    if (linkArray[currrenderedtweets] == "T") {
+                        if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
                             currrenderedtweets++;
                             countercontrol++;
+                            if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
+                                customizeSingleTweet();
+                            }
                         }
-
-                        if (linkArrayToRender[currrenderedtweets + 5]) {
-                            renderLink(linkArrayToRender[currrenderedtweets + 5]);
+                    }
+                    else {
+                        $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
+                
+                        if (!isMobile) {
+                            idCurr = linkArray[currrenderedtweets];
+                            setTimeout(function(){
+                                document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
+                            }, 0);
                         }
+                        currrenderedtweets++;
+                        countercontrol++;
+                    }
 
-                    }, 190);
-                }
+                    if (linkArrayToRender[currrenderedtweets + 5]) {
+                        renderLink(linkArrayToRender[currrenderedtweets + 5]);
+                    }
+
+                }, 190);
             }
           }
           else {
