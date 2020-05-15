@@ -1160,8 +1160,8 @@ function preCustomize(newtweetobj) {
 }
 
 
-var getJsonbyid = function(id, functorun) {
-    for (i; i < allLinks.length; i++) {
+var getJsonbyid = function(id) {
+    for (var i = 0; i < allLinks.length; i++) {
         var val = allLinks[i];
 
         if (val.id == id) {
