@@ -470,8 +470,8 @@ function processCountBlock() {
 function processCountUpdate(countersParam) {
     console.log("processCountUpdate process");
 
-    tagsmap = new Map(JSON.parse(countersParam.tagsmap));
-    counters = new Map(JSON.parse(countersParam.counters));
+    var tagsmap = new Map(JSON.parse(countersParam.tagsmap));
+    var counters = new Map(JSON.parse(countersParam.counters));
 
     var o = new Option("notag", "notag");
     $(o).html("All Tags");
