@@ -100,11 +100,10 @@ function removetweet(obj) {
         fixfocus(obj);
 
     if ($('#linkChange').attr("cid") != "new") {
+        jsonvar = getJsonbyid($('#linkChange').attr("cid"));
 
-        var functorun = function(jsonvar) 
-        { 
-            var isdeleted = readCookie($('#linkChange').attr("cid") + "isdeleted");
-            if (jsonvar.deleted != "" || (isdeleted && isdeleted.length > 0)) {
+        if (jsonvar) {
+            if (jsonvar.deleted.length > 0) {
                 try {
                     $( "#dialog-confirm-delete" ).dialog({
                         resizable: false,
@@ -164,8 +163,10 @@ function removetweet(obj) {
 
                 showMessage("Link Marked To Delete");
             }
-        } 
-        getJsonbyid($('#linkChange').attr("cid"), functorun);
+        }
+        else {
+            showMessage("Unknown System Error");
+        }
     }
     else {
         create();

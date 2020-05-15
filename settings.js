@@ -46,14 +46,10 @@ function expandCat(obj, idparam, valid) {
     }
     */
 
-    var functorun = function(jsonvar) 
-    { 
-        
-        if (jsonvar != null) {
-            openSettingsPopup(jsonvar);
-        }
-    } 
-    getJsonbyid(id, functorun);
+    var jsonvar = getJsonbyid(id);
+    if (jsonvar != null) {
+        openSettingsPopup(jsonvar);
+    }
 }
 
 function fixfocus(el, flag, otherproperty)
@@ -820,58 +816,26 @@ var openMainSettingsPopup = function(jsonobj)
 
 var getLinkColor = function(id) 
 {
-    var functorun = function(jsonvar) 
-    { 
-        var isdeleted = readCookie(id + "isdeleted");
-        if (jsonvar.deleted != "" || (isdeleted && isdeleted.length > 0)) {
+    var jsonvar = getJsonbyid(id);
+
+    if (jsonvar) {
+        if (jsonvar.deleted.length > 0) {
             return "red";
         }
         else {
-    
             if (jsonvar.isnew && jsonvar.isnew != "") {
                 return "#00dc00";
             }
             else {
-                var hasChanges = false;
-    
-                var tagchanged = readCookie(id + "tagchanged");
-                if (tagchanged && tagchanged.length > 0) {
-                    hasChanges = true;
-                } 
-            
-                var catchanged = readCookie(id + "catchanged");
-                if (catchanged && catchanged.length > 0) {
-                    hasChanges = true;
-                } 
-            
-                var classifchanged = readCookie(id + "classif");
-                if (classifchanged && classifchanged.length > 0) {
-                    hasChanges = true;
-                } 
-            
-                var infochanged = readCookie(id + "info");
-                if (infochanged && infochanged.length > 0) {
-                    hasChanges = true;
-                }
-    
-                var author = readCookie(id + "author");
-                if (author && author.length > 0) {
-                    hasChanges = true;
-                }
-
-                var datechanged = readCookie(id + "datechanged");
-                if (datechanged && datechanged.length > 0) {
-                    hasChanges = true;
-                }
+                var hasChanges = readCookie(id + "haschanges");
                 
-                if (hasChanges) 
+                if (hasChanges && hasChanges.length > 0) 
                     return "#f18618";
                 else 
-                   return "";
+                    return "";
             }
         }
-    } 
-    getJsonbyid(id, functorun);
+    }
 } 
 
 
@@ -1276,59 +1240,52 @@ function updateSettingsColor(color) {
 }
 
 function updateLinkColor(val, id) {
-    var functorun = function(val) 
-    { 
-        var isdeleted = readCookie(val.id + "isdeleted");
-        if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { 
-            if (showColors) {
-                $("#" + val.id).find("i.linkbar").css("color", "red"); 
-                $("#seticon").attr("style", "color: red;");
-            }
-            else {
-                if (showColorsAdv) {
-                    $("#seticon").attr("style", "color: red;");
-                }
-            }
-        } 
-        else if (showColors) {
-            if (val.isnew && val.isnew != "") { 
-                $(".tweet#" + val.id).find("i.linkbar").css("color", "#00dc00"); 
-                $("#seticon").attr("style", "color: #00dc00;");
-            }
-            else {
-                var hasChanges = readCookie(val.id + "haschanges");
-                if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
-                    $(".tweet#" + val.id).find("i.linkbar").css("color", "#f18618"); 
-                    $("#seticon").attr("style", "color: #f18618;");
-                } 
-                else {
-                    $(".tweet#" + val.id).find("i.linkbar").css("color", ""); 
-                    $("#seticon").css("color", ""); 
-                }
-            }
+    if (id) {
+        val = getJsonbyid(id);
+    }
+
+    if (val.deleted.length > 0) { 
+        if (showColors) {
+            $("#" + val.id).find("i.linkbar").css("color", "red"); 
+            $("#seticon").attr("style", "color: red;");
         }
         else {
             if (showColorsAdv) {
-                if (val.isnew && val.isnew != "") { 
-                    $("#seticon").attr("style", "color: #00dc00;");
-                }
-                else {
-                    $(".tweet#" + val.id).find("i.linkbar").css("color", ""); 
-                    $("#seticon").css("color", ""); 
-                }
+                $("#seticon").attr("style", "color: red;");
+            }
+        }
+    } 
+    else if (showColors) {
+        if (val.isnew && val.isnew != "") { 
+            $(".tweet#" + val.id).find("i.linkbar").css("color", "#00dc00"); 
+            $("#seticon").attr("style", "color: #00dc00;");
+        }
+        else {
+            var hasChanges = readCookie(val.id + "haschanges");
+            if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
+                $(".tweet#" + val.id).find("i.linkbar").css("color", "#f18618"); 
+                $("#seticon").attr("style", "color: #f18618;");
+            } 
+            else {
+                $(".tweet#" + val.id).find("i.linkbar").css("color", ""); 
+                $("#seticon").css("color", ""); 
+            }
+        }
+    }
+    else {
+        if (showColorsAdv) {
+            if (val.isnew && val.isnew != "") { 
+                $("#seticon").attr("style", "color: #00dc00;");
             }
             else {
                 $(".tweet#" + val.id).find("i.linkbar").css("color", ""); 
                 $("#seticon").css("color", ""); 
             }
         }
-    } 
-
-    if (id) {
-        getJsonbyid(id, functorun);
-    }
-    else {
-        functorun(val);
+        else {
+            $(".tweet#" + val.id).find("i.linkbar").css("color", ""); 
+            $("#seticon").css("color", ""); 
+        }
     }
 }
 

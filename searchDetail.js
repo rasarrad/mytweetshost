@@ -1161,110 +1161,13 @@ function preCustomize(newtweetobj) {
 
 
 var getJsonbyid = function(id, functorun) {
-    var path = "./data.json";
+    for (i; i < allLinks.length; i++) {
+        var val = allLinks[i];
 
-    $.getJSON(path, function(data) {
-        var processtmp = true;
-        
-        nextid = null;
-        try {
-            nextid = parseInt(readCookie("maxid"));
+        if (val.id == id) {
+            return val;
         }
-        catch(err) {
-            //cnonsole.log("getJsonbyid - Error parsing next id");
-        }
-        finally {
-            if (nextid) {
-                $("#maxid").val(nextid);
-                //cnonsole.log("getJsonbyid - nextid vem do cookie: " + nextid);
-                nextid = nextid - 1;
-            }
-            else {
-                nextid = parseInt($("#maxid").val());
-                createCookie("maxid", nextid);
-                //cnonsole.log("getJsonbyid - nextid vem do hidden field: " + nextid);
-                nextid = nextid - 1;
-            }
-        }
-        var retObj = null;
-
-        $.each(data.Tweets, function(key, val) {
-            var recordfromdata = val;
-            var linkcontent = null;
-
-            do {
-                if (processtmp) {
-                    linkcontent = readCookie(nextid + "templink");
-                    if (linkcontent && linkcontent.length > 0) {
-                        var linktmp = decodeURIComponent(linkcontent);
-                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
-                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
-                        linktmp = linktmp.replace(/(\\)/gm, ""); 
-                        linktmp = JSON.parse(linktmp);
-    
-                        val = linktmp;
-                        nextid = nextid - 1;
-                    }
-                    else {
-                        if (showAll) {
-                            val = recordfromdata;
-                        }
-                        else {
-                            val.id = "0";
-                        }
-                        
-                        processtmp = false;
-                    }
-                }
-                else {
-                    if (showAll) {
-                        val = recordfromdata;
-                    }
-                    else {
-                        val.id = "0";
-                    }
-                }
-
-                var isdeleted = readCookie(val.id + "isdeleted");
-                if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id.includes(id) && val.id != "0") {
-                    var cat = readCookie(val.id + "catchanged");
-                    if (cat && cat.length > 0) {
-                        val.categories = cat;
-                    }
-        
-                    var tag = readCookie(val.id + "tagchanged");
-                    if (tag && tag.length > 0) {
-                        val.tags = tag;
-                    }
-        
-                    var info = readCookie(val.id + "info");
-                    if (info && info.length > 0) {
-                        val.info = info;
-                    }
-        
-                    var classif = readCookie(val.id + "classif");
-                    if (classif && classif.length > 0) {
-                        val.classif = classif;
-                    }
-
-                    if (val.id == id) {
-                        processtmp = false;
-                        retObj = val;
-                    }
-                }
-            }
-            while (processtmp);
-        }); 
-
-        if (retObj) {
-            if (functorun)
-                functorun(retObj);
-            return null;
-        }
-        else {
-            return null;
-        }
-    }); 
+    }
 
     return null;
 }
