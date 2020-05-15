@@ -2585,34 +2585,45 @@ function startWorker() {
                     }, 15190); */
                 }
     
-                renderTimeout = setTimeout(function() {  
-                    if (linkArray[currrenderedtweets] == "T") {
-                        if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                            currrenderedtweets++;
-                            countercontrol++;
-                            if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
-                                customizeSingleTweet();
+                var doExec = false;
+
+                if (new Date().getTime() - datecontrol.getTime() > 200) {
+                    datecontrol = new Date();
+
+                    doExec = true;
+                }
+                
+
+                if (doExec) {
+                    renderTimeout = setTimeout(function() {  
+                        if (linkArray[currrenderedtweets] == "T") {
+                            if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
+                                currrenderedtweets++;
+                                countercontrol++;
+                                if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
+                                    customizeSingleTweet();
+                                }
                             }
                         }
-                    }
-                    else {
-                        $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
-                
-                        if (!isMobile) {
-                            idCurr = linkArray[currrenderedtweets];
-                            setTimeout(function(){
-                                document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
-                            }, 0);
+                        else {
+                            $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
+                    
+                            if (!isMobile) {
+                                idCurr = linkArray[currrenderedtweets];
+                                setTimeout(function(){
+                                    document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
+                                }, 0);
+                            }
+                            currrenderedtweets++;
+                            countercontrol++;
                         }
-                        currrenderedtweets++;
-                        countercontrol++;
-                    }
 
-                    if (linkArrayToRender[currrenderedtweets + 5]) {
-                        renderLink(linkArrayToRender[currrenderedtweets + 5]);
-                    }
+                        if (linkArrayToRender[currrenderedtweets + 5]) {
+                            renderLink(linkArrayToRender[currrenderedtweets + 5]);
+                        }
 
-                }, 190);
+                    }, 190);
+                }
             }
           }
           else {
