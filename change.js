@@ -410,36 +410,43 @@ function processCountBlock() {
                     var isdeleted = readCookie(val.id + "isdeleted");
                     if (!(isdeleted && isdeleted == "yes")) {
             
+                        val.deletedOri = val.deleted;
                         if (isdeleted && isdeleted.length > 0) {
                             val.deleted = isdeleted;
                         } 
             
                         var cat = readCookie(val.id + "catchanged");
+                        val.categoriesOri = val.categories;
                         if (cat && cat.length > 0) {
                             val.categories = cat;
                         }
             
                         var tag = readCookie(val.id + "tagchanged");
+                        val.tagsOri = val.tags;
                         if (tag && tag.length > 0) {
                             val.tags = tag;
                         }
             
                         var info = readCookie(val.id + "info");
+                        val.infoOri = val.info;
                         if (info && info.length > 0) {
                             val.info = info;
                         }
             
                         var classif = readCookie(val.id + "classif");
+                        val.classifOri = val.classif;
                         if (classif && classif.length > 0) {
                             val.classif = classif;
                         }
                         
                         var author = readCookie(val.id + "author");
+                        val.authorOri = val.author;
                         if (author && author.length > 0) {
                             val.author = author;
                         }
 
                         var datechanged = readCookie(val.id + "datechanged");
+                        val.dateOri = val.date;
                         if (datechanged && datechanged.length > 0) {
                             val.date = datechanged;
                         }
