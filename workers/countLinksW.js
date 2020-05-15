@@ -40,6 +40,7 @@ var total = 0;
 
 function processCount(inputArray, showDeleted) {
 
+    sleep(300);
     console.log("---process");
     for (var j = 0; j < inputArray.length; j++) {
         var val = inputArray[j];
@@ -93,4 +94,10 @@ function resetVars() {
     total_t = 0;
     total_h = 0;  
     total = 0;   
+}
+
+function sleep(seconds) 
+{
+    var e = new Date().getTime() + (seconds);
+    while (new Date().getTime() <= e) {}
 }

@@ -108,7 +108,7 @@ $( document ).ready(function() {
     // setTimeout(function() { 
     //      countalltweets(); agora é feito no showDeleted (em cima)
 
-    setTimeout(function(){
+/*     setTimeout(function(){
         $( "#mask" ).fadeOut( 800, function() {
             var style = window.getComputedStyle(body, null);
     
@@ -117,7 +117,7 @@ $( document ).ready(function() {
             $("#mask > div" ).hide();
             $("#mask > .fa-circle-o-notch").show();
         });
-    }, 340); 
+    }, 340);  */
     //}, 1); 
 
 
