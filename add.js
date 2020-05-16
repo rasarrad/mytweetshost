@@ -37,6 +37,9 @@ function parseTweet(type) {
 
             var idExisting = existsLink(text, "T");
             if (idExisting) {
+                $("#main").empty();
+                $('#tweetcount').hide(); 
+    
                 getInformationbyid(idExisting, true);
             }
             else {
@@ -104,6 +107,9 @@ function parseTweet(type) {
 
             var idExisting = existsLink(url, "Y");
             if (idExisting) {
+                $("#main").empty();
+                $('#tweetcount').hide(); 
+    
                 getInformationbyid(idExisting, true);
             }
             else {
@@ -162,6 +168,9 @@ function parseTweet(type) {
 
             var idExisting = existsLink(url, "Y");
             if (idExisting) {
+                $("#main").empty();
+                $('#tweetcount').hide(); 
+    
                 getInformationbyid(idExisting, true);
             }
             else {
@@ -210,13 +219,11 @@ function parseTweet(type) {
             text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://s.wordpress.com/mshots/v1/" 
                     + text + "); background-size: 100%;'><i class='logo fa fa-html5'></i></div>\""; 
 
-            var functorun = function() 
-            { 
-                
-            } 
-
             var idExisting = existsLink(url, "Y");
             if (idExisting) {
+                $("#main").empty();
+                $('#tweetcount').hide(); 
+    
                 getInformationbyid(idExisting, true);
             }
             else {
