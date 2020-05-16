@@ -925,8 +925,10 @@ var getInformationbyid = function(id, flag) {
 
     while (allLinks[i]) {
         var val = allLinks[i];
-    
+        console.log("tartar " + val.id)
+
         if (id == val.id) {
+            console.log("encontrou")
             renderLink(val);
             preCustomize(id);
             $('#mask').fadeOut(300);
