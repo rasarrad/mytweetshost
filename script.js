@@ -398,6 +398,7 @@ $( document ).ready(function() {
             $("#showdeleted2").prop('checked', false);
             setshowdeletedcookie("false");
         }
+        alert(66666)
         countalltweets();
     });
 
@@ -2593,6 +2594,9 @@ function nextLink(direction) {
         
     }
 }
+
+
+
 function startCLWorker(data, flag, doStop) {
     if (typeof(Worker) !== "undefined") {
         if (typeof(clWorker) !== "undefined") {

@@ -1046,6 +1046,7 @@ function setShowDeleted(flag) {
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
+    alert(777)
     countalltweets();
 }
 
