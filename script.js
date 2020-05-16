@@ -2629,13 +2629,17 @@ function startCLWorker(data, flag, doStop) {
 }
 
 function startWorker() {
-
+    console.log(11111);
     if (typeof(Worker) !== "undefined") {
+        console.log(2222);
       if (typeof(timeoutWorker) == "undefined") {
+        console.log(33333);
         timeoutWorker = new Worker("worker.js");
       }
       // mudar o timeout
       //w.postMessage({ "args": [ 500 ] });
+
+      console.log(4444);
 
       timeoutWorker.onmessage = function(event) {
         
