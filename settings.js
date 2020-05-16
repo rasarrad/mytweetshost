@@ -999,16 +999,21 @@ function toggleShowDeleted() {
         setshowdeletedcookie("true");
     }
     
+    countAllLinks();
+}
 
+
+function countAllLinks() {
     if (typeof(clWorker) !== "undefined") {
-        console.log("timeoutWorker NOT undefined");
         clWorker.terminate();
             clWorker = undefined;
     }
     
     counterAllLinks = 0;
+
     processCountBlock(null, true);
 }
+
 
 function toggleShowDeleted2() {
 
@@ -1022,13 +1027,9 @@ function toggleShowDeleted2() {
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
-    if (typeof(clWorker) !== "undefined") {
-        console.log("clWorker terminate 2");
-        clWorker.terminate();
-    }
-        // xyzz
-    //counterAllLinks = 0;
-    //processCountBlock(null, true);
+    
+    console.log("toggleShowDeleted2");
+    countAllLinks();
 }
 
 function toggleShowDeletedAll() {
@@ -1042,10 +1043,6 @@ function toggleShowDeletedAll() {
         $("#showdeleted").prop('checked', true);
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
-    }
-    if (typeof(clWorker) !== "undefined") {
-        console.log("clWorker terminate 2");
-        clWorker.terminate();
     }
         // xyzz
     //counterAllLinks = 0;

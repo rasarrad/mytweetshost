@@ -1,18 +1,13 @@
 
 self.addEventListener("message", function(e) {
-    var inputArray = JSON.parse(e.data);
+    var inputArray = JSON.parse(e.data.array);
 
-    var result = "";
+    processCount(inputArray, e.data.includeDeleted);
 
-    //result = "tamanho: " + inputArray.length + " - id 1: " + inputArray[0].id + " - id 2: " + inputArray[inputArray.length - 1].id;
-
-    processCount(inputArray);
-
-    if (inputArray[inputArray.length - 1]) {
+    if (inputArray[inputArray.length -1]) {
         self.postMessage({ "finnish": "no", "result": ""});
     }
     else {
-
         var result = {};
 
         result.counters = JSON.stringify(Array.from(counters.entries()));
@@ -21,7 +16,6 @@ self.addEventListener("message", function(e) {
         result.total_t = total_t;
         result.total_h = total_h;
         result.total = total;
-        console.log("finnish: YES")
         
         self.postMessage({ "finnish": "yes", "result": result});
 
@@ -30,7 +24,6 @@ self.addEventListener("message", function(e) {
 
 }, false);
 
-
 var counters = new Map();
 var tagsmap = new Map();
 var total_y = 0;
@@ -38,13 +31,20 @@ var total_t = 0;
 var total_h = 0; 
 var total = 0;   
 
-function processCount(inputArray, showDeleted) {
-    console.log("total: " + total);
+function processCount(inputArray, includeDeleted) {
+
+
+    console.log("includeDeleted");
+    console.log(includeDeleted);
+    if (includeDeleted)
+        console.log("true");
+    else 
+        console.log("false");
     
+    sleep(300);
     for (var j = 0; j < inputArray.length; j++) {
         var val = inputArray[j];
-        sleep(400);
-        console.log("TTT: " + total + " - " + val.id)
+
         if (val.deleted != "yes") {
             
             var res = val.categories.split(" ");
@@ -85,7 +85,6 @@ function processCount(inputArray, showDeleted) {
     }
 } 
 
-
 function resetVars() {
     counters = new Map();
     tagsmap = new Map();
@@ -95,8 +94,7 @@ function resetVars() {
     total = 0;   
 }
 
-function sleep(seconds) 
-{
+function sleep(seconds) {
     var e = new Date().getTime() + (seconds);
     while (new Date().getTime() <= e) {}
 }

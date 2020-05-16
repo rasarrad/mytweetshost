@@ -2603,10 +2603,18 @@ function startCLWorker(data, flag, doStop) {
             clWorker = new Worker("workers/countLinksW.js");
         }
 
-        clWorker.postMessage(data);
+        var workerInput = {};
+        workerInput.array = data;
+        if ($("#showdeleted2").is(":checked")) {
+            workerInput.includeDeleted = true;
+        }
+        else {
+            workerInput.includeDeleted = false;
+        }
+
+        clWorker.postMessage(workerInput);
 
         clWorker.onmessage = function(event) {
-            
             if (event.data.finnish == "yes") {
                 clWorker.terminate();
                 clWorker = undefined;
@@ -2615,7 +2623,6 @@ function startCLWorker(data, flag, doStop) {
             else {
                 processCountBlock(flag);
             }
- 
         };
     }
 }
