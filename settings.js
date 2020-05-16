@@ -1005,9 +1005,10 @@ function toggleShowDeleted() {
         clWorker.terminate();
             clWorker = undefined;
     }
-
-    counterAllLinks = 0;
-    processCountBlock(null, true);
+alert(123);
+    // xyzz
+    //counterAllLinks = 0;
+    //processCountBlock(null, true);
 }
 
 function toggleShowDeleted2() {
@@ -1026,8 +1027,9 @@ function toggleShowDeleted2() {
         console.log("clWorker terminate 2");
         clWorker.terminate();
     }
-    counterAllLinks = 0;
-    processCountBlock(null, true);
+        // xyzz
+    //counterAllLinks = 0;
+    //processCountBlock(null, true);
 }
 
 function toggleShowDeletedAll() {
@@ -1046,8 +1048,9 @@ function toggleShowDeletedAll() {
         console.log("clWorker terminate 2");
         clWorker.terminate();
     }
-    counterAllLinks = 0;
-    processCountBlock(null, true);
+        // xyzz
+    //counterAllLinks = 0;
+    //processCountBlock(null, true);
 }
 
 function setShowDeleted(flag) {
