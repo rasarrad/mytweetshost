@@ -1066,102 +1066,25 @@ function resetFields(flag) {
 
 
 
-var existsLink = function(text, type, functorun) {
+var existsLink = function(text, type) {
+    for (var i = 0; i < allLinks.length; i++) {
+        var val = allLinks[i];
 
-    var path = "./data.json";
-
-    nextid = null;
-    try {
-        nextid = parseInt(readCookie("maxid"));
-    }
-    catch(err) {
-        //cnonsole.log("existsLink - Error parsing next id");
-    }
-    finally {
-        if (nextid) {
-            $("#maxid").val(nextid);
-            //cnonsole.log("existsLink - nextid vem do cookie: " + nextid);
-            nextid = nextid - 1;
-        }
-        else {
-            nextid = parseInt($("#maxid").val());
-            createCookie("maxid", nextid);
-            //cnonsole.log("existsLink - nextid vem do hidden field: " + nextid);
-            nextid = nextid - 1;
-        }
-    }
-    existingId = "no";
-
-    $.getJSON(path, function(data) {
-        var processtmp = true;
-
-        $.each(data.Tweets, function(key, val) {
-            var recordfromdata = val;
-            var linkcontent = null;
-
-            do {
-                if (processtmp) {
-                    linkcontent = readCookie(nextid + "templink");
-                    if (linkcontent && linkcontent.length > 0) {
-                        var linktmp = decodeURIComponent(linkcontent);
-                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
-                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
-                        linktmp = linktmp.replace(/(\\)/gm, ""); 
-                        linktmp = JSON.parse(linktmp);
-    
-                        val = linktmp;
-                        nextid = nextid - 1;
-                    }
-                    else {
-                        if (showAll) {
-                            val = recordfromdata;
-                        }
-                        else {
-                            val.id = "0";
-                        }
-                        
-                        processtmp = false;
-                    }
-                }
-                else {
-                    if (showAll) {
-                        val = recordfromdata;
-                    }
-                    else {
-                        val.id = "0";
-                    }
-                }
-
-                var isdeleted = readCookie(val.id + "isdeleted");
-
-                if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
-                    if (val.type == "T") {
-                        if (val.tweet.includes(text.substring(1,130))) {
-                            existingId = val.id;
-                        }
-                    }
-                    else {
-                        if (val.url.localeCompare(text) == 0) {
-                            existingId = val.id;
-                        }
-                    }
-    
-                    if (val.id == "0") {
-                        if (functorun)
-                            functorun();
-                    }
-                }
-                else { 
-                    var isdeleted = readCookie(val.id + "isdeleted");
-
-                    if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes" && val.id != "0") && functorun) {
-                        functorun();
-                    }
+        if (val.deleted == "yes") {
+            if (val.type == "T") {
+                if (val.tweet.includes(text.substring(1,130))) {
+                    return val.id;
                 }
             }
-            while (processtmp);
-        });     
-    }); 
+            else {
+                if (val.url.localeCompare(text) == 0) {
+                    return val.id;
+                }
+            }
+        }
+    }
+
+    return null;
 }
 
 

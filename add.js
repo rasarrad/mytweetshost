@@ -35,54 +35,50 @@ function parseTweet(type) {
 
             text = "\"" + text.replace(/"/g, '').replace('<\/script>', '<&#47;script>') + "\"";
 
-            var functorun = function() 
-            { 
-                if (existingId != "no") {
-                    getInformationbyid(existingId, true);
+            var idExisting = existsLink(text, "T");
+            if (idExisting) {
+                getInformationbyid(idExisting, true);
+            }
+            else {
+                origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
+        
+                $('#postedby').val(origin);
+                
+                url = text.substring(text.lastIndexOf('https://twitter'), text.lastIndexOf('?ref_src=')); 
+        
+                var date = text.substring(text.lastIndexOf('ref_src=twsrc%5Etfw>') + 20, text.lastIndexOf('</a></blockquote>')); 
+                
+                var year = date.substring(date.length - 4);
+                var month = date.substring(0, date.indexOf(' ')); 
+                var day = date.substring(date.indexOf(' ') + 1, date.lastIndexOf(' ') -1); 
+        
+                $('#date').val(year + pad(getMonthFromString(month), 2) + pad(day, 2));
+                
+                $('#datetoshow').val(formatDateFromNum($('#date').val()));
+                if (type && type == 2) {
+                    create();
+                    showMessage("Tweet Link Successfully Parsed And Created"); 
                 }
                 else {
-                    origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
-            
-                    $('#postedby').val(origin);
-                    
-                    url = text.substring(text.lastIndexOf('https://twitter'), text.lastIndexOf('?ref_src=')); 
-            
-                    var date = text.substring(text.lastIndexOf('ref_src=twsrc%5Etfw>') + 20, text.lastIndexOf('</a></blockquote>')); 
-                    
-                    var year = date.substring(date.length - 4);
-                    var month = date.substring(0, date.indexOf(' ')); 
-                    var day = date.substring(date.indexOf(' ') + 1, date.lastIndexOf(' ') -1); 
-            
-                    $('#date').val(year + pad(getMonthFromString(month), 2) + pad(day, 2));
-                    
-                    $('#datetoshow').val(formatDateFromNum($('#date').val()));
-                    if (type && type == 2) {
-                        create();
-                        showMessage("Tweet Link Successfully Parsed And Created"); 
-                    }
-                    else {
-                        if (type && type == 1) {
-                            if ($(".addpopup").css('display') == 'none') {
-                                openCreatePopup(true);
-                                
-                                createPreview();
-                            }
-                        }
-                        else {
+                    if (type && type == 1) {
+                        if ($(".addpopup").css('display') == 'none') {
+                            openCreatePopup(true);
+                            
                             createPreview();
                         }
-        
-                        if ($(window).width() > 1200) {
-                            $('#postedby').focus();
-                        }
-        
-                        showMessage("Tweet Link Successfully Parsed"); 
-                    }     
-                    $('#mask').fadeOut(600);  
-                }
-            } 
-
-            existsLink(text, "T", functorun);
+                    }
+                    else {
+                        createPreview();
+                    }
+    
+                    if ($(window).width() > 1200) {
+                        $('#postedby').focus();
+                    }
+    
+                    showMessage("Tweet Link Successfully Parsed"); 
+                }     
+                $('#mask').fadeOut(600);  
+            }
 
             return false;
         }
@@ -106,40 +102,36 @@ function parseTweet(type) {
             text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://img.youtube.com/vi/" 
                     + youtubeId  + "/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div>\""; 
 
-            var functorun = function() 
-            { 
-                if (existingId != "no") {
-                    getInformationbyid(existingId, true);
+            var idExisting = existsLink(url, "Y");
+            if (idExisting) {
+                getInformationbyid(idExisting, true);
+            }
+            else {
+                if (type && type == 2) {
+                    create();
+                    showMessage("Youtube Link Successfully Parsed And Created"); 
                 }
                 else {
-                    if (type && type == 2) {
-                        create();
-                        showMessage("Youtube Link Successfully Parsed And Created"); 
-                    }
-                    else {
-                        if (type && type == 1) {
-                            if ($(".addpopup").css('display') == 'none') {
-                                openCreatePopup(true);
-                                hasProcessedDescription = true;
-                                getYoutubeData();
+                    if (type && type == 1) {
+                        if ($(".addpopup").css('display') == 'none') {
+                            openCreatePopup(true);
+                            hasProcessedDescription = true;
+                            getYoutubeData();
 
-                                createPreview();
-                            }
-                        }
-                        else {
                             createPreview();
                         }
-                        
-                        if ($(window).width() > 1200) {
-                            $('#postedby').focus();
-                        }
-                        showMessage("Youtube Link Successfully Parsed"); 
-                    }             
-                    $('#mask').fadeOut(600);  
-                }
-            } 
-
-            existsLink(url, "Y", functorun);
+                    }
+                    else {
+                        createPreview();
+                    }
+                    
+                    if ($(window).width() > 1200) {
+                        $('#postedby').focus();
+                    }
+                    showMessage("Youtube Link Successfully Parsed"); 
+                }             
+                $('#mask').fadeOut(600);  
+            }
 
             return false;
             
@@ -165,37 +157,38 @@ function parseTweet(type) {
 
             var functorun = function() 
             { 
-                if (existingId != "no") {
-                    getInformationbyid(existingId, true);
-                }
-                else {
-                    if (type && type == 2) {
-                        create();
-                        showMessage("Youtube Link Successfully Parsed And Created"); 
-                    }
-                    else {
-                        if (type && type == 1) {
-                            if ($(".addpopup").css('display') == 'none') {
-                                openCreatePopup(true);
-                                getYoutubeData();
-                                hasProcessedDescription = true;
-                                createPreview();
-                            }
-                        }
-                        else {
-                            createPreview();
-                        }
-        
-                        if ($(window).width() > 1200) {
-                            $('#postedby').focus();
-                        }
-                        showMessage("Youtube Link Successfully Parsed"); 
-                    }     
-                    $('#mask').fadeOut(600);  
-                }
+                
             } 
 
-            existsLink(url, "Y", functorun);
+            var idExisting = existsLink(url, "Y");
+            if (idExisting) {
+                getInformationbyid(idExisting, true);
+            }
+            else {
+                if (type && type == 2) {
+                    create();
+                    showMessage("Youtube Link Successfully Parsed And Created"); 
+                }
+                else {
+                    if (type && type == 1) {
+                        if ($(".addpopup").css('display') == 'none') {
+                            openCreatePopup(true);
+                            getYoutubeData();
+                            hasProcessedDescription = true;
+                            createPreview();
+                        }
+                    }
+                    else {
+                        createPreview();
+                    }
+    
+                    if ($(window).width() > 1200) {
+                        $('#postedby').focus();
+                    }
+                    showMessage("Youtube Link Successfully Parsed"); 
+                }     
+                $('#mask').fadeOut(600);  
+            }
 
             return false;  
         }
@@ -219,45 +212,46 @@ function parseTweet(type) {
 
             var functorun = function() 
             { 
-                if (existingId != "no") {
-                    getInformationbyid(existingId, true);
-                }
-                else {
-                    if (type && type == 2) {
-                        create();
-                        showMessage("HTTP Link Successfully Parsed And Created"); 
-                    }
-                    else {
-                        if (type && type == 1) {
-                            if ($(".addpopup").css('display') == 'none') {
-                                openCreatePopup(true);
-                                
-                                createPreview();
-
-                                getWebsiteData();
-
-                                hasProcessedDescription = true;
-                            
-                            }
-                        }
-                        else {
-                            createPreview();
-                        }
-        
-                        /*$('#date').focus(function(){
-                            var that = this;
-                            setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
-                        });*/
-                        if ($(window).width() > 1200) {
-                            $('#postedby').focus();
-                        }
-                        showMessage("HTTP Link Successfully Parsed"); 
-                    }
-                    $('#mask').fadeOut(600);  
-                }
+                
             } 
 
-            existsLink(url, "Y", functorun);
+            var idExisting = existsLink(url, "Y");
+            if (idExisting) {
+                getInformationbyid(idExisting, true);
+            }
+            else {
+                if (type && type == 2) {
+                    create();
+                    showMessage("HTTP Link Successfully Parsed And Created"); 
+                }
+                else {
+                    if (type && type == 1) {
+                        if ($(".addpopup").css('display') == 'none') {
+                            openCreatePopup(true);
+                            
+                            createPreview();
+
+                            getWebsiteData();
+
+                            hasProcessedDescription = true;
+                        
+                        }
+                    }
+                    else {
+                        createPreview();
+                    }
+    
+                    /*$('#date').focus(function(){
+                        var that = this;
+                        setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
+                    });*/
+                    if ($(window).width() > 1200) {
+                        $('#postedby').focus();
+                    }
+                    showMessage("HTTP Link Successfully Parsed"); 
+                }
+                $('#mask').fadeOut(600);  
+            }
 
             return false;
         }
