@@ -9,6 +9,8 @@ self.addEventListener("message", function(e) {
     processCount(inputArray);
 
     if (inputArray[inputArray.length -1]) {
+        
+        console.log("finnish: NO")
         self.postMessage({ "finnish": "no", "result": ""});
     }
     else {
@@ -21,7 +23,7 @@ self.addEventListener("message", function(e) {
         result.total_t = total_t;
         result.total_h = total_h;
         result.total = total;
-
+        console.log("finnish: YES")
         
         self.postMessage({ "finnish": "yes", "result": result});
 
@@ -42,9 +44,9 @@ function processCount(inputArray, showDeleted) {
 
     sleep(2300);
     for (var j = 0; j < inputArray.length; j++) {
-        console.log("TTT: " + total)
         var val = inputArray[j];
 
+        console.log("TTT: " + total + " - " + val.id)
         if (val.deleted != "yes") {
             
             var res = val.categories.split(" ");
