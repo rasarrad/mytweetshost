@@ -1030,7 +1030,6 @@ function toggleShowDeletedAll() {
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
-    alert(3333)
     processCountBlock(null, true);
 }
 
@@ -1046,7 +1045,6 @@ function setShowDeleted(flag) {
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
-    alert(777)
     countalltweets();
 }
 

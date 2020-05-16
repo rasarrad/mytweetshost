@@ -389,7 +389,7 @@ $( document ).ready(function() {
 
     });
 
-    $( "#showdeleted" ).bind( "click", function( event ) {
+/*     $( "#showdeleted" ).bind( "click", function( event ) {
         if ($("#showdeleted").is(":checked")) {
             $("#showdeleted2").prop('checked', true);
             setshowdeletedcookie("true");
@@ -398,9 +398,8 @@ $( document ).ready(function() {
             $("#showdeleted2").prop('checked', false);
             setshowdeletedcookie("false");
         }
-        alert(66666)
         countalltweets();
-    });
+    }); */
 
 
     ///////////////////////////////////////
