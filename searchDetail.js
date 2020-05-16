@@ -780,10 +780,19 @@ var getInformation = function(wasfiltered, valid) {
                 && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal
                 && (doShowDeletedLink || val.deleted == "")) {
                 
-                if (val.type == "T")
+                 
+                if (val.type == "T") {
+                    total_tt = total_tt + 1;
                     linkArray[localCounter] = val.type;
-                else
+                }
+                else if (val.type == "Y") {
+                    total_yy = total_yy + 1;
                     linkArray[localCounter] = val.id;
+                }
+                else {
+                    total_hh = total_hh + 1;
+                    linkArray[localCounter] = val.id;
+                }
 
                 if (localCounter < 5) {
                     renderLink(val);
@@ -799,8 +808,17 @@ var getInformation = function(wasfiltered, valid) {
     catch(err) {
     }
 
+    $('#tcnumber').text(localCounter + " Links");
+    $('#tccateg').text("In " + $('#selectedcattext').val());
 
-    /* $('#main').find('.tweet').sort(function (a, b) {
+    $('#tct').text(total_tt);
+    $('#tcy').text(total_yy);
+    $('#tch').text(total_hh);
+
+
+    /*
+        SORT!!! 
+    $('#main').find('.tweet').sort(function (a, b) {
         return Number($(b).attr('cdate')) - Number($(a).attr('cdate'));
     }).appendTo('#main'); */
 
