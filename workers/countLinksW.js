@@ -40,10 +40,10 @@ var total = 0;
 
 function processCount(inputArray, showDeleted) {
     console.log("total: " + total);
-    sleep(2300);
+    
     for (var j = 0; j < inputArray.length; j++) {
         var val = inputArray[j];
-
+        sleep(400);
         console.log("TTT: " + total + " - " + val.id)
         if (val.deleted != "yes") {
             
