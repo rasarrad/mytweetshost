@@ -683,7 +683,6 @@ var getInformation = function(wasfiltered, valid) {
         $('#countfilter').hide();
     }
 
-    console.log("inicio de search")
     var dofiltertext = $('#filtertext').val().trim().length > 0; 
     var dofilterdate1 = $('#filterdate1').val().trim().length > 0; 
     var dofilterdate2 = $('#filterdate2').val().trim().length > 0; 
@@ -796,7 +795,6 @@ var getInformation = function(wasfiltered, valid) {
     }
 
 
-    console.log("fim de search")
     /* $('#main').find('.tweet').sort(function (a, b) {
         return Number($(b).attr('cdate')) - Number($(a).attr('cdate'));
     }).appendTo('#main'); */
