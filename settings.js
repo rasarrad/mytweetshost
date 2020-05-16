@@ -998,7 +998,8 @@ function toggleShowDeleted() {
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
-    countalltweets();
+    alert(11)
+    processCountBlock(null, true);
 }
 
 function toggleShowDeleted2() {
@@ -1013,7 +1014,8 @@ function toggleShowDeleted2() {
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
-    countalltweets();
+    alert(22222)
+    processCountBlock(null, true);
 }
 
 function toggleShowDeletedAll() {
@@ -1028,7 +1030,8 @@ function toggleShowDeletedAll() {
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
-    countalltweets();
+    alert(3333)
+    processCountBlock(null, true);
 }
 
 function setShowDeleted(flag) {
@@ -1043,8 +1046,7 @@ function setShowDeleted(flag) {
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
-    alert(11)
-    processCountBlock(null, true);
+    countalltweets();
 }
 
 function closeMenuPopup(obj, timer) {

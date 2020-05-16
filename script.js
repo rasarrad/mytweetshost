@@ -101,7 +101,7 @@ $( document ).ready(function() {
 
     // START da variavel setShowDeleted
     var showDeleted = getshowdeletedcookie();
-    setShowDeleted(showDeleted, true); // faz o count all tweets
+    setShowDeleted(showDeleted); // faz o count all tweets
 
 
     // START do mascara cinzenta inicial
