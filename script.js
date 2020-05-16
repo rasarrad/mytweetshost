@@ -2596,7 +2596,7 @@ function nextLink(direction) {
 function startCLWorker(data, flag) {
     if (typeof(Worker) !== "undefined") {
         if (typeof(clWorker) !== "undefined") {
-            worker.terminate();
+            clWorker.terminate();
         }
         
         clWorker = new Worker("workers/countLinksW.js");
