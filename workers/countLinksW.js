@@ -39,7 +39,7 @@ var total_h = 0;
 var total = 0;   
 
 function processCount(inputArray, showDeleted) {
-
+    console.log("total: " + total);
     sleep(2300);
     for (var j = 0; j < inputArray.length; j++) {
         var val = inputArray[j];
