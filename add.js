@@ -313,7 +313,7 @@ function createPreview() {
         newtweetobj.append($('<div class="innertweet" style="max-height: 290px;min-height: 200px;width: 100% !important;margin-left: 0 !important;"><i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;height: 33px;width: 33px;top: 69px;color: var(--high-color);font-size: 33px; display: none; "></i></div>'));
         newtweetobj.find('.innertweet').append(text.substring(1, text.length -1));
 
-        preCustomize(newtweetobj);
+        preCustomize(inid);
         
         setTimeout(function(){ 
             $('#previewtd > div div.innertweet twitter-widget').show().css('opacity', 1);

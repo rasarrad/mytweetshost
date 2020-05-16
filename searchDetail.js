@@ -928,7 +928,7 @@ var getInformationbyid = function(id, flag) {
     
         if (id == val.id) {
             renderLink(val);
-
+            preCustomize(id);
             $('#mask').fadeOut(300);
     
             if (flag)
@@ -944,33 +944,26 @@ var getInformationbyid = function(id, flag) {
     }
 }
 
-function preCustomize(newtweetobj) {
+function preCustomize(id) {
 
     setTimeout(function(){
-                
-        var tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
-
-        if (tweetId && tweetId.length > 0) {
-            customizeSingleTweet(newtweetobj.attr("id"));
+        if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
+            customizeSingleTweet(id);
         }
         else {
             setTimeout(function(){
-                tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
-
-                if (tweetId && tweetId.length > 0) {
-                    customizeSingleTweet(newtweetobj.attr("id"));
+                if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
+                    customizeSingleTweet(id);
                 }
                 else {
                     setTimeout(function(){
-                        tweetId = newtweetobj.find(".twitter-tweet.twitter-tweet-rendered").attr("id");
-
-                        if (tweetId && tweetId.length > 0) {
-                            customizeSingleTweet(newtweetobj.attr("id"));
+                        if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
+                            customizeSingleTweet(id);
                         }
         
-                    }, 350);
+                    }, 1950);
                 }
-            }, 350);
+            }, 950);
         }
     }, 350);
 }
