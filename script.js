@@ -2595,7 +2595,7 @@ function nextLink(direction) {
 }
 function startCLWorker(data, flag) {
     if (typeof(Worker) !== "undefined") {
-        if (typeof(clWorker) == "undefined") {
+        if (typeof(clWorker) !== "undefined") {
             worker.terminate();
         }
         
