@@ -1014,6 +1014,10 @@ function toggleShowDeleted2() {
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
+    if (typeof(clWorker) !== "undefined") {
+        console.log("clWorker terminate 2");
+        clWorker.terminate();
+    }
     counterAllLinks = 0;
     processCountBlock(null, true);
 }
@@ -1030,6 +1034,11 @@ function toggleShowDeletedAll() {
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
+    if (typeof(clWorker) !== "undefined") {
+        console.log("clWorker terminate 2");
+        clWorker.terminate();
+    }
+    counterAllLinks = 0;
     processCountBlock(null, true);
 }
 
