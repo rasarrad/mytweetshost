@@ -2632,6 +2632,8 @@ function startWorker() {
     console.log(11111);
     if (typeof(Worker) !== "undefined") {
         console.log(2222);
+        
+        console.log(typeof(timeoutWorker));
       if (typeof(timeoutWorker) == "undefined") {
         console.log(33333);
         timeoutWorker = new Worker("worker.js");
