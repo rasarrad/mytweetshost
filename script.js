@@ -2629,6 +2629,7 @@ function startCLWorker(data, flag, doStop) {
 }
 
 function startWorker() {
+
     if (typeof(Worker) !== "undefined") {
       if (typeof(timeoutWorker) == "undefined") {
         timeoutWorker = new Worker("worker.js");
@@ -2638,7 +2639,8 @@ function startWorker() {
 
       timeoutWorker.onmessage = function(event) {
         
-          if (linkArray[currrenderedtweets]) {
+        console.log(event.data);
+/*           if (linkArray[currrenderedtweets]) {
             if (currrenderedtweets < 5) {
                 if (currrenderedtweets == 0) {
                     $("html, body").scrollTop(0);
@@ -2677,13 +2679,13 @@ function startWorker() {
                     $('#mask').fadeOut(3000);  
                     $('#tweetcount').fadeIn(3800);
 
-/*                     setTimeout(function() {     
-                        var element = document.getElementById("13");
-
+    //                setTimeout(function() {     
+  //                      var element = document.getElementById("13");
+//
                         // smooth scroll to element and align it at the bottom
-                        element.scrollIntoView({ behavior: 'smooth', block: 'start'});
+                    //    element.scrollIntoView({ behavior: 'smooth', block: 'start'});
 
-                    }, 15190); */
+                    //}, 15190); 
                 }
     
                 var doExec = false;
@@ -2740,7 +2742,7 @@ function startWorker() {
                     stopWorker();
                 }, 1000);  
             }
-          }
+          } */
       };
     } 
   }

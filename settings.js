@@ -998,8 +998,18 @@ function toggleShowDeleted() {
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
-    counterAllLinks = 0;
-    processCountBlock(null, true);
+    
+
+    if (typeof(timeoutWorker) !== "undefined") {
+        console.log("timeoutWorker NOT undefined");
+            timeoutWorker.terminate();
+    }
+
+
+    startWorker();
+
+/*     counterAllLinks = 0;
+    processCountBlock(null, true); */
 }
 
 function toggleShowDeleted2() {
