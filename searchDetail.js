@@ -818,7 +818,7 @@ var getInformation = function(wasfiltered, valid) {
 
 
 
-function renderLink(val, customize) {
+function renderLink(val, flag) {
     var tagdispalay = " --";
     var expandclass = "";
     var color = "";
@@ -892,8 +892,11 @@ function renderLink(val, customize) {
 
     newtweetobj = $('<div style="display: none;" id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>');
 
-    $('#hiddendiv').append(newtweetobj);
-        
+    if (flag)
+        $('#main').append(newtweetobj);
+    else 
+        $('#hiddendiv').append(newtweetobj);  
+
     newtweetobj.append($('<div style="z-index: 0;background: var(--soft-color);height: 39px;" class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
     
     newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
@@ -929,7 +932,7 @@ var getInformationbyid = function(id, flag) {
 
         if (id == val.id) {
             console.log("encontrou")
-            renderLink(val);
+            renderLink(val, true);
             preCustomize(id);
             $('#mask').fadeOut(300);
     
