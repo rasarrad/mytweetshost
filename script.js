@@ -2593,13 +2593,21 @@ function nextLink(direction) {
         
     }
 }
-function startCLWorker(data, flag) {
+function startCLWorker(data, flag, doStop) {
     if (typeof(Worker) !== "undefined") {
         if (typeof(clWorker) !== "undefined") {
-            clWorker.terminate();
+            console.log("clWorker NOT undefined");
+            if (doStop) {
+                
+                console.log("clWorker doStop");
+                clWorker.terminate();
+                clWorker = new Worker("workers/countLinksW.js");
+            }
         }
-        
-        clWorker = new Worker("workers/countLinksW.js");
+        else {
+            console.log("clWorker undefined");
+            clWorker = new Worker("workers/countLinksW.js");
+        } 
 
         clWorker.postMessage(data);
 

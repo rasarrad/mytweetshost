@@ -1043,7 +1043,8 @@ function setShowDeleted(flag) {
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
-    countalltweets();
+    alert(11)
+    processCountBlock(null, true);
 }
 
 function closeMenuPopup(obj, timer) {

@@ -387,9 +387,9 @@ function countalltweets() {
 } 
 
 
-function processCountBlock(flag) {
+function processCountBlock(flag, doStop) {
 
-    console.log("processCountBlock process " + flag);
+    console.log("processCountBlock process " + flag + " - " + doStop);
 
     if (flag) {
         var i = counterAllLinks;
@@ -455,7 +455,7 @@ function processCountBlock(flag) {
         }
     }
 
-    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 200)), flag);
+    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 200)), flag, doStop);
     
     counterAllLinks = counterAllLinks + 200;
 } 
