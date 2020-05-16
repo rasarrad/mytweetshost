@@ -1003,7 +1003,6 @@ function toggleShowDeleted() {
     if (typeof(timeoutWorker) !== "undefined") {
         console.log("timeoutWorker NOT undefined");
             timeoutWorker.terminate();
-            timeoutWorker = undefined;
     }
 
 
