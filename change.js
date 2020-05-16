@@ -732,6 +732,7 @@ function processCountUpdate(countersParam) {
 
     var paramid = getParameterByName('tweetid');
     if (paramid) {
+        console.log("paramid")
       getInformationbyid(paramid);   
     }
 } 
