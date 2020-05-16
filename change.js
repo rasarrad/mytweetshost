@@ -315,7 +315,7 @@ function changecat(obj, id) {
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
-function countalltweets(webLinksMap) {
+function countalltweets() {
     console.log("countalltweets 1111");
     var path = "./data.json";
     nextid = null;
@@ -340,7 +340,6 @@ function countalltweets(webLinksMap) {
     }
     $.getJSON(path, function(data) 
     {
-        console.log("countalltweets process");
         
         allLinks = data.Tweets;
 
@@ -374,9 +373,6 @@ function countalltweets(webLinksMap) {
         allLinks = tempLinks.concat(allLinks); 
         allLinks.pop();
 
-        console.log("countalltweets FIM process");
-
-            
         $( "#mask" ).fadeOut( 800, function() {
             var style = window.getComputedStyle(body, null);
 
@@ -386,82 +382,82 @@ function countalltweets(webLinksMap) {
             $("#mask > .fa-circle-o-notch").show();
         });
 
-        processCountBlock();
+        processCountBlock(true);
     }); 
 } 
 
 
-function processCountBlock() {
+function processCountBlock(flag) {
 
-    console.log("processCountBlock process");
+    console.log("processCountBlock process " + flag);
 
-    var i = counterAllLinks;
+    if (flag) {
+        var i = counterAllLinks;
 
-    try {
-        for (i; i < counterAllLinks + 200; i++) {
-            var val = allLinks[i];
+        try {
+            for (i; i < counterAllLinks + 200; i++) {
+                var val = allLinks[i];
+        
+                if (val.deleted != "yes") {
+                    var haschanges = readCookie(val.id + "haschanges");
+        
+                    if (haschanges && haschanges.length > 0) {
+                        var isdeleted = readCookie(val.id + "isdeleted");
+                        if (!(isdeleted && isdeleted == "yes")) {
+                
+                            val.deletedOri = val.deleted;
+                            if (isdeleted && isdeleted.length > 0) {
+                                val.deleted = isdeleted;
+                            } 
+                
+                            var cat = readCookie(val.id + "catchanged");
+                            val.categoriesOri = val.categories;
+                            if (cat && cat.length > 0) {
+                                val.categories = cat;
+                            }
+                
+                            var tag = readCookie(val.id + "tagchanged");
+                            val.tagsOri = val.tags;
+                            if (tag && tag.length > 0) {
+                                val.tags = tag;
+                            }
+                
+                            var info = readCookie(val.id + "info");
+                            val.infoOri = val.info;
+                            if (info && info.length > 0) {
+                                val.info = info;
+                            }
+                
+                            var classif = readCookie(val.id + "classif");
+                            val.classifOri = val.classif;
+                            if (classif && classif.length > 0) {
+                                val.classif = classif;
+                            }
+                            
+                            var author = readCookie(val.id + "author");
+                            val.authorOri = val.author;
+                            if (author && author.length > 0) {
+                                val.author = author;
+                            }
     
-            if (val.deleted != "yes") {
-                var haschanges = readCookie(val.id + "haschanges");
-    
-                if (haschanges && haschanges.length > 0) {
-                    var isdeleted = readCookie(val.id + "isdeleted");
-                    if (!(isdeleted && isdeleted == "yes")) {
-            
-                        val.deletedOri = val.deleted;
-                        if (isdeleted && isdeleted.length > 0) {
-                            val.deleted = isdeleted;
+                            var datechanged = readCookie(val.id + "datechanged");
+                            val.dateOri = val.date;
+                            if (datechanged && datechanged.length > 0) {
+                                val.date = datechanged;
+                            }
                         } 
-            
-                        var cat = readCookie(val.id + "catchanged");
-                        val.categoriesOri = val.categories;
-                        if (cat && cat.length > 0) {
-                            val.categories = cat;
-                        }
-            
-                        var tag = readCookie(val.id + "tagchanged");
-                        val.tagsOri = val.tags;
-                        if (tag && tag.length > 0) {
-                            val.tags = tag;
-                        }
-            
-                        var info = readCookie(val.id + "info");
-                        val.infoOri = val.info;
-                        if (info && info.length > 0) {
-                            val.info = info;
-                        }
-            
-                        var classif = readCookie(val.id + "classif");
-                        val.classifOri = val.classif;
-                        if (classif && classif.length > 0) {
-                            val.classif = classif;
-                        }
-                        
-                        var author = readCookie(val.id + "author");
-                        val.authorOri = val.author;
-                        if (author && author.length > 0) {
-                            val.author = author;
-                        }
-
-                        var datechanged = readCookie(val.id + "datechanged");
-                        val.dateOri = val.date;
-                        if (datechanged && datechanged.length > 0) {
-                            val.date = datechanged;
-                        }
+                        allLinks[i] = val; 
                     } 
-                    allLinks[i] = val; 
-                } 
+                }
             }
         }
-    }
-    catch(err) {
+        catch(err) {
+        }
     }
 
-    console.log("processCountBlock FIM process");
-
-    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 200)));
+    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 200)), flag);
     
-    counterAllLinks = i;
+    counterAllLinks = counterAllLinks + 200;
 } 
 
 

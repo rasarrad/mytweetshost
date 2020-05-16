@@ -2593,11 +2593,14 @@ function nextLink(direction) {
         
     }
 }
-function startCLWorker(data) {
+function startCLWorker(data, flag) {
     if (typeof(Worker) !== "undefined") {
         if (typeof(clWorker) == "undefined") {
-            clWorker = new Worker("workers/countLinksW.js");
+            worker.terminate();
         }
+        
+        clWorker = new Worker("workers/countLinksW.js");
+
         clWorker.postMessage(data);
 
         clWorker.onmessage = function(event) {
@@ -2606,7 +2609,7 @@ function startCLWorker(data) {
                 processCountUpdate(event.data.result);
             }
             else {
-                processCountBlock();
+                processCountBlock(flag);
             }
  
         };
