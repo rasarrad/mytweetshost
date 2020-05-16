@@ -44,7 +44,6 @@ function processCount(inputArray, showDeleted) {
     for (var j = 0; j < inputArray.length; j++) {
         var val = inputArray[j];
 
-        console.log(val.id)
         if (val.deleted != "yes") {
             
             var res = val.categories.split(" ");
