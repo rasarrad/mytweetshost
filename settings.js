@@ -1005,10 +1005,8 @@ function toggleShowDeleted() {
         clWorker.terminate();
             clWorker = undefined;
     }
-alert(123);
-    // xyzz
-    //counterAllLinks = 0;
-    //processCountBlock(null, true);
+    counterAllLinks = 0;
+    processCountBlock(null, true);
 }
 
 function toggleShowDeleted2() {
