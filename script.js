@@ -398,7 +398,7 @@ $( document ).ready(function() {
             $("#showdeleted2").prop('checked', false);
             setshowdeletedcookie("false");
         }
-        countalltweets();
+        countAllLinks();
     }); */
 
 
@@ -1102,6 +1102,7 @@ function handleFileSelectDragDrop(evt) {
                         setTimeout(function(){
                             showMessage("Links Successfully Imported"); 
             
+                            //xyzz
                             countalltweets(webLinksMap);
                 
                             eraseAllTmpData(); 

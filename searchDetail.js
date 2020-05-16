@@ -721,7 +721,6 @@ var getInformation = function(wasfiltered, valid) {
     }
     */
 
-    var totalLinkss = 0;
     total_yy = 0;
     total_tt = 0;
     total_hh = 0;
@@ -747,8 +746,13 @@ var getInformation = function(wasfiltered, valid) {
     startWorker();
 
     try {
-
         var i = 0;
+
+        var doShowDeletedLink = true;  
+        if (!$("#showdeleted2").is(":checked")) {
+            doShowDeletedLink = false; 
+        }
+
         while (allLinks[i]) {
             var val = allLinks[i];
         
@@ -773,7 +777,8 @@ var getInformation = function(wasfiltered, valid) {
         
 
             if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
-                && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal) {
+                && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal
+                && (doShowDeletedLink || val.deleted == "")) {
                 
                 if (val.type == "T")
                     linkArray[localCounter] = val.type;

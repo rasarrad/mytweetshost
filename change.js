@@ -118,7 +118,6 @@ function removetweet(obj) {
                             $("#main").empty();
                             $('#tweetcount').hide(); 
     
-                            countalltweets();
                             showMessage("Link Deleted Forever");
                             closeSettingsPopup();
                             $("#mask").fadeOut(500);
@@ -316,25 +315,21 @@ function changecat(obj, id) {
 /////////////////////////////////////////////////////////////////////////
 
 function countalltweets() {
-    console.log("countalltweets 1111");
     var path = "./data.json";
     nextid = null;
     try {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        //cnonsole.log("countalltweets - Error parsing next id");
     }
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            //cnonsole.log("countalltweets - nextid vem do cookie: " + nextid);
             nextid = nextid - 1;
         }
         else {
             nextid = parseInt($("#maxid").val());
             createCookie("maxid", nextid);
-            //cnonsole.log("countalltweets - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
     }
@@ -736,7 +731,7 @@ function processCountUpdate(countersParam) {
 
 
 
-function countalltweetsORI(webLinksMap) {
+function countalsltweetsORI(webLinksMap) {
     resetFields(false);
     var path = "./data.json";
     var counters = new Map();
@@ -753,18 +748,18 @@ function countalltweetsORI(webLinksMap) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        //cnonsole.log("countalltweets - Error parsing next id");
+        //cnonsole.log("countallsstweets - Error parsing next id");
     }
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            //cnonsole.log("countalltweets - nextid vem do cookie: " + nextid);
+            //cnonsole.log("countallsstweets - nextid vem do cookie: " + nextid);
             nextid = nextid - 1;
         }
         else {
             nextid = parseInt($("#maxid").val());
             createCookie("maxid", nextid);
-            //cnonsole.log("countalltweets - nextid vem do hidden field: " + nextid);
+            //cnonsole.log("countallssstweets - nextid vem do hidden field: " + nextid);
             nextid = nextid - 1;
         }
     }

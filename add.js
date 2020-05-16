@@ -549,7 +549,6 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
     createCookie("maxid", nextid + 1);
 
     resetFields(false);
-    countalltweets();
 }
 
 function getYoutubeData(creationdate, cats, tags, resinfo, classif) {
