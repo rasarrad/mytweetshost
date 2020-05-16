@@ -1011,7 +1011,6 @@ var eraseAllDeletedFunc = function(text, type, functorun) {
 }
 
 /* function undogenerate() {
-  var path = "./data.json";
   var ind = false;
   resetFields(false);
 
