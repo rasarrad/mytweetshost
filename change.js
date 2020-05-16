@@ -389,8 +389,6 @@ function countalltweets() {
 
 function processCountBlock(flag, doStop) {
 
-    console.log("processCountBlock process " + flag + " - " + doStop);
-
     if (flag) {
         var i = counterAllLinks;
 

@@ -1005,6 +1005,7 @@ function toggleShowDeleted() {
         clWorker.terminate();
             clWorker = undefined;
     }
+    
     counterAllLinks = 0;
     processCountBlock(null, true);
 }

@@ -6,8 +6,6 @@ self.addEventListener("message", function(e) {
 
     //result = "tamanho: " + inputArray.length + " - id 1: " + inputArray[0].id + " - id 2: " + inputArray[inputArray.length - 1].id;
 
-    console.log("inputArray")
-    console.log(inputArray)
     processCount(inputArray);
 
     if (inputArray[inputArray.length - 1]) {
