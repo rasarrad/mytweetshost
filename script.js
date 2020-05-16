@@ -2617,6 +2617,7 @@ function startCLWorker(data, flag, doStop) {
         clWorker.onmessage = function(event) {
             
             if (event.data.finnish == "yes") {
+                clWorker.terminate();
                 processCountUpdate(event.data.result);
             }
             else {

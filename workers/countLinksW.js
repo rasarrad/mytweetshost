@@ -1,7 +1,7 @@
 
 self.addEventListener("message", function(e) {
     var inputArray = JSON.parse(e.data);
-
+console.log(inputArray)
     var result = "";
 
     //result = "tamanho: " + inputArray.length + " - id 1: " + inputArray[0].id + " - id 2: " + inputArray[inputArray.length - 1].id;
