@@ -395,7 +395,7 @@ function processCountBlock(flag, doStop) {
         var i = counterAllLinks;
 
         try {
-            for (i; i < counterAllLinks + 200; i++) {
+            for (i; i < counterAllLinks + 5; i++) {
                 var val = allLinks[i];
         
                 if (val.deleted != "yes") {
@@ -455,7 +455,7 @@ function processCountBlock(flag, doStop) {
         }
     }
 
-    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 200)), flag, doStop);
+    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 5)), flag, doStop);
     
     counterAllLinks = counterAllLinks + 200;
 } 

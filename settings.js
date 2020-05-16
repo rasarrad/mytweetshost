@@ -1000,16 +1000,14 @@ function toggleShowDeleted() {
     }
     
 
-    if (typeof(timeoutWorker) !== "undefined") {
+    if (typeof(clWorker) !== "undefined") {
         console.log("timeoutWorker NOT undefined");
-            timeoutWorker.terminate();
+        clWorker.terminate();
+            clWorker = undefined;
     }
 
-
-    startWorker();
-
-/*     counterAllLinks = 0;
-    processCountBlock(null, true); */
+    counterAllLinks = 0;
+    processCountBlock(null, true);
 }
 
 function toggleShowDeleted2() {

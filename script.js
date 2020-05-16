@@ -2599,16 +2599,12 @@ function nextLink(direction) {
 function startCLWorker(data, flag, doStop) {
     if (typeof(Worker) !== "undefined") {
         if (typeof(clWorker) !== "undefined") {
-            console.log("clWorker NOT undefined");
             if (doStop) {
-                
-                console.log("clWorker doStop");
                 clWorker.terminate();
                 clWorker = new Worker("workers/countLinksW.js");
             }
         }
         else {
-            console.log("clWorker undefined");
             clWorker = new Worker("workers/countLinksW.js");
         } 
 
@@ -2618,6 +2614,7 @@ function startCLWorker(data, flag, doStop) {
             
             if (event.data.finnish == "yes") {
                 clWorker.terminate();
+                clWorker = undefined;
                 processCountUpdate(event.data.result);
             }
             else {
@@ -2629,24 +2626,16 @@ function startCLWorker(data, flag, doStop) {
 }
 
 function startWorker() {
-    console.log(11111);
     if (typeof(Worker) !== "undefined") {
-        console.log(2222);
-        
-        console.log(timeoutWorker);
       if (typeof(timeoutWorker) == "undefined") {
-        console.log(33333);
         timeoutWorker = new Worker("worker.js");
       }
       // mudar o timeout
       //w.postMessage({ "args": [ 500 ] });
 
-      console.log(4444);
-
       timeoutWorker.onmessage = function(event) {
         
-        console.log(event.data);
-/*           if (linkArray[currrenderedtweets]) {
+          if (linkArray[currrenderedtweets]) {
             if (currrenderedtweets < 5) {
                 if (currrenderedtweets == 0) {
                     $("html, body").scrollTop(0);
@@ -2685,13 +2674,13 @@ function startWorker() {
                     $('#mask').fadeOut(3000);  
                     $('#tweetcount').fadeIn(3800);
 
-    //                setTimeout(function() {     
-  //                      var element = document.getElementById("13");
-//
-                        // smooth scroll to element and align it at the bottom
-                    //    element.scrollIntoView({ behavior: 'smooth', block: 'start'});
+/*                     setTimeout(function() {     
+                        var element = document.getElementById("13");
 
-                    //}, 15190); 
+                        // smooth scroll to element and align it at the bottom
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start'});
+
+                    }, 15190); */
                 }
     
                 var doExec = false;
@@ -2748,7 +2737,7 @@ function startWorker() {
                     stopWorker();
                 }, 1000);  
             }
-          } */
+          }
       };
     } 
   }
