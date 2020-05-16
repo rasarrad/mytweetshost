@@ -25,7 +25,7 @@
    "tags": "aaa aaaaa aaaa aaaaaaa aaaaaaaaaa",
    "info": "",
    "classif": "0",
-   "deleted": "",
+   "deleted": "yes",
    "isnew": "",
    "tweet": "<div id='contentin31' class='contentin pobj' style='background: url(https://img.youtube.com/vi/edicDsSwYpk/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div><div class='bottomstrip'><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line1'>aaaaaaaaaaa aaaaaaaaaaa aaaaa aaaaaaaaaaa aaaaaaaaaaa aaaaa aaaaaaaaaaa aaaaaaaaaaa aaaaa</span><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line2'>bbbb bbbbbbbb bbb</span></div>"
    }, {
