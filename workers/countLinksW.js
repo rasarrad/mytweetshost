@@ -1,7 +1,7 @@
 
 self.addEventListener("message", function(e) {
     var inputArray = JSON.parse(e.data);
-console.log(inputArray)
+
     var result = "";
 
     //result = "tamanho: " + inputArray.length + " - id 1: " + inputArray[0].id + " - id 2: " + inputArray[inputArray.length - 1].id;
@@ -44,6 +44,7 @@ function processCount(inputArray, showDeleted) {
     for (var j = 0; j < inputArray.length; j++) {
         var val = inputArray[j];
 
+        console.log(val.id)
         if (val.deleted != "yes") {
             
             var res = val.categories.split(" ");
