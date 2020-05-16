@@ -11,9 +11,6 @@ var urldirect = "";
 var dblFlag = false;
 var dblClickTimeout = null;
 var addType = "T";
-var total_yy = 0; 
-var total_tt = 0;
-var total_hh = 0;
 var hideMode = false;
 var tagssloaded = false;
 var catsmap = new Map();
@@ -68,8 +65,6 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 
 $( document ).ready(function() { 
     
-    //eraseAllTmpData();
-
     isMobile = window.mobileAndTabletCheck();
 
     // START do texto das categorias
@@ -1069,11 +1064,12 @@ function handleFileSelectDragDrop(evt) {
                     try {
                         var resultParsed = JSON.parse(reader.result);
             
-                        var webLinksMap = new Map();
                         var hasTemp = false;
             
                         for (var x = 0; x < resultParsed.length; x++) {
-            
+                            
+                            eraseLinkTmpData(resultParsed[x].id, true);
+
                             if (parseInt(resultParsed[x].id) >= 100000) {
                                 hasTemp = true;
             
@@ -1081,11 +1077,10 @@ function handleFileSelectDragDrop(evt) {
             
                                 var mlink = encodeURIComponent(JSON.stringify(link));
                 
-                                eraseLinkTmpData(resultParsed[x].id, false);
                                 createCookie(resultParsed[x].id + "templink", mlink);
                             }
                             else {
-                                webLinksMap.set(parseInt(resultParsed[0].id), resultParsed[x]);
+                                updateWebLink(resultParsed[x]);
                             }
                         }
             
@@ -1102,10 +1097,7 @@ function handleFileSelectDragDrop(evt) {
                         setTimeout(function(){
                             showMessage("Links Successfully Imported"); 
             
-                            //xyzz
-                            countalltweets(webLinksMap);
-                
-                            eraseAllTmpData(); 
+                            countalltweets();
 
                             document.getElementById("files").value = "";
                         }, 600); 
@@ -1139,36 +1131,34 @@ function handleFileSelectDragDrop(evt) {
   }
 
 
-  function updateWebLink(obj, webObj) {
+  function updateWebLink(obj) {
 
-    eraseLinkTmpData(obj.id, true)
-
-    if(obj.hasOwnProperty("date") && obj.date != webObj.date) {
-        createCookie2(obj.id, "datechanged", obj.date);
+    if(obj.hasOwnProperty("date")) {
+        createCookie(obj.id + "datechanged", obj.date);
     }
 
-    if(obj.hasOwnProperty("author") && obj.author != webObj.author) {
-        createCookie2(obj.id, "author", obj.author);
+    if(obj.hasOwnProperty("author")) {
+        createCookie(obj.id + "author", obj.author);
     }
 
-    if(obj.hasOwnProperty("categories") && obj.categories != webObj.categories) {
-        createCookie2(obj.id, "catchanged", obj.categories);
+    if(obj.hasOwnProperty("categories")) {
+        createCookie(obj.id + "catchanged", obj.categories);
     }
 
-    if(obj.hasOwnProperty("tags") && obj.tags != webObj.tags) {
-        createCookie2(obj.id, "tagchanged", obj.tags);
+    if(obj.hasOwnProperty("tags")) {
+        createCookie(obj.id + "tagchanged", obj.tags);
     }
 
-    if(obj.hasOwnProperty("info") && obj.info != webObj.info) {
-        createCookie2(obj.id, "info", obj.info);
+    if(obj.hasOwnProperty("info")) {
+        createCookie(obj.id + "info", obj.info);
     }
 
     if(obj.hasOwnProperty("deleted")) {
-        createCookie2(obj.id, "isdeleted", obj.deleted);
+        createCookie(obj.id + "isdeleted", obj.deleted);
     }
 
-    if(obj.hasOwnProperty("classif") && obj.classif != webObj.classif) {
-        createCookie2(obj.id, "classif", obj.classif);
+    if(obj.hasOwnProperty("classif")) {
+        createCookie(obj.id + "classif", obj.classif);
     }
   }
 

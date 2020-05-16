@@ -727,11 +727,18 @@ function processCountUpdate(countersParam) {
     $("#cli").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
     $("#cli2").text(climate);
     $("#cli2").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
+
+    dblFlag = false;  
+
+    var paramid = getParameterByName('tweetid');
+    if (paramid) {
+      getInformationbyid(paramid);   
+    }
 } 
 
 
 
-function countalsltweetsORI(webLinksMap) {
+function countalsltweetsORI() {
     resetFields(false);
     var path = "./data.json";
     var counters = new Map();
@@ -809,15 +816,6 @@ function countalsltweetsORI(webLinksMap) {
 
                 var isdeleted = readCookie(val.id + "isdeleted");
                 if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
-
-                    if (webLinksMap) {
-                        var linkObj = webLinksMap.get(parseInt(val.id));
-
-                        if (linkObj) {
-                            updateWebLink(linkObj, val);
-                        }
-                    }
-
 
                     var doShowDeletedLink = true;  
                     if (!$("#showdeleted").is(":checked")) {
