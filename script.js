@@ -2622,7 +2622,7 @@ function startCLWorker(data, doStop) {
                 processCountUpdate(event.data.result);
             }
             else {
-                processCountBlock(flag);
+                processCountBlock();
             }
         };
     }
