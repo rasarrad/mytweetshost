@@ -470,7 +470,6 @@ function create() {
         createCookie("maxid", nextid + 1);
     
         resetFields(false);
-        countalltweets();
     }
     else {
         getLinkDescriptionAndCreate(creationdate, cats, tags, resinfo, classif);

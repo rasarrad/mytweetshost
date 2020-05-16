@@ -387,73 +387,86 @@ function countalltweets() {
 } 
 
 
-function processCountBlock(flag, doStop) {
+function processCountBlock(doStop) {
 
-    if (flag) {
-        var i = counterAllLinks;
+    var i = counterAllLinks;
 
-        try {
-            for (i; i < counterAllLinks + 5; i++) {
-                var val = allLinks[i];
-        
-                if (val.deleted != "yes") {
-                    var haschanges = readCookie(val.id + "haschanges");
-        
-                    if (haschanges && haschanges.length > 0) {
-                        var isdeleted = readCookie(val.id + "isdeleted");
-                        if (!(isdeleted && isdeleted == "yes")) {
-                
-                            val.deletedOri = val.deleted;
-                            if (isdeleted && isdeleted.length > 0) {
-                                val.deleted = isdeleted;
-                            } 
-                
-                            var cat = readCookie(val.id + "catchanged");
-                            val.categoriesOri = val.categories;
-                            if (cat && cat.length > 0) {
-                                val.categories = cat;
-                            }
-                
-                            var tag = readCookie(val.id + "tagchanged");
-                            val.tagsOri = val.tags;
-                            if (tag && tag.length > 0) {
-                                val.tags = tag;
-                            }
-                
-                            var info = readCookie(val.id + "info");
-                            val.infoOri = val.info;
-                            if (info && info.length > 0) {
-                                val.info = info;
-                            }
-                
-                            var classif = readCookie(val.id + "classif");
-                            val.classifOri = val.classif;
-                            if (classif && classif.length > 0) {
-                                val.classif = classif;
-                            }
-                            
-                            var author = readCookie(val.id + "author");
-                            val.authorOri = val.author;
-                            if (author && author.length > 0) {
-                                val.author = author;
-                            }
+    var hasAnyLinkChange = false;
+    try {
+        for (i; i < counterAllLinks + 5; i++) {
+            var val = allLinks[i];
     
-                            var datechanged = readCookie(val.id + "datechanged");
-                            val.dateOri = val.date;
-                            if (datechanged && datechanged.length > 0) {
-                                val.date = datechanged;
-                            }
+            if (val.deleted != "yes") {
+                var haschanges = readCookie(val.id + "haschanges");
+    
+                if (haschanges && haschanges.length > 0) {
+                    hasAnyLinkChange = true;
+                    var isdeleted = readCookie(val.id + "isdeleted");
+                    if (!(isdeleted && isdeleted == "yes")) {
+            
+                        val.deletedOri = val.deleted;
+                        if (isdeleted && isdeleted.length > 0) {
+                            val.deleted = isdeleted;
                         } 
-                        allLinks[i] = val; 
+            
+                        var cat = readCookie(val.id + "catchanged");
+                        val.categoriesOri = val.categories;
+                        if (cat && cat.length > 0) {
+                            val.categories = cat;
+                        }
+            
+                        var tag = readCookie(val.id + "tagchanged");
+                        val.tagsOri = val.tags;
+                        if (tag && tag.length > 0) {
+                            val.tags = tag;
+                        }
+            
+                        var info = readCookie(val.id + "info");
+                        val.infoOri = val.info;
+                        if (info && info.length > 0) {
+                            val.info = info;
+                        }
+            
+                        var classif = readCookie(val.id + "classif");
+                        val.classifOri = val.classif;
+                        if (classif && classif.length > 0) {
+                            val.classif = classif;
+                        }
+                        
+                        var author = readCookie(val.id + "author");
+                        val.authorOri = val.author;
+                        if (author && author.length > 0) {
+                            val.author = author;
+                        }
+
+                        var datechanged = readCookie(val.id + "datechanged");
+                        val.dateOri = val.date;
+                        if (datechanged && datechanged.length > 0) {
+                            val.date = datechanged;
+                        }
                     } 
-                }
+                    allLinks[i] = val; 
+                } 
             }
         }
-        catch(err) {
-        }
+    }
+    catch(err) {
     }
 
-    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 5)), flag, doStop);
+    if (hasAnyLinkChange) {
+        if (showColorsAdv) {
+            $("#generateicon").addClass("haschanges");
+            if (showColors) {
+                $("#settings").addClass("haschanges");
+            }
+        } 
+    }
+    else {
+        $("#generateicon").removeClass("haschanges");
+        $("#settings").removeClass("haschanges");
+    }
+
+    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 5)), doStop);
     
     counterAllLinks = counterAllLinks + 5;
 } 
@@ -462,7 +475,6 @@ function processCountBlock(flag, doStop) {
 
 
 function processCountUpdate(countersParam) {
-    console.log("processCountUpdate process");
 
     var tagsmap = new Map(JSON.parse(countersParam.tagsmap));
     var counters = new Map(JSON.parse(countersParam.counters));
@@ -720,9 +732,6 @@ function processCountUpdate(countersParam) {
     $("#cli").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
     $("#cli2").text(climate);
     $("#cli2").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
-
-    console.log("processCountUpdate FIM process");
-
 } 
 
 

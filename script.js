@@ -2152,6 +2152,7 @@ function createCookie2(id, name, value, obj) {
         }
     }
 
+    // quando não é criacao o val vem com o objecto json do link
     if (val) {
         var isTemp = readCookie(id + "templink");
         if (isTemp && isTemp.length > 0) {
@@ -2596,10 +2597,9 @@ function nextLink(direction) {
 
 
 
-function startCLWorker(data, flag, doStop) {
+function startCLWorker(data, doStop) {
     if (typeof(Worker) !== "undefined") {
         if (typeof(clWorker) == "undefined") {
-            console.log("reiniciou")
             clWorker = new Worker("workers/countLinksW.js");
         }
 

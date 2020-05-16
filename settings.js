@@ -1027,8 +1027,6 @@ function toggleShowDeleted2() {
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
-    
-    console.log("toggleShowDeleted2");
     countAllLinks();
 }
 
@@ -1044,9 +1042,8 @@ function toggleShowDeletedAll() {
         $("#showdeleted2").prop('checked', true);
         setshowdeletedcookie("true");
     }
-        // xyzz
-    //counterAllLinks = 0;
-    //processCountBlock(null, true);
+    
+    countAllLinks();
 }
 
 function setShowDeleted(flag) {
