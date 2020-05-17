@@ -302,7 +302,6 @@ function processCountBlock(doStop) {
             if (val.deleted != "yes") {
                 var haschanges = readCookie(val.id + "haschanges");
     
-                console.log("id: " + val.id + "-" + haschanges)
                 if (haschanges && haschanges.length > 0) {
                     hasAnyLinkChange = true;
                     var isdeleted = readCookie(val.id + "isdeleted");
@@ -318,7 +317,7 @@ function processCountBlock(doStop) {
                         if (cat && cat.length > 0) {
                             val.categories = cat;
                         }
-            
+                        console.log("id: " + val.id + "-" + val.categories + "-" + val.categoriesOri)
                         var tag = readCookie(val.id + "tagchanged");
                         val.tagsOri = val.tags;
                         if (tag && tag.length > 0) {
