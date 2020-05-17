@@ -2203,6 +2203,8 @@ function updateObject(val, name, value) {
             val.classif = value;
             break;  
         case "catchanged":
+            console.log("----------555555-----------");
+            console.log(value + "-" + val.categories);
             val.categories = value;
             break;  
         case "tagchanged":
