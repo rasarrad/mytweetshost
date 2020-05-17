@@ -2170,8 +2170,6 @@ function hasChanges(val) {
         return true;
     }  
     if (val.categories != val.categoriesOri) {
-        
-        alert(val.categories+ "-" +val.categoriesOri)
         return true;
     }         
     if (val.deleted != val.deletedOri) {
@@ -2197,27 +2195,61 @@ function hasChanges(val) {
 function updateObject(val, name, value) {            
     switch(name) {
         case "info":
+            if (value == "") {
+                val.info = val.infoOri;
+            }
+            else {
+                val.info = value;
+            }
             val.info = value;
             break;  
         case "classif":
-            val.classif = value;
+            if (value == "") {
+                val.classif = val.classifOri;
+            }
+            else {
+                val.classif = value;
+            }
             break;  
         case "catchanged":
-            console.log("----------555555-----------");
-            console.log(value + "-" + val.categories);
-            val.categories = value;
+            if (value == "") {
+                val.categories = val.categoriesOri;
+            }
+            else {
+                val.categories = value;
+            }
             break;  
         case "tagchanged":
-            val.tags = value;
+            if (value == "") {
+                val.tags = val.tagsOri;
+            }
+            else {
+                val.tags = value;
+            }
             break;  
         case "author":
-            val.author = value;
+            if (value == "") {
+                val.author = val.authorOri;
+            }
+            else {
+                val.author = value;
+            }
             break;  
         case "datechanged":
-            val.date = value;
+            if (value == "") {
+                val.date = val.dateOri;
+            }
+            else {
+                val.date = value;
+            }
             break;  
         case "isdeleted":
-            val.deleted = value;
+            if (value == "") {
+                val.deleted = val.deletedOri;
+            }
+            else {
+                val.deleted = value;
+            }
             break;  
     }
     return val;
