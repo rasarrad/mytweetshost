@@ -239,8 +239,7 @@ var openSettingsPopup = function(jsonobj)
         }  
         $("#linkChange #editTags .fa-chevron-down").show();    
         
-        $(".buttontdtohide").show();  
-        $(".originaltr").show();
+        $(".buttontdtohide").show();
         
         $('#removetweetp2').attr('class','').addClass('fa').addClass('fa-eraser').addClass('fa-flip-horizontal');
 
@@ -295,14 +294,18 @@ var openSettingsPopup = function(jsonobj)
         else {
             $('.originalcats').html("--"); 
         }
-        
+
         if (jsonobj.categoriesOri != jsonobj.categories) {
             currentcatdisplay.css('color','#00ff72');
             $('#originalcattd i').show();
+              
+            $("#editCats .originaltr").show();
         } 
         else {
             currentcatdisplay.css('color',"");
             $('#originalcattd i').hide();
+
+            $("#editCats .originaltr").hide();
         }
         currentcatdisplay.html(parseCats(jsonobj.categories));
         $('#catsinput').val(jsonobj.categories);
@@ -441,17 +444,9 @@ var openSettingsPopup = function(jsonobj)
         $("#linkChange .buttonstable tr:first-child td .datetoshow").show(); 
 
         $(".buttontdtohide").hide();
-        $(".originaltr").hide();
         $('#removetweetp2').attr('class','').addClass('fa').addClass('fa-floppy-o');
 
         $("#linkChange #editTags .fa-chevron-down").show();    
-    }
-
-    if (showColors) {
-        $(".originaltr").show();
-    }
-    else {
-        $(".originaltr").hide();
     }
 
     //$('#linkChange').fadeIn(); 
@@ -1484,13 +1479,16 @@ function catsInputOnChange(obj) {
         currentcatdisplay.css('color', '');
         createCookie2($('#linkChange').attr("cid"), "catchanged", "");
         $('#originalcattd i').hide();
+        
+        $("#editCats .originaltr").hide();
     }
     else {
         currentcatdisplay.css('color','#00ff72');
         createCookie2($('#linkChange').attr("cid"), "catchanged", $(obj).val());
         $('#originalcattd i').show();
+        
+        $("#editCats .originaltr").show();
     }
-
     markCategoriesCheckBoxs();
 }
 
