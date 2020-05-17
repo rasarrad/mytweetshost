@@ -314,6 +314,7 @@ function processCountBlock(doStop) {
             
                         var cat = readCookie(val.id + "catchanged");
                         val.categoriesOri = val.categories;
+                        console.log("id: " + val.id + "-"+ val.categories +  "-")
                         if (cat && cat.length > 0) {
                             val.categories = cat;
                         }
