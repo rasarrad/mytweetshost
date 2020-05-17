@@ -2148,7 +2148,6 @@ function createCookie2(id, name, value, obj) {
             updateLinkCookie(val);
         }
         
-        alert(111456)
         updateLinkColor(val, id);
     }
     else {

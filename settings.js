@@ -1246,6 +1246,8 @@ function updateLinkColor(val, id) {
         }
         else {
             var hasChanges = readCookie(val.id + "haschanges");
+            
+        alert(hasChanges)
             if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
                 $(".tweet#" + val.id).find("i.linkbar").css("color", "#f18618"); 
                 $("#seticon").attr("style", "color: #f18618;");
