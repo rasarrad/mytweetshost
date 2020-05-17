@@ -258,6 +258,8 @@ var openSettingsPopup = function(jsonobj)
             $('.originaltags').html("--");  
         }
 
+        alert(tagchanged)
+
         if (tagchanged && tagchanged.length > 0) {
 
             if (showColors && jsonobj.tags != tagchanged) {
@@ -1222,15 +1224,6 @@ function tagsInputOnChange(obj) {
     updateLinkColor(null, $('#linkChange').attr("cid"));
 }
 
- 
-function updateSettingsColor(color) {
-    if (color != "") {
-        $('#seticon').css("color", color); 
-    }
-    else {
-        $('#seticon').css("color", ""); 
-    }
-}
 
 function updateLinkColor(val, id) {
     if (id) {
