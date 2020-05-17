@@ -848,7 +848,7 @@ function renderLink(val, flag) {
         }
         else {
             var hasChanges = readCookie(val.id + "haschanges");
-            alert(hasChanges)
+            alert("2: " + hasChanges)
             if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
                 color = "color: #f18618;";
                 if (expandclass == "isnew")

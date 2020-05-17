@@ -2136,6 +2136,7 @@ function createCookie2(id, name, value, obj) {
         console.log(val.categoriesOri + "-" + val.categories);
         document.cookie = id + name + "=" + value + "; path=/";
 
+        alert("3: " + hasChanges(val))
         if (hasChanges(val)) {
             document.cookie = id + "haschanges=yes; path=/";
         }
