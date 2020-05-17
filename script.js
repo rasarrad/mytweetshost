@@ -2137,6 +2137,7 @@ function createCookie2(id, name, value, obj) {
             document.cookie = id + "haschanges=yes; path=/";
         }
         else {
+            alert(4566788)
             document.cookie = id + "haschanges=; path=/";
         }
     }
