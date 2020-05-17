@@ -312,15 +312,11 @@ function processCountBlock(doStop) {
                             val.deleted = isdeleted;
                         } 
             
-                        console.log("111id: " + val.id + "-" + val.categories)
                         var cat = readCookie(val.id + "catchanged");
                         val.categoriesOri = val.categories;
                         if (cat && cat.length > 0) {
                             val.categories = cat;
                         }
-                        console.log("id: " + val.id + "-" + val.categories + "-" + val.categoriesOri)
-
-
 
                         var tag = readCookie(val.id + "tagchanged");
                         val.tagsOri = val.tags;
