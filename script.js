@@ -63,7 +63,7 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 
 $( document ).ready(function() { 
     
-    createCookie("zzzz", "");
+    createCookie("zzzz", "12345");
 
     var aasd = readCookie("zzzz");
 
@@ -2144,10 +2144,10 @@ function createCookie(name, value, days) {
     }
     else var expires = "";               
 
-    document.cookie = name + "=" + value + expires + "; path=/";
+    document.cookie = name + "=-" + value + "-" + expires + "; path=/";
 }
 
-function createCookie2(id, name, value, obj) {            
+function createCookie2(id, name, value, obj, doErase) {            
     val = getJsonbyid(id);
     console.log("---------------------");
     console.log(val.categoriesOri + "-" + val.categories);
@@ -2155,7 +2155,11 @@ function createCookie2(id, name, value, obj) {
         val = updateObject(val, name, value);
         console.log("------------3333---------");
         console.log(val.categoriesOri + "-" + val.categories);
-        document.cookie = id + name + "=" + value + "; path=/";
+
+        if (doErase)
+
+        else 
+            document.cookie = id + name + "=-" + value + "-; path=/";
 
         if (hasChanges(val)) {
             console.log("------------yes---------");
@@ -2298,7 +2302,7 @@ function readCookie(name) {
     for (var i = 0; i < ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length + 1, c.length - 1);
     }
     return null;
 }
@@ -2309,7 +2313,7 @@ function readCookie(name) {
 
 
 function eraseCookie(name) {
-    createCookie(name, "", -1);
+    document.cookie = name + '=; path=/;';
 }  
     
 
