@@ -68,20 +68,20 @@ $( document ).ready(function() {
     var aasd = readCookie("zzzz");
 
     if (aasd) {
-        console.log(1)
+        console.log("1-" + aasd + "-")
     }
     else {
-        console.log(2)
+        console.log("2-" + aasd + "-")
     }
     createCookie("zzzz", null);
 
     var aasd2 = readCookie("zzzz");
 
     if (aasd2) {
-        console.log(111111)
+        console.log("11111111-" + aasd2 + "-")
     }
     else {
-        console.log(2222222)
+        console.log("2222222-" + aasd2 + "-")
     }
 
     isMobile = window.mobileAndTabletCheck();
