@@ -2639,7 +2639,7 @@ function nextLink(direction) {
 
 
 
-function startCLWorker(data, hasChanges) {
+function startCLWorker(data, hasChanges, execParamId) {
     if (typeof(Worker) !== "undefined") {
         if (typeof(clWorker) == "undefined") {
             clWorker = new Worker("workers/countLinksW.js");
@@ -2660,7 +2660,7 @@ function startCLWorker(data, hasChanges) {
             if (event.data.finnish == "yes") {
                 clWorker.terminate();
                 clWorker = undefined;
-                processCountUpdate(event.data.result, hasChanges);
+                processCountUpdate(event.data.result, hasChanges, execParamId);
             }
             else {
                 processCountBlock(hasChanges);
