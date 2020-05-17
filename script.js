@@ -63,6 +63,27 @@ if (currTheme && currTheme.length > 0 && currTheme != 'default') {
 
 $( document ).ready(function() { 
     
+    createCookie("zzzz", "");
+
+    var aasd = readCookie("zzzz");
+
+    if (aasd) {
+        console.log(1)
+    }
+    else {
+        console.log(2)
+    }
+    createCookie("zzzz", null);
+
+    var aasd2 = readCookie("zzzz");
+
+    if (aasd2) {
+        console.log(111111)
+    }
+    else {
+        console.log(2222222)
+    }
+
     isMobile = window.mobileAndTabletCheck();
 
     // START do texto das categorias
