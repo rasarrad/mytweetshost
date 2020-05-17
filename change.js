@@ -285,12 +285,12 @@ function countalltweets() {
             $("#mask > .fa-circle-o-notch").show();
         });
 
-        processCountBlock(false);
+        processCountBlock(false, true);
     }); 
 } 
 
 
-function processCountBlock(hasAnyLinkChange) {
+function processCountBlock(hasAnyLinkChange, execParamId) {
 
     var i = counterAllLinks;
 
@@ -364,7 +364,7 @@ function processCountBlock(hasAnyLinkChange) {
     catch(err) {
     }
 
-    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 5)), hasAnyLinkChange);
+    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 5)), hasAnyLinkChange, execParamId);
     
     counterAllLinks = counterAllLinks + 5;
 } 
@@ -372,7 +372,7 @@ function processCountBlock(hasAnyLinkChange) {
 
 
 
-function processCountUpdate(countersParam, hasAnyLinkChange) {
+function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
 
     if (hasAnyLinkChange) {
         if (showColorsAdv) {
@@ -644,11 +644,13 @@ function processCountUpdate(countersParam, hasAnyLinkChange) {
     $("#cli2").text(climate);
     $("#cli2").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
 
-    dblFlag = false;  
+    if (execParamId) {
+        dblFlag = false;  
 
-    var paramid = getParameterByName('tweetid');
-    if (paramid) {
-        getInformationbyid(paramid);   
+        var paramid = getParameterByName('tweetid');
+        if (paramid) {
+            getInformationbyid(paramid);   
+        }
     }
 } 
 
