@@ -319,6 +319,9 @@ function processCountBlock(doStop) {
                             val.categories = cat;
                         }
                         console.log("id: " + val.id + "-" + val.categories + "-" + val.categoriesOri)
+
+
+                        
                         var tag = readCookie(val.id + "tagchanged");
                         val.tagsOri = val.tags;
                         if (tag && tag.length > 0) {

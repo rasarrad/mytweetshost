@@ -258,8 +258,6 @@ var openSettingsPopup = function(jsonobj)
             $('.originaltags').html("--");  
         }
 
-        alert(tagchanged)
-
         if (tagchanged && tagchanged.length > 0) {
 
             if (showColors && jsonobj.tags != tagchanged) {
