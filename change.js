@@ -321,7 +321,7 @@ function processCountBlock(doStop) {
                         console.log("id: " + val.id + "-" + val.categories + "-" + val.categoriesOri)
 
 
-                        
+
                         var tag = readCookie(val.id + "tagchanged");
                         val.tagsOri = val.tags;
                         if (tag && tag.length > 0) {
@@ -355,7 +355,7 @@ function processCountBlock(doStop) {
                 }
                 else {
                     val.deletedOri = val.deleted;
-                    val.tagsOri = tag;
+                    val.tagsOri = val.tags;
                     val.categoriesOri = val.categories;
                     val.infoOri = val.info;
                     val.classifOri = classif;
