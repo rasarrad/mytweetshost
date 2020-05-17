@@ -2137,9 +2137,11 @@ function createCookie2(id, name, value, obj) {
         document.cookie = id + name + "=" + value + "; path=/";
 
         if (hasChanges(val)) {
+            console.log("------------yes---------");
             document.cookie = id + "haschanges=yes; path=/";
         }
         else {
+            console.log("------------no---------");
             document.cookie = id + "haschanges=; path=/";
         }
     }
