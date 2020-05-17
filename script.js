@@ -2663,7 +2663,7 @@ function startCLWorker(data, hasChanges, execParamId) {
                 processCountUpdate(event.data.result, hasChanges, execParamId);
             }
             else {
-                processCountBlock(hasChanges);
+                processCountBlock(hasChanges, execParamId);
             }
         };
     }
