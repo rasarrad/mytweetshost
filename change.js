@@ -291,7 +291,7 @@ function countalltweets() {
 
 
 function processCountBlock(hasAnyLinkChange, execParamId) {
-
+alert(execParamId)
     var i = counterAllLinks;
 
     try {
