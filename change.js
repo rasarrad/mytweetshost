@@ -354,8 +354,8 @@ function processCountBlock(doStop) {
                     val.tagsOri = val.tags;
                     val.categoriesOri = val.categories;
                     val.infoOri = val.info;
-                    val.classifOri = classif;
-                    val.authorOri = author;
+                    val.classifOri = val.classif;
+                    val.authorOri = val.author;
                     val.dateOri = val.date;
                 } 
                 allLinks[i] = val;  
