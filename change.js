@@ -314,7 +314,6 @@ function processCountBlock(doStop) {
             
                         var cat = readCookie(val.id + "catchanged");
                         val.categoriesOri = val.categories;
-                        console.log("id: " + val.id + "-"+ val.categories +  "-")
                         if (cat && cat.length > 0) {
                             val.categories = cat;
                         }
@@ -349,8 +348,17 @@ function processCountBlock(doStop) {
                             val.date = datechanged;
                         }
                     } 
-                    allLinks[i] = val; 
+                }
+                else {
+                    val.deletedOri = val.deleted;
+                    val.tagsOri = tag;
+                    val.categoriesOri = val.categories;
+                    val.infoOri = val.info;
+                    val.classifOri = classif;
+                    val.authorOri = author;
+                    val.dateOri = val.date;
                 } 
+                allLinks[i] = val;  
             }
         }
     }
