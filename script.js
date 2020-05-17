@@ -2157,7 +2157,7 @@ function createCookie2(id, name, value, obj, doErase) {
         console.log(val.categoriesOri + "-" + val.categories);
 
         if (doErase)
-
+            eraseCookie(id + name);
         else 
             document.cookie = id + name + "=-" + value + "-; path=/";
 
