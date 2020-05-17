@@ -2137,7 +2137,6 @@ function createCookie2(id, name, value, obj) {
             document.cookie = id + "haschanges=yes; path=/";
         }
         else {
-            alert(4566788)
             document.cookie = id + "haschanges=; path=/";
         }
     }
@@ -2168,6 +2167,8 @@ function hasChanges(val) {
         return true;
     }  
     if (val.categories != val.categoriesOri) {
+        
+        alert(val.categories+ "-" +val.categoriesOri)
         return true;
     }         
     if (val.deleted != val.deletedOri) {
