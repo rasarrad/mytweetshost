@@ -294,86 +294,127 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
     var i = counterAllLinks;
 
     try {
-        for (i; i < counterAllLinks + 5; i++) {
-            var val = allLinks[i];
+        if (execParamId) {
+            for (i; i < counterAllLinks + 5; i++) {
+                var val = allLinks[i];
+        
+                if (val.deleted != "yes") {
+                    var haschanges = readCookie(val.id + "haschanges");
+        
+                    if (val.id=="14")
+                        console.log("1111-" + haschanges + "-")
+                    if (haschanges && haschanges.length > 0) {
+                        hasAnyLinkChange = true;
+                        var isdeleted = readCookie(val.id + "isdeleted");
+                        if (!(isdeleted && isdeleted == "yes")) {
+                
+                            val.deletedOri = val.deleted;
+                            if (isdeleted && isdeleted.length > 0) {
+                                val.deleted = isdeleted;
+                            } 
+                
+                            var cat = readCookie(val.id + "catchanged");
+                            val.categoriesOri = val.categories;
+                            if (val.id=="14")
+                        console.log("cat-" + cat + "-" + val.categoriesOri)
+                            if (cat && cat.length > 0) {
+                                val.categories = cat;
+                            }
     
-            if (val.deleted != "yes") {
-                var haschanges = readCookie(val.id + "haschanges");
+                            var tag = readCookie(val.id + "tagchanged");
+                            val.tagsOri = val.tags;
+                            if (tag && tag.length > 0) {
+                                val.tags = tag;
+                            }
+                
+                            var info = readCookie(val.id + "info");
+                            val.infoOri = val.info;
+                            if (info && info.length > 0) {
+                                val.info = info;
+                            }
+                
+                            var classif = readCookie(val.id + "classif");
+                            val.classifOri = val.classif;
+                            if (classif && classif.length > 0) {
+                                val.classif = classif;
+                            }
+                            
+                            var author = readCookie(val.id + "author");
+                            val.authorOri = val.author;
+                            if (author && author.length > 0) {
+                                val.author = author;
+                            }
     
-                if (val.id=="14")
-                    console.log("1111-" + haschanges + "-")
-                if (haschanges && haschanges.length > 0) {
-                    hasAnyLinkChange = true;
-                    var isdeleted = readCookie(val.id + "isdeleted");
-                    if (!(isdeleted && isdeleted == "yes")) {
-            
-                        val.deletedOri = val.deleted;
-                        
-                        if (val.id=="14")
-                    console.log("isdeleted-" + isdeleted + "-" + val.deletedOri)
-                        if (isdeleted && isdeleted.length > 0) {
-                            val.deleted = isdeleted;
+                            var datechanged = readCookie(val.id + "datechanged");
+                            val.dateOri = val.date;
+                            if (datechanged && datechanged.length > 0) {
+                                val.date = datechanged;
+                            }
                         } 
-            
-                        var cat = readCookie(val.id + "catchanged");
-                        val.categoriesOri = val.categories;
-                        if (val.id=="14")
-                    console.log("cat-" + cat + "-" + val.categoriesOri)
-                        if (cat && cat.length > 0) {
-                            val.categories = cat;
-                        }
-
-                        var tag = readCookie(val.id + "tagchanged");
+                    }
+                    else {
+                        val.deletedOri = val.deleted;
                         val.tagsOri = val.tags;
-                        if (val.id=="14")
-                    console.log("tag-" + tag + "-" + val.tagsOri)
-                        if (tag && tag.length > 0) {
-                            val.tags = tag;
-                        }
-            
-                        var info = readCookie(val.id + "info");
+                        val.categoriesOri = val.categories;
                         val.infoOri = val.info;
-                        if (val.id=="14")
-                    console.log("info-" + info + "-" + val.infoOri)
-                        if (info && info.length > 0) {
-                            val.info = info;
-                        }
-            
-                        var classif = readCookie(val.id + "classif");
                         val.classifOri = val.classif;
-                        if (val.id=="14")
-                    console.log("classif-" + classif + "-" + val.classifOri)
-                        if (classif && classif.length > 0) {
-                            val.classif = classif;
-                        }
-                        
-                        var author = readCookie(val.id + "author");
                         val.authorOri = val.author;
-                        if (val.id=="14")
-                    console.log("author-" + author + "-" + val.authorOri)
-                        if (author && author.length > 0) {
-                            val.author = author;
-                        }
-
-                        var datechanged = readCookie(val.id + "datechanged");
                         val.dateOri = val.date;
-                        if (val.id=="14")
-                    console.log("datechanged-" + datechanged + "-" + val.dateOri)
-                        if (datechanged && datechanged.length > 0) {
-                            val.date = datechanged;
-                        }
                     } 
+                    allLinks[i] = val;  
                 }
-                else {
-                    val.deletedOri = val.deleted;
-                    val.tagsOri = val.tags;
-                    val.categoriesOri = val.categories;
-                    val.infoOri = val.info;
-                    val.classifOri = val.classif;
-                    val.authorOri = val.author;
-                    val.dateOri = val.date;
-                } 
-                allLinks[i] = val;  
+            }
+        }
+        else {
+            for (i; i < counterAllLinks + 5; i++) {
+                var val = allLinks[i];
+        
+                if (val.deleted != "yes") {
+                    var haschanges = readCookie(val.id + "haschanges");
+        
+                    if (haschanges && haschanges.length > 0) {
+                        hasAnyLinkChange = true;
+                        var isdeleted = readCookie(val.id + "isdeleted");
+                        if (!(isdeleted && isdeleted == "yes")) {
+                
+                            val.deletedOri = val.deleted;
+                            if (isdeleted && isdeleted.length > 0) {
+                                val.deleted = isdeleted;
+                            } 
+                
+                            var cat = readCookie(val.id + "catchanged");
+                            if (cat && cat.length > 0) {
+                                val.categories = cat;
+                            }
+    
+                            var tag = readCookie(val.id + "tagchanged");
+                            if (tag && tag.length > 0) {
+                                val.tags = tag;
+                            }
+                
+                            var info = readCookie(val.id + "info");
+                            if (info && info.length > 0) {
+                                val.info = info;
+                            }
+                
+                            var classif = readCookie(val.id + "classif");
+                            if (classif && classif.length > 0) {
+                                val.classif = classif;
+                            }
+                            
+                            var author = readCookie(val.id + "author");
+                            if (author && author.length > 0) {
+                                val.author = author;
+                            }
+    
+                            var datechanged = readCookie(val.id + "datechanged");
+                            if (datechanged && datechanged.length > 0) {
+                                val.date = datechanged;
+                            }
+                        } 
+                    }
+                    allLinks[i] = val;  
+                }
             }
         }
     }
