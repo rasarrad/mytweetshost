@@ -308,6 +308,8 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                     if (!(isdeleted && isdeleted == "yes")) {
             
                         val.deletedOri = val.deleted;
+                        if (val.id=="14")
+                    console.log("isdeleted-" + isdeleted + "-" + val.deletedOri)
                         if (isdeleted && isdeleted.length > 0) {
                             val.deleted = isdeleted;
                         } 
@@ -322,30 +324,40 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
 
                         var tag = readCookie(val.id + "tagchanged");
                         val.tagsOri = val.tags;
+                        if (val.id=="14")
+                    console.log("tag-" + tag + "-" + val.tagsOri)
                         if (tag && tag.length > 0) {
                             val.tags = tag;
                         }
             
                         var info = readCookie(val.id + "info");
                         val.infoOri = val.info;
+                        if (val.id=="14")
+                    console.log("info-" + info + "-" + val.infoOri)
                         if (info && info.length > 0) {
                             val.info = info;
                         }
             
                         var classif = readCookie(val.id + "classif");
                         val.classifOri = val.classif;
+                        if (val.id=="14")
+                    console.log("classif-" + classif + "-" + val.classifOri)
                         if (classif && classif.length > 0) {
                             val.classif = classif;
                         }
                         
                         var author = readCookie(val.id + "author");
                         val.authorOri = val.author;
+                        if (val.id=="14")
+                    console.log("author-" + author + "-" + val.authorOri)
                         if (author && author.length > 0) {
                             val.author = author;
                         }
 
                         var datechanged = readCookie(val.id + "datechanged");
                         val.dateOri = val.date;
+                        if (val.id=="14")
+                    console.log("datechanged-" + datechanged + "-" + val.dateOri)
                         if (datechanged && datechanged.length > 0) {
                             val.date = datechanged;
                         }
