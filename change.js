@@ -644,6 +644,7 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
     $("#cli2").text(climate);
     $("#cli2").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
 
+    alert(execParamId)
     if (execParamId) {
         dblFlag = false;  
 
