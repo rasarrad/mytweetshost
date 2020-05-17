@@ -2136,7 +2136,6 @@ function createCookie2(id, name, value, obj) {
         console.log(val.categoriesOri + "-" + val.categories);
         document.cookie = id + name + "=" + value + "; path=/";
 
-        console.log("3: " + hasChanges(val))
         if (hasChanges(val)) {
             document.cookie = id + "haschanges=yes; path=/";
         }
@@ -2171,6 +2170,8 @@ function hasChanges(val) {
         return true;
     }  
     if (val.categories != val.categoriesOri) {
+        
+        console.log("ss3:-" + val.categories + "-" + val.categoriesOri + "-")
         return true;
     }         
     if (val.deleted != val.deletedOri) {
