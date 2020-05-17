@@ -895,10 +895,10 @@ function renderLink(val, flag) {
     if (flag) {
         $('#main').append(newtweetobj);
 
-        if (val.type != "H") {
+        if (val.type != "T") {
 
             newtweetobj.fadeIn(1500);
-            
+
             setTimeout(function(){
                 if (!isMobile) {
                     setTimeout(function(){
