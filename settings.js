@@ -989,7 +989,7 @@ function countAllLinks() {
     
     counterAllLinks = 0;
 
-    processCountBlock(null, true);
+    processCountBlock(false);
 }
 
 

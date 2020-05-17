@@ -285,16 +285,15 @@ function countalltweets() {
             $("#mask > .fa-circle-o-notch").show();
         });
 
-        processCountBlock(true);
+        processCountBlock(false);
     }); 
 } 
 
 
-function processCountBlock(doStop) {
+function processCountBlock(hasAnyLinkChange) {
 
     var i = counterAllLinks;
 
-    var hasAnyLinkChange = false;
     try {
         for (i; i < counterAllLinks + 5; i++) {
             var val = allLinks[i];
@@ -364,7 +363,17 @@ function processCountBlock(doStop) {
     }
     catch(err) {
     }
-console.log(hasAnyLinkChange + "-" + showColorsAdv + "-" + showColors + "-")
+
+    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 5)), hasAnyLinkChange);
+    
+    counterAllLinks = counterAllLinks + 5;
+} 
+
+
+
+
+function processCountUpdate(countersParam, hasAnyLinkChange) {
+
     if (hasAnyLinkChange) {
         if (showColorsAdv) {
             $("#generateicon").addClass("haschanges");
@@ -377,16 +386,6 @@ console.log(hasAnyLinkChange + "-" + showColorsAdv + "-" + showColors + "-")
         $("#generateicon").removeClass("haschanges");
         $("#settings").removeClass("haschanges");
     }
-
-    startCLWorker(JSON.stringify(allLinks.slice(counterAllLinks, counterAllLinks + 5)), doStop);
-    
-    counterAllLinks = counterAllLinks + 5;
-} 
-
-
-
-
-function processCountUpdate(countersParam) {
 
     var tagsmap = new Map(JSON.parse(countersParam.tagsmap));
     var counters = new Map(JSON.parse(countersParam.counters));

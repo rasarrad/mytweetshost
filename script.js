@@ -2637,7 +2637,7 @@ function nextLink(direction) {
 
 
 
-function startCLWorker(data, doStop) {
+function startCLWorker(data, hasChanges) {
     if (typeof(Worker) !== "undefined") {
         if (typeof(clWorker) == "undefined") {
             clWorker = new Worker("workers/countLinksW.js");
@@ -2661,7 +2661,7 @@ function startCLWorker(data, doStop) {
                 processCountUpdate(event.data.result);
             }
             else {
-                processCountBlock();
+                processCountBlock(hasChanges);
             }
         };
     }
