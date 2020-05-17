@@ -1467,6 +1467,8 @@ function catsInputOnChange(obj) {
     var currentcatdisplay = $('.currentcats'); 
     currentcatdisplay.html(parseCats($(obj).val()));
     
+    console.log("&&&&&&&&&&6")
+    console.log($(obj).val() + "-----" + oldcats)
     if (oldcats == $(obj).val()) {
         currentcatdisplay.css('color', '');
         createCookie2($('#linkChange').attr("cid"), "catchanged", "");
