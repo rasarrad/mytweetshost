@@ -288,8 +288,8 @@ var openSettingsPopup = function(jsonobj)
 
         var currentcatdisplay = $('.currentcats');
 
-        if (jsonobj.categories.length > 0 && jsonobj.categories != "undefined") {
-            $('.originalcats').html(parseCats(jsonobj.categories));  
+        if (jsonobj.categoriesOri.length > 0) {
+            $('.originalcats').html(parseCats(jsonobj.categoriesOri));  
         }
         else {
             $('.originalcats').html("--"); 
