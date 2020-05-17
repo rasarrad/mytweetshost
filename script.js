@@ -2159,6 +2159,8 @@ function createCookie2(id, name, value, obj) {
         insertInMainArray(obj);
         updateLinkCookie(obj);
     }
+    
+    countAllLinks();
 }
 
 
