@@ -364,7 +364,7 @@ function processCountBlock(doStop) {
     }
     catch(err) {
     }
-
+console.log(hasAnyLinkChange + "-" + showColorsAdv + "-" + showColors + "-")
     if (hasAnyLinkChange) {
         if (showColorsAdv) {
             $("#generateicon").addClass("haschanges");
