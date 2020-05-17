@@ -137,9 +137,6 @@ function zoom(obj, flag) {
 
 var openSettingsPopup = function(jsonobj) 
 {
-    // GENERAL
-    var hasChanges = false;
-    
     // OTHER SETTINGS
     $('body, html').css('overflow-y', 'hidden');
 
@@ -263,7 +260,6 @@ var openSettingsPopup = function(jsonobj)
         }
 
         if (tagchanged && tagchanged.length > 0) {
-            hasChanges = true;
 
             if (showColors && jsonobj.tags != tagchanged) {
                 currenttagdisplay.css('color','#00ff72');
@@ -289,9 +285,8 @@ var openSettingsPopup = function(jsonobj)
 
         // CAGTEGORIES
 
-        $('#catsinput').attr("ccats", jsonobj.categories);
+        $('#catsinput').attr("ccats", jsonobj.categoriesOri);
 
-        var catchanged = readCookie(jsonobj.id + "catchanged");
         var currentcatdisplay = $('.currentcats');
 
         if (jsonobj.categories.length > 0 && jsonobj.categories != "undefined") {
@@ -301,30 +296,20 @@ var openSettingsPopup = function(jsonobj)
             $('.originalcats').html("--"); 
         }
 
-        if (catchanged && catchanged.length > 0) {
-            hasChanges = true;
-            
-            if (showColors && jsonobj.categories != catchanged) {
-                currentcatdisplay.css('color','#00ff72');
-            }
-
-            if (catchanged.length > 0)
-                currentcatdisplay.html(parseCats(catchanged));
-            else
-                currentcatdisplay.html("--");
-            
-            $('#catsinput').val(catchanged);
+        if (jsonobj.categoriesOri != jsonobj.categories) {
+            currentcatdisplay.css('color','#00ff72');
             $('#originalcattd i').show();
         } 
         else {
             currentcatdisplay.css('color',"");
-            currentcatdisplay.html(parseCats(jsonobj.categories));
-            $('#catsinput').val(jsonobj.categories);
+            $('#originalcattd i').hide();
         }
+        currentcatdisplay.html(parseCats(jsonobj.categories));
+        $('#catsinput').val(jsonobj.categories);
         
         markCategoriesCheckBoxs();
 
-        // CLASSIFICATION
+        // CLASSIFICATION zz
         $('#classifinput').attr("cclassif", jsonobj.classif);
 
         var classifchanged = readCookie(jsonobj.id + "classif");
@@ -338,7 +323,6 @@ var openSettingsPopup = function(jsonobj)
         }
 
         if (classifchanged && classifchanged.length > 0) {
-            hasChanges = true;
 
             if (showColors && jsonobj.classif != classifchanged) {            
                 currentclassifdisplay.css('color','#00ff72');
@@ -378,7 +362,6 @@ var openSettingsPopup = function(jsonobj)
         }
 
         if (infochanged && infochanged.length > 0) {
-            hasChanges = true;
             
             if (showColors && jsonobj.info != infochanged) {
                 currentinfodisplay.css('color','#00ff72');
@@ -1509,9 +1492,6 @@ function catsInputOnChange(obj) {
     }
 
     markCategoriesCheckBoxs();
-
-    updateLinkColor(null, $('#linkChange').attr("cid"));
-
 }
 
 function clickCheckCat(obj, cat) {
@@ -1552,9 +1532,6 @@ function undoCats(e, obj) {
 
     $('#catsinput').val($('#catsinput').attr("ccats"));
     $(obj).hide();
-    var functorun = function() 
-    { 
-    } 
     $('#catsinput').trigger("change");
 
     markCategoriesCheckBoxs();
@@ -1634,9 +1611,6 @@ function undoClassif(e, obj) {
 
     $('#classifinput').val($('#classifinput').attr("cclassif"));
     $(obj).hide();
-    var functorun = function() 
-    { 
-    } 
     $('#classifinput').trigger("change");
 
     showMessage("Classification reverted", null, "fa-undo", "", null, "undo");

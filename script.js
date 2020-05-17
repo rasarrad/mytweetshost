@@ -204,7 +204,7 @@ $( document ).ready(function() {
 
 
     // START da cor caso haja alteracoes
-    var hasChanges = readCookie("haschanges");
+/*     var hasChanges = readCookie("haschanges");
     if (hasChanges && hasChanges.length > 0) {
         if (showColorsAdv) {
             $("#generateicon").addClass("haschanges");
@@ -214,7 +214,7 @@ $( document ).ready(function() {
         } 
     }
     
-
+ */
     // START filechoser
     var dropZone = document.getElementById('filedrop');
     dropZone.addEventListener('dragover', handleDragOver, false);
@@ -2147,6 +2147,8 @@ function createCookie2(id, name, value, obj) {
         if (isTemp && isTemp.length > 0) {
             updateLinkCookie(val);
         }
+        
+        updateLinkColor(val, id);
     }
     else {
         insertInMainArray(obj);

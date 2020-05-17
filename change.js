@@ -1,96 +1,4 @@
 
-function saveinfo(obj, id) {
-    createCookie2(id, "info", encodeURIComponent($("#" + id + "info").val()));
-    
-    $(obj).parent().parent().find("#expand").addClass("infomodified");
-    
-    $(obj).parent().find("textarea.info").css("border", "2px solid red");
-
-    if ($("#" + id + "oldinfo").length > 0) {
-      $("#" + id + "oldinfo").css("border", "2px solid red");
-
-      $("#" + id + "undoinfo").css("display", "inline-block");
-    }
-  
-    showMessage("Information About Link Saved"); 
-}   
-
-
-/////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
-
-
-function saveclassif(obj, id) {
-    createCookie2(id, "classif", $("#" + id + "classif").val());
-
-    $(obj).parent().parent().parent().find("#expand").addClass("infomodified");
-
-    $(obj).parent().find("#" + id + "classif").css("border", "2px solid red");
-
-    if ($("#" + id + "oldclassif").length > 0) {
-        $("#" + id + "oldclassif").show();
-        $("#" + id + "oldclassif").css("border", "2px solid red");
-
-        $("#" + id + "undoinfo").css("display", "inline-block");
-    }
-
-    showMessage("Link Classification Saved"); 
-}  
-
-
-/////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
-
-
-function undosaveclassif(obj, id) {
-    var oldtext = readCookie(id + "classif");
-
-    //if ($(obj).parent().find(".oldclassif"))
-       
-    if ($("#" + id + "oldclassif")) {
-        oldtext = $("#" + id + "oldclassif").text();
-        $(obj).css("display", "none");
-        $("#" + id + "oldclassif").remove();
-    }
-
-    createCookie2(id, "classif", "");
-    
-    $(obj).parent().parent().parent().find("#expand").removeClass("infomodified");
-    
-    $(obj).parent().find("#" + id + "classif").val(oldtext);
-    $(obj).parent().find("#" + id + "classif").css("border", "none");
-
-    showMessage("Link Reclassification Reverted");
-}  
-
-
-/////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
-
-
-function undosaveinfo(obj, id) {
-    var oldtext = readCookie(id + "info");
-
-    if ($("#" + id + "oldinfo").length > 0)
-        oldtext = encodeURIComponent($("#" + id + "oldinfo").text());
-
-    createCookie2(id, "info", "");
-
-    $(obj).parent().parent().find("#expand").removeClass("infomodified");
-
-    $(obj).parent().find("textarea.info").val(decodeURIComponent(oldtext));
-    $(obj).parent().find("textarea.info").css("border", "none");
-
-    $("#" + id + "undoinfo").css("display", "none");
-
-    if ($("#" + id + "oldinfo").length > 0) {
-        $("#" + id + "oldinfo").remove();
-    }          
-    
-    showMessage("Information About Link Reverted");
-}  
-
-
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
@@ -823,7 +731,7 @@ function undogenerate(obj) {
 
             idF = idF - 1;
         }
-        while (idF >= 100000);        
+        while (idF >= 100000);  // xyzz      
         createCookie("haschanges", "");
         $("#settings").removeClass("haschanges");
         $("#generateicon").removeClass("haschanges");
