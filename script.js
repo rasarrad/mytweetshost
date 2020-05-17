@@ -2658,7 +2658,7 @@ function startCLWorker(data, hasChanges) {
             if (event.data.finnish == "yes") {
                 clWorker.terminate();
                 clWorker = undefined;
-                processCountUpdate(event.data.result);
+                processCountUpdate(event.data.result, hasChanges);
             }
             else {
                 processCountBlock(hasChanges);
