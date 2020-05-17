@@ -695,7 +695,6 @@ var getInformation = function(wasfiltered, valid) {
     currrenderedtweets = 0;
     linkArray = new Array();
     linkArrayToRender = new Array();
-    var localCounter = 0;    
     var total_yy = 0; 
     var total_tt = 0;
     var total_hh = 0;
@@ -764,24 +763,24 @@ var getInformation = function(wasfiltered, valid) {
                  
                 if (val.type == "T") {
                     total_tt = total_tt + 1;
-                    linkArray[localCounter] = val.type;
+                    linkArray[searchtotal] = val.type;
                 }
                 else if (val.type == "Y") {
                     total_yy = total_yy + 1;
-                    linkArray[localCounter] = val.id;
+                    linkArray[searchtotal] = val.id;
                 }
                 else {
                     total_hh = total_hh + 1;
-                    linkArray[localCounter] = val.id;
+                    linkArray[searchtotal] = val.id;
                 }
 
-                if (localCounter < 5) {
+                if (searchtotal < 5) {
                     renderLink(val);
                 } 
                 else {
-                    linkArrayToRender[localCounter] = val;
+                    linkArrayToRender[searchtotal] = val;
                 }
-                localCounter++;
+                searchtotal++;
             }  
             i++;
         }
@@ -789,7 +788,7 @@ var getInformation = function(wasfiltered, valid) {
     catch(err) {
     }
 
-    $('#tcnumber').text(localCounter + " Links");
+    $('#tcnumber').text(searchtotal + " Links");
     $('#tccateg').text("In " + $('#selectedcattext').val());
 
     $('#tct').text(total_tt);
@@ -803,7 +802,7 @@ var getInformation = function(wasfiltered, valid) {
         return Number($(b).attr('cdate')) - Number($(a).attr('cdate'));
     }).appendTo('#main'); */
 
-    if (localCounter > 0) {
+    if (searchtotal > 0) {
         //if (wasfiltered != 2)
             //showMessage("Search Results", 2000);
     }
