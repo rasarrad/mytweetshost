@@ -2131,9 +2131,8 @@ function createCookie2(id, name, value, obj) {
 
     if (name != "templink") {
         val = updateObject(val, name, value);
-        document.cookie = name + "=" + value + "; path=/";
+        document.cookie = id + name + "=" + value + "; path=/";
 
-        console.log("-----id: " + val.id + "-" + value)
         if (hasChanges(val)) {
             document.cookie = id + "haschanges=yes; path=/";
         }
