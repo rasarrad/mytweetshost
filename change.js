@@ -302,6 +302,7 @@ function processCountBlock(doStop) {
             if (val.deleted != "yes") {
                 var haschanges = readCookie(val.id + "haschanges");
     
+                console.log("id: " + val.id + "-" + haschanges)
                 if (haschanges && haschanges.length > 0) {
                     hasAnyLinkChange = true;
                     var isdeleted = readCookie(val.id + "isdeleted");
