@@ -2169,6 +2169,7 @@ function insertInMainArray(val) {
 
 function hasChanges(val) { 
     if (val.tags != val.tagsOri) {
+        console.log("------------tags---------");
         return true;
     }  
     if (val.categories != val.categoriesOri) {
@@ -2177,18 +2178,23 @@ function hasChanges(val) {
         return true;
     }         
     if (val.deleted != val.deletedOri) {
+        console.log("------------deleted---------");
         return true;
     }
     if (val.info != val.infoOri) {
+        console.log("------------info---------");
         return true;
     }
     if (val.classif != val.classifOri) {
+        console.log("------------classif---------");
         return true;
     }
     if (val.author != val.authorOri) {
+        console.log("------------author---------");
         return true;
     }
     if (val.date != val.dateOri) {
+        console.log("------------date---------");
         return true;
     }
     
