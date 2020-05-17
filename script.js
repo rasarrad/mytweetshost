@@ -2129,7 +2129,7 @@ function createCookie(name, value, days) {
 function createCookie2(id, name, value, obj) {            
     val = getJsonbyid(id);
     console.log("---------------------");
-    console.log(val);
+    console.log(val.categoriesOri + "-" + val.categories);
     if (name != "templink") {
         val = updateObject(val, name, value);
         document.cookie = id + name + "=" + value + "; path=/";
