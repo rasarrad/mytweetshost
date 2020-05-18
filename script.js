@@ -2171,9 +2171,9 @@ function createCookie(name, value, days, doErase) {
     else var expires = "";               
 
     if (doErase)
-        eraseCookie(name);
+        document.cookie = name + "=NULL" + expires + "; path=/";
     else 
-        document.cookie = name + "=-" + value + "-" + expires + "; path=/";
+        document.cookie = name + "=" + value + expires + "; path=/";
 }
 
 function createCookie2(id, name, value, obj, doErase) {            
@@ -2340,18 +2340,18 @@ function readCookie(name) {
     for (var i = 0; i < ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length + 1, c.length - 1);
+        if (c.indexOf(nameEQ) == 0) 
+            return c.substring(nameEQ.length, c.length) == "NULL" ? null : c.substring(nameEQ.length, c.length);
     }
     return null;
 }
-
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
 
 function eraseCookie(name) {
-    document.cookie = name + '; path=/;';
+    document.cookie = name + '=NULL; path=/;';
 }  
     
 
