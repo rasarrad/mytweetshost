@@ -251,7 +251,7 @@ function countalltweets() {
         var processtmp = true;
 
         do {
-            alert(111);
+            eraseCookie(nextid + "templink")
             var linkcontent = readCookie(nextid + "templink");
 console.log(linkcontent);
             if (linkcontent) {
