@@ -2192,7 +2192,7 @@ function createCookie2(id, name, value, obj, doErase) {
         }
         else {
             console.log("------------no---------");
-            document.cookie = id + "haschanges=; path=/";
+            document.cookie = id + "haschanges=NULL; path=/";
         }
     }
 
