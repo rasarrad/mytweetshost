@@ -948,7 +948,7 @@ var getInformationbyid = function(id, flag) {
             notFound = false;
             renderLink(val, true);
             preCustomize(id);
-            $('#mask').fadeOut(300);
+            $('#mask').fadeOut(2000);
     
             if (flag)
                 showMessage("This Link is the same as the one you are trying to add", 6000); 
