@@ -63,7 +63,7 @@ if (currTheme && currTheme != 'default') {
 
 $( document ).ready(function() { 
 
-    //eraseAllTmpData();
+    eraseAllTmpData();
 
 /*     createCookie("zzzz", "12345");
 
