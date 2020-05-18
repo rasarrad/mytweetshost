@@ -831,7 +831,7 @@ function eraseAllTmpData(obj) {
 
         idF = idF - 1;
     }
-    while (idF >= 100000);        
+    while (idF >= 99999);        
 
     createCookie("haschanges", "", null, true);
 
