@@ -959,6 +959,10 @@ var getInformationbyid = function(id, flag) {
          
         i++;
     }
+
+    
+    $('#mask').fadeOut(300);
+    showMessage("Link Not Found"); 
 }
 
 function preCustomize(id) {
