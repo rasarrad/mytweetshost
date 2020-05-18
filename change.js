@@ -225,7 +225,6 @@ function changecat(obj, id) {
 function countalltweets() {
     var path = "./data.json";
     nextid = null;
-    alert(readCookie("maxid"))
     try {
         nextid = parseInt(readCookie("maxid"));
     }
@@ -252,8 +251,9 @@ function countalltweets() {
         var processtmp = true;
 
         do {
+            alert(111);
             var linkcontent = readCookie(nextid + "templink");
-
+console.log(linkcontent);
             if (linkcontent) {
                 
                 var linktmp = decodeURIComponent(linkcontent);
