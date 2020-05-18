@@ -33,7 +33,7 @@ function parseTweet(type) {
 
             $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-twitter').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
 
-            text = "\"" + text.replace(/"/g, '').replace('<\/script>', '<&#47;script>') + "\"";
+            text = text.replace(/"/g, '').replace('<\/script>', '<&#47;script>');
 
             var idExisting = existsLink(text, "T");
             if (idExisting) {
@@ -102,8 +102,8 @@ function parseTweet(type) {
             
             urldirect = "https://www.youtube.com/watch?v=" + youtubeId; 
 
-            text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://img.youtube.com/vi/" 
-                    + youtubeId  + "/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div>\""; 
+            text = "<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://img.youtube.com/vi/" 
+                    + youtubeId  + "/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div>"; 
 
             var idExisting = existsLink(url, "Y");
             if (idExisting) {
@@ -158,8 +158,8 @@ function parseTweet(type) {
             
             youtubeId = text.substring(text.indexOf('watch?v=') + 8, text.indexOf('watch?v=') + 19);
 
-            text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://img.youtube.com/vi/" 
-                    + youtubeId  + "/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div>\""; 
+            text = "<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://img.youtube.com/vi/" 
+                    + youtubeId  + "/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div>"; 
 
             var functorun = function() 
             { 
@@ -216,8 +216,8 @@ function parseTweet(type) {
 
             url = text; 
 
-            text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://s.wordpress.com/mshots/v1/" 
-                    + text + "); background-size: 100%;'><i class='logo fa fa-html5'></i></div>\""; 
+            text = "<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://s.wordpress.com/mshots/v1/" 
+                    + text + "); background-size: 100%;'><i class='logo fa fa-html5'></i></div>"; 
 
             var idExisting = existsLink(url, "Y");
             if (idExisting) {
