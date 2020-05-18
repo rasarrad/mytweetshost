@@ -294,7 +294,6 @@ var openSettingsPopup = function(jsonobj)
         else {
             $('.originalcats').html("--"); 
         }
-        alert("-" + jsonobj.categories + "-" + jsonobj.categoriesOri + "-")
         if (jsonobj.categoriesOri != jsonobj.categories) {
             currentcatdisplay.css('color','#00ff72');
             $('#originalcattd i').show();
@@ -1466,7 +1465,6 @@ function catsInputOnChange(obj) {
     var oldcats = $(obj).attr("ccats");
     var currentcatdisplay = $('.currentcats'); 
     currentcatdisplay.html(parseCats($(obj).val()));
-    alert("-" + oldcats + "-" + $(obj).val() + "-")
     if (oldcats == $(obj).val()) {
         currentcatdisplay.css('color', '');
         createCookie2($('#linkChange').attr("cid"), "catchanged", "", null, true);
