@@ -63,7 +63,7 @@ if (currTheme && currTheme != 'default') {
 
 $( document ).ready(function() { 
 
-
+    createCookie("14catchanged", "");
     var cat = readCookie("14catchanged");
     console.log(" ---" + cat + "--- ")
     if (cat) {
