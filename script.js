@@ -2177,12 +2177,12 @@ function insertInMainArray(val) {
     allLinks.unshift(val);
 }
 
-function updateMainArray(val) { 
+function updateMainArray(obj) { 
     for (var i = 0; i < allLinks.length; i++) {
         var val = allLinks[i];
 
-        if (val.id == id) {
-            allLinks[i] = val;
+        if (val.id == obj.id) {
+            allLinks[i] = obj;
         }
     }
 }
