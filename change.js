@@ -323,6 +323,7 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                                 console.log(" --- " + cat + " --- " + val.categoriesOri + " --- ")
 
                             if (cat) {
+                                console.log(" --- vvvvv --- ")
                                 val.categories = cat;
                             }
     
