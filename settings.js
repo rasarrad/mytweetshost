@@ -490,11 +490,12 @@ var openMainSettingsPopup = function(jsonobj)
 
     $('body, html').css('overflow-y', 'hidden');
 
-    if (!isMy) {
+    // xyzz
+    /* if (!isMy) {
         $("#mainsettings table.ismy").each( function( index, element ) {
             $(element).css('display', 'none');
         });
-    }
+    } */
 
     var setHeight = "26px";
 
