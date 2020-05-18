@@ -243,8 +243,9 @@ function countalltweets() {
     }
     $.getJSON(path, function(data) 
     {
-        
-        allLinks = data.Tweets;
+        if (showAll) {
+            allLinks = data.Tweets;
+        }
 
         var tempLinks = new Array();
         var tempCounter = 0;
@@ -252,9 +253,7 @@ function countalltweets() {
 
         do {
             var linkcontent = readCookie(nextid + "templink");
-console.log("-" + linkcontent + "-");
             if (linkcontent) {
-                
                 var linktmp = decodeURIComponent(linkcontent);
                 linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
 
@@ -274,7 +273,9 @@ console.log("-" + linkcontent + "-");
         while (processtmp);
 
         allLinks = tempLinks.concat(allLinks); 
-        allLinks.pop();
+        
+        if (allLinks.length > 0)
+            allLinks.pop();
 
         $( "#mask" ).fadeOut( 800, function() {
             var style = window.getComputedStyle(body, null);

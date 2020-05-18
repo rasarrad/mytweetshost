@@ -93,6 +93,15 @@ $( document ).ready(function() {
     });
 
 
+    // START victorywillcome tweets
+    var valueVWC = readCookie("vwc");
+    if (valueVWC) {
+        if (valueVWC == "Yes") {
+            showAll = true;
+        }
+    }
+
+
     // START da variavel setShowDeleted
     var showDeleted = getshowdeletedcookie();
     setShowDeleted(showDeleted); // faz o count all tweets
@@ -192,16 +201,6 @@ $( document ).ready(function() {
         $( ".fa-question-circle:not(.ashow)" ).each( function( index, element ){
             $(element).css("display", "none");
         });
-    }
-
-
-    // START victorywillcome tweets
-    var valueVWC = readCookie("vwc");
-    if (valueVWC) {
-        if (valueVWC == "Yes") {
-            alert(123)
-            showAll = true;
-        }
     }
 
 
