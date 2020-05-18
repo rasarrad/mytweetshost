@@ -274,8 +274,9 @@ function countalltweets() {
 
         allLinks = tempLinks.concat(allLinks); 
         
-        if (allLinks.length > 0)
+        if (showAll) {
             allLinks.pop();
+        }
 
         $( "#mask" ).fadeOut( 800, function() {
             var style = window.getComputedStyle(body, null);
@@ -286,6 +287,7 @@ function countalltweets() {
             $("#mask > .fa-circle-o-notch").show();
         });
 
+        alert(allLinks.length)
         processCountBlock(false, true);
     }); 
 } 
