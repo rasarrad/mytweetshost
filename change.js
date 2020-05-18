@@ -256,13 +256,18 @@ function countalltweets() {
         do {
             var linkcontent = readCookie(nextid + "templink");
             if (linkcontent) {
+                console.log("11111-" + linkcontent)
                 var linktmp = decodeURIComponent(linkcontent);
+                
+                console.log("222222-" + linktmp)
                 linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
-
+                console.log("333333-" + linktmp)
                 linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                console.log("4444444-" + linktmp)
                 linktmp = linktmp.replace(/(\\)/gm, ""); 
+                console.log("555555-" + linktmp)
                 linktmp = JSON.parse(linktmp);
-
+                console.log("666666-" + linktmp)
                 tempLinks[tempCounter] = linktmp;
                 tempCounter++;
 
@@ -318,12 +323,7 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                 
                             var cat = readCookie(val.id + "catchanged");
                             val.categoriesOri = val.categories;
-
-                            if (val.id =="14")
-                                console.log(" --- " + cat + " --- " + val.categoriesOri + " --- ")
-
                             if (cat) {
-                                console.log(" --- vvvvv --- ")
                                 val.categories = cat;
                             }
     
@@ -366,6 +366,11 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         val.classifOri = val.classif;
                         val.authorOri = val.author;
                         val.dateOri = val.date;
+
+                        var isnew = readCookie(val.id + "isnew");
+                        if (isnew) {
+                            hasAnyLinkChange = true;
+                        }
                     } 
                     allLinks[i] = val;  
                 }
@@ -419,6 +424,9 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                             }
                         } 
                     }
+                    else if (readCookie(val.id + "isnew")) {
+                        hasAnyLinkChange = true;
+                    } 
                     allLinks[i] = val;  
                 }
             }
