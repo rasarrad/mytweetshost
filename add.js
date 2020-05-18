@@ -457,7 +457,9 @@ function create() {
         $("#linkresult").blur();
 
         var mlink = encodeURIComponent(JSON.stringify(result));
-    
+        
+        createCookie("maxid", nextid + 1);
+
         createCookie2(nextid,"templink", mlink, jsonVal);
     
         if (showColorsAdv) {
@@ -468,7 +470,6 @@ function create() {
         }  
     
         //} 
-        createCookie("maxid", nextid + 1);
     
         resetFields(false);
     }
@@ -545,9 +546,9 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
 
     var mlink = encodeURIComponent(JSON.stringify(result));
     
-    createCookie2(nextid, "templink", mlink, jsonVal);
-
     createCookie("maxid", nextid + 1);
+
+    createCookie2(nextid, "templink", mlink, jsonVal);
 
     resetFields(false);
 }
