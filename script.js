@@ -75,7 +75,7 @@ $( document ).ready(function() {
     else {
         console.log("2-" + aasd + "-")
     }
-    createCookie("zzzz", null);
+    createCookie("zzzz", null, null, true);
 
     var aasd2 = readCookie("zzzz");
 
