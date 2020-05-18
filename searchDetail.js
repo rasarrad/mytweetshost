@@ -998,6 +998,8 @@ var getJsonbyid = function(id) {
         var val = allLinks[i];
 
         if (val.id == id) {
+            console.log("####################")
+            console.log(val)
             return val;
         }
     }
