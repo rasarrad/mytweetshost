@@ -62,8 +62,17 @@ if (currTheme && currTheme != 'default') {
 
 
 $( document ).ready(function() { 
-    eraseAllTmpData();
 
+
+    var cat = readCookie("14catchanged");
+    console.log(" ---" + cat + "--- ")
+    if (cat) {
+        console.log(" ---11111--- ")
+    }
+else {
+    
+    console.log(" ---22222--- ")
+}
     isMobile = window.mobileAndTabletCheck();
 
     // START do texto das categorias
