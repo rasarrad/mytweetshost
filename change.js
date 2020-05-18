@@ -287,7 +287,7 @@ function countalltweets() {
             $("#mask > .fa-circle-o-notch").show();
         });
 
-        alert(allLinks.length)
+        console.log(allLinks.length)
         processCountBlock(false, true);
     }); 
 } 
