@@ -846,12 +846,14 @@ function eraseAllTmpData(obj) {
     do {
         eraseLinkTmpData(idF);
 
-        idF = idF - 1;
+        idF = idF - 1; 
     }
     while (idF >= 99999);        
 
     createCookie("haschanges", "", null, true);
 
+    createCookie("maxid", 100000);
+    
     $("#settings").removeClass("haschanges");
     $("#generateicon").removeClass("haschanges");
 }
