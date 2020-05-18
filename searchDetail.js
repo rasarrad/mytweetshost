@@ -945,6 +945,10 @@ var getInformationbyid = function(id, flag) {
         var val = allLinks[i];
 
         if (id == val.id) {
+            
+            console.log("####################")
+            console.log(val)
+            
             notFound = false;
             renderLink(val, true);
             preCustomize(id);
@@ -998,8 +1002,6 @@ var getJsonbyid = function(id) {
         var val = allLinks[i];
 
         if (val.id == id) {
-            console.log("####################")
-            console.log(val)
             return val;
         }
     }
