@@ -755,6 +755,8 @@ console.log(allLinks.length)
             dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
             dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
         
+            if (val.deleted = "yes")
+                dofiltertextfinal = false;
 
             if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                 && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal
@@ -948,7 +950,7 @@ var getInformationbyid = function(id, flag) {
             
             console.log("####################")
             console.log(val)
-            
+
             notFound = false;
             renderLink(val, true);
             preCustomize(id);
