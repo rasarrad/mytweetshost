@@ -2136,7 +2136,7 @@ function createCookie2(id, name, value, obj, doErase) {
     console.log("---------------------");
     console.log(val.categoriesOri + "-" + val.categories);
     if (name != "templink") {
-        val = updateObject(val, name, value);
+        val = updateObject(val, name, value, doErase);
         console.log("------------3333---------");
         console.log(val.categoriesOri + "-" + val.categories);
 
@@ -2161,7 +2161,7 @@ function createCookie2(id, name, value, obj, doErase) {
         if (isTemp) {
             updateLinkCookie(val);
         }
-        
+        updateMainArray(val);
         updateLinkColor(val, id);
     }
     else {
@@ -2175,6 +2175,16 @@ function createCookie2(id, name, value, obj, doErase) {
 
 function insertInMainArray(val) { 
     allLinks.unshift(val);
+}
+
+function updateMainArray(val) { 
+    for (var i = 0; i < allLinks.length; i++) {
+        var val = allLinks[i];
+
+        if (val.id == id) {
+            allLinks[i] = val;
+        }
+    }
 }
 
 
@@ -2213,19 +2223,18 @@ function hasChanges(val) {
 }
 
 
-function updateObject(val, name, value) {            
+function updateObject(val, name, value, doErase) {            
     switch(name) {
         case "info":
-            if (value == "") {
+            if (doErase) {
                 val.info = val.infoOri;
             }
             else {
                 val.info = value;
             }
-            val.info = value;
             break;  
         case "classif":
-            if (value == "") {
+            if (doErase) {
                 val.classif = val.classifOri;
             }
             else {
@@ -2233,7 +2242,7 @@ function updateObject(val, name, value) {
             }
             break;  
         case "catchanged":
-            if (value == "") {
+            if (doErase) {
                 val.categories = val.categoriesOri;
             }
             else {
@@ -2241,7 +2250,7 @@ function updateObject(val, name, value) {
             }
             break;  
         case "tagchanged":
-            if (value == "") {
+            if (doErase) {
                 val.tags = val.tagsOri;
             }
             else {
@@ -2249,7 +2258,7 @@ function updateObject(val, name, value) {
             }
             break;  
         case "author":
-            if (value == "") {
+            if (doErase) {
                 val.author = val.authorOri;
             }
             else {
@@ -2257,7 +2266,7 @@ function updateObject(val, name, value) {
             }
             break;  
         case "datechanged":
-            if (value == "") {
+            if (doErase) {
                 val.date = val.dateOri;
             }
             else {
@@ -2265,7 +2274,7 @@ function updateObject(val, name, value) {
             }
             break;  
         case "isdeleted":
-            if (value == "") {
+            if (doErase) {
                 val.deleted = val.deletedOri;
             }
             else {
