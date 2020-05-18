@@ -63,55 +63,6 @@ if (currTheme && currTheme != 'default') {
 
 $( document ).ready(function() { 
 
-    //eraseAllTmpData();
-
-/*     createCookie("zzzz", "12345");
-
-    var aasd = readCookie("zzzz");
-
-    if (aasd) {
-        console.log("1-" + aasd + "-")
-    }
-    else {
-        console.log("2-" + aasd + "-")
-    }
-    createCookie("zzzz", null, null, true);
-
-    var aasd2 = readCookie("zzzz");
-
-    if (aasd2) {
-        console.log("11111111-" + aasd2 + "-")
-    }
-    else {
-        console.log("2222222-" + aasd2 + "-")
-    }
-
-    createCookie("zzzz", "");
-
-    var aasd3 = readCookie("zzzz");
-
-    if (aasd3) {
-        console.log("aaa11111111-" + aasd3 + "-")
-    }
-    else {
-        console.log("aaa2222222-" + aasd3 + "-")
-    }
-
-
-
-    createCookie("14catchanged", "");
-    var cat = readCookie("14catchanged");
-    console.log(" ---" + cat + "--- ")
-    if (cat) {
-        console.log(" ---11111--- ")
-    }
-else {
-    
-    console.log(" ---22222--- ")
-} */
-
-
-
     isMobile = window.mobileAndTabletCheck();
 
     // START do texto das categorias
@@ -2819,7 +2770,6 @@ function startWorker() {
             }
           }
           else {
-            console.log(searchtotal + "-" + currrenderedtweets)
             if (searchtotal > 0 && currrenderedtweets == searchtotal) {
                 stopWorker();
                 closeMenuPopup(null, "2.7");

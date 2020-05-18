@@ -1474,8 +1474,6 @@ function catsInputOnChange(obj) {
         $("#editCats .originaltr").hide();
     }
     else {
-        console.log("&&&&&&&&&&6")
-        
         currentcatdisplay.css('color','#00ff72');
         createCookie2($('#linkChange').attr("cid"), "catchanged", $(obj).val());
         $('#originalcattd i').show();

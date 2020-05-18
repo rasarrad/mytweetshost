@@ -732,7 +732,7 @@ var getInformation = function(wasfiltered, valid) {
         if (!$("#showdeleted2").is(":checked")) {
             doShowDeletedLink = false; 
         }
-console.log(allLinks.length)
+        
         while (allLinks[i]) {
             var val = allLinks[i];
         
@@ -947,9 +947,6 @@ var getInformationbyid = function(id, flag) {
         var val = allLinks[i];
 
         if (id == val.id) {
-            
-            console.log("####################")
-            console.log(val)
 
             notFound = false;
             renderLink(val, true);

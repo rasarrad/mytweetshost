@@ -256,18 +256,12 @@ function countalltweets() {
         do {
             var linkcontent = readCookie(nextid + "templink");
             if (linkcontent) {
-                console.log("11111-" + linkcontent)
                 var linktmp = decodeURIComponent(linkcontent);
                 
-                console.log("222222-" + linktmp)
                 linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
-                console.log("333333-" + linktmp)
                 linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
-                console.log("4444444-" + linktmp)
                 linktmp = linktmp.replace(/(\\)/gm, ""); 
-                console.log("555555-" + linktmp.substring(0, linktmp.length - 2))
                 linktmp = JSON.parse(linktmp);
-                console.log("666666-" + linktmp)
                 tempLinks[tempCounter] = linktmp;
                 tempCounter++;
 
@@ -294,7 +288,6 @@ function countalltweets() {
             $("#mask > .fa-circle-o-notch").show();
         });
 
-        console.log(allLinks.length)
         processCountBlock(false, true);
     }); 
 } 
