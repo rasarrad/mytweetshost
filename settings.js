@@ -294,7 +294,7 @@ var openSettingsPopup = function(jsonobj)
         else {
             $('.originalcats').html("--"); 
         }
-
+        alert("-" + jsonobj.categories + "-" + jsonobj.categoriesOri + "-")
         if (jsonobj.categoriesOri != jsonobj.categories) {
             currentcatdisplay.css('color','#00ff72');
             $('#originalcattd i').show();
