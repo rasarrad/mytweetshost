@@ -34,7 +34,7 @@ function removetweet(obj) {
                             });
                           },
                           "Restore": function() {
-                            createCookie2($('#linkChange').attr("cid"), "isdeleted", "");
+                            createCookie2($('#linkChange').attr("cid"), "isdeleted", "", null, true);
             
                             jsonvar.deleted = "";
                             updateLinkColor(jsonvar);
@@ -95,7 +95,7 @@ function changetag(obj, id) {
 
     $("#changetags").find('span.poptitle').text("Change tags")
 
-    if (text && text.length > 0)
+    if (text)
         $("#changetags").find('input').val(text);
     else
         $("#changetags").find('input').val($(obj).attr('tagactual'));
@@ -120,7 +120,7 @@ function acceptTag(obj) {
         createCookie2(id, "catchanged", $(obj).parent().find('input').val());
     
         var text = readCookie(id + "tagchanged");
-        if (text && text.length > 0) {
+        if (text) {
             $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, rgb(247, 205, 205), rgb(177, 0, 0), rgb(247, 205, 205))');
         }
         else {
@@ -135,7 +135,7 @@ function acceptTag(obj) {
         createCookie2(id, "tagchanged", $(obj).parent().find('input').val());
     
         var text = readCookie(id + "catchanged");
-        if (text && text.length > 0) {
+        if (text) {
             $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, rgb(247, 205, 205), rgb(177, 0, 0), rgb(247, 205, 205))');
         }
         else {
@@ -167,7 +167,7 @@ function undotag(obj) {
         $('#' + id).find('.newcat').html('');
 
         var text = readCookie(id + "tagchanged");
-        if (text && text.length > 0) {
+        if (text) {
             $('#' + id).find('.tags').css('background-image', 'linear-gradient(to right, rgb(177, 0, 0), rgb(247, 205, 205))');
         }
         else {
@@ -183,7 +183,7 @@ function undotag(obj) {
         $('#' + id).find('.newtag').html('');
 
         var text = readCookie(id + "catchanged");
-        if (text && text.length > 0) {
+        if (text) {
             $('#' + id).find('.tags').css('background-image', 'linear-gradient(to left, rgb(177, 0, 0), rgb(247, 205, 205))');
         }
         else {
@@ -206,7 +206,7 @@ function changecat(obj, id) {
 
     $("#changetags").find('span.poptitle').text("Change categories")
 
-    if (text && text.length > 0)
+    if (text)
         $("#changetags").find('input').val(text);
     else
         $("#changetags").find('input').val($(obj).attr('catactual'));
@@ -253,7 +253,7 @@ function countalltweets() {
         do {
             var linkcontent = readCookie(nextid + "templink");
 
-            if (linkcontent && linkcontent.length > 0) {
+            if (linkcontent) {
                 
                 var linktmp = decodeURIComponent(linkcontent);
                 linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
@@ -301,53 +301,50 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                 if (val.deleted != "yes") {
                     var haschanges = readCookie(val.id + "haschanges");
         
-                    if (val.id=="14")
-                        console.log("1111-" + haschanges + "-")
-                    if (haschanges && haschanges.length > 0) {
+                    if (haschanges) {
                         hasAnyLinkChange = true;
                         var isdeleted = readCookie(val.id + "isdeleted");
                         if (!(isdeleted && isdeleted == "yes")) {
                 
                             val.deletedOri = val.deleted;
-                            if (isdeleted && isdeleted.length > 0) {
+                            if (isdeleted) {
                                 val.deleted = isdeleted;
                             } 
                 
                             var cat = readCookie(val.id + "catchanged");
                             val.categoriesOri = val.categories;
-                            if (val.id=="14")
-                        console.log("cat-" + cat + "-" + val.categoriesOri)
-                            if (cat && cat.length > 0) {
+
+                            if (cat) {
                                 val.categories = cat;
                             }
     
                             var tag = readCookie(val.id + "tagchanged");
                             val.tagsOri = val.tags;
-                            if (tag && tag.length > 0) {
+                            if (tag) {
                                 val.tags = tag;
                             }
                 
                             var info = readCookie(val.id + "info");
                             val.infoOri = val.info;
-                            if (info && info.length > 0) {
+                            if (info) {
                                 val.info = info;
                             }
                 
                             var classif = readCookie(val.id + "classif");
                             val.classifOri = val.classif;
-                            if (classif && classif.length > 0) {
+                            if (classif) {
                                 val.classif = classif;
                             }
                             
                             var author = readCookie(val.id + "author");
                             val.authorOri = val.author;
-                            if (author && author.length > 0) {
+                            if (author) {
                                 val.author = author;
                             }
     
                             var datechanged = readCookie(val.id + "datechanged");
                             val.dateOri = val.date;
-                            if (datechanged && datechanged.length > 0) {
+                            if (datechanged) {
                                 val.date = datechanged;
                             }
                         } 
@@ -372,43 +369,43 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                 if (val.deleted != "yes") {
                     var haschanges = readCookie(val.id + "haschanges");
         
-                    if (haschanges && haschanges.length > 0) {
+                    if (haschanges) {
                         hasAnyLinkChange = true;
                         var isdeleted = readCookie(val.id + "isdeleted");
                         if (!(isdeleted && isdeleted == "yes")) {
                 
                             val.deletedOri = val.deleted;
-                            if (isdeleted && isdeleted.length > 0) {
+                            if (isdeleted) {
                                 val.deleted = isdeleted;
                             } 
                 
                             var cat = readCookie(val.id + "catchanged");
-                            if (cat && cat.length > 0) {
+                            if (cat) {
                                 val.categories = cat;
                             }
     
                             var tag = readCookie(val.id + "tagchanged");
-                            if (tag && tag.length > 0) {
+                            if (tag) {
                                 val.tags = tag;
                             }
                 
                             var info = readCookie(val.id + "info");
-                            if (info && info.length > 0) {
+                            if (info) {
                                 val.info = info;
                             }
                 
                             var classif = readCookie(val.id + "classif");
-                            if (classif && classif.length > 0) {
+                            if (classif) {
                                 val.classif = classif;
                             }
                             
                             var author = readCookie(val.id + "author");
-                            if (author && author.length > 0) {
+                            if (author) {
                                 val.author = author;
                             }
     
                             var datechanged = readCookie(val.id + "datechanged");
-                            if (datechanged && datechanged.length > 0) {
+                            if (datechanged) {
                                 val.date = datechanged;
                             }
                         } 
@@ -768,7 +765,7 @@ function undogenerate(obj) {
             }
             while (idF >= 0);        
         
-            createCookie("haschanges", "");
+            createCookie("haschanges", "", null, true);
             $("#settings").removeClass("haschanges");
             $("#generateicon").removeClass("haschanges");
         
@@ -799,7 +796,7 @@ function undogenerate(obj) {
             idF = idF - 1;
         }
         while (idF >= 100000);  // xyzz      
-        createCookie("haschanges", "");
+        createCookie("haschanges", "", null, true);
         $("#settings").removeClass("haschanges");
         $("#generateicon").removeClass("haschanges");
     } 
@@ -836,7 +833,7 @@ function eraseAllTmpData(obj) {
     }
     while (idF >= 100000);        
 
-    createCookie("haschanges", "");
+    createCookie("haschanges", "", null, true);
 
     $("#settings").removeClass("haschanges");
     $("#generateicon").removeClass("haschanges");
@@ -933,7 +930,7 @@ var eraseAllDeletedFunc = function(text, type, functorun) {
             do {
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
-                    if (linkcontent && linkcontent.length > 0) {
+                    if (linkcontent) {
                         var linktmp = decodeURIComponent(linkcontent);
                         linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
@@ -965,7 +962,7 @@ var eraseAllDeletedFunc = function(text, type, functorun) {
 
                 var isdeleted = readCookie(val.id + "isdeleted");
 
-                if (((val && val.deleted.length > 0) || (isdeleted && isdeleted.length > 0)) && val.id != "0") {
+                if (((val && val.deleted.length > 0) || (isdeleted)) && val.id != "0") {
                     /*val.deleted = "yes";
                     createCookie2(val.id, "isdeleted", "yes");
                     updateLinkCookie(val);
@@ -1148,7 +1145,7 @@ function generate(obj) {
 
                     linkcontent = readCookie(nextid + "templink");
 
-                    if (linkcontent && linkcontent.length > 0) {
+                    if (linkcontent) {
                         linktmp = decodeURIComponent(linkcontent);
                         linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
@@ -1174,37 +1171,37 @@ function generate(obj) {
                     var auxLink = {};
 
                     var cat = readCookie(val.id + "catchanged");
-                    if (cat && cat.length > 0) {
+                    if (cat) {
                         val.categories = cat;
                         auxLink.categories = cat;
                     }
         
                     var tag = readCookie(val.id + "tagchanged");
-                    if (tag && tag.length > 0) {
+                    if (tag) {
                         val.tags = tag;
                         auxLink.tags = tag;
                     }
         
                     var info = readCookie(val.id + "info");
-                    if (info && info.length > 0) {
+                    if (info) {
                         val.info = info;
                         auxLink.info = info;
                     }
         
                     var classif = readCookie(val.id + "classif");
-                    if (classif && classif.length > 0) {
+                    if (classif) {
                         val.classif = classif;
                         auxLink.classif = classif;
                     }
     
                     var datechanged = readCookie(val.id + "datechanged");
-                    if (datechanged && datechanged.length > 0) {
+                    if (datechanged) {
                         val.date = datechanged;
                         auxLink.date = datechanged;
                     }
     
                     var author = readCookie(val.id + "author");
-                    if (author && author.length > 0) {
+                    if (author) {
                         val.author = author;
                         auxLink.author = author;
                     }
@@ -1212,7 +1209,7 @@ function generate(obj) {
                     var isdeleted = readCookie(val.id + "isdeleted");
     
                     if (isMy) {
-                        if (isdeleted && isdeleted.length > 0) {
+                        if (isdeleted) {
                         } 
                         else {
                             if (ind) {

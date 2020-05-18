@@ -475,7 +475,7 @@ function calendarChanged(date) {
                         }
                     }
                     else {
-                        createCookie2($('#linkChange').attr("cid"), "datechanged", "");
+                        createCookie2($('#linkChange').attr("cid"), "datechanged", "", null, true);
                         otherObj.css('color','');
                     }
                 }
@@ -822,7 +822,7 @@ function renderLink(val, flag) {
     var expandclass = "";
     var color = "";
     var isdeleted = readCookie(val.id + "isdeleted");
-    if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { // ID DELETED
+    if (val.deleted != "" || isdeleted) { // ID DELETED
         expandclass = hideMode ? "" : "isdeleted";    
         if (showColors)
             color = "color: red;";
@@ -835,7 +835,7 @@ function renderLink(val, flag) {
 
             var tagchanged = readCookie(val.id + "tagchanged");
 
-            if (tagchanged && tagchanged.length > 0) {
+            if (tagchanged) {
                 tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
                 tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
             } 
@@ -847,7 +847,7 @@ function renderLink(val, flag) {
         }
         else {
             var hasChanges = readCookie(val.id + "haschanges");
-            if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
+            if (hasChanges) { // HAS CHAMGES
                 color = "color: #f18618;";
                 if (expandclass == "isnew")
                     expandclass = hideMode ? "" : "isnewmodified";  
@@ -856,7 +856,7 @@ function renderLink(val, flag) {
 
                 var tagchanged = readCookie(val.id + "tagchanged");
 
-                if (tagchanged && tagchanged.length > 0) {
+                if (tagchanged) {
                     tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
                     tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
                 } 

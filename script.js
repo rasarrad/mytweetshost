@@ -56,39 +56,18 @@ var clWorker;
 
 // START do tema
 var currTheme = readCookie("currTheme");
-if (currTheme && currTheme.length > 0 && currTheme != 'default') {
+if (currTheme && currTheme != 'default') {
      changetheme(currTheme, true);
 }  
 
 
 $( document ).ready(function() { 
     
-    createCookie("zzzz", "12345");
-
-    var aasd = readCookie("zzzz");
-
-    if (aasd) {
-        console.log("1-" + aasd + "-")
-    }
-    else {
-        console.log("2-" + aasd + "-")
-    }
-    createCookie("zzzz", null);
-
-    var aasd2 = readCookie("zzzz");
-
-    if (aasd2) {
-        console.log("11111111-" + aasd2 + "-")
-    }
-    else {
-        console.log("2222222-" + aasd2 + "-")
-    }
-
     isMobile = window.mobileAndTabletCheck();
 
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");
-    if (catschanged && catschanged.length > 0 ) {
+    if (catschanged) {
         catsmap.set("cli", "My Tweets");
         $(".cat-cli").text("My Tweets");
     }
@@ -137,7 +116,7 @@ $( document ).ready(function() {
 
     // START do zoom
     var hasZoom = readCookie("hasZoom");
-    if (hasZoom && hasZoom.length > 0)
+    if (hasZoom)
         zoom(null, true);
     setTimeout(function(){
         $('body').removeClass('notransit'); 
@@ -147,7 +126,7 @@ $( document ).ready(function() {
     // START do tweet counter
     var tweetCounter = readCookie("tweetCounter");
 
-    if (tweetCounter && tweetCounter.length > 0) {
+    if (tweetCounter) {
         $('#tweetcount').addClass(tweetCounter); 
     }
     
@@ -162,7 +141,7 @@ $( document ).ready(function() {
         
     // START das colors
     var valueColor = readCookie("colors");
-    if (valueColor && valueColor.length > 0) {
+    if (valueColor) {
         if (valueColor == "All") {
             showColors = true;
             showColorsAdv = true;
@@ -176,7 +155,7 @@ $( document ).ready(function() {
 
     // START do top menu
     var value = readCookie("topmenu");
-    if (value && value.length > 0) {
+    if (value) {
         if (value == "0") {
             topMenuMode = 0;
         }
@@ -192,7 +171,7 @@ $( document ).ready(function() {
 
     // START dos swipes
     var valueSwipe = readCookie("swipes");
-    if (valueSwipe && valueSwipe.length > 0) {
+    if (valueSwipe) {
         if (valueSwipe == "Yes") {
             useSwipes = true;
 
@@ -208,7 +187,7 @@ $( document ).ready(function() {
 
     // START da help
     value = readCookie("help");
-    if (value && value.length > 0) {
+    if (value) {
         $( ".fa-question-circle:not(.ashow)" ).each( function( index, element ){
             $(element).css("display", "none");
         });
@@ -217,7 +196,7 @@ $( document ).ready(function() {
 
     // START victorywillcome tweets
     var valueVWC = readCookie("vwc");
-    if (valueVWC && valueVWC.length > 0) {
+    if (valueVWC) {
         if (valueVWC == "Yes") {
             showAll = true;
         }
@@ -264,7 +243,7 @@ $( document ).ready(function() {
     nextid = parseInt(readCookie("maxid"));
 
     do {
-        createCookie2(nextid, "templink", "");
+        createCookie2(nextid, "templink", "", null, true);
         nextid = nextid - 1;
     }
     while (nextid > 0);
@@ -915,7 +894,7 @@ window.openLinkInside = function(id) {
 
         var value = readCookie("maximumfs");
 
-        if (value && value.length > 0) {
+        if (value) {
             $("#fsPopup").addClass("full");
         }
         else {
@@ -1378,7 +1357,7 @@ function executeSingleDoubleFunction(obj, type) {
 
         case "contentin":
             var value = readCookie("doublefs");
-            if (value && value.length > 0) {
+            if (value) {
                 if (type == "double")
                     type = "single";
                 else 
@@ -1387,7 +1366,7 @@ function executeSingleDoubleFunction(obj, type) {
             if (type == "double") { // Execute double/long touch
                 value = readCookie("linksinside");
 
-                if (value && value.length > 0) {
+                if (value) {
                     openLinkInside(obj.substring(9));
                 }
                 else {
@@ -1737,7 +1716,7 @@ $.fn.isChildOverflowing = function (child) {
 
     function setviewmode() {
         var hideModeVar = readCookie("hideMode");
-        if (hideModeVar && hideModeVar.length > 0) {
+        if (hideModeVar) {
             hideMode = true;
             //$("#generate").addClass("hidemode");
         }
@@ -1747,7 +1726,7 @@ $.fn.isChildOverflowing = function (child) {
         if (hideMode) {
             hideMode = false;
             //$("#generate").removeClass("hidemode");
-            createCookie("hideMode", "");
+            createCookie("hideMode", "", null, true);
             showMessage("Hide Mode Deactivated");
         }
         else {
@@ -2136,7 +2115,7 @@ function showMessage(text, speed, icon, iconstyle, undofunc, undotext, transpare
 /////////////////////////////////////////////////////////////////////////
 
 
-function createCookie(name, value, days) {
+function createCookie(name, value, days, doErase) {
     if (days) {
         var date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -2144,7 +2123,10 @@ function createCookie(name, value, days) {
     }
     else var expires = "";               
 
-    document.cookie = name + "=-" + value + "-" + expires + "; path=/";
+    if (doErase)
+        eraseCookie(id + name);
+    else 
+        document.cookie = name + "=-" + value + "-" + expires + "; path=/";
 }
 
 function createCookie2(id, name, value, obj, doErase) {            
@@ -2174,7 +2156,7 @@ function createCookie2(id, name, value, obj, doErase) {
     // quando não é criacao o val vem com o objecto json do link
     if (val) {
         var isTemp = readCookie(id + "templink");
-        if (isTemp && isTemp.length > 0) {
+        if (isTemp) {
             updateLinkCookie(val);
         }
         

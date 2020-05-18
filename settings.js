@@ -87,7 +87,7 @@ function zoom(obj, flag) {
         $('#zoomin').addClass('fa-search-plus');
         $('#zoomin').removeClass('fa-search-minus');
         $('body').removeClass('big');
-        createCookie("hasZoom", "");
+        createCookie("hasZoom", "", null, true);
     }
 
     // create
@@ -184,7 +184,7 @@ var openSettingsPopup = function(jsonobj)
 
         $('#postedby').attr("cauthor", jsonobj.author);
         var authorchanged = readCookie(jsonobj.id + "author");
-        if (authorchanged && authorchanged.length > 0) {
+        if (authorchanged) {
             $("#linkChange .buttonstable tr:first-child td .author").html(authorchanged);
             if (showColors && jsonobj.author != authorchanged) {
                 $("#linkChange .buttonstable tr:first-child td .author").css('color','#00ff72');
@@ -213,7 +213,7 @@ var openSettingsPopup = function(jsonobj)
         
         var datechanged = readCookie(jsonobj.id + "datechanged");
         $('#date').attr("cdate", jsonobj.date);
-        if (datechanged && datechanged.length > 0) {
+        if (datechanged) {
             $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(datechanged));
             
             if (showColors && jsonobj.date != datechanged) {
@@ -258,7 +258,7 @@ var openSettingsPopup = function(jsonobj)
             $('.originaltags').html("--");  
         }
 
-        if (tagchanged && tagchanged.length > 0) {
+        if (tagchanged) {
 
             if (showColors && jsonobj.tags != tagchanged) {
                 currenttagdisplay.css('color','#00ff72');
@@ -325,7 +325,7 @@ var openSettingsPopup = function(jsonobj)
             $('.originalclassif').html("--"); 
         }
 
-        if (classifchanged && classifchanged.length > 0) {
+        if (classifchanged) {
 
             if (showColors && jsonobj.classif != classifchanged) {            
                 currentclassifdisplay.css('color','#00ff72');
@@ -364,7 +364,7 @@ var openSettingsPopup = function(jsonobj)
             $('.originalinfo').html("--"); 
         }
 
-        if (infochanged && infochanged.length > 0) {
+        if (infochanged) {
             
             if (showColors && jsonobj.info != infochanged) {
                 currentinfodisplay.css('color','#00ff72');
@@ -576,7 +576,7 @@ var openMainSettingsPopup = function(jsonobj)
 
     value = readCookie("tweetCounter");
 
-    if (value && value.length > 0) {
+    if (value) {
 
         if (value == "hidall") {
             value = "No";
@@ -620,7 +620,7 @@ var openMainSettingsPopup = function(jsonobj)
 
     value = readCookie("linksinside");
 
-    if (value && value.length > 0) {
+    if (value) {
         value = "Yes";
 
         $('#maximumfstr').css("opacity", 1);
@@ -652,7 +652,7 @@ var openMainSettingsPopup = function(jsonobj)
 
     value = readCookie("doublefs");
 
-    if (value && value.length > 0) {
+    if (value) {
         value = "Yes";
     }
     else {
@@ -673,7 +673,7 @@ var openMainSettingsPopup = function(jsonobj)
 
     value = readCookie("maximumfs");
 
-    if (value && value.length > 0) {
+    if (value) {
         value = "Yes";
     }
     else {
@@ -760,7 +760,7 @@ var openMainSettingsPopup = function(jsonobj)
     // xyz fakepass
     $('#unlockinput').val("x20#002e");
     
-    if (ceec && ceec.length > 0 ) {
+    if (ceec) {
         $('#unlockdisplay').text("Unlocked");
     }
     else {
@@ -807,7 +807,7 @@ var getLinkColor = function(id)
             else {
                 var hasChanges = readCookie(id + "haschanges");
                 
-                if (hasChanges && hasChanges.length > 0) 
+                if (hasChanges) 
                     return "#f18618";
                 else 
                     return "";
@@ -871,7 +871,7 @@ function saveAuthor(obj) {
                 }
             }
             else {
-                createCookie2($('#linkChange').attr("cid"), "author", "");
+                createCookie2($('#linkChange').attr("cid"), "author", "", null, true);
             }
             otherObj.html($(obj).val());
         }
@@ -1205,7 +1205,7 @@ function tagsInputOnChange(obj) {
     
     if (oldtags == $(obj).val()) {
         currenttagdisplay.css('color', '');
-        createCookie2($('#linkChange').attr("cid"), "tagchanged", "");
+        createCookie2($('#linkChange').attr("cid"), "tagchanged", "", null, true);
         $('#originaltagtd i').hide();
     }
     else {
@@ -1247,7 +1247,7 @@ function updateLinkColor(val, id) {
         else {
             var hasChanges = readCookie(val.id + "haschanges");
             
-            if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
+            if (hasChanges) { // HAS CHAMGES
                 $(".tweet#" + val.id).find("i.linkbar").css("color", "#f18618"); 
                 $("#seticon").attr("style", "color: #f18618;");
             } 
@@ -1469,7 +1469,7 @@ function catsInputOnChange(obj) {
     
     if (oldcats == $(obj).val()) {
         currentcatdisplay.css('color', '');
-        createCookie2($('#linkChange').attr("cid"), "catchanged", "");
+        createCookie2($('#linkChange').attr("cid"), "catchanged", "", null, true);
         $('#originalcattd i').hide();
         
         $("#editCats .originaltr").hide();
@@ -1557,7 +1557,7 @@ function classifInputOnChange(obj) {
     
     if (oldclassif == $(obj).val().trim()) {
         currentclassifdisplay.css('color', '');
-        createCookie2($('#linkChange').attr("cid"), "classif", "");
+        createCookie2($('#linkChange').attr("cid"), "classif", "", null, true);
         $('#originalclassiftd i').hide();
     }
     else {
@@ -1624,7 +1624,7 @@ function infoInputOnKeyup(obj) {
             
             if (oldinfo == val) {
                 currentinfodisplay.css('color', '');
-                createCookie2($('#linkChange').attr("cid"), "info", "");
+                createCookie2($('#linkChange').attr("cid"), "info", "", null, true);
                 $('#originalinfotd i').hide();
             }
             else {
@@ -1714,7 +1714,7 @@ function clickLiDoublefs(e, obj) {
             }
             else {
                 showMessage("Change click/press and double click/long press functions off", null, null, null, null, null); 
-                createCookie("doublefs", "", 99999);
+                createCookie("doublefs", "", 99999, true);
             }
         }  
     }
@@ -1743,7 +1743,7 @@ function clickLiMaximumfs(e, obj) {
             }
             else {
                 showMessage("Use maximum available space in fullscreen off", null, null, null, null, null); 
-                createCookie("maximumfs", "", 99999);
+                createCookie("maximumfs", "", null, true);
             }
         }  
     }
@@ -1777,7 +1777,7 @@ function clickLiLinksinside(e, obj) {
         }
         else {
             showMessage("Double click/long press opens the link in fullscreen inside the app off", null, null, null, null, null); 
-            createCookie("linksinside", "", 99999);
+            createCookie("linksinside", "", null, true);
                     
             $('#maximumfstr').css("opacity", 0.5);
 
@@ -1807,7 +1807,7 @@ function clickLiLinkscounter(e, obj) {
             showMessage("Show links counter when displaying the links on", null, null, null, null, null);
             
             if (getGotopulValue() == "Yes") {
-                createCookie("tweetCounter", "", 99999);
+                createCookie("tweetCounter", "", null, true);
 
                 $('#tweetcount').attr("class", "pobj"); 
             }
@@ -1863,7 +1863,7 @@ function clickLiGotop(e, obj) {
             showMessage("Show GoTop button when displaying the links on", null, null, null, null, null);
             
             if (getLinksCounterValue() == "Yes") {
-                createCookie("tweetCounter", "", 99999);
+                createCookie("tweetCounter", "", null, true);
 
                 $('#tweetcount').attr("class", "pobj"); 
             }
@@ -1921,7 +1921,7 @@ function clickLiTopmenu(e, obj) {
         else {
             showMessage("Top menu visibility: " + value, null, null, null, null, null);
             
-            createCookie("topmenu", "", 99999);
+            createCookie("topmenu", "", null, true);
             topMenuMode = 2;
             $("#recoilback").css("position", "fixed"); 
         }
@@ -2002,7 +2002,7 @@ function clickLiHelp(e, obj) {
         $("#helpdisplay").text(value);
 
         if (value == "Yes")
-            createCookie("help", "", 99999);
+            createCookie("help", "", null, true);
         else
             createCookie("help", value, 99999);
     }  
@@ -2023,7 +2023,7 @@ function clickLiVWC(e, obj) {
         });
 
         if (value == "Yes") {
-            createCookie("cat-cli", "", 99999);
+            createCookie("cat-cli", "", null, true);
 
             showMessage("VictoryWillCome Tweets Shown", null, null, null, null, null);
             showAll = true;
@@ -2052,7 +2052,7 @@ function changeCatsText(changed) {
         catsmap.set("cli", "My Tweets");
     }
     else {
-        createCookie("cat-cli", "", 99999);
+        createCookie("cat-cli", "", null, true);
         $(".cat-cli").text("VictoryWillCome Tweets");
         catsmap.set("cli", "VictoryWillCome Tweets");
     }
@@ -2076,7 +2076,7 @@ function unl() {
     else {
         $('#unlockdisplay').text("Locked");
         
-        createCookie("eec", "");
+        createCookie("eec", "", null, true);
         showMessage("Invalid Code"); 
     }
 }
@@ -2084,7 +2084,7 @@ function unl() {
 function dunl() {
     var ceec = readCookie("eec");
 
-    if (ceec && ceec.length > 0 ) {
+    if (ceec) {
         var ded = CryptoJS.AES.decrypt("U2FsdGVkX18wrpX9qtgpVRefS/x73IjGWl7asgInrKw=", ceec);
 
         if (ded.toString(CryptoJS.enc.Utf8) == "x20#0000002e") {
