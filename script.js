@@ -2174,24 +2174,17 @@ function createCookie(name, value, days, doErase) {
 
 function createCookie2(id, name, value, obj, doErase) {            
     val = getJsonbyid(id);
-    console.log("---------------------");
-    console.log(val.categoriesOri + "-" + val.categories);
     if (name != "templink") {
         val = updateObject(val, name, value, doErase);
-        console.log("------------3333---------");
-        console.log(val.categoriesOri + "-" + val.categories);
-
         if (doErase)
             document.cookie = id + name + "=NULL" + "; path=/";
         else 
             document.cookie = id + name + "=" + value + "; path=/";
 
         if (hasChanges(val)) {
-            console.log("------------yes---------");
             document.cookie = id + "haschanges=yes; path=/";
         }
         else {
-            console.log("------------no---------");
             document.cookie = id + "haschanges=NULL; path=/";
         }
     }
@@ -2231,32 +2224,24 @@ function updateMainArray(obj) {
 
 function hasChanges(val) { 
     if (val.tags != val.tagsOri) {
-        console.log("tags:-" + val.tags + "-" + val.tagsOri + "-")
         return true;
     }  
     if (val.categories != val.categoriesOri) {
-        
-        console.log("ss3:-" + val.categories + "-" + val.categoriesOri + "-")
         return true;
     }         
     if (val.deleted != val.deletedOri) {
-        console.log("------------deleted---------");
         return true;
     }
     if (val.info != val.infoOri) {
-        console.log("------------info---------");
         return true;
     }
     if (val.classif != val.classifOri) {
-        console.log("------------classif---------");
         return true;
     }
     if (val.author != val.authorOri) {
-        console.log("------------author---------");
         return true;
     }
     if (val.date != val.dateOri) {
-        console.log("------------date---------");
         return true;
     }
     
