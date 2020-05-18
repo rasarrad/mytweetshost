@@ -300,7 +300,7 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
         if (execParamId) {
             for (i; i < counterAllLinks + 5; i++) {
                 var val = allLinks[i];
-        
+                console.log(val.id)
                 if (val.deleted != "yes") {
                     var haschanges = readCookie(val.id + "haschanges");
         
