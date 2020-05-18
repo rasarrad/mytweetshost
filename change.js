@@ -225,6 +225,7 @@ function changecat(obj, id) {
 function countalltweets() {
     var path = "./data.json";
     nextid = null;
+    alert(readCookie("maxid"))
     try {
         nextid = parseInt(readCookie("maxid"));
     }
