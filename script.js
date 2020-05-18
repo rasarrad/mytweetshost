@@ -2351,7 +2351,7 @@ function readCookie(name) {
 
 
 function eraseCookie(name) {
-    document.cookie = name + '=; path=/;';
+    document.cookie = name + '; path=/;';
 }  
     
 
