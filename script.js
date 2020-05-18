@@ -63,7 +63,7 @@ if (currTheme && currTheme != 'default') {
 
 $( document ).ready(function() { 
     eraseAllTmpData();
-    
+
     isMobile = window.mobileAndTabletCheck();
 
     // START do texto das categorias
@@ -2125,7 +2125,7 @@ function createCookie(name, value, days, doErase) {
     else var expires = "";               
 
     if (doErase)
-        eraseCookie(id + name);
+        eraseCookie(name);
     else 
         document.cookie = name + "=-" + value + "-" + expires + "; path=/";
 }
