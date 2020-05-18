@@ -732,7 +732,7 @@ var getInformation = function(wasfiltered, valid) {
         if (!$("#showdeleted2").is(":checked")) {
             doShowDeletedLink = false; 
         }
-
+console.log(allLinks.length)
         while (allLinks[i]) {
             var val = allLinks[i];
         
