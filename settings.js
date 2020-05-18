@@ -2041,7 +2041,7 @@ function clickLiVWC(e, obj) {
 
         $("#VWCdisplay").text(value);
         createCookie("vwc", value, 99999);
-        countAllLinks();
+        countalltweets();
     }  
 }
 
