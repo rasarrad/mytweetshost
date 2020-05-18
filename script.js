@@ -128,6 +128,7 @@ $( document ).ready(function() {
     var hasZoom = readCookie("hasZoom");
     if (hasZoom)
         zoom(null, true);
+    
     setTimeout(function(){
         $('body').removeClass('notransit'); 
     }, 1400);  
@@ -744,7 +745,7 @@ $( document ).ready(function() {
 
     //closeSplash(); 
 
-    togglecriterions();
+    //togglecriterions();
 
     
     /* CATEGORIES RENAMING
