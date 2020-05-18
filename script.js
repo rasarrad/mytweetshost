@@ -199,6 +199,7 @@ $( document ).ready(function() {
     var valueVWC = readCookie("vwc");
     if (valueVWC) {
         if (valueVWC == "Yes") {
+            alert(123)
             showAll = true;
         }
     }
