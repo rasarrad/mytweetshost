@@ -300,7 +300,7 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
         if (execParamId) {
             for (i; i < counterAllLinks + 5; i++) {
                 var val = allLinks[i];
-                console.log(val.id)
+        
                 if (val.deleted != "yes") {
                     var haschanges = readCookie(val.id + "haschanges");
         
@@ -493,7 +493,7 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
         var elem2 = $("<li  onclick='javascript: clickLiTag(event, this)' class='litags'>" + key + "</li>");
         $('#tagsearchul').append(elem2);
     }  
-alert(countersParam.total)
+
     // All Links
     $("#all").text(countersParam.total);
     $("#all2").text(countersParam.total);
