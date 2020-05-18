@@ -65,7 +65,7 @@ $( document ).ready(function() {
 
 
 
-    createCookie("zzzz", "12345");
+/*     createCookie("zzzz", "12345");
 
     var aasd = readCookie("zzzz");
 
@@ -108,7 +108,10 @@ $( document ).ready(function() {
 else {
     
     console.log(" ---22222--- ")
-}
+} */
+
+
+
     isMobile = window.mobileAndTabletCheck();
 
     // START do texto das categorias
