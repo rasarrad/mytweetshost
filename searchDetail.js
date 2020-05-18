@@ -940,10 +940,12 @@ var getInformationbyid = function(id, flag) {
 
     var i = 0;
 
+    var notFound = true;
     while (allLinks[i]) {
         var val = allLinks[i];
 
         if (id == val.id) {
+            notFound = false;
             renderLink(val, true);
             preCustomize(id);
             $('#mask').fadeOut(300);
@@ -960,9 +962,10 @@ var getInformationbyid = function(id, flag) {
         i++;
     }
 
-    
-    $('#mask').fadeOut(300);
-    showMessage("Link Not Found"); 
+    if (notFound) {
+        $('#mask').fadeOut(300);
+        showMessage("Link Not Found");
+    } 
 }
 
 function preCustomize(id) {
