@@ -263,7 +263,7 @@ function countalltweets() {
                 linktmp = linktmp.replace(/(\\)/gm, ""); 
                 linktmp = JSON.parse(linktmp);
                 if (linktmp.id == "100006")
-                    console.log(val.tweet)
+                    console.log(linktmp.tweet)
                 tempLinks[tempCounter] = linktmp;
                 tempCounter++;
 
