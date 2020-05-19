@@ -19,7 +19,7 @@ function parseTweet(type) {
             //cnonsole.log("parseTweet - nextid vem do hidden field: " + nextid);
         }
     }
-    
+    alert($(".addpopup").css('display') == 'none')
     setTimeout(function() {
         $('#tweetid').val(nextid);
         youtubeId = "";
@@ -270,7 +270,7 @@ function parseTweet(type) {
             }
             else {
                 $('#tweet').val("");
-                alert($(".addpopup").css('display') == 'none')
+                
                 if ($(".addpopup").css('display') == 'none') {
                     $('#tweet').focus();
                     $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
