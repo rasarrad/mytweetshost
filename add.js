@@ -533,6 +533,7 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
 
     $("#linkresult").blur();
 
+    console.log(result);
     var mlink = encodeURIComponent(JSON.stringify(result));
     
     createCookie("maxid", nextid + 1);
