@@ -263,7 +263,6 @@ function parseTweet(type) {
             return false;
         }
         $('#mask').fadeOut(600);  
-        alert(type)
         alert($(".addpopup").css('display') == 'none')
         if (type) {
             if (type == 2) {
@@ -683,7 +682,6 @@ var closePopup = function()
     $('#tagsinput').val('');
     $('#infoinput').val('');
     $('#result').val('');  
-    $('.addpopup').fadeOut();
     $('#typeTT').css('border-color', 'white'); 
     $('#typeHH').css('border-color', 'white'); 
     $('#typeYY').css('border-color', 'white');  
