@@ -40,7 +40,7 @@ function processCount(inputArray, includeDeleted) {
             var val = inputArray[j];
     
             if (val.deleted != "yes") {
-                
+                console.log(val)
                 var res = val.categories.split(" ");
                 for (var i = 0; i < res.length; i++) {
                     if (counters.has(val.type + res[i])) {
