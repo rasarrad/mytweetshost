@@ -63,7 +63,7 @@ if (currTheme && currTheme != 'default') {
 
 $( document ).ready(function() { 
 
-    eraseAllTmpData()
+    eraseAllTmpData();
 
     isMobile = window.mobileAndTabletCheck();
 
@@ -2704,7 +2704,7 @@ function startWorker() {
                         idCurr = linkArray[currrenderedtweets];
                         setTimeout(function(){
                             document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
-                        }, 0);
+                        }, 1000);
                     }
                     currrenderedtweets++;
                 }
@@ -2757,7 +2757,7 @@ function startWorker() {
                                 idCurr = linkArray[currrenderedtweets];
                                 setTimeout(function(){
                                     document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
-                                }, 0);
+                                }, 1000);
                             }
                             currrenderedtweets++;
                             countercontrol++;
