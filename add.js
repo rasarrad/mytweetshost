@@ -446,7 +446,7 @@ function create() {
         var mlink = encodeURIComponent(JSON.stringify(result));
         
         createCookie("maxid", nextid + 1);
-
+        console.log(3333);
         createCookie2(nextid,"templink", mlink, jsonVal);
     
         if (showColorsAdv) {
@@ -513,7 +513,7 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
 
     if (addType == "Y") {
         jsonVal.url = urldirect; 
-        alert(11111);
+        console.log(11111);
         text = text.substring(0, text.length -1) + "<div class='bottomstrip'><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line1'>" + resinfo + "</span><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line2'>" + urldirect + "</span></div>\""; 
         $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + urldirect  + "\",\r\n\"ishidden\": \"0\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
     }
