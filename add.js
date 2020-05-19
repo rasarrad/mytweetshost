@@ -19,7 +19,7 @@ function parseTweet(type) {
             //cnonsole.log("parseTweet - nextid vem do hidden field: " + nextid);
         }
     }
-    alert($(".addpopup").css('display') == 'none')
+    
     setTimeout(function() {
         $('#tweetid').val(nextid);
         youtubeId = "";
@@ -263,7 +263,8 @@ function parseTweet(type) {
             return false;
         }
         $('#mask').fadeOut(600);  
-
+        alert(type)
+        alert($(".addpopup").css('display') == 'none')
         if (type) {
             if (type == 2) {
                 showMessage("Link Parse Failed And Was Not Created"); 
