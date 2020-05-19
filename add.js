@@ -64,11 +64,8 @@ function parseTweet(type) {
                 }
                 else {
                     if (type && type == 1) {
-                        if ($(".addpopup").css('display') == 'none') {
-                            openCreatePopup(true);
-                            
-                            createPreview();
-                        }
+                        openCreatePopup(true);
+                        createPreview();
                     }
                     else {
                         createPreview();
@@ -119,13 +116,11 @@ function parseTweet(type) {
                 }
                 else {
                     if (type && type == 1) {
-                        if ($(".addpopup").css('display') == 'none') {
-                            openCreatePopup(true);
-                            hasProcessedDescription = true;
-                            getYoutubeData();
+                        openCreatePopup(true);
+                        hasProcessedDescription = true;
+                        getYoutubeData();
 
-                            createPreview();
-                        }
+                        createPreview();
                     }
                     else {
                         createPreview();
@@ -180,12 +175,10 @@ function parseTweet(type) {
                 }
                 else {
                     if (type && type == 1) {
-                        if ($(".addpopup").css('display') == 'none') {
-                            openCreatePopup(true);
-                            getYoutubeData();
-                            hasProcessedDescription = true;
-                            createPreview();
-                        }
+                        openCreatePopup(true);
+                        getYoutubeData();
+                        hasProcessedDescription = true;
+                        createPreview();
                     }
                     else {
                         createPreview();
@@ -233,16 +226,13 @@ function parseTweet(type) {
                 }
                 else {
                     if (type && type == 1) {
-                        if ($(".addpopup").css('display') == 'none') {
-                            openCreatePopup(true);
-                            
-                            createPreview();
-
-                            getWebsiteData();
-
-                            hasProcessedDescription = true;
+                        openCreatePopup(true);
                         
-                        }
+                        createPreview();
+
+                        getWebsiteData();
+
+                        hasProcessedDescription = true;
                     }
                     else {
                         createPreview();
@@ -263,24 +253,20 @@ function parseTweet(type) {
             return false;
         }
         $('#mask').fadeOut(600);  
-        alert($(".addpopup").css('display') == 'none')
         if (type) {
             if (type == 2) {
                 showMessage("Link Parse Failed And Was Not Created"); 
             }
             else {
                 $('#tweet').val("");
-                
-                if ($(".addpopup").css('display') == 'none') {
-                    $('#tweet').focus();
-                    $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
+            
+                $('#tweet').focus();
+                $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
 
-                    $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-question').attr('style','');
-                
-                    dblFlag = true;
-                    openCreatePopup(true);
-
-                }
+                $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-question').attr('style','');
+            
+                dblFlag = true;
+                openCreatePopup(true);
             }
         }
         else {
