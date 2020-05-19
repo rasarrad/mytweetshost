@@ -541,6 +541,19 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
 
     createCookie2(nextid, "templink", mlink, jsonVal);
 
+    var linkcontent = readCookie(nextid + "templink");
+    if (linkcontent) {
+        var linktmp = decodeURIComponent(linkcontent);
+        
+        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
+        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+        linktmp = linktmp.replace(/(\\)/gm, ""); 
+        linktmp = JSON.parse(linktmp);
+        
+    console.log(44444444);
+        console.log(linktmp.tweet)
+    }
+
     resetFields(false);
 }
 
