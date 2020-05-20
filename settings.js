@@ -308,12 +308,12 @@ var openDetailPopup = function(jsonobj)
         markCategoriesCheckBoxs();
 
         // CLASSIFICATION zz
-        $('#classifinput').attr("cclassif", jsonobj.classif);
+        $('#classifinput').attr("cclassif", jsonobj.classifOri);
 
         var currentclassifdisplay = $('.currentclassif');
 
-        if (jsonobj.classif != "0") {
-            $('.originalclassif').html(jsonobj.classif); 
+        if (jsonobj.classifOri != "0") {
+            $('.originalclassif').html(jsonobj.classifOri); 
         }
         else {
             $('.originalclassif').html("--"); 
