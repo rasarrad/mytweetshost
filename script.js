@@ -63,7 +63,7 @@ if (currTheme && currTheme != 'default') {
 
 $( document ).ready(function() { 
 
-    eraseAllTmpData();
+    //eraseAllTmpData();
 
     isMobile = window.mobileAndTabletCheck();
 
