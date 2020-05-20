@@ -864,12 +864,15 @@ function eraseAllTmpData(obj) {
     }
     while (idF >= 99999);    */     
 
+    console.log(111111111)
     var j = allLinks.length - 1;
     while (allLinks[j]) {
         eraseLinkTmpData(allLinks[j].id);
         j = j - 1; 
     }
       
+    console.log(2222222)
+
     createCookie("haschanges", "", null, true);
 
     createCookie("maxid", 100000);
