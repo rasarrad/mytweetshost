@@ -822,17 +822,8 @@ function renderLink(val, flag) {
     var tagdispalay = " --";
     var expandclass = "";
     var color = "";
-    var isdeleted = readCookie(val.id + "isdeleted");
-
                     
-    if (val.id == "31") {
-        console.log("-" + val + "-")
-        console.log("-" + isdeleted + "-")
-        console.log(val)
-    }
-    
-
-    if (val.deleted != "" || isdeleted) { // ID DELETED
+    if (val.deleted != "") { // ID DELETED
         expandclass = hideMode ? "" : "isdeleted";    
         if (showColors)
             color = "color: red;";
@@ -843,17 +834,7 @@ function renderLink(val, flag) {
             expandclass = hideMode ? "" : "isnew";  
             color = "color: #00dc00;";
 
-            var tagchanged = readCookie(val.id + "tagchanged");
-
-            if (tagchanged) {
-                tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
-                tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
-            } 
-            else {
-                if (val.tags.length > 0 && val.tags != 'undefined') {
-                    tagdispalay = parseTags(val.tags);
-                }
-            } 
+            tagdispalay = parseTags(val.tags);
         }
         else {
             var hasChanges = readCookie(val.id + "haschanges");
@@ -863,27 +844,11 @@ function renderLink(val, flag) {
                     expandclass = hideMode ? "" : "isnewmodified";  
                 else 
                     expandclass = hideMode ? "" : "ismodified";  
-
-                var tagchanged = readCookie(val.id + "tagchanged");
-
-                if (tagchanged) {
-                    tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
-                    tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
-                } 
-                else {
-                    if (val.tags.length > 0 && val.tags != 'undefined') {
-                        tagdispalay = parseTags(val.tags);
-                    }
-                }
             } 
-            else if (val.tags.length > 0 && val.tags != 'undefined') {
-                tagdispalay = parseTags(val.tags);
-            }
         }
     }
-    else {
-        tagdispalay = parseTags(val.tags);
-    }
+    
+    tagdispalay = parseTags(val.tags);
 
     var xclass = "";
     var typefa = "twitter"
