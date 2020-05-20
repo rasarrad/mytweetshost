@@ -246,37 +246,27 @@ var openDetailPopup = function(jsonobj)
     
         // TAGS
 
-        $('#tagsinput').attr("ctags", jsonobj.tags);
+        $('#tagsinput').attr("ctags", jsonobj.tagsOri);
 
-        var tagchanged = readCookie(jsonobj.id + "tagchanged");
         var currenttagdisplay = $('.currenttags');
         
-        if (jsonobj.tags.length > 0 && jsonobj.tags != "undefined") {
-            $('.originaltags').html(parseTags(jsonobj.tags));  
-        }
-        else {
-            $('.originaltags').html("--");  
-        }
+        $('.originaltags').html(parseTags(jsonobj.tags));
 
-        if (tagchanged) {
+        if (!compareStringArrays(jsonobj.tags, jsonobj.tagsOri)) {
 
-            if (showColors && jsonobj.tags != tagchanged) {
+            if (showColors) {
                 currenttagdisplay.css('color','#00ff72');
             }
 
-            if (tagchanged.length > 0)
-                currenttagdisplay.html(parseTags(tagchanged));
-            else
-                currenttagdisplay.html("--");
-
-            $('#tagsinput').val(tagchanged);
+            $('#tagsinput').val(jsonobj.tags);
             $('#originaltagtd i').show();
         } 
         else {
-            currenttagdisplay.css('color',"");
-            currenttagdisplay.html(parseTags(jsonobj.tags));
+            currenttagdisplay.css("color","");
             $('#tagsinput').val(jsonobj.tags);
+            $('#originaltagtd i').hide();
         }
+        currenttagdisplay.html(parseTags(jsonobj.tags));
 
         removeNonExistentLi();
 
@@ -291,13 +281,15 @@ var openDetailPopup = function(jsonobj)
         $('.originalcats').html(parseCats(jsonobj.categoriesOri)); 
 
         if (!compareStringArrays(jsonobj.categories, jsonobj.categoriesOri)) {
-            currentcatdisplay.css('color','#00ff72');
+            if (showColors) {
+                currentcatdisplay.css('color','#00ff72');
+            }
             $('#originalcattd i').show();
               
             $("#editCats .originaltr").show();
         } 
         else {
-            currentcatdisplay.css('color',"");
+            currentcatdisplay.css("color","");
             $('#originalcattd i').hide();
 
             $("#editCats .originaltr").hide();
@@ -332,7 +324,7 @@ var openDetailPopup = function(jsonobj)
         } 
         else {
             $('#originalclassiftd i').show();
-            currentclassifdisplay.css('color',"");
+            currentclassifdisplay.css("color","");
             if (jsonobj.classif != 0) {
                 currentclassifdisplay.html(jsonobj.classif);
                 $('#classifinput').val(jsonobj.classif);
@@ -1199,7 +1191,7 @@ function tagsInputOnChange(obj) {
     var currenttagdisplay = $('.currenttags'); 
     currenttagdisplay.html(parseTags($(obj).val()));
     
-    if (oldtags == $(obj).val()) {
+    if (compareStringArrays(oldtags, $(obj).val())) {
         currenttagdisplay.css('color', '');
         createCookie2($('#linkChange').attr("cid"), "tagchanged", "", null, true);
         $('#originaltagtd i').hide();
