@@ -2049,6 +2049,7 @@ body.big #filterdate2display {
     
     #tooltip {
       max-width: 387px;
+      width: 387px;
     }
 
     .tweet.html div.contentin {
@@ -3257,7 +3258,8 @@ body.big .newLayout#searchpopup .sectiontitletable .sectionicontd {
 }
 
     #tooltip {
-      max-width: 251px;
+      max-width: 309px;
+      width: 309px;
     }
 
      body.big .tweet.yt div.contentin {
