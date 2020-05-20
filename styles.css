@@ -1651,7 +1651,7 @@ body.big #editTags {
   top: 503px;
   font-weight: bold;
   text-transform: lowercase;
-  font-size: 14px;
+  font-size: 13px;
   filter: brightness(53%);
   border-bottom: 0px solid;
   height: 95px;
@@ -1666,7 +1666,7 @@ body.big .tweet.html .bottomstrip {
   top: 668px;
 }
 body.big .bottomstrip {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 
@@ -1674,6 +1674,7 @@ body.big .bottomstrip {
   /* width: calc(100% - 50px); */
   background-color: linear-gradient(to bottom, var(--dark-color) -84%, var(--dark-color) 60%, transparent 81%);
   to bottom, var(--dark-color) -84%, var(--dark-color) 60%, transparent 81%):;
+  /* text-transform: capitalize; */
 }
 .bottomstrip .bottomstripline {
   /* padding-top: 19px; */
@@ -1691,10 +1692,16 @@ body.big .bottomstrip {
   cursor: default;
 }
 
+
 .bottomstrip .bottomstripline.line1 {
   /* margin: 19px 20px 0px 20px; */
   padding-top: 10px;
   padding-bottom: 3px;
+  text-transform: uppercase;
+}
+
+.bottomstrip .bottomstripline.line2 {
+  text-transform: uppercase;
 }
 
 #splash.newLayout table:nth-of-type(2) {
