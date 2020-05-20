@@ -903,8 +903,6 @@ function renderLink(val, flag) {
             setTimeout(function(){
                 if (!isMobile) {
                     setTimeout(function(){
-                        console.log("contentin------------------" + val.id)
-                        console.log(document.getElementById("contentin" + val.id))
                         document.getElementById("contentin" + val.id).addEventListener("click", clickHandler);
                     }, 0);
                 } 

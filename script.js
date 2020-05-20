@@ -2702,7 +2702,12 @@ function startWorker() {
                     
                     if (!isMobile) {
                         idCurr = linkArray[currrenderedtweets];
+                        console.log("contentin----------111111111111--------" + idCurr)
                         setTimeout(function(){
+                            
+                        console.log("contentin---------222222222---------" + idCurr)
+                        console.log(document.getElementById("contentin" + idCurr))
+
                             document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
                         }, 1000);
                     }
