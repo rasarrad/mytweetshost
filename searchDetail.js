@@ -924,8 +924,9 @@ function renderLink(val, flag) {
         newtweetobj.attr('id', val.id);
     }
     else {
-        console.log(1111)
         console.log($(val.tweet))
+        console.log(112222211)
+
         newtweetobj.append($(val.tweet));
         console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
         newtweetobj.find(".bottomstripline.line1").html(val.info);
