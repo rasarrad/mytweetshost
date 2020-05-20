@@ -888,10 +888,7 @@ function renderLink(val, flag) {
         typefa = "youtube-play"
     }
     
-    var newtweet = null;
-    var newtweetobj = null; 
-
-    newtweetobj = $('<div style="display: none;" id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>');
+    var newtweetobj = $('<div style="display: none;" id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>');
 
     if (flag) {
         $('#main').append(newtweetobj);
