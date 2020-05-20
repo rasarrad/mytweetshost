@@ -357,9 +357,9 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                     else {
                         val.deletedOri = val.deleted;
                         val.tagsOri = val.tags;
-                        if (id="32")
-                                console.log("2-" + val.categoriesOri + "-")
                         val.categoriesOri = val.categories;
+                        if (id=="32")
+                                console.log("2-" + val.categoriesOri + "-")
                         val.infoOri = val.info;
                         val.classifOri = val.classif;
                         val.authorOri = val.author;
