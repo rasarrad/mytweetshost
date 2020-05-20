@@ -303,7 +303,9 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
         
                 if (val.deleted != "yes") {
                     var haschanges = readCookie(val.id + "haschanges");
-                    
+                    if (val.id=="32" || val.id== 32)
+                            console.log("4-" + haschanges + "-")
+
                     if (haschanges) {
                         hasAnyLinkChange = true;
                         var isdeleted = readCookie(val.id + "isdeleted");
@@ -317,7 +319,7 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                 
                             var cat = readCookie(val.id + "catchanged");
                             val.categoriesOri = val.categories;
-                            if (val.id=="32")
+                            if (val.id=="32" || val.id== 32)
                                 console.log("1-" + val.categoriesOri + "-")
                             if (cat) {
                                 val.categories = cat;
@@ -358,7 +360,7 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         val.deletedOri = val.deleted;
                         val.tagsOri = val.tags;
                         val.categoriesOri = val.categories;
-                        if (val.id=="32")
+                        if (val.id=="32" || val.id== 32)
                                 console.log("2-" + val.categoriesOri + "-")
                         val.infoOri = val.info;
                         val.classifOri = val.classif;
