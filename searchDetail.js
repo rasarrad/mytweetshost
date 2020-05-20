@@ -974,16 +974,19 @@ var getInformationbyid = function(id, flag) {
 function preCustomize(id) {
 
     setTimeout(function(){
+        console.log(totalrenderedtweets)
         if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
             customizeSingleTweet(id);
         }
         else {
             setTimeout(function(){
+                console.log(totalrenderedtweets)
                 if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
                     customizeSingleTweet(id);
                 }
                 else {
                     setTimeout(function(){
+                        console.log(totalrenderedtweets)
                         if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
                             customizeSingleTweet(id);
                         }
