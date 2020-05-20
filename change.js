@@ -871,7 +871,7 @@ function eraseLinkTmpData(idF, flag) {
     eraseCookie(idF + "author");
 
     eraseCookie(idF + "datechanged");
-
+    alert(111223)
     eraseCookie(idF + "isnew");
     
     eraseCookie(idF + "haschanges");
