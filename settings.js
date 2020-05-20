@@ -250,7 +250,7 @@ var openDetailPopup = function(jsonobj)
 
         var currenttagdisplay = $('.currenttags');
         
-        $('.originaltags').html(parseTags(jsonobj.tags));
+        $('.originaltags').html(parseTags(jsonobj.tagsOri));
 
         if (!compareStringArrays(jsonobj.tags, jsonobj.tagsOri)) {
 
