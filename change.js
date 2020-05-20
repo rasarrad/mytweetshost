@@ -380,6 +380,9 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                     } 
                     allLinks[i] = val;  
                 }
+                else {
+                    allLinks.splice(i, 1);
+                }
             }
         }
         else {
@@ -436,6 +439,9 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         hasAnyLinkChange = true;
                     } 
                     allLinks[i] = val;  
+                }
+                else {
+                    allLinks.splice(i, 1);
                 }
             }
         }
