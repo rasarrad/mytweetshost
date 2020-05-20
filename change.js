@@ -456,56 +456,59 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
         $("#generateicon").removeClass("haschanges");
         $("#settings").removeClass("haschanges");
     }
-
-    var tagsmap = new Map(JSON.parse(countersParam.tagsmap));
+    
     var counters = new Map(JSON.parse(countersParam.counters));
 
-    var o = new Option("notag", "notag");
-    $(o).html("All Tags");
-    $("#tagsselect").append(o);
-    $("#tagsearchselect").append(o);
-    var mapAsc = new Map([...tagsmap.entries()].sort());
+    if (execParamId) {
+        var tagsmap = new Map(JSON.parse(countersParam.tagsmap));
 
-    for (let [key, value] of mapAsc) {   
-        o = new Option(key, key);
-        $(o).html(key);
+        var o = new Option("notag", "notag");
+        $(o).html("All Tags");
         $("#tagsselect").append(o);
         $("#tagsearchselect").append(o);
-    }
-
-    tagsmap[Symbol.iterator] = function* () {
-
-        yield* [...this.entries()].sort((a, b) => b[1] - a[1]);
+        var mapAsc = new Map([...tagsmap.entries()].sort());
     
-    }
-    /*
-    for (let [key, value] of tagsmap) {     // get data sorted
-        o = new Option(key, key);
-        $(o).html(key);
-        $("#tagsselect").append(o);
-    }*/
-
-
-    $("#addpopup").css("top", "4000px");
-    $("#addpopup").show();
-    var hasOverflow = false;
-
-    for (let [key, value] of tagsmap) {     // get data sorted
+        for (let [key, value] of mapAsc) {   
+            o = new Option(key, key);
+            $(o).html(key);
+            $("#tagsselect").append(o);
+            $("#tagsearchselect").append(o);
+        }
+    
+        tagsmap[Symbol.iterator] = function* () {
+    
+            yield* [...this.entries()].sort((a, b) => b[1] - a[1]);
+        
+        }
         /*
-        if (!hasOverflow) {
+        for (let [key, value] of tagsmap) {     // get data sorted
+            o = new Option(key, key);
+            $(o).html(key);
+            $("#tagsselect").append(o);
+        }*/
+    
+    
+        $("#addpopup").css("top", "4000px");
+        $("#addpopup").show();
+        var hasOverflow = false;
+    
+        for (let [key, value] of tagsmap) {     // get data sorted
+            /*
+            if (!hasOverflow) {
+                var elem = $("<li  onclick='javascript: clickLiTag(event, this)' class='litags'>" + key + "</li>");
+                $("#tagsul").append(elem);
+                if ($('#tagsul').isChildOverflowing(elem)) {
+                    hasOverflow = true;
+                    elem.remove();
+                }
+            }
+                */
             var elem = $("<li  onclick='javascript: clickLiTag(event, this)' class='litags'>" + key + "</li>");
             $("#tagsul").append(elem);
-            if ($('#tagsul').isChildOverflowing(elem)) {
-                hasOverflow = true;
-                elem.remove();
-            }
-        }
-            */
-        var elem = $("<li  onclick='javascript: clickLiTag(event, this)' class='litags'>" + key + "</li>");
-        $("#tagsul").append(elem);
-        var elem2 = $("<li  onclick='javascript: clickLiTag(event, this)' class='litags'>" + key + "</li>");
-        $('#tagsearchul').append(elem2);
-    }  
+            var elem2 = $("<li  onclick='javascript: clickLiTag(event, this)' class='litags'>" + key + "</li>");
+            $('#tagsearchul').append(elem2);
+        }  
+    }
 
     // All Links
     $("#all").text(countersParam.total);
