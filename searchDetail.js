@@ -761,12 +761,6 @@ var getInformation = function(wasfiltered, valid) {
             if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                 && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal
                 && (doShowDeletedLink || val.deleted == "")) {
-                
-                    if (val.id == "31") {
-                        console.log("-" + val + "-")
-                        console.log(val)
-                    }
-                    
 
                 if (val.type == "T") {
                     total_tt = total_tt + 1;
@@ -829,6 +823,15 @@ function renderLink(val, flag) {
     var expandclass = "";
     var color = "";
     var isdeleted = readCookie(val.id + "isdeleted");
+
+                    
+    if (val.id == "31") {
+        console.log("-" + val + "-")
+        console.log("-" + isdeleted + "-")
+        console.log(val)
+    }
+    
+
     if (val.deleted != "" || isdeleted) { // ID DELETED
         expandclass = hideMode ? "" : "isdeleted";    
         if (showColors)
