@@ -362,7 +362,7 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         val.dateOri = val.date;
 
                         var isnew = readCookie(val.id + "isnew");
-                        if (isnew) {
+                        if (isnew || val.isnew) {
                             hasAnyLinkChange = true;
                         }
                     } 
@@ -418,7 +418,7 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                             }
                         } 
                     }
-                    else if (readCookie(val.id + "isnew")) {
+                    else if (readCookie(val.id + "isnew") || val.isnew) {
                         hasAnyLinkChange = true;
                     } 
                     allLinks[i] = val;  
