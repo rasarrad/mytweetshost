@@ -2704,9 +2704,6 @@ function startWorker() {
                     if (!isMobile) {
                         idCurr = linkArray[currrenderedtweets];
                         setTimeout(function(){
-                        console.log("contentin---------222222222---------" + idCurr)
-                        console.log(document.getElementById("contentin" + idCurr))
-
                             document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
                         }, 0);
                     }
@@ -2760,9 +2757,6 @@ function startWorker() {
                             if (!isMobile) {
                                 idCurr = linkArray[currrenderedtweets];
                                 setTimeout(function(){
-                                    
-                        console.log("contentin---------33333---------" + idCurr)
-                        console.log(document.getElementById("contentin" + idCurr))
                                     document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
                                 }, 0);
                             }

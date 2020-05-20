@@ -1564,7 +1564,7 @@ function classifInputOnChange(obj) {
     var oldclassif = $(obj).attr("cclassif");
     var currentclassifdisplay = $('.currentclassif'); 
     currentclassifdisplay.html($(obj).val().trim());
-    console.log(oldclassif + "-" + $(obj).val().trim())
+    
     if (oldclassif == $(obj).val().trim()) {
         currentclassifdisplay.css('color', '');
         createCookie2($('#linkChange').attr("cid"), "classif", "", null, true);

@@ -262,7 +262,6 @@ function countalltweets() {
                 linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                 linktmp = linktmp.replace(/(\\)/gm, ""); 
                 linktmp = JSON.parse(linktmp);
-                    console.log(linktmp)
                 tempLinks[tempCounter] = linktmp;
                 tempCounter++;
 
@@ -871,7 +870,7 @@ function eraseLinkTmpData(idF, flag) {
     eraseCookie(idF + "author");
 
     eraseCookie(idF + "datechanged");
-    alert(111223)
+    
     eraseCookie(idF + "isnew");
     
     eraseCookie(idF + "haschanges");

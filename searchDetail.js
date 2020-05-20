@@ -921,11 +921,7 @@ function renderLink(val, flag) {
         newtweetobj.attr('id', val.id);
     }
     else {
-        console.log(112222211)
-        console.log(val.tweet)
-        console.log(val.url)
         newtweetobj.append($(val.tweet));
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
         newtweetobj.find(".bottomstripline.line1").html(val.info);
         
         newtweetobj.attr('id', val.id);
@@ -974,19 +970,16 @@ var getInformationbyid = function(id, flag) {
 function preCustomize(id) {
 
     setTimeout(function(){
-        console.log(totalrenderedtweets)
         if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
             customizeSingleTweet(id);
         }
         else {
             setTimeout(function(){
-                console.log(totalrenderedtweets)
                 if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
                     customizeSingleTweet(id);
                 }
                 else {
                     setTimeout(function(){
-                        console.log(totalrenderedtweets)
                         if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
                             customizeSingleTweet(id);
                         }
