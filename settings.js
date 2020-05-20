@@ -288,6 +288,7 @@ var openSettingsPopup = function(jsonobj)
 
         var currentcatdisplay = $('.currentcats');
 
+        console.log("----" + jsonobj.categories + "-")
         $('.originalcats').html(parseCats(jsonobj.categoriesOri)); 
 
         if (!compareStringArrays(jsonobj.categories, jsonobj.categoriesOri)) {
