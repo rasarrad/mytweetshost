@@ -261,7 +261,6 @@ function countalltweets() {
                 linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                 linktmp = linktmp.replace(/(\\)/gm, ""); 
                 linktmp = JSON.parse(linktmp);
-                console.log(linktmp)
                 tempLinks[tempCounter] = linktmp;
                 tempCounter++;
 
@@ -303,19 +302,9 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
         
                 var isdeleted = readCookie(val.id + "isdeleted");
 
-                
-                if (val.id=="32" || val.id== 32)
-                    console.log("123-" + isdeleted + "-")
-
                 if (val.deleted != "yes" && !(isdeleted && isdeleted == "yes")) {
                     
-                    
-                if (val.id=="32" || val.id== 32)
-                console.log("123444-" + (isdeleted == "yes") + "-")
                     var haschanges = readCookie(val.id + "haschanges");
-                    if (val.id=="32" || val.id== 32)
-                            console.log("4-" + haschanges + "-")
-
                     if (haschanges) {
                         hasAnyLinkChange = true;
             
@@ -326,8 +315,6 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
             
                         var cat = readCookie(val.id + "catchanged");
                         val.categoriesOri = val.categories;
-                        if (val.id=="32" || val.id== 32)
-                            console.log("1-" + val.categoriesOri + "-")
                         if (cat) {
                             val.categories = cat;
                         }
@@ -366,8 +353,6 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         val.deletedOri = val.deleted;
                         val.tagsOri = val.tags;
                         val.categoriesOri = val.categories;
-                        if (val.id=="32" || val.id== 32)
-                                console.log("2-" + val.categoriesOri + "-")
                         val.infoOri = val.info;
                         val.classifOri = val.classif;
                         val.authorOri = val.author;

@@ -48,7 +48,7 @@ function expandCat(obj, idparam, valid) {
 
     var jsonvar = getJsonbyid(id);
     if (jsonvar != null) {
-        openSettingsPopup(jsonvar);
+        openDetailPopup(jsonvar);
     }
 }
 
@@ -135,7 +135,7 @@ function zoom(obj, flag) {
 
 
 
-var openSettingsPopup = function(jsonobj) 
+var openDetailPopup = function(jsonobj) 
 {
     // OTHER SETTINGS
     $('body, html').css('overflow-y', 'hidden');
@@ -288,7 +288,6 @@ var openSettingsPopup = function(jsonobj)
 
         var currentcatdisplay = $('.currentcats');
 
-        console.log("----" + jsonobj.categories + "-")
         $('.originalcats').html(parseCats(jsonobj.categoriesOri)); 
 
         if (!compareStringArrays(jsonobj.categories, jsonobj.categoriesOri)) {
@@ -311,30 +310,30 @@ var openSettingsPopup = function(jsonobj)
         // CLASSIFICATION zz
         $('#classifinput').attr("cclassif", jsonobj.classif);
 
-        var classifchanged = readCookie(jsonobj.id + "classif");
         var currentclassifdisplay = $('.currentclassif');
 
-        if (jsonobj.classif.length > 0 && jsonobj.classif != 0 && jsonobj.classif != "undefined") {
+        if (jsonobj.classif != "0") {
             $('.originalclassif').html(jsonobj.classif); 
         }
         else {
             $('.originalclassif').html("--"); 
         }
 
-        if (classifchanged) {
+        if (jsonobj.classif != jsonobj.classifOri) {
 
-            if (showColors && jsonobj.classif != classifchanged) {            
+            if (showColors) {            
                 currentclassifdisplay.css('color','#00ff72');
             }
 
-            currentclassifdisplay.html(classifchanged);
-            $('#classifinput').val(classifchanged);
+            currentclassifdisplay.html(jsonobj.classif);
+            $('#classifinput').val(jsonobj.classif);
             $('#originalclassiftd i').show();
-            markClassif(classifchanged);
+            markClassif(jsonobj.classif);
         } 
         else {
+            $('#originalclassiftd i').show();
             currentclassifdisplay.css('color',"");
-            if (jsonobj.classif.length > 0 && jsonobj.classif != 0 && jsonobj.classif != "undefined") {
+            if (jsonobj.classif != 0) {
                 currentclassifdisplay.html(jsonobj.classif);
                 $('#classifinput').val(jsonobj.classif);
                 markClassif(jsonobj.classif);
@@ -342,8 +341,8 @@ var openSettingsPopup = function(jsonobj)
             else {
                 currentclassifdisplay.html("--");
                 $('#classifinput').val(0);
+                markClassif(0);
             }
-
         }
 
         
@@ -1527,7 +1526,6 @@ function undoCats(e, obj) {
 
 function parseCats(cats) {
     var result = "";
-    console.log("-" + cats + "-")
     var res = cats.trim().split(" ");
 
     if (res.length == 1 && (res[0].trim() == 0 || res[0].trim() == "undefined")) {

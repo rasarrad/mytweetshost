@@ -614,7 +614,7 @@ var openCreatePopup = function(flag)
     } */
     $('#tweet').focus();
 
-    openSettingsPopup();
+    openDetailPopup();
 
 } 
 
