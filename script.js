@@ -63,7 +63,7 @@ if (currTheme && currTheme != 'default') {
 
 $( document ).ready(function() { 
 
-    //eraseAllTmpData();
+    eraseAllTmpData();
 
     isMobile = window.mobileAndTabletCheck();
 
@@ -1738,7 +1738,6 @@ $.fn.isChildOverflowing = function (child) {
             createCookie("hideMode", "yes");
             showMessage("Hide Mode Activated");
         }
-        resetFields(false);
     }
 
 /////////////////////////////////////////////////////////////////////////
@@ -1994,26 +1993,19 @@ function externallinkcopy(obj, link) {
 
 
 var clickmenu = function(val) {    
-    resetFields();
-
     $('#selectedcat').val(val);
     $('#selectedcattext').val(catsmap.get(val));
+    $('#titlesearch').html("(" + $('#selectedcattext').val() + ")");
 
     if ($('#mainmenu').attr("fromsearch") == "yes") {
         closeMenuPopup();
         var style = window.getComputedStyle(body, null);
         $('#searchpopup').css("background", style.getPropertyValue('--soft-transp-color'));
-        $('#titlesearch').html("(" + $('#selectedcattext').val() + ")");
         $('#mainmenu').attr("fromsearch", "");
     }
     else {
-        /*if ($(window).width() > 1200) {
-            openmenu();
-        }
-        else {*/
-            
-        //}
-        
+        resetFields();
+
         getInformation(2);
     }
 } 

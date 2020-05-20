@@ -23,8 +23,7 @@ function removetweet(obj) {
                             jsonvar.deleted = "yes";
                             createCookie2(jsonvar.id, "isdeleted", "yes");
     
-                            $("#main").empty();
-                            $('#tweetcount').hide(); 
+                            resetMainDiv();
     
                             showMessage("Link Deleted Forever");
                             closeSettingsPopup();
@@ -750,8 +749,6 @@ function undogenerate(obj) {
     if (isMy) {
         var r = confirm("Remove all Changes?");
         if (r == true) {
-            resetFields(false);
-    
             do {
     
                 eraseCookie(idF + "templink");
@@ -997,7 +994,6 @@ var eraseAllDeletedFunc = function(text, type, functorun) {
 
 /* function undogenerate() {
   var ind = false;
-  resetFields(false);
 
   $.getJSON(path, function(data) 
   {
@@ -1112,7 +1108,6 @@ function generate(obj) {
     if (obj)
         fixfocus(obj);
 
-    resetFields(false);
     var path = "./data.json";
     var text = '';
     if (isMy) text = '{"Tweets": [';

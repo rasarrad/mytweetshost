@@ -37,8 +37,7 @@ function parseTweet(type) {
 
             var idExisting = existsLink(text, "T");
             if (idExisting) {
-                $("#main").empty();
-                $('#tweetcount').hide(); 
+                resetMainDiv(); 
     
                 getInformationbyid(idExisting, true);
             }
@@ -104,8 +103,7 @@ function parseTweet(type) {
 
             var idExisting = existsLink(url, "Y");
             if (idExisting) {
-                $("#main").empty();
-                $('#tweetcount').hide(); 
+                resetMainDiv();
     
                 getInformationbyid(idExisting, true);
             }
@@ -163,8 +161,7 @@ function parseTweet(type) {
 
             var idExisting = existsLink(url, "Y");
             if (idExisting) {
-                $("#main").empty();
-                $('#tweetcount').hide(); 
+                resetMainDiv();
     
                 getInformationbyid(idExisting, true);
             }
@@ -214,8 +211,7 @@ function parseTweet(type) {
 
             var idExisting = existsLink(url, "Y");
             if (idExisting) {
-                $("#main").empty();
-                $('#tweetcount').hide(); 
+                resetMainDiv();
     
                 getInformationbyid(idExisting, true);
             }
@@ -458,8 +454,6 @@ function create() {
         }  
     
         //} 
-    
-        resetFields(false);
     }
     else {
         getLinkDescriptionAndCreate(creationdate, cats, tags, resinfo, classif);
@@ -532,17 +526,11 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
     document.execCommand('copy');
 
     $("#linkresult").blur();
-    console.log(1111111);
-    console.log(result);
-    console.log(222222222);
-    console.log(jsonVal);
     var mlink = encodeURIComponent(JSON.stringify(result));
     
     createCookie("maxid", nextid + 1);
 
     createCookie2(nextid, "templink", mlink, jsonVal);
-
-    resetFields(false);
 }
 
 function getYoutubeData(creationdate, cats, tags, resinfo, classif) {

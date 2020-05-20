@@ -1062,8 +1062,8 @@ var togglecriterions = function(obj) {
 
 
 function resetFields(flag) {
-    $("#main").empty();
-    $('#tweetcount').hide();  
+    resetMainDiv();
+    
     clearcriterion(null,null, "filterdate1", "searchdate", true);
     clearcriterion(null,null, "filterdate2", "searchdate", true);
     clearcriterion(null,null, "selectedtype", "searchtypes", true);
@@ -1082,6 +1082,10 @@ function resetFields(flag) {
         showMessage("Search Criterions Cleaned"); 
 } 
 
+function resetMainDiv() {
+    $("#main").empty();
+    $('#tweetcount').hide();  
+} 
 
 
 var existsLink = function(text, type) {
