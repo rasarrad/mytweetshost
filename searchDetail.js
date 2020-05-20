@@ -924,6 +924,8 @@ function renderLink(val, flag) {
         newtweetobj.attr('id', val.id);
     }
     else {
+        alert(1111)
+        console.log(val.tweet)
         newtweetobj.append($(val.tweet));
         
         newtweetobj.find(".bottomstripline.line1").html(val.info);
