@@ -737,6 +737,8 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
             getInformationbyid(paramid);   
         }
     }
+    
+    eraseAllTmpData();
 } 
 
 
@@ -835,7 +837,7 @@ function eraseAllTmpData(obj) {
 
     if (obj)
         fixfocus(obj);
-
+/* 
     var idF = null;
     
     try {
@@ -860,14 +862,22 @@ function eraseAllTmpData(obj) {
 
         idF = idF - 1; 
     }
-    while (idF >= 99999);        
+    while (idF >= 99999);    */     
 
+    var j = allLinks.length - 1;
+    while (allLinks[j]) {
+        eraseLinkTmpData(allLinks[j].id);
+        j = j - 1; 
+    }
+      
     createCookie("haschanges", "", null, true);
 
     createCookie("maxid", 100000);
     
     $("#settings").removeClass("haschanges");
     $("#generateicon").removeClass("haschanges");
+
+    showMessage("TEMP DATA REMOVED");
 }
 
 function eraseLinkTmpData(idF, flag) {
