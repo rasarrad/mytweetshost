@@ -762,8 +762,11 @@ var getInformation = function(wasfiltered, valid) {
                 && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal
                 && (doShowDeletedLink || val.deleted == "")) {
                 
-                    if (val.id == "31")
-                    console.log("-" + val + "-")
+                    if (val.id == "31") {
+                        console.log("-" + val + "-")
+                        console.log(val)
+                    }
+                    
 
                 if (val.type == "T") {
                     total_tt = total_tt + 1;
