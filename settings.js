@@ -1526,6 +1526,7 @@ function undoCats(e, obj) {
 
 function parseCats(cats) {
     var result = "";
+    console.log("-" + cats + "-")
     var res = cats.trim().split(" ");
 
     if (res.length == 1 && (res[0].trim() == 0 || res[0].trim() == "undefined")) {
