@@ -294,7 +294,7 @@ var openSettingsPopup = function(jsonobj)
         else {
             $('.originalcats').html("--"); 
         }
-        if (jsonobj.categoriesOri != jsonobj.categories) {
+        if (compareStringArrays(jsonobj.categories, jsonobj.categoriesOri)) {
             currentcatdisplay.css('color','#00ff72');
             $('#originalcattd i').show();
               
@@ -1466,7 +1466,7 @@ function catsInputOnChange(obj) {
     var oldcats = $(obj).attr("ccats");
     var currentcatdisplay = $('.currentcats'); 
     currentcatdisplay.html(parseCats($(obj).val()));
-    if (oldcats == $(obj).val()) {
+    if (compareStringArrays(oldcats, $(obj).val())) {
         currentcatdisplay.css('color', '');
         createCookie2($('#linkChange').attr("cid"), "catchanged", "", null, true);
         $('#originalcattd i').hide();
@@ -1542,6 +1542,23 @@ function parseCats(cats) {
 
     return result.substring(0, result.length - 3);
 }
+
+function compareStringArrays(array, arrayOri) {
+    var res = array.trim().split(" ");
+    var resOri = arrayOri.trim().split(" ");
+    var response = true;
+
+    for (var i = 0; i < res.length; i++) {
+        if (!arrayOri.includes(res[i])) 
+            response = false;
+    }
+
+    if (response && res.length != resOri.length)
+        response = false;
+
+    return response;
+}
+
 
 /////////////////////////////////////////////////////////////////////////
 //                     CLASSIFICATION SETTINGS                         //
