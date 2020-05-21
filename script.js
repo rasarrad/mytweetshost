@@ -2169,35 +2169,25 @@ function hasChanges(val) {
     if (val.tags != val.tagsOri) {
         return true;
     }  
-    console.log("-2-")
     if (val.categories != val.categoriesOri) {
         return true;
     }         
-    console.log("-3-")
     if (val.deleted != val.deletedOri) {
         return true;
     }
-    console.log("-4-")
     if (val.info != val.infoOri) {
         return true;
     }
-    console.log("-5-")
     if (val.classif != val.classifOri) {
         return true;
     }
-    console.log("-6-")
     if (val.author != val.authorOri) {
-        
-        console.log("-" + val.author + "-")
-        console.log("-" + val.authorOri + "-")
         return true;
     }
-    console.log("-" + val.date + "-")
-    console.log("-" + val.dateOri + "-")
     if (val.date != val.dateOri) {
         return true;
     }
-    console.log("-7-")
+    
     return false;
 }
 

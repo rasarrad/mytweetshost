@@ -357,11 +357,11 @@ function resetCalendar(e) {
         case "filterdate2":
             break; 
         case "linkdate":
-            var otherObj = $("#linkChange").find(".date");
-            otherObj.html("--"); 
+            //var otherObj = $("#linkChange").find(".date");
+            //otherObj.html("--"); 
             $("#linkChange").find(".dateinput").val("");
 
-            if ($('#date').attr("cdate") != "") {
+            /* if ($('#date').attr("cdate") != "") {
                 createCookie2($('#linkChange').attr("cid"), "datechanged", "");
                 if (showColors) {
                     otherObj.css('color','#00ff72');
@@ -373,7 +373,7 @@ function resetCalendar(e) {
             else {
                 createCookie2($('#linkChange').attr("cid"), "datechanged", "", null, true);
                 otherObj.css('color','');
-            }
+            } */
             break; 
         case "linkcreatedate":    
             break;     
@@ -382,6 +382,23 @@ function resetCalendar(e) {
     closeCalendarPopup();
 }
 
+function revertCalendar(e) {
+    if (e)
+        e.stopPropagation();
+    
+    switch($('#calendardiv').attr("targetObj")) {
+        case "filterdate1":
+        case "filterdate2":
+            break; 
+        case "linkdate":
+            $("#linkChange").find(".dateinput").val($('#date').attr("cdate"));
+            break; 
+        case "linkcreatedate":    
+            break;     
+    }
+
+    closeCalendarPopup();
+}
 
 function openCalendar(targetObj, date) {
     $('body, html').css('overflow-y', 'hidden');
