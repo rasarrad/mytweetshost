@@ -396,17 +396,31 @@ function undoCalendar(e) {
     closeCalendarPopup();
 }
 
-function openCalendar(targetObj, date) {
+function openCalendar(targetObj, date, doShowReset) {
     $('body, html').css('overflow-y', 'hidden');
 
     var currDate = null;
 
-    if (date) {
+    if (date && date.trim().length > 0) {
         currDate = date;
-        $("#calendardiv .currdate").html("Current value: " + formatDate(date)); 
+        if (targetObj == "linkdate") {
+            $("#calendardiv .fa-times-circle").show(); 
+            $("#calendardiv .currdate").html("Current value: " + formatDate(date)); 
+        }
+        else {
+            $("#calendardiv .fa-times-circle").hide(); 
+        }
+            
+        if (doShowReset)
+            $("#calendardiv .fa-undo").show();  
+        else
+            $("#calendardiv .fa-undo").hide(); 
     }
-    else
+    else {
+        $("#calendardiv .fa-undo").hide(); 
+        $("#calendardiv .fa-times-circle").hide();
         currDate = new Date();
+    }
 
     calendar = new VanillaCalendar({
         selector: "#myCalendar",
