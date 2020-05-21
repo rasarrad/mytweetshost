@@ -380,9 +380,9 @@ function undoCalendar(e) {
 
             if (date.length > 0) {
                 var dateFinal = new Date();
-                dateFinal.setDate(Number(date.val().substring(6, 8)));
-                dateFinal.setMonth(Number(date.val().substring(4, 6)) - 1);
-                dateFinal.setFullYear(Number(date.val().substring(0, 4)));
+                dateFinal.setDate(Number(date.substring(6, 8)));
+                dateFinal.setMonth(Number(date.substring(4, 6)) - 1);
+                dateFinal.setFullYear(Number(date.substring(0, 4)));
                 datepickerAuthorChange(dateFinal);
             }
             else {
