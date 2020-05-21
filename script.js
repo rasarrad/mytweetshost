@@ -2192,6 +2192,8 @@ function hasChanges(val) {
         console.log("-" + val.authorOri + "-")
         return true;
     }
+    console.log("-" + val.date + "-")
+    console.log("-" + val.dateOri + "-")
     if (val.date != val.dateOri) {
         return true;
     }
