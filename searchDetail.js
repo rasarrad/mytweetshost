@@ -375,7 +375,19 @@ function undoCalendar(e) {
         case "filterdate2":
             break; 
         case "linkdate":
-            datepickerAuthorChange($('#date').attr("cdate"));
+
+            var date = $('#date').attr("cdate");
+
+            if (date.length > 0) {
+                var dateFinal = new Date();
+                dateFinal.setDate(Number(date.val().substring(6, 8)));
+                dateFinal.setMonth(Number(date.val().substring(4, 6)) - 1);
+                dateFinal.setFullYear(Number(date.val().substring(0, 4)));
+                datepickerAuthorChange(dateFinal);
+            }
+            else {
+                datepickerAuthorChange(date);
+            }
             break; 
         case "linkcreatedate":    
             break;     
@@ -391,7 +403,7 @@ function openCalendar(targetObj, date) {
 
     if (date) {
         currDate = date;
-        $("#calendardiv .currdate").html("Current: " + formatDate(date)); 
+        $("#calendardiv .currdate").html("Current value: " + formatDate(date)); 
     }
     else
         currDate = new Date();
