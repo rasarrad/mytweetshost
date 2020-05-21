@@ -885,7 +885,7 @@ function showDate(obj) {
 function datepickerAuthorChange(date) {
     if ($('#linkChange').attr("cid") != "new") {
         var otherObj = $("#linkChange").find(".date");
-        
+        console.log("-" + date + "-");
         if (date) {
             otherObj.html(formatDate(date));
             $("#linkChange").find(".dateinput").val(formatNumDate(date));
