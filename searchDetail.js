@@ -326,6 +326,7 @@ function formatDateFromNum(date) {
 function formatNumDate(date) {
     return date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2);
 }
+
 function closeCalendarPopup(e) {
     if (e)
         e.stopPropagation();
@@ -347,13 +348,50 @@ function closeCalendarPopup(e) {
     $('#calendardiv').fadeOut(600);
 }
 
+function resetCalendar(e) {
+    if (e)
+        e.stopPropagation();
+    
+    switch($('#calendardiv').attr("targetObj")) {
+        case "filterdate1":
+        case "filterdate2":
+            break; 
+        case "linkdate":
+            var otherObj = $("#linkChange").find(".date");
+            otherObj.html("--"); 
+            $("#linkChange").find(".dateinput").val("");
+
+            if ($('#date').attr("cdate") != "") {
+                createCookie2($('#linkChange').attr("cid"), "datechanged", "");
+                if (showColors) {
+                    otherObj.css('color','#00ff72');
+                }
+                else {
+                    otherObj.css('color','');
+                }
+            }
+            else {
+                createCookie2($('#linkChange').attr("cid"), "datechanged", "", null, true);
+                otherObj.css('color','');
+            }
+            break; 
+        case "linkcreatedate":    
+            break;     
+    }
+
+    closeCalendarPopup();
+}
+
+
 function openCalendar(targetObj, date) {
     $('body, html').css('overflow-y', 'hidden');
 
     var currDate = null;
 
-    if (date)
+    if (date) {
         currDate = date;
+        $("#calendardiv .currdate").html("Current: " + formatDate(date)); 
+    }
     else
         currDate = new Date();
 

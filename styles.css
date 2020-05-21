@@ -2521,7 +2521,9 @@ body.big #calendardiv .fa-window-close {
 }
 
 #calendardiv .titletable.buttonstable {
-    max-height: 23px;
+    max-height: 71px;
+    height: 55px;
+    width: 359px !important;
 }
 
 body.big #calendardiv .titletable.buttonstable {
@@ -2529,7 +2531,7 @@ body.big #calendardiv .titletable.buttonstable {
 }
 
 #calendardiv .sectiontitletable.sectionexpandable {
-  margin-top: 30px;
+  margin-top: 51px;
 }
 
 body.big #calendardiv .sectiontitletable.sectionexpandable {
