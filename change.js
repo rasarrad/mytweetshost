@@ -306,6 +306,7 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                     
                     var haschanges = readCookie(val.id + "haschanges");
                     if (haschanges) {
+                        console.log(val.id)
                         hasAnyLinkChange = true;
             
                         val.deletedOri = val.deleted;
@@ -342,7 +343,8 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         if (author) {
                             val.author = author;
                         }
-
+                        console.log("-" + val.author + "-")
+                        console.log("-" + val.authorOri + "-")
                         var datechanged = readCookie(val.id + "datechanged");
                         val.dateOri = val.date;
                         if (datechanged) {
