@@ -215,6 +215,7 @@ var openDetailPopup = function(jsonobj)
         else {
             $("#linkChange .buttonstable tr:first-child td .date").css('color','');
         }  
+        console.log("-" + jsonobj.date.length + "-")
         if (jsonobj.date.length > 0) {
             $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(jsonobj.date));
             $("#linkChange .buttonstable tr:first-child td .dateinput").val(jsonobj.date);
