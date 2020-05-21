@@ -203,32 +203,28 @@ var openDetailPopup = function(jsonobj)
         $("#linkChange .buttonstable tr:first-child td .dateinput").hide(); 
         $("#linkChange .buttonstable tr:first-child td .datetoshow").hide(); 
         
-        var datechanged = readCookie(jsonobj.id + "datechanged");
-        $('#date').attr("cdate", jsonobj.date);
-        if (datechanged) {
-            $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(datechanged));
-            
-            if (showColors && jsonobj.date != datechanged) {
+        $('#date').attr("cdate", jsonobj.dateOri);
+        if (jsonobj.dateOri != jsonobj.date) {
+            if (showColors) {
                 $("#linkChange .buttonstable tr:first-child td .date").css('color','#00ff72');
             }
             else {
                 $("#linkChange .buttonstable tr:first-child td .date").css('color','');
             }
-            $("#linkChange .buttonstable tr:first-child td .dateinput").val(datechanged);
         } 
         else {
             $("#linkChange .buttonstable tr:first-child td .date").css('color','');
-            var date = jsonobj.date.toString();
-            if (date.length > 0) {
-                $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(date));
-            
-                $("#linkChange .buttonstable tr:first-child td .dateinput").val(date);
-            }
-            else {
-                $("#linkChange .buttonstable tr:first-child td .date").html("--");
-                $("#linkChange .buttonstable tr:first-child td .dateinput").val("");
-            }
         }  
+        if (jsonobj.date.length > 0) {
+            $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(jsonobj.date));
+            $("#linkChange .buttonstable tr:first-child td .dateinput").val(jsonobj.date);
+        }
+        else {
+            $("#linkChange .buttonstable tr:first-child td .date").html("--");
+            $("#linkChange .buttonstable tr:first-child td .dateinput").val("");
+        }
+
+
         $("#linkChange #editTags .fa-chevron-down").show();    
         
         $(".buttontdtohide").show();

@@ -473,6 +473,9 @@ function calendarChanged(date) {
                         if (showColors) {
                             otherObj.css('color','#00ff72');
                         }
+                        else {
+                            otherObj.css('color','');
+                        }
                     }
                     else {
                         createCookie2($('#linkChange').attr("cid"), "datechanged", "", null, true);
@@ -481,6 +484,21 @@ function calendarChanged(date) {
                 }
                 else {
                     otherObj.html("--"); 
+                    $("#linkChange").find(".dateinput").val("");
+
+                    if ($('#date').attr("cdate") != "") {
+                        createCookie2($('#linkChange').attr("cid"), "datechanged", "");
+                        if (showColors) {
+                            otherObj.css('color','#00ff72');
+                        }
+                        else {
+                            otherObj.css('color','');
+                        }
+                    }
+                    else {
+                        createCookie2($('#linkChange').attr("cid"), "datechanged", "", null, true);
+                        otherObj.css('color','');
+                    }
                 }
 
                 updateLinkColor(null, $('#linkChange').attr("cid"));
