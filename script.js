@@ -2124,6 +2124,7 @@ function createCookie2(id, name, value, obj, doErase) {
         else 
             document.cookie = id + name + "=" + value + "; path=/";
 
+        alert(hasChanges(val))    
         if (hasChanges(val)) {
             document.cookie = id + "haschanges=yes; path=/";
         }
