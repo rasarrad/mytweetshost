@@ -910,6 +910,7 @@ function datepickerAuthorChange(date) {
             $("#linkChange").find(".dateinput").val("");
 
             if ($('#date').attr("cdate") != "") {
+                console.log("-ssss-");
                 createCookie2($('#linkChange').attr("cid"), "datechanged", "");
                 if (showColors) {
                     otherObj.css('color','#00ff72');
