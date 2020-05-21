@@ -182,30 +182,22 @@ var openDetailPopup = function(jsonobj)
         $("#linkChange .buttonstable tr:first-child td .author").show();
         $("#linkChange .buttonstable tr:first-child td .authorinput").hide(); 
 
-        $('#postedby').attr("cauthor", jsonobj.author);
-        var authorchanged = readCookie(jsonobj.id + "author");
-        if (authorchanged) {
-            $("#linkChange .buttonstable tr:first-child td .author").html(authorchanged);
-            if (showColors && jsonobj.author != authorchanged) {
-                $("#linkChange .buttonstable tr:first-child td .author").css('color','#00ff72');
-            }
-            else {
-                $("#linkChange .buttonstable tr:first-child td .author").css('color','');
-            }
-            $("#linkChange .buttonstable tr:first-child td .authorinput").val(authorchanged);
+        $('#postedby').attr("cauthor", jsonobj.authorOri);
+        if (jsonobj.authorOri != jsonobj.author && showColors) {
+            $("#linkChange .buttonstable tr:first-child td .author").css('color','#00ff72');
         } 
         else {
             $("#linkChange .buttonstable tr:first-child td .author").css('color','');
-
-            if (jsonobj.author.length > 0) {
-                $("#linkChange .buttonstable tr:first-child td .author").html(jsonobj.author);
-                $("#linkChange .buttonstable tr:first-child td .authorinput").val(jsonobj.author);
-            }
-            else {
-                $("#linkChange .buttonstable tr:first-child td .author").html("--");
-                $("#linkChange .buttonstable tr:first-child td .authorinput").val("");
-            }
         }
+        if (jsonobj.author.length > 0) {
+            $("#linkChange .buttonstable tr:first-child td .author").html(jsonobj.author);
+            $("#linkChange .buttonstable tr:first-child td .authorinput").val(jsonobj.author);
+        }
+        else {
+            $("#linkChange .buttonstable tr:first-child td .author").html("--");
+            $("#linkChange .buttonstable tr:first-child td .authorinput").val("");
+        }
+
         $("#linkChange .buttonstable tr:first-child td .datetoshow").removeClass('extended');
         $("#linkChange .buttonstable tr:first-child td .date").show();
         $("#linkChange .buttonstable tr:first-child td .dateinput").hide(); 
@@ -851,16 +843,22 @@ function saveAuthor(obj) {
     if ($('#linkChange').attr("cid") != "new") {
         $(obj).hide();
         var otherObj = $(obj).parent().find(".author");
-        if ($(obj).val().length > 0) {
-            if ($(obj).val() != $('#postedby').attr("cauthor")) {
-                createCookie2($('#linkChange').attr("cid"), "author", $(obj).val());
-                if (showColors) {
-                    otherObj.css('color','#00ff72');
-                }
+        
+        if ($(obj).val() != $('#postedby').attr("cauthor")) {
+            createCookie2($('#linkChange').attr("cid"), "author", $(obj).val());
+            if (showColors) {
+                otherObj.css('color','#00ff72');
             }
             else {
-                createCookie2($('#linkChange').attr("cid"), "author", "", null, true);
+                otherObj.css('color','');
             }
+        }
+        else {
+            createCookie2($('#linkChange').attr("cid"), "author", "", null, true);
+            otherObj.css('color','');
+        }
+
+        if ($(obj).val().length > 0) {
             otherObj.html($(obj).val());
         }
         else
