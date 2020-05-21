@@ -881,6 +881,53 @@ function showDate(obj) {
     openCalendar("linkdate", date);
 }
 
+
+function datepickerAuthorChange(date) {
+    if ($('#linkChange').attr("cid") != "new") {
+        var otherObj = $("#linkChange").find(".date");
+        
+        if (date) {
+            otherObj.html(formatDate(date));
+            $("#linkChange").find(".dateinput").val(formatNumDate(date));
+            
+            if (formatNumDate(date) != $('#date').attr("cdate")) {
+                createCookie2($('#linkChange').attr("cid"), "datechanged", formatNumDate(date));
+                if (showColors) {
+                    otherObj.css('color','#00ff72');
+                }
+                else {
+                    otherObj.css('color','');
+                }
+            }
+            else {
+                createCookie2($('#linkChange').attr("cid"), "datechanged", "", null, true);
+                otherObj.css('color','');
+            }
+        }
+        else {
+            otherObj.html("--"); 
+            $("#linkChange").find(".dateinput").val("");
+
+            if ($('#date').attr("cdate") != "") {
+                createCookie2($('#linkChange').attr("cid"), "datechanged", "");
+                if (showColors) {
+                    otherObj.css('color','#00ff72');
+                }
+                else {
+                    otherObj.css('color','');
+                }
+            }
+            else {
+                createCookie2($('#linkChange').attr("cid"), "datechanged", "", null, true);
+                otherObj.css('color','');
+            }
+        }
+
+        updateLinkColor(null, $('#linkChange').attr("cid"));
+    }
+}
+
+
 function closeSettingsPopup(obj) {
     if (obj)
         fixfocus(obj);

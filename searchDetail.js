@@ -357,23 +357,7 @@ function resetCalendar(e) {
         case "filterdate2":
             break; 
         case "linkdate":
-            //var otherObj = $("#linkChange").find(".date");
-            //otherObj.html("--"); 
-            $("#linkChange").find(".dateinput").val("");
-
-            /* if ($('#date').attr("cdate") != "") {
-                createCookie2($('#linkChange').attr("cid"), "datechanged", "");
-                if (showColors) {
-                    otherObj.css('color','#00ff72');
-                }
-                else {
-                    otherObj.css('color','');
-                }
-            }
-            else {
-                createCookie2($('#linkChange').attr("cid"), "datechanged", "", null, true);
-                otherObj.css('color','');
-            } */
+            datepickerAuthorChange(null);
             break; 
         case "linkcreatedate":    
             break;     
@@ -391,7 +375,7 @@ function undoCalendar(e) {
         case "filterdate2":
             break; 
         case "linkdate":
-            $("#linkChange").find(".dateinput").val($('#date').attr("cdate"));
+            datepickerAuthorChange($('#date').attr("cdate"));
             break; 
         case "linkcreatedate":    
             break;     
@@ -516,48 +500,8 @@ function calendarChanged(date) {
             $('#searchpopup').css("background", style.getPropertyValue('--soft-transp-color'));
             break; 
         case "linkdate":
-            if ($('#linkChange').attr("cid") != "new") {
-                var otherObj = $("#linkChange").find(".date");
-                
-                if (date) {
-                    otherObj.html(formatDate(date));
-                    $("#linkChange").find(".dateinput").val(formatNumDate(date));
-                    
-                    if (formatNumDate(date) != $('#date').attr("cdate")) {
-                        createCookie2($('#linkChange').attr("cid"), "datechanged", formatNumDate(date));
-                        if (showColors) {
-                            otherObj.css('color','#00ff72');
-                        }
-                        else {
-                            otherObj.css('color','');
-                        }
-                    }
-                    else {
-                        createCookie2($('#linkChange').attr("cid"), "datechanged", "", null, true);
-                        otherObj.css('color','');
-                    }
-                }
-                else {
-                    otherObj.html("--"); 
-                    $("#linkChange").find(".dateinput").val("");
-
-                    if ($('#date').attr("cdate") != "") {
-                        createCookie2($('#linkChange').attr("cid"), "datechanged", "");
-                        if (showColors) {
-                            otherObj.css('color','#00ff72');
-                        }
-                        else {
-                            otherObj.css('color','');
-                        }
-                    }
-                    else {
-                        createCookie2($('#linkChange').attr("cid"), "datechanged", "", null, true);
-                        otherObj.css('color','');
-                    }
-                }
-
-                updateLinkColor(null, $('#linkChange').attr("cid"));
-            }
+            datepickerAuthorChange(date);
+            
             closeCalendarPopup();
             break;    
 
