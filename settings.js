@@ -833,12 +833,26 @@ function searchClassif(val, selectedclassif, selectedclassiftype) {
 function showAuthor(obj) {
     $(obj).hide();
     var otherObj = $(obj).parent().find(".authorinput");
+
+    if ($('#postedby').attr("cauthor") != otherObj.val())
+        $(obj).parent().find(".fa-undo").show();
+    else
+        $(obj).parent().find(".fa-undo").hide();
+    
     otherObj.show();
     otherObj.focus();
 }
+
+function undoAuthor(obj) {
+    $(obj).parent().find(".authorinput").val($('#postedby').attr("cauthor"));
+    saveAuthor($(obj).parent().find(".authorinput"));
+}
+
 function saveAuthor(obj) {
     if ($('#linkChange').attr("cid") != "new") {
         $(obj).hide();
+        $(obj).parent().find(".fa-undo").hide();
+
         var otherObj = $(obj).parent().find(".author");
         
         if ($(obj).val() != $('#postedby').attr("cauthor")) {
@@ -882,7 +896,7 @@ function showDate(obj) {
         var doShowReset = true;
         if ($('#date').attr("cdate").trim() == otherObj.val()) 
             doShowReset = false;
-            
+
         openCalendar("linkdate", date, doShowReset);
     }
     else {
