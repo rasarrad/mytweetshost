@@ -167,8 +167,6 @@ var openDetailPopup = function(jsonobj)
         
         $('#editTags').css('margin-top', '75px');  
         
-        $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
-
         $("#linkChange #seticon").addClass('fa').addClass('fa-twitter').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
     
         if (jsonobj.type == "H") {
