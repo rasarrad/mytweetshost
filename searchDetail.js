@@ -382,7 +382,7 @@ function resetCalendar(e) {
     closeCalendarPopup();
 }
 
-function revertCalendar(e) {
+function undoCalendar(e) {
     if (e)
         e.stopPropagation();
     
