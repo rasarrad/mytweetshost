@@ -878,8 +878,21 @@ function showDate(obj) {
         date.setDate(Number(otherObj.val().substring(6, 8)));
         date.setMonth(Number(otherObj.val().substring(4, 6)) - 1);
         date.setFullYear(Number(otherObj.val().substring(0, 4)));
+
+        var doShowReset = true;
+        if ($('#date').attr("cdate").trim() == otherObj.val()) 
+            doShowReset = false;
+            
+        openCalendar("linkdate", date, doShowReset);
     }
-    openCalendar("linkdate", date);
+    else {
+        var doShowReset = true;
+        if ($('#date').attr("cdate").trim() == otherObj.val()) 
+            doShowReset = false;
+
+        openCalendar("linkdate", null, doShowReset);
+    }
+    
 }
 
 

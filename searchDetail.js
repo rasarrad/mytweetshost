@@ -378,7 +378,7 @@ function undoCalendar(e) {
 
             var date = $('#date').attr("cdate");
 
-            if (date.length > 0) {
+            if (date && date.trim().length > 0) {
                 var dateFinal = new Date();
                 dateFinal.setDate(Number(date.substring(6, 8)));
                 dateFinal.setMonth(Number(date.substring(4, 6)) - 1);
@@ -386,7 +386,7 @@ function undoCalendar(e) {
                 datepickerAuthorChange(dateFinal);
             }
             else {
-                datepickerAuthorChange(date);
+                datepickerAuthorChange(null);
             }
             break; 
         case "linkcreatedate":    
@@ -401,7 +401,7 @@ function openCalendar(targetObj, date, doShowReset) {
 
     var currDate = null;
 
-    if (date && date.trim().length > 0) {
+    if (date) {
         currDate = date;
         if (targetObj == "linkdate") {
             $("#calendardiv .fa-times-circle").show(); 
@@ -417,8 +417,19 @@ function openCalendar(targetObj, date, doShowReset) {
             $("#calendardiv .fa-undo").hide(); 
     }
     else {
-        $("#calendardiv .fa-undo").hide(); 
-        $("#calendardiv .fa-times-circle").hide();
+        if (targetObj == "linkdate") {
+            $("#calendardiv .fa-times-circle").show(); 
+            $("#calendardiv .currdate").html("Current value: --"); 
+        }
+        else {
+            $("#calendardiv .fa-times-circle").hide(); 
+        }
+            
+        if (doShowReset)
+            $("#calendardiv .fa-undo").show();  
+        else
+            $("#calendardiv .fa-undo").hide();
+                    
         currDate = new Date();
     }
 
