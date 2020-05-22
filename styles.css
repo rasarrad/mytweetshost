@@ -6081,3 +6081,64 @@ body.big .otherOptText {
 body.big .iconul {
   margin-bottom: 16px !important;
 }
+
+.authorbuttons {
+  position: absolute;
+  width: 80px;
+  font-size: 15px;
+  top: 28px;
+  background: var(--dark-color);
+  left: 153px;
+  z-index: 1;
+  border: 1px solid var(--high-color);
+  border-radius: 3px;
+  text-align: left;
+  padding-bottom: 1px;
+}
+
+.authorbuttons.noundo {
+  width: 56px;
+  left: 177px;
+}
+
+.authorbuttons i {
+  margin-left: 8px;
+  font-size: 15px;
+  color: var(--high-color);
+}
+
+.authorbuttons .fa-times {
+  font-size: 17px;
+}
+
+.authorbuttons.noundo .fa-undo {
+  display: none;
+}
+
+.authorbuttons .fa-check {
+  font-size: 17px;
+}
+
+body.big .authorbuttons {
+
+}
+
+body.big .authorbuttons.noundo {
+
+}
+
+body.big .authorbuttons i {
+
+}
+
+body.big .authorbuttons .fa-times {
+
+}
+
+body.big .authorbuttons .fa-undo {
+
+}
+
+body.big .authorbuttons .fa-check {
+
+}

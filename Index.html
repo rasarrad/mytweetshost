@@ -206,10 +206,10 @@
                     <b style="margin-left: -1px;">author </b>
                     <span class="author" onclick="showAuthor(this)" style="overflow: hidden;text-overflow: ellipsis;max-width: 124px;display: inline-block;white-space: nowrap;position: relative;top: 4px;text-transform: lowercase;"></span>
                     <input type="text" additionalAttributes="{autocomplete: 'none'}" autocomplete=none id="postedby" class="authorinput" style="white-space: nowrap;position: relative;top: 0px;display:none;" value="">
-                    <div class="authorbuttons" style="position: absolute;width: 0px;font-size: 15px;top: 13px;color: var(--dark-color);left: 220px !important;display: none;">
-                      <i class="fa fa-undo clicable" onclick="undoAuthor(event, this)" style="font-size: 15px;color: var(--high-color);"></i>
-                      <i class="fa fa-times clicable" onclick="closeAuthor(event, this)" style="font-size: 15px;color: var(--high-color);"></i>
-                      <i class="fa fa-check clicable" onclick="saveAuthor(this)" style="font-size: 15px;color: var(--high-color);"></i>
+                    <div class="authorbuttons" style="display: none;">
+                      <i class="fa fa-undo clicable" onclick="undoAuthor(this)"></i>
+                      <i class="fa fa-times clicable" onclick="closeAuthor(this)"></i>
+                      <i class="fa fa-check clicable" onclick="saveAuthor(this)"></i>
                     </div>
                     <br class="brsep">
                     <b class="datespan" style="margin-left: 5px;">date </b>

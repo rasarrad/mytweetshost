@@ -827,24 +827,30 @@ function searchClassif(val, selectedclassif, selectedclassiftype) {
 }
 
 
+function closeAuthor(obj) {
+    $(obj).parent().find(".authorinput").hide();
+
+    $(obj).parent().find(".authorbuttons").fadeOut(700);
+}
+
 
 function showAuthor(obj) {
     $(obj).hide();
     var otherObj = $(obj).parent().find(".authorinput");
+    var spanObj = $(obj).parent().find(".author");
+
+    otherObj.val(spanObj.text());
 
     if ($('#postedby').attr("cauthor") != otherObj.val())
-        $(obj).parent().find(".authorbuttons").show();
+        $(obj).parent().find(".authorbuttons").fadeIn(700).removeClass("noundo");
     else
-        $(obj).parent().find(".authorbuttons").hide();
+        $(obj).parent().find(".authorbuttons").fadeIn(700).addClass("noundo");
     
     otherObj.show();
     otherObj.focus();
 }
 
-function undoAuthor(e, obj) {
-    e.stopPropagation();
-    console.log("11-333333-")
-    console.log($(obj).parent().find(".authorinput"))
+function undoAuthor(obj) {
     $(obj).parent().find(".authorinput").val($('#postedby').attr("cauthor"));
     saveAuthor($(obj).parent().find(".authorinput"));
 }
@@ -852,7 +858,7 @@ function undoAuthor(e, obj) {
 function saveAuthor(obj) {
     if ($('#linkChange').attr("cid") != "new") {
         $(obj).hide();
-        $(obj).parent().find(".authorbuttons").hide();
+        $(obj).parent().find(".authorbuttons").fadeOut(700);
 
         var otherObj = $(obj).parent().find(".author");
         console.log("11-" + $(obj).val() + "-" + $('#postedby').attr("cauthor") + "-")
