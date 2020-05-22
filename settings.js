@@ -1615,8 +1615,14 @@ function parseCats(cats) {
 }
 
 function compareStringArrays(array, arrayOri) {
-    var res = array.trim().split(" ");
-    var resOri = arrayOri.trim().split(" ");
+    var res = new Array();
+    if (array)
+        res = array.trim().split(" ");
+    
+    var resOri = new Array();
+    if (array)
+        resOri = arrayOri.trim().split(" ");
+
     var response = true;
 
     for (var i = 0; i < res.length; i++) {
@@ -1624,7 +1630,7 @@ function compareStringArrays(array, arrayOri) {
             response = false;
     }
 
-    if (response && res.length != resOri.length)
+    if (response && res.length != resOri.length )
         response = false;
 
     return response;
