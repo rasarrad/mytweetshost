@@ -1601,17 +1601,23 @@ function undoCats(e, obj) {
 
 function parseCats(cats) {
     var result = "";
-    var res = cats.trim().split(" ");
+    
+    if (cats) {
+        var res = cats.trim().split(" ");
 
-    if (res.length == 1 && (res[0].trim() == 0 || res[0].trim() == "undefined")) {
-        return "--";
-    } 
-
-    for (var i = 0; i < res.length; i++) {
-        result = result + catsmap.get(res[i]) + " - ";
+        if (res.length == 1 && (res[0].trim() == 0 || res[0].trim() == "undefined")) {
+            return "--";
+        } 
+    
+        for (var i = 0; i < res.length; i++) {
+            result = result + catsmap.get(res[i]) + " - ";
+        }
+    
+        return result.substring(0, result.length - 3);
     }
-
-    return result.substring(0, result.length - 3);
+    else {
+        return "--";
+    }
 }
 
 function compareStringArrays(array, arrayOri) {
