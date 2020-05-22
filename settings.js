@@ -851,7 +851,7 @@ function showAuthor(obj) {
 }
 
 function undoAuthor(obj) {
-    $(obj).parent().find(".authorinput").val($('#postedby').attr("cauthor"));
+    $(obj).parent().parent().find(".authorinput").val($('#postedby').attr("cauthor"));
     saveAuthor(obj);
 }
 
