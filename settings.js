@@ -1462,17 +1462,23 @@ function removeNonExistentLi(obj, obj2) {
 
 function parseTags(tags) {
     var result = "";
-    var res = tags.trim().split(" ");
 
-    if (res.length == 1 && (res[0].trim() == 0 || res[0].trim() == "undefined")) {
+    if (tags) {
+        var res = tags.trim().split(" ");
+
+        if (res.length == 1 && (res[0].trim() == 0 || res[0].trim() == "undefined")) {
+            return "--";
+        } 
+    
+        for (var i = 0; i < res.length; i++) {
+            result = result + res[i] + " - ";
+        }
+    
+        return result.substring(0, result.length - 3);
+    }
+    else {
         return "--";
     } 
-
-    for (var i = 0; i < res.length; i++) {
-        result = result + res[i] + " - ";
-    }
-
-    return result.substring(0, result.length - 3);
 }
 
 
