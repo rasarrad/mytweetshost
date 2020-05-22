@@ -206,7 +206,7 @@
                     <b style="margin-left: -1px;">author </b>
                     <span class="author" onclick="showAuthor(this)" style="overflow: hidden;text-overflow: ellipsis;max-width: 124px;display: inline-block;white-space: nowrap;position: relative;top: 4px;text-transform: lowercase;"></span>
                     <input type="text" additionalAttributes="{autocomplete: 'none'}" autocomplete=none id="postedby" onblur="saveAuthor(this)" class="authorinput" style="white-space: nowrap;position: relative;top: 0px;display:none;" value="">
-                    <i class="fa fa-undo clicable" onclick="undoAuthor(this)" style="position: absolute;width: 0px;font-size: 15px;top: 13px;color: var(--dark-color);left: 220px !important;display: none;"></i>
+                    <i class="fa fa-undo clicable" onclick="undoAuthor(event, this)" style="position: absolute;width: 0px;font-size: 15px;top: 13px;color: var(--dark-color);left: 220px !important;display: none;"></i>
                     <br class="brsep">
                     <b class="datespan" style="margin-left: 5px;">date </b>
                     <span onclick="showDate(this)" style="cursor: pointer;" class="date smallrem"></span>

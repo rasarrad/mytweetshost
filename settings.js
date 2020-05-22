@@ -841,7 +841,8 @@ function showAuthor(obj) {
     otherObj.focus();
 }
 
-function undoAuthor(obj) {
+function undoAuthor(e, obj) {
+    e.stopPropagation();
     console.log("11-333333-")
     console.log($(obj).parent().find(".authorinput"))
     $(obj).parent().find(".authorinput").val($('#postedby').attr("cauthor"));
