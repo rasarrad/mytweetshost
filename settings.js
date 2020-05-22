@@ -828,9 +828,9 @@ function searchClassif(val, selectedclassif, selectedclassiftype) {
 
 
 function closeAuthor(obj) {
-    $(obj).parent().find(".authorinput").hide();
+    $(obj).parent().parent().find(".authorinput").hide();
 
-    $(obj).parent().find(".authorbuttons").fadeOut(700);
+    $(obj).parent().fadeOut(700);
 }
 
 
@@ -857,12 +857,12 @@ function undoAuthor(obj) {
 
 function saveAuthor(obj) {
     if ($('#linkChange').attr("cid") != "new") {
-        $(obj).hide();
-        $(obj).parent().find(".authorbuttons").fadeOut(700);
+        var inputObj = $(obj).parent().parent().find(".authorinput");
+        inputObj.hide();
+        $(obj).parent().fadeOut(700);
 
-        var otherObj = $(obj).parent().find(".author");
-        console.log("11-" + $(obj).val() + "-" + $('#postedby').attr("cauthor") + "-")
-        if ($(obj).val() != $('#postedby').attr("cauthor")) {
+        var otherObj = $(obj).parent().parent().find(".author");
+        if (inputObj.val() != $('#postedby').attr("cauthor")) {
             createCookie2($('#linkChange').attr("cid"), "author", $(obj).val());
             if (showColors) {
                 otherObj.css('color','#00ff72');
@@ -876,8 +876,8 @@ function saveAuthor(obj) {
             otherObj.css('color','');
         }
 
-        if ($(obj).val().length > 0) {
-            otherObj.html($(obj).val());
+        if (inputObj.val().length > 0) {
+            otherObj.html(inputObj.val());
         }
         else
             otherObj.html("--"); 
