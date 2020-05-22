@@ -1620,7 +1620,7 @@ function compareStringArrays(array, arrayOri) {
         res = array.trim().split(" ");
     
     var resOri = new Array();
-    if (array)
+    if (arrayOri)
         resOri = arrayOri.trim().split(" ");
 
     var response = true;
