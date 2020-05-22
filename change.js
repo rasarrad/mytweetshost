@@ -383,6 +383,7 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                 }
                 else {
                     allLinks.splice(i, 1);
+                    i = i - 1;
                 }
             }
         }
