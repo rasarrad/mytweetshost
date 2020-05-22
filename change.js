@@ -302,7 +302,7 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
         
                 var isdeleted = readCookie(val.id + "isdeleted");
 
-                if (val.deleted != "yes" && !(isdeleted && isdeleted == "yes")) {
+                if (val.deleted.length == 0 && !(isdeleted && isdeleted == "yes")) {
                     
                     var haschanges = readCookie(val.id + "haschanges");
                     if (haschanges) {
