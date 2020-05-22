@@ -829,7 +829,7 @@ function searchClassif(val, selectedclassif, selectedclassiftype) {
 
 function closeAuthor(obj) {
     $(obj).parent().parent().find(".authorinput").hide();
-
+    $(obj).parent().parent().find(".author").show();
     $(obj).parent().fadeOut(700);
 }
 
@@ -852,7 +852,7 @@ function showAuthor(obj) {
 
 function undoAuthor(obj) {
     $(obj).parent().find(".authorinput").val($('#postedby').attr("cauthor"));
-    saveAuthor($(obj).parent().find(".authorinput"));
+    saveAuthor(obj);
 }
 
 function saveAuthor(obj) {
