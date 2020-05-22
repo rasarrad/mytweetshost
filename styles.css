@@ -2571,6 +2571,7 @@ body.big #linkChange.newLayout > div .titletable tr:first-child .firsttd {
   width: 202px;
   margin-left: 3px;
   margin-right: 3px;
+  line-height: 14px;
 }
 body.big #postedby {
   width: 169px;
@@ -2876,6 +2877,7 @@ body.big .newLayout#searchpopup .sectiontitletable .sectionicontd {
       margin-left: 3px;
       margin-right: 3px;
       padding-right: 20px;
+      line-height: 14px;
     }
     body.big #postedby {
       width: 194px;
