@@ -833,9 +833,9 @@ function showAuthor(obj) {
     var otherObj = $(obj).parent().find(".authorinput");
 
     if ($('#postedby').attr("cauthor") != otherObj.val())
-        $(obj).parent().find(".fa-undo").show();
+        $(obj).parent().find(".authorbuttons").show();
     else
-        $(obj).parent().find(".fa-undo").hide();
+        $(obj).parent().find(".authorbuttons").hide();
     
     otherObj.show();
     otherObj.focus();
@@ -852,7 +852,7 @@ function undoAuthor(e, obj) {
 function saveAuthor(obj) {
     if ($('#linkChange').attr("cid") != "new") {
         $(obj).hide();
-        $(obj).parent().find(".fa-undo").hide();
+        $(obj).parent().find(".authorbuttons").hide();
 
         var otherObj = $(obj).parent().find(".author");
         console.log("11-" + $(obj).val() + "-" + $('#postedby').attr("cauthor") + "-")
