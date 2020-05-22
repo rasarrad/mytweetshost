@@ -852,7 +852,7 @@ function saveAuthor(obj) {
         $(obj).parent().find(".fa-undo").hide();
 
         var otherObj = $(obj).parent().find(".author");
-        
+        console.log("11-" + $(obj).val() + "-" + $('#postedby').attr("cauthor") + "-")
         if ($(obj).val() != $('#postedby').attr("cauthor")) {
             createCookie2($('#linkChange').attr("cid"), "author", $(obj).val());
             if (showColors) {
