@@ -296,14 +296,12 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
     var i = counterAllLinks;
 
     try {
-        alert(1111)
         if (execParamId) {
-            alert(222222)
             for (i; i < counterAllLinks + 5; i++) {
                 var val = allLinks[i];
         
                 var isdeleted = readCookie(val.id + "isdeleted");
-
+                console.log(val)
                 if (val.id==31 || val.id=="31")
                 console.log(isdeleted)
 
