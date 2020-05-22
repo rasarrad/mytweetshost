@@ -504,7 +504,7 @@
                 </td>            
             </tr>
             <tr class="buttonstr" style="text-align: center;">
-              <td onclick="resetFields(true)" style="position: relative;left: -1px;">
+              <td onclick="resetFields(true, this)" style="position: relative;left: -1px;">
                   <i id="removetweetp" class="fa fa-eraser fa-flip-horizontal"></i>
               </td>
               <td class="buttontdtohide" onclick="javascript: showTooltip(event, this, true, 'The functionality load a search is not implemented')" style="position: relative;left: 0px; padding-top: 6px;">
@@ -523,7 +523,6 @@
         <tbody>
           <tr class="cursorpointer" onclick="changecriteria(event,this, 'searchtags')" style="padding-bottom: 15px;">
             <td class="sectionicontd firsticon" style="width: 31px;display: inline-block;white-space: nowrap;">
-              <i id="expandsearchtags" class="fa fa-chevron-down mainbutton" onclick="javascript: expandtags(event,this, 'searchtags')"></i>  
               <i class="fa fa-tags"></i><span style="padding-left: 6px;" class="sectiontitle">Tag</span>
             </td>    
             <td class="sectionicontd el ellipsis">
@@ -537,6 +536,7 @@
             <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center; position: relative;">
               <input type="text" id="filtertag" style="margin-left: 1px;width: calc(100% - 115px);margin-top: 0px;float: left;">
               <select id="tagsearchselect" style="position: absolute;top: 1px;right: 3px;width: 100px;"></select>
+              <i id="expandsearchtags" class="fa fa-chevron-down mainbutton" onclick="javascript: expandtags(event,this, 'searchtags')"></i>  
             </td>                                          
         </tr>  
       <tr>  

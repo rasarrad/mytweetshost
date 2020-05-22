@@ -1088,7 +1088,10 @@ var togglecriterions = function(obj) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function resetFields(flag) {
+function resetFields(flag, obj) {
+    if (obj)
+        fixfocus(obj, null, "background");
+        
     resetMainDiv();
     
     clearcriterion(null,null, "filterdate1", "searchdate", true);

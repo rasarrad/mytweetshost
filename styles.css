@@ -1841,7 +1841,7 @@ body.big .checkstyleddiv.showdeleted i {
 
 #expandedittags, #expandsearchtags {
     /* width: calc(100% - 166px); */
-    width: calc(100% - 226px);
+    width: calc(100% - 4px);
     border-radius: 4px;
     top: 206px;
     color: var(--high-color) !important;
@@ -1849,13 +1849,16 @@ body.big .checkstyleddiv.showdeleted i {
     font-size: 15px !important;
     height: 19px;
     position: absolute;
-    padding-left: 220px;
+    padding-left: 0px;
     left: 2px;
     z-index: 1;
     padding-bottom: 2px;
     background: var(--soft-color) !important;
     background: var(--softdark-color) !important;
+    transition: color 0.7s;
 }
+
+
 
 body.big #expandedittags {
     /* padding-left: 2px; */
@@ -1864,7 +1867,7 @@ body.big #expandedittags {
 }
 
 body.big #expandsearchtags {
-    top: 233px;
+    top: 191px;
 }
 
 #filterdate1display {
@@ -4921,6 +4924,11 @@ body.big #mainsettings #theme td:first-child {
         opacity: 0.7;
     }
 
+
+    #expandedittags:hover, #expandsearchtags:hover {
+      cursor: pointer;
+      color: var(--text-color) !important;
+    }
 
   ::-webkit-scrollbar {
 	  width: 5px;
