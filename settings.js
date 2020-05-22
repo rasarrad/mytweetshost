@@ -1626,7 +1626,7 @@ function compareStringArrays(array, arrayOri) {
     var response = true;
 
     for (var i = 0; i < res.length; i++) {
-        if (!arrayOri.includes(res[i])) 
+        if (!resOri.includes(res[i])) 
             response = false;
     }
 
