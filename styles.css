@@ -2875,6 +2875,7 @@ body.big .newLayout#searchpopup .sectiontitletable .sectionicontd {
       width: 98px;
       margin-left: 3px;
       margin-right: 3px;
+      padding-right: 20px;
     }
     body.big #postedby {
       width: 194px;
