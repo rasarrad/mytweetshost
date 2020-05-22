@@ -301,15 +301,10 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                 var val = allLinks[i];
         
                 var isdeleted = readCookie(val.id + "isdeleted");
-                console.log(val)
-                if (val.id==31 || val.id=="31")
-                console.log(isdeleted)
 
                 if (val.deleted.length == 0 && !(isdeleted && isdeleted == "yes")) {
                     
                     var haschanges = readCookie(val.id + "haschanges");
-                    if (val.id==31 || val.id=="31")
-                        console.log(haschanges)
                     if (haschanges) {
                         hasAnyLinkChange = true;
             
@@ -325,17 +320,6 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         }
 
                         var tag = readCookie(val.id + "tagchanged");
-                        
-                        if (val.id==31 || val.id=="31") {
-
-                            console.log("-" + tag + "-")
-
-                            console.log("-" + val.tags + "-")
-
-                            console.log("-" + val.tagsOri + "-")
-
-                        }
-                        
                         val.tagsOri = val.tags;
                         if (tag) {
                             val.tags = tag;
