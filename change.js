@@ -296,7 +296,9 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
     var i = counterAllLinks;
 
     try {
+        alert(1111)
         if (execParamId) {
+            alert(222222)
             for (i; i < counterAllLinks + 5; i++) {
                 var val = allLinks[i];
         
