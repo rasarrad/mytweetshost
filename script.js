@@ -744,7 +744,7 @@ $( document ).ready(function() {
 
     //closeSplash(); 
 
-    //togglecriterions();
+    togglecriterions();
 
     
     /* CATEGORIES RENAMING
