@@ -6151,3 +6151,7 @@ body.big .authorbuttons .fa-undo {
 body.big .authorbuttons .fa-check {
 
 }
+
+.li.yeffect {
+  background: #ffff6c !important;
+}
