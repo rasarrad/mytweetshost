@@ -134,28 +134,18 @@ function changecriteria(e, obj, tableparam, flag) {
     
             table.find('td.el').removeClass('ellipsis');
 
-            if (searchbutton.css("left") == "18px") {
+            if (searchbutton.attr("exp") == "yes") {
                 searchbutton.css('transition', 'all .8s ease');
 
-                searchbutton.css("left", "307px");
-
-                if (window.innerWidth > 480) {
-                    searchbutton.css("left", "426px");
-                }
-    
+                if (table.attr("cheight"))
+                    offset = offset + Number(table.attr("cheight"));  
+        
+                searchbutton.css("top", (table.offset().top + 15 + offset) + "px");
+                
                 setTimeout(function() { 
-                    //cnonsole.log(offset)
-                    if (table.attr("cheight"))
-                        offset = offset + Number(table.attr("cheight"));  
-                    //cnonsole.log(offset) 
-                    searchbutton.css("top", (table.offset().top + 15 + offset) + "px");
-                    searchbutton.css('transition', 'all .6s ease-in');
+                    dblTapFlag = false;
                     table.find(".titletext").fadeIn(500);
-                    setTimeout(function() { 
-                        dblTapFlag = false;
-                    }, 600);
-                    
-                }, 801);
+                }, 600);
             }
             else {
                 setTimeout(function() { 
