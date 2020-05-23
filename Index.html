@@ -491,17 +491,6 @@
                       <b style="margin-left: 6px;top: -3px;position: relative;">Search</b>
                       <span  onclick="openmenu(null, true)" id="titlesearch" style="position: absolute;width: 100%;top: 27px;left: 3px;"></span >
                       <i id="sear" onclick="javascript: getInformation(1)" class="fa fa-search clicable"></i>  
-                      <div class="checkstyleddiv showdeleted" style="position: absolute;">                  
-                          <input onclick="toggleShowDeleted()" type="checkbox" id="showdeleted" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: 'none'}" style="left: -4px;top: 22px;">
-                              <label for="showdeleted" style="position: relative;top: -7px;font-size: 12px;">
-                                      <span>
-                                        <i class="fa fa-square" style="top: 2.4px;left: 0.1px;font-size: 6.1px !important;"></i>
-                                      </span>
-                                      <div style="position: relative;top: -21px;left: 43px;">Include
-                                        <span style="border: 0;position: relative;top: 12px;left: -48px;">deleted</span>
-                                      </div>
-                              </label>
-                      </div>  
                 </td>            
             </tr>
             <tr class="buttonstr" style="text-align: center;">
@@ -674,29 +663,50 @@
           </ul>   
           <input type="hidden" id="selectedclassif" value="all">
         </td>
-  </tr>   
-</tbody>
-</table>
-<table id="searchauthor" cmaxheight="65px" cmaxheightbig="76px" class="sectiontitletable sectionexpandable emptyvalue">
-    <tbody>
-      <tr class="cursorpointer" onclick="changecriteria(event,this)" style="padding-bottom: 15px;">
-        <td class="sectionicontd firsticon" style="width: 48px;display: inline-block;white-space: nowrap;">
-            <i class="fa fa-user-circle" style="top: 1px;"></i><span style="padding-left: 4px;" class="sectiontitle">Author</span>
-        </td>    
-        <td class="sectionicontd el ellipsis">
-            <span class="currentauthorsearch emptyvalue titletext slicename">all</span>
-        </td>            
-        <td class="sectionedittd">
-            <i class="fa fa-angle-up"></i>
-        </td>           
-    </tr> 
-    <tr>  
-        <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;">
-          <input type="text" id="filterauthor" style="margin-left: 1px;width: calc(100% - 72px);margin-top: 0px;float: left;position: relative;top: -2px;margin-bottom: 5px;" ctags="">
-        </td>                                          
-    </tr>  
+    </tr>   
   </tbody>
   </table>
+  <table id="searchauthor" cmaxheight="65px" cmaxheightbig="76px" class="sectiontitletable sectionexpandable emptyvalue">
+      <tbody>
+        <tr class="cursorpointer" onclick="changecriteria(event,this)" style="padding-bottom: 15px;">
+          <td class="sectionicontd firsticon" style="width: 48px;display: inline-block;white-space: nowrap;">
+              <i class="fa fa-user-circle" style="top: 1px;"></i><span style="padding-left: 4px;" class="sectiontitle">Author</span>
+          </td>    
+          <td class="sectionicontd el ellipsis">
+              <span class="currentauthorsearch emptyvalue titletext slicename">all</span>
+          </td>            
+          <td class="sectionedittd">
+              <i class="fa fa-angle-up"></i>
+          </td>           
+      </tr> 
+      <tr>  
+          <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;">
+            <input type="text" id="filterauthor" style="margin-left: 1px;width: calc(100% - 72px);margin-top: 0px;float: left;position: relative;top: -2px;margin-bottom: 5px;" ctags="">
+          </td>                                          
+      </tr>  
+    </tbody>
+  </table>
+
+  <table class="sectiontitletable sectionexpandable emptyvalue">
+    <tbody>
+      <tr class="cursorpointer" style="padding-bottom: 15px;">
+        <td colspan="3" class="sectionicontd firsticon" style="width: 48px;display: inline-block;white-space: nowrap;">
+          <div class="checkstyleddiv showdeleted" style="position: absolute;">                  
+            <input onclick="toggleShowDeleted()" type="checkbox" id="showdeleted" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: 'none'}" style="left: -4px;top: 22px;">
+                <label for="showdeleted" style="position: relative;top: -7px;font-size: 12px;">
+                        <span>
+                          <i class="fa fa-square" style="top: 2.4px;left: 0.1px;font-size: 6.1px !important;"></i>
+                        </span>
+                        <div style="position: relative;top: -21px;left: 43px;">Include
+                          <span style="border: 0;position: relative;top: 12px;left: -48px;">deleted</span>
+                        </div>
+                </label>
+        </div>
+        </td>           
+    </tr> 
+  </tbody>
+</table>
+
   </div>
 </div>
 

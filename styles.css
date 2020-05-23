@@ -6153,11 +6153,12 @@ body.big .authorbuttons .fa-undo {
 body.big .authorbuttons .fa-check {
 
 }
-
 li.yeffect {
+  transition: background 1.5s !important;
   background: #ffff6c !important;
 }
 
 td.yeffect {
+  transition: background 1.5s !important;
   background: #ffff6c !important;
 }
