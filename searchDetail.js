@@ -150,9 +150,8 @@ function changecriteria(e, obj, tableparam, flag) {
                     //cnonsole.log(offset) 
                     searchbutton.css("top", (table.offset().top + 15 + offset) + "px");
                     searchbutton.css('transition', 'all .6s ease-in');
-
+                    table.find(".titletext").fadeIn(500);
                     setTimeout(function() { 
-                        table.find(".titletext").fadeIn(500);
                         dblTapFlag = false;
                     }, 600);
                     
@@ -168,9 +167,8 @@ function changecriteria(e, obj, tableparam, flag) {
                     
                     searchbutton.css('transition', 'all .6s ease'); 
                     searchbutton.css("top", (table.offset().top + 15 + offset) + "px");
-
+                    table.find(".titletext").fadeIn(500);
                     setTimeout(function() { 
-                        table.find(".titletext").fadeIn(500);
                         dblTapFlag = false;
                     }, 600);
 
@@ -190,9 +188,10 @@ function changecriteria(e, obj, tableparam, flag) {
         setTimeout(function() { 
             searchbutton.css("left", "18px");
             searchbutton.css('transition', 'all .6s ease-in');
+            table.find(".titletext").fadeIn(500);
             setTimeout(function() { 
                 table.find(".togglepos").css("position", "absolute");
-                table.find(".titletext").fadeIn(500);
+                
                 dblTapFlag = false;
             }, 600);
 
