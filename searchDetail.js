@@ -66,13 +66,13 @@ function expandsection(obj, table) {
 
 function changecriteria(e, obj, tableparam, flag) {
 
-/*     if (flag) {
+    if (flag) {
 
     }
     else if (dblTapFlag)
         return false;
 
-    dblTapFlag = true; */
+    dblTapFlag = true;
     
     var table = null;
     if (obj) {
@@ -105,14 +105,12 @@ function changecriteria(e, obj, tableparam, flag) {
                 othertable.find('td.el').addClass('ellipsis');
             });
     
-            setTimeout(function() { 
                 $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
                     var othertable = $(element);
     
                     if (othertable.attr("id") != table.attr("id"))
                         othertable.find(".togglepos").css("position", "absolute"); 
                 });
-            }, 600);
 
             table.find(".togglepos").css("position", ""); 
             table.css('transition', 'max-height 0.7s');
@@ -133,7 +131,7 @@ function changecriteria(e, obj, tableparam, flag) {
     
             table.find('td.el').removeClass('ellipsis');
 
-/*             if (searchbutton.css("left") == "18px") {
+            if (searchbutton.css("left") == "18px") {
                 searchbutton.css('transition', 'all .8s ease');
 
                 searchbutton.css("left", "307px");
@@ -173,7 +171,7 @@ function changecriteria(e, obj, tableparam, flag) {
                     }, 600);
 
                 }, 721);
-            } */
+            }
         }
     }
     else {
@@ -183,18 +181,16 @@ function changecriteria(e, obj, tableparam, flag) {
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
         table.find('td.el').addClass('ellipsis');
 
-/*         searchbutton.css('transition', 'all .8s ease');
+        searchbutton.css('transition', 'all .8s ease');
         searchbutton.css("top", "8px");
         setTimeout(function() { 
             searchbutton.css("left", "18px");
             searchbutton.css('transition', 'all .6s ease-in');
             
-            setTimeout(function() { 
                 table.find(".togglepos").css("position", "absolute");
                 dblTapFlag = false;
-            }, 600);
 
-        }, 801); */
+        }, 801);
     }
 }
 
