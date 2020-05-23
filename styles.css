@@ -190,7 +190,7 @@ body.big #searchdate tr:nth-of-type(2) span {
 }
 body.big #searchpopup .fa-times-circle {
     position: relative;
-    top: 2px !important;
+    top: 1px !important;
     font-size: 15px;
     margin-left: 3px !important;
 }
@@ -2716,7 +2716,7 @@ body.big .newLayout#searchpopup .fa-tags {
 
 body.big .newLayout#searchpopup .slicename {
   line-height: 30px;
-  font-size: 15px;
+  font-size: 12px;
   top: -2px !important;
   padding-left: 20px !important;
 }
@@ -2725,18 +2725,20 @@ body.big .newLayout#searchpopup .slicename {
   line-height: 18px;
   position: relative;
   top: -3px !important;
+  text-transform: uppercase;
 }
 
 .newLayout#searchpopup .el.ellipsis .slicename {
   /* left: 1px; */
   text-align: right !important;
   margin-right: 9px;
+  text-transform: uppercase;
 }
 
 body.big .newLayout#searchpopup .el:not(.ellipsis) .slicename {
   line-height: 25px;
-  font-size: 15px;
-  top: -3px !important;
+  font-size: 12px;
+  top: -1px !important;
   padding-left: 0px !important;
   left: 11px;
 }
@@ -4843,7 +4845,7 @@ body.big #searchpopup .titletable tr:first-child {
 }
 
 body.big #searchpopup #searchinfo td.el:not(.ellipsis) span.titletext {
-    line-height: 13px;
+    /* line-height: 13px; */
 }
 
 #mainsettings .sectionedittd > i {

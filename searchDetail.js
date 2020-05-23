@@ -1091,7 +1091,7 @@ var togglecriterions = function(obj) {
 
 function resetFields(flag, obj) {
     if (obj)
-        fixfocus(obj, null, "background");
+        fixfocusli(obj);
         
     resetMainDiv();
     
