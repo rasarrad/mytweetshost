@@ -1511,7 +1511,6 @@ function clickLiTag(e, obj) {
         }      
         else {
                 
-            $(obj).attr("class", "litags");
             $(obj).addClass("selectedtag");
             $('#tagsinput').val($('#tagsinput').val().trim() + " " + $(obj).html());
             $('#tagsinput').trigger("change");
@@ -1530,7 +1529,6 @@ function clickLiTag(e, obj) {
             $('#filtertag').trigger("change");
         }      
         else {
-            $(obj).attr("class", "litags");
             $(obj).addClass("selectedtag");
             $('#filtertag').val(($('#filtertag').val().trim() + " " + $(obj).html()).trim());
             $('#filtertag').trigger("change");
