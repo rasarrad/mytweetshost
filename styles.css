@@ -2645,10 +2645,22 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
 } 
 
 .checkstyleddiv.showdeleted {
-  /* top: -4px; */
-  /* right: 6px; */
+  top: 16px;
   width: 156px;
+  left: 14px;
+  position: absolute;
 }
+
+.checkstyleddiv.showdeleted .incdeltext {
+  position: relative;
+  top: -12px;
+  left: 20px;
+  width: 106px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+
 
 body.big .checkstyleddiv.showdeleted {
   /* top: -12px; */
@@ -3363,13 +3375,13 @@ body.big .newLayout#searchpopup .sectiontitletable .sectionicontd {
       }
 
       .checkstyleddiv.showdeleted {
-        top: -4px;
-        right: 6px;
+        /* top: -4px; */
+        /* right: 6px; */
       }
 
       body.big .checkstyleddiv.showdeleted {
-        top: -12px;
-        right: -13px;
+        /* top: -12px; */
+        /* right: -13px; */
       }    
 
       .checkstyleddiv.showdeleted span {
