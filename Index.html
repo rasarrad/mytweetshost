@@ -482,7 +482,7 @@
   
       
 <div id="searchpopup" style="display: block;height: calc(100%) !important;position: fixed !important; margin-top: 0px !important;display: none;" class="newLayout pobj" onclick="closeSearchPopup()" cid="">
-  <div style="position: relative;top: -1px !important;display: block;max-height: calc(100% - 10px) !important;margin-top: 0px !important;border-top: 1px solid var(--soft-color);border-radius: 0px;">    
+  <div style="position: relative;top: -1px !important;display: block;max-height: calc(100% - 10px) !important;margin-top: 0px !important;border-top: 1px solid var(--soft-color);border-radius: 0px;padding-bottom: 0px;">    
       <table class="titletable buttonstable" style="overflow: visible;">
           <tbody>
             <tr class="cursordefault">
@@ -687,18 +687,17 @@
     </tbody>
   </table>
 
-  <table class="sectiontitletable sectionexpandable emptyvalue">
+  <table class="sectiontitletable sectionexpandable emptyvalue" style="position: sticky;bottom: 0px;background: red;margin-left: 0px;max-height: 119px;width: 477px;/* display: none; */margin: 0;padding: 0;margin-bottom: 0px;display: table-cell;background: var(--dark-color);">
     <tbody>
-      <tr class="cursorpointer" style="padding-bottom: 15px;">
-        <td colspan="3" class="sectionicontd firsticon" style="width: 48px;display: inline-block;white-space: nowrap;">
-          <div class="checkstyleddiv showdeleted" style="position: absolute;">                  
+      <tr class="cursorpointer" style="/* padding-bottom: 15px; */">
+        <td colspan="3" class="sectionicontd firsticon" style="/* width: 48px; */display: inline-block;/* white-space: nowrap; */">
+          <div class="checkstyleddiv showdeleted" style="position: absolute;/* display: none; */transform: translate(-50%, 0px);left: calc(50%) !important;">                  
             <input onclick="toggleShowDeleted()" type="checkbox" id="showdeleted" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: 'none'}" style="left: -4px;top: 22px;">
-                <label for="showdeleted" style="position: relative;top: -7px;font-size: 12px;">
+                <label for="showdeleted" style="position: relative;top: -15px;/* font-size: 12px; */">
                         <span>
                           <i class="fa fa-square" style="top: 2.4px;left: 0.1px;font-size: 6.1px !important;"></i>
                         </span>
-                        <div style="position: relative;top: -21px;left: 43px;">Include
-                          <span style="border: 0;position: relative;top: 12px;left: -48px;">deleted</span>
+                        <div style="position: relative;top: -16px;left: 20px;">Include deleted
                         </div>
                 </label>
         </div>

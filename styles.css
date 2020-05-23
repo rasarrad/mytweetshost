@@ -2645,13 +2645,14 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
 } 
 
 .checkstyleddiv.showdeleted {
-  top: -4px;
-  right: 6px;
+  /* top: -4px; */
+  /* right: 6px; */
+  width: 156px;
 }
 
 body.big .checkstyleddiv.showdeleted {
-  top: -12px;
-  right: -13px;
+  /* top: -12px; */
+  /* right: -13px; */
 }
 
 .newLayout .fa-tags {
@@ -3967,7 +3968,7 @@ input[type="checkbox"] {
     display: inline-block;
 }
 body.big .checkstyleddiv {
-    width: 146px;
+    width: 162px;
     display: inline-block;
 }
 .checkstyleddiv input {
