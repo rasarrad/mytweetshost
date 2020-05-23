@@ -66,13 +66,13 @@ function expandsection(obj, table) {
 
 function changecriteria(e, obj, tableparam, flag) {
 
-    if (flag) {
+/*     if (flag) {
 
     }
     else if (dblTapFlag)
         return false;
 
-    dblTapFlag = true;
+    dblTapFlag = true; */
     
     var table = null;
     if (obj) {
