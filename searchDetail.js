@@ -115,6 +115,7 @@ function changecriteria(e, obj, tableparam, flag) {
             }, 600);
 
             table.find(".togglepos").css("position", ""); 
+            table.find(".titletext").fadeOut(300); 
             table.css('transition', 'max-height 0.7s');
     
             if (table.attr("cmaxheight")) {
@@ -150,6 +151,7 @@ function changecriteria(e, obj, tableparam, flag) {
                     searchbutton.css("top", (table.offset().top + 15 + offset) + "px");
                     searchbutton.css('transition', 'all .6s ease-in');
 
+                    table.find(".titletext").fadeIn(300);
                     setTimeout(function() { 
                         dblTapFlag = false;
                     }, 600);
@@ -159,7 +161,7 @@ function changecriteria(e, obj, tableparam, flag) {
             else {
                 setTimeout(function() { 
                     //cnonsole.log(offset);
-
+                    table.find(".titletext").fadeIn(300);
                     if (table.attr("cheight"))
                         offset = offset + Number(table.attr("cheight"));
                     
@@ -177,7 +179,7 @@ function changecriteria(e, obj, tableparam, flag) {
         }
     }
     else {
-
+        table.find(".titletext").fadeOut(300);
         table.css('transition', 'max-height 0.7s');
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
@@ -188,7 +190,7 @@ function changecriteria(e, obj, tableparam, flag) {
         setTimeout(function() { 
             searchbutton.css("left", "18px");
             searchbutton.css('transition', 'all .6s ease-in');
-            
+            table.find(".titletext").fadeIn(300);
             setTimeout(function() { 
                 table.find(".togglepos").css("position", "absolute");
                 dblTapFlag = false;
