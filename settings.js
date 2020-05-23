@@ -65,11 +65,21 @@ function fixfocus(el, flag, otherproperty)
         if (otherproperty)
             property = otherproperty;
 
-        newel.css("transition", property + " 0.3s").css(property, "#ffff6c");
+        newel.css("transition", property + " 0.3s").css(property, "#");
         setTimeout(function(){
             newel.css(property, "").css("transition", "");
         }, 400);  
     }
+}
+
+function fixfocusli(el)
+{
+    var newel = $(el);
+
+    newel.addClass("yeffect");
+/*     setTimeout(function(){    
+        newel.removeClass("yeffect");
+    }, 400);  */ 
 }
 
 function zoom(obj, flag) {
@@ -1483,6 +1493,9 @@ function parseTags(tags) {
 
 
 function clickLiTag(e, obj) {
+    if (obj)
+        fixfocusli(obj);
+
     e.stopPropagation();
 
     if ($("#searchpopup").css("display") == "none") {
