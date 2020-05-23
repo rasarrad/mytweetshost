@@ -77,9 +77,9 @@ function fixfocusli(el)
     var newel = $(el);
 
     newel.addClass("yeffect");
-/*     setTimeout(function(){    
+    setTimeout(function(){    
         newel.removeClass("yeffect");
-    }, 400);  */ 
+    }, 400);  
 }
 
 function zoom(obj, flag) {
