@@ -483,13 +483,14 @@
       
 <div id="searchpopup" style="display: block;height: calc(100%) !important;position: fixed !important; margin-top: 0px !important;display: none;" class="newLayout pobj" onclick="closeSearchPopup()" cid="">
   <div style="position: relative;top: -1px !important;display: block;max-height: calc(100% - 10px) !important;margin-top: 0px !important;border-top: 1px solid var(--soft-color);border-radius: 0px;">    
-      <table class="titletable buttonstable">
+      <table class="titletable buttonstable" style="overflow: visible;">
           <tbody>
             <tr class="cursordefault">
                 <td colspan="4" class="firsttd" style="padding-top: 3px;padding-bottom: 9px;vertical-align: super;">
                       <!--<i class="fa fa-search clicable" style="margin-right: 12px;font-size: 19px;position: relative;top: -1px;"></i>-->
                       <b style="margin-left: 6px;top: -3px;position: relative;">Search</b>
                       <span  onclick="openmenu(null, true)" id="titlesearch" style="position: absolute;width: 100%;top: 27px;left: 3px;"></span >
+                      <i id="sear" onclick="javascript: getInformation(1)" class="fa fa-search clicable"></i>  
                       <div class="checkstyleddiv showdeleted" style="position: absolute;">                  
                           <input onclick="toggleShowDeleted()" type="checkbox" id="showdeleted" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: 'none'}" style="left: -4px;top: 22px;">
                               <label for="showdeleted" style="position: relative;top: -7px;font-size: 12px;">
@@ -694,11 +695,8 @@
           <input type="text" id="filterauthor" style="margin-left: 1px;width: calc(100% - 72px);margin-top: 0px;float: left;position: relative;top: -2px;margin-bottom: 5px;" ctags="">
         </td>                                          
     </tr>  
-      
-</tbody>
-</table>
-
-  <i id="sear" onclick="javascript: getInformation(1)" class="fa fa-search clicable"></i>  
+  </tbody>
+  </table>
   </div>
 </div>
 

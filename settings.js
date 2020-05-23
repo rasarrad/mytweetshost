@@ -1483,6 +1483,9 @@ function parseTags(tags) {
 
 
 function clickLiTag(e, obj) {
+    if (obj)
+        fixfocus(obj, null, "background");
+
     e.stopPropagation();
 
     if ($("#searchpopup").css("display") == "none") {
