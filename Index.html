@@ -489,7 +489,6 @@
                 <td colspan="4" class="firsttd" style="padding-top: 3px;padding-bottom: 9px;vertical-align: super;">
                       <!--<i class="fa fa-search clicable" style="margin-right: 12px;font-size: 19px;position: relative;top: -1px;"></i>-->
                       <b style="margin-left: 6px;top: -3px;position: relative;">Search</b>
-                      <span  onclick="openmenu(null, true)" id="titlesearch" style="position: absolute;width: 100%;top: 27px;left: 3px;"></span >
                       <i id="sear" onclick="javascript: getInformation(1)" class="fa fa-search clicable"></i>  
                 </td>            
             </tr>
@@ -686,13 +685,12 @@
       </tr>  
     </tbody>
   </table>
-
   <table class="sectiontitletable sectionexpandable emptyvalue" style="position: sticky; bottom: 0px; max-height: 26px; width: 477px; margin: 0px; padding: 0px; display: table-cell; background: var(--dark-color);">
     <tbody>
       <tr class="cursorpointer" style="/* padding-bottom: 15px; */">
         <td colspan="3" class="sectionicontd firsticon" style="/* width: 48px; */display: inline-block;/* white-space: nowrap; */height: 36px;">
           <div class="checkstyleddiv showdeleted">                  
-            <input onclick="toggleShowDeleted()" type="checkbox" id="showdeleted" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: 'none'}" style="left: -4px;top: 22px;">
+            <input onclick="toggleShowDeleted()" type="checkbox" id="showdeleted" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: 'none'}">
                 <label for="showdeleted" style="position: relative;top: -15px;/* font-size: 12px; */">
                         <span>
                           <i class="fa fa-square" style="top: 2.4px;left: 0.1px;font-size: 6.1px !important;"></i>
@@ -701,6 +699,7 @@
                         </div>
                 </label>
         </div>
+<span onclick="openmenu(null, true)" id="titlesearch" style="position: absolute;top: 15px;left: 3px;transform: translate(-50%, 0px);left: calc(50%) !important;">(All Links)</span>
         </td>           
     </tr> 
   </tbody>

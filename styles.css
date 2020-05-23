@@ -1825,7 +1825,7 @@ body.big .checkstyleddiv.menuincludedeleted i {
 
 .newLayout#searchpopup > div .titletable {
   width: 475px;
-  height: 87px;
+  height: 71px;
   /* background: green; */
 }
 
@@ -2392,7 +2392,7 @@ body.big .buttonstable .date {
 
 
 #searchtags {
-  margin-top: 88px !important;
+  margin-top: 71px !important;
 }
 body.big #searchtags {
   margin-top: 93px !important;
@@ -2645,9 +2645,9 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
 } 
 
 .checkstyleddiv.showdeleted {
-  top: 16px;
+  top: 12px;
   width: 156px;
-  left: 14px;
+  left: 10px;
   position: absolute;
 }
 
@@ -3988,6 +3988,7 @@ body.big .checkstyleddiv {
     top: 10px;
     left: -50px;
     z-index: 1;
+    position: initial;
     opacity: 0;
 }
 
@@ -4844,7 +4845,7 @@ body.big #titlesearch {
 }
 
 #searchpopup .titletable tr:first-child {
-  height: 50px;
+  height: 33px;
 }
 
 body.big #searchpopup .titletable tr:first-child {
