@@ -1494,8 +1494,6 @@ function parseTags(tags) {
 
 
 function clickLiTag(e, obj) {
-    if (obj)
-        fixfocusli(obj);
 
     e.stopPropagation();
 
@@ -1536,6 +1534,10 @@ function clickLiTag(e, obj) {
         }
 
     }
+
+    if (obj)
+        fixfocusli(obj);
+
 }
 
 
