@@ -156,8 +156,9 @@ function changecriteria(e, obj, tableparam, flag) {
 
         searchbutton.css('transition', 'all .7s ease');
         setTimeout(function() { 
-            searchbutton.css("top", ($("#searchpopup > div").height() - 40) + "px");
-
+            searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
+            dblTapFlag = false;
+            table.find(".titletext").fadeIn(500);
         }, 701);
     }
 }
