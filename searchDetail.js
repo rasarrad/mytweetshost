@@ -143,9 +143,9 @@ function changecriteria(e, obj, tableparam, flag) {
     
             searchbutton.css("top", (table.offset().top + 15 + offset) + "px");
             
+            table.find('td.el').removeClass('ellipsis');
             setTimeout(function() { 
                 dblTapFlag = false;
-                table.find('td.el').removeClass('ellipsis');
 
                 titletext.css('transition', 'opacity .7s ease');
                 titletext.css("opacity", 1); 
