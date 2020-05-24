@@ -2777,8 +2777,13 @@ body.big .newLayout#searchpopup .el:not(.ellipsis) .slicename {
 
 
 body.big .newLayout#searchpopup .sectiontitletable .sectionicontd {
+  height: 26px !important;
+}
+
+body.big .newLayout#searchpopup .sectiontitletable:last-child .sectionicontd {
   height: 46px !important;
 }
+
 
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
