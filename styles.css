@@ -4858,7 +4858,9 @@ body.big #titlesearch {
 }
 body.big #titlesearch {
   font-size: 19px;
-  top: 19px !important;
+  top: 18px !important;
+  width: 284px;
+  text-align: center;
 }
 
 #searchpopup .titletable tr:first-child {
