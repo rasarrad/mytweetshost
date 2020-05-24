@@ -1845,7 +1845,7 @@ body.big .checkstyleddiv.showdeleted i {
     /* width: calc(100% - 166px); */
     width: calc(100% - 4px);
     border-radius: 4px;
-    top: 206px;
+    top: 148px;
     color: var(--high-color) !important;
     /* border: 1px solid var(--high-color) !important; */
     font-size: 15px !important;
@@ -1855,9 +1855,11 @@ body.big .checkstyleddiv.showdeleted i {
     left: 2px;
     z-index: 1;
     padding-bottom: 2px;
+    padding-top: 2px;
     background: var(--soft-color) !important;
     background: var(--softdark-color) !important;
     transition: color 0.7s;
+    padding-left: 218px;
 }
 
 
@@ -1869,7 +1871,7 @@ body.big #expandedittags {
 }
 
 body.big #expandsearchtags {
-    top: 191px;
+    top: 163px;
 }
 
 #filterdate1display {

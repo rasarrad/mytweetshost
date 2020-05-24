@@ -243,7 +243,7 @@ function expandtags(e, obj) {
         $(obj).addClass("fa-chevron-up");
 
         $(obj).css("top", "auto");
-        $(obj).css("bottom", "3px");
+        $(obj).css("bottom", "0px");
         tagstable.css("max-height", "4000px");
     }
     else {
