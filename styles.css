@@ -1902,7 +1902,7 @@ body.big #filterdate2display {
   /* text-decoration: underline; */
   position: relative;
   top: -1px;
-  font-size: 14px;
+  font-size: 13px;
   cursor: default;
   position: absolute;
   top: 15px;
@@ -1917,11 +1917,11 @@ body.big #filterdate2display {
   display: block;
   text-align: center;
   /* width: 179px; */
-  top: 23px !important;
+  top: 22px !important;
 }
 
 body.big #titlesearch {
-  font-size: 19px;
+  font-size: 17px;
   top: 28px !important;
   width: 290px;
   text-align: center;
@@ -2685,17 +2685,17 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
 
 .checkstyleddiv.showdeleted .incdeltext {
   position: relative;
-  top: -12px;
+  top: -11px;
   left: 20px;
   width: 106px;
-  font-size: 10px;
+  font-size: 9px;
   text-transform: uppercase;
 }
 
 body.big .checkstyleddiv.showdeleted .incdeltext {
-  top: -21px;
+  top: -17px;
   left: 20px;
-  font-size: 12px;
+  font-size: 10px;
   width: 72px;
 }
 
