@@ -166,7 +166,11 @@ function changecriteria(e, obj, tableparam, flag) {
         searchbutton.css('transition', 'all .7s ease');
         setTimeout(function() { 
             table.find('td.el').addClass('ellipsis');
-            searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
+            if ($('body').hasClass('big')) 
+                searchbutton.css("top", ($("#searchpopup > div").height() - 53) + "px");
+            else
+                searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
+            
             dblTapFlag = false;        
             titletext.css('transition', 'opacity .7s ease');
             titletext.css("opacity", 1); 
@@ -199,7 +203,10 @@ function changecriteriasilent(tableparam) {
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
         table.find('td.el').addClass('ellipsis');
         table.find(".togglepos").css("position", "absolute");
-        searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
+        if ($('body').hasClass('big')) 
+            searchbutton.css("top", ($("#searchpopup > div").height() - 53) + "px");
+        else
+            searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
     }
     
     table.css('transition', 'max-height 0.7s');
@@ -659,8 +666,11 @@ function updateSearchTablesHeight() {
     setTimeout(function() { 
         var searchbutton = $("#sear");
         searchbutton.css('transition', 'all 0.01s ease');
-    
-        searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
+
+        if ($('body').hasClass('big')) 
+            searchbutton.css("top", ($("#searchpopup > div").height() - 53) + "px");
+        else
+            searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
     
         searchbutton.css('transition', 'all 0.6s ease');
     }, 701);
