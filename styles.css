@@ -2723,7 +2723,7 @@ body.big .newLayout#searchpopup .fa-tags {
 .newLayout#searchpopup .slicename {
   text-transform: lowercase;
   top: -2px !important;
-  font-size: 12px;
+  font-size: 10px;
   padding-left: 6px !important;
 }
 
@@ -2737,7 +2737,7 @@ body.big .newLayout#searchpopup .slicename {
 .newLayout#searchpopup .el:not(.ellipsis) .slicename {
   line-height: 18px;
   position: relative;
-  top: -3px !important;
+  top: -2px !important;
   text-transform: uppercase;
 }
 

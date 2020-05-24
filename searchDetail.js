@@ -95,6 +95,8 @@ function changecriteria(e, obj, tableparam, flag) {
         offset = 5;
     }
 
+    var titletext = table.find(".titletext");
+
     if (table.css('max-height') == setHeight) {
         if (obj) {
             $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
@@ -115,7 +117,9 @@ function changecriteria(e, obj, tableparam, flag) {
             }, 600);
 
             table.find(".togglepos").css("position", ""); 
-            table.find(".titletext").hide(); 
+
+            titletext.css('transition', 'opacity .7s ease');
+            titletext.css("opacity", 0); 
             table.css('transition', 'max-height 0.7s');
     
             if (table.attr("cmaxheight")) {
@@ -143,12 +147,13 @@ function changecriteria(e, obj, tableparam, flag) {
                 
                 setTimeout(function() { 
                     dblTapFlag = false;
-                    table.find(".titletext").fadeIn(500);
+                    titletext.css("opacity", 1); 
                 }, 600);
         }
     }
     else {
-        table.find(".titletext").hide();
+        titletext.css('transition', 'opacity .7s ease');
+        titletext.css("opacity", 0); 
         table.css('transition', 'max-height 0.7s');
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
@@ -157,8 +162,8 @@ function changecriteria(e, obj, tableparam, flag) {
         searchbutton.css('transition', 'all .7s ease');
         setTimeout(function() { 
             searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
-            dblTapFlag = false;
-            table.find(".titletext").fadeIn(500);
+            dblTapFlag = false;        
+            titletext.css("opacity", 1); 
         }, 701);
     }
 }
@@ -189,7 +194,6 @@ function changecriteriasilent(tableparam) {
         table.find('td.el').addClass('ellipsis');
         table.find(".togglepos").css("position", "absolute");
         searchbutton.css("top", "8px");
-        searchbutton.css("left", "18px");
     }
     
     table.css('transition', 'max-height 0.7s');
@@ -650,7 +654,6 @@ function updateSearchTablesHeight() {
     searchbutton.css('transition', 'all 0.01s ease');
 
     searchbutton.css("top", "8px");
-    searchbutton.css("left", "18px");
 
     searchbutton.css('transition', 'all 0.6s ease');
 
