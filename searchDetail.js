@@ -111,9 +111,11 @@ function changecriteria(e, obj, tableparam, flag) {
                 $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
                     var othertable = $(element);
     
-                    othertable.find('td.el').addClass('ellipsis');
-                    if (othertable.attr("id") != table.attr("id"))
+                    
+                    if (othertable.attr("id") != table.attr("id")) {
                         othertable.find(".togglepos").css("position", "absolute"); 
+                        othertable.find('td.el').addClass('ellipsis');
+                    }
                 });
             }, 600);
 
