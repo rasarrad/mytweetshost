@@ -1896,6 +1896,34 @@ body.big #filterdate2display {
   padding-left: 2px;
 }
 
+#titlesearch {
+  /* text-decoration: underline; */
+  position: relative;
+  top: -1px;
+  font-size: 14px;
+  cursor: default;
+  position: absolute;
+  top: 15px;
+  left: 3px;
+  transform: translate(-50%, 0px);
+  left: calc(50%) !important;
+  /* max-width: 176px; */
+  height: 50px;
+  word-break: break-all;
+  vertical-align: middle;
+  /* width: 183px; */
+  display: block;
+  text-align: center;
+  /* width: 179px; */
+  top: 23px !important;
+}
+
+body.big #titlesearch {
+  font-size: 19px;
+  top: 28px !important;
+  width: 290px;
+  text-align: center;
+}
 
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
@@ -2792,6 +2820,10 @@ body.big .newLayout#searchpopup .sectiontitletable:last-child .sectionicontd {
   Screen = B/w 320px to 479px */
   @media (max-width: 480px) {
 
+
+    body.big #titlesearch {
+      width: 178px;
+    }
     .checkstyleddiv.showdeleted .incdeltext {
         width: 50px;
         top: -17px;
@@ -3246,7 +3278,7 @@ body.big .newLayout#searchpopup .sectiontitletable:last-child .sectionicontd {
         margin-top: 120px !important;
       }      
       body.big #searchtags {
-        margin-top: 90px !important;
+        margin-top: 83px !important;
       }
   
       body.big .newLayout.new #editTags {
@@ -3415,14 +3447,15 @@ body.big .newLayout#searchpopup .sectiontitletable:last-child .sectionicontd {
       }
 
       body.big .checkstyleddiv.showdeleted span {
-        width: 10px !important;
-        height: 10px !important;
-        padding-right: 1px;
+        /* width: 10px !important; */
+        /* height: 10px !important; */
+        /* padding-right: 1px; */
+        /* font-size: 38px; */
       }  
 
 
       body.big .checkstyleddiv.showdeleted i {
-        left: 0.5px !important;
+        /* left: 0.5px !important; */
       }
        
       #filterdate1display {
@@ -4376,13 +4409,15 @@ body.big input[type="checkbox"] + label span i {
 input[type="checkbox"] + label {
     font-size: 11px;
 }
-body.big input[type="checkbox"] + label {
+body.big .showdeletedinput[type="checkbox"] + label {
     font-size: 14px;
 }
 body.big #mainmenu input[type="checkbox"] + label {
     font-size: 16px !important;
 }
-
+body.big .showdeleted input[type="checkbox"] + label {
+    font-size: 11px;
+}
 
 .newLayout textarea {
     font-size: 14px;
@@ -4858,41 +4893,11 @@ body.big #filterdate2clean {
   left: 0px !important;
   top: 0px !important;
 }
-#titlesearch {
-  /* text-decoration: underline; */
-  position: relative;
-  top: -1px;
-  font-size: 14px;
-  cursor: default;
-  position: absolute;
-  top: 15px;
-  left: 3px;
-  transform: translate(-50%, 0px);
-  left: calc(50%) !important;
-  /* max-width: 176px; */
-  height: 50px;
-  word-break: break-all;
-  vertical-align: middle;
-  /* width: 183px; */
-  display: block;
-  text-align: center;
-  /* width: 179px; */
-  top: 23px !important;
-}
+
 
 #titlesearch > span {transform: translate(0px, -50%);top: calc(50%);display: block;/* max-width: 138px; */text-align: center;}
 
-body.big #titlesearch {
-  top: -1px;
-    font-size: 16px;
 
-}
-body.big #titlesearch {
-  font-size: 19px;
-  top: 28px !important;
-  width: 290px;
-  text-align: center;
-}
 
 #searchpopup .titletable tr:first-child {
   height: 33px;
