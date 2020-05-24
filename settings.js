@@ -68,7 +68,6 @@ function fixfocus(el, flag, otherproperty)
         newel.css("transition", property + " 0.3s").css(property, "#");
         setTimeout(function(){
             console.log(newel)
-            newel.css(property, "").css("transition", "");
         }, 400);  
     }
 }
