@@ -616,7 +616,7 @@ var openSearchPopup = function(jsonobj)
 {
     $('body, html').css('overflow-y', 'hidden');
     
-    $('#titlesearch').html("(" + $('#selectedcattext').val() + ")");
+    $('#titlesearch .span2').html($('#selectedcattext').val());
 
     updateSearchTablesHeight();
     
@@ -1079,7 +1079,7 @@ function resetFields(flag, obj) {
     
     $('#selectedcat').val("all");
     $('#selectedcattext').val("All Links");
-    $('#titlesearch').html("(All Links)");
+    $('#titlesearch .span2').html("All Links");
 
     if (flag) 
         showMessage("Search Criterions Cleaned"); 

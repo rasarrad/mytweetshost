@@ -1993,7 +1993,7 @@ function externallinkcopy(obj, link) {
 var clickmenu = function(val) {    
     $('#selectedcat').val(val);
     $('#selectedcattext').val(catsmap.get(val));
-    $('#titlesearch').html("(" + $('#selectedcattext').val() + ")");
+    $('#titlesearch .span2').html($('#selectedcattext').val());
 
     if ($('#mainmenu').attr("fromsearch") == "yes") {
         closeMenuPopup();
