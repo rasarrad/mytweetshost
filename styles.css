@@ -2646,7 +2646,7 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
 
 .checkstyleddiv.showdeleted {
   top: 12px;
-  width: 156px;
+  width: 120px;
   left: 10px;
   position: absolute;
 }
@@ -4833,7 +4833,7 @@ body.big #filterdate2clean {
   position: relative;
   top: -1px;
   font-size: 14px;
-  cursor: pointer;
+  cursor: default;
 }
 body.big #titlesearch {
   top: -1px;
@@ -6189,4 +6189,5 @@ td.yeffect {
 #titlesearch .span2 {
   text-decoration: underline;
   padding-right: 5px;
+  cursor: pointer;
 }
