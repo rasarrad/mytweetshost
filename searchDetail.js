@@ -96,7 +96,7 @@ function changecriteria(e, obj, tableparam, flag) {
     }
 
     var titletext = table.find(".titletext");
-
+		
     if (table.css('max-height') == setHeight) {
         if (obj) {
             titletext.css('transition', 'none');
