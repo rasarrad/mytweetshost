@@ -134,7 +134,6 @@ function changecriteria(e, obj, tableparam, flag) {
     
             table.find('td.el').removeClass('ellipsis');
 
-            if (searchbutton.attr("exp") == "yes") {
                 searchbutton.css('transition', 'all .8s ease');
 
                 if (table.attr("cheight"))
@@ -146,24 +145,6 @@ function changecriteria(e, obj, tableparam, flag) {
                     dblTapFlag = false;
                     table.find(".titletext").fadeIn(500);
                 }, 600);
-            }
-            else {
-                setTimeout(function() { 
-                    //cnonsole.log(offset);
-                    if (table.attr("cheight"))
-                        offset = offset + Number(table.attr("cheight"));
-                    
-                    //cnonsole.log(offset);
-                    
-                    searchbutton.css('transition', 'all .6s ease'); 
-                    searchbutton.css("top", (table.offset().top + 15 + offset) + "px");
-                    table.find(".titletext").fadeIn(500);
-                    setTimeout(function() { 
-                        dblTapFlag = false;
-                    }, 600);
-
-                }, 721);
-            }
         }
     }
     else {
@@ -173,19 +154,11 @@ function changecriteria(e, obj, tableparam, flag) {
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
         table.find('td.el').addClass('ellipsis');
 
-        searchbutton.css('transition', 'all .8s ease');
-        searchbutton.css("top", "8px");
+        searchbutton.css('transition', 'all .7s ease');
         setTimeout(function() { 
-            searchbutton.css("left", "18px");
-            searchbutton.css('transition', 'all .6s ease-in');
-            table.find(".titletext").fadeIn(500);
-            setTimeout(function() { 
-                table.find(".togglepos").css("position", "absolute");
-                
-                dblTapFlag = false;
-            }, 600);
+            searchbutton.css("top", ($("#searchpopup > div").height() - 40) + "px");
 
-        }, 801);
+        }, 701);
     }
 }
 
