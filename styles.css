@@ -4860,7 +4860,24 @@ body.big #filterdate2clean {
   top: -1px;
   font-size: 14px;
   cursor: default;
+  position: absolute;
+  top: 15px;
+  left: 3px;
+  transform: translate(-50%, 0px);
+  left: calc(50%) !important;
+  /* max-width: 176px; */
+  height: 50px;
+  word-break: break-all;
+  vertical-align: middle;
+  /* width: 183px; */
+  display: block;
+  text-align: center;
+  /* width: 179px; */
+  top: 23px !important;
 }
+
+#titlesearch > span {transform: translate(0px, -50%);top: calc(50%);display: block;/* max-width: 138px; */text-align: center;}
+
 body.big #titlesearch {
   top: -1px;
     font-size: 16px;
@@ -4868,8 +4885,8 @@ body.big #titlesearch {
 }
 body.big #titlesearch {
   font-size: 19px;
-  top: 18px !important;
-  width: 284px;
+  top: 7px !important;
+  width: 290px;
   text-align: center;
 }
 
@@ -6217,10 +6234,13 @@ td.yeffect {
   background: #ffff6c !important;
 }
 
-#titlesearch .span1 {text-decoration: none !important;color: var(--text-color);padding-right: 5px;}
+#titlesearch .span1 {text-decoration: none !important;color: var(--text-color);padding-right: 5px;/* transform: translate(0px, -50%); *//* top: calc(50%); *//* display: block; */}
 
 #titlesearch .span2 {
   text-decoration: underline;
   padding-right: 5px;
   cursor: pointer;
+  /* transform: translate(0px, -50%); */
+  /* top: calc(50%); */
+  /* display: block; */
 }
