@@ -104,13 +104,14 @@ function changecriteria(e, obj, tableparam, flag) {
 
                 othertable.css('max-height', setHeight);
                 othertable.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
-                othertable.find('td.el').addClass('ellipsis');
+
             });
     
             setTimeout(function() { 
                 $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
                     var othertable = $(element);
     
+                    othertable.find('td.el').addClass('ellipsis');
                     if (othertable.attr("id") != table.attr("id"))
                         othertable.find(".togglepos").css("position", "absolute"); 
                 });
