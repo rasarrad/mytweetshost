@@ -2792,7 +2792,10 @@ body.big .newLayout#searchpopup .sectiontitletable:last-child .sectionicontd {
   Screen = B/w 320px to 479px */
   @media (max-width: 480px) {
 
-
+    .checkstyleddiv.showdeleted .incdeltext {
+        width: 50px;
+        top: -17px;
+    }
     #expandedittags, #expandsearchtags {
         padding-left: 159px;
         width: calc(100% - 166px);
@@ -3237,7 +3240,7 @@ body.big .newLayout#searchpopup .sectiontitletable:last-child .sectionicontd {
         margin-top: 115px !important;
       }
       #searchtags {
-        margin-top: 87px !important;
+        margin-top: 71px !important;
       }
       body.big #searchtags {
         margin-top: 120px !important;
@@ -3398,6 +3401,7 @@ body.big .newLayout#searchpopup .sectiontitletable:last-child .sectionicontd {
       .checkstyleddiv.showdeleted {
         /* top: -4px; */
         /* right: 6px; */
+        width: 72px !important;
       }
 
       body.big .checkstyleddiv.showdeleted {
@@ -4885,7 +4889,7 @@ body.big #titlesearch {
 }
 body.big #titlesearch {
   font-size: 19px;
-  top: 7px !important;
+  top: 28px !important;
   width: 290px;
   text-align: center;
 }
