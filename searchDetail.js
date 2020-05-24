@@ -198,7 +198,7 @@ function changecriteriasilent(tableparam) {
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
         table.find('td.el').addClass('ellipsis');
         table.find(".togglepos").css("position", "absolute");
-        searchbutton.css("top", "8px");
+        searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
     }
     
     table.css('transition', 'max-height 0.7s');
@@ -658,7 +658,7 @@ function updateSearchTablesHeight() {
     var searchbutton = $("#sear");
     searchbutton.css('transition', 'all 0.01s ease');
 
-    searchbutton.css("top", "8px");
+    searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
 
     searchbutton.css('transition', 'all 0.6s ease');
 
