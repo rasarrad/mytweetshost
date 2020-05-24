@@ -655,12 +655,14 @@ function updateSearchTablesHeight() {
         iTop = "-1px";
     }
 
-    var searchbutton = $("#sear");
-    searchbutton.css('transition', 'all 0.01s ease');
-
-    searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
-
-    searchbutton.css('transition', 'all 0.6s ease');
+    setTimeout(function() { 
+        var searchbutton = $("#sear");
+        searchbutton.css('transition', 'all 0.01s ease');
+    
+        searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
+    
+        searchbutton.css('transition', 'all 0.6s ease');
+    }, 701);
 
     $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
         var table = $(element);
