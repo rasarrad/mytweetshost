@@ -1770,9 +1770,7 @@ body.big #sear2 {
     top: -10px;
 }
 
-body.big #sear {
-
-}
+body.big #sear {font-size: 31px;width: 14px;height: 33px;padding-top: 6px;padding-left: 10px;}
 
 #splash .splashbutton {
   border: 1px solid var(--dark-color);
@@ -1828,14 +1826,18 @@ body.big .checkstyleddiv.menuincludedeleted i {
   height: 71px;
   /* background: green; */
 }
+body.big .newLayout#searchpopup > div .titletable {
+  height: 82px;
+}
 
+.checks
 .checkstyleddiv.showdeleted span {
     width: 10px !important;
     height: 9.6px !important;
 }
 
 body.big .checkstyleddiv.showdeleted i {
-  left: 0.5px !important;
+  /* left: 0.5px !important; */
 }
 
 
@@ -2395,7 +2397,7 @@ body.big .buttonstable .date {
   margin-top: 71px !important;
 }
 body.big #searchtags {
-  margin-top: 93px !important;
+  margin-top: 82px !important;
 }
 
 .sectionicontd {
@@ -2660,11 +2662,17 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
   text-transform: uppercase;
 }
 
-
+body.big .checkstyleddiv.showdeleted .incdeltext {
+  top: -21px;
+  left: 20px;
+  font-size: 12px;
+  width: 72px;
+}
 
 body.big .checkstyleddiv.showdeleted {
-  /* top: -12px; */
+  top: 17px;
   /* right: -13px; */
+  width: 83px;
 }
 
 .checkstyleddiv.showdeleted .fa-square{
@@ -2767,8 +2775,9 @@ body.big .newLayout#searchpopup .el:not(.ellipsis) .slicename {
   width: 92px !important;
 }
 
+
 body.big .newLayout#searchpopup .sectiontitletable .sectionicontd {
-  height: 25px;
+  height: 46px !important;
 }
 
 /*****************************************************************************/
@@ -4848,7 +4857,8 @@ body.big #titlesearch {
 
 }
 body.big #titlesearch {
-  font-size: 17px;
+  font-size: 19px;
+  top: 19px !important;
 }
 
 #searchpopup .titletable tr:first-child {
@@ -4856,7 +4866,7 @@ body.big #titlesearch {
 }
 
 body.big #searchpopup .titletable tr:first-child {
-  height: 50px;
+  height: 41px;
 }
 
 #searchpopup .titletable tr:first-child b {
@@ -4866,6 +4876,10 @@ body.big #searchpopup .titletable tr:first-child {
   font-size: 20px;
 }
 
+body.big #searchpopup .titletable tr:first-child b {
+  font-size: 24px;
+  top: 1px;
+}
 
 #classifsearchul .litags {
   min-width: 16px;
