@@ -84,7 +84,7 @@ body.big #searchpopup .fa-star-half-o {
 
 #searchpopup .fa-user-circle {
   left: 11px;
-  top: 7px !important;
+  top: 8px !important;
   position: absolute;
   font-size: 12px;
 }
@@ -2666,6 +2666,13 @@ body.big .checkstyleddiv.showdeleted {
   /* top: -12px; */
   /* right: -13px; */
 }
+
+.checkstyleddiv.showdeleted .fa-square{
+  top: 2.7px;
+  left: 3.1px;
+  font-size: 6.1px !important;
+}
+
 
 .newLayout .fa-tags {
     font-size: 13px;
