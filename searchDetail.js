@@ -118,7 +118,7 @@ function changecriteria(e, obj, tableparam, flag) {
 
             table.find(".togglepos").css("position", ""); 
 
-            titletext.css('transition', 'opacity .7s ease');
+            titletext.css('transition', 'opacity .01s ease');
             titletext.css("opacity", 0); 
             table.css('transition', 'max-height 0.7s');
     
@@ -136,33 +136,35 @@ function changecriteria(e, obj, tableparam, flag) {
     
             table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down').css("top", "-4px");
     
-            table.find('td.el').removeClass('ellipsis');
+            searchbutton.css('transition', 'all .8s ease');
 
-                searchbutton.css('transition', 'all .8s ease');
+            if (table.attr("cheight"))
+                offset = offset + Number(table.attr("cheight"));  
+    
+            searchbutton.css("top", (table.offset().top + 15 + offset) + "px");
+            
+            setTimeout(function() { 
+                dblTapFlag = false;
+                table.find('td.el').removeClass('ellipsis');
 
-                if (table.attr("cheight"))
-                    offset = offset + Number(table.attr("cheight"));  
-        
-                searchbutton.css("top", (table.offset().top + 15 + offset) + "px");
-                
-                setTimeout(function() { 
-                    dblTapFlag = false;
-                    titletext.css("opacity", 1); 
-                }, 600);
+                titletext.css('transition', 'opacity .7s ease');
+                titletext.css("opacity", 1); 
+            }, 600);
         }
     }
     else {
-        titletext.css('transition', 'opacity .7s ease');
+        titletext.css('transition', 'opacity .01s ease');
         titletext.css("opacity", 0); 
         table.css('transition', 'max-height 0.7s');
         table.css('max-height', setHeight);
         table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
-        table.find('td.el').addClass('ellipsis');
 
         searchbutton.css('transition', 'all .7s ease');
         setTimeout(function() { 
+            table.find('td.el').addClass('ellipsis');
             searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
             dblTapFlag = false;        
+            titletext.css('transition', 'opacity .7s ease');
             titletext.css("opacity", 1); 
         }, 701);
     }
