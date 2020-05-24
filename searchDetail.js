@@ -99,6 +99,9 @@ function changecriteria(e, obj, tableparam, flag) {
 
     if (table.css('max-height') == setHeight) {
         if (obj) {
+            titletext.css('transition', 'none');
+            titletext.css("opacity", 0); 
+
             $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
                 var othertable = $(element);
 
@@ -121,8 +124,6 @@ function changecriteria(e, obj, tableparam, flag) {
 
             table.find(".togglepos").css("position", ""); 
 
-            titletext.css('transition', 'opacity .01s ease');
-            titletext.css("opacity", 0); 
             table.css('transition', 'max-height 0.7s');
     
             if (table.attr("cmaxheight")) {
@@ -156,7 +157,7 @@ function changecriteria(e, obj, tableparam, flag) {
         }
     }
     else {
-        titletext.css('transition', 'opacity .01s ease');
+        titletext.css('transition', 'none');
         titletext.css("opacity", 0); 
         table.css('transition', 'max-height 0.7s');
         table.css('max-height', setHeight);
