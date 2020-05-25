@@ -1835,8 +1835,8 @@ function putChoosedThemTop()
         $(themes[i]).find("td").css("border-bottom", "0");
 
 
-        $(element).find(".themebox").css("border", "3px solid var(--dark-color)").css("width", "calc(100% - 4px)");
-        $(element).find(".themetitle").css("left", "-3px").css("width", "calc(100% + 6px)").css("background", "var(--dark-color)").css("color", "var(--high-color)");
+        $(themes[i]).find(".themebox").css("border", "3px solid var(--dark-color)").css("width", "calc(100% - 4px)");
+        $(themes[i]).find(".themetitle").css("left", "-3px").css("width", "calc(100% + 6px)").css("background", "var(--dark-color)").css("color", "var(--high-color)");
 
 
         $("#mainsettings table#theme").append(themes[i]);
