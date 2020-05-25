@@ -1855,7 +1855,7 @@ body.big .checkstyleddiv.showdeleted i {
     left: 2px;
     z-index: 1;
     padding-bottom: 2px;
-    padding-top: 2px;
+    padding-top: 3px;
     background: var(--soft-color) !important;
     background: var(--softdark-color) !important;
     transition: color 0.7s;
@@ -2890,8 +2890,9 @@ body.big .newLayout#searchpopup .sectiontitletable:last-child .sectionicontd {
 
     
     #expandedittags, #expandsearchtags {
-        padding-left: 159px;
-        width: calc(100% - 166px);
+        padding-left: 160px;
+        width: calc(100% - 160px);
+        top: 149px;
     }
 
 
