@@ -92,7 +92,7 @@ body.big #searchpopup .fa-user-circle {
   font-size: 17px;
   position: absolute;
   left: 10px;
-  top: 10px !important;
+  top: 11px !important;
 }
 #searchpopup .fa-file-text {
   position: absolute;
@@ -1927,6 +1927,47 @@ body.big #titlesearch {
   text-align: center;
 }
 
+#mainmenu .checkstyleddiv span {
+  top: -4px;
+  width: 9px !important;
+} 
+
+.checkstyleddiv.showdeleted {
+  top: 12px;
+  width: 120px;
+  left: 10px;
+  position: absolute;
+}
+
+.checkstyleddiv.showdeleted .incdeltext {
+  position: relative;
+  top: -11px;
+  left: 20px;
+  width: 106px;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+body.big .checkstyleddiv.showdeleted .incdeltext {
+  top: -17px;
+  left: 20px;
+  font-size: 10px;
+  width: 72px;
+}
+
+body.big .checkstyleddiv.showdeleted {
+  top: 17px;
+  /* right: -13px; */
+  width: 83px;
+}
+
+.checkstyleddiv.showdeleted .fa-square{
+  top: 2.7px;
+  left: 4.1px;
+  font-size: 6.1px !important;
+}
+
+
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
 /* 
@@ -1944,6 +1985,26 @@ body.big #titlesearch {
      body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
       top: auto;
       bottom: 14px;
+    }
+
+    body.big .checkstyleddiv.showdeleted {
+      top: 15px;
+      /* right: -13px; */
+      width: 83px;
+    }
+
+    .checkstyleddiv.showdeleted .incdeltext {
+      top: -12px;
+    }
+
+    body.big .checkstyleddiv.showdeleted .incdeltext {
+      top: -18px;
+    }
+
+    .checkstyleddiv.showdeleted .fa-square{
+      top: 2.7px;
+      left: 3.5px;
+      font-size: 6.1px !important;
     }
 
     .checkstyleddiv.showdeleted span {
@@ -2346,6 +2407,20 @@ body.big #titlesearch {
         left: 0.2px !important;
         font-size: 6.4px !important;
     }    
+
+
+    #titlesearch {
+      top: 23px !important;
+    }
+
+    body.big #titlesearch {
+      top: 28px !important;
+    }
+        
+    .checkstyleddiv.showdeleted {
+      top: 4px;
+    }
+
               
 }
 /****************************** FIM LANDSCAPE CSS ****************************/
@@ -2671,45 +2746,6 @@ body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
   width: 207px;
 } 
 
-#mainmenu .checkstyleddiv span {
-  top: -4px;
-  width: 9px !important;
-} 
-
-.checkstyleddiv.showdeleted {
-  top: 12px;
-  width: 120px;
-  left: 10px;
-  position: absolute;
-}
-
-.checkstyleddiv.showdeleted .incdeltext {
-  position: relative;
-  top: -11px;
-  left: 20px;
-  width: 106px;
-  font-size: 9px;
-  text-transform: uppercase;
-}
-
-body.big .checkstyleddiv.showdeleted .incdeltext {
-  top: -17px;
-  left: 20px;
-  font-size: 10px;
-  width: 72px;
-}
-
-body.big .checkstyleddiv.showdeleted {
-  top: 17px;
-  /* right: -13px; */
-  width: 83px;
-}
-
-.checkstyleddiv.showdeleted .fa-square{
-  top: 2.7px;
-  left: 4.1px;
-  font-size: 6.1px !important;
-}
 
 
 .newLayout .fa-tags {
@@ -2740,7 +2776,7 @@ body.big .newLayout .fa-tags {
 body.big .newLayout#searchpopup .sectiontitle {
   font-size: 16px;
   position: absolute;
-  top: 10px;
+  top: 9px;
   left: 32px;
 }
 
@@ -2796,7 +2832,7 @@ body.big .newLayout#searchpopup .slicename {
 body.big .newLayout#searchpopup .el:not(.ellipsis) .slicename {
   line-height: 25px;
   font-size: 12px;
-  top: -1px !important;
+  top: -2px !important;
   padding-left: 0px !important;
   left: 11px;
 }
@@ -2822,14 +2858,37 @@ body.big .newLayout#searchpopup .sectiontitletable:last-child .sectionicontd {
   Screen = B/w 320px to 479px */
   @media (max-width: 480px) {
 
+    #titlesearch {
+      top: 24px !important;
+    }
 
     body.big #titlesearch {
       width: 178px;
     }
     .checkstyleddiv.showdeleted .incdeltext {
         width: 50px;
-        top: -17px;
+        top: -17px !important;
     }
+
+    body.big .checkstyleddiv.showdeleted .incdeltext {
+        width: 50px;
+        top: -18px !important;
+    }
+
+
+    .checkstyleddiv.showdeleted .fa-square{
+      top: 2.7px;
+      left: 3.4px;
+      font-size: 6.1px !important;
+    }
+
+    body.big .checkstyleddiv.showdeleted .fa-square{
+      top: 3.1px;
+      left: 3.7px;
+      font-size: 6.1px !important;
+    }
+
+    
     #expandedittags, #expandsearchtags {
         padding-left: 159px;
         width: calc(100% - 166px);
@@ -3433,13 +3492,13 @@ body.big .newLayout#searchpopup .sectiontitletable:last-child .sectionicontd {
       }
 
       .checkstyleddiv.showdeleted {
-        /* top: -4px; */
+        top: 10px;
         /* right: 6px; */
         width: 72px !important;
       }
 
       body.big .checkstyleddiv.showdeleted {
-        /* top: -12px; */
+        top: 15px;
         /* right: -13px; */
       }    
 
