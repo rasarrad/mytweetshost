@@ -223,7 +223,6 @@ var openDetailPopup = function(jsonobj)
         else {
             $("#linkChange .buttonstable tr:first-child td .date").css('color','');
         }  
-        console.log("-" + jsonobj.date.length + "-")
         if (jsonobj.date && jsonobj.date.trim().length > 0) {
             $("#linkChange .buttonstable tr:first-child td .date").html(formatDateFromNum(jsonobj.date));
             $("#linkChange .buttonstable tr:first-child td .dateinput").val(jsonobj.date);
@@ -336,43 +335,35 @@ var openDetailPopup = function(jsonobj)
 
         
         // INFO
-        $('#infoinput').attr("cinfo", jsonobj.info);
+        $('#infoinput').attr("cinfo", jsonobj.infoOri);
 
-        var infochanged = readCookie(jsonobj.id + "info");
         var currentinfodisplay = $('.currentinfo');
 
-        if (jsonobj.info.length > 0 && jsonobj.info != "undefined") {
-            $('.originalinfo').html(decodeURIComponent(jsonobj.info)); 
-        }
-        else {
-            $('.originalinfo').html("--"); 
-        }
-
-        if (infochanged) {
-            
-            if (showColors && jsonobj.info != infochanged) {
+        if (jsonobj.info != jsonobj.infoOri) {
+            if (showColors) {            
                 currentinfodisplay.css('color','#00ff72');
             }
-
-            if (infochanged.length > 0)
-                currentinfodisplay.html(decodeURIComponent(infochanged));
-            else
-                currentinfodisplay.html("--");
-
-            $('#infoinput').val(decodeURIComponent(infochanged));
-            $('#originalinfotd i').show();
-        } 
-        else {
-            currentinfodisplay.css('color',"");
-            if (jsonobj.info.length > 0 && jsonobj.info != "" && jsonobj.info != "undefined") {
-                currentinfodisplay.html(decodeURIComponent(jsonobj.info));
-                $('#infoinput').val(decodeURIComponent(jsonobj.info));
-            }
             else {
-                currentinfodisplay.html("--");
-                $('#infoinput').val("");
+                currentinfodisplay.css('color','');
             }
+            
+            $('#originalinfotd i').show();
+            if (jsonobj.info.length > 0)
+                $('.originalinfo').html(decodeURIComponent(jsonobj.infoOri)); 
+            else
+                $('.originalinfo').html("--");
         }
+        else {
+            currentinfodisplay.css('color','');
+            $('#originalinfotd i').hide();
+        }
+
+        $('#infoinput').val(decodeURIComponent(jsonobj.info));
+        
+        if (jsonobj.info.length > 0)
+            currentinfodisplay.html(decodeURIComponent(infochanged));
+        else
+            currentinfodisplay.html("--");
 
         updateLinkColor(jsonobj);
     }
@@ -930,7 +921,6 @@ function showDate(obj) {
 function datepickerAuthorChange(date) {
     if ($('#linkChange').attr("cid") != "new") {
         var otherObj = $("#linkChange").find(".date");
-        console.log("-" + date + "-");
         if (date) {
             otherObj.html(formatDate(date));
             $("#linkChange").find(".dateinput").val(formatNumDate(date));
@@ -954,7 +944,6 @@ function datepickerAuthorChange(date) {
             $("#linkChange").find(".dateinput").val("");
 
             if ($('#date').attr("cdate") != "") {
-                console.log("-ssss-");
                 createCookie2($('#linkChange').attr("cid"), "datechanged", "");
                 if (showColors) {
                     otherObj.css('color','#00ff72');
