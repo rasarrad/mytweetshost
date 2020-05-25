@@ -2796,7 +2796,7 @@ function clickMenuTooltip(obj, e) {
 
     if (obj)
         fixfocus(obj);
-    console.log($(obj).parent())
+    console.log($(obj))
 alert( $(obj).parent().attr("title"))
     showTooltip(event, this, true, $(obj).parent().attr("title"))
 }
