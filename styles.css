@@ -2039,9 +2039,18 @@ body.big .newLayout#searchpopup .sectiontitletable .sectionicontd {
   height: 26px !important;
 }
 
+.newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
+  height: 26px !important;
+}
+
 body.big .newLayout#searchpopup .sectiontitletable:last-child .sectionicontd {
   height: 46px !important;
 }
+
+body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
+  height: 46px !important;
+}
+
 
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
@@ -5546,7 +5555,7 @@ body.big .topoback:not(.topoback2) {
 }
 
 body.big #mainmenu table:last-child {
-  height: 100px;
+  /* height: 100px; */
 }  
 
 #mainmenu table {
