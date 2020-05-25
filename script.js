@@ -740,11 +740,14 @@ $( document ).ready(function() {
     
     // xyz startcode
     
+
+    openmenu();
+
     //clickmenu('all');
 
     //closeSplash(); 
 
-    togglecriterions();
+    //togglecriterions();
 
     
     /* CATEGORIES RENAMING
