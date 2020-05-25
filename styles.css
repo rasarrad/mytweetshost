@@ -2427,7 +2427,7 @@ body.big .buttonstable .date {
   margin-top: 71px !important;
 }
 body.big #searchtags {
-  margin-top: 82px !important;
+  margin-top: 84px !important;
 }
 
 .sectionicontd {
@@ -3280,7 +3280,7 @@ body.big .newLayout#searchpopup .sectiontitletable:last-child .sectionicontd {
         margin-top: 120px !important;
       }      
       body.big #searchtags {
-        margin-top: 83px !important;
+        margin-top: 85px !important;
       }
   
       body.big .newLayout.new #editTags {
@@ -4917,7 +4917,7 @@ body.big #searchpopup .titletable tr:first-child {
 }
 
 body.big #searchpopup .titletable tr:first-child b {
-  font-size: 24px;
+  font-size: 26px;
   top: 1px;
 }
 
