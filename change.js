@@ -513,10 +513,8 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
     }
 
     // All Links
-    $("#all").text(countersParam.total);
     $("#all2").text(countersParam.total);
-    $("#all").parent().attr("title", "Twitter: " + countersParam.total_t + " - Youtube: " + countersParam.total_y + " - Website: " + countersParam.total_h);
-    $("#all2").parent().attr("title", "Twitter: " + countersParam.total_t + " - Youtube: " + countersParam.total_y + " - Website: " + countersParam.total_h);
+    $("#all2").attr("title", "Twitter: " + countersParam.total_t + " - Youtube: " + countersParam.total_y + " - Website: " + countersParam.total_h);
 
     // New / Ongoing
     var toview = 0;
@@ -536,10 +534,8 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
         toview = toview + counters.get("Htvn");
     }
 
-    $("#tvn").text(toview);
-    $("#tvn").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
     $("#tvn2").text(toview);
-    $("#tvn2").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
+    $("#tvn2").attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
 
     // Hot / Trending
     var trending = 0;
@@ -559,10 +555,8 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
         trending = trending + counters.get("Htrn");
     }
 
-    $("#trn").text(trending);
-    $("#trn").parent().attr("title", "Twitter: " + trendingT + " - Youtube: " + trendingY + " - Website: " + trendingH);
     $("#trn2").text(trending);
-    $("#trn2").parent().attr("title", "Twitter: " + trendingT + " - Youtube: " + trendingY + " - Website: " + trendingH);
+    $("#trn2").attr("title", "Twitter: " + trendingT + " - Youtube: " + trendingY + " - Website: " + trendingH);
 
     // To Watch
     var toview = 0;
@@ -582,10 +576,8 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
         toview = toview + counters.get("Htvi");
     }
 
-    $("#tvi").text(toview);
-    $("#tvi").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
     $("#tvi2").text(toview);
-    $("#tvi2").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
+    $("#tvi2").attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
 
 
     // Documentaries / Films
@@ -606,10 +598,8 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
         toview = toview + counters.get("Htvl");
     }
 
-    $("#tvl").text(toview);
-    $("#tvl").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
     $("#tvl2").text(toview);
-    $("#tvl2").parent().attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
+    $("#tvl2").attr("title", "Twitter: " + toviewT + " - Youtube: " + toviewY + " - Website: " + toviewH);
 
     // Fast Reading
     var toread = 0;
@@ -628,10 +618,8 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
         toreadH = counters.get("Htre");
         toread = toread + counters.get("Htre");
     }
-    $("#tre").text(toread);
-    $("#tre").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
     $("#tre2").text(toread);
-    $("#tre2").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
+    $("#tre2").attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
 
     // Long Reading
     var toread = 0;
@@ -650,10 +638,8 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
         toreadH = counters.get("Htrl");
         toread = toread + counters.get("Htrl");
     }
-    $("#trl").text(toread);
-    $("#trl").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
     $("#trl2").text(toread);
-    $("#trl2").parent().attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
+    $("#trl2").attr("title", "Twitter: " + toreadT + " - Youtube: " + toreadY + " - Website: " + toreadH);
 
     // Important / To Keep
     var tokeep = 0;
@@ -672,10 +658,8 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
         tokeepH = counters.get("Htke");
         tokeep = tokeep + counters.get("Htk");
     }
-    $("#tke").text(tokeep);
-    $("#tke").parent().attr("title", "Twitter: " + tokeepT + " - Youtube: " + tokeepY + " - Website: " + tokeepH);
     $("#tke2").text(tokeep);
-    $("#tke2").parent().attr("title", "Twitter: " + tokeepT + " - Youtube: " + tokeepY + " - Website: " + tokeepH);
+    $("#tke2").attr("title", "Twitter: " + tokeepT + " - Youtube: " + tokeepY + " - Website: " + tokeepH);
 
     var imp = 0;
     var impT = 0;
@@ -693,10 +677,8 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
         impH = counters.get("Himp");
         imp = imp + counters.get("Himp");
     }
-    $("#imp").text(imp);
-    $("#imp").parent().attr("title", "Twitter: " + impT + " - Youtube: " + impY + " - Website: " + impH);
     $("#imp2").text(imp);
-    $("#imp2").parent().attr("title", "Twitter: " + impT + " - Youtube: " + impY + " - Website: " + impH);
+    $("#imp2").attr("title", "Twitter: " + impT + " - Youtube: " + impY + " - Website: " + impH);
 
     var climate = 0;
     var climateT = 0;
@@ -714,10 +696,8 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
         climateH = counters.get("Hcli");
         climate = climate + counters.get("Hcli");
     }
-    $("#cli").text(climate);
-    $("#cli").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
     $("#cli2").text(climate);
-    $("#cli2").parent().attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
+    $("#cli2").attr("title", "Twitter: " + climateT + " - Youtube: " + climateY + " - Website: " + climateH);
 
     if (execParamId) {
         dblFlag = false;  
