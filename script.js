@@ -2119,16 +2119,10 @@ function createCookie2(id, name, value, obj, doErase) {
     if (name != "templink") {
         val = updateObject(val, name, value, doErase);
 
-        console.log("1-" + doErase + "-");
-        console.log("2-" + value + "-");
-
-        
         if (doErase)
             document.cookie = id + name + "=NULL" + "; path=/";
         else 
             document.cookie = id + name + "=" + value + "; path=/";
-
-            console.log("3-" + readCookie(id + name) + "-");
 
         if (hasChanges(val)) {
             document.cookie = id + "haschanges=yes; path=/";
