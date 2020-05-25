@@ -1825,9 +1825,8 @@ function putChoosedThemTop()
             $('#mainsettings .currenttheme').html(currow.find('.themetitle').text()); 
             $(element).find("i").removeClass("gradient-border");
             $(element).find("i").hide();
-            $(element).find("td").css("border-bottom", "6px solid #45cae700");
             $(element).find(".themebox").css("border", "3px solid var(--high-color)").css("width", "calc(100% - 4px)");
-            $(element).find(".themetitle").css("left", "-3px").css("width", "calc(100% + 6px)");
+            $(element).find(".themetitle").css("left", "-3px").css("width", "calc(100% + 6px)").css("background", "var(--hig-color)").css("color", "var(--dark-color)");
         }
     });
 
@@ -1836,8 +1835,8 @@ function putChoosedThemTop()
         $(themes[i]).find("td").css("border-bottom", "0");
 
 
-        $(themes[i]).find(".themebox").css("border", "1px solid var(--high-color)").css("width", "100%");
-        $(themes[i]).find(".themetitle").css("left", "-1px").css("width", "calc(100% + 2px)");
+        $(element).find(".themebox").css("border", "3px solid var(--dark-color)").css("width", "calc(100% - 4px)");
+        $(element).find(".themetitle").css("left", "-3px").css("width", "calc(100% + 6px)").css("background", "var(--dark-color)").css("color", "var(--high-color)");
 
 
         $("#mainsettings table#theme").append(themes[i]);
