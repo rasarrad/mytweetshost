@@ -361,7 +361,7 @@ var openDetailPopup = function(jsonobj)
         $('#infoinput').val(decodeURIComponent(jsonobj.info));
         
         if (jsonobj.info.length > 0)
-            currentinfodisplay.html(decodeURIComponent(infochanged));
+            currentinfodisplay.html(decodeURIComponent(jsonobj.info));
         else
             currentinfodisplay.html("--");
 
