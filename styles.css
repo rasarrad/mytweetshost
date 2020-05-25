@@ -1806,6 +1806,7 @@ body.big #sear {font-size: 31px;width: 14px;height: 33px;padding-top: 6px;paddin
     
 body.big #mainmenu .checkstyleddiv {
   top: 12px !important;
+  left: 167px;
 }
 
 .newLayout#searchpopup > div .titletable {
@@ -3496,12 +3497,12 @@ body.big .newLayout .fa-tags {
 
       #mainmenu .checkstyleddiv {
         top: 11px !important;
-        left: 124px;
+        left: 115px;
       }
 
       body.big #mainmenu .checkstyleddiv {
         top: 11px !important;
-        left: 112px;
+        left: 108px;
       }
 
       .checkstyleddiv.showdeleted {
