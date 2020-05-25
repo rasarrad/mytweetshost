@@ -2518,7 +2518,7 @@ function showTooltip(event, obj, flag, text) {
 
     if (flag || hasOverflow(obj)) {
         var tooltip = $("#tooltip");
-
+        alert(text)
         if (text)
             tooltip.text(text);
         else
@@ -2796,7 +2796,7 @@ function clickMenuTooltip(obj, e) {
 
     if (obj)
         fixfocus(obj);
-
+alert( $(obj).parent().attr("title"))
     showTooltip(event, this, true, $(obj).parent().attr("title"))
 }
 
