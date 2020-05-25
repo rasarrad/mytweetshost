@@ -1826,7 +1826,7 @@ function putChoosedThemTop()
             $(element).find("i").removeClass("gradient-border");
             $(element).find("i").hide();
             $(element).find(".themebox").css("border", "3px solid var(--high-color)").css("width", "calc(100% - 4px)");
-            $(element).find(".themetitle").css("left", "-3px").css("width", "calc(100% + 6px)").css("background", "var(--hig-color)").css("color", "var(--dark-color)");
+            $(element).find(".themetitle").css("left", "-3px").css("width", "calc(100% + 6px)").css("background", "var(--high-color)").css("color", "var(--dark-color)");
         }
     });
 
