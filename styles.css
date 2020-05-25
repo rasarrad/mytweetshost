@@ -1467,7 +1467,7 @@ body.big #mainmenu .checkstyleddiv span {
   font-size: 18px;
   top: -1px;
   width: 13.9px !important;
-  height: 14px !important;
+  height: 13px !important;
 } 
 
 #mainmenu .fa-bars {
@@ -1800,11 +1800,12 @@ body.big #sear {font-size: 31px;width: 14px;height: 33px;padding-top: 6px;paddin
 
 
 #mainmenu .checkstyleddiv {
-  top: -11px !important;
+  top: 11px !important;
+  left: 177px;
 }
     
 body.big #mainmenu .checkstyleddiv {
-  top: -10px !important;
+  top: 12px !important;
 }
 
 .newLayout#searchpopup > div .titletable {
@@ -1915,7 +1916,7 @@ body.big #titlesearch {
 
 #mainmenu .checkstyleddiv span {
   top: -4px;
-  width: 9px !important;
+  width: 12.3px !important;
 } 
 
 .checkstyleddiv.showdeleted {
@@ -1924,6 +1925,7 @@ body.big #titlesearch {
   left: 10px;
   position: absolute;
 }
+
 
 .checkstyleddiv.showdeleted .incdeltext {
   position: relative;
@@ -1934,6 +1936,16 @@ body.big #titlesearch {
   text-transform: uppercase;
 }
 
+#mainmenu .checkstyleddiv.showdeleted .incdeltext {
+  top: -17px !important;
+  font-size: 11px;
+}
+
+body.big #mainmenu .checkstyleddiv.showdeleted .incdeltext {
+  top: -15px !important;
+  font-size: 12px;
+  left: 25px;
+}
 body.big .checkstyleddiv.showdeleted .incdeltext {
   top: -17px;
   left: 20px;
@@ -1953,6 +1965,17 @@ body.big .checkstyleddiv.showdeleted {
   font-size: 6.1px !important;
 }
 
+#mainmenu .checkstyleddiv.showdeleted .fa-square{
+  top: 2.7px;
+  left: 0.1px;
+  font-size: 6.1px !important;
+}
+
+body.big #mainmenu .checkstyleddiv.showdeleted .fa-square{
+  top: 3.4px;
+  left: 0.1px;
+  font-size: 7.5px !important;
+}
 .newLayout#searchpopup .sectionexpandable {
     position: relative;
 }
@@ -2048,7 +2071,7 @@ body.big .newLayout#searchpopup .sectiontitletable:last-child .sectionicontd {
 }
 
 body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
-  height: 46px !important;
+  height: 35px !important;
 }
 
 
@@ -2865,11 +2888,19 @@ body.big .newLayout .fa-tags {
         top: -17px !important;
     }
 
+    #mainmenu .checkstyleddiv.showdeleted .incdeltext {
+          top: -17px !important;
+      }
+    
     body.big .checkstyleddiv.showdeleted .incdeltext {
         width: 50px;
         top: -18px !important;
     }
 
+   body.big #mainmenu .checkstyleddiv.showdeleted .incdeltext {
+          top: -14px !important;
+      }
+    
 
     .checkstyleddiv.showdeleted .fa-square{
       top: 2.7px;
@@ -3464,11 +3495,13 @@ body.big .newLayout .fa-tags {
       }
 
       #mainmenu .checkstyleddiv {
-        top: -14px !important;
+        top: 11px !important;
+        left: 124px;
       }
 
       body.big #mainmenu .checkstyleddiv {
-        top: -13px !important;
+        top: 11px !important;
+        left: 112px;
       }
 
       .checkstyleddiv.showdeleted {
