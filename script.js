@@ -2790,7 +2790,12 @@ function stopWorker() {
     }
 }
 
+function clickMenuTooltip(obj) {
+    if (obj)
+        fixfocus(obj);
 
+    showTooltip(event, this, true, $(obj).parent().attr("title"))
+}
 
 
 
