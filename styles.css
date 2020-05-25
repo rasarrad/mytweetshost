@@ -1523,13 +1523,19 @@ body.big #mainmenu table:not(.firstsettable):not(.buttonstable) {
     font-size: 13px;
     opacity: 0.6;
     position: absolute;
-    top: 2px;
-    right: -19px;
+    top: -6px;
+    right: -33px;
+    padding-top: 6px;
+    /* background: blue; */
+    padding-right: 14px;
+    height: 19px;
 }
 body.big .menuitemcounter {
     font-size: 16px;
-    top: 5px;
-    right: -19px;
+    top: -7px;
+    right: -33px;
+    padding-top: 11px;
+    height: 26px;
 }       
 
 #calendardiv > div {

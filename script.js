@@ -2790,7 +2790,10 @@ function stopWorker() {
     }
 }
 
-function clickMenuTooltip(obj) {
+function clickMenuTooltip(obj, e) {
+    if (e)
+        e.stopPropagation();
+
     if (obj)
         fixfocus(obj);
 
