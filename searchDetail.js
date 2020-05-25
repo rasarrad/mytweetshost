@@ -140,21 +140,21 @@ function changecriteria(e, obj, tableparam, flag) {
             }
     
             table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down').css("top", "-4px");
-    
-            searchbutton.css('transition', 'all .8s ease');
-
-            if (table.attr("cheight"))
-                offset = offset + Number(table.attr("cheight"));  
-    
-            searchbutton.css("top", (table.offset().top + 15 + offset) + "px");
             
             table.find('td.el').removeClass('ellipsis');
             setTimeout(function() { 
                 dblTapFlag = false;
 
+                searchbutton.css('transition', 'all .8s ease');
+
+                if (table.attr("cheight"))
+                    offset = offset + Number(table.attr("cheight"));  
+        
+                searchbutton.css("top", (table.offset().top + 15 + offset) + "px");
+
                 titletext.css('transition', 'opacity .7s ease');
                 titletext.css("opacity", 1); 
-            }, 600);
+            }, 701);
         }
     }
     else {
