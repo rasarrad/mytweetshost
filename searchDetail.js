@@ -116,6 +116,7 @@ function changecriteria(e, obj, tableparam, flag) {
     
                     
                     if (othertable.attr("id") != table.attr("id")) {
+                        comsole.log(othertable.attr("id") + "-" + table.attr("id"))
                         othertable.find(".togglepos").css("position", "absolute"); 
                         othertable.find('td.el').addClass('ellipsis');
                     }
