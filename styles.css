@@ -1807,20 +1807,6 @@ body.big #mainmenu .checkstyleddiv {
   top: -10px !important;
 }
 
-
-.checkstyleddiv.menuincludedeleted i {
-    top: 1.9px;
-    left: 0.2px !important;
-    font-size: 6.4px !important;
-}
-
-body.big .checkstyleddiv.menuincludedeleted i {
-    top: 3.3px;
-    left: -0.1px !important;
-    font-size: 6.4px !important;
-}
-
-
 .newLayout#searchpopup > div .titletable {
   width: 475px;
   height: 71px;
@@ -2503,20 +2489,6 @@ body.big .newLayout#searchpopup .sectiontitletable:last-child .sectionicontd {
       height: 13px !important;
     }     
 
-
-    .checkstyleddiv.menuincludedeleted i {
-        top: 1.9px;
-        left: 0.2px !important;
-        font-size: 6.4px !important;
-    }
-
-    body.big .checkstyleddiv.menuincludedeleted i {
-        top: 3.3px;
-        left: 0.2px !important;
-        font-size: 6.4px !important;
-    }    
-
-
     #titlesearch {
       top: 23px !important;
     }
@@ -2824,10 +2796,6 @@ body.big #splash .titletable {
   width: 478px;
   padding-left: 6px;
 }  
-.menuincludedeleted {
-    left: 165px;
-}
-
 .yt.tweet:last-child .bottomgradiantback {
     background-image: linear-gradient(to bottom, var(--dark-color) 13%, #004a8600 80%);
     bottom: -37px !important;
@@ -2989,9 +2957,6 @@ body.big .newLayout .fa-tags {
     body.big #splash.newLayout table:nth-of-type(4) {
       height: 218px;
     }    
-    .menuincludedeleted {
-      left: 109px;
-     }
 
     #mask > div > i {
       background: #484848 !important;
@@ -3489,26 +3454,12 @@ body.big .newLayout .fa-tags {
         height: 30px;
       }
 
-
       #mainmenu .checkstyleddiv {
         top: -14px !important;
       }
 
       body.big #mainmenu .checkstyleddiv {
         top: -13px !important;
-      }
-
-
-      .checkstyleddiv.menuincludedeleted i {
-          top: 1.9px;
-          left: 0.2px !important;
-          font-size: 6.4px !important;
-      }
-
-      body.big .checkstyleddiv.menuincludedeleted i {
-          top: 3.3px;
-          left: 0.2px !important;
-          font-size: 6.4px !important;
       }
 
       .checkstyleddiv.showdeleted {
@@ -5293,17 +5244,6 @@ body.big #mainsettings #theme td:first-child {
   
 body.big .author {
   font-size: 19px;
-}
-  
-
-
-body.big .menuincludedeleted {
-    top: -7px !important;
-}
-
-body.big .menuincludedeleted label > div {
-    top: -17px !important;
-    padding-left: 3px;
 }
 
 #splash.newLayout .firstTable {
