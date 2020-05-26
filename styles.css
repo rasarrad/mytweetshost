@@ -71,7 +71,7 @@ body.big td.datetd {
 
 #searchpopup .fa-star-half-o {
   top: -2px !important;
-  top: -2px !important;
+  top: -1px !important;
   left: -5px;
 }
 body.big #searchpopup .fa-star-half-o {
@@ -114,7 +114,7 @@ body.big #searchpopup .fa-calendar {
   position: relative;
   left: -3px;
   margin-right: 4px;
-  top: 1px !important;
+  top: 2px !important;
 }
 
 #showdeleted2 {
@@ -1437,6 +1437,21 @@ body.big .newLayout#mainsettings > div {
 .newLayout#mainsettings .fa-check {
   top: -2px !important;
 }
+
+.newLayout#searchpopup > div {
+    position: relative;
+    top: -1px !important;
+    display: block;
+    max-height: calc(100% - 2px) !important;
+    margin-top: 0px !important;
+    border-top: 1px solid var(--soft-color);
+    border-radius: 0px;
+    padding-bottom: 0px;
+    border-radius: 6px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
 #mainmenu .buttonstable {
   width: 474px;
   display: block;
@@ -2014,13 +2029,13 @@ body.big .newLayout#searchpopup .sectiontitle {
 }
 
 .newLayout#searchpopup .fa-tags {
-    top: -1px;
+    top: 1px;
     left: -3px;
     font-size: 13px;
 }
 body.big .newLayout#searchpopup .fa-tags {
     font-size: 17px;
-    top: 1px;
+    top: 2px;
     left: -3px;
 }
 
@@ -2101,6 +2116,14 @@ body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
       bottom: 14px;
     }
 
+    .newLayout#searchpopup > div {
+        max-height: calc(100% - 3px) !important;
+    }
+
+    body.big #mainmenu .checkstyleddiv.showdeleted .incdeltext {
+      top: -14px !important;
+    }    
+
     .newLayout#searchpopup .el:not(.ellipsis) .slicename {
       line-height: 18px;
       position: relative;
@@ -2130,7 +2153,15 @@ body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
       top: -12px;
     }
 
+    #searchpopup .checkstyleddiv.showdeleted .incdeltext {
+      top: -11px;
+    }
+    
     body.big .checkstyleddiv.showdeleted .incdeltext {
+      top: -18px;
+    }
+
+    body.big #searchpopup .checkstyleddiv.showdeleted .incdeltext {
       top: -18px;
     }
 
@@ -2514,11 +2545,13 @@ body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
     }    
 
     #mainmenu .checkstyleddiv {
-      top: -14px !important;
+      top: 8px !important;
+      left: 179px;
     }
 
     body.big #mainmenu .checkstyleddiv {
-      top: -13px !important;
+      top: 8px !important;
+      left: 173px;
     }
 
     body.big #mainmenu .checkstyleddiv span {
@@ -2540,7 +2573,14 @@ body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
       top: 4px;
     }
 
-              
+    #searchpopup .checkstyleddiv.showdeleted {
+      top: 9px;
+    }
+       
+    body.big #searchpopup .checkstyleddiv.showdeleted {
+      top: 14px;
+    }
+                       
 }
 /****************************** FIM LANDSCAPE CSS ****************************/
 /*****************************************************************************/
@@ -2621,7 +2661,7 @@ body.big .buttonstable .date {
   margin-top: 71px !important;
 }
 body.big #searchtags {
-  margin-top: 84px !important;
+  margin-top: 83px !important;
 }
 
 .sectionicontd {
@@ -3128,7 +3168,7 @@ body.big .newLayout .fa-tags {
       width: 304px;
     } 
     .menuitemcounter {
-        top: 1px;
+        top: -5px;
     }
     body.big #mainmenu .firstsettable {
       margin-top: 42px;
@@ -3224,12 +3264,12 @@ body.big .newLayout .fa-tags {
         max-height: calc(100% - 137px) !important;
     } 
     #searchpopup.newLayout > div {
-        margin-top: 31px !important;
-        max-height: calc(100% - 137px) !important;
+        /* margin-top: 31px !important; */
+        /* max-height: calc(100% - 137px) !important; */
     } 
     body.big #searchpopup.newLayout > div {
-        margin-top: 27px !important;
-        max-height: 614px !important;
+        /* margin-top: 27px !important; */
+        /* max-height: 614px !important; */
     } 
   
     body.big .newLayout#mainsettings > div {
@@ -3365,13 +3405,13 @@ body.big .newLayout .fa-tags {
         margin-top: 115px !important;
       }
       #searchtags {
-        margin-top: 71px !important;
+        margin-top: 70px !important;
       }
       body.big #searchtags {
         margin-top: 120px !important;
       }      
       body.big #searchtags {
-        margin-top: 85px !important;
+        margin-top: 82px !important;
       }
   
       body.big .newLayout.new #editTags {
@@ -3502,13 +3542,13 @@ body.big .newLayout .fa-tags {
       }
 
       #mainmenu .checkstyleddiv {
-        top: 11px !important;
-        left: 115px;
+        top: 9px !important;
+        left: 121px;
       }
 
       body.big #mainmenu .checkstyleddiv {
-        top: 11px !important;
-        left: 108px;
+        top: 8px !important;
+        left: 112px;
       }
 
       .checkstyleddiv.showdeleted {
