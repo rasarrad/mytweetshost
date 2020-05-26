@@ -2278,7 +2278,7 @@ body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
     
     #tooltip {
       max-width: 387px;
-      width: 387px;
+      /* width: 387px; */
     }
 
     .tweet.html div.contentin {
@@ -3431,7 +3431,7 @@ body.big .newLayout .fa-tags {
 
     #tooltip {
       max-width: 309px;
-      width: 309px;
+      /* width: 309px; */
     }
 
      body.big .tweet.yt div.contentin {
