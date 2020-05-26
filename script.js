@@ -1357,6 +1357,7 @@ function handleTouchEnd(evt) {
 
 // xyzdouble 
 function executeSingleDoubleFunction(obj, type) {
+    alert("-" + obj + "-")
     switch(obj.substring(0, 9)) {
 
         case "contentin":
