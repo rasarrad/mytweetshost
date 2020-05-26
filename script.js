@@ -146,7 +146,7 @@ $( document ).ready(function() {
     if (!dunl())
         showSplash();
     */
-    //showSplash();
+    showSplash();
     //////////////
         
     // START das colors
@@ -740,7 +740,7 @@ $( document ).ready(function() {
     // xyz startcode
     
 
-    openmenu();
+    //openmenu();
 
     //clickmenu('all');
 
@@ -1357,7 +1357,6 @@ function handleTouchEnd(evt) {
 // xyzdouble 
 function executeSingleDoubleFunction(obj, type) {
     switch(obj.substring(0, 9)) {
-
         case "contentin":
             var value = readCookie("doublefs");
             if (value) {
@@ -1375,13 +1374,10 @@ function executeSingleDoubleFunction(obj, type) {
                 else {
                     openLinkOutside(obj.substring(9));
                 }
-                //cnonsole.log("Execute double/long touch:" + obj);
             }
             else { // Execute single/touch
                 openLinkInline(obj.substring(9));
-                //cnonsole.log("Execute single/touch:" + obj);
             }
-
             break;  
         case "tweetcoun":
             if (type == "double") { // Execute double/long touch
@@ -1393,7 +1389,6 @@ function executeSingleDoubleFunction(obj, type) {
                 else
                     countdoubleclick();
             }
-
             break;  
     }
 }
