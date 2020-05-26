@@ -2112,6 +2112,25 @@ body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
 }
 
 
+#linkChange #datetoshow {
+  position: relative;
+  top: -1px;
+}
+
+#linktable {
+  transition: max-height 0.5s ease 0s;
+  max-height: 26px;
+  margin-top: 76px;
+}
+
+
+#linktable .fa-link {font-size: 14px;position: relative;top: 0px;left: -4px;}
+
+#linktable .sectiontitle {padding-left: 6px;position: relative;top: -1px;left: -1px;}
+
+#linktable #tweet {position: relative;top: -3px;width: calc(100% - 53px);left: 39px;}
+
+
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
 /* 
@@ -2872,6 +2891,9 @@ body.big #linkChange.newLayout > div .titletable tr:first-child .firsttd {
   margin-left: 3px;
   margin-right: 3px;
   line-height: 14px;
+  white-space: nowrap;
+  position: relative;
+  top: -1px;
 }
 body.big #postedby {
   width: 169px;
@@ -2887,7 +2909,7 @@ body.big #datetoshow {
   margin-left: 4px;
 }
 #linkChange .titletable {
-  width: 464px;
+  width: 470px;
   padding-left: 7px;
 }
 body.big #linkChange .titletable {
@@ -2962,6 +2984,7 @@ body.big .newLayout .fa-tags {
 body.big #splash .secondrow div {
     font-size: 13px;
 }
+
 
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
@@ -3832,7 +3855,7 @@ body.big #splash .secondrow div {
     cursor: pointer;
     font-size: 18px !important;
     position: relative;
-    top: 2px;
+    top: 1px;
 }
 
 body.big .newLayout.new #removetweetp2 {

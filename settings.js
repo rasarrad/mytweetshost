@@ -370,6 +370,7 @@ var openDetailPopup = function(jsonobj)
     else {
 
         dblFlag = false;
+        $("#linkChange #seticon").removeClass('fa-question').removeClass('fa-twitter').removeClass('fa-internet-explorer').removeClass('fa-youtube-play');
 
         $('#linkChange').find("table:not(.defaulttablerow):not(.newlinktable)").each( function( index, element ) {
             var table = $(element);
