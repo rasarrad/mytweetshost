@@ -2959,6 +2959,10 @@ body.big .newLayout .fa-tags {
     width: 455px;
 }
 
+body.big #splash .secondrow div {
+    font-size: 13px;
+}
+
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
 /* 
@@ -2967,7 +2971,7 @@ body.big .newLayout .fa-tags {
   @media (max-width: 480px) {
 
     #splash .secondrow div {
-        width: 338px;
+        width: 340px;
     }
 
     #titlesearch {
@@ -3164,7 +3168,7 @@ body.big .newLayout .fa-tags {
       margin-top: -0.5px !important;
     }
     body.big #splash .titletable {
-      width: 343px;
+      width: 361px;
       padding-left: 6px;
     } 
     body.big .buttonstable .date {
@@ -5393,7 +5397,7 @@ body.big .author {
 }
 
 body.big #splash.newLayout .firstTable {
-    margin-top: 40px;
+    margin-top: 62px;
 }
 
 #splash.newLayout .fa-folder-open {
