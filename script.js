@@ -1384,12 +1384,11 @@ function executeSingleDoubleFunction(obj, type) {
 
             break;  
         case "tweetcoun":
-            console.log(type)
             if (type == "double") { // Execute double/long touch
                 countdoubleclick();
             }
             else { // Execute single/touch
-                if (!isMobile)
+                if (isMobile)
                     countclick();
                 else
                     countdoubleclick();
