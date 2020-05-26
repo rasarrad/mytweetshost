@@ -184,16 +184,15 @@ $( document ).ready(function() {
     if (valueSwipe) {
         if (valueSwipe == "Yes") {
             useSwipes = true;
-
-            if (isMobile) {
-                // START swip binds
-                document.addEventListener('touchstart', handleTouchStart, false);        
-                document.addEventListener('touchmove', handleTouchMove, false);
-                document.addEventListener('touchend', handleTouchEnd, false);
-            }
         }
     }
     
+    if (isMobile) {
+        // START swip binds
+        document.addEventListener('touchstart', handleTouchStart, false);        
+        document.addEventListener('touchmove', handleTouchMove, false);
+        document.addEventListener('touchend', handleTouchEnd, false);
+    }
 
     // START da help
     value = readCookie("help");
@@ -1316,25 +1315,23 @@ function handleTouchMove(evt) {
 };
 
 function handleTouchEnd(evt) {
-    console.log(111111111111);
-    console.log(lastTouch);
     if (lastTouch) {
         if (useSwipes && dblFlag && lastTouch) {                       
             if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
                 if ( xDiff > 0 ) {
                     //cnonsole.log("left: " + currObjSwipe);
-                    //executeSwipeFunction(currObjSwipe, "left");
+                    executeSwipeFunction(currObjSwipe, "left");
                 } else {
                     //cnonsole.log("right: " + currObjSwipe);
-                    //executeSwipeFunction(currObjSwipe, "right");
+                    executeSwipeFunction(currObjSwipe, "right");
                 }                       
             } else {
                 if ( yDiff > 0 ) {
                     //cnonsole.log("up: " + currObjSwipe);
-                    //executeSwipeFunction(currObjSwipe, "up");
+                    executeSwipeFunction(currObjSwipe, "up");
                 } else {
                     //cnonsole.log("down: " + currObjSwipe);
-                    //executeSwipeFunction(currObjSwipe, "down");
+                    executeSwipeFunction(currObjSwipe, "down");
                 }                                                                 
             }
         }      
