@@ -2529,9 +2529,6 @@ function showTooltip(event, obj, flag, text) {
     
         tooltip.fadeIn(700);
 
-        setTimeout(function(){
-            closeTooltip();
-        }, 4000);
     }
 }
 
