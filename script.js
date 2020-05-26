@@ -146,7 +146,7 @@ $( document ).ready(function() {
     if (!dunl())
         showSplash();
     */
-    showSplash();
+    //showSplash();
     //////////////
         
     // START das colors
