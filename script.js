@@ -719,8 +719,8 @@ $( document ).ready(function() {
                     openPopupParsed(text, 1);
                 }
                 else {
-                    var win = window.open('https://github.com/rasarrad/mytweetshost/edit/master/data.json', '_blank');
-                    win.focus();
+                    //var win = window.open('https://github.com/rasarrad/mytweetshost/edit/master/data.json', '_blank');
+                    //win.focus();
                 }
     
                 dblFlag = false;
@@ -740,6 +740,7 @@ $( document ).ready(function() {
     // xyz startcode
     
 
+    openPopupParsed("sssssssss", 1);
     //openmenu();
 
     //clickmenu('all');
