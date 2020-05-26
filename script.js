@@ -1928,7 +1928,15 @@ function gotop(e) {
         e.stopPropagation();
     
     if (!$("#tweetcount").hasClass("hidicon")) {
-        $("html").scrollTop(0);
+        var speed = 2500;
+        var top = $(window).scrollTop();
+
+        if (top < 1000)
+            speed = 500;
+        else if (top < 5000)
+            speed = 1500;
+
+        $("html, body").animate({ scrollTop: "0" }, speed); 
     }
 }   
 

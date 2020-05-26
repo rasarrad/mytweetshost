@@ -339,12 +339,12 @@ ol > li {
     font-weight: bold;
     padding-bottom: 2px;
     border-radius: 7px;
-    color: var(--dark-color);
+    color: var(--high-color);
     cursor: pointer;
-    border: 2px solid var(--soft-color);
+    border: 2px solid var(--high-color);
     z-index: 13;
     display: none;
-    background: var(--high-color);
+    background: var(--soft-color);
     opacity: 1;
    }
 
@@ -2128,7 +2128,7 @@ body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
   @media (max-width: 999px) and (min-width: 481px), (max-width: 1024px) and (min-width: 768px) and (orientation: portrait) {
      body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
       top: auto;
-      bottom: 13px;
+      bottom: 4px;
     }
 
     .newLayout#searchpopup > div {
@@ -2386,9 +2386,8 @@ body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
         margin-top: -9px;
     }
     body.big .tweet:first-child #expand {
-        margin-top: -11px;
-    }   
-     
+        margin-top: -10px;
+    }    
     .tweet:first-child .linkbar {
         top: -1px !important;
     }
