@@ -1388,7 +1388,10 @@ function executeSingleDoubleFunction(obj, type) {
                 countdoubleclick();
             }
             else { // Execute single/touch
-                countclick();
+                if (!isMobile)
+                    countclick();
+                else
+                    countdoubleclick();
             }
 
             break;  
