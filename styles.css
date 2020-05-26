@@ -2953,6 +2953,11 @@ body.big .newLayout .fa-tags {
     left: -3px;
 }
 
+#splash .secondrow div {
+    margin-left: -1px;
+    font-size: 11px;
+    width: 455px;
+}
 
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
@@ -2960,6 +2965,10 @@ body.big .newLayout .fa-tags {
   ###Device = Most of the Smartphones Mobiles (Portrait)
   Screen = B/w 320px to 479px */
   @media (max-width: 480px) {
+
+    #splash .secondrow div {
+        width: 338px;
+    }
 
     #titlesearch {
       top: 24px !important;
@@ -5380,7 +5389,7 @@ body.big .author {
 }
 
 #splash.newLayout .firstTable {
-    margin-top: 38px;
+    margin-top: 57px;
 }
 
 body.big #splash.newLayout .firstTable {
