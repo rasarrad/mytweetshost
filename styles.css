@@ -3064,6 +3064,9 @@ body.big .newLayout .fa-tags {
     .tweet:first-child #expand {
         margin-top: -9px;
     }
+    body.big .tweet:first-child #expand {
+        margin-top: -9px;
+    }
     .linkbar {
         left: calc(50% - 240px);
         top: 6px !important;
@@ -3253,7 +3256,7 @@ body.big .newLayout .fa-tags {
     }
     body.big #expand {
         right: calc(50% - 241px);
-        top: 8.5px !important;
+        top: 11px !important;
     }     
   .newLayout > div {
         /* margin-top: 20px !important; */
@@ -3285,7 +3288,7 @@ body.big .newLayout .fa-tags {
     }   
     body.big .tags {
       padding-left: 42px !important;
-      top: -2px;
+      top: -1px;
       max-width: calc(100% - 83px) !important;
     }   
     
@@ -3312,13 +3315,16 @@ body.big .newLayout .fa-tags {
     }      
     body.big .linkbar {
         left: 8px;
-        top: 0px !important;
+        top: 2px !important;
     }
     body.big .linkbar.fa-youtube-play {
         top: 2px !important;
-    }    
+    } 
+    body.big .tweet:first-child .linkbar {
+        top: 0px !important;
+    }  
     body.big .linkbar.fa-internet-explorer {
-        top: 3px !important;
+        top: 4px !important;
     }     
   .toptitle {
       top: 12px;
