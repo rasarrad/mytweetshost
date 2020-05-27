@@ -1887,14 +1887,7 @@ body.big .checkstyleddiv.showdeleted i {
 }
 
 
-
-body.big #expandedittags {
-    /* padding-left: 2px; */
-    position: absolute;
-    padding-right: 11px;
-}
-
-body.big #expandsearchtags {
+body.big #expandsearchtags, body.big #expandsearchtags #expandedittags {
     top: 163px;
 }
 
