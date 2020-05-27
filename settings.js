@@ -1217,10 +1217,8 @@ function editSetting(e, obj, flag) {
             table.find('td.el').addClass('ellipsis');
         }
 
-        setTimeout(function() { 
-            titletext.css('transition', 'opacity .7s ease');
+            titletext.css('transition', 'opacity .9s ease');
             titletext.css("opacity", 1); 
-        }, 701);
     }
     
     //updateTopPosition("linkChange"); 
