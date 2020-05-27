@@ -1154,11 +1154,12 @@ function editSetting(e, obj, flag) {
         if ($('body').hasClass('big'))
             setHeight = "37px";
     
+        var table = $(obj).parent().parent();
+
         var titletext = table.find(".titletext");
         titletext.css('transition', 'opacity .7s ease');
         titletext.css("opacity", 0); 
 
-        var table = $(obj).parent().parent();
         if (table.css('max-height') == setHeight) {
             $("#mainsettings table.expd").each( function( index, element ) {
                 var table = $(element);
