@@ -743,8 +743,10 @@ $( document ).ready(function() {
     //openPopupParsed("sssssssss", 1);
     
     //openmenu();
-
-    clickmenu('all');
+    setTimeout(function() {    
+        
+        clickmenu('all');
+    }, 1200);  
 
     //closeSplash(); 
 
