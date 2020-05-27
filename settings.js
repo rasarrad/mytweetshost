@@ -1154,9 +1154,12 @@ function editSetting(e, obj, flag) {
         if ($('body').hasClass('big'))
             setHeight = "37px";
     
+        var titletext = table.find(".titletext");
+        titletext.css('transition', 'opacity .7s ease');
+        titletext.css("opacity", 0); 
+
         var table = $(obj).parent().parent();
         if (table.css('max-height') == setHeight) {
-            var hasExpanded = false;
             $("#mainsettings table.expd").each( function( index, element ) {
                 var table = $(element);
         
@@ -1212,6 +1215,11 @@ function editSetting(e, obj, flag) {
             table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
             table.find('td.el').addClass('ellipsis');
         }
+
+        setTimeout(function() { 
+            titletext.css('transition', 'opacity .7s ease');
+            titletext.css("opacity", 1); 
+        }, 701);
     }
     
     //updateTopPosition("linkChange"); 
