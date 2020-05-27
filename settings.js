@@ -1157,7 +1157,7 @@ function editSetting(e, obj, flag) {
         var table = $(obj).parent().parent();
 
         var titletext = table.find(".titletext");
-        titletext.css('transition', 'opacity .7s ease');
+        titletext.css('transition', 'none');
         titletext.css("opacity", 0); 
 
         if (table.css('max-height') == setHeight) {
