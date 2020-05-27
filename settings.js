@@ -1218,7 +1218,7 @@ function editSetting(e, obj, flag) {
         }
 
         setTimeout(function() { 
-            titletext.css('transition', 'opacity .9s ease');
+            titletext.css('transition', 'opacity 1.3s ease');
             titletext.css("opacity", 1); 
         }, 1);
     }
