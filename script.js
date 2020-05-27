@@ -740,10 +740,11 @@ $( document ).ready(function() {
     // xyz startcode
     
 
-    openPopupParsed("sssssssss", 1);
+    //openPopupParsed("sssssssss", 1);
+    
     //openmenu();
 
-    //clickmenu('all');
+    clickmenu('all');
 
     //closeSplash(); 
 

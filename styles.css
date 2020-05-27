@@ -2131,6 +2131,46 @@ body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
 #linktable #tweet {position: relative;top: -3px;width: calc(100% - 53px);left: 39px;}
 
 
+.newLayout#searchpopup .slicename {
+    text-transform: lowercase;
+    top: -2px !important;
+    font-size: 10px;
+    padding-left: 6px !important;
+}
+
+.newLayout#linkChange .el:not(.ellipsis) .slicename {
+    line-height: 18px;
+    position: relative;
+    top: -2px !important;
+    text-transform: uppercase;
+}
+
+.newLayout#linkChange .sectiontitle {
+    position: absolute;
+    top: 6px;
+}
+
+.newLayout#linkChange .sectionexpandable {
+    position: relative;
+}
+
+.newLayout#linkChange .sectiontitle {
+    padding-left: 9px;
+    font-weight: bold;
+    font-size: 12px;
+    position: absolute;
+    top: 6px;
+    left: 29px;
+    text-transform: lowercase;
+}
+
+.newLayout#linkChange .el.ellipsis .slicename {
+    /* left: 1px; */
+    text-align: right !important;
+    margin-right: 9px;
+    text-transform: uppercase;
+}
+
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
 /* 
@@ -4532,8 +4572,8 @@ td:not(.ellipsis) .titletext.originalcats  {
     left: 4px;
 }
 td:not(.ellipsis) .titletext.currenttags {
-    position: relative;
-    top: -0.5px !important;
+    /* position: relative; */
+    /* top: -0.5px !important; */
 }
 
 body.big td:not(.ellipsis) .titletext {
