@@ -1197,13 +1197,6 @@ function editSetting(e, obj, flag) {
                 table.css('max-height', "fit-content");
             }
             
-            if (table.attr("extrastyle")) {
-                table.css('overflow-y', "auto");
-            }
-            else {
-                table.css('overflow-y', "hidden");
-            }
-
             if (table.attr('id') != 'editInfo')
                 table.find('td.el').removeClass('ellipsis');
 
@@ -1211,7 +1204,6 @@ function editSetting(e, obj, flag) {
         }
         else {
             table.css('transition', 'transition: all 0.7s !important');
-            table.css('overflow-y', "hidden");
             table.css('max-height', setHeight);
             table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
             table.find('td.el').addClass('ellipsis');

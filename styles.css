@@ -2117,18 +2117,38 @@ body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
 }
 
 
-#linktable .fa-link {font-size: 14px;position: relative;top: 0px;left: -4px;}
+#linktable .fa-link {
+  font-size: 14px;
+  position: relative;
+  top: 0px;
+  left: -4px;
+}
 
-#linktable .sectiontitle {padding-left: 6px;position: relative;top: -1px;left: -1px;}
+#linktable .sectiontitle {
+  padding-left: 6px;
+  position: relative;
+  top: -1px;
+  left: -1px;
+}
 
-#linktable #tweet {position: relative;top: -3px;width: calc(100% - 53px);left: 39px;}
-
+#linktable #tweet {
+  position: relative;
+  top: -3px;
+  width: calc(100% - 53px);
+  left: 39px;
+}
 
 .newLayout#searchpopup .slicename {
     text-transform: lowercase;
     top: -2px !important;
     font-size: 10px;
     padding-left: 6px !important;
+}
+
+
+.newLayout#linkChange .sectiontitletable .sectionicontd {
+  height: 18px;
+  min-height: 18px;
 }
 
 .newLayout#linkChange .el:not(.ellipsis) .slicename {
@@ -3964,6 +3984,7 @@ body.big .newLayout #editTags.sectiontitletable tr:first-child td {
   padding-bottom: 6px;
   /* position: relative; */
   /* top: 0px; */
+  
 }
 
 .newLayout table.emptyvalue .sectionicontd.el.ellipsis > span {
