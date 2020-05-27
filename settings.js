@@ -177,13 +177,13 @@ var openDetailPopup = function(jsonobj)
         
         $('#editTags').css('margin-top', '75px');  
         
-        $("#linkChange #seticon").addClass('fa').addClass('fa-twitter').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
+        $("#linkChange #seticon").addClass('fa').addClass('fa-twitter');
     
         if (jsonobj.type == "H") {
-            $("#linkChange #seticon").addClass('fa').removeClass('fa-twitter').addClass('fa-internet-explorer').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
+            $("#linkChange #seticon").addClass('fa').removeClass('fa-twitter').addClass('fa-internet-explorer');
         }
         else if (jsonobj.type == "Y") {
-            $("#linkChange #seticon").addClass('fa').removeClass('fa-twitter').addClass('fa-youtube-play').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
+            $("#linkChange #seticon").addClass('fa').removeClass('fa-twitter').addClass('fa-youtube-play');
         }   
 
             //$("#linkChange .buttonstable tr:first-child td .id").html(jsonobj.id);

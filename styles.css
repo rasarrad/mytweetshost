@@ -2154,7 +2154,7 @@ body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
 .newLayout#linkChange .el:not(.ellipsis) .slicename {
     line-height: 18px;
     position: relative;
-    top: -2px !important;
+    top: -3px !important;
     text-transform: uppercase;
 }
 
@@ -2170,11 +2170,11 @@ body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
 .newLayout#linkChange .sectiontitle {
     padding-left: 9px;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 11px;
     position: absolute;
-    top: 6px;
+    top: 7px;
     left: 29px;
-    text-transform: lowercase;
+    text-transform: uppercase;
 }
 
 .newLayout#linkChange .el.ellipsis .slicename {
@@ -2182,6 +2182,18 @@ body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
     text-align: right !important;
     margin-right: 9px;
     text-transform: uppercase;
+}
+
+#linkChange .firsttd .author {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 224px !important;
+  display: inline-block;
+  white-space: nowrap;
+  position: relative;
+  top: 3px;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 /*****************************************************************************/
@@ -2748,6 +2760,8 @@ body.big .newLayout.new .buttonstable .datespan {
 .buttonstable .date {
     position: relative !important;
     top: 0px;
+    text-transform: uppercase;
+    font-size: 14px;
 }    
 body.big .buttonstable .date {
     position: relative !important;
@@ -2757,6 +2771,7 @@ body.big .buttonstable .date {
 .buttonstable .datespan {
     position: relative !important;
     top: 0px;
+    margin-left: 14px;
 }  
 
 
@@ -2962,7 +2977,7 @@ body.big #datetoshow {
   margin-left: 4px;
 }
 #linkChange .titletable {
-  width: 470px;
+  width: 476px;
   padding-left: 7px;
 }
 body.big #linkChange .titletable {
@@ -3038,6 +3053,18 @@ body.big #splash .secondrow div {
     font-size: 13px;
 }
 
+
+.newLayout#linkChange .fa-tags {
+    font-size: 14px;
+    position: relative;
+    top: -1px;
+    left: -4px;
+}
+body.big .newLayout#linkChange .fa-tags {
+    font-size: 17px;
+    top: 1px;
+    left: -3px;
+}
 
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
@@ -4062,7 +4089,7 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
 
 .newLayout .sectiontitletable .sectionedittd i {
   position: relative;
-  top: -2px;
+  top: -3px;
   font-size: 16px;
   position: relative;
   width: 11px;
@@ -4421,7 +4448,7 @@ input[type="radio"]:checked + label span:not(.text) {
 
 .currenttags.titletext {
   position: relative;
-  top: -1.5px !important;
+  top: -2.5px !important;
 }
 
 .currentinfo.titletext {
@@ -4532,6 +4559,7 @@ body.big .newLayout #editClassif .sectiontitle {
 
 .newLayout .boldtitle {
     font-size: 12px;
+    text-transform: uppercase;
 }
 body.big .newLayout .boldtitle {
     font-size: 15px;
@@ -4552,6 +4580,7 @@ body.big .newLayout .titletext {
 td:not(.ellipsis) .titletext {
     position: relative;
     top: -2px !important;
+    text-transform: uppercase;
 }
 td:not(.ellipsis) .titletext.originalinfo {
     position: relative;
@@ -4607,6 +4636,7 @@ body.big td.ellipsis .titletext.currenttags {
 
 .newLayout .fa-undo.mainbutton {
    font-size: 14px !important;
+   top: 0 !important;
 }
 body.big .newLayout .fa-undo..mainbutton {
    font-size: 17px !important; 
@@ -4922,6 +4952,14 @@ body.notransit * {
 }
 
 body.big .newLayout.new #seticon {font-size: 24px;top: 3px;}
+
+
+#linkChange #seticon.fa-youtube-play {
+  margin-right: 9px;
+  font-size: 15px !important;
+  position: relative;
+  top: 0px !important;
+}
 
 #previewtd {
   width: calc(100% - 220px);
