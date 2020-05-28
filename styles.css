@@ -972,7 +972,7 @@ twitter-widget {
 }
 body.big .buttonstable .author {
        max-width: 124px !important;
-       top: 3px !important;
+       top: 4px !important;
 }
 
 
@@ -2197,6 +2197,11 @@ body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
   top: 3px;
   text-transform: uppercase;
   font-size: 14px;
+}
+
+body.big #linkChange .firsttd .author {
+  font-size: 16px;
+  max-width: 183px !important;
 }
 
 body .newLayout #editTags .sectionicontd:first-child {
@@ -4978,6 +4983,11 @@ body.big .newLayout.new #seticon {font-size: 24px;top: 3px;}
   font-size: 15px !important;
   position: relative;
   top: 0px !important;
+}
+
+body.big #linkChange #seticon.fa-youtube-play {
+  font-size: 19px !important;
+  top: 1px !important;
 }
 
 #previewtd {
