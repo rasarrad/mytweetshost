@@ -116,15 +116,16 @@ function changecriteria(e, obj, tableparam, flag) {
 
             table.find(".togglepos").css("position", ""); 
 
-            table.css('transition', 'max-height 0.7s');
+            table.css('transition', 'max-height 1.7s');
     
             if (table.attr("cmaxheight")) {
-                if ($('body').hasClass('big')) {
+                table.css('max-height', '2000px');
+/*                 if ($('body').hasClass('big')) {
                     table.css('max-height', table.attr("cmaxheightbig"));
                 }
                 else {
                     table.css('max-height', table.attr("cmaxheight"));
-                }
+                } */
             }   
             else {
                 table.css('max-height', "fit-content");
