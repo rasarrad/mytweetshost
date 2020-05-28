@@ -5358,8 +5358,9 @@ body.big #mainsettings #theme td:first-child {
     opacity: 0.6;
   }
   
-  .newLayout > div .buttonstr td:hover { 
-    opacity: 0.6;
+  .newLayout > div .buttonstr td:hover {
+    /* opacity: 0.6; */
+    background: var(--softdark-color) !important;
   }
   .newLayout.new div table tr .td:hover {
     cursor: default !important;
