@@ -276,21 +276,21 @@
                 <i class="fa fa-angle-down"></i>
             </td>                                        
         </tr>   
-        <tr>  
+        <tr class="trcontent">  
             <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;">
                 <input id="tagsinput" style="margin-left: 3px;display:none;" ctags="">
                 <input id="addtaginput" type="text" style="margin-left: 3px;">
                 <i class="fa fa-plus-square mainbutton" onclick="javascript: addTextTag(this)" style="font-size: 17px;padding-left: 4px;position: relative;top: 2px;padding-right: 10px;"></i>
                 <select id="tagsselect"><option value="notag">All Tags</option><option value="Assange">Assange</option><option value="John">John</option><option value="Julian">Julian</option><option value="Pilger">Pilger</option><option value="bernie">bernie</option><option value="climate">climate</option><option value="corbyn">corbyn</option><option value="coronel">coronel</option><option value="coup">coup</option><option value="dailyshow">dailyshow</option><option value="failed">failed</option><option value="fakenews">fakenews</option><option value="fox">fox</option><option value="funny">funny</option><option value="gun">gun</option><option value="hannity">hannity</option><option value="hongkong">hongkong</option><option value="israel">israel</option><option value="joe">joe</option><option value="maduro">maduro</option><option value="max">max</option><option value="moto">moto</option><option value="nunes">nunes</option><option value="palestine">palestine</option><option value="racism">racism</option><option value="rogan">rogan</option><option value="sanders">sanders</option><option value="syria">syria</option><option value="usa">usa</option><option value="venezuela">venezuela</option><option value="west">west</option><option value="ww2">ww2</option></select> </td>                                          
         </tr>  
-      <tr>  
+      <tr class="trcontent">  
           <td colspan="3" style="position: relative;">
               <ul id="tagsul"></ul>
               <div style="height: 7px;width: 100%;position: relative;top: -4px;background-image: linear-gradient(to bottom, transparent 49%, var(--softdark-color) 80%);"></div>
               <i id="expandedittags" class="fa fa-chevron-down" onclick="javascript: expandsection(this, event)"></i>
           </td>                                        
       </tr>    
-      <tr class="cursordefault originaltr">
+      <tr class="cursordefault originaltr trcontent">
         <td id="originaltagtd" colspan="3" style="padding: 4px;padding-top: 0px;">
             <span class="boldtitle">Original tags</span><i class="fa fa-undo mainbutton clicable" onclick="javascript: undoTags(event, this)" style="font-size: 14px;padding-left: 8px;position: relative;top: 1px;display: none;"></i>
             <span class="originaltags titletext" style="margin-left: 6px;"></span>
@@ -313,7 +313,7 @@
             <i class="fa fa-angle-down"></i>
         </td>                                        
     </tr>   
-    <tr>  
+    <tr class="trcontent">  
         <td colspan="3" style="width: calc(100% - 220px);padding-left: 6px;padding-bottom: 14px;">
             <input id="catsinput" style="margin-left: 3px;margin-top: -12px;visibility: hidden;height: 0;display: block;">
             <div class="checkstyleddiv">                  
@@ -389,7 +389,7 @@
             </div>
         </td>                                          
     </tr>    
-    <tr class="cursordefault originaltr">
+    <tr class="cursordefault originaltr trcontent">
       <td id="originalcattd" colspan="3" style="padding: 4px;padding-top: 0px;">
           <span class="boldtitle">Original categories</span><i class="fa fa-undo mainbutton" onclick="javascript: undoCats(event, this)" style="font-size: 14px;padding-left: 8px;position: relative;top: 1px;display: none;"></i>
           <span class="originalcats titletext"></span>
@@ -412,7 +412,7 @@
             <i class="fa fa-angle-down"></i>
         </td>                                        
     </tr>   
-    <tr>  
+    <tr class="trcontent">  
         <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;padding-bottom: 5px;">
             <input id="classifinput" style="margin-left: 3px;display:none;">
             <ul id="classiful">
@@ -441,7 +441,7 @@
           </td>
     </tr>   
 
-    <tr class="cursordefault originaltr">
+    <tr class="cursordefault originaltr trcontent">
       <td id="originalclassiftd" colspan="3" style="padding: 4px;padding-top: 0px;">
           <span class="boldtitle">Original classification</span><i class="fa fa-undo mainbutton clicable" onclick="javascript: undoClassif(event, this)" style="font-size: 14px;padding-left: 8px;position: relative;top: 1px;display: none;"></i>
           <span class="originalclassif titletext"></span>
@@ -464,13 +464,13 @@
             <i class="fa fa-angle-down"></i>
         </td>                                        
     </tr>   
-    <tr>  
+    <tr class="trcontent">  
         <td colspan="3" style="width: 80%;width: calc(100% - 220px);text-align: center;">
           <textarea id="infoinput" style="width: calc(100% - 16px);height: 84px;"></textarea>
          
     </tr>  
 
-    <tr class="cursordefault originaltr">
+    <tr class="cursordefault originaltr trcontent">
       <td id="originalinfotd" colspan="3" style="padding: 4px;padding-top: 0px;">
           <span class="boldtitle">Original info</span><i class="fa fa-undo mainbutton clicable" onclick="javascript: undoInfo(event, this)" style="font-size: 14px;padding-left: 8px;position: relative;top: 1px;display: none;"></i>
           <span class="originalinfo titletext"></span>

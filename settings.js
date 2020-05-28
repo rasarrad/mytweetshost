@@ -1200,13 +1200,28 @@ function editSetting(e, obj, flag) {
             if (table.attr('id') != 'editInfo')
                 table.find('td.el').removeClass('ellipsis');
 
-            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down');
+            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down'); 
+            
+            table.find('.trcontent').css("display", "table-row");
+
+            setTimeout(function() {
+                $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
+                    var table2 = $(element);
+
+                    if (table2.attr("id") != table.attr("id"))
+                        table2.find('.trcontent').css("display", "none");
+                });
+            }, 700);
         }
         else {
             table.css('transition', 'transition: all 0.7s !important');
             table.css('max-height', setHeight);
             table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
             table.find('td.el').addClass('ellipsis');
+
+            setTimeout(function() { 
+                table.find('.trcontent').css("display", "none");
+            }, 700);
         }
 
         setTimeout(function() { 

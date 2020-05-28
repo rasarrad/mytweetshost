@@ -86,7 +86,7 @@ body.big #searchpopup .fa-star-half-o {
   left: 11px;
   top: 7px !important;
   position: absolute;
-  font-size: 12px;
+  font-size: 13px;
 }
 body.big #searchpopup .fa-user-circle {
   font-size: 17px;
@@ -4079,7 +4079,7 @@ body.big .newLayout .sectiontitletable .sectionicontd {
 .newLayout .titletext {
   text-align: left;
   padding-left: 0px;
-  color: var(--text-color);
+  /* color: var(--text-color); */
   line-height: 19px;
   /* position: relative; */
 }
@@ -5408,7 +5408,9 @@ body.big #mainsettings #theme td:first-child {
   }
 
   .cursorpointer:hover {
-    opacity: 0.6 !important;
+    /* opacity: 0.6 !important; */
+    color: var(--text-color);
+    /* filter: grayscale(20%); */
   }
 
   .litags:hover {
