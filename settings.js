@@ -1201,10 +1201,12 @@ function editSetting(e, obj, flag) {
                 table.find('td.el').removeClass('ellipsis');
 
             table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down'); 
-            
+
             table.find('.trcontent').css("display", "table-row");
 
             setTimeout(function() {
+                titletext.css('transition', 'opacity .9s ease');
+                titletext.css("opacity", 1); 
                 $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
                     var table2 = $(element);
 
@@ -1220,14 +1222,11 @@ function editSetting(e, obj, flag) {
             table.find('td.el').addClass('ellipsis');
 
             setTimeout(function() { 
+                titletext.css('transition', 'opacity .9s ease');
+                titletext.css("opacity", 1); 
                 table.find('.trcontent').css("display", "none");
             }, 700);
         }
-
-        setTimeout(function() { 
-            titletext.css('transition', 'opacity 1.3s ease');
-            titletext.css("opacity", 1); 
-        }, 1);
     }
     
     //updateTopPosition("linkChange"); 
