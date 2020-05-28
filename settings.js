@@ -1205,7 +1205,7 @@ function editSetting(e, obj, flag) {
             table.find('.trcontent').css("display", "table-row");
 
             setTimeout(function() {
-                titletext.css('transition', 'opacity .9s ease');
+                titletext.css('transition', 'opacity .6s ease');
                 titletext.css("opacity", 1); 
                 $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
                     var table2 = $(element);
@@ -1222,7 +1222,7 @@ function editSetting(e, obj, flag) {
             table.find('td.el').addClass('ellipsis');
 
             setTimeout(function() { 
-                titletext.css('transition', 'opacity .9s ease');
+                titletext.css('transition', 'opacity .6s ease');
                 titletext.css("opacity", 1); 
                 table.find('.trcontent').css("display", "none");
             }, 700);
