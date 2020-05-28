@@ -1886,6 +1886,9 @@ body.big .checkstyleddiv.showdeleted i {
     padding-left: 218px;
 }
 
+#expandedittags {
+    top: 150px;
+}
 
 body.big #expandsearchtags, body.big #expandsearchtags #expandedittags {
     top: 163px;
