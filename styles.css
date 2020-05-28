@@ -2199,6 +2199,49 @@ body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
   font-size: 14px;
 }
 
+body .newLayout #editTags .sectionicontd:first-child {
+    width: 49px !important;
+}
+
+body.big .newLayout #editTags .sectionicontd:first-child {
+    width: 56px !important;
+}
+
+body .newLayout #editCats .sectionicontd:first-child {
+    width: 93px !important;
+}
+
+body.big .newLayout #editCats .sectionicontd:first-child {
+    width: 102px !important;
+}
+
+body .newLayout #editClassif .sectionicontd:first-child {
+    width: 113px !important;
+}
+
+body.big .newLayout #editClassif .sectionicontd:first-child {
+    width: 129px !important;
+}
+
+body .newLayout #editInfo .sectionicontd:first-child {
+    width: 37px !important;
+}
+
+body.big .newLayout #editInfo .sectionicontd:first-child {
+    width: 55px !important;
+}
+
+#linkChange .checkstyleddiv {
+  min-width: 208px;
+  cursor: pointer !important;
+}
+
+#linkChange .checkstyleddiv:first-child {
+  min-width: 208px;
+  cursor: pointer !important;
+}
+
+
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
 /* 
@@ -3058,7 +3101,7 @@ body.big #splash .secondrow div {
 
 
 .newLayout#linkChange .fa-tags {
-    font-size: 14px;
+    font-size: 13px;
     position: relative;
     top: -1px;
     left: -4px;
@@ -4029,38 +4072,6 @@ body.big .newLayout .sectiontitletable .sectionicontd {
     padding-top: 3px !important;
 }
 
-body .newLayout #editTags .sectionicontd:first-child {
-    width: 43px !important;
-}
-
-body.big .newLayout #editTags .sectionicontd:first-child {
-    width: 56px !important;
-}
-
-body .newLayout #editCats .sectionicontd:first-child {
-    width: 78px !important;
-}
-
-body.big .newLayout #editCats .sectionicontd:first-child {
-    width: 102px !important;
-}
-
-body .newLayout #editClassif .sectionicontd:first-child {
-    width: 101px !important;
-}
-
-body.big .newLayout #editClassif .sectionicontd:first-child {
-    width: 129px !important;
-}
-
-body .newLayout #editInfo .sectionicontd:first-child {
-    width: 37px !important;
-}
-
-body.big .newLayout #editInfo .sectionicontd:first-child {
-    width: 55px !important;
-}
-
 
 
 
@@ -4265,7 +4276,7 @@ body.big .newLayout .fa-bookmark {
 .newLayout .fa-star-half-o {
     font-size: 15px;
     position: relative;
-    top: 0px;
+    top: -1px;
     left: -4px;
 }
 body.big .newLayout .fa-star-half-o {
@@ -4277,7 +4288,7 @@ body.big .newLayout .fa-star-half-o {
 .newLayout .fa-file-text {
     font-size: 12px;
     position: relative;
-    top: 0px;
+    top: -2px;
     left: -3px;
 }
 body.big .newLayout .fa-file-text {
@@ -4481,7 +4492,7 @@ body.big td.ellipsis span.currentcats {
 } 
 
 .newLayout .titletext.currentclassif {
-  top: -1.5px;
+  /* top: -1.5px; */
 }
 
 input[type=text] {
@@ -4561,7 +4572,7 @@ body.big .newLayout #editClassif .sectiontitle {
 }
 
 .newLayout .boldtitle {
-    font-size: 12px;
+    font-size: 11px;
     text-transform: uppercase;
 }
 body.big .newLayout .boldtitle {
@@ -6534,4 +6545,29 @@ td.yeffect {
   text-decoration: underline;
   padding-right: 5px;
   cursor: pointer;
+}
+
+#linkChange .checkstyleddiv span {
+    width: 12px !important;
+    height: 11.6px !important;
+}
+
+#linkChange .checkstyleddiv i {
+    font-size: 6px;
+    top: 3px;
+    left: 4px;
+}
+
+#linkChange .titletext {
+    top: -2.5px !important;
+}
+
+#linkChange .titletext:not(.slicename) {
+    top: -1.5px !important;
+}
+
+.newLayout#linkChange ul#classiful {
+    padding-top: 0px;
+    margin-top: 4px;
+    margin-bottom: -1px;
 }
