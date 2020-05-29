@@ -2469,7 +2469,7 @@ function customizeSingleTweet(id) {
         
     console.log(totalrenderedtweets)
     var styleTag = document.getElementById("twitter-widget-" + totalrenderedtweets).shadowRoot;
-        insertAfter(tweetStyle, styleTag.childNodes[0]);
+        //insertAfter(tweetStyle, styleTag.childNodes[0]);
 
     //} else {
     //    var tweetWidget = document.getElementById("twitter-widget-" + j).contentDocument;
