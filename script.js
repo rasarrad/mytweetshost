@@ -668,7 +668,7 @@ $( document ).ready(function() {
         .then(text => {
             if (!dblFlag) {
                 closeallnewlayout();
-                $('body, html').css('overflow-y', 'hidden');
+                $('body, html').css('overflow', 'hidden');
                 
                 dblFlag = true;
                 dblClickTimeout = setTimeout(function() {     
@@ -700,7 +700,7 @@ $( document ).ready(function() {
             */
             $( "#addtweet" ).blur();
             closeallnewlayout();
-            $('body, html').css('overflow-y', 'hidden');
+            $('body, html').css('overflow', 'hidden');
             
 
             if (!dblFlag) {
@@ -895,7 +895,7 @@ window.openLinkInside = function(id) {
         if (!obj.hasClass("yt") && !obj.hasClass("html"))
             return false;
 
-        $('body, html').css('overflow-y', 'hidden');
+        $('body, html').css('overflow', 'hidden');
 
         $("#fsPopup iframe").attr("cid", id);
 
@@ -1301,7 +1301,7 @@ function handleTouchStart(evt) {
 
 function handleTouchMove(evt) {
     //if (!dblFlag && allowScroll)
-    //    $('body, html').css('overflow', 'auto');
+    //    $('body, html').css('overflow-y', 'auto');
 
     if ( ! xDown || ! yDown ) {
         return;
@@ -1886,7 +1886,7 @@ function openmenu(obj, flag) {
             closeallnewlayout();
         }
 
-        $('body, html').css('overflow-y', 'hidden');
+        $('body, html').css('overflow', 'hidden');
 
 
         $('#mainmenu').css('transition', 'transition: all 0.01s');
@@ -2351,7 +2351,7 @@ $(document).on({
                 $( "#addtweet" ).blur();
                 closeallnewlayout();
                 resetFieldsPopup(); 
-                $('body, html').css('overflow-y', 'hidden');
+                $('body, html').css('overflow', 'hidden');
                 
                 dblFlag = true;
                 dblClickTimeout = setTimeout(function() {     
@@ -2365,7 +2365,7 @@ $(document).on({
                 $( "#addtweet" ).blur();
                 closeallnewlayout();
                 resetFieldsPopup(); 
-                $('body, html').css('overflow-y', 'hidden');
+                $('body, html').css('overflow', 'hidden');
 
                 dblFlag = true;
                 dblClickTimeout = setTimeout(function() {     

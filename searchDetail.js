@@ -372,7 +372,7 @@ function undoCalendar(e) {
 }
 
 function openCalendar(targetObj, date, doShowReset) {
-    $('body, html').css('overflow-y', 'hidden');
+    $('body, html').css('overflow', 'hidden');
 
     var currDate = null;
 
@@ -494,7 +494,7 @@ function updatedatedisplay() {
 } 
 
 function calendarChanged(date) {
-    $('body, html').css('overflow-y', 'hidden');
+    $('body, html').css('overflow', 'hidden');
     var style = window.getComputedStyle(body, null);
     switch($('#calendardiv').attr("targetObj")) {
         case "filterdate1":
@@ -615,7 +615,7 @@ function changesearchtype(e, obj, code, desc) {
 
 var openSearchPopup = function(jsonobj) 
 {
-    $('body, html').css('overflow-y', 'hidden');
+    $('body, html').css('overflow', 'hidden');
     
     $('#titlesearch .span2').html($('#selectedcattext').val());
 
