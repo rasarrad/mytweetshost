@@ -2480,7 +2480,7 @@ function customizeSingleTweet(id) {
         $("#" + id).fadeIn(3000);
     }
     else {
-        obj.parent().parent().appendTo($("#main")).fadeIn(1000);
+        obj.parent().parent().parent().appendTo($("#main")).fadeIn(1000);
     }
 }
 
