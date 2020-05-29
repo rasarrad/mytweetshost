@@ -177,13 +177,13 @@ var openDetailPopup = function(jsonobj)
         
         $('#editTags').css('margin-top', '75px');  
         
-        $("#linkChange #seticon").addClass('fa').addClass('fa-twitter');
+        $("#linkChange #seticon").addClass('fa').addClass('fa-twitter').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
     
         if (jsonobj.type == "H") {
-            $("#linkChange #seticon").addClass('fa').removeClass('fa-twitter').addClass('fa-internet-explorer');
+            $("#linkChange #seticon").addClass('fa').removeClass('fa-twitter').addClass('fa-internet-explorer').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
         }
         else if (jsonobj.type == "Y") {
-            $("#linkChange #seticon").addClass('fa').removeClass('fa-twitter').addClass('fa-youtube-play');
+            $("#linkChange #seticon").addClass('fa').removeClass('fa-twitter').addClass('fa-youtube-play').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
         }   
 
             //$("#linkChange .buttonstable tr:first-child td .id").html(jsonobj.id);
@@ -1155,12 +1155,8 @@ function editSetting(e, obj, flag) {
             setHeight = "37px";
     
         var table = $(obj).parent().parent();
-
-        var titletext = table.find(".titletext");
-        titletext.css('transition', 'none');
-        titletext.css("opacity", 0); 
-
         if (table.css('max-height') == setHeight) {
+            var hasExpanded = false;
             $("#mainsettings table.expd").each( function( index, element ) {
                 var table = $(element);
         
@@ -1197,35 +1193,24 @@ function editSetting(e, obj, flag) {
                 table.css('max-height', "fit-content");
             }
             
+            if (table.attr("extrastyle")) {
+                table.css('overflow-y', "auto");
+            }
+            else {
+                table.css('overflow-y', "hidden");
+            }
+
             if (table.attr('id') != 'editInfo')
                 table.find('td.el').removeClass('ellipsis');
 
-            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down'); 
-
-            table.find('.trcontent').css("display", "table-row");
-
-            setTimeout(function() {
-                titletext.css('transition', 'opacity .6s ease');
-                titletext.css("opacity", 1); 
-                $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
-                    var table2 = $(element);
-
-                    if (table2.attr("id") != table.attr("id"))
-                        table2.find('.trcontent').css("display", "none");
-                });
-            }, 700);
+            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down');
         }
         else {
             table.css('transition', 'transition: all 0.7s !important');
+            table.css('overflow-y', "hidden");
             table.css('max-height', setHeight);
             table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up');
             table.find('td.el').addClass('ellipsis');
-
-            setTimeout(function() { 
-                titletext.css('transition', 'opacity .6s ease');
-                titletext.css("opacity", 1); 
-                table.find('.trcontent').css("display", "none");
-            }, 700);
         }
     }
     

@@ -740,9 +740,10 @@ $( document ).ready(function() {
     // xyz startcode
     
 
-    //openPopupParsed("sssssssss", 1);
-    
+    openPopupParsed("sssssssss", 1);
     //openmenu();
+
+    //clickmenu('all');
 
     //closeSplash(); 
 
@@ -2457,7 +2458,7 @@ function customizeSingleTweet(id) {
     }
 
     var obj = $("#twitter-widget-" + totalrenderedtweets);
-    console.log(obj)
+
     obj.attr("processed", "yes");
     var tweetStyle = document.createElement("style");
 
@@ -2466,9 +2467,7 @@ function customizeSingleTweet(id) {
     tweetStyle.type = "text/css"; 
 
     //if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
-        
-    console.log(totalrenderedtweets)
-    var styleTag = document.getElementById("twitter-widget-" + totalrenderedtweets).shadowRoot;
+        var styleTag = document.getElementById("twitter-widget-" + totalrenderedtweets).shadowRoot;
         insertAfter(tweetStyle, styleTag.childNodes[0]);
 
     //} else {
