@@ -2457,7 +2457,7 @@ function customizeSingleTweet(id) {
     }
 
     var obj = $("#twitter-widget-" + totalrenderedtweets);
-
+    console.log(obj)
     obj.attr("processed", "yes");
     var tweetStyle = document.createElement("style");
 
