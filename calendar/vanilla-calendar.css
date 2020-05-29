@@ -108,11 +108,10 @@
 }
 
 .vanilla-calendar .vanilla-calendar-date--today {
-    /*
     background-color: var(--high-color);
     color: var(--dark-color);
     font-weight: bold;
-    border: 1px solid var(--softdark-color);*/
+    border: 1px solid var(--softdark-color);
 }
 
 .vanilla-calendar .vanilla-calendar-date--selected {

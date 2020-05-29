@@ -2,20 +2,27 @@ var text = "";
 var origin = "";
 var nextid = "";
 var currentIndex = 0;
+var currpage = 0;
+var dosearchmore = true;
 var youtubeId = "";
-var scrollLastPos = 0;
-var topMenuMode = 1;
 var hasProcessedDescription = false;
 var url = "";
 var urldirect = "";
 var dblFlag = false;
 var dblClickTimeout = null;
 var addType = "T";
+var processedCount = 0;
+var totalLinkss = 0;
+var total_yy = 0; 
+var total_tt = 0;
+var total_hh = 0;
 var hideMode = false;
+var tagssloaded = false;
 var catsmap = new Map();
 var calendar = null; 
 var filterdate1date = null;
 var filterdate2date = null; 
+var existingId = null;
 var xUp = null;                                    
 var yUp = null;  
 var xDiff = null;  
@@ -28,24 +35,11 @@ var searchtotal = 0;
 var showAll = false;
 var showColors = false;
 var showColorsAdv = false;
-var isMy = false;
+var isMy = true;
 var useSwipes = false;
 var ceec = 0; 
 var funcg = null;
 var isMobile = null;
-var totalrenderedtweets = 0;
-var currrenderedtweets = 0;
-var linkArray = new Array();
-var linkArrayToRender = new Array();
-var timeoutWorker;
-var renderTimeout = null;
-var datecontrol = new Date();
-var countercontrol = 0;
-
-
-var allLinks = new Array();
-var counterAllLinks = 0;
-var clWorker;
 
 /* 
     xyz startcode
@@ -53,13 +47,11 @@ var clWorker;
     xyz splash
 */
 
-
 // START do tema
 var currTheme = readCookie("currTheme");
-if (currTheme && currTheme != 'default') {
+if (currTheme && currTheme.length > 0 && currTheme != 'default') {
      changetheme(currTheme, true);
 }  
-
 
 $( document ).ready(function() { 
 
@@ -67,22 +59,33 @@ $( document ).ready(function() {
 
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");
-    if (catschanged) {
-        catsmap.set("cli", "My Tweets");
-        $(".cat-cli").text("My Tweets");
+
+    if (catschanged && catschanged.length > 0 ) {
+        catsmap.set("cli", catschanged);
+        $(".cat-cli").text(catschanged);
+
+        catsmap.set("tvn", "New / Ongoing");
+        catsmap.set("trn", "Hot / Trending");
+        catsmap.set("tvi", "To Watch");
+        catsmap.set("tvl", "Documentaries / Films");
+        catsmap.set("tre", "Fast Reading");
+        catsmap.set("trl", "Long Reading");
+        catsmap.set("tke", "Important / To Keep");
+        catsmap.set("imp", "Shocking Truth");
+        catsmap.set("all", "All");
     }
     else {
-        catsmap.set("cli", "VictoryWillCome Tweets");
+        catsmap.set("tvn", "New / Ongoing");
+        catsmap.set("trn", "Hot / Trending");
+        catsmap.set("tvi", "To Watch");
+        catsmap.set("tvl", "Documentaries / Films");
+        catsmap.set("tre", "Fast Reading");
+        catsmap.set("trl", "Long Reading");
+        catsmap.set("tke", "Important / To Keep");
+        catsmap.set("imp", "Shocking Truth");
+        catsmap.set("cli", "My Tweets");
+        catsmap.set("all", "All");
     }
-    catsmap.set("all", "All Links");
-    catsmap.set("tvn", "New / Ongoing");
-    catsmap.set("trn", "Hot / Trending");
-    catsmap.set("tvi", "To Watch");
-    catsmap.set("tvl", "Documentaries / Films");
-    catsmap.set("tre", "Fast Reading");
-    catsmap.set("trl", "Long Reading");
-    catsmap.set("tke", "Important / To Keep");
-    catsmap.set("imp", "Shocking Truth");
 
     // START remover speckcheks
     $( "input, textarea" ).each( function( index, element ){
@@ -91,26 +94,16 @@ $( document ).ready(function() {
         $(element).attr("additionalAttributes", "{autocomplete: 'none'}");
     });
 
-
-    // START victorywillcome tweets
-    var valueVWC = readCookie("vwc");
-    if (valueVWC) {
-        if (valueVWC == "Yes") {
-            showAll = true;
-        }
-    }
-
-
     // START da variavel setShowDeleted
     var showDeleted = getshowdeletedcookie();
-    setShowDeleted(showDeleted); // faz o count all tweets
+    setShowDeleted(showDeleted, true); // faz o count all tweets
 
 
     // START do mascara cinzenta inicial
     // setTimeout(function() { 
     //      countalltweets(); agora é feito no showDeleted (em cima)
 
-/*     setTimeout(function(){
+    setTimeout(function(){
         $( "#mask" ).fadeOut( 800, function() {
             var style = window.getComputedStyle(body, null);
     
@@ -119,39 +112,31 @@ $( document ).ready(function() {
             $("#mask > div" ).hide();
             $("#mask > .fa-circle-o-notch").show();
         });
-    }, 340);  */
+    }, 340); 
     //}, 1); 
 
 
     // START do zoom
     var hasZoom = readCookie("hasZoom");
-    if (hasZoom)
+    if (hasZoom && hasZoom.length > 0)
         zoom(null, true);
-    
     setTimeout(function(){
         $('body').removeClass('notransit'); 
     }, 1400);  
 
 
-    // START do tweet counter
-    var tweetCounter = readCookie("tweetCounter");
-
-    if (tweetCounter) {
-        $('#tweetcount').addClass(tweetCounter); 
-    }
-    
     // START do splash screen
     /* xyz splash
     createCookie("eec", "sss", 99999);
     if (!dunl())
         showSplash();
     */
-    //showSplash();
+    // showSplash();
     //////////////
         
-    // START das colors
+    // START das colos
     var valueColor = readCookie("colors");
-    if (valueColor) {
+    if (valueColor && valueColor.length > 0) {
         if (valueColor == "All") {
             showColors = true;
             showColorsAdv = true;
@@ -163,48 +148,42 @@ $( document ).ready(function() {
     }
 
 
-    // START do top menu
-    var value = readCookie("topmenu");
-    if (value) {
-        if (value == "0") {
-            topMenuMode = 0;
-        }
-        else {
-            topMenuMode = 1;
-            $("#recoilback").css("position", "absolute");   
-        }
-    }
-    else {
-        topMenuMode = 2;
-    }
-
-
     // START dos swipes
     var valueSwipe = readCookie("swipes");
-    if (valueSwipe) {
+    if (valueSwipe && valueSwipe.length > 0) {
         if (valueSwipe == "Yes") {
             useSwipes = true;
+
+            if (isMobile) {
+                // START swip binds
+                document.addEventListener('touchstart', handleTouchStart, false);        
+                document.addEventListener('touchmove', handleTouchMove, false);
+                document.addEventListener('touchend', handleTouchEnd, false);
+            }
         }
     }
     
-    if (isMobile) {
-        // START swip binds
-        document.addEventListener('touchstart', handleTouchStart, false);        
-        document.addEventListener('touchmove', handleTouchMove, false);
-        document.addEventListener('touchend', handleTouchEnd, false);
-    }
 
     // START da help
-    value = readCookie("help");
-    if (value) {
+    var value = readCookie("help");
+    if (value && value.length > 0) {
         $( ".fa-question-circle:not(.ashow)" ).each( function( index, element ){
             $(element).css("display", "none");
         });
     }
 
 
+    // START victorywillcome tweets
+    var valueVWC = readCookie("vwc");
+    if (valueVWC && valueVWC.length > 0) {
+        if (valueVWC == "Yes") {
+            showAll = true;
+        }
+    }
+
+
     // START da cor caso haja alteracoes
-/*     var hasChanges = readCookie("haschanges");
+    var hasChanges = readCookie("haschanges");
     if (hasChanges && hasChanges.length > 0) {
         if (showColorsAdv) {
             $("#generateicon").addClass("haschanges");
@@ -214,7 +193,7 @@ $( document ).ready(function() {
         } 
     }
     
- */
+
     // START filechoser
     var dropZone = document.getElementById('filedrop');
     dropZone.addEventListener('dragover', handleDragOver, false);
@@ -235,15 +214,15 @@ $( document ).ready(function() {
     */
 
     /* 
-    //cnonsole.log("----window.innerWidth-----window.innerHeight------navigator.userAgent-----");
-    //cnonsole.log(window.innerWidth + " - " + window.innerHeight + " - " + navigator.userAgent);
+    console.log("----window.innerWidth-----window.innerHeight------navigator.userAgent-----");
+    console.log(window.innerWidth + " - " + window.innerHeight + " - " + navigator.userAgent);
     */
 
     /*
     nextid = parseInt(readCookie("maxid"));
 
     do {
-        createCookie2(nextid, "templink", "", null, true);
+        createCookie(nextid + "templink", "", 99999);
         nextid = nextid - 1;
     }
     while (nextid > 0);
@@ -279,34 +258,19 @@ $( document ).ready(function() {
 /////////////////////////////////////////////////////////////////////////
 
     window.onscroll = function(ev) {
-        clearTimeout(renderTimeout);
+        if ((window.innerHeight + window.scrollY + 1800) >= document.body.offsetHeight && dosearchmore) {
+            dosearchmore = false;
 
-        if (topMenuMode == 2) {
-            if (scrollLastPos > $(window).scrollTop()) {
-                $("#recoilback").css("position", "fixed");
-                $("#recoilback").slideDown(1080);
-    
-                if ($(window).scrollTop() == 0) {
-                    $("#recoilback").css("border-bottom", "0px solid var(--dark-color)");
-                }
-                else {
-                    $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
-                }
-            }
-            else {
-                $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
-                $("#recoilback").slideUp(650, function() {
-                    $("#recoilback").css("position", "absolute");
-                });
-            }
-        }
+            if ($('#moretweets').attr('doshow') && $('#moretweets').attr('doshow') == 'yes') {
+                $('#moretweets').css('opacity', 1);
+                //$('#moretweets').show();
 
-        var scroll = scrollLastPos = $(window).scrollTop();
-        if (scroll > 200) {
-          $('#gotop').fadeIn(700); 
-        }
-        else {
-          $('#gotop').fadeOut(700);
+                $('#moretweets').attr('doshow', 'no'); 
+                $("#moretweets").click();
+            }
+            setTimeout(function() { 
+              dosearchmore = true;
+            }, 2000);
         }
     };
 
@@ -347,11 +311,23 @@ $( document ).ready(function() {
 
     ///////////////////////////////////////
 
+    $(window).scroll(function (event) {
+        var scroll = $(window).scrollTop();
+        if (scroll > 200) {
+          $('#gotop').fadeIn(700); 
+        }
+        else {
+          $('#gotop').fadeOut(700);
+        }
+    });
+
+    ///////////////////////////////////////
+
     $('#filtertext, #filterauthor, #filtertag').keypress(function(event){
       
         var keycode = (event.keyCode ? event.keyCode : event.which);
       if(keycode == '13' && $(this).val().length > 0){
-        getInformation(1);
+        getInformation(false, 1);
 
         if ($(window).width() < 1200) {
             $(this).blur();
@@ -382,7 +358,7 @@ $( document ).ready(function() {
 
     });
 
-/*     $( "#showdeleted" ).bind( "click", function( event ) {
+    $( "#showdeleted" ).bind( "click", function( event ) {
         if ($("#showdeleted").is(":checked")) {
             $("#showdeleted2").prop('checked', true);
             setshowdeletedcookie("true");
@@ -391,14 +367,18 @@ $( document ).ready(function() {
             $("#showdeleted2").prop('checked', false);
             setshowdeletedcookie("false");
         }
-        countAllLinks();
-    }); */
+        countalltweets();
+    });
 
+
+    $( "#moretweets" ).bind( "click", function( event ) {
+        getInformation(true, 3);
+    });
 
     ///////////////////////////////////////
 
     $( "#btnsearch" ).bind( "click", function( event ) {
-      getInformation(1);
+      getInformation(false , 1);
     });
 
     ///////////////////////////////////////
@@ -451,7 +431,8 @@ $( document ).ready(function() {
 
     $( "#removetmp" ).bind( "click", function( event ) {
         if ($('#removetmpinput').val() != "") {
-            eraseLinkTmpData($('#removetmpinput').val(), true);
+            createCookie($('#removetmpinput').val() + "templink", "", 99999);
+
             showMessage("Removed link number: " +  $('#removetmpinput').val());
             $('#removetmpinput').val('');
         }
@@ -461,25 +442,25 @@ $( document ).ready(function() {
                 nextid = parseInt(readCookie("maxid"));
             }
             catch(err) {
-                //cnonsole.log("removetmp click - Error parsing next id");
+                console.log("removetmp click - Error parsing next id");
             }
             finally {
                 if (nextid) {
                     $("#maxid").val(nextid);
-                    //cnonsole.log("removetmp click - nextid vem do cookie: " + nextid);
+                    console.log("removetmp click - nextid vem do cookie: " + nextid);
                 }
                 else {
                     nextid = parseInt($("#maxid").val());
                     createCookie("maxid", nextid);
-                    //cnonsole.log("removetmp click - nextid vem do hidden field: " + nextid);
+                    console.log("removetmp click - nextid vem do hidden field: " + nextid);
                 }
             }
 
             do {
-                eraseLinkTmpData(nextid, true);
+                createCookie(nextid + "templink", "", 99999);
                 nextid = nextid - 1;
             }
-            while (nextid > 99990);
+            while (nextid > 99999);
     
             showMessage("Temp Links Removed");
         } 
@@ -632,7 +613,6 @@ $( document ).ready(function() {
         }
       });
 
-            /*
       $("input, textarea").focus(function(){  
             if ($("#linkChange").css("display") != "none") {
                 var innerHeight = window.innerHeight;
@@ -655,7 +635,7 @@ $( document ).ready(function() {
                 htmlElem.attr("style", "margin-top: -1px !important;" + maxHeightStyle + "top: " + top + "px !important;"); 
             }
       });
-
+      /*
       $("input, textarea").blur( function(){  
             if ($("#linkChange").css("display") != "none") {
                 updateTopPosition("linkChange");
@@ -681,7 +661,7 @@ $( document ).ready(function() {
             else {
                 clearTimeout(dblClickTimeout);
                 
-                //changeviewmode();
+                changeviewmode();
     
                 dblFlag = false;
             }  
@@ -719,8 +699,8 @@ $( document ).ready(function() {
                     openPopupParsed(text, 1);
                 }
                 else {
-                    //var win = window.open('https://github.com/rasarrad/mytweetshost/edit/master/data.json', '_blank');
-                    //win.focus();
+                    var win = window.open('https://github.com/rasarrad/mytweetshost/edit/master/data.json', '_blank');
+                    win.focus();
                 }
     
                 dblFlag = false;
@@ -730,24 +710,15 @@ $( document ).ready(function() {
         .catch(err => {
             
         })
-    }); 
+    });
 
-    if (!isMobile) {
-        document.getElementById("tweetcount").addEventListener("click", clickHandler);
-        document.getElementById("tweetcount").addEventListener("mouseover", countclick);
-    }
-    
+ 
     // xyz startcode
     
-
-    openPopupParsed("sssssssss", 1);
-    //openmenu();
-
-    //clickmenu('all');
+    clickmenu('all');
 
     //closeSplash(); 
 
-    //togglecriterions();
 
     
     /* CATEGORIES RENAMING
@@ -864,6 +835,7 @@ function SaveDatFileBro(localstorage) {
   
          reader.onloadend = function(e) {
             
+           //console.log(this.result);
          };
   
          reader.readAsText(file);
@@ -881,6 +853,7 @@ window.openLinkOutside = function(id) {
     window.open($("#" + id).attr("curl"));
 };
 
+var dblFlag2 = false;
 window.openLinkInside = function(id) {
     //if ($("#fsPopup iframe").attr("cid") == id && $("#fsPopup iframe").attr("cerror") != "yes") {
     //    $("#fsPopup").fadeIn(500);
@@ -898,7 +871,7 @@ window.openLinkInside = function(id) {
 
         var value = readCookie("maximumfs");
 
-        if (value) {
+        if (value && value.length > 0) {
             $("#fsPopup").addClass("full");
         }
         else {
@@ -919,10 +892,10 @@ window.openLinkInside = function(id) {
 
         $("#fsPopup iframe").attr("src", url);
         $("#fsPopup").fadeIn(1600);
-        dblFlag = true;  
+        dblFlag2 = true;  
     
         setTimeout(function() {    
-            dblFlag = false; 
+            dblFlag2 = false; 
         }, timer);  
    // }
 };
@@ -936,14 +909,14 @@ window.openLinkInline = function(id) {
 
     $("#contentin" + id).prepend("<iframe src='" + url + "' id='contentiniframe" + id + "' onload='iframeloadFunc(this)' scrolling='yes' frameborder='0' allowtransparency='true' style='border: 0px solid;margin-top: 0px !important;width: 100% !important;transform: translate(-50%, -50%) !important; display: none;'></iframe>");
     $("#contentiniframe" + id).attr("cid", id);
-    dblFlag = true; 
+    dblFlag2 = true; 
 
     var timer = 1500;
     if (obj.hasClass("yt"))
         timer = 1;
 
     setTimeout(function() {    
-        dblFlag = false; 
+        dblFlag2 = false; 
     }, timer); 
 
     $("#contentiniframe" + id).fadeIn(1900);
@@ -959,9 +932,10 @@ function getOffset(el) {
   }
 
 function iframeloadFunc(obj) {
-    if (dblFlag) {
+    if (dblFlag2) {
         window.open($(obj).attr("src"));
 
+        console.log("ZZZZ: " + "#" + $(obj).attr("cid"))
         var element = document.getElementById($(obj).attr("cid"));
         
         showFreeTooltip(getOffset(element).left, getOffset(element).top, "This link can't be open inside the app.");
@@ -971,6 +945,7 @@ function iframeloadFunc(obj) {
 } 
 
 function generateUrl(url) {
+    console.log("URL 1: " + url);
     if (url.indexOf('watch?v=') >= 0) {
         url = url.substring(url.indexOf('watch?v=') + 8);
 
@@ -980,6 +955,7 @@ function generateUrl(url) {
         }
         url = "https://www.youtube.com/embed/" + url + "?autoplay=1";
     }
+    console.log("URL 2: " + url);
     return url;
 } 
 
@@ -1007,11 +983,12 @@ function iframeFSloadFunc(obj) {
     if ($(obj).attr("cid") == "none")
         return false;
     
-    if (dblFlag) {
+    if (dblFlag2) {
         //$(obj).attr("cerror", "yes");
  
         window.open($(obj).attr("src"));
 
+        console.log("ZZZZ: " + "#" + $(obj).attr("cid"))
         var element = document.getElementById($(obj).attr("cid"));
         
         showFreeTooltip(getOffset(element).left, getOffset(element).top, "This link can't be open inside the app.");
@@ -1066,12 +1043,11 @@ function handleFileSelectDragDrop(evt) {
                     try {
                         var resultParsed = JSON.parse(reader.result);
             
+                        var webLinksMap = new Map();
                         var hasTemp = false;
             
                         for (var x = 0; x < resultParsed.length; x++) {
-                            
-                            eraseLinkTmpData(resultParsed[x].id, true);
-
+            
                             if (parseInt(resultParsed[x].id) >= 100000) {
                                 hasTemp = true;
             
@@ -1079,10 +1055,10 @@ function handleFileSelectDragDrop(evt) {
             
                                 var mlink = encodeURIComponent(JSON.stringify(link));
                 
-                                createCookie(resultParsed[x].id + "templink", mlink);
+                                createCookie(resultParsed[x].id + "templink", mlink, 99999);
                             }
                             else {
-                                updateWebLink(resultParsed[x]);
+                                webLinksMap.set(parseInt(resultParsed[0].id), resultParsed[x]);
                             }
                         }
             
@@ -1099,7 +1075,9 @@ function handleFileSelectDragDrop(evt) {
                         setTimeout(function(){
                             showMessage("Links Successfully Imported"); 
             
-                            countalltweets();
+                            countalltweets(webLinksMap);
+                
+                            eraseAllTmpData(); 
 
                             document.getElementById("files").value = "";
                         }, 600); 
@@ -1133,34 +1111,36 @@ function handleFileSelectDragDrop(evt) {
   }
 
 
-  function updateWebLink(obj) {
+  function updateWebLink(obj, webObj) {
 
-    if(obj.hasOwnProperty("date")) {
-        createCookie(obj.id + "datechanged", obj.date);
+    eraseLinkTmpData(obj.id, true)
+
+    if(obj.hasOwnProperty("date") && obj.date != webObj.date) {
+        createCookie(obj.id + "date", obj.date, 99999);
     }
 
-    if(obj.hasOwnProperty("author")) {
-        createCookie(obj.id + "author", obj.author);
+    if(obj.hasOwnProperty("author") && obj.author != webObj.author) {
+        createCookie(obj.id + "author", obj.author, 99999);
     }
 
-    if(obj.hasOwnProperty("categories")) {
-        createCookie(obj.id + "catchanged", obj.categories);
+    if(obj.hasOwnProperty("categories") && obj.categories != webObj.categories) {
+        createCookie(obj.id + "catchanged", obj.categories, 99999);
     }
 
-    if(obj.hasOwnProperty("tags")) {
-        createCookie(obj.id + "tagchanged", obj.tags);
+    if(obj.hasOwnProperty("tags") && obj.tags != webObj.tags) {
+        createCookie(obj.id + "tagchanged", obj.tags, 99999);
     }
 
-    if(obj.hasOwnProperty("info")) {
-        createCookie(obj.id + "info", obj.info);
+    if(obj.hasOwnProperty("info") && obj.info != webObj.info) {
+        createCookie(obj.id + "info", obj.info, 99999);
     }
 
     if(obj.hasOwnProperty("deleted")) {
-        createCookie(obj.id + "isdeleted", obj.deleted);
+        createCookie(obj.id + "isdeleted", obj.deleted, 99999);
     }
 
-    if(obj.hasOwnProperty("classif")) {
-        createCookie(obj.id + "classif", obj.classif);
+    if(obj.hasOwnProperty("classif") && obj.classif != webObj.classif) {
+        createCookie(obj.id + "classif", obj.classif, 99999);
     }
   }
 
@@ -1320,19 +1300,19 @@ function handleTouchEnd(evt) {
         if (useSwipes && dblFlag && lastTouch) {                       
             if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
                 if ( xDiff > 0 ) {
-                    //cnonsole.log("left: " + currObjSwipe);
-                    executeSwipeFunction(currObjSwipe, "left");
+                    console.log("left: " + currObjSwipe);
+                    //executeSwipeFunction(currObjSwipe, "left");
                 } else {
-                    //cnonsole.log("right: " + currObjSwipe);
-                    executeSwipeFunction(currObjSwipe, "right");
+                    console.log("right: " + currObjSwipe);
+                    //executeSwipeFunction(currObjSwipe, "right");
                 }                       
             } else {
                 if ( yDiff > 0 ) {
-                    //cnonsole.log("up: " + currObjSwipe);
-                    executeSwipeFunction(currObjSwipe, "up");
+                    console.log("up: " + currObjSwipe);
+                    //executeSwipeFunction(currObjSwipe, "up");
                 } else {
-                    //cnonsole.log("down: " + currObjSwipe);
-                    executeSwipeFunction(currObjSwipe, "down");
+                    console.log("down: " + currObjSwipe);
+                    //executeSwipeFunction(currObjSwipe, "down");
                 }                                                                 
             }
         }      
@@ -1358,9 +1338,10 @@ function handleTouchEnd(evt) {
 // xyzdouble 
 function executeSingleDoubleFunction(obj, type) {
     switch(obj.substring(0, 9)) {
+
         case "contentin":
             var value = readCookie("doublefs");
-            if (value) {
+            if (value && value.length > 0) {
                 if (type == "double")
                     type = "single";
                 else 
@@ -1369,28 +1350,21 @@ function executeSingleDoubleFunction(obj, type) {
             if (type == "double") { // Execute double/long touch
                 value = readCookie("linksinside");
 
-                if (value) {
+                if (value && value.length > 0) {
                     openLinkInside(obj.substring(9));
                 }
                 else {
                     openLinkOutside(obj.substring(9));
                 }
+                console.log("Execute double/long touch:" + obj);
             }
             else { // Execute single/touch
                 openLinkInline(obj.substring(9));
+                console.log("Execute single/touch:" + obj);
             }
+
             break;  
-        case "tweetcoun":
-            if (type == "double") { // Execute double/long touch
-                countdoubleclick();
-            }
-            else { // Execute single/touch
-                if (isMobile)
-                    countclick();
-                else
-                    countdoubleclick();
-            }
-            break;  
+
     }
 }
 function executeSwipeFunction(obj, type) {
@@ -1432,28 +1406,28 @@ function executeSwipeFunction(obj, type) {
 
 function processHelpDivFuncs(type) {
     closeHelpPopup();
-    //cnonsole.log("help all-----------------------------------------------");
+    console.log("help all-----------------------------------------------");
 } 
 
 function processLinkChangeFuncs(type) {
     switch(type) {
         case "up":
             closeSettingsPopup()
-            //cnonsole.log("linkChange up-----------------------------------------------");
+            console.log("linkChange up-----------------------------------------------");
             break;
 
         case "down":
             closeSettingsPopup()
-            //cnonsole.log("linkChange down-----------------------------------------------");
+            console.log("linkChange down-----------------------------------------------");
             break;
         case "left":
             closeSettingsPopup()
-            //cnonsole.log("linkChange left-----------------------------------------------");
+            console.log("linkChange left-----------------------------------------------");
             break;
 
         case "right":
             closeSettingsPopup();
-            //cnonsole.log("linkChange right-----------------------------------------------");
+            console.log("linkChange right-----------------------------------------------");
             break;
     }
 }  
@@ -1462,21 +1436,21 @@ function processSearchFuncs(type) {
     switch(type) {
         case "up":
             closeSearchPopup()
-            //cnonsole.log("searchpopup up-----------------------------------------------");
+            console.log("searchpopup up-----------------------------------------------");
             break;
 
         case "down":
             closeSearchPopup()
-            //cnonsole.log("searchpopup down-----------------------------------------------");
+            console.log("searchpopup down-----------------------------------------------");
             break;
         case "left":
             resetFields(true)
-            //cnonsole.log("searchpopup left-----------------------------------------------");
+            console.log("searchpopup left-----------------------------------------------");
             break;
 
         case "right":
-            getInformation(2);
-            //cnonsole.log("searchpopup right-----------------------------------------------");
+            getInformation(false, 2);
+            console.log("searchpopup right-----------------------------------------------");
             break;
     }
 }  
@@ -1485,21 +1459,21 @@ function processCalendarFuncs(type) {
     switch(type) {
         case "up":
             closeCalendarPopup()
-            //cnonsole.log("calendardiv up-----------------------------------------------");
+            console.log("calendardiv up-----------------------------------------------");
             break;
 
         case "down":
             closeCalendarPopup()
-            //cnonsole.log("calendardiv down-----------------------------------------------");
+            console.log("calendardiv down-----------------------------------------------");
             break;
         case "left":
             $("button[data-calendar-toggle=previous]").trigger("click");
-            //cnonsole.log("calendardiv left-----------------------------------------------");
+            console.log("calendardiv left-----------------------------------------------");
             break;
 
         case "right":
             $("button[data-calendar-toggle=next]").trigger("click");
-            //cnonsole.log("calendardiv right-----------------------------------------------");
+            console.log("calendardiv right-----------------------------------------------");
             break;
     }
 }  
@@ -1508,21 +1482,21 @@ function processBackdivFuncs(type) {
     switch(type) {
         case "up":
             openSearchPopup()
-            //cnonsole.log("backdiv up-----------------------------------------------");
+            console.log("backdiv up-----------------------------------------------");
             break;
 
         case "down":
             openmenu()
-            //cnonsole.log("backdiv down-----------------------------------------------");
+            console.log("backdiv down-----------------------------------------------");
             break;
         case "left":
             openmenu()
-            //cnonsole.log("backdiv left-----------------------------------------------");
+            console.log("backdiv left-----------------------------------------------");
             break;
 
         case "right":
             openSearchPopup()
-            //cnonsole.log("backdiv right-----------------------------------------------");
+            console.log("backdiv right-----------------------------------------------");
             break;
     }
 }  
@@ -1531,21 +1505,21 @@ function processMainsettingsFuncs(type) {
     switch(type) {
         case "up":
             closeMainSettingsPopup();
-            //cnonsole.log("mainsettings up-----------------------------------------------");
+            console.log("mainsettings up-----------------------------------------------");
             break;
 
         case "down":
             closeMainSettingsPopup();
-            //cnonsole.log("mainsettings down-----------------------------------------------");
+            console.log("mainsettings down-----------------------------------------------");
             break;
         case "left":
             closeMainSettingsPopup();
-            //cnonsole.log("mainsettings left-----------------------------------------------");
+            console.log("mainsettings left-----------------------------------------------");
             break;
 
         case "right":
             closeMainSettingsPopup();
-            //cnonsole.log("mainsettings right-----------------------------------------------");
+            console.log("mainsettings right-----------------------------------------------");
             break;
     }
 }  
@@ -1554,25 +1528,25 @@ function processMainmenuFuncs(type) {
     switch(type) {
         case "up":
             closeMenuPopup()
-            //cnonsole.log("Mainmenu up-----------------------------------------------");
+            console.log("Mainmenu up-----------------------------------------------");
             break;
 
         case "down":
             closeMenuPopup()
-            //cnonsole.log("Mainmenu down-----------------------------------------------");
+            console.log("Mainmenu down-----------------------------------------------");
             break;
         case "left":
             showMessage("Show Deleted Links Toggled", 2500, null, null, null, null, true, 500);
 
             toggleShowDeletedAll();
 
-            //cnonsole.log("Mainmenu left-----------------------------------------------");
+            console.log("Mainmenu left-----------------------------------------------");
             break;
 
         case "right":
             clickmenu('all', 'All Links');
             showMessage("All Links Displayed", 2500, null, null, null, null, true, 500);
-            //cnonsole.log("Mainmenu right-----------------------------------------------");
+            console.log("Mainmenu right-----------------------------------------------");
             break;
     }
 }  
@@ -1584,7 +1558,7 @@ function processLinkFuncs(idLink, type) {
             case "up":
 
 
-                ////cnonsole.log("UP   UP   UP   UP   UP   UP   UP   UP   UP   UP   UP");
+                //console.log("UP   UP   UP   UP   UP   UP   UP   UP   UP   UP   UP");
                 /*
                 openSearchPopup()
                 https://stackoverflow.com/questions/22629286/scroll-down-a-webpage-by-constant-speed/22629859
@@ -1598,15 +1572,16 @@ function processLinkFuncs(idLink, type) {
                 break;
     
             case "down":// apagar pesquisa - mantendo os critérios
-                /*//cnonsole.log("DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   ");
+                /*console.log("DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   DOWN   ");
                 
                 $("#main").empty();
+                $('#moretweets').hide();
                 $('#tweetcount').hide(); 
                 showMessage("Search cleared", 2500, null, null, null, null, true, 500);
 */
                 break;
             case "left": // apagar pesquisa - mantendo os critérios 
-                /*//cnonsole.log("LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   ");
+                /*console.log("LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   ");
              
                 $('#linkresult').val($('#' + idLink).attr('curl'));
                 $("#linkresult").focus();
@@ -1622,7 +1597,7 @@ function processLinkFuncs(idLink, type) {
                 break;
     
             case "right": // abrir link
-                ////cnonsole.log("RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   ");
+                //console.log("RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   ");
                 expandCat(null, idLink);
                 break;
         }
@@ -1666,11 +1641,7 @@ function showSplash()
 function updateSplashCounter()
 {
     if (currentIndex == 1) {
-        if ($('body').hasClass('big'))
-            $("#splashbutton").html("<i class='fa fa-times' style='padding-left: 0px;padding-right: 4px;font-size: 17px;position: relative;top: 1px;'></i>close");
-        else
-            $("#splashbutton").html("<i class='fa fa-times' style='padding-left: 0px;padding-right: 4px;font-size: 14px;position: relative;top: 1px;'></i>close");
-        
+        $("#splashbutton").html("close");
         $("#splashbutton").addClass("active");
         currentIndex = 0;
         //updateSplashInnerCounter();
@@ -1708,7 +1679,6 @@ $.fn.isChildOverflowing = function (child) {
         $('#mask').fadeIn(600);  
         setTimeout(function() { 
             resetFieldsPopup(); 
-
             $('#tweet').val(text);
 
             parseTweet(type);
@@ -1718,7 +1688,7 @@ $.fn.isChildOverflowing = function (child) {
 
     function setviewmode() {
         var hideModeVar = readCookie("hideMode");
-        if (hideModeVar) {
+        if (hideModeVar && hideModeVar.length > 0) {
             hideMode = true;
             //$("#generate").addClass("hidemode");
         }
@@ -1728,7 +1698,7 @@ $.fn.isChildOverflowing = function (child) {
         if (hideMode) {
             hideMode = false;
             //$("#generate").removeClass("hidemode");
-            createCookie("hideMode", "", null, true);
+            createCookie("hideMode", "");
             showMessage("Hide Mode Deactivated");
         }
         else {
@@ -1737,6 +1707,7 @@ $.fn.isChildOverflowing = function (child) {
             createCookie("hideMode", "yes");
             showMessage("Hide Mode Activated");
         }
+        resetFields(false);
     }
 
 /////////////////////////////////////////////////////////////////////////
@@ -1826,8 +1797,9 @@ function putChoosedThemTop()
             $('#mainsettings .currenttheme').html(currow.find('.themetitle').text()); 
             $(element).find("i").removeClass("gradient-border");
             $(element).find("i").hide();
+            $(element).find("td").css("border-bottom", "6px solid #45cae700");
             $(element).find(".themebox").css("border", "3px solid var(--high-color)").css("width", "calc(100% - 4px)");
-            $(element).find(".themetitle").css("left", "-3px").css("width", "calc(100% + 6px)").css("background", "var(--high-color)").css("color", "var(--dark-color)");
+            $(element).find(".themetitle").css("left", "-3px").css("width", "calc(100% + 6px)");
         }
     });
 
@@ -1836,8 +1808,8 @@ function putChoosedThemTop()
         $(themes[i]).find("td").css("border-bottom", "0");
 
 
-        $(themes[i]).find(".themebox").css("border", "3px solid var(--dark-color)").css("width", "calc(100% - 4px)");
-        $(themes[i]).find(".themetitle").css("left", "-3px").css("width", "calc(100% + 6px)").css("background", "var(--dark-color)").css("color", "var(--high-color)");
+        $(themes[i]).find(".themebox").css("border", "1px solid var(--high-color)").css("width", "100%");
+        $(themes[i]).find(".themetitle").css("left", "-1px").css("width", "calc(100% + 2px)");
 
 
         $("#mainsettings table#theme").append(themes[i]);
@@ -1904,7 +1876,7 @@ function openmenu(obj, flag) {
 
         setTimeout(function(){
             $('#mainmenu').css('background', 'var(--soft-transp-color)');
-        }, 800);
+        }, 600);
 
     }
     else {
@@ -1925,18 +1897,7 @@ function closeallnewlayout(bj) {
 function gotop(e) {
     if (e)
         e.stopPropagation();
-    
-    if (!$("#tweetcount").hasClass("hidicon")) {
-        var speed = 2500;
-        var top = $(window).scrollTop();
-
-        if (top < 1000)
-            speed = 500;
-        else if (top < 5000)
-            speed = 1500;
-
-        $("html, body").animate({ scrollTop: "0" }, speed); 
-    }
+    $("html").scrollTop(0);
 }   
 
 
@@ -1999,20 +1960,27 @@ function externallinkcopy(obj, link) {
 
 
 var clickmenu = function(val) {    
+    resetFields();
+
     $('#selectedcat').val(val);
     $('#selectedcattext').val(catsmap.get(val));
-    $('#titlesearch .span2').html($('#selectedcattext').val());
 
     if ($('#mainmenu').attr("fromsearch") == "yes") {
         closeMenuPopup();
         var style = window.getComputedStyle(body, null);
         $('#searchpopup').css("background", style.getPropertyValue('--soft-transp-color'));
+        $('#titlesearch').html("(" + $('#selectedcattext').val() + ")");
         $('#mainmenu').attr("fromsearch", "");
     }
     else {
-        resetFields();
-
-        getInformation(2);
+        /*if ($(window).width() > 1200) {
+            openmenu();
+        }
+        else {*/
+            closeMenuPopup();
+        //}
+        
+        getInformation(false, 2);
     }
 } 
   
@@ -2116,152 +2084,17 @@ function showMessage(text, speed, icon, iconstyle, undofunc, undotext, transpare
 /////////////////////////////////////////////////////////////////////////
 
 
-function createCookie(name, value, days, doErase) {
-    if (doErase)
-        document.cookie = name + "=NULL; path=/";
-    else 
-        document.cookie = name + "=" + value + "; path=/";
+function createCookie(name, value, days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        var expires = "; expires=" + date.toGMTString();
+    }
+    else var expires = "";               
+
+    document.cookie = name + "=" + value + expires + "; path=/";
 }
 
-function createCookie2(id, name, value, obj, doErase) {            
-    val = getJsonbyid(id);
-    if (name != "templink") {
-        val = updateObject(val, name, value, doErase);
-
-        if (doErase)
-            document.cookie = id + name + "=NULL" + "; path=/";
-        else 
-            document.cookie = id + name + "=" + value + "; path=/";
-
-        if (hasChanges(val)) {
-            document.cookie = id + "haschanges=yes; path=/";
-        }
-        else {
-            document.cookie = id + "haschanges=NULL; path=/";
-        }
-    }
-
-    // quando não é criacao o val vem com o objecto json do link
-    if (val) {
-        var isTemp = readCookie(id + "templink");
-        if (isTemp) {
-            updateLinkCookie(val);
-        }
-        updateMainArray(val);
-        updateLinkColor(val, id);
-    }
-    else {
-        insertInMainArray(obj);
-        updateLinkCookie(obj);
-    }
-    
-    countAllLinks();
-}
-
-
-function insertInMainArray(val) { 
-    allLinks.unshift(val);
-}
-
-function updateMainArray(obj) { 
-    for (var i = 0; i < allLinks.length; i++) {
-        var val = allLinks[i];
-
-        if (val.id == obj.id) {
-            allLinks[i] = obj;
-        }
-    }
-}
-
-
-function hasChanges(val) { 
-    if (val.tags != val.tagsOri) {
-        return true;
-    }  
-    if (val.categories != val.categoriesOri) {
-        return true;
-    }         
-    if (val.deleted != val.deletedOri) {
-        return true;
-    }
-    if (val.info != val.infoOri) {
-        return true;
-    }
-    if (val.classif != val.classifOri) {
-        return true;
-    }
-    if (val.author != val.authorOri) {
-        return true;
-    }
-    if (val.date != val.dateOri) {
-        return true;
-    }
-    
-    return false;
-}
-
-
-function updateObject(val, name, value, doErase) {            
-    switch(name) {
-        case "info":
-            if (doErase) {
-                val.info = val.infoOri;
-            }
-            else {
-                val.info = value;
-            }
-            break;  
-        case "classif":
-            if (doErase) {
-                val.classif = val.classifOri;
-            }
-            else {
-                val.classif = value;
-            }
-            break;  
-        case "catchanged":
-            if (doErase) {
-                val.categories = val.categoriesOri;
-            }
-            else {
-                val.categories = value;
-            }
-            break;  
-        case "tagchanged":
-            if (doErase) {
-                val.tags = val.tagsOri;
-            }
-            else {
-                val.tags = value;
-            }
-            break;  
-        case "author":
-            if (doErase) {
-                val.author = val.authorOri;
-            }
-            else {
-                val.author = value;
-            }
-            break;  
-        case "datechanged":
-            if (doErase) {
-                val.date = val.dateOri;
-            }
-            else {
-                val.date = value;
-            }
-            break;  
-        case "isdeleted":
-            if (doErase) {
-                val.deleted = val.deletedOri;
-            }
-            else {
-                val.deleted = value;
-            }
-            break;  
-    }
-    return val;
-}
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////@ts-check
@@ -2273,24 +2106,18 @@ function readCookie(name) {
     for (var i = 0; i < ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) == 0) {
-            if (c.substring(nameEQ.length, c.length) == "NULL")
-                return null; 
-            else if (c.substring(nameEQ.length, c.length) == "")
-                return " "
-            else 
-                return c.substring(nameEQ.length, c.length)
-        }
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
     }
     return null;
 }
+
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
 
 function eraseCookie(name) {
-    document.cookie = name + '=NULL; path=/;';
+    createCookie(name, "", -1);
 }  
     
 
@@ -2343,34 +2170,18 @@ $(document).on({
 
         e.originalEvent.dataTransfer.items[0].getAsString(function(str)
         {
-
-            if ($(e.target) && $(e.target).attr("id") == "toptitle") {
-                $( "#addtweet" ).blur();
-                closeallnewlayout();
-                resetFieldsPopup(); 
-                $('body, html').css('overflow-y', 'hidden');
-                
-                dblFlag = true;
-                dblClickTimeout = setTimeout(function() {     
-                  if (dblFlag) {
-                      openPopupParsed("https://" + str, 2);
-                      dblFlag = false;  
-                  }
-                }, 500);
+            if (str.substring(0,3) == "www") {
+                showMessage("Invalid Link - Must be HTTPS"); 
             }
             else {
-                $( "#addtweet" ).blur();
-                closeallnewlayout();
                 resetFieldsPopup(); 
-                $('body, html').css('overflow-y', 'hidden');
 
-                dblFlag = true;
-                dblClickTimeout = setTimeout(function() {     
-                  if (dblFlag) {
-                      openPopupParsed("https://" + str, 1);
-                      dblFlag = false;  
-                  }
-                }, 500);
+                if ($(".addpopup").css('display') == 'none') {
+                  openCreatePopup(true);
+                }
+
+                $('#tweet').val("https://www." + str);
+                parseTweet();
             }
             
         })
@@ -2381,24 +2192,27 @@ $(document).on({
 /////////////////////////////////////////////////////////////////////////
 
 
-function countdoubleclick() {
+function countmove(obj) {
+    if (!dblFlag) {
+        dblFlag = true;
 
-    $("#tweetcount").fadeOut(500);
-    
-    setTimeout(function() { 
-        $("#tweetcount").fadeIn(1500);
-    }, 4000);
-}  
-
-function countclick() {
-    $("#tweetcount").css('opacity', '1');
-    
-    setTimeout(function() { 
+        $(obj).css('opacity', '0.8');
+        
+        if ($(obj).css('bottom') == "54px") {
+            $(obj).css('bottom', 'calc(100% - 140px)');
+        }
+        else {
+            $(obj).css('bottom', '54px');
+        }
         setTimeout(function() { 
-            $("#tweetcount").css('opacity', '0.52');
-        }, 2500);
-    }, 500);
+            dblFlag = false;
+            setTimeout(function() { 
+                $(obj).css('opacity', '0.52');
+            }, 2500);
+        }, 500);
+    }
 }  
+
 
 
 function expandscreen(obj) {
@@ -2437,7 +2251,7 @@ function expandscreen(obj) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function customizeSingleTweet(id) {
+function customizeTweets(flag, forceProcess, big, dopostcode) {
     var isChromium = window.chrome;
     var winNav = window.navigator;
     var vendorName = winNav.vendor;
@@ -2448,39 +2262,69 @@ function customizeSingleTweet(id) {
     var ua = navigator.userAgent.toLowerCase();
     var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
 
-    var tweetCSS = ".EmbeddedTweet{height:auto !important;background: transparent !important; margin: 0 !important;}.EmbeddedTweet {max-width: none !important;width: 100%;padding-bottom: 25px !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;} .Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar:not(.Identity-avatar) {height: 50px !important;width: 50px !important;position: absolute !important;top: -7px !important;}.Avatar.Identity-avatar {width: 20px !important;height: 22px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important; padding-top: 0 !important;}.TwitterCard-container {max-width: 10000px!important;} .TweetInfo-like {display: none !important;} .CallToAction-icon {display: none !important;} .TweetInfo-timeGeo {margin-left: 5px !important;} .CallToAction-text { color: var(--text-color) !important;} .CallToAction-text:hover { opacity: 0.6 !important;} a:hover { opacity: 0.6 !important;}";
+    var tweetCSS = ".EmbeddedTweet{height:auto !important;background: transparent !important; margin: 0 !important;}.EmbeddedTweet {max-width: none !important;width: 100%;padding-bottom: 25px !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;} .Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar:not(.Identity-avatar) {height: 50px !important;width: 50px !important;position: absolute !important;top: -7px !important;}.Avatar.Identity-avatar {width: 20px !important;height: 22px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important; padding-top: 0 !important;}.TwitterCard-container {max-width: 10000px!important;}";
       
     if ($('body').hasClass('big')) {
-        tweetCSS = ".EmbeddedTweet{height:auto !important; background: transparent !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;padding-bottom: 25px !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;width: 100%;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.Tweet-ancestorContents.Tweet-ancestorContents--repliesRefresh > .avatar {left: -8px !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar:not(.Identity-avatar) {height: 45px !important; width: 45px !important; position: relative !important; top: -2px !important;min-width: 43px !important;}.Avatar.Identity-avatar {width: 20px !important;height: 22px !important;} .TweetAuthor-avatar--ancestor .Avatar {left: -8px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important;}.TwitterCard-container {border: 1px solid var(--soft-color) !important;max-width: 10000px!important;} .TweetInfo-like {display: none !important;} .CallToAction-icon {display: none !important;} .TweetInfo-timeGeo {margin-left: 5px !important;} .CallToAction-text { color: var(--text-color) !important;} .CallToAction-text:hover { opacity: 0.6 !important;} a:hover { opacity: 0.6 !important;}";
+        tweetCSS = ".EmbeddedTweet{height:auto !important; background: transparent !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;padding-bottom: 25px !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;width: 100%;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.Tweet-ancestorContents.Tweet-ancestorContents--repliesRefresh > .avatar {left: -8px !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar:not(.Identity-avatar) {height: 45px !important; width: 45px !important; position: relative !important; top: -2px !important;min-width: 43px !important;}.Avatar.Identity-avatar {width: 20px !important;height: 22px !important;} .TweetAuthor-avatar--ancestor .Avatar {left: -8px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important;}.TwitterCard-container {border: 1px solid var(--soft-color) !important;max-width: 10000px!important;}";
     }
     else {
-        tweetCSS = ".EmbeddedTweet{height:auto !important; background: transparent !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;padding-bottom: 25px !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;width: 100%;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {background: transparent !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TwitterCard-container {border: 1px solid var(--soft-color) !important;max-width: 10000px!important;}.TweetAuthor-name {font-size: 16px !important;}.Avatar:not(.Identity-avatar) {height: 36px !important;width: 36px !important;position: relative !important;min-width: 36px !important;top: 2px !important;}.Avatar.Identity-avatar {width: 16px !important;height: 16px !important;}.TweetAuthor-screenName {font-size: 14px !important;}.Tweet-body{font-size: 16px !important;} .TweetAuthor-avatar--ancestor .Avatar {left: -5px !important;}.TweetInfo {font-size: 12px !important;}.CallToAction {font-size: 13px !important;}.Tweet-card {font-size: 14px !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TweetAuthor-avatar{width: 36px !important;height: 36px !important;} .TweetInfo-like {display: none !important;} .CallToAction-icon {display: none !important;} .TweetInfo-timeGeo {margin-left: 5px !important;} .CallToAction-text { color: var(--text-color) !important;} .CallToAction-text:hover { opacity: 0.6 !important;} a:hover { opacity: 0.6 !important;}";    
+        tweetCSS = ".EmbeddedTweet{height:auto !important; background: transparent !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;padding-bottom: 25px !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;width: 100%;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {background: transparent !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TwitterCard-container {border: 1px solid var(--soft-color) !important;max-width: 10000px!important;}.TweetAuthor-name {font-size: 16px !important;}.Avatar:not(.Identity-avatar) {height: 36px !important;width: 36px !important;position: relative !important;min-width: 36px !important;top: 2px !important;}.Avatar.Identity-avatar {width: 16px !important;height: 16px !important;}.TweetAuthor-screenName {font-size: 14px !important;}.Tweet-body{font-size: 16px !important;} .TweetAuthor-avatar--ancestor .Avatar {left: -5px !important;}.TweetInfo {font-size: 12px !important;}.CallToAction {font-size: 13px !important;}.Tweet-card {font-size: 14px !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TweetAuthor-avatar{width: 36px !important;height: 36px !important;}";    
     }
 
-    var obj = $("#twitter-widget-" + totalrenderedtweets);
+    var i = findFirstLink();
+    var j = i;
+    var processed = false;
 
-    obj.attr("processed", "yes");
-    var tweetStyle = document.createElement("style");
+    if (j > -1) {
+      do {
+        var obj = $("#twitter-widget-" + j);
 
-    tweetStyle.setAttribute("id", "tweet-style-" + totalrenderedtweets);
-    tweetStyle.innerHTML = tweetCSS;
-    tweetStyle.type = "text/css"; 
+        if (obj && obj.length > 0) {
 
-    //if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
-        var styleTag = document.getElementById("twitter-widget-" + totalrenderedtweets).shadowRoot;
-        insertAfter(tweetStyle, styleTag.childNodes[0]);
+          if (forceProcess || obj.attr("processed") != "yes") {
+            processed = true;
+              obj.attr("processed", "yes");
 
-    //} else {
-    //    var tweetWidget = document.getElementById("twitter-widget-" + j).contentDocument;
-    //    $(tweetWidget.head).prepend(tweetStyle);
-    //} 
-    
-    totalrenderedtweets = totalrenderedtweets + 1;
-    if (id) {
-        $("#" + id).fadeIn(3000);
+              var tweetStyle = document.createElement("style");
+
+              tweetStyle.setAttribute("id", "tweet-style-" + j);
+              tweetStyle.innerHTML = tweetCSS;
+              tweetStyle.type = "text/css";
+
+              //if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
+                  var styleTag = document.getElementById("twitter-widget-" + j).shadowRoot;
+                  insertAfter(tweetStyle, styleTag.childNodes[0]);
+
+              //} else {
+              //    var tweetWidget = document.getElementById("twitter-widget-" + j).contentDocument;
+              //    $(tweetWidget.head).prepend(tweetStyle);
+              //} 
+              
+          } 
+        }
+
+        j++;
+      }
+      while (j < i + searchtotal); 
+
+      if (processed) {
+        $('#tweetcount').fadeIn(800);
+        $('#mask').fadeOut(1100);
+        $('#moretweets').fadeOut(300);
+        $('#moretweets').css('opacity', 0);
+
+        /*
+        setTimeout(function(){
+          $("html").scrollTop(0);
+        }, 1000);
+        
+        */
+      }
+
+      return processed;
     }
     else {
-        obj.parent().parent().appendTo($("#main")).fadeIn(1000);
+      return false;
     }
 }
 
@@ -2519,19 +2363,16 @@ function insertAfter(newNode, referenceNode) {
 
 
     
-function showTooltip(event, obj, flag, text) {
+function showTooltip(event, obj) {
     var $element = $(obj);
 
-    if (flag || hasOverflow(obj)) {
+    if (hasOverflow(obj)) {
         var tooltip = $("#tooltip");
+        tooltip.text($element.text())
+    
 
-        if (text)
-            tooltip.text(text);
-        else
-            tooltip.text($element.text());
-
-        tooltip.css("top", (event.pageY + 30) + "px");
-        /* tooltip.css("left", getTooltipPosition(event.pageX) + "px"); */
+        tooltip.css("top", (event.pageY - 70) + "px");
+        tooltip.css("left", getTooltipPosition(event.pageX) + "px");
     
         tooltip.fadeIn(700);
 
@@ -2541,7 +2382,7 @@ function showTooltip(event, obj, flag, text) {
     }
 }
 
-/* function showFreeTooltip(x, y, text) {
+function showFreeTooltip(x, y, text) {
     var tooltip = $("#tooltip");
     tooltip.text(text);
 
@@ -2549,7 +2390,7 @@ function showTooltip(event, obj, flag, text) {
     tooltip.css("left",  (x + 70) + "px");
 
     tooltip.fadeIn(700);
-} */
+}
 
 
 function getTooltipPosition(pageX) {
@@ -2605,7 +2446,7 @@ function getWebsiteData2(url) {
     $.ajax({
         url: 'https://cors-anywhere.herokuapp.com/' + url
       }).then(function(data) {
-        //cnonsole.log('---------------WEBSITE ' + url + ' ----------------');
+        console.log('---------------WEBSITE ' + url + ' ----------------');
         // titulo - checar se é vazia
         
         
@@ -2614,9 +2455,9 @@ function getWebsiteData2(url) {
         
         var html = $(data);
         // descricao - checar se é vazia
-        //cnonsole.log("Descricao: " + getMetaContent(html, 'description') );
+        console.log("Descricao: " + getMetaContent(html, 'description') );
 
-        //cnonsole.log(data)
+        console.log(data)
 
       });
 
@@ -2630,183 +2471,4 @@ function getMetaContent(html, name) {
 //hasAvailableImage('45', 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/https://zzzsmallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy/')
 
 
-function nextLink(direction) {
-    if (direction == "up") {
-
-    }
-    else {
-        
-    }
-}
-
-
-
-function startCLWorker(data, hasChanges, execParamId) {
-    if (typeof(Worker) !== "undefined") {
-        if (typeof(clWorker) == "undefined") {
-            clWorker = new Worker("workers/countLinksW.js");
-        }
-
-        var workerInput = {};
-        workerInput.array = data;
-        if ($("#showdeleted2").is(":checked")) {
-            workerInput.includeDeleted = true;
-        }
-        else {
-            workerInput.includeDeleted = false;
-        }
-
-        clWorker.postMessage(workerInput);
-
-        clWorker.onmessage = function(event) {
-            if (event.data.finnish == "yes") {
-                clWorker.terminate();
-                clWorker = undefined;
-                processCountUpdate(event.data.result, hasChanges, execParamId);
-            }
-            else {
-                processCountBlock(hasChanges, execParamId);
-            }
-        };
-    }
-}
-
-function startWorker() {
-    if (typeof(Worker) !== "undefined") {
-      if (typeof(timeoutWorker) == "undefined") {
-        timeoutWorker = new Worker("worker.js");
-      }
-      // mudar o timeout
-      //w.postMessage({ "args": [ 500 ] });
-
-      timeoutWorker.onmessage = function(event) {
-        
-          if (linkArray[currrenderedtweets]) {
-            if (currrenderedtweets < 5) {
-                if (currrenderedtweets == 0) {
-                    $("html, body").scrollTop(0);
-                    $("#main").empty();
-                }
-                if (linkArray[currrenderedtweets] == "T") {
-                    if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                        currrenderedtweets++;
-        
-                        if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
-                            customizeSingleTweet();
-                        }
-                    }
-                }
-                else {
-
-                    $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
-                    
-                    if (!isMobile) {
-                        idCurr = linkArray[currrenderedtweets];
-                        setTimeout(function(){
-                            document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
-                        }, 0);
-                    }
-                    currrenderedtweets++;
-                }
-                if (linkArrayToRender[currrenderedtweets + 5]) {
-                    renderLink(linkArrayToRender[currrenderedtweets + 5]);
-                }
-            }
-            else {
-                
-                if (currrenderedtweets == 5) {
-                    //stopWorker();
-                    closeMenuPopup(null, "2.7");
-                    closeSearchPopup();
-                    $('#mask').fadeOut(3000);  
-                    $('#tweetcount').fadeIn(3800);
-
-/*                     setTimeout(function() {     
-                        var element = document.getElementById("13");
-
-                        // smooth scroll to element and align it at the bottom
-                        element.scrollIntoView({ behavior: 'smooth', block: 'start'});
-
-                    }, 15190); */
-                }
     
-                var doExec = false;
-
-                if (new Date().getTime() - datecontrol.getTime() > 200) {
-                    datecontrol = new Date();
-
-                    doExec = true;
-                }
-                
-
-                if (doExec) {
-                    renderTimeout = setTimeout(function() {  
-                        if (linkArray[currrenderedtweets] == "T") {
-                            if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                                currrenderedtweets++;
-                                countercontrol++;
-                                if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
-                                    customizeSingleTweet();
-                                }
-                            }
-                        }
-                        else {
-                            $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
-                    
-                            if (!isMobile) {
-                                idCurr = linkArray[currrenderedtweets];
-                                setTimeout(function(){
-                                    document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
-                                }, 0);
-                            }
-                            currrenderedtweets++;
-                            countercontrol++;
-                        }
-
-                        if (linkArrayToRender[currrenderedtweets + 5]) {
-                            renderLink(linkArrayToRender[currrenderedtweets + 5]);
-                        }
-
-                    }, 190);
-                }
-            }
-          }
-          else {
-            if (searchtotal > 0 && currrenderedtweets == searchtotal) {
-                stopWorker();
-                closeMenuPopup(null, "2.7");
-                closeSearchPopup();
-                $('#mask').fadeOut(3000);  
-                $('#tweetcount').fadeIn(3800);
-            }
-            else {
-                renderTimeout = setTimeout(function() {     
-                    stopWorker();
-                }, 1000);  
-            }
-          }
-      };
-    } 
-  }
-  
-function stopWorker() {
-    if (typeof(timeoutWorker) != "undefined") {
-        timeoutWorker.terminate();
-        timeoutWorker = undefined;
-    }
-}
-
-function clickMenuTooltip(obj, e) {
-    if (e)
-        e.stopPropagation();
-
-    if (obj)
-        fixfocus(obj);
-
-    if (isMobile) {
-        showTooltip(event, this, true, $(obj).attr("title"))
-    } 
-}
-
-
-

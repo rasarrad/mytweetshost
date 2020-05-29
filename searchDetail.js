@@ -18,7 +18,7 @@ function closeSearchPopup(obj) {
         if ($('body').hasClass('big'))
             setHeight = "37px";
     
-        $("#searchpopup table:not(.buttonstable)").each( function( index, element ) {
+        $("#searchpopup table").each( function( index, element ) {
             var table = $(element);
     
             table.css('max-height', setHeight);
@@ -64,16 +64,7 @@ function expandsection(obj, table) {
 }
 
 
-function changecriteria(e, obj, tableparam, flag) {
-
-    if (flag) {
-
-    }
-    else if (dblTapFlag)
-        return false;
-
-    dblTapFlag = true;
-    
+function changecriteria(e, obj, tableparam) {
     var table = null;
     if (obj) {
         table = $(obj).parent().parent();
@@ -82,48 +73,28 @@ function changecriteria(e, obj, tableparam, flag) {
         table = $("#" + tableparam);
     }
 
+    var maindiv = table.parent();
+    
     if (e)
         e.stopPropagation();
 
-    var searchbutton = $("#sear");
-    var iTop = "-2px";
     var setHeight = "26px";
-    var offset = 0;
-    if ($('body').hasClass('big')) {
-        setHeight = "37px";
-        iTop = "-1px";
-        offset = 5;
-    }
 
-    var titletext = table.find(".titletext");
-		
+    if ($('body').hasClass('big'))
+        setHeight = "37px";
+
     if (table.css('max-height') == setHeight) {
         if (obj) {
-            titletext.css('transition', 'none');
-            titletext.css("opacity", 0); 
-
+            var hasExpanded = false;
             $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
                 var othertable = $(element);
 
                 othertable.css('max-height', setHeight);
-                othertable.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
-
+                othertable.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", "0px");
+                othertable.find('td.el').addClass('ellipsis');
             });
-    
-            setTimeout(function() { 
-                $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
-                    var othertable = $(element);
-    
-                    if (othertable.attr("id") != table.attr("id")) {
-                        othertable.find(".togglepos").css("position", "absolute"); 
-                        othertable.find('td.el').addClass('ellipsis');
-                    }
-                });
-            }, 600);
-
-            table.find(".togglepos").css("position", ""); 
-
-            table.css('transition', 'max-height 0.7s');
+            
+            table.css('transition', 'max-height 1s');
     
             if (table.attr("cmaxheight")) {
                 if ($('body').hasClass('big')) {
@@ -137,79 +108,29 @@ function changecriteria(e, obj, tableparam, flag) {
                 table.css('max-height', "fit-content");
             }
     
-            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down').css("top", "-4px");
-            
+            table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down').css("top", "-6px");
+    
             table.find('td.el').removeClass('ellipsis');
             setTimeout(function() { 
-                dblTapFlag = false;
-
-                searchbutton.css('transition', 'all .8s ease');
-
-                if (table.attr("cheight"))
-                    offset = offset + Number(table.attr("cheight"));  
-        
-                searchbutton.css("top", (table.offset().top + 15 + offset) + "px");
-
-                titletext.css('transition', 'opacity .7s ease');
-                titletext.css("opacity", 1); 
-            }, 701);
+                var offset = 0;
+                if (table.attr("cheight") && table.attr("cheight").trim() != "")
+                    offset = Number(table.attr("cheight"));   
+                $("#sear").css("top", (table.offset().top - 69 + offset) + "px");
+            }, 100);
         }
     }
     else {
-        titletext.css('transition', 'none');
-        titletext.css("opacity", 0); 
-        table.css('transition', 'max-height 0.7s');
+        table.css('transition', 'max-height 1s');
         table.css('max-height', setHeight);
-        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
-
-        searchbutton.css('transition', 'all .7s ease');
-        setTimeout(function() { 
-            table.find('td.el').addClass('ellipsis');
-            if ($('body').hasClass('big')) 
-                searchbutton.css("top", ($("#searchpopup > div").height() - 53) + "px");
-            else
-                searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
-            
-            dblTapFlag = false;        
-            titletext.css('transition', 'opacity .7s ease');
-            titletext.css("opacity", 1); 
-        }, 701);
-    }
-}
-
-function changecriteriasilent(tableparam) {
-
-    var table = $("#" + tableparam);
-
-    var setHeight = "26px";
-    var iTop = "-2px";
-    if ($('body').hasClass('big')) {
-        setHeight = "37px";
-        iTop = "-1px";
-    }
-
-    var searchbutton = $("#sear");
-
-    table.css('transition', 'max-height 0.01s');
-    searchbutton.css('transition', 'all .01s ease');
-
-    if (table.css('max-height') == setHeight) {
-
-    }
-    else {
-
-        table.css('max-height', setHeight);
-        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
+        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", "0px");
         table.find('td.el').addClass('ellipsis');
-        table.find(".togglepos").css("position", "absolute");
-        if ($('body').hasClass('big')) 
-            searchbutton.css("top", ($("#searchpopup > div").height() - 53) + "px");
-        else
-            searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
+        setTimeout(function() { 
+            $("#sear").css("top", "calc(100% - 53px)");
+        }, 100);
     }
-    
-    table.css('transition', 'max-height 0.7s');
-    searchbutton.css('transition', 'all .8s ease');
+    setTimeout(function() { 
+        //updateTopPosition("searchpopup"); 
+    }, 1000);
 }
 
 function filtertagOnChange(obj) {
@@ -222,7 +143,7 @@ function filtertagOnChange(obj) {
         $("#searchtags").removeClass("withvalue");
     }
     else {
-        currenttagdisplay.html("<i onclick='clearcriterion(event,this, \"filtertag\", \"searchtags\")' class='fa fa-times-circle'></i>" + $(obj).val().trim());
+        currenttagdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filtertag\", \"searchtags\")' class='fa fa-times-circle'></i>");
         currenttagdisplay.removeClass("emptyvalue");
         $("#searchtags").removeClass("emptyvalue");
         $("#searchtags").addClass("withvalue");
@@ -231,34 +152,6 @@ function filtertagOnChange(obj) {
     removeNonExistentLi("tagsearchul", "filtertag");
 
     createNonExistentLi("tagsearchul", "filtertag");
-}
-
-function expandtags(e, obj) {
-    e.stopPropagation();
-    var tagstable = $('#searchtags'); 
-        
-    if ($(obj).hasClass("fa-chevron-down")) {
-        $(obj).removeClass("fa-chevron-down");
-        $(obj).addClass("fa-chevron-up");
-
-        $(obj).css("top", "auto");
-        $(obj).css("bottom", "0px");
-        tagstable.css("max-height", "4000px");
-    }
-    else {
-        $(obj).removeClass("fa-chevron-up");
-        $(obj).addClass("fa-chevron-down");
-        tagstable.css('transition', 'all 0.01s');
-        setTimeout(function(){
-            tagstable.css('transition', 'max-height 0.7s ease');
-        }, 800);
-        $(obj).css("top", "");
-
-        if ($('body').hasClass('big'))
-            tagstable.css("max-height", tagstable.attr("cmaxheightbig"));
-        else
-            tagstable.css("max-height", tagstable.attr("cmaxheight"));
-    }
 }
 
 function filterinfoOnChange(obj) {
@@ -271,7 +164,7 @@ function filterinfoOnChange(obj) {
         $("#searchinfo").removeClass("withvalue");
     }
     else {
-        currentinfosearchdisplay.html("<i onclick='clearcriterion(event,this, \"filtertext\", \"searchinfo\")' class='fa fa-times-circle'></i>" + $(obj).val().trim());
+        currentinfosearchdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filtertext\", \"searchinfo\")' class='fa fa-times-circle'></i>");
         currentinfosearchdisplay.removeClass("emptyvalue");
         $("#searchinfo").removeClass("emptyvalue");
         $("#searchinfo").addClass("withvalue");
@@ -288,7 +181,7 @@ function filterauthorOnChange(obj) {
         $("#searchinfo").removeClass("withvalue");
     }
     else {
-        currentinfosearchdisplay.html("<i onclick='clearcriterion(event,this, \"filterauthor\", \"searchauthor\")' class='fa fa-times-circle'></i>" + $(obj).val().trim());
+        currentinfosearchdisplay.html($(obj).val().trim() + "<i onclick='clearcriterion(event,this, \"filterauthor\", \"searchauthor\")' class='fa fa-times-circle'></i>");
         currentinfosearchdisplay.removeClass("emptyvalue");
         $("#searchinfo").removeClass("emptyvalue");
         $("#searchinfo").addClass("withvalue"); 
@@ -307,7 +200,6 @@ function formatDateFromNum(date) {
 function formatNumDate(date) {
     return date.getFullYear() + "" + pad((date.getMonth() + 1), 2) + pad(date.getDate(), 2);
 }
-
 function closeCalendarPopup(e) {
     if (e)
         e.stopPropagation();
@@ -329,90 +221,15 @@ function closeCalendarPopup(e) {
     $('#calendardiv').fadeOut(600);
 }
 
-function resetCalendar(e) {
-    if (e)
-        e.stopPropagation();
-    
-    switch($('#calendardiv').attr("targetObj")) {
-        case "filterdate1":
-        case "filterdate2":
-            break; 
-        case "linkdate":
-            datepickerAuthorChange(null);
-            break; 
-        case "linkcreatedate":    
-            break;     
-    }
-
-    closeCalendarPopup();
-}
-
-function undoCalendar(e) {
-    if (e)
-        e.stopPropagation();
-    
-    switch($('#calendardiv').attr("targetObj")) {
-        case "filterdate1":
-        case "filterdate2":
-            break; 
-        case "linkdate":
-
-            var date = $('#date').attr("cdate");
-
-            if (date && date.trim().length > 0) {
-                var dateFinal = new Date();
-                dateFinal.setDate(Number(date.substring(6, 8)));
-                dateFinal.setMonth(Number(date.substring(4, 6)) - 1);
-                dateFinal.setFullYear(Number(date.substring(0, 4)));
-                datepickerAuthorChange(dateFinal);
-            }
-            else {
-                datepickerAuthorChange(null);
-            }
-            break; 
-        case "linkcreatedate":    
-            break;     
-    }
-
-    closeCalendarPopup();
-}
-
-function openCalendar(targetObj, date, doShowReset) {
+function openCalendar(targetObj, date) {
     $('body, html').css('overflow-y', 'hidden');
 
     var currDate = null;
 
-    if (date) {
+    if (date)
         currDate = date;
-        if (targetObj == "linkdate") {
-            $("#calendardiv .fa-times-circle").show(); 
-            $("#calendardiv .currdate").html("Current value: " + formatDate(date)); 
-        }
-        else {
-            $("#calendardiv .fa-times-circle").hide(); 
-        }
-            
-        if (doShowReset)
-            $("#calendardiv .fa-undo").show();  
-        else
-            $("#calendardiv .fa-undo").hide(); 
-    }
-    else {
-        if (targetObj == "linkdate") {
-            $("#calendardiv .fa-times-circle").show(); 
-            $("#calendardiv .currdate").html("Current value: --"); 
-        }
-        else {
-            $("#calendardiv .fa-times-circle").hide(); 
-        }
-            
-        if (doShowReset)
-            $("#calendardiv .fa-undo").show();  
-        else
-            $("#calendardiv .fa-undo").hide();
-                    
+    else
         currDate = new Date();
-    }
 
     calendar = new VanillaCalendar({
         selector: "#myCalendar",
@@ -466,11 +283,11 @@ function updatedatedisplay() {
     if ($( "#filterdate1display" ).val().trim().length > 0) {
         if ($( "#filterdate2display" ).val().trim().length > 0) {
             if ($( "#filterdate2display" ).val().trim() == $( "#filterdate1display" ).val().trim()) {
-                $( ".currentdate" ).html("<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>" + "On " + $( "#filterdate1display" ).val());
+                $( ".currentdate" ).html("On " + $( "#filterdate1display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
             }
             else {
                 $( ".currentdate" ).css("font-size", "13px");
-                $( ".currentdate" ).html("<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>" + "Between " + $( "#filterdate1display" ).val() + " & " + $( "#filterdate2display" ).val());
+                $( ".currentdate" ).html("Between " + $( "#filterdate1display" ).val() + " & " + $( "#filterdate2display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
             }
             $( "#filterdate1clean" ).show();
             $( "#filterdate2clean" ).show();
@@ -478,13 +295,13 @@ function updatedatedisplay() {
         else {
             $( "#filterdate1clean" ).show();
             $( "#filterdate2clean" ).hide();
-            $( ".currentdate" ).html("<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>" + "After " + $( "#filterdate1display" ).val());
+            $( ".currentdate" ).html("After " + $( "#filterdate1display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
         }
     }
     else if ($( "#filterdate2display" ).val().trim().length > 0) {
         $( "#filterdate1clean" ).hide();
         $( "#filterdate2clean" ).show();
-        $( ".currentdate" ).html("<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>" + "Before " + $( "#filterdate2display" ).val());
+        $( ".currentdate" ).html("Before " + $( "#filterdate2display" ).val() + "<i onclick='clearcriterion(event,this, \"filterdate1\", \"searchdate\")' class='fa fa-times-circle'></i>");
     }
     else {
         $( "#filterdate1clean" ).hide();
@@ -518,8 +335,31 @@ function calendarChanged(date) {
             $('#searchpopup').css("background", style.getPropertyValue('--soft-transp-color'));
             break; 
         case "linkdate":
-            datepickerAuthorChange(date);
-            
+            if ($('#linkChange').attr("cid") != "new") {
+                var otherObj = $("#linkChange").find(".date");
+                
+                if (date) {
+                    otherObj.html(formatDate(date));
+                    $("#linkChange").find(".dateinput").val(formatNumDate(date));
+                    
+                    if (formatNumDate(date) != $('#date').attr("cdate")) {
+                        createCookie($('#linkChange').attr("cid") + "datechanged", formatNumDate(date));
+                        createCookie($('#linkChange').attr("cid") + "haschanges", "yes");
+                        if (showColors) {
+                            otherObj.css('color','#00ff72');
+                        }
+                    }
+                    else {
+                        createCookie($('#linkChange').attr("cid") + "datechanged", "");
+                        otherObj.css('color','');
+                    }
+                }
+                else {
+                    otherObj.html("--"); 
+                }
+
+                updateLinkColor(null, $('#linkChange').attr("cid"));
+            }
             closeCalendarPopup();
             break;    
 
@@ -535,7 +375,12 @@ function calendarChanged(date) {
     }
 }          
 
-function clearcriterion(e, obj, affectedobj, affectedtable, silent) {
+
+
+
+
+
+function clearcriterion(e, obj, affectedobj, affectedtable) {
     switch(affectedobj) {
         case "selectedtype":
             $('#' + affectedobj).val("all");
@@ -584,10 +429,7 @@ function clearcriterion(e, obj, affectedobj, affectedtable, silent) {
             break; 
     }
 
-    if (silent)
-        changecriteriasilent(affectedtable);
-    else 
-        changecriteria(null,null, affectedtable, true);
+    changecriteria(null,null, affectedtable);
 
     if (e)
         e.stopPropagation();
@@ -611,7 +453,7 @@ function changesearchtype(e, obj, code, desc) {
         $("#searchtypes").removeClass("withvalue");
     }
     else {
-        currenttagdisplay.html("<i onclick='clearcriterion(event,this, \"selectedtype\", \"searchtypes\")' class='fa fa-times-circle'></i>" + desc);
+        currenttagdisplay.html(desc + "<i onclick='clearcriterion(event,this, \"selectedtype\", \"searchtypes\")' class='fa fa-times-circle'></i>");
         currenttagdisplay.removeClass("emptyvalue");
         $("#searchtypes").removeClass("emptyvalue");
         $("#searchtypes").addClass("withvalue");
@@ -623,7 +465,7 @@ var openSearchPopup = function(jsonobj)
 {
     $('body, html').css('overflow-y', 'hidden');
     
-    $('#titlesearch .span2').html($('#selectedcattext').val());
+    $('#titlesearch').html("(" + $('#selectedcattext').val() + ")");
 
     updateSearchTablesHeight();
     
@@ -645,7 +487,7 @@ var openSearchPopup = function(jsonobj)
 
     setTimeout(function(){
         $('#searchpopup').css('background', 'var(--soft-transp-color)');
-    }, 800);
+    }, 600);
 
     //updateTopPosition("searchpopup"); 
 
@@ -654,30 +496,13 @@ var openSearchPopup = function(jsonobj)
 
 function updateSearchTablesHeight() {
     var setHeight = "26px";
-    var iTop = "-2px";
-    var ibuttontop = "calc(100% - -14px)";
-    if ($('body').hasClass('big')) {
-        ibuttontop = "calc(100% - -14px)";
+    if ($('body').hasClass('big'))
         setHeight = "37px";
-        iTop = "-1px";
-    }
-
-    setTimeout(function() { 
-        var searchbutton = $("#sear");
-        searchbutton.css('transition', 'all 0.01s ease');
-
-        if ($('body').hasClass('big')) 
-            searchbutton.css("top", ($("#searchpopup > div").height() - 53) + "px");
-        else
-            searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
-    
-        searchbutton.css('transition', 'all 0.6s ease');
-    }, 701);
 
     $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
         var table = $(element);
         table.css('max-height', setHeight);
-        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop).show();
+        table.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').show();
         table.find('td.el').addClass('ellipsis');
     });
 } 
@@ -701,7 +526,7 @@ function clickSearchLiClassif(e, obj) {
         desc = "Less than ";
     }
 
-    $(".currentsearchclassif").html("<i onclick='clearcriterion(event,this, \"selectedclassif\", \"searchclassif\")' class='fa fa-times-circle'></i>" + desc + $(obj).html().trim());
+    $(".currentsearchclassif").html(desc + $(obj).html().trim() + "<i onclick='clearcriterion(event,this, \"selectedclassif\", \"searchclassif\")' class='fa fa-times-circle'></i>");
     $(".currentsearchclassif").removeClass("emptyvalue");
     $("#searchclassif").removeClass("emptyvalue");
     $("#searchclassif").addClass("withvalue");
@@ -710,10 +535,9 @@ function clickSearchLiClassif(e, obj) {
 
 
 
-var getInformation = function(wasfiltered, valid) {
+var getInformation = function(ismoretweets, wasfiltered, valid) {
 
-    $('#mask').fadeIn(100);
-    stopWorker();
+    closeSearchPopup();
 
     if (wasfiltered == 1) {
         $('#countfilter').show();
@@ -722,6 +546,10 @@ var getInformation = function(wasfiltered, valid) {
         $('#countfilter').hide();
     }
 
+    var path = "./data.json";
+    var endIndex = currentIndex + Number($('#recordspersearch').val());
+    var objToFocus = -1;
+    var ind = 0;
     var dofiltertext = $('#filtertext').val().trim().length > 0; 
     var dofilterdate1 = $('#filterdate1').val().trim().length > 0; 
     var dofilterdate2 = $('#filterdate2').val().trim().length > 0; 
@@ -731,12 +559,6 @@ var getInformation = function(wasfiltered, valid) {
     var dofiltertype = $('#selectedtype').val().trim() != "all"; 
     var dofilterclassif = $('#selectedclassif').val().trim() != "all"; 
     searchtotal = 0;
-    currrenderedtweets = 0;
-    linkArray = new Array();
-    linkArrayToRender = new Array();
-    var total_yy = 0; 
-    var total_tt = 0;
-    var total_hh = 0;
 
     // security check
     /* xyz splash 
@@ -751,7 +573,7 @@ var getInformation = function(wasfiltered, valid) {
         if (!dunl()) {
             funcg = function() 
             { 
-                getInformation(1, true);
+                getInformation(false, 1, true);
             } 
 
             $("#splashbutton").attr("ceec", "yes");
@@ -762,20 +584,213 @@ var getInformation = function(wasfiltered, valid) {
     }
     */
 
-    startWorker();
+    if (!ismoretweets) {
+        $('#mask').fadeIn(300);  
+        $('#moretweets').hide();
+        currentIndex = 0;
+        endIndex = currentIndex + Number($('#recordspersearch').val());
+        processedCount = 0;
+        totalLinkss = 0;
+        total_yy = 0;
+        total_tt = 0;
+        total_hh = 0;
 
+        $("html").scrollTop(0);
+        $("#main").empty();
+    }
+
+    currpage = currpage + 1;
+
+    nextid = null;
     try {
-        var i = 0;
-
-        var doShowDeletedLink = true;  
-        if (!$("#showdeleted2").is(":checked")) {
-            doShowDeletedLink = false; 
+        nextid = parseInt(readCookie("maxid"));
+    }
+    catch(err) {
+    }
+    finally {
+        if (nextid) {
+            $("#maxid").val(nextid);
+            nextid = nextid - 1;
         }
+        else {
+            nextid = parseInt($("#maxid").val());
+            createCookie("maxid", nextid);
+            nextid = nextid - 1;
+        }
+    }
+
+    $.getJSON(path, function(data) {
+        var processtmp = true;
+
+        if (!ismoretweets) {
+            $.each(data.Tweets, function(key, val) {
+                var newtweet = null;
+                var dofiltertextfinal = false;
+                var dofilterdate1final = false;
+                var dofilterdate2final = false;
+                var dofiltertagfinal = false;
+                var dofiltercatfinal = false;
+                var dofilterauthorfinal = false;
+                var recordfromdata = val;
+                var linkcontent = null;
+                var dofiltertypefinal = false;
+                var dofilterclassiffinal = false;
+
+                do {
+                    if (processtmp) {
+                        linkcontent = readCookie(nextid + "templink");
+                        if (linkcontent && linkcontent.length > 0) {
+                            var linktmp = decodeURIComponent(linkcontent);
+                            linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
+                            linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                            linktmp = linktmp.replace(/(\\)/gm, ""); 
+                            linktmp = JSON.parse(linktmp);
         
-        while (allLinks[i]) {
-            var val = allLinks[i];
+                            val = linktmp;
+                            nextid = nextid - 1;
+                        }
+                        else {
+                            if (showAll) {
+                                val = recordfromdata;
+                            }
+                            else {
+                                val.id = "0";
+                            }
+                            
+                            processtmp = false;
+                        }
+                    }
+                    else {
+                        if (showAll) {
+                            val = recordfromdata;
+                        }
+                        else {
+                            val.id = "0";
+                        }
+                    }
+
+                    var isdeleted = readCookie(val.id + "isdeleted");
+                    if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
+                        var cat = readCookie(val.id + "catchanged");
+                        if (cat && cat.length > 0) {
+                            val.categories = cat;
+                        }
+            
+                        var tag = readCookie(val.id + "tagchanged");
+                        if (tag && tag.length > 0) {
+                            val.tags = tag;
+                        }
+            
+                        var info = readCookie(val.id + "info");
+                        if (info && info.length > 0) {
+                            val.info = info;
+                        }
+            
+                        var classif = readCookie(val.id + "classif");
+                        if (classif && classif.length > 0) {
+                            val.classif = classif;
+                        }
+    
+                        var author = readCookie(val.id + "author");
+                        if (author && author.length > 0) {
+                            val.author = author;
+                        }
+            
+                        var datechanged = readCookie(val.id + "datechanged");
+                        if (datechanged && datechanged.length > 0) {
+                            val.date = datechanged;
+                        }
+                        
+                        dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
+                        dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
+                        dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
+                        dofiltertagfinal = !dofiltertag || searchTags(val.tags.toLowerCase(), $('#filtertag').val().toLowerCase());
+                        dofiltercatfinal = !dofiltercat || val.categories.includes($('#selectedcat').val());
+                        dofilterauthorfinal = !dofilterauthor || val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase());
+                        dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
+                        dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
+                        
+                        var doShowDeletedLink = true;  
+                        if (!$("#showdeleted2").is(":checked")) {
+                            if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
+                                doShowDeletedLink = false; 
+                            } 
+                        }
+    
+                        if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
+                            && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
+          
+    
+                            searchtotal = searchtotal + 1;
+    
+    
+                            ind = ind + 1;
         
-            //startWorker();
+                            if (val.type == "T") {
+                                total_tt = total_tt + 1;
+                            }
+                            else if (val.type == "Y") {
+                                total_yy = total_yy + 1;
+                            }
+                            else {
+                                total_hh = total_hh + 1;
+                            }
+                        }
+                    }
+                }
+                while (processtmp);
+            });     
+            totalLinkss = ind; 
+        }
+
+
+        var toindex = 0;
+        if (currentIndex + Number($('#recordspersearch').val()) < totalLinkss)
+            toindex = currentIndex + Number($('#recordspersearch').val());
+        else 
+            toindex = totalLinkss;
+
+        ind = 0;
+
+        nextid = null;
+        try {
+            nextid = parseInt(readCookie("maxid"));
+        }
+        catch(err) {
+        }
+        finally {
+            if (nextid) {
+                $("#maxid").val(nextid);
+                nextid = nextid - 1;
+            }
+            else {
+                nextid = parseInt($("#maxid").val());
+                createCookie("maxid", nextid);
+                nextid = nextid - 1;
+            }
+        }
+
+        processtmp = true;
+
+        /*
+        var sortByProperty = function (property) {
+            return function (x, y) {
+                return y.property - x.property;
+            };
+        };
+        data.Tweets.sort(sortByProperty(''));
+
+        var sortByDate = function () {
+            return function (x, y) {
+                return Number(y.date) - Number(x.date);
+            };
+        };
+        data.Tweets.sort(sortByDate());
+        */
+
+
+        $.each(data.Tweets, function(key, val) {
+            var newtweet = null;
             var dofiltertextfinal = false;
             var dofilterdate1final = false;
             var dofilterdate2final = false;
@@ -784,162 +799,630 @@ var getInformation = function(wasfiltered, valid) {
             var dofilterauthorfinal = false;
             var dofiltertypefinal = false;
             var dofilterclassiffinal = false;
-                    
-            dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
-            dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
-            dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
-            dofiltertagfinal = !dofiltertag || searchTags(val.tags.toLowerCase(), $('#filtertag').val().toLowerCase());
-            dofiltercatfinal = !dofiltercat || val.categories.includes($('#selectedcat').val());
-            dofilterauthorfinal = !dofilterauthor || val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase());
-            dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
-            dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
+            recordfromdata = val;
+            
+            linkcontent = null;
+
+            do {
+
+                if (processtmp) {
+                    linkcontent = readCookie(nextid + "templink");
+                    if (linkcontent && linkcontent.length > 0) {
+                        var linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
+                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                        linktmp = linktmp.replace(/(\\)/gm, ""); 
+                        linktmp = JSON.parse(linktmp);
+    
+                        val = linktmp;
+                        nextid = nextid - 1;
+                    }
+                    else {
+                        if (showAll) {
+                            val = recordfromdata;
+                        }
+                        else {
+                            val.id = "0";
+                        }
+                        
+                        processtmp = false;
+                    }
+                }
+                else {
+                    if (showAll) {
+                        val = recordfromdata;
+                    }
+                    else {
+                        val.id = "0";
+                    }
+                }
+                var isdeleted = readCookie(val.id + "isdeleted");
+                if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
+                    var cat = readCookie(val.id + "catchanged");
+                    if (cat && cat.length > 0) {
+                        val.categories = cat;
+                    }
         
-            if (val.deleted == "yes")
-                dofiltertextfinal = false;
+                    var tag = readCookie(val.id + "tagchanged");
+                    if (tag && tag.length > 0) {
+                        val.tags = tag;
+                    }
+        
+                    var info = readCookie(val.id + "info");
+                    if (info && info.length > 0) {
+                        val.info = info;
+                    }
+        
+                    var classif = readCookie(val.id + "classif");
+                    if (classif && classif.length > 0) {
+                        val.classif = classif;
+                    }
+    
+                    var author = readCookie(val.id + "author");
+                    if (author && author.length > 0) {
+                        val.author = author;
+                    }
+        
+                    var datechanged = readCookie(val.id + "datechanged");
+                    if (datechanged && datechanged.length > 0) {
+                        val.date = datechanged;
+                    }
 
-            if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
-                && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal
-                && (doShowDeletedLink || val.deleted == "")) {
+                    ind = ind + 1;
+                    if (ind < processedCount ) {
+                        return;
+                    }
+    
+                    if (currentIndex < endIndex) {
+    
+                        dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
+                        dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
+                        dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
+                        dofiltertagfinal = !dofiltertag || searchTags(val.tags.toLowerCase(), $('#filtertag').val().toLowerCase());
+                        dofiltercatfinal = !dofiltercat || val.categories.includes($('#selectedcat').val());
+                        dofilterauthorfinal = !dofilterauthor || val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase());
+                        dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
+                        dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
+                        
+                        var doShowDeletedLink = true;  
+                        if (!$("#showdeleted").is(":checked")) {
+                            if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) {
+                                doShowDeletedLink = false; 
+                            } 
+                        }
+    
+                        if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
+                            && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal && doShowDeletedLink) {
+                            
+                            var tagdispalay = " --";
+                            var expandclass = "";
+                            var color = "";
+                            if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { // ID DELETED
+                                expandclass = hideMode ? "" : "isdeleted";    
+                                if (showColors)
+                                    color = "color: red;";
+                            } 
+                            else if (showColors) {
+                                if (val.isnew && val.isnew != "") { // IS NEW
 
-                if (val.type == "T") {
-                    total_tt = total_tt + 1;
-                    linkArray[searchtotal] = val.type;
-                }
-                else if (val.type == "Y") {
-                    total_yy = total_yy + 1;
-                    linkArray[searchtotal] = val.id;
+                                    expandclass = hideMode ? "" : "isnew";  
+                                    color = "color: #00dc00;";
+        
+                                    var tagchanged = readCookie(val.id + "tagchanged");
+            
+                                    if (tagchanged && tagchanged.length > 0) {
+                                        tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                                        tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
+                                    } 
+                                    else {
+                                        if (val.tags.length > 0 && val.tags != 'undefined') {
+                                            tagdispalay = parseTags(val.tags);
+                                        }
+                                    } 
+                                }
+                                else {
+                                    var hasChanges = readCookie(val.id + "haschanges");
+                                    if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
+                                        color = "color: #f18618;";
+                                        if (expandclass == "isnew")
+                                            expandclass = hideMode ? "" : "isnewmodified";  
+                                        else 
+                                            expandclass = hideMode ? "" : "ismodified";  
+        
+                                        var tagchanged = readCookie(val.id + "tagchanged");
+            
+                                        if (tagchanged && tagchanged.length > 0) {
+                                            tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                                            tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
+                                        } 
+                                        else {
+                                            if (val.tags.length > 0 && val.tags != 'undefined') {
+                                                tagdispalay = parseTags(val.tags);
+                                            }
+                                        }
+                                    } 
+                                    else if (val.tags.length > 0 && val.tags != 'undefined') {
+                                        tagdispalay = parseTags(val.tags);
+                                    }
+                                }
+                            }
+                            else {
+                                tagdispalay = parseTags(val.tags);
+                            }
+    
+                            var xclass = "";
+                            var typefa = "twitter"
+                            if (val.type == "H") {
+                                xclass = " html";
+                                typefa = "internet-explorer"
+                            }
+                            else if (val.type == "Y") {
+                                xclass = " yt";
+                                typefa = "youtube-play"
+                            }
+                            
+                            var newtweet = $('#main').append($('<div id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>'));
+                            var newtweetobj = $('#inid');
+    
+                            newtweetobj.append($('<div style="z-index: 0;background: var(--soft-color);height: 39px;" class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
+                            
+                            newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
+                            
+                            if (val.type == "T") {
+                                newtweetobj.append($('<div class="innertweet"></div>'));
+                                newtweetobj.find('.innertweet').append(val.tweet);
+
+                                newtweetobj.attr('id', val.id);
+                            }
+                            else {
+                                newtweetobj.append($(val.tweet));
+                                
+                                newtweetobj.find(".bottomstripline.line1").html(val.info);
+                                
+                                newtweetobj.attr('id', val.id);
+
+                                var currid = val.id;
+                                //setTimeout( function() {                                 
+                                    // xyzdouble
+                                    if (!isMobile) {
+                                        document.getElementById("contentin" + currid).addEventListener("click", clickHandler);
+                                    }
+                                //}, 200 );
+                            }
+            
+                            if (objToFocus < 0) {
+            
+                                objToFocus = currentIndex;
+                                var newtweetobjaction = newtweetobj;
+    /*                             $('html, body').animate({
+                                    scrollTop: $(newtweetobjaction).offset().top - 60
+                                }, 100); */
+            
+                            }
+                            currentIndex = currentIndex + 1;
+                        }   
+                    }
+                    else {
+                        if (currentIndex >= endIndex) {
+    
+                            $('#moretweets').attr('doshow', 'yes');
+                       
+                            
+                /*               setTimeout(function(){
+                                $('#mask').fadeOut(300);
+                            }, 300);
+                            showMessage("Search Results"); */
+    
+                            if (Number($('#recordspersearch').val()) < ind) {
+                
+                                //$('#tweetcount').css('background', '#fff900');
+                                
+                                //$('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
+                                $('#tcnumber').text(totalLinkss + " Links");
+                                $('#tccateg').text("In " + $('#selectedcattext').val());
+                    
+                                var aux = ind;
+                    
+                                setTimeout(function(){ 
+                                    if (aux == toindex) { 
+                                        $('#tcnumber').text(totalLinkss + " Links");
+                                        $('#tccateg').text("In " + $('#selectedcattext').val());
+                                    }
+                                    else {
+                                        //$('#tcnumber').text(toindex + " of " + aux);
+                                        $('#tcnumber').text(totalLinkss + " Links");
+                                        $('#tccateg').text("In " + $('#selectedcattext').val());
+                                    }   
+                                    
+                                    //$('#tweetcount').css('background', 'white');
+                                }, 3000);
+                    
+                            }
+                            else {  
+                                $('#tcnumber').text(totalLinkss + " Links");
+                                $('#tccateg').text("In " + $('#selectedcattext').val());
+                            }
+                    
+                            $('#tct').text(total_tt);
+                            $('#tcy').text(total_yy);
+                            $('#tch').text(total_hh);                        
+    
+                            return false;
+                        }
+                    }
+                    if (val.id == 0) {
+                        return;
+                    }
                 }
                 else {
-                    total_hh = total_hh + 1;
-                    linkArray[searchtotal] = val.id;
+                    var isdeleted = readCookie(val.id + "isdeleted");
+                    if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
+                        return;
+                    }
                 }
+            }
+            while (processtmp);
 
-                if (searchtotal < 5) {
-                    renderLink(val);
-                } 
-                else {
-                    linkArrayToRender[searchtotal] = val;
+        });
+        processedCount = ind;
+        if (Number($('#recordspersearch').val()) < ind) {
+        
+            //$('#tweetcount').css('background', '#fff900');
+            
+            //$('#tcnumber').text((currentIndex + 1)  + " to " + toindex + " of " + ind);
+            $('#tcnumber').text(totalLinkss + " Links");
+            $('#tccateg').text("In " + $('#selectedcattext').val());
+
+            var aux = ind;
+
+            setTimeout(function(){ 
+                if (aux == toindex) { 
+                    $('#tcnumber').text(totalLinkss + " Links");
+                    $('#tccateg').text("In " + $('#selectedcattext').val());
                 }
-                searchtotal++;
-            }  
-            i++;
+                else {
+                    //$('#tcnumber').text(toindex + " of " + aux);
+                    $('#tcnumber').text(totalLinkss + " Links");
+                    $('#tccateg').text("In " + $('#selectedcattext').val());
+                }   
+                
+                //$('#tweetcount').css('background', 'white');
+            }, 3000);
+
         }
-    }
-    catch(err) {
-    }
+        else {  
+            $('#tcnumber').text(totalLinkss + " Links");
+            $('#tccateg').text("In " + $('#selectedcattext').val());
+        }
 
-    $('#tcnumber').text(searchtotal + " Links");
-    $('#tccateg').text("In " + $('#selectedcattext').val());
+        $('#tct').text(total_tt);
+        $('#tcy').text(total_yy);
+        $('#tch').text(total_hh);
 
-    $('#tct').text(total_tt);
-    $('#tcy').text(total_yy);
-    $('#tch').text(total_hh);
+        $('#main').find('.tweet').sort(function (a, b) {
+            return Number($(b).attr('cdate')) - Number($(a).attr('cdate'));
+        }).appendTo('#main');
+        
+        setTimeout(function() { 
+            var found = customizeTweets(1);
 
+            sleep(100);  
 
-    /*
-        SORT!!! 
-    $('#main').find('.tweet').sort(function (a, b) {
-        return Number($(b).attr('cdate')) - Number($(a).attr('cdate'));
-    }).appendTo('#main'); */
+            if (!found) {
+                setTimeout(function() { 
+                    found = customizeTweets(1);
+        
+                    sleep(100);  
+        
+                    if (!found) {
+                        setTimeout(function() { 
+                            var found = customizeTweets(1);
+                            if (!found) {
+                                $('#tweetcount').fadeIn(800);
+                                $('#mask').fadeOut(700);
+                                          
+                                $('#moretweets').fadeOut(300);
+                                $('#moretweets').css('opacity', 0);
+                            }
+                        }, 2500); 
+                    }
+                }, 1500);
+            }
+        }, 500);
 
-    if (searchtotal > 0) {
-        //if (wasfiltered != 2)
-            //showMessage("Search Results", 2000);
-    }
-    else {
-        //stopWorker();
-        $('#mask').fadeOut(2000);  
-        $('#tweetcount').fadeOut(1000);
-        showMessage("No Links Found", 2000);
-    }
+        if (!ismoretweets) {
+            if (totalLinkss > 0) {
+                //if (wasfiltered != 2)
+                    //showMessage("Search Results", 2000);
+            }
+            else {
+
+                $('#mask').fadeOut(600);  
+                $('#tweetcount').fadeOut(800);
+                $('#moretweets').fadeOut(300);
+                $('#moretweets').css('opacity', 0);
+                showMessage("No Links Found", 2000);
+            }
+        }
+    }); 
 }
   
 
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 
 
-function renderLink(val, flag) {
-    var tagdispalay = " --";
-    var expandclass = "";
-    var color = "";
-                    
-    if (val.deleted != "") { // ID DELETED
-        expandclass = hideMode ? "" : "isdeleted";    
-        if (showColors)
-            color = "color: red;";
-    } 
-    else if (showColors) {
-        if (val.isnew && val.isnew != "") { // IS NEW
+var getInformationOld = function(ismoretweets) {
+    
+    var path = "./data.json";
+    var endIndex = currentIndex + Number($('#recordspersearch').val());
+    var objToFocus = -1;
+    var ind = 0;
+    
 
-            expandclass = hideMode ? "" : "isnew";  
-            color = "color: #00dc00;";
+    var dofiltertext = $('#filtertext').val().length > 0; 
+    var dofilterdate1 = $('#filterdate1').val().length > 0; 
+    var dofilterdate2 = $('#filterdate2').val().length > 0; 
+    var dofilterid = $('#filterid').val().length > 0; 
+    var dofiltertag = $('#filtertag').val().length > 0; 
+    var dofilterauthor = $('#filterauthor').val().length > 0;
+    var dofiltercat = $('#selectedcat').val().length > 0 && $('#selectedcat').val() != 'all';  
 
-            tagdispalay = parseTags(val.tags);
+    
+    if (!ismoretweets) {
+        $('#mask').fadeIn(300);  
+        $('#moretweets').hide();
+        currentIndex = 0;
+        endIndex = currentIndex + 5;
+
+        $("#main").empty();
+    }
+
+    currpage = currpage + 1;
+
+    $.getJSON(path, function(data) 
+    {
+    $.each(data.Tweets, function(key, val) 
+        {
+        var newtweet = null;
+        var dofiltertextfinal = false;
+        var dofilterdate1final = false;
+        var dofilterdate2final = false;
+        var dofilteridfinal = false;
+        var dofiltertagfinal = false;
+        var dofiltercatfinal = false;
+        var dofilterauthorfinal = false;
+
+        dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
+        dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
+        dofilterdate2final = !dofilterdate2 || (dofilterdate2 && val.date <= Number($('#filterdate2').val()));
+        dofilteridfinal = !dofilterid || (dofilterid && (Number(val.id) == Number($('#filterid').val())));
+        dofiltertagfinal = !dofiltertag || (dofiltertag && val.tags.includes($('#filtertag').val()));
+        dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
+        dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
+
+        if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
+            && dofilterauthorfinal && dofiltercatfinal) {
+            ind = ind + 1;
+        }
+        });
+        
+        var toindex = 0;
+        if (currentIndex + Number($('#recordspersearch').val()) < ind)
+            toindex = currentIndex + Number($('#recordspersearch').val());
+        else 
+            toindex = ind;
+
+        if (Number($('#recordspersearch').val()) < ind) {
+            $('#tweetcount').css('background', '#fff900');
+            $('#tweetcount').html((currentIndex + 1)  + " to " + toindex + " of " + ind + "<br>In " + $('#selectedcattext').val());    
+            var aux = ind;
+
+            setTimeout(function(){ 
+                if (aux == toindex) { 
+                $('#tweetcount').html(aux + " Tweets<br>In " + $('#selectedcattext').val());  
+                }
+                else {
+                $('#tweetcount').html(toindex + " of " + aux + "<br>In " + $('#selectedcattext').val());  
+                }   
+                
+                $('#tweetcount').css('background', 'white');
+            }, 3000);
+
         }
         else {
-            var hasChanges = readCookie(val.id + "haschanges");
-            if (hasChanges) { // HAS CHAMGES
-                color = "color: #f18618;";
-                if (expandclass == "isnew")
-                    expandclass = hideMode ? "" : "isnewmodified";  
-                else 
-                    expandclass = hideMode ? "" : "ismodified";  
+            $('#tweetcount').html(ind + " Tweets<br>In " + $('#selectedcattext').val());  
+        }
+
+        ind = 0;
+        $.each(data.Tweets, function(key, val) 
+        {
+        var newtweet = null;
+        var dofiltertextfinal = false;
+        var dofilterdate1final = false;
+        var dofilterdate2final = false;
+        var dofilteridfinal = false;
+        var dofiltertagfinal = false;
+        var dofiltercatfinal = false;
+        var dofilterauthorfinal = false;
+
+        if (currentIndex < endIndex && ((ismoretweets && currentIndex == ind) || !ismoretweets)) {
+            dofiltertextfinal = !dofiltertext || (dofiltertext && val.tweet.toLowerCase().includes($('#filtertext').val().toLowerCase()));
+            dofilterdate1final = !dofilterdate1 || (dofilterdate1 && val.date >= Number($('#filterdate1').val()));
+            dofilterdate2final = !dofilterdate2 || (dofilterdate2 && val.date <= Number($('#filterdate2').val()));
+            dofilteridfinal = !dofilterid || (dofilterid && (Number(val.id) == Number($('#filterid').val())));
+            dofiltertagfinal = !dofiltertag || (dofiltertag && val.tags.includes($('#filtertag').val()));
+            dofiltercatfinal = !dofiltercat || (dofiltercat && val.categories.includes($('#selectedcat').val()));
+
+            dofilterauthorfinal = !dofilterauthor || (dofilterauthor && val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase()));
+
+            if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final && dofilteridfinal
+            && dofilterauthorfinal && dofiltercatfinal) {
+
+            var isdeleted = readCookie(val.id + "isdeleted");
+            if (isdeleted && isdeleted.length > 0) {
+                isdeleted = "background-image: linear-gradient(to bottom, #d60000, #ff2e2e)";
             } 
+            else {
+                isdeleted ="";
+            }
+            var tagchanged = readCookie(val.id + "tagchanged");
+            var catchanged = readCookie(val.id + "catchanged");
+            var tagstyle = "background-image: linear-gradient(to right, #0082cd, #0082cd)";
+            if (tagchanged && tagchanged.length > 0 && catchanged && catchanged.length > 0) {
+                tagstyle = "background-image: linear-gradient(to right, rgb(247, 205, 205), rgb(177, 0, 0), rgb(247, 205, 205))";
+                tagchanged = '<span class="newtag"><b> New tags </b>' + tagchanged + '</span>';
+                catchanged = '<span class="newcat"><b> New categories </b>' + catchanged + '</span>';
+            } 
+            else {
+                if (tagchanged && tagchanged.length > 0) {
+                    tagstyle = "background-image: linear-gradient(to right, rgb(177, 0, 0), rgb(247, 205, 205))";
+                    tagchanged = '<span class="newtag"><b> New tags </b>' + tagchanged + '</span>';
+                    catchanged = '<span class="newcat"></span>';
+                }
+                else if (catchanged && catchanged.length > 0) {
+                    tagstyle = "background-image: linear-gradient(to left, rgb(177, 0, 0), rgb(247, 205, 205))";
+                    tagchanged = '<span class="newtag"></span>';
+                    catchanged = '<span class="newcat"><b> New categories </b>' + catchanged + '</span>';
+                }
+                else {
+                    tagchanged = '<span class="newtag"></span>';
+                    catchanged = '<span class="newcat"></span>';
+                }
+            }
+
+            var hasinfo = decodeURIComponent(readCookie(val.id + "info"));
+            var textareaExtraStyle ="";
+            var expandclass = "";
+            var displayundo = "";
+            if (hasinfo && hasinfo.length > 0) {
+                if (val.info && val.info.length > 0) {
+                    textareaExtraStyle = "border: 2px solid red;";
+                    expandclass = "infomodified";
+                    val.info = '<div id ="' + val.id + 'oldinfo" class="oldinfo" style="width: 562px;height: 163px;position: relative;left: calc(50% - 282px);z-index: 11;font-size: 14px;background: #0000002e;text-align: left;display: block;border: 2px solid red;top: -12px;">' 
+                    + val.info + '</div>';
+                }
+                else {
+                    val.info = "";
+                }
+            } 
+            else {
+                displayundo = "display: none;";
+                if (val.info && val.info.length > 0) {
+                    hasinfo = decodeURIComponent(val.info);
+                }
+                else {
+                    hasinfo = "";
+                }
+                val.info = "";
+            }
+
+            var hasClassif = readCookie(val.id + "classif");
+            var textboxExtraStyle ="";
+            var displayundoclassif = "";
+
+            if (hasClassif && hasClassif.length > 0) {
+                if (val.classif && val.classif.length > 0) {
+                    textboxExtraStyle = "border: 2px solid red;";
+                    expandclass = "infomodified";
+                    val.classif = '<div class="oldclassif" id ="' + val.id + 'oldclassif" style="position: relative;top: -41px;left: -283px;width: 34px; text-align: center; border: 2px solid red;height: 19px; padding-top: 2px; font-size: 14px;">'
+                    + val.classif + '</div>';
+                }
+                else {
+                    val.classif = "";
+                }
+            } 
+            else {
+                displayundoclassif = "display: none;";
+                if (val.classif && val.classif.length > 0) {
+                hasClassif = val.classif;
+                }
+                else {
+                hasClassif = "";
+                }
+                val.classif = "";
+            }
+
+
+            var tagdispalay = " --";
+            if (val.tags.length > 0) {
+                tagdispalay = val.tags;
+            }
+
+
+            //$('#moretweets').hide();
+            var newtweet = $('#main').append($('<div style="' + isdeleted + '" id="inid" class="tweet"></div>'));
+            var newtweetobj = $('#inid');
+            newtweetobj.append($('<i onclick="javascript: expandCat(this)" id="expand" class="fa fa-edit ' + expandclass + '"></i>' 
+                + '<div class="categorias">' 
+                    + '<i onclick="javascript: removetweet(this,\'' + val.id + '\')" id="removetweet" class="fa fa-remove"></i>' 
+                    + '<i tagactual="' + val.tags + '" onclick="javascript: changetag(this, \'' + val.id + '\')" id="changetag" class="fa fa-tags"></i>' 
+                    + '<i catactual="' + val.categories + '" onclick="javascript: changecat(this,\'' + val.id + '\')" id="changecat" class="fa fa-bookmark"></i>' 
+                    + '<b>Id </b>' + val.id + '<b> Categories </b>' + val.categories + catchanged 
+                    + '<div style="width: 0px;height: 0px;position: relative;left: calc(50% - 282px);z-index: 11;display: block;top: 19px;border: 0;">'
+                    + '<input  id="' + val.id + 'classif" class="info" type="text" value="' + hasClassif + '"style="width: 25px;height: 19px;position: relative;left: calc(50% - 90px);z-index: 11;display: block;border: 1px solid white;margin-top: 4px;background: #2baffa;text-align: center;' + textboxExtraStyle + '"></input>'
+                    + '<i onclick="javascript: saveclassif(this,\'' + val.id + '\')" class="fa fa-check" style="position: relative;cursor: pointer;background: white;color: #0082cd;padding: 3px 6px;font-size: 21px;border-radius: 4px;left: -46px;top: -24px;width: 18px;"></i>'
+                    + '<i onclick="javascript: undosaveclassif(this,\'' + val.id + '\')" id ="' + val.id + 'undoclassif" class="fa fa-undo" style="position: relative;cursor: pointer;background: white;color: #0082cd;padding: 3px 6px;font-size: 21px;border-radius: 4px;left: -231px;top: -17px;' + displayundoclassif + '"></i>'
+                    + val.classif // vai conter a div com a classificacao antiga - caso exista
+                    + '</div>'
+                    + '<textarea class="info" style="width: 558px;height: 216px;position: relative;left: calc(50% - 282px);z-index: 11;display: block; margin-top: 4px;' + textareaExtraStyle + '" id="' + val.id + 'info" type="text">' 
+                    + hasinfo + '</textarea>' 
+                    + '<i onclick="javascript: saveinfo(this,\'' + val.id + '\')" class="fa fa-check" style="position: relative;left: 330px;top: -221px;cursor: pointer;background: white;color: #0082cd;padding: 3px 6px;font-size: 21px;border-radius: 4px;width: 18px;"></i>' 
+                    + '<i onclick="javascript: undosaveinfo(this,\'' + val.id + '\')" id ="' + val.id + 'undoinfo" class="fa fa-undo" style="position: relative;cursor: pointer;background: white;color: #0082cd;' + displayundo + 'padding: 3px 6px;font-size: 21px;border-radius: 4px;left: 300px;top: -188px;"></i>' 
+                    + val.info // vai conter a div com o texto antigo - caso exista
+                + '</div>'));
+             
+            newtweetobj.append($('<div style="' + tagstyle + '" class="tags"><i onclick="javascript: internallinkcopy(\'' + val.id + '\')" id="internallink" class="fa fa-link"></i><i onclick="javascript: externallinkcopy(\'' + val.url + '\', \'' + val.id + '\')" id="externallink" class="fa fa-external-link"></i><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags </b>' + tagdispalay + tagchanged + '</div>'));
+            
+            if (val.type == "T") {
+                newtweetobj.append($('<div class="innertweet"></div>'));
+                newtweetobj.find('.innertweet').append(val.tweet);
+            }
+            else {
+                newtweetobj.append($(val.tweet));
+            }
+   
+            newtweetobj.attr('id', val.id);
+
+            if (objToFocus < 0) {
+
+                $('#tweetcount').fadeIn(800);
+
+                objToFocus = currentIndex;
+                var newtweetobjaction = newtweetobj;
+                $('html, body').animate({
+                scrollTop: $(newtweetobjaction).offset().top - 60 
+                }, 100);
+
+            }
+            currentIndex = currentIndex + 1;
+            }   
         }
-    }
-    
-    tagdispalay = parseTags(val.tags);
-
-    var xclass = "";
-    var typefa = "twitter"
-    if (val.type == "H") {
-        xclass = " html";
-        typefa = "internet-explorer"
-    }
-    else if (val.type == "Y") {
-        xclass = " yt";
-        typefa = "youtube-play"
-    }
-    
-    var newtweetobj = $('<div style="display: none;" id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>');
-
-    if (flag) {
-        $('#main').append(newtweetobj);
-
-        if (val.type != "T") {
-
-            newtweetobj.fadeIn(1500);
-
-            setTimeout(function(){
-                if (!isMobile) {
-                    setTimeout(function(){
-                        document.getElementById("contentin" + val.id).addEventListener("click", clickHandler);
-                    }, 0);
-                } 
-            }, 1300);
+        else {
+            if (currentIndex >= endIndex) {
+            $('#moretweets').css('opacity', 0);
+            $('#moretweets').attr('doshow', 'yes');
+            
+/*               setTimeout(function(){
+                $('#mask').fadeOut(300);
+            }, 300);
+            showMessage("Search Results"); */
+            return false;
+            }
         }
-    }
-    else {
-        $('#hiddendiv').append(newtweetobj);  
-    }
-
-    newtweetobj.append($('<div style="z-index: 0;background: var(--soft-color);height: 39px;" class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
-    
-    newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
-    
-    if (val.type == "T") {
-        newtweetobj.append($('<div class="innertweet"></div>'));
-        newtweetobj.find('.innertweet').append(val.tweet);
-
-        newtweetobj.attr('id', val.id);
-    }
-    else {
-        newtweetobj.append($(val.tweet));
-        newtweetobj.find(".bottomstripline.line1").html(val.info);
         
-        newtweetobj.attr('id', val.id);
-    }
-}
+        setTimeout(function(){
+            $('#mask').fadeOut(300);
+            }, 300);
 
+            ind = ind + 1;
+        });
+
+        if (!ismoretweets || $('#moretweets').css('opacity') != 1) {
+            //showMessage("Search Results", 2000);
+        }
+    }); 
+}
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
@@ -947,71 +1430,284 @@ function renderLink(val, flag) {
   
 var getInformationbyid = function(id, flag) {
     $('#mask').fadeIn(300);  
+    var path = "./data.json";
 
-    var i = 0;
-
-    var notFound = true;
-    while (allLinks[i]) {
-        var val = allLinks[i];
-
-        if (id == val.id) {
-
-            notFound = false;
-            renderLink(val, true);
-            preCustomize(id);
-            $('#mask').fadeOut(2000);
-    
-            if (flag)
-                showMessage("This Link is the same as the one you are trying to add", 6000); 
-
-            $('#tweetcount').hide();
-            $('body, html').css('overflow-y', 'auto');
-            
-            break;       
-        } 
-         
-        i++;
+    nextid = null;
+    try {
+        nextid = parseInt(readCookie("maxid"));
     }
-
-    if (notFound) {
-        $('#mask').fadeOut(300);
-        showMessage("Link Not Found");
-    } 
-}
-
-function preCustomize(id) {
-
-    setTimeout(function(){
-        if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-            customizeSingleTweet(id);
+    catch(err) {
+        console.log("getInformationbyid - Error parsing next id");
+    }
+    finally {
+        if (nextid) {
+            $("#maxid").val(nextid);
+            console.log("getInformationbyid - nextid vem do cookie: " + nextid);
+            nextid = nextid - 1;
         }
         else {
-            setTimeout(function(){
-                if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                    customizeSingleTweet(id);
+            nextid = parseInt($("#maxid").val());
+            createCookie("maxid", nextid);
+            console.log("getInformationbyid - nextid vem do hidden field: " + nextid);
+            nextid = nextid - 1;
+        }
+    }
+
+    $.getJSON(path, function(data) {
+        var processtmp = true;
+
+        $.each(data.Tweets, function(key, val) {
+            var newtweet = null;
+            var recordfromdata = val;
+            var linkcontent = null;
+
+            do {
+                if (processtmp) {
+                    linkcontent = readCookie(nextid + "templink");
+                    if (linkcontent && linkcontent.length > 0) {
+                        var linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
+                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                        linktmp = linktmp.replace(/(\\)/gm, ""); 
+                        linktmp = JSON.parse(linktmp);
+    
+                        val = linktmp;
+                        nextid = nextid - 1;
+                    }
+                    else {
+                        if (showAll) {
+                            val = recordfromdata;
+                        }
+                        else {
+                            val.id = "0";
+                        }
+                        
+                        processtmp = false;
+                    }
                 }
                 else {
-                    setTimeout(function(){
-                        if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                            customizeSingleTweet(id);
-                        }
-        
-                    }, 1950);
+                    if (showAll) {
+                        val = recordfromdata;
+                    }
+                    else {
+                        val.id = "0";
+                    }
                 }
-            }, 950);
-        }
-    }, 350);
+                var isdeleted = readCookie(val.id + "isdeleted");
+
+                if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id.includes(id) && val.id != "0") {
+                    $("#main").empty();
+                    $('#moretweets').hide();
+                    $('#tweetcount').hide();  
+    
+    
+                    var tagdispalay = " --";
+                    var expandclass = "";
+                    var color = "";
+
+                    if (val.deleted != "" || (isdeleted && isdeleted.length > 0)) { // ID DELETED
+                        expandclass = hideMode ? "" : "isdeleted";    
+                        color = "color: red;";
+                    } 
+                    else {
+                        if (val.isnew && val.isnew != "") { // IS NEW
+                            expandclass = hideMode ? "" : "isnew";  
+                            color = "color: #00dc00;";
+    
+                            var tagchanged = readCookie(val.id + "tagchanged");
+    
+                            if (tagchanged && tagchanged.length > 0 && tagchanged) {
+                                tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                                tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
+                            } 
+                            else {
+                                if (val.tags.length > 0 && val.tags != 'undefined') {
+                                    tagdispalay = parseTags(val.tags);
+                                }
+                            }
+                        }
+                        else {
+                            var hasChanges = readCookie(val.id + "haschanges");
+                            if (hasChanges && hasChanges.length > 0) { // HAS CHAMGES
+                                color = "color: #f18618;";
+                                if (expandclass == "isnew")
+                                    expandclass = hideMode ? "" : "isnewmodified";  
+                                else 
+                                    expandclass = hideMode ? "" : "ismodified";  
+    
+                                var tagchanged = readCookie(val.id + "tagchanged");
+    
+                                if (tagchanged && tagchanged.length > 0 && tagchanged) {
+                                    tagdispalay = '<span class="newtag">' + tagchanged + '</span>';
+                                    tagdispalay = '<span>' + parseTags(tagchanged) + '</span>';
+                                } 
+                                else {
+                                    if (val.tags.length > 0 && val.tags != 'undefined') {
+                                        tagdispalay = parseTags(val.tags);
+                                    }
+                                }
+                            } 
+                            else if (val.tags.length > 0 && val.tags != 'undefined') {
+                                tagdispalay = parseTags(val.tags);
+                            }
+                        }
+                    }
+    
+                    var xclass = "";
+                    var typefa = "twitter"
+                    if (val.type == "H") {
+                        xclass = " html";
+                        typefa = "internet-explorer"
+                    }
+                    else if (val.type == "Y") {
+                        xclass = " yt";
+                        typefa = "youtube-play"
+                    }
+    
+                    var newtweet = $('#main').append($('<div id="inid" class="tweet' + xclass + '"></div>'));
+                    var newtweetobj = $('#inid');
+    
+                    newtweetobj.append($('<div style="z-index: 0;background: var(--soft-color);height: 39px;" class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
+                    
+                    newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
+                    
+                    if (val.type == "T") {
+                        newtweetobj.append($('<div class="innertweet"></div>'));
+                        newtweetobj.find('.innertweet').append(val.tweet);
+                    }
+                    else {
+                        newtweetobj.append($(val.tweet));
+                    }
+        
+                    newtweetobj.attr('id', val.id);
+    
+                    var newtweetobjaction = newtweetobj;
+                    
+                    $('#mask').fadeOut(300);
+    
+                    if (flag)
+                        showMessage("This Link is the same as the one you are trying to add", 6000); 
+
+                    setTimeout(function() { 
+                            customizeTweets(2);
+                            $('#tweetcount').hide();
+                            $('body, html').css('overflow-y', 'auto');
+                      }, 1000);
+                    return false;
+                }
+            }
+            while (processtmp);
+        });
+
+    }); 
 }
 
 
-var getJsonbyid = function(id) {
-    for (var i = 0; i < allLinks.length; i++) {
-        var val = allLinks[i];
+var getJsonbyid = function(id, functorun) {
+    var path = "./data.json";
 
-        if (val.id == id) {
-            return val;
+    $.getJSON(path, function(data) {
+        var processtmp = true;
+        
+        nextid = null;
+        try {
+            nextid = parseInt(readCookie("maxid"));
         }
-    }
+        catch(err) {
+            console.log("getJsonbyid - Error parsing next id");
+        }
+        finally {
+            if (nextid) {
+                $("#maxid").val(nextid);
+                console.log("getJsonbyid - nextid vem do cookie: " + nextid);
+                nextid = nextid - 1;
+            }
+            else {
+                nextid = parseInt($("#maxid").val());
+                createCookie("maxid", nextid);
+                console.log("getJsonbyid - nextid vem do hidden field: " + nextid);
+                nextid = nextid - 1;
+            }
+        }
+        var retObj = null;
+
+        $.each(data.Tweets, function(key, val) {
+            var recordfromdata = val;
+            var linkcontent = null;
+
+            do {
+                if (processtmp) {
+                    linkcontent = readCookie(nextid + "templink");
+                    if (linkcontent && linkcontent.length > 0) {
+                        var linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
+                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                        linktmp = linktmp.replace(/(\\)/gm, ""); 
+                        linktmp = JSON.parse(linktmp);
+    
+                        val = linktmp;
+                        nextid = nextid - 1;
+                    }
+                    else {
+                        if (showAll) {
+                            val = recordfromdata;
+                        }
+                        else {
+                            val.id = "0";
+                        }
+                        
+                        processtmp = false;
+                    }
+                }
+                else {
+                    if (showAll) {
+                        val = recordfromdata;
+                    }
+                    else {
+                        val.id = "0";
+                    }
+                }
+
+                var isdeleted = readCookie(val.id + "isdeleted");
+                if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id.includes(id) && val.id != "0") {
+                    var cat = readCookie(val.id + "catchanged");
+                    if (cat && cat.length > 0) {
+                        val.categories = cat;
+                    }
+        
+                    var tag = readCookie(val.id + "tagchanged");
+                    if (tag && tag.length > 0) {
+                        val.tags = tag;
+                    }
+        
+                    var info = readCookie(val.id + "info");
+                    if (info && info.length > 0) {
+                        val.info = info;
+                    }
+        
+                    var classif = readCookie(val.id + "classif");
+                    if (classif && classif.length > 0) {
+                        val.classif = classif;
+                    }
+
+                    if (val.id == id) {
+                        processtmp = false;
+                        retObj = val;
+                    }
+                }
+            }
+            while (processtmp);
+        }); 
+
+        if (retObj) {
+            if (functorun)
+                functorun(retObj);
+            return null;
+        }
+        else {
+            return null;
+        }
+    }); 
 
     return null;
 }
@@ -1022,9 +1718,6 @@ var getJsonbyid = function(id) {
 
 
 var togglecriterions = function(obj) {
-    if (obj)
-        fixfocus(obj);
-    
     closeallnewlayout();
 
     if ($("#searchpopup").css("display") == "none")
@@ -1073,55 +1766,129 @@ var togglecriterions = function(obj) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function resetFields(flag, obj) {
-    if (obj)
-        fixfocusli(obj);
-        
-    resetMainDiv();
-    
-    clearcriterion(null,null, "filterdate1", "searchdate", true);
-    clearcriterion(null,null, "filterdate2", "searchdate", true);
-    clearcriterion(null,null, "selectedtype", "searchtypes", true);
-    clearcriterion(null,null, "filterauthor", "searchauthor", true);
-    clearcriterion(null,null, "filtertext", "searchinfo", true);
-    clearcriterion(null,null, "filtertag", "searchtags", true);
-    clearcriterion(null,null, "selectedclassif", "searchclassif", true);
+function resetFields(flag) {
+    $("#main").empty();
+    $('#moretweets').hide();
+    $('#tweetcount').hide();  
+    clearcriterion(null,null, "filterdate1", "searchdate");
+    clearcriterion(null,null, "filterdate2", "searchdate");
+    clearcriterion(null,null, "selectedtype", "searchtypes");
+    clearcriterion(null,null, "filterauthor", "searchauthor");
+    clearcriterion(null,null, "filtertext", "searchinfo");
+    clearcriterion(null,null, "filtertag", "searchtags");
+    clearcriterion(null,null, "selectedclassif", "searchclassif");
     filterdate1date = null;
     filterdate2date = null;
     
-    $('#selectedcat').val("all");
-    $('#selectedcattext').val("All Links");
-    $('#titlesearch .span2').html("All Links");
-
     if (flag) 
         showMessage("Search Criterions Cleaned"); 
 } 
 
-function resetMainDiv() {
-    $("#main").empty();
-    $('#tweetcount').hide();  
-} 
 
 
-var existsLink = function(text, type) {
-    for (var i = 0; i < allLinks.length; i++) {
-        var val = allLinks[i];
+var existsLink = function(text, type, functorun) {
 
-        if (val.deleted == "yes") {
-            if (val.type == "T") {
-                if (val.tweet.includes(text.substring(1,130))) {
-                    return val.id;
-                }
-            }
-            else {
-                if (val.url.localeCompare(text) == 0) {
-                    return val.id;
-                }
-            }
+    var path = "./data.json";
+
+    nextid = null;
+    try {
+        nextid = parseInt(readCookie("maxid"));
+    }
+    catch(err) {
+        console.log("existsLink - Error parsing next id");
+    }
+    finally {
+        if (nextid) {
+            $("#maxid").val(nextid);
+            console.log("existsLink - nextid vem do cookie: " + nextid);
+            nextid = nextid - 1;
+        }
+        else {
+            nextid = parseInt($("#maxid").val());
+            createCookie("maxid", nextid);
+            console.log("existsLink - nextid vem do hidden field: " + nextid);
+            nextid = nextid - 1;
         }
     }
+    existingId = "no";
 
-    return null;
+    $.getJSON(path, function(data) {
+        var processtmp = true;
+
+        $.each(data.Tweets, function(key, val) {
+            var recordfromdata = val;
+            var linkcontent = null;
+
+            do {
+                if (processtmp) {
+                    linkcontent = readCookie(nextid + "templink");
+                    if (linkcontent && linkcontent.length > 0) {
+                        var linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
+                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
+                        linktmp = linktmp.replace(/(\\)/gm, ""); 
+                        linktmp = JSON.parse(linktmp);
+    
+                        val = linktmp;
+                        nextid = nextid - 1;
+                    }
+                    else {
+                        if (showAll) {
+                            val = recordfromdata;
+                        }
+                        else {
+                            val.id = "0";
+                        }
+                        
+                        processtmp = false;
+                    }
+                }
+                else {
+                    if (showAll) {
+                        val = recordfromdata;
+                    }
+                    else {
+                        val.id = "0";
+                    }
+                }
+
+                var isdeleted = readCookie(val.id + "isdeleted");
+
+                if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes") && val.id != "0") {
+                    if (val.type == "T") {
+                        if (   
+                            (text.substring(0,20) != "" && val.tweet.includes(text.substring(0,20)))
+                            &&
+                            (text.substring(40,60) != "" && val.tweet.includes(text.substring(40,60)))                        
+                            &&
+                            (text.substring(80,100) != "" && val.tweet.includes(text.substring(80,100)))                     
+                        ) {
+    
+                            existingId = val.id;
+                        }
+                    }
+                    else {
+                        if (val.url.localeCompare(text) == 0) {
+                            existingId = val.id;
+                        }
+                    }
+    
+                    if (val.id == "0") {
+                        if (functorun)
+                            functorun();
+                    }
+                }
+                else { 
+                    var isdeleted = readCookie(val.id + "isdeleted");
+
+                    if (!(val && val.deleted == "yes") && !(isdeleted && isdeleted == "yes" && val.id != "0") && functorun) {
+                        functorun();
+                    }
+                }
+            }
+            while (processtmp);
+        });     
+    }); 
 }
 
 
