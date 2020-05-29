@@ -148,7 +148,7 @@ function zoom(obj, flag) {
 var openDetailPopup = function(jsonobj) 
 {
     // OTHER SETTINGS
-    $('body, html').css('overflow', 'hidden');
+    $('body, html').css('overflow-y', 'hidden');
 
     if (jsonobj) {
         var setHeight = "26px";
@@ -465,7 +465,7 @@ var openMainSettingsPopup = function(jsonobj)
 {
     closeallnewlayout();
 
-    $('body, html').css('overflow', 'hidden');
+    $('body, html').css('overflow-y', 'hidden');
 
     // xyzz
     /* if (!isMy) {
