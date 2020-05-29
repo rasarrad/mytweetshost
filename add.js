@@ -6,20 +6,20 @@ function parseTweet(type) {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("parseTweet - Error parsing next id");
+        //cnonsole.log("parseTweet - Error parsing next id");
     }
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("parseTweet - nextid vem do cookie: " + nextid);
+            //cnonsole.log("parseTweet - nextid vem do cookie: " + nextid);
         }
         else {
             nextid = parseInt($("#maxid").val());
             createCookie("maxid", nextid);
-            console.log("parseTweet - nextid vem do hidden field: " + nextid);
+            //cnonsole.log("parseTweet - nextid vem do hidden field: " + nextid);
         }
     }
-
+    
     setTimeout(function() {
         $('#tweetid').val(nextid);
         youtubeId = "";
@@ -33,56 +33,51 @@ function parseTweet(type) {
 
             $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-twitter').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
 
-            text = "\"" + text.replace(/"/g, '').replace('<\/script>', '<&#47;script>') + "\"";
+            text = text.replace(/"/g, '').replace('<\/script>', '<&#47;script>');
 
-            var functorun = function() 
-            { 
-                if (existingId != "no") {
-                    getInformationbyid(existingId, true);
+            var idExisting = existsLink(text, "T");
+            if (idExisting) {
+                resetMainDiv(); 
+    
+                getInformationbyid(idExisting, true);
+            }
+            else {
+                origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
+        
+                $('#postedby').val(origin);
+                
+                url = text.substring(text.lastIndexOf('https://twitter'), text.lastIndexOf('?ref_src=')); 
+        
+                var date = text.substring(text.lastIndexOf('ref_src=twsrc%5Etfw>') + 20, text.lastIndexOf('</a></blockquote>')); 
+                
+                var year = date.substring(date.length - 4);
+                var month = date.substring(0, date.indexOf(' ')); 
+                var day = date.substring(date.indexOf(' ') + 1, date.lastIndexOf(' ') -1); 
+        
+                $('#date').val(year + pad(getMonthFromString(month), 2) + pad(day, 2));
+                
+                $('#datetoshow').val(formatDateFromNum($('#date').val()));
+                if (type && type == 2) {
+                    create();
+                    showMessage("Tweet Link Successfully Parsed And Created"); 
                 }
                 else {
-                    origin = text.substring(text.indexOf('&mdash;') + 8, text.lastIndexOf(' <a href=https')); 
-            
-                    $('#postedby').val(origin);
-                    
-                    url = text.substring(text.lastIndexOf('https://twitter'), text.lastIndexOf('?ref_src=')); 
-            
-                    var date = text.substring(text.lastIndexOf('ref_src=twsrc%5Etfw>') + 20, text.lastIndexOf('</a></blockquote>')); 
-                    
-                    var year = date.substring(date.length - 4);
-                    var month = date.substring(0, date.indexOf(' ')); 
-                    var day = date.substring(date.indexOf(' ') + 1, date.lastIndexOf(' ') -1); 
-            
-                    $('#date').val(year + pad(getMonthFromString(month), 2) + pad(day, 2));
-                    
-                    $('#datetoshow').val(formatDateFromNum($('#date').val()));
-                    if (type && type == 2) {
-                        create();
-                        showMessage("Tweet Link Successfully Parsed And Created"); 
+                    if (type && type == 1) {
+                        openCreatePopup(true);
+                        createPreview();
                     }
                     else {
-                        if (type && type == 1) {
-                            if ($(".addpopup").css('display') == 'none') {
-                                openCreatePopup(true);
-                                
-                                createPreview();
-                            }
-                        }
-                        else {
-                            createPreview();
-                        }
-        
-                        if ($(window).width() > 1200) {
-                            $('#postedby').focus();
-                        }
-        
-                        showMessage("Tweet Link Successfully Parsed"); 
-                    }     
-                    $('#mask').fadeOut(600);  
-                }
-            } 
-
-            existsLink(text, "T", functorun);
+                        createPreview();
+                    }
+    
+                    if ($(window).width() > 1200) {
+                        $('#postedby').focus();
+                    }
+    
+                    showMessage("Tweet Link Successfully Parsed"); 
+                }     
+                $('#mask').fadeOut(600);  
+            }
 
             return false;
         }
@@ -97,49 +92,45 @@ function parseTweet(type) {
             
             $('#datetoshow').val(formatDate(date));
 
-            url = text.substring(text.indexOf('https://www.youtube'), text.indexOf('frameborder') - 2); 
-            
-            youtubeId = text.substring(text.indexOf('embed') + 6, text.indexOf('frameborder') - 2);
+            youtubeId = text.substring(text.indexOf('embed') + 6, text.indexOf('embed') + 17);
 
+            url = "https://www.youtube.com/embed/" + youtubeId; 
+            
             urldirect = "https://www.youtube.com/watch?v=" + youtubeId; 
 
-            text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://img.youtube.com/vi/" 
-                    + youtubeId  + "/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div>\""; 
+            text = "<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://img.youtube.com/vi/" 
+                    + youtubeId  + "/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div>"; 
 
-            var functorun = function() 
-            { 
-                if (existingId != "no") {
-                    getInformationbyid(existingId, true);
+            var idExisting = existsLink(url, "Y");
+            if (idExisting) {
+                resetMainDiv();
+    
+                getInformationbyid(idExisting, true);
+            }
+            else {
+                if (type && type == 2) {
+                    create();
+                    showMessage("Youtube Link Successfully Parsed And Created"); 
                 }
                 else {
-                    if (type && type == 2) {
-                        create();
-                        showMessage("Youtube Link Successfully Parsed And Created"); 
+                    if (type && type == 1) {
+                        openCreatePopup(true);
+                        hasProcessedDescription = true;
+                        getYoutubeData();
+
+                        createPreview();
                     }
                     else {
-                        if (type && type == 1) {
-                            if ($(".addpopup").css('display') == 'none') {
-                                openCreatePopup(true);
-                                hasProcessedDescription = true;
-                                getYoutubeData();
-
-                                createPreview();
-                            }
-                        }
-                        else {
-                            createPreview();
-                        }
-                        
-                        if ($(window).width() > 1200) {
-                            $('#postedby').focus();
-                        }
-                        showMessage("Youtube Link Successfully Parsed"); 
-                    }             
-                    $('#mask').fadeOut(600);  
-                }
-            } 
-
-            existsLink(url, "Y", functorun);
+                        createPreview();
+                    }
+                    
+                    if ($(window).width() > 1200) {
+                        $('#postedby').focus();
+                    }
+                    showMessage("Youtube Link Successfully Parsed"); 
+                }             
+                $('#mask').fadeOut(600);  
+            }
 
             return false;
             
@@ -158,49 +149,45 @@ function parseTweet(type) {
             
             urldirect = text; 
             
-            youtubeId = text.substring(text.indexOf('watch?v=') + 8);
+            youtubeId = text.substring(text.indexOf('watch?v=') + 8, text.indexOf('watch?v=') + 19);
 
-            if (youtubeId.indexOf("&t=") > 0) {
-                youtubeId = youtubeId.replace("&t=","?start=");
-                youtubeId = youtubeId.substring(0, youtubeId.length -1);
-            }
-            
-            text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://img.youtube.com/vi/" 
-                    + youtubeId  + "/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div>\""; 
+            text = "<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://img.youtube.com/vi/" 
+                    + youtubeId  + "/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div>"; 
 
             var functorun = function() 
             { 
-                if (existingId != "no") {
-                    getInformationbyid(existingId, true);
-                }
-                else {
-                    if (type && type == 2) {
-                        create();
-                        showMessage("Youtube Link Successfully Parsed And Created"); 
-                    }
-                    else {
-                        if (type && type == 1) {
-                            if ($(".addpopup").css('display') == 'none') {
-                                openCreatePopup(true);
-                                getYoutubeData();
-                                hasProcessedDescription = true;
-                                createPreview();
-                            }
-                        }
-                        else {
-                            createPreview();
-                        }
-        
-                        if ($(window).width() > 1200) {
-                            $('#postedby').focus();
-                        }
-                        showMessage("Youtube Link Successfully Parsed"); 
-                    }     
-                    $('#mask').fadeOut(600);  
-                }
+                
             } 
 
-            existsLink(url, "Y", functorun);
+            var idExisting = existsLink(url, "Y");
+            if (idExisting) {
+                resetMainDiv();
+    
+                getInformationbyid(idExisting, true);
+            }
+            else {
+                if (type && type == 2) {
+                    create();
+                    showMessage("Youtube Link Successfully Parsed And Created"); 
+                }
+                else {
+                    if (type && type == 1) {
+                        openCreatePopup(true);
+                        getYoutubeData();
+                        hasProcessedDescription = true;
+                        createPreview();
+                    }
+                    else {
+                        createPreview();
+                    }
+    
+                    if ($(window).width() > 1200) {
+                        $('#postedby').focus();
+                    }
+                    showMessage("Youtube Link Successfully Parsed"); 
+                }     
+                $('#mask').fadeOut(600);  
+            }
 
             return false;  
         }
@@ -219,71 +206,63 @@ function parseTweet(type) {
 
             url = text; 
 
-            text = "\"<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://s.wordpress.com/mshots/v1/" 
-                    + text + "); background-size: 100%;'><i class='logo fa fa-html5'></i></div>\""; 
+            text = "<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://s.wordpress.com/mshots/v1/" 
+                    + text + "); background-size: 100%;'><i class='logo fa fa-html5'></i></div>"; 
 
-            var functorun = function() 
-            { 
-                if (existingId != "no") {
-                    getInformationbyid(existingId, true);
+            var idExisting = existsLink(url, "Y");
+            if (idExisting) {
+                resetMainDiv();
+    
+                getInformationbyid(idExisting, true);
+            }
+            else {
+                if (type && type == 2) {
+                    create();
+                    showMessage("HTTP Link Successfully Parsed And Created"); 
                 }
                 else {
-                    if (type && type == 2) {
-                        create();
-                        showMessage("HTTP Link Successfully Parsed And Created"); 
+                    if (type && type == 1) {
+                        openCreatePopup(true);
+                        
+                        createPreview();
+
+                        getWebsiteData();
+
+                        hasProcessedDescription = true;
                     }
                     else {
-                        if (type && type == 1) {
-                            if ($(".addpopup").css('display') == 'none') {
-                                openCreatePopup(true);
-                                
-                                createPreview();
-
-                                getWebsiteData();
-
-                                hasProcessedDescription = true;
-                            
-                            }
-                        }
-                        else {
-                            createPreview();
-                        }
-        
-                        /*$('#date').focus(function(){
-                            var that = this;
-                            setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
-                        });*/
-                        if ($(window).width() > 1200) {
-                            $('#postedby').focus();
-                        }
-                        showMessage("HTTP Link Successfully Parsed"); 
+                        createPreview();
                     }
-                    $('#mask').fadeOut(600);  
+    
+                    /*$('#date').focus(function(){
+                        var that = this;
+                        setTimeout(function(){ that.selectionStart = that.selectionEnd = 10000; }, 0);
+                    });*/
+                    if ($(window).width() > 1200) {
+                        $('#postedby').focus();
+                    }
+                    showMessage("HTTP Link Successfully Parsed"); 
                 }
-            } 
-
-            existsLink(url, "Y", functorun);
+                $('#mask').fadeOut(600);  
+            }
 
             return false;
         }
         $('#mask').fadeOut(600);  
-
         if (type) {
             if (type == 2) {
                 showMessage("Link Parse Failed And Was Not Created"); 
             }
             else {
                 $('#tweet').val("");
-                if ($(".addpopup").css('display') == 'none') {
-                    $('#tweet').focus();
-                    $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
+            
+                $('#tweet').focus();
+                $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
 
-                    $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-question').attr('style','');
-                
-                    dblFlag = true;
-                    openCreatePopup(true);
-
-                }
+                $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-question').attr('style','');
+            
+                dblFlag = true;
+                openCreatePopup(true);
             }
         }
         else {
@@ -310,19 +289,24 @@ function createPreview() {
     }
     $('#previewtd').empty();
 
-    var newtweet = $('#previewtd').append($('<div id="inid" style="overflow: hidden;margin-top: 0px;" class="tweet' + xclass + '"></div>'));
+    $('#previewtd').append($('<div id="inid" style="overflow: hidden;margin-top: 0px;" class="tweet' + xclass + '"></div>'));
     var newtweetobj = $('#inid');
     $('#previewtd').css('height', '');    
 
     if (addType == "T") {
-        newtweetobj.append($('<div class="innertweet" style="max-height: 290px;min-height: 200px;margin-left: 0 !important;"><i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;height: 33px;width: 33px;top: 69px;color: var(--high-color);font-size: 33px; display: none; "></i></div>'));
-        newtweetobj.find('.innertweet').append(text.substring(1, text.length -1));
-        setTimeout(function(){ customizeTweets(null, true, null, 1); }, 1300);
+        newtweetobj.append($('<div class="innertweet" style="max-height: 290px;min-height: 200px;width: 100% !important;margin-left: 0 !important;"><i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;height: 33px;width: 33px;top: 69px;color: var(--high-color);font-size: 33px; display: none; "></i></div>'));
+        newtweetobj.find('.innertweet').append(text);
+
+        preCustomize("inid");
+        
+        setTimeout(function(){ 
+            $('#previewtd > div div.innertweet twitter-widget').show().css('opacity', 1);
+        }, 1300);
 
     }
     else {
         newtweetobj.attr('style', 'top: -3px;margin-top: 0px;overflow: hidden;')
-        newtweetobj.append('<i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;left: height: 33px;width: 33px;top: 69px;color: var(--high-color);font-size: 33px; display: none; "></i>' + text.substring(1, text.length -1));
+        newtweetobj.append('<i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;left: height: 33px;width: 33px;top: 69px;color: var(--high-color);font-size: 33px; display: none; "></i>' + text);
 
         setTimeout(function(){$('#previewtd > div iframe').show().css('opacity', 1);}, 1300);
     }
@@ -340,17 +324,17 @@ function create() {
         nextid = parseInt(readCookie("maxid"));
     }
     catch(err) {
-        console.log("create - Error parsing next id");
+        //cnonsole.log("create - Error parsing next id");
     }
     finally {
         if (nextid) {
             $("#maxid").val(nextid);
-            console.log("create - nextid vem do cookie: " + nextid);
+            //cnonsole.log("create - nextid vem do cookie: " + nextid);
         }
         else {
             nextid = parseInt($("#maxid").val());
             createCookie("maxid", nextid);
-            console.log("create - nextid vem do hidden field: " + nextid);
+            //cnonsole.log("create - nextid vem do hidden field: " + nextid);
         }
     }
 
@@ -413,18 +397,40 @@ function create() {
 
     if (hasProcessedDescription || addType == "T") {
 
+        var jsonVal = {};
+        
+        jsonVal.id = nextid;        
+        jsonVal.info = resinfo;        
+        jsonVal.classif = classif;        
+        jsonVal.categories = cats;        
+        jsonVal.date = $('#date').val();        
+        jsonVal.tags = tags;              
+        jsonVal.deleted = "";   
+        jsonVal.creationdate = creationdate; 
+        jsonVal.type = addType; 
+        jsonVal.isnew = "yes";
+        jsonVal.ishidden = "0";
+
         if (addType == "Y") {
-            $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"" + ishidden  + "\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");       
+            $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"0\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");       
+            jsonVal.url = url; 
+            jsonVal.author = origin;  
         }
         else if (addType == "Y") {
-            text = text.substring(0, text.length -1) + "<div class='bottomstrip'><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line1'>" + $("#infoinput").val() + "</span><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line2'>" + urldirect + "</span></div>\""; 
+            jsonVal.url = urldirect; 
+            jsonVal.author = $('#postedby').val();  
+            text = text + "<div class='bottomstrip'><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line1'>" + $("#infoinput").val() + "</span><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line2'>" + urldirect + "</span></div>"; 
             $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + urldirect  + "\",\r\n\"ishidden\": \"0\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
         }
         else {
-            text = text.substring(0, text.length -1) + "<div class='bottomstrip'><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line1'>" + $("#infoinput").val() + "</span><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line2'>" + url + "</span></div>\""; 
+            jsonVal.url = url; 
+            jsonVal.author = $('#postedby').val();  
+            text = text + "<div class='bottomstrip'><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line1'>" + $("#infoinput").val() + "</span><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line2'>" + url + "</span></div>"; 
             $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"0\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
         }
 
+        jsonVal.tweet = text;
+        
         var result = $('#result').val();
         
         $('#linkresult').val(result);
@@ -435,10 +441,10 @@ function create() {
         $("#linkresult").blur();
 
         var mlink = encodeURIComponent(JSON.stringify(result));
-    
-        createCookie(nextid + "templink", mlink, 99999);
-        createCookie("haschanges", "yes");
-    
+        
+        createCookie("maxid", nextid + 1);
+
+        createCookie2(nextid,"templink", mlink, jsonVal);
     
         if (showColorsAdv) {
             $("#generateicon").addClass("haschanges");
@@ -448,10 +454,6 @@ function create() {
         }  
     
         //} 
-        createCookie("maxid", nextid + 1);
-    
-        resetFields(false);
-        countalltweets();
     }
     else {
         getLinkDescriptionAndCreate(creationdate, cats, tags, resinfo, classif);
@@ -488,14 +490,33 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
     if (resinfo.length == 0)
         resinfo = "No Info About The Link"
 
+    var jsonVal = {};
+    jsonVal.id = nextid;        
+    jsonVal.info = resinfo;        
+    jsonVal.classif = classif;        
+    jsonVal.categories = cats;        
+    jsonVal.date = $('#date').val();        
+    jsonVal.tags = tags;        
+    jsonVal.author = $('#postedby').val();        
+    jsonVal.deleted = "";   
+    jsonVal.creationdate = creationdate; 
+    jsonVal.type = addType; 
+    jsonVal.url = url; 
+    jsonVal.isnew = "yes";
+    jsonVal.ishidden = "0";
+
     if (addType == "Y") {
-        text = text.substring(0, text.length -1) + "<div class='bottomstrip'><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line1'>" + resinfo + "</span><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line2'>" + urldirect + "</span></div>\""; 
+        jsonVal.url = urldirect; 
+        text = text + "<div class='bottomstrip'><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line1'>" + resinfo + "</span><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line2'>" + urldirect + "</span></div>"; 
         $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + urldirect  + "\",\r\n\"ishidden\": \"0\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
     }
     else {
-        text = text.substring(0, text.length -1) + "<div class='bottomstrip'><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line1'>" + resinfo + "</span><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line2'>" + url + "</span></div>\""; 
+        jsonVal.url = url; 
+        text = text + "<div class='bottomstrip'><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line1'>" + resinfo + "</span><span onclick='javascript: showTooltip(event, this)' class='bottomstripline line2'>" + url + "</span></div>"; 
         $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"0\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
     }
+
+    jsonVal.tweet = text;
 
     var result = $('#result').val();
 
@@ -505,25 +526,11 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
     document.execCommand('copy');
 
     $("#linkresult").blur();
-
     var mlink = encodeURIComponent(JSON.stringify(result));
     
-    createCookie(nextid + "templink", mlink, 99999);
-    createCookie("haschanges", "yes");
-
-
-    if (showColorsAdv) {
-        $("#generateicon").addClass("haschanges");
-        if (showColors) {
-            $("#settings").addClass("haschanges");
-        }
-    }  
-
-    //} 
     createCookie("maxid", nextid + 1);
 
-    resetFields(false);
-    countalltweets();
+    createCookie2(nextid, "templink", mlink, jsonVal);
 }
 
 function getYoutubeData(creationdate, cats, tags, resinfo, classif) {
@@ -607,7 +614,7 @@ var openCreatePopup = function(flag)
     } */
     $('#tweet').focus();
 
-    openSettingsPopup();
+    openDetailPopup();
 
 } 
 
@@ -627,7 +634,7 @@ function resetFieldsPopup()
     $('#typeHH').css('border-color', 'white'); 
     $('#typeYY').css('border-color', 'white');   
 
-    $( ".litags" ).each( function( index, element ){
+    $( "#tagsul .litags" ).each( function( index, element ){
         $(this).removeClass("selectedtag");
     });
 
@@ -654,7 +661,6 @@ var closePopup = function()
     $('#tagsinput').val('');
     $('#infoinput').val('');
     $('#result').val('');  
-    $('.addpopup').fadeOut();
     $('#typeTT').css('border-color', 'white'); 
     $('#typeHH').css('border-color', 'white'); 
     $('#typeYY').css('border-color', 'white');  

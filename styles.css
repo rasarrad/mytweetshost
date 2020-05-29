@@ -33,45 +33,77 @@
 }
 
 #searchpopup .fa-external-link-square {
-  
+  position: absolute;
+  left: 12px;
+  top: 6px !important;
+  font-size: 14px;
 }
 body.big #searchpopup .fa-external-link-square {
+  font-size: 18px;
+  position: absolute;
+  left: 12px;
+  top: 10px !important;
+}
+
+.newLayout#searchpopup #searchdate.sectiontitletable .firsticon {
+    width: 37px !important;
+}
+body.big .newLayout#searchpopup #searchdate.sectiontitletable .firsticon {
+    width: 85px !important;
+}
+
+#searchpopup .fa-calendar {
+  position: absolute;
+  left: 12px;
+  top: 7px !important;
+}
+body.big #searchpopup .fa-calendar {
   font-size: 17px;
-  position: relative;
-  left: -2px;
-  margin-right: 4px;
+  position: absolute;
+  left: 12px;
+  top: 10px !important;
 }
 
 
-#searchpopup .fa-external-link-square {
-  
+body.big td.datetd {
+  padding-bottom: 12px !important;
+}
+
+#searchpopup .fa-star-half-o {
+  top: -2px !important;
+  top: -1px !important;
+  left: -5px;
 }
 body.big #searchpopup .fa-star-half-o {
-  font-size: 17px;
-  position: relative;
-  left: -3px;
-  margin-right: 4px;
+  font-size: 19px;
+  position: absolute;
+  left: 10px;
+  top: 9px !important;
 }
 
 
 #searchpopup .fa-user-circle {
-  
+  left: 11px;
+  top: 7px !important;
+  position: absolute;
+  font-size: 13px;
 }
 body.big #searchpopup .fa-user-circle {
   font-size: 17px;
-  position: relative;
-  left: -3px;
-  margin-right: 4px;
+  position: absolute;
+  left: 10px;
+  top: 10px !important;
 }
 #searchpopup .fa-file-text {
-  
+  position: absolute;
+  left: 13px;
+  top: 7px !important;
 }
 body.big #searchpopup .fa-file-text {
   font-size: 16px;
-  position: relative;
-  left: -2px;
-  margin-right: 4px;
-  top: 0 !important;
+  left: 13px;
+  top: 11px !important;
+  position: absolute;
 }
 
 #searchpopup .fa-calendar {
@@ -80,43 +112,41 @@ body.big #searchpopup .fa-file-text {
 body.big #searchpopup .fa-calendar {
   font-size: 16px;
   position: relative;
-  left: -2px;
+  left: -3px;
   margin-right: 4px;
-  top: 0 !important;
+  top: 2px !important;
 }
 
-.newLayout#searchpopup #searchtypes.sectiontitletable .firsticon {
-
+#showdeleted2 {
+  font-size: 14px !important;
 }
+
+.newLayout#searchpopup #searchtypes.sectiontitletable .firsticon {width: 65px !important;}
 body.big .newLayout#searchpopup #searchtypes.sectiontitletable .firsticon {
-  width: 88px !important;
+  width: 85px !important;
 }
 .newLayout#searchpopup #searchtypes.searchclassif .firsticon {
 
 }
 body.big .newLayout#searchpopup #searchclassif.sectiontitletable .firsticon {
-  width: 124px !important;
+  width: 122px !important;
 }
 
 .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
-    width: 37px !important;
+    width: 30px !important;
 }
 body.big .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
-  width: 49px !important;
+  width: 27px !important;
 }
 
-.newLayout#searchpopup #searchauthor.sectiontitletable .firsticon {
-
-}
+.newLayout#searchpopup #searchauthor.sectiontitletable .firsticon {width: 52px !important;}
 body.big .newLayout#searchpopup #searchauthor.sectiontitletable .firsticon {
-  width: 77px !important;
+  width: 67px !important;
 }
 
-.newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {
-
-}
+.newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {width: 35px !important;}
 body.big .newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {
-  width: 51px !important;
+  width: 45px !important;
   padding-top: 4px !important;
 }
 
@@ -125,13 +155,19 @@ body.big .newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {
 
 }
 body.big .newLayout#searchpopup #searchdate.sectiontitletable .firsticon {
-  width: 54px !important;
-  padding-top: 4px !important;
+  width: 46px !important;
 }
 
-#searchdate span {
-  
+#searchdate span.to {
+  position: relative;
+  left: 6px;
+  top: 1px;
 }
+
+body.big #searchdate span.to {
+  top: 1px !important;
+}
+
 body.big #searchdate tr:nth-of-type(2) span {
   font-size: 14px;
   position: relative;
@@ -141,19 +177,22 @@ body.big #searchdate tr:nth-of-type(2) span {
 
 #searchpopup .emptyvalue:not(table) {
     /* text-align: right !important; */
-    padding-right: 9px !important;
+    /* padding-right: 9px !important; */
 }
 
 
 #searchpopup .fa-times-circle {
-  
+  margin-right: 6px;
+  margin-left: 2px;
+  position: relative;
+  top: 1px;
+  font-size: 13px;
 }
 body.big #searchpopup .fa-times-circle {
-    display: inline;
     position: relative;
-    top: 1.2px;
-    font-size: 16px;
-    left: 7px;  
+    top: 1px !important;
+    font-size: 15px;
+    margin-left: 3px !important;
 }
 
 
@@ -300,12 +339,12 @@ ol > li {
     font-weight: bold;
     padding-bottom: 2px;
     border-radius: 7px;
-    color: var(--dark-color);
+    color: var(--high-color);
     cursor: pointer;
-    border: 2px solid var(--soft-color);
+    border: 2px solid var(--high-color);
     z-index: 13;
     display: none;
-    background: var(--high-color);
+    background: var(--soft-color);
     opacity: 1;
    }
 
@@ -358,7 +397,7 @@ body.big .gradiantback {
   top: 42px;
 }
 
-   body > div > i.fa-folder-open {
+body > div > i.fa-folder-open {
     color: var(--high-color);
     font-size: 122px;
     position: relative;
@@ -375,12 +414,13 @@ body.big .gradiantback {
     border-right-color: transparent !important;
     border-width: 4px !important;
 }
-   .menubutton {
+
+.menubutton {
     font-size: 40px;
     background: #004a86;
     padding-left: 0px;
     padding-right: 5px;
-    padding: 6px 11px;
+    padding: 5px 12px;
     color: var(--high-color);
     background: #001b30;
     cursor: pointer;
@@ -390,93 +430,109 @@ body.big .gradiantback {
     width: 37px;
     background-image: linear-gradient(to bottom, #003056, #004a86);
     background: transparent;
-    }
+}
+
+body.big .menubutton {
+    padding: 6px 11px;
+}
+
 body.big .menubutton {
     font-size: 54px;
 }
     
-    #menu {
-      width: 0px;
-      overflow: hidden;
-      position: fixed;
-      background: white;
-      transition: all 0.6s;
-      border: 1px solid gray;
-      border-left-width: 0px;
-      position: absolute;
-      left: -1px;
-      top: 52px;
-    }
-    
+#menu {
+  width: 0px;
+  overflow: hidden;
+  position: fixed;
+  background: white;
+  transition: all 0.6s;
+  border: 1px solid gray;
+  border-left-width: 0px;
+  position: absolute;
+  left: -1px;
+  top: 52px;
+}
 
-    #menu > ul {
-      list-style: none;
-      margin: 0;
-      padding-left: 0px;
-    }
 
-    #menu > ul > li {
-      overflow: hidden;
-      white-space: nowrap;
-      padding: 10px 0px;
-      padding-left: 17px;
-      color: #005484;
-      border-bottom: 1px solid #c1c1c1;
-      cursor: pointer;
-      transition: all 0.6s;
-      font-weight: bold;
-      position: relative;
-    }
-    #menu > ul > li > div {
-    position: absolute;
-    right: 3px;
-    top: 12px;
-    font-size: 13px;
-    color: #0169bd;
-    text-align: center;
-    width: 25px;
-    /* top: 10px; */
-    }
+#menu > ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0px;
+}
 
-    .label {
-      color: #0084d0;
-      position: absolute;
-      top: 8px;
-      display: inline;
-      font-size: 12px;
-      font-weight: bold;
-    }          
-    
-    .label.text {
-      left: 124px;
-    }
-     
-    .label.tag {
-      left: 315px;
-    }
-              
-    .label.author {
-      left: 441px;
-    }
-              
-    .label.date {
-      left: 564px;
-    }
-              
-    .label.id {
-      left: 724px;
-    }
+#menu > ul > li {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0px;
+  padding-left: 17px;
+  color: #005484;
+  border-bottom: 1px solid #c1c1c1;
+  cursor: pointer;
+  transition: all 0.6s;
+  font-weight: bold;
+  position: relative;
+}
+#menu > ul > li > div {
+position: absolute;
+right: 3px;
+top: 12px;
+font-size: 13px;
+color: #0169bd;
+text-align: center;
+width: 25px;
+/* top: 10px; */
+}
 
-    #sear,#sear2 {
-      position: relative;
-      color: #004a86;
-      font-size: 22px;
-      padding-left: 7px;
-      padding-right: 17px;
-      top: -7px;
-      cursor: pointer;
-      transition: all 0.6s;
-    }
+.label {
+  color: #0084d0;
+  position: absolute;
+  top: 8px;
+  display: inline;
+  font-size: 12px;
+  font-weight: bold;
+}          
+
+.label.text {
+  left: 124px;
+}
+
+.label.tag {
+  left: 315px;
+}
+
+.label.author {
+  left: 441px;
+}
+
+.label.date {
+  left: 564px;
+}
+
+.label.id {
+  left: 724px;
+}
+
+#sear {
+  position: relative;
+  font-size: 22px;
+  padding-left: 7px;
+  padding-right: 17px;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+
+#sear2 {
+  position: relative;
+  color: #004a86;
+  font-size: 22px;
+  padding-left: 7px;
+  padding-right: 17px;
+  top: -7px;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+
+
 .toptitle {
   color: var(--high-color) !important;
   text-shadow: 3px 3px #c5c5c5;
@@ -554,7 +610,7 @@ button > i {
 body.big #zoomin {
     font-size: 21px;
     top: 22px;
-    right: 81px;
+    right: 89px;
 }
 
 #settings {
@@ -657,11 +713,15 @@ body.big #zoomin {
       background: #007cc391;
       border: 1px solid var(--dark-color);
       color: var(--dark-color);
-    background: var(--high-color);
+      background: var(--high-color);
       padding-left: 4px;
       padding-right: 4px;
-      font-family: Helvetica, Roboto, "Segoe UI", Calibri, sans-serif;
+      font-family: sans-serif;
       font-variant-caps: normal;
+      text-transform: uppercase;
+      line-height: 17px;
+      font-variant: small-caps;
+      border-radius: 3px;
      }
 
     #removetweet {
@@ -855,8 +915,9 @@ twitter-widget {
 }
 
 #backdiv {
-  background-image: linear-gradient(to bottom, #0081cd, #008ada) !important;
+  background-image: linear-gradient(var(--softdark-color) 0%, var(--soft-color) 45%, var(--dark-color) 99%) !important;
 }
+
 .tweet iframe {
     position: relative;
     top: 4px;
@@ -911,7 +972,7 @@ twitter-widget {
 }
 body.big .buttonstable .author {
        max-width: 124px !important;
-       top: 3px !important;
+       top: 4px !important;
 }
 
 
@@ -943,6 +1004,13 @@ body.big .topoback {
     height: 76px;
 }     
 
+#recoilback {
+  height: 53px;
+}
+
+body.big #recoilback {
+  height: 66px;
+}
 
 body.big #backdiv {
   top: 64px !important;
@@ -1014,7 +1082,7 @@ body.big .toptitle {
 body.big #settings {
   font-size: 19px;
   top: 22px;
-  right: 44px;
+  right: 51px;
   padding-left: 3px;
  }  
 #addtweet {
@@ -1023,7 +1091,8 @@ body.big #settings {
 }  
 body.big #addtweet {
   font-size: 26px;
-  top: 20px;
+  top: 21px;
+  right: 20px;
 }  
 
 .tweet .innertweet {
@@ -1050,6 +1119,7 @@ body.big #addtweet {
   /* background-image: linear-gradient(to bottom, var(--soft-color) 4%, var(--dark-color) 7% ); */
   background: var(--dark-color);
   margin-top: -10px;
+  transition: max-height 2s;
 }
 .tweet:first-child {
       margin-top: 26px;
@@ -1125,7 +1195,7 @@ body.big #expand {
   /* width: 100%; */
   background: rgba(0, 0, 0, 0.81);
   z-index: 9;
-  height: 21px;
+  height: 23px;
   background-image: linear-gradient(to bottom, var(--dark-color) 3%, var(--soft-color) 80%);
   top: auto;
   bottom: -1px;
@@ -1133,7 +1203,7 @@ body.big #expand {
 body:not(.big) .tweet:not(:last-child) .bottomgradiantback {
   height: 19px;
   top: auto;
-  bottom: 4px;
+  bottom: 2px;
 }
 body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
   top: auto;
@@ -1152,7 +1222,7 @@ body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
 
 
 .tweet.html:not(:last-child) .bottomgradiantback {
-    bottom: 9px;
+    bottom: 7px;
 }
 
 
@@ -1163,7 +1233,7 @@ body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
   }
 body:not(.big) .yt.tweet .bottomgradiantback {
   /* height: 15px; */
-  bottom: 16px;
+  bottom: 15px;
   }     
   .html.tweet .bottomgradiantback {
   background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--soft-color) 85%);
@@ -1171,8 +1241,9 @@ body:not(.big) .yt.tweet .bottomgradiantback {
 
 .html.tweet:last-child .bottomgradiantback {
     background-image: linear-gradient(to bottom, var(--dark-color) 15%, #004a8600 85%);
+    background: transparent;
 }
-  .tweet iframe {
+.tweet iframe {
   width: calc(100% - 0px) !important;
   margin-left: 0px !important;
   margin-right: 12px !important;
@@ -1181,32 +1252,32 @@ body:not(.big) .yt.tweet .bottomgradiantback {
   margin-bottom: 1px;
   margin-top: 0px !important;
   border: 0px solid white;
-  }
+}
 
-  .tweet.yt:not(:last-child) iframe {
-    margin-top: 0px !important;
-    /* height: 317px !important; */
-    }
+.tweet.yt:not(:last-child) iframe {
+  margin-top: 0px !important;
+  /* height: 317px !important; */
+}
 
-  .tweet.yt {
-      /* background: #101010; */
-      top: 0px;
-      height: 660px;
-      /* height: 91vw; */
-      /* max-height: 782px; */
-  }
+.tweet.yt {
+    /* background: #101010; */
+    top: 0px;
+    height: 660px;
+    /* height: 91vw; */
+    /* max-height: 782px; */
+}
 
 body.big .tweet.yt {
     margin-top: -10px;
-  }
+}
   
-  .tweet.html {
-      /* background: #002646; */
-      top: 0px;
-      height: 805px;
-      /* height: 91vw; */
-      /* max-height: 606px; */
-  }
+.tweet.html {
+    /* background: #002646; */
+    top: 0px;
+    height: 805px;
+    /* height: 91vw; */
+    /* max-height: 606px; */
+}
 
   
 .tweet div.contentin {
@@ -1268,11 +1339,6 @@ body.big .tweet div.contentin .logo {
     background-position-y: -80px !important;
 }
        
-  
-  #backdiv {
-    background-image: linear-gradient(var(--soft-color), var(--dark-color)) !important;
-  }
-
 .tweet iframe {
   position: relative;
   top: 10px;
@@ -1315,8 +1381,8 @@ body.big .tweet.html iframe {
 }
 body.big .tags {
   font-size: 17px !important;
-  height: 32px;
-  top: -3px;
+  height: 36px;
+  top: -2px;
   margin-top: -9px;
   max-width: 735px;
 }
@@ -1371,17 +1437,32 @@ body.big .newLayout#mainsettings > div {
 .newLayout#mainsettings .fa-check {
   top: -2px !important;
 }
+
+.newLayout#searchpopup > div {
+    position: relative;
+    top: -1px !important;
+    display: block;
+    max-height: calc(100% - 2px) !important;
+    margin-top: 0px !important;
+    border-top: 1px solid var(--soft-color);
+    border-radius: 0px;
+    padding-bottom: 0px;
+    border-radius: 6px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
 #mainmenu .buttonstable {
-  width: 471px;
+  width: 474px;
   display: block;
   text-align: center;
   font-size: 15px;
-  max-height: 24px;
+  max-height: 31px;
   margin-top: 0px;
 }
 body.big #mainmenu .buttonstable {
   font-size: 15px;
-  max-height: 32px;
+  max-height: 38px;
   margin-top: 0px;
 }        
 #mainmenu span {
@@ -1396,6 +1477,14 @@ body.big #mainmenu span {
   font-size: 18px;
   top: -1px;
 } 
+
+body.big #mainmenu .checkstyleddiv span {
+  font-size: 18px;
+  top: -1px;
+  width: 13.9px !important;
+  height: 13px !important;
+} 
+
 #mainmenu .fa-bars {
     font-size: 18px;
     position: absolute;
@@ -1405,17 +1494,17 @@ body.big #mainmenu span {
 body.big #mainmenu .fa-bars {
     font-size: 23px;
     left: 10px;
-    top: 8px;
+    top: 6px;
 } 
 
 #mainmenu .firsttd b {
     position: relative;
-    top: 0px;
+    top: -1px;
     font-size: 16px;
 }
 
 body.big #mainmenu .firsttd b {
-    top: 1px;
+    top: -3px;
     font-size: 18px;
 }
 
@@ -1424,15 +1513,15 @@ body.big #mainmenu .firsttd b {
     margin-top: 2px;
     cursor: pointer;
     position: relative;
-    right: 23px;
+    right: 22px;
 } 
 body.big #mainmenu .fa-window-close {
     font-size: 19px;
-    margin-top: 3px;
+    margin-top: 2px;
     right: 24px;
 } 
 #mainmenu .firstsettable {
-  margin-top: 35px;
+  margin-top: 32px;
 }  
 #mainmenu table:not(.firstsettable):not(.buttonstable) {
   margin-top: 5px;
@@ -1449,13 +1538,19 @@ body.big #mainmenu table:not(.firstsettable):not(.buttonstable) {
     font-size: 13px;
     opacity: 0.6;
     position: absolute;
-    top: 2px;
-    right: -19px;
+    top: -6px;
+    right: -33px;
+    padding-top: 6px;
+    /* background: blue; */
+    padding-right: 14px;
+    height: 19px;
 }
 body.big .menuitemcounter {
     font-size: 16px;
-    top: 5px;
-    right: -19px;
+    top: -7px;
+    right: -33px;
+    padding-top: 11px;
+    height: 26px;
 }       
 
 #calendardiv > div {
@@ -1466,8 +1561,9 @@ body.big .menuitemcounter {
 }
 body.big #calendardiv > div {
   margin-top: 40px !important;
-  height: 331px !important;
+  height: auto !important;
   max-width: 361px !important;
+  padding-bottom: 1px;
 }
 
 .newLayout#mainsettings > div {
@@ -1505,7 +1601,7 @@ body.big .linkbar {
 }
 body.big .linkbar.fa-internet-explorer {
       font-size: 18px;
-      top: 2px;
+      top: 3px;
 }
 
 
@@ -1517,7 +1613,7 @@ body.big .linkbar.fa-internet-explorer {
 body.big .linkbar.fa-youtube-play{
     /* left: 9px; */
     font-size: 20px;
-    top: 1px;
+    top: 2px;
 }
 
 
@@ -1538,8 +1634,23 @@ body.big #expand {
     top: -1px !important;
 }
 
+.tweet:first-child .linkbar.fa-internet-explorer {
+    top: 1px !important;
+}
+.tweet:first-child .linkbar.fa-youtube-play {
+    top: 0px !important;
+}
+
+
 body.big .tweet:first-child .linkbar {
     top: -1px !important;
+}
+
+body.big .tweet:first-child .linkbar.fa-internet-explorer {
+    top: 1px !important;
+}
+body.big .tweet:first-child .linkbar.fa-youtube-play {
+    top: 0px !important;
 }
 
 #expand {
@@ -1576,7 +1687,7 @@ body.big #editTags {
   top: 503px;
   font-weight: bold;
   text-transform: lowercase;
-  font-size: 14px;
+  font-size: 13px;
   filter: brightness(53%);
   border-bottom: 0px solid;
   height: 95px;
@@ -1591,7 +1702,7 @@ body.big .tweet.html .bottomstrip {
   top: 668px;
 }
 body.big .bottomstrip {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 
@@ -1599,6 +1710,7 @@ body.big .bottomstrip {
   /* width: calc(100% - 50px); */
   background-color: linear-gradient(to bottom, var(--dark-color) -84%, var(--dark-color) 60%, transparent 81%);
   to bottom, var(--dark-color) -84%, var(--dark-color) 60%, transparent 81%):;
+  /* text-transform: capitalize; */
 }
 .bottomstrip .bottomstripline {
   /* padding-top: 19px; */
@@ -1616,22 +1728,529 @@ body.big .bottomstrip {
   cursor: default;
 }
 
+
 .bottomstrip .bottomstripline.line1 {
   /* margin: 19px 20px 0px 20px; */
   padding-top: 10px;
   padding-bottom: 3px;
+  text-transform: uppercase;
 }
 
-.bottomstrip .bottomstripline.line2 {}
-
-.bottomstripZZZ:hover .bottomstripline {
-  left: -100%;
-  width: 200%;
+.bottomstrip .bottomstripline.line2 {
+  text-transform: uppercase;
 }
 
-.contentin.error {
+#splash.newLayout table:nth-of-type(2) {
+  height: 198px;
+}
+body.big #splash.newLayout table:nth-of-type(2) {
+  height: 256px;
+}
+#splash.newLayout table:nth-of-type(3) {
+  height: 219px;
+}
+body.big #splash.newLayout table:nth-of-type(3) {
+  height: 208px;
+}
+#splash.newLayout table:nth-of-type(4) {
+  height: 154px;
+}
+    
+body.big #splash.newLayout table:nth-of-type(2) {
+  height: 273px;
+}
+body.big #splash.newLayout table:nth-of-type(3) {
+  height: 261px;
+}
+body.big #splash.newLayout table:nth-of-type(4) {
+  height: 205px;
+}
+
+
+#sear2  {
+    position: relative;
+    color: var(--high-color);
+    font-size: 18px;
+    padding-left: 7px;
+    padding-right: 17px;
+    top: -7px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+
+#sear {
+    position: absolute;
+    bottom: auto;
+    z-index: 33333;
+    background: var(--high-color);
+    color: var(--softdark-color);
+    border-radius: 3px;
+    border: 1px solid var(--softdark-color);
+    font-size: 25px;
+    padding-left: 13px;
+    padding-right: 24px;
+    padding-bottom: 6px;
+    width: 6px;
+    height: 24px;
+    padding-top: 3px;
+    padding-left: 8px;
+    transition: all 0.6s ease 0s;
+    right: 8px;
+    top: 8px;
+}
+
+body.big #sear2 {
+    font-size: 25px;
+    padding-left: 17px;
+    padding-right: 17px;
+    top: -10px;
+}
+
+body.big #sear {font-size: 31px;width: 14px;height: 33px;padding-top: 6px;padding-left: 10px;}
+
+#splash .splashbutton {
+  border: 1px solid var(--dark-color);
+  background: var(--high-color);
+  color: var(--dark-color);
+  width: 70px;
+  position: absolute;
+  text-align: center;
+  line-height: 19px;
+  font-size: 13px;
+  height: 24px;
+  padding-top: 3px;
+  font-weight: bold;
+  padding-left: 0;
+  right: 0px;
+  cursor: default !important;
+  float: right;
+  bottom: -7px;
+  padding-right: 2px;
+  border-radius: 3px;
+}
+
+#splash .splashbutton.active {
+  cursor: pointer !important;
+  /* line-height: 15px; */
+}
+
+
+#mainmenu .checkstyleddiv {
+  top: 11px !important;
+  left: 177px;
+}
+    
+body.big #mainmenu .checkstyleddiv {
+  top: 12px !important;
+  left: 167px;
+}
+
+.newLayout#searchpopup > div .titletable {
+  width: 475px;
+  height: 71px;
+  /* background: green; */
+}
+body.big .newLayout#searchpopup > div .titletable {
+  height: 82px;
+}
+
+.checks
+.checkstyleddiv.showdeleted span {
+    width: 10px !important;
+    height: 9.6px !important;
+}
+
+body.big .checkstyleddiv.showdeleted i {
+  /* left: 0.5px !important; */
+}
+
+
+#expandedittags, #expandsearchtags {
+    /* width: calc(100% - 166px); */
+    width: calc(100% - 4px);
+    border-radius: 4px;
+    top: 148px;
+    color: var(--high-color) !important;
+    /* border: 1px solid var(--high-color) !important; */
+    font-size: 15px !important;
+    height: 19px;
+    position: absolute;
+    padding-left: 0px;
+    left: 2px;
+    z-index: 1;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    background: var(--soft-color) !important;
+    background: var(--softdark-color) !important;
+    transition: color 0.7s;
+    padding-left: 218px;
+}
+
+#expandedittags {
+    top: 150px;
+}
+
+body.big #expandsearchtags, body.big #expandsearchtags #expandedittags {
+    top: 163px;
+}
+
+#filterdate1display {
+  width: calc(50% - 165px);
+  margin-left: 9px !important;
+}
+
+body.big #filterdate1display {
+  width: calc(50% - 160px);
+  margin-left: 1px !important;
+  margin-right: 11px !important;
+  padding-left: 2px;
+}
+
+
+#filterdate2display {
+  width: calc(50% - 165px);
+  margin-left: 9px !important;
+}
+
+body.big #filterdate2display {
+  width: calc(50% - 161px);
+  margin-left: 1px !important;
+  padding-left: 2px;
+}
+
+#titlesearch {
+  /* text-decoration: underline; */
+  position: relative;
+  top: -1px;
+  font-size: 13px;
+  cursor: default;
+  position: absolute;
+  top: 15px;
+  left: 3px;
+  transform: translate(-50%, 0px);
+  left: calc(50%) !important;
+  /* max-width: 176px; */
+  height: 50px;
+  word-break: break-all;
+  vertical-align: middle;
+  /* width: 183px; */
+  display: block;
+  text-align: center;
+  /* width: 179px; */
+  top: 22px !important;
+}
+
+body.big #titlesearch {
+  font-size: 17px;
+  top: 28px !important;
+  width: 290px;
+  text-align: center;
+}
+
+#mainmenu .checkstyleddiv span {
+  top: -4px;
+  width: 12.3px !important;
+} 
+
+.checkstyleddiv.showdeleted {
+  top: 12px;
+  width: 120px;
+  left: 10px;
+  position: absolute;
+}
+
+
+.checkstyleddiv.showdeleted .incdeltext {
+  position: relative;
+  top: -11px;
+  left: 20px;
+  width: 106px;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+#mainmenu .checkstyleddiv.showdeleted .incdeltext {
+  top: -17px !important;
+  font-size: 11px;
+}
+
+body.big #mainmenu .checkstyleddiv.showdeleted .incdeltext {
+  top: -15px !important;
+  font-size: 12px;
+  left: 25px;
+}
+body.big .checkstyleddiv.showdeleted .incdeltext {
+  top: -17px;
+  left: 20px;
+  font-size: 10px;
+  width: 72px;
+}
+
+body.big .checkstyleddiv.showdeleted {
+  top: 17px;
+  /* right: -13px; */
+  width: 83px;
+}
+
+.checkstyleddiv.showdeleted .fa-square{
+  top: 2.7px;
+  left: 4.1px;
+  font-size: 6.1px !important;
+}
+
+#mainmenu .checkstyleddiv.showdeleted .fa-square{
+  top: 2.7px;
+  left: 0.1px;
+  font-size: 6.1px !important;
+}
+
+body.big #mainmenu .checkstyleddiv.showdeleted .fa-square{
+  top: 3.4px;
+  left: 0.1px;
+  font-size: 7.5px !important;
+}
+.newLayout#searchpopup .sectionexpandable {
+    position: relative;
+}
+
+.newLayout#searchpopup .sectiontitle {
+  padding-left: 9px;
+  font-weight: bold;
+  font-size: 12px;
+  position: absolute;
+  top: 6px;
+  left: 29px;
+  text-transform: lowercase;
+}
+body.big .newLayout#searchpopup .sectiontitle {
+  font-size: 16px;
+  position: absolute;
+  top: 9px;
+  left: 32px;
+}
+
+
+.newLayout#searchpopup .sectiontitle {
+  position: absolute;
+  top: 6px;
+}
+
+body.big .newLayout#searchpopup .sectiontitle {
 
 }
+
+.newLayout#searchpopup .fa-tags {
+    top: 1px;
+    left: -3px;
+    font-size: 13px;
+}
+body.big .newLayout#searchpopup .fa-tags {
+    font-size: 17px;
+    top: 2px;
+    left: -3px;
+}
+
+.newLayout#searchpopup .slicename {
+  text-transform: lowercase;
+  top: -2px !important;
+  font-size: 10px;
+  padding-left: 6px !important;
+}
+
+body.big .newLayout#searchpopup .slicename {
+  line-height: 30px;
+  font-size: 12px;
+  top: -2px !important;
+  padding-left: 20px !important;
+}
+
+.newLayout#searchpopup .el:not(.ellipsis) .slicename {
+  line-height: 18px;
+  position: relative;
+  top: -2px !important;
+  text-transform: uppercase;
+}
+
+.newLayout#searchpopup .el.ellipsis .slicename {
+  /* left: 1px; */
+  text-align: right !important;
+  margin-right: 9px;
+  text-transform: uppercase;
+}
+
+body.big .newLayout#searchpopup .el:not(.ellipsis) .slicename {
+  line-height: 25px;
+  font-size: 12px;
+  top: -2px !important;
+  padding-left: 0px !important;
+  left: 11px;
+}
+
+.newLayout#searchpopup .sectiontitletable .sectionicontd.firsticon {
+  width: 92px !important;
+}
+
+
+body.big .newLayout#searchpopup .sectiontitletable .sectionicontd {
+  height: 26px !important;
+}
+
+.newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
+  height: 26px !important;
+}
+
+body.big .newLayout#searchpopup .sectiontitletable:last-child .sectionicontd {
+  height: 46px !important;
+}
+
+body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
+  height: 35px !important;
+}
+
+
+#linkChange #datetoshow {
+  position: relative;
+  top: -1px;
+}
+
+#linktable {
+  transition: max-height 0.5s ease 0s;
+  max-height: 26px;
+  margin-top: 76px;
+}
+
+
+#linktable .fa-link {
+  font-size: 14px;
+  position: relative;
+  top: 0px;
+  left: -4px;
+}
+
+#linktable .sectiontitle {
+  padding-left: 6px;
+  position: relative;
+  top: -1px;
+  left: -1px;
+}
+
+#linktable #tweet {
+  position: relative;
+  top: -3px;
+  width: calc(100% - 53px);
+  left: 39px;
+}
+
+.newLayout#searchpopup .slicename {
+    text-transform: lowercase;
+    top: -2px !important;
+    font-size: 10px;
+    padding-left: 6px !important;
+}
+
+
+.newLayout#linkChange .sectiontitletable .sectionicontd {
+  height: 18px;
+  min-height: 18px;
+}
+
+.newLayout#linkChange .el:not(.ellipsis) .slicename {
+    line-height: 18px;
+    position: relative;
+    top: -3px !important;
+    text-transform: uppercase;
+}
+
+.newLayout#linkChange .sectiontitle {
+    position: absolute;
+    top: 6px;
+}
+
+.newLayout#linkChange .sectionexpandable {
+    position: relative;
+}
+
+.newLayout#linkChange .sectiontitle {
+    padding-left: 9px;
+    font-weight: bold;
+    font-size: 11px;
+    position: absolute;
+    top: 7px;
+    left: 29px;
+    text-transform: uppercase;
+}
+
+.newLayout#linkChange .el.ellipsis .slicename {
+    /* left: 1px; */
+    text-align: right !important;
+    margin-right: 9px;
+    text-transform: uppercase;
+}
+
+#linkChange .firsttd .author {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 224px !important;
+  display: inline-block;
+  white-space: nowrap;
+  position: relative;
+  top: 3px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+body.big #linkChange .firsttd .author {
+  font-size: 16px;
+  max-width: 183px !important;
+}
+
+body .newLayout #editTags .sectionicontd:first-child {
+    width: 49px !important;
+}
+
+body.big .newLayout #editTags .sectionicontd:first-child {
+    width: 56px !important;
+}
+
+body .newLayout #editCats .sectionicontd:first-child {
+    width: 93px !important;
+}
+
+body.big .newLayout #editCats .sectionicontd:first-child {
+    width: 102px !important;
+}
+
+body .newLayout #editClassif .sectionicontd:first-child {
+    width: 113px !important;
+}
+
+body.big .newLayout #editClassif .sectionicontd:first-child {
+    width: 129px !important;
+}
+
+body .newLayout #editInfo .sectionicontd:first-child {
+    width: 37px !important;
+}
+
+body.big .newLayout #editInfo .sectionicontd:first-child {
+    width: 55px !important;
+}
+
+.checkstyleddiv span {
+  transition: all .5s;
+}
+
+
+#linkChange .checkstyleddiv {
+  min-width: 208px;
+  cursor: pointer !important;
+}
+
+#linkChange .checkstyleddiv:first-child {
+  min-width: 208px;
+  cursor: pointer !important;
+}
+
 
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
@@ -1647,6 +2266,120 @@ body.big .bottomstrip {
   ###Device = Tablets, Ipads (portrait)
   Screen = B/w 768px to 1024px */
   @media (max-width: 999px) and (min-width: 481px), (max-width: 1024px) and (min-width: 768px) and (orientation: portrait) {
+     body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
+      top: auto;
+      bottom: 4px;
+    }
+
+    .newLayout#searchpopup > div {
+        max-height: calc(100% - 3px) !important;
+    }
+
+    body.big #mainmenu .checkstyleddiv.showdeleted .incdeltext {
+      top: -14px !important;
+    }    
+
+    .newLayout#searchpopup .el:not(.ellipsis) .slicename {
+      line-height: 18px;
+      position: relative;
+      top: -1px !important;
+      text-transform: uppercase;
+      font-size: 9px;
+    }
+
+    body.big .newLayout#searchpopup > div .titletable {
+      margin-top: -0.2px;
+    }
+
+    #expandedittags, #expandsearchtags {
+        padding-left: 218px;
+        /* width: calc(100% - 166px); */
+        top: 148px;
+        padding-top: 6px !important;
+    }
+    
+    body.big .checkstyleddiv.showdeleted {
+      top: 15px;
+      /* right: -13px; */
+      width: 83px;
+    }
+
+    .checkstyleddiv.showdeleted .incdeltext {
+      top: -12px;
+    }
+
+    #searchpopup .checkstyleddiv.showdeleted .incdeltext {
+      top: -11px;
+    }
+    
+    body.big .checkstyleddiv.showdeleted .incdeltext {
+      top: -18px;
+    }
+
+    body.big #searchpopup .checkstyleddiv.showdeleted .incdeltext {
+      top: -18px;
+    }
+
+    .checkstyleddiv.showdeleted .fa-square{
+      top: 2.7px;
+      left: 3.5px;
+      font-size: 6.1px !important;
+    }
+
+    .checkstyleddiv.showdeleted span {
+        width: 11px !important;
+        height: 10.6px !important;
+    }
+
+    .tweet.yt {
+        margin-top: 13px;
+    }   
+    body.big .tweet.yt {
+        margin-top: -11px;
+    }       
+    #splash .splashbutton {
+      height: 23px;
+    }
+    
+    #splash.newLayout table:nth-of-type(2) {
+      height: 206px;
+    }
+    body.big #splash.newLayout table:nth-of-type(2) {
+      height: 256px;
+    }
+    #splash.newLayout table:nth-of-type(3) {
+      height: 209px;
+    }
+    body.big #splash.newLayout table:nth-of-type(3) {
+      height: 208px;
+    }
+    #splash.newLayout table:nth-of-type(4) {
+      height: 154px;
+    }
+
+    body.big #splash.newLayout table:nth-of-type(2) {
+      height: 238px;
+    }
+    body.big #splash.newLayout table:nth-of-type(3) {
+      height: 261px;
+    }
+    body.big #splash.newLayout table:nth-of-type(4) {
+      height: 205px;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0px;  /* Remove scrollbar space */
+        background: transparent;  /* Optional: just make scrollbar invisible */
+    }
+    .newLayout > div::-webkit-scrollbar { width: 0 !important }
+    html, body { 
+      overflow: -moz-scrollbars-none; 
+      -ms-overflow-style: none;
+    }
+    .newLayout > div { 
+      overflow: -moz-scrollbars-none; 
+      -ms-overflow-style: none;
+    }    
     .tweet iframe {
       position: relative;
       top: 10px;
@@ -1710,6 +2443,15 @@ body.big .bottomstrip {
         background-position-y: -2px !important;
     }
 
+    #previewtd .tweet.yt div.contentin {
+        transform: translate(-50%, -28px);
+        top: auto !important;
+        margin-top: -2px;
+        width: 606px;
+        height: 459px;
+        background-position-y: -2px !important;
+    }
+    
     .tweet div.contentin .logo {
         font-size: 31px;
         top: calc(42%) !important;
@@ -1722,6 +2464,7 @@ body.big .bottomstrip {
     
     #tooltip {
       max-width: 387px;
+      /* width: 387px; */
     }
 
     .tweet.html div.contentin {
@@ -1773,15 +2516,18 @@ body.big .bottomstrip {
     }   
     body.big .linkbar.fa-internet-explorer {
           font-size: 18px;
-          top: 6px !important;
+          top: 5px !important;
     }
     #expand {
       margin-top: -6px;
       /* left: 18px; */
     }     
     .tweet:first-child #expand {
-        margin-top: -12px;
+        margin-top: -9px;
     }
+    body.big .tweet:first-child #expand {
+        margin-top: -10px;
+    }    
     .tweet:first-child .linkbar {
         top: -1px !important;
     }
@@ -1790,6 +2536,10 @@ body.big .bottomstrip {
         top: -2.5px !important;
     }
           
+    body.big .tweet:first-child .linkbar.fa-youtube-play {
+        top: -1px !important;
+    }
+      
     #addtweet {
         font-size: 22px;
         top: 15px;
@@ -1867,12 +2617,21 @@ body.big .bottomstrip {
       .tweet:first-child .linkbar {
           top: -1px !important;
       }
+
+    .tweet:first-child .linkbar.fa-internet-explorer {
+        top: 0px !important;
+    }
+      
+      .tweet:first-child .linkbar.fa-youtube-play {
+          top: -1px !important;
+      }
+
       body.big .linkbar {
           left: calc(50% - 243px);
           top: 3px !important;
       }
       body.big .linkbar.fa-youtube-play {
-          top: 5px !important;
+          top: 4px !important;
       }    
       #expand {
           transform: translate(-50%, 0px);
@@ -1881,16 +2640,17 @@ body.big .bottomstrip {
       }
       body.big #expand {
           /* right: calc(50% - 241px); */
-          top: 12px !important;
+          top: 11px !important;
       } 
       .tags {
         font-size: 12px !important;
         top: -2px;
+        height: 24px;
       }
       body.big .tags {
         font-size: 17px !important;
-        height: 32px;
-        top: 1px;
+        height: 39px;
+        top: 0px;
       }
       .tweet .tags {
         padding-left: calc(50% - 209px);
@@ -1915,11 +2675,14 @@ body.big .bottomstrip {
       .tweet {
         margin-top: -10px;
       }
+      body.big .tweet {
+        margin-top: -11px;
+      }
       .tweet:not(:first-of-type) .innermask {
         width: 605px;
       }   
       .tweet.yt .gradiantback {
-        top: 16px;
+        top: 20px;
       } 
       body.big .tweet.yt .gradiantback {
         top: 26px;
@@ -1928,6 +2691,67 @@ body.big .bottomstrip {
       body.big #editTags {
         margin-top: 93px !important;
       }  
+      body.big #addtweet {
+        top: 20px;
+      }  
+
+    #mainmenu .fa-window-close {
+        margin-top: 2px;
+    }
+    #mainmenu .firsttd b {
+        top: -3px;
+    }
+    #mainmenu .fa-bars {
+        top: 8px;
+    }  
+
+    body.big #mainmenu .fa-window-close {
+        margin-top: 2px;
+    }
+    body.big #mainmenu .firsttd b {
+        top: -3px;
+    }
+    body.big #mainmenu .fa-bars {
+        top: 7px;
+    }    
+
+    #mainmenu .checkstyleddiv {
+      top: 8px !important;
+      left: 179px;
+    }
+
+    body.big #mainmenu .checkstyleddiv {
+      top: 8px !important;
+      left: 173px;
+    }
+
+    body.big #mainmenu .checkstyleddiv span {
+      font-size: 18px;
+      top: 0px;
+      width: 13px !important;
+      height: 13px !important;
+    }     
+
+    #titlesearch {
+      top: 23px !important;
+    }
+
+    body.big #titlesearch {
+      top: 28px !important;
+    }
+        
+    .checkstyleddiv.showdeleted {
+      top: 4px;
+    }
+
+    #searchpopup .checkstyleddiv.showdeleted {
+      top: 9px;
+    }
+       
+    body.big #searchpopup .checkstyleddiv.showdeleted {
+      top: 14px;
+    }
+                       
 }
 /****************************** FIM LANDSCAPE CSS ****************************/
 /*****************************************************************************/
@@ -1960,23 +2784,6 @@ height: 101px;
   right: 129px !important;
 }
 
-#sear, #sear2  {
-    position: relative;
-    color: var(--high-color);
-    font-size: 18px;
-    padding-left: 7px;
-    padding-right: 17px;
-    top: -9px;
-    cursor: pointer;
-    transition: all 0.6s;
-}
-body.big #sear, body.big #sear2 {
-    font-size: 25px;
-    padding-left: 17px;
-    padding-right: 17px;
-    top: 20px !important;
-    left: 62px !important;
-}
 .tweetcount {
   background: rgba(255, 255, 255, 0.65) !important;
 }
@@ -2009,6 +2816,8 @@ body.big .newLayout.new .buttonstable .datespan {
 .buttonstable .date {
     position: relative !important;
     top: 0px;
+    text-transform: uppercase;
+    font-size: 14px;
 }    
 body.big .buttonstable .date {
     position: relative !important;
@@ -2018,14 +2827,15 @@ body.big .buttonstable .date {
 .buttonstable .datespan {
     position: relative !important;
     top: 0px;
+    margin-left: 14px;
 }  
 
 
 #searchtags {
-  margin-top: 93px !important;
+  margin-top: 71px !important;
 }
 body.big #searchtags {
-  margin-top: 93px !important;
+  margin-top: 83px !important;
 }
 
 .sectionicontd {
@@ -2051,11 +2861,15 @@ body.big #searchtags {
 #previewtable #inid {
   min-width: auto;
   max-height: 296px;
+  width: 455px;
+  height: 400px;
+  margin-top: 6px !important;
 }
 
 #previewtable #inid.yt {
   min-width: auto;
-  max-height: 243px;
+  max-height: 389px;
+  top: -1px !important;
 }
 
 body.big .newLayout #linktable {
@@ -2150,7 +2964,9 @@ body.big #calendardiv .fa-window-close {
 }
 
 #calendardiv .titletable.buttonstable {
-    max-height: 23px;
+    max-height: 71px;
+    height: 55px;
+    width: 359px !important;
 }
 
 body.big #calendardiv .titletable.buttonstable {
@@ -2158,7 +2974,7 @@ body.big #calendardiv .titletable.buttonstable {
 }
 
 #calendardiv .sectiontitletable.sectionexpandable {
-  margin-top: 30px;
+  margin-top: 51px;
 }
 
 body.big #calendardiv .sectiontitletable.sectionexpandable {
@@ -2198,6 +3014,10 @@ body.big #linkChange.newLayout > div .titletable tr:first-child .firsttd {
   width: 202px;
   margin-left: 3px;
   margin-right: 3px;
+  line-height: 14px;
+  white-space: nowrap;
+  position: relative;
+  top: -1px;
 }
 body.big #postedby {
   width: 169px;
@@ -2213,7 +3033,7 @@ body.big #datetoshow {
   margin-left: 4px;
 }
 #linkChange .titletable {
-  width: 464px;
+  width: 476px;
   padding-left: 7px;
 }
 body.big #linkChange .titletable {
@@ -2232,14 +3052,11 @@ body.big #splash .titletable {
   width: 478px;
   padding-left: 6px;
 }  
-.menuincludedeleted {
-    left: 165px;
-}
-
 .yt.tweet:last-child .bottomgradiantback {
     background-image: linear-gradient(to bottom, var(--dark-color) 13%, #004a8600 80%);
     bottom: -37px !important;
     height: 47px;
+    background: transparent;
 }
 
 #splash.newLayout > div .titletable tr:first-child .firsttd {
@@ -2255,30 +3072,54 @@ body.big #splash .titletable {
   width: 464px;
 } 
 
+#splash.newLayout > div .titletable tr:nth-of-type(2) {
+  display: inline-table;
+  width: 471px;
+  /* font-size: 12px; */
+  text-align: center;
+} 
+
 body.big #splash.newLayout > div .titletable tr:first-child .firsttd {
   min-width: 345px;
   /* min-width: 236px !important; */
   width: 207px;
 } 
 
-#splash.newLayout table:nth-of-type(2) {
-  height: 256px;
+
+
+.newLayout .fa-tags {
+    font-size: 13px;
+    position: relative;
+    top: 0px;
+    left: -3px;
 }
-#splash.newLayout table:nth-of-type(3) {
-  height: 208px;
+body.big .newLayout .fa-tags {
+    font-size: 17px;
+    top: 1px;
+    left: -3px;
 }
-#splash.newLayout table:nth-of-type(4) {
-  height: 154px;
+
+#splash .secondrow div {
+    margin-left: -1px;
+    font-size: 11px;
+    width: 455px;
 }
-    
-body.big #splash.newLayout table:nth-of-type(2) {
-  height: 261px;
+
+body.big #splash .secondrow div {
+    font-size: 13px;
 }
-body.big #splash.newLayout table:nth-of-type(3) {
-  height: 261px;
+
+
+.newLayout#linkChange .fa-tags {
+    font-size: 13px;
+    position: relative;
+    top: -1px;
+    left: -4px;
 }
-body.big #splash.newLayout table:nth-of-type(4) {
-  height: 205px;
+body.big .newLayout#linkChange .fa-tags {
+    font-size: 17px;
+    top: 1px;
+    left: -3px;
 }
 
 /*****************************************************************************/
@@ -2287,18 +3128,125 @@ body.big #splash.newLayout table:nth-of-type(4) {
   ###Device = Most of the Smartphones Mobiles (Portrait)
   Screen = B/w 320px to 479px */
   @media (max-width: 480px) {
+
+    #splash .secondrow div {
+        width: 340px;
+    }
+
+    #titlesearch {
+      top: 24px !important;
+    }
+
+    body.big #titlesearch {
+      width: 178px;
+    }
+    .checkstyleddiv.showdeleted .incdeltext {
+        width: 50px;
+        top: -17px !important;
+    }
+
+    #mainmenu .checkstyleddiv.showdeleted .incdeltext {
+          top: -17px !important;
+      }
+    
+    body.big .checkstyleddiv.showdeleted .incdeltext {
+        width: 50px;
+        top: -18px !important;
+    }
+
+   body.big #mainmenu .checkstyleddiv.showdeleted .incdeltext {
+          top: -14px !important;
+      }
+    
+
+    .checkstyleddiv.showdeleted .fa-square{
+      top: 2.7px;
+      left: 3.4px;
+      font-size: 6.1px !important;
+    }
+
+    body.big .checkstyleddiv.showdeleted .fa-square{
+      top: 3.1px;
+      left: 3.7px;
+      font-size: 6.1px !important;
+    }
+
+    
+    #expandedittags, #expandsearchtags {
+        padding-left: 159px;
+        width: calc(100% - 166px);
+        top: 148px;
+        padding-top: 6px !important;
+    }
+
+
+    body.big #mainmenu .checkstyleddiv span {
+      font-size: 18px;
+      top: 0px;
+      width: 13px !important;
+      height: 13px !important;
+    } 
+
+    #mainmenu .fa-window-close {
+        margin-top: 1px;
+    }
+    #mainmenu .firsttd b {
+        top: -3px;
+    }
+    #mainmenu .fa-bars {
+        top: 7px;
+    }  
+
+    body.big #mainmenu .fa-window-close {
+        margin-top: 3px;
+    }
+    body.big #mainmenu .firsttd b {
+        top: -2px;
+    }
+    body.big #mainmenu .fa-bars {
+        top: 8px;
+    }    
+          
+    #splash .splashbutton {
+      height: 23px;
+    }
+    body.big #sear2 {
+        left: 0px !important;
+    }
+    #addtweet {
+        top: 15px;
+    }
+    body.big #addtweet {
+        top: 20px;
+    }
+      #backdiv {
+        background-image: linear-gradient(var(--softdark-color) 0%, var(--soft-color) 45%, var(--dark-color) 99%) !important;
+      }
   
+    ::-webkit-scrollbar {
+        width: 0px;  /* Remove scrollbar space */
+        background: transparent; 
+    }
+    .newLayout > div::-webkit-scrollbar { width: 0 !important }
+    html, body { 
+      overflow: -moz-scrollbars-none; 
+      -ms-overflow-style: none;
+    }
+    .newLayout > div { 
+      overflow: -moz-scrollbars-none; 
+      -ms-overflow-style: none;
+    }  
     #splash.newLayout table:nth-of-type(2) {
-      height: 297px;
+      height: 233px;
     }
     body.big #splash.newLayout table:nth-of-type(2) {
-      height: 349px;
+      height: 301px;
     }
     #splash.newLayout table:nth-of-type(3) {
-      height: 239px;
+      height: 230px;
     }
     body.big #splash.newLayout table:nth-of-type(3) {
-      height: 316px;
+      height: 330px;
     }
     #splash.newLayout table:nth-of-type(4) {
       height: 186px;
@@ -2306,9 +3254,6 @@ body.big #splash.newLayout table:nth-of-type(4) {
     body.big #splash.newLayout table:nth-of-type(4) {
       height: 218px;
     }    
-    .menuincludedeleted {
-      left: 109px;
-     }
 
     #mask > div > i {
       background: #484848 !important;
@@ -2317,16 +3262,19 @@ body.big #splash.newLayout table:nth-of-type(4) {
         top: 18px;
     }
     body:not(.big) .tweet:not(:last-child) .bottomgradiantback {
-      bottom: 4px;
+      bottom: 2px;
     }
     body:not(.big) .yt.tweet:not(:last-child) .bottomgradiantback {
-      bottom: 15px;
+      bottom: 13px;
     }
     body:not(.big) .html.tweet:not(:last-child) .bottomgradiantback {
-      bottom: 16px;
+      bottom: 14px;
     }
     
     .tweet:first-child #expand {
+        margin-top: -9px;
+    }
+    body.big .tweet:first-child #expand {
         margin-top: -9px;
     }
     .linkbar {
@@ -2343,10 +3291,13 @@ body.big #splash.newLayout table:nth-of-type(4) {
         width: 162px !important;
         display: inline-block;
     }  
+
     #postedby {
       width: 98px;
       margin-left: 3px;
       margin-right: 3px;
+      /* padding-right: 20px; */
+      line-height: 14px;
     }
     body.big #postedby {
       width: 194px;
@@ -2372,11 +3323,11 @@ body.big #splash.newLayout table:nth-of-type(4) {
     #splash .titletable {
       width: 358px;
       padding-left: 6px;
-      height: 38px;
+      height: 56px;
       margin-top: -0.5px !important;
     }
     body.big #splash .titletable {
-      width: 343px;
+      width: 361px;
       padding-left: 6px;
     } 
     body.big .buttonstable .date {
@@ -2406,7 +3357,8 @@ body.big #splash.newLayout table:nth-of-type(4) {
     }  
     #calendardiv > div {
       margin-top: 164px !important;
-      height: 300px !important;
+      height: auto !important;
+      padding-bottom: 1px;
     }
     body.big #calendardiv > div {
       margin-top: 145px !important;
@@ -2420,16 +3372,16 @@ body.big #splash.newLayout table:nth-of-type(4) {
         max-height: calc(100% - 137px) !important;
     } 
     #mainmenu .firstsettable {
-      margin-top: 34px;
+      margin-top: 32px;
     }  
     #mainmenu .buttonstable {
-      width: 345px;
+      width: 358px;
     }   
     #mainmenu span {
       width: 304px;
     } 
     .menuitemcounter {
-        top: 1px;
+        top: -5px;
     }
     body.big #mainmenu .firstsettable {
       margin-top: 42px;
@@ -2514,7 +3466,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
     }
     body.big #expand {
         right: calc(50% - 241px);
-        top: 8.5px !important;
+        top: 11px !important;
     }     
   .newLayout > div {
         /* margin-top: 20px !important; */
@@ -2525,12 +3477,12 @@ body.big #splash.newLayout table:nth-of-type(4) {
         max-height: calc(100% - 137px) !important;
     } 
     #searchpopup.newLayout > div {
-        margin-top: 31px !important;
-        max-height: calc(100% - 137px) !important;
+        /* margin-top: 31px !important; */
+        /* max-height: calc(100% - 137px) !important; */
     } 
     body.big #searchpopup.newLayout > div {
-        margin-top: 27px !important;
-        max-height: 614px !important;
+        /* margin-top: 27px !important; */
+        /* max-height: 614px !important; */
     } 
   
     body.big .newLayout#mainsettings > div {
@@ -2546,7 +3498,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
     }   
     body.big .tags {
       padding-left: 42px !important;
-      top: -2px;
+      top: -1px;
       max-width: calc(100% - 83px) !important;
     }   
     
@@ -2573,13 +3525,16 @@ body.big #splash.newLayout table:nth-of-type(4) {
     }      
     body.big .linkbar {
         left: 8px;
-        top: 0px !important;
+        top: 2px !important;
     }
     body.big .linkbar.fa-youtube-play {
         top: 2px !important;
-    }    
+    } 
+    body.big .tweet:first-child .linkbar {
+        top: 0px !important;
+    }  
     body.big .linkbar.fa-internet-explorer {
-        top: 3px !important;
+        top: 4px !important;
     }     
   .toptitle {
       top: 12px;
@@ -2636,7 +3591,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
           min-width: 344px;
       }
       body.big .newLayout > div .titletable tr:first-child .firsttd {
-          min-width: 343px !important;
+          min-width: 346px !important;
       }  
 
       #splash.newLayout > div .titletable tr:first-child {
@@ -2647,10 +3602,13 @@ body.big #splash.newLayout table:nth-of-type(4) {
         #previewtable #inid {
           min-width: auto;
           max-height: 296px;
+          height: 240px;
+          width: 333px;
       }
       #previewtable #inid.yt {
           min-width: auto;
-          max-height: 229px;
+          max-height: 241px;
+          top: -1px !important;
       }
       #previewtable #inid > i {
           left: 153px;
@@ -2663,13 +3621,13 @@ body.big #splash.newLayout table:nth-of-type(4) {
         margin-top: 115px !important;
       }
       #searchtags {
-        margin-top: 87px !important;
+        margin-top: 70px !important;
       }
       body.big #searchtags {
         margin-top: 120px !important;
       }      
       body.big #searchtags {
-        margin-top: 90px !important;
+        margin-top: 82px !important;
       }
   
       body.big .newLayout.new #editTags {
@@ -2681,7 +3639,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
       }
   
       .newLayout > div .titletable {
-          margin-top: 0.7px !important;
+          margin-top: -0.5px !important;
           /* margin-top: 0px !important; */
       }      
       .newLayout#mainsettings > div .titletable {
@@ -2689,7 +3647,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
       }      
   
       .newLayout#searchpopup > div .titletable {
-        width: 344px !important;
+        width: 354px !important;
       }
   
       .tweet.html {
@@ -2728,7 +3686,8 @@ body.big #splash.newLayout table:nth-of-type(4) {
 }
 
     #tooltip {
-      max-width: 251px;
+      max-width: 309px;
+      /* width: 309px; */
     }
 
      body.big .tweet.yt div.contentin {
@@ -2744,6 +3703,20 @@ body.big #splash.newLayout table:nth-of-type(4) {
           margin-top: 40px;
       } 
       
+       #previewtd .tweet.yt div.contentin {
+          transform: translate(-50%, 0px);
+          top: calc(0px) !important;
+          margin-top: 0px;
+          background-position-y: 0px !important;
+          height: 383px;
+      }  
+      
+      body.big #previewtd .tweet.html div.contentin {
+          transform: translate(-50%, 0px);
+          height: 400px;
+          width: 334px;
+      } 
+
       .yt .bottomstrip {
           width: calc(100% - 50px);
           top: 80vw;
@@ -2775,15 +3748,75 @@ body.big #splash.newLayout table:nth-of-type(4) {
       } 
 
       .html.tweet:last-child .bottomgradiantback {
-          background-image: linear-gradient(to bottom, var(--dark-color) 15%, var(--soft-color) 85%);
-          background-image: linear-gradient(to bottom, #000000 3%, #00315600 80%);
       }
 
 
      .yt.tweet:last-child .bottomgradiantback {
-        background-image: linear-gradient(to bottom, #000000 13%, #004a8600 80%);
+        background-image: linear-gradient(to bottom, #00000000 13%, #004a8600 80%);
         bottom: 0px !important;
         height: 30px;
+      }
+
+      #mainmenu .checkstyleddiv {
+        top: 9px !important;
+        left: 121px;
+      }
+
+      body.big #mainmenu .checkstyleddiv {
+        top: 8px !important;
+        left: 112px;
+      }
+
+      .checkstyleddiv.showdeleted {
+        top: 10px;
+        /* right: 6px; */
+        width: 72px !important;
+      }
+
+      body.big .checkstyleddiv.showdeleted {
+        top: 15px;
+        /* right: -13px; */
+      }    
+
+      .checkstyleddiv.showdeleted span {
+        width: 9.9px !important;
+        height: 9.6px !important;
+      }
+
+      body.big .checkstyleddiv.showdeleted span {
+        /* width: 10px !important; */
+        /* height: 10px !important; */
+        /* padding-right: 1px; */
+        /* font-size: 38px; */
+      }  
+
+
+      body.big .checkstyleddiv.showdeleted i {
+        /* left: 0.5px !important; */
+      }
+       
+      #filterdate1display {
+        width: calc(50% - 106px);
+        margin-left: 9px !important;
+      }
+
+      body.big #filterdate1display {
+        width: calc(50% - 102px);
+        margin-left: 1px !important;
+        margin-right: 11px !important;
+        padding-left: 2px;
+      }
+
+
+      #filterdate2display {
+        width: calc(50% - 106px);
+        margin-left: 9px !important;
+      }
+
+      body.big #filterdate2display {
+        width: calc(50% - 102px);
+        margin-left: 1px !important;
+        padding-left: 2px;
       }
 
   }
@@ -2891,8 +3924,6 @@ body.big #splash.newLayout table:nth-of-type(4) {
 
 
 
-.newLayout#searchpopup > div .titletable {width: 465px;}
-
 .newLayout.new > div .titletable #seticon {
     color: var(--high-color) !important;
 }
@@ -2946,16 +3977,25 @@ body.big #splash.newLayout table:nth-of-type(4) {
 .newLayout #removetweetp {
     cursor: pointer;
     font-size: 18px !important;
-    position: initial;
+    position: relative;
+    top: 1px;
 }
-.newLayout.new #removetweetp {
+
+.newLayout #removetweetp2 {
+  cursor: pointer;
+  font-size: 20px !important;
+  position: relative;
+  top: 1px;
+}
+
+.newLayout.new #removetweetp2 {
     cursor: pointer;
     font-size: 18px !important;
     position: relative;
-    top: 2px;
+    top: 1px;
 }
 
-body.big .newLayout.new #removetweetp {
+body.big .newLayout.new #removetweetp2 {
     cursor: pointer;
     font-size: 27px;
     position: initial;
@@ -2968,7 +4008,7 @@ body.big .newLayout.new #removetweetp {
     transition: all 0.6s;
     display: initial;
     position: relative;
-    top: -1px;
+    top: -2px;
 }
 .newLayout #opensearch {
     position: initial;
@@ -2982,18 +4022,10 @@ body.big .newLayout.new #removetweetp {
 
 body.big .newLayout #opensearch {
     font-size: 22px;
-    top: -1px;
+    top: -2px;
 }
 
 .newLayout #externallinkp {
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.6s;
-    display: initial;
-    position: relative;
-    top: 3px;
-}
-.newLayout #savesearch {
     cursor: pointer;
     font-size: 17px;
     transition: all 0.6s;
@@ -3001,8 +4033,17 @@ body.big .newLayout #opensearch {
     position: relative;
     top: 2px;
 }
+.newLayout #savesearch {
+    cursor: pointer;
+    font-size: 17px;
+    transition: all 0.6s;
+    display: initial;
+    position: relative;
+    top: 1px;
+}
 body.big .newLayout #savesearch {
     font-size: 23px;
+    top: 0px;
 }
 
 .newLayout #closepopupp {
@@ -3027,10 +4068,11 @@ body.big .newLayout #editTags.sectiontitletable tr:first-child td {
   padding-bottom: 6px;
   /* position: relative; */
   /* top: 0px; */
+  
 }
 
 .newLayout table.emptyvalue .sectionicontd.el.ellipsis > span {
-  padding-right: 13px;
+  /* padding-right: 13px; */
 }
 .newLayout table.emptyvalue .sectionicontd.el.ellipsis > span > i {
     position: absolute !important;
@@ -3041,38 +4083,6 @@ body.big .newLayout .sectiontitletable .sectionicontd {
     padding-top: 3px !important;
 }
 
-body .newLayout #editTags .sectionicontd:first-child {
-    width: 43px !important;
-}
-
-body.big .newLayout #editTags .sectionicontd:first-child {
-    width: 56px !important;
-}
-
-body .newLayout #editCats .sectionicontd:first-child {
-    width: 78px !important;
-}
-
-body.big .newLayout #editCats .sectionicontd:first-child {
-    width: 102px !important;
-}
-
-body .newLayout #editClassif .sectionicontd:first-child {
-    width: 101px !important;
-}
-
-body.big .newLayout #editClassif .sectionicontd:first-child {
-    width: 129px !important;
-}
-
-body .newLayout #editInfo .sectionicontd:first-child {
-    width: 37px !important;
-}
-
-body.big .newLayout #editInfo .sectionicontd:first-child {
-    width: 55px !important;
-}
-
 
 
 
@@ -3080,7 +4090,7 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
 .newLayout .titletext {
   text-align: left;
   padding-left: 0px;
-  color: var(--text-color);
+  /* color: var(--text-color); */
   line-height: 19px;
   /* position: relative; */
 }
@@ -3104,7 +4114,7 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
 
 .newLayout .sectiontitletable .sectionedittd i {
   position: relative;
-  top: -2px;
+  top: -3px;
   font-size: 16px;
   position: relative;
   width: 11px;
@@ -3185,6 +4195,7 @@ body.big #linktable {
     font-size: 17px;
     font-family: Helvetica, Roboto, "Segoe UI", Calibri, sans-serif;
     font-variant-caps: normal;
+        border-radius: 3px;
 }
 .newLayout ul {
     width: 100%;
@@ -3195,7 +4206,7 @@ body.big #linktable {
     z-index: 99;
     display: block;
     margin-top: 6px;
-    margin-bottom: 0;
+    margin-bottom: 26px;
 }
 .newLayout ul#classiful {
     height: 100%;
@@ -3225,12 +4236,14 @@ body.big #linktable {
     margin-left: 8px;
     position: relative;
     color: var(--dark-color);
-    font-weight: bold;
+    font-weight: bold !important;
     background: var(--high-color);
     padding: 0px 4px;
     border: 1px solid var(--dark-color);
     top: -1px;
     cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 3px;
 }
 
 select {
@@ -3274,7 +4287,7 @@ body.big .newLayout .fa-bookmark {
 .newLayout .fa-star-half-o {
     font-size: 15px;
     position: relative;
-    top: 0px;
+    top: -1px;
     left: -4px;
 }
 body.big .newLayout .fa-star-half-o {
@@ -3286,8 +4299,8 @@ body.big .newLayout .fa-star-half-o {
 .newLayout .fa-file-text {
     font-size: 12px;
     position: relative;
-    top: 0px;
-    left: -3px;
+    top: -2px;
+    left: -2px;
 }
 body.big .newLayout .fa-file-text {
     font-size: 17px;
@@ -3317,19 +4330,11 @@ body.big .newLayout .fa-file-text {
 }
 body.big .topoback2 {
     left: 66px;
-    width: calc(100% - 77px);
+    width: calc(100% - 78px);
     top: 9px;
     height: 45px;
 }
 
-::-webkit-scrollbar {
-    width: 0px;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
-}
-
-.newLayout > div::-webkit-scrollbar { width: 0 !important }
-.newLayout > div { overflow: -moz-scrollbars-none; }
-.newLayout > div { -ms-overflow-style: none; }
 
 input[type="checkbox"] {
     /* display:none; */
@@ -3340,7 +4345,7 @@ input[type="checkbox"] {
     display: inline-block;
 }
 body.big .checkstyleddiv {
-    width: 146px;
+    width: 162px;
     display: inline-block;
 }
 .checkstyleddiv input {
@@ -3348,6 +4353,7 @@ body.big .checkstyleddiv {
     top: 10px;
     left: -50px;
     z-index: 1;
+    position: initial;
     opacity: 0;
 }
 
@@ -3356,7 +4362,7 @@ body.big .checkstyleddiv input {
     left: -48px;
 }
 input[type="checkbox"] + label {
-    color: var(--text-color);
+    color: var(--high-color);
 }
 
 input[type="checkbox"] + label span:not(.text) {
@@ -3371,6 +4377,11 @@ input[type="checkbox"] + label span:not(.text) {
     border-radius: 4px;
     border: 1px solid var(--high-color);
     background: var(--dark-color);
+}
+
+.checkstyleddiv.showdeleted span {
+    width: 12px !important;
+    height: 11.6px !important;
 }
 
 input[type="checkbox"] + label span i {display: none;font-size: 8px;position: relative;top: 3px;left: 5px;transition: all 0.6s;color: var(--high-color);}
@@ -3462,7 +4473,7 @@ input[type="radio"]:checked + label span:not(.text) {
 
 .currenttags.titletext {
   position: relative;
-  top: -1.5px !important;
+  top: -2.5px !important;
 }
 
 .currentinfo.titletext {
@@ -3492,11 +4503,11 @@ body.big td.ellipsis span.currentcats {
 } 
 
 .newLayout .titletext.currentclassif {
-  top: -1.5px;
+  /* top: -1.5px; */
 }
 
 input[type=text] {
-  font-size: 12px !important;
+  font-size: 11px !important;
   height: 15px;
 }
 input, select, textarea {
@@ -3507,8 +4518,9 @@ input[type=text]#date {
 }
 
 body.big input[type=text] {
-  font-size: 15px !important;
+  font-size: 12px !important;
   height: 18px;
+  line-height: 13px;
 }
 
 body.big .newLayout.new #postedby {
@@ -3524,13 +4536,17 @@ body.big postedby {
   height: 18px;
 }
 select {
-  font-size: 11px !important;
+  font-size: 10px !important;
 }
 body.big select {
-  font-size: 15px !important;
+  font-size: 12px !important;
   height: 22px;
+  padding-top: 1px;
 }
 
+body.big select#tagsearchselect {
+  /* top: 43px !important; */
+}
 
 .newLayout .sectiontitle {
   padding-left: 9px;
@@ -3567,7 +4583,8 @@ body.big .newLayout #editClassif .sectiontitle {
 }
 
 .newLayout .boldtitle {
-    font-size: 12px;
+    font-size: 11px;
+    text-transform: uppercase;
 }
 body.big .newLayout .boldtitle {
     font-size: 15px;
@@ -3588,6 +4605,7 @@ body.big .newLayout .titletext {
 td:not(.ellipsis) .titletext {
     position: relative;
     top: -2px !important;
+    text-transform: uppercase;
 }
 td:not(.ellipsis) .titletext.originalinfo {
     position: relative;
@@ -3622,8 +4640,8 @@ td:not(.ellipsis) .titletext.originalcats  {
     left: 4px;
 }
 td:not(.ellipsis) .titletext.currenttags {
-    position: relative;
-    top: -0.5px !important;
+    /* position: relative; */
+    /* top: -0.5px !important; */
 }
 
 body.big td:not(.ellipsis) .titletext {
@@ -3643,6 +4661,7 @@ body.big td.ellipsis .titletext.currenttags {
 
 .newLayout .fa-undo.mainbutton {
    font-size: 14px !important;
+   top: 0 !important;
 }
 body.big .newLayout .fa-undo..mainbutton {
    font-size: 17px !important; 
@@ -3700,10 +4719,15 @@ body.big input[type="checkbox"] + label span i {
 input[type="checkbox"] + label {
     font-size: 11px;
 }
-body.big input[type="checkbox"] + label {
+body.big .showdeletedinput[type="checkbox"] + label {
     font-size: 14px;
 }
-
+body.big #mainmenu input[type="checkbox"] + label {
+    font-size: 16px !important;
+}
+body.big .showdeleted input[type="checkbox"] + label {
+    font-size: 11px;
+}
 
 .newLayout textarea {
     font-size: 14px;
@@ -3743,6 +4767,14 @@ body.big .buttonstable .firsttd {
 body.big #removetweetp {
     font-size: 25px !important;
 }
+
+#removetweetp2 {
+  font-size: 18px !important;
+}
+body.big #removetweetp2 {
+  font-size: 25px !important;
+}
+
 body.big .newLayout.new #removetweetp {
     font-size: 27px !important;
 }
@@ -3781,17 +4813,6 @@ body.big #closepopupp {
 
 /* TAGS das settings */
 
-.newLayout .fa-tags {
-    font-size: 13px;
-    position: relative;
-    top: 0px;
-    left: -3px;
-}
-body.big .newLayout .fa-tags {
-    font-size: 17px;
-    top: 1px;
-    left: -3px;
-}
 
 
 .newLayout ul li {
@@ -3807,6 +4828,14 @@ body.big .newLayout ul li {
     padding-top: 2px;
     /* font-weight: normal; */
     margin-right: 11px;
+
+}
+
+body.big .newLayout ul.iconul li {
+    font-size: 15px;
+    margin-right: 0px;
+    width: 38px;
+    height: 32px !important;
 }
 
 
@@ -3829,6 +4858,8 @@ body.big .newLayout ul#classiful li {
 
 
 #tweetcount {
+    transition: all 0.6s;
+    cursor: pointer;
     padding: 0px 4px !important;
     line-height: 16px !important;
     font-size: 11.5px !important;
@@ -3925,15 +4956,14 @@ body.big .buttonstable tr:first-child .firsttd i.fa-twitter {
     left: 1px !important;
 }
 
+/*
 i.clicable:active {
    color: #ffff6c !important;
 }
-
-body.big .newLayout > div .buttonstable tr:last-child td {
-    /* padding: 9px 0px 8px 0px; */
+span.toptitle.clicable:active {
+  color: #ffff6c !important;
 }
-
-
+*/
 body.notransit * {
   -o-transition-property: none !important;
   -moz-transition-property: none !important;
@@ -3948,6 +4978,19 @@ body.notransit * {
 
 body.big .newLayout.new #seticon {font-size: 24px;top: 3px;}
 
+
+#linkChange #seticon.fa-youtube-play {
+  margin-right: 9px;
+  font-size: 15px !important;
+  position: relative;
+  top: 0px !important;
+}
+
+body.big #linkChange #seticon.fa-youtube-play {
+  font-size: 19px !important;
+  top: 1px !important;
+}
+
 #previewtd {
   width: calc(100% - 220px);
   padding-left: 6px;
@@ -3956,15 +4999,22 @@ body.big .newLayout.new #seticon {font-size: 24px;top: 3px;}
 }
 
 #previewtd div:not(.innertweet):not(.tweet) {
-  max-height: 251px;
   margin: 0;
   top: 10px;
   background: transparent;
 }
 
+#previewtd .html div:not(.innertweet):not(.tweet) {
+  height: 324px;
+  width: 454px;
+  margin: 0;
+  top: -6px !important;
+  background: transparent;
+}
+
 
 #previewtd > div div:not(.innertweet):not(.glasscover) {
-  display: none !important;
+  /* display: none !important; */
 }
 
 #previewtd > div div.innertweet twitter-widget {
@@ -4045,9 +5095,10 @@ body.big .newLayout.new .sectiontitle {
 
 
 .clicable {
-  transition: opacity 0.6s !important;
-  cursor: pointer !important
+  transition: opacity 0.6s;
+  cursor: pointer !important;
 }
+
 
 .cursorpointer {
   transition: opacity 0.6s !important;
@@ -4076,37 +5127,50 @@ body.big .newLayout.new .sectiontitle {
 }
 
 .iconul li {
-    display: inline-block;
+    display: inline-flex;
     border: 1px solid var(--high-color);
-    border-radius: 4px;
-    width: 25px;
-    height: 20px;
+    border-radius: 2px;
+    width: 32px;
+    height: 27px !important;
+    padding: 0 !important;
+    margin-left: 3px;
 }
 body.big .iconul li {
-    display: inline-block;
-    border: 1px solid var(--high-color);
-    border-radius: 4px;
-    width: 30px;
-    height: 25px;
+    /* display: inline-block; */
+    /* border: 1px solid var(--high-color); */
+    /* border-radius: 4px; */
+    /* width: 35px; */
+    /* margin-right: 0px !important; */
+    /* height: 29px !important; */
 }
 .iconul li i {
     font-size: 20px;
+    position: relative;
+    top: 3px;
+    left: 6px;
 }
 body.big .iconul li i {
+    top: 4px;
+    left: 7px;
     font-size: 23px;
-    padding-left: 4px;
-    float: left;
 }
 
+body.big .iconul li i.fa-internet-explorer {
+    /* font-size: 20px; */
+}
+
+
 .iconul li div {
-    font-size: 20px;
+    font-size: 14px;
+    position: relative;
+    top: 5px;
+    left: -15px;
+    font-weight: bold;
 }
 body.big .iconul li div {
-    font-size: 15px;
-    font-weight: bold;
-    position: absolute;
-    margin-top: 4px;
-    padding-left: 2px;
+    font-size: 17px;
+    top: 6px;
+    left: -17px;
 }
 
 .iconul li.selected {
@@ -4126,46 +5190,12 @@ body.big .iconul li div {
   background: var(--soft-color);
 }
 
-.vanilla-calendar-date:hover {
-    transition: all 0.6s;
-}
-
-.vanilla-calendar-date:hover {
-    opacity: 0.6;
-    background: var(--high-color);
-color: var(--dark-color);
-
-}
-
 #myCalendar {
   cursor: default !important;
   border-bottom-left-radius: 5px !important;
   border-bottom-right-radius: 5px !important;
 }
 
-#filterdate1display {
-  width: calc(50% - 99px);
-  margin-left: 9px !important;
-}
-
-body.big #filterdate1display {
-  width: calc(50% - 89px);
-  margin-left: 1px !important;
-  margin-right: 11px !important;
-  padding-left: 1px;
-}
-
-
-#filterdate2display {
-  width: calc(50% - 99px);
-  margin-left: 9px !important;
-}
-
-body.big #filterdate2display {
-  width: calc(50% - 88px);
-  margin-left: 1px !important;
-  padding-left: 1px;
-}
 
 #filterdate1clean {
 
@@ -4186,51 +5216,30 @@ body.big #filterdate2clean {
   left: 0px !important;
   top: 0px !important;
 }
-#titlesearch {
-  text-decoration: underline;
-  position: relative;
-  top: -1px;
-  font-size: 14px;
-  cursor: pointer;
-}
-body.big #titlesearch {
-  top: -1px;
-    font-size: 16px;
 
-}
-body.big #titlesearch {
-  font-size: 17px;
-}
+
+#titlesearch > span {transform: translate(0px, -50%);top: calc(50%);display: block;/* max-width: 138px; */text-align: center;}
+
+
 
 #searchpopup .titletable tr:first-child {
-  height: 50px;
+  height: 33px;
 }
 
 body.big #searchpopup .titletable tr:first-child {
-  height: 50px;
+  height: 41px;
 }
 
-
-body.big #searchpopup td span.titletext.currenttagsearch {
-    position: relative;
-    top: -0.5px !important;
-    left: auto;
-    padding-left: 0px !important;
+#searchpopup .titletable tr:first-child b {
+  margin-left: 6px;
+  top: 0px;
+  position: relative;
+  font-size: 20px;
 }
 
-#searchpopup td.ellipsis span.titletext.currenttagsearch {
-    position: absolute;
-    top: 3px !important;
-    width: 236px;
-    display: block;
-}
-body.big #searchpopup.ellipsis td span.titletext.currenttagsearch {
-    position: absolute;
-    top: 3px !important;
-}
-
-body.big #searchpopup #searchdate td.ellipsis .titletext {
-    top: 5px !important;
+body.big #searchpopup .titletable tr:first-child b {
+  font-size: 26px;
+  top: 1px;
 }
 
 #classifsearchul .litags {
@@ -4239,7 +5248,7 @@ body.big #searchpopup #searchdate td.ellipsis .titletext {
 }
 
 body.big #searchpopup #searchinfo td.el:not(.ellipsis) span.titletext {
-    line-height: 13px;
+    /* line-height: 13px; */
 }
 
 #mainsettings .sectionedittd > i {
@@ -4298,42 +5307,14 @@ body.big #mainsettings #theme td:first-child {
   width: 56px !important;
 }
 
-#expandedittags, #expandsearchtags {
-    padding-left: 2px;
-    position: relative;
-    padding-right: 11px;
-    padding-top: 1px;
-    /* height: 22px; */
-    width: 10px;
-    top: 88px;
-    border-radius: 4px;
-    bottom: auto;
-    left: calc(100% - 28px);
-    color: var(--soft-color);
-    border: 1px solid var(--soft-color);
-    font-size: 19px !important;
-    background: var(--high-color) !important;
-    height: 22px;
-    left: calc(100% - 23px);
+.newLayout ul li {
+  opacity:1;
+  transition: all 0.6s;
 }
 
-body.big #expandedittags, body.big #expandsearchtags {
-    padding-left: 2px;
-    position: absolute;
-    padding-right: 11px;
-    padding-top: 1px;
-    height: 26px;
-    width: 14px;
-    top: auto;
-    border-radius: 4px;
-    bottom: 23px;
-    left: calc(100% - 32px);
-    color: var(--soft-color);
-    border: 1px solid var(--soft-color);
-    font-size: 23px !important;
-    background: var(--high-color) !important;
+.newLayout ul li.selected {
+    cursor: default !important;
 }
-
 
 /*****************************************************************************/
 /********************************* DESKTOP CSS *******************************/
@@ -4344,23 +5325,60 @@ body.big #expandedittags, body.big #expandsearchtags {
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops */
 @media (min-width: 1025px) {
-  
+    .newLayout ul li:not(.selected):not(.selectedtag):hover {
+        background: var(--softdark-color);
+        /* opacity: 0.7; */
+        color: var(--high-color);
+    }
+
+
+    #expandedittags:hover, #expandsearchtags:hover {
+      cursor: pointer;
+      color: var(--text-color) !important;
+    }
+
+  ::-webkit-scrollbar {
+	  width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+      background-color: var(--softdark-color);
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background-color: var(--soft-color);
+      border-top: 1px solid var(--dark-color);	
+      border-bottom: 1px solid var(--dark-color);	
+      cursor: pointer !important;
+  }
 
   #mask .fa-circle-o-notch {
     height: 43px !important;
   }
+
+  .vanilla-calendar-date:hover {
+      transition: all 0.6s;
+  }
+
+  .vanilla-calendar-date:hover {
+      opacity: 0.6;
+      background: var(--high-color);
+      color: var(--dark-color);
+  }
+
   .sectionedittd:hover {
     opacity: 0.6;
   }
   
-  .newLayout > div .buttonstr td:hover { 
-    opacity: 0.6;
+  .newLayout > div .buttonstr td:hover {
+    /* opacity: 0.6; */
+    background: var(--softdark-color) !important;
   }
   .newLayout.new div table tr .td:hover {
     cursor: default !important;
   }
   .mainbutton:hover {
-    opacity: 0.6;
+    /* opacity: 0.6; */
+    color: var(--text-color);
   }
 
   .toptitle:hover {
@@ -4384,7 +5402,7 @@ body.big #expandedittags, body.big #expandsearchtags {
   #settings:hover {
     opacity: 0.4;
     opacity: 0.6;
-}
+  }
 
   .buttonIcon:hover {
     color: #e4e4e4;
@@ -4410,7 +5428,9 @@ body.big #expandedittags, body.big #expandsearchtags {
   }
 
   .cursorpointer:hover {
-    opacity: 0.6 !important;
+    /* opacity: 0.6 !important; */
+    color: var(--text-color);
+    /* filter: grayscale(20%); */
   }
 
   .litags:hover {
@@ -4418,30 +5438,67 @@ body.big #expandedittags, body.big #expandsearchtags {
     background: var(--high-color);
   }
   .litags.selectedtag:hover {
-    color: var(--high-color);
-    background: var(--soft-color);
+    color: var(--softdark-color);
+    background: var(--text-color);
   }
   
   .litags:not(.selectedtag):hover {
       color: var(--dark-color);
       background: var(--high-color);
   }
-      #addtweet:hover {
+      
+  #addtweet:hover {
       /* color: var(--soft-color); */
       opacity: 0.6;
-    }
+  }
 
-    #sear:hover {
+  #sear:hover {
       /* color: var(--soft-color); */
       opacity: 0.6;
-    }
+  }
     
     .clicable:hover {
       opacity: 0.6 !important;
     }
-    .checkstyleddiv:hover {
-      opacity: 0.6 !important;
+    #splashbutton.active:hover {
+      opacity: 0.7 !important;
     }
+    .checkstyleddiv:hover span:not(.text) {
+       border-color: var(--text-color) !important;
+    }
+
+    .checkstyleddiv:hover span.text {
+       color: var(--text-color) !important;
+    }
+    
+    #mainmenu table:not(:first-child):not(:last-child):hover {
+      opacity: 0.7 !important;
+    }
+
+    .ui-dialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset button:hover {
+      opacity: 0.7
+   }
+
+   .triggerUpload {
+    transition: opacity 0.7s;
+    cursor: pointer;
+  }
+  
+  
+  
+  .pointeropacity {
+    cursor: pointer !important;
+    /* transition: opacity 0.6s !important; */
+  }
+  
+  .pointeropacity:hover {
+    opacity: 0.7 !important;
+  }
+  
+   .triggerUpload:hover {
+    opacity: 0.85
+   }
+  
 }
 /******************************* FIM DESKTOP CSS *****************************/
 /*****************************************************************************/
@@ -4483,36 +5540,19 @@ body.big #expandedittags, body.big #expandsearchtags {
 
 .author {
   font-size: 15px;
+  cursor: pointer;
 }
   
 body.big .author {
   font-size: 19px;
 }
-  
-.checkstyleddiv.showdeleted {
-  top: -4px;
-  right: 6px;
-}
-
-body.big .checkstyleddiv.showdeleted {
-  top: -12px;
-  right: -13px;
-}
-
-body.big .menuincludedeleted {
-    top: -7px !important;
-}
-
-body.big .menuincludedeleted label > div {
-    top: -14px !important;
-}
 
 #splash.newLayout .firstTable {
-    margin-top: 38px;
+    margin-top: 57px;
 }
 
 body.big #splash.newLayout .firstTable {
-    margin-top: 40px;
+    margin-top: 62px;
 }
 
 #splash.newLayout .fa-folder-open {
@@ -4525,7 +5565,7 @@ body.big #splash.newLayout .firstTable {
 }
 
 body.big #splash.newLayout .fa-folder-open {
-    font-size: 18px;
+    font-size: 17px;
     top: 1px;
     left: -2px;
 }
@@ -4557,11 +5597,12 @@ body.big #splash.newLayout .fa-credit-card-alt {
 }
 
 .splashtext {
-  font-size: 12px;
+  font-size: 11px;
+  text-transform: uppercase;
 }
 
 body.big .splashtext {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 #splash.newLayout .sectiontitle {
@@ -4610,31 +5651,9 @@ body.big .splashtext.aboutbs {
 }
 
 
-#splash .splashbutton {
-  border: 1px solid var(--dark-color);
-  background: var(--high-color);
-  color: var(--dark-color);
-  width: 50px;
-  position: absolute;
-  text-align: center;
-  line-height: 19px;
-  font-size: 13px;
-  height: 20px;
-  padding-top: 3px;
-  font-weight: bold;
-  padding-left: 0;
-  right: 0px;
-  cursor: default !important;
-  float: right;
-  bottom: -7px;
-}
 
-#splash .splashbutton.active {
-  cursor: pointer !important;
-  line-height: 15px;
-}
 
-body.big #splash .splashbutton {font-size: 16px;width: 60px;}
+body.big #splash .splashbutton {font-size: 16px;width: 74px;}
 
 body.big #splash .splashbutton > span {
 
@@ -4828,30 +5847,19 @@ body.big .topoback:not(.topoback2) {
 }
 
 body.big #mainmenu table:last-child {
-  height: 100px;
+  /* height: 100px; */
 }  
 
 #mainmenu table {
   transition: all 0.7s !important;
 }
 
-#mainmenu table:not(:first-child):not(:last-child):hover {
-  opacity: 0.7 !important;
-}
+
 
 .checkstyleddiv label {
   cursor: pointer;
 }
 
-body.big .checkstyleddiv.menuincludedeleted i {
-    top: 1.9px;
-    left: 0.2px !important;
-    font-size: 6.4px !important;
-}
-
-body.big .checkstyleddiv.showdeleted i {
-  left: 1px !important;
-}
 
 #calendardiv.newLayout > div .titletable tr:first-child .firsttd {
     padding-top: 1px;
@@ -4941,28 +5949,8 @@ body.big .ui-dialog.ui-widget.ui-widget-content.ui-front .ui-dialog-titlebar.ui-
     font-size: 12px;
  }
 
- .ui-dialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset button:hover {
-    opacity: 0.7
- }
 
- .triggerUpload {
-  transition: opacity 0.7s;
-  cursor: pointer;
-}
-
-.triggerUpload:hover {
- opacity: 0.85
-}
-
-.pointeropacity {
-  cursor: pointer !important;
-  /* transition: opacity 0.6s !important; */
-}
-
-.pointeropacity:hover {
-  opacity: 0.7 !important;
-}
-
+ 
 #mainsettings.newLayout .sectionexpandable {
     position: relative;
 }
@@ -5476,4 +6464,147 @@ body.big .ui-dialog button {
 
 body.big .otherOptText {
   font-size: 14px;
+}
+
+#tweetcount.hidcontent {
+  border-color: transparent !important;
+  background: transparent !important;
+}
+
+#tweetcount.hidcontent > div {
+  display: none !important;
+}
+
+#tweetcount.hidcontent > span {
+  display: none;
+}
+
+#tweetcount.hidicon > i {
+  visibility: hidden !important;
+}
+
+#tweetcount.hidall {
+  display: none !important;
+}
+
+.ellipsis .slicename i {
+  margin-left: 15px !important;
+}
+
+body.big .iconul {
+  margin-bottom: 16px !important;
+}
+
+.authorbuttons {
+  position: absolute;
+  width: 80px;
+  font-size: 15px;
+  top: 28px;
+  background: var(--dark-color);
+  left: 145px;
+  z-index: 1;
+  border: 1px solid var(--high-color);
+  border-radius: 3px;
+  text-align: left;
+  padding-bottom: 1px;
+}
+
+.authorbuttons.noundo {
+  width: 56px;
+  left: 169px;
+}
+
+.authorbuttons i {
+  margin-left: 8px;
+  font-size: 15px;
+  color: var(--high-color);
+}
+
+.authorbuttons .fa-times {
+  font-size: 17px;
+}
+
+.authorbuttons.noundo .fa-undo {
+  display: none;
+}
+
+.authorbuttons .fa-check {
+  font-size: 17px;
+}
+
+body.big .authorbuttons {
+
+}
+
+body.big .authorbuttons.noundo {
+
+}
+
+body.big .authorbuttons i {
+
+}
+
+body.big .authorbuttons .fa-times {
+
+}
+
+body.big .authorbuttons .fa-undo {
+
+}
+
+body.big .authorbuttons .fa-check {
+
+}
+li.yeffect {
+  transition: background 1.5s !important;
+  background: #ffff6c !important;
+}
+
+td.yeffect {
+  transition: background 1.5s !important;
+  background: #ffff6c !important;
+}
+
+#titlesearch .span1 {text-decoration: none !important;color: var(--text-color);padding-right: 5px;/* transform: translate(0px, -50%); *//* top: calc(50%); *//* display: block; */}
+
+#titlesearch .span2 {
+  text-decoration: underline;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+#linkChange .checkstyleddiv span {
+    width: 12px !important;
+    height: 11.6px !important;
+}
+
+#linkChange .checkstyleddiv i {
+    font-size: 6px;
+    top: 3px;
+    left: 4px;
+}
+
+#linkChange .titletext {
+    top: -2.5px !important;
+}
+
+#linkChange .titletext:not(.slicename) {
+    top: -1.5px !important;
+}
+
+.newLayout#linkChange ul#classiful {
+    padding-top: 0px;
+    margin-top: 4px;
+    margin-bottom: -1px;
+}
+
+select option {
+  border: 0 !important;
+}
+
+option:focus{
+    background-color:#FFF;
+    outline:none;
+    border:none;
+    box-shadow:none;
 }
