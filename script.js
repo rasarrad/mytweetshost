@@ -2703,7 +2703,6 @@ function startWorker() {
                     if (!isMobile) {
                         idCurr = linkArray[currrenderedtweets];
                         setTimeout(function(){
-                            document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
                         }, 0);
                     }
                     currrenderedtweets++;
@@ -2756,7 +2755,6 @@ function startWorker() {
                             if (!isMobile) {
                                 idCurr = linkArray[currrenderedtweets];
                                 setTimeout(function(){
-                                    document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
                                 }, 0);
                             }
                             currrenderedtweets++;
