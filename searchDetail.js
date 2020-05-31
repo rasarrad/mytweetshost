@@ -28,39 +28,32 @@ function closeSearchPopup(obj) {
     }, 700);
 }
 
-function expandsection(obj, table) {
+function expandsection(obj, e) {
+    e.stopPropagation();
+    var tagstable = $('#editTags'); 
+        
     if ($(obj).hasClass("fa-chevron-down")) {
         $(obj).removeClass("fa-chevron-down");
         $(obj).addClass("fa-chevron-up");
+
         $(obj).css("top", "auto");
-        $(obj).css("bottom", "4px");
-        $("#" + table).css("max-height", "fit-content");
-    }   
+        $(obj).css("bottom", "0px");
+        tagstable.css("max-height", "4000px");
+    }
     else {
         $(obj).removeClass("fa-chevron-up");
-        $(obj).addClass("fa-chevron-down");  
-        
-        if ($('body').hasClass('big')) {
-            $("#" + table).css("max-height", $("#" + table).attr("cmaxheightbig"));
-            $(obj).css("top", "-63px");
-        }
-        else {
-            $("#" + table).css("max-height", $("#" + table).attr("cmaxheight"));
-            $(obj).css("top", "-59px");
-        }
-        top: ;
-        bottom: auto;
-        $(obj).css("bottom", "auto");
-    } 
+        $(obj).addClass("fa-chevron-down");
+        tagstable.css('transition', 'all 0.01s');
+        setTimeout(function(){
+            tagstable.css('transition', 'max-height 0.7s ease');
+        }, 800);
+        $(obj).css("top", "");
 
-    /*
-    if (table == "searchtags") {
-        updateTopPosition("searchpopup"); 
+        if ($('body').hasClass('big'))
+            tagstable.css("max-height", tagstable.attr("cmaxheightbig"));
+        else
+            tagstable.css("max-height", tagstable.attr("cmaxheight"));
     }
-    else {
-        updateTopPosition("linkChange"); 
-    }
-     */
 }
 
 
@@ -123,15 +116,16 @@ function changecriteria(e, obj, tableparam, flag) {
 
             table.find(".togglepos").css("position", ""); 
 
-            table.css('transition', 'max-height 0.7s');
+            table.css('transition', 'max-height 1.7s');
     
             if (table.attr("cmaxheight")) {
-                if ($('body').hasClass('big')) {
+                table.css('max-height', '2000px');
+/*                 if ($('body').hasClass('big')) {
                     table.css('max-height', table.attr("cmaxheightbig"));
                 }
                 else {
                     table.css('max-height', table.attr("cmaxheight"));
-                }
+                } */
             }   
             else {
                 table.css('max-height', "fit-content");
@@ -236,7 +230,7 @@ function filtertagOnChange(obj) {
 function expandtags(e, obj) {
     e.stopPropagation();
     var tagstable = $('#searchtags'); 
-        
+         
     if ($(obj).hasClass("fa-chevron-down")) {
         $(obj).removeClass("fa-chevron-down");
         $(obj).addClass("fa-chevron-up");

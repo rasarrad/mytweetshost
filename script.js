@@ -740,10 +740,9 @@ $( document ).ready(function() {
     // xyz startcode
     
 
-    openPopupParsed("sssssssss", 1);
+    //openPopupParsed("sssssssss", 1);
+    
     //openmenu();
-
-    //clickmenu('all');
 
     //closeSplash(); 
 
@@ -2458,7 +2457,7 @@ function customizeSingleTweet(id) {
     }
 
     var obj = $("#twitter-widget-" + totalrenderedtweets);
-
+    console.log(obj)
     obj.attr("processed", "yes");
     var tweetStyle = document.createElement("style");
 
@@ -2467,8 +2466,10 @@ function customizeSingleTweet(id) {
     tweetStyle.type = "text/css"; 
 
     //if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
-        var styleTag = document.getElementById("twitter-widget-" + totalrenderedtweets).shadowRoot;
-        //insertAfter(tweetStyle, styleTag.childNodes[0]);
+        
+    console.log(totalrenderedtweets)
+    var styleTag = document.getElementById("twitter-widget-" + totalrenderedtweets).shadowRoot;
+        insertAfter(tweetStyle, styleTag.childNodes[0]);
 
     //} else {
     //    var tweetWidget = document.getElementById("twitter-widget-" + j).contentDocument;
@@ -2480,7 +2481,7 @@ function customizeSingleTweet(id) {
         $("#" + id).fadeIn(3000);
     }
     else {
-        obj.parent().parent().parent().appendTo($("#main")).fadeIn(1000);
+        obj.parent().parent().appendTo($("#main")).fadeIn(1000);
     }
 }
 
@@ -2703,6 +2704,7 @@ function startWorker() {
                     if (!isMobile) {
                         idCurr = linkArray[currrenderedtweets];
                         setTimeout(function(){
+                            document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
                         }, 0);
                     }
                     currrenderedtweets++;
@@ -2755,6 +2757,7 @@ function startWorker() {
                             if (!isMobile) {
                                 idCurr = linkArray[currrenderedtweets];
                                 setTimeout(function(){
+                                    document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
                                 }, 0);
                             }
                             currrenderedtweets++;

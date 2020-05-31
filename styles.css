@@ -86,7 +86,7 @@ body.big #searchpopup .fa-star-half-o {
   left: 11px;
   top: 7px !important;
   position: absolute;
-  font-size: 12px;
+  font-size: 13px;
 }
 body.big #searchpopup .fa-user-circle {
   font-size: 17px;
@@ -972,7 +972,7 @@ twitter-widget {
 }
 body.big .buttonstable .author {
        max-width: 124px !important;
-       top: 3px !important;
+       top: 4px !important;
 }
 
 
@@ -1886,15 +1886,11 @@ body.big .checkstyleddiv.showdeleted i {
     padding-left: 218px;
 }
 
-
-
-body.big #expandedittags {
-    /* padding-left: 2px; */
-    position: absolute;
-    padding-right: 11px;
+#expandedittags {
+    top: 150px;
 }
 
-body.big #expandsearchtags {
+body.big #expandsearchtags, body.big #expandsearchtags #expandedittags {
     top: 163px;
 }
 
@@ -2124,11 +2120,136 @@ body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
 }
 
 
-#linktable .fa-link {font-size: 14px;position: relative;top: 0px;left: -4px;}
+#linktable .fa-link {
+  font-size: 14px;
+  position: relative;
+  top: 0px;
+  left: -4px;
+}
 
-#linktable .sectiontitle {padding-left: 6px;position: relative;top: -1px;left: -1px;}
+#linktable .sectiontitle {
+  padding-left: 6px;
+  position: relative;
+  top: -1px;
+  left: -1px;
+}
 
-#linktable #tweet {position: relative;top: -3px;width: calc(100% - 53px);left: 39px;}
+#linktable #tweet {
+  position: relative;
+  top: -3px;
+  width: calc(100% - 53px);
+  left: 39px;
+}
+
+.newLayout#searchpopup .slicename {
+    text-transform: lowercase;
+    top: -2px !important;
+    font-size: 10px;
+    padding-left: 6px !important;
+}
+
+
+.newLayout#linkChange .sectiontitletable .sectionicontd {
+  height: 18px;
+  min-height: 18px;
+}
+
+.newLayout#linkChange .el:not(.ellipsis) .slicename {
+    line-height: 18px;
+    position: relative;
+    top: -3px !important;
+    text-transform: uppercase;
+}
+
+.newLayout#linkChange .sectiontitle {
+    position: absolute;
+    top: 6px;
+}
+
+.newLayout#linkChange .sectionexpandable {
+    position: relative;
+}
+
+.newLayout#linkChange .sectiontitle {
+    padding-left: 9px;
+    font-weight: bold;
+    font-size: 11px;
+    position: absolute;
+    top: 7px;
+    left: 29px;
+    text-transform: uppercase;
+}
+
+.newLayout#linkChange .el.ellipsis .slicename {
+    /* left: 1px; */
+    text-align: right !important;
+    margin-right: 9px;
+    text-transform: uppercase;
+}
+
+#linkChange .firsttd .author {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 224px !important;
+  display: inline-block;
+  white-space: nowrap;
+  position: relative;
+  top: 3px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+body.big #linkChange .firsttd .author {
+  font-size: 16px;
+  max-width: 183px !important;
+}
+
+body .newLayout #editTags .sectionicontd:first-child {
+    width: 49px !important;
+}
+
+body.big .newLayout #editTags .sectionicontd:first-child {
+    width: 56px !important;
+}
+
+body .newLayout #editCats .sectionicontd:first-child {
+    width: 93px !important;
+}
+
+body.big .newLayout #editCats .sectionicontd:first-child {
+    width: 102px !important;
+}
+
+body .newLayout #editClassif .sectionicontd:first-child {
+    width: 113px !important;
+}
+
+body.big .newLayout #editClassif .sectionicontd:first-child {
+    width: 129px !important;
+}
+
+body .newLayout #editInfo .sectionicontd:first-child {
+    width: 37px !important;
+}
+
+body.big .newLayout #editInfo .sectionicontd:first-child {
+    width: 55px !important;
+}
+
+.checkstyleddiv span {
+  transition: all .5s;
+}
+
+
+#linkChange .checkstyleddiv {
+  min-width: 208px;
+  cursor: pointer !important;
+}
+
+#linkChange .checkstyleddiv:first-child {
+  min-width: 208px;
+  cursor: pointer !important;
+}
 
 
 /*****************************************************************************/
@@ -2695,6 +2816,8 @@ body.big .newLayout.new .buttonstable .datespan {
 .buttonstable .date {
     position: relative !important;
     top: 0px;
+    text-transform: uppercase;
+    font-size: 14px;
 }    
 body.big .buttonstable .date {
     position: relative !important;
@@ -2704,6 +2827,7 @@ body.big .buttonstable .date {
 .buttonstable .datespan {
     position: relative !important;
     top: 0px;
+    margin-left: 14px;
 }  
 
 
@@ -2909,7 +3033,7 @@ body.big #datetoshow {
   margin-left: 4px;
 }
 #linkChange .titletable {
-  width: 470px;
+  width: 476px;
   padding-left: 7px;
 }
 body.big #linkChange .titletable {
@@ -2985,6 +3109,18 @@ body.big #splash .secondrow div {
     font-size: 13px;
 }
 
+
+.newLayout#linkChange .fa-tags {
+    font-size: 13px;
+    position: relative;
+    top: -1px;
+    left: -4px;
+}
+body.big .newLayout#linkChange .fa-tags {
+    font-size: 17px;
+    top: 1px;
+    left: -3px;
+}
 
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
@@ -3847,8 +3983,9 @@ body.big #splash .secondrow div {
 
 .newLayout #removetweetp2 {
   cursor: pointer;
-  font-size: 18px !important;
-  position: initial;
+  font-size: 20px !important;
+  position: relative;
+  top: 1px;
 }
 
 .newLayout.new #removetweetp2 {
@@ -3871,7 +4008,7 @@ body.big .newLayout.new #removetweetp2 {
     transition: all 0.6s;
     display: initial;
     position: relative;
-    top: -1px;
+    top: -2px;
 }
 .newLayout #opensearch {
     position: initial;
@@ -3890,11 +4027,11 @@ body.big .newLayout #opensearch {
 
 .newLayout #externallinkp {
     cursor: pointer;
-    font-size: 16px;
+    font-size: 17px;
     transition: all 0.6s;
     display: initial;
     position: relative;
-    top: 3px;
+    top: 2px;
 }
 .newLayout #savesearch {
     cursor: pointer;
@@ -3931,6 +4068,7 @@ body.big .newLayout #editTags.sectiontitletable tr:first-child td {
   padding-bottom: 6px;
   /* position: relative; */
   /* top: 0px; */
+  
 }
 
 .newLayout table.emptyvalue .sectionicontd.el.ellipsis > span {
@@ -3945,38 +4083,6 @@ body.big .newLayout .sectiontitletable .sectionicontd {
     padding-top: 3px !important;
 }
 
-body .newLayout #editTags .sectionicontd:first-child {
-    width: 43px !important;
-}
-
-body.big .newLayout #editTags .sectionicontd:first-child {
-    width: 56px !important;
-}
-
-body .newLayout #editCats .sectionicontd:first-child {
-    width: 78px !important;
-}
-
-body.big .newLayout #editCats .sectionicontd:first-child {
-    width: 102px !important;
-}
-
-body .newLayout #editClassif .sectionicontd:first-child {
-    width: 101px !important;
-}
-
-body.big .newLayout #editClassif .sectionicontd:first-child {
-    width: 129px !important;
-}
-
-body .newLayout #editInfo .sectionicontd:first-child {
-    width: 37px !important;
-}
-
-body.big .newLayout #editInfo .sectionicontd:first-child {
-    width: 55px !important;
-}
-
 
 
 
@@ -3984,7 +4090,7 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
 .newLayout .titletext {
   text-align: left;
   padding-left: 0px;
-  color: var(--text-color);
+  /* color: var(--text-color); */
   line-height: 19px;
   /* position: relative; */
 }
@@ -4008,7 +4114,7 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
 
 .newLayout .sectiontitletable .sectionedittd i {
   position: relative;
-  top: -2px;
+  top: -3px;
   font-size: 16px;
   position: relative;
   width: 11px;
@@ -4181,7 +4287,7 @@ body.big .newLayout .fa-bookmark {
 .newLayout .fa-star-half-o {
     font-size: 15px;
     position: relative;
-    top: 0px;
+    top: -1px;
     left: -4px;
 }
 body.big .newLayout .fa-star-half-o {
@@ -4193,8 +4299,8 @@ body.big .newLayout .fa-star-half-o {
 .newLayout .fa-file-text {
     font-size: 12px;
     position: relative;
-    top: 0px;
-    left: -3px;
+    top: -2px;
+    left: -2px;
 }
 body.big .newLayout .fa-file-text {
     font-size: 17px;
@@ -4256,7 +4362,7 @@ body.big .checkstyleddiv input {
     left: -48px;
 }
 input[type="checkbox"] + label {
-    color: var(--text-color);
+    color: var(--high-color);
 }
 
 input[type="checkbox"] + label span:not(.text) {
@@ -4367,7 +4473,7 @@ input[type="radio"]:checked + label span:not(.text) {
 
 .currenttags.titletext {
   position: relative;
-  top: -1.5px !important;
+  top: -2.5px !important;
 }
 
 .currentinfo.titletext {
@@ -4397,7 +4503,7 @@ body.big td.ellipsis span.currentcats {
 } 
 
 .newLayout .titletext.currentclassif {
-  top: -1.5px;
+  /* top: -1.5px; */
 }
 
 input[type=text] {
@@ -4477,7 +4583,8 @@ body.big .newLayout #editClassif .sectiontitle {
 }
 
 .newLayout .boldtitle {
-    font-size: 12px;
+    font-size: 11px;
+    text-transform: uppercase;
 }
 body.big .newLayout .boldtitle {
     font-size: 15px;
@@ -4498,6 +4605,7 @@ body.big .newLayout .titletext {
 td:not(.ellipsis) .titletext {
     position: relative;
     top: -2px !important;
+    text-transform: uppercase;
 }
 td:not(.ellipsis) .titletext.originalinfo {
     position: relative;
@@ -4532,8 +4640,8 @@ td:not(.ellipsis) .titletext.originalcats  {
     left: 4px;
 }
 td:not(.ellipsis) .titletext.currenttags {
-    position: relative;
-    top: -0.5px !important;
+    /* position: relative; */
+    /* top: -0.5px !important; */
 }
 
 body.big td:not(.ellipsis) .titletext {
@@ -4553,6 +4661,7 @@ body.big td.ellipsis .titletext.currenttags {
 
 .newLayout .fa-undo.mainbutton {
    font-size: 14px !important;
+   top: 0 !important;
 }
 body.big .newLayout .fa-undo..mainbutton {
    font-size: 17px !important; 
@@ -4868,6 +4977,19 @@ body.notransit * {
 }
 
 body.big .newLayout.new #seticon {font-size: 24px;top: 3px;}
+
+
+#linkChange #seticon.fa-youtube-play {
+  margin-right: 9px;
+  font-size: 15px !important;
+  position: relative;
+  top: 0px !important;
+}
+
+body.big #linkChange #seticon.fa-youtube-play {
+  font-size: 19px !important;
+  top: 1px !important;
+}
 
 #previewtd {
   width: calc(100% - 220px);
@@ -5203,8 +5325,10 @@ body.big #mainsettings #theme td:first-child {
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops */
 @media (min-width: 1025px) {
-    .newLayout ul li:not(.selected):hover {
-        opacity: 0.7;
+    .newLayout ul li:not(.selected):not(.selectedtag):hover {
+        background: var(--softdark-color);
+        /* opacity: 0.7; */
+        color: var(--high-color);
     }
 
 
@@ -5245,14 +5369,16 @@ body.big #mainsettings #theme td:first-child {
     opacity: 0.6;
   }
   
-  .newLayout > div .buttonstr td:hover { 
-    opacity: 0.6;
+  .newLayout > div .buttonstr td:hover {
+    /* opacity: 0.6; */
+    background: var(--softdark-color) !important;
   }
   .newLayout.new div table tr .td:hover {
     cursor: default !important;
   }
   .mainbutton:hover {
-    opacity: 0.6;
+    /* opacity: 0.6; */
+    color: var(--text-color);
   }
 
   .toptitle:hover {
@@ -5302,7 +5428,9 @@ body.big #mainsettings #theme td:first-child {
   }
 
   .cursorpointer:hover {
-    opacity: 0.6 !important;
+    /* opacity: 0.6 !important; */
+    color: var(--text-color);
+    /* filter: grayscale(20%); */
   }
 
   .litags:hover {
@@ -5310,8 +5438,8 @@ body.big #mainsettings #theme td:first-child {
     background: var(--high-color);
   }
   .litags.selectedtag:hover {
-    color: var(--high-color);
-    background: var(--soft-color);
+    color: var(--softdark-color);
+    background: var(--text-color);
   }
   
   .litags:not(.selectedtag):hover {
@@ -5335,10 +5463,14 @@ body.big #mainsettings #theme td:first-child {
     #splashbutton.active:hover {
       opacity: 0.7 !important;
     }
-    .checkstyleddiv:hover {
-      opacity: 0.6 !important;
+    .checkstyleddiv:hover span:not(.text) {
+       border-color: var(--text-color) !important;
     }
 
+    .checkstyleddiv:hover span.text {
+       color: var(--text-color) !important;
+    }
+    
     #mainmenu table:not(:first-child):not(:last-child):hover {
       opacity: 0.7 !important;
     }
@@ -6439,4 +6571,40 @@ td.yeffect {
   text-decoration: underline;
   padding-right: 5px;
   cursor: pointer;
+}
+
+#linkChange .checkstyleddiv span {
+    width: 12px !important;
+    height: 11.6px !important;
+}
+
+#linkChange .checkstyleddiv i {
+    font-size: 6px;
+    top: 3px;
+    left: 4px;
+}
+
+#linkChange .titletext {
+    top: -2.5px !important;
+}
+
+#linkChange .titletext:not(.slicename) {
+    top: -1.5px !important;
+}
+
+.newLayout#linkChange ul#classiful {
+    padding-top: 0px;
+    margin-top: 4px;
+    margin-bottom: -1px;
+}
+
+select option {
+  border: 0 !important;
+}
+
+option:focus{
+    background-color:#FFF;
+    outline:none;
+    border:none;
+    box-shadow:none;
 }
