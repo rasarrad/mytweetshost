@@ -2187,6 +2187,11 @@ body.big .newLayout#mainmenu .sectiontitletable:last-child .sectionicontd {
     text-transform: uppercase;
 }
 
+.newLayout#linkChange.new .el.ellipsis .slicename {
+    text-align: left !important;
+}
+
+
 #linkChange .firsttd .author {
   overflow: hidden;
   text-overflow: ellipsis;
