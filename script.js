@@ -339,12 +339,7 @@ $( document ).ready(function() {
         
     });*/
 
-    ///////////////////////////////////////
     
-    $( "#create" ).bind( "click", function( event ) {
-        create();      
-    });
-
     ///////////////////////////////////////
 
     $('#filtertext, #filterauthor, #filtertag').keypress(function(event){
@@ -738,7 +733,9 @@ $( document ).ready(function() {
     }
     
     // xyz startcode
-    
+    setTimeout(function() {
+        clickmenu('all', 'All Links')
+    }, 1220);
 
     //openPopupParsed("sssssssss", 1);
     

@@ -154,11 +154,6 @@ function parseTweet(type) {
             text = "<div class='contentin pobj' id='contentin" + nextid + "' style='background: url(https://img.youtube.com/vi/" 
                     + youtubeId  + "/0.jpg); background-size: 100%;'><i class='logo fa fa-youtube-play'></i></div>"; 
 
-            var functorun = function() 
-            { 
-                
-            } 
-
             var idExisting = existsLink(url, "Y");
             if (idExisting) {
                 resetMainDiv();
@@ -248,6 +243,39 @@ function parseTweet(type) {
 
             return false;
         }
+        else {
+            hasProcessedDescription = true;
+            addType = "N";
+            $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
+            $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-file-text').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
+
+            var date = new Date();
+            
+            $('#date').val(formatNumDate(date));
+            
+            $('#datetoshow').val(formatDate(date));
+
+            url = ""; 
+
+            text = "<div class='contentin pobj' id='contentin" + nextid + "' ><i class='logo fa fa-html5'></i></div>"; 
+            if (type && type == 2) {
+                create();
+                showMessage("Text Link Successfully Parsed And Created"); 
+            }
+            else {
+                $('#linktable').hide();
+
+                $('#previewtable').show();
+
+                openCreatePopup(true);
+
+                showMessage("HTTP Link Successfully Parsed"); 
+            }
+            $('#mask').fadeOut(600); 
+
+            return false;
+        }
+
         $('#mask').fadeOut(600);  
         if (type) {
             if (type == 2) {
