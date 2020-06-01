@@ -1753,23 +1753,29 @@ function infoInputOnKeyup(obj) {
     var val = $("#infoinput").val();
     if (!dblFlag) {
         dblFlag = true;
-        setTimeout(function() {     
-            var oldinfo = cid;
-            var currentinfodisplay = $('.currentinfo'); 
-            currentinfodisplay.html(val);
-            
-            if (oldinfo == val) {
-                currentinfodisplay.css('color', '');
-                createCookie2($('#linkChange').attr("cid"), "info", "", null, true);
-                $('#originalinfotd i').hide();
-            }
-            else {
-                currentinfodisplay.css('color','#00ff72');
-                createCookie2($('#linkChange').attr("cid"), "info", val);
-                $('#originalinfotd i').show();
-            }
+        setTimeout(function() { 
+            var currentinfodisplay = $('.currentinfo');
+            if (!$('#linkChange').hasClass("new")) { 
+                var oldinfo = cid;
+                
+                if (oldinfo == val) {
+                    currentinfodisplay.css('color', '');
+                    createCookie2($('#linkChange').attr("cid"), "info", "", null, true);
+                    $('#originalinfotd i').hide();
+                }
+                else {
+                    currentinfodisplay.css('color','#00ff72');
+                    createCookie2($('#linkChange').attr("cid"), "info", val);
+                    $('#originalinfotd i').show();
+                }
 
-            updateLinkColor(null, $('#linkChange').attr("cid"));
+                updateLinkColor(null, $('#linkChange').attr("cid"));
+            } 
+            
+            if (val.trim().length > 0) 
+                currentinfodisplay.html(val);
+            else
+                currentinfodisplay.html("--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
 
             dblFlag = false;
         }, 300);
