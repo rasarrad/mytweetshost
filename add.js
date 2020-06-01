@@ -257,7 +257,7 @@ function parseTweet(type) {
 
             url = ""; 
 
-            text = "<div class='contentin pobj' id='contentin" + nextid + "' ><i class='edittext fa fa-pencil'></i></div>"; 
+            text = "<div class='contentin pobj' id='contentin" + nextid + "' ><div></div><i class='edittext fa fa-pencil'></i></div>"; 
 
             $('#linktable').hide();
 

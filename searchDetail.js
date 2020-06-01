@@ -935,7 +935,7 @@ function renderLink(val, flag) {
         
         newtweetobj.attr('id', val.id);
 
-        newtweetobj.find(".contentin").html(val.info)
+        newtweetobj.find(".contentin > div").html(val.info)
     }
     else {
         newtweetobj.append($(val.tweet));
