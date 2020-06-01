@@ -319,12 +319,7 @@ function editLinkText(e, obj, id) {
 
         elemParent.find("div").html(elemParent.find("textarea").val());
 
-        if (jsonvar.infoOri == val) {
-            createCookie2(id, "info", "", null, true);
-        }
-        else {
-            createCookie2(id, "info", elemParent.find("textarea").val());
-        }
+        createCookie2(id, "info", elemParent.find("textarea").val());
     }
 }
 
