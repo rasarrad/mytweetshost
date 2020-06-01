@@ -1267,6 +1267,10 @@ body:not(.big) .yt.tweet .bottomgradiantback {
     /* max-height: 782px; */
 }
 
+.tweet.yt.text {
+  height: auto;
+}
+
 body.big .tweet.yt {
     margin-top: -10px;
 }
@@ -1337,6 +1341,25 @@ body.big .tweet div.contentin .logo {
     margin-top: 19px;
     height: 531px;
     background-position-y: -80px !important;
+}
+
+                     
+.tweet.yt.text div.contentin {
+    background: none;
+    background-size: 100%;
+    position: relative;
+    display: block;
+    margin: 0;
+    height: auto;
+    top: 12px !important;
+    cursor: default;
+    padding-bottom: 83px;
+    padding-right: 30px;
+    padding-left: 30px;
+    width: 772px;
+    transform: translate(-50%, 0px);
+    font-size: 13px;
+
 }
        
 .tweet iframe {
@@ -2234,7 +2257,7 @@ body.big .newLayout #editClassif .sectionicontd:first-child {
 }
 
 body .newLayout #editInfo .sectionicontd:first-child {
-    width: 37px !important;
+    width: 47px !important;
 }
 
 body.big .newLayout #editInfo .sectionicontd:first-child {
@@ -5437,6 +5460,13 @@ body.big #mainsettings #theme td:first-child {
     color: var(--text-color);
     /* filter: grayscale(20%); */
   }
+
+  #linkChange .cursorpointer:hover {
+    /* opacity: 0.6 !important; */
+    color: var(--high-color);
+    /* filter: grayscale(20%); */
+  }
+
 
   .litags:hover {
     color: var(--dark-color);

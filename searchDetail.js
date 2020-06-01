@@ -893,7 +893,11 @@ function renderLink(val, flag) {
         xclass = " yt";
         typefa = "youtube-play"
     }
-    
+    else if (val.type == "N") {
+        xclass = " yt text";
+        typefa = "file-text"
+    }
+
     var newtweetobj = $('<div style="display: none;" id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>');
 
     if (flag) {
@@ -926,6 +930,13 @@ function renderLink(val, flag) {
 
         newtweetobj.attr('id', val.id);
     }
+    else if (val.type == "N") {
+        newtweetobj.append($(val.tweet));
+        
+        newtweetobj.attr('id', val.id);
+
+        newtweetobj.find(".contentin").html(val.info)
+    }
     else {
         newtweetobj.append($(val.tweet));
         newtweetobj.find(".bottomstripline.line1").html(val.info);
@@ -952,7 +963,11 @@ var getInformationbyid = function(id, flag) {
 
             notFound = false;
             renderLink(val, true);
-            preCustomize(id);
+
+            if (val.type == "T") {
+                preCustomize(id);
+            }
+
             $('#mask').fadeOut(2000);
     
             if (flag)

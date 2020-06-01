@@ -257,7 +257,7 @@ function parseTweet(type) {
 
             url = ""; 
 
-            text = "<div class='contentin pobj' id='contentin" + nextid + "' ><i class='logo fa fa-html5'></i></div>"; 
+            text = "<div class='contentin pobj' id='contentin" + nextid + "' ><i class='edittext fa fa-pencil'></i></div>"; 
 
             $('#linktable').hide();
 
@@ -433,10 +433,14 @@ function create() {
         jsonVal.isnew = "yes";
         jsonVal.ishidden = "0";
 
-        if (addType == "Y") {
+        if (addType == "T") {
             $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"0\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + origin  + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");       
             jsonVal.url = url; 
             jsonVal.author = origin;  
+        }
+        else if (addType == "N") {
+            jsonVal.author = $('#postedby').val();  
+            $('#result').val("{\r\n\"id\": \"" + nextid + "\",\r\n\"creationdate\": \"" + creationdate  + "\",\r\n\"type\": \"" + addType  + "\",\r\n\"url\": \"" + url  + "\",\r\n\"ishidden\": \"0\",\r\n\"date\": \"" + $('#date').val() + "\",\r\n\"author\": \"" + $('#postedby').val() + "\",\r\n\"categories\": \"" + cats + "\",\r\n\"tags\": \"" + tags + "\",\r\n\"info\": \"" + resinfo + "\",\r\n\"classif\": \"" + classif + "\",\r\n\"deleted\": \"\",\r\n\"isnew\": \"aaa\",\r\n\"tweet\": " + text + "\r\n},");
         }
         else if (addType == "Y") {
             jsonVal.url = urldirect; 
