@@ -383,7 +383,7 @@ var openDetailPopup = function(jsonobj, flag)
 
             
         $("#linkChange .originaltr").hide();
-
+        $('#linkChange td.el').removeClass('ellipsis');
         dblFlag = false;
         $("#linkChange #seticon").removeClass('fa-question').removeClass('fa-twitter').removeClass('fa-internet-explorer').removeClass('fa-youtube-play');
 
