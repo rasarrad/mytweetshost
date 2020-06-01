@@ -268,8 +268,6 @@ function parseTweet(type) {
                 $('#previewtable').hide();
 
                 openCreatePopup(true);
-
-                showMessage("Text Link Successfully Parsed"); 
             }
             $('#mask').fadeOut(600); 
 
