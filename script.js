@@ -879,7 +879,7 @@ window.openLinkOutside = function(id) {
     if (obj.hasClass("text")) {
         return false;
     }
-    
+
     window.open($("#" + id).attr("curl"));
 };
 
@@ -891,6 +891,8 @@ window.openLinkInside = function(id) {
         //$("#fsPopup iframe").attr("cerror", "");
         var obj = $("#" + id);
 
+        alert(id)
+        alert(obj.hasClass("text"))
         if (obj.hasClass("text")) {
             return false;
         }
