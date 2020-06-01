@@ -257,7 +257,7 @@ function parseTweet(type) {
 
             url = ""; 
 
-            text = "<div class='contentin pobj' id='contentin" + nextid + "' ><div></div><i class='edittext fa fa-pencil'></i></div>"; 
+            text = "<div class='contentin pobj' id='contentin" + nextid + "' ><div></div><textarea class='display: none;'></textarea><i onclick='javascript: editLinkText(event, this," + nextid + ")' class='edittext fa fa-pencil'><i onclick='javascript: closeLinkText(event, this)' class='fa fa-times'></i></div>"; 
 
             $('#linktable').hide();
 
@@ -292,6 +292,61 @@ function parseTweet(type) {
         } */
     }, 700);
 } 
+
+
+
+function editLinkText(e, obj, id) {
+    var elem = $(obj);
+    var elemParent = elem.parent();
+
+    var jsonvar = getJsonbyid(id);
+
+    if (elem.hasClass("fa-pencil")) {
+        elem.addClass("fa-check");
+        elem.removeClass("fa-pencil");
+        elemParent.find("textarea").fadeIn(800);
+        elemParent.find("div").fadeOut(800);
+        elemParent.find("i.fa-times").show();
+
+        elemParent.find("textarea").val(jsonvar.info)
+    }
+    else {
+        elem.addClass("fa-pencil");
+        elem.removeClass("fa-check");
+        elemParent.find("textarea").fadeOut(800);
+        elemParent.find("div").fadeIn(800);
+        elemParent.find("i.fa-times").hide();
+
+        elemParent.find("div").html(elemParent.find("textarea").val());
+
+        if (jsonvar.infoOri == val) {
+            createCookie2(id, "info", "", null, true);
+        }
+        else {
+            createCookie2(id, "info", elemParent.find("textarea").val());
+        }
+    }
+}
+
+
+
+function closeLinkText(e, obj) {
+    var elem = $(obj);
+
+    var elemParent = elem.parent();
+    
+    var elemButton = elemParent.find("i.fa-check");
+
+    elem.find("i.fa-times").hide();
+
+    elemParent.find("textarea").fadeOut(800);
+    
+    elemParent.find("div").fadeIn(800);
+
+    elemButton.addClass("fa-pencil");
+    elemButton.removeClass("fa-check");
+}
+
 
 
 /////////////////////////////////////////////////////////////////////////
