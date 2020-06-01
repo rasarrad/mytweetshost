@@ -145,7 +145,7 @@ function zoom(obj, flag) {
 
 
 
-var openDetailPopup = function(jsonobj) 
+var openDetailPopup = function(jsonobj, flag) 
 {
     // OTHER SETTINGS
     $('body, html').css('overflow-y', 'hidden');
@@ -400,8 +400,7 @@ var openDetailPopup = function(jsonobj)
 
         $('#linkChange').attr("cid", "new");
         $('#linkChange').addClass("new");
-        $('#editTags').css('margin-top', '6px');  
-        $('#linktable').show();
+
 
         $('#previewtable').hide();
 
@@ -449,7 +448,14 @@ var openDetailPopup = function(jsonobj)
             $('#linkChange').css("top", "-233px");
         } 
     }
-        
+    
+    if (flag) {
+
+    }
+    else {
+        $('#editTags').css('margin-top', '6px');  
+        $('#linktable').show();
+    }
     $('#linkChange').css("background", "transparent");
 
     $('#linkChange').slideDown();

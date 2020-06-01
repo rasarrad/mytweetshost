@@ -2317,7 +2317,7 @@ $(document).keydown(function(e) {
                     $('#tweet').val(text);
 
                     if ($(".addpopup").css('display') == 'none') {
-                      openCreatePopup(true);
+                      openCreatePopup();
                     }
                     parseTweet();
                 }, 300);
