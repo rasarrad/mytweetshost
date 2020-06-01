@@ -874,6 +874,12 @@ function SaveDatFileBro(localstorage) {
 /////////////////////////////////////////////////////////////////////////
 
 window.openLinkOutside = function(id) {
+    var obj = $("#" + id);
+
+    if (obj.hasClass("text")) {
+        return false;
+    }
+    
     window.open($("#" + id).attr("curl"));
 };
 
@@ -884,6 +890,10 @@ window.openLinkInside = function(id) {
     //else {
         //$("#fsPopup iframe").attr("cerror", "");
         var obj = $("#" + id);
+
+        if (obj.hasClass("text")) {
+            return false;
+        }
 
         if (!obj.hasClass("yt") && !obj.hasClass("html"))
             return false;
