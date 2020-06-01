@@ -4540,6 +4540,7 @@ input[type=text] {
 }
 input, select, textarea {
   outline: none;
+  resize: none;
 }
 input[type=text]#date {
   text-align: center;
