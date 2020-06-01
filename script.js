@@ -891,8 +891,6 @@ window.openLinkInside = function(id) {
         //$("#fsPopup iframe").attr("cerror", "");
         var obj = $("#" + id);
 
-        alert(id)
-        alert(obj.hasClass("text"))
         if (obj.hasClass("text")) {
             return false;
         }
@@ -1367,6 +1365,8 @@ function handleTouchEnd(evt) {
 function executeSingleDoubleFunction(obj, type) {
     switch(obj.substring(0, 9)) {
         case "contentin":
+            
+        alert(2322323)
             var value = readCookie("doublefs");
             if (value) {
                 if (type == "double")
