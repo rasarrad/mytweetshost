@@ -938,6 +938,12 @@ window.openLinkInline = function(id) {
 
     var obj = $("#" + id);
 
+    var obj = $("#" + id);
+
+    if (obj.hasClass("text")) {
+        return false;
+    }
+    
     var url = generateUrl(obj.attr("curl"));
 
     $("#contentin" + id).prepend("<iframe src='" + url + "' id='contentiniframe" + id + "' onload='iframeloadFunc(this)' scrolling='yes' frameborder='0' allowtransparency='true' style='border: 0px solid;margin-top: 0px !important;width: 100% !important;transform: translate(-50%, -50%) !important; display: none;'></iframe>");
@@ -1377,16 +1383,13 @@ function executeSingleDoubleFunction(obj, type) {
                 value = readCookie("linksinside");
 
                 if (value) {
-                    alert(1)
                     openLinkInside(obj.substring(9));
                 }
                 else {
-                    alert(2)
                     openLinkOutside(obj.substring(9));
                 }
             }
             else { // Execute single/touch
-                alert(3)
                 openLinkInline(obj.substring(9));
             }
             break;  
