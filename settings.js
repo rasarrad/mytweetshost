@@ -256,11 +256,15 @@ var openDetailPopup = function(jsonobj, flag)
 
             $('#tagsinput').val(jsonobj.tags);
             $('#originaltagtd i').show();
+            
+            $("#editTags .originaltr").show();
         } 
         else {
             currenttagdisplay.css("color","");
             $('#tagsinput').val(jsonobj.tags);
             $('#originaltagtd i').hide();
+            
+            $("#editTags .originaltr").hide();
         }
         currenttagdisplay.html(parseTags(jsonobj.tags));
 
@@ -283,6 +287,7 @@ var openDetailPopup = function(jsonobj, flag)
             $('#originalcattd i').show();
               
             $("#editCats .originaltr").show();
+            
         } 
         else {
             currentcatdisplay.css("color","");
@@ -316,10 +321,13 @@ var openDetailPopup = function(jsonobj, flag)
             currentclassifdisplay.html(jsonobj.classif);
             $('#classifinput').val(jsonobj.classif);
             $('#originalclassiftd i').show();
+            $("#editClassif .originaltr").show();
             markClassif(jsonobj.classif);
         } 
         else {
-            $('#originalclassiftd i').show();
+            $('#originalclassiftd i').hide();
+            $("#editClassif .originaltr").show();
+            
             currentclassifdisplay.css("color","");
             if (jsonobj.classif != 0) {
                 currentclassifdisplay.html(jsonobj.classif);
@@ -348,6 +356,9 @@ var openDetailPopup = function(jsonobj, flag)
             }
             
             $('#originalinfotd i').show();
+            
+            $("#editInfo .originaltr").show();
+
             if (jsonobj.info.length > 0)
                 $('.originalinfo').html(decodeURIComponent(jsonobj.infoOri)); 
             else
@@ -356,6 +367,7 @@ var openDetailPopup = function(jsonobj, flag)
         else {
             currentinfodisplay.css('color','');
             $('#originalinfotd i').hide();
+            $("#editInfo .originaltr").hide();
         }
 
         $('#infoinput').val(decodeURIComponent(jsonobj.info));
@@ -368,6 +380,9 @@ var openDetailPopup = function(jsonobj, flag)
         updateLinkColor(jsonobj);
     }
     else {
+
+            
+        $("#linkChange .originaltr").hide();
 
         dblFlag = false;
         $("#linkChange #seticon").removeClass('fa-question').removeClass('fa-twitter').removeClass('fa-internet-explorer').removeClass('fa-youtube-play');
