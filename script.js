@@ -1366,7 +1366,6 @@ function executeSingleDoubleFunction(obj, type) {
     switch(obj.substring(0, 9)) {
         case "contentin":
             
-        alert(2322323)
             var value = readCookie("doublefs");
             if (value) {
                 if (type == "double")
@@ -1378,13 +1377,16 @@ function executeSingleDoubleFunction(obj, type) {
                 value = readCookie("linksinside");
 
                 if (value) {
+                    alert(1)
                     openLinkInside(obj.substring(9));
                 }
                 else {
+                    alert(2)
                     openLinkOutside(obj.substring(9));
                 }
             }
             else { // Execute single/touch
+                alert(3)
                 openLinkInline(obj.substring(9));
             }
             break;  
