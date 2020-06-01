@@ -258,22 +258,18 @@ function parseTweet(type) {
             url = ""; 
 
             text = "<div class='contentin pobj' id='contentin" + nextid + "' ><i class='logo fa fa-html5'></i></div>"; 
-            if (type && type == 2) {
-                create();
-                showMessage("Text Link Successfully Parsed And Created"); 
-            }
-            else {
-                $('#linktable').hide();
 
-                $('#previewtable').hide();
+            $('#linktable').hide();
 
-                openCreatePopup(true);
-            }
+            $('#previewtable').hide();
+
+            openCreatePopup(true);
+            
             $('#mask').fadeOut(600); 
 
             return false;
         }
-
+/* 
         $('#mask').fadeOut(600);  
         if (type) {
             if (type == 2) {
@@ -293,7 +289,7 @@ function parseTweet(type) {
         }
         else {
             showMessage("Link Parse Failed"); 
-        }
+        } */
     }, 700);
 } 
 
