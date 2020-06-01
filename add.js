@@ -63,7 +63,7 @@ function parseTweet(type) {
                 }
                 else {
                     if (type && type == 1) {
-                        openCreatePopup(true);
+                        openCreatePopup();
                         createPreview();
                     }
                     else {
@@ -114,7 +114,7 @@ function parseTweet(type) {
                 }
                 else {
                     if (type && type == 1) {
-                        openCreatePopup(true);
+                        openCreatePopup();
                         hasProcessedDescription = true;
                         getYoutubeData();
 
@@ -167,7 +167,7 @@ function parseTweet(type) {
                 }
                 else {
                     if (type && type == 1) {
-                        openCreatePopup(true);
+                        openCreatePopup();
                         getYoutubeData();
                         hasProcessedDescription = true;
                         createPreview();
@@ -217,7 +217,7 @@ function parseTweet(type) {
                 }
                 else {
                     if (type && type == 1) {
-                        openCreatePopup(true);
+                        openCreatePopup();
                         
                         createPreview();
 
@@ -265,11 +265,11 @@ function parseTweet(type) {
             else {
                 $('#linktable').hide();
 
-                $('#previewtable').show();
+                $('#previewtable').hide();
 
                 openCreatePopup(true);
 
-                showMessage("HTTP Link Successfully Parsed"); 
+                showMessage("Text Link Successfully Parsed"); 
             }
             $('#mask').fadeOut(600); 
 
@@ -290,7 +290,7 @@ function parseTweet(type) {
                 $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-question').attr('style','');
             
                 dblFlag = true;
-                openCreatePopup(true);
+                openCreatePopup();
             }
         }
         else {
@@ -642,7 +642,7 @@ var openCreatePopup = function(flag)
     } */
     $('#tweet').focus();
 
-    openDetailPopup();
+    openDetailPopup(null, flag);
 
 } 
 
