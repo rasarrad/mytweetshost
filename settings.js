@@ -1302,18 +1302,22 @@ function updateTopPosition(obj) {
 function tagsInputOnChange(obj) {
     var oldtags = $(obj).attr("ctags");
     var currenttagdisplay = $('.currenttags'); 
-    currenttagdisplay.html(parseTags($(obj).val()));
     
-    if (compareStringArrays(oldtags, $(obj).val())) {
-        currenttagdisplay.css('color', '');
-        createCookie2($('#linkChange').attr("cid"), "tagchanged", "", null, true);
-        $('#originaltagtd i').hide();
+    if (!$('#linkChange').hasClass("new")) { 
+        if (compareStringArrays(oldtags, $(obj).val())) {
+            currenttagdisplay.css('color', '');
+            createCookie2($('#linkChange').attr("cid"), "tagchanged", "", null, true);
+            $('#originaltagtd i').hide();
+        }
+        else {
+            currenttagdisplay.css('color','#00ff72');
+            createCookie2($('#linkChange').attr("cid"), "tagchanged", $(obj).val());
+            $('#originaltagtd i').show();
+        }
     }
-    else {
-        currenttagdisplay.css('color','#00ff72');
-        createCookie2($('#linkChange').attr("cid"), "tagchanged", $(obj).val());
-        $('#originaltagtd i').show();
-    }
+
+    currenttagdisplay.html(parseTags($(obj).val()));
+
     removeNonExistentLi();
 
     createNonExistentLi();
@@ -1576,20 +1580,24 @@ function catsInputOnChange(obj) {
     var oldcats = $(obj).attr("ccats");
     var currentcatdisplay = $('.currentcats'); 
     currentcatdisplay.html(parseCats($(obj).val()));
-    if (compareStringArrays(oldcats, $(obj).val())) {
-        currentcatdisplay.css('color', '');
-        createCookie2($('#linkChange').attr("cid"), "catchanged", "", null, true);
-        $('#originalcattd i').hide();
         
-        $("#editCats .originaltr").hide();
+    if (!$('#linkChange').hasClass("new")) { 
+        if (compareStringArrays(oldcats, $(obj).val())) {
+            currentcatdisplay.css('color', '');
+            createCookie2($('#linkChange').attr("cid"), "catchanged", "", null, true);
+            $('#originalcattd i').hide();
+            
+            $("#editCats .originaltr").hide();
+        }
+        else {
+            currentcatdisplay.css('color','#00ff72');
+            createCookie2($('#linkChange').attr("cid"), "catchanged", $(obj).val());
+            $('#originalcattd i').show();
+            
+            $("#editCats .originaltr").show();
+        }
     }
-    else {
-        currentcatdisplay.css('color','#00ff72');
-        createCookie2($('#linkChange').attr("cid"), "catchanged", $(obj).val());
-        $('#originalcattd i').show();
-        
-        $("#editCats .originaltr").show();
-    }
+
     markCategoriesCheckBoxs();
 }
 
@@ -1689,18 +1697,25 @@ function compareStringArrays(array, arrayOri) {
 function classifInputOnChange(obj) {
     var oldclassif = $(obj).attr("cclassif");
     var currentclassifdisplay = $('.currentclassif'); 
-    currentclassifdisplay.html($(obj).val().trim());
     
-    if (oldclassif == $(obj).val().trim()) {
-        currentclassifdisplay.css('color', '');
-        createCookie2($('#linkChange').attr("cid"), "classif", "", null, true);
-        $('#originalclassiftd i').hide();
+    if (!$('#linkChange').hasClass("new")) { 
+        if (oldclassif == $(obj).val().trim()) {
+            currentclassifdisplay.css('color', '');
+            createCookie2($('#linkChange').attr("cid"), "classif", "", null, true);
+            $('#originalclassiftd i').hide();
+        }
+        else {
+            currentclassifdisplay.css('color','#00ff72');
+            createCookie2($('#linkChange').attr("cid"), "classif", $(obj).val().trim());
+            $('#originalclassiftd i').show();
+        }
     }
-    else {
-        currentclassifdisplay.css('color','#00ff72');
-        createCookie2($('#linkChange').attr("cid"), "classif", $(obj).val().trim());
-        $('#originalclassiftd i').show();
-    }
+
+    if ($(obj).val().trim().length > 0 && $(obj).val().trim() != "0")
+        currentclassifdisplay.html($(obj).val().trim());
+    else 
+        currentclassifdisplay.html("--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+
 
     updateLinkColor(null, $('#linkChange').attr("cid"));
 
@@ -1789,9 +1804,7 @@ function undoInfo(e, obj) {
 
     $('#infoinput').val($('#infoinput').attr("cinfo"));
     $(obj).hide();
-    var functorun = function() 
-    { 
-    } 
+
     $('#infoinput').trigger("keyup");
 
     showMessage("Information reverted", null, "fa-undo", "", null, "undo");
