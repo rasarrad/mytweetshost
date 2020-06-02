@@ -1600,7 +1600,7 @@
     </div>
 </div>
 
-<div id="editinfodiv" style="background: var(--soft-transp-color);margin-top: 0px !important;position: fixed !important;display: none;" class="newLayout pobj" onclick="closeCalendarPopup(event)" targetobj="linkdate">
+<div id="editinfodiv" style="background: var(--soft-transp-color);margin-top: 0px !important;position: fixed !important;display: none;" class="newLayout pobj" onclick="closeLinkText()">
   <div style="background: var(--softdark-color);position: relative;transform: translate(0px, -50%);top: calc(50%) !important;margin-top: 0px !important;max-height: 190px !important;padding-bottom: 0;">        
       <table class="titletable buttonstable">
           <tbody>
@@ -1610,7 +1610,7 @@
                     <b style="position: relative;top: 1px;">edit text link</b>
                 </td>
                 <td style="padding-top: 4px;vertical-align: initial;">
-                  <i onclick="closeCalendarPopup(event)" class="fa fa-window-close" style="position: relative;right: 22px; top: -2px;"></i>
+                  <i onclick="closeLinkText()" class="fa fa-window-close" style="position: relative;right: 22px; top: -2px;"></i>
                 </td>            
             </tr>
           </tbody>
@@ -1619,9 +1619,10 @@
         <tbody>
           <tr class="cursorpointer hover">
             <td colspan="3" class="sectionicontd" style="display: contents;white-space: nowrap;cursor: pointer;position: relative;padding: 0 !important;width: 100%;">
-              <textarea style="overflow: hidden;height: 141px;width: calc(100% - 20px); margin-left: 2px;position: relative; border: 0px solid var(--soft-color); top: 1px;">            
-              </textarea>
-            </td>                                                                   
+              <textarea></textarea>
+              <i onclick="javascript: closeLinkText(event, this)" class="fa fa-times"></i>
+              <i onclick="javascript: saveLinkText(event, this)" class="fa fa-check"></i>
+            </td>                                                                 
           </tr>   
          </tbody>
       </table>

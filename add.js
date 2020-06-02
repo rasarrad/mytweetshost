@@ -257,7 +257,7 @@ function parseTweet(type) {
 
             url = ""; 
 
-            text = "<div class='contentin pobj' id='contentin" + nextid + "' ><div></div><textarea class='display: none;'></textarea><i onclick='javascript: editLinkText(event, this," + nextid + ")' class='edittext fa fa-pencil'></i><i onclick='javascript: closeLinkText(event, this)' class='fa fa-times'></i></div>"; 
+            text = "<div class='contentin pobj' id='contentin" + nextid + "' ><div></div><i onclick='javascript: editLinkText(event, this," + nextid + ")' class='edittext fa fa-pencil'></i></div>"; 
 
             $('#linktable').hide();
 
@@ -293,88 +293,61 @@ function parseTweet(type) {
     }, 700);
 } 
 
+function saveLinkText(e, obj) {
+    var elemParent = $(obj).parent();
+    
+    var finalValue = elemParent.find("textarea").val();
+
+    var displayValue = elemParent.find("textarea").val().replace(/[\n\r]/g, '<br />');
+    var displayValueAux = elemParent.find("textarea").val().replace(/[\n\r]/g, '<br />');
+    var lnkmap = new Map();
+    var firstindex = 0;
+    var secondindex = 0;
+    var linksCounter = 0;
+
+    while (displayValueAux.indexOf('http') >= 0) {
+        firstindex = displayValueAux.indexOf('http');
+        linksCounter++;
+        for (x=firstindex; x < displayValueAux.length; x++) {
+            if (displayValueAux.substring(x, x + 1) == " ") {
+                secondindex = x;
+                break;
+            }
+        }
+
+        lnkmap.set("xxx" + linksCounter, displayValueAux.substring(firstindex, secondindex));
+
+        displayValueAux = displayValueAux.substring(secondindex);
+    }
+
+    for (y=0; y < linksCounter; y++) {
+        var linkAux = lnkmap.get("xxx" + (y + 1));
+
+        displayValue = displayValue.replace(linkAux, "<a target='_blank' href='" + linkAux + "'>" + linkAux + "</a>")
+    }
+
+    $("contentin" + $('#editinfodiv').attr("cid") + "div").html(displayValue);
+
+    createCookie2($('#editinfodiv').attr("cid"), "info", escape(finalValue));
+
+    closeLinkText(); 
+}
 
 
 function editLinkText(e, obj, id) {
-    var elem = $(obj);
-    var elemParent = elem.parent();
-
     var jsonvar = getJsonbyid(id);
 
-    if (elem.hasClass("fa-pencil")) {
-        //elem.addClass("fa-check");
-        //elem.removeClass("fa-pencil");
-        
-        //elemParent.find("textarea").fadeIn(800);
-        $('#editinfodiv textarea').val(unescape(jsonvar.info))
-        $('#editinfodiv').fadeIn(800);
-        
-    }
-    else {
-        elem.addClass("fa-pencil");
-        elem.removeClass("fa-check");
-        elemParent.find("textarea").fadeOut(800);
-        elemParent.find("div").fadeIn(800);
-        elemParent.find("i.fa-times").hide();
-
-        var finalValue = elemParent.find("textarea").val();
-
-        var displayValue = elemParent.find("textarea").val().replace(/[\n\r]/g, '<br />');
-        var displayValueAux = elemParent.find("textarea").val().replace(/[\n\r]/g, '<br />');
-        var lnkmap = new Map();
-        var firstindex = 0;
-        var secondindex = 0;
-        var linksCounter = 0;
-
-        while (displayValueAux.indexOf('http') >= 0) {
-            firstindex = displayValueAux.indexOf('http');
-            linksCounter++;
-            for (x=firstindex; x < displayValueAux.length; x++) {
-                if (displayValueAux.substring(x, x + 1) == " ") {
-                    secondindex = x;
-                    break;
-                }
-            }
-
-            lnkmap.set("xxx" + linksCounter, displayValueAux.substring(firstindex, secondindex));
-
-            displayValueAux = displayValueAux.substring(secondindex);
-        }
-
-        for (y=0; y < linksCounter; y++) {
-            var linkAux = lnkmap.get("xxx" + (y + 1));
-
-            
-            console.log("111-" + linkAux + "-")
-            
-            console.log("22222-" + displayValueAux + "-")
-            displayValue = displayValue.replace(linkAux, "<a target='_blank' href='" + linkAux + "'>" + linkAux + "</a>")
-        }
-
-        elemParent.find("div").html(displayValue);
-
-        createCookie2(id, "info", escape(finalValue));
-
-    }
+    $('body, html').css('overflow-y', 'hidden');
+    $('#editinfodiv textarea').val(unescape(jsonvar.info))
+    $('#editinfodiv').attr("cid", id);
+    $('#editinfodiv').fadeIn(800);
 }
 
 
 
 function closeLinkText(e, obj) {
-    var elem = $(obj);
-
-    var elemParent = elem.parent();
-    
-    var elemButton = elemParent.find("i.fa-check");
-
-    elem.find("i.fa-times").hide();
-
-    elemParent.find("textarea").fadeOut(800);
-    
-    elemParent.find("div").fadeIn(800);
-
-    elemButton.addClass("fa-pencil");
-    elemButton.removeClass("fa-check");
+    $('body, html').css('overflow-y', 'auto');
+    $('#editinfodiv').fadeOut(800);
 }
 
 

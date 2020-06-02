@@ -5442,7 +5442,20 @@ body.big #mainsettings #theme td:first-child {
         color: var(--high-color);
     }
 
+    #editinfodiv .fa-times:hover {
+      background: var(--dark-color) !important;
+      color: var(--text-color) !important;
+    }
 
+    #editinfodiv .fa-check:hover {
+      background: var(--dark-color) !important;
+      color: var(--text-color) !important;
+    }
+
+    .edittext.fa-pencil:hover {
+      color: var(--text-color) !important;
+    }
+    
     #expandedittags:hover, #expandsearchtags:hover {
       cursor: pointer;
       color: var(--text-color) !important;
@@ -13531,62 +13544,53 @@ option:focus{
 
 .edittext.fa-pencil {
   position: absolute;
-  top: -1px;
-  right: 11px;
+  top: 2px;
+  left: -3px;
   color: var(--high-color);
   cursor: pointer;
   font-size: 15px;
+  transition: all .6s;
 }
 
-.tweet.text textarea {
-  resize: vertical;
-  width: calc(100% - 30px);
-  background: var(--high-color);
-  color: var(--dark-color);
-  padding-left: 8px;
-  padding-right: 8px;
-  font-size: 14px;
-  font-weight: bold;
-  min-height: 98px;
-  text-transform: uppercase;
-  display: none;
+.edittext.fa-pencil:hover {
+  color: var(--text-color);
 }
 
-.tweet.text .fa-times {
+#editinfodiv textarea {
+    overflow: hidden;
+    height: 141px;
+    width: calc(100% - 19px);
+    margin-left: 1px;
+    position: relative;
+    border: 0px solid var(--soft-color);
+    top: 1px;
+}
+
+
+#editinfodiv .fa-check {
+    position: absolute;
+    bottom: 11px;
+    right: 10px;
+    color: var(--high-color);
+    font-size: 19px;
+    cursor: pointer;
+    display: block;
+    background: var(--softdark-color);
+    padding: 3px 3px;
+    border-radius: 3px;
+    transition: all .6s;
+}
+#editinfodiv .fa-times {
   position: absolute;
-  top: 24px;
-  right: 10px;
+  bottom: 11px;
+  right: 42px;
   color: var(--high-color);
   font-size: 19px;
   cursor: pointer;
   display: block;
-  display: none;
+  background: var(--softdark-color);
+  padding: 3px 5px;
+  border-radius: 3px;
+  transition: all .6s;
 }
 
-.edittext.fa-check {
-  position: absolute;
-  top: -3px;
-  right: 9px;
-  color: var(--high-color);
-  cursor: pointer;
-  font-size: 18px;
-}
-.tweet.text .fa-times {
-  position: absolute;
-  top: 24px;
-  right: 10px;
-  color: var(--high-color);
-  font-size: 19px;
-  cursor: pointer;
-  display: block;
-  display: none;
-}
-
-.edittext.fa-check {
-  position: absolute;
-  top: -3px;
-  right: 9px;
-  color: var(--high-color);
-  cursor: pointer;
-  font-size: 18px;
-}
