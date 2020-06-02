@@ -343,6 +343,8 @@ function editLinkText(e, obj, id) {
             displayValueAux = displayValueAux.substring(secondindex);
 
             console.log("222-" + displayValueAux + "-")
+
+            console.log("333-" + firstindex + "-" + secondindex + "-")
         }
 
         for (y=0; y < linksCounter; y++) {
