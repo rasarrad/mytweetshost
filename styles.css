@@ -4232,9 +4232,9 @@ body.big #linktable {
     border-radius: 3px;
     resize: none;
 }
-.newLayout textarea[readonly=true] {
+.newLayout textarea[readonly] {
     color: var(--high-color);
-    background: var(--soft-transp-color);
+    background: var(--dark-color);
     border: 1px solid var(--high-color);
 }
 
