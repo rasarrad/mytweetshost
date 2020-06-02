@@ -347,7 +347,7 @@ function editLinkText(e, obj, id) {
             console.log("111-" + linkAux + "-")
             
             console.log("22222-" + displayValueAux + "-")
-            displayValue = displayValue.replace(linkAux, "<a href=" + linkAux + ">" + linkAux + "</a>")
+            displayValue = displayValue.replace(linkAux, "<a target='_blank' href='" + linkAux + "'>" + linkAux + "</a>")
         }
 
         elemParent.find("div").html(displayValue);

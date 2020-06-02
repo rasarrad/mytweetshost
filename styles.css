@@ -1298,6 +1298,11 @@ body.big .tweet.yt {
     background-position-y: 6px !important;
 }
 
+  
+.tweet div.contentin > div a {
+    color: var(--high-color);
+}
+
 .tweet.html div.contentin {
     width: 850px;
     margin-top: -7px;
