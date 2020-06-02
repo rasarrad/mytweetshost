@@ -326,7 +326,7 @@ function saveLinkText(e, obj) {
         displayValue = displayValue.replace(linkAux, "<a target='_blank' href='" + linkAux + "'>" + linkAux + "</a>")
     }
 
-    $("#contentin" + $('#editinfodiv').attr("cid") + "div").html(displayValue);
+    $("#contentin" + $('#editinfodiv').attr("cid") + " div").html(displayValue);
 
     createCookie2($('#editinfodiv').attr("cid"), "info", escape(finalValue));
 
