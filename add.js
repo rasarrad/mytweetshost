@@ -352,9 +352,6 @@ function editLinkText(e, obj, id) {
 
         createCookie2(id, "info", escape(finalValue));
 
-        <a href="https://www.w3schools.com">Visit W3Schools.com!</a>
-
-
     }
 }
 
