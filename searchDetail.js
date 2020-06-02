@@ -935,6 +935,9 @@ function renderLink(val, flag) {
         
         newtweetobj.attr('id', val.id);
 
+        
+        console.log("11111-")
+
         var displayValue = unescape(val.info);
         var displayValueAux = displayValue;
         var lnkmap = new Map();
@@ -963,6 +966,7 @@ function renderLink(val, flag) {
         }
 
         newtweetobj.find(".contentin > div").html(displayValue)
+        console.log("22222-")
     }
     else {
         newtweetobj.append($(val.tweet));
