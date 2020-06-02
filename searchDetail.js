@@ -938,7 +938,7 @@ function renderLink(val, flag) {
         
         console.log("11111-")
 
-        var displayValue = unescape(val.info);
+        var displayValue = unescape(val.info).replace(/[\n\r]/g, '<br />');
         var displayValueAux = displayValue;
         var lnkmap = new Map();
         var firstindex = 0;
