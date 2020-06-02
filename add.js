@@ -308,8 +308,8 @@ function editLinkText(e, obj, id) {
         elemParent.find("div").fadeOut(800);
         elemParent.find("i.fa-times").show();
 
-        console.log("-" + jsonvar.info + "-")
-        elemParent.find("textarea").val(jsonvar.info)
+        console.log("-" + jsonvar.info.replace(/[<br>]/g, '\n\r') + "-")
+        elemParent.find("textarea").val(jsonvar.info.replace(/[<br>]/g, '\n\r'))
     }
     else {
         elem.addClass("fa-pencil");
