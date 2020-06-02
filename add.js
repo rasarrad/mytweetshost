@@ -307,8 +307,6 @@ function editLinkText(e, obj, id) {
         elemParent.find("textarea").fadeIn(800);
         elemParent.find("div").fadeOut(800);
         elemParent.find("i.fa-times").show();
-
-        console.log("-" + unescape(jsonvar.info) + "-")
         elemParent.find("textarea").val(unescape(jsonvar.info))
     }
     else {
@@ -320,11 +318,43 @@ function editLinkText(e, obj, id) {
 
         var finalValue = elemParent.find("textarea").val();
 
-        console.log("-" + finalValue + "-")
+        var displayValue = elemParent.find("textarea").val().replace(/[\n\r]/g, '<br />');
+        var displayValueAux = elemParent.find("textarea").val().replace(/[\n\r]/g, '<br />');
+        var lnkmap = new Map();
+        var firstindex = 0;
+        var secondindex = 0;
+        var linksCounter = 0;
 
-        elemParent.find("div").html(elemParent.find("textarea").val().replace(/[\n\r]/g, '<br />'));
+        while (displayValueAux.indexOf('http') >= 0) {
+            firstindex = displayValueAux.indexOf('http');
+            linksCounter++;
+            for (x=firstindex; x < displayValueAux.length; x++) {
+                if (displayValueAux.substring(x, 1) == " ") {
+                    secondindex = x;
+                    break;
+                }
+            }
+
+            lnkmap.set("xxx" + linksCounter, displayValueAux.substring(firstindex, secondindex));
+
+
+            console.log("-" + displayValueAux.substring(firstindex, secondindex) + "-")
+
+            displayValueAux = displayValueAux.substring(secondindex);
+        }
+
+        for (y=0; y < linksCounter; y++) {
+            var linkAux = lnkmap.get("xxx" + y);
+            displayValue.replace(linkAux, "<a href=" + linkAux + ">" + linkAux + "</a>")
+        }
+
+        elemParent.find("div").html(displayValue);
 
         createCookie2(id, "info", escape(finalValue));
+
+        <a href="https://www.w3schools.com">Visit W3Schools.com!</a>
+
+
     }
 }
 
