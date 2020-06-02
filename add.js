@@ -308,8 +308,8 @@ function editLinkText(e, obj, id) {
         elemParent.find("div").fadeOut(800);
         elemParent.find("i.fa-times").show();
 
-        console.log("-" + decodeURIComponent(jsonvar.info).replace(/[<br />]/g, String.fromCharCode(13) + String.fromCharCode(13)) + "-")
-        elemParent.find("textarea").val(decodeURIComponent(jsonvar.info).replace(/[<br />]/g, String.fromCharCode(13) + String.fromCharCode(13)))
+        console.log("-" + decodeURIComponent(jsonvar.info).replace(/[<br />]/g, String.fromCharCode(13)) + "-")
+        elemParent.find("textarea").val(decodeURIComponent(jsonvar.info).replace(/[<br />]/g, String.fromCharCode(13)))
     }
     else {
         elem.addClass("fa-pencil");
