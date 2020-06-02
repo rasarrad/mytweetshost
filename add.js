@@ -308,8 +308,8 @@ function editLinkText(e, obj, id) {
         elemParent.find("div").fadeOut(800);
         elemParent.find("i.fa-times").show();
 
-        console.log("-" + jsonvar.info + "-")
-        elemParent.find("textarea").val(jsonvar.info.replace(/[<br>]/g, '\n\r'))
+        console.log("-" + decodeURIComponent(jsonvar.info) + "-")
+        elemParent.find("textarea").val(decodeURIComponent(jsonvar.info).replace(/[<br>]/g, '\n\r'))
     }
     else {
         elem.addClass("fa-pencil");
@@ -318,12 +318,13 @@ function editLinkText(e, obj, id) {
         elemParent.find("div").fadeIn(800);
         elemParent.find("i.fa-times").hide();
 
-        
-        console.log("-" + elemParent.find("textarea").val().replace(/[\n\r]/g, '<br>') + "-")
+        var finalValue = elemParent.find("textarea").val().replace(/[\n\r]/g, '<br>');
 
-        elemParent.find("div").html(elemParent.find("textarea").val().replace(/[\n\r]/g, '<br>'));
+        console.log("-" + finalValue + "-")
 
-        createCookie2(id, "info", elemParent.find("textarea").val());
+        elemParent.find("div").html(finalValue);
+
+        createCookie2(id, "info", encodeURIComponent(finalValue));
     }
 }
 
