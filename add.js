@@ -337,15 +337,17 @@ function editLinkText(e, obj, id) {
 
             lnkmap.set("xxx" + linksCounter, displayValueAux.substring(firstindex, secondindex));
 
-
-            console.log("111-" + displayValueAux.substring(firstindex, secondindex) + "-")
-
             displayValueAux = displayValueAux.substring(secondindex);
         }
 
         for (y=0; y < linksCounter; y++) {
             var linkAux = lnkmap.get("xxx" + (y + 1));
-            displayValue.replace(linkAux, "<a href=" + linkAux + ">" + linkAux + "</a>")
+
+            
+            console.log("111-" + linkAux + "-")
+            
+            console.log("22222-" + displayValueAux + "-")
+            displayValue = displayValue.replace(linkAux, "<a href=" + linkAux + ">" + linkAux + "</a>")
         }
 
         elemParent.find("div").html(displayValue);
