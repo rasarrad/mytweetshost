@@ -302,12 +302,13 @@ function editLinkText(e, obj, id) {
     var jsonvar = getJsonbyid(id);
 
     if (elem.hasClass("fa-pencil")) {
-        elem.addClass("fa-check");
-        elem.removeClass("fa-pencil");
-        elemParent.find("textarea").fadeIn(800);
-        elemParent.find("div").fadeOut(800);
-        elemParent.find("i.fa-times").show();
-        elemParent.find("textarea").val(unescape(jsonvar.info))
+        //elem.addClass("fa-check");
+        //elem.removeClass("fa-pencil");
+        
+        //elemParent.find("textarea").fadeIn(800);
+        $('#editinfodiv textarea').val(unescape(jsonvar.info))
+        $('#editinfodiv').fadeIn(800);
+        
     }
     else {
         elem.addClass("fa-pencil");

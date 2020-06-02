@@ -1595,6 +1595,20 @@ body.big #calendardiv > div {
   padding-bottom: 1px;
 }
 
+
+#editinfodiv > div {
+  height: 301px !important;
+  max-width: 361px !important;
+  margin-left: calc(50% - 183px) !important;
+  margin-top: 40px !important;
+}
+body.big #editinfodiv > div {
+  margin-top: 40px !important;
+  height: auto !important;
+  max-width: 361px !important;
+  padding-bottom: 1px;
+}
+
 .newLayout#mainsettings > div {
       margin-top: 16px !important;
       max-height: calc(100% - 65px) !important;
@@ -2615,6 +2629,17 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
         max-height: unset !important;
         border-radius: 0;
       }
+
+      #editinfodiv > div {
+        margin-top: -52px !important;
+        max-height: 300px !important;
+      }
+      body.big #editinfodiv > div {
+        margin-top: -72px !important;
+        height: 375px !important;
+        max-height: unset !important;
+        border-radius: 0;
+      }
   
       body > div > i.fa-folder-open {
         font-size: 74px;
@@ -3023,6 +3048,41 @@ body.big #calendardiv .fa-calendar {
     font-size: 19px;
 }
 
+
+
+
+#editinfodiv  > div .titletable tr:first-child .firsttd {
+    min-width: 345px !important;
+}
+
+#editinfodiv .fa-window-close {
+  right: 19px !important;
+  cursor: pointer;
+}
+
+body.big #editinfodiv .fa-window-close {
+    font-size: 19px;
+    right: 22px !important;
+}
+
+#editinfodiv .titletable.buttonstable {
+    max-height: 71px;
+    height: 55px;
+    width: 359px !important;
+}
+
+body.big #editinfodiv .titletable.buttonstable {
+  max-height: 34px;
+}
+
+#editinfodiv .sectiontitletable.sectionexpandable {
+  margin-top: 51px;
+}
+
+body.big #editinfodiv .sectiontitletable.sectionexpandable {
+  margin-top: 42px;
+}
+
 .toptitle > span {
     position: relative;
     top: -1px;
@@ -3397,6 +3457,15 @@ body.big .newLayout#linkChange .fa-tags {
     body.big #calendardiv > div {
       margin-top: 145px !important;
     }  
+    #editinfodiv > div {
+      margin-top: 164px !important;
+      height: auto !important;
+      padding-bottom: 1px;
+    }
+    body.big #editinfodiv > div {
+      margin-top: 145px !important;
+    } 
+
     .newLayout#mainsettings > div {
           margin-top: 18px !important;
           max-height: calc(100% - 122px) !important;
@@ -5921,6 +5990,22 @@ body.big #calendardiv.newLayout > div .titletable tr:first-child .firsttd {
 #calendardiv .fa-calendar {position: relative;top: -1px;}
 
 body.big #calendardiv .fa-calendar {
+    margin-top: 0px;
+}
+
+
+
+#editinfodiv.newLayout > div .titletable tr:first-child .firsttd {
+    padding-top: 1px;
+}
+
+body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {
+    padding-top: 5px;
+}
+
+#editinfodiv .fa-calendar {position: relative;top: -1px;}
+
+body.big #editinfodiv .fa-calendar {
     margin-top: 0px;
 }
 
@@ -8270,12 +8355,28 @@ body.big .menuitemcounter {
   margin-left: calc(50% - 183px) !important;
   margin-top: 40px !important;
 }
+
+#editinfodiv > div {
+  height: 301px !important;
+  max-width: 361px !important;
+  margin-left: calc(50% - 183px) !important;
+  margin-top: 40px !important;
+}
+
+body.big #editinfodiv > div {
+  margin-top: 40px !important;
+  height: auto !important;
+  max-width: 361px !important;
+  padding-bottom: 1px;
+}
+
 body.big #calendardiv > div {
   margin-top: 40px !important;
   height: auto !important;
   max-width: 361px !important;
   padding-bottom: 1px;
 }
+
 
 .newLayout#mainsettings > div {
       margin-top: 16px !important;
@@ -9297,7 +9398,16 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
         max-height: unset !important;
         border-radius: 0;
       }
-  
+      #editinfodiv > div {
+        margin-top: -52px !important;
+        max-height: 300px !important;
+      }
+      body.big #editinfodiv > div {
+        margin-top: -72px !important;
+        height: 375px !important;
+        max-height: unset !important;
+        border-radius: 0;
+      }  
       body > div > i.fa-folder-open {
         font-size: 74px;
         height: 76px;
@@ -9705,6 +9815,48 @@ body.big #calendardiv .fa-calendar {
     font-size: 19px;
 }
 
+
+#editinfodiv  > div .titletable tr:first-child .firsttd {
+    min-width: 349px !important;
+}
+
+#editinfodiv .fa-window-close {
+  right: 26px !important;
+  cursor: pointer;
+}
+
+body.big #editinfodiv .fa-window-close {
+    font-size: 19px;
+    right: 22px !important;
+}
+
+#editinfodiv .titletable.buttonstable {
+    max-height: 61px;
+    height: 33px;
+    width: 359px !important;
+    background: var(--softdark-color);
+}
+
+body.big #editinfodiv .titletable.buttonstable {
+  max-height: 34px;
+}
+
+#editinfodiv .sectiontitletable.sectionexpandable {
+  margin-top: 34px;
+}
+
+body.big #editinfodiv .sectiontitletable.sectionexpandable {
+  margin-top: 42px;
+}
+
+#editinfodiv .fa-calendar {
+    font-size: 14px;
+}
+
+body.big #editinfodiv .fa-calendar {
+    font-size: 19px;
+}
+
 .toptitle > span {
     position: relative;
     top: -1px;
@@ -10079,6 +10231,15 @@ body.big .newLayout#linkChange .fa-tags {
     body.big #calendardiv > div {
       margin-top: 145px !important;
     }  
+    #editinfodiv > div {
+      margin-top: 164px !important;
+      height: auto !important;
+      padding-bottom: 1px;
+    }
+    body.big #editinfodiv > div {
+      margin-top: 145px !important;
+    }  
+
     .newLayout#mainsettings > div {
           margin-top: 18px !important;
           max-height: calc(100% - 122px) !important;
@@ -10906,7 +11067,7 @@ body.big #linktable {
     /* font-weight: bold; */
     background: var(--high-color);
     padding: 4px 8px;
-    border: 1px solid #002133;
+    border: 1px solid var(--dark-color);
     outline: none;
     font-size: 17px;
     font-family: Helvetica, Roboto, "Segoe UI", Calibri, sans-serif;
@@ -12600,9 +12761,37 @@ body.big #calendardiv.newLayout > div .titletable tr:first-child .firsttd {
     padding-top: 5px;
 }
 
-#calendardiv .fa-calendar {position: relative;top: -1px;}
+#calendardiv .fa-calendar {
+  position: relative;
+  top: -1px;
+}
 
 body.big #calendardiv .fa-calendar {
+    margin-top: 0px;
+}
+
+
+#editinfodiv.newLayout > div .titletable tr:first-child .firsttd {
+    padding-top: 1px;
+    position: relative;
+    left: -4px;
+    min-width: 353px !important;
+    height: 20px;
+    min-height: 20px;
+    top: 1px;
+    padding-bottom: 5px;
+}
+
+body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {
+    padding-top: 5px;
+}
+
+#editinfodiv .fa-calendar {
+  position: relative;
+  top: -1px;
+}
+
+body.big #editinfodiv .fa-calendar {
     margin-top: 0px;
 }
 
