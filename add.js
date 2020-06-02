@@ -329,7 +329,7 @@ function editLinkText(e, obj, id) {
             firstindex = displayValueAux.indexOf('http');
             linksCounter++;
             for (x=firstindex; x < displayValueAux.length; x++) {
-                if (displayValueAux.substring(x, 1) == " ") {
+                if (displayValueAux.substring(x, x + 1) == " ") {
                     secondindex = x;
                     break;
                 }
