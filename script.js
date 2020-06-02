@@ -943,7 +943,7 @@ window.openLinkInline = function(id) {
     if (obj.hasClass("text")) {
         return false;
     }
-    
+
     var url = generateUrl(obj.attr("curl"));
 
     $("#contentin" + id).prepend("<iframe src='" + url + "' id='contentiniframe" + id + "' onload='iframeloadFunc(this)' scrolling='yes' frameborder='0' allowtransparency='true' style='border: 0px solid;margin-top: 0px !important;width: 100% !important;transform: translate(-50%, -50%) !important; display: none;'></iframe>");
@@ -2471,7 +2471,7 @@ function customizeSingleTweet(id) {
     }
 
     var obj = $("#twitter-widget-" + totalrenderedtweets);
-    console.log(obj)
+
     obj.attr("processed", "yes");
     var tweetStyle = document.createElement("style");
 
@@ -2481,7 +2481,6 @@ function customizeSingleTweet(id) {
 
     //if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
         
-    console.log(totalrenderedtweets)
     var styleTag = document.getElementById("twitter-widget-" + totalrenderedtweets).shadowRoot;
         insertAfter(tweetStyle, styleTag.childNodes[0]);
 

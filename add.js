@@ -338,9 +338,11 @@ function editLinkText(e, obj, id) {
             lnkmap.set("xxx" + linksCounter, displayValueAux.substring(firstindex, secondindex));
 
 
-            console.log("-" + displayValueAux.substring(firstindex, secondindex) + "-")
+            console.log("111-" + displayValueAux.substring(firstindex, secondindex) + "-")
 
             displayValueAux = displayValueAux.substring(secondindex);
+
+            console.log("222-" + displayValueAux + "-")
         }
 
         for (y=0; y < linksCounter; y++) {
