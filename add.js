@@ -319,9 +319,9 @@ function editLinkText(e, obj, id) {
         elemParent.find("i.fa-times").hide();
 
         
-        console.log("-" + elemParent.find("textarea").val() + "-")
+        console.log("-" + elemParent.find("textarea").val().replace(/[^\n]/g, '<br>') + "-")
 
-        elemParent.find("div").html(elemParent.find("textarea").val());
+        elemParent.find("div").html(elemParent.find("textarea").val().replace(/[^\n]/g, '<br>'));
 
         createCookie2(id, "info", elemParent.find("textarea").val());
     }
