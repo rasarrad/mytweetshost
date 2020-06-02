@@ -308,6 +308,7 @@ function editLinkText(e, obj, id) {
         elemParent.find("div").fadeOut(800);
         elemParent.find("i.fa-times").show();
 
+        console.log("-" + jsonvar.info + "-")
         elemParent.find("textarea").val(jsonvar.info)
     }
     else {
@@ -316,6 +317,9 @@ function editLinkText(e, obj, id) {
         elemParent.find("textarea").fadeOut(800);
         elemParent.find("div").fadeIn(800);
         elemParent.find("i.fa-times").hide();
+
+        
+        console.log("-" + elemParent.find("textarea").val() + "-")
 
         elemParent.find("div").html(elemParent.find("textarea").val());
 
