@@ -151,6 +151,7 @@ var openDetailPopup = function(jsonobj, flag)
     $('body, html').css('overflow-y', 'hidden');
 
     if (jsonobj) {
+
         var setHeight = "26px";
 
         if ($('body').hasClass('big'))
@@ -179,14 +180,20 @@ var openDetailPopup = function(jsonobj, flag)
         
         $("#linkChange #seticon").addClass('fa').addClass('fa-twitter');
     
+        $('#infoinput').prop('readonly', null);
+
         if (jsonobj.type == "H") {
             $("#linkChange #seticon").addClass('fa').removeClass('fa-twitter').addClass('fa-internet-explorer');
         }
         else if (jsonobj.type == "Y") {
             $("#linkChange #seticon").addClass('fa').removeClass('fa-twitter').addClass('fa-youtube-play');
         }   
+        else if (jsonobj.type == "N") {
+            $("#linkChange #seticon").addClass('fa').removeClass('fa-file-text').addClass('fa-youtube-play');
+        
+            $('#infoinput').prop('readonly', 'true');
+        }  
 
-            //$("#linkChange .buttonstable tr:first-child td .id").html(jsonobj.id);
         $("#linkChange .buttonstable tr:first-child td .author").show();
         $("#linkChange .buttonstable tr:first-child td .authorinput").hide(); 
 
@@ -437,6 +444,9 @@ var openDetailPopup = function(jsonobj, flag)
         $('#removetweetp2').attr('class','').addClass('fa').addClass('fa-floppy-o');
 
         $("#linkChange #editTags .fa-chevron-down").show();    
+
+                
+        $('#infoinput').prop('readonly', null);
     }
 
     //$('#linkChange').fadeIn(); 

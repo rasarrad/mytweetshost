@@ -4229,8 +4229,15 @@ body.big #linktable {
     font-size: 17px;
     font-family: Helvetica, Roboto, "Segoe UI", Calibri, sans-serif;
     font-variant-caps: normal;
-        border-radius: 3px;
+    border-radius: 3px;
+    resize: none;
 }
+.newLayout textarea[readonly=true] {
+    color: var(--high-color);
+    background: var(--soft-transp-color);
+    border: 1px solid var(--high-color);
+}
+
 .newLayout ul {
     width: 100%;
     height: 100%;
