@@ -911,7 +911,7 @@ function renderLink(val, flag) {
                 if (!isMobile) {
                     setTimeout(function(){
                         document.getElementById("contentin" + val.id).addEventListener("click", clickHandler);
-                    }, 0);
+                    }, 700);
                 } 
             }, 1300);
         }

@@ -2718,7 +2718,7 @@ function startWorker() {
                         idCurr = linkArray[currrenderedtweets];
                         setTimeout(function(){
                             document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
-                        }, 0);
+                        }, 700);
                     }
                     currrenderedtweets++;
                 }
@@ -2771,7 +2771,7 @@ function startWorker() {
                                 idCurr = linkArray[currrenderedtweets];
                                 setTimeout(function(){
                                     document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
-                                }, 0);
+                                }, 700);
                             }
                             currrenderedtweets++;
                             countercontrol++;

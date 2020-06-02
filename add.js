@@ -341,14 +341,10 @@ function editLinkText(e, obj, id) {
             console.log("111-" + displayValueAux.substring(firstindex, secondindex) + "-")
 
             displayValueAux = displayValueAux.substring(secondindex);
-
-            console.log("222-" + displayValueAux + "-")
-
-            console.log("333-" + firstindex + "-" + secondindex + "-")
         }
 
         for (y=0; y < linksCounter; y++) {
-            var linkAux = lnkmap.get("xxx" + y);
+            var linkAux = lnkmap.get("xxx" + (y + 1));
             displayValue.replace(linkAux, "<a href=" + linkAux + ">" + linkAux + "</a>")
         }
 
