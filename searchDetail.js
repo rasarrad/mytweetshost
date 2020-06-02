@@ -935,7 +935,34 @@ function renderLink(val, flag) {
         
         newtweetobj.attr('id', val.id);
 
-        newtweetobj.find(".contentin > div").html(unescape(val.info))
+        var displayValue = unescape(val.info);
+        var displayValueAux = displayValue;
+        var lnkmap = new Map();
+        var firstindex = 0;
+        var secondindex = 0;
+        var linksCounter = 0;
+
+        while (displayValueAux.indexOf('http') >= 0) {
+            firstindex = displayValueAux.indexOf('http');
+            linksCounter++;
+            for (x=firstindex; x < displayValueAux.length; x++) {
+                if (displayValueAux.substring(x, x + 1) == " ") {
+                    secondindex = x;
+                    break;
+                }
+            }
+
+            lnkmap.set("xxx" + linksCounter, displayValueAux.substring(firstindex, secondindex));
+
+            displayValueAux = displayValueAux.substring(secondindex);
+        }
+
+        for (y=0; y < linksCounter; y++) {
+            var linkAux = lnkmap.get("xxx" + (y + 1));
+            displayValue = displayValue.replace(linkAux, "<a target='_blank' href='" + linkAux + "'>" + linkAux + "</a>")
+        }
+
+        newtweetobj.find(".contentin > div").html(displayValue)
     }
     else {
         newtweetobj.append($(val.tweet));
