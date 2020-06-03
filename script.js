@@ -2726,7 +2726,11 @@ function startWorker() {
                     
                     if (!isMobile) {
                         idCurr = linkArray[currrenderedtweets];
+                        console.log(111118888)
+                        console.log(idCurr)
                         setTimeout(function(){
+                            
+                            console.log(idCurr)
                             document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
                         }, 700);
                     }
