@@ -1178,6 +1178,9 @@ function generate(obj) {
                     val = recordfromdata;
                 }
 
+                console.log(1111111)
+                console.log(val.id)
+                console.log(val)
                 if (val.id != "0") {
                     var auxLink = {};
 
