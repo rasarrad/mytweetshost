@@ -1368,7 +1368,6 @@ function handleTouchEnd(evt) {
         }      
     }
     else {
-        console.log(new Date().getTime() + " - " + datet.getTime())
         if (new Date().getTime() - datet.getTime() < 300) {
             executeSingleDoubleFunction(currObjSwipe, "single");
         }
@@ -1434,7 +1433,7 @@ function executeSingleDoubleFunction(obj, type) {
     }
 }
 function executeSwipeFunction(obj, type) {
-
+    console.log(obj)
     switch(obj) {
         case "main":
         case "backdiv":
