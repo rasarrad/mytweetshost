@@ -1641,7 +1641,7 @@ function processMainmenuFuncs(type) {
 }  
 
 function processLinkFuncs(idLink, type) {
-
+    console.log(idLink)
     if (parseInt(idLink) > -1) {
         switch(type) {
             case "up":
