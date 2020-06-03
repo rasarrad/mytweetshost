@@ -1219,8 +1219,8 @@ function generate(obj) {
     
                     var isdeleted = readCookie(val.id + "isdeleted");
     
-                    if (isMy) {
-                        if (isdeleted) {
+                    if (isMy || val.ishidden == 1) {
+                        if (isdeleted || val.ishidden == 1) {
                         } 
                         else {
                             if (ind) {
