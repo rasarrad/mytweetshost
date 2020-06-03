@@ -899,6 +899,7 @@ window.openLinkInside = function(id) {
         }
 
         if (!obj.hasClass("yt") && !obj.hasClass("html")) {
+            console.log(obj.attr("curl"))
             var win = window.open(!obj.attr("curl"), '_blank');
             win.focus();
             return false;
