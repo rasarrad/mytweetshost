@@ -2,15 +2,15 @@
 {"Tweets": [{
    "id": "33",
    "creationdate": "20200305",
-   "type": "T",
+   "type": "N",
    "url": "",
    "ishidden": "1",
    "date": "20190717",
    "author": "",
    "categories": "",
    "tags": "",
-   "deleted": "aa",
-   "classif": "1",
+   "deleted": "",
+   "classif": "0",
    "info": "dfsf fsfs fessfs",
    "tweet": "<div class='contentin pobj' id='contentin33'><div></div><i onclick='javascript: editLinkText(event, this,33)' class='edittext fa fa-pencil'></i></div>"
    },{
