@@ -12,7 +12,7 @@
    "deleted": "",
    "classif": "0",
    "info": "dfsf fsfs fessfs",
-   "tweet": "<div class='contentin pobj' id='contentin33'><div></div><i onclick='javascript: editLinkText(event, this,33)' class='edittext fa fa-pencil'></i></div>"
+   "tweet": "<div class='contentin pobj' id='contentin33'><div></div><i onclick='javascript: editLinkText(33)' class='edittext fa fa-pencil'></i></div>"
    },{
    "id": "32",
    "creationdate": "20200305",

@@ -1375,7 +1375,7 @@ function executeSingleDoubleFunction(obj, type) {
 
             if (jsonvar.type == "N") {
                 if (type == "double") {
-
+                    editLinkText(jsonvar.id)
                 }
             }
             else {

@@ -257,7 +257,7 @@ function parseTweet(type) {
 
             url = ""; 
 
-            text = "<div class='contentin pobj' id='contentin" + nextid + "' ><div></div><i onclick='javascript: editLinkText(event, this," + nextid + ")' class='edittext fa fa-pencil'></i></div>"; 
+            text = "<div class='contentin pobj' id='contentin" + nextid + "' ><div></div><i onclick='javascript: editLinkText(" + nextid + ")' class='edittext fa fa-pencil'></i></div>"; 
 
             $('#linktable').hide();
 
