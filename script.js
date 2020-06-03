@@ -28,7 +28,7 @@ var searchtotal = 0;
 var showAll = false;
 var showColors = false;
 var showColorsAdv = false;
-var isMy = false;
+var isMy = true;
 var useSwipes = false;
 var ceec = 0; 
 var funcg = null;
@@ -1371,28 +1371,37 @@ function handleTouchEnd(evt) {
 function executeSingleDoubleFunction(obj, type) {
     switch(obj.substring(0, 9)) {
         case "contentin":
-            
-            var value = readCookie("doublefs");
-            if (value) {
-                if (type == "double")
-                    type = "single";
-                else 
-                    type = "double";
-            }
-            if (type == "double") { // Execute double/long touch
-                value = readCookie("linksinside");
+            var jsonvar = getJsonbyid(obj.substring(9));
 
+            if (jsonvar.type == "N") {
+                if (type == "double") {
+
+                }
+            }
+            else {
+                var value = readCookie("doublefs");
                 if (value) {
-                    openLinkInside(obj.substring(9));
+                    if (type == "double")
+                        type = "single";
+                    else 
+                        type = "double";
                 }
-                else {
-                    openLinkOutside(obj.substring(9));
+                if (type == "double") { // Execute double/long touch
+                    value = readCookie("linksinside");
+    
+                    if (value) {
+                        openLinkInside(obj.substring(9));
+                    }
+                    else {
+                        openLinkOutside(obj.substring(9));
+                    }
                 }
+                else { // Execute single/touch
+                    openLinkInline(obj.substring(9));
+                }
+                break;  
             }
-            else { // Execute single/touch
-                openLinkInline(obj.substring(9));
-            }
-            break;  
+
         case "tweetcoun":
             if (type == "double") { // Execute double/long touch
                 countdoubleclick();
