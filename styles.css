@@ -3525,7 +3525,7 @@ body.big .newLayout#linkChange .fa-tags {
     }  
 
     #editinfodiv > div {
-      margin-top: 164px !important;
+      /* margin-top: 164px !important; */
       height: auto !important;
       padding-bottom: 1px;
     }
