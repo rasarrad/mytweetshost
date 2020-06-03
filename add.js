@@ -334,8 +334,13 @@ function saveLinkText(e, obj) {
 }
 
 
-function editLinkText(e, obj, id) {
-    var jsonvar = getJsonbyid(id);
+function editLinkText(id, obj) {
+    var jsonvar = null;
+
+    if (obj)
+        jsonvar = obj;
+    else
+        jsonvar = getJsonbyid(id);
 
     $('body, html').css('overflow-y', 'hidden');
     $('#editinfodiv textarea').val(unescape(jsonvar.info))

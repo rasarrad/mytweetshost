@@ -911,7 +911,7 @@ function renderLink(val, flag) {
                 if (!isMobile) {
                     setTimeout(function(){
                         document.getElementById("contentin" + val.id).addEventListener("click", clickHandler);
-                    }, 700);
+                    }, 170);
                 } 
             }, 1300);
         }
@@ -934,9 +934,6 @@ function renderLink(val, flag) {
         newtweetobj.append($(val.tweet));
         
         newtweetobj.attr('id', val.id);
-
-        
-        console.log("11111-")
 
         var displayValue = unescape(val.info).replace(/[\n\r]/g, '<br />');
         var displayValueAux = displayValue;
@@ -966,7 +963,6 @@ function renderLink(val, flag) {
         }
 
         newtweetobj.find(".contentin > div").html(displayValue)
-        console.log("22222-")
     }
     else {
         newtweetobj.append($(val.tweet));

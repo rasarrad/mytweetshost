@@ -1220,7 +1220,6 @@ var dblTapFlag = false;
 var dblTapTimeout = null;
 
 function clickHandler(event) {
-    console.log(12334556)
     var obj = event.currentTarget.id;
     dblTapFlagControl = false;
     if(!dblTapFlag) {
@@ -1373,10 +1372,9 @@ function executeSingleDoubleFunction(obj, type) {
     switch(obj.substring(0, 9)) {
         case "contentin":
             var jsonvar = getJsonbyid(obj.substring(9));
-            console.log(jsonvar.type)
             if (jsonvar.type == "N") {
                 if (type == "double") {
-                    editLinkText(jsonvar.id)
+                    editLinkText(null, jsonvar)
                 }
             }
             else {
@@ -2726,11 +2724,7 @@ function startWorker() {
                     
                     if (!isMobile) {
                         idCurr = linkArray[currrenderedtweets];
-                        console.log(111118888)
-                        console.log(idCurr)
                         setTimeout(function(){
-                            
-                            console.log(idCurr)
                             document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
                         }, 70);
                     }
@@ -2785,7 +2779,7 @@ function startWorker() {
                                 idCurr = linkArray[currrenderedtweets];
                                 setTimeout(function(){
                                     document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
-                                }, 700);
+                                }, 70);
                             }
                             currrenderedtweets++;
                             countercontrol++;
