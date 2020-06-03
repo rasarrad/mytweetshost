@@ -2732,7 +2732,7 @@ function startWorker() {
                             
                             console.log(idCurr)
                             document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
-                        }, 700);
+                        }, 70);
                     }
                     currrenderedtweets++;
                 }
