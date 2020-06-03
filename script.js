@@ -1222,9 +1222,7 @@ var dblTapTimeout = null;
 function clickHandler(event) {
     
     if (event.detail > 1) {
-        setTimeout( function() { 
             clearTextSelection();
-        }, 200 );
     }
 
     var obj = event.currentTarget.id;
