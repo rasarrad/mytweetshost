@@ -898,9 +898,12 @@ window.openLinkInside = function(id) {
             return false;
         }
 
-        if (!obj.hasClass("yt") && !obj.hasClass("html"))
+        if (!obj.hasClass("yt") && !obj.hasClass("html")) {
+            var win = window.open(!obj.attr("curl"), '_blank');
+            win.focus();
             return false;
-
+        }
+            
         $('body, html').css('overflow-y', 'hidden');
 
         $("#fsPopup iframe").attr("cid", id);
@@ -1689,13 +1692,12 @@ function processLinkFuncs(idLink, type) {
                 $("#linkresult").blur();
                 showMessage("Link Copied To Clipboard", 2500, null, null, null, null, true, 500);
 */
-                openLinkInside(id);
-
+                expandCat(null, id);
                 break;
     
             case "right": // abrir link
                 ////cnonsole.log("RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   ");
-                expandCat(null, id);
+                openLinkInside(id);
                 break;
         }
     }
