@@ -1372,7 +1372,7 @@ function executeSingleDoubleFunction(obj, type) {
     switch(obj.substring(0, 9)) {
         case "contentin":
             var jsonvar = getJsonbyid(obj.substring(9));
-
+            console.log(jsonvar.type)
             if (jsonvar.type == "N") {
                 if (type == "double") {
                     editLinkText(jsonvar.id)
