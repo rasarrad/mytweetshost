@@ -765,7 +765,7 @@ var getInformation = function(wasfiltered, valid) {
         if (!$("#showdeleted2").is(":checked")) {
             doShowDeletedLink = false; 
         }
-        alert($('#selectedcat').val())
+        
         while (allLinks[i]) {
             var val = allLinks[i];
         
@@ -1129,9 +1129,9 @@ function resetFields(flag, obj) {
     filterdate1date = null;
     filterdate2date = null;
     
-    $('#selectedcat').val("all");
+/*     $('#selectedcat').val("all");
     $('#selectedcattext').val("All Links");
-    $('#titlesearch .span2').html("All Links");
+    $('#titlesearch .span2').html("All Links"); */
 
     if (flag) 
         showMessage("Search Criterions Cleaned"); 
