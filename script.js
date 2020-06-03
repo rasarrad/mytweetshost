@@ -1461,6 +1461,11 @@ function executeSwipeFunction(obj, type) {
         case "mainsettings":
             processMainsettingsFuncs(type);
             break;
+
+        case "editinfodiv":
+            processEditinfoFuncs(type);
+            break;
+
         default:
             processLinkFuncs(obj, type);
             break;       
@@ -1468,6 +1473,25 @@ function executeSwipeFunction(obj, type) {
     currObjSwipe = null;
 
 }
+
+function processEditinfoFuncs(type) {
+    switch(type) {
+        case "up":
+            saveLinkText()
+            break;
+
+        case "down":
+            closeLinkText()
+            break;
+        case "left":
+            closeLinkText()
+            break;
+
+        case "right":
+            saveLinkText()
+            break;
+    }
+}  
 
 function processHelpDivFuncs(type) {
     closeHelpPopup();

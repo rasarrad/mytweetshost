@@ -293,13 +293,14 @@ function parseTweet(type) {
     }, 700);
 } 
 
-function saveLinkText(e, obj) {
-    var elemParent = $(obj).parent();
-    
-    var finalValue = elemParent.find("textarea").val();
+function saveLinkText() {
 
-    var displayValue = elemParent.find("textarea").val().replace(/[\n\r]/g, '<br />');
-    var displayValueAux = elemParent.find("textarea").val().replace(/[\n\r]/g, '<br />');
+    textarea = $("#editinfodiv textarea");
+
+    var finalValue = textarea.val();
+
+    var displayValue = textarea.val().replace(/[\n\r]/g, '<br />');
+    var displayValueAux = textarea.val().replace(/[\n\r]/g, '<br />');
     var lnkmap = new Map();
     var firstindex = 0;
     var secondindex = 0;
@@ -350,7 +351,7 @@ function editLinkText(id, obj) {
 
 
 
-function closeLinkText(e, obj) {
+function closeLinkText() {
     $('body, html').css('overflow-y', 'auto');
     $('#editinfodiv').fadeOut(800);
 }
