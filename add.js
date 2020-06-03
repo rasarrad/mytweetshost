@@ -344,7 +344,7 @@ function editLinkText(id, obj) {
 
     $('body, html').css('overflow-y', 'hidden');
     $('#editinfodiv textarea').val(unescape(jsonvar.info))
-    $('#editinfodiv').attr("cid", id);
+    $('#editinfodiv').attr("cid", jsonvar.id);
     $('#editinfodiv').fadeIn(800);
 }
 
