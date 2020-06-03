@@ -1607,10 +1607,16 @@ body.big #calendardiv > div {
 }
 
 #editinfodiv > div {
-  height: 301px !important;
+  height: auto !important;
   max-width: 361px !important;
   margin-left: calc(50% - 183px) !important;
-  margin-top: 40px !important;
+  background: var(--softdark-color);
+  position: relative;
+  transform: translate(0px, -50%);
+  top: calc(50%) !important;
+  margin-top: 0px !important;
+  max-height: none !important;
+  padding-bottom: 1px;
 }
 body.big #editinfodiv > div {
   margin-top: 40px !important;
@@ -6819,7 +6825,7 @@ option:focus{
 
 #editinfodiv textarea {
     overflow: hidden;
-    height: 141px;
+    height: 100%;
     width: calc(100% - 19px);
     margin-left: 1px;
     position: relative;
