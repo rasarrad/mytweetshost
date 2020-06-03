@@ -1220,6 +1220,7 @@ var dblTapFlag = false;
 var dblTapTimeout = null;
 
 function clickHandler(event) {
+    console.log(12334556)
     var obj = event.currentTarget.id;
     dblTapFlagControl = false;
     if(!dblTapFlag) {
