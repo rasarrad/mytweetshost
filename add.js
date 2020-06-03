@@ -345,7 +345,7 @@ function editLinkText(id, obj) {
 
     $('body, html').css('overflow-y', 'hidden');
 
-    $('#editinfodiv .sectionicontd').css("height", (window.innerHeight - 74) + "px");
+    $('#editinfodiv .sectionicontd').css("height", (window.innerHeight - 94) + "px");
 
     $('#editinfodiv textarea').val(unescape(jsonvar.info))
     $('#editinfodiv').attr("cid", jsonvar.id);

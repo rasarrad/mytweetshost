@@ -2661,8 +2661,8 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
       }
 
       #editinfodiv > div {
-        margin-top: -52px !important;
-        max-height: 300px !important;
+        /* margin-top: -52px !important; */
+        /* max-height: 300px !important; */
       }
       body.big #editinfodiv > div {
         margin-top: -72px !important;
