@@ -892,6 +892,9 @@ window.openLinkInside = function(id) {
         var obj = $("#" + id);
 
         if (obj.hasClass("text")) {
+            var jsonvar = getJsonbyid(id);
+            editLinkText(null, jsonvar)
+
             return false;
         }
 
@@ -1641,8 +1644,14 @@ function processMainmenuFuncs(type) {
 }  
 
 function processLinkFuncs(idLink, type) {
-    console.log(idLink)
-    if (parseInt(idLink) > -1) {
+    var id = 0;
+
+    if (idLink.startsWith("contentin"))
+        id = parseInt(idLink.substring(9));
+    else
+        id = parseInt(idLink);
+
+    if (id > -1) {
         switch(type) {
             case "up":
 
