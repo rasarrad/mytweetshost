@@ -1223,16 +1223,18 @@ function generate(obj) {
                     var isdeleted = readCookie(val.id + "isdeleted");
     
                     if (isMy || val.ishidden == 1) {
-                        if (isdeleted || val.ishidden == 1) {
-                        } 
-                        else {
-                            if (ind) {
-                                text = text + ",";
+                        if (isMy && val.deleted != "yes") {
+                            if (isdeleted && isdeleted == "yes") {
                             }
                             else {
-                                ind = true;
+                                if (ind) {
+                                    text = text + ",";
+                                }
+                                else {
+                                    ind = true;
+                                }
+                                text = text + JSON.stringify(val, null, " ");  
                             }
-                            text = text + JSON.stringify(val, null, " ");  
                         }
                     }
                     else {
