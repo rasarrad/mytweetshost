@@ -6825,6 +6825,7 @@ option:focus{
     position: relative;
     border: 0px solid var(--soft-color);
     top: 1px;
+    overflow-y: auto;
 }
 
 
