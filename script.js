@@ -1368,6 +1368,7 @@ function handleTouchEnd(evt) {
         }      
     }
     else {
+        console.log(111111123)
         if (new Date().getTime() - datet.getTime() < 300) {
             executeSingleDoubleFunction(currObjSwipe, "single");
         }
