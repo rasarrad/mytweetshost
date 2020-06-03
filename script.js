@@ -1662,6 +1662,8 @@ function processLinkFuncs(idLink, type) {
     
             case "right": // abrir link
                 ////cnonsole.log("RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   ");
+                console.log(11111987)
+                console.log(idLink)
                 expandCat(null, idLink);
                 break;
         }
