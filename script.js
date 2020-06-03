@@ -1680,7 +1680,7 @@ function processLinkFuncs(idLink, type) {
             case "left": // apagar pesquisa - mantendo os critérios 
                 /*//cnonsole.log("LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   LEFT   ");
              
-                $('#linkresult').val($('#' + idLink).attr('curl'));
+                $('#linkresult').val($('#' + id).attr('curl'));
                 $("#linkresult").focus();
                 sleep(100);  
                 $("#linkresult").select();
@@ -1689,15 +1689,13 @@ function processLinkFuncs(idLink, type) {
                 $("#linkresult").blur();
                 showMessage("Link Copied To Clipboard", 2500, null, null, null, null, true, 500);
 */
-                openLinkInside(idLink);
+                openLinkInside(id);
 
                 break;
     
             case "right": // abrir link
                 ////cnonsole.log("RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   ");
-                console.log(11111987)
-                console.log(idLink)
-                expandCat(null, idLink);
+                expandCat(null, id);
                 break;
         }
     }
