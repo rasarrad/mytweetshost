@@ -1220,8 +1220,13 @@ var dblTapFlag = false;
 var dblTapTimeout = null;
 
 function clickHandler(event) {
-    console.log(11111111)
-    console.log(event.detail)
+    
+    if (event.detail > 1) {
+        setTimeout( function() { 
+            clearTextSelection();
+        }, 200 );
+    }
+
     var obj = event.currentTarget.id;
     dblTapFlagControl = false;
     if(!dblTapFlag) {
@@ -1242,6 +1247,19 @@ function clickHandler(event) {
     executeSingleDoubleFunction(obj, "double");
  }
 
+
+ function clearTextSelection() {
+
+    if (window.getSelection) {
+        if (window.getSelection().empty) {  // Chrome
+          window.getSelection().empty();
+        } else if (window.getSelection().removeAllRanges) {  // Firefox
+          window.getSelection().removeAllRanges();
+        }
+      } else if (document.selection) {  // IE?
+        document.selection.empty();
+      }
+ }
 
 
 
