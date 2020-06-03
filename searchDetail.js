@@ -765,7 +765,7 @@ var getInformation = function(wasfiltered, valid) {
         if (!$("#showdeleted2").is(":checked")) {
             doShowDeletedLink = false; 
         }
-        
+        alert($('#selectedcat').val())
         while (allLinks[i]) {
             var val = allLinks[i];
         
