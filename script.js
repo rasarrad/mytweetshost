@@ -892,16 +892,10 @@ window.openLinkInside = function(id) {
         var obj = $("#" + id);
 
         if (obj.hasClass("text")) {
-            var jsonvar = getJsonbyid(id);
-            editLinkText(null, jsonvar)
-
             return false;
         }
 
         if (!obj.hasClass("yt") && !obj.hasClass("html")) {
-            console.log(obj.attr("curl"))
-            var win = window.open(!obj.attr("curl"), '_blank');
-            win.focus();
             return false;
         }
             
@@ -945,9 +939,16 @@ window.openLinkInline = function(id) {
 
     var obj = $("#" + id);
 
-    var obj = $("#" + id);
-
     if (obj.hasClass("text")) {
+        var jsonvar = getJsonbyid(id);
+        editLinkText(null, jsonvar)
+
+        return false;
+    }
+
+    if (!obj.hasClass("yt") && !obj.hasClass("html")) {
+        var win = window.open(obj.attr("curl"), '_blank');
+        win.focus();
         return false;
     }
 
@@ -1698,7 +1699,7 @@ function processLinkFuncs(idLink, type) {
     
             case "right": // abrir link
                 ////cnonsole.log("RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   RIGHT   ");
-                openLinkInside(id);
+                openLinkInline(id);
                 break;
         }
     }
