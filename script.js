@@ -287,12 +287,18 @@ $( document ).ready(function() {
                 }
             }
             else {
-                if ($(window).scrollTop() > 100) {
-                    $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
-                    $("#recoilback").slideUp(650, function() {
-                        $("#recoilback").css("position", "absolute");
-                    });
+                var speed = 650;
+                if ($(window).scrollTop() < 100) {
+                    if ($(window).scrollTop() < 50) 
+                        speed = 50;
+                    else 
+                        speed = 100;
                 }
+
+                $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
+                $("#recoilback").slideUp(speed, function() {
+                    $("#recoilback").css("position", "absolute");
+                });
             }
         }
 
