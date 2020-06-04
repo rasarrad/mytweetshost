@@ -277,7 +277,15 @@ $( document ).ready(function() {
         if (topMenuMode == 2) {
             if (scrollLastPos > $(window).scrollTop()) {
                 $("#recoilback").css("position", "fixed");
-                $("#recoilback").slideDown(1080);
+                var speed = 1080;
+                if ($(window).scrollTop() < 100) {
+                    if ($(window).scrollTop() < 50) 
+                        speed = 50;
+                    else 
+                        speed = 150;
+                }
+
+                $("#recoilback").slideDown(speed);
     
                 if ($(window).scrollTop() == 0) {
                     $("#recoilback").css("border-bottom", "0px solid var(--dark-color)");
@@ -287,16 +295,8 @@ $( document ).ready(function() {
                 }
             }
             else {
-                var speed = 650;
-                if ($(window).scrollTop() < 100) {
-                    if ($(window).scrollTop() < 50) 
-                        speed = 50;
-                    else 
-                        speed = 100;
-                }
-
                 $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
-                $("#recoilback").slideUp(speed, function() {
+                $("#recoilback").slideUp(650, function() {
                     $("#recoilback").css("position", "absolute");
                 });
             }
