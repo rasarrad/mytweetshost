@@ -287,7 +287,7 @@ $( document ).ready(function() {
                 }
             }
             else {
-                if ($(window).scrollTop() > 200) {
+                if ($(window).scrollTop() > 100) {
                     $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
                     $("#recoilback").slideUp(650, function() {
                         $("#recoilback").css("position", "absolute");
