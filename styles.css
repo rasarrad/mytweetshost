@@ -1366,24 +1366,36 @@ body.big .tweet div.contentin .logo {
     padding-bottom: 83px;
     padding-right: 30px;
     padding-left: 30px;
-    width: 846px;
+    width: 850px;
     transform: translate(-50%, 0px);
     font-size: 12px;
     text-transform: uppercase;
     line-height: 22px;
     margin-top: -2px;
 }
-    .tweet.yt.text div.contentin > div {
-        background-image: linear-gradient(to bottom, var(--softdark-color), var(--dark-color));
-        padding-top: 8px;
-        border: 1px solid var(--soft-color);
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-bottom: 12px;
-        background: var(--softdark-color);
-        border-radius: 4px;
-        margin-bottom: 7px;
-    }       
+
+body.big .tweet.yt.text div.contentin {
+    padding-bottom: 103px;
+}
+
+.tweet.yt.text div.contentin > div {
+    background-image: linear-gradient(to bottom, var(--softdark-color), var(--dark-color));
+    padding-top: 8px;
+    border: 1px solid var(--soft-color);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 12px;
+    background: var(--softdark-color);
+    border-radius: 4px;
+    margin-bottom: 7px;
+}       
+
+
+body.big .tweet.yt.text div.contentin > div {
+    font-size: 15px;
+    line-height: 22px;
+}
+    
 .tweet iframe {
   position: relative;
   top: 10px;
@@ -1632,10 +1644,10 @@ body.big #calendardiv > div {
 }
 
 body.big #editinfodiv > div {
-  margin-top: 40px !important;
+  /* margin-top: 40px !important; */
   height: auto !important;
-  max-width: 361px !important;
-  padding-bottom: 1px;
+  /* max-width: 361px !important; */
+  /* padding-bottom: 1px; */
 }
 
 .newLayout#mainsettings > div {
@@ -1707,15 +1719,17 @@ body.big #expand {
 }
 
 .tweet.text .linkbar {
-    top: 0.5px !important;
+    top: 3px !important;
     font-size: 13px;
     left: 11px !important;
+    left: calc(50% - 396px) !important;
 }
 
 .tweet.text:first-child .linkbar {
     top: 0.5px !important;
     font-size: 13px;
     left: 11px !important;
+    left: calc(50% - 396px) !important;
 }
 
 body.big .tweet.text .linkbar {
@@ -2381,6 +2395,13 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
       bottom: 4px;
     }
 
+    .tweet.text .linkbar {
+            left: calc(50% - 289px) !important;
+    }
+
+    .tweet.text:first-child .linkbar {
+            left: calc(50% - 289px) !important;
+    }
 
     .tweet.yt.text div.contentin {
         width: 601px;
@@ -3136,7 +3157,8 @@ body.big #calendardiv .fa-calendar {
 
 body.big #editinfodiv .fa-window-close {
     font-size: 19px;
-    right: 22px !important;
+    right: 9px !important;
+    top: 6px !important;
 }
 
 #editinfodiv .titletable.buttonstable {
@@ -3148,7 +3170,8 @@ body.big #editinfodiv .fa-window-close {
 }
 
 body.big #editinfodiv .titletable.buttonstable {
-  max-height: 34px;
+  max-height: 73px;
+  height: 40px;
 }
 
 #editinfodiv .sectiontitletable.sectionexpandable {
@@ -3311,6 +3334,12 @@ body.big .newLayout#linkChange .fa-tags {
   background: var(--high-color);    
 }
 
+body.big .edittext.fa-pencil {
+  margin-top: -1px;
+  padding: 5px 6px;
+  font-size: 19px;
+}
+
 #editinfodiv textarea {
     overflow: hidden;
     height: 100%;
@@ -3336,6 +3365,16 @@ body.big .newLayout#linkChange .fa-tags {
       top: auto;
       margin-top: -4px;
     }
+
+
+    .tweet.text .linkbar {
+        left: 11px !important;
+    }
+
+    .tweet.text:first-child .linkbar {
+        left: 11px !important;
+    }
+
 
     #editinfodiv .fa-window-close {
       right: 7px !important;
@@ -3367,10 +3406,10 @@ body.big .newLayout#linkChange .fa-tags {
 
     .tweet.yt.text div.contentin > div {
         background-image: linear-gradient(to bottom, var(--softdark-color), var(--dark-color));
-        padding-top: 6px;
+        padding-top: 11px;
         border: 0px solid var(--high-color);
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     
     #titlesearch {
@@ -4571,13 +4610,14 @@ body.big .newLayout .fa-file-text {
     font-size: 12px;
     position: relative;
     top: 2px !important;
+    float: left;
     left: -2px;
     font-size: 14px !important;
 }
 body.big #editinfodiv.newLayout .fa-file-text {
-    font-size: 17px;
-    top: -1px;
-    left: -1px;
+    font-size: 17px !important;
+    top: 7px !important;
+    left: 10px;
 }
 
 .mainbutton {
@@ -6173,9 +6213,7 @@ body.big #calendardiv .fa-calendar {
     top: 2px;
 }
 
-body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {
-    padding-top: 5px;
-}
+body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 2px;width: 608px !important;min-width: 575px !important;}
 
 #editinfodiv .fa-calendar {position: relative;top: -1px;}
 
@@ -6935,6 +6973,13 @@ option:focus{
     transition: all .6s;
 }
 
+body.big #editinfodiv .fa-check {
+    bottom: 11px;
+    right: 12px;
+    font-size: 22px;
+    padding: 3px 3px;
+    padding-top: 2px;
+}
 #editinfodiv .fa-times {
   position: absolute;
   bottom: 11px;
@@ -6949,3 +6994,10 @@ option:focus{
   transition: all .6s;
 }
 
+body.big #editinfodiv .fa-times {
+  bottom: 11px;
+  right: 49px;
+  font-size: 22px;
+  padding: 3px 6px;
+  padding-top: 2px;
+}

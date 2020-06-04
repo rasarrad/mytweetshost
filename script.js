@@ -187,13 +187,6 @@ $( document ).ready(function() {
         }
     }
     
-    if (isMobile) {
-        // START swip binds
-        document.addEventListener('touchstart', handleTouchStart, false);        
-        document.addEventListener('touchmove', handleTouchMove, false);
-        document.addEventListener('touchend', handleTouchEnd, false);
-    }
-
     // START da help
     value = readCookie("help");
     if (value) {
@@ -503,17 +496,28 @@ $( document ).ready(function() {
         filtertagOnChange(this);
     });
 
-    $("#editinfodiv textarea").focus(function(){  
-        $("#editinfodiv .sectionicontd").css("height", (window.innerHeight/2) + "px");
+    if (!isMobile) {
+        document.getElementById("tweetcount").addEventListener("click", clickHandler);
+        document.getElementById("tweetcount").addEventListener("mouseover", countclick);
+    }
+    else {
+        // START swip binds
+        document.addEventListener('touchstart', handleTouchStart, false);        
+        document.addEventListener('touchmove', handleTouchMove, false);
+        document.addEventListener('touchend', handleTouchEnd, false);
 
-        $("#editinfodiv").addClass("keyb");
-    });
-
-    $("#editinfodiv textarea").blur(function(){  
-        $("#editinfodiv .sectionicontd").css("height", (window.innerHeight - 94) + "px")
-
-        $("#editinfodiv").removeClass("keyb");
-    });
+        $("#editinfodiv textarea").focus(function(){  
+            $("#editinfodiv .sectionicontd").css("height", (window.innerHeight/2) + "px");
+    
+            $("#editinfodiv").addClass("keyb");
+        });
+    
+        $("#editinfodiv textarea").blur(function(){  
+            $("#editinfodiv .sectionicontd").css("height", (window.innerHeight - 94) + "px")
+    
+            $("#editinfodiv").removeClass("keyb");
+        });
+    }
 
     $("#filtertag").keyup(function(e) {
         filtertagOnChange(this);
@@ -738,11 +742,6 @@ $( document ).ready(function() {
             
         })
     }); 
-
-    if (!isMobile) {
-        document.getElementById("tweetcount").addEventListener("click", clickHandler);
-        document.getElementById("tweetcount").addEventListener("mouseover", countclick);
-    }
     
     // xyz startcode
     setTimeout(function() {
