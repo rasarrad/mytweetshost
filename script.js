@@ -287,10 +287,12 @@ $( document ).ready(function() {
                 }
             }
             else {
-                $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
-                $("#recoilback").slideUp(650, function() {
-                    $("#recoilback").css("position", "absolute");
-                });
+                if ($(window).scrollTop() > 200) {
+                    $("#recoilback").css("border-bottom", "1px solid var(--dark-color)");
+                    $("#recoilback").slideUp(650, function() {
+                        $("#recoilback").css("position", "absolute");
+                    });
+                }
             }
         }
 
