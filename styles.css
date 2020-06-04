@@ -3358,9 +3358,12 @@ body.big .edittext.fa-pencil {
     position: relative;
     border: 0px solid var(--soft-color);
     top: 2px;
-    overflow-y: auto;
+    overflow-y: unset;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
+    overscroll-behavior-y: contain;
+    overflow-y: auto;
+    scroll-behavior: auto;
 }
 
 

@@ -343,7 +343,7 @@ function editLinkText(id, obj) {
     else
         jsonvar = getJsonbyid(id);
 
-    $('body, html').css('overflow-y', 'hidden');
+    $('body, html').css('overflow-y', 'hidden').css('position', 'fixed');
 
     $('#editinfodiv .sectionicontd').css("height", (window.innerHeight - 94) + "px");
 
@@ -355,7 +355,7 @@ function editLinkText(id, obj) {
 
 
 function closeLinkText() {
-    $('body, html').css('overflow-y', 'auto');
+    $('body, html').css('overflow-y', 'auto').css('position', 'static');
     $('#editinfodiv').fadeOut(800);
 }
 
