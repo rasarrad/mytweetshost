@@ -503,6 +503,18 @@ $( document ).ready(function() {
         filtertagOnChange(this);
     });
 
+    $("#editinfodiv textarea").focus(function(){  
+        $("#editinfodiv .sectionicontd").css("height", (window.innerHeight/2) + "px");
+
+        $("#editinfodiv").addClass("keyb");
+    });
+
+    $("#editinfodiv textarea").blur(function(){  
+        $("#editinfodiv .sectionicontd").css("height", (window.innerHeight - 94) + "px")
+
+        $("#editinfodiv").removeClass("keyb");
+    });
+
     $("#filtertag").keyup(function(e) {
         filtertagOnChange(this);
     });

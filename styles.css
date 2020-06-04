@@ -1625,6 +1625,12 @@ body.big #calendardiv > div {
   max-width: 583px !important;
   width: auto !important;
 }
+
+#editinfodiv.keyb > div {
+  transform: translate(-50%, 0px);
+  top: -34px !important;
+}
+
 body.big #editinfodiv > div {
   margin-top: 40px !important;
   height: auto !important;
