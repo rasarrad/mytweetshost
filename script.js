@@ -1441,7 +1441,6 @@ function executeSingleDoubleFunction(obj, type) {
     }
 }
 function executeSwipeFunction(obj, type) {
-    console.log(obj)
     switch(obj) {
         case "main":
         case "backdiv":

@@ -1608,15 +1608,17 @@ body.big #calendardiv > div {
 
 #editinfodiv > div {
   height: auto !important;
-  max-width: 361px !important;
-  margin-left: calc(50% - 183px) !important;
+  margin-left: 0 !important;
   background: var(--softdark-color);
   position: relative;
-  transform: translate(0px, -50%);
+  transform: translate(-50%, -50%);
   top: calc(50%) !important;
   margin-top: 0px !important;
+  left: calc(50%) !important;
   max-height: none !important;
   padding-bottom: 1px;
+  max-width: 583px !important;
+  width: auto !important;
 }
 body.big #editinfodiv > div {
   margin-top: 40px !important;
@@ -2343,6 +2345,7 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
       top: auto;
       bottom: 4px;
     }
+
 
     .tweet.yt.text div.contentin {
         width: 536px;
@@ -3080,12 +3083,18 @@ body.big #calendardiv .fa-calendar {
 }
 
 #editinfodiv  > div .titletable tr:first-child .firsttd {
-    min-width: 349px !important;
+    width: 616px !important;
+    position: relative;
+    left: -4px;
+    min-width: 575px;
 }
 
 #editinfodiv .fa-window-close {
-  right: 26px !important;
+  right: 8px !important;
   cursor: pointer;
+  left: auto;
+  float: right;
+  top: 4px !important;
 }
 
 body.big #editinfodiv .fa-window-close {
@@ -3096,7 +3105,7 @@ body.big #editinfodiv .fa-window-close {
 #editinfodiv .titletable.buttonstable {
     max-height: 61px;
     height: 33px;
-    width: 359px !important;
+    width: 583px !important;
     background: var(--softdark-color);
 }
 
@@ -3275,6 +3284,16 @@ body.big .newLayout#linkChange .fa-tags {
       top: auto;
       margin-top: -4px;
     }
+    #editinfodiv .titletable.buttonstable {
+        width: calc(100% - 0px) !important;
+    }
+
+    #editinfodiv  > div .titletable tr:first-child .firsttd {
+        min-width: calc(100% + 15px);
+        width: calc(100% + 140px) !important;
+        display: block;
+    }
+
     #splash .secondrow div {
         width: 340px;
     }
@@ -3528,6 +3547,7 @@ body.big .newLayout#linkChange .fa-tags {
       /* margin-top: 164px !important; */
       height: auto !important;
       padding-bottom: 1px;
+      max-width: calc(100% - 34px) !important;
     }
     body.big #editinfodiv > div {
       margin-top: 145px !important;
@@ -4480,6 +4500,19 @@ body.big .newLayout .fa-star-half-o {
     left: -2px;
 }
 body.big .newLayout .fa-file-text {
+    font-size: 17px;
+    top: -1px;
+    left: -1px;
+}
+
+#editinfodiv.newLayout .fa-file-text {
+    font-size: 12px;
+    position: relative;
+    top: 2px !important;
+    left: -2px;
+    font-size: 14px !important;
+}
+body.big #editinfodiv.newLayout .fa-file-text {
     font-size: 17px;
     top: -1px;
     left: -1px;
@@ -6832,6 +6865,8 @@ option:focus{
     border: 0px solid var(--soft-color);
     top: 1px;
     overflow-y: auto;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
 }
 
 
