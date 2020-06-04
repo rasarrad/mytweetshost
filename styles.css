@@ -1825,6 +1825,7 @@ body.big .bottomstrip {
   background-color: linear-gradient(to bottom, var(--dark-color) -84%, var(--dark-color) 60%, transparent 81%);
   to bottom, var(--dark-color) -84%, var(--dark-color) 60%, transparent 81%):;
   /* text-transform: capitalize; */
+  background-image: linear-gradient(to bottom, var(--dark-color) -84%, var(--softdark-color) 50%, transparent 65%);
 }
 .bottomstrip .bottomstripline {
   /* padding-top: 19px; */
@@ -2413,7 +2414,7 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
     }
 
     body.big .tweet.text .linkbar {
-        top: 4px !important;
+        top: 6px !important;
         font-size: 17px;
         left: calc(50% - 287px) !important;
     }
@@ -3423,6 +3424,7 @@ body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 
 
     body.big .tweet.text .linkbar {
         left: 11px !important;
+        top: 5px !important;
     }
 
     body.big .tweet.text:first-child .linkbar {
