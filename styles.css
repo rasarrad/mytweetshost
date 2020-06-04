@@ -1180,6 +1180,11 @@ body.big #expand {
     display: block;
     background-image: linear-gradient(to bottom, var(--soft-color) 10%, var(--dark-color) 83%);
 }
+
+.yt.text .gradiantback {
+    background-image: linear-gradient(to bottom, var(--soft-color) 10%, var(--softdark-color) 83%);
+}
+
   .html .gradiantback {
     position: absolute;
     width: 100%;
@@ -1773,11 +1778,11 @@ body.big #editTags {
   font-weight: bold;
   text-transform: lowercase;
   font-size: 13px;
-  filter: brightness(53%);
+  /* filter: brightness(53%); */
   border-bottom: 0px solid;
   height: 95px;
   color: var(--high-color);
-  background-image: linear-gradient(to bottom, var(--dark-color) -84%, var(--dark-color) 60%, transparent 81%);
+  background-image: linear-gradient(to bottom, var(--dark-color) -84%, var(--softdark-color) 50%, transparent 65%);
 }
 
 .tweet.html .bottomstrip {
@@ -6906,13 +6911,9 @@ option:focus{
     box-shadow:none;
 }
 
-
-
 .edittext.fa-pencil:hover {
   color: var(--soft-color);
 }
-
-
 
 #editinfodiv .fa-check {
     position: absolute;
@@ -6927,6 +6928,7 @@ option:focus{
     border-radius: 3px;
     transition: all .6s;
 }
+
 #editinfodiv .fa-times {
   position: absolute;
   bottom: 11px;
@@ -6940,3 +6942,4 @@ option:focus{
   border-radius: 3px;
   transition: all .6s;
 }
+
