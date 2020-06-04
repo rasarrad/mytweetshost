@@ -1641,6 +1641,12 @@ body.big #calendardiv > div {
   top: -34px !important;
 }
 
+body.big #editinfodiv.keyb > div {
+  transform: translate(-50%, 0px);
+  top: -44px !important;
+}
+
+
 body.big #editinfodiv > div {
   /* margin-top: 40px !important; */
   height: auto !important;
