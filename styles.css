@@ -1825,7 +1825,7 @@ body.big .bottomstrip {
   background-color: linear-gradient(to bottom, var(--dark-color) -84%, var(--dark-color) 60%, transparent 81%);
   to bottom, var(--dark-color) -84%, var(--dark-color) 60%, transparent 81%):;
   /* text-transform: capitalize; */
-  background-image: linear-gradient(to bottom, var(--dark-color) -84%, var(--softdark-color) 50%, transparent 65%);
+  background-image: linear-gradient(to bottom, var(--dark-color) -84%, var(--softdark-color) 54%, transparent 71%);
 }
 .bottomstrip .bottomstripline {
   /* padding-top: 19px; */
