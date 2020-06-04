@@ -7038,3 +7038,61 @@ body.big #editinfodiv .fa-times {
   padding: 3px 6px;
   padding-top: 2px;
 }
+
+#editinfodiv .fa-keyboard-o {
+    position: absolute;
+    bottom: 11px;
+    right: calc(50% - 14px);
+    color: var(--high-color);
+    font-size: 19px;
+    cursor: pointer;
+    display: block;
+    background: var(--softdark-color);
+    padding: 3px 5px;
+    border-radius: 3px;
+    padding-right: 7px;
+    transition: all .6s;
+  display: none !important;
+}
+
+
+#editinfodiv .fa-angle-down {
+    position: absolute;
+    bottom: 11px;
+    right: calc(50% - 30px);
+    color: var(--high-color);
+    font-size: 19px;
+    cursor: pointer;
+    display: block;
+    background: var(--softdark-color);
+    padding: 3px 5px;
+    border-radius: 3px;
+    transition: all .6s;
+
+  display: none !important;
+}
+
+#editinfodiv.keyb .fa-keyboard-o {
+  display: block !important;
+}
+
+
+#editinfodiv.keyb .fa-angle-down {
+  display: block !important;
+}
+
+
+body.big #editinfodiv.keyb .fa-keyboard-o {
+    font-size: 25px;
+    padding: 3px 5px;
+    padding-top: 0px;
+    padding-bottom: 2px;
+    right: calc(50% - 12px);
+}
+
+
+body.big #editinfodiv.keyb .fa-angle-down {
+    font-size: 21px;
+    padding: 3px 5px;
+    right: calc(50% - 31px);
+}

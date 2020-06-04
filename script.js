@@ -508,12 +508,12 @@ $( document ).ready(function() {
 
         $("#editinfodiv textarea").focus(function(){  
             $("#editinfodiv .sectionicontd").css("height", (window.innerHeight/2) + "px");
-    
+            $("#editinfodiv").attr("cinner", window.innerHeight - 94);
             $("#editinfodiv").addClass("keyb");
         });
     
         $("#editinfodiv textarea").blur(function(){  
-            $("#editinfodiv .sectionicontd").css("height", (window.innerHeight - 94) + "px")
+            $("#editinfodiv .sectionicontd").css("height", $("#editinfodiv").attr("cinner") + "px")
     
             $("#editinfodiv").removeClass("keyb");
         });
