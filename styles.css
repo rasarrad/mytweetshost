@@ -1181,9 +1181,7 @@ body.big #expand {
     background-image: linear-gradient(to bottom, var(--soft-color) 10%, var(--dark-color) 83%);
 }
 
-.yt.text .gradiantback {
-    background-image: linear-gradient(to bottom, var(--soft-color) 10%, var(--softdark-color) 83%);
-}
+
 
   .html .gradiantback {
     position: absolute;
@@ -1375,7 +1373,7 @@ body.big .tweet div.contentin .logo {
 }
 
 body.big .tweet.yt.text div.contentin {
-    padding-bottom: 103px;
+    /* padding-bottom: 103px; */
 }
 
 .tweet.yt.text div.contentin > div {
@@ -1733,15 +1731,15 @@ body.big #expand {
 }
 
 body.big .tweet.text .linkbar {
-    top: 0.5px !important;
-    font-size: 13px;
-    left: 11px !important;
+    top: 3.5px !important;
+    font-size: 17px;
+    left: calc(50% - 392px) !important;
 }
 
 body.big .tweet.text:first-child .linkbar {
     top: 0.5px !important;
-    font-size: 13px;
-    left: 11px !important;
+    font-size: 17px;
+    left: calc(50% - 392px) !important;
 }
 
 .tweet:first-child .linkbar.fa-internet-explorer {
@@ -2408,6 +2406,12 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
         margin-top: -6px;
     }
 
+    body.big .tweet.text .linkbar {
+        top: 4px !important;
+        font-size: 17px;
+        left: calc(50% - 287px) !important;
+    }
+
     .newLayout#searchpopup > div {
         max-height: calc(100% - 3px) !important;
     }
@@ -2724,10 +2728,10 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
         /* max-height: 300px !important; */
       }
       body.big #editinfodiv > div {
-        margin-top: -72px !important;
-        height: 375px !important;
-        max-height: unset !important;
-        border-radius: 0;
+        /* margin-top: -72px !important; */
+        /* height: 375px !important; */
+        /* max-height: unset !important; */
+        /* border-radius: 0; */
       }
 
 
@@ -3158,7 +3162,7 @@ body.big #calendardiv .fa-calendar {
 body.big #editinfodiv .fa-window-close {
     font-size: 19px;
     right: 9px !important;
-    top: 6px !important;
+    top: 7px !important;
 }
 
 #editinfodiv .titletable.buttonstable {
@@ -3336,7 +3340,7 @@ body.big .newLayout#linkChange .fa-tags {
 
 body.big .edittext.fa-pencil {
   margin-top: -1px;
-  padding: 5px 6px;
+  padding: 5px 8px;
   font-size: 19px;
 }
 
@@ -3351,6 +3355,11 @@ body.big .edittext.fa-pencil {
     overflow-y: auto;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
+}
+
+
+body.big #editinfodiv textarea {
+    top: 3px;
 }
 
 /*****************************************************************************/
@@ -3375,7 +3384,14 @@ body.big .edittext.fa-pencil {
         left: 11px !important;
     }
 
+    body.big .tweet.text .linkbar {
+        left: 11px !important;
+    }
 
+    body.big .tweet.text:first-child .linkbar {
+        left: 11px !important;
+        top: 1px !important;
+    }
     #editinfodiv .fa-window-close {
       right: 7px !important;
     }
@@ -3651,7 +3667,7 @@ body.big .edittext.fa-pencil {
       width: 361px !important;
     }
     body.big #editinfodiv > div {
-      margin-top: 145px !important;
+      margin-top: 0px !important;
     } 
 
     .newLayout#mainsettings > div {
@@ -3988,6 +4004,18 @@ body.big .edittext.fa-pencil {
           background-position-y: calc(50% - 20vw) !important;
           height: 566px;
       }  
+
+
+     body.big .tweet.yt.text div.contentin {
+          transform: none;
+          top: 0px !important;
+          margin-top: 40px;
+          background-position-y: calc(50% - 20vw) !important;
+          height: auto;
+          left: 0 !important;
+          margin-top: -3px;
+      }  
+      
       body.big .tweet.html div.contentin {
           transform: translate(-50%, -50%);
           top: calc(50% + 0px) !important;
@@ -4108,6 +4136,9 @@ body.big .edittext.fa-pencil {
         width: calc(50% - 102px);
         margin-left: 1px !important;
         padding-left: 2px;
+      }
+      .yt.text .gradiantback {
+          background-image: linear-gradient(to bottom, var(--soft-color) 10%, var(--softdark-color) 83%);
       }
 
   }
@@ -4609,9 +4640,9 @@ body.big .newLayout .fa-file-text {
 #editinfodiv.newLayout .fa-file-text {
     font-size: 12px;
     position: relative;
-    top: 2px !important;
+    top: 6px !important;
     float: left;
-    left: -2px;
+    left: 9px;
     font-size: 14px !important;
 }
 body.big #editinfodiv.newLayout .fa-file-text {
@@ -6213,7 +6244,7 @@ body.big #calendardiv .fa-calendar {
     top: 2px;
 }
 
-body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 2px;width: 608px !important;min-width: 575px !important;}
+body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 0px;width: 608px !important;min-width: 575px !important;}
 
 #editinfodiv .fa-calendar {position: relative;top: -1px;}
 
