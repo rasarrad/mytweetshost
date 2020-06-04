@@ -274,18 +274,11 @@ $( document ).ready(function() {
     window.onscroll = function(ev) {
         clearTimeout(renderTimeout);
 
-        if (topMenuMode == 2) {
+        if (topMenuMode == 2 && $(window).scrollTop() > 300) {
             if (scrollLastPos > $(window).scrollTop()) {
                 $("#recoilback").css("position", "fixed");
-                var speed = 1080;
-                if ($(window).scrollTop() < 100) {
-                    if ($(window).scrollTop() < 50) 
-                        speed = 50;
-                    else 
-                        speed = 150;
-                }
 
-                $("#recoilback").slideDown(speed);
+                $("#recoilback").slideDown(1080);
     
                 if ($(window).scrollTop() == 0) {
                     $("#recoilback").css("border-bottom", "0px solid var(--dark-color)");
