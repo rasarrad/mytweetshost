@@ -1361,7 +1361,7 @@ body.big .tweet div.contentin .logo {
     padding-bottom: 83px;
     padding-right: 30px;
     padding-left: 30px;
-    width: 772px;
+    width: 846px;
     transform: translate(-50%, 0px);
     font-size: 12px;
     text-transform: uppercase;
@@ -1616,7 +1616,7 @@ body.big #calendardiv > div {
   margin-top: 0px !important;
   left: calc(50%) !important;
   max-height: none !important;
-  padding-bottom: 1px;
+  padding-bottom: 3px;
   max-width: 583px !important;
   width: auto !important;
 }
@@ -2348,7 +2348,7 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
 
 
     .tweet.yt.text div.contentin {
-        width: 536px;
+        width: 601px;
         margin-top: -6px;
     }
 
@@ -3087,6 +3087,8 @@ body.big #calendardiv .fa-calendar {
     position: relative;
     left: -4px;
     min-width: 575px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 }
 
 #editinfodiv .fa-window-close {
@@ -3107,6 +3109,7 @@ body.big #editinfodiv .fa-window-close {
     height: 33px;
     width: 583px !important;
     background: var(--softdark-color);
+    padding-top: 4px;
 }
 
 body.big #editinfodiv .titletable.buttonstable {
@@ -3261,16 +3264,30 @@ body.big .newLayout#linkChange .fa-tags {
     top: 1px;
     left: -3px;
 }
-    .edittext.fa-pencil {
-      left: -10px;
-      left: 50%;
-      top: auto;
-      margin-top: -1px;
-      border: 1px solid var(--softdark-color);
-      border-radius: 3px;
-      padding: 3px 4px;
-      background: var(--high-color);
-    }
+
+.edittext.fa-pencil {
+  left: -10px;
+  left: 50%;
+  top: auto;
+  margin-top: -1px;
+  border: 1px solid var(--softdark-color);
+  border-radius: 3px;
+  padding: 3px 4px;
+  background: var(--high-color);    
+}
+
+#editinfodiv textarea {
+    overflow: hidden;
+    height: 100%;
+    width: calc(100% - 19px);
+    margin-left: 1px;
+    position: relative;
+    border: 0px solid var(--soft-color);
+    top: 2px;
+    overflow-y: auto;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
 
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
@@ -3284,13 +3301,22 @@ body.big .newLayout#linkChange .fa-tags {
       top: auto;
       margin-top: -4px;
     }
+
+    #editinfodiv .fa-window-close {
+      right: 7px !important;
+    }
+
+    #editinfodiv textarea {
+        top: 1px;
+    }
+
     #editinfodiv .titletable.buttonstable {
-        width: calc(100% - 0px) !important;
+        width: 357px !important;
     }
 
     #editinfodiv  > div .titletable tr:first-child .firsttd {
         min-width: calc(100% + 15px);
-        width: calc(100% + 140px) !important;
+        width: 338px !important;
         display: block;
     }
 
@@ -3547,7 +3573,8 @@ body.big .newLayout#linkChange .fa-tags {
       /* margin-top: 164px !important; */
       height: auto !important;
       padding-bottom: 1px;
-      max-width: calc(100% - 34px) !important;
+      max-width: 361px !important;
+      width: 361px !important;
     }
     body.big #editinfodiv > div {
       margin-top: 145px !important;
@@ -4385,7 +4412,7 @@ body.big #linktable {
     font-size: 17px;
     font-family: Helvetica, Roboto, "Segoe UI", Calibri, sans-serif;
     font-variant-caps: normal;
-    border-radius: 3px;
+    border-radius: 4px;
     resize: none;
 }
 .newLayout textarea[readonly] {
@@ -6106,6 +6133,11 @@ body.big #calendardiv .fa-calendar {
     padding-top: 1px;
 }
 
+
+#editinfodiv.newLayout > div .titletable tr:first-child .firsttd b {
+    top: 2px;
+}
+
 body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {
     padding-top: 5px;
 }
@@ -6850,25 +6882,9 @@ option:focus{
     box-shadow:none;
 }
 
-
-
 .edittext.fa-pencil:hover {
   color: var(--soft-color);
 }
-
-#editinfodiv textarea {
-    overflow: hidden;
-    height: 100%;
-    width: calc(100% - 19px);
-    margin-left: 1px;
-    position: relative;
-    border: 0px solid var(--soft-color);
-    top: 1px;
-    overflow-y: auto;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-}
-
 
 #editinfodiv .fa-check {
     position: absolute;
