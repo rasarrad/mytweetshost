@@ -3368,6 +3368,18 @@ body.big #editinfodiv textarea {
     top: 3px;
 }
 
+#editinfodiv.newLayout > div .titletable tr:first-child .firsttd {
+    padding-top: 1px;
+}
+
+
+#editinfodiv.newLayout > div .titletable tr:first-child .firsttd b {
+    top: 2px;
+}
+
+body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 0px;width: 608px !important;min-width: 575px !important;}
+
+
 /*****************************************************************************/
 /******************************** PORTRAIT CSS *******************************/
 /* 
@@ -3380,6 +3392,22 @@ body.big #editinfodiv textarea {
       top: auto;
       margin-top: -4px;
     }
+
+    #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {
+        padding-top: 1px;
+    }
+
+
+    #editinfodiv.newLayout > div .titletable tr:first-child .firsttd b {
+        top: 2px;
+    }
+
+    body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd b {
+        top: 3px;
+    }
+
+
+    body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 0px;width: 357px !important;min-width: 317px !important;}
 
 
     .tweet.text .linkbar {
@@ -6240,17 +6268,6 @@ body.big #calendardiv.newLayout > div .titletable tr:first-child .firsttd {
 body.big #calendardiv .fa-calendar {
     margin-top: 0px;
 }
-
-#editinfodiv.newLayout > div .titletable tr:first-child .firsttd {
-    padding-top: 1px;
-}
-
-
-#editinfodiv.newLayout > div .titletable tr:first-child .firsttd b {
-    top: 2px;
-}
-
-body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 0px;width: 608px !important;min-width: 575px !important;}
 
 #editinfodiv .fa-calendar {position: relative;top: -1px;}
 

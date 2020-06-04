@@ -507,7 +507,7 @@ $( document ).ready(function() {
         document.addEventListener('touchend', handleTouchEnd, false);
 
         $("#editinfodiv textarea").focus(function(){  
-            $("#editinfodiv .sectionicontd").css("height", (window.innerHeight/2) + "px");
+            $("#editinfodiv .sectionicontd").css("height", ((window.innerHeight/2) - 20) + "px");
             $("#editinfodiv").attr("cinner", window.innerHeight - 94);
             $("#editinfodiv").addClass("keyb");
         });
