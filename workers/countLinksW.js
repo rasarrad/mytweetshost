@@ -70,7 +70,7 @@ function processCount(inputArray, includeDeleted) {
                 else if (val.type == "Y") {
                     total_y = total_y + 1;
                 }
-                else if (val.type == "H") {
+                else {
                     total_h = total_h + 1;
                 }
                 total = total + 1;
@@ -113,7 +113,7 @@ function processCount(inputArray, includeDeleted) {
                 else if (val.type == "Y") {
                     total_y = total_y + 1;
                 }
-                else if (val.type == "H") {
+                else {
                     total_h = total_h + 1;
                 }
                 total = total + 1;
