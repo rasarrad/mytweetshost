@@ -981,6 +981,8 @@ window.openLinkInline = function(id) {
     $("#contentiniframe" + id).attr("cid", id);
     dblFlag = true; 
 
+    $("#contentin" + id + " logo").hide();
+
     var timer = 1500;
     if (obj.hasClass("yt"))
         timer = 1;
@@ -1021,7 +1023,7 @@ function generateUrl(url) {
             url = url.replace("&t=","?start=");
             url = url.substring(0, url.length -1);
         }
-        url = "https://www.youtube.com/embed/" + url + "?autoplay=1&mute=1&enablejsapi=1";
+        url = "https://www.youtube.com/embed/" + url + "?autoplay=1";
     }
     return url;
 } 
