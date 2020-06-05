@@ -1330,13 +1330,19 @@ body.big .tweet.yt {
 }
 
 body.big .tweet div.contentin .logo {
-    top: calc(35%) !important;
-    font-size: 31px;
+    /* top: calc(35%) !important; */
+    /* font-size: 31px; */
+}
+
+.tweet div.contentin .logo {
+    font-size: 151px;
+    top: calc(22%) !important;
+    padding: 44px 73px;
 }
 
 
 body.big .tweet div.contentin .logo {
-    font-size: 62px;
+    /* font-size: 62px; */
 }
 
 .tweet div.contentin .logo.large {
@@ -2569,7 +2575,7 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
     }
     body.big .tweet div.contentin .logo {
         /* font-size: 44px; */
-        top: calc(39%) !important;
+        /* top: calc(39%) !important; */
     }
     .tweet.yt {
         top: 0px;
@@ -2603,11 +2609,14 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
     .tweet div.contentin .logo {
         font-size: 31px;
         top: calc(42%) !important;
+        font-size: 114px;
+        top: calc(32%) !important;
+        padding: 20px 41px;
     }
 
     body.big .tweet div.contentin .logo {
-        font-size: 44px;
-        top: calc(41%) !important;
+        /* font-size: 44px; */
+        /* top: calc(41%) !important; */
     }
 
     #previewtable .tweet div.contentin .logo {
@@ -2641,7 +2650,9 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
     }
     
     .tweet.html div.contentin .logo {
-       top: calc(41.5%) !important;
+        font-size: 119px;
+        top: calc(27.1%) !important;
+        padding: 23px 47px;
     }
      
     .tweet .bottomstrip {
@@ -4152,8 +4163,8 @@ body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 
           top: calc(39%) !important;
       }
       body.big .tweet div.contentin .logo {
-          top: calc(40%) !important;
-          font-size: 41px;
+          /* top: calc(40%) !important; */
+          /* font-size: 41px; */
       }
 
       #previewtd .tweet div.contentin .logo {
@@ -4161,10 +4172,17 @@ body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 
           font-size: 69px;
       }
 
-       .tweet.html div.contentin .logo {
+       .tweet div.contentin .logo {
           transform: translate(-50%, -97%);
-          font-size: 30px;
-      }     
+          font-size: 67px;
+          top: calc(45%) !important;
+          padding: 20px 28px;
+      }   
+
+       .tweet.html div.contentin .logo {
+          top: calc(43%) !important;
+      }   
+            
       .tweet div.contentin .logo.large {
           font-size: 22vw;
       }
