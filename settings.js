@@ -178,18 +178,20 @@ var openDetailPopup = function(jsonobj, flag)
         
         $('#editTags').css('margin-top', '75px');  
         
+        $("#linkChange #seticon").attr('class','');
+
         $("#linkChange #seticon").addClass('fa').addClass('fa-twitter');
     
         $('#infoinput').prop('readonly', null);
 
         if (jsonobj.type == "H") {
-            $("#linkChange #seticon").addClass('fa').removeClass('fa-twitter').addClass('fa-internet-explorer');
+            $("#linkChange #seticon").removeClass('fa-twitter').addClass('fa-internet-explorer');
         }
         else if (jsonobj.type == "Y") {
-            $("#linkChange #seticon").addClass('fa').removeClass('fa-twitter').addClass('fa-youtube-play');
+            $("#linkChange #seticon").removeClass('fa-twitter').addClass('fa-youtube-play');
         }   
         else if (jsonobj.type == "N") {
-            $("#linkChange #seticon").addClass('fa').removeClass('fa-file-text').addClass('fa-youtube-play');
+            $("#linkChange #seticon").removeClass('fa-twitter').addClass('fa-file-text');
         
             $('#infoinput').prop('readonly', 'true');
         }  
@@ -387,12 +389,24 @@ var openDetailPopup = function(jsonobj, flag)
         updateLinkColor(jsonobj);
     }
     else {
-
-            
         $("#linkChange .originaltr").hide();
         $('#linkChange td.el').removeClass('ellipsis');
+
         dblFlag = false;
-        $("#linkChange #seticon").removeClass('fa-question').removeClass('fa-twitter').removeClass('fa-internet-explorer').removeClass('fa-youtube-play');
+        
+        $("#linkChange #seticon").attr('class','');
+
+        $("#linkChange #seticon").addClass('fa').addClass('fa-twitter');
+    
+        if (addType == "H") {
+            $("#linkChange #seticon").removeClass('fa-twitter').addClass('fa-internet-explorer');
+        }
+        else if (addType == "Y") {
+            $("#linkChange #seticon").removeClass('fa-twitter').addClass('fa-youtube-play');
+        }   
+        else if (addType == "N") {
+            $("#linkChange #seticon").removeClass('fa-twitter').addClass('fa-file-text');
+        }  
 
         $('#linkChange').find("table:not(.defaulttablerow):not(.newlinktable)").each( function( index, element ) {
             var table = $(element);
@@ -422,7 +436,6 @@ var openDetailPopup = function(jsonobj, flag)
 
         $('#linkChange').attr("cid", "new");
         $('#linkChange').addClass("new");
-
 
         $('#previewtable').hide();
 

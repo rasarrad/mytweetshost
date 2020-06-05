@@ -29,10 +29,6 @@ function parseTweet(type) {
         if (text.substring(0,4) == "<blo") {
             addType = "T";
 
-            $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
-
-            $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-twitter').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
-
             text = text.replace(/"/g, '').replace('<\/script>', '<&#47;script>');
 
             var idExisting = existsLink(text, "T");
@@ -83,8 +79,6 @@ function parseTweet(type) {
         }
         else if (text.indexOf("youtube.com/embed") >= 0) {
             addType = "Y";
-            $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
-            $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-youtube-play').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
             
             var date = new Date();
             
@@ -137,8 +131,6 @@ function parseTweet(type) {
         }
         else if (text.substring(0, 50).indexOf("youtube") >= 0) {
             addType = "Y";
-            $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
-            $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-youtube-play').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
 
             var date = new Date();
             
@@ -188,8 +180,6 @@ function parseTweet(type) {
         }
         else if (text.substring(0,4) == "http") {
             addType = "H";
-            $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
-            $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-internet-explorer').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
 
             var date = new Date();
             
@@ -246,8 +236,6 @@ function parseTweet(type) {
         else {
             hasProcessedDescription = true;
             addType = "N";
-            $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
-            $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-file-text').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
 
             var date = new Date();
             
