@@ -176,7 +176,8 @@ var openDetailPopup = function(jsonobj, flag)
         $('#linkChange').removeClass("new");
         
         $('#editTags').css('margin-top', '75px');  
-        
+                
+        $('#linktable').show();
         $("#linkChange #seticon").attr('class','');
 
         $("#linkChange #seticon").addClass('fa').addClass('fa-twitter');
@@ -459,6 +460,7 @@ var openDetailPopup = function(jsonobj, flag)
 
         $("#linkChange #editTags .fa-chevron-down").show();    
 
+        $('#editTags').css('margin-top', '6px');  
                 
         $('#infoinput').prop('readonly', null);
     }
@@ -488,13 +490,6 @@ var openDetailPopup = function(jsonobj, flag)
         } 
     }
     
-    if (flag) {
-
-    }
-    else {
-        $('#editTags').css('margin-top', '6px');  
-        $('#linktable').show();
-    }
     $('#linkChange').css("background", "transparent");
 
     $('#linkChange').slideDown();

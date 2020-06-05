@@ -1790,7 +1790,7 @@ body.big .tweet:first-child .linkbar.fa-youtube-play {
   background: #464646 !important;
 }  
 
-body.big #editTags {
+body.big .newLayout.new #editTags {
   margin-top: 119px !important;
 }
 
@@ -4035,7 +4035,7 @@ body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 
           display: inline;
       }  
       
-      body.big #editTags {
+      body.big .newLayout.new #editTags {
         margin-top: 115px !important;
       }
       #searchtags {
