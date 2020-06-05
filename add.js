@@ -688,6 +688,7 @@ function hasAvailableImage(url) {
         url: 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/' + url,
         type: 'GET'
     }).always(function(jqXHR, textStatus) {
+        alert(jqXHR.length)
         if (jqXHR.length > 26570 && jqXHR.length < 26594) {
             
             text = text.replace("class='contentin", "class='contentin error")
