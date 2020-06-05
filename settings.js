@@ -405,6 +405,7 @@ var openDetailPopup = function(jsonobj, flag)
         }   
         else if (addType == "N") {
             $("#linkChange #seticon").removeClass('fa-twitter').addClass('fa-file-text');
+            $('#linktable #tweet').val("");
             $('#linktable').show();
         }  
 
