@@ -174,7 +174,6 @@ var openDetailPopup = function(jsonobj, flag)
         $('#linkChange').attr("cid", jsonobj.id);
         $('#linkChange').attr("clink", jsonobj.url);
         $('#linkChange').removeClass("new");
-        $('#linktable').hide();
         
         $('#editTags').css('margin-top', '75px');  
         
@@ -406,6 +405,7 @@ var openDetailPopup = function(jsonobj, flag)
         }   
         else if (addType == "N") {
             $("#linkChange #seticon").removeClass('fa-twitter').addClass('fa-file-text');
+            $('#linktable').show();
         }  
 
         $('#linkChange').find("table:not(.defaulttablerow):not(.newlinktable)").each( function( index, element ) {

@@ -247,8 +247,6 @@ function parseTweet(type) {
 
             text = "<div class='contentin pobj' id='contentin" + nextid + "' ><div></div><i onclick='javascript: editLinkText(" + nextid + ")' class='edittext fa fa-pencil'></i></div>"; 
 
-            $('#linktable').hide();
-
             $('#previewtable').hide();
 
             openCreatePopup(true);
