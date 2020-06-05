@@ -135,7 +135,7 @@ function parseTweet(type) {
             return false;
             
         }
-        else if (text.indexOf("youtube") >= 0) {
+        else if (text.substring(0, 50).indexOf("youtube") >= 0) {
             addType = "Y";
             $("#linkChange .buttonstable tr:first-child td i.fa").attr('class','').attr('style','margin-right: 9px;font-size: 18px;position: relative;top: 2px;');
             $("#linkChange .buttonstable tr:first-child td i").addClass('fa').addClass('fa-youtube-play').attr('style','margin-right: 9px;font-size: 15px;position: relative;top: 1px;');
