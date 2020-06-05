@@ -184,7 +184,7 @@ function parseTweet(type) {
             
             $('#datetoshow').val(formatDate(date));
 
-            hasAvailableImage(text);
+            //hasAvailableImage(text);
 
             url = text; 
 
@@ -349,16 +349,14 @@ function closeLinkText() {
 
 function createPreview() {
     $("#linkChange #seticon").attr('class','');
-
-    var typefa = "twitter"
+    
+    var xclass = "";
     if (addType == "H") {
         xclass = " html";
-        typefa = "internet-explorer";
         $("#linkChange #seticon").removeClass('fa-twitter').addClass('fa-internet-explorer');
     }
     else if (addType == "Y") {
         xclass = " yt";
-        typefa = "youtube-play";
         $("#linkChange #seticon").removeClass('fa-twitter').addClass('fa-youtube-play');
     }
     $('#previewtd').empty();
@@ -670,7 +668,7 @@ function getWebsiteData(creationdate, cats, tags, resinfo, classif) {
 
 }
 
-function hasAvailableImage(url) {
+/* function hasAvailableImage(url) {
     $.ajax({
         url: 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/' + url,
         type: 'GET'
@@ -679,7 +677,7 @@ function hasAvailableImage(url) {
             text = text.replace("class='contentin", "class='contentin error")
         }
     });
-}
+} */
 
 
 var openCreatePopup = function(flag) 
