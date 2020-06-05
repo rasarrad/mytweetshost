@@ -803,7 +803,7 @@ var getInformation = function(wasfiltered, valid) {
                     total_yy = total_yy + 1;
                     linkArray[searchtotal] = val.id;
                 }
-                else {
+                else if (val.type == "H") {
                     total_hh = total_hh + 1;
                     linkArray[searchtotal] = val.id;
                 }
