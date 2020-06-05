@@ -1403,6 +1403,12 @@ body.big .tweet.yt.text div.contentin > div {
     font-size: 15px;
     line-height: 22px;
 }
+ 
+#previewtable .tweet div.contentin .logo {
+    font-size: 105px;
+    top: calc(29%) !important;
+    padding: 8px 36px;
+}
     
 .tweet iframe {
   position: relative;
@@ -4172,8 +4178,10 @@ body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 
       }
 
       #previewtd .tweet div.contentin .logo {
-          top: calc(38%) !important;
-          font-size: 69px;
+          top: calc(41%) !important;
+          font-size: 63px;
+          /* display: none; */
+          padding: 14px 21px;
       }
 
        .tweet div.contentin .logo {
@@ -7168,4 +7176,8 @@ body.big #editinfodiv.keyb .fa-angle-down {
     font-size: 21px;
     padding: 3px 5px;
     right: calc(50% - 31px);
+}
+
+#previewtable .tweet.yt div.contentin .logo {
+    display: none !important;
 }
