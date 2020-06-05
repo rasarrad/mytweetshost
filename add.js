@@ -58,15 +58,11 @@ function parseTweet(type) {
                     showMessage("Tweet Link Successfully Parsed And Created"); 
                 }
                 else {
-                    alert(type)
                     if (type && type == 1) {
                         openCreatePopup();
-                        createPreview();
                     }
-                    else {
-                        createPreview();
-                    }
-    
+                    createPreview();
+
                     if ($(window).width() > 1200) {
                         $('#postedby').focus();
                     }
@@ -352,16 +348,18 @@ function closeLinkText() {
 /////////////////////////////////////////////////////////////////////////
 
 function createPreview() {
+    $("#linkChange #seticon").attr('class','');
 
-    var xclass = "";
     var typefa = "twitter"
     if (addType == "H") {
         xclass = " html";
-        typefa = "internet-explorer"
+        typefa = "internet-explorer";
+        $("#linkChange #seticon").removeClass('fa-twitter').addClass('fa-internet-explorer');
     }
     else if (addType == "Y") {
         xclass = " yt";
-        typefa = "youtube-play"
+        typefa = "youtube-play";
+        $("#linkChange #seticon").removeClass('fa-twitter').addClass('fa-youtube-play');
     }
     $('#previewtd').empty();
 
@@ -370,6 +368,8 @@ function createPreview() {
     $('#previewtd').css('height', '');    
 
     if (addType == "T") {
+        $("#linkChange #seticon").addClass('fa').addClass('fa-twitter');
+
         newtweetobj.append($('<div class="innertweet" style="max-height: 290px;min-height: 200px;width: 100% !important;margin-left: 0 !important;"><i class="fa fa-circle-o-notch fa-spin" style="font-size: 14px;position: absolute;top: 0px;height: 33px;width: 33px;top: 69px;color: var(--high-color);font-size: 33px; display: none; "></i></div>'));
         newtweetobj.find('.innertweet').append(text);
 
@@ -675,9 +675,7 @@ function hasAvailableImage(url) {
         url: 'https://cors-anywhere.herokuapp.com/https://s.wordpress.com/mshots/v1/' + url,
         type: 'GET'
     }).always(function(jqXHR, textStatus) {
-        alert(jqXHR.length)
         if (jqXHR.length > 26570 && jqXHR.length < 26594) {
-            
             text = text.replace("class='contentin", "class='contentin error")
         }
     });
