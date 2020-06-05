@@ -1021,8 +1021,7 @@ function generateUrl(url) {
             url = url.replace("&t=","?start=");
             url = url.substring(0, url.length -1);
         }
-        alert(123)
-        url = "https://www.youtube.com/embed/" + url + "?autoplay=1";
+        url = "https://www.youtube.com/embed/" + url + "?autoplay=1&mute=1&enablejsapi=1";
     }
     return url;
 } 
