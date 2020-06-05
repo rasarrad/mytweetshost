@@ -756,9 +756,9 @@ $( document ).ready(function() {
     }); 
     
     // xyz startcode
-    setTimeout(function() {
+/*     setTimeout(function() {
         clickmenu('all', 'All Links')
-    }, 1220);
+    }, 1220); */
 
     //openPopupParsed("sssssssss", 1);
     

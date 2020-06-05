@@ -392,7 +392,7 @@ var openDetailPopup = function(jsonobj, flag)
         $('#linkChange td.el').removeClass('ellipsis');
 
         dblFlag = false;
-        alert(123)
+        
         $("#linkChange #seticon").attr('class','');
 
         $("#linkChange #seticon").addClass('fa').addClass('fa-twitter');
