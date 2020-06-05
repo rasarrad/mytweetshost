@@ -1027,7 +1027,7 @@ function closeSettingsPopup(obj) {
         if ($('body').hasClass('big'))
             setHeight = "37px";
     
-        $('#linkChange').find("table:not(.buttonstable)").each( function( index, element ) {
+        $('#linkChange').find("table:not(.buttonstable):not(.nocol)").each( function( index, element ) {
             var table = $(element);
             
             table.css('transition', 'transition: all 0.7s !important');
