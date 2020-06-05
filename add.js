@@ -58,6 +58,7 @@ function parseTweet(type) {
                     showMessage("Tweet Link Successfully Parsed And Created"); 
                 }
                 else {
+                    alert(type)
                     if (type && type == 1) {
                         openCreatePopup();
                         createPreview();
