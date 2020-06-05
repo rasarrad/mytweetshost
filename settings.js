@@ -177,7 +177,6 @@ var openDetailPopup = function(jsonobj, flag)
         
         $('#editTags').css('margin-top', '75px');  
                 
-        $('#linktable').show();
         $("#linkChange #seticon").attr('class','');
 
         $("#linkChange #seticon").addClass('fa').addClass('fa-twitter');
