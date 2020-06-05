@@ -981,7 +981,7 @@ window.openLinkInline = function(id) {
     $("#contentiniframe" + id).attr("cid", id);
     dblFlag = true; 
 
-    $("#contentin" + id + " logo").hide();
+    $("#contentin" + id + " .logo").hide();
 
     var timer = 1500;
     if (obj.hasClass("yt"))
