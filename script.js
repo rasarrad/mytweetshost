@@ -274,7 +274,7 @@ $( document ).ready(function() {
     window.onscroll = function(ev) {
         clearTimeout(renderTimeout);
 
-        if (topMenuMode == 2 && $(window).scrollTop() > 300) {
+/*         if (topMenuMode == 2 && $(window).scrollTop() > 300) {
             if (scrollLastPos > $(window).scrollTop()) {
                 $("#recoilback").css("position", "fixed");
 
@@ -292,6 +292,17 @@ $( document ).ready(function() {
                 $("#recoilback").slideUp(650, function() {
                     $("#recoilback").css("position", "absolute");
                 });
+            }
+        } */
+
+        if (topMenuMode == 2) {
+            if (scrollLastPos > $(window).scrollTop()) {
+                $("#recoilback").css("position", "fixed");
+                $("#recoilback").fadeIn(400);
+            }
+            else {
+                $("#recoilback").css("position", "absolute");
+                $("#recoilback").fadeOut(400);
             }
         }
 
