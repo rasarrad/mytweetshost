@@ -298,11 +298,11 @@ $( document ).ready(function() {
         if (topMenuMode == 2) {
             if (scrollLastPos > $(window).scrollTop()) {
                 $("#recoilback").css("position", "fixed");
-                $("#recoilback").fadeIn(400);
+                $("#recoilback").fadeIn(700);
             }
             else {
                 $("#recoilback").css("position", "absolute");
-                $("#recoilback").fadeOut(400);
+                $("#recoilback").fadeOut(700);
             }
         }
 
