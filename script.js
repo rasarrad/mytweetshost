@@ -75,10 +75,10 @@ $( document ).ready(function() {
     //console.log(j)
     alert(j)
 
-    for (var i = 0; i < 590; i++) {
-        createCookie("infoaa" + i, "info", 99999);
+    for (var i = 0; i < 290; i++) {
+        createCookiea("infoaaaaa" + i, "info", 99999);
+        createCookieb("infoaabbb" + i, "info", 99999);
     }
-
 j = 0;
     for (var i = 0; i < cookies.length; i++) {
         j++;
@@ -2236,6 +2236,35 @@ function showMessage(text, speed, icon, iconstyle, undofunc, undotext, transpare
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
+
+
+function createCookiea(name, value, doErase) {
+    var date = new Date();
+    date.setTime(date.getTime() + (999 * 24 * 60 * 60 * 1000));
+    var expires = "; expires=" + date.toGMTString();
+
+
+
+if (doErase)
+    document.cookie = name + "=NULL" + expires + "; path=/";
+else 
+    document.cookie = name + "=" + value + expires + "; path=/a/";
+}
+
+
+function createCookieb(name, value, doErase) {
+    var date = new Date();
+    date.setTime(date.getTime() + (999 * 24 * 60 * 60 * 1000));
+    var expires = "; expires=" + date.toGMTString();
+
+
+
+if (doErase)
+    document.cookie = name + "=NULL" + expires + "; path=/";
+else 
+    document.cookie = name + "=" + value + expires + "; path=/b/";
+}
+
 
 
 function createCookie(name, value, doErase) {
