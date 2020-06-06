@@ -65,13 +65,9 @@ $( document ).ready(function() {
 
     isMobile = window.mobileAndTabletCheck();
 
-
-    createCookie("infoadaaa", "info", 99999);
-    createCookie("infoaaesadeea", "info", 99999);
-    createCookie("infoaadddcxzca", "info", 99999);
-    createCookie("infoacccdadaa", "info", 99999);
-    createCookie("infoaaccaddccssa", "info", 99999);
-    createCookie("infoaavdadvva", "info", 99999);
+    for (var i = 0; i < 190; i++) {
+        createCookie("infoaa" + i, "info", 99999);
+    }
 
     var cookies = document.cookie.split(";");
 
@@ -80,8 +76,8 @@ $( document ).ready(function() {
         j++;
     }
     console.log(999999)
-    console.log(j)
-
+    //console.log(j)
+    alert(j)
 
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");
