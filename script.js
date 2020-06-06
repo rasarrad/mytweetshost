@@ -65,7 +65,7 @@ $( document ).ready(function() {
 
     isMobile = window.mobileAndTabletCheck();
 
-    for (var i = 0; i < 190; i++) {
+    for (var i = 0; i < 290; i++) {
         createCookie("infoaa" + i, "info", 99999);
     }
 
