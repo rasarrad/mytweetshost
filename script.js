@@ -67,25 +67,15 @@ $( document ).ready(function() {
 
 
     var cookies = document.cookie.split(";");
+
     var j = 0;
     for (var i = 0; i < cookies.length; i++) {
-        j++;
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        console.log(name)
     }
-    console.log(999999)
     //console.log(j)
-    alert(j)
-
-    for (var i = 0; i < 290; i++) {
-        createCookiea("infoaaaaa" + i, "info", 99999);
-        createCookieb("infoaabbb" + i, "info", 99999);
-    }
-j = 0;
-    for (var i = 0; i < cookies.length; i++) {
-        j++;
-    }
-    console.log(999999)
-    //console.log(j)
-    alert(j)
 
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");
@@ -2236,35 +2226,6 @@ function showMessage(text, speed, icon, iconstyle, undofunc, undotext, transpare
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
-
-
-function createCookiea(name, value, doErase) {
-    var date = new Date();
-    date.setTime(date.getTime() + (999 * 24 * 60 * 60 * 1000));
-    var expires = "; expires=" + date.toGMTString();
-
-
-
-if (doErase)
-    document.cookie = name + "=NULL" + expires + "; path=/";
-else 
-    document.cookie = name + "=" + value + expires + "; path=/a/";
-}
-
-
-function createCookieb(name, value, doErase) {
-    var date = new Date();
-    date.setTime(date.getTime() + (999 * 24 * 60 * 60 * 1000));
-    var expires = "; expires=" + date.toGMTString();
-
-
-
-if (doErase)
-    document.cookie = name + "=NULL" + expires + "; path=/";
-else 
-    document.cookie = name + "=" + value + expires + "; path=/b/";
-}
-
 
 
 function createCookie(name, value, doErase) {
