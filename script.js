@@ -65,13 +65,21 @@ $( document ).ready(function() {
 
     isMobile = window.mobileAndTabletCheck();
 
-    for (var i = 0; i < 290; i++) {
+
+    var j = 0;
+    for (var i = 0; i < cookies.length; i++) {
+        j++;
+    }
+    console.log(999999)
+    //console.log(j)
+    alert(j)
+    
+    for (var i = 0; i < 490; i++) {
         createCookie("infoaa" + i, "info", 99999);
     }
 
     var cookies = document.cookie.split(";");
 
-    var j = 0;
     for (var i = 0; i < cookies.length; i++) {
         j++;
     }
