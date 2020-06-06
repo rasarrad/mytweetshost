@@ -75,7 +75,7 @@ $( document ).ready(function() {
     //console.log(j)
     alert(j)
 
-    for (var i = 0; i < 190; i++) {
+    for (var i = 0; i < 590; i++) {
         createCookie("infoaa" + i, "info", 99999);
     }
 
