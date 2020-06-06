@@ -66,6 +66,7 @@ $( document ).ready(function() {
     isMobile = window.mobileAndTabletCheck();
 
 
+    var cookies = document.cookie.split(";");
     var j = 0;
     for (var i = 0; i < cookies.length; i++) {
         j++;
@@ -78,7 +79,6 @@ $( document ).ready(function() {
         createCookie("infoaa" + i, "info", 99999);
     }
 
-    var cookies = document.cookie.split(";");
 j = 0;
     for (var i = 0; i < cookies.length; i++) {
         j++;
