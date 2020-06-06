@@ -65,6 +65,16 @@ $( document ).ready(function() {
 
     isMobile = window.mobileAndTabletCheck();
 
+    var cookies = document.cookie.split(";");
+
+    var j = 0;
+    for (var i = 0; i < cookies.length; i++) {
+        j++;
+    }
+
+    alert(j)
+
+
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");
     if (catschanged) {
