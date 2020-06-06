@@ -65,6 +65,14 @@ $( document ).ready(function() {
 
     isMobile = window.mobileAndTabletCheck();
 
+
+    createCookie("infoaaa", "info", 99999);
+    createCookie("infoaaeeea", "info", 99999);
+    createCookie("infoaaddda", "info", 99999);
+    createCookie("infoacccaa", "info", 99999);
+    createCookie("infoaaccccssa", "info", 99999);
+    createCookie("infoaavvva", "info", 99999);
+
     var cookies = document.cookie.split(";");
 
     var j = 0;
