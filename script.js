@@ -66,12 +66,12 @@ $( document ).ready(function() {
     isMobile = window.mobileAndTabletCheck();
 
 
-    createCookie("infoaaa", "info", 99999);
-    createCookie("infoaaeeea", "info", 99999);
-    createCookie("infoaaddda", "info", 99999);
-    createCookie("infoacccaa", "info", 99999);
-    createCookie("infoaaccccssa", "info", 99999);
-    createCookie("infoaavvva", "info", 99999);
+    createCookie("infoadaaa", "info", 99999);
+    createCookie("infoaaesadeea", "info", 99999);
+    createCookie("infoaadddcxzca", "info", 99999);
+    createCookie("infoacccdadaa", "info", 99999);
+    createCookie("infoaaccaddccssa", "info", 99999);
+    createCookie("infoaavdadvva", "info", 99999);
 
     var cookies = document.cookie.split(";");
 
