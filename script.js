@@ -2216,11 +2216,17 @@ function showMessage(text, speed, icon, iconstyle, undofunc, undotext, transpare
 /////////////////////////////////////////////////////////////////////////
 
 
-function createCookie(name, value, days, doErase) {
+function createCookie(name, value, doErase) {
+        var date = new Date();
+        date.setTime(date.getTime() + (999 * 24 * 60 * 60 * 1000));
+        var expires = "; expires=" + date.toGMTString();
+
+    
+
     if (doErase)
-        document.cookie = name + "=NULL; path=/";
+        document.cookie = name + "=NULL" + expires + "; path=/";
     else 
-        document.cookie = name + "=" + value + "; path=/";
+        document.cookie = name + "=" + value + expires + "; path=/";
 }
 
 function createCookie2(id, name, value, obj, doErase) {            
