@@ -73,13 +73,13 @@ $( document ).ready(function() {
     console.log(999999)
     //console.log(j)
     alert(j)
-    
-    for (var i = 0; i < 490; i++) {
+
+    for (var i = 0; i < 190; i++) {
         createCookie("infoaa" + i, "info", 99999);
     }
 
     var cookies = document.cookie.split(";");
-
+j = 0;
     for (var i = 0; i < cookies.length; i++) {
         j++;
     }
