@@ -65,6 +65,16 @@ $( document ).ready(function() {
 
     isMobile = window.mobileAndTabletCheck();
 
+    localStorage['movie'+i] = 'yes';
+
+alert(localStorage['movie'+i]);
+    /* 
+        for (var i = 0; i < 10000; i++) {
+        localStorage.lastname = "ssssss";
+    }
+
+
+
     if (localStorage.lastname) 
         alert(1)
     else
@@ -83,7 +93,7 @@ $( document ).ready(function() {
     else
         alert(234)
 
-
+*/
 
 
     // START do texto das categorias
