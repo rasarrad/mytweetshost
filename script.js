@@ -66,12 +66,12 @@ $( document ).ready(function() {
     isMobile = window.mobileAndTabletCheck();
 
    console.log(11111111)
-    for (var i = 0; i < 1000000; i++) {
+    for (var i = 0; i < 314000; i++) {
         localStorage['movie'+ i] = "ssssss";
     }
 
     var z = 0;
-    for (var j= 0; j < 1000000; j++) {
+    for (var j= 0; j < 314000; j++) {
 
         if (localStorage['movie'+ j])
             z++;
