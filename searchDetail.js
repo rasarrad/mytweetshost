@@ -658,9 +658,9 @@ function updateSearchTablesHeight() {
         searchbutton.css('transition', 'all 0.01s ease');
 
         if ($('body').hasClass('big')) 
-            searchbutton.css("top", ($("#searchpopup > div").height() - 53) + "px");
+            searchbutton.css("top", ($("#searchpopup > div").height() - 73) + "px");
         else
-            searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
+            searchbutton.css("top", ($("#searchpopup > div").height() - 51) + "px");
     
         searchbutton.css('transition', 'all 0.6s ease');
     }, 701);
