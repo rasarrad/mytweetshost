@@ -622,10 +622,10 @@ var openSearchPopup = function(jsonobj)
     $('#searchpopup').css("height", "calc(100%)");
 
     if ($('body').hasClass('big')) {
-        $('#searchpopup').css("top", "-375px");
+        $('#searchpopup').css("top", "-415px");
     }
     else {
-        $('#searchpopup').css("top", "-320px");
+        $('#searchpopup').css("top", "-330px");
     }
 
     $('#searchpopup').css("background", "transparent");
@@ -658,9 +658,9 @@ function updateSearchTablesHeight() {
         searchbutton.css('transition', 'all 0.01s ease');
 
         if ($('body').hasClass('big')) 
-            searchbutton.css("top", ($("#searchpopup > div").height() - 73) + "px");
+            searchbutton.css("top", ($("#searchpopup > div").height() - 53) + "px");
         else
-            searchbutton.css("top", ($("#searchpopup > div").height() - 51) + "px");
+            searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
     
         searchbutton.css('transition', 'all 0.6s ease');
     }, 701);
