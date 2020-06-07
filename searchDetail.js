@@ -156,6 +156,7 @@ function changecriteria(e, obj, tableparam, flag) {
         searchbutton.css('transition', 'all .7s ease');
         setTimeout(function() { 
             table.find('td.el').addClass('ellipsis');
+            table.find(".togglepos").css("position", "absolute"); 
             if ($('body').hasClass('big')) 
                 searchbutton.css("top", ($("#searchpopup > div").height() - 53) + "px");
             else
