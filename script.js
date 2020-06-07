@@ -65,9 +65,24 @@ $( document ).ready(function() {
 
     isMobile = window.mobileAndTabletCheck();
 
+    if (localStorage.lastname) 
+        alert(1)
+    else
+        alert(2)
 
+    localStorage.lastname = "ssssss";
 
-        alert(localStorage.lastname)
+    if (localStorage.lastname) 
+        alert(12)
+    else
+        alert(23)
+
+        localStorage.lastname = null;
+    if (localStorage.lastname) 
+        alert(123)
+    else
+        alert(234)
+
 
 
 
