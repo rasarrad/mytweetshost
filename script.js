@@ -66,16 +66,13 @@ $( document ).ready(function() {
     isMobile = window.mobileAndTabletCheck();
 
 
-    var cookies = document.cookie.split(";");
+    if (typeof(Storage) !== "undefined") {
+        alert(1)
+      } else {
+        alert(2)
+      }
 
-    var j = 0;
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i];
-        var eqPos = cookie.indexOf("=");
-        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-        console.log(name)
-    }
-    //console.log(j)
+
 
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");
