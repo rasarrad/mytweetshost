@@ -81,6 +81,23 @@ $( document ).ready(function() {
     alert(z)
 
  /* 
+ localStorage.clear();
+
+    for (var i = 0; i < 10000; i++) {
+        localStorage['movie'+ i] = "ssssss";
+    }
+
+    var z = 0;
+    for (var j= 0; j < 10000; j++) {
+
+        if (localStorage['movie'+ ])
+            z++;
+    }
+
+    localStorage.removeItem("lastname");
+
+
+ 
     if (localStorage.lastname) 
         alert(1)
     else
@@ -2254,16 +2271,10 @@ function showMessage(text, speed, icon, iconstyle, undofunc, undotext, transpare
 
 
 function createCookie(name, value, doErase) {
-        var date = new Date();
-        date.setTime(date.getTime() + (999 * 24 * 60 * 60 * 1000));
-        var expires = "; expires=" + date.toGMTString();
-
-    
-
     if (doErase)
-        document.cookie = name + "=NULL" + expires + "; path=/";
+        localStorage.removeItem(name);
     else 
-        document.cookie = name + "=" + value + expires + "; path=/";
+        localStorage[name] = value;
 }
 
 function createCookie2(id, name, value, obj, doErase) {            
@@ -2272,15 +2283,15 @@ function createCookie2(id, name, value, obj, doErase) {
         val = updateObject(val, name, value, doErase);
 
         if (doErase)
-            document.cookie = id + name + "=NULL" + "; path=/";
+            localStorage.removeItem(id + name);
         else 
-            document.cookie = id + name + "=" + value + "; path=/";
+            localStorage[id + name] = value;
 
         if (hasChanges(val)) {
-            document.cookie = id + "haschanges=yes; path=/";
+            localStorage[id + "haschanges"] = "yes";
         }
         else {
-            document.cookie = id + "haschanges=NULL; path=/";
+            localStorage.removeItem(id + "haschanges");
         }
     }
 
@@ -2411,21 +2422,10 @@ function updateObject(val, name, value, doErase) {
 
 
 function readCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) == 0) {
-            if (c.substring(nameEQ.length, c.length) == "NULL")
-                return null; 
-            else if (c.substring(nameEQ.length, c.length) == "")
-                return " "
-            else 
-                return c.substring(nameEQ.length, c.length)
-        }
-    }
-    return null;
+    if(localStorage[name])
+        return localStorage[name];
+    else
+        return null;
 }
 
 /////////////////////////////////////////////////////////////////////////
