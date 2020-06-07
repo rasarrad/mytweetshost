@@ -77,7 +77,7 @@ $( document ).ready(function() {
     else
         alert(23)
 
-        localStorage.lastname = null;
+        localStorage.lastname = undefined;
     if (localStorage.lastname) 
         alert(123)
     else
