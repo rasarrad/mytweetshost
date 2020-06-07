@@ -102,7 +102,7 @@ body.big #searchpopup .fa-user-circle {
 body.big #searchpopup .fa-file-text {
   font-size: 16px;
   left: 13px;
-  top: 11px !important;
+  top: 9.5px !important;
   position: absolute;
 }
 
@@ -114,7 +114,7 @@ body.big #searchpopup .fa-calendar {
   position: relative;
   left: -3px;
   margin-right: 4px;
-  top: 2px !important;
+  top: 1px !important;
 }
 
 #showdeleted2 {
@@ -4544,6 +4544,15 @@ body.big .newLayout .sectiontitletable .sectionicontd {
     padding-top: 3px !important;
 }
 
+.newLayout #searchinfo .sectiontitletable .sectionicontd {
+    padding-top: 2px !important;
+}
+
+
+
+body.big .newLayout #searchinfo .sectiontitletable .sectionicontd {
+    padding-top: 2px !important;
+}
 
 
 
