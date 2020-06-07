@@ -97,6 +97,7 @@ function changecriteria(e, obj, tableparam, flag) {
 
             $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
                 var othertable = $(element);
+                othertable.css('transition', 'max-height .7s');
                 othertable.css('max-height', setHeight);
                 othertable.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
@@ -111,20 +112,22 @@ function changecriteria(e, obj, tableparam, flag) {
                         othertable.find('td.el').addClass('ellipsis');
                     }
                 });
-            }, 600);
+            }, 701);
 
             table.find(".togglepos").css("position", ""); 
 
-            table.css('transition', 'max-height 1.7s');
+            table.css('transition', 'max-height .7s');
     
-            if (table.attr("cmaxheight")) {
+/*             if (table.attr("cmaxheight")) {
                 if ($('body').hasClass('big')) {
                     table.css('max-height', table.attr("cmaxheightbig"));
                 }
                 else {
                     table.css('max-height', table.attr("cmaxheight"));
                 }
-            }   
+            }    */
+
+            table.css('max-height', '2000px');
     
             table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down').css("top", "-4px");
             
