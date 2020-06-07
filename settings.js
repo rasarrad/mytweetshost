@@ -1858,7 +1858,7 @@ function clickLiColors(e, obj) {
         }
 
         $("#colordisplay").text(value);
-        createCookie("colors", value, 99999);
+        createCookie("colors", value);
 
         showMessage("Color Mode Changed To " + value, null, null, null, null, null);
     }  
@@ -1883,11 +1883,11 @@ function clickLiDoublefs(e, obj) {
             if (value == "Yes") {
                 showMessage("Change click/press and double click/long press functions on", null, null, null, null, null);
                 
-                createCookie("doublefs", "s", 99999);
+                createCookie("doublefs", "s");
             }
             else {
                 showMessage("Change click/press and double click/long press functions off", null, null, null, null, null); 
-                createCookie("doublefs", "", 99999, true);
+                createCookie("doublefs", "", true);
             }
         }  
     }
@@ -1912,11 +1912,11 @@ function clickLiMaximumfs(e, obj) {
             if (value == "Yes") {
                 showMessage("Use maximum available space in fullscreen on", null, null, null, null, null);
                 
-                createCookie("maximumfs", "aa", 99999);
+                createCookie("maximumfs", "aa");
             }
             else {
                 showMessage("Use maximum available space in fullscreen off", null, null, null, null, null); 
-                createCookie("maximumfs", "", null, true);
+                createCookie("maximumfs", "", true);
             }
         }  
     }
@@ -1946,11 +1946,11 @@ function clickLiLinksinside(e, obj) {
                 $(element).removeClass("disable");
             });
 
-            createCookie("linksinside", "s", 99999);
+            createCookie("linksinside", "s");
         }
         else {
             showMessage("Double click/long press opens the link in fullscreen inside the app off", null, null, null, null, null); 
-            createCookie("linksinside", "", null, true);
+            createCookie("linksinside", "", true);
                     
             $('#maximumfstr').css("opacity", 0.5);
 
@@ -1980,12 +1980,12 @@ function clickLiLinkscounter(e, obj) {
             showMessage("Show links counter when displaying the links on", null, null, null, null, null);
             
             if (getGotopulValue() == "Yes") {
-                createCookie("tweetCounter", "", null, true);
+                createCookie("tweetCounter", "", true);
 
                 $('#tweetcount').attr("class", "pobj"); 
             }
             else {
-                createCookie("tweetCounter", "hidicon", 99999);
+                createCookie("tweetCounter", "hidicon");
 
                 $('#tweetcount').attr("class", "hidicon pobj"); 
             }
@@ -1994,12 +1994,12 @@ function clickLiLinkscounter(e, obj) {
             showMessage("Show links counter when displaying the links off", null, null, null, null, null); 
              
             if (getGotopulValue() == "Yes") {
-                createCookie("tweetCounter", "hidcontent", 99999);
+                createCookie("tweetCounter", "hidcontent");
 
                 $('#tweetcount').attr("class", "hidcontent pobj"); 
             }
             else {
-                createCookie("tweetCounter", "hidall", 99999);
+                createCookie("tweetCounter", "hidall");
 
                 $('#tweetcount').attr("class", "hidall pobj"); 
             }
@@ -2036,12 +2036,12 @@ function clickLiGotop(e, obj) {
             showMessage("Show GoTop button when displaying the links on", null, null, null, null, null);
             
             if (getLinksCounterValue() == "Yes") {
-                createCookie("tweetCounter", "", null, true);
+                createCookie("tweetCounter", "", true);
 
                 $('#tweetcount').attr("class", "pobj"); 
             }
             else {
-                createCookie("tweetCounter", "hidcontent", 99999);
+                createCookie("tweetCounter", "hidcontent");
 
                 $('#tweetcount').attr("class", "hidcontent pobj"); 
             }
@@ -2050,12 +2050,12 @@ function clickLiGotop(e, obj) {
             showMessage("Show GoTop button when displaying the links off", null, null, null, null, null); 
              
             if (getLinksCounterValue() == "Yes") {
-                createCookie("tweetCounter", "hidicon", 99999);
+                createCookie("tweetCounter", "hidicon");
 
                 $('#tweetcount').attr("class", "hidicon pobj"); 
             }
             else {
-                createCookie("tweetCounter", "hidall", 99999);
+                createCookie("tweetCounter", "hidall");
 
                 $('#tweetcount').attr("class", "hidall pobj"); 
             }
@@ -2080,21 +2080,21 @@ function clickLiTopmenu(e, obj) {
         if (value == "Visible") {
             showMessage("Top menu visibility: " + value, null, null, null, null, null);
             
-            createCookie("topmenu", "0", 99999);
+            createCookie("topmenu", "0");
             topMenuMode = 0;
             $("#recoilback").css("position", "fixed");  
         }
         else if (value == "Fixed On Top") {
             showMessage("Top menu visibility: " + value, null, null, null, null, null);
             
-            createCookie("topmenu", "1", 99999);
+            createCookie("topmenu", "1");
             topMenuMode = 1;
             $("#recoilback").css("position", "absolute");   
         }
         else {
             showMessage("Top menu visibility: " + value, null, null, null, null, null);
             
-            createCookie("topmenu", "", null, true);
+            createCookie("topmenu", "", true);
             topMenuMode = 2;
             $("#recoilback").css("position", "fixed"); 
         }
@@ -2141,7 +2141,7 @@ function clickLiSwipes(e, obj) {
         }
 
         $("#swipedisplay").text(value);
-        createCookie("swipes", value, 99999);
+        createCookie("swipes", value);
     }  
 }
 
@@ -2175,9 +2175,9 @@ function clickLiHelp(e, obj) {
         $("#helpdisplay").text(value);
 
         if (value == "Yes")
-            createCookie("help", "", null, true);
+            createCookie("help", "", true);
         else
-            createCookie("help", value, 99999);
+            createCookie("help", value);
     }  
 }
 
@@ -2196,7 +2196,7 @@ function clickLiVWC(e, obj) {
         });
 
         if (value == "Yes") {
-            createCookie("cat-cli", "", null, true);
+            createCookie("cat-cli", "", true);
 
             showMessage("VictoryWillCome Tweets Shown", null, null, null, null, null);
             showAll = true;
@@ -2204,7 +2204,7 @@ function clickLiVWC(e, obj) {
             changeCatsText(false);
         }
         else {
-            createCookie("cat-cli", "aaa", 99999);
+            createCookie("cat-cli", "aaa");
 
             showMessage("VictoryWillCome Tweets Hidden", null, null, null, null, null);
             showAll = false;  
@@ -2213,19 +2213,19 @@ function clickLiVWC(e, obj) {
         }
 
         $("#VWCdisplay").text(value);
-        createCookie("vwc", value, 99999);
+        createCookie("vwc", value);
         countalltweets();
     }  
 }
 
 function changeCatsText(changed) {
     if (changed) {
-        createCookie("cat-cli", "My Tweets", 99999);
+        createCookie("cat-cli", "My Tweets");
         $(".cat-cli").text("My Tweets");
         catsmap.set("cli", "My Tweets");
     }
     else {
-        createCookie("cat-cli", "", null, true);
+        createCookie("cat-cli", "", true);
         $(".cat-cli").text("VictoryWillCome Tweets");
         catsmap.set("cli", "VictoryWillCome Tweets");
     }
@@ -2249,7 +2249,7 @@ function unl() {
     else {
         $('#unlockdisplay').text("Locked");
         
-        createCookie("eec", "", null, true);
+        createCookie("eec", "", true);
         showMessage("Invalid Code"); 
     }
 }

@@ -182,7 +182,7 @@ $( document ).ready(function() {
     
     // START do splash screen
     /* xyz splash
-    createCookie("eec", "sss", 99999);
+    createCookie("eec", "sss");
     if (!dunl())
         showSplash();
     */
@@ -847,15 +847,15 @@ $( document ).ready(function() {
     catsmap.set("cli", catschanged);
     $(".cat-cli").text(catschanged);
 
-    createCookie("cat-tvn", "New / Ongoing 2222", 99999);
-    createCookie("cat-trn", "Hot / Trending 2222", 99999);
-    createCookie("cat-tvi", "To Watch 2222", 99999);
-    createCookie("cat-tvl", "Documentaries / Films 2222", 99999);
-    createCookie("cat-tre", "Fast Reading 2222", 99999);
-    createCookie("cat-trl", "Long Reading 2222", 99999);
-    createCookie("cat-tke", "Important / To Keep 2222", 99999);
-    createCookie("cat-imp", "Shocking Truth 2222", 99999);
-    createCookie("cat-cli", "My Tweets 2222", 99999);
+    createCookie("cat-tvn", "New / Ongoing 2222");
+    createCookie("cat-trn", "Hot / Trending 2222");
+    createCookie("cat-tvi", "To Watch 2222");
+    createCookie("cat-tvl", "Documentaries / Films 2222");
+    createCookie("cat-tre", "Fast Reading 2222");
+    createCookie("cat-trl", "Long Reading 2222");
+    createCookie("cat-tke", "Important / To Keep 2222");
+    createCookie("cat-imp", "Shocking Truth 2222");
+    createCookie("cat-cli", "My Tweets 2222");
     */
 
 
@@ -1782,7 +1782,7 @@ function processLinkFuncs(idLink, type) {
 
 
 function setshowdeletedcookie(val) {
-    createCookie("showdeleted", val, 99999);  
+    createCookie("showdeleted", val);  
 }   
 
 function getshowdeletedcookie(val) {

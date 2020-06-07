@@ -1019,8 +1019,8 @@ var eraseAllDeletedFunc = function(text, type, functorun) {
                     linktmp = JSON.parse(linktmp);
                     ind = true;
                     val = linktmp;
-                    createCookie(nextid + "templink", linktmp, 99999);
-                    createCookie(nextid + "templink_bk", "", 99999);
+                    createCookie(nextid + "templink", linktmp);
+                    createCookie(nextid + "templink_bk", "");
                     nextid = nextid - 1;
                 }
                 else {
@@ -1035,54 +1035,54 @@ var eraseAllDeletedFunc = function(text, type, functorun) {
             var cat = readCookie(val.id + "catchanged_bk");
             if (cat && cat.length > 0) {
                 ind = true;
-                createCookie2(val.id, "catchanged_bk", "", 99999);
-                createCookie2(val.id, "catchanged", cat, 99999);
+                createCookie2(val.id, "catchanged_bk", "");
+                createCookie2(val.id, "catchanged", cat);
             }
             else {
-                createCookie2(val.id, "catchanged", "", 99999);
+                createCookie2(val.id, "catchanged", "");
             }
 
             var tag = readCookie(val.id + "tagchanged_bk");
             if (tag && tag.length > 0) {
                 ind = true;
                 val.tags = tag;
-                createCookie2(val.id, "tagchanged", tag, 99999);
-                createCookie2(val.id, "tagchanged_bk", "", 99999);
+                createCookie2(val.id, "tagchanged", tag);
+                createCookie2(val.id, "tagchanged_bk", "");
             }
             else {
-                createCookie2(val.id, "tagchanged", "", 99999);
+                createCookie2(val.id, "tagchanged", "");
             }
 
             var info = readCookie(val.id + "info_bk");
             if (info && info.length > 0) {
                 ind = true;
                 val.info = info;
-                createCookie2(val.id, "info", info, 99999);
-                createCookie2(val.id, "info_bk", "", 99999);
+                createCookie2(val.id, "info", info);
+                createCookie2(val.id, "info_bk", "");
             }
             else {
-                createCookie2(val.id, "info", "", 99999);
+                createCookie2(val.id, "info", "");
             }
 
             var classif = readCookie(val.id + "classif_bk");
             if (classif && classif.length > 0) {
                 ind = true;
                 val.classif = classif;
-                createCookie2(val.id, "classif", classif, 99999);
-                createCookie2(val.id, "classif_bk", "", 99999);
+                createCookie2(val.id, "classif", classif);
+                createCookie2(val.id, "classif_bk", "");
             }
             else {
-                createCookie2(val.id, "classif", "", 99999);
+                createCookie2(val.id, "classif", "");
             }
 
             var isdeleted = readCookie(val.id + "isdeleted_bk");
             if (isdeleted && isdeleted.length > 0) {
                 ind = true;
-                createCookie2(val.id, "isdeleted", "yes", 99999);
-                createCookie2(val.id, "isdeleted_bk", "", 99999);
+                createCookie2(val.id, "isdeleted", "yes");
+                createCookie2(val.id, "isdeleted_bk", "");
             } 
             else {
-                createCookie2(val.id, "isdeleted", "", 99999);
+                createCookie2(val.id, "isdeleted", "");
             }    
         }
         while (processtmp);        
