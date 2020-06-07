@@ -65,6 +65,8 @@ $( document ).ready(function() {
 
     isMobile = window.mobileAndTabletCheck();
 
+    var i = 4;
+
     localStorage['movie'+i] = 'yes';
 
 alert(localStorage['movie'+i]);
