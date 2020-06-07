@@ -97,7 +97,7 @@ function changecriteria(e, obj, tableparam, flag) {
 
             $('#searchpopup').find("table:not(.buttonstable)").each( function( index, element ) {
                 var othertable = $(element);
-                alert(othertable.attr("id"))
+                othertable.css('transition', 'max-height .7s');
                 othertable.css('max-height', setHeight);
                 othertable.find('.sectionedittd i').addClass('fa-angle-down').removeClass('fa-angle-up').css("top", iTop);
 
