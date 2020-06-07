@@ -77,7 +77,7 @@ $( document ).ready(function() {
     else
         alert(23)
 
-        localStorage.lastname = undefined;
+        localStorage.removeItem("lastname");
     if (localStorage.lastname) 
         alert(123)
     else
