@@ -65,18 +65,18 @@ $( document ).ready(function() {
 
     isMobile = window.mobileAndTabletCheck();
 
-   
-    for (var i = 0; i < 10000; i++) {
+   console.log(11111111)
+    for (var i = 0; i < 100000; i++) {
         localStorage['movie'+ i] = "ssssss";
     }
 
     var z = 0;
-    for (var j= 0; j < 10000; j++) {
+    for (var j= 0; j < 100000; j++) {
 
         if (localStorage['movie'+ j])
             z++;
     }
-
+    console.log(22222222)
     alert(z)
 
  /* 
