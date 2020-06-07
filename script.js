@@ -65,18 +65,21 @@ $( document ).ready(function() {
 
     isMobile = window.mobileAndTabletCheck();
 
-    var i = 4;
-
-    localStorage['movie'+i] = 'yes';
-
-alert(localStorage['movie'+i]);
-    /* 
-        for (var i = 0; i < 10000; i++) {
-        localStorage.lastname = "ssssss";
+   
+    for (var i = 0; i < 10000; i++) {
+        localStorage['movie'+ i] = "ssssss";
     }
 
+    var z = 0;
+    for (var j= 0; j < 10000; j++) {
 
+        if (localStorage['movie'+ i])
+            z++;
+    }
 
+    alert(z)
+
+ /* 
     if (localStorage.lastname) 
         alert(1)
     else
