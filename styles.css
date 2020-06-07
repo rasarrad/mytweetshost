@@ -126,13 +126,13 @@ body.big #searchpopup .fa-calendar {
 }
 
 body.big .newLayout#searchpopup #searchtypes.sectiontitletable .firsticon {
-  width: 81px !important;
+  width: 78px !important;
 }
 .newLayout#searchpopup #searchtypes.searchclassif .firsticon {
 
 }
 body.big .newLayout#searchpopup #searchclassif.sectiontitletable .firsticon {
-  width: 122px !important;
+  width: 114px !important;
 }
 
 .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
@@ -147,12 +147,12 @@ body.big .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
 }
 
 body.big .newLayout#searchpopup #searchauthor.sectiontitletable .firsticon {
-  width: 67px !important;
+  width: 61px !important;
 }
 
 .newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {width: 35px !important;}
 body.big .newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {
-  width: 41px !important;
+  width: 40px !important;
   padding-top: 4px !important;
 }
 
@@ -161,7 +161,7 @@ body.big .newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {
 
 }
 body.big .newLayout#searchpopup #searchdate.sectiontitletable .firsticon {
-  width: 46px !important;
+  width: 43px !important;
 }
 
 #searchdate span.to {
@@ -2183,7 +2183,7 @@ body.big .newLayout#searchpopup .sectiontitle {
 }
 body.big .newLayout#searchpopup .fa-tags {
     font-size: 17px;
-    top: 2px;
+    top: 1px;
     left: -3px;
 }
 
@@ -5997,28 +5997,47 @@ body.big #mainsettings #theme td:first-child {
 
     .ui-dialog.ui-widget.ui-widget-content .ui-dialog-buttonpane .ui-dialog-buttonset button:hover {
       opacity: 0.7
-   }
+     }
 
-   .triggerUpload {
-    transition: opacity 0.7s;
-    cursor: pointer;
-  }
-  
-  
-  
-  .pointeropacity {
-    cursor: pointer !important;
-    /* transition: opacity 0.6s !important; */
-  }
-  
-  .pointeropacity:hover {
-    opacity: 0.7 !important;
-  }
-  
+     .triggerUpload {
+      transition: opacity 0.7s;
+      cursor: pointer;
+    }
+
+ 
+    .pointeropacity {
+      cursor: pointer !important;
+      /* transition: opacity 0.6s !important; */
+    }
+
+    .pointeropacity:hover {
+      opacity: 0.7 !important;
+    }
+
    .triggerUpload:hover {
-    opacity: 0.85
-   }
-  
+      opacity: 0.85
+     }
+
+    body.big .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
+      width: 26px !important;
+    }
+    body.big .newLayout#searchpopup #searchinfo.sectiontitletable .firsticon {
+        width: 44px !important;
+        padding-top: 4px !important;
+    }
+    body.big .newLayout#searchpopup #searchtypes.sectiontitletable .firsticon {
+        width: 84px !important;
+    }
+    body.big .newLayout#searchpopup #searchdate.sectiontitletable .firsticon {
+        width: 47px !important;
+    }
+    body.big .newLayout#searchpopup #searchclassif.sectiontitletable .firsticon {
+        width: 122px !important;
+    }
+    body.big .newLayout#searchpopup #searchauthor.sectiontitletable .firsticon {
+        width: 67px !important;
+    }
+
 }
 /******************************* FIM DESKTOP CSS *****************************/
 /*****************************************************************************/
