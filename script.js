@@ -67,7 +67,8 @@ $( document ).ready(function() {
 
    console.log(11111111)
     for (var i = 0; i < 1000000; i++) {
-        localStorage['movie'+ i] = "ssssss";
+        //localStorage['movie'+ i] = "ssssss";
+        localStorage.removeItem('movie'+ i);
     }
 
     var z = 0;
