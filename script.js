@@ -66,11 +66,8 @@ $( document ).ready(function() {
     isMobile = window.mobileAndTabletCheck();
 
 
-    if (typeof(Storage) !== "undefined") {
-        alert(1)
-      } else {
-        alert(2)
-      }
+
+        alert(localStorage.lastname)
 
 
 
