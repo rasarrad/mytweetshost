@@ -2597,7 +2597,8 @@ function customizeSingleTweet(id) {
 
     //if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
         
-
+    var styleTag = document.getElementById("twitter-widget-" + totalrenderedtweets).shadowRoot;
+        insertAfter(tweetStyle, styleTag.childNodes[0]);
 
     //} else {
     //    var tweetWidget = document.getElementById("twitter-widget-" + j).contentDocument;
