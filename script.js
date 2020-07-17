@@ -103,7 +103,7 @@ $( document ).ready(function() {
         alert(234)
 
 */
-
+getWebsiteData2('https://t.co/HM7mRR6ElX')
 
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");
@@ -2730,9 +2730,9 @@ function hasOverflow(obj) {
 
 
 //getWebsiteData2('https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy')
-getWebsiteData2('https://t.co/HM7mRR6ElX')
-function getWebsiteData2(url) {
 
+function getWebsiteData2(url) {
+alert(1111)
     $.ajax({
         url: 'https://cors-anywhere.herokuapp.com/' + url
       }).then(function(data) {
