@@ -2732,7 +2732,7 @@ function hasOverflow(obj) {
 //getWebsiteData2('https://smallwarsjournal.com/jrnl/art/victimization-narrative-thematic-analysis-iranian-history-and-strategy')
 
 function getWebsiteData2(url) {
-alert(1111)
+
     $.ajax({
         url: 'https://cors-anywhere.herokuapp.com/' + url
       }).then(function(data) {
@@ -2747,7 +2747,7 @@ alert(1111)
         // descricao - checar se é vazia
         //cnonsole.log("Descricao: " + getMetaContent(html, 'description') );
 
-        cnonsole.log(data)
+        console.log(data)
 
       });
 
