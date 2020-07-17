@@ -103,7 +103,7 @@ $( document ).ready(function() {
         alert(234)
 
 */
-getWebsiteData2('https://twitter.com/victorywiilcome/status/1281299146725621763')
+getWebsiteData2('https://twitter.com/victorywiilcome/status/1281299169303580680')
 
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");
