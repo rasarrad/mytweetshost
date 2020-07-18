@@ -2772,12 +2772,14 @@ function startWorker() {
                 $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
                 
                 if (!isMobile) {
+                    /* 
                     if (linkArray[currrenderedtweets] != "T") {
                         idCurr = linkArray[currrenderedtweets];
                         setTimeout(function(){
                             document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
                         }, 70);
                     }
+                    */
 
                 }
                 currrenderedtweets++;
@@ -2819,13 +2821,14 @@ function startWorker() {
                         $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
                 
                         if (!isMobile) {
+                            /* 
                             if (linkArray[currrenderedtweets] != "T") {
                                 idCurr = linkArray[currrenderedtweets];
                                 setTimeout(function(){
                                     document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
                                 }, 70);
                             }
-
+                            */
                         }
                         currrenderedtweets++;
                         countercontrol++;
