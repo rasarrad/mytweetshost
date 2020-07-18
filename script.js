@@ -2760,7 +2760,11 @@ function startWorker() {
       //w.postMessage({ "args": [ 500 ] });
 
       timeoutWorker.onmessage = function(event) {
+        console.log("---------------------")
+        console.log(linkArray)
+        console.log(linkArrayToRender)
         
+
           if (linkArray[currrenderedtweets]) {
             if (currrenderedtweets < 5) {
                 if (currrenderedtweets == 0) {
