@@ -102,7 +102,6 @@ $( document ).ready(function() {
         alert(234)
 
 */
-getWebsiteData2('https://t.co/RlDJWdSWAu')
 
     // START do texto das categorias
     var catschanged = readCookie("cat-cli");

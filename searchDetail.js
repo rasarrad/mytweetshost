@@ -763,7 +763,7 @@ var getInformation = function(wasfiltered, valid) {
         if (!$("#showdeleted2").is(":checked")) {
             doShowDeletedLink = false; 
         }
-        console.log(allLinks);
+        
         while (allLinks[i]) {
             var val = allLinks[i];
         
@@ -781,36 +781,18 @@ var getInformation = function(wasfiltered, valid) {
             dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
             dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
             dofiltertagfinal = !dofiltertag || searchTags(val.tags.toLowerCase(), $('#filtertag').val().toLowerCase());
-            console.log("--------------------------- : ");
-            console.log("$('#selectedcat').val() :" + $('#selectedcat').val() + "-");
-            console.log("val.categories :" + val.categories + "-");
-            console.log("!dofiltercat " + !dofiltercat);
-            console.log("includes " + val.categories.includes($('#selectedcat').val()));
-
             dofiltercatfinal = !dofiltercat || val.categories.includes($('#selectedcat').val());
             dofilterauthorfinal = !dofilterauthor || val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase());
             dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
             dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
         
-
-
             if (val.deleted == "yes")
                 dofiltertextfinal = false;
 
-
-                console.log("dofiltertextfinal : " + dofiltertextfinal);
-                console.log("dofilterdate1final : " + dofilterdate1final);
-                console.log("dofilterdate2final : " + dofilterdate2final);
-                console.log("dofiltertagfinal : " + dofiltertagfinal);
-                console.log("dofiltercatfinal : " + dofiltercatfinal);
-                console.log("dofilterauthorfinal : " + dofilterauthorfinal);
-                console.log("dofiltertypefinal : " + dofiltertypefinal);
-                console.log("dofilterclassiffinal : " + dofilterclassiffinal);
-                console.log("doShowDeletedLink || val.deleted : " + (doShowDeletedLink || val.deleted == "")); 
             if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                 && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal
                 && (doShowDeletedLink || val.deleted == "")) {
-                    console.log("6666666666666666666666666666" );
+
                 if (val.type == "T") {
                     total_tt = total_tt + 1;
                     linkArray[searchtotal] = val.type;
@@ -826,9 +808,15 @@ var getInformation = function(wasfiltered, valid) {
                 else {
                     linkArray[searchtotal] = val.id;
                 }
-
+/*
+                if (searchtotal < 5) {
+                    renderLink(val);
+                } 
+                else {
+                    linkArrayToRender[searchtotal] = val;
+                }
+ */
                 linkArrayToRender[searchtotal] = val;
-                console.log("8888888" );
                 searchtotal++;
             }  
             i++;
@@ -850,7 +838,7 @@ var getInformation = function(wasfiltered, valid) {
     $('#main').find('.tweet').sort(function (a, b) {
         return Number($(b).attr('cdate')) - Number($(a).attr('cdate'));
     }).appendTo('#main'); */
-    console.log("searchtotal: " + searchtotal)
+
     if (searchtotal > 0) {
         //if (wasfiltered != 2)
             //showMessage("Search Results", 2000);
@@ -916,6 +904,8 @@ function renderLink(val, flag) {
     var newtweetobj = $('<div style="display: none;" id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>');
 
     if (flag) {
+        
+        console.log("11111111");
         $('#main').append(newtweetobj);
 
         if (val.type != "T") {
@@ -932,6 +922,9 @@ function renderLink(val, flag) {
         }
     }
     else {
+        
+        console.log("22222222");
+
         $('#hiddendiv').append(newtweetobj);  
     }
 
