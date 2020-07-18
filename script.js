@@ -331,7 +331,7 @@ $( document ).ready(function() {
                     $("#recoilback").css("position", "absolute");
                 });
             }
-        } */
+        } 
 
         if (topMenuMode == 2) {
             if (scrollLastPos > $(window).scrollTop()) {
@@ -343,7 +343,7 @@ $( document ).ready(function() {
                 $("#recoilback").fadeOut(700);
             }
         }
-
+        */
         var scroll = scrollLastPos = $(window).scrollTop();
         if (scroll > 200) {
           $('#gotop').fadeIn(700); 
