@@ -2589,7 +2589,11 @@ function customizeSingleTweet(id) {
     var obj = $("#twitter-widget-" + totalrenderedtweets);
 
     obj.attr("processed", "yes");
+    var tweetStyle = document.createElement("style");
 
+    tweetStyle.setAttribute("id", "tweet-style-" + totalrenderedtweets);
+    tweetStyle.innerHTML = tweetCSS;
+    tweetStyle.type = "text/css"; 
 
     //if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
         
