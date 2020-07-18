@@ -784,7 +784,9 @@ var getInformation = function(wasfiltered, valid) {
             console.log("--------------------------- : ");
             console.log("$('#selectedcat').val() : " + $('#selectedcat').val());
             console.log("val.categories : " + val.categories);
-            console.log("--- " + !dofiltercat || val.categories.includes($('#selectedcat').val()));
+            console.log("!dofiltercat " + !dofiltercat);
+            console.log("includes " + val.categories.includes($('#selectedcat').val()));
+
             dofiltercatfinal = !dofiltercat || val.categories.includes($('#selectedcat').val());
             dofilterauthorfinal = !dofilterauthor || val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase());
             dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
