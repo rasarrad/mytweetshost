@@ -952,7 +952,10 @@ function renderLink(val, flag) {
             const iframes = el.getElementsByTagName('iframe');
 
             for (let iframe of iframes) {
-                iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+                
+                $(iframe).resizable({
+                    animate: true, animateEasing: 'swing', animateDuration: 500
+                });
             }
 
           });
