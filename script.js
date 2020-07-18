@@ -33,7 +33,6 @@ var useSwipes = false;
 var ceec = 0; 
 var funcg = null;
 var isMobile = null;
-var totalrenderedtweets = 0;
 var currrenderedtweets = 0;
 var linkArray = new Array();
 var linkArrayToRender = new Array();
@@ -65,6 +64,11 @@ $( document ).ready(function() {
 
     isMobile = window.mobileAndTabletCheck();
 
+
+
+    var aaa = "https://twitter.com/noamchomskyT/status/1240012281334976512";
+
+    alert(aaa.substring(aaa.indexOf("status/")))
 
  /* 
  localStorage.clear();
@@ -2566,55 +2570,6 @@ function expandscreen(obj) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function customizeSingleTweet(id) {
-    var isChromium = window.chrome;
-    var winNav = window.navigator;
-    var vendorName = winNav.vendor;
-    var isOpera = typeof window.opr !== "undefined";
-    var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
-    var isIOSChrome = winNav.userAgent.match("CriOS");
-    var isSafari6Plus = !!navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i) && typeof document.body.style.webkitFilter !== "undefined";
-    var ua = navigator.userAgent.toLowerCase();
-    var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-
-    var tweetCSS = ".EmbeddedTweet{height:auto !important;background: transparent !important; margin: 0 !important;}.EmbeddedTweet {max-width: none !important;width: 100%;padding-bottom: 25px !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;} .Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar:not(.Identity-avatar) {height: 50px !important;width: 50px !important;position: absolute !important;top: -7px !important;}.Avatar.Identity-avatar {width: 20px !important;height: 22px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important; padding-top: 0 !important;}.TwitterCard-container {max-width: 10000px!important;} .TweetInfo-like {display: none !important;} .CallToAction-icon {display: none !important;} .TweetInfo-timeGeo {margin-left: 5px !important;} .CallToAction-text { color: var(--text-color) !important;} .CallToAction-text:hover { opacity: 0.6 !important;} a:hover { opacity: 0.6 !important;}";
-      
-    if ($('body').hasClass('big')) {
-        tweetCSS = ".EmbeddedTweet{height:auto !important; background: transparent !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;padding-bottom: 25px !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;width: 100%;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.Tweet-ancestorContents.Tweet-ancestorContents--repliesRefresh > .avatar {left: -8px !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {font-size: 19px !important;background: transparent !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .Tweet-body{font-size: 19px !important;}.TweetAuthor-avatar{width: 50px !important;height: 50px !important;}.Avatar:not(.Identity-avatar) {height: 45px !important; width: 45px !important; position: relative !important; top: -2px !important;min-width: 43px !important;}.Avatar.Identity-avatar {width: 20px !important;height: 22px !important;} .TweetAuthor-avatar--ancestor .Avatar {left: -8px !important;}.TweetAuthor-name {font-size: 18px !important;}.TweetAuthor-screenName {font-size: 15px !important;}.TweetInfo {font-size: 15px !important;}.CallToAction {font-size: 15px !important;}.TwitterCard-container {border: 1px solid var(--soft-color) !important;max-width: 10000px!important;} .TweetInfo-like {display: none !important;} .CallToAction-icon {display: none !important;} .TweetInfo-timeGeo {margin-left: 5px !important;} .CallToAction-text { color: var(--text-color) !important;} .CallToAction-text:hover { opacity: 0.6 !important;} a:hover { opacity: 0.6 !important;}";
-    }
-    else {
-        tweetCSS = ".EmbeddedTweet{height:auto !important; background: transparent !important;border-radius: 0px !important;border: 0px !important; margin: 0 !important;padding-bottom: 25px !important;} .Identity-screenName {color: var(--text-color) !important;} .TwitterCardsGrid-col--spacerTop.SummaryCard-destination {color: var(--high-color) !important} .SandboxRoot {color: var(--text-color) !important} .CallToAction-text {color: var(--text-color)} .TweetAuthor-screenName {color: var(--high-color) !important} a {color: var(--high-color) !important} .TweetAuthor-screenName.Identity-screenName {color: var(--text-color) !important} .u-block.TwitterCardsGrid-col--spacerTop SummaryCard-destination {color: var(--text-color) !important} .Icon.Icon--twitter {display: none !important;} .CallToAction{border: 0px !important; padding-top: 0 !important;} .EmbeddedTweet {max-width: none !important;width: 100%;}.SummaryCard-contentContainer{background: var(--softdark-color) !important;transition: all 0.6s !important;}.SummaryCard-contentContainer:hover{background: var(--soft-color) !important;}.Tweet-card {background: transparent !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TwitterCard-container {border: 1px solid var(--soft-color) !important;max-width: 10000px!important;}.TweetAuthor-name {font-size: 16px !important;}.Avatar:not(.Identity-avatar) {height: 36px !important;width: 36px !important;position: relative !important;min-width: 36px !important;top: 2px !important;}.Avatar.Identity-avatar {width: 16px !important;height: 16px !important;}.TweetAuthor-screenName {font-size: 14px !important;}.Tweet-body{font-size: 16px !important;} .TweetAuthor-avatar--ancestor .Avatar {left: -5px !important;}.TweetInfo {font-size: 12px !important;}.CallToAction {font-size: 13px !important;}.Tweet-card {font-size: 14px !important;}.Tweet-card > .QuoteTweet {background: #ffffff38 !important;border-bottom-right-radius: 0 !important;border-bottom-left-radius: 0 !important;border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;margin-top: 19px !important;} .TweetAuthor-avatar{width: 36px !important;height: 36px !important;} .TweetInfo-like {display: none !important;} .CallToAction-icon {display: none !important;} .TweetInfo-timeGeo {margin-left: 5px !important;} .CallToAction-text { color: var(--text-color) !important;} .CallToAction-text:hover { opacity: 0.6 !important;} a:hover { opacity: 0.6 !important;}";    
-    }
-
-    var obj = $("#twitter-widget-" + totalrenderedtweets);
-
-    obj.attr("processed", "yes");
-    var tweetStyle = document.createElement("style");
-
-    tweetStyle.setAttribute("id", "tweet-style-" + totalrenderedtweets);
-    tweetStyle.innerHTML = tweetCSS;
-    tweetStyle.type = "text/css"; 
-
-    //if (isAndroid || (isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
-        
-    //var styleTag = document.getElementById("twitter-widget-" + totalrenderedtweets).shadowRoot;
-    //    insertAfter(tweetStyle, styleTag.childNodes[0]);
-
-    //} else {
-    //    var tweetWidget = document.getElementById("twitter-widget-" + j).contentDocument;
-    //    $(tweetWidget.head).prepend(tweetStyle);
-    //} 
-    
-    totalrenderedtweets = totalrenderedtweets + 1;
-    if (id) {
-        $("#" + id).fadeIn(3000);
-    }
-    else {
-        obj.parent().parent().appendTo($("#main")).fadeIn(1000);
-    }
-}
-
-
 function findFirstLink() {
 var notFound = true;
 var i = -1;
@@ -2818,27 +2773,18 @@ function startWorker() {
                     $("html, body").scrollTop(0);
                     $("#main").empty();
                 }
-                if (linkArray[currrenderedtweets] == "T") {
-                    if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                        currrenderedtweets++;
-        
-                        if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
-                            customizeSingleTweet();
-                        }
-                    }
-                }
-                else {
 
-                    $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
-                    
-                    if (!isMobile) {
-                        idCurr = linkArray[currrenderedtweets];
-                        setTimeout(function(){
-                            document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
-                        }, 70);
-                    }
-                    currrenderedtweets++;
+
+                $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
+                
+                if (!isMobile) {
+                    idCurr = linkArray[currrenderedtweets];
+                    setTimeout(function(){
+                        document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
+                    }, 70);
                 }
+                currrenderedtweets++;
+  
                 if (linkArrayToRender[currrenderedtweets + 5]) {
                     renderLink(linkArrayToRender[currrenderedtweets + 5]);
                 }
@@ -2872,27 +2818,18 @@ function startWorker() {
 
                 if (doExec) {
                     renderTimeout = setTimeout(function() {  
-                        if (linkArray[currrenderedtweets] == "T") {
-                            if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                                currrenderedtweets++;
-                                countercontrol++;
-                                if ($("#twitter-widget-" + totalrenderedtweets).attr("processed") != "yes") {
-                                    customizeSingleTweet();
-                                }
-                            }
+
+                        $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
+                
+                        if (!isMobile) {
+                            idCurr = linkArray[currrenderedtweets];
+                            setTimeout(function(){
+                                document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
+                            }, 70);
                         }
-                        else {
-                            $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
-                    
-                            if (!isMobile) {
-                                idCurr = linkArray[currrenderedtweets];
-                                setTimeout(function(){
-                                    document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
-                                }, 70);
-                            }
-                            currrenderedtweets++;
-                            countercontrol++;
-                        }
+                        currrenderedtweets++;
+                        countercontrol++;
+
 
                         if (linkArrayToRender[currrenderedtweets + 5]) {
                             renderLink(linkArrayToRender[currrenderedtweets + 5]);

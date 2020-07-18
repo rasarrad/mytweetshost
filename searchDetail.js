@@ -994,10 +994,6 @@ var getInformationbyid = function(id, flag) {
             notFound = false;
             renderLink(val, true);
 
-            if (val.type == "T") {
-                preCustomize(id);
-            }
-
             $('#mask').fadeOut(2000);
     
             if (flag)
@@ -1016,30 +1012,6 @@ var getInformationbyid = function(id, flag) {
         $('#mask').fadeOut(300);
         showMessage("Link Not Found");
     } 
-}
-
-function preCustomize(id) {
-
-    setTimeout(function(){
-        if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-            customizeSingleTweet(id);
-        }
-        else {
-            setTimeout(function(){
-                if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                    customizeSingleTweet(id);
-                }
-                else {
-                    setTimeout(function(){
-                        if ($("#twitter-widget-" + totalrenderedtweets) && $("#twitter-widget-" + totalrenderedtweets).length > 0) {
-                            customizeSingleTweet(id);
-                        }
-        
-                    }, 1950);
-                }
-            }, 950);
-        }
-    }, 350);
 }
 
 
