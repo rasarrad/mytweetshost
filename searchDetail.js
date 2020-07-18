@@ -929,7 +929,18 @@ function renderLink(val, flag) {
     console.log(newtweetobj)
     if (val.type == "T") {
         newtweetobj.append($('<div class="innertweet"></div>'));
-        newtweetobj.find('.innertweet').append(val.tweet);
+
+        twttr.widgets.createTweet(
+            val.url.substring(val.url.indexOf("status/") + 7), newtweetobj.find('.innertweet'),
+            {
+              conversation : 'none',    // or all
+              cards        : 'hidden',  // or visible
+              linkColor    : '#cc0000', // default is blue
+              theme        : 'light'    // or dark
+            })
+          .then (function (el) {
+            console.log("renderizou o tweet numero: " + val.id);
+          });
 
         newtweetobj.attr('id', val.id);
     }
