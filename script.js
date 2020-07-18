@@ -2772,6 +2772,8 @@ function startWorker() {
                     $("#main").empty();
                 }
 
+                renderLink(linkArrayToRender[currrenderedtweets ]);
+
                 console.log(linkArray[currrenderedtweets])
 
                 if (!isMobile) {
@@ -2787,9 +2789,7 @@ function startWorker() {
                 }
                 currrenderedtweets++;
   
-                if (linkArrayToRender[currrenderedtweets + 5]) {
-                    renderLink(linkArrayToRender[currrenderedtweets + 5]);
-                }
+
             }
             else {
                 

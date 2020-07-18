@@ -903,11 +903,33 @@ function renderLink(val, flag) {
 
     var newtweetobj = $('<div style="display: none;" id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>');
 
+    $('#main').append(newtweetobj);
 
+
+        newtweetobj.fadeIn(1500);
+
+    /*     
+    if (flag) {
+        $('#main').append(newtweetobj);
+
+        if (val.type != "T") {
+
+            newtweetobj.fadeIn(1500);
+
+            setTimeout(function(){
+                if (!isMobile) {
+                    setTimeout(function(){
+                        document.getElementById("contentin" + val.id).addEventListener("click", clickHandler);
+                    }, 170);
+                } 
+            }, 1300);
+        }
+    }
+    else {
         console.log(111111111)
         $('#hiddendiv').append(newtweetobj);  
-
-
+    }
+*/
     newtweetobj.append($('<div style="z-index: 0;background: var(--soft-color);height: 39px;" class="innermask"><i class="fa fa-circle-o-notch fa-spin" style="display:none;"></i></div><div class="gradiantback"></div><div class="bottomgradiantback"></div><i onclick="javascript: expandCat(this)" id="expand" class="clicable fa fa-edit ' + expandclass + '"></i><i class="linkbar clicable fa fa-' + typefa + '" style="' + color + '" onclick="javascript: externallinkopen(this, \'' + val.url + '\', \'' + val.id + '\')"></i>'));
     
     newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
