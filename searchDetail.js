@@ -949,14 +949,7 @@ function renderLink(val, flag) {
           .then (function (el) {
             console.log("renderizou o tweet numero: " + val.id);
             console.log(el);
-            const iframes = el.getElementsByTagName('iframe');
 
-            for (let iframe of iframes) {
-                
-                $(iframe).resizable({
-                    animate: true, animateEasing: 'swing', animateDuration: 500
-                });
-            }
 
           });
 
