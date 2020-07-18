@@ -782,8 +782,8 @@ var getInformation = function(wasfiltered, valid) {
             dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
             dofiltertagfinal = !dofiltertag || searchTags(val.tags.toLowerCase(), $('#filtertag').val().toLowerCase());
             console.log("--------------------------- : ");
-            console.log("$('#selectedcat').val() : " + $('#selectedcat').val());
-            console.log("val.categories : " + val.categories);
+            console.log("$('#selectedcat').val() :" + $('#selectedcat').val() + "-");
+            console.log("val.categories :" + val.categories + "-");
             console.log("!dofiltercat " + !dofiltercat);
             console.log("includes " + val.categories.includes($('#selectedcat').val()));
 
