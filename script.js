@@ -2773,7 +2773,7 @@ function startWorker() {
                 $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
                 
                 if (!isMobile) {
-                    if (linkArray[currrenderedtweets] == "T") {
+                    if (linkArray[currrenderedtweets] != "T") {
                         idCurr = linkArray[currrenderedtweets];
                         setTimeout(function(){
                             document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
@@ -2820,7 +2820,7 @@ function startWorker() {
                         $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
                 
                         if (!isMobile) {
-                            if (linkArray[currrenderedtweets] == "T") {
+                            if (linkArray[currrenderedtweets] != "T") {
                                 idCurr = linkArray[currrenderedtweets];
                                 setTimeout(function(){
                                     document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
