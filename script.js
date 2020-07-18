@@ -2769,8 +2769,7 @@ function startWorker() {
                 }
 
                 console.log(linkArray[currrenderedtweets])
-                $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
-                
+
                 if (!isMobile) {
                     /* 
                     if (linkArray[currrenderedtweets] != "T") {
@@ -2790,6 +2789,7 @@ function startWorker() {
             }
             else {
                 
+                console.log("mais que 5")
                 if (currrenderedtweets == 5) {
                     //stopWorker();
                     closeMenuPopup(null, "2.7");
