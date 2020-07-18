@@ -781,19 +781,17 @@ var getInformation = function(wasfiltered, valid) {
             dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
             dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
             dofiltertagfinal = !dofiltertag || searchTags(val.tags.toLowerCase(), $('#filtertag').val().toLowerCase());
+            console.log("--------------------------- : ");
+            console.log("$('#selectedcat').val() : " + $('#selectedcat').val());
+            console.log("val.categories : " + val.categories);
+            console.log("--- " + !dofiltercat || val.categories.includes($('#selectedcat').val()));
             dofiltercatfinal = !dofiltercat || val.categories.includes($('#selectedcat').val());
             dofilterauthorfinal = !dofilterauthor || val.author.toLowerCase().includes($('#filterauthor').val().toLowerCase());
             dofiltertypefinal = !dofiltertype || val.type == $('#selectedtype').val();
             dofilterclassiffinal = !dofilterclassif || searchClassif(val.classif, $('#selectedclassif').val(), $('#selectedclassifcombo').val());
         
-            console.log("dofiltertextfinal : " + dofiltertextfinal);
-            console.log("dofilterdate1final : " + dofilterdate1final);
-            console.log("dofilterdate2final : " + dofilterdate2final);
-            console.log("dofiltertagfinal : " + dofiltertagfinal);
-            console.log("dofiltercatfinal : " + dofiltercatfinal);
-            console.log("dofilterauthorfinal : " + dofilterauthorfinal);
-            console.log("dofiltertypefinal : " + dofiltertypefinal);
-            console.log("dofilterclassiffinal : " + dofilterclassiffinal);
+
+
             if (val.deleted == "yes")
                 dofiltertextfinal = false;
 
