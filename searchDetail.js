@@ -719,6 +719,7 @@ var getInformation = function(wasfiltered, valid) {
     var dofilterdate2 = $('#filterdate2').val().trim().length > 0; 
     var dofiltertag = $('#filtertag').val().trim().length > 0; 
     var dofilterauthor = $('#filterauthor').val().trim().length > 0;
+    alert($('#selectedcat').val());
     var dofiltercat = $('#selectedcat').val().length > 0 && $('#selectedcat').val() != 'all';  
     var dofiltertype = $('#selectedtype').val().trim() != "all"; 
     var dofilterclassif = $('#selectedclassif').val().trim() != "all"; 
