@@ -797,10 +797,20 @@ var getInformation = function(wasfiltered, valid) {
             if (val.deleted == "yes")
                 dofiltertextfinal = false;
 
+
+                console.log("dofiltertextfinal : " + dofiltertextfinal);
+                console.log("dofilterdate1final : " + dofilterdate1final);
+                console.log("dofilterdate2final : " + dofilterdate2final);
+                console.log("dofiltertagfinal : " + dofiltertagfinal);
+                console.log("dofiltercatfinal : " + dofiltercatfinal);
+                console.log("dofilterauthorfinal : " + dofilterauthorfinal);
+                console.log("dofiltertypefinal : " + dofiltertypefinal);
+                console.log("dofilterclassiffinal : " + dofilterclassiffinal);
+                console.log("doShowDeletedLink || val.deleted : " + (doShowDeletedLink || val.deleted == "")); 
             if (dofiltertextfinal && dofilterdate1final && dofiltertagfinal && dofilterdate2final
                 && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal
                 && (doShowDeletedLink || val.deleted == "")) {
-
+                    console.log("6666666666666666666666666666" );
                 if (val.type == "T") {
                     total_tt = total_tt + 1;
                     linkArray[searchtotal] = val.type;
