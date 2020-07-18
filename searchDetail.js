@@ -904,8 +904,6 @@ function renderLink(val, flag) {
     var newtweetobj = $('<div style="display: none;" id="inid" cdate="' + val.date + '" curl="' + val.url + '" class="pobj tweet' + xclass + '"></div>');
 
     if (flag) {
-        
-        console.log("11111111");
         $('#main').append(newtweetobj);
 
         if (val.type != "T") {
@@ -922,9 +920,6 @@ function renderLink(val, flag) {
         }
     }
     else {
-        
-        console.log("22222222");
-
         $('#hiddendiv').append(newtweetobj);  
     }
 
@@ -932,8 +927,6 @@ function renderLink(val, flag) {
     
     newtweetobj.append($('<div class="tags"><i onclick="javascript: expandscreen(this)" class="fa fa-square-o"></i><b>Tags: </b>' + tagdispalay + '</div>'));
     
-    console.log(val.type)
-    console.log(newtweetobj)
     if (val.type == "T") {
         newtweetobj.append($('<div id="tw' + val.id + '" class="innertweet"></div>'));
         var tweet = document.getElementById("tw" + val.id);

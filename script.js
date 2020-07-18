@@ -2768,7 +2768,7 @@ function startWorker() {
                     $("#main").empty();
                 }
 
-
+                console.log(linkArray[currrenderedtweets])
                 $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
                 
                 if (!isMobile) {
@@ -2822,7 +2822,7 @@ function startWorker() {
                 
                         if (!isMobile) {
                             /* 
-                            if (linkArray[currrenderedtweets] != "T") {
+                            if (linkArray[cuarrrenderedtweets] != "T") {
                                 idCurr = linkArray[currrenderedtweets];
                                 setTimeout(function(){
                                     document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);

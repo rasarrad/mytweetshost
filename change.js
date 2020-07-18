@@ -316,12 +316,8 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
             
                         var cat = readCookie(val.id + "catchanged");
                         val.categoriesOri = val.categories;
-                        console.log("--------------------------------")
-                        console.log(val.categories)
 
                         if (cat) {
-                            console.log("-----------")
-                            console.log(cat)
                             val.categories = cat;
                         }
 
@@ -363,8 +359,6 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         val.classifOri = val.classif;
                         val.authorOri = val.author;
                         val.dateOri = val.date;
-                        console.log("----22222-------")
-                        console.log(val.categories)
                         var isnew = readCookie(val.id + "isnew");
                         if (isnew || val.isnew) {
                             hasAnyLinkChange = true;
@@ -399,11 +393,7 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                             } 
                 
                             var cat = readCookie(val.id + "catchanged");
-                            console.log("--------------------------------")
-                            console.log(val.categories)
                             if (cat) {
-                                console.log("-----------")
-                                console.log(cat)
                                 val.categories = cat;
                             }
     
