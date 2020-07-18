@@ -1113,7 +1113,7 @@ body.big #addtweet {
     width: 884px;
     background: var(--dark-color) !important;
     transform: translate(-50%, 0px);
-    left: calc(50% - 0px) !important;
+    left: calc(50% - -151px) !important;
     top: -19px !important;
 }  
 .tweet {
@@ -2577,7 +2577,7 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
       margin-right: 0px !important;
       top: -12px;
       max-width: 604px;
-      left: calc(50% - 0px) !important;
+      left: calc(50% - -58px) !important;
       top: calc(50% - -8px) !important;
       height: 430px !important;
     }   
@@ -2811,7 +2811,7 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
           display: block;
           width: 647px !important;
           transform: translate(-50%, 0px);
-          left: calc(50% - 0px) !important;
+          left: calc(50% - -47px) !important;
       }
        .linkbar {
           left: calc(50% - 240px);
@@ -3903,7 +3903,7 @@ body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 
         margin-right: 0px !important;
         top: -12px;
         max-width: 470px;
-        transform: translate(-50%, -50%) !important;
+        /* transform: translate(-50%, -50%) !important; */
         left: calc(50% - 0px) !important;
         top: calc(50% - 19.4vw) !important;
         height: 56vw !important;

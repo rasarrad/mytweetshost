@@ -944,10 +944,11 @@ function renderLink(val, flag) {
               conversation : 'none',    // or all
               cards        : 'hidden',  // or visible
               linkColor    : '#cc0000', // default is blue
-              theme        : 'light'    // or dark
+              theme        : 'dark'    // or dark
             })
           .then (function (el) {
             console.log("renderizou o tweet numero: " + val.id);
+            console.log(el);
           });
 
         newtweetobj.attr('id', val.id);
