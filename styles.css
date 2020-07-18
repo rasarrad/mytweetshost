@@ -1260,6 +1260,7 @@ body:not(.big) .yt.tweet .bottomgradiantback {
   border-top: 0 !important;
   margin-bottom: 1px;
   margin-top: 0px !important;
+  background: transparent;
   border: 0px solid white;
 }
 
@@ -3908,7 +3909,7 @@ body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 
         top: calc(50% - 19.4vw) !important;
         height: 56vw !important;
         margin-left: -2px !important;
-        height: 75vw !important;
+        height: 92vw !important;
     }
     .tweet.html iframe {
         margin-left: 0px !important;
@@ -3932,6 +3933,8 @@ body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 
         margin-right: 0px !important;
         top: -12px;
         max-width: none;
+        transform: translate(0%, 0px);
+        left: calc(0px) !important;
     }
     body.big #expand {
         right: calc(50% - 241px);
