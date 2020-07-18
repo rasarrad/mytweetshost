@@ -65,11 +65,6 @@ $( document ).ready(function() {
     isMobile = window.mobileAndTabletCheck();
 
 
-
-    var aaa = "https://twitter.com/noamchomskyT/status/1240012281334976512";
-
-    console.log("-" + aaa.substring(aaa.indexOf("status/") + 7) + "--> 1240012281334976512")
-
  /* 
  localStorage.clear();
 
@@ -2778,10 +2773,13 @@ function startWorker() {
                 $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
                 
                 if (!isMobile) {
-                    idCurr = linkArray[currrenderedtweets];
-                    setTimeout(function(){
-                        document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
-                    }, 70);
+                    if (linkArray[currrenderedtweets] == "T") {
+                        idCurr = linkArray[currrenderedtweets];
+                        setTimeout(function(){
+                            document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
+                        }, 70);
+                    }
+
                 }
                 currrenderedtweets++;
   
@@ -2822,10 +2820,13 @@ function startWorker() {
                         $("#" + linkArray[currrenderedtweets]).appendTo($("#main")).fadeIn(1000);
                 
                         if (!isMobile) {
-                            idCurr = linkArray[currrenderedtweets];
-                            setTimeout(function(){
-                                document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
-                            }, 70);
+                            if (linkArray[currrenderedtweets] == "T") {
+                                idCurr = linkArray[currrenderedtweets];
+                                setTimeout(function(){
+                                    document.getElementById("contentin" + idCurr).addEventListener("click", clickHandler);
+                                }, 70);
+                            }
+
                         }
                         currrenderedtweets++;
                         countercontrol++;
