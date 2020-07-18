@@ -795,7 +795,7 @@ var getInformation = function(wasfiltered, valid) {
 
                 if (val.type == "T") {
                     total_tt = total_tt + 1;
-                    linkArray[searchtotal] = val.type;
+                    linkArray[searchtotal] = val.id;
                 }
                 else if (val.type == "Y") {
                     total_yy = total_yy + 1;
