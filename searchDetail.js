@@ -842,7 +842,7 @@ var getInformation = function(wasfiltered, valid) {
     $('#main').find('.tweet').sort(function (a, b) {
         return Number($(b).attr('cdate')) - Number($(a).attr('cdate'));
     }).appendTo('#main'); */
-
+    console.log("searchtotal: " + searchtotal)
     if (searchtotal > 0) {
         //if (wasfiltered != 2)
             //showMessage("Search Results", 2000);
