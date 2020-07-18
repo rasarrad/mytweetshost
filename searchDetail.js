@@ -935,7 +935,7 @@ function renderLink(val, flag) {
     console.log(val.type)
     console.log(newtweetobj)
     if (val.type == "T") {
-        newtweetobj.append($('<div id="tw + ' + val.id + '" class="innertweet"></div>'));
+        newtweetobj.append($('<div id="tw' + val.id + '" class="innertweet"></div>'));
         var tweet = document.getElementById("tw" + val.id);
 
         twttr.widgets.createTweet(
