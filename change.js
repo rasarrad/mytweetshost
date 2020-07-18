@@ -247,11 +247,7 @@ function countalltweets() {
         if (showAll) {
             allLinks = data.Tweets;
         }
-        console.log("--------------------------------")
-        console.log("--------------------------------")
-        console.log(data.Tweets)
-        console.log("--------------------------------")
-        console.log("--------------------------------")
+
         var tempLinks = new Array();
         var tempCounter = 0;
         var processtmp = true;
@@ -320,8 +316,11 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
             
                         var cat = readCookie(val.id + "catchanged");
                         val.categoriesOri = val.categories;
+                        console.log("--------------------------------")
+                        console.log(val.categories)
+
                         if (cat) {
-                            console.log("--------------------------------")
+                            console.log("-----------")
                             console.log(cat)
                             val.categories = cat;
                         }
