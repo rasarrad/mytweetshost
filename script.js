@@ -68,7 +68,7 @@ $( document ).ready(function() {
 
     var aaa = "https://twitter.com/noamchomskyT/status/1240012281334976512";
 
-    alert(aaa.substring(aaa.indexOf("status/")))
+    alert(aaa.substring("-" + aaa.indexOf("status/") + 7) + "--> 1240012281334976512")
 
  /* 
  localStorage.clear();
