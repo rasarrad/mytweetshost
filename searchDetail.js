@@ -827,12 +827,7 @@ var getInformation = function(wasfiltered, valid) {
                     linkArray[searchtotal] = val.id;
                 }
 
-                if (searchtotal < 5) {
-                    renderLink(val);
-                } 
-                else {
-                    linkArrayToRender[searchtotal] = val;
-                }
+                linkArrayToRender[searchtotal] = val;
                 console.log("8888888" );
                 searchtotal++;
             }  
