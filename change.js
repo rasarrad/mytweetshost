@@ -247,7 +247,11 @@ function countalltweets() {
         if (showAll) {
             allLinks = data.Tweets;
         }
-
+        console.log("--------------------------------")
+        console.log("--------------------------------")
+        console.log(data.Tweets)
+        console.log("--------------------------------")
+        console.log("--------------------------------")
         var tempLinks = new Array();
         var tempCounter = 0;
         var processtmp = true;
