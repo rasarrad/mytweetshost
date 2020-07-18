@@ -928,10 +928,11 @@ function renderLink(val, flag) {
     console.log(val.type)
     console.log(newtweetobj)
     if (val.type == "T") {
-        newtweetobj.append($('<div class="innertweet"></div>'));
+        newtweetobj.append($('<div id="tw + ' + val.id + '" class="innertweet"></div>'));
+        var tweet = document.getElementById(tw + val.id);
 
         twttr.widgets.createTweet(
-            val.url.substring(val.url.indexOf("status/") + 7), newtweetobj.find('.innertweet'),
+            val.url.substring(val.url.indexOf("status/") + 7),  tweet,
             {
               conversation : 'none',    // or all
               cards        : 'hidden',  // or visible
