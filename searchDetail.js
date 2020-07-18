@@ -833,6 +833,7 @@ var getInformation = function(wasfiltered, valid) {
                 else {
                     linkArrayToRender[searchtotal] = val;
                 }
+                console.log("8888888" );
                 searchtotal++;
             }  
             i++;
