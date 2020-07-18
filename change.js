@@ -321,6 +321,8 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         var cat = readCookie(val.id + "catchanged");
                         val.categoriesOri = val.categories;
                         if (cat) {
+                            console.log("--------------------------------")
+                            console.log(cat)
                             val.categories = cat;
                         }
 
