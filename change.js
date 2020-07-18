@@ -363,7 +363,8 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         val.classifOri = val.classif;
                         val.authorOri = val.author;
                         val.dateOri = val.date;
-
+                        console.log("----22222-------")
+                        console.log(val.categories)
                         var isnew = readCookie(val.id + "isnew");
                         if (isnew || val.isnew) {
                             hasAnyLinkChange = true;
