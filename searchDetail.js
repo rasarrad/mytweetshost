@@ -644,6 +644,9 @@ var openSearchPopup = function(jsonobj)
     //updateTopPosition("searchpopup"); 
 
     $('#searchpopup').fadeIn(); 
+
+    $('#searchtags').find(".cursorpointer").click(); 
+    
 } 
 
 function updateSearchTablesHeight() {
