@@ -425,6 +425,8 @@ var openDetailPopup = function(jsonobj, flag)
                 table.css('max-height', "fit-content");
             }
 
+            table.find('.trcontent').css("display", "table-row");
+            
             table.find('.sectionedittd i').hide();
         });
         

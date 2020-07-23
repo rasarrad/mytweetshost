@@ -2112,7 +2112,7 @@ function externallinkopen(obj, link) {
 function linkAndTextCopy(obj, link, id) {
     var jsonvar = getJsonbyid(id);
     
-    $('#linkresult').val(jsonvar.info + "\\r\\n" + link);
+    $('#linkresult').val(jsonvar.info + link);
     $("#linkresult").focus();
     sleep(100);  
     $("#linkresult").select();
