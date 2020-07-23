@@ -776,7 +776,9 @@ var getInformation = function(wasfiltered, valid) {
             var dofilterauthorfinal = false;
             var dofiltertypefinal = false;
             var dofilterclassiffinal = false;
-                    
+
+console.log("////////////////////////////////////////");
+console.log("-" + val.tags.toLowerCase() + "-" + $('#filtertag').val().toLowerCase() + "-");
             dofiltertextfinal = !dofiltertext || searchInfo(val.info.toLowerCase(), val.tweet.toLowerCase(), $('#filtertag').val().toLowerCase());
             dofilterdate1final = !dofilterdate1 || val.date >= Number($('#filterdate1').val());
             dofilterdate2final = !dofilterdate2 || val.date <= Number($('#filterdate2').val());
