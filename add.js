@@ -26,7 +26,10 @@ function parseTweet(type) {
         $("#infoinput").val("");
         text = $('#tweet').val();
 
-        if (text.substring(0,4) == "<blo") {
+        if (text.substring(0,19) == "https://twitter.com") {
+        alert(1234)
+        }
+        else if (text.substring(0,4) == "<blo") {
             addType = "T";
 
             text = text.replace(/"/g, '').replace('<\/script>', '<&#47;script>');
