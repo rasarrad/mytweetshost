@@ -2838,8 +2838,8 @@ function startWorker() {
                         countercontrol++;
 
 
-                        if (linkArrayToRender[currrenderedtweets + 5]) {
-                            renderLink(linkArrayToRender[currrenderedtweets + 5]);
+                        if (linkArrayToRender[currrenderedtweets]) {
+                            renderLink(linkArrayToRender[currrenderedtweets]);
                         }
 
                     }, 190);
