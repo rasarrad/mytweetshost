@@ -2763,6 +2763,7 @@ function startWorker() {
         console.log("---------------------")
         console.log(linkArray)
         console.log(linkArrayToRender)
+        console.log(currrenderedtweets)
         
 
           if (linkArray[currrenderedtweets]) {
