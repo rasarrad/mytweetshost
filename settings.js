@@ -471,6 +471,8 @@ var openDetailPopup = function(jsonobj, flag)
         $('#infoinput').prop('readonly', null);
 
         $('#infoinput').focus();
+        var elmnt = document.getElementById("infoinput");
+            elmnt.scrollIntoView();
     }
 
     //$('#linkChange').fadeIn(); 
