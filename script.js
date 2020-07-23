@@ -39,7 +39,6 @@ var linkArrayToRender = new Array();
 var timeoutWorker;
 var renderTimeout = null;
 var datecontrol = new Date();
-var countercontrol = 0;
 
 
 var allLinks = new Array();
@@ -2835,12 +2834,12 @@ function startWorker() {
                             }
                             */
                         }
-                        currrenderedtweets++;
-                        countercontrol++;
+                        
 
 
                         if (linkArrayToRender[currrenderedtweets]) {
                             renderLink(linkArrayToRender[currrenderedtweets]);
+                            currrenderedtweets++;
                         }
 
                     }, 190);
