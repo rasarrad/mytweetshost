@@ -62,9 +62,11 @@ function changecriteria(e, obj, tableparam, flag) {
     if (flag) {
 
     }
-    else if (dblTapFlag)
+    else if (dblTapFlag) {
+        dblTapFlag = false;
         return false;
-
+    }
+        
     dblTapFlag = true;
     
     var table = null;
