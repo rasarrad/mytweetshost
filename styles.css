@@ -1429,7 +1429,7 @@ body.big .tweet.yt.text div.contentin > div {
   max-width: 849px;
   left: calc(50% - 0px) !important;
   top: calc(50% - 26px) !important;
-  height: 481px !important;
+  height: 531px !important;
 }   
 .tweet.html iframe {
   top: -12px;
@@ -2580,7 +2580,7 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
       max-width: 604px;
       left: calc(50% - -58px) !important;
       top: calc(50% - -8px) !important;
-      height: 430px !important;
+      height: 532px !important;
     }   
         .tweet.html iframe {
       position: relative;
@@ -3909,7 +3909,7 @@ body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 
         top: calc(50% - 19.4vw) !important;
         height: 56vw !important;
         margin-left: -2px !important;
-        height: 92vw !important;
+        height: 113vw !important;
     }
     .tweet.html iframe {
         margin-left: 0px !important;

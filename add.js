@@ -452,6 +452,7 @@ function create() {
     var resinfo = $('#infoinput').val();
     
     if (resinfo != "") {
+        alert(222)
         resinfo = resinfo.replace(/"/g, "");
         resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "").trim();    
     }
