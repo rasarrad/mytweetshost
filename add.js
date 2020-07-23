@@ -451,12 +451,6 @@ function create() {
     var ishidden = "0";
     var resinfo = $('#infoinput').val();
     
-    if (resinfo != "") {
-        alert(222)
-        resinfo = resinfo.replace(/"/g, "");
-        resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "").trim();    
-    }
-    
     var cats = $('#catsinput').val();
 
     if (cats == "undefined" || cats.length == 0) {
@@ -599,9 +593,6 @@ var getLinkDescriptionAndCreate = function(creationdate, cats, tags, resinfo, cl
 } 
 
 function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) {       
-
-    resinfo = resinfo.replace(/"/g, "");
-    resinfo = resinfo.replace(/(\r\n|\n|\r)/gm, "").trim();
 
     if (resinfo.length == 0)
         resinfo = "No Info About The Link"
