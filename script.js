@@ -2109,6 +2109,18 @@ function externallinkopen(obj, link) {
     //showMessage("External Link Copied To Clipboard"); 
 }
 
+function linkAndTextCopy(obj, link, id) {
+    var jsonvar = getJsonbyid(id);
+    
+    $('#linkresult').val(jsonvar.info + "\\r\\n" + link);
+    $("#linkresult").focus();
+    sleep(100);  
+    $("#linkresult").select();
+    document.execCommand('copy');
+    sleep(100);  
+    $("#linkresult").blur();
+    showMessage("Link And Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
+}
 
 function externallinkCopyPre() {
     externallinkcopy(null, $("#" + $("#fsPopup iframe").attr("cid")).attr("curl"));
