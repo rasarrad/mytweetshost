@@ -470,9 +470,12 @@ var openDetailPopup = function(jsonobj, flag)
                 
         $('#infoinput').prop('readonly', null);
 
-        $('#infoinput').focus();
-        var elmnt = document.getElementById("infoinput");
-            elmnt.scrollIntoView();
+        setTimeout(function(){
+
+            $('#infoinput').focus();
+            var elmnt = document.getElementById("infoinput");
+                elmnt.scrollIntoView();
+        }, 800);
     }
 
     //$('#linkChange').fadeIn(); 
