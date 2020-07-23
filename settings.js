@@ -469,6 +469,8 @@ var openDetailPopup = function(jsonobj, flag)
         $('#editTags').css('margin-top', '6px');  
                 
         $('#infoinput').prop('readonly', null);
+
+        $('#infoinput').focus();
     }
 
     //$('#linkChange').fadeIn(); 
