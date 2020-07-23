@@ -27,7 +27,42 @@ function parseTweet(type) {
         text = $('#tweet').val();
 
         if (text.substring(0,19) == "https://twitter.com") {
-        alert(1234)
+            addType = "T";
+
+            text = text.replace(/"/g, '').replace('<\/script>', '<&#47;script>');
+
+            var idExisting = existsLink(text, "T");
+            if (idExisting) {
+                resetMainDiv(); 
+    
+                getInformationbyid(idExisting, true);
+            }
+            else {
+
+                url = text; 
+        
+                var date = text.substring(text.lastIndexOf('ref_src=twsrc%5Etfw>') + 20, text.lastIndexOf('</a></blockquote>')); 
+                
+                if (type && type == 2) {
+                    create();
+                    showMessage("Tweet Link Successfully Parsed And Created"); 
+                }
+                else {
+                    if (type && type == 1) {
+                        openCreatePopup();
+                    }
+                    createPreview();
+
+                    if ($(window).width() > 1200) {
+                        $('#postedby').focus();
+                    }
+    
+                    showMessage("Tweet Link Successfully Parsed"); 
+                }     
+                $('#mask').fadeOut(600);  
+            }
+
+            return false;
         }
         else if (text.substring(0,4) == "<blo") {
             addType = "T";
