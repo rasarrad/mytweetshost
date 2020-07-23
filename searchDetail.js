@@ -795,6 +795,7 @@ console.log("-" + val.tags.toLowerCase() + "-" + searchTags(val.tags.toLowerCase
                 && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal
                 && (doShowDeletedLink || val.deleted == "")) {
 
+                    console.log("ENTROU");
                 if (val.type == "T") {
                     total_tt = total_tt + 1;
                     linkArray[searchtotal] = val.id;
