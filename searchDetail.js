@@ -942,7 +942,7 @@ function renderLink(val, flag) {
             val.url.substring(val.url.indexOf("status/") + 7),  tweet,
             {
               conversation : 'none',    // or all
-              cards        : 'hidden',  // or visible
+              cards        : 'visible',  // or visible
               linkColor    : 'red', // default is blue
               theme        : 'dark'    // or dark
             })
