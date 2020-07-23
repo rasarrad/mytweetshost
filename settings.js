@@ -168,7 +168,7 @@ var openDetailPopup = function(jsonobj, flag)
         $('#editInfo').css('max-height', '300px');
         $('#editInfo').find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down').show();
         $('#editInfo').find('td.el').removeClass('ellipsis');
-        $('#editInfo').find('.trcontent').show();
+        $('#editInfo').find('.trcontent:not(.originaltr)').show();
 
         $(".fa-angle-up").show();  
 
@@ -430,7 +430,7 @@ var openDetailPopup = function(jsonobj, flag)
                 table.css('max-height', "fit-content");
             }
 
-            table.find('.trcontent').css("display", "table-row");
+            table.find('.trcontent:not(.originaltr)').css("display", "table-row");
             
             table.find('.sectionedittd i').hide();
         });
@@ -1248,7 +1248,7 @@ function editSetting(e, obj, flag) {
 
             table.find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down'); 
 
-            table.find('.trcontent').css("display", "table-row");
+            table.find('.trcontent:not(.originaltr)').css("display", "table-row");
 
             setTimeout(function() {
                 titletext.css('transition', 'opacity .6s ease');
