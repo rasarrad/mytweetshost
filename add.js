@@ -29,7 +29,7 @@ function parseTweet(type) {
         if (text.substring(0,19) == "https://twitter.com") {
             addType = "T";
 
-            text = text.replace(/"/g, '').replace('<\/script>', '<&#47;script>');
+            text = text.replace('?s=20', '');
 
             var idExisting = existsLink(text, "T");
             if (idExisting) {
