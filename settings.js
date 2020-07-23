@@ -165,6 +165,11 @@ var openDetailPopup = function(jsonobj, flag)
             table.find('td.el').addClass('ellipsis');
         });
 
+        $('#editInfo').css('max-height', '300px');
+        $('#editInfo').find('.sectionedittd i').addClass('fa-angle-up').removeClass('fa-angle-down').show();
+        $('#editInfo').find('td.el').removeClass('ellipsis');
+        $('#editInfo').find('.trcontent').show();
+
         $(".fa-angle-up").show();  
 
         $('#linktable').hide();
