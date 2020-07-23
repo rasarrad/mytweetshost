@@ -175,7 +175,7 @@ var openDetailPopup = function(jsonobj, flag)
         $('#linkChange').attr("clink", jsonobj.url);
         $('#linkChange').removeClass("new");
         
-        $('#editTags').css('margin-top', '75px');  
+        $('#editTags').css('margin-top', '100px');  
                 
         $("#linkChange #seticon").attr('class','');
 
