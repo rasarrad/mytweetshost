@@ -50,6 +50,8 @@ function expandCat(obj, idparam, valid) {
     */
 
     var jsonvar = getJsonbyid(id);
+
+    alert(jsonvar)
     if (jsonvar != null) {
         openDetailPopup(jsonvar);
     }
