@@ -1,4 +1,19 @@
 {"Tweets": [{
+   "id": "2",
+   "creationdate": "20200724",
+   "type": "T",
+   "url": "https://twitter.com/theintercept/status/1286391659148857344",
+   "ishidden": "0",
+   "date": "",
+   "author": "",
+   "categories": "cli",
+   "tags": "",
+   "info": "aaaaa%250A%250Asssss%250A%250Asssss",
+   "classif": "0",
+   "deleted": "",
+   "isnew": "yes",
+   "tweet": "https://twitter.com/theintercept/status/1286391659148857344"
+  },{
    "id": "1",
    "creationdate": "20200724",
    "type": "T",
@@ -8,7 +23,7 @@
    "author": "",
    "categories": "cli",
    "tags": "",
-   "info": "aaaaa%250A%250Asss%250A%250A",
+   "info": "aaaaa%25250A%25250Asss%25250A%25250A",
    "classif": "0",
    "deleted": "",
    "isnew": "yes",
