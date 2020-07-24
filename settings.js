@@ -14,6 +14,9 @@ function expandCat(obj, idparam, valid) {
 
     var id = null;
 
+    if (obj)
+        vibrateApp(300);
+    
     if (idparam) {
         id = idparam;
     }
