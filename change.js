@@ -326,7 +326,6 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         if (tag) {
                             val.tags = tag;
                         }
-
                         var info = readCookie(val.id + "info");
                         val.infoOri = unescape(val.info);
                         if (info) {
@@ -360,7 +359,12 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         val.deletedOri = val.deleted;
                         val.tagsOri = val.tags;
                         val.categoriesOri = val.categories;
+                        console.log(val.info)
+                        val.info = unescape(val.info);
+                        console.log(val.info)
+                        
                         val.infoOri = unescape(val.info);
+                        
                         val.classifOri = val.classif;
                         val.authorOri = val.author;
                         val.dateOri = val.date;
