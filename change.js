@@ -1276,7 +1276,9 @@ function generate(obj) {
         });
 
         if (isMy) {
-            text = text + ']}';
+            text = text + 
+            ',{"id": "0","creationdate": "20000101","type": "T","url": "","ishidden": "0","date": "20000101","author": "","categories": "","tags": "","deleted": "","classif": "","info": "","tweet": "STARTING LINK - DO NOT DELETE"}'
+            + ']}';
             $('#linkresult').val(text);
             $("#linkresult").select();
             document.execCommand('copy'); 
