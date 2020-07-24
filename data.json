@@ -1,1 +1,16 @@
-{"Tweets": [{"id": "0","creationdate": "20000101","type": "T","url": "","ishidden": "0","date": "20000101","author": "","categories": "","tags": "","deleted": "","classif": "","info": "","tweet": "STARTING LINK - DO NOT DELETE"}]}
+{"Tweets": [{
+   "id": "1",
+   "creationdate": "20200724",
+   "type": "T",
+   "url": "https://twitter.com/OurHiddenHistry/status/1286493870025592832",
+   "ishidden": "0",
+   "date": "",
+   "author": "",
+   "categories": "cli",
+   "tags": "",
+   "info": "aaaaa%250A%250Asss%250A%250A",
+   "classif": "0",
+   "deleted": "",
+   "isnew": "yes",
+   "tweet": "https://twitter.com/OurHiddenHistry/status/1286493870025592832"
+  },{"id": "0","creationdate": "20000101","type": "T","url": "","ishidden": "0","date": "20000101","author": "","categories": "","tags": "","deleted": "","classif": "","info": "","tweet": "STARTING LINK - DO NOT DELETE"}]}
