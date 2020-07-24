@@ -1068,10 +1068,14 @@ var togglecriterions = function(obj) {
     
     closeallnewlayout();
 
-    if ($("#searchpopup").css("display") == "none")
+    if ($("#searchpopup").css("display") == "none") {
         openSearchPopup();
-    else
+
+        vibrateApp(300); 
+    }
+    else {
         closeSearchPopup();
+    }
 
     /*    
     fixfocus(obj);
