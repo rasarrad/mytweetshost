@@ -333,7 +333,9 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                             val.info = info;
                         }
                         else {
+                            console.log(val.info)
                             val.info = unescape(val.info);
+                            console.log(val.info)
                         }
             
                         var classif = readCookie(val.id + "classif");
