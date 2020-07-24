@@ -328,9 +328,12 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         }
 
                         var info = readCookie(val.id + "info");
-                        val.infoOri = val.info;
+                        val.infoOri = unescape(val.info);
                         if (info) {
                             val.info = info;
+                        }
+                        else {
+                            val.info = unescape(val.info);
                         }
             
                         var classif = readCookie(val.id + "classif");
@@ -355,7 +358,7 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         val.deletedOri = val.deleted;
                         val.tagsOri = val.tags;
                         val.categoriesOri = val.categories;
-                        val.infoOri = val.info;
+                        val.infoOri = unescape(val.info);
                         val.classifOri = val.classif;
                         val.authorOri = val.author;
                         val.dateOri = val.date;
@@ -406,7 +409,9 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                             if (info) {
                                 val.info = info;
                             }
-                
+                            else {
+                                val.info = unescape(val.info);
+                            }
                             var classif = readCookie(val.id + "classif");
                             if (classif) {
                                 val.classif = classif;
@@ -1195,8 +1200,11 @@ function generate(obj) {
         
                     var info = readCookie(val.id + "info");
                     if (info) {
-                        val.info = info;
-                        auxLink.info = info;
+                        val.info = escape(info);
+                        auxLink.info = escape(info);
+                    }
+                    else {
+                        val.info = escape(val.info);
                     }
         
                     var classif = readCookie(val.id + "classif");
