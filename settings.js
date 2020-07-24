@@ -2431,3 +2431,11 @@ function closeHelpPopup(obj) {
 
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
+
+function openGitHub(obj) {
+    if (obj)
+        fixfocus(obj);
+    
+     var win = window.open('https://github.com/rasarrad/mytweetshost/edit/master/data.json', '_blank');
+     win.focus();               
+}
