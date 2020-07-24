@@ -1,16 +1,16 @@
-  
 {"Tweets": [{
-   "id": "0",
-   "creationdate": "20000101",
+   "id": "1",
+   "creationdate": "20200724",
    "type": "T",
-   "url": "",
+   "url": "https://twitter.com/victorywiilcome/status/1285677874498940936",
    "ishidden": "0",
-   "date": "20000101",
+   "date": "",
    "author": "",
-   "categories": "",
-   "tags": "",
+   "categories": "cli",
+   "tags": "sssss",
+   "info": "111222",
+   "classif": "0",
    "deleted": "",
-   "classif": "",
-   "info": "",
-   "tweet": "STARTING LINK - DO NOT DELETE"
-   }]}
+   "isnew": "yes",
+   "tweet": "https://twitter.com/victorywiilcome/status/1285677874498940936"
+  },{"id": "0","creationdate": "20000101","type": "T","url": "","ishidden": "0","date": "20000101","author": "","categories": "","tags": "","deleted": "","classif": "","info": "","tweet": "STARTING LINK - DO NOT DELETE"}]}
