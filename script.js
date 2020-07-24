@@ -760,6 +760,9 @@ $( document ).ready(function() {
             */
             $( "#addtweet" ).blur();
             closeallnewlayout();
+
+            vibrateApp(600);
+            
             $('body, html').css('overflow-y', 'hidden');
             
 
@@ -2120,6 +2123,8 @@ function linkAndTextCopy(obj, link, id) {
     sleep(100);  
     $("#linkresult").blur();
     showMessage("Link And Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
+
+    vibrateApp(600);
 }
 
 function externallinkCopyPre() {
@@ -2896,4 +2901,9 @@ function clickMenuTooltip(obj, e) {
 }
 
 
-
+function vibrateApp(duration) {
+    var dur = 50;
+    if (duration)
+        dur = duration;
+    window.navigator.vibrate(dur);
+}
