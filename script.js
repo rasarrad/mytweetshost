@@ -762,7 +762,7 @@ $( document ).ready(function() {
             closeallnewlayout();
 
             vibrateApp(600);
-            
+
             $('body, html').css('overflow-y', 'hidden');
             
 
@@ -2433,7 +2433,7 @@ function readCookie(name) {
 
 
 function eraseCookie(name) {
-    document.cookie = name + '=NULL; path=/;';
+    localStorage.removeItem(name);
 }  
     
 

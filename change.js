@@ -733,16 +733,16 @@ function undogenerate(obj) {
     finally {
         if (idF) {
             $("#maxid").val(idF);
-            idF = idF - 1;
+            idF = idF + 1;
         }
         else {
             idF = parseInt($("#maxid").val());
             createCookie("maxid", idF);
-            idF = idF - 1;
+            idF = idF + 1;
         }
     }
     if (isMy) {
-        var r = confirm("Remove all Changes?");
+        var r = confirm("Remove all Changes (my)?");
         if (r == true) {
             do {
     
