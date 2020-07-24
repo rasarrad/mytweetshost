@@ -54,7 +54,7 @@ function processCount(inputArray, includeDeleted) {
     
                 for (var i = 0; i < tags.length; i++) {
                     if (tags[i].trim().length > 0) {
-                        if (tagsmap.toLowerCase().has(tags[i].toLowerCase().trim())) {
+                        if (tagsmap.has(tags[i].toLowerCase().trim())) {
                             var aux = Number(tagsmap.get(tags[i]));
     
                             tagsmap.set(tags[i].trim().toLowerCase(), aux + 1);
@@ -97,7 +97,7 @@ function processCount(inputArray, includeDeleted) {
     
                 for (var i = 0; i < tags.length; i++) {
                     if (tags[i].trim().length > 0) {
-                        if (tagsmap.toLowerCase().has(tags[i].toLowerCase().trim())) {
+                        if (tagsmap.has(tags[i].toLowerCase().trim())) {
                             var aux = Number(tagsmap.get(tags[i]));
     
                             tagsmap.set(tags[i].trim().toLowerCase(), aux + 1);
