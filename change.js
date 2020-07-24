@@ -357,11 +357,14 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         val.deletedOri = val.deleted;
                         val.tagsOri = val.tags;
                         val.categoriesOri = val.categories;
+
+                        console.log("----------------")
+                        console.log(val.info)
                         val.info = decodeURIComponent(val.info)
                         val.info = unescape(val.info);
                         
                         val.infoOri = decodeURIComponent(val.info).unescape(val.info);
-                        
+                        console.log(val.info)
                         val.classifOri = val.classif;
                         val.authorOri = val.author;
                         val.dateOri = val.date;
