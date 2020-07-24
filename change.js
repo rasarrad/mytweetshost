@@ -1169,10 +1169,7 @@ function generate(obj) {
 
                     if (linkcontent) {
                         linktmp = decodeURIComponent(linkcontent);
-                        linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
-                        linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
-                        linktmp = linktmp.replace(/(\\)/gm, ""); 
-
+                        linktmp = linktmp.substring(1, linktmp.length - 2);
                         linktmp = JSON.parse(linktmp);
                         
                         val = linktmp;
