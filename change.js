@@ -329,7 +329,7 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         var info = readCookie(val.id + "info");
                         val.infoOri = unescape(val.info);
                         if (info) {
-                            val.info = info;
+                            val.info = unescape(info);
                         }
                         else {
                             console.log(val.info)
@@ -413,7 +413,7 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                 
                             var info = readCookie(val.id + "info");
                             if (info) {
-                                val.info = info;
+                                val.info = unescape(info);
                             }
                             else {
                                 val.info = unescape(val.info);
@@ -1169,7 +1169,6 @@ function generate(obj) {
 
                     if (linkcontent) {
                         linktmp = decodeURIComponent(linkcontent);
-                        console.log(linktmp)
                         linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
@@ -1177,7 +1176,6 @@ function generate(obj) {
                         linktmp = JSON.parse(linktmp);
                         
                         val = linktmp;
-                        console.log(val.info)
                         nextid = nextid - 1;
                     }
                     else {
@@ -1213,6 +1211,7 @@ function generate(obj) {
                     }
                     else {
                         val.info = escape(val.info);
+                        auxLink.info = escape(val.info);
                     }
         
                     var classif = readCookie(val.id + "classif");
