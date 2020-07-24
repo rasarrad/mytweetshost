@@ -327,12 +327,15 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                             val.tags = tag;
                         }
                         var info = readCookie(val.id + "info");
-                        val.infoOri = decodeURIComponent(val.info).unescape(val.info);
+                        val.infoOri = decodeURIComponent(val.info);
+                        val.infoOri = unescape(val.infoOri);
                         if (info) {
-                            val.info = decodeURIComponent(info).unescape(info);
+                            val.info = decodeURIComponent(info);
+                            val.info = unescape(val.info);
                         }
                         else {
-                            val.info = decodeURIComponent(val.info).unescape(val.info);
+                            val.info = decodeURIComponent(val.info);
+                            val.info = unescape(val.info);
                         }
             
                         var classif = readCookie(val.id + "classif");
@@ -363,7 +366,8 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         val.info = decodeURIComponent(val.info)
                         val.info = unescape(val.info);
                         
-                        val.infoOri = decodeURIComponent(val.info).unescape(val.info);
+                        val.infoOri = decodeURIComponent(val.info);
+                        val.infoOri = unescape(val.infoOri);
                         console.log(val.info)
                         val.classifOri = val.classif;
                         val.authorOri = val.author;
@@ -413,10 +417,12 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                 
                             var info = readCookie(val.id + "info");
                             if (info) {
-                                val.info = decodeURIComponent(info).unescape(info);
+                                val.info = decodeURIComponent(info);
+                                val.info = unescape(val.info);
                             }
                             else {
-                                val.info = decodeURIComponent(val.info).unescape(val.info);
+                                val.info = decodeURIComponent(val.info);
+                                val.info = unescape(val.info);
                             }
                             var classif = readCookie(val.id + "classif");
                             if (classif) {
