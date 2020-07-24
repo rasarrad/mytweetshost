@@ -8,6 +8,7 @@ function removetweet(obj) {
         fixfocus(obj);
 
     if ($('#linkChange').attr("cid") != "new") {
+        alert($('#linkChange').attr("cid"))
         jsonvar = getJsonbyid($('#linkChange').attr("cid"));
 
         if (jsonvar) {
