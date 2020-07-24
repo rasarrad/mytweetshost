@@ -1355,8 +1355,8 @@ function tagsInputOnChange(obj) {
     createNonExistentLi();
     
     updateTagsText($(obj).val(), $('#linkChange').attr("cid"));
-
-    updateLinkColor(null, $('#linkChange').attr("cid"));
+    if (!$('#linkChange').hasClass("new")) 
+        updateLinkColor(null, $('#linkChange').attr("cid"));
 }
 
 
@@ -1748,8 +1748,8 @@ function classifInputOnChange(obj) {
     else 
         currentclassifdisplay.html("--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
 
-
-    updateLinkColor(null, $('#linkChange').attr("cid"));
+    if (!$('#linkChange').hasClass("new")) 
+        updateLinkColor(null, $('#linkChange').attr("cid"));
 
     markClassif($(obj).val().trim());
 }
