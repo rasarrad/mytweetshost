@@ -502,7 +502,7 @@ function create() {
         var jsonVal = {};
         
         jsonVal.id = nextid;        
-        jsonVal.info = resinfo;        
+        jsonVal.info = escape(resinfo);        
         jsonVal.classif = classif;        
         jsonVal.categories = cats;        
         jsonVal.date = $('#date').val();        
@@ -599,7 +599,7 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
 
     var jsonVal = {};
     jsonVal.id = nextid;        
-    jsonVal.info = resinfo;        
+    jsonVal.info = escape(resinfo);           
     jsonVal.classif = classif;        
     jsonVal.categories = cats;        
     jsonVal.date = $('#date').val();        
