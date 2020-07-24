@@ -327,14 +327,12 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                             val.tags = tag;
                         }
                         var info = readCookie(val.id + "info");
-                        val.infoOri = unescape(val.info);
+                        val.infoOri = decodeURIComponent(val.info).unescape(val.info);
                         if (info) {
-                            val.info = unescape(info);
+                            val.info = decodeURIComponent(info).unescape(info);
                         }
                         else {
-                            console.log(val.info)
-                            val.info = unescape(val.info);
-                            console.log(val.info)
+                            val.info = decodeURIComponent(val.info).unescape(val.info);
                         }
             
                         var classif = readCookie(val.id + "classif");
@@ -359,14 +357,10 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         val.deletedOri = val.deleted;
                         val.tagsOri = val.tags;
                         val.categoriesOri = val.categories;
-                        console.log("----------------------------------")
-                        console.log(val.info)
                         val.info = decodeURIComponent(val.info)
-                        console.log(val.info)
                         val.info = unescape(val.info);
-                        console.log(val.info)
                         
-                        val.infoOri = unescape(val.info);
+                        val.infoOri = decodeURIComponent(val.info).unescape(val.info);
                         
                         val.classifOri = val.classif;
                         val.authorOri = val.author;
@@ -416,10 +410,10 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                 
                             var info = readCookie(val.id + "info");
                             if (info) {
-                                val.info = unescape(info);
+                                val.info = decodeURIComponent(info).unescape(info);
                             }
                             else {
-                                val.info = unescape(val.info);
+                                val.info = decodeURIComponent(val.info).unescape(val.info);
                             }
                             var classif = readCookie(val.id + "classif");
                             if (classif) {
@@ -759,7 +753,6 @@ function undogenerate(obj) {
         var r = confirm("Remove all Changes (my)?");
         if (r == true) {
             do {
-                console.log(idF)
                 eraseCookie(idF + "templink");
         
                 eraseCookie(idF + "isdeleted");
