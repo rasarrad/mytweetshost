@@ -2005,6 +2005,7 @@ function openmenu(obj, flag) {
     if (obj)
         fixfocus(obj);
 
+    vibrateApp(300);    
     if ($('#mainmenu').css("display") == "none") {
         var setHeight = "26px";
         if ($('body').hasClass('big')) {
