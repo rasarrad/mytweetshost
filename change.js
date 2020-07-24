@@ -307,7 +307,7 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
         
                 var isdeleted = readCookie(val.id + "isdeleted");
 
-                if (val.deleted.length == 0 && !(isdeleted && isdeleted == "yes")
+                if (val.deleted.length < 2 && !(isdeleted && isdeleted == "yes")
                     && (isMy || val.ishidden == "0")) {
                     
                     var haschanges = readCookie(val.id + "haschanges");
@@ -396,7 +396,7 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
  
                 var isdeleted = readCookie(val.id + "isdeleted");
 
-                if (val.deleted.length == 0 && !(isdeleted && isdeleted == "yes")
+                if (val.deleted.length < 2 && !(isdeleted && isdeleted == "yes")
                     && (isMy || val.ishidden == "0")) {
                     var haschanges = readCookie(val.id + "haschanges");
         
