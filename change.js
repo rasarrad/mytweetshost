@@ -10,9 +10,8 @@ function removetweet(obj) {
     if ($('#linkChange').attr("cid") != "new") {
         jsonvar = getJsonbyid($('#linkChange').attr("cid"));
 
-        alert(jsonvar)
         if (jsonvar) {
-            if (jsonvar.deleted.length > 0) {
+            //if (jsonvar.deleted.length > 0) {
                 try {
                     $( "#dialog-confirm-delete" ).dialog({
                         resizable: false,
@@ -34,11 +33,16 @@ function removetweet(obj) {
                             });
                           },
                           "Restore": function() {
-                            createCookie2($('#linkChange').attr("cid"), "isdeleted", "", null, true);
+/*                             createCookie2($('#linkChange').attr("cid"), "isdeleted", "", null, true);
             
                             jsonvar.deleted = "";
                             updateLinkColor(jsonvar);
                             showMessage("Link Marked To Delete Reverted");
+                              $("#mask").fadeOut(500);
+                              $("#dialog-confirm-delete").parent().fadeOut( 800, function() {
+                                $("#dialog-confirm-delete").parent().remove();
+                              }); */
+
                               $("#mask").fadeOut(500);
                               $("#dialog-confirm-delete").parent().fadeOut( 800, function() {
                                 $("#dialog-confirm-delete").parent().remove();
@@ -59,14 +63,14 @@ function removetweet(obj) {
                     $("#dialog-confirm-delete").parent().css("top", ((window.innerHeight/2) - 100) + "px")
                     $("#mask").fadeIn(500);
                     $("#dialog-confirm-delete").parent().fadeIn(800);
-            } 
+/*             } 
             else {
                 createCookie2($('#linkChange').attr("cid"), "isdeleted", "a");
                 jsonvar.deleted = "a";
                 updateLinkColor(jsonvar);
 
                 showMessage("Link Marked To Delete");
-            }
+            } */
         }
         else {
             showMessage("Unknown System Error");
