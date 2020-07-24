@@ -327,9 +327,12 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                         }
 
                         var tag = readCookie(val.id + "tagchanged");
-                        val.tagsOri = val.tags;
+                        val.tagsOri = val.tags.toLowerCase();
                         if (tag) {
-                            val.tags = tag;
+                            val.tags = tag.toLowerCase();
+                        }
+                        else {
+                            val.tags = val.tags.toLowerCase();
                         }
                         var info = readCookie(val.id + "info");
                         val.infoOri = decodeURIComponent(val.info);
@@ -363,7 +366,8 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                     }
                     else {
                         val.deletedOri = val.deleted;
-                        val.tagsOri = val.tags;
+                        val.tagsOri = val.tags.toLowerCase();
+
                         val.categoriesOri = val.categories;
 
                         console.log("----------------")
@@ -417,9 +421,12 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
     
                             var tag = readCookie(val.id + "tagchanged");
                             if (tag) {
-                                val.tags = tag;
+                                val.tags = tag.toLowerCase();
                             }
-                
+                            else {
+                                val.tags = val.tags.toLowerCase();
+                            }
+
                             var info = readCookie(val.id + "info");
                             if (info) {
                                 val.info = decodeURIComponent(info);
