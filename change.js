@@ -745,7 +745,7 @@ function undogenerate(obj) {
         var r = confirm("Remove all Changes (my)?");
         if (r == true) {
             do {
-    
+                console.log(idF)
                 eraseCookie(idF + "templink");
         
                 eraseCookie(idF + "isdeleted");
