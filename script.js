@@ -2637,7 +2637,7 @@ function showTooltip(event, obj, flag, text) {
     }
 }
 
-/* function showFreeTooltip(x, y, text) {
+function showFreeTooltip(x, y, text) {
     var tooltip = $("#tooltip");
     tooltip.text(text);
 
@@ -2645,7 +2645,18 @@ function showTooltip(event, obj, flag, text) {
     tooltip.css("left",  (x + 70) + "px");
 
     tooltip.fadeIn(700);
-} */
+} 
+
+
+function showFreeTooltip(x, y, text) {
+    var tooltip = $("#tooltip");
+    tooltip.text(text);
+
+    tooltip.css("top", (y) + "px");
+    tooltip.css("left",  (x) + "px");
+
+    tooltip.fadeIn(700);
+} 
 
 
 function getTooltipPosition(pageX) {
