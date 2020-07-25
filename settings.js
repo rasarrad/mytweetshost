@@ -1834,6 +1834,51 @@ function infoInputOnKeyup(obj) {
 }
 
 
+function saveInfo(obj) {
+    var cid = $(obj).attr("cid");
+    var val = $("#tweetinfo" + cid).val();
+    var oldInfo = $("#tweetinfo" + cid).attr("cinfo");
+
+
+    if (oldInfo == val) {
+        createCookie2($(cid).attr("cid"), "info", "", null, true);
+    }
+    else {
+        createCookie2(cid, "info", val);
+    }
+}
+
+function expandInfo(obj) {
+    var text = $(obj).parent().find("textarea");
+
+    text.css("height", (text.height() + 20) + "px")
+}
+
+function expandTweet(obj) {
+    var div = $(obj).parent().find("div");
+
+    div.css("height", (div.height() + 20) + "px")
+}
+
+function copyInfo(obj) {
+    
+
+    var url = $(obj).parent().parent().attr("curl");
+
+
+    $('#linkresult').val(navigator.clipboard.readText() + url);
+    $("#linkresult").focus();
+    sleep(100);  
+    $("#linkresult").select();
+    document.execCommand('copy');
+    sleep(100);  
+    $("#linkresult").blur();
+    showMessage("Link And Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
+
+    vibrateApp(100);
+}
+
+
 function undoInfo(e, obj) {
     e.stopPropagation();
     fixfocus(obj);

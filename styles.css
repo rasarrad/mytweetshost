@@ -1115,6 +1115,7 @@ body.big #addtweet {
     transform: translate(-50%, 0px);
     left: calc(50% - -151px) !important;
     top: -19px !important;
+    margin-bottom: 10px;
 }  
 .tweet {
   padding-bottom: 0px;
@@ -7267,7 +7268,7 @@ body.big #editinfodiv.keyb .fa-angle-down {
 }
 
 
-.innertweet > .textinfo {width: calc(100% - 12px);height: 55px;font-size: 16px;/* font-weight: bold; */margin-left: 6px;margin-top: 0px;margin-bottom: 0px;border: 0px;resize: none;background: var(--dark-color) !important;color: var(--text-color) !important;}
+.innertweet > .textinfo {width: calc(100% - 14px);height: 55px;font-size: 18px;/* font-weight: bold; */margin-left: 6px;margin-top: 0px;margin-bottom: 0px;border: 0px;resize: none;background: var(--dark-color) !important;color: var(--text-color) !important;}
 
 .innertweet > .twitter-tweet.twitter-tweet-rendered {
   height: 300px !important;
@@ -7277,3 +7278,42 @@ body.big #editinfodiv.keyb .fa-angle-down {
 .innertweet > .twitter-tweet.twitter-tweet-rendered > iframe {
   height: auto !important;
 }
+
+
+.buttontweet {
+    position: absolute;
+    margin-top: 6px;
+    font-size: 22px;
+    height: 18px;
+    line-height: 20px;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 3px;
+    transition: all 0.6s;
+    z-index: 10;
+    background: transparent;
+    color: var(--high-color);
+    left: auto !important;
+    bottom: 13px;
+    right: 13px;
+   }
+
+   .buttontweet.fa-clone {
+    right: 76px;
+    font-size: 17px;
+    bottom: 13px;
+   }
+
+ .buttontweet.topps {
+    bottom: auto;
+    top: 7px;
+    right: 51px;
+    font-size: 24px;
+    color: white;
+   }
+
+.buttontweet.fa-save {
+    right: 45px;
+    font-size: 19px;
+    bottom: 12px;
+   }
