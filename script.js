@@ -2650,10 +2650,13 @@ function showFreeTooltip(x, y, text) {
 
 function showFreeTooltip2(x, y, text) {
     var tooltip = $("#tooltip");
+
+    tooltip.attr("style", "position: absolute;top: 380px;z-index: 2147483647;background: var(--high-color);padding: 2px 10px;border: 1px solid var(--dark-color);color: var(--dark-color);border-radius: 3px;width: 100%;max-width: 1000px;left: 0px;");
+
     tooltip.text(text);
 
     tooltip.css("top", (y) + "px");
-    tooltip.css("left",  (x) + "px");
+    tooltip.css("left",  "0px");
 
     tooltip.fadeIn(700);
 } 

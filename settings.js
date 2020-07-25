@@ -1846,8 +1846,10 @@ function saveInfo(obj) {
 }
 
 function expandInfo(obj) {
+    var cid = $(obj).attr("cid");
 
-    showFreeTooltip2(getOffset(obj).left, getOffset(obj).top - 80, "This link can't be open insidelink can't be open insidelink can't be open inside the app.");
+    var text = parseCats(getJsonbyid(cid).categories);
+    showFreeTooltip2(9, getOffset(obj).top - 80, "This link can't be open insidelink can't be open insidelink can't be open inside the app.");
 
     /* 
     var text = $(obj).parent().find("textarea");
