@@ -1845,6 +1845,8 @@ function saveInfo(obj) {
     }
     else {
         jsonvar = getJsonbyid(cid);
+
+        console.log(jsonvar)
         createCookie2(cid, "info", jsonvar);
     }
 }
