@@ -116,7 +116,8 @@ $( document ).ready(function() {
     //    catsmap.set("tvn", "New / Ongoing");
     catsmap.set("trn", "To Tweet NOW");
     //catsmap.set("trn", "Hot / Trending");
-    catsmap.set("tvi", "To Watch");
+    catsmap.set("tvi", "Tweets Read / Watch");
+    //catsmap.set("tvi", "To Watch");
     catsmap.set("tvl", "Documentaries / Films");
     catsmap.set("tre", "Fast Reading");
     catsmap.set("trl", "Long Reading");
