@@ -1837,7 +1837,7 @@ function infoInputOnKeyup(obj) {
 function saveInfo(obj) {
     var cid = $(obj).attr("cid");
     var val = $("#tweetinfo" + cid).val();
-    var oldInfo = $("#tweetinfo" + cid).attr("cinfo");
+    var oldInfo = $(obj).attr("cinfo");
     
     jsonvar = getJsonbyid(cid);
 
