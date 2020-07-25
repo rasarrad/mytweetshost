@@ -1838,15 +1838,17 @@ function saveInfo(obj) {
     var cid = $(obj).attr("cid");
     var val = $("#tweetinfo" + cid).val();
     var oldInfo = $("#tweetinfo" + cid).attr("cinfo");
+    
+    jsonvar = getJsonbyid(cid);
 
-
+    console.log(cid)
+    console.log(val)
+    console.log(oldInfo)
+    console.log(jsonvar)
     if (oldInfo == val) {
         createCookie2($(cid).attr("cid"), "info", "", null, true);
     }
     else {
-        jsonvar = getJsonbyid(cid);
-
-        console.log(jsonvar)
         createCookie2(cid, "info", jsonvar);
     }
 }
