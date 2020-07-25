@@ -7283,7 +7283,7 @@ body.big #editinfodiv.keyb .fa-angle-down {
 .buttontweet {
     position: absolute;
     margin-top: 6px;
-    font-size: 22px;
+    font-size: 25px;
     height: 18px;
     line-height: 20px;
     padding-left: 2px;
@@ -7299,27 +7299,26 @@ body.big #editinfodiv.keyb .fa-angle-down {
    }
 
    .buttontweet.fa-clone {
-    right: 107px;
-    font-size: 17px;
-    bottom: 12px;
+    right: 125px;
+    font-size: 20px;
+    bottom: 14px;
    }
 
    .buttontweet.fa-clone.copy2 {
-   
-       right: 46px;
+   right: 52px;
    }
 
 
  .buttontweet.topps {
     bottom: auto;
-    top: 7px;
-    right: 51px;
-    font-size: 24px;
-    color: white;
+    top: 8px;
+    right: 53px;
+    font-size: 25px;
+    color: rgb(217, 217, 217);
    }
 
 .buttontweet.fa-save {
-    right: 77px;
-    font-size: 19px;
-    bottom: 12px;
+    right: 89px;
+    font-size: 21px;
+    bottom: 14px;
    }
