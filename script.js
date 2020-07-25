@@ -2777,11 +2777,6 @@ function startWorker() {
       //w.postMessage({ "args": [ 500 ] });
 
       timeoutWorker.onmessage = function(event) {
-        console.log("---------------------")
-        console.log(linkArray)
-        console.log(linkArrayToRender)
-        console.log(currrenderedtweets)
-        
 
           if (linkArray[currrenderedtweets]) {
             if (currrenderedtweets < 5) {
@@ -2791,8 +2786,6 @@ function startWorker() {
                 }
 
                 renderLink(linkArrayToRender[currrenderedtweets ]);
-
-                console.log(linkArray[currrenderedtweets])
 
                 if (!isMobile) {
                     /* 
@@ -2810,8 +2803,6 @@ function startWorker() {
 
             }
             else {
-                
-                console.log("mais que 5")
                 if (currrenderedtweets == 5) {
                     //stopWorker();
                     closeMenuPopup(null, "2.7");
