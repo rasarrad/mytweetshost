@@ -1870,7 +1870,7 @@ function copyInfo(obj) {
         var url = $(obj).parent().parent().attr("curl");
 
 
-        $('#linkresult').val(textt + "\\r\\n" + url);
+        $('#linkresult').val(textt + "\r\n" + url);
         $("#linkresult").focus();
         sleep(100);  
         $("#linkresult").select();
