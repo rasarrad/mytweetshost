@@ -1839,6 +1839,8 @@ function saveInfo(obj) {
     var val = $("#tweetinfo" + cid).val();
     
     createCookie2(cid, "info", val);
+
+    showMessage("Tweet Info Saved", 2500, null, null, null, null, true, 500);
 }
 
 function expandInfo(obj) {
@@ -1867,7 +1869,7 @@ function copyInfo(obj) {
         document.execCommand('copy');
         sleep(100);  
         $("#linkresult").blur();
-        showMessage("Link And Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
+        showMessage("Link And Selected Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
     
         vibrateApp(100);
     })
@@ -1886,7 +1888,7 @@ function copyInfoAll(obj) {
     document.execCommand('copy');
     sleep(100);  
     $("#linkresult").blur();
-    showMessage("Link And Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
+    showMessage("Link And All Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
 
     vibrateApp(100);
 }
