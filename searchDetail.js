@@ -953,7 +953,7 @@ function renderLink(val, flag) {
             })
           .then (function (el) {
             //if (val.info.trim() != "")
-                $("#tw" + val.id).append($('<textarea id="tweetinfo' + val.id + '" rows="104" class="textinfo" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: \'none\'}"></textarea><i onclick="javascript: expandTweet(this)" class="clicable fa fa-chevron-circle-down buttontweet"></i><i cid="' + val.id + '" cinfo="' + val.info + '" onclick="javascript: copyInfo(this)" class="clicable fa fa-clone buttontweet"></i><i onclick="javascript: expandInfo(this)" class="clicable fa fa-chevron-circle-down buttontweet topps"></i><i onclick="javascript: saveInfo(this)" class="clicable fa fa-save buttontweet"></i>'));
+                $("#tw" + val.id).append($('<textarea id="tweetinfo' + val.id + '" rows="104" class="textinfo" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: \'none\'}"></textarea><i onclick="javascript: expandInfo(this)" class="clicable fa fa-chevron-circle-down buttontweet"></i><i cid="' + val.id + '" cinfo="' + val.info + '" onclick="javascript: copyInfo(this)" class="clicable fa fa-clone buttontweet"></i><i onclick="javascript: expandTweet(this)" class="clicable fa fa-chevron-circle-down buttontweet topps"></i><i onclick="javascript: saveInfo(this)" class="clicable fa fa-save buttontweet"></i>'));
               
                 $("#tw" + val.id + " textarea").val(val.info);
           });

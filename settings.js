@@ -1844,38 +1844,47 @@ function saveInfo(obj) {
         createCookie2($(cid).attr("cid"), "info", "", null, true);
     }
     else {
-        createCookie2(cid, "info", val);
+        jsonvar = getJsonbyid(cid);
+        createCookie2(cid, "info", jsonvar);
     }
 }
 
 function expandInfo(obj) {
     var text = $(obj).parent().find("textarea");
 
-    text.css("height", (text.height() + 20) + "px")
+    console.log(text)
+    text.css("height", (text.height() + 40) + "px")
 }
 
 function expandTweet(obj) {
     var div = $(obj).parent().find("div");
 
-    div.css("height", (div.height() + 20) + "px")
+    div.css("height", (div.height() + 40) + "px")
 }
 
 function copyInfo(obj) {
+    navigator.clipboard.readText()
+    .then(textt => {
+        var url = $(obj).parent().parent().attr("curl");
+
+
+        $('#linkresult').val(textt + url);
+        $("#linkresult").focus();
+        sleep(100);  
+        $("#linkresult").select();
+        document.execCommand('copy');
+        sleep(100);  
+        $("#linkresult").blur();
+        showMessage("Link And Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
     
+        vibrateApp(100);
+    })
+    .catch(err => {
+        
+    })
 
-    var url = $(obj).parent().parent().attr("curl");
 
 
-    $('#linkresult').val(navigator.clipboard.readText() + url);
-    $("#linkresult").focus();
-    sleep(100);  
-    $("#linkresult").select();
-    document.execCommand('copy');
-    sleep(100);  
-    $("#linkresult").blur();
-    showMessage("Link And Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
-
-    vibrateApp(100);
 }
 
 
