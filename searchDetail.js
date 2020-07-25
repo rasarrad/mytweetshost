@@ -960,6 +960,9 @@ function renderLink(val, flag) {
           });
 
         newtweetobj.attr('id', val.id);
+
+        if (val.info.trim() != "")
+            $("#tw" + val.id).append($('<textarea id="infoinput" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: \'none\'}"></textarea>'));
     }
     else if (val.type == "N") {
         newtweetobj.append($(val.tweet));
