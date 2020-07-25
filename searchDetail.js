@@ -955,14 +955,14 @@ function renderLink(val, flag) {
           .then (function (el) {
             console.log("renderizou o tweet numero: " + val.id);
             console.log(el);
-
+            if (val.info.trim() != "")
+                $("#tw" + val.id).append($('<textarea class="textinfo" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: \'none\'}"></textarea>'));
 
           });
 
         newtweetobj.attr('id', val.id);
 
-        if (val.info.trim() != "")
-            $("#tw" + val.id).append($('<textarea id="infoinput" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: \'none\'}"></textarea>'));
+        
     }
     else if (val.type == "N") {
         newtweetobj.append($(val.tweet));
