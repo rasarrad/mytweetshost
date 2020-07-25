@@ -112,13 +112,16 @@ $( document ).ready(function() {
         catsmap.set("cli", "VictoryWillCome Tweets");
     }
     catsmap.set("all", "All Links");
-    catsmap.set("tvn", "New / Ongoing");
-    catsmap.set("trn", "Hot / Trending");
+    catsmap.set("tvn", "To Tweet");
+    //    catsmap.set("tvn", "New / Ongoing");
+    catsmap.set("trn", "To Tweet NOW");
+    //catsmap.set("trn", "Hot / Trending");
     catsmap.set("tvi", "To Watch");
     catsmap.set("tvl", "Documentaries / Films");
     catsmap.set("tre", "Fast Reading");
     catsmap.set("trl", "Long Reading");
-    catsmap.set("tke", "Important / To Keep");
+    catsmap.set("tke", "Investigation");
+    //catsmap.set("tke", "Important / To Keep");
     catsmap.set("imp", "Shocking Truth");
 
     // START remover speckcheks
@@ -847,15 +850,6 @@ $( document ).ready(function() {
     catsmap.set("cli", catschanged);
     $(".cat-cli").text(catschanged);
 
-    createCookie("cat-tvn", "New / Ongoing 2222");
-    createCookie("cat-trn", "Hot / Trending 2222");
-    createCookie("cat-tvi", "To Watch 2222");
-    createCookie("cat-tvl", "Documentaries / Films 2222");
-    createCookie("cat-tre", "Fast Reading 2222");
-    createCookie("cat-trl", "Long Reading 2222");
-    createCookie("cat-tke", "Important / To Keep 2222");
-    createCookie("cat-imp", "Shocking Truth 2222");
-    createCookie("cat-cli", "My Tweets 2222");
     */
 
 
