@@ -798,7 +798,6 @@ var getInformation = function(wasfiltered, valid) {
                 && dofilterauthorfinal && dofiltercatfinal && dofiltertypefinal && dofilterclassiffinal
                 && (doShowDeletedLink || val.deleted == "")) {
 
-                    console.log("ENTROU");
                 if (val.type == "T") {
                     total_tt = total_tt + 1;
                     linkArray[searchtotal] = val.id;
@@ -944,6 +943,8 @@ function renderLink(val, flag) {
         newtweetobj.append($('<div id="tw' + val.id + '" class="innertweet"></div>'));
         var tweet = document.getElementById("tw" + val.id);
 
+        console.log(val.info)
+
         twttr.widgets.createTweet(
             val.url.substring(val.url.indexOf("status/") + 7),  tweet,
             {
@@ -953,10 +954,9 @@ function renderLink(val, flag) {
               theme        : 'dark'    // or dark
             })
           .then (function (el) {
-            console.log("renderizou o tweet numero: " + val.id);
-            console.log(el);
             if (val.info.trim() != "")
                 $("#tw" + val.id).append($('<textarea class="textinfo" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: \'none\'}"></textarea>'));
+                console.log(val.info)
                 $("#tw" + val.id).val(val.info)
           });
 
