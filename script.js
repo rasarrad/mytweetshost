@@ -2648,7 +2648,7 @@ function showFreeTooltip(x, y, text) {
 } 
 
 
-function showFreeTooltip(x, y, text) {
+function showFreeTooltip2(x, y, text) {
     var tooltip = $("#tooltip");
     tooltip.text(text);
 
