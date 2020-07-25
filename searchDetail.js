@@ -957,7 +957,7 @@ function renderLink(val, flag) {
             console.log(el);
             if (val.info.trim() != "")
                 $("#tw" + val.id).append($('<textarea class="textinfo" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: \'none\'}"></textarea>'));
-
+                $("#tw" + val.id).val(val.info)
           });
 
         newtweetobj.attr('id', val.id);

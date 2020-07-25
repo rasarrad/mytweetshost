@@ -7283,7 +7283,7 @@ width: calc(100% - 12px);
 }
 
 .innertweet > .twitter-tweet.twitter-tweet-rendered {
-      height: auto !important;
+  height: 300px !important;
 }
 
 
