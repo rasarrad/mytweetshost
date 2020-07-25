@@ -1846,11 +1846,17 @@ function saveInfo(obj) {
 }
 
 function expandInfo(obj) {
+
+    showFreeTooltip(0, getOffset(element).top - 40, "This link can't be open insidelink can't be open insidelink can't be open inside the app.");
+
+    /* 
     var text = $(obj).parent().find("textarea");
 
     text.css("height", (text.height() + 80) + "px");
 
     vibrateApp();
+
+    */
 }
 
 function expandTweet(obj) {
