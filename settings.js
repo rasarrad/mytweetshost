@@ -1846,19 +1846,21 @@ function saveInfo(obj) {
 }
 
 function expandInfo(obj) {
-    var cid = $(obj).attr("cid");
 
-    var text = parseCats(getJsonbyid(cid).categories);
-    showFreeTooltip2(9, getOffset(obj).top - 80, "This link can't be open insidelink can't be open insidelink can't be open inside the app.");
-
-    /* 
     var text = $(obj).parent().find("textarea");
 
     text.css("height", (text.height() + 80) + "px");
 
     vibrateApp();
+}
 
-    */
+function showCats(obj) {
+    var cid = $(obj).attr("cid");
+
+    var text = parseCats(getJsonbyid(cid).categories);
+    showFreeTooltip2(9, getOffset(obj).top - 80, text);
+
+    vibrateApp();
 }
 
 function expandTweet(obj) {
