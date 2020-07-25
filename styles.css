@@ -7299,10 +7299,16 @@ body.big #editinfodiv.keyb .fa-angle-down {
    }
 
    .buttontweet.fa-clone {
-    right: 76px;
+    right: 107px;
     font-size: 17px;
-    bottom: 13px;
+    bottom: 12px;
    }
+
+   .buttontweet.fa-clone.copy2 {
+   
+       right: 46px;
+   }
+
 
  .buttontweet.topps {
     bottom: auto;
@@ -7313,7 +7319,7 @@ body.big #editinfodiv.keyb .fa-angle-down {
    }
 
 .buttontweet.fa-save {
-    right: 45px;
+    right: 77px;
     font-size: 19px;
     bottom: 12px;
    }

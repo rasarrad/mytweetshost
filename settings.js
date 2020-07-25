@@ -1884,11 +1884,22 @@ function copyInfo(obj) {
     .catch(err => {
         
     })
-
-
-
 }
 
+function copyInfoAll(obj) {
+    var url = $(obj).parent().parent().attr("curl");
+
+    $('#linkresult').val($("#tweetinfo" + $(obj).attr("cid")).val() + "\r\n" + url);
+    $("#linkresult").focus();
+    sleep(100);  
+    $("#linkresult").select();
+    document.execCommand('copy');
+    sleep(100);  
+    $("#linkresult").blur();
+    showMessage("Link And Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
+
+    vibrateApp(100);
+}
 
 function undoInfo(e, obj) {
     e.stopPropagation();
