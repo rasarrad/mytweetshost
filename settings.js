@@ -1847,7 +1847,7 @@ function saveInfo(obj) {
 
 function expandInfo(obj) {
 
-    showFreeTooltip2(0, getOffset(obj).top - 40, "This link can't be open insidelink can't be open insidelink can't be open inside the app.");
+    showFreeTooltip2(getOffset(obj).left, getOffset(obj).top - 80, "This link can't be open insidelink can't be open insidelink can't be open inside the app.");
 
     /* 
     var text = $(obj).parent().find("textarea");
