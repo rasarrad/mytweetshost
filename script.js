@@ -761,7 +761,7 @@ $( document ).ready(function() {
             $( "#addtweet" ).blur();
             closeallnewlayout();
 
-            vibrateApp(600);
+            vibrateApp();
 
             $('body, html').css('overflow-y', 'hidden');
             
@@ -2005,7 +2005,7 @@ function openmenu(obj, flag) {
     if (obj)
         fixfocus(obj);
 
-    vibrateApp(100);    
+    vibrateApp();    
     if ($('#mainmenu').css("display") == "none") {
         var setHeight = "26px";
         if ($('body').hasClass('big')) {
@@ -2125,7 +2125,7 @@ function linkAndTextCopy(obj, link, id) {
     $("#linkresult").blur();
     showMessage("Link And Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
 
-    vibrateApp(600);
+    vibrateApp();
 }
 
 function externallinkCopyPre() {

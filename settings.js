@@ -15,7 +15,7 @@ function expandCat(obj, idparam, valid) {
     var id = null;
 
     if (obj)
-        vibrateApp(300);
+        vibrateApp();
     
     if (idparam) {
         id = idparam;
@@ -1841,19 +1841,24 @@ function saveInfo(obj) {
     createCookie2(cid, "info", val);
 
     showMessage("Tweet Info Saved", 2500, null, null, null, null, true, 500);
+
+    vibrateApp();
 }
 
 function expandInfo(obj) {
     var text = $(obj).parent().find("textarea");
 
-    console.log(text)
-    text.css("height", (text.height() + 40) + "px")
+    text.css("height", (text.height() + 80) + "px");
+
+    vibrateApp();
 }
 
 function expandTweet(obj) {
     var div = $(obj).parent().find("div");
 
-    div.css("height", (div.height() + 40) + "px")
+    div.css("height", (div.height() + 80) + "px");
+
+    vibrateApp();
 }
 
 function copyInfo(obj) {
@@ -1871,7 +1876,7 @@ function copyInfo(obj) {
         $("#linkresult").blur();
         showMessage("Link And Selected Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
     
-        vibrateApp(100);
+        vibrateApp();
     })
     .catch(err => {
         
@@ -1890,7 +1895,7 @@ function copyInfoAll(obj) {
     $("#linkresult").blur();
     showMessage("Link And All Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
 
-    vibrateApp(100);
+    vibrateApp();
 }
 
 function undoInfo(e, obj) {

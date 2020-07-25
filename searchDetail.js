@@ -1070,7 +1070,7 @@ var togglecriterions = function(obj) {
     if ($("#searchpopup").css("display") == "none") {
         openSearchPopup();
 
-        vibrateApp(300); 
+        vibrateApp(); 
     }
     else {
         closeSearchPopup();
