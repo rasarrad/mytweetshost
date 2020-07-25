@@ -7267,7 +7267,7 @@ body.big #editinfodiv.keyb .fa-angle-down {
 }
 
 
-.textinfo {
+.innertweet > .textinfo {
 width: calc(100% - 12px);
     height: 55px;
     font-size: 20px;
