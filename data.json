@@ -1,19 +1,4 @@
 {"Tweets": [{
-    "id": "21",
-    "creationdate": "20200726",
-    "type": "N",
-    "url": "undefined",
-    "ishidden": "1",
-    "date": "20200726",
-    "author": "",
-    "categories": "cli",
-    "tags": "lula fbi cia latin coup elections brazil brazil brazilwire rightwing usa",
-    "info": "",
-    "classif": "9",
-    "deleted": "",
-    "isnew": "yes",
-    "tweet": "<div class='contentin pobj' id='contentin21' ><div></div><i onclick='javascript: editLinkText(21)' class='edittext fa fa-pencil'></i></div>"
-   },{
     "id": "20",
     "creationdate": "20200725",
     "type": "T",
