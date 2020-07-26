@@ -1,4 +1,19 @@
 {"Tweets": [{
+    "id": "21",
+    "creationdate": "20200726",
+    "type": "N",
+    "url": "undefined",
+    "ishidden": "1",
+    "date": "20200726",
+    "author": "",
+    "categories": "cli",
+    "tags": "lula fbi cia latin coup elections brazil brazil brazilwire rightwing usa",
+    "info": "Important%2520summary%2520of%2520weaponised%2520%25u201Ccorruption%25u201D%2520and%2520the%2520use%2520of%2520Lawfare%2520tactics%2520by%2520the%2520United%2520States%2520to%2520eliminate%2520geopolitical%2520opponents%2520in%2520Latin%2520America.%250ABy%2520@_michaelbrooks%2520@tmbsfm.%2520https%253A//t.co/G6FNVINcpk",
+    "classif": "9",
+    "deleted": "",
+    "isnew": "yes",
+    "tweet": "<div class='contentin pobj' id='contentin21' ><div></div><i onclick='javascript: editLinkText(21)' class='edittext fa fa-pencil'></i></div>"
+   },{
     "id": "20",
     "creationdate": "20200725",
     "type": "T",
