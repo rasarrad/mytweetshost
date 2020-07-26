@@ -319,6 +319,14 @@
         <td colspan="3" style="width: calc(100% - 220px);padding-left: 6px;padding-bottom: 6px;">
             <input id="catsinput" style="margin-left: 3px;margin-top: -12px;visibility: hidden;height: 0;display: block;">
             <div class="checkstyleddiv">                  
+              <input type="checkbox" onclick="javascript: clickCheckCat(this, 'trn')" id="cattrn">
+              <label for="cattrn" style="position: relative;top: -7px;">
+                  <span><i class="fa fa-square"></i></span>
+                  <span class="cat-trn text">To Tweet NOW</span>
+                  <!--<span class="cat-trn text">Hot / Trending</span>-->
+              </label>
+          </div>
+            <div class="checkstyleddiv">                  
                 <input type="checkbox" onclick="javascript: clickCheckCat(this, 'tvn')" id="cattvn">
                 <label for="cattvn" style="position: relative;top: -7px;">
                     <span><i class="fa fa-square"></i></span>
@@ -326,20 +334,29 @@
                     <!--<span class="cat-tvn text">New / Ongoing</span>-->
                 </label>
             </div>
+
             <div class="checkstyleddiv">                  
-                <input type="checkbox" onclick="javascript: clickCheckCat(this, 'trn')" id="cattrn">
-                <label for="cattrn" style="position: relative;top: -7px;">
-                    <span><i class="fa fa-square"></i></span>
-                    <span class="cat-trn text">Hot / Trending</span>
-                    
-                </label>
-            </div>
+              <input type="checkbox" onclick="javascript: clickCheckCat(this, 'tke')" id="cattke">
+              <label for="cattke" style="position: relative;top: -7px;">
+                  <span><i class="fa fa-square"></i></span>
+                  <span class="cat-tke text">Investigation</span>
+                  <!--<span class="cat-tke text">Important / To Keep</span>-->
+                  
+              </label>
+          </div>
+          <div class="checkstyleddiv">                  
+            <input type="checkbox" onclick="javascript: clickCheckCat(this, 'cli')" id="catcli">
+            <label for="catcli" style="position: relative;top: -7px;">
+                <span><i class="fa fa-square"></i></span>
+                <span class="cat-cli text">VictoryWillCome Tweets</span>
+            </label>
+        </div>         
             <div class="checkstyleddiv">                  
                 <input type="checkbox" onclick="javascript: clickCheckCat(this, 'tvi')" id="cattvi">
                 <label for="cattvi" style="position: relative;top: -7px;">
                     <span><i class="fa fa-square"></i></span>
-                    <span class="cat-tvi text">To Watch</span>
-                    
+                    <span class="cat-tvi text">Tweets Read / Watch</span>
+                    <!--<span class="cat-tvi text">To Watch</span>-->
                 </label>
             </div>
             <div class="checkstyleddiv">                  
@@ -366,14 +383,7 @@
                     
                 </label>
             </div>
-            <div class="checkstyleddiv">                  
-                <input type="checkbox" onclick="javascript: clickCheckCat(this, 'tke')" id="cattke">
-                <label for="cattke" style="position: relative;top: -7px;">
-                    <span><i class="fa fa-square"></i></span>
-                    <span class="cat-tke text">Important / To Keep</span>
-                    
-                </label>
-            </div>
+
             <div class="checkstyleddiv">                  
                 <input type="checkbox" onclick="javascript: clickCheckCat(this, 'imp')" id="catimp">
                 <label for="catimp" style="position: relative;top: -7px;">
@@ -382,13 +392,7 @@
                     
                 </label>
             </div>
-            <div class="checkstyleddiv">                  
-                <input type="checkbox" onclick="javascript: clickCheckCat(this, 'cli')" id="catcli">
-                <label for="catcli" style="position: relative;top: -7px;">
-                    <span><i class="fa fa-square"></i></span>
-                    <span class="cat-cli text">VictoryWillCome Tweets</span>
-                </label>
-            </div>
+
         </td>                                          
     </tr>    
     <tr class="cursordefault originaltr trcontent">
@@ -1332,17 +1336,6 @@
         </table>
         <table class="sectiontitletable sectionexpandable defaulttablerow">
           <tbody>
-            <tr onclick="javascript: clickmenu('tvn')" class="cursorpointer hover" style="padding-bottom: 15px;">
-              <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
-                  <span style="padding-left: 6px;" class="sectiontitle cat-tvn">To Tweet</span>
-                  <!--<span style="padding-left: 6px;" class="sectiontitle cat-tvn">New / Ongoing</span>-->
-                  <div onclick="javascript: clickMenuTooltip(this, event)" class="menuitemcounter" id="tvn2"></div>
-              </td>                                                                   
-            </tr>   
-           </tbody>
-        </table>
-        <table class="sectiontitletable sectionexpandable defaulttablerow">
-          <tbody>
             <tr onclick="javascript: clickmenu('trn')" class="cursorpointer hover" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
                   <span style="padding-left: 6px;" class="sectiontitle cat-trn">To Tweet NOW</span>
@@ -1352,6 +1345,17 @@
             </tr>   
            </tbody>
         </table>
+        <table class="sectiontitletable sectionexpandable defaulttablerow">
+          <tbody>
+            <tr onclick="javascript: clickmenu('tvn')" class="cursorpointer hover" style="padding-bottom: 15px;">
+              <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
+                  <span style="padding-left: 6px;" class="sectiontitle cat-tvn">To Tweet</span>
+                  <!--<span style="padding-left: 6px;" class="sectiontitle cat-tvn">New / Ongoing</span>-->
+                  <div onclick="javascript: clickMenuTooltip(this, event)" class="menuitemcounter" id="tvn2"></div>
+              </td>                                                                   
+            </tr>   
+           </tbody>
+        </table>        
         <table class="sectiontitletable sectionexpandable defaulttablerow">
           <tbody>
             <tr onclick="javascript: clickmenu('tke')" class="cursorpointer hover" style="padding-bottom: 15px;">
