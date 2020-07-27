@@ -7370,3 +7370,7 @@ body.big #editinfodiv.keyb .fa-angle-down {
   background-color: DodgerBlue !important;
   color: #ffffff;
 }
+.menuitemcounter {
+  color: var(--text-color);
+  opacity: 1;
+}

@@ -808,8 +808,6 @@ function autocomplete(inp, arr) {
           }
         }
         if (index == 1) {
-            console.log(123)
-
             $(inp).val($(a).find("input").val());
                 
             addTextTag();
