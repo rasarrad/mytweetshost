@@ -327,6 +327,7 @@ function saveLinkText() {
     var secondindex = 0;
     var linksCounter = 0;
 
+    /*
     while (displayValueAux.indexOf('http') >= 0) {
         firstindex = displayValueAux.indexOf('http');
         linksCounter++;
@@ -347,7 +348,7 @@ function saveLinkText() {
 
         displayValue = displayValue.replace(linkAux, "<a target='_blank' href='" + linkAux + "'>" + linkAux + "</a>")
     }
-
+*/
     $("#contentin" + $('#editinfodiv').attr("cid") + " div").html(displayValue);
 
     createCookie2($('#editinfodiv').attr("cid"), "info", escape(finalValue));

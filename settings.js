@@ -1944,7 +1944,7 @@ function copyLinkText(id) {
     document.execCommand('copy');
     sleep(100);  
     $("#linkresult").blur();
-    showMessage("Selected Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
+    showMessage("Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
 
     vibrateApp();
 }
