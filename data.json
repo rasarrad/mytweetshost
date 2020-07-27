@@ -1,19 +1,4 @@
 {"Tweets": [{
- "id": "33",
- "creationdate": "20200726",
- "type": "N",
- "url": "undefined",
- "ishidden": "1",
- "date": "20200726",
- "author": "",
- "categories": "cli",
- "tags": "to_r china ptl my_t",
- "info": "Para%2520quem%2520quiser%2520conhecer%2520esta%2520china%2520que%2520a%2520media%2520nojenta%2520nunca%2520fala...%250Ahttps%253A//twitter.com/victorywiilcome/status/1282783278618103808%2520%250A%250AUma%2520sele%25E7%25E3o%2520das%2520minhas%2520melhores%2520hist%25F3rias...%250Ahttps%253A//twitter.com/victorywiilcome/status/1283490853248471040%2520%250A%250Ahttps%253A//twitter.com/victorywiilcome/status/1282783278618103808%2520%250A",
- "classif": "0",
- "deleted": "",
- "isnew": "yes",
- "tweet": "<div class='contentin pobj' id='contentin33' ><div></div><i onclick='javascript: editLinkText(33)' class='edittext fa fa-pencil'></i></div>"
-},{
  "id": "32",
  "creationdate": "20200726",
  "type": "T",
