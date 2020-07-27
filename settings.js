@@ -387,7 +387,14 @@ var openDetailPopup = function(jsonobj, flag)
             $("#editInfo .originaltr").hide();
         }
 
-        $('#infoinput').val(decodeURIComponent(jsonobj.info));
+        var infot = jsonobj.info;
+
+        if (jsonobj.type = "N") {
+            console.log(123)
+            infot = unescape(infot);
+
+        }
+        $('#infoinput').val(decodeURIComponent(infot));
         
         if (jsonobj.info.length > 0)
             currentinfodisplay.html(decodeURIComponent(jsonobj.info));
