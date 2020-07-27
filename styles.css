@@ -7339,7 +7339,7 @@ body.big #editinfodiv.keyb .fa-angle-down {
 
 
 .autocomplete-items {
-  position: initial;
+  position: relative;
   /* border: 1px solid #d4d4d4; */
   border-bottom: none;
   border-top: none;
@@ -7348,11 +7348,11 @@ body.big #editinfodiv.keyb .fa-angle-down {
   top: 100%;
   left: 0;
   right: 0;
-  left: auto;
+  left: -78px;
   right: auto;
   width: 100px;
   display: inline-block;
-  margin-left: -154px;
+  /* margin-left: -37px; */
 }
 .autocomplete-items div {
   padding: 10px;
