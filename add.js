@@ -280,7 +280,7 @@ function parseTweet(type) {
 
             url = ""; 
 
-            text = "<div class='contentin pobj' id='contentin" + nextid + "' ><div></div><i onclick='javascript: editLinkText(" + nextid + ")' class='edittext fa fa-pencil'></i></div>"; 
+            text = "<div class='contentin pobj' id='contentin" + nextid + "' ><div></div><i onclick='javascript: editLinkText(" + nextid + ")' class='edittext fa fa-pencil'></i><i onclick='javascript: copyLinkText(" + nextid + ")' class='edittext fa fa-clone'></i><i onclick='javascript: copyLinkTexSel(" + nextid + ")' class='edittext fa fa-clone clone2'></i></div>"; 
 
             $('#previewtable').hide();
 

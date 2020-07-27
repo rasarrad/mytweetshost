@@ -1909,6 +1909,52 @@ function copyInfoAll(obj) {
     vibrateApp();
 }
 
+
+
+
+
+
+
+function copyLinkTexSel(obj) {
+    navigator.clipboard.readText()
+    .then(textt => {
+        $("#linkresult").focus();
+        $('#linkresult').val(textt);
+        sleep(100);  
+        $("#linkresult").select();
+        document.execCommand('copy');
+        sleep(100);  
+        $("#linkresult").blur();
+        showMessage("Selected Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
+    
+        vibrateApp();
+    })
+    .catch(err => {
+        
+    })
+}
+
+function copyLinkTex(id) {
+    var jsonvar = getJsonbyid(id);
+
+    $("#linkresult").focus();
+    $('#linkresult').val(unescape(jsonvar.info));
+    sleep(100);  
+    $("#linkresult").select();
+    document.execCommand('copy');
+    sleep(100);  
+    $("#linkresult").blur();
+    showMessage("Selected Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
+
+    vibrateApp();
+}
+
+
+
+
+
+
+
 function undoInfo(e, obj) {
     e.stopPropagation();
     fixfocus(obj);

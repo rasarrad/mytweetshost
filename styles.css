@@ -1388,6 +1388,7 @@ body.big .tweet div.contentin .logo {
     text-transform: uppercase;
     line-height: 22px;
     margin-top: -2px;
+    word-break: break-all;
 }
 
 body.big .tweet.yt.text div.contentin {
