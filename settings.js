@@ -1882,6 +1882,7 @@ function expandTweet(obj) {
 function copyInfo(obj) {
     navigator.clipboard.readText()
     .then(textt => {
+        alert(1111);
         var url = $(obj).parent().parent().attr("curl");
 
 
