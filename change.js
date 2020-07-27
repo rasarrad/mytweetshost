@@ -797,6 +797,11 @@ function autocomplete(inp, arr) {
                 closeAllLists();
             });
             a.appendChild(b);
+
+            $(b).bind( "click", function( event ) {
+                $(inp).val($(this).find("input").val());
+                $(inp).click();
+            });
           }
         }
     });
