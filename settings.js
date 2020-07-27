@@ -1883,7 +1883,6 @@ function copyInfo(obj) {
     var textt = "";
     navigator.clipboard.readText()
     .then(textt => {
-        alert(1111);
         var url = $(obj).parent().parent().attr("curl");
 
 
@@ -1899,10 +1898,8 @@ function copyInfo(obj) {
         vibrateApp();
     })
     .catch(err => {
-        alert(2222);
-    })
 
-    alert(3333);
+    })
 }
 
 function copyInfoAll(obj) {
