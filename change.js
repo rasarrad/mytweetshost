@@ -497,16 +497,20 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
         console.log(JSON.parse(countersParam.tagsmap))
 
         var o = new Option("notag", "notag");
+        var o2 = new Option("notag", "notag");
         $(o).html("All Tags");
+        $(o2).html("All Tags");
         $("#tagsselect").append(o);
-        $("#tagsearchselect").append(o);
+        $("#tagsearchselect").append(o2);
         var mapAsc = new Map([...tagsmap.entries()].sort());
         console.log(mapAsc)
         for (let [key, value] of mapAsc) {   
             o = new Option(key, key);
             $(o).html(key);
             $("#tagsselect").append(o);
-            $("#tagsearchselect").append(o);
+            o2 = new Option(key, key);
+            $(o2).html(key);
+            $("#tagsearchselect").append(o2);
         }
     
         tagsmap[Symbol.iterator] = function* () {
