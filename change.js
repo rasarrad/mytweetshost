@@ -805,7 +805,7 @@ function autocomplete(inp, arr) {
             });
           }
         }
-
+        console.log(arr.length)
         if (arr.length == 1) {
             console.log(123)
 
