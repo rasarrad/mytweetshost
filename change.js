@@ -501,7 +501,7 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
         $("#tagsselect").append(o);
         $("#tagsearchselect").append(o);
         var mapAsc = new Map([...tagsmap.entries()].sort());
-    
+        console.log(mapAsc)
         for (let [key, value] of mapAsc) {   
             o = new Option(key, key);
             $(o).html(key);
