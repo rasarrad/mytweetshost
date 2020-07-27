@@ -1934,7 +1934,7 @@ function copyLinkTexSel(obj) {
     })
 }
 
-function copyLinkTex(id) {
+function copyLinkText(id) {
     var jsonvar = getJsonbyid(id);
 
     $("#linkresult").focus();
