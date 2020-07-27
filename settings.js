@@ -1885,7 +1885,7 @@ function copyInfo(obj) {
     .then(textt => {
         var url = $(obj).parent().parent().attr("curl");
 
-
+        $("#linkresult").show();
         $('#linkresult').val(textt + "\r\n" + url);
         $("#linkresult").focus();
         sleep(100);  
@@ -1893,6 +1893,7 @@ function copyInfo(obj) {
         document.execCommand('copy');
         sleep(100);  
         $("#linkresult").blur();
+        $("#linkresult").hide();
         $(obj).parent().parent().focus();
         $(obj).parent().parent().click();
         showMessage("Link And Selected Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
@@ -1907,6 +1908,7 @@ function copyInfo(obj) {
 function copyInfoAll(obj) {
     var url = $(obj).parent().parent().attr("curl");
 
+    $("#linkresult").show();
     $('#linkresult').val($("#tweetinfo" + $(obj).attr("cid")).val() + "\r\n" + url);
     $("#linkresult").focus();
     sleep(100);  
@@ -1914,6 +1916,7 @@ function copyInfoAll(obj) {
     document.execCommand('copy');
     sleep(100);  
     $("#linkresult").blur();
+    $("#linkresult").hide();
     $(obj).parent().parent().focus();
     $(obj).parent().parent().click();
 
@@ -1931,6 +1934,7 @@ function copyInfoAll(obj) {
 function copyLinkTexSel(obj) {
     navigator.clipboard.readText()
     .then(textt => {
+        $("#linkresult").show();
         $("#linkresult").focus();
         $('#linkresult').val(textt);
         sleep(100);  
@@ -1939,10 +1943,10 @@ function copyLinkTexSel(obj) {
         sleep(100);  
         $("#linkresult").blur();
         showMessage("Selected Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
-    
+        $("#linkresult").hide();
         $("#recoilback").focus();
         $("#recoilback").click();
-        
+
         vibrateApp();
     })
     .catch(err => {
@@ -1953,6 +1957,7 @@ function copyLinkTexSel(obj) {
 function copyLinkText(id) {
     var jsonvar = getJsonbyid(id);
 
+    $("#linkresult").show();
     $("#linkresult").focus();
     $('#linkresult').val(unescape(jsonvar.info));
     sleep(100);  
@@ -1960,6 +1965,8 @@ function copyLinkText(id) {
     document.execCommand('copy');
     sleep(100);  
     $("#linkresult").blur();
+
+    $("#linkresult").hide();
 
     $("#recoilback").focus();
     $("#recoilback").click();
