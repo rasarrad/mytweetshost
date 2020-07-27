@@ -17,6 +17,7 @@ self.addEventListener("message", function(e) {
         result.total_h = total_h;
         result.total = total;
         console.log(111111111)
+        console.log(Array.from(counters.entries()).length)
         console.log(result.tagsmap)
         
 
