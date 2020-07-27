@@ -16,7 +16,10 @@ self.addEventListener("message", function(e) {
         result.total_t = total_t;
         result.total_h = total_h;
         result.total = total;
+        console.log(111111111)
+        console.log(result.tagsmap)
         
+
         self.postMessage({ "finnish": "yes", "result": result});
 
         resetVars();
