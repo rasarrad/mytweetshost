@@ -1430,6 +1430,7 @@ function addTextTag(obj) {
         $('#tagsinput').val($('#tagsinput').val() + " " + $('#addtaginput').val().toLowerCase());
         $('#tagsinput').trigger("change");
         $('#addtaginput').val("");
+        $('#addtaginput').focus();
     }
 }
 
