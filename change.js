@@ -805,6 +805,15 @@ function autocomplete(inp, arr) {
             });
           }
         }
+
+        if (arr.length == 1) {
+            console.log(123)
+
+            $(inp).val($(a).find("input").val());
+                
+                addTextTag();
+        }
+
     });
     /*execute a function presses a key on the keyboard:*/
     inp.addEventListener("keydown", function(e) {
