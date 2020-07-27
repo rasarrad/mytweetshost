@@ -2406,6 +2406,26 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
   transition: all .6s;
 }
 
+.edittext.fa-clone {
+  position: absolute;
+  top: 2px;
+  left: -3px;
+  color: var(--dark-color);
+  cursor: pointer;
+  font-size: 15px;
+  transition: all .6s;
+}
+
+.edittext.fa-clone.clone2 {
+  position: absolute;
+  top: 2px;
+  left: -3px;
+  color: var(--dark-color);
+  cursor: pointer;
+  font-size: 15px;
+  transition: all .6s;
+}
+
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
 /* 
@@ -3409,6 +3429,42 @@ body.big .edittext.fa-pencil {
   font-size: 19px;
 }
 
+
+.edittext.fa-clone {
+  left: -10px;
+  left: 42%;
+  top: auto;
+  margin-top: -1px;
+  border: 1px solid var(--softdark-color);
+  border-radius: 3px;
+  padding: 3px 4px;
+  background: var(--high-color);
+}
+
+body.big .edittext.fa-clone {
+  margin-top: -1px;
+  padding: 5px 8px;
+  font-size: 19px;
+}
+
+
+.edittext.fa-clone.clone2 {
+  left: -10px;
+  left: 58%;
+  top: auto;
+  margin-top: -1px;
+  border: 1px solid var(--softdark-color);
+  border-radius: 3px;
+  padding: 3px 4px;
+  background: var(--high-color);
+}
+
+body.big .edittext.fa-clone.clone2 {
+  margin-top: -1px;
+  padding: 5px 8px;
+  font-size: 19px;
+}
+
 #editinfodiv textarea {
     overflow: hidden;
     height: 100%;
@@ -3491,6 +3547,20 @@ body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 
     .edittext.fa-pencil {
       left: -10px;
       left: 50%;
+      top: auto;
+      margin-top: -4px;
+    }
+
+        .edittext.fa-clone {
+      left: -10px;
+      left: 37%;
+      top: auto;
+      margin-top: -4px;
+    }
+
+        .edittext.fa-clone.clone2 {
+      left: -10px;
+      left: 63%;
       top: auto;
       margin-top: -4px;
     }
