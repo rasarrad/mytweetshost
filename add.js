@@ -351,7 +351,7 @@ function saveLinkText() {
 */
     $("#contentin" + $('#editinfodiv').attr("cid") + " div").html(displayValue);
 
-    createCookie2($('#editinfodiv').attr("cid"), "info", escape(finalValue));
+    createCookie2($('#editinfodiv').attr("cid"), "info", finalValue);
 
     closeLinkText(); 
 }
