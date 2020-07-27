@@ -1893,6 +1893,8 @@ function copyInfo(obj) {
         document.execCommand('copy');
         sleep(100);  
         $("#linkresult").blur();
+        $(obj).parent().parent().focus();
+        $(obj).parent().parent().click();
         showMessage("Link And Selected Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
     
         vibrateApp();
@@ -1912,6 +1914,9 @@ function copyInfoAll(obj) {
     document.execCommand('copy');
     sleep(100);  
     $("#linkresult").blur();
+    $(obj).parent().parent().focus();
+    $(obj).parent().parent().click();
+
     showMessage("Link And All Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
 
     vibrateApp();
@@ -1935,6 +1940,9 @@ function copyLinkTexSel(obj) {
         $("#linkresult").blur();
         showMessage("Selected Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
     
+        $("#recoilback").focus();
+        $("#recoilback").click();
+        
         vibrateApp();
     })
     .catch(err => {
@@ -1952,6 +1960,10 @@ function copyLinkText(id) {
     document.execCommand('copy');
     sleep(100);  
     $("#linkresult").blur();
+
+    $("#recoilback").focus();
+    $("#recoilback").click();
+
     showMessage("Text Copied To Clipboard", 2500, null, null, null, null, true, 500);
 
     vibrateApp();
