@@ -812,7 +812,9 @@ function autocomplete(inp, arr) {
 
             $(inp).val($(a).find("input").val());
                 
-                addTextTag();
+            addTextTag();
+
+            closeAllLists();
         }
 
     });
