@@ -1880,6 +1880,7 @@ function expandTweet(obj) {
 }
 
 function copyInfo(obj) {
+    var textt = "";
     navigator.clipboard.readText()
     .then(textt => {
         alert(1111);
@@ -1898,8 +1899,10 @@ function copyInfo(obj) {
         vibrateApp();
     })
     .catch(err => {
-        
+        alert(2222);
     })
+
+    alert(3333);
 }
 
 function copyInfoAll(obj) {
