@@ -807,7 +807,13 @@ function autocomplete(inp, arr) {
             });
           }
         }
+/*         if (index == 1) {
+            $(inp).val($(a).find("input").val());
+                
+            addTextTag();
 
+            closeAllLists();
+        } */
 
     });
     /*execute a function presses a key on the keyboard:*/

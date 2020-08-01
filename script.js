@@ -607,7 +607,14 @@ $( document ).ready(function() {
     $("#addtaginput").keyup(function(event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13' && $(this).val().length > 0){
-            addTextTag();
+            //addTextTag();
+            if ($("#addtaginputautocomplete-list")) {
+                alert(11)
+            }
+            else {
+                alert(2222)
+            }
+
         }
     });
     
