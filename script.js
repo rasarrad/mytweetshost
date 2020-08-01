@@ -607,12 +607,12 @@ $( document ).ready(function() {
     $("#addtaginput").keyup(function(event) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13' && $(this).val().length > 0){
-            //addTextTag();
-            if ($("#addtaginputautocomplete-list").css("display") != "none") {
-                alert($("#addtaginputautocomplete-list").find("div").length)
+            
+            if ($("#addtaginputautocomplete-list").find("div").length > 0) {
+                addTextTag(null, true);
             }
             else {
-                alert(2222)
+                addTextTag();
             }
 
         }

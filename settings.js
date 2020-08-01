@@ -1431,14 +1431,21 @@ function updateTagsText(text, id) {
 }
 
 
-function addTextTag(obj) {
+function addTextTag(obj, flagAutocomplete) {
     //fixfocus(obj);
-    if ($('#addtaginput').val() != "") {
-        $('#tagsinput').val($('#tagsinput').val() + " " + $('#addtaginput').val().toLowerCase());
-        $('#tagsinput').trigger("change");
-        $('#addtaginput').val("");
-        $('#addtaginput').focus();
+    if (flagAutocomplete) {
+        alert($("#addtaginputautocomplete-list").find("div:first-child input").val())
+
     }
+    else {
+        if ($('#addtaginput').val() != "") {
+            $('#tagsinput').val($('#tagsinput').val() + " " + $('#addtaginput').val().toLowerCase());
+            $('#tagsinput').trigger("change");
+            $('#addtaginput').val("");
+            $('#addtaginput').focus();
+        }
+    }
+
 }
 
 
