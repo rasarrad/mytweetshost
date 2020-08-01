@@ -608,7 +608,7 @@ $( document ).ready(function() {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13' && $(this).val().length > 0){
             //addTextTag();
-            if ($("#addtaginputautocomplete-list")) {
+            if ($("#addtaginputautocomplete-list").css("display") != "none") {
                 alert(11)
             }
             else {
