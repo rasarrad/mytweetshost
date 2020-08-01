@@ -481,12 +481,12 @@ var openDetailPopup = function(jsonobj, flag)
                 
         $('#infoinput').prop('readonly', null);
 
-        setTimeout(function(){
+/*         setTimeout(function(){
 
             $('#infoinput').focus();
             var elmnt = document.getElementById("infoinput");
                 elmnt.scrollIntoView();
-        }, 800);
+        }, 800); */
     }
 
     //$('#linkChange').fadeIn(); 
