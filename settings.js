@@ -456,7 +456,6 @@ var openDetailPopup = function(jsonobj, flag)
         $('#linkChange').attr("cid", "new");
         $('#linkChange').addClass("new");
 
-
         $('#previewtable').hide();
 
         $('.currenttags').html("--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");  

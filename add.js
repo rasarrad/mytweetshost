@@ -422,7 +422,7 @@ function createPreview() {
         setTimeout(function(){$('#previewtd > div iframe').show().css('opacity', 1);}, 1300);
     }
     newtweetobj.append('<div class="glasscover" style="position: absolute;left: -16px;width: calc(100% + 16px);height: 100%;top: 0px;"></div>');
-    $('#linktable').hide();
+    //$('#linktable').hide();
 
     //$('#previewtable').show();
 }
