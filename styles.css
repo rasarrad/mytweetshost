@@ -1806,7 +1806,7 @@ body.big .tweet:first-child .linkbar.fa-youtube-play {
 }  
 
 body.big .newLayout.new #editTags {
-  margin-top: 119px !important;
+  /* margin-top: 119px !important; */
 }
 
 
