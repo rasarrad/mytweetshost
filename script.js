@@ -609,7 +609,8 @@ $( document ).ready(function() {
         if(keycode == '13' && $(this).val().length > 0){
             //addTextTag();
             if ($("#addtaginputautocomplete-list").css("display") != "none") {
-                alert($("#addtaginputautocomplete-list").css("visibility"))
+                alert($("#addtaginputautocomplete-list").find("div"))
+                console.log($("#addtaginputautocomplete-list").find("div"))
             }
             else {
                 alert(2222)
