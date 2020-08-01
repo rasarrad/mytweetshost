@@ -424,7 +424,7 @@ function createPreview() {
     newtweetobj.append('<div class="glasscover" style="position: absolute;left: -16px;width: calc(100% + 16px);height: 100%;top: 0px;"></div>');
     $('#linktable').hide();
 
-    $('#previewtable').show();
+    //$('#previewtable').show();
 }
 
 
