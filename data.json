@@ -1,7 +1,22 @@
 {"Tweets": [{
+ "id": "68",
+ "creationdate": "20200802",
+ "type": "T",
+ "url": "https://twitter.com/BrasilWire/status/1284229686034407426",
+ "ishidden": "0",
+ "date": "",
+ "author": "",
+ "categories": "tvi",
+ "tags": "",
+ "info": "",
+ "classif": "0",
+ "deleted": "",
+ "isnew": "yes",
+ "tweet": "https://twitter.com/BrasilWire/status/1284229686034407426"
+},{
  "id": "67",
  "creationdate": "20200802",
- "type": "N",
+ "type": "T",
  "url": "https://twitter.com/NovaShpakova/status/1284287521262796800",
  "ishidden": "0",
  "date": "",
