@@ -646,8 +646,8 @@
 },{
  "id": "33",
  "creationdate": "20200727",
- "type": "N",
- "url": "undefined",
+ "type": "T",
+ "url": "https://twitter.com/victorywiilcome/status/1282783278618103808",
  "ishidden": "1",
  "date": "20200727",
  "author": "",
@@ -657,7 +657,7 @@
  "classif": "0",
  "deleted": "",
  "isnew": "yes",
- "tweet": "<div class='contentin pobj' id='contentin33' ><div></div><i onclick='javascript: editLinkText(33)' class='edittext fa fa-pencil'></i><i onclick='javascript: copyLinkText(33)' class='edittext fa fa-clone'></i><i onclick='javascript: copyLinkTexSel(33)' class='edittext fa fa-clone clone2'></i></div>"
+ "tweet": "https://twitter.com/victorywiilcome/status/1282783278618103808"
 },{
  "id": "32",
  "creationdate": "20200726",
