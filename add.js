@@ -454,12 +454,13 @@ function create() {
     
     var cats = $('#catsinput').val();
 
-    if (cats == "undefined" || cats.length == 0) {
+    /* if (cats == "undefined" || cats.length == 0) {
         cats = "cli";
     }
     else {
         cats = cats.trim();
-    }
+    } */
+    cats = cats.trim();
 
     var classif = $('#classifinput').val();
     if (classif == "undefined" || classif.length == 0) {
