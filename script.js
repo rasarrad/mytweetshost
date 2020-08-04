@@ -2286,11 +2286,15 @@ function createCookie2(id, name, value, obj, doErase) {
     if (name != "templink") {
         val = updateObject(val, name, value, doErase);
 
-        if (doErase)
+        if (doErase) {
             localStorage.removeItem(id + name);
-        else 
+        }
+        else {
+            console.log("zzzzzzzzzz")
+            console.log("-" + value + "-")
             localStorage[id + name] = value;
-
+        }
+            
         if (hasChanges(val)) {
             localStorage[id + "haschanges"] = "yes";
         }

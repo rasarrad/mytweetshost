@@ -391,7 +391,6 @@ var openDetailPopup = function(jsonobj, flag)
         var infot = jsonobj.info;
 
         if (jsonobj.type = "N") {
-            console.log(123)
             infot = unescape(infot);
 
         }
@@ -1649,8 +1648,6 @@ function catsInputOnChange(obj) {
             $("#editCats .originaltr").hide();
         }
         else {
-            console.log("aaaaaaaaaaaaa")
-            console.log("-" + $(obj).val() + "-")
             currentcatdisplay.css('color','#00ff72');
             createCookie2($('#linkChange').attr("cid"), "catchanged", $(obj).val());
             $('#originalcattd i').show();
