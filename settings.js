@@ -378,7 +378,7 @@ var openDetailPopup = function(jsonobj, flag)
 
             // zzz $('.originalinfo').html(decodeURIComponent(jsonobj.infoOri)); 
             if (jsonobj.info.length > 0)
-                $('.originalinfo').html(jsonobj.infoOri); 
+                $('.originalinfo').html(unescape(jsonobj.infoOri)); 
             else
                 $('.originalinfo').html("--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
         }
