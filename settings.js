@@ -201,7 +201,7 @@ var openDetailPopup = function(jsonobj, flag)
         else if (jsonobj.type == "N") {
             $("#linkChange #seticon").removeClass('fa-twitter').addClass('fa-file-text');
         
-            $('#infoinput').prop('readonly', 'true');
+            //$('#infoinput').prop('readonly', 'true');
         }  
 
         $("#linkChange .buttonstable tr:first-child td .author").show();
@@ -360,7 +360,7 @@ var openDetailPopup = function(jsonobj, flag)
 
         
         // INFO
-        $('#infoinput').attr("cinfo", jsonobj.infoOri);
+        $('#infoinput').attr("cinfo", unescape(jsonobj.infoOri));
 
         var currentinfodisplay = $('.currentinfo');
 
@@ -400,7 +400,7 @@ var openDetailPopup = function(jsonobj, flag)
         
         // zzz currentinfodisplay.html(decodeURIComponent(jsonobj.info));
         if (jsonobj.info.length > 0)
-            currentinfodisplay.html(jsonobj.info);
+            currentinfodisplay.html(unescape(jsonobj.info));
         else
             currentinfodisplay.html("--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
 
