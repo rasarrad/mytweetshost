@@ -953,9 +953,11 @@ function renderLink(val, flag) {
             })
           .then (function (el) {
             //if (val.info.trim() != "")
+            console.log("22222222222222222222");
+            console.log(val.info);
                 $("#tw" + val.id).append($('<textarea id="tweetinfo' + val.id + '" rows="104" class="textinfo" spellcheck="false" autocomplete="none" additionalattributes="{autocomplete: \'none\'}"></textarea><i onclick="javascript: expandInfo(this)" class="clicable fa fa-chevron-circle-down buttontweet"></i><i cid="' + val.id + '" onclick="javascript: showCats(this)" class="clicable fa fa-bars buttontweet"></i><i cid="' + val.id + '" onclick="javascript: copyInfoAll(this)" class="clicable fa fa-clone buttontweet"></i><i cid="' + val.id + '" cinfo="' + val.info + '" onclick="javascript: copyInfo(this)" class="clicable fa fa-clone buttontweet copy2"></i><i onclick="javascript: expandTweet(this)" class="clicable fa fa-chevron-circle-down buttontweet topps"></i><i cid="' + val.id + '" cinfo="' + val.info + '" onclick="javascript: saveInfo(this)" class="clicable fa fa-save buttontweet"></i>'));
               
-                $("#tw" + val.id + " textarea").val(unescape(val.info).replace(/[\n\r]/g, '<br />'));
+                $("#tw" + val.id + " textarea").val(unescape(val.info));
           });
 
         newtweetobj.attr('id', val.id);
@@ -967,6 +969,8 @@ function renderLink(val, flag) {
         
         newtweetobj.attr('id', val.id);
 
+        console.log("1111111111111111111111");
+        console.log(val.info);
         var displayValue = unescape(val.info).replace(/[\n\r]/g, '<br />');
         var displayValueAux = displayValue;
         var lnkmap = new Map();
