@@ -974,6 +974,7 @@ function renderLink(val, flag) {
         var secondindex = 0;
         var linksCounter = 0;
 
+        /*
         while (displayValueAux.indexOf('http') >= 0) {
             firstindex = displayValueAux.indexOf('http');
             linksCounter++;
@@ -993,7 +994,7 @@ function renderLink(val, flag) {
             var linkAux = lnkmap.get("xxx" + (y + 1));
             displayValue = displayValue.replace(linkAux, "<a target='_blank' href='" + linkAux + "'>" + linkAux + "</a>")
         }
-
+*/
         newtweetobj.find(".contentin > div").html(displayValue)
     }
     else {
