@@ -2291,7 +2291,7 @@ function createCookie2(id, name, value, obj, doErase) {
         }
         else {
             console.log("zzzzzzzzzz")
-            console.log("-" + value + "-")
+            console.log("-" + id + name + "-")
             localStorage[id + name] = value;
         }
             
@@ -2430,6 +2430,9 @@ function updateObject(val, name, value, doErase) {
 
 
 function readCookie(name) {
+    
+    console.log("aaaaaaa222222aaaaaa")
+    console.log("-" + name + "-")
     if(localStorage[name])
         return localStorage[name];
     else

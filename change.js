@@ -506,9 +506,6 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
     if (execParamId) {
         var tagsmap = new Map(JSON.parse(countersParam.tagsmap));
 
-        console.log(22222222)
-        console.log(JSON.parse(countersParam.tagsmap))
-
         var o = new Option("notag", "notag");
         var o2 = new Option("notag", "notag");
         $(o).html("All Tags");
