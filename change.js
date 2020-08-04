@@ -84,7 +84,8 @@ function removetweet(obj) {
 function updateLinkCookie(obj) {
     var link = "{\r\n\"id\": \"" + obj.id + "\",\r\n\"creationdate\": \"" + obj.creationdate  + "\",\r\n\"type\": \"" + obj.type  + "\",\r\n\"url\": \"" + obj.url  + "\",\r\n\"ishidden\": \"" + obj.ishidden  + "\",\r\n\"date\": \"" + obj.date + "\",\r\n\"author\": \"" + obj.author  + "\",\r\n\"categories\": \"" + obj.categories + "\",\r\n\"tags\": \"" + obj.tags + "\",\r\n\"info\": \"" + obj.info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "") + "\",\r\n\"classif\": \"" + obj.classif + "\",\r\n\"deleted\": \"" + obj.deleted + "\",\r\n\"isnew\": \"" + obj.isnew + "\",\r\n\"tweet\": \"" + obj.tweet + "\"\r\n},";
 
-    var mlink = encodeURIComponent(JSON.stringify(link));
+    //zzz var mlink = encodeURIComponent(JSON.stringify(link));
+    var mlink = JSON.stringify(link);
     
     createCookie(obj.id + "templink", mlink);
 }
@@ -260,7 +261,8 @@ function countalltweets() {
         do {
             var linkcontent = readCookie(nextid + "templink");
             if (linkcontent) {
-                var linktmp = decodeURIComponent(linkcontent);
+                // zzz var linktmp = decodeURIComponent(linkcontent);
+                var linktmp = linkcontent;
                 
                 linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
                 linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
@@ -335,14 +337,18 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                             val.tags = val.tags.toLowerCase();
                         }
                         var info = readCookie(val.id + "info");
-                        val.infoOri = decodeURIComponent(val.info);
+
+                        // xxx val.infoOri = decodeURIComponent(val.info);
+                        val.infoOri = val.info;
                         val.infoOri = unescape(val.infoOri);
                         if (info) {
-                            val.info = decodeURIComponent(info);
+                            // xxx val.info = decodeURIComponent(info);
+                            val.info = info;
                             val.info = unescape(val.info);
                         }
                         else {
-                            val.info = decodeURIComponent(val.info);
+                            // xxx val.info = decodeURIComponent(val.info); 
+                            val.info = val.info;
                             val.info = unescape(val.info);
                         }
             
@@ -370,10 +376,12 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
 
                         val.categoriesOri = val.categories;
 
-                        val.info = decodeURIComponent(val.info)
+                        // zzz val.info = decodeURIComponent(val.info)
+                        val.info = val.info;
                         val.info = unescape(val.info);
                         
-                        val.infoOri = decodeURIComponent(val.info);
+                        // zzz val.infoOri = decodeURIComponent(val.info);
+                        val.infoOri = val.info;
                         val.infoOri = unescape(val.infoOri);
 
                         val.classifOri = val.classif;
@@ -427,11 +435,13 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
 
                             var info = readCookie(val.id + "info");
                             if (info) {
-                                val.info = decodeURIComponent(info);
+                                // zzz val.info = decodeURIComponent(info);
+                                val.info = info;
                                 val.info = unescape(val.info);
                             }
                             else {
-                                val.info = decodeURIComponent(val.info);
+                                // zzz val.info = decodeURIComponent(val.info);
+                                val.info = val.info;
                                 val.info = unescape(val.info);
                             }
                             var classif = readCookie(val.id + "classif");
@@ -1094,7 +1104,8 @@ var eraseAllDeletedFunc = function(text, type, functorun) {
                 if (processtmp) {
                     linkcontent = readCookie(nextid + "templink");
                     if (linkcontent) {
-                        var linktmp = decodeURIComponent(linkcontent);
+                        // zzz var linktmp = decodeURIComponent(linkcontent);
+                        var linktmp = linkcontent;
                         linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
@@ -1307,7 +1318,8 @@ function generate(obj) {
                     linkcontent = readCookie(nextid + "templink");
 
                     if (linkcontent) {
-                        linktmp = decodeURIComponent(linkcontent);
+                        // zzz linktmp = decodeURIComponent(linkcontent);
+                        linktmp = linkcontent;
                         linktmp = linktmp.replace(/(?:\\[rn])+/g, "\\n");
                         linktmp = linktmp.substring(1, linktmp.length - 2).replace(/(\\n)/gm, ""); 
                         linktmp = linktmp.replace(/(\\)/gm, ""); 

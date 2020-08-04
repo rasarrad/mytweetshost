@@ -551,7 +551,8 @@ function create() {
     
         $("#linkresult").blur();
 
-        var mlink = encodeURIComponent(JSON.stringify(result));
+        //zzz var mlink = encodeURIComponent(JSON.stringify(result));
+        var mlink = JSON.stringify(result);
         
         createCookie("maxid", nextid + 1);
 
@@ -634,7 +635,8 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
     document.execCommand('copy');
 
     $("#linkresult").blur();
-    var mlink = encodeURIComponent(JSON.stringify(result));
+    // zzz var mlink = encodeURIComponent(JSON.stringify(result));
+    var mlink = JSON.stringify(result);
     
     createCookie("maxid", nextid + 1);
 

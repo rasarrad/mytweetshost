@@ -376,8 +376,9 @@ var openDetailPopup = function(jsonobj, flag)
             
             $("#editInfo .originaltr").show();
 
+            // zzz $('.originalinfo').html(decodeURIComponent(jsonobj.infoOri)); 
             if (jsonobj.info.length > 0)
-                $('.originalinfo').html(decodeURIComponent(jsonobj.infoOri)); 
+                $('.originalinfo').html(jsonobj.infoOri); 
             else
                 $('.originalinfo').html("--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
         }
@@ -394,10 +395,12 @@ var openDetailPopup = function(jsonobj, flag)
             infot = unescape(infot);
 
         }
-        $('#infoinput').val(decodeURIComponent(infot));
+        // xxx $('#infoinput').val(decodeURIComponent(infot));
+        $('#infoinput').val(infot);
         
+        // zzz currentinfodisplay.html(decodeURIComponent(jsonobj.info));
         if (jsonobj.info.length > 0)
-            currentinfodisplay.html(decodeURIComponent(jsonobj.info));
+            currentinfodisplay.html(jsonobj.info);
         else
             currentinfodisplay.html("--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
 
