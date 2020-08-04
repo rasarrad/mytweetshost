@@ -1642,12 +1642,14 @@ function catsInputOnChange(obj) {
     if (!$('#linkChange').hasClass("new")) { 
         if (compareStringArrays(oldcats, $(obj).val())) {
             currentcatdisplay.css('color', '');
+            alert(1111)
             createCookie2($('#linkChange').attr("cid"), "catchanged", "", null, true);
             $('#originalcattd i').hide();
             
             $("#editCats .originaltr").hide();
         }
         else {
+            alert(2222)
             currentcatdisplay.css('color','#00ff72');
             createCookie2($('#linkChange').attr("cid"), "catchanged", $(obj).val());
             $('#originalcattd i').show();
