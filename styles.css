@@ -7441,6 +7441,47 @@ body.big #editinfodiv.keyb .fa-angle-down {
   background-color: DodgerBlue !important;
   color: #ffffff;
 }
+
+.autocomplete2 {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+
+
+.autocomplete-items2 {
+  position: relative;
+  /* border: 1px solid #d4d4d4; */
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+  left: -78px;
+  right: auto;
+  width: 100px;
+  display: inline-block;
+  /* margin-left: -37px; */
+}
+.autocomplete-items2 div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--dark-color);
+  width: 100px;
+  text-align: left;
+}
+.autocomplete-items2 div:hover {
+  /*when hovering an item:*/
+  color: var(--text-color);
+}
+.autocomplete-active2 {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
 .menuitemcounter {
   color: var(--text-color);
   opacity: 1;
