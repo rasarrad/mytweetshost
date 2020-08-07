@@ -580,9 +580,8 @@ $( document ).ready(function() {
                 $('#filtertag').val($('#filtertag').val().substring(0, $('#filtertag').val().lastIndexOf(" ")) + " " + $("#filtertagautocomplete-list").find("div:first-child input").val());
 
                 $('#filtertag').focus();
-                filtertagOnChange(this);
             }
-
+            filtertagOnChange(this);
         }
         else {
             filtertagOnChange(this);
