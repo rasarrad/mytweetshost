@@ -577,7 +577,7 @@ $( document ).ready(function() {
         if(keycode == '13' && $(this).val().length > 0){
             
             if ($("#filtertagautocomplete-list").find("div").length > 0) {
-                $('#filtertag').val($('#filtertag').val() + " " + $("#addtaginputautocomplete-list").find("div:first-child input").val());
+                $('#filtertag').val($('#filtertag').val().substring(0, $('#filtertag').val().lastIndexOf(" ")) + " " + $("#filtertagautocomplete-list").find("div:first-child input").val());
 
                 $('#filtertag').focus();
                 filtertagOnChange(this);
