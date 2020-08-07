@@ -576,7 +576,7 @@ $( document ).ready(function() {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13' && $(this).val().length > 0){
             
-            if ($("#addtaginputautocomplete-list").find("div").length > 0) {
+            if ($("#filtertagautocomplete-list").find("div").length > 0) {
                 $('#filtertag').val($('#filtertag').val() + " " + $("#addtaginputautocomplete-list").find("div:first-child input").val());
 
                 $('#filtertag').focus();

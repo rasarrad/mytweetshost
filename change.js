@@ -923,7 +923,7 @@ function autocomplete(inp, arr) {
             $(b).bind( "click", function( event ) {
                 $(inp).val($(this).find("input").val());
                 
-                    $('#filtertag').val($('#filtertag').val() + " " + $("#filtertagautocomplete-list2").find("div:first-child input").val());
+                    $('#filtertag').val($('#filtertag').val() + " " + $("#filtertagautocomplete-list").find("div:first-child input").val());
     
                     $('#filtertag').focus();
                     filtertagOnChange(this);
