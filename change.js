@@ -528,8 +528,8 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
             index++;
         }
     
+        autocomplete(document.getElementById("filtertag"), words);
         autocomplete(document.getElementById("addtaginput"), words);
-
         tagsmap[Symbol.iterator] = function* () {
     
             yield* [...this.entries()].sort((a, b) => b[1] - a[1]);
