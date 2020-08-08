@@ -576,16 +576,17 @@ $( document ).ready(function() {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13' && $(this).val().length > 0){
             
-            if ($("#filtertagautocomplete-list").find("div").length > 0) {
+            if ($("#filtertagaddautocomplete-list").find("div").length > 0) {
+                console.log(11111111111)
                 //$('#filtertag').val($('#filtertag').val().substring(0, $('#filtertag').val().lastIndexOf(" ")) + " " + $("#filtertagautocomplete-list").find("div:first-child input").val());
-                $('#filtertag').val($('#filtertag').val() + " " + $("#filtertagautocomplete-list").find("div:first-child input").val());
+                $('#filtertag').val($('#filtertag').val() + " " + $("#filtertagaddutocomplete-list").find("div:first-child input").val());
 
                 $('#filtertag').focus();
             }
             else {
                 $('#filtertag').val($('#filtertag').val() + " " + $('#filtertagadd').val());
                 filtertagOnChange(this);
-
+                console.log(2222222)
                 getInformation(1);
 
                 if ($(window).width() < 1200) {
