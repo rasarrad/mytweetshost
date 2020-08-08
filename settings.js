@@ -1436,6 +1436,7 @@ function updateTagsText(text, id) {
 function addTextTag(obj, flagAutocomplete) {
     //fixfocus(obj);
     if (flagAutocomplete) {
+        alert($("#addtaginputautocomplete-list").find("div:first-child input").val())
         $('#tagsinput').val($('#tagsinput').val() + " " + $("#addtaginputautocomplete-list").find("div:first-child input").val());
         $('#tagsinput').trigger("change");
         $('#addtaginput').val("");

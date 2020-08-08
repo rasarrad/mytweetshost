@@ -847,7 +847,7 @@ $( document ).ready(function() {
     //closeSplash(); 
 
     togglecriterions();
-$("#filtertagadd").focus();
+    $("#filtertagadd").focus();
     
     /* CATEGORIES RENAMING
 
