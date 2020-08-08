@@ -581,12 +581,17 @@ $( document ).ready(function() {
                 //$('#filtertag').val($('#filtertag').val().substring(0, $('#filtertag').val().lastIndexOf(" ")) + " " + $("#filtertagautocomplete-list").find("div:first-child input").val());
                 $('#filtertag').val($('#filtertag').val() + " " + $("#filtertagaddutocomplete-list").find("div:first-child input").val());
 
+                $('#filtertagadd').val("");
+
+                filtertagOnChange(this);
+
                 $('#filtertag').focus();
             }
             else {
                 $('#filtertag').val($('#filtertag').val() + " " + $('#filtertagadd').val());
                 filtertagOnChange(this);
-                console.log(2222222)
+                $('#filtertagadd').val("");
+
                 getInformation(1);
 
                 if ($(window).width() < 1200) {
