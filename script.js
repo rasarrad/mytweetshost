@@ -581,6 +581,9 @@ $( document ).ready(function() {
                 //$('#filtertag').val($('#filtertag').val().substring(0, $('#filtertag').val().lastIndexOf(" ")) + " " + $("#filtertagautocomplete-list").find("div:first-child input").val());
                 $('#filtertag').val($('#filtertag').val() + " " + $("#filtertagaddutocomplete-list").find("div:first-child input").val());
 
+                console.log($("#filtertagaddutocomplete-list").find("div:first-child input").val())
+                console.log($('#filtertag').val())
+
                 $('#filtertagadd').val("");
 
                 filtertagOnChange(this);
