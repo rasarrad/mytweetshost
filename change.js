@@ -528,7 +528,7 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
             index++;
         }
     
-        autocomplete2(document.getElementById("filtertag"), words);
+        autocomplete2(document.getElementById("filtertagadd"), words);
         autocomplete(document.getElementById("addtaginput"), words);
         tagsmap[Symbol.iterator] = function* () {
     
