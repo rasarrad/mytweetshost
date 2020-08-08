@@ -30,8 +30,8 @@ function parseTweet(type) {
         if (text.includes("twitter.com")) {    
             addType = "T";
 
-            text = text.replace('?s=20', '').replace('?s=19', '');
-
+            text = text.replace('?s=20', '');
+            text = text.replace('?s=19', '');
             var idExisting = existsLink(text, "T");
             if (idExisting) {
                 resetMainDiv(); 
