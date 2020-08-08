@@ -583,8 +583,11 @@ $( document ).ready(function() {
                 $('#filtertag').focus();
             }
             else {
-                getInformation(1);
+                $('#filtertag').val($('#filtertag').val() + " " + $('#filtertagadd').val());
                 filtertagOnChange(this);
+
+                getInformation(1);
+
                 if ($(window).width() < 1200) {
                     $(this).blur();
                 }
