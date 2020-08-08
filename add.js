@@ -549,8 +549,11 @@ function create() {
         $("#linkresult").select();
     
         document.execCommand('copy');
-    
+
+        sleep(100);  
         $("#linkresult").blur();
+        $("#linkresult").hide();
+
         $("#recoilback").focus();
         $("#recoilback").click();
         //zzz var mlink = encodeURIComponent(JSON.stringify(result));
@@ -636,7 +639,9 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
 
     document.execCommand('copy');
 
+    sleep(100);  
     $("#linkresult").blur();
+    $("#linkresult").hide();
 
     $("#recoilback").focus();
     $("#recoilback").click();
