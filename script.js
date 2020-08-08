@@ -574,7 +574,7 @@ $( document ).ready(function() {
 
     $("#filtertagadd").keyup(function(e) {
         var keycode = (event.keyCode ? event.keyCode : event.which);
-        if(keycode == '13' && $(this).val().length > 0){
+        if(keycode == '13'){
             
             if ($("#filtertagaddautocomplete-list").find("div").length > 0) {
                 console.log(11111111111)
