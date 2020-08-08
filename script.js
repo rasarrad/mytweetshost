@@ -637,8 +637,9 @@ $( document ).ready(function() {
         if(keycode == '13' && $(this).val().length > 0){
             
             if ($("#addtaginputautocomplete-list").find("div").length > 0) {
-                $("#addtaginputautocomplete-list").remove();
+                
                 addTextTag(null, true);
+                $("#addtaginputautocomplete-list").remove();
             }
             else {
                 addTextTag();
