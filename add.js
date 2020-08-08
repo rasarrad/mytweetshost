@@ -26,7 +26,8 @@ function parseTweet(type) {
         $("#infoinput").val("");
         text = $('#tweet').val();
 
-        if (text.substring(0,19) == "https://twitter.com") {
+        //if (text.substring(0,19) == "https://twitter.com") {
+        if (text.includes("twitter.com")) {    
             addType = "T";
 
             text = text.replace('?s=20', '').replace('?s=19', '');
