@@ -551,7 +551,8 @@ function create() {
         document.execCommand('copy');
     
         $("#linkresult").blur();
-
+        $("#recoilback").focus();
+        $("#recoilback").click();
         //zzz var mlink = encodeURIComponent(JSON.stringify(result));
         var mlink = JSON.stringify(result);
         
@@ -636,6 +637,11 @@ function createLinkAfterDescription(creationdate, cats, tags, resinfo, classif) 
     document.execCommand('copy');
 
     $("#linkresult").blur();
+
+    $("#recoilback").focus();
+    $("#recoilback").click();
+
+
     // zzz var mlink = encodeURIComponent(JSON.stringify(result));
     var mlink = JSON.stringify(result);
     
