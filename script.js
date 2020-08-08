@@ -579,7 +579,7 @@ $( document ).ready(function() {
             if ($("#filtertagaddautocomplete-list").find("div").length > 0) {
                 console.log(11111111111)
                 //$('#filtertag').val($('#filtertag').val().substring(0, $('#filtertag').val().lastIndexOf(" ")) + " " + $("#filtertagautocomplete-list").find("div:first-child input").val());
-                $('#filtertag').val($('#filtertag').val() + " " + $("#filtertagaddutocomplete-list").find("div:first-child input").val());
+                $('#filtertag').val($('#filtertag').val() + " " + $("#filtertagaddautocomplete-list").find("div:first-child input").val());
 
                 console.log($("#filtertagaddutocomplete-list").find("div:first-child input").val())
                 console.log($('#filtertag').val())
