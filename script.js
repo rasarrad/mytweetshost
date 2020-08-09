@@ -2313,6 +2313,8 @@ function createCookie(name, value, doErase) {
 
 function createCookie2(id, name, value, obj, doErase) {            
     val = getJsonbyid(id);
+    console.log("createCookie2 1")
+    console.log(val)
     if (name != "templink") {
         val = updateObject(val, name, value, doErase);
 
@@ -2333,6 +2335,9 @@ function createCookie2(id, name, value, obj, doErase) {
         }
     }
 
+    console.log("createCookie2 2")
+    console.log(val)
+
     // quando não é criacao o val vem com o objecto json do link
     if (val) {
         var isTemp = readCookie(id + "templink");
@@ -2341,6 +2346,8 @@ function createCookie2(id, name, value, obj, doErase) {
         }
         updateMainArray(val);
         updateLinkColor(val, id);
+        console.log("createCookie2 3")
+        console.log(val)
     }
     else {
         insertInMainArray(obj);
@@ -2360,6 +2367,8 @@ function updateMainArray(obj) {
         var val = allLinks[i];
 
         if (val.id == obj.id) {
+            console.log("updateMainArray 1")
+            console.log(obj)
             allLinks[i] = obj;
         }
     }

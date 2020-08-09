@@ -1643,6 +1643,7 @@ function catsInputOnChange(obj) {
         if (compareStringArrays(oldcats, $(obj).val())) {
             currentcatdisplay.css('color', '');
             
+            console.log("catsInputOnChange 1")
             createCookie2($('#linkChange').attr("cid"), "catchanged", "", null, true);
             $('#originalcattd i').hide();
             
@@ -1650,6 +1651,7 @@ function catsInputOnChange(obj) {
         }
         else {
             currentcatdisplay.css('color','#00ff72');
+            console.log("catsInputOnChange 2")
             createCookie2($('#linkChange').attr("cid"), "catchanged", $(obj).val());
             $('#originalcattd i').show();
             
