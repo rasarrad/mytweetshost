@@ -577,12 +577,9 @@ $( document ).ready(function() {
         if(keycode == '13'){
             
             if ($("#filtertagaddautocomplete-list").find("div").length > 0) {
-                console.log(11111111111)
                 //$('#filtertag').val($('#filtertag').val().substring(0, $('#filtertag').val().lastIndexOf(" ")) + " " + $("#filtertagautocomplete-list").find("div:first-child input").val());
                 $('#filtertag').val($('#filtertag').val() + " " + $("#filtertagaddautocomplete-list").find("div:first-child input").val());
 
-                console.log($("#filtertagaddutocomplete-list").find("div:first-child input").val())
-                console.log($('#filtertag').val())
                 $("#filtertagaddautocomplete-list").remove();
                 $('#filtertagadd').val("");
 
@@ -2346,8 +2343,6 @@ function createCookie2(id, name, value, obj, doErase) {
         }
         updateMainArray(val);
         updateLinkColor(val, id);
-        console.log("createCookie2 3")
-        console.log(val)
     }
     else {
         insertInMainArray(obj);
@@ -2367,8 +2362,6 @@ function updateMainArray(obj) {
         var val = allLinks[i];
 
         if (val.id == obj.id) {
-            console.log("updateMainArray 1")
-            console.log(obj)
             allLinks[i] = obj;
         }
     }
@@ -2469,9 +2462,6 @@ function updateObject(val, name, value, doErase) {
 
 
 function readCookie(name) {
-    
-    console.log("aaaaaaa222222aaaaaa")
-    console.log("-" + name + "-")
     if(localStorage[name])
         return localStorage[name];
     else
@@ -2775,8 +2765,6 @@ function getWebsiteData2(url) {
         //var html = $(data);
         // descricao - checar se é vazia
         //cnonsole.log("Descricao: " + getMetaContent(html, 'description') );
-
-        console.log(data)
 
       });
 

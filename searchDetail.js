@@ -931,7 +931,6 @@ function renderLink(val, flag) {
         }
     }
     else {
-        console.log(111111111)
         $('#hiddendiv').append(newtweetobj);  
     }
 */

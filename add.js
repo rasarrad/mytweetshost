@@ -559,9 +559,6 @@ function create() {
         $("#recoilback").click();
         //zzz var mlink = encodeURIComponent(JSON.stringify(result));
 
-        console.log("ddddddddddddd");
-        console.log(JSON.stringify(result));
-        console.log(jsonVal);
         var mlink = JSON.stringify(result);
         
         createCookie("maxid", nextid + 1);
