@@ -280,10 +280,10 @@ function countalltweets() {
             }
         }
         while (processtmp);
-        console.log("---aaaaaaaaaaa----" + val.id)
+        console.log("---aaaaaaaaaaa----")
         console.log(allLinks)
         allLinks = tempLinks.concat(allLinks); 
-        console.log("---bbbbbbbbb----" + val.id)
+        console.log("---bbbbbbbbb----")
         console.log(allLinks)
         if (showAll) {
             allLinks.pop();
