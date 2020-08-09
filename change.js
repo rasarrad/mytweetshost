@@ -280,8 +280,7 @@ function countalltweets() {
             }
         }
         while (processtmp);
-        console.log("---aaaaaaaaaaa----")
-        console.log(allLinks)
+
         allLinks = tempLinks.concat(allLinks); 
         console.log("---bbbbbbbbb----")
         console.log(allLinks)
@@ -763,6 +762,9 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
             getInformationbyid(paramid);   
         }
     }
+    
+    console.log("---aaaaaaaaaaa----")
+    console.log(allLinks)
     
     //eraseAllTmpData();
 } 
