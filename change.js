@@ -308,6 +308,8 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
         if (execParamId) {
             for (i; i < counterAllLinks + 5; i++) {
                 var val = allLinks[i];
+                console.log("---2----" + val.id)
+                console.log(val)
             
                 var isdeleted = readCookie(val.id + "isdeleted");
 
@@ -403,7 +405,8 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
         else {
             for (i; i < counterAllLinks + 5; i++) {
                 var val = allLinks[i];
- 
+                console.log("---33333----" + val.id)
+                console.log(val)
                 var isdeleted = readCookie(val.id + "isdeleted");
 
                 if (val.deleted.length < 2 && !(isdeleted && isdeleted == "yes")
