@@ -390,7 +390,7 @@ var openDetailPopup = function(jsonobj, flag)
 
         var infot = jsonobj.info;
 
-        if (jsonobj.type = "N") {
+        if (jsonobj.type == "N") {
             infot = unescape(infot);
 
         }
