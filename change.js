@@ -82,6 +82,8 @@ function removetweet(obj) {
 }    
 
 function updateLinkCookie(obj) {
+    console.log("updateLinkCookie " + obj.id)
+    console.log(obj)
     var link = "{\r\n\"id\": \"" + obj.id + "\",\r\n\"creationdate\": \"" + obj.creationdate  + "\",\r\n\"type\": \"" + obj.type  + "\",\r\n\"url\": \"" + obj.url  + "\",\r\n\"ishidden\": \"" + obj.ishidden  + "\",\r\n\"date\": \"" + obj.date + "\",\r\n\"author\": \"" + obj.author  + "\",\r\n\"categories\": \"" + obj.categories + "\",\r\n\"tags\": \"" + obj.tags + "\",\r\n\"info\": \"" + obj.info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "") + "\",\r\n\"classif\": \"" + obj.classif + "\",\r\n\"deleted\": \"" + obj.deleted + "\",\r\n\"isnew\": \"" + obj.isnew + "\",\r\n\"tweet\": \"" + obj.tweet + "\"\r\n},";
 
     //zzz var mlink = encodeURIComponent(JSON.stringify(link));
@@ -306,8 +308,6 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
         if (execParamId) {
             for (i; i < counterAllLinks + 5; i++) {
                 var val = allLinks[i];
-                console.log("---2----" + val.id)
-                console.log(val)
             
                 var isdeleted = readCookie(val.id + "isdeleted");
 

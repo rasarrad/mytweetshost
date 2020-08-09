@@ -2310,8 +2310,7 @@ function createCookie(name, value, doErase) {
 
 function createCookie2(id, name, value, obj, doErase) {            
     val = getJsonbyid(id);
-    console.log("createCookie2 1")
-    console.log(val)
+
     if (name != "templink") {
         val = updateObject(val, name, value, doErase);
 
@@ -2319,8 +2318,6 @@ function createCookie2(id, name, value, obj, doErase) {
             localStorage.removeItem(id + name);
         }
         else {
-            console.log("zzzzzzzzzz")
-            console.log("-" + id + name + "-")
             localStorage[id + name] = value;
         }
             
@@ -2331,9 +2328,6 @@ function createCookie2(id, name, value, obj, doErase) {
             localStorage.removeItem(id + "haschanges");
         }
     }
-
-    console.log("createCookie2 2")
-    console.log(val)
 
     // quando não é criacao o val vem com o objecto json do link
     if (val) {
