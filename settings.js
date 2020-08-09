@@ -426,7 +426,8 @@ var openDetailPopup = function(jsonobj, flag)
             $('#linktable #tweet').val("");
             $('#linktable').show();
         }  
-
+        $('#linktable').show();
+        
         $('#linkChange').find("table:not(.defaulttablerow):not(.newlinktable)").each( function( index, element ) {
             var table = $(element);
 
