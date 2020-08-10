@@ -1420,7 +1420,7 @@ function generate(obj) {
             var recordfromdata = val;
             var linkcontent = null;
             var linktmp = null;
-
+            console.log("---aaaFFFFFF----")
             var fromWeb = true; 
 
             do {
