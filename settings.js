@@ -525,9 +525,8 @@ var openDetailPopup = function(jsonobj, flag)
  
 
     $("#editTags tr:first-child").click();
-    var elmnt = document.getElementById("addtaginput");
-    elmnt.scrollIntoView();
 
+    $('#linkChange > div').scrollTop();
     $("#addtaginput").focus();
 
     setTimeout(function(){
