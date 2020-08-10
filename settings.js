@@ -522,6 +522,13 @@ var openDetailPopup = function(jsonobj, flag)
     $('#linkChange').slideDown();
 
     $('#linkChange').attr("style", "top: 0px;transition: all 0.8s cubic-bezier(0.01, 0.76, 0.65, 0.96) 0.5s, background 1.1s, height 0.2s;");
+ 
+
+    $("#editTags tr:first:child").click();
+    var elmnt = document.getElementById("addtaginput");
+    elmnt.scrollIntoView();
+
+    $("#addtaginput").focus();
 
     setTimeout(function(){
         $('#linkChange').css('background', 'var(--soft-transp-color)');
