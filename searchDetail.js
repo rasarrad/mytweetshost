@@ -645,6 +645,8 @@ var openSearchPopup = function(jsonobj)
 
     $('#searchpopup').fadeIn(); 
 
+    $("#filtertagadd").focus();
+    
     $('#searchtags').find(".cursorpointer").click(); 
     
 } 

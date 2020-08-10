@@ -82,8 +82,6 @@ function removetweet(obj) {
 }    
 
 function updateLinkCookie(obj) {
-    console.log("updateLinkCookie " + obj.id)
-    console.log(obj)
     var link = "{\r\n\"id\": \"" + obj.id + "\",\r\n\"creationdate\": \"" + obj.creationdate  + "\",\r\n\"type\": \"" + obj.type  + "\",\r\n\"url\": \"" + obj.url  + "\",\r\n\"ishidden\": \"" + obj.ishidden  + "\",\r\n\"date\": \"" + obj.date + "\",\r\n\"author\": \"" + obj.author  + "\",\r\n\"categories\": \"" + obj.categories + "\",\r\n\"tags\": \"" + obj.tags + "\",\r\n\"info\": \"" + obj.info.replace(/"/g, "").replace(/(\r\n|\n|\r)/gm, "") + "\",\r\n\"classif\": \"" + obj.classif + "\",\r\n\"deleted\": \"" + obj.deleted + "\",\r\n\"isnew\": \"" + obj.isnew + "\",\r\n\"tweet\": \"" + obj.tweet + "\"\r\n},";
 
     //zzz var mlink = encodeURIComponent(JSON.stringify(link));
@@ -282,8 +280,7 @@ function countalltweets() {
         while (processtmp);
 
         allLinks = tempLinks.concat(allLinks); 
-        console.log("---bbbbbbbbb----")
-        console.log(allLinks)
+
         if (showAll) {
             allLinks.pop();
         }
@@ -316,8 +313,6 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                     && (isMy || val.ishidden == "0")) {
                     var haschanges = readCookie(val.id + "haschanges");
                     if (haschanges) {
-                        console.log("---2----" + val.id)
-                        console.log(val)
                         hasAnyLinkChange = true;
             
                         val.deletedOri = val.deleted;
@@ -414,8 +409,6 @@ function processCountBlock(hasAnyLinkChange, execParamId) {
                     var haschanges = readCookie(val.id + "haschanges");
         
                     if (haschanges) {
-                        console.log("---33333----" + val.id)
-                        console.log(val)
                         hasAnyLinkChange = true;
                         var isdeleted = readCookie(val.id + "isdeleted");
                         if (!(isdeleted && isdeleted == "yes")) {
@@ -763,8 +756,7 @@ function processCountUpdate(countersParam, hasAnyLinkChange, execParamId) {
         }
     }
     
-    console.log("---aaaaaaaaaaa----")
-    console.log(allLinks)
+
     
     //eraseAllTmpData();
 } 
@@ -1432,8 +1424,9 @@ function generate(obj) {
             var fromWeb = true; 
 
             do {
-                if (processtmp) {
+                if (processtmp) {    
                     fromWeb = false; 
+                    console.log("---aaaaaaaaaaa----")
 
                     linkcontent = readCookie(nextid + "templink");
 
@@ -1445,11 +1438,12 @@ function generate(obj) {
                         linktmp = linktmp.replace(/(\\)/gm, ""); 
 
                         linktmp = JSON.parse(linktmp);
-                        
+                        console.log("---bbbbbbbbb----")
                         val = linktmp;
                         nextid = nextid - 1;
                     }
                     else {
+                        console.log("---cccccc----")
                         val = recordfromdata;
                         processtmp = false;
                         fromWeb = true; 
@@ -1459,6 +1453,7 @@ function generate(obj) {
                     fromWeb = true; 
                     val = recordfromdata;
                 }
+
 
                 if (val.id != "0") {
                     var auxLink = {};

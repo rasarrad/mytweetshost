@@ -61,13 +61,12 @@ if (currTheme && currTheme != 'default') {
 
 $( document ).ready(function() { 
 
-    setTimeout(function() {  
+/*     setTimeout(function() {  
         clickmenu('trn');
-      }, 1000);
+      }, 1000); */
 
    //openmenu(null, null, true);
-    //togglecriterions();
-    //$("#filtertagadd").focus();
+    togglecriterions();
 
 
     isMobile = window.mobileAndTabletCheck();
