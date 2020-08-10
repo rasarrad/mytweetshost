@@ -61,6 +61,12 @@ if (currTheme && currTheme != 'default') {
 
 $( document ).ready(function() { 
 
+
+    openmenu(null, null, true);
+    //togglecriterions();
+    //$("#filtertagadd").focus();
+    
+
     isMobile = window.mobileAndTabletCheck();
 
 
@@ -844,8 +850,6 @@ $( document ).ready(function() {
 
     //closeSplash(); 
 
-    togglecriterions();
-    $("#filtertagadd").focus();
     
     /* CATEGORIES RENAMING
 
@@ -2031,12 +2035,18 @@ function getParameterByName(name) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function openmenu(obj, flag) {
+function openmenu(obj, flag, isTextSc) {
     if (obj)
         fixfocus(obj);
 
     vibrateApp();    
     if ($('#mainmenu').css("display") == "none") {
+        if (isTextSc) {
+            $('#mainmenu').addClass("textsc");
+        }
+        else {
+            $('#mainmenu').removeClass("textsc");
+        }
         var setHeight = "26px";
         if ($('body').hasClass('big')) {
             setHeight = "36px";
