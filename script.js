@@ -61,7 +61,7 @@ if (currTheme && currTheme != 'default') {
 
 $( document ).ready(function() { 
 
-    setTimeout(function() { 
+    setTimeout(function() {  
         clickmenu('trn');
       }, 1000);
 
