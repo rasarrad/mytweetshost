@@ -2128,8 +2128,8 @@ function clicktextsc(obj, e, type, isPT) {
     var jsonvar = getJsonbyid($('#mainmenu').attr("tid"));
 
     if (isPT) {
-        if (jsonvar.info.includes("langpt")) {
-            textToCopy = jsonvar.info.substring(6, jsonvar.info.indexOf("langen"))
+        if (jsonvar.info.includes("lpt")) {
+            textToCopy = jsonvar.info.substring(3, jsonvar.info.indexOf("len"))
             //textToCopy = "Texto em PT\r\nEncontrado texto em PT\r\n";
         }
         else {
@@ -2138,8 +2138,8 @@ function clicktextsc(obj, e, type, isPT) {
         }
     }
     else {
-        if (jsonvar.info.includes("langen")) {
-            textToCopy = jsonvar.info.substring(jsonvar.info.indexOf("langen"))
+        if (jsonvar.info.includes("len")) {
+            textToCopy = jsonvar.info.substring(jsonvar.info.indexOf("len") + 3) + "\r\n"
             //textToCopy = "Text in EN\r\nFound Text in EN\r\n";
         }
         else {
