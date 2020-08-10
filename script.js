@@ -2123,9 +2123,60 @@ function clicktextsc(obj, e, type, isPT) {
     if (obj)
         fixfocus(obj);
 
-    
-    alert(type + "-" + lang + "-" + $('#mainmenu').attr("tid"));
+    var textToCopy = ";"
 
+    var jsonvar = getJsonbyid($('#mainmenu').attr("tid"));
+
+    if (val.info.includes("langpt")) {
+        textToCopy = "Texto em PT\r\n2nd Texto em PT\r\n";
+    }
+    else {
+        textToCopy = "Text in EN\r\n2nd Text in EN\r\n";
+    }
+
+    textToCopy = textToCopy + jsonvar.url + "\r\n";
+
+    //alert(type + "-" + lang + "-" + $('#mainmenu').attr("tid"));
+
+
+
+    switch(type) {
+        case "1":
+            if (isPT) {
+                textToCopy = textToCopy + "Se o Socialismo\r\nLINK Se o Socialismo\r\n\r\n";
+            }
+            else {
+                textToCopy = textToCopy + "If Socialism\r\nLINK If Socialism\r\n\r\n";
+            }
+            break;  
+        case "2":
+            if (isPT) {
+                textToCopy = textToCopy + "Estado terror\r\nLINK Estado terror\r\n\r\n";
+            }
+            else {
+                textToCopy = textToCopy + "Terror state\r\nLINK Terror state\r\n\r\n";
+            }
+            break;  
+    }
+
+    textToCopy = textToCopy + jsonvar.url;
+    
+    $("#linkresult").show();
+    $('#linkresult').val(textToCopy);
+    $("#linkresult").focus();
+    sleep(100);  
+    $("#linkresult").select();
+    document.execCommand('copy');
+    sleep(100);  
+    $("#linkresult").blur();
+    $("#linkresult").hide();
+    $(obj).parent().parent().focus();
+    $(obj).parent().parent().click();
+
+    showMessage("Information Copied To Clipboard", 2500, null, null, null, null, true, 500);
+
+    vibrateApp();
+    
     closeMenuPopup();
 }
 
