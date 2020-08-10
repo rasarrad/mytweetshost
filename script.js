@@ -2133,7 +2133,7 @@ function clicktextsc(obj, e, type, isPT) {
             //textToCopy = "Texto em PT\r\nEncontrado texto em PT\r\n";
         }
         else {
-            textToCopy = jsonvar.info;
+            textToCopy = "\r\n" + jsonvar.info + "\r\n";
             //textToCopy = "Texto em PT\r\nNÃO foi Encontrado texto em PT\r\n";
         }
     }
@@ -2143,7 +2143,7 @@ function clicktextsc(obj, e, type, isPT) {
             //textToCopy = "Text in EN\r\nFound Text in EN\r\n";
         }
         else {
-            textToCopy = jsonvar.info;
+            textToCopy = "\r\n" + jsonvar.info + "\r\n";
             //textToCopy = "Text in EN\r\nALL Text in EN\r\n";
         }
     }
