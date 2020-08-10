@@ -2129,23 +2129,27 @@ function clicktextsc(obj, e, type, isPT) {
 
     if (isPT) {
         if (jsonvar.info.includes("langpt")) {
-            textToCopy = "Texto em PT\r\nEncontrado texto em PT\r\n";
+            textToCopy = jsonvar.info.substring(6, jsonvar.info.indexOf("langen"))
+            //textToCopy = "Texto em PT\r\nEncontrado texto em PT\r\n";
         }
         else {
-            textToCopy = "Texto em PT\r\nNÃO foi Encontrado texto em PT\r\n";
+            textToCopy = jsonvar.info;
+            //textToCopy = "Texto em PT\r\nNÃO foi Encontrado texto em PT\r\n";
         }
     }
     else {
         if (jsonvar.info.includes("langen")) {
-            textToCopy = "Text in EN\r\nFound Text in EN\r\n";
+            textToCopy = jsonvar.info.substring(jsonvar.info.indexOf("langen"))
+            //textToCopy = "Text in EN\r\nFound Text in EN\r\n";
         }
         else {
-            textToCopy = "Text in EN\r\nALL Text in EN\r\n";
+            textToCopy = jsonvar.info;
+            //textToCopy = "Text in EN\r\nALL Text in EN\r\n";
         }
     }
 
 
-    textToCopy = textToCopy + jsonvar.url + "\r\n";
+    textToCopy = textToCopy + jsonvar.url + "\r\n\r\n";
 
     //alert(type + "-" + lang + "-" + $('#mainmenu').attr("tid"));
 
