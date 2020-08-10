@@ -2112,11 +2112,11 @@ function closeallnewlayout(bj) {
 
 
 function clicktextsc(obj, e, type, isPT) {
-    var lang = "en";
+/*     var lang = "en";
 
     if (isPT) {
         lang = "pt";
-    }
+    } */
     if (e)
         e.stopPropagation();
 
@@ -2127,12 +2127,23 @@ function clicktextsc(obj, e, type, isPT) {
 
     var jsonvar = getJsonbyid($('#mainmenu').attr("tid"));
 
-    if (val.info.includes("langpt")) {
-        textToCopy = "Texto em PT\r\n2nd Texto em PT\r\n";
+    if (isPT) {
+        if (jsonvar.info.includes("langpt")) {
+            textToCopy = "Texto em PT\r\nEncontrado texto em PT\r\n";
+        }
+        else {
+            textToCopy = "Texto em PT\r\nNÃO foi Encontrado texto em PT\r\n";
+        }
     }
     else {
-        textToCopy = "Text in EN\r\n2nd Text in EN\r\n";
+        if (jsonvar.info.includes("langen")) {
+            textToCopy = "Text in EN\r\nFound Text in EN\r\n";
+        }
+        else {
+            textToCopy = "Text in EN\r\nALL Text in EN\r\n";
+        }
     }
+
 
     textToCopy = textToCopy + jsonvar.url + "\r\n";
 
