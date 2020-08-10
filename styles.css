@@ -7486,3 +7486,12 @@ body.big #editinfodiv.keyb .fa-angle-down {
   color: var(--text-color);
   opacity: 1;
 }
+
+
+#mainmenu:not(.textsc) .nottextsc {
+  display: none;
+}
+
+#mainmenu.textsc .nottextsc {
+  display: none;
+}

@@ -1312,7 +1312,7 @@
 
   <div id="mainmenu" style="top: -391px; background: transparent;display: none;" class="newLayout pobj" onclick="closeMenuPopup()">
     <div style="position: relative;top: 0px !important;display: block;max-height: calc(100% - 26px) !important;margin-top: 0px !important;border-top: 1px solid var(--soft-color);border-top-left-radius: 0px;border-top-right-radius: 0px;padding-bottom: 0px;max-height: calc(100% - 4px) !important;padding-bottom: 9px;">
-        <table class="titletable buttonstable">
+        <table class="nottextsc titletable buttonstable">
             <tbody>
               <tr class="cursordefault">
                   <td colspan="3" class="firsttd" style="width: 164px;">
@@ -1455,13 +1455,24 @@
         -->
         <table class="textsc sectiontitletable sectionexpandable defaulttablerow">
           <tbody>
-            <tr onclick="javascript: clicktextsc('1')" class="cursorpointer hover" style="padding-bottom: 15px;">
+            <tr onclick="javascript: clicktextsc(this, event, '1')" class="cursorpointer hover" style="padding-bottom: 15px;">
               <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
                   <span style="padding-left: 6px;" class="sectiontitle cat-tvl">If Socialism</span>
+                  <div onclick="javascript: clicktextsc(this, event, '1', true)" class="menuitemcounter">-PT-</div>
               </td>                                                                   
             </tr>   
            </tbody>
-        </table>   
+        </table>
+        <table class="textsc sectiontitletable sectionexpandable defaulttablerow">
+          <tbody>
+            <tr onclick="javascript: clicktextsc(this, event, '2')" class="cursorpointer hover" style="padding-bottom: 15px;">
+              <td class="sectionicontd" style="display: inline-block;white-space: nowrap;cursor: pointer; position: relative;">
+                  <span style="padding-left: 6px;" class="sectiontitle cat-tvl">Terror state</span>
+                  <div onclick="javascript: clicktextsc(this, event, '2', true)" class="menuitemcounter">-PT-</div>
+              </td>                                                                   
+            </tr>   
+           </tbody>
+        </table>    
     </div>
   </div>
 

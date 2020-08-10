@@ -65,7 +65,7 @@ $( document ).ready(function() {
     openmenu(null, null, true);
     //togglecriterions();
     //$("#filtertagadd").focus();
-    
+
 
     isMobile = window.mobileAndTabletCheck();
 
@@ -2097,6 +2097,27 @@ function openmenu(obj, flag, isTextSc) {
 function closeallnewlayout(bj) {
     $('.newLayout').fadeOut(300);
 }
+
+
+
+function clicktextsc(obj, e, type, isPT) {
+    var lang = "en";
+
+    if (isPT) {
+        lang = "pt";
+    }
+    if (e)
+        e.stopPropagation();
+
+    if (obj)
+        fixfocus(obj);
+
+    
+    alert(type + "-" + lang)
+
+    closeMenuPopup();
+}
+
 
 
 /////////////////////////////////////////////////////////////////////////
