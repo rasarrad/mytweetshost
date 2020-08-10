@@ -7375,6 +7375,14 @@ body.big #editinfodiv.keyb .fa-angle-down {
     bottom: 14px;
    }
 
+   
+   .buttontweet.fa-file-text-o {
+    right: 207px;
+    font-size: 20px;
+    bottom: 14px;
+   }
+
+
    .buttontweet.fa-clone.copy2 {
    right: 87px;
    }
@@ -7488,7 +7496,7 @@ body.big #editinfodiv.keyb .fa-angle-down {
 }
 
 
-#mainmenu:not(.textsc) .nottextsc {
+#mainmenu:not(.textsc) .textsc {
   display: none;
 }
 

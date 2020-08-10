@@ -61,8 +61,8 @@ if (currTheme && currTheme != 'default') {
 
 $( document ).ready(function() { 
 
-
-    openmenu(null, null, true);
+    clickmenu('trn');
+   //openmenu(null, null, true);
     //togglecriterions();
     //$("#filtertagadd").focus();
 
@@ -2035,13 +2035,14 @@ function getParameterByName(name) {
 /////////////////////////////////////////////////////////////////////////
 
 
-function openmenu(obj, flag, isTextSc) {
+function openmenu(obj, flag, isTextSc, id) {
     if (obj)
         fixfocus(obj);
 
     vibrateApp();    
     if ($('#mainmenu').css("display") == "none") {
         if (isTextSc) {
+            $('#mainmenu').attr("tid", id);
             $('#mainmenu').addClass("textsc");
         }
         else {
@@ -2113,7 +2114,7 @@ function clicktextsc(obj, e, type, isPT) {
         fixfocus(obj);
 
     
-    alert(type + "-" + lang)
+    alert(type + "-" + lang + "-" + $('#mainmenu').attr("tid"));
 
     closeMenuPopup();
 }
