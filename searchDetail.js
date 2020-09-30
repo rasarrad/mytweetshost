@@ -647,7 +647,7 @@ var openSearchPopup = function(jsonobj)
 
     $("#filtertagadd").focus();
     
-    $('#searchtags').find(".cursorpointer").click(); 
+    //$('#searchtags').find(".cursorpointer").click(); 
     
 } 
 
