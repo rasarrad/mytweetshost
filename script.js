@@ -320,7 +320,7 @@ $( document ).ready(function() {
 //                           BINDS ON READY                            //
 /////////////////////////////////////////////////////////////////////////
 
-    window.onscroll = function(ev) {
+    window.onscroll = function(ev) { 
         clearTimeout(renderTimeout);
 
 /*         if (topMenuMode == 2 && $(window).scrollTop() > 300) {
