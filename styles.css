@@ -2426,6 +2426,13 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
   transition: all .6s;
 }
 
+
+#searchtags .fa-plus-square.mainbutton {
+   top: 0px !important;
+   font-size: 19px !important;
+}
+
+
 /*****************************************************************************/
 /******************************** LANDSCAPE CSS ******************************/
 /* 
