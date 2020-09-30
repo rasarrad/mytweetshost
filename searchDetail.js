@@ -138,9 +138,13 @@ function changecriteria(e, obj, tableparam, flag) {
 
                 searchbutton.css('transition', 'all .8s ease');
 
-                if (table.attr("cheight"))
-                    offset = offset + Number(table.attr("cheight"));  
-        
+                if (table.attr("cheight")) {
+                    if ($('body').hasClass('big')) 
+                        offset = offset + Number(table.attr("cheight"));
+                    else
+                        offset = offset - 18 + Number(table.attr("cheight"));  
+                }
+
                 searchbutton.css("top", (table.offset().top + 15 + offset) + "px");
 
                 titletext.css('transition', 'opacity .7s ease');
