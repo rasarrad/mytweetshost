@@ -1932,7 +1932,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
     padding-bottom: 6px;
     width: 6px;
     height: 23px;
-    padding-top: 3px;
+    padding-top: 4px;
     padding-left: 8px;
     transition: all 0.6s ease 0s;
     right: 8px;
@@ -2024,6 +2024,7 @@ body.big .checkstyleddiv.showdeleted i {
     background: var(--softdark-color) !important;
     transition: color 0.7s;
     padding-left: 218px;
+    cursor: pointer;
 }
 
 #expandedittags {

@@ -173,7 +173,7 @@ function changecriteria(e, obj, tableparam, flag) {
             table.find('td.el').addClass('ellipsis');
             table.find(".togglepos").css("position", "absolute"); 
             if ($('body').hasClass('big')) 
-                searchbutton.css("top", ($("#searchpopup > div").height() - 53) + "px");
+                searchbutton.css("top", ($("#searchpopup > div").height() - 52) + "px");
             else
                 searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
             
