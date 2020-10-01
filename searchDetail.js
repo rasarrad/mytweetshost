@@ -83,11 +83,11 @@ function changecriteria(e, obj, tableparam, flag) {
     var searchbutton = $("#sear");
     var iTop = "-2px";
     var setHeight = "26px";
-    var offset = 0;
+    var offset = "";
     if ($('body').hasClass('big')) {
         setHeight = "37px";
         iTop = "-1px";
-        offset = 5;
+        //offset = 5;
     }
 
     var titletext = table.find(".titletext");
@@ -139,13 +139,22 @@ function changecriteria(e, obj, tableparam, flag) {
                 searchbutton.css('transition', 'all .8s ease');
 
                 if (table.attr("cheight")) {
-                    if ($('body').hasClass('big')) 
-                        offset = offset + Number(table.attr("cheight"));
-                    else
-                        offset = offset - 18 + Number(table.attr("cheight"));  
+                    if ($(window).width() < 600 && table.attr("id") == "searchclassif") {
+                        if ($('body').hasClass('big')) 
+                            offset = "431px";
+                        else
+                            offset = "267px";
+                    }
+                    else {
+                        if ($('body').hasClass('big')) 
+                            offset = table.attr("cheightbig");
+                        else
+                            offset = table.attr("cheight");
+                    }
+
                 }
 
-                searchbutton.css("top", (table.offset().top + 15 + offset) + "px");
+                searchbutton.css("top", offset);
 
                 titletext.css('transition', 'opacity .7s ease');
                 titletext.css("opacity", 1); 
@@ -166,7 +175,7 @@ function changecriteria(e, obj, tableparam, flag) {
             if ($('body').hasClass('big')) 
                 searchbutton.css("top", ($("#searchpopup > div").height() - 53) + "px");
             else
-                searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
+                searchbutton.css("top", ($("#searchpopup > div").height() - 40) + "px");
             
             dblTapFlag = false;        
             titletext.css('transition', 'opacity .7s ease');
