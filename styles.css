@@ -196,9 +196,9 @@ body.big #searchdate tr:nth-of-type(2) span {
 }
 body.big #searchpopup .fa-times-circle {
     position: relative;
-    top: 1px !important;
-    font-size: 15px;
-    margin-left: 3px !important;
+    top: 3px !important;
+    font-size: 19px;
+    margin-left: 11px !important;
 }
 
 
@@ -2429,8 +2429,8 @@ body.big .newLayout #editInfo .sectionicontd:first-child {
 
 
 #searchtags .fa-plus-square.mainbutton {
-   top: 0px !important;
-   font-size: 19px !important;
+   top: -1px !important;
+   font-size: 24px !important;
 }
 
 
@@ -3552,6 +3552,14 @@ body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 
   ###Device = Most of the Smartphones Mobiles (Portrait)
   Screen = B/w 320px to 479px */
   @media (max-width: 480px) {
+
+    body.big .newLayout#searchpopup #searchtags.sectiontitletable .firsticon {
+      /* width: 29px !important; */
+    }
+    body.big .newLayout#searchpopup .el:not(.ellipsis) .slicename {
+        top: -3px !important;
+    }
+
     .edittext.fa-pencil {
       left: -10px;
       left: 50%;
@@ -4035,6 +4043,7 @@ body.big #editinfodiv.newLayout > div .titletable tr:first-child .firsttd {top: 
     body.big #searchpopup.newLayout > div {
         /* margin-top: 27px !important; */
         /* max-height: 614px !important; */
+        border-top-color: transparent;
     } 
   
     body.big .newLayout#mainsettings > div {
