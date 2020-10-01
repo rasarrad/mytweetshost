@@ -1931,7 +1931,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
     padding-right: 24px;
     padding-bottom: 6px;
     width: 6px;
-    height: 24px;
+    height: 23px;
     padding-top: 3px;
     padding-left: 8px;
     transition: all 0.6s ease 0s;
@@ -1946,7 +1946,7 @@ body.big #sear2 {
     top: -10px;
 }
 
-body.big #sear {font-size: 31px;width: 14px;height: 33px;padding-top: 6px;padding-left: 10px;}
+body.big #sear {font-size: 31px;width: 14px;height: 33px;padding-top: 5px;padding-left: 10px;}
 
 #splash .splashbutton {
   border: 1px solid var(--dark-color);

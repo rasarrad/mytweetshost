@@ -141,9 +141,9 @@ function changecriteria(e, obj, tableparam, flag) {
                 if (table.attr("cheight")) {
                     if ($(window).width() < 600 && table.attr("id") == "searchclassif") {
                         if ($('body').hasClass('big')) 
-                            offset = "345px";
+                            offset = "432px";
                         else
-                            offset = "268px";
+                            offset = "343px";
                     }
                     else {
                         if ($('body').hasClass('big')) 
@@ -173,7 +173,7 @@ function changecriteria(e, obj, tableparam, flag) {
             table.find('td.el').addClass('ellipsis');
             table.find(".togglepos").css("position", "absolute"); 
             if ($('body').hasClass('big')) 
-                searchbutton.css("top", ($("#searchpopup > div").height() - 54) + "px");
+                searchbutton.css("top", ($("#searchpopup > div").height() - 53) + "px");
             else
                 searchbutton.css("top", ($("#searchpopup > div").height() - 41) + "px");
             
