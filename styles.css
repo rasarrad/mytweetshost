@@ -1924,7 +1924,7 @@ body.big #splash.newLayout table:nth-of-type(4) {
     z-index: 33333;
     background: var(--high-color);
     color: var(--softdark-color);
-    border-radius: 3px;
+    border-radius: 5px;
     border: 1px solid var(--softdark-color);
     font-size: 25px;
     padding-left: 13px;
@@ -2062,7 +2062,7 @@ body.big #filterdate2display {
   /* text-decoration: underline; */
   position: relative;
   top: -1px;
-  font-size: 13px;
+  font-size: 16px;
   cursor: default;
   position: absolute;
   top: 15px;
@@ -2077,11 +2077,11 @@ body.big #filterdate2display {
   display: block;
   text-align: center;
   /* width: 179px; */
-  top: 22px !important;
+  top: 23px !important;
 }
 
 body.big #titlesearch {
-  font-size: 17px;
+  font-size: 19px;
   top: 28px !important;
   width: 290px;
   text-align: center;
