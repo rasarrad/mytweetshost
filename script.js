@@ -67,7 +67,7 @@ $( document ).ready(function() {
 
    //openmenu(null, null, true);
     togglecriterions();
-
+alert(8989)
 
     isMobile = window.mobileAndTabletCheck();
 
