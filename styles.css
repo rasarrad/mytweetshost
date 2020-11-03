@@ -265,9 +265,8 @@ body.big #searchpopup .fa-times-circle {
     position: relative;
     top: 2px;
     font-size: 14px !important;
-    color: var(--soft-color);
+    color: var(--high-color);
     cursor: default;
-    font-weight: bold;
     text-transform: uppercase;
     transform: translate(-50%, 0px);
     left: calc(50% - 168px);
@@ -310,13 +309,13 @@ body.big #searchpopup .fa-times-circle {
     transition: all 0.6s;
     z-index: 10;
     background: transparent;
-    color: var(--soft-color);
+    color: var(--high-color);
     left: auto;
     transform: translate(-50%, 0px);
     left: calc(50% - 247px);
    }
 
-   .tweet:first-child #expand {/* margin-top: 6.5px; */}
+   .tweet:first-child #expand {margin-top: 6.5px;}
    #expand.expanded {
     margin-top: 3px;
     left: 5px;
@@ -374,12 +373,9 @@ ol > li {
     display: block;
     transform: translate(-50%, 0px);
     left: calc(50% - 0px) !important;
-    height: 47px !important;
-    border-radius: 5px;
-    background: var(--high-color) !important;
 }
-.innermask {
-    width: 647px;
+.tweet:not(:first-child) .innermask {
+    width: 850px;
 }
 
 .gradiantback {
@@ -394,7 +390,6 @@ ol > li {
 }
 body.big .gradiantback {
     top: 27px;
-    display: none;
 }
  body.big .html .gradiantback {
     top: 24px;
@@ -897,7 +892,7 @@ twitter-widget {
       position: absolute;
       right: 13px;
       top: -7px;
-      color: var(--soft-color);
+      color: var(--high-color);
       background: transparent;
       z-index: 9;
       cursor: pointer;
@@ -1115,11 +1110,11 @@ body.big #addtweet {
     margin-left: calc(0%) !important;
     margin-right: 0px !important;
     top: -12px;
-    width: 602px;
-    background: transparent !important;
+    width: 884px;
+    background: var(--dark-color) !important;
     transform: translate(-50%, 0px);
-    left: calc(50% - -25px) !important;
-    top: -12px !important;
+    left: calc(50% - -151px) !important;
+    top: -19px !important;
     margin-bottom: 10px;
 }  
 .tweet {
@@ -1129,7 +1124,7 @@ body.big #addtweet {
   height: calc(100% - 43px);
   background: var(--soft-color);
   /* background-image: linear-gradient(to bottom, var(--soft-color) 4%, var(--dark-color) 7% ); */
-  background: transparent;
+  background: var(--dark-color);
   margin-top: -10px;
   transition: max-height 2s;
 }
@@ -1151,7 +1146,7 @@ body.big .tweet:first-child {
   border-bottom-width: 0px !important;
   background: transpa !important;
   /* z-index: 9; */
-  padding-left: calc(50% - 566px);
+  padding-left: calc(50% - 294px);
   text-align: left;
 }   
 
@@ -1162,7 +1157,7 @@ body.big .linkbar {
     left: calc(50% - 334px);
 }
 #expand {
-    right: calc(50% - 325px);
+    right: calc(50% - 417px);
 }
 body.big #expand {
     /* right: calc(50% - 331px); */
@@ -1181,7 +1176,6 @@ body.big #expand {
     transform: translate(-50%, 0px);
     left: calc(50% - 0px) !important;
     width: 850px;
-    display: none;
 }
   .yt .gradiantback {
     position: absolute;
@@ -1463,14 +1457,14 @@ body.big .tweet.html iframe {
   max-width: 753px;
 }
 .tweet:first-child .tags {
-  /* top: -4px; */
+  top: -4px;
 }
 body.big .tags {
   font-size: 17px !important;
   height: 36px;
   top: -2px;
   margin-top: -9px;
-  max-width: 546px;
+  max-width: 735px;
 }
 .newLayout.mainsettings > div {
     /* max-height: calc(100% - 66px) !important; */
@@ -1704,7 +1698,7 @@ body.big #mainsettings.newLayout > div {
     font-size: 15px;
     top: 2px;
     width: 20px;
-    left: calc(50% - 297px) !important;
+    left: calc(50% - 396px) !important;
 }
 
 body.big .linkbar {
@@ -1750,7 +1744,7 @@ body.big #expand {
 }
 
 .tweet:first-child .linkbar {
-    /* top: -1px !important; */
+    top: -1px !important;
 }
 
 .tweet.text .linkbar {
@@ -1788,7 +1782,7 @@ body.big .tweet.text:first-child .linkbar {
 
 
 body.big .tweet:first-child .linkbar {
-    /* top: -1px !important; */
+    top: -1px !important;
 }
 
 body.big .tweet:first-child .linkbar.fa-internet-explorer {
@@ -1803,7 +1797,7 @@ body.big .tweet:first-child .linkbar.fa-youtube-play {
   /* left: 18px; */
 }     
 .tweet:first-child #expand {
-    /* margin-top: -8px; */
+    margin-top: -8px;
 }    
    
 
@@ -7362,7 +7356,7 @@ body.big #editinfodiv.keyb .fa-angle-down {
 }
 
 
-.innertweet > .textinfo {width: calc(100% - 14px);height: 55px;font-size: 18px;/* font-weight: bold; */margin-left: 6px;margin-top: 0px;margin-bottom: 0px;border: 0px;/* text-transform: uppercase; */resize: none;background: var(--dark-color) !important;color: var(--text-color) !important;display: none;}
+.innertweet > .textinfo {width: calc(100% - 14px);height: 55px;font-size: 18px;/* font-weight: bold; */margin-left: 6px;margin-top: 0px;margin-bottom: 0px;border: 0px;/* text-transform: uppercase; */resize: none;background: var(--dark-color) !important;color: var(--text-color) !important;}
 
 .innertweet > .twitter-tweet.twitter-tweet-rendered {
   height: 300px;
@@ -7390,7 +7384,6 @@ body.big #editinfodiv.keyb .fa-angle-down {
     left: auto !important;
     bottom: 13px;
     right: 13px;
-    display: none;
    }
 
    .buttontweet.fa-clone {
